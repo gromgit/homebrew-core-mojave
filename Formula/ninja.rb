@@ -12,6 +12,11 @@ class Ninja < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ninja-1.10.2"
+    sha256 cellar: :any_skip_relocation, mojave: "7a77dbfc04955e48827757c5a18e8751812ee70879e0f18e2c0073757aa65310"
+  end
+
 
   # Ninja only needs Python for some non-core functionality.
   depends_on "python@3.10" => [:build, :test]
