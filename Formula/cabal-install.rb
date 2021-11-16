@@ -6,6 +6,11 @@ class CabalInstall < Formula
   license "BSD-3-Clause"
   head "https://github.com/haskell/cabal.git", branch: "3.6"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cabal-install-3.6.2.0"
+    sha256 cellar: :any_skip_relocation, mojave: "5c87f9b38ae6c5b2a4d5bbf28c5d490d76a6c24e94ce8d6ecb105113bcafb083"
+  end
+
 
   depends_on "ghc"
   uses_from_macos "zlib"
