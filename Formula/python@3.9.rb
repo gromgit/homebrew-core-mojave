@@ -10,6 +10,11 @@ class PythonAT39 < Formula
     regex(%r{href=.*?v?(3\.9(?:\.\d+)*)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.9-3.9.8"
+    sha256 mojave: "aeee82cbe55c1a87b4106a9252df55e396ef40311a238987032ca820a5c24a7f"
+  end
+
 
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
