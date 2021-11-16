@@ -7,6 +7,11 @@ class SphinxDoc < Formula
   sha256 "6d051ab6e0d06cba786c4656b0fe67ba259fe058410f49e95bee6e49c4052cbf"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sphinx-doc-4.3.0"
+    sha256 cellar: :any_skip_relocation, mojave: "856fab0321d4d81ec0fb68dc6f5b6c67b856a939bd7d665fdfbdc07d0e750caa"
+  end
+
 
   keg_only <<~EOS
     this formula is mainly used internally by other formulae.
