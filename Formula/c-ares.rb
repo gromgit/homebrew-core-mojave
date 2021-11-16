@@ -14,6 +14,11 @@ class CAres < Formula
     regex(/href=.*?c-ares[._-](\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/c-ares-1.18.1"
+    sha256 cellar: :any, mojave: "0e619c5dcd22bfdcc75d9e9b3addb879b8a26a7b03d9f4b8e3d15562241e8d81"
+  end
+
 
   depends_on "cmake" => :build
 
