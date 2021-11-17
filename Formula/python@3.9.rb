@@ -12,7 +12,8 @@ class PythonAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.9-3.9.8"
-    sha256 mojave: "aeee82cbe55c1a87b4106a9252df55e396ef40311a238987032ca820a5c24a7f"
+    rebuild 1
+    sha256 mojave: "3a4caa730519408552296c791f1a0646c5fd537dde3ccd6b7f3c5975cbbb1522"
   end
 
 
