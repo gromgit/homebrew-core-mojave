@@ -7,6 +7,11 @@ class Aom < Formula
   license "BSD-2-Clause"
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aom"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f063df82f82cee479a2d5cd6b5163c2dea0eae0da610ea85e721a40d11d212a4"
+  end
 
   depends_on "cmake" => :build
   depends_on "yasm" => :build
