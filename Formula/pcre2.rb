@@ -27,6 +27,11 @@ class Pcre2 < Formula
     regex(/^pcre2[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcre2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8fb5eafe75baf8c8bc941692649c29f3a3d19902b478350f0493bfcdfb6b2ba0"
+  end
 
   head do
     url "https://github.com/PhilipHazel/pcre2.git", branch: "master"
