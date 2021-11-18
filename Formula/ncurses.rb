@@ -8,6 +8,11 @@ class Ncurses < Formula
   sha256 "97fc51ac2b085d4cde31ef4d2c3122c21abc217e9090a43a30fc5ec21684e059"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncurses"
+    rebuild 1
+    sha256 mojave: "db41cedbec22956a066ae277e8cbd888c7693f28af74f46a4539c68ffa0e00b6"
+  end
 
   keg_only :provided_by_macos
 
