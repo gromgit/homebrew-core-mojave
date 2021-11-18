@@ -11,6 +11,11 @@ class Rav1e < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rav1e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "44d097451428b0ea8aac721e2907cd535e3396e9e5757074beaf3e83a42b1f4e"
+  end
 
   depends_on "cargo-c" => :build
   depends_on "nasm" => :build
