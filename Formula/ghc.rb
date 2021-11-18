@@ -15,6 +15,11 @@ class Ghc < Formula
     regex(/href=.*?download[._-]ghc[._-][^"' >]+?\.html[^>]*?>\s*?v?(8(?:\.\d+)+)\s*?</i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc"
+    rebuild 1
+    sha256 mojave: "564b8ac3df4767914a6d28339069a03134fe1413ce183d2d7fb65ead380c6471"
+  end
 
   depends_on "python@3.9" => :build
   depends_on "sphinx-doc" => :build
