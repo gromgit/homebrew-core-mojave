@@ -6,6 +6,11 @@ class Webp < Formula
   license "BSD-3-Clause"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "48e66d92df3458726ac5c52598cad2ef722dc4e991846bc2558755d8b064c8a6"
+  end
 
   head do
     url "https://chromium.googlesource.com/webm/libwebp.git"
