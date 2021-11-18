@@ -13,6 +13,11 @@ class Curl < Formula
     regex(/href=.*?curl[._-]v?(.*?)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curl"
+    rebuild 1
+    sha256 cellar: :any, mojave: "648b821a5afb867dc80877d8c8f8a2786c8fc6a44462269602bda29d083c63e3"
+  end
 
   head do
     url "https://github.com/curl/curl.git"
