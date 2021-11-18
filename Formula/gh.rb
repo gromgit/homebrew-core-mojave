@@ -12,6 +12,11 @@ class Gh < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gh"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bbc6fc093934e519a42ee5b3bbb82b8c0c7b2ddc400cff8dd4761d088af4e33f"
+  end
 
   depends_on "go" => :build
 
