@@ -13,6 +13,11 @@ class Asciidoc < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciidoc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1dc8d4d6a27636b57271b420b4de0a6cebbce54cc3f96c9322f709edfe03d5f6"
+  end
 
   depends_on "docbook"
   depends_on "python@3.10"
