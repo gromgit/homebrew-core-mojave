@@ -6,6 +6,11 @@ class Libtasn1 < Formula
   sha256 "4365c154953563d64c67a024b607d1ee75c6db76e0d0f65709ea80a334cd1898"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtasn1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5e73a77724732a94c374c122f4cf6f18c89fd46f8f1a9661d5e3a0f9b384924b"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking",
