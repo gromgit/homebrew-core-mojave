@@ -14,6 +14,11 @@ class Ffmpeg < Formula
     regex(/href=.*?ffmpeg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg"
+    rebuild 1
+    sha256 mojave: "04aade8b02d7198e175920d96e925a34e18693115b6de828c441acd1872b39ed"
+  end
 
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
