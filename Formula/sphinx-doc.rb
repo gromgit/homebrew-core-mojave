@@ -8,10 +8,10 @@ class SphinxDoc < Formula
   license "BSD-2-Clause"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sphinx-doc-4.3.0"
-    sha256 cellar: :any_skip_relocation, mojave: "856fab0321d4d81ec0fb68dc6f5b6c67b856a939bd7d665fdfbdc07d0e750caa"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sphinx-doc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3eef307bd235896027b8e7a72461e564a086e7dae417809d0ce8575f5a391f68"
   end
-
 
   keg_only <<~EOS
     this formula is mainly used internally by other formulae.
