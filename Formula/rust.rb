@@ -15,6 +15,11 @@ class Rust < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2efd9fc6950d1c731d6a0aa0dae852b971b41c98c2ec31b5f411527e02c6b609"
+  end
 
   head do
     url "https://github.com/rust-lang/rust.git"
