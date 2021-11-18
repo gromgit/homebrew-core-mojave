@@ -7,10 +7,10 @@ class Gdbm < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdbm-1.22"
-    sha256 mojave: "575b52c3ee5c3d54b0f567dffa7595e3760048e9db257c1c40f584333f12db50"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdbm"
+    rebuild 1
+    sha256 mojave: "54541971b02dd8b9932aad8ff053e62943fc638988ec24e4aaadde912c7c9aaa"
   end
-
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
