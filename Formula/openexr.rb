@@ -6,6 +6,11 @@ class Openexr < Formula
   sha256 "6f70a624d1321319d8269a911c4032f24950cde52e76f46e9ecbebfcb762f28c"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openexr"
+    rebuild 1
+    sha256 mojave: "27069d05f1e306dab5a667ff4325d445c62a1571608ad6f317c43f9ebd2cb3ef"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
