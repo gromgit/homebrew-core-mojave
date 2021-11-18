@@ -7,6 +7,11 @@ class Glib < Formula
   sha256 "f9b7bce7f51753a1f43853bbcaca8bf09e15e994268e29cfd7a76f65636263c0"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glib"
+    rebuild 1
+    sha256 mojave: "60a21d1b2c5462c9e3effffd9d0b6860b746c8b118d491af528b23d64aba4e5b"
+  end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
