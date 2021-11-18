@@ -6,6 +6,11 @@ class Shellcheck < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/koalaman/shellcheck.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shellcheck"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9341a80bff324c54045f02c2e302193db22d64261c0a4c810ed8ce35e8510d39"
+  end
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
