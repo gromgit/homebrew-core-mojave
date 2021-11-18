@@ -6,6 +6,11 @@ class Libvmaf < Formula
   license "BSD-2-Clause-Patent"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvmaf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "567811e298b9ce9591e0c03dc5256a726b53ab2c0fa373ab6f1705fee15b6bda"
+  end
 
   depends_on "meson" => :build
   depends_on "nasm" => :build
