@@ -6,6 +6,11 @@ class Pandoc < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/pandoc.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pandoc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ff45d3ecee3132a39aaf3010e9e052d4a36e813d41b87f4943fcecbbdcb04bf4"
+  end
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
