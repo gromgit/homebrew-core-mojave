@@ -5,6 +5,11 @@ class JpegXl < Formula
   sha256 "ccbd5a729d730152303be399f033b905e608309d5802d77a61a95faa092592c5"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg-xl"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3510c95ec4b11dfad444924a6349f6e7d292dd25331f5e4134a18a2f559a1009"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
