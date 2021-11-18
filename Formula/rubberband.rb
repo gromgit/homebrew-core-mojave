@@ -11,6 +11,11 @@ class Rubberband < Formula
     regex(/href=.*?rubberband[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rubberband"
+    rebuild 1
+    sha256 cellar: :any, mojave: "92beabe1072017f3753b7c55cd792c3cbf71ed7df721fab7b14427479fc295b3"
+  end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
