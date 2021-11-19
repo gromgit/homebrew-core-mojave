@@ -6,6 +6,11 @@ class Licensefinder < Formula
       revision: "408a49a0bad4685a942571616a0302a4cca252f3"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/licensefinder"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "068854ad8a873c26c2cc3db62ac1d18a9ea63c03e7f3fb136bac4d54f35772af"
+  end
 
   depends_on "ruby@2.7" if MacOS.version <= :mojave
 
