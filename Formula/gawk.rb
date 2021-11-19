@@ -6,6 +6,11 @@ class Gawk < Formula
   sha256 "d87629386e894bbea11a5e00515fc909dc9b7249529dad9e6a3a2c77085f7ea2"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gawk"
+    rebuild 1
+    sha256 mojave: "ed5d0f1615fa03a53230980caa9d77bac550c0cd6b1fa3f07acfbdf2aca9445f"
+  end
 
   depends_on "gettext"
   depends_on "mpfr"
