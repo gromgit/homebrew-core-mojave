@@ -12,6 +12,11 @@ class Lmdb < Formula
     regex(/^LMDB[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lmdb"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4599ef248472ac54236bba6a454fe6988c57b01bbfa026101a9dc071d0ff5627"
+  end
 
   def install
     cd "libraries/liblmdb" do
