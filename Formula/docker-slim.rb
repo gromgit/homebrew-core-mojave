@@ -10,6 +10,11 @@ class DockerSlim < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-slim"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3106861b3efcb381995356aa2dae4640d3cdcc60f082502e54166081397d5395"
+  end
 
   depends_on "go" => :build
 
