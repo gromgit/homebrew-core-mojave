@@ -8,6 +8,11 @@ class Regipy < Formula
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regipy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "840531f6d043e1e087354ee05da7d55dd1e69370b1703f70b3ed110155aac9e6"
+  end
 
   depends_on "python-tabulate"
   depends_on "python@3.9"
