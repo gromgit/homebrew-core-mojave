@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://github.com/fastlane/fastlane/archive/2.197.0.tar.gz"
-  sha256 "49fa64c1c5b2f16c4fa3cc8efcd31dc19f776164535b00f327d4133a790d837a"
+  url "https://github.com/fastlane/fastlane/archive/2.198.1.tar.gz"
+  sha256 "e6fd9f208619560e172f37bebbb5e44fabde2a741a8e4f3c692c2b6ccb996b07"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git"
 
@@ -11,6 +11,10 @@ class Fastlane < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastlane"
+    sha256 cellar: :any, mojave: "ea7aae3d2ce25d191ce9fd9c7654069f9abfa40821503d938f2d0ce8e8ae32b8"
+  end
 
   depends_on "ruby"
 
