@@ -7,6 +7,11 @@ class Openstackclient < Formula
   sha256 "c65e3d51018f193cce2daf3d0fd69daa36003bdb2b85df6b07b973e4c39e2f92"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openstackclient"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ed27b092f047f6c209b0eb4cafabd141a8ecbf30b6c221e78baf59c3d4b3abcb"
+  end
 
   depends_on "rust" => :build
   depends_on "python@3.10"
