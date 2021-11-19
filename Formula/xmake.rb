@@ -6,6 +6,11 @@ class Xmake < Formula
   license "Apache-2.0"
   head "https://github.com/xmake-io/xmake.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmake"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0f11403aa050abf1f14471bd8283b9c5e1e08af91eaa2867cbfb168a99e0a6ee"
+  end
 
   on_linux do
     depends_on "readline"
