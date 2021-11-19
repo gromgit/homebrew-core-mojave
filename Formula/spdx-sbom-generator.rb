@@ -5,6 +5,11 @@ class SpdxSbomGenerator < Formula
   sha256 "7d088f136a53d1f608b1941362c568d78cc6279df9c1bdb3516de075cb7f10c3"
   license any_of: ["Apache-2.0", "CC-BY-4.0"]
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spdx-sbom-generator"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a50df30f105990c37e25db9d4f7a0b5944f5646d55bf0cd39d941b9986c4a062"
+  end
 
   depends_on "go" => [:build, :test]
 
