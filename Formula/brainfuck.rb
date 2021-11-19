@@ -6,6 +6,11 @@ class Brainfuck < Formula
   license "Apache-2.0"
   head "https://github.com/fabianishere/brainfuck.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brainfuck"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b62d8d65d9f25c5a57241a1f1da80de096d0a26091e88f557c7f21e094e760e"
+  end
 
   depends_on "cmake" => :build
 
