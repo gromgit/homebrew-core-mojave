@@ -7,6 +7,11 @@ class Esptool < Formula
   sha256 "9638ff11c68e621e08e7c3335d4fd9d70b2ddcf7caae778073cd8cc27be1216f"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esptool"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6901eb5f679eb73769ebf43f1af04f910000a9f76f488e070a7d354a5877059a"
+  end
 
   depends_on "rust" => :build
   depends_on "python@3.10"
