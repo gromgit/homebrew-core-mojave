@@ -5,6 +5,11 @@ class Hebcal < Formula
   sha256 "a69913029933fccc187ad1243bf57a7e799ce06b8f3d813174af3c8d78054b14"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hebcal"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a0533e307328fc6d6ec0281d1b92e216baf94bcd286a707eccddb5f39d6263db"
+  end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
