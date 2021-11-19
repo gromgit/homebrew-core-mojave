@@ -11,6 +11,11 @@ class Dwarfutils < Formula
     regex(%r{href=(?:["']?|.*?/)libdwarf[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dwarfutils"
+    rebuild 1
+    sha256 mojave: "3f24ed75ea7a234d4bfb7cae8780a37c03fc2b4a90df0d28e08f5d28114c36bc"
+  end
 
   head do
     url "https://github.com/davea42/libdwarf-code.git", branch: "master"
