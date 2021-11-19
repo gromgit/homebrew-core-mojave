@@ -12,6 +12,11 @@ class Pyenv < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyenv"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aa940dd18e4b22da3070d79fd4f92da41281f0604090aa1078294de1d4a85c76"
+  end
 
   depends_on "autoconf"
   depends_on "openssl@1.1"
