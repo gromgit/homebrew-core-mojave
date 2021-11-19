@@ -1,6 +1,21 @@
 class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
+
+  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
+  revision 2
+  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(%r{href=["']?gcc[._-]v?(\d+(?:\.\d+)+)(?:/?["' >]|\.t)}i)
+  end
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc"
+    sha256 mojave: "e1cad9363ad2c5d03a6d0db0ae917229ffd6481431b2cf00ea90ee55493a867d"
+  end
+
   if Hardware::CPU.arm?
     # Branch from the Darwin maintainer of GCC with Apple Silicon support,
     # located at https://github.com/iains/gcc-darwin-arm64 and
@@ -13,16 +28,8 @@ class Gcc < Formula
     mirror "https://ftpmirror.gnu.org/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
     sha256 "d08edc536b54c372a1010ff6619dd274c0f1603aa49212ba20f7aa2cda36fa8b"
   end
-  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision 1
-  head "https://gcc.gnu.org/git/gcc.git"
 
   # We can't use `url :stable` here due to the ARM-specific branch above.
-  livecheck do
-    url "https://ftp.gnu.org/gnu/gcc/"
-    regex(%r{href=["']?gcc[._-]v?(\d+(?:\.\d+)+)(?:/?["' >]|\.t)}i)
-  end
-
 
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
@@ -47,12 +54,6 @@ class Gcc < Formula
   patch do
     url "https://github.com/iains/gcc-darwin-arm64/commit/20f61faaed3b335d792e38892d826054d2ac9f15.patch?full_index=1"
     sha256 "c0605179a856ca046d093c13cea4d2e024809ec2ad4bf3708543fc3d2e60504b"
-  end
-
-  # https://gcc.gnu.org/pipermail/gcc-patches/2021-November/583031.html
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/de47854e6e26ec9d0ebb43d1ca23b7384f5d7aa5/gcc/gcc-11.2-rtl-bug.diff"
-    sha256 "8f04ffa663a2a0d1ab3b8ed894ccfdbaaabeff621fb4074c53f94b06c44ef378"
   end
 
   def version_suffix
@@ -82,6 +83,7 @@ class Gcc < Formula
       --libdir=#{lib}/gcc/#{version_suffix}
       --disable-nls
       --enable-checking=release
+      --with-gcc-major-version-only
       --enable-languages=#{languages.join(",")}
       --program-suffix=-#{version_suffix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
@@ -226,6 +228,7 @@ class Gcc < Formula
       #     Noted that it should only be passed for the `gcc@*` formulae.
       #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
       #     brew libraries.
+      # Note: *link will silently add #{libdir} first to the RPATH
       libdir = HOMEBREW_PREFIX/"lib/gcc/#{version_suffix}"
       specs.write specs_string + <<~EOS
         *cpp_unique_options:
@@ -235,9 +238,13 @@ class Gcc < Formula
         #{glibc_installed ? "-nostdlib -L#{libgcc}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
 
         *link:
-        + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir} -rpath #{HOMEBREW_PREFIX}/lib
+        + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir}
+
+        *homebrew_rpath:
+        -rpath #{HOMEBREW_PREFIX}/lib
 
       EOS
+      inreplace(specs, " %o ", "\\0%(homebrew_rpath) ")
     end
   end
 
