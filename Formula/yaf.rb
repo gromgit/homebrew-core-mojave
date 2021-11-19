@@ -10,6 +10,11 @@ class Yaf < Formula
     regex(/".*?yaf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "62be780cd004889505390297d2656300d392352996ab98609bd3d4520eb29abd"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "gettext"
