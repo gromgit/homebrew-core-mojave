@@ -18,6 +18,11 @@ class Clusterctl < Formula
     regex(%r{/cluster-api/releases/download/v?(\d+(?:\.\d+)+)/}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clusterctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "22d2c63cc45f0e0e2a60546abacd4fa11cb574b052e4a1d7d015cfa2020abf36"
+  end
 
   depends_on "go" => :build
 
