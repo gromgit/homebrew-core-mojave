@@ -9,6 +9,11 @@ class Ykman < Formula
   revision 1
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ykman"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e5973704977b52e1b0da03e72f1c95c42dfd3dbbe6e8243024566a3914da51c8"
+  end
 
   depends_on "rust" => :build
   depends_on "swig" => :build
