@@ -5,6 +5,11 @@ class Libxls < Formula
   sha256 "5dacc34d94bf2115926c80c6fb69e4e7bd2ed6403d51cff49041a94172f5e371"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxls"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fbe6f5ca80c5fdd7087412cdfe6be14138658182a952f571c13a1d6b8749b268"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
