@@ -14,6 +14,11 @@ class Agda < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/agda"
+    rebuild 1
+    sha256 mojave: "0bd58458f1b0f6a13f50aa04733da4fa80d64d2bb24d2e683ef2c4f7769c03bd"
+  end
 
   head do
     url "https://github.com/agda/agda.git"
