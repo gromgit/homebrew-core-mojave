@@ -6,6 +6,11 @@ class LibjsonRpcCpp < Formula
   license "MIT"
   head "https://github.com/cinemast/libjson-rpc-cpp.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libjson-rpc-cpp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e7ba00ec373a5b2314f9b36d2f2c9c627b2b5fb4fe8f4cc10298ea4ddb8413d2"
+  end
 
   depends_on "cmake" => :build
   depends_on "argtable"
