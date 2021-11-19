@@ -5,6 +5,11 @@ class Nebula < Formula
   sha256 "f67684a8eba6da91de3601afc97567fddd0e198973bba950fcf15cded92cdc50"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nebula"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8b7dadab0ec39147f7cfcdfdfc944a3be1c03a65e514acad90be39509b78833c"
+  end
 
   depends_on "go" => :build
 
