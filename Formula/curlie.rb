@@ -5,6 +5,11 @@ class Curlie < Formula
   sha256 "25a0ea35be6ff9dd88551c992a0f7ea565ce2fae8213c674bd28a7cc512493d9"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curlie"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "51f2f05331fede63c698df57bce9204e04da3f440fb6a7deafb7bd4360e07991"
+  end
 
   depends_on "go" => :build
 
