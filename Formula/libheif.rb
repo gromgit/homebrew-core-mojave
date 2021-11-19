@@ -6,6 +6,11 @@ class Libheif < Formula
   license "LGPL-3.0-only"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libheif"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5bf805a8ed8f4c9d724a2278319bc2004d799a21eb1988ad70020408e20cc373"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "aom"
