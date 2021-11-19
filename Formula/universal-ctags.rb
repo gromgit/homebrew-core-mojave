@@ -12,6 +12,11 @@ class UniversalCtags < Formula
     regex(/^(p\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/universal-ctags"
+    rebuild 1
+    sha256 cellar: :any, mojave: "89b335d171da5ad7a0b7d3bd317e0dc0f0dda1d34cdf388b44bb3b4e0ead89f0"
+  end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
