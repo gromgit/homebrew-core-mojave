@@ -8,6 +8,11 @@ class YouGet < Formula
   license "MIT"
   head "https://github.com/soimort/you-get.git", branch: "develop"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/you-get"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5312f61b29579a3562c0d51e49fcbbf1fcbeb9472bf84c7403302a04d364ed09"
+  end
 
   depends_on "python@3.10"
   depends_on "rtmpdump"
