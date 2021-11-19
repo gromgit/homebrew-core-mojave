@@ -7,6 +7,11 @@ class Glew < Formula
   revision 1
   head "https://github.com/nigels-com/glew.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glew"
+    rebuild 1
+    sha256 cellar: :any, mojave: "eac269d7879a8d2467818dd5a51f0cee14e4b2bee71ba2fc38a8541fb3dbe6bc"
+  end
 
   depends_on "cmake" => [:build, :test]
 
