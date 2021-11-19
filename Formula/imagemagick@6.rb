@@ -11,6 +11,11 @@ class ImagemagickAT6 < Formula
     regex(/href=.*?ImageMagick[._-]v?(6(?:\.\d+)+(?:-\d+)?)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick@6"
+    rebuild 1
+    sha256 mojave: "83f4defeae5c65c878e2c5046b4e12f8a414b004847922b89e2734c2285d22a8"
+  end
 
   keg_only :versioned_formula
 
