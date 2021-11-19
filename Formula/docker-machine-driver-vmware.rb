@@ -6,6 +6,11 @@ class DockerMachineDriverVmware < Formula
       revision: "faa4b93573820340d44333ffab35e2beee3f984a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-machine-driver-vmware"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5431941b0a7e037ff8726f6887e03b54263cd90873848658b49bc0d74a30e1ee"
+  end
 
   depends_on "go" => :build
   depends_on "docker-machine"
