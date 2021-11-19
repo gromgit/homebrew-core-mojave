@@ -5,6 +5,11 @@ class Webdis < Formula
   sha256 "05b3786ab120b102b37b510aa2e854bf1ccb4c68b730b7bb1456c60f8e27ed2b"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webdis"
+    rebuild 1
+    sha256 cellar: :any, mojave: "057139ddef0e4f513b741a2af8f39b670e2cefd94f1a97996a3a063fad4a1200"
+  end
 
   depends_on "libevent"
 
