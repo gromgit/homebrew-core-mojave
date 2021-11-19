@@ -5,6 +5,11 @@ class CiliumCli < Formula
   sha256 "ca11474ced97ea7958305cea3d6e80837580764d546874b1e997eb15fef86f74"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cilium-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b0b26f2d5315e1c38660424fe173dd1430d0d0371912f7b2d86b146163548bf7"
+  end
 
   depends_on "go" => :build
 
