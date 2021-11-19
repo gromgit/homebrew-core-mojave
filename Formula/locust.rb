@@ -7,6 +7,11 @@ class Locust < Formula
   sha256 "975e29ad9019db3c5d29eeea7d087c5fd2b643fdbbf1161d445da9fc4308a620"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/locust"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bb3f62bbbb9e741f02e47ced6f41526ee7393d40932f2f3df7a4fc9f730bf8bd"
+  end
 
   depends_on "python@3.10"
   depends_on "six"
