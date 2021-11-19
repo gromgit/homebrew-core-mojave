@@ -5,6 +5,11 @@ class PandocCrossref < Formula
   sha256 "7c54bab0bb45ee68b3110a39b11c4012afe9ddf243ba0745126f0da170e1d40c"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pandoc-crossref"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "36fa2e0b6c4c24f5d6c69d6e414ba2949ba0e04082941f93b601fa9203a8b504"
+  end
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
