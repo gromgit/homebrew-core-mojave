@@ -5,6 +5,11 @@ class Ucloud < Formula
   sha256 "91c8153854b102dcd671c58976e35b056b3ed32258a6daea3755c8cb35aed742"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ucloud"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "823c9bc08a10d5fcc6a376074cf52e5bd9af7a395a690378aeda6e13ce80089a"
+  end
 
   depends_on "go" => :build
 
