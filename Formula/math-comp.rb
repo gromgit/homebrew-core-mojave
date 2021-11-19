@@ -6,6 +6,11 @@ class MathComp < Formula
   license "CECILL-B"
   head "https://github.com/math-comp/math-comp.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/math-comp"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "03049e01faa4136113afee31a6b303e1f7ba8dff95da5307e9ca4a23be1c821c"
+  end
 
   depends_on "ocaml" => :build
   depends_on "coq"
