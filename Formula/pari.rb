@@ -10,6 +10,11 @@ class Pari < Formula
     regex(/href=.*?pari[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pari"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5b267f1ec77b6f21f8c042a926c3a40067d7dda9544f8a559248adcdbdbe684c"
+  end
 
   depends_on "gmp"
   depends_on "readline"
