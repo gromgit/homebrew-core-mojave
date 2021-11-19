@@ -11,6 +11,11 @@ class Fluxctl < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluxctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "98d3f2af818bbfeb157cafc287e03b6b35fa3e1a918719143ca0e89f4f9fb6de"
+  end
 
   depends_on "go" => :build
 
