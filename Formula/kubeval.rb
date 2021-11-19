@@ -7,6 +7,11 @@ class Kubeval < Formula
   license "Apache-2.0"
   head "https://github.com/instrumenta/kubeval.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeval"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c28b297fa409b75e7f3aac7543a29391570bc794cc09dddfcf3cac075ecbc21c"
+  end
 
   depends_on "go" => :build
 
