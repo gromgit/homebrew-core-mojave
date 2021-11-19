@@ -6,6 +6,11 @@ class Glfw < Formula
   license "Zlib"
   head "https://github.com/glfw/glfw.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glfw"
+    rebuild 1
+    sha256 cellar: :any, mojave: "714da94f469304e30644bf9b0a37f35c13213161f49f0f73f2c242bfce1afa34"
+  end
 
   depends_on "cmake" => :build
 
