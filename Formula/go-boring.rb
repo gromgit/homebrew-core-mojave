@@ -11,6 +11,11 @@ class GoBoring < Formula
     regex(/>go[._-]?(\d+(?:\.\d+)+b\d+)[._-]src\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-boring"
+    rebuild 1
+    sha256 mojave: "157a88a553a4be18658c79b6ad3ca11fd70611f14207c6daa3044a9540a42c6c"
+  end
 
   keg_only "it conflicts with the Go formula"
 
