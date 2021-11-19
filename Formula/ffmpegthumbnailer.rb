@@ -7,6 +7,11 @@ class Ffmpegthumbnailer < Formula
   revision 6
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpegthumbnailer"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cbfe113d0446a5200287ba121adbedcdd83f4fcd9231d4067077e7ffae6feaa5"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
