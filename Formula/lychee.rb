@@ -6,6 +6,11 @@ class Lychee < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/lycheeverse/lychee.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lychee"
+    rebuild 1
+    sha256 cellar: :any, mojave: "12ac5f7f3249cbc4f24009b3ca59db953fa0cf34a8f5b39da3cad1e9c1824630"
+  end
 
   depends_on "rust" => :build
   depends_on "openssl@1.1"
