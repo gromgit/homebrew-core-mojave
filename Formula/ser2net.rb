@@ -10,6 +10,11 @@ class Ser2net < Formula
     regex(%r{url=.*?/ser2net[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ser2net"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aeedc9ad5a016dc4fb49794da66338b3777519f27f2f6ed73cc6c33c05486654"
+  end
 
   depends_on "libyaml"
 
