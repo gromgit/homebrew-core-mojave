@@ -7,6 +7,11 @@ class Copier < Formula
   sha256 "4afec02c6fa3efcac73e89307a1fddce1b71bf43f2df2adc338b97b89949a59b"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/copier"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "87b0e753e5a862b2081dd70a13b043d31312db1a530046b8802d458a534ae597"
+  end
 
   depends_on "poetry" => :build
   depends_on "python@3.10"
