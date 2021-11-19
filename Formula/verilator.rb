@@ -11,6 +11,11 @@ class Verilator < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/verilator"
+    rebuild 1
+    sha256 mojave: "08ab40d0a86597f9cf361d22c940ed7935fc7c6fe18fcbc6b7473ceff6364049"
+  end
 
   head do
     url "https://git.veripool.org/git/verilator", using: :git
