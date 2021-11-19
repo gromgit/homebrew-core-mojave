@@ -6,6 +6,11 @@ class UutilsCoreutils < Formula
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uutils-coreutils"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "956e96bfd4eeb132108294b830e287e363585c0067cb1948528fc4006248d2d2"
+  end
 
   depends_on "make" => :build
   depends_on "rust" => :build
