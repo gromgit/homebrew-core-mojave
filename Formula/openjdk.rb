@@ -10,6 +10,11 @@ class Openjdk < Formula
     regex(/^jdk[._-]v?(\d+(?:\.\d+)*)-ga$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk"
+    rebuild 1
+    sha256 cellar: :any, mojave: "36610824f8432f00470ae8689de364f07a30216a6cfcaf1c604bcd3c8efe60a3"
+  end
 
   keg_only :shadowed_by_macos
 
