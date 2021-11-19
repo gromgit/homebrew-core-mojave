@@ -16,6 +16,11 @@ class Minio < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cbc0185d3beee1f7ee65f90af82ddd95a41883e6b52fd24ef4cb5b0a2595d147"
+  end
 
   depends_on "go" => :build
 
