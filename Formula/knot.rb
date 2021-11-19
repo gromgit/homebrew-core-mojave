@@ -10,6 +10,11 @@ class Knot < Formula
     regex(/href=.*?knot[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/knot"
+    rebuild 1
+    sha256 mojave: "dfb02a8a5600ae4c0898b2311174d3039c36e9227b3dce4d2cec25a04d5ee0b8"
+  end
 
   head do
     url "https://gitlab.labs.nic.cz/knot/knot-dns.git"
