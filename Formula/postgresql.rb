@@ -11,6 +11,11 @@ class Postgresql < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql"
+    rebuild 1
+    sha256 mojave: "410361ffc502318f93572c345f8128309c7f9e211c23fddfec63572d5870f2bd"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "icu4c"
