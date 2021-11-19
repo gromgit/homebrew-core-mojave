@@ -6,6 +6,11 @@ class Buildozer < Formula
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildozer"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6751956b3b6f121aa6b5e25c8b55d3b634f08ca174b47c7c36e41de0b95be905"
+  end
 
   depends_on "go" => :build
 
