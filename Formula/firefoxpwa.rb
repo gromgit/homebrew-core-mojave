@@ -6,6 +6,11 @@ class Firefoxpwa < Formula
   license "MPL-2.0"
   head "https://github.com/filips123/FirefoxPWA.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/firefoxpwa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1f3ecadc40d1b567c8e52dbd44ffbeaf8d7051a9314bf8eb1cb9c1d19724d7de"
+  end
 
   depends_on "rust" => :build
 
