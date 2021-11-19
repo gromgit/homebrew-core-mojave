@@ -15,6 +15,11 @@ class AzureCli < Formula
     regex(%r{href=.*?/tag/azure-cli[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/azure-cli"
+    rebuild 1
+    sha256 cellar: :any, mojave: "286337a7f90dfc45965b6164de2e9a95c7e92532ed89bb0d2d5544bf3e6b1461"
+  end
 
   depends_on "openssl@1.1"
   depends_on "python@3.10"
