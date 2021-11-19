@@ -6,6 +6,11 @@ class Caddy < Formula
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caddy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dec456aebd13f0fe949602c46570ae059130ee439ba91f491a944aef42105b1f"
+  end
 
   depends_on "go" => :build
 
