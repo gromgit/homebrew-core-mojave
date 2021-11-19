@@ -6,6 +6,11 @@ class Nfpm < Formula
   license "MIT"
   head "https://github.com/goreleaser/nfpm.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nfpm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b529730fdaa0b183a7365090a0aa7b050b66e25c8e58833df22651be8e242c4b"
+  end
 
   depends_on "go" => :build
 
