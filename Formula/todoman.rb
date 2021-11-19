@@ -8,6 +8,11 @@ class Todoman < Formula
   license "ISC"
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/todoman"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0ae8fc92256aaba88e3c00e74eef8a75c363609e87cf9f22fdc5013303814d17"
+  end
 
   depends_on "python-tabulate"
   depends_on "python@3.9"
