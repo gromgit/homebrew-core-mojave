@@ -6,6 +6,11 @@ class Allureofthestars < Formula
   license all_of: ["AGPL-3.0-or-later", "GPL-2.0-or-later", "OFL-1.1", "MIT", :cannot_represent]
   head "https://github.com/AllureOfTheStars/Allure.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/allureofthestars"
+    rebuild 1
+    sha256 mojave: "4918ea70d5251e34d9cc250c49725ba384a4ae3e31f50a32305f353f1b00f9bd"
+  end
 
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
