@@ -12,6 +12,11 @@ class DosboxX < Formula
     regex(/^dosbox-x[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-x"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d0e3e17fa9d3d3e0a851820b13ee4060e52674f4b21cd6e5c9248a32060c592a"
+  end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
