@@ -11,6 +11,11 @@ class FluentBit < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluent-bit"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6d5f15522ed40a9e0fcf13ac0dd8427373582eb220f9d612ee5ecb64bc506390"
+  end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
