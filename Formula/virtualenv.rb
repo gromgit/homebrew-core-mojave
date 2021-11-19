@@ -8,6 +8,11 @@ class Virtualenv < Formula
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/virtualenv"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9466157139b4853c5838ecf4910a20048a99c0c837b728d446ba2f796a951292"
+  end
 
   depends_on "python@3.10"
   depends_on "six"
