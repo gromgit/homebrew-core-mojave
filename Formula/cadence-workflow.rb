@@ -7,6 +7,11 @@ class CadenceWorkflow < Formula
   license "MIT"
   head "https://github.com/uber/cadence.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadence-workflow"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "26b49500ade872e9ab9fc991434c911b9a70652e948557d5fc47dabf480699a5"
+  end
 
   depends_on "go" => :build
 
