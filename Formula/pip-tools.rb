@@ -7,6 +7,11 @@ class PipTools < Formula
   sha256 "65553a15b1ba34be5e43889345062e38fb9b219ffa23b084ca0d4c4039b6f53b"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pip-tools"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a461ced8fa34eb40fdbdf9b9988b218c988b1ee06368859f34995223544a3edc"
+  end
 
   depends_on "python@3.10"
 
