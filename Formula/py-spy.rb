@@ -6,6 +6,11 @@ class PySpy < Formula
   license "MIT"
   head "https://github.com/benfred/py-spy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/py-spy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a25b865824445bb4047eead715b8ca54b2bc0cc1c1221597a62ae91631d0e9d2"
+  end
 
   depends_on "rust" => :build
   depends_on "python@3.9" => :test
