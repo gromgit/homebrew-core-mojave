@@ -11,6 +11,11 @@ class Zig < Formula
     depends_on "llvm@12"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zig"
+    rebuild 1
+    sha256 cellar: :any, mojave: "84494819c1f65ce2a1d4e0d2a7e7a1311b1d6f7358654f0bc6e8db0e95d2b23f"
+  end
 
   head do
     url "https://github.com/ziglang/zig.git", branch: "master"
