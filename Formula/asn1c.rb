@@ -5,6 +5,11 @@ class Asn1c < Formula
   sha256 "8007440b647ef2dd9fb73d931c33ac11764e6afb2437dbe638bb4e5fc82386b9"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asn1c"
+    rebuild 1
+    sha256 mojave: "d482c7e2f05e99b758d1897aaa48740ef49bd74abfe18842d047b788e2597f3d"
+  end
 
   head do
     url "https://github.com/vlm/asn1c.git"
