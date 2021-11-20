@@ -6,6 +6,11 @@ class Stgit < Formula
   license "GPL-2.0-only"
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stgit"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "58a2f0196b8431d64ad7473183253231929feecc2b6ff4bfbedac7f30dda03cd"
+  end
 
   depends_on "asciidoc" => :build
   depends_on "xmlto" => :build
