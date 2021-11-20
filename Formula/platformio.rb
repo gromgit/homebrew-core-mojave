@@ -7,6 +7,11 @@ class Platformio < Formula
   sha256 "94584b1cfd8cc82ee5c51cbecba57e884f906b0c3f2903b136049796d62ae86a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/platformio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a22b248c95765661102e5a6565cadc46a58cda504147c39bbf13dab7e0e72ead"
+  end
 
   depends_on "python-tabulate"
   depends_on "python@3.9"
