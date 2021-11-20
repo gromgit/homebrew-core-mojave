@@ -7,6 +7,11 @@ class Cloudiscovery < Formula
   sha256 "1170ea352a3c7d5643652ebe96b068482734cd995b9c92dc820206f1b87407e5"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudiscovery"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e7a8ea76db078db9ab001f843ecf30143d6d87035e167f2bcbed42daae602a6f"
+  end
 
   depends_on "python@3.10"
   depends_on "six"
