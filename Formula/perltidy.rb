@@ -10,6 +10,11 @@ class Perltidy < Formula
     regex(%r{url=.*?/Perl-Tidy[._-]v?(\d+(?:\.\d+)*)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/perltidy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "648d89b5302cb50761f6f2e0f1c63229f5424ddaa9e9ef1a82b75790649d2a42"
+  end
 
   uses_from_macos "perl"
 
