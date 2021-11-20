@@ -6,6 +6,11 @@ class Opa < Formula
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/opa.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0f2494cc315cfd63b18f7ab337e5c6192c866b89b14e98d4bd7415de0f9a7e5c"
+  end
 
   depends_on "go" => :build
 
