@@ -12,6 +12,11 @@ class Openrtsp < Formula
     regex(/href=.*?live[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openrtsp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "27bebf5fd9a487a8092efbcff4ff95e0f7bf1a83229547c8e29189505eff0634"
+  end
 
   depends_on "openssl@1.1"
 
