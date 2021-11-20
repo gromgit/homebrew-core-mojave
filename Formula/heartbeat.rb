@@ -7,6 +7,11 @@ class Heartbeat < Formula
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heartbeat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3b6d5624d325c961216e0d7e0f19418f256dd349206485f44303a8f4dc3ba9da"
+  end
 
   depends_on "go" => :build
   depends_on "mage" => :build
