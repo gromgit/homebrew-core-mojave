@@ -7,6 +7,11 @@ class SvtplayDl < Formula
   sha256 "4e33a9e4cbca0b0504501f4de9cfc0b4066a61920515bc436269693eec2e7d28"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/svtplay-dl"
+    rebuild 1
+    sha256 cellar: :any, mojave: "126e1cc84337c91c3a89f7a8db471db976dfaebb4b65a6ed63e0822259c80561"
+  end
 
   depends_on "rust" => :build
   depends_on "openssl@1.1"
