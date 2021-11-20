@@ -6,6 +6,11 @@ class Frps < Formula
       revision: "143750901ee320506f5083691990f61f1e7d93d2"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frps"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "abec4da0b4aafaf1de3138265f5dc2be2ba5a23007fce0759762651e1e073dca"
+  end
 
   depends_on "go" => :build
 
