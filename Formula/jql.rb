@@ -6,6 +6,11 @@ class Jql < Formula
   license "MIT"
   head "https://github.com/yamafaktory/jql.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jql"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ad4b84f3c0d0de57bc76bbe28ef2f10416557075077147c98ec6e0d432bab08a"
+  end
 
   depends_on "rust" => :build
 
