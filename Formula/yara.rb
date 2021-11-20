@@ -6,6 +6,11 @@ class Yara < Formula
   license "BSD-3-Clause"
   head "https://github.com/VirusTotal/yara.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yara"
+    rebuild 1
+    sha256 cellar: :any, mojave: "95463df965f7247f40d2c01ad9bb718fd74127cbd12921e08043f84bda9c14d4"
+  end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
