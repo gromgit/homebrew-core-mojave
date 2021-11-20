@@ -10,6 +10,11 @@ class Micronaut < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micronaut"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "48591cddbe55e316ea95a2e0ad0bf60f235b5a830a76caf27fb1dba995a5539b"
+  end
 
   # Uses a hardcoded list of supported JDKs. Try switching to `openjdk` on update.
   depends_on "openjdk@11"
