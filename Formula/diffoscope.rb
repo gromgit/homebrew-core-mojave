@@ -7,6 +7,11 @@ class Diffoscope < Formula
   sha256 "ae2774334fce7905f1b938a155d487d55b9fef9da9a9d18eda3d74951a8a8084"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diffoscope"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "71ecff8fd84e04e3def289b629ff9c316c365e045fdeaac8f1ad207a90efceb3"
+  end
 
   depends_on "libarchive"
   depends_on "libmagic"
