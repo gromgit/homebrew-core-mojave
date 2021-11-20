@@ -9,6 +9,11 @@ class Filebeat < Formula
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/filebeat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ef5b582c44cac601fba0d37fb6d5672ff9d1b20d9c34548edf11e196d94dc0b9"
+  end
 
   depends_on "go" => :build
   depends_on "mage" => :build
