@@ -8,6 +8,11 @@ class Pgbouncer < Formula
     url "https://github.com/pgbouncer/pgbouncer"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgbouncer"
+    rebuild 1
+    sha256 cellar: :any, mojave: "91c887fa1f35542948ba597b3a5d7a11fc19b6b5505ba0a8aca67824c90f5131"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "libevent"
