@@ -5,6 +5,11 @@ class Condure < Formula
   sha256 "6a30cf8f5aa51d958099c15433f23dacc1a75780b1aace9a94dce40a5e755d90"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/condure"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bdd99c995df61a52c8753ba47b8286e25199c9a7d621e407f9efaf240b6e340c"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
