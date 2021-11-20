@@ -9,6 +9,11 @@ class Stormssh < Formula
   revision 7
   head "https://github.com/emre/storm.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stormssh"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3ccfad8152c18c2f3abfe51944e026a5f0a0a329d0134f1a7a086ea9acadd86c"
+  end
 
   depends_on "rust" => :build
   depends_on "python@3.10"
