@@ -15,6 +15,11 @@ class CmakeDocs < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake-docs"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c93f57fb307869fd69d416b9c91f180be42b2b866304b70dc694fe88c185c7fc"
+  end
 
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build
