@@ -11,6 +11,11 @@ class Openttd < Formula
     regex(/Download stable \((\d+(\.\d+)+)\)/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openttd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4d98110863b43ea4f3c6c87684ead7109feef6c1dff7866b6c2f58971c26d954"
+  end
 
   depends_on "cmake" => :build
   depends_on "libpng"
