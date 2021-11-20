@@ -9,6 +9,11 @@ class MysqlConnectorCxx < Formula
     regex(/href=.*?mysql-connector-c%2B%2B[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql-connector-c++"
+    rebuild 1
+    sha256 cellar: :any, mojave: "93f7d86e63be4f8bd010720cfd922f423020a5b001f07b8b9fe4ab4419bf7c51"
+  end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
