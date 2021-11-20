@@ -8,6 +8,11 @@ class Pywhat < Formula
   license "MIT"
   head "https://github.com/bee-san/pyWhat.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pywhat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0486e896f4ce75e4719b12b9857a906bb3aa1871f7cb2a57b1e1318dee17774f"
+  end
 
   depends_on "python@3.9"
   depends_on "six"
