@@ -7,6 +7,11 @@ class SwiftProtobuf < Formula
   revision 1
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swift-protobuf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ffe5a8cf85bb3442a5436219972e910b9ac425382117cdd2f908baf7537b7fc3"
+  end
 
   depends_on xcode: ["8.3", :build]
   depends_on "protobuf"
