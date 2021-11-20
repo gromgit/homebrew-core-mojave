@@ -5,6 +5,11 @@ class Lf < Formula
   sha256 "dccd1ad67d2639e47fe0cbc93d74f202d6d6f0c3759fb0237affb7b1a2b1379e"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "26b029aca6c0d4204044b3d124a204e06c6e2afad7431e2e15afae98a866292b"
+  end
 
   depends_on "go" => :build
 
