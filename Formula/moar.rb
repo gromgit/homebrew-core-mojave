@@ -5,6 +5,11 @@ class Moar < Formula
   sha256 "00fe9ae0631d89bce109ac5b8fb3f5ed0e090df1a5fe9e26cc54fa21f0e40710"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moar"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0df7172b13093d6537f06b2ef89c2815152c8ecad951eea917e97c66546ed0a9"
+  end
 
   depends_on "go" => :build
 
