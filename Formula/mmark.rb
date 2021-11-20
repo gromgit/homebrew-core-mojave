@@ -5,6 +5,11 @@ class Mmark < Formula
   sha256 "1f24ef62fcdf3bbe36880aef4f8b5f4cc623884f399200987aa1b1be9a5a5326"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mmark"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2859f66fec7807064385baf303e920c7f4ca45fd7b9d61db5767cf7b9df9b0c6"
+  end
 
   depends_on "go" => :build
 
