@@ -10,6 +10,11 @@ class Cadical < Formula
     regex(/^rel[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadical"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5d74cddf335e095f94608e2315fe8b76050d08722ea31d0db9dd56f00c0a9883"
+  end
 
   def install
     system "./configure"
