@@ -6,6 +6,11 @@ class Htmldoc < Formula
   license "GPL-2.0-only"
   head "https://github.com/michaelrsweet/htmldoc.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htmldoc"
+    rebuild 1
+    sha256 mojave: "09771de9f1d82be2e969e1d07079ad23547f1fc231cab64539472b2d09c83cd5"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "jpeg"
