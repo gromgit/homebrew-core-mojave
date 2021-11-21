@@ -5,6 +5,11 @@ class Lesspipe < Formula
   sha256 "6192e7e451c5db26841c6dc3cbcc23c1ef396c1cc4588288effa699dbc665cdb"
   license "GPL-2.0-only"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lesspipe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4900d11902b3cf3a1be44361d132e3efa6b1024edf308c98a899315717fa13e1"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}", "--yes"
