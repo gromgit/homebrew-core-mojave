@@ -7,6 +7,11 @@ class Dxpy < Formula
   sha256 "b1d11dd499166dc8688d387994faa42e6fac516b22ab64fb76efb560245e0307"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dxpy"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0a03bcaad719176a2789f6d8d9bff7c772a220991aeb005b203f48e103a2a88f"
+  end
 
   depends_on "python@3.9"
   depends_on "six"
