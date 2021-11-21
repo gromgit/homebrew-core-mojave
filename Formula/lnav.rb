@@ -10,6 +10,11 @@ class Lnav < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lnav"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e9557d588cf11027821aab5a4cdc088cef1ba8996da70c0d3c93b6937b15f59a"
+  end
 
   head do
     url "https://github.com/tstack/lnav.git", branch: "master"
