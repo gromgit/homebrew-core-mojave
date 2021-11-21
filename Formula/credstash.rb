@@ -9,6 +9,11 @@ class Credstash < Formula
   revision 4
   head "https://github.com/fugue/credstash.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/credstash"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4023745615f338280d0f4e29f562e2886feb4035f9f19c044e2fb08ed6e51270"
+  end
 
   depends_on "rust" => :build
   depends_on "openssl@1.1"
