@@ -7,6 +7,11 @@ class Ngs < Formula
   revision 1
   head "https://github.com/ngs-lang/ngs.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ngs"
+    rebuild 1
+    sha256 cellar: :any, mojave: "abd753cd557c139856e0cd98c4a59827207b5fbe290ddb5385266a86e5e24e31"
+  end
 
   depends_on "cmake" => :build
   depends_on "pandoc" => :build
