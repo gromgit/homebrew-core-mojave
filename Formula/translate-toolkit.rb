@@ -8,6 +8,11 @@ class TranslateToolkit < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/translate-toolkit"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b651d1ed5a69475a87a98b71e4ce5bb62988c03a1193e11e5438e779dde30cdc"
+  end
 
   depends_on "python@3.10"
 
