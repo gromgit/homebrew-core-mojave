@@ -7,6 +7,11 @@ class Wtfutil < Formula
   license "MPL-2.0"
   head "https://github.com/wtfutil/wtf.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wtfutil"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9e4c5bb4189f16c17ac9bcf964a54e572b1f2dc7bcbf7898a00e14f2017f7f01"
+  end
 
   depends_on "go" => :build
 
