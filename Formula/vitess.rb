@@ -5,6 +5,11 @@ class Vitess < Formula
   sha256 "f20f84014236fc89b993d76facb08b7ade85121e1ef94db42503ce9e3aff6adf"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vitess"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "01d9ecd8610361b869c3c0421223eee9ce7d1505cf4b0e487b04c8c1247ef439"
+  end
 
   depends_on "go" => :build
   depends_on "etcd"
