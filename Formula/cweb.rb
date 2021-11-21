@@ -6,9 +6,14 @@ class Cweb < Formula
 
   livecheck do
     url :stable
-    regex(/^cweb[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(/^cweb[._-]v?(\d+(?:\.\d+)+[a-z]*?)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cweb"
+    rebuild 1
+    sha256 mojave: "619318cf518dc16086236095c3740f8c97dc9c1d61b85bb900e3309ce18ec601"
+  end
 
   conflicts_with "texlive", because: "both install `cweb` binaries"
 
