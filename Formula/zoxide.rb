@@ -5,6 +5,11 @@ class Zoxide < Formula
   sha256 "aea1a55d107a2367d46be19617fbd8fb440d906121a84d6d9e7b86f3a24fbad4"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zoxide"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1752b7ad56e9c50a423b92f28e0b23c0244556adef62c49cce4fc1eecf98eaa9"
+  end
 
   depends_on "rust" => :build
 
