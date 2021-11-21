@@ -11,6 +11,11 @@ class Mafft < Formula
     regex(%r{href=.*?mafft[._-]v?(\d+(?:\.\d+)+)-with-extensions-src\.t.+?</a>\s*?<(?:br[^>]*?|/li|/ul)>}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mafft"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4800ab555459166e28d9b9ac15110a74b87290ce46139330b89c298a859ed5f1"
+  end
 
   def install
     make_args = %W[CC=#{ENV.cc} CXX=#{ENV.cxx} PREFIX=#{prefix} install]
