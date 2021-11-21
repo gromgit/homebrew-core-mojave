@@ -5,6 +5,11 @@ class Pcapplusplus < Formula
   sha256 "56b8566b14b2586b8afc358e7c98268bc1dd6192197b29a3917b9df2120c51b0"
   license "Unlicense"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcapplusplus"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4c6bdb24f338cfa775f909cc26e4245a0290e1709f6fd5b1a1d3fbe9062bd171"
+  end
 
   uses_from_macos "libpcap"
 
