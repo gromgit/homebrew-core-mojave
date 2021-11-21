@@ -7,6 +7,11 @@ class Packetbeat < Formula
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packetbeat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "04a1d98f95b7ba3ee079f3a765bc06ea845cee5964d32e9b190889404fe7fc86"
+  end
 
   depends_on "go" => :build
   depends_on "mage" => :build
