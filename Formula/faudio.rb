@@ -6,6 +6,11 @@ class Faudio < Formula
   license "Zlib"
   head "https://github.com/FNA-XNA/FAudio.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faudio"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0e2328ac359c455665feec57a1f82214a307366377637853b82d756db353e507"
+  end
 
   depends_on "cmake" => :build
   depends_on "sdl2"
