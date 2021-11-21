@@ -7,6 +7,11 @@ class CfnLint < Formula
   sha256 "3e39895bc844506f774889bfd3b71db2cdd7ee76bb52102f518dd55b854091fe"
   license "MIT-0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfn-lint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "97dd0890dc30c7500a5821e273a8e61b5b82d9ce4372943098ed0cb301909663"
+  end
 
   depends_on "python@3.10"
   depends_on "six"
