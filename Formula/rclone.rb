@@ -6,6 +6,11 @@ class Rclone < Formula
   license "MIT"
   head "https://github.com/rclone/rclone.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rclone"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3940794a03603a4fc9cc65626af1a5489a01905227a74e319cb181d9de0b8495"
+  end
 
   depends_on "go" => :build
 
