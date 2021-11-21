@@ -8,6 +8,11 @@ class Gitless < Formula
   license "MIT"
   revision 11
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitless"
+    rebuild 1
+    sha256 cellar: :any, mojave: "46ae95095b80348fc12f9e34f4bd28ce930023e4cb0aab4759eb5df2e22793fa"
+  end
 
   depends_on "libgit2"
   depends_on "python@3.10"
