@@ -3,11 +3,15 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-21.2.5.tar.xz"
-  sha256 "8e49585fb760d973723dab6435d0c86f7849b8305b1e6d99f475138d896bacbb"
+  url "https://mesa.freedesktop.org/archive/mesa-21.3.0.tar.xz"
+  sha256 "a2753c09deef0ba14d35ae8a2ceff3fe5cd13698928c7bb62c2ec8736eb09ce1"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
+    sha256 mojave: "48e591d1800b4df33c383f011d50cae2b64bcd42e03c7a719279f9d742480ef9"
+  end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -46,8 +50,8 @@ class Mesa < Formula
   fails_with gcc: "5"
 
   resource "Mako" do
-    url "https://files.pythonhosted.org/packages/d1/42/ff293411e980debfc647be9306d89840c8b82ea24571b014f1a35b2ad80f/Mako-1.1.5.tar.gz"
-    sha256 "169fa52af22a91900d852e937400e79f535496191c63712e3b9fda5a9bed6fc3"
+    url "https://files.pythonhosted.org/packages/af/b6/42cd322ae555aa770d49e31b8c5c28a243ba1bbb57ad927e1a5f5b064811/Mako-1.1.6.tar.gz"
+    sha256 "4e9e345a41924a954251b95b4b28e14a301145b544901332e658907a7464b6b2"
   end
 
   resource "glxgears.c" do
