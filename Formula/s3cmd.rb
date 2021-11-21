@@ -9,6 +9,11 @@ class S3cmd < Formula
   revision 1
   head "https://github.com/s3tools/s3cmd.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s3cmd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7ad7329d8e7b5b327ae04f9e5174ee8e8922905bef93de95613fa7b5f704491d"
+  end
 
   depends_on "python@3.9"
   depends_on "six"
