@@ -5,10 +5,15 @@ class CargoC < Formula
   sha256 "83804d4e4c264c44372112d12c011b865b899696c16bc6a0e97bac5e12bd9112"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-c"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cdf5bec5c1b9ac47fc848847cfd26cd89b3f08d1037d9b27777a00f9669d3cfe"
+    rebuild 2
+    sha256 cellar: :any, mojave: "3584802fa38fa5d755c46e1c2709529a7a182f48453f6867b94b9dd5c722fa5a"
   end
 
   depends_on "rust" => :build
