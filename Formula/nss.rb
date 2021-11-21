@@ -10,6 +10,11 @@ class Nss < Formula
     regex(%r{href=.*?NSS[._-]v?(\d+(?:[._]\d+)+)[._-]RTM/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nss"
+    rebuild 1
+    sha256 cellar: :any, mojave: "edf0222416155c8564439b93e2e80ead02873f42222707a770d7ab95f0b006ec"
+  end
 
   depends_on "nspr"
 
