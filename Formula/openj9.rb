@@ -16,6 +16,11 @@ class Openj9 < Formula
     regex(/^openj9-(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openj9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cc8bea07b7ec619a9d659f52089aec980e85e19b3109275e36f6e9b7a4e81903"
+  end
 
   keg_only :shadowed_by_macos
 
