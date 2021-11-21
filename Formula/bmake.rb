@@ -10,6 +10,11 @@ class Bmake < Formula
     regex(/href=.*?bmake[._-]v?(\d{6,8})\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bmake"
+    rebuild 1
+    sha256 mojave: "ae251c936cddbc80f3e6d4e17a5eac0dae5efac63827dbd1cd03542e341da24e"
+  end
 
   def install
     # Don't pre-roff cat pages.
