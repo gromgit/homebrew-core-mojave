@@ -11,6 +11,11 @@ class Consul < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/consul"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "adfd01f6804141cc1ab440655a36b992f5df8660a95bdb66af2e05882742a16d"
+  end
 
   depends_on "go" => :build
 
