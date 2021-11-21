@@ -7,6 +7,11 @@ class Nbdime < Formula
   sha256 "67767320e971374f701a175aa59abd3a554723039d39fae908e72d16330d648b"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nbdime"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e9931b0bbdb5ba60d9cfb9a79fb3b50de48583ea9174a7d6ae29da2af2fcec29"
+  end
 
   depends_on "python@3.10"
   depends_on "six"
