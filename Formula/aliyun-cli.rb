@@ -6,6 +6,11 @@ class AliyunCli < Formula
       revision: "a14b5503f993f0c45ec2f7b3512d9d33b5b3d096"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aliyun-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5892a77b034e11a0938608fc89d3e6adbcd01f670cadd57a77c23ccd82417d29"
+  end
 
   depends_on "go" => :build
 
