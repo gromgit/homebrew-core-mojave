@@ -6,6 +6,11 @@ class Fn < Formula
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fn"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2ae2782dfb2b85ff675acebf2d8b76df9bd5abb26a4107c48b2f4cb12a2a56d8"
+  end
 
   depends_on "go" => :build
 
