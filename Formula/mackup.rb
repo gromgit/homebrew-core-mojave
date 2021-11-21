@@ -8,6 +8,11 @@ class Mackup < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/lra/mackup.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mackup"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e67cef9d68b3cc8607f298952944b694db03b3af47909f8f04157951073122cf"
+  end
 
   depends_on "python@3.10"
   depends_on "six"
