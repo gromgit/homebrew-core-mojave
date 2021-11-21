@@ -6,6 +6,11 @@ class Youtubeuploader < Formula
   license "Apache-2.0"
   head "https://github.com/porjo/youtubeuploader.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtubeuploader"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "df15abe8c2143c5a62813afc09cc2b6ededea8af521468f833ed05052fb532fd"
+  end
 
   depends_on "go" => :build
 
