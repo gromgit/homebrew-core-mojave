@@ -7,6 +7,11 @@ class Inform6 < Formula
   license "Artistic-2.0"
   head "https://gitlab.com/DavidGriffith/inform6unix.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inform6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "87211f072d4b0546a1b2e84c8ba9f75651ae5479f4107dcd06a2b2fa49d0a497"
+  end
 
   resource "test_resource" do
     url "https://inform-fiction.org/examples/Adventureland/Adventureland.inf"
