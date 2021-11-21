@@ -6,6 +6,11 @@ class Slides < Formula
   license "MIT"
   head "https://github.com/maaslalani/slides.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/slides"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a9a3edac3bb4413e3f5e4535f3ee46d127f39beccf66fecf63056a0d476b1c10"
+  end
 
   depends_on "go" => :build
 
