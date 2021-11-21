@@ -7,6 +7,11 @@ class Archey4 < Formula
   sha256 "8c81ad0267d6d4689357d27e274fa142e10a8e619184bfafd9e57d9a8a720848"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/archey4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cc70b76b28d5e935bbbc35669555b6356735b2f02b972b9bc1399e0b752df667"
+  end
 
   depends_on "python@3.10"
 
