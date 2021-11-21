@@ -7,6 +7,11 @@ class Timg < Formula
   revision 1
   head "https://github.com/hzeller/timg.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/timg"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a05c56d898861495499bfa8ec5cfd9cf4b276963cf3fda97be420f6d5810efcd"
+  end
 
   depends_on "cmake" => :build
   depends_on "ffmpeg"
