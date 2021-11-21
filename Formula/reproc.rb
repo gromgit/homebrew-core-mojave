@@ -6,6 +6,11 @@ class Reproc < Formula
   license "MIT"
   head "https://github.com/DaanDeMeyer/reproc.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reproc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c3f61ac7d9a0861bf3bd259ea75b4e2ce6feef8bfe353b1a615d5a365fb9932a"
+  end
 
   depends_on "cmake" => :build
 
