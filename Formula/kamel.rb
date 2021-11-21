@@ -12,6 +12,11 @@ class Kamel < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kamel"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4fd0c2dbb9976763af25172a54f5e1e165a8ef8005013ccf3d8dfc3bf67cee7c"
+  end
 
   depends_on "go" => :build
   depends_on "openjdk@11" => :build
