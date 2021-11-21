@@ -11,6 +11,11 @@ class TclTk < Formula
     regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcl-tk"
+    rebuild 1
+    sha256 mojave: "4dd53e5f65de7531998c64e711f9648f1c3fa92be989cd4cd6ba090a92ff5cf3"
+  end
 
   keg_only :provided_by_macos
 
