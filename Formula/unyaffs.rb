@@ -11,6 +11,11 @@ class Unyaffs < Formula
     regex(/href=.*?unyaffs[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unyaffs"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "187edb55b92aaa238a4599f61b07e2da1251ea6d9769366e386bd84978961584"
+  end
 
   def install
     system "make"
