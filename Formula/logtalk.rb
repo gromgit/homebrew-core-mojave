@@ -11,6 +11,11 @@ class Logtalk < Formula
     regex(/Latest stable version:.*?v?(\d+(?:\.\d+)+)/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logtalk"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c41d6c96df7d203804b5092cd42f5b0e2d31c3a6341ea166ec6e95cebb20bc9d"
+  end
 
   depends_on "gnu-prolog"
 
