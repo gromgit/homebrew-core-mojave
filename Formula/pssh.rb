@@ -8,6 +8,11 @@ class Pssh < Formula
   license "BSD-3-Clause"
   revision 6
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pssh"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "08c734526c2f89e23d3046c2e5b8ba13b67f2e51afa5d5bbe61a1fcc6e971099"
+  end
 
   depends_on "python@3.10"
 
