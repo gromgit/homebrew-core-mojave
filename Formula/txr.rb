@@ -10,6 +10,11 @@ class Txr < Formula
     regex(/href=.*?txr[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/txr"
+    rebuild 1
+    sha256 cellar: :any, mojave: "53b5a003883202a554256e7b4b7d56e54929b1862f9da93c99e3d1ae37530abf"
+  end
 
   depends_on "libffi"
 
