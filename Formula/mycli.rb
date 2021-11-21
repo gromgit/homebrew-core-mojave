@@ -8,6 +8,11 @@ class Mycli < Formula
   license "BSD-3-Clause"
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mycli"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9bba83341dfc0a58b079485bc870d6d22adbdd7b68938c7535f6970f4bb1fc52"
+  end
 
   depends_on "rust" => :build
   depends_on "openssl@1.1"
