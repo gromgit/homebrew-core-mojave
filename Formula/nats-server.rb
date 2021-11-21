@@ -6,6 +6,11 @@ class NatsServer < Formula
   license "Apache-2.0"
   head "https://github.com/nats-io/nats-server.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nats-server"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "86d68671a184086b042519e4120e89174480f17c2c803094ffaf6a78e63f1f4b"
+  end
 
   depends_on "go" => :build
 
