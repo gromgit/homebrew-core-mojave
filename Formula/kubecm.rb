@@ -5,6 +5,11 @@ class Kubecm < Formula
   sha256 "38a812f6ee37493e8297ef4db4061a8dd1c466f72f6e0f70ec94308e8b107856"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubecm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1157a2004749e190ee441b033aba837643ad16928274008bdbaa1077272d839e"
+  end
 
   depends_on "go" => :build
 
