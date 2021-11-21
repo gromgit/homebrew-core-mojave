@@ -9,6 +9,11 @@ class SNail < Formula
     regex(/href=.*?s-nail[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s-nail"
+    rebuild 1
+    sha256 mojave: "8a4ed9a0951a23c5fda974fe7bd300146e00e8fd523636de7b77eb61d75c6a37"
+  end
 
   depends_on "awk" => :build
   depends_on "libidn"
