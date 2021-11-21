@@ -6,6 +6,11 @@ class Xdotool < Formula
   license "BSD-3-Clause"
   head "https://github.com/jordansissel/xdotool.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xdotool"
+    rebuild 1
+    sha256 mojave: "ede8f37a3de4a42c009324e7d261d8394f83435046eee57dd6eb07b39abd99e1"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "libx11"
