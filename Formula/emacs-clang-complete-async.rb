@@ -13,6 +13,11 @@ class EmacsClangCompleteAsync < Formula
     patch :DATA
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emacs-clang-complete-async"
+    rebuild 1
+    sha256 mojave: "804bf5a14f675377188bed35dc44946ce1b3d4e04ec7aa52341afdfec4c341fa"
+  end
 
   depends_on "llvm"
 
