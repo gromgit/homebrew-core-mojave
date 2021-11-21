@@ -6,6 +6,11 @@ class Staticcheck < Formula
   license "MIT"
   head "https://github.com/dominikh/go-tools.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/staticcheck"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5c1f4d6b300bae87e7390de76c7754830553530c1619ff00772fa698a0bec39d"
+  end
 
   depends_on "go"
 
