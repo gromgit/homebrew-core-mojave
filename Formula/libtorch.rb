@@ -13,6 +13,11 @@ class Libtorch < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorch"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ee810456751a07cd8955431b61eac4feb77d8f0860f219e8d2bc49d0b41cebd7"
+  end
 
   depends_on "cmake" => :build
   depends_on "python@3.9" => :build
