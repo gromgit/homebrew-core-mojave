@@ -12,6 +12,11 @@ class Mmctl < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mmctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "72a9eef1b19336e8cc4982a9a2273e364a22d2e5180d79982a8ab8dd0f6d16d2"
+  end
 
   depends_on "go" => :build
 
