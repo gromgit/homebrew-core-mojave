@@ -11,6 +11,11 @@ class Exiv2 < Formula
     regex(/href=.*?exiv2[._-]v?(\d+(?:\.\d+)+)-Source\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exiv2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e9eca232dd7895dc8c684bceebe77a8a2a6ad4ee62dacbc761b4151627974a12"
+  end
 
   depends_on "cmake" => :build
   depends_on "gettext"
