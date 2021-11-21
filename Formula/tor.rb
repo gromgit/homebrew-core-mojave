@@ -18,6 +18,11 @@ class Tor < Formula
     regex(/href=.*?tor[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tor"
+    rebuild 1
+    sha256 mojave: "98bcef5bc4fa1d2f4420f2c9712dfc41268b8fef555e8fda0c76e7630ce2dded"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "libevent"
