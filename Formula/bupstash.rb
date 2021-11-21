@@ -5,6 +5,11 @@ class Bupstash < Formula
   sha256 "fc813b8a4b8835aa30060a8df7d02398fc90a77614048c18528d2ad6e1bb1412"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bupstash"
+    rebuild 1
+    sha256 cellar: :any, mojave: "61a39ee1e9e9854a1ad727c858c1450158a2664db471f0349c8af906296048fd"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
