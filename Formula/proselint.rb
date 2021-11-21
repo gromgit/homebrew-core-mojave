@@ -8,6 +8,11 @@ class Proselint < Formula
   license "BSD-3-Clause"
   head "https://github.com/amperser/proselint.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proselint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d4edf07b5f5c0910a98c889d5f4d5d6056194e57a64e3c7cc62a9a35dd028a75"
+  end
 
   depends_on "python@3.9"
   depends_on "six"
