@@ -5,6 +5,11 @@ class FuncE < Formula
   sha256 "0e5d76b5907142800e67417684996f57b0851b55cdb464e3c79e89d54c802fc2"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/func-e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "77ddf60b64ea9faa733873214fb0ee00d736305902e44bdf9feb69cbf1d4c59c"
+  end
 
   depends_on "go" => :build
 
