@@ -14,6 +14,11 @@ class MinimalRacket < Formula
     regex(/["'][^"']*?racket(?:-minimal)?[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimal-racket"
+    rebuild 1
+    sha256 mojave: "93e415434dc2377068f96b06c507b31363f29472a434043274affdf1ff660ef4"
+  end
 
   depends_on "openssl@1.1"
 
