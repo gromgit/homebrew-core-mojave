@@ -5,6 +5,11 @@ class Notcurses < Formula
   sha256 "a2771ad1633e0158f8273fa8b30b5bce0f12e1205e863045f4ae186b6b52f537"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notcurses"
+    rebuild 1
+    sha256 mojave: "2a7234b9c2df256aa7d4cfbb66a014d494fd129a96cb73a6ae649593d7e12ecc"
+  end
 
   depends_on "cmake" => :build
   depends_on "doctest" => :build
