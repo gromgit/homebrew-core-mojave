@@ -5,6 +5,11 @@ class Chezscheme < Formula
   sha256 "e23c556493f9a661852ea046f3317500feac5f223ea6ef3aa3b9234567e14c0e"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chezscheme"
+    rebuild 1
+    sha256 mojave: "8b674466f4e7f9046e36a5a6698196708787c3498990709352878cef8ccbd58d"
+  end
 
   depends_on "libx11" => :build
   depends_on "xterm"
