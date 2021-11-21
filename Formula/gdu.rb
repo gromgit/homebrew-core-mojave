@@ -5,6 +5,11 @@ class Gdu < Formula
   sha256 "c3c4973e621066aef23115710379953c5f59142d495c69c9b102ce98faf2291b"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdu"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "644e614ef80744ccecc9a67378b484cb7d7d9312b383b0ea8e5191828e6b3360"
+  end
 
   depends_on "go" => :build
 
