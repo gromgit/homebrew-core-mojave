@@ -5,6 +5,11 @@ class Sn0int < Formula
   sha256 "38600bfb1df61f0640f52ab23b990eb25cd422df95af30bf1d290fb455849a95"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sn0int"
+    rebuild 1
+    sha256 cellar: :any, mojave: "39863db662978ee2375b2b76a7218e3f28b3e9c12629b8301d10c8bb276993c0"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
