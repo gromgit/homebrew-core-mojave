@@ -8,6 +8,11 @@ class Bpython < Formula
   license "MIT"
   head "https://github.com/bpython/bpython.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bpython"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cd0119e3735d16d71bc0645d7907cc609ff9598d3f68e32c97dfe81b073d735a"
+  end
 
   depends_on "python@3.10"
   depends_on "six"
