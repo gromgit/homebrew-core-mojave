@@ -10,6 +10,11 @@ class Mpop < Formula
     regex(/href=.*?mpop[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpop"
+    rebuild 1
+    sha256 mojave: "779c1b3338860f3fac4e7e150b3f3d0d449b5b4eebcc7700862b8a662029c90a"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "gettext"
