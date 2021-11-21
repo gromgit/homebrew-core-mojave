@@ -6,6 +6,11 @@ class Muffet < Formula
   license "MIT"
   head "https://github.com/raviqqe/muffet.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/muffet"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cf67eb3cb1f8e5520c8e301358c3ed354a745de308c6aa73a3579013246bd229"
+  end
 
   depends_on "go" => :build
 
