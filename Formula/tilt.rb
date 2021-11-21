@@ -7,6 +7,11 @@ class Tilt < Formula
   license "Apache-2.0"
   head "https://github.com/tilt-dev/tilt.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tilt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dcbb334d196581e9ad653d7bb6787f2ec4c345982c6511e97fc7c748bbc69507"
+  end
 
   depends_on "go" => :build
 
