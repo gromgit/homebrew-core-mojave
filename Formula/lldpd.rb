@@ -9,6 +9,11 @@ class Lldpd < Formula
     url "https://github.com/lldpd/lldpd.git"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lldpd"
+    rebuild 1
+    sha256 mojave: "b7ed4fe0cd4a46dc4b6ce01891b73dbccb2c211235e027a494e2917749bedeb2"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "libevent"
