@@ -7,6 +7,11 @@ class ScIm < Formula
   revision 3
   head "https://github.com/andmarti1424/sc-im.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sc-im"
+    rebuild 1
+    sha256 mojave: "7e4aea9f42581e7ae40097a14d267f6e10b5da9b8533e3e169bf95c7a535044a"
+  end
 
   depends_on "libxls"
   depends_on "libxlsxwriter"
