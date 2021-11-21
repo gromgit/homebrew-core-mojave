@@ -6,6 +6,11 @@ class CloudflareWrangler < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cloudflare/wrangler.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudflare-wrangler"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ac088e2017315893bbf95346e22de05e9c135c271e22c6946c0c6ceea9006d34"
+  end
 
   depends_on "rust" => :build
 
