@@ -11,6 +11,11 @@ class Yq < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yq"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "46f14a8956f092b5d67754e2b721a36eee8315b36be6729379989a6fa67a75d5"
+  end
 
   depends_on "go" => :build
   depends_on "pandoc" => :build
