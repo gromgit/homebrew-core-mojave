@@ -11,6 +11,11 @@ class Djview4 < Formula
     regex(%r{url=.*?/djview[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djview4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8e478bddcc4a02a28074c239fdcee16e6e2815ddc41dae5b506b9e958ee3d7ad"
+  end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
