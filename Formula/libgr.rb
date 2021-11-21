@@ -5,6 +5,11 @@ class Libgr < Formula
   sha256 "871a4c57572567727831038274d0a28a2272c73a2f8e5b5b72cc856077c135ea"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgr"
+    rebuild 1
+    sha256 mojave: "5c415ea2f9347a5784a22702e1490ea3f561d2e9e9e449a39d5bab58b0ad3a27"
+  end
 
   depends_on "cmake" => :build
   depends_on "cairo"
