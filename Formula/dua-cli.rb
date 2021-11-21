@@ -5,6 +5,11 @@ class DuaCli < Formula
   sha256 "31c95fc4e9e034f9ba892397dc3d3844635c6b03852983fcf3b0cc326b751c83"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dua-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "78d5f34376b6903a4389f403b5d6ba3da87f049a6c4e2022e404325abbe9cfeb"
+  end
 
   depends_on "rust" => :build
 
