@@ -5,6 +5,11 @@ class Libcbor < Formula
   sha256 "da81e4f9333e0086d4e2745183c7052f04ecc4dbcffcf910029df24f103c15d1"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcbor"
+    rebuild 1
+    sha256 cellar: :any, mojave: "defc2eb146197ff1a80f9e7a85ea9dd9f9ba3dd5b3c5bace63783b8b3be78d04"
+  end
 
   depends_on "cmake" => :build
 
