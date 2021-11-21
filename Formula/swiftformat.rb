@@ -6,6 +6,11 @@ class Swiftformat < Formula
   license "MIT"
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swiftformat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ed6a8acb6dbeb7c6f1891e7b0a1dbfe1add027922607c884dbe0de981a79afc7"
+  end
 
   depends_on xcode: ["10.1", :build]
   depends_on :macos
