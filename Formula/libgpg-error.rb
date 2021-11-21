@@ -10,6 +10,11 @@ class LibgpgError < Formula
     regex(/href=.*?libgpg-error[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgpg-error"
+    rebuild 1
+    sha256 mojave: "c9430e3a78caff834a0063e48ce3444f955b1f64a7e5c3511c086f35f1b16791"
+  end
 
   def install
     system "./configure", "--disable-dependency-tracking",
