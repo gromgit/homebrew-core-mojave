@@ -11,6 +11,11 @@ class Pypy3 < Formula
     regex(/href=.*?pypy3(?:\.\d+)*[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pypy3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7fc6e3fa07c19f4929a27b9ea393f858268f7f6eae9a2c46b0cf7ca47bae45fd"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "pypy" => :build
