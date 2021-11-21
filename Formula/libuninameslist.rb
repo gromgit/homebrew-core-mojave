@@ -11,6 +11,11 @@ class Libuninameslist < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libuninameslist"
+    rebuild 1
+    sha256 cellar: :any, mojave: "164edd87c8e1498ac1090fb5c47fa1d92016c5d5348cb2c0e4f6d3e17dd5e610"
+  end
 
   head do
     url "https://github.com/fontforge/libuninameslist.git"
