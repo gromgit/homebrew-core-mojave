@@ -6,6 +6,11 @@ class Viddy < Formula
   license "MIT"
   head "https://github.com/sachaos/viddy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/viddy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "83806af54c2d18154bb44cf0d1f9e684fe05cf709ac40aeaefc9906447650849"
+  end
 
   depends_on "go" => :build
 
