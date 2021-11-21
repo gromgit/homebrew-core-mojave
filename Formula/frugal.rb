@@ -5,6 +5,11 @@ class Frugal < Formula
   sha256 "982fe4e84aaadbcb04ee5bca2f7859b9e789d172e6b8641dec447246f4567aff"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frugal"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1d013f82eb43c8c604b042db1b1d1586d4167fd21227701050b7024a995a2564"
+  end
 
   depends_on "go" => :build
 
