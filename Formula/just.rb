@@ -6,6 +6,11 @@ class Just < Formula
   license "CC0-1.0"
   head "https://github.com/casey/just.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/just"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "82a3bfc8a8b3709abe52c6566362ea3346158f12a61869f80035aba2e9236614"
+  end
 
   depends_on "rust" => :build
 
