@@ -10,6 +10,11 @@ class Gtk4 < Formula
     regex(/gtk[._-](4\.([0-8]\d*?)?[02468](?:\.\d+)*?)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk4"
+    rebuild 1
+    sha256 mojave: "79aaa81ec563a6e9145e6c57b2dec3bd41cc6116a4d76329300a9cc9de077423"
+  end
 
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
