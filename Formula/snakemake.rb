@@ -8,6 +8,11 @@ class Snakemake < Formula
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snakemake"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a8df2817233d09d21f7202705d7d4c07815f302f9f6896793128693d056eb09f"
+  end
 
   depends_on "cbc"
   depends_on "python@3.10"
