@@ -5,6 +5,11 @@ class Twty < Formula
   sha256 "d1ee544ff31a9a9488ff759da587baf927ab7c31b191b4b5bc010f36ecfb8188"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twty"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "838c2bfbbf4a81ad6c80dd738c69a2b49b7fa85b787af2582cb9de14b09e1a30"
+  end
 
   depends_on "go" => :build
 
