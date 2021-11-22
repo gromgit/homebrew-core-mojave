@@ -8,6 +8,11 @@ class OciCli < Formula
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oci-cli"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3cd2dbba9cb0e842076d12db67f13d4844bfe7108a1bd28e3eae29c5fd760468"
+  end
 
   depends_on "rust" => :build
   depends_on "python@3.10"
