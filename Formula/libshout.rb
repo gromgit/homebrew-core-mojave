@@ -12,6 +12,11 @@ class Libshout < Formula
     regex(/href=.*?libshout[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libshout"
+    rebuild 1
+    sha256 cellar: :any, mojave: "152923de27499e6638d8efd8350de0df45e10cceb8a86afa32847a658a098a3d"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "libogg"
