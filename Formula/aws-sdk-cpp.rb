@@ -8,6 +8,11 @@ class AwsSdkCpp < Formula
   license "Apache-2.0"
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-sdk-cpp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d292df2b567ac360f200a59fcd699c828732b22be900bcfd4e9bad10a7b9fdfd"
+  end
 
   depends_on "cmake" => :build
 
