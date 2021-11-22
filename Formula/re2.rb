@@ -18,6 +18,11 @@ class Re2 < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/re2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e25c52f99b382d5391a82f379daf6b51bb460688007d457c85265e3178f4bfae"
+  end
 
   depends_on "cmake" => :build
 
