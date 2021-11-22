@@ -11,6 +11,11 @@ class Linkerd < Formula
     regex(/^stable[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/linkerd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "782b6ee2cbcda60a25c8da633b5741d01fa7b3a4fc0ae861adc8a40bf9768dba"
+  end
 
   depends_on "go" => :build
 
