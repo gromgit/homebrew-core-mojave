@@ -7,6 +7,11 @@ class Urlwatch < Formula
   sha256 "f0b36db4bccd38923b178b66408c0d80d3103b7257f286b78e87d991283b86d7"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/urlwatch"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6e2160a0f029758e8b5dbc3e3a900ea7a37ce40e8fb21d4a5407531f3f3a9e74"
+  end
 
   depends_on "python@3.10"
 
