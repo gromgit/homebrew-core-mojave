@@ -6,6 +6,12 @@ class Arb < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/fredrik-johansson/arb.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arb"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4f8cfb6775e0c6c7ce8cd316ba0ec6e2ce9354a4f0bbb12603c2ed008d2bf2cf"
+  end
+
   depends_on "cmake" => :build
   depends_on "flint"
   depends_on "gmp"
