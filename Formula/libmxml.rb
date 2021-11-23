@@ -6,7 +6,6 @@ class Libmxml < Formula
   license "Apache-2.0"
   head "https://github.com/michaelrsweet/mxml.git"
 
-
   depends_on xcode: :build # for docsetutil
 
   def install

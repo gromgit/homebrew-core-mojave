@@ -5,7 +5,6 @@ class Goose < Formula
   sha256 "95ecd4176dd86126d56f23d8dccbc37550b0ee1c7f22004ee5bc5a4f3547856c"
   license "MIT"
 
-
   depends_on "go" => :build
 
   def install

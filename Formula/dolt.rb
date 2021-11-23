@@ -1,15 +1,14 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://github.com/dolthub/dolt/archive/v0.34.0.tar.gz"
-  sha256 "28df295e5d5d8e6a7244392881cd4dca7649c22641a7ee789ea43df0db769c18"
+  url "https://github.com/dolthub/dolt/archive/v0.34.2.tar.gz"
+  sha256 "cbeea64b7623d32b5e555ac20e9e5d102d8bfd22dee0bd954a82f9862ca74e3b"
   license "Apache-2.0"
 
   livecheck do
     url :stable
     strategy :github_latest
   end
-
 
   depends_on "go" => :build
 

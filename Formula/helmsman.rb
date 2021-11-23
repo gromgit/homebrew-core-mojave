@@ -7,7 +7,6 @@ class Helmsman < Formula
   license "MIT"
   head "https://github.com/Praqma/helmsman.git", branch: "master"
 
-
   depends_on "go" => :build
   depends_on "helm"
   depends_on "kubernetes-cli"

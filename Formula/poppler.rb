@@ -11,7 +11,6 @@ class Poppler < Formula
     regex(/href=.*?poppler[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build

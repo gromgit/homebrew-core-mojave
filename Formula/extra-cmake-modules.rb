@@ -13,7 +13,6 @@ class ExtraCmakeModules < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake" => [:build, :test]
   depends_on "qt@5" => :build
   depends_on "sphinx-doc" => :build

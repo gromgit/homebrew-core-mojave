@@ -6,7 +6,6 @@ class ArgocdVaultPlugin < Formula
       revision: "89e02217591d856e3902be247df36ec7d489270f"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

@@ -6,7 +6,6 @@ class Subnetcalc < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/subnetcalc.git", branch: "master"
 
-
   depends_on "cmake" => :build
   depends_on "geoip"
 

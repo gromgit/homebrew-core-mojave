@@ -14,18 +14,11 @@ class Libgccjit < Formula
   end
   homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  head "https://gcc.gnu.org/git/gcc.git"
+  revision 1
+  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   livecheck do
     formula "gcc"
-  end
-
-  bottle do
-    sha256 arm64_big_sur: "7ea976a3eac574118aa769d054443ffb1c1987c6ca431d2ea6b2a91c05e99604"
-    sha256 monterey:      "eb84ecdbf1eb34fe4cc916f20156e1214f5fd4aa4b9e862804519878534d02be"
-    sha256 big_sur:       "a2aea5ac05ce16b497cd7f508ecda8f592aa387e8efc1544e8ed5ca5d72a535f"
-    sha256 catalina:      "2aaa68904eff16c3608e20f71ffc167c3e47df6db8c403acd706cc5c38b1c960"
-    sha256 mojave:        "47ae6d2fc53939abf4fe94dc282f280a64d2268091c0b8497aba3bea0c8157eb"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -62,6 +55,7 @@ class Libgccjit < Formula
       --libdir=#{lib}/gcc/#{version.major}
       --disable-nls
       --enable-checking=release
+      --with-gcc-major-version-only
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-mpfr=#{Formula["mpfr"].opt_prefix}
       --with-mpc=#{Formula["libmpc"].opt_prefix}

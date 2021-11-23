@@ -6,7 +6,6 @@ class F3d < Formula
   license "BSD-3-Clause"
   revision 3
 
-
   depends_on "cmake" => :build
   depends_on "vtk"
 

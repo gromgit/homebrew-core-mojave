@@ -7,7 +7,6 @@ class Kubebuilder < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kubebuilder.git"
 
-
   depends_on "git-lfs" => :build
   depends_on "go"
 

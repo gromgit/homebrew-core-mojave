@@ -13,7 +13,6 @@ class Rtags < Formula
     strategy :github_latest
   end
 
-
   depends_on "cmake" => :build
   depends_on "emacs"
   depends_on "llvm"

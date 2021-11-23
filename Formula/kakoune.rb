@@ -11,7 +11,6 @@ class Kakoune < Formula
     strategy :github_latest
   end
 
-
   depends_on macos: :high_sierra # needs C++17
   depends_on "ncurses"
 

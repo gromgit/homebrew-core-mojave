@@ -9,7 +9,6 @@ class Statik < Formula
   revision 4
   head "https://github.com/thanethomson/statik.git", branch: "master"
 
-
   depends_on "libpq"
   depends_on "python@3.9"
 

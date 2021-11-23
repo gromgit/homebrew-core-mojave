@@ -6,7 +6,6 @@ class Cbmc < Formula
       revision: "e27dba61975a3afc10c8ae133f2227d96f891def"
   license "BSD-4-Clause"
 
-
   depends_on "cmake" => :build
   depends_on "maven" => :build
   depends_on "openjdk" => :build

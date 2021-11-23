@@ -12,7 +12,6 @@ class FabricInstaller < Formula
     regex(/["']url["']:\s*["'][^"']*?fabric-installer[._-]v?(\d+(?:\.\d+)+)\.jar/i)
   end
 
-
   depends_on "openjdk"
 
   def install

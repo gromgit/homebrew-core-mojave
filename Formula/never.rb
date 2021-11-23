@@ -12,7 +12,6 @@ class Never < Formula
     strategy :github_latest
   end
 
-
   depends_on "bison" => :build
   depends_on "cmake" => :build
 

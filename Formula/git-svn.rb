@@ -1,23 +1,13 @@
 class GitSvn < Formula
   desc "Bidirectional operation between a Subversion repository and Git"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.33.1.tar.xz"
-  sha256 "e054a6e6c2b088bd1bff5f61ed9ba5aa91c9a3cd509539a4b41c5ddf02201f2f"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.34.0.tar.xz"
+  sha256 "fd6cb9b26665794c61f9ca917dcf00e7c19b0c02be575ad6ba9354fa6962411f"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
     formula "git"
-  end
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5b0ba61fc7f7184dd47546c2258e98ad5026e2ae0c019e7a64cbef1b16092d0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b0af7c6eb7c5cfb9825289b540d78cd1870517a28dbd0f7211550295cc0d23b"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5b0ba61fc7f7184dd47546c2258e98ad5026e2ae0c019e7a64cbef1b16092d0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4b0af7c6eb7c5cfb9825289b540d78cd1870517a28dbd0f7211550295cc0d23b"
-    sha256 cellar: :any_skip_relocation, catalina:       "2e59871e0a1767fb6ed63478ce9215d2e125d5d4c28271fee6610417a1a0b96f"
-    sha256 cellar: :any_skip_relocation, mojave:         "2e59871e0a1767fb6ed63478ce9215d2e125d5d4c28271fee6610417a1a0b96f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f60df3b6a37a84b205d5c25686dcf9cdbca68d3d59bf6e10e9f67713a16b168"
   end
 
   depends_on "git"

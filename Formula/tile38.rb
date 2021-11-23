@@ -7,7 +7,6 @@ class Tile38 < Formula
   license "MIT"
   head "https://github.com/tidwall/tile38.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def datadir

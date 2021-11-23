@@ -5,7 +5,6 @@ class Cnats < Formula
   sha256 "8ee6a738396f08254ce507771d1644bb08e01b8528a00a5ad0b47d527963a35f"
   license "Apache-2.0"
 
-
   depends_on "cmake" => :build
   depends_on "libevent"
   depends_on "libuv"

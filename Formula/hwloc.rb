@@ -5,7 +5,6 @@ class Hwloc < Formula
   sha256 "e1f073e44e28c296ff848dead5e9bd6e2426b77f95ead1792358958e859fa83a"
   license "BSD-3-Clause"
 
-
   head do
     url "https://github.com/open-mpi/hwloc.git"
     depends_on "autoconf" => :build

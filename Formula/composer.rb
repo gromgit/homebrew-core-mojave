@@ -10,7 +10,6 @@ class Composer < Formula
     regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/composer\.phar}i)
   end
 
-
   depends_on "php"
 
   # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix

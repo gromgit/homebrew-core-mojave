@@ -5,7 +5,6 @@ class Torchvision < Formula
   sha256 "32a06ccf755e4d75006ce03701f207652747a63dbfdf65f0f20a1b6f93a2e834"
   license "BSD-3-Clause"
 
-
   depends_on "cmake" => :build
   depends_on "jpeg"
   depends_on "libpng"

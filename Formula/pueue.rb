@@ -6,7 +6,6 @@ class Pueue < Formula
   license "MIT"
   head "https://github.com/Nukesor/pueue.git", branch: "master"
 
-
   depends_on "rust" => :build
 
   def install

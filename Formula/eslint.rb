@@ -7,7 +7,6 @@ class Eslint < Formula
   sha256 "5ce1f9e56e92c598b3ee1b841a2de11e1011a7bb215d95c7e002c892a972c59c"
   license "MIT"
 
-
   depends_on "node"
 
   def install

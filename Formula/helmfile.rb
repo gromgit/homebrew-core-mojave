@@ -5,7 +5,6 @@ class Helmfile < Formula
   sha256 "5475a041f0a1eb5777cc45e3fb06458ae76b1d4840aec89f2fed509d833d0cde"
   license "MIT"
 
-
   depends_on "go" => :build
   depends_on "helm"
 

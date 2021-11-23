@@ -6,7 +6,6 @@ class Mlt < Formula
   license "LGPL-2.1-only"
   head "https://github.com/mltframework/mlt.git"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"

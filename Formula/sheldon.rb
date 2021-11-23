@@ -6,7 +6,6 @@ class Sheldon < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
-
   depends_on "rust" => :build
   depends_on "curl"
   depends_on "openssl@1.1"

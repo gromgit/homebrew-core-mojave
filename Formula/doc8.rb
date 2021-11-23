@@ -8,7 +8,6 @@ class Doc8 < Formula
   license "Apache-2.0"
   head "https://github.com/PyCQA/doc8.git", branch: "main"
 
-
   depends_on "python@3.10"
 
   resource "docutils" do

@@ -11,7 +11,6 @@ class Treefrog < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on xcode: :build
   depends_on "mongo-c-driver"
   depends_on "qt"

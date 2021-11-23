@@ -6,7 +6,6 @@ class Atlantis < Formula
   license "Apache-2.0"
   head "https://github.com/runatlantis/atlantis.git", branch: "master"
 
-
   depends_on "go" => :build
   depends_on "terraform"
 

@@ -10,7 +10,6 @@ class GhcAT9 < Formula
     regex(/href=.*?download[._-]ghc[._-][^"' >]+?\.html[^>]*?>\s*?v?(\d+(?:\.\d+)+)\s*?</i)
   end
 
-
   keg_only :versioned_formula
 
   depends_on "python@3.9" => :build

@@ -11,7 +11,6 @@ class RomTools < Formula
     formula "mame"
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
   depends_on "flac"

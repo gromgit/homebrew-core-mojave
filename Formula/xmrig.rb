@@ -11,7 +11,6 @@ class Xmrig < Formula
     strategy :github_latest
   end
 
-
   depends_on "cmake" => :build
   depends_on "hwloc"
   depends_on "libmicrohttpd"

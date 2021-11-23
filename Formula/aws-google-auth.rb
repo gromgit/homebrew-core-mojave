@@ -9,7 +9,6 @@ class AwsGoogleAuth < Formula
   revision 4
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
-
   depends_on "rust" => :build
   depends_on "pillow"
   depends_on "python-tabulate"

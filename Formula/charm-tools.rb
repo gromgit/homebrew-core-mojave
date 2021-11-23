@@ -8,7 +8,6 @@ class CharmTools < Formula
   license "GPL-3.0-only"
   revision 2
 
-
   depends_on "rust" => :build
   depends_on "charm"
   depends_on "libyaml"

@@ -5,7 +5,6 @@ class Matterbridge < Formula
   sha256 "5f00556b89855db7ce171c91552f51de1d053e463b8c858049a872fadd5c22a6"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

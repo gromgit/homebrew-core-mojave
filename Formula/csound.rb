@@ -13,7 +13,6 @@ class Csound < Formula
     strategy :github_latest
   end
 
-
   depends_on "asio" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build

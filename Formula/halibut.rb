@@ -6,7 +6,6 @@ class Halibut < Formula
   license all_of: ["MIT", :cannot_represent]
   head "https://git.tartarus.org/simon/halibut.git", branch: "main"
 
-
   depends_on "cmake" => :build
 
   def install

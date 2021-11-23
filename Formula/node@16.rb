@@ -10,7 +10,6 @@ class NodeAT16 < Formula
     regex(%r{href=["']?v?(16(?:\.\d+)+)/?["' >]}i)
   end
 
-
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build

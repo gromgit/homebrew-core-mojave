@@ -8,7 +8,6 @@ class TwinePypi < Formula
   license "Apache-2.0"
   head "https://github.com/pypa/twine.git", branch: "main"
 
-
   depends_on "python@3.10"
   depends_on "six"
 

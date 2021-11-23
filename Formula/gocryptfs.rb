@@ -5,7 +5,6 @@ class Gocryptfs < Formula
   sha256 "31be3f3a9400bd5eb8a4d5f86f7aee52a488207e12d312f2601ae08e7e26dd02"
   license "MIT"
 
-
   depends_on "go" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"

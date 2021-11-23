@@ -5,7 +5,6 @@ class Tctl < Formula
   sha256 "3276bb3a030c7c96bfc56535dd7bf28c41ff8064c467b4e4cfba1c694879b97b"
   license "MIT"
 
-
   depends_on "go" => :build
 
   def install

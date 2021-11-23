@@ -5,7 +5,6 @@ class Mdcat < Formula
   sha256 "f0e400f2060a460e347546932fcb501da71fab5af602413c7932fac35136b89f"
   license "MPL-2.0"
 
-
   depends_on "cmake" => :build
   depends_on "rust" => :build
 

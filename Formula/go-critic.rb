@@ -11,7 +11,6 @@ class GoCritic < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "go"
 
   def install

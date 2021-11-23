@@ -6,7 +6,6 @@ class GrpcSwift < Formula
   license "Apache-2.0"
   head "https://github.com/grpc/grpc-swift.git", branch: "main"
 
-
   depends_on xcode: ["12.0", :build]
   depends_on "protobuf"
   depends_on "swift-protobuf"

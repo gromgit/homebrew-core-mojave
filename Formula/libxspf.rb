@@ -5,7 +5,6 @@ class Libxspf < Formula
   sha256 "ce78a7f7df73b7420b6a54b5766f9b74e396d5e0b37661c9a448f2f589754a49"
   license "BSD-3-Clause"
 
-
   depends_on "cpptest" => :build
   depends_on "pkg-config" => :build
   depends_on "uriparser"

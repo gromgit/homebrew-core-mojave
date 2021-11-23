@@ -6,7 +6,6 @@ class Scipy < Formula
   license "BSD-3-Clause"
   head "https://github.com/scipy/scipy.git", branch: "master"
 
-
   depends_on "cython" => :build
   depends_on "pythran" => :build
   depends_on "swig" => :build

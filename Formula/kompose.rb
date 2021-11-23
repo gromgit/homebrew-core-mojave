@@ -5,7 +5,6 @@ class Kompose < Formula
   sha256 "e24db4279d3386700e25f3eb3ae4115ed11f4e0b2eea16d28f2113c71d13fb5b"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

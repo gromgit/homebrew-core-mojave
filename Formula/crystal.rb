@@ -18,7 +18,6 @@ class Crystal < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   head do
     url "https://github.com/crystal-lang/crystal.git"
 

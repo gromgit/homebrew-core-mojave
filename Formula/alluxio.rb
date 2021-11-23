@@ -10,7 +10,6 @@ class Alluxio < Formula
     regex(%r{href=["']?v?(\d+(?:[.-]\d+)+)/?["' >]}i)
   end
 
-
   # Alluxio requires Java 8 or Java 11
   depends_on "openjdk@11"
 

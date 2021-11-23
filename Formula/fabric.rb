@@ -9,7 +9,6 @@ class Fabric < Formula
   revision 2
   head "https://github.com/fabric/fabric.git"
 
-
   depends_on "rust" => :build
   depends_on "openssl@1.1"
   depends_on "python@3.9"

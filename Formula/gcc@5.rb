@@ -11,7 +11,6 @@ class GccAT5 < Formula
     regex(%r{href=.*?gcc[._-]v?(5(?:\.\d+)+)(?:/?["' >]|\.t)}i)
   end
 
-
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed

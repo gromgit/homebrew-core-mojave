@@ -7,7 +7,6 @@ class Triton < Formula
   sha256 "e325641d2ba183c484597e196ee74ecf67e6a0bcb459dd7ef49d23c509eec984"
   license "MPL-2.0"
 
-
   depends_on "node"
 
   def install

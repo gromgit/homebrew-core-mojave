@@ -3,21 +3,10 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://files.pythonhosted.org/packages/e8/7d/ca09bfc9882d5d467568f8683252130c9eacf615ab6646f3ad229865a104/xonsh-0.10.1.tar.gz"
-  sha256 "00409804fc38111800dbca40274224e069e4ef5af6020c27ad58f966ca3025e3"
+  url "https://files.pythonhosted.org/packages/12/5c/b6143c3d6a3007450f2126a5188a86d7524122c761bf1652428c3393dfd2/xonsh-0.11.0.tar.gz"
+  sha256 "0d9c3d9a4e8b8199ae697fbc9d1e0ae55085cdbdd4306d04813350996f9c15dc"
   license "BSD-2-Clause-Views"
-  revision 1
   head "https://github.com/xonsh/xonsh.git", branch: "main"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "feb1f63aae32730630f8f93d7f181d7b31bc6ba018925890dd6337bfb1b2d072"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5fb3c82fca2e1ab90535bec95ca2b8a0a8b88fab228ef5359f506ec80b39390f"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef3f0b1417e1e000de414291b3aa8e6943e1561956c09e0ba4f6a13b18d207da"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3e7f1cce24863e1cd004aa5e48936fb3fa08221562f48a8df09a9d41d30abd65"
-    sha256 cellar: :any_skip_relocation, catalina:       "2b3f5a0fec4be94ade8e795bbed189d40b170bbe6666272f2769301a10a06b7b"
-    sha256 cellar: :any_skip_relocation, mojave:         "c725e454f415b326e51aa0f3b689597a7f88917997de91826e8ef234d8416d05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad63f1d5ee9d7cfe2f7ab3057133eed133ca766896d7910497d17eb23824e94e"
-  end
 
   depends_on "python@3.10"
 
@@ -25,13 +14,13 @@ class Xonsh < Formula
   # See https://xon.sh/osx.html#dependencies
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/88/4b/2c0f9e2b52297bdeede91c8917c51575b125006da5d0485521fa2b1e0b75/prompt_toolkit-3.0.19.tar.gz"
-    sha256 "08360ee3a3148bdb5163621709ee322ec34fc4375099afa4bbf751e9b7b7fa4f"
+    url "https://files.pythonhosted.org/packages/53/96/b3bff620964869c07252fc2eac4e7e2dd48aea07314d932d21cfd92428da/prompt_toolkit-3.0.22.tar.gz"
+    sha256 "449f333dd120bd01f5d296a8ce1452114ba3a71fae7288d2f0ae2c918764fa72"
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/ba/6e/7a7c13c21d8a4a7f82ccbfe257a045890d4dbf18c023f985f565f97393e3/Pygments-2.9.0.tar.gz"
-    sha256 "a18f47b506a429f6f4b9df81bb02beab9ca21d0a5fee38ed15aef65f0545519f"
+    url "https://files.pythonhosted.org/packages/b7/b3/5cba26637fe43500d4568d0ee7b7362de1fb29c0e158d50b4b69e9a40422/Pygments-2.10.0.tar.gz"
+    sha256 "f398865f7eb6874156579fdf36bc840a03cab64d1cde9e93d68f46a425ec52c6"
   end
 
   resource "pyperclip" do

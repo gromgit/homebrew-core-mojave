@@ -5,7 +5,6 @@ class Igraph < Formula
   sha256 "c4e3f67892e1e287865d799162406b3f94916ad6f2cc069a9239e36ca495a17a"
   license "GPL-2.0-or-later"
 
-
   depends_on "cmake" => :build
   depends_on "arpack"
   depends_on "glpk"

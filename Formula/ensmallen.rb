@@ -6,7 +6,6 @@ class Ensmallen < Formula
   license "BSD-3-Clause"
   head "https://github.com/mlpack/ensmallen.git"
 
-
   depends_on "cmake" => :build
   depends_on "armadillo"
 

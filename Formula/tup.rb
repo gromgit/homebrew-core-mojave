@@ -6,7 +6,6 @@ class Tup < Formula
   license "GPL-2.0-only"
   head "https://github.com/gittup/tup.git", branch: "master"
 
-
   depends_on "pkg-config" => :build
 
   on_macos do

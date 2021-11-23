@@ -7,7 +7,6 @@ class Metricbeat < Formula
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git"
 
-
   depends_on "go" => :build
   depends_on "mage" => :build
   depends_on "python@3.9" => :build

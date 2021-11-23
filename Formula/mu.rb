@@ -16,7 +16,6 @@ class Mu < Formula
     regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
   end
 
-
   head do
     url "https://github.com/djcb/mu.git"
 

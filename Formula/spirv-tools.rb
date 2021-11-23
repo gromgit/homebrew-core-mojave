@@ -5,7 +5,6 @@ class SpirvTools < Formula
   sha256 "d68de260708dda785d109ff1ceeecde2d2ab71142fa5bf59061bb9f47dd3bb2c"
   license "Apache-2.0"
 
-
   depends_on "cmake" => :build
   depends_on "python@3.9" => :build
 

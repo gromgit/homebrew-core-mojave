@@ -10,7 +10,6 @@ class PopplerQt5 < Formula
     formula "poppler"
   end
 
-
   keg_only "it conflicts with poppler"
 
   depends_on "cmake" => :build

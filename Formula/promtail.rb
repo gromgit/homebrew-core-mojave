@@ -9,7 +9,6 @@ class Promtail < Formula
     formula "loki"
   end
 
-
   depends_on "go" => :build
 
   on_linux do

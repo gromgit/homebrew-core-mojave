@@ -6,7 +6,6 @@ class Dasel < Formula
   license "MIT"
   head "https://github.com/TomWright/dasel.git"
 
-
   depends_on "go" => :build
 
   def install

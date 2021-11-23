@@ -11,7 +11,6 @@ class Sleuthkit < Formula
     regex(%r{href=.*?/tag/sleuthkit[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
-
   depends_on "ant" => :build
   depends_on "afflib"
   depends_on "libewf"

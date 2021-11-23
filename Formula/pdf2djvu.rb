@@ -6,7 +6,6 @@ class Pdf2djvu < Formula
   license "GPL-2.0-only"
   head "https://github.com/jwilk/pdf2djvu.git", branch: "master"
 
-
   depends_on "pkg-config" => :build
   depends_on "djvulibre"
   depends_on "exiv2"

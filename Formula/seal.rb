@@ -1,17 +1,9 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://github.com/microsoft/SEAL/archive/v3.7.1.tar.gz"
-  sha256 "cdc7426d01f879a8b87204a5df9e01339262d4b53962f6fddc2f34a0dec71777"
+  url "https://github.com/microsoft/SEAL/archive/v3.7.2.tar.gz"
+  sha256 "12676de5766b8e2d641d6e45e92114ccdf8debd6f6d44b42a2ecc39a59b0bf13"
   license "MIT"
-
-  bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "23beceb2de3f10406360d6dd91ed9aa386e7e94a368c9457918d3581106c2a7b"
-    sha256 cellar: :any,                 big_sur:       "d6c02002668e4a85b55881dceab6d3e8f4b6ee7ee805c008cd0e8e0b5b991434"
-    sha256 cellar: :any,                 catalina:      "e73d859446af694f6914ee025a73d707cbc873ec3bba65e6f25a88850313f3f4"
-    sha256 cellar: :any,                 mojave:        "94cd84ae736c28a2c234333fb90b5c68933a26e60edbb569c8d2fb00326db170"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc947e560250392fc1a7128849d62cc9d6921e0dea814485ce8c8a1ad0b1061a"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "cpp-gsl"
@@ -26,8 +18,8 @@ class Seal < Formula
   fails_with gcc: "5"
 
   resource "hexl" do
-    url "https://github.com/intel/hexl/archive/v1.2.1.tar.gz"
-    sha256 "d09f4bf5309f4fa13f0046475f77e8c5a065d7b9c726eba2d3d943fc13cdae1a"
+    url "https://github.com/intel/hexl/archive/v1.2.3.tar.gz"
+    sha256 "f2cf33ee2035d12996d10b69d2f41a586b9954a29b99c70a852495cf5758878c"
   end
 
   def install

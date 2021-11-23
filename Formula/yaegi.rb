@@ -6,7 +6,6 @@ class Yaegi < Formula
   license "Apache-2.0"
   head "https://github.com/containous/yaegi.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

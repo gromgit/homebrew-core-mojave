@@ -7,7 +7,6 @@ class NewrelicInfraAgent < Formula
   license "Apache-2.0"
   head "https://github.com/newrelic/infrastructure-agent.git", branch: "master"
 
-
   # https://github.com/newrelic/infrastructure-agent/issues/723
   depends_on "go@1.16" => :build
   # https://github.com/newrelic/infrastructure-agent/issues/695

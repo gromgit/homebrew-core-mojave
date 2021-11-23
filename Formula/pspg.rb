@@ -6,7 +6,6 @@ class Pspg < Formula
   license "BSD-2-Clause"
   head "https://github.com/okbob/pspg.git", branch: "master"
 
-
   depends_on "libpq"
   depends_on "ncurses"
   depends_on "readline"

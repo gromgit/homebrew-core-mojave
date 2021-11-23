@@ -5,7 +5,6 @@ class Samtools < Formula
   sha256 "9341dabaa98b0ea7d60fd47e42af25df43a7d3d64d8e654cdf852974546b7d74"
   license "MIT"
 
-
   depends_on "htslib"
 
   uses_from_macos "ncurses"

@@ -6,7 +6,6 @@ class EfmLangserver < Formula
   license "MIT"
   head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

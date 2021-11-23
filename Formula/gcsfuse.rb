@@ -6,7 +6,6 @@ class Gcsfuse < Formula
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/gcsfuse.git"
 
-
   depends_on "go" => :build
 
   on_macos do

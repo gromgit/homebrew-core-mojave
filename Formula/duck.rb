@@ -11,7 +11,6 @@ class Duck < Formula
     regex(/href=.*?duck-src[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "ant" => :build
   depends_on "maven" => :build
   depends_on "pkg-config" => :build

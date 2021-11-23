@@ -5,7 +5,6 @@ class Proj < Formula
   sha256 "de93df9a4aa88d09459ead791f2dbc874b897bf67a5bbb3e4b68de7b1bdef13c"
   license "MIT"
 
-
   head do
     url "https://github.com/OSGeo/proj.git"
     depends_on "autoconf" => :build

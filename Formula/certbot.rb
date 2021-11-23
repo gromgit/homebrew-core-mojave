@@ -8,7 +8,6 @@ class Certbot < Formula
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git", branch: "master"
 
-
   depends_on "rust" => :build # for cryptography
   depends_on "augeas"
   depends_on "dialog"

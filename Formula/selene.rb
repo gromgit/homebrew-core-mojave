@@ -6,7 +6,6 @@ class Selene < Formula
   license "MPL-2.0"
   head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
-
   depends_on "rust" => :build
   depends_on "openssl@1.1"
 

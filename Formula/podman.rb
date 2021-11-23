@@ -13,7 +13,6 @@ class Podman < Formula
     end
   end
 
-
   head do
     url "https://github.com/containers/podman.git", branch: "main"
 

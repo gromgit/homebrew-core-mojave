@@ -10,7 +10,6 @@ class WpCli < Formula
     strategy :github_latest
   end
 
-
   depends_on "php"
 
   # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix

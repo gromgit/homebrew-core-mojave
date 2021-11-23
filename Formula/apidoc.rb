@@ -7,7 +7,6 @@ class Apidoc < Formula
   sha256 "23af169410f5e25414b444d85f346f304ce2e494fe2c3c034cdf256e02e22218"
   license "MIT"
 
-
   depends_on "node"
 
   on_macos do

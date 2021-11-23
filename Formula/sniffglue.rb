@@ -5,7 +5,6 @@ class Sniffglue < Formula
   sha256 "9c3347603550349c9686639f81a933eb12bcc76efa6c46c37888cd2aaf785e39"
   license "GPL-3.0-or-later"
 
-
   depends_on "rust" => :build
 
   uses_from_macos "libpcap"

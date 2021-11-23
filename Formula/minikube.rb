@@ -7,7 +7,6 @@ class Minikube < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes/minikube.git"
 
-
   depends_on "go" => :build
   depends_on "go-bindata" => :build
   depends_on "kubernetes-cli"

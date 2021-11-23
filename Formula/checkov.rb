@@ -8,7 +8,6 @@ class Checkov < Formula
   sha256 "1895396eba0d08df6213ccf5befe49245d0cabe3c0360dd3cfbeec089cef13b7"
   license "Apache-2.0"
 
-
   depends_on "python-tabulate"
   depends_on "python@3.9"
   depends_on "six"

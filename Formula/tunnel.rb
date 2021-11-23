@@ -5,7 +5,6 @@ class Tunnel < Formula
   sha256 "7a57451416b76dbf220e69c7dd3e4c33dc84758a41cdb9337a464338565e3e6e"
   license "MIT"
 
-
   depends_on "go" => :build
 
   def install

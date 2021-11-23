@@ -16,7 +16,6 @@ class Fetchmail < Formula
     regex(%r{url=.*?/branch_\d+(?:\.\d+)*?/fetchmail[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-
   depends_on "openssl@1.1"
 
   def install

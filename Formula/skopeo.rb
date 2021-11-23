@@ -5,7 +5,6 @@ class Skopeo < Formula
   sha256 "624fd87dd8de7623f8c19c09715dd6b37820101e605ff5951cc512cf50d067a1"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
   depends_on "gpgme"
 

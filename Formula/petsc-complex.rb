@@ -1,19 +1,12 @@
 class PetscComplex < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (complex)"
   homepage "https://www.mcs.anl.gov/petsc/"
-  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.0.tar.gz"
-  sha256 "5aaad7deea127a4790c8aa95c42fd9451ab10b5d6c68b226b92d4853002f438d"
+  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.1.tar.gz"
+  sha256 "909cf7bce7b6a0ddb2580a1ac9502aa01631ec4105c716594c1804f0ee1ea06a"
   license "BSD-2-Clause"
 
   livecheck do
     formula "petsc"
-  end
-
-  bottle do
-    sha256 arm64_big_sur: "8aac66bae6ddb59ad3ac4c93285b0353fb80ca9460481b9cb73cf95a0544b9ab"
-    sha256 big_sur:       "4ec9893205112d29dd80c50b105a54abf6f23580828a8117f4a1b32b8661e62d"
-    sha256 catalina:      "63bac9da17e984c5296ba8aa1ca88e2cfbcb2150a8ff79da723aa5619e921987"
-    sha256 mojave:        "e157b6dc2fdd68d86d3b90f4d5baf1f968aa26929dabc763812861d9663bfe19"
   end
 
   depends_on "hdf5"

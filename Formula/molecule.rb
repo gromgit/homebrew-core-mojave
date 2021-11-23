@@ -8,7 +8,6 @@ class Molecule < Formula
   license "MIT"
   revision 2
 
-
   depends_on "rust" => :build
   depends_on "ansible"
   depends_on "openssl@1.1"

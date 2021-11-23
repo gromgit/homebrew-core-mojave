@@ -6,7 +6,6 @@ class Enzyme < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/wsmoses/Enzyme.git", branch: "main"
 
-
   depends_on "cmake" => :build
   depends_on "llvm"
 

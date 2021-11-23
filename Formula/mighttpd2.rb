@@ -5,7 +5,6 @@ class Mighttpd2 < Formula
   sha256 "5afc8acb4e268401dc19964b710230e5013399b8ad3baa7ae6d5e5802ad4ac42"
   license "BSD-3-Clause"
 
-
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 

@@ -7,7 +7,6 @@ class AwsCdk < Formula
   sha256 "79cc04b473a3ed2e441b180ecff46e73b30a2baa6c6f6243d0e110773b01953a"
   license "Apache-2.0"
 
-
   depends_on "node"
 
   def install

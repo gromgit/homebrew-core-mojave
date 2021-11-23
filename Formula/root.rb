@@ -11,7 +11,6 @@ class Root < Formula
     regex(/href=.*?root[._-]v?(\d+(?:\.\d*[02468])+)\.source\.t/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "cfitsio"

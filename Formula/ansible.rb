@@ -8,7 +8,6 @@ class Ansible < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
-
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "libyaml"

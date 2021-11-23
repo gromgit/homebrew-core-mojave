@@ -8,7 +8,6 @@ class TrezorAgent < Formula
   license "LGPL-3.0"
   revision 3
 
-
   depends_on "libusb"
   depends_on "pillow"
   depends_on "python@3.9"

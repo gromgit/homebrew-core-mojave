@@ -6,7 +6,6 @@ class Traefik < Formula
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
-
   depends_on "go" => :build
   depends_on "go-bindata" => :build
 

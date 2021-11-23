@@ -6,7 +6,6 @@ class Futhark < Formula
   license "ISC"
   head "https://github.com/diku-dk/futhark.git"
 
-
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "sphinx-doc" => :build

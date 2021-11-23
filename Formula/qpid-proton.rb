@@ -7,7 +7,6 @@ class QpidProton < Formula
   license "Apache-2.0"
   head "https://gitbox.apache.org/repos/asf/qpid-proton.git", branch: "main"
 
-
   depends_on "cmake" => :build
   depends_on "libuv"
   depends_on "openssl@1.1"

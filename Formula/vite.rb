@@ -7,7 +7,6 @@ class Vite < Formula
   sha256 "c1a37127f2e35ac7bc177f65010e33fa0fe0c6334d82718373c08b99135c1728"
   license "MIT"
 
-
   depends_on "node"
 
   def install

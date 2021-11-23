@@ -5,7 +5,6 @@ class Terragrunt < Formula
   sha256 "40100e6e9a3eae36c35c36dfc98a8adc5a8ea72bc5ffd1b1833eeca56c7508de"
   license "MIT"
 
-
   depends_on "go" => :build
   depends_on "terraform"
 

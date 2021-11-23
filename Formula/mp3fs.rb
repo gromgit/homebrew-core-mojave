@@ -5,7 +5,6 @@ class Mp3fs < Formula
   sha256 "942b588fb623ea58ce8cac8844e6ff2829ad4bc9b4c163bba58e3fa9ebc15608"
   license "GPL-3.0-or-later"
 
-
   depends_on "pkg-config" => :build
   depends_on "flac"
   depends_on "lame"

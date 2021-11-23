@@ -10,7 +10,6 @@ class Geos < Formula
     regex(/href=.*?geos[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "cmake" => :build
 
   def install

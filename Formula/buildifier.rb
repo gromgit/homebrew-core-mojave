@@ -6,7 +6,6 @@ class Buildifier < Formula
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

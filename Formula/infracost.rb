@@ -6,7 +6,6 @@ class Infracost < Formula
   license "Apache-2.0"
   head "https://github.com/infracost/infracost.git"
 
-
   depends_on "go" => :build
   depends_on "terraform" => :test
 

@@ -9,7 +9,6 @@ class QtMariadb < Formula
     formula "qt"
   end
 
-
   depends_on "cmake" => [:build, :test]
 
   depends_on "mariadb"

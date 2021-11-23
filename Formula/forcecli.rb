@@ -6,7 +6,6 @@ class Forcecli < Formula
   license "MIT"
   head "https://github.com/ForceCLI/force.git"
 
-
   depends_on "go" => :build
 
   def install

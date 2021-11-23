@@ -6,7 +6,6 @@ class Oauth2Proxy < Formula
   license "MIT"
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

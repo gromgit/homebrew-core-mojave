@@ -8,7 +8,6 @@ class Pdm < Formula
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
-
   depends_on "python@3.10"
   depends_on "six"
 

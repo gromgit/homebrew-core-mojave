@@ -6,7 +6,6 @@ class Argocd < Formula
       revision: "a346cf933e10d872eae26bff8e58c5e7ac40db25"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
   depends_on "node@14" => :build
   depends_on "yarn" => :build

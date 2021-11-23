@@ -10,7 +10,6 @@ class PostgresqlAT11 < Formula
     regex(%r{href=["']?v?(11(?:\.\d+)+)/?["' >]}i)
   end
 
-
   keg_only :versioned_formula
 
   # https://www.postgresql.org/support/versioning/

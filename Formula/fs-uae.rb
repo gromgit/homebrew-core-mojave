@@ -10,7 +10,6 @@ class FsUae < Formula
     regex(/href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   head do
     url "https://github.com/FrodeSolheim/fs-uae.git"
     depends_on "autoconf" => :build

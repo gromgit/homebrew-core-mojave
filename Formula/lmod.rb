@@ -5,7 +5,6 @@ class Lmod < Formula
   sha256 "bec911ff6b20de7d38587d1f9c351f58ed7bdf10cb3938089c82944b5ee0ab0d"
   license "MIT"
 
-
   depends_on "luarocks" => :build
   depends_on "pkg-config" => :build
   depends_on "lua"

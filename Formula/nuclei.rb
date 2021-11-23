@@ -6,7 +6,6 @@ class Nuclei < Formula
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

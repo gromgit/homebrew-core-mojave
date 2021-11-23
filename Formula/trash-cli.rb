@@ -8,7 +8,6 @@ class TrashCli < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
-
   depends_on "python@3.10"
 
   conflicts_with "macos-trash", because: "both install a `trash` binary"

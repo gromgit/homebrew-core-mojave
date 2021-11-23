@@ -5,7 +5,6 @@ class CargoInstruments < Formula
   sha256 "e71b29af433f5701483827620866fd6302999d08ddb559578261951da15601cc"
   license "MIT"
 
-
   depends_on "rust" => :build
   depends_on :macos
   depends_on "openssl@1.1"

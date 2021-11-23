@@ -8,7 +8,6 @@ class Parliament < Formula
   license "BSD-3-Clause"
   head "https://github.com/duo-labs/parliament.git", branch: "main"
 
-
   depends_on "python@3.10"
   depends_on "six"
 

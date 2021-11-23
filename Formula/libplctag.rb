@@ -10,7 +10,6 @@ class Libplctag < Formula
     strategy :github_latest
   end
 
-
   depends_on "cmake" => :build
 
   def install

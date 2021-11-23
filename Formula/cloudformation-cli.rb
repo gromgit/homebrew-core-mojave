@@ -7,7 +7,6 @@ class CloudformationCli < Formula
   sha256 "d0a54ea2a4cfff0ed569a6346d9abd223416d45d26c39f35f89c319f981da706"
   license "Apache-2.0"
 
-
   depends_on "go" => :test
   depends_on "python@3.10"
   depends_on "six"

@@ -5,7 +5,6 @@ class Nqp < Formula
   sha256 "48135bc1b3ce22c1c57ccef46531e7688eec83d6b905b502ffcefd6c23294b49"
   license "Artistic-2.0"
 
-
   depends_on "libtommath"
   depends_on "moarvm"
 

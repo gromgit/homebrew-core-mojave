@@ -5,7 +5,6 @@ class Topgrade < Formula
   sha256 "c60dd5ae7d1d3bcfe941ead9f088c4b0413b9a4561fb9154429faf86a43e0983"
   license "GPL-3.0-or-later"
 
-
   depends_on "rust" => :build
   depends_on xcode: :build if MacOS::CLT.version >= "11.4" # libxml2 module bug
 

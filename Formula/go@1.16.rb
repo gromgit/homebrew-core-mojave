@@ -11,7 +11,6 @@ class GoAT116 < Formula
     regex(/href=.*?go[._-]?v?(1\.16(?:\.\d+)*)[._-]src\.t/i)
   end
 
-
   keg_only :versioned_formula
 
   depends_on "go" => :build

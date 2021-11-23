@@ -11,7 +11,6 @@ class Terraform < Formula
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-
   depends_on "go" => :build
 
   on_linux do

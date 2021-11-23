@@ -13,7 +13,6 @@ class Irrlicht < Formula
     regex(%r{url=.*?/irrlicht[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)}i)
   end
 
-
   depends_on xcode: :build
 
   depends_on "jpeg"

@@ -5,7 +5,6 @@ class Psalm < Formula
   sha256 "44d354b2291adf35d557760ee3a95992cfbe4ff966d0c87a5f94f7144a877ec2"
   license "MIT"
 
-
   depends_on "composer" => :test
   depends_on "php"
 

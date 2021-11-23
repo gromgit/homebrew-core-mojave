@@ -10,7 +10,6 @@ class Pdnsrec < Formula
     regex(/href=.*?pdns-recursor[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "lua"

@@ -7,7 +7,6 @@ class Goreleaser < Formula
   license "MIT"
   head "https://github.com/goreleaser/goreleaser.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

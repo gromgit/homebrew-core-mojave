@@ -8,7 +8,6 @@ class Conan < Formula
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
-
   depends_on "pkg-config" => :build
   depends_on "cmake" => :test
   depends_on "libffi"

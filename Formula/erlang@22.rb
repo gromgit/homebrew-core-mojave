@@ -11,7 +11,6 @@ class ErlangAT22 < Formula
     regex(/^OTP[._-]v?(22(?:\.\d+)+)$/i)
   end
 
-
   keg_only :versioned_formula
 
   depends_on "openssl@1.1"

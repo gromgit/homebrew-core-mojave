@@ -7,7 +7,6 @@ class Fceux < Formula
   license "GPL-2.0-only"
   head "https://github.com/TASEmulators/fceux.git"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"

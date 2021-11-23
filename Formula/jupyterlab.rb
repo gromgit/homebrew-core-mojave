@@ -7,7 +7,6 @@ class Jupyterlab < Formula
   sha256 "7d74593e52d4dbfacbb98e14cac4bc765ea2cffb1b980675f44930d622871705"
   license "BSD-3-Clause"
 
-
   depends_on "node"
   depends_on "pandoc"
   depends_on "python@3.9"

@@ -21,7 +21,6 @@ class Lammps < Formula
     end
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "fftw"
   depends_on "gcc" # for gfortran

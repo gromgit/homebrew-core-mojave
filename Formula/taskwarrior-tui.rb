@@ -11,7 +11,6 @@ class TaskwarriorTui < Formula
     strategy :github_latest
   end
 
-
   depends_on "pandoc" => :build
   depends_on "rust" => :build
   depends_on "task"

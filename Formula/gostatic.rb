@@ -1,11 +1,10 @@
 class Gostatic < Formula
   desc "Fast static site generator"
   homepage "https://github.com/piranha/gostatic"
-  url "https://github.com/piranha/gostatic/archive/2.31.tar.gz"
-  sha256 "a1c41e9992878e9ba5505aac8d09ac7ca6aa339d47e8fed5370a53af4df5e6c1"
+  url "https://github.com/piranha/gostatic/archive/2.32.tar.gz"
+  sha256 "857de1667660e71f890de019a230ce6c0ab5fdb2420511c4cf74d5f73a5a224a"
   license "ISC"
   head "https://github.com/piranha/gostatic.git"
-
 
   depends_on "go" => :build
 

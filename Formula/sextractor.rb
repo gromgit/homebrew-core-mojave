@@ -5,7 +5,6 @@ class Sextractor < Formula
   sha256 "ab8ec8fe2d5622a94eb3a20d007e0c54bf2cdc04b8d632667b2e951c02819d8e"
   license "GPL-3.0-or-later"
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

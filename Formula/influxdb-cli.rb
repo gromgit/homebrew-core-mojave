@@ -12,7 +12,6 @@ class InfluxdbCli < Formula
     regex(/^v?((?!9\.9\.9)\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "go" => :build
   depends_on "influxdb" => :test
 

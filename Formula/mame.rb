@@ -17,7 +17,6 @@ class Mame < Formula
     regex(/>\s*MAME v?(\d+(?:\.\d+)+)/im)
   end
 
-
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build

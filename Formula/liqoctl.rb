@@ -5,7 +5,6 @@ class Liqoctl < Formula
   sha256 "4a89c95613d6a2083987aa29bf76eac0d42ae894e422e3995d039fe8c7b3b2d9"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

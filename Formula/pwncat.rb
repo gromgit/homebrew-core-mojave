@@ -8,7 +8,6 @@ class Pwncat < Formula
   license "MIT"
   head "https://github.com/cytopia/pwncat.git", branch: "master"
 
-
   depends_on "python@3.10"
 
   def install

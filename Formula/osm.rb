@@ -6,7 +6,6 @@ class Osm < Formula
       revision: "c01aefae509d59735d7908a32a359327ff3f2322"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
   depends_on "helm" => :build
 

@@ -12,7 +12,6 @@ class FaasCli < Formula
     strategy :github_latest
   end
 
-
   depends_on "go" => :build
 
   def install

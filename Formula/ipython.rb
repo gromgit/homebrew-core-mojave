@@ -8,7 +8,6 @@ class Ipython < Formula
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git"
 
-
   depends_on "python@3.10"
   depends_on "six"
   depends_on "zeromq"

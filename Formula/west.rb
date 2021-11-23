@@ -8,7 +8,6 @@ class West < Formula
   license "Apache-2.0"
   head "https://github.com/zephyrproject-rtos/west.git", branch: "main"
 
-
   depends_on "python@3.10"
   depends_on "six"
 

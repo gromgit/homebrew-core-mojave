@@ -7,7 +7,6 @@ class Datalad < Formula
   sha256 "44f8c5b3960c6d9848aeecd868c82330c49689a21e975597df5b112dc2e5c9f0"
   license "MIT"
 
-
   depends_on "git-annex"
   depends_on "p7zip"
   depends_on "python@3.10"

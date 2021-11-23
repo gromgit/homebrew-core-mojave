@@ -7,7 +7,6 @@ class Wallpaper < Formula
   revision 1
   head "https://github.com/sindresorhus/macos-wallpaper.git", branch: "main"
 
-
   depends_on xcode: ["11.4", :build]
   depends_on :macos
 

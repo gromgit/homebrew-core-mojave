@@ -10,7 +10,6 @@ class Dovecot < Formula
     regex(/href=.*?dovecot[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "openssl@1.1"
 
   uses_from_macos "bzip2"

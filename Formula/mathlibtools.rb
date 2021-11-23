@@ -8,7 +8,6 @@ class Mathlibtools < Formula
   license "Apache-2.0"
   revision 2
 
-
   depends_on "lean" => :test
   depends_on "python@3.10"
   depends_on "six"

@@ -11,7 +11,6 @@ class Dynare < Formula
     regex(/href=.*?dynare[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   head do
     url "https://git.dynare.org/Dynare/dynare.git"
 

@@ -6,7 +6,6 @@ class K2tf < Formula
   license "MPL-2.0"
   head "https://github.com/sl1pm4t/k2tf.git", branch: "master"
 
-
   depends_on "go" => :build
 
   resource("test") do

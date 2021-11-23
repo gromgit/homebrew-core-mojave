@@ -6,7 +6,6 @@ class Simdjson < Formula
   license "Apache-2.0"
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
-
   depends_on "cmake" => :build
 
   on_linux do

@@ -6,7 +6,6 @@ class Tfproviderlint < Formula
   license "MPL-2.0"
   head "https://github.com/bflad/tfproviderlint.git", branch: "main"
 
-
   depends_on "go" => [:build, :test]
 
   resource "test_resource" do

@@ -9,7 +9,6 @@ class Bzt < Formula
   revision 1
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
-
   depends_on "rust" => :build
   depends_on "numpy"
   depends_on "python@3.9"

@@ -30,7 +30,6 @@ class Libsigrok < Formula
     regex(/^libsigrok-(\d+(?:\.\d+)+)$/i)
   end
 
-
   head do
     url "git://sigrok.org/libsigrok", branch: "master"
 

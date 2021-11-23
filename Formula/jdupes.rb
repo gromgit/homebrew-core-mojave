@@ -10,7 +10,6 @@ class Jdupes < Formula
     strategy :github_latest
   end
 
-
   def install
     system "make", "install", "PREFIX=#{prefix}", "ENABLE_DEDUPE=1"
   end

@@ -5,7 +5,6 @@ class Ape < Formula
   sha256 "c5f6ec0740f20dd5eb26c223149fc4bade3daadff02a851e2abb7e00be97db42"
   license "GPL-2.0"
 
-
   disable! date: "2020-12-08", because: :unmaintained
 
   def install

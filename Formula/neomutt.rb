@@ -6,7 +6,6 @@ class Neomutt < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/neomutt/neomutt.git", branch: "master"
 
-
   depends_on "docbook-xsl" => :build
   depends_on "gettext"
   depends_on "gpgme"

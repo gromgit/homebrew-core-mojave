@@ -5,7 +5,6 @@ class Vale < Formula
   sha256 "0dda66e3f2b14f4be2e4a188d2acbfe4f0087b2086bcb59b3abb4dc87fa3633c"
   license "MIT"
 
-
   depends_on "go" => :build
 
   def install

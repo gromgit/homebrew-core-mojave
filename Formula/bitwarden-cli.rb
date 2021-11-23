@@ -7,7 +7,6 @@ class BitwardenCli < Formula
   sha256 "20b34a237dd9c93f7fc50e1e216894fc552c95727cdef3688879b83c4b24ffce"
   license "GPL-3.0-only"
 
-
   depends_on "node"
 
   def install

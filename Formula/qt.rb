@@ -13,7 +13,6 @@ class Qt < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake"      => [:build, :test]
   depends_on "ninja"      => :build
   depends_on "node"       => :build

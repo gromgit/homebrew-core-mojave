@@ -21,7 +21,6 @@ class Haxe < Formula
     strategy :github_latest
   end
 
-
   depends_on "cmake" => :build
   depends_on "ocaml" => :build
   depends_on "opam" => :build

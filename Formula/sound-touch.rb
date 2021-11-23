@@ -5,7 +5,6 @@ class SoundTouch < Formula
   sha256 "42633774f372d8cb0a33333a0ea3b30f357c548626526ac9f6ce018c94042692"
   license "LGPL-2.1-or-later"
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

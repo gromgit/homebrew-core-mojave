@@ -13,7 +13,6 @@ class Juju < Formula
     regex(/^juju[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "go" => :build
 
   def install

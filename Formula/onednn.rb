@@ -11,7 +11,6 @@ class Onednn < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 

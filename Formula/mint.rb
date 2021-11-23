@@ -5,7 +5,6 @@ class Mint < Formula
   sha256 "0e3ab23e548a752f6eee3a7b98d1c137a30371e4a0ec9212840baaa56741d2e4"
   license "MIT"
 
-
   depends_on xcode: ["12.0", :build]
 
   def install

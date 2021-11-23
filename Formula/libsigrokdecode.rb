@@ -16,7 +16,6 @@ class Libsigrokdecode < Formula
     regex(/^libsigrokdecode-(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "doxygen" => :build

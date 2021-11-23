@@ -12,7 +12,6 @@ class Wasmtime < Formula
     strategy :github_latest
   end
 
-
   depends_on "rust" => :build
 
   def install

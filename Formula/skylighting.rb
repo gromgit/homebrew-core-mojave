@@ -6,7 +6,6 @@ class Skylighting < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/skylighting.git", branch: "master"
 
-
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 

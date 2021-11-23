@@ -8,7 +8,6 @@ class Ppsspp < Formula
   revision 1
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
-
   depends_on "cmake" => :build
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build

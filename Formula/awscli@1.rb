@@ -13,7 +13,6 @@ class AwscliAT1 < Formula
     regex(/^v?(1(?:\.\d+)+)$/i)
   end
 
-
   keg_only :versioned_formula
 
   depends_on "libyaml" # for faster PyYAML

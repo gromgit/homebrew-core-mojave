@@ -5,7 +5,6 @@ class Faust < Formula
   sha256 "f14577e9f63041ec341f40a64dae5e9362be8ed77571aa389ed7d389484a31d7"
   license "GPL-2.0-or-later"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libmicrohttpd"

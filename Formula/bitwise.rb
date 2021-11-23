@@ -5,7 +5,6 @@ class Bitwise < Formula
   sha256 "f524f794188a10defc4df673d8cf0b3739f93e58e93aff0cdb8a99fbdcca2ffb"
   license "GPL-3.0"
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "readline"

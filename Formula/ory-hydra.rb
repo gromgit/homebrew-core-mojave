@@ -11,7 +11,6 @@ class OryHydra < Formula
     strategy :github_latest
   end
 
-
   depends_on "go" => :build
 
   conflicts_with "hydra", because: "both install `hydra` binaries"

@@ -5,7 +5,6 @@ class Libtcod < Formula
   sha256 "37c9dff5eb61be1aa4dc08f6c7fe910385e12244c14c6b163e2ffab373d779d7"
   license "BSD-3-Clause"
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

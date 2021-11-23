@@ -6,7 +6,6 @@ class ArgocdAutopilot < Formula
       revision: "442e6c2dd70b093aa860b49de3626916107b9824"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

@@ -6,7 +6,6 @@ class Texlab < Formula
   license "GPL-3.0-only"
   head "https://github.com/latex-lsp/texlab.git", branch: "master"
 
-
   depends_on "rust" => :build
 
   def install

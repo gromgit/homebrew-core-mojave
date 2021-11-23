@@ -6,7 +6,6 @@ class Tldr < Formula
   license "MIT"
   head "https://github.com/tldr-pages/tldr-c-client.git", branch: "master"
 
-
   depends_on "pkg-config" => :build
   depends_on "libzip"
 

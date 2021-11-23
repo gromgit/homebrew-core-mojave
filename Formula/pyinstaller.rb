@@ -8,7 +8,6 @@ class Pyinstaller < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
-
   depends_on "python@3.10"
 
   resource "altgraph" do

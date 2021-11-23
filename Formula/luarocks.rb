@@ -6,7 +6,6 @@ class Luarocks < Formula
   license "MIT"
   head "https://github.com/luarocks/luarocks.git"
 
-
   depends_on "lua@5.1" => :test
   depends_on "lua@5.3" => :test
   depends_on "luajit" => :test unless Hardware::CPU.arm?

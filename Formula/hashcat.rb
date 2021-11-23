@@ -8,7 +8,6 @@ class Hashcat < Formula
   version_scheme 1
   head "https://github.com/hashcat/hashcat.git"
 
-
   depends_on "gnu-sed" => :build
 
   # fixed for next version with https://github.com/hashcat/hashcat/pull/3030

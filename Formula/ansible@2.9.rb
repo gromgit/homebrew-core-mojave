@@ -15,7 +15,6 @@ class AnsibleAT29 < Formula
     regex(%r{href=.*?/project/ansible/v?(2\.9(?:\.\d+)*)/?["' >]}i)
   end
 
-
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build

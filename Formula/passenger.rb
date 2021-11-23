@@ -6,7 +6,6 @@ class Passenger < Formula
   license "MIT"
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
-
   # to build nginx module
   depends_on "nginx" => [:build, :test]
   depends_on "openssl@1.1"

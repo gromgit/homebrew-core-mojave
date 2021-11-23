@@ -7,7 +7,6 @@ class WakatimeCli < Formula
   license "BSD-3-Clause"
   version_scheme 1
 
-
   depends_on "go" => :build
 
   def install

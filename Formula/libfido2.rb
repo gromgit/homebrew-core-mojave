@@ -6,7 +6,6 @@ class Libfido2 < Formula
   license "BSD-2-Clause"
   revision 1
 
-
   depends_on "cmake" => :build
   depends_on "mandoc" => :build
   depends_on "pkg-config" => :build

@@ -5,7 +5,6 @@ class Driftctl < Formula
   sha256 "3827a253c70ee5f18091efbff0f922c8f71e7d947c5d4e74294e33f1dfd06b88"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

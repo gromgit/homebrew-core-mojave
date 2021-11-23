@@ -10,7 +10,6 @@ class Minised < Formula
     regex(/href=.*?minised[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   def install
     system "make"
     system "make", "DESTDIR=#{prefix}", "PREFIX=", "install"

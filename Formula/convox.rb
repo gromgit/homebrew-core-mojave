@@ -11,7 +11,6 @@ class Convox < Formula
     strategy :github_latest
   end
 
-
   depends_on "go" => :build
 
   # Support go 1.17, remove when upstream patch is merged/released

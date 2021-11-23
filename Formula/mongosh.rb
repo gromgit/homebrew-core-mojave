@@ -7,7 +7,6 @@ class Mongosh < Formula
   sha256 "da820f141f11012a608e58717f0491753656db832a090bbc2e2a0b0e2f5908ca"
   license "Apache-2.0"
 
-
   depends_on "node@14"
 
   def install

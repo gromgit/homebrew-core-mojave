@@ -10,7 +10,6 @@ class Dafny < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "gradle" => :build
   depends_on "nuget" => :build
   depends_on arch: :x86_64 # dotnet does not support ARM

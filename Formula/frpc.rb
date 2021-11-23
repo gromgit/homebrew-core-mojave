@@ -6,7 +6,6 @@ class Frpc < Formula
       revision: "143750901ee320506f5083691990f61f1e7d93d2"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

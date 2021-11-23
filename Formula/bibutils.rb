@@ -10,7 +10,6 @@ class Bibutils < Formula
     regex(%r{url=.*?/bibutils[._-]v?(\d+(?:\.\d+)+)[._-]src\.t}i)
   end
 
-
   def install
     system "./configure", "--install-dir", bin,
                           "--install-lib", lib

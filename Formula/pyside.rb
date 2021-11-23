@@ -10,7 +10,6 @@ class Pyside < Formula
     regex(%r{href=.*?PySide6[._-]v?(\d+(?:\.\d+)+)-src/}i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on xcode: :build

@@ -7,7 +7,6 @@ class Snort < Formula
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
-
   depends_on "cmake" => :build
   depends_on "flatbuffers" => :build
   depends_on "flex" => :build # need flex>=2.6.0

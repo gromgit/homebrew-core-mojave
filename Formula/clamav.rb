@@ -12,7 +12,6 @@ class Clamav < Formula
     regex(/href=.*?clamav[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "json-c"

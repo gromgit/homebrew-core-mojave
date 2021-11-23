@@ -6,7 +6,6 @@ class Tflint < Formula
   license "MPL-2.0"
   head "https://github.com/terraform-linters/tflint.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

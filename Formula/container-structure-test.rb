@@ -6,7 +6,6 @@ class ContainerStructureTest < Formula
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/container-structure-test.git", branch: "master"
 
-
   depends_on "go" => :build
 
   # Small Docker image to run tests against

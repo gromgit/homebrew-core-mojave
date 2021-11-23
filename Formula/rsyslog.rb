@@ -10,7 +10,6 @@ class Rsyslog < Formula
     regex(/href=.*?rsyslog[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "libestr"
 

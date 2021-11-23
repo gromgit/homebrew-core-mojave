@@ -12,7 +12,6 @@ class FfmpegAT28 < Formula
     regex(/href=.*?ffmpeg[._-]v?(2\.8(?:\.\d+)*)\.t/i)
   end
 
-
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build

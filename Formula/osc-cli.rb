@@ -7,7 +7,6 @@ class OscCli < Formula
   sha256 "58e76cec711e12f24d31b86519485e24749c14269090317876e195d00ae4b945"
   license "BSD-3-Clause"
 
-
   depends_on "python@3.10"
   depends_on "six"
 

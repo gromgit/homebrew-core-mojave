@@ -7,7 +7,6 @@ class Osm2pgrouting < Formula
   revision 1
   head "https://github.com/pgRouting/osm2pgrouting.git", branch: "main"
 
-
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "expat"

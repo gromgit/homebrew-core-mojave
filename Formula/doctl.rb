@@ -6,7 +6,6 @@ class Doctl < Formula
   license "Apache-2.0"
   head "https://github.com/digitalocean/doctl.git"
 
-
   depends_on "go" => :build
 
   def install

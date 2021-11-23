@@ -12,7 +12,6 @@ class Mandoc < Formula
     regex(/href=.*?mandoc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   uses_from_macos "zlib"
 
   def install

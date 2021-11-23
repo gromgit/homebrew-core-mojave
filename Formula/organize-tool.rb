@@ -8,7 +8,6 @@ class OrganizeTool < Formula
   license "MIT"
   revision 2
 
-
   depends_on "freetype"
   depends_on "openjpeg"
   depends_on "python@3.10"

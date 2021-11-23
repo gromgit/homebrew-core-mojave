@@ -7,7 +7,6 @@ class Gtop < Formula
   sha256 "04fa0e7d72c07c863258d802d1fd1fbb421ea7ec9130d69dc079be8771c621fc"
   license "MIT"
 
-
   depends_on "node"
 
   def install

@@ -6,7 +6,6 @@ class Nsh < Formula
   license any_of: ["CC0-1.0", "MIT"]
   head "https://github.com/nuta/nsh.git", branch: "main"
 
-
   depends_on "rust" => :build
 
   def install

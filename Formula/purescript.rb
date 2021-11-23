@@ -6,7 +6,6 @@ class Purescript < Formula
   license "BSD-3-Clause"
   head "https://github.com/purescript/purescript.git", branch: "master"
 
-
   depends_on "ghc" => :build
   depends_on "haskell-stack" => :build
 

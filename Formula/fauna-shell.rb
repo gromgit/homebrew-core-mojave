@@ -7,7 +7,6 @@ class FaunaShell < Formula
   sha256 "a6dc40319b61efd1a3e3804e670d02d85a2424c251cb9288bc9a422f0995d8c6"
   license "MPL-2.0"
 
-
   depends_on "node"
 
   def install

@@ -6,7 +6,6 @@ class Texmath < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/texmath.git", branch: "master"
 
-
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 

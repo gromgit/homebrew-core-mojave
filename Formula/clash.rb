@@ -5,7 +5,6 @@ class Clash < Formula
   sha256 "e1bae0ba88a0e2ba36702f95fe95fdc8fee58db4751b5b108ea600563c36a972"
   license "GPL-3.0-only"
 
-
   depends_on "go" => :build
   depends_on "shadowsocks-libev" => :test
 

@@ -12,7 +12,6 @@ class Openimageio < Formula
     regex(%r{href=.*?/tag/(?:Release[._-])?v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"

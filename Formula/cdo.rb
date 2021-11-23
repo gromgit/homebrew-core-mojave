@@ -10,7 +10,6 @@ class Cdo < Formula
     regex(/href=.*?cdo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "eccodes"
   depends_on "hdf5"
   depends_on "netcdf"

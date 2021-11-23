@@ -7,7 +7,6 @@ class Nativefier < Formula
   sha256 "6c962e14cdbfd428e0e1ae524ba034f1c2fc2e1514a2f6edafbe56ffe605bbc5"
   license "MIT"
 
-
   depends_on "node"
 
   def install

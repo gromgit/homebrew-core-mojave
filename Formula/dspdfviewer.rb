@@ -7,7 +7,6 @@ class Dspdfviewer < Formula
   revision 11
   head "https://github.com/dannyedel/dspdfviewer.git"
 
-
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build

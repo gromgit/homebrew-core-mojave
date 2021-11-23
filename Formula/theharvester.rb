@@ -8,7 +8,6 @@ class Theharvester < Formula
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
-
   depends_on "maturin" => :build
   depends_on "rust" => :build
   depends_on "libyaml"

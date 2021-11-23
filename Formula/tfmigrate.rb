@@ -6,7 +6,6 @@ class Tfmigrate < Formula
   license "MIT"
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
-
   depends_on "go" => :build
   depends_on "terraform" => :test
 

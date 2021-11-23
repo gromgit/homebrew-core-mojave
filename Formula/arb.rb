@@ -6,7 +6,6 @@ class Arb < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/fredrik-johansson/arb.git", branch: "master"
 
-
   depends_on "cmake" => :build
   depends_on "flint"
   depends_on "gmp"

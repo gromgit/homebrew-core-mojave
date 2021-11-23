@@ -6,7 +6,6 @@ class Opam < Formula
   license "LGPL-2.1-only"
   head "https://github.com/ocaml/opam.git", branch: "master"
 
-
   depends_on "ocaml" => [:build, :test]
   depends_on "gpatch"
 

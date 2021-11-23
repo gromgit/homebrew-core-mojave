@@ -7,7 +7,6 @@ class B2Tools < Formula
   sha256 "411232733599a7553bd146e842e84b15530712aead26d71ff68b81fec754d62b"
   license "MIT"
 
-
   depends_on "python@3.10"
   depends_on "six"
 

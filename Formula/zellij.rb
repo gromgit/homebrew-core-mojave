@@ -5,7 +5,6 @@ class Zellij < Formula
   sha256 "aa2cc622f924c1d41a8b1b616aae3d7b989e483bca1041061db43b6d0c6c9f52"
   license "MIT"
 
-
   depends_on "rust" => :build
 
   def install

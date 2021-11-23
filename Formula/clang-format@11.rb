@@ -5,7 +5,6 @@ class ClangFormatAT11 < Formula
   sha256 "ce8508e318a01a63d4e8b3090ab2ded3c598a50258cc49e2625b9120d4c03ea5"
   license "Apache-2.0"
 
-
   depends_on "cmake" => :build
 
   uses_from_macos "ncurses"

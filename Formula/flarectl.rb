@@ -6,7 +6,6 @@ class Flarectl < Formula
   license "BSD-3-Clause"
   head "https://github.com/cloudflare/cloudflare-go.git"
 
-
   depends_on "go" => :build
 
   def install

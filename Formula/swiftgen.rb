@@ -6,7 +6,6 @@ class Swiftgen < Formula
   license "MIT"
   head "https://github.com/SwiftGen/SwiftGen/archive/develop.tar.gz"
 
-
   depends_on "ruby" => :build if MacOS.version <= :sierra
   depends_on xcode: ["13.0", :build]
   depends_on :macos

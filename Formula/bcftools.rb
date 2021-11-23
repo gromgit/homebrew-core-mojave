@@ -12,7 +12,6 @@ class Bcftools < Formula
     strategy :github_latest
   end
 
-
   depends_on "gsl"
   depends_on "htslib"
 

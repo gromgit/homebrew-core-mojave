@@ -1,8 +1,8 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-13.tar.xz"
-  sha256 "7eb82add552eb197775c69bae2cba8611e1293cc697f4938d92868f30373576a"
+  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-14.tar.xz"
+  sha256 "8f08592b759eb8ff948814d4329fab2004042c5f4bd185315b066aca76f69f76"
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
@@ -10,7 +10,6 @@ class Imagemagick < Formula
     url "https://download.imagemagick.org/ImageMagick/download/"
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
-
 
   depends_on "pkg-config" => :build
   depends_on "freetype"

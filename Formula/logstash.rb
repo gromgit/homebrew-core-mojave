@@ -12,7 +12,6 @@ class Logstash < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "openjdk@11"
 
   uses_from_macos "ruby" => :build

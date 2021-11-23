@@ -9,7 +9,6 @@ class QtPerconaServer < Formula
     formula "qt"
   end
 
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => :build
 

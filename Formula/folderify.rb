@@ -9,7 +9,6 @@ class Folderify < Formula
   # Default branch is "main" not "master"
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
-
   depends_on xcode: :build
   depends_on "imagemagick"
   depends_on :macos

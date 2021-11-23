@@ -7,7 +7,6 @@ class Geogram < Formula
   sha256 "7323d9f6a38fbaff3e07c47955e0c8f310906871d38171536ec8bc0758e816aa"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
 
-
   depends_on "cmake" => :build
   depends_on "glfw"
 

@@ -11,7 +11,6 @@ class Packer < Formula
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-
   depends_on "go" => :build
 
   def install

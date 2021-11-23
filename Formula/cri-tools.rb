@@ -6,7 +6,6 @@ class CriTools < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

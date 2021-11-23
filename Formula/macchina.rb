@@ -5,7 +5,6 @@ class Macchina < Formula
   sha256 "f8cd45546f3ce1e59e88b5861c1ba538039b39e7802749fff659a6367f097402"
   license "MIT"
 
-
   depends_on "rust" => :build
 
   def install

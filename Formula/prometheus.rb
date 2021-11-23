@@ -10,7 +10,6 @@ class Prometheus < Formula
     strategy :github_latest
   end
 
-
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "yarn" => :build

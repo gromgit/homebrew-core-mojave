@@ -6,7 +6,6 @@ class Starship < Formula
   license "ISC"
   head "https://github.com/starship/starship.git", branch: "master"
 
-
   depends_on "rust" => :build
   depends_on "openssl@1.1"
 

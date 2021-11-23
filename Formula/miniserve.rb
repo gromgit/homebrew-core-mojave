@@ -5,7 +5,6 @@ class Miniserve < Formula
   sha256 "24860f103879fd881a522a7ad8f25f2c9dcd5e01287b0485bcabf3e88c719015"
   license "MIT"
 
-
   depends_on "rust" => :build
 
   def install

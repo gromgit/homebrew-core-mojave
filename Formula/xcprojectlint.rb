@@ -7,7 +7,6 @@ class Xcprojectlint < Formula
   license "Apache-2.0"
   head "https://github.com/americanexpress/xcprojectlint.git", branch: "master"
 
-
   depends_on xcode: ["12.0", :build]
 
   def install

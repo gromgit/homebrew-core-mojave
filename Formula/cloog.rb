@@ -10,7 +10,6 @@ class Cloog < Formula
     regex(/href=.*?cloog[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "gmp"
   depends_on "isl@0.18"

@@ -6,7 +6,6 @@ class Yosys < Formula
   license "ISC"
   head "https://github.com/YosysHQ/yosys.git", branch: "master"
 
-
   depends_on "bison" => :build
   depends_on "pkg-config" => :build
   depends_on "libffi"

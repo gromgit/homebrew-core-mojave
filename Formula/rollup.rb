@@ -7,7 +7,6 @@ class Rollup < Formula
   sha256 "033376d305c55a5440e7dd1e1f636e2488e718bbd37d7911854c9cbd9fe21994"
   license all_of: ["ISC", "MIT"]
 
-
   depends_on "node"
 
   def install

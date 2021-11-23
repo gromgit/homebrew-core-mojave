@@ -12,7 +12,6 @@ class Nwchem < Formula
     regex(/^v?(\d+(?:\.\d+)+)-release$/i)
   end
 
-
   depends_on "gcc" # for gfortran
   depends_on "open-mpi"
   depends_on "openblas"

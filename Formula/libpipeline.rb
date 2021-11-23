@@ -10,7 +10,6 @@ class Libpipeline < Formula
     regex(/href=.*?libpipeline[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"

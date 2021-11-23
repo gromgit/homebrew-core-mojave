@@ -5,7 +5,6 @@ class Mockolo < Formula
   sha256 "37bd8639349fb292e4244593785be0c63d16fd91b601c10d25a48c0964dd15a2"
   license "Apache-2.0"
 
-
   depends_on xcode: ["12.5", :build]
 
   def install

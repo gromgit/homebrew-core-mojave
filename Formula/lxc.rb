@@ -10,7 +10,6 @@ class Lxc < Formula
     regex(/href=.*?lxd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "go" => :build
 
   def install

@@ -7,7 +7,6 @@ class Glslviewer < Formula
   revision 1
   head "https://github.com/patriciogonzalezvivo/glslViewer.git"
 
-
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
   depends_on "glfw"

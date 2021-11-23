@@ -9,7 +9,6 @@ class Bit < Formula
   revision 1
   head "https://github.com/teambit/bit.git", branch: "master"
 
-
   depends_on arch: :x86_64 # installs an x86_64 `node.napi.node`
   depends_on "node"
 

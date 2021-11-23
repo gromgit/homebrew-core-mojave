@@ -6,7 +6,6 @@ class Gifski < Formula
   license "AGPL-3.0-only"
   revision 1
 
-
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"

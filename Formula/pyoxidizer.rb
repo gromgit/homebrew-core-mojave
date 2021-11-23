@@ -11,7 +11,6 @@ class Pyoxidizer < Formula
     regex(%r{^pyoxidizer/v?(\d+(?:\.\d+)+)$}i)
   end
 
-
   depends_on "rust" => :build
   # Currently needs macOS 11 SDK due to checking for DeploymentTargetSettingName
   # Remove when issue is fixed: https://github.com/indygreg/PyOxidizer/issues/431

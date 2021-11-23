@@ -11,7 +11,6 @@ class PhoronixTestSuite < Formula
     strategy :github_latest
   end
 
-
   depends_on "php"
 
   def install

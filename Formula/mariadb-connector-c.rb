@@ -15,7 +15,6 @@ class MariadbConnectorC < Formula
     regex(/href=.*?mariadb-connector-c[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
 

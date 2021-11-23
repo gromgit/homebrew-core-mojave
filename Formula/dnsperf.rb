@@ -10,7 +10,6 @@ class Dnsperf < Formula
     regex(/href=.*?dnsperf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "concurrencykit"
   depends_on "ldns"

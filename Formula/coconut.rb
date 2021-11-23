@@ -7,7 +7,6 @@ class Coconut < Formula
   sha256 "1f8d3ba15a4335246dc5c2ae3693042b9ce02398455fea5fc6d1d9dcc242c69b"
   license "Apache-2.0"
 
-
   depends_on "python@3.10"
 
   resource "cPyparsing" do

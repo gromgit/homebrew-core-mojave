@@ -5,7 +5,6 @@ class Sfcgal < Formula
   sha256 "5363c4e4a4a75cfbd6c4e9c5ba634f406db400be0afd7cafc92fddae7453b486"
   license "LGPL-2.0-or-later"
 
-
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "cgal"

@@ -10,7 +10,6 @@ class Logcli < Formula
     formula "loki"
   end
 
-
   depends_on "go" => :build
   depends_on "loki" => :test
 

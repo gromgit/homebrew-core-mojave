@@ -5,7 +5,6 @@ class Lima < Formula
   sha256 "f6b178e2536e3fb141db8c532b831e555253485fed4e0ad1a139c0998d5d7f3f"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
   depends_on "qemu"
 

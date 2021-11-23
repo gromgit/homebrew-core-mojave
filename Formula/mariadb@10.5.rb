@@ -22,7 +22,6 @@ class MariadbAT105 < Formula
     end
   end
 
-
   keg_only :versioned_formula
 
   # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-105/

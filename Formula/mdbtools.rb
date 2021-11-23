@@ -5,7 +5,6 @@ class Mdbtools < Formula
   sha256 "3446e1d71abdeb98d41e252777e67e1909b186496fda59f98f67032f7fbcd955"
   license "GPL-2.0-or-later"
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build

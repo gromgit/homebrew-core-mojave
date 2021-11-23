@@ -10,7 +10,6 @@ class Solidity < Formula
     strategy :github_latest
   end
 
-
   depends_on "cmake" => :build
   depends_on xcode: ["11.0", :build]
   depends_on "boost"

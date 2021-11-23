@@ -9,7 +9,6 @@ class Libpq < Formula
     formula "postgresql"
   end
 
-
   keg_only "conflicts with postgres formula"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.

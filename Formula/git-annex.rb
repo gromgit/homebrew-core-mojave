@@ -7,7 +7,6 @@ class GitAnnex < Formula
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
 
-
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "pkg-config" => :build

@@ -9,7 +9,6 @@ class Mitmproxy < Formula
   revision 1
   head "https://github.com/mitmproxy/mitmproxy.git"
 
-
   depends_on "rust" => :build # for cryptography
   depends_on "openssl@1.1"
   depends_on "protobuf"

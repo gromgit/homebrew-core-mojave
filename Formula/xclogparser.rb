@@ -5,7 +5,6 @@ class Xclogparser < Formula
   sha256 "b47885b599b9dce44a69e5b30d9da32f7abf9f25e5decd12f5f3313322e93242"
   license "Apache-2.0"
 
-
   depends_on xcode: "12.0"
 
   resource "test_log" do

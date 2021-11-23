@@ -7,7 +7,6 @@ class Dvc < Formula
   sha256 "e28e63bbf256045d16ffccdfbd86721110afe117b6e9472e24ab4fe1e0b68a19"
   license "Apache-2.0"
 
-
   depends_on "pkg-config" => :build
   # for cryptograpy (required by azure deps)
   depends_on "rust" => :build

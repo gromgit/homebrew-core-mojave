@@ -6,7 +6,6 @@ class HopenpgpTools < Formula
   license "AGPL-3.0-or-later"
   head "https://salsa.debian.org/clint/hOpenPGP.git"
 
-
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "pkg-config" => :build

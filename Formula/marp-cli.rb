@@ -7,7 +7,6 @@ class MarpCli < Formula
   sha256 "44ba2ec584cdb5091ecb76efda633f51389a66f91fcc83823d834256d2d458e6"
   license "MIT"
 
-
   depends_on "node"
 
   def install

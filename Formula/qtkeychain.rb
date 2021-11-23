@@ -5,7 +5,6 @@ class Qtkeychain < Formula
   sha256 "dc84aea039b81f2613c7845d2ac88bad1cf3a06646ec8af0f7276372bb010c11"
   license "BSD-2-Clause"
 
-
   depends_on "cmake" => :build
   depends_on "qt@5"
 

@@ -9,7 +9,6 @@ class Awscurl < Formula
   revision 1
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
-
   depends_on "rust" => :build
   depends_on "python@3.9"
 

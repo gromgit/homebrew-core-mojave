@@ -5,7 +5,6 @@ class Rakudo < Formula
   sha256 "b174c7537328efb5e3f74245e79fa7159b70131b84c597916cf5a65c2aca24a1"
   license "Artistic-2.0"
 
-
   depends_on "nqp"
 
   conflicts_with "rakudo-star"

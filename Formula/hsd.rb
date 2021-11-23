@@ -12,7 +12,6 @@ class Hsd < Formula
     strategy :github_latest
   end
 
-
   depends_on "python@3.9" => :build
   depends_on "node@10"
   depends_on "unbound"

@@ -6,7 +6,6 @@ class SqliteUtils < Formula
   sha256 "3e86d8dd5f633c4bcf78c4e1a3aa5b0f02852a602cea8134b700229598109ff6"
   license "Apache-2.0"
 
-
   depends_on "python-tabulate"
   depends_on "python@3.9"
   depends_on "six"

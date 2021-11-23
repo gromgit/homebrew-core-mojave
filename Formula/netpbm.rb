@@ -15,7 +15,6 @@ class Netpbm < Formula
     regex(/Release v?(\d+(?:\.\d+)+)/i)
   end
 
-
   depends_on "jasper"
   depends_on "jpeg"
   depends_on "libpng"

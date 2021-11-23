@@ -5,7 +5,6 @@ class OpenImageDenoise < Formula
   sha256 "e70d27ce24b41364782376c1b3b4f074f77310ccfe5f8ffec4a13a347e48a0ea"
   license "Apache-2.0"
 
-
   depends_on "cmake" => :build
   depends_on "ispc" => :build
   # clang: error: unknown argument: '-fopenmp-simd'

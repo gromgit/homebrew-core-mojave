@@ -13,7 +13,6 @@ class Z3 < Formula
     regex(%r{href=.*?/tag/z3[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
-
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
   depends_on "python@3.10" => :build

@@ -11,7 +11,6 @@ class Node < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "brotli"
   depends_on "c-ares"

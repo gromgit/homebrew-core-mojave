@@ -6,7 +6,6 @@ class Ncnn < Formula
   license "BSD-3-Clause"
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
-
   depends_on "cmake" => :build
   depends_on "protobuf"
 

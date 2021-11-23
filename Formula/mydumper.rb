@@ -5,7 +5,6 @@ class Mydumper < Formula
   sha256 "ddd0427f572467589cdb024a4ef746d30b4214c804954612f4e07510607cf7a7"
   license "GPL-3.0-or-later"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build

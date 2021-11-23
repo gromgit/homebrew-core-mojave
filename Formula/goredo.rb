@@ -10,7 +10,6 @@ class Goredo < Formula
     regex(/href=.*?goredo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "go" => :build
 
   def install

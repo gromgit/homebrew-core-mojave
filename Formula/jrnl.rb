@@ -8,7 +8,6 @@ class Jrnl < Formula
   license "GPL-3.0-only"
   revision 1
 
-
   depends_on "rust" => :build
   depends_on "python@3.9"
 

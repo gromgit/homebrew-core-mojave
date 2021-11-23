@@ -7,7 +7,6 @@ class Ocrmypdf < Formula
   sha256 "e8ccf43d28c8d328409ac0a2d1ad0c9f0c7af3074f55e5d150080e15d77858e2"
   license "MPL-2.0"
 
-
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "ghostscript"

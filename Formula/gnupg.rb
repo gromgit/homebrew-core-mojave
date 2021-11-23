@@ -11,7 +11,6 @@ class Gnupg < Formula
     regex(/href=.*?gnupg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "gnutls"

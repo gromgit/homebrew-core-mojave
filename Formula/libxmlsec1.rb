@@ -10,7 +10,6 @@ class Libxmlsec1 < Formula
     regex(/href=.*?xmlsec1[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "gnutls" # Yes, it wants both ssl/tls variations
   depends_on "libgcrypt"

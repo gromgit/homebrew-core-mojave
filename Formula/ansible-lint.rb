@@ -8,7 +8,6 @@ class AnsibleLint < Formula
   license "MIT"
   revision 1
 
-
   depends_on "pkg-config" => :build
   depends_on "ansible"
   depends_on "libyaml"

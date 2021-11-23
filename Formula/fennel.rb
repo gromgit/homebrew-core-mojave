@@ -5,7 +5,6 @@ class Fennel < Formula
   sha256 "6f619832751af9c37835737cde5cf4475ff90e073ecef4671f9e4f8be2c121a7"
   license "MIT"
 
-
   depends_on "lua"
 
   def install

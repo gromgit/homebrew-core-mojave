@@ -8,7 +8,6 @@ class Sip < Formula
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
-
   depends_on "python@3.9"
 
   resource "packaging" do

@@ -6,7 +6,6 @@ class Librespot < Formula
   license "MIT"
   head "https://github.com/librespot-org/librespot.git", branch: "dev"
 
-
   depends_on "rust" => :build
 
   on_linux do

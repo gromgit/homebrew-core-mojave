@@ -12,7 +12,6 @@ class Mercurial < Formula
     regex(/href=.*?mercurial[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "python@3.9"
 
   def install

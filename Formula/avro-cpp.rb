@@ -6,7 +6,6 @@ class AvroCpp < Formula
   sha256 "ef70ca8a1cfeed7017dcb2c0ed591374deab161b86be6ca4b312bc24cada9c56"
   license "Apache-2.0"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"

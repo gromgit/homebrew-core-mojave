@@ -6,7 +6,6 @@ class N < Formula
   license "MIT"
   head "https://github.com/tj/n.git", branch: "master"
 
-
   def install
     bin.mkdir
     system "make", "PREFIX=#{prefix}", "install"

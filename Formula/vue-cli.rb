@@ -7,7 +7,6 @@ class VueCli < Formula
   sha256 "1b30ab732dd74684212623a1b25853905f3b788d4a2ddb5bf8de80107ee53bf2"
   license "MIT"
 
-
   depends_on "node"
 
   on_macos do

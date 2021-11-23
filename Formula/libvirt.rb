@@ -11,7 +11,6 @@ class Libvirt < Formula
     regex(/href=.*?libvirt[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "docutils" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build

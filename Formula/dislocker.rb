@@ -6,7 +6,6 @@ class Dislocker < Formula
   license "GPL-2.0-only"
   revision 6
 
-
   depends_on "cmake" => :build
   depends_on "mbedtls@2"
 

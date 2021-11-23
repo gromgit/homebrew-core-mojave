@@ -7,7 +7,6 @@ class Neovim < Formula
   revision 1
   head "https://github.com/neovim/neovim.git", branch: "master"
 
-
   depends_on "cmake" => :build
   # Libtool is needed to build `libvterm`.
   # Remove this dependency when we use the formula.

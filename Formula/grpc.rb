@@ -12,7 +12,6 @@ class Grpc < Formula
     strategy :github_latest
   end
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build

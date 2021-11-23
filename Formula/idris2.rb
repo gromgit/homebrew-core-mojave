@@ -7,7 +7,6 @@ class Idris2 < Formula
   revision 1
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
-
   depends_on "coreutils" => :build
   depends_on "gmp" => :build
   depends_on "chezscheme"

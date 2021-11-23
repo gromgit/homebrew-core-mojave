@@ -8,7 +8,6 @@ class ContentfulCli < Formula
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
-
   depends_on "node"
 
   def install

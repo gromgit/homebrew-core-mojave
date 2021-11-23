@@ -6,7 +6,6 @@ class Scorecard < Formula
   license "Apache-2.0"
   head "https://github.com/ossf/scorecard.git", branch: "main"
 
-
   depends_on "go" => :build
 
   def install

@@ -7,7 +7,6 @@ class Mas < Formula
   license "MIT"
   head "https://github.com/mas-cli/mas.git", branch: "main"
 
-
   depends_on :macos
   if Hardware::CPU.arm?
     depends_on xcode: ["12.2", :build]

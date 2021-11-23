@@ -5,7 +5,6 @@ class Dartsim < Formula
   sha256 "e0d47bbc191903b93474da00bbd1042cefdc85f5ead3e9a9282b5f4187d53304"
   license "BSD-2-Clause"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "assimp"

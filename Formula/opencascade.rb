@@ -19,7 +19,6 @@ class Opencascade < Formula
     end
   end
 
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "rapidjson" => :build

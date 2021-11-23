@@ -6,7 +6,6 @@ class Ponyc < Formula
       revision: "18c59df20206e34ab6379e31fb2d75d762b4ca6e"
   license "BSD-2-Clause"
 
-
   depends_on "cmake" => :build
 
   uses_from_macos "zlib"

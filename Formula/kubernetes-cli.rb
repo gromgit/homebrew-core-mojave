@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.22.3",
-      revision: "c92036820499fedefec0f847e2054d824aea6cd1"
+      tag:      "v1.22.4",
+      revision: "b695d79d4f967c403a96986f1750a35eb75e75f1"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git"
 
@@ -11,7 +11,6 @@ class KubernetesCli < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
 
   depends_on "bash" => :build
   depends_on "coreutils" => :build

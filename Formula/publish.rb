@@ -6,7 +6,6 @@ class Publish < Formula
   license "MIT"
   head "https://github.com/JohnSundell/Publish.git", branch: "master"
 
-
   # https://github.com/JohnSundell/Publish#system-requirements
   depends_on xcode: ["12.5", :build]
 

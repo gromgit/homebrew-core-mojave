@@ -10,7 +10,6 @@ class Websocat < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
 

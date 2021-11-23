@@ -10,7 +10,6 @@ class Dialog < Formula
     regex(/href=.*?dialog[._-]v?(\d+(?:\.\d+)+-\d{6,8})\.t/i)
   end
 
-
   uses_from_macos "ncurses"
 
   def install

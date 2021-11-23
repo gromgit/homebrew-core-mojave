@@ -7,7 +7,6 @@ class AllRepos < Formula
   sha256 "2c42f1cb18aebc2efa601d76fbbadee98a4dc6d71a73b1f29ef9155d191f966b"
   license "MIT"
 
-
   depends_on "python@3.10"
 
   resource "identify" do

@@ -6,7 +6,6 @@ class DockerCompose < Formula
   license "Apache-2.0"
   head "https://github.com/docker/compose.git", branch: "v2"
 
-
   depends_on "go" => :build
 
   def install

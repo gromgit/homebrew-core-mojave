@@ -8,7 +8,6 @@ class Sqlmap < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
-
   depends_on "python@3.10"
 
   uses_from_macos "sqlite" => :test

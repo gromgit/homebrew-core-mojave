@@ -5,7 +5,6 @@ class Himalaya < Formula
   sha256 "13567726903243f04a4aa64e96b88e0d0fd5c3ccbe4953357f3a8ef1c569dad9"
   license "BSD-3-Clause"
 
-
   depends_on "rust" => :build
 
   on_linux do

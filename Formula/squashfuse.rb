@@ -5,7 +5,6 @@ class Squashfuse < Formula
   sha256 "aa52460559e0d0b1753f6b1af5c68cfb777ca5a13913285e93f4f9b7aa894b3a"
   license "BSD-2-Clause"
 
-
   depends_on "pkg-config" => :build
   depends_on "lz4"
   depends_on "lzo"

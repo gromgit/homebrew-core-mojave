@@ -6,7 +6,6 @@ class Bibtexconv < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
-
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "openssl@1.1"

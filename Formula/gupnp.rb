@@ -8,7 +8,6 @@ class Gupnp < Formula
   license "LGPL-2.0-or-later"
   revision 1
 
-
   depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build

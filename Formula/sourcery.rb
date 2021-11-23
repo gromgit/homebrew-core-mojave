@@ -6,7 +6,6 @@ class Sourcery < Formula
   license "MIT"
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
-
   depends_on xcode: "13.0"
 
   uses_from_macos "ruby" => :build

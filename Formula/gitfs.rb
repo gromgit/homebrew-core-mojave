@@ -9,7 +9,6 @@ class Gitfs < Formula
   revision 8
   head "https://github.com/presslabs/gitfs.git"
 
-
   depends_on "libgit2"
   depends_on "python@3.9"
 

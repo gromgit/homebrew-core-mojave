@@ -6,7 +6,6 @@ class Needle < Formula
       revision: "6a2d5e25cd3c77ddfa57835e991469db791c4744"
   license "Apache-2.0"
 
-
   depends_on xcode: ["12.2", :build]
 
   def install

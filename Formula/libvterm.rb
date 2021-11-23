@@ -11,7 +11,6 @@ class Libvterm < Formula
     regex(/href=.*?libvterm[._-]v?(\d+(?:\.\d+)+)\./i)
   end
 
-
   depends_on "libtool" => :build
 
   def install

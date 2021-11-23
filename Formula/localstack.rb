@@ -7,7 +7,6 @@ class Localstack < Formula
   sha256 "92eabd00ce5a3073253b30b4450faead93b6c24ec3530df06142683c7f82b890"
   license "Apache-2.0"
 
-
   depends_on "docker" => :test
   depends_on "python-tabulate"
   depends_on "python@3.9"

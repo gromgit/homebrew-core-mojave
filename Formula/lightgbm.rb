@@ -6,7 +6,6 @@ class Lightgbm < Formula
       revision: "d4851c3381495d9a065d49e848fbf291a408477d"
   license "MIT"
 
-
   depends_on "cmake" => :build
   depends_on "libomp"
 

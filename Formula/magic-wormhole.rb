@@ -8,7 +8,6 @@ class MagicWormhole < Formula
   license "MIT"
   revision 4
 
-
   depends_on "rust" => :build
   depends_on "libsodium"
   depends_on "openssl@1.1"

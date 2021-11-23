@@ -6,7 +6,6 @@ class GccAT49 < Formula
   sha256 "6c11d292cd01b294f9f84c9a59c230d80e9e4a47e5c6355f046bb36d4f358092"
   revision 2
 
-
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed

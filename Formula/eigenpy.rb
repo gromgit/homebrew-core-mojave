@@ -6,7 +6,6 @@ class Eigenpy < Formula
   license "BSD-2-Clause"
   head "https://github.com/stack-of-tasks/eigenpy.git", branch: "master"
 
-
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

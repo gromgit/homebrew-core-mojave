@@ -8,7 +8,6 @@ class Graphviz < Formula
   version_scheme 1
   head "https://gitlab.com/graphviz/graphviz.git"
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build

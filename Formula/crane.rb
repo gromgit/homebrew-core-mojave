@@ -5,7 +5,6 @@ class Crane < Formula
   sha256 "f2e4d7f2e57811a706e669e75c5d43377d5967ab1846a83304e91b9f35ffce06"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

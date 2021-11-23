@@ -13,7 +13,6 @@ class Influxdb < Formula
     regex(/^v?((?!9\.9\.9)\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "breezy" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build

@@ -6,7 +6,6 @@ class Embree < Formula
   license "Apache-2.0"
   head "https://github.com/embree/embree.git"
 
-
   depends_on "cmake" => :build
   depends_on "ispc" => :build
   depends_on "tbb"

@@ -8,7 +8,6 @@ class Bandit < Formula
   license "Apache-2.0"
   head "https://github.com/PyCQA/bandit.git", branch: "master"
 
-
   depends_on "python@3.10"
 
   resource "gitdb" do

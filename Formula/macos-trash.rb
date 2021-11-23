@@ -6,7 +6,6 @@ class MacosTrash < Formula
   license "MIT"
   head "https://github.com/sindresorhus/macos-trash.git"
 
-
   depends_on xcode: ["12.0", :build]
   depends_on :macos
 

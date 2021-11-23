@@ -6,7 +6,6 @@ class Uuu < Formula
   license "BSD-3-Clause"
   head "https://github.com/NXPmicro/mfgtools.git", branch: "master"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 

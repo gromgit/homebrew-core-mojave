@@ -6,7 +6,6 @@ class Kubevela < Formula
       revision: "066c448c1ae5a339e4f8dfc17b60085f137e9de4"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

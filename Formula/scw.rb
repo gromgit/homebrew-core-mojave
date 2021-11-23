@@ -5,7 +5,6 @@ class Scw < Formula
   sha256 "7baa6d7af5602703bc9b1f54beb5a36642151cc12d6584d6ab76df8bb088365e"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

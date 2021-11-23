@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://gravitational.com/teleport"
-  url "https://github.com/gravitational/teleport/archive/v7.3.3.tar.gz"
-  sha256 "893fb8e06f28eb5ee48989bf8e4fa2358a41d65d3c0372fe95076c948b530514"
+  url "https://github.com/gravitational/teleport/archive/v8.0.0.tar.gz"
+  sha256 "63cd8a169723575ee1658aa26622424038079815cf28443f4a3c770e95c1331f"
   license "Apache-2.0"
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -15,7 +15,6 @@ class Teleport < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "go" => :build
 
   uses_from_macos "curl" => :test
@@ -26,8 +25,8 @@ class Teleport < Formula
 
   # Keep this in sync with https://github.com/gravitational/teleport/tree/v#{version}
   resource "webassets" do
-    url "https://github.com/gravitational/webassets/archive/07493a5e78677de448b0e35bd72bf1dc6498b5ea.tar.gz"
-    sha256 "2074ee7e50720f20ff1b4da923434c05f6e1664e13694adde9522bf9ab09e0fd"
+    url "https://github.com/gravitational/webassets/archive/a1039e35e86aec770db6cdb32321c93356477757.tar.gz"
+    sha256 "11010e65d44d8b9bb956ffbaf18249c8cb370d36c47d165f9fc905ea624ce25c"
   end
 
   def install
@@ -38,20 +37,29 @@ class Teleport < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/teleport version")
-    (testpath/"config.yml").write shell_output("#{bin}/teleport configure")
-      .gsub("0.0.0.0", "127.0.0.1")
-      .gsub("/var/lib/teleport", testpath)
-      .gsub("/var/run", testpath)
-      .gsub(/https_(.*)/, "")
+    assert_match version.to_s, shell_output("#{bin}/tsh version")
+    assert_match version.to_s, shell_output("#{bin}/tctl version")
+
+    mkdir testpath/"data"
+    (testpath/"config.yml").write <<~EOS
+      version: v2
+      teleport:
+        nodename: testhost
+        data_dir: #{testpath}/data
+        log:
+          output: stderr
+          severity: WARN
+    EOS
 
     fork do
-      exec "#{bin}/teleport start -c #{testpath}/config.yml --debug"
+      exec "#{bin}/teleport start --roles=proxy,node,auth --config=#{testpath}/config.yml"
     end
 
     sleep 10
     system "curl", "--insecure", "https://localhost:3080"
-    system "nc", "-z", "localhost", "3022"
-    system "nc", "-z", "localhost", "3023"
-    system "nc", "-z", "localhost", "3025"
+
+    status = shell_output("#{bin}/tctl --config=#{testpath}/config.yml status")
+    assert_match(/Cluster\s*testhost/, status)
+    assert_match(/Version\s*#{version}/, status)
   end
 end

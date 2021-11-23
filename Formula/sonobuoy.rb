@@ -5,7 +5,6 @@ class Sonobuoy < Formula
   sha256 "2f1db8498fbe7de614cbb7255c6680ce3cc57ddc520c74f6ecd651b9920e116d"
   license "Apache-2.0"
 
-
   depends_on "go" => :build
 
   def install

@@ -11,7 +11,6 @@ class S2n < Formula
     strategy :github_latest
   end
 
-
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
 

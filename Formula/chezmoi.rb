@@ -7,6 +7,11 @@ class Chezmoi < Formula
   license "MIT"
   head "https://github.com/twpayne/chezmoi.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chezmoi"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9e10c253175703c840290397d5ebb08a2f984b0c26c5a8eae0cefd8eb67f7a8f"
+  end
 
   depends_on "go" => :build
 

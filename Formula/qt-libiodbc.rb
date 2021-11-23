@@ -9,7 +9,6 @@ class QtLibiodbc < Formula
     formula "qt"
   end
 
-
   depends_on "cmake" => [:build, :test]
 
   depends_on "libiodbc"

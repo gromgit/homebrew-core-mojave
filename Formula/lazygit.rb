@@ -5,7 +5,6 @@ class Lazygit < Formula
   sha256 "7a9fcb0c5f1edf025d1e1f5fb21099770e0de7ed424af62e133bd9d4afffdc35"
   license "MIT"
 
-
   depends_on "go" => :build
 
   def install

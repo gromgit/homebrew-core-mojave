@@ -6,7 +6,6 @@ class Vapor < Formula
   license "MIT"
   head "https://github.com/vapor/toolbox.git", branch: "main"
 
-
   depends_on xcode: "11.4"
 
   def install

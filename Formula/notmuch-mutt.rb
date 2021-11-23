@@ -10,7 +10,6 @@ class NotmuchMutt < Formula
     formula "notmuch"
   end
 
-
   depends_on "notmuch"
   depends_on "readline"
 

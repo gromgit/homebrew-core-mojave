@@ -6,7 +6,6 @@ class Gopass < Formula
   license "MIT"
   head "https://github.com/gopasspw/gopass.git", branch: "master"
 
-
   depends_on "go" => :build
   depends_on "gnupg"
 

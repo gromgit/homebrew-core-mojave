@@ -5,7 +5,6 @@ class DockerGen < Formula
   sha256 "3d969c32d1a612d44c8193422649b375ea9cea8d78a044be463d58fe128c525a"
   license "MIT"
 
-
   depends_on "go" => :build
 
   def install

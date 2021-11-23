@@ -17,7 +17,6 @@ class Emscripten < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "node"
   depends_on "python@3.9"

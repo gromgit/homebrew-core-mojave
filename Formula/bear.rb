@@ -6,7 +6,6 @@ class Bear < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "fmt"

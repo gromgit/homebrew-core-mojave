@@ -7,7 +7,6 @@ class Bartycrouch < Formula
   license "MIT"
   head "https://github.com/Flinesoft/BartyCrouch.git", branch: "main"
 
-
   depends_on xcode: ["12.5", :build]
   depends_on :macos
 

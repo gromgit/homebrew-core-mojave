@@ -6,7 +6,6 @@ class Zabbix < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/zabbix/zabbix.git", branch: "master"
 
-
   depends_on "openssl@1.1"
   depends_on "pcre"
 

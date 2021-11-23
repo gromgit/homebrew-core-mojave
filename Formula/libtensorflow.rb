@@ -5,7 +5,6 @@ class Libtensorflow < Formula
   sha256 "bb124905c7fdacd81e7c842b287c169bbf377d29c74c9dacc04f96c9793747bb"
   license "Apache-2.0"
 
-
   depends_on "bazel" => :build
   depends_on "numpy" => :build
   depends_on "python@3.9" => :build

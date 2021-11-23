@@ -5,7 +5,6 @@ class Libmobi < Formula
   sha256 "136f81451e51486e57ec2afe5a64e56d6604cf99ee4a2d01fba288ab4dce161f"
   license "LGPL-3.0-or-later"
 
-
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 

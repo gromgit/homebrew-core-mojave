@@ -7,7 +7,6 @@ class Openrct2 < Formula
   license "GPL-3.0-only"
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "duktape"

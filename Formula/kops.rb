@@ -11,7 +11,6 @@ class Kops < Formula
     strategy :github_latest
   end
 
-
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 

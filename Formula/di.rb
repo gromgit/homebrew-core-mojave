@@ -10,7 +10,6 @@ class Di < Formula
     regex(%r{url=.*?/di[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-
   def install
     system "make", "install", "prefix=#{prefix}"
   end

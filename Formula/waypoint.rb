@@ -6,7 +6,6 @@ class Waypoint < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/waypoint.git", branch: "main"
 
-
   depends_on "go" => :build
   depends_on "go-bindata" => :build
 

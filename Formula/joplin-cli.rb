@@ -7,7 +7,6 @@ class JoplinCli < Formula
   sha256 "5ae8c2cfbb54b55bba18f7cd413ba7bd7ef03412021322b65df53216fd7db4be"
   license "MIT"
 
-
   depends_on "pkg-config" => :build
   depends_on "node"
   depends_on "sqlite"

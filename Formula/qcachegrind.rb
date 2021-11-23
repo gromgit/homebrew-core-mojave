@@ -12,7 +12,6 @@ class Qcachegrind < Formula
     regex(%r{href=.*?v?(\d+\.\d+\.(?:(?![89]\d)\d+)(?:\.\d+)*)/?["' >]}i)
   end
 
-
   depends_on "graphviz"
   depends_on "qt@5"
 

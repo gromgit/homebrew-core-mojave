@@ -13,7 +13,6 @@ class GnomeAutoar < Formula
     regex(/gnome-autoar[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "gtk+3"

@@ -11,7 +11,6 @@ class Notmuch < Formula
     regex(/href=.*?notmuch[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "doxygen" => :build
   depends_on "emacs" => :build
   depends_on "libgpg-error" => :build

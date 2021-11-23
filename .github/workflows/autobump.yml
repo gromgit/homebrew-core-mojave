@@ -18,12 +18,22 @@ env:
     apidoc
     argo
     artifactory
+    autorest
     aws-cdk
     b3sum
     bcoin
     buildkit
     bundletool
+    cadence
     calicoctl
+    cargo-audit
+    cargo-bloat
+    cargo-c
+    cargo-edit
+    cargo-instruments
+    cargo-llvm-lines
+    cargo-outdated
+    cargo-watch
     cdk8s
     chezmoi
     circleci
@@ -50,9 +60,11 @@ env:
     fuse-overlayfs
     gatsby-cli
     gitleaks
+    glooctl
     gofish
     golang-migrate
     goreleaser
+    gosec
     gostatic
     hcloud
     helm
@@ -78,6 +90,7 @@ env:
     minikube
     mmctl
     nativefier
+    navi
     ncc
     neofetch
     netlify-cli
@@ -85,7 +98,9 @@ env:
     node-sass
     nomad
     nushell
+    octant
     okteto
+    oxipng
     pnpm
     rollup
     selene
@@ -124,7 +139,7 @@ jobs:
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@master
         with:
-          username: ${{ github.event == 'schedule' && 'BrewTestBot' || github.actor }}
+          username: ${{ github.event == 'workflow_dispatch' && github.actor || 'BrewTestBot' }}
 
       - name: Bump formulae
         uses: Homebrew/actions/bump-formulae@master

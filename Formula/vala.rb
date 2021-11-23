@@ -5,7 +5,6 @@ class Vala < Formula
   sha256 "ed1d5fe4cbc0cd2845d0de4f1ffefb15afb06892d230c7cca695781672e8fb60"
   license "LGPL-2.1-or-later"
 
-
   depends_on "gettext"
   depends_on "glib"
   depends_on "graphviz"

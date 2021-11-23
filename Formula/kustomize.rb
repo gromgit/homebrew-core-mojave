@@ -12,7 +12,6 @@ class Kustomize < Formula
     regex(%r{^kustomize/v?(\d+(?:\.\d+)+)$}i)
   end
 
-
   depends_on "go" => :build
 
   def install

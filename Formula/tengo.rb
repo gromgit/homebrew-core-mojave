@@ -5,7 +5,6 @@ class Tengo < Formula
   sha256 "487331f79a3742fc05817d6210f6fb751b3ade90826910dde634037c60804f4e"
   license "MIT"
 
-
   depends_on "go" => :build
 
   def install

@@ -8,7 +8,6 @@ class GitlabCiLocal < Formula
   license "MIT"
   head "https://github.com/firecow/gitlab-ci-local.git", branch: "master"
 
-
   depends_on "node"
 
   def install

@@ -12,7 +12,6 @@ class SyncGateway < Formula
     strategy :github_latest
   end
 
-
   depends_on "gnupg" => :build
   depends_on "go" => :build
   depends_on "repo" => :build

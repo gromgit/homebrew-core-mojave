@@ -7,7 +7,6 @@ class Minizinc < Formula
   revision 1
   head "https://github.com/MiniZinc/libminizinc.git", branch: "develop"
 
-
   depends_on "cmake" => :build
   depends_on "cbc"
   depends_on "gecode"

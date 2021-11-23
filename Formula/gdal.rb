@@ -10,7 +10,6 @@ class Gdal < Formula
     regex(/href=.*?gdal[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   head do
     url "https://github.com/OSGeo/gdal.git"
     depends_on "doxygen" => :build

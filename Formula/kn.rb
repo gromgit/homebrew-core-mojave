@@ -7,7 +7,6 @@ class Kn < Formula
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
-
   depends_on "go" => :build
 
   def install

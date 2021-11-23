@@ -6,7 +6,6 @@ class Raylib < Formula
   license "Zlib"
   head "https://github.com/raysan5/raylib.git", branch: "master"
 
-
   depends_on "cmake" => :build
 
   on_linux do

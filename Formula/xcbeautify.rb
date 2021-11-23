@@ -7,7 +7,6 @@ class Xcbeautify < Formula
   license "MIT"
   head "https://github.com/thii/xcbeautify.git", branch: "master"
 
-
   depends_on xcode: ["11.4", :build]
 
   def install

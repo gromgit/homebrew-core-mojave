@@ -7,7 +7,6 @@ class Pcl < Formula
   revision 1
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "boost"

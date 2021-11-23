@@ -6,7 +6,6 @@ class Ejdb < Formula
   license "MIT"
   head "https://github.com/Softmotions/ejdb.git"
 
-
   depends_on "cmake" => :build
 
   def install

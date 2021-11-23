@@ -7,7 +7,6 @@ class Tmuxp < Formula
   sha256 "91a73dceda6c6fb700d25e9d21380ab8af4ca84da1e7086a0324f498d409c39f"
   license "MIT"
 
-
   depends_on "python@3.10"
   depends_on "tmux"
 

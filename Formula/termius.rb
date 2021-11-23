@@ -9,7 +9,6 @@ class Termius < Formula
   revision 2
   head "https://github.com/termius/termius-cli.git", branch: "master"
 
-
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "openssl@1.1"

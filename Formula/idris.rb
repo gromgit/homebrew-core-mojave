@@ -6,7 +6,6 @@ class Idris < Formula
   license "BSD-3-Clause"
   head "https://github.com/idris-lang/Idris-dev.git"
 
-
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
   depends_on "ghc@8.8"

@@ -6,7 +6,6 @@ class Pdftoipe < Formula
   license "GPL-2.0-or-later"
   revision 2
 
-
   depends_on "pkg-config" => :build
   depends_on "poppler"
 

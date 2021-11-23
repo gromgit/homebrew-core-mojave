@@ -5,7 +5,6 @@ class Bindfs < Formula
   sha256 "04dd3584a6cdf9af4344d403c62185ca9fab31ce3ae5a25d0101bc10936c68ab"
   license "GPL-2.0-or-later"
 
-
   head do
     url "https://github.com/mpartel/bindfs.git"
 

@@ -5,7 +5,6 @@ class Swiftplantuml < Formula
   sha256 "2ba045c719e11d84bb8951b7e352b34e7d459318505f8fc9b1987328de598dff"
   license "MIT"
 
-
   depends_on xcode: ["12.2", :build]
   depends_on :macos
 

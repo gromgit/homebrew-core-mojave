@@ -11,7 +11,6 @@ class Visp < Formula
     regex(/href=.*?visp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "eigen"

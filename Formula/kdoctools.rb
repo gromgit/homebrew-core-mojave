@@ -18,7 +18,6 @@ class Kdoctools < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake" => [:build, :test]
   depends_on "docbook-xsl" => [:build, :test]
   depends_on "doxygen" => :build

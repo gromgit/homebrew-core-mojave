@@ -7,7 +7,6 @@ class Sail < Formula
   sha256 "fe4e0fe2bee119a9c590587fc4feac129022df945bac14658457f5577602af1d"
   license "GPL-3.0-only"
 
-
   depends_on "rust" => :build
   depends_on "python@3.10"
   depends_on "six"

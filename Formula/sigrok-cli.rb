@@ -10,7 +10,6 @@ class SigrokCli < Formula
     regex(/href=.*?sigrok-cli[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   head do
     url "git://sigrok.org/sigrok-cli", branch: "master"
 

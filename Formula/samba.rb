@@ -13,7 +13,6 @@ class Samba < Formula
     regex(/href=.*?samba[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   # configure requires python3 binary to be present, even when --disable-python is set.
   depends_on "python@3.10" => :build
   depends_on "gnutls"

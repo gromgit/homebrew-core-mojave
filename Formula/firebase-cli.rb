@@ -8,7 +8,6 @@ class FirebaseCli < Formula
   license "MIT"
   head "https://github.com/firebase/firebase-tools.git"
 
-
   depends_on "node"
 
   uses_from_macos "expect" => :test

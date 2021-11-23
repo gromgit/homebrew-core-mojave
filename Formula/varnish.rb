@@ -12,7 +12,6 @@ class Varnish < Formula
     regex(/href=.*?varnish[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "docutils" => :build
   depends_on "graphviz" => :build
   depends_on "pkg-config" => :build

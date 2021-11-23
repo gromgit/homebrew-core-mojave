@@ -6,7 +6,6 @@ class Gspell < Formula
   license "LGPL-2.1-or-later"
   revision 4
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gtk-doc" => :build

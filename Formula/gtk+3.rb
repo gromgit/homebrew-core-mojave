@@ -11,7 +11,6 @@ class Gtkx3 < Formula
     regex(/gtk\+[._-](3\.([0-8]\d*?)?[02468](?:\.\d+)*?)\.t/i)
   end
 
-
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build

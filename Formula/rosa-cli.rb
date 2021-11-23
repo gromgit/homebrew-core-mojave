@@ -12,7 +12,6 @@ class RosaCli < Formula
     regex(%r{href=.*?/tag/v?(\d+\.\d+\.\d+)["' >]}i)
   end
 
-
   depends_on "go" => :build
   depends_on "awscli"
 

@@ -12,7 +12,6 @@ class PamU2f < Formula
     regex(/href=.*?pam_u2f[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-
   depends_on "asciidoc" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build

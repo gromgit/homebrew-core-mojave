@@ -11,7 +11,6 @@ class Task < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "gnutls"
 

@@ -13,7 +13,6 @@ class Nginx < Formula
     regex(%r{nginx[._-]v?(\d+(?:\.\d+)+)</a>\nmainline version}i)
   end
 
-
   depends_on "openssl@1.1"
   depends_on "pcre"
 

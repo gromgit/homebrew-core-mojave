@@ -6,7 +6,6 @@ class Zurl < Formula
   license "GPL-3.0-or-later"
   revision 3
 
-
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => :test
   depends_on "qt@5"

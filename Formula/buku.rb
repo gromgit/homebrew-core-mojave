@@ -9,7 +9,6 @@ class Buku < Formula
   revision 1
   head "https://github.com/jarun/buku.git", branch: "master"
 
-
   depends_on "rust" => :build
   depends_on "openssl@1.1"
   depends_on "python@3.9"

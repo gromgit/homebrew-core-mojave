@@ -11,7 +11,6 @@ class V2ray < Formula
     strategy :github_latest
   end
 
-
   depends_on "go" => :build
 
   resource "geoip" do

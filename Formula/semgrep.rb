@@ -14,7 +14,6 @@ class Semgrep < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "coreutils"=> :build
   depends_on "dune" => :build

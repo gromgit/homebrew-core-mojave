@@ -10,7 +10,6 @@ class Antlr4CppRuntime < Formula
     regex(/href=.*?antlr4-cpp-runtime[._-]v?(\d+(?:\.\d+)+)-source\.zip/i)
   end
 
-
   depends_on "cmake" => :build
 
   on_linux do

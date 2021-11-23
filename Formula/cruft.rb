@@ -8,7 +8,6 @@ class Cruft < Formula
   license "MIT"
   head "https://github.com/cruft/cruft.git", branch: "master"
 
-
   depends_on "poetry" => :build
   depends_on "python@3.9"
   depends_on "six"

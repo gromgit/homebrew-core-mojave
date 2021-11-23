@@ -13,7 +13,6 @@ class Swift < Formula
     regex(/Releases<.*?>Swift v?(\d+(?:\.\d+)+)</im)
   end
 
-
   keg_only :provided_by_macos
 
   depends_on "cmake" => :build

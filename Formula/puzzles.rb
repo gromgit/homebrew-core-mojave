@@ -17,7 +17,6 @@ class Puzzles < Formula
     regex(/version v?(\d{6,8})(?:\.[a-z0-9]+)?/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "halibut" => :build
 

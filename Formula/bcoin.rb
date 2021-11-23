@@ -8,7 +8,6 @@ class Bcoin < Formula
   license "MIT"
   head "https://github.com/bcoin-org/bcoin.git", branch: "master"
 
-
   depends_on "python@3.10" => :build
   depends_on "node@16"
 

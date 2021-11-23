@@ -6,7 +6,6 @@ class Conftest < Formula
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/conftest.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

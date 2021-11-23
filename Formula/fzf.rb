@@ -6,7 +6,6 @@ class Fzf < Formula
   license "MIT"
   head "https://github.com/junegunn/fzf.git"
 
-
   depends_on "go" => :build
 
   uses_from_macos "ncurses"

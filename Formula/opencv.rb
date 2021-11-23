@@ -11,7 +11,6 @@ class Opencv < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ceres-solver"

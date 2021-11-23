@@ -5,7 +5,6 @@ class GitLfs < Formula
   sha256 "7179a357a0d0e7beaba217489f7f784ca8717035a5e3f1ee91ca7193ba3a35f3"
   license "MIT"
 
-
   depends_on "go" => :build
   depends_on "ronn" => :build
   depends_on "ruby" => :build

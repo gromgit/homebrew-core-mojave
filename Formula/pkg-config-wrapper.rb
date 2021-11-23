@@ -11,7 +11,6 @@ class PkgConfigWrapper < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-
   depends_on "go" => :build
   depends_on "pkg-config"
 

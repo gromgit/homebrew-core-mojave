@@ -10,7 +10,6 @@ class Katago < Formula
     strategy :github_latest
   end
 
-
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "libzip"

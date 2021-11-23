@@ -6,7 +6,6 @@ class Kahip < Formula
   license "MIT"
   head "https://github.com/KaHIP/KaHIP.git"
 
-
   depends_on "cmake" => :build
   depends_on "open-mpi"
 

@@ -7,7 +7,6 @@ class ConsulTemplate < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul-template.git", branch: "master"
 
-
   depends_on "go" => :build
 
   def install

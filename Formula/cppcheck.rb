@@ -6,7 +6,6 @@ class Cppcheck < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
-
   depends_on "cmake" => :build
   depends_on "python@3.9" => [:build, :test]
   depends_on "pcre"

@@ -8,7 +8,6 @@ class Flintrock < Formula
   license "Apache-2.0"
   revision 1
 
-
   depends_on "rust" => :build
   depends_on "python@3.9"
   depends_on "six"
