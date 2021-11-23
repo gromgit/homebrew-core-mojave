@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Load personal standard shell library
+# shellcheck source=/dev/null
+if [[ -r ~/etc/lib.bash ]]; then . ~/etc/lib.bash; else echo "FATAL ERROR: ~/etc/lib.bash not found." ; exit 1 ; fi
+need_progs brew
+
+shopt -s lastpipe
+
+main=homebrew-core
+build_dir=~/Library/Caches/build-core-mojave
+url=https://github.com/gromgit/homebrew-core-mojave
+
+cd "$(dirname "$0")" || fatal "Can't cd into $(dirname "$0")"
+
+if [[ $# -eq 0 ]]; then
+  # Automatically select all non-bottled formulae
+  work=()
+  grep -L "bottle do" ${main}/Formula/*.rb | while read -r i; do
+    work+=("$(basename "$i" .rb)")
+  done
+  set -- "${work[@]}"
+fi
+
+# Sort by dependency tree
+# shellcheck disable=SC2046
+set -- $(brew deps -n --include-build --include-test --union "$@")
+
+for f in "$@"; do
+  formula=${main}/Formula/${f}.rb
+  installed=""
+  [[ -d ${HOMEBREW_CELLAR}/${f} ]] && installed=yes
+  if grep -q 'depends_on :linux' "$formula"; then
+    warn "Skipping $f - Linux-only"
+    continue
+  fi
+  grep -q 'disable!' "$formula" | while read -r _ f1 f2 _; do
+    if [[ $f1 == "date:" && ! $f2 > $(date +%Y-%m-d) ]]; then
+      warn "Skipping $f - disabled"
+      continue
+    fi
+  done
+  if ! grep -q "bottle do" "${main}/Formula/${f}.rb"; then
+    (
+      mkdir -p "$build_dir/$f"
+      cd "$build_dir/$f" || fatal "Can't cd into $(dirname "$0")"
+      #cmd brew test-bot --skip-setup --skip-online-checks --publish "$f"
+      cmd brew test-bot --only-formulae --publish --root-url="${url}/releases/download/${f}" "$f"
+    ) &&
+    cmd brew upload-mojave &&
+    rm -f "${HOMEBREW_CELLAR}"/*.tar &&
+    cmd git -C "$main" push
+  fi
+  # Clean up manually afterwards
+  if [[ -n $installed ]]; then
+    cmd brew rm "$i" && cmd brew autoremove
+  fi
+done

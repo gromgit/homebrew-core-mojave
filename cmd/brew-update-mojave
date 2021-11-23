@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# Load personal standard shell library
+# shellcheck source=/dev/null
+if [[ -r ~/etc/lib.bash ]]; then . ~/etc/lib.bash; else echo "FATAL ERROR: ~/etc/lib.bash not found." ; exit 1 ; fi
+need_progs brew sw_vers
+
+os_name() {
+  case "$(sw_vers -productVersion)" in
+    12.*) echo "monterey";;
+    11.*) echo "big_sur";;
+    10.15.*) echo "catalina";;
+    10.14.*) echo "mojave";;
+    10.13.*) echo "high_sierra";;
+    10.12.*) echo "sierra";;
+    10.11.*) echo "el_capitan";;
+    10.10.*) echo "yosemite";;
+    10.9.*) echo "mavericks";;
+    10.8.*) echo "mountain_lion";;
+    10.7.*) echo "lion";;
+    10.6.*) echo "snow_leopard";;
+    *) echo "unknown";;
+  esac
+}
+
+anti_depends=(
+  ":linux"
+  "macos: :catalina"
+)
+
+my_os=$(os_name)
+repo=$(brew --repo homebrew/core)
+cd "$(dirname "$repo")" || fatal "Unable to cd to $(dirname "$repo")"
+main=${repo##*/}
+main_url=https://github.com/gromgit/homebrew-core-${my_os}
+real=homebrew-realcore
+
+[[ -d $real ]] || mv "$main" "$real"
+[[ -d $main ]] || brew tap homebrew/core "$main_url"
+
+find "$real"/ \( -name .git -o -name Formula \) -prune -o \! -type d -print | while read -r f; do
+  f2=${f/${real}/${main}}
+  [[ $f -nt $f2 ]] && {
+    mkdir -p "$(dirname "$f2")"
+    cp -avf "$f" "$f2"
+  }
+done
+
+mkdir -p "$main"/Formula
+# Copy over everything first
+find "$real"/Formula -type f -print | while read -r f; do
+  f2=${f/${real}/${main}}
+  if [[ $f -nt $f2 ]]; then
+    if grep -Eq "sha256 .*(${my_os}|all):" "$f"; then
+      cp -avf "$f" "$f2"
+    else
+      # Strip out bottle blocks if we don't find our OS listed
+      echo "Stripping $f2" >&2
+      sed '/bottle do/,/end/d' < "$f" > "$f2"
+      brew style --fix "$f2"
+    fi
+  fi
+done
+# Now drop everything that can't be built
+for drop in "${anti_depends[@]}"; do
+  info "Dropping $drop"
+  grep -rl "depends_on $drop" "$main"/Formula | xargs rm -fv
+done
+
+(
+  cd "$main" || fatal "update: Can't cd to $main"
+  # Automatically commit new files
+  git status -s | grep -F \? | while read -r _ f; do
+    git add "$f"
+  done
+  # Automatically deal with deleted files (skipping the sticky ones)
+  find ./* .github/* \! -type d | while read -r f; do
+    if [[ ! -e ../"$real/$f" && ! -k "$f" ]]; then
+      git rm -fr "$f"
+    fi
+  done
+  # Update the main repo
+  git commit -m "Updates from $real $(date +%Y%m%d.%H%M%S)"
+  git push
+)
