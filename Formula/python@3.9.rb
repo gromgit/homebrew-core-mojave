@@ -10,6 +10,12 @@ class PythonAT39 < Formula
     regex(%r{href=.*?v?(3\.9(?:\.\d+)*)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.9"
+    rebuild 1
+    sha256 mojave: "79fb100f316aa6dc79a629ab3217daeedab33306348a1e410238ef0405556771"
+  end
+
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? only_if: :clt_installed
