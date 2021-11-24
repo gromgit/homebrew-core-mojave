@@ -1,16 +1,10 @@
 class BuildpulseTestReporter < Formula
   desc "Connect your CI to BuildPulse to detect, track, and rank flaky tests"
   homepage "https://buildpulse.io"
-  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "ead1db68b7826eeb302cebf0bdacd25b835b896b43883b57c94a74c0d96fd0cd"
+  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "2defba6007ff0d90d40f915ea06e6f9df79c92b8e49d609eb2321a17e72b4efe"
   license "MIT"
   head "https://github.com/buildpulse/test-reporter.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildpulse-test-reporter"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d11167797df91c037581f77092f7755f4c7538cf0036f41ee9818e7ae0c876e1"
-  end
 
   depends_on "go" => :build
 

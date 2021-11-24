@@ -22,11 +22,6 @@ os_name() {
   esac
 }
 
-anti_depends=(
-  ":linux"
-  "macos: :catalina"
-)
-
 my_os=$(os_name)
 repo=$(brew --repo homebrew/core)
 cd "$(dirname "$repo")" || fatal "Unable to cd to $(dirname "$repo")"
@@ -60,18 +55,9 @@ find "$real"/Formula -type f -print | while read -r f; do
     fi
   fi
 done
-# Now drop everything that can't be built
-for drop in "${anti_depends[@]}"; do
-  info "Dropping $drop"
-  grep -rl "depends_on $drop" "$main"/Formula | xargs rm -fv
-done
 
 (
   cd "$main" || fatal "update: Can't cd to $main"
-  # Automatically commit new files
-  git status -s | grep -F \? | while read -r _ f; do
-    git add "$f"
-  done
   # Automatically deal with deleted files (skipping the sticky ones)
   find ./* .github/* \! -type d | while read -r f; do
     if [[ ! -e ../"$real/$f" && ! -k "$f" ]]; then
@@ -79,6 +65,7 @@ done
     fi
   done
   # Update the main repo
+  git add .github ./*
   git commit -m "Updates from $real $(date +%Y%m%d.%H%M%S)"
   git push
 )

@@ -1,19 +1,10 @@
 class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https://julialang.org/"
-  url "https://github.com/JuliaLang/julia/releases/download/v1.6.3/julia-1.6.3.tar.gz"
-  sha256 "2593def8cc9ef81663d1c6bfb8addc3f10502dd9a1d5a559728316a11dea2594"
+  url "https://github.com/JuliaLang/julia/releases/download/v1.6.4/julia-1.6.4.tar.gz"
+  sha256 "a4aa921030250f58015201e28204bff604a007defc5a379a608723e6bb1808d4"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
-  revision 3
   head "https://github.com/JuliaLang/julia.git"
-
-  bottle do
-    sha256 cellar: :any,                 monterey:     "148af476cd414d54a2e905ab2e768c49b40736921e14eb0bb14a76cf873dc885"
-    sha256 cellar: :any,                 big_sur:      "b0944c27e4ab5a11289d89ab6417ecb692ed89dbba0696366f9886f75fa0da5a"
-    sha256 cellar: :any,                 catalina:     "491f43d467ff4cdd51b2ef5bf8ec0c122a334f2279df5b1e89954b0a8fc4179d"
-    sha256 cellar: :any,                 mojave:       "8330cf34dd9966a4fa31ef99a843024a50aab029a969f8d5f2c647e8614672bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8629b4e48728a971ba0a6dfc0272fbcba573d42ee09fab8b3cbd7902d28dc97e"
-  end
 
   depends_on "python@3.9" => :build
   # https://github.com/JuliaLang/julia/issues/36617

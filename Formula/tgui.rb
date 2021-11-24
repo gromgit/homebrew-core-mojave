@@ -1,18 +1,9 @@
 class Tgui < Formula
   desc "GUI library for use with sfml"
   homepage "https://tgui.eu"
-  url "https://github.com/texus/TGUI/archive/v0.9.1.tar.gz"
-  sha256 "6b08f14974be3ef843dacb6200efa39d1735dafac1f502fb604bb1f1de4d312d"
+  url "https://github.com/texus/TGUI/archive/v0.9.2.tar.gz"
+  sha256 "9f1835d9be1924694b6399fa1e7fe079e8abebb77ad602b8b2fea2572dfbe12b"
   license "Zlib"
-
-  bottle do
-    sha256 cellar: :any, arm64_monterey: "8b941cab3a40750fc3764adb2d59eb09084e1bfb05f93a535f79554f72e295db"
-    sha256 cellar: :any, arm64_big_sur:  "b58a6d6ff3990f2afb85ea39073e00ce31d91c16d7c88c6c6f1c4f22c4f4f674"
-    sha256 cellar: :any, monterey:       "5e3d966222709fa8d3e5b816c9c4b7e58c8efdd4edb35a7f93404f85cf4da8d1"
-    sha256 cellar: :any, big_sur:        "43215426baf657e7f73aa0751c3c952d35c489025065ed530223353d254c6556"
-    sha256 cellar: :any, catalina:       "7e8a817332ba8a35526ee7dd0a499d4136780f54d905f4abd10fea287a185662"
-    sha256 cellar: :any, mojave:         "4f003c5fc1520d427c657af818d88168cba1eeda04652a8cc016d10ef3214b23"
-  end
 
   depends_on "cmake" => :build
   depends_on "sfml"

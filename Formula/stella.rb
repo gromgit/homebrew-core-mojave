@@ -1,18 +1,10 @@
 class Stella < Formula
   desc "Atari 2600 VCS emulator"
   homepage "https://stella-emu.github.io/"
-  url "https://github.com/stella-emu/stella/releases/download/6.5.3/stella-6.5.3-src.tar.xz"
-  sha256 "b49d5e5a5aa872e1f4b6f24eabd72304abdd577801d6ec349760c73b99e7f14d"
+  url "https://github.com/stella-emu/stella/releases/download/6.6/stella-6.6-src.tar.xz"
+  sha256 "d481efc6d27b5294565dfcc10983de2dbc4db8a59932a678ffdb4d2404b8c207"
   license "GPL-2.0-or-later"
   head "https://github.com/stella-emu/stella.git", branch: "master"
-
-  bottle do
-    sha256 cellar: :any,                 monterey:     "0c17c5a1afa5fc194644ab3fcd3f71053f68e8bc974fdf4c4facd81288c574a3"
-    sha256 cellar: :any,                 big_sur:      "413ec06db90b9e5fd3f704e8181e50d4d39c88ff579c0e9dc523ee74b2ad3558"
-    sha256 cellar: :any,                 catalina:     "7765c2e205dc182aab86de151356ae6a586585a076cea5f9d0d82708447a0427"
-    sha256 cellar: :any,                 mojave:       "228ac66abf639dce733dce76c6cde14c122c84c12476c1663a64243ac609994a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6d45dce649baa67cfad4b1f916a059b3c77c012513475afd0b95a13a8f092176"
-  end
 
   depends_on xcode: :build
   depends_on "libpng"

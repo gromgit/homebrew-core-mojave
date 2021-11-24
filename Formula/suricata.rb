@@ -1,21 +1,13 @@
 class Suricata < Formula
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata.io"
-  url "https://www.openinfosecfoundation.org/download/suricata-6.0.3.tar.gz"
-  sha256 "daf134bb2d7c980035e9ae60f7aaf313323a809340009f26e48110ccde81f602"
+  url "https://www.openinfosecfoundation.org/download/suricata-6.0.4.tar.gz"
+  sha256 "a8f197e33d1678689ebbf7bc1abe84934c465d22c504c47c2c7e9b74aa042d0d"
   license "GPL-2.0-only"
 
   livecheck do
     url "https://suricata.io/download/"
     regex(/href=.*?suricata[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    sha256 arm64_big_sur: "d0561f0b1d46352fa3fd8978595f33db686fedb8b8477aeae7933afdf8170212"
-    sha256 big_sur:       "4094fdeeaf0aa94612e22df2d45475f0e8c4063d8e17acf187c40f1af3943445"
-    sha256 catalina:      "7e9a56df59a2627ae561819f21213583d2b68156bcfbf0a07de2b96db7f67f66"
-    sha256 mojave:        "0d03f52c6826445b736021546b5fe8df9baeb06f41e4c4ebdc66e030229213f9"
-    sha256 x86_64_linux:  "2dfc82962d8f0dace13037232917a5bac8a2e7a2f096025d5106db9291590485"
   end
 
   depends_on "pkg-config" => :build
@@ -43,8 +35,15 @@ class Suricata < Formula
   end
 
   resource "simplejson" do
-    url "https://files.pythonhosted.org/packages/49/45/a16db4f0fa383aaf0676fb7e3c660304fe390415c243f41a77c7f917d59b/simplejson-3.17.2.tar.gz"
-    sha256 "75ecc79f26d99222a084fbdd1ce5aad3ac3a8bd535cd9059528452da38b68841"
+    url "https://files.pythonhosted.org/packages/7a/47/c7cc3d4ed15f09917838a2fb4e1759eafb6d2f37ebf7043af984d8b36cf7/simplejson-3.17.6.tar.gz"
+    sha256 "cf98038d2abf63a1ada5730e91e84c642ba6c225b0198c3684151b1f80c5f8a6"
+  end
+
+  # Fix -flat_namespace being used on Big Sur and later.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    directory "libhtp"
   end
 
   def install

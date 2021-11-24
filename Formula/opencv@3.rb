@@ -1,18 +1,9 @@
 class OpencvAT3 < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://github.com/opencv/opencv/archive/3.4.15.tar.gz"
-  sha256 "b1e8470b18e9e793bf70b4ae051bbc9bf81fa45f8cbfee1e6c88858c90be8ff7"
+  url "https://github.com/opencv/opencv/archive/3.4.16.tar.gz"
+  sha256 "5e37b791b2fe42ed39b52d9955920b951ee42d5da95f79fbc9765a08ef733399"
   license "BSD-3-Clause"
-
-  bottle do
-    sha256 arm64_big_sur: "30f24b7ae1e2d3f63072e0abd4cd8c110063766abee4ea59eb885eb9a3137e7f"
-    sha256 monterey:      "58e42ca68cb65ecaf614222e331376be8a50562c705ad790acb73dfc96f88845"
-    sha256 big_sur:       "d7430cf4a9378666322b6d5fae8c9804314e7e91e1ceff20739fd133d6968c2b"
-    sha256 catalina:      "36a4597c6d285a881ae976f26b31293242865a294d67db9ae91e1c75096bc81d"
-    sha256 mojave:        "73d93954772b452010c15441e87ab429cfaed0185478463eb7d601e0fbb521a2"
-    sha256 x86_64_linux:  "eeda9a7dad6d03a9070df0704c47bdbb8aeffd85ff750a13f9c4b20f168f8200"
-  end
 
   keg_only :versioned_formula
 
@@ -32,8 +23,8 @@ class OpencvAT3 < Formula
   depends_on "tbb"
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/3.4.15.tar.gz"
-    sha256 "5004024f2e92e520d324f235dc30a80878fd501fb03ca1f98ca3cbd53d27b6fb"
+    url "https://github.com/opencv/opencv_contrib/archive/3.4.16.tar.gz"
+    sha256 "92b4f6ab8107e9de387bafc3c7658263e5c6be68554d6086b37a2cb168e332c5"
   end
 
   # tbb 2021 support. Backport of

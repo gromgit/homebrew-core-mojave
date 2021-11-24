@@ -1,24 +1,25 @@
 class Gperftools < Formula
   desc "Multi-threaded malloc() and performance analysis tools"
   homepage "https://github.com/gperftools/gperftools"
-  url "https://github.com/gperftools/gperftools/releases/download/gperftools-2.9.1/gperftools-2.9.1.tar.gz"
-  sha256 "ea566e528605befb830671e359118c2da718f721c27225cbbc93858c7520fee3"
   license "BSD-3-Clause"
+  revision 1
+
+  stable do
+    url "https://github.com/gperftools/gperftools/releases/download/gperftools-2.9.1/gperftools-2.9.1.tar.gz"
+    sha256 "ea566e528605befb830671e359118c2da718f721c27225cbbc93858c7520fee3"
+
+    # Fix segfaults on Monterey.
+    # https://github.com/gperftools/gperftools/pull/1315
+    patch do
+      url "https://github.com/gperftools/gperftools/commit/1000c64559ad5f624bec4d08657209d755c0a02a.patch?full_index=1"
+      sha256 "93f58cb6fe6d0e22a7aadc1ad2ee60a45743e862e398387213024acad83de319"
+    end
+  end
 
   livecheck do
     url :stable
     strategy :github_latest
     regex(%r{href=.*?/tag/gperftools[._-]v?(\d+(?:\.\d+)+)["' >]}i)
-  end
-
-  bottle do
-    sha256 cellar: :any,                 arm64_monterey: "225e48e3d56d64dc9161d286a142a6f410a0ebc5572127cc3c1e51e426352fbd"
-    sha256 cellar: :any,                 arm64_big_sur:  "a8711aa1a9496a1c801b10bcfc3572fc204be3af52f2455a0a3d9e1b2d924aae"
-    sha256 cellar: :any,                 monterey:       "43ee00f578719526821be22dfa6c6ee8637a65206f9862056bd6a7d5c0d6f6df"
-    sha256 cellar: :any,                 big_sur:        "db13bfa856a699c5e74e95ee81722cc76b38bb9dcca1d10cebe2eed17888ff68"
-    sha256 cellar: :any,                 catalina:       "df9901c12be430101b403c8024a4dc5b5f5d0f718e4ace970f52bc68b17a3659"
-    sha256 cellar: :any,                 mojave:         "9976b82f86958d3ad6924d138d138d5bddbc2bcc6eb16ea44c4255ed9cb889b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35bdc71ea25b996acec0752c3dbb6a68b1f56529f577f08f1a32556893ce70ca"
   end
 
   head do
@@ -73,5 +74,20 @@ class Gperftools < Formula
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-ltcmalloc", "-o", "test"
     system "./test"
+
+    (testpath/"segfault.c").write <<~EOS
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main()
+      {
+        void *ptr = malloc(128);
+        if (ptr == NULL) return 1;
+        free(ptr);
+        return 0;
+      }
+    EOS
+    system ENV.cc, "segfault.c", "-L#{lib}", "-ltcmalloc", "-o", "segfault"
+    system "./segfault"
   end
 end

@@ -7,12 +7,6 @@ class Autopep8 < Formula
   sha256 "44f0932855039d2c15c4510d6df665e4730f2b8582704fa48f9c55bd3e17d979"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autopep8"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8a03bd5ba4031f71e493f0427c652a9254b245bd519df5ce35a667693f89bb5e"
-  end
-
   depends_on "python@3.10"
 
   resource "pycodestyle" do
@@ -30,7 +24,7 @@ class Autopep8 < Formula
   end
 
   test do
-    output = shell_output("echo \"x='homebrew'\" | #{bin}/autopep8 -")
+    output = pipe_output("#{bin}/autopep8 -", "x='homebrew'")
     assert_equal "x = 'homebrew'", output.strip
   end
 end

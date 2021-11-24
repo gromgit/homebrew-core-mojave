@@ -1,19 +1,14 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
   homepage "https://github.com/onflow/cadence"
-  url "https://github.com/onflow/cadence/archive/v0.20.0.tar.gz"
-  sha256 "8cde15afedde078cc1fc9499a4b3acfe4222e676d565ad2e36d0a166b31f932d"
+  url "https://github.com/onflow/cadence/archive/v0.20.1.tar.gz"
+  sha256 "728849ea1a90764753b1c859c7b3037bf2be68703826406914f94f189c05796c"
   license "Apache-2.0"
   head "https://github.com/onflow/cadence.git", branch: "master"
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadence"
-    sha256 cellar: :any_skip_relocation, mojave: "8c2bfc0804c004e75963386ac1c9c01adfd7cc4b67bef037050afe9825afee29"
   end
 
   depends_on "go" => :build

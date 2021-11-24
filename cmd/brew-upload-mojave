@@ -4,7 +4,7 @@
 if [[ -r ~/etc/lib.bash ]]; then . ~/etc/lib.bash; else echo "FATAL ERROR: ~/etc/lib.bash not found." ; exit 1 ; fi
 need_progs brew rsync
 
-bottle_root=~/Library/Caches/build_core
+bottle_root=~/Library/Caches/build-core-mojave
 
 cd "$bottle_root" || fatal "Can't cd into $bottle_root"
 mkdir -p .done

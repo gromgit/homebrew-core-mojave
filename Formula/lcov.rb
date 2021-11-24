@@ -10,21 +10,8 @@ class Lcov < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/linux-test-project/lcov.git"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "157d247e5fb878c1b0a4e58387a6f6f868df1e0b1cee820511cad5a34492abd8"
-    sha256 cellar: :any_skip_relocation, big_sur:       "c3fe31eeb887f60b1e349c2fa13c09059cc75dbe49471a7da41a5cfc07dc3c01"
-    sha256 cellar: :any_skip_relocation, catalina:      "1c84487473440a6f7971ecf25f2b8b5022d23a230d16e863825b43944788e3be"
-    sha256 cellar: :any_skip_relocation, mojave:        "41ebe534e6bf4166e88d0eb59ac04d28df457a86fb514fc610ca485386bd06b4"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "9c3a3586283d61ae1f1ce30145b613ebdc50e28a7656cf4b4f4e935408f4c147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ebcc60880b409d88b26b9d2b90938997b2ea6c9b0400684d166d920e547004"
-  end
-
   uses_from_macos "perl"
   uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "gcc" => :test
-  end
 
   resource "JSON" do
     url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.02.tar.gz"
@@ -34,6 +21,13 @@ class Lcov < Formula
   resource "PerlIO::gzip" do
     url "https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz"
     sha256 "4848679a3f201e3f3b0c5f6f9526e602af52923ffa471a2a3657db786bd3bdc5"
+  end
+
+  # Temporary patch. Use correct c++filt flag. Upstreamed at
+  # https://github.com/linux-test-project/lcov/pull/125
+  patch do
+    url "https://github.com/linux-test-project/lcov/commit/462f71ddbad726b2c9968fefca31d60a9f0f745f.patch?full_index=1"
+    sha256 "73414e8f29d5c703c6c057d202fdd73efb07df05ae35c7daa5c48a4b2396e55b"
   end
 
   def install
@@ -62,12 +56,6 @@ class Lcov < Formula
   test do
     gcc = ENV.cc
     gcov = "gcov"
-
-    on_macos do
-      gcc_major_ver = Formula["gcc"].any_installed_version.major
-      gcc = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
-      gcov = Formula["gcc"].opt_bin/"gcov-#{gcc_major_ver}"
-    end
 
     (testpath/"hello.c").write <<~EOS
       #include <stdio.h>
