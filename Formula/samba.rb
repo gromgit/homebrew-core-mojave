@@ -13,6 +13,12 @@ class Samba < Formula
     regex(/href=.*?samba[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/samba"
+    rebuild 1
+    sha256 mojave: "f7f7cbda65462aaab0eb8d3b4b1cd92b2a2c353c291f54022769158cabaa5f9e"
+  end
+
   # configure requires python3 binary to be present, even when --disable-python is set.
   depends_on "python@3.10" => :build
   depends_on "gnutls"
