@@ -15,6 +15,12 @@ class Cmake < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6973ff47b45460b149415a13a24b29aa35418acc2a3ae2f193ab802b5e4ff338"
+  end
+
   uses_from_macos "ncurses"
 
   on_linux do
