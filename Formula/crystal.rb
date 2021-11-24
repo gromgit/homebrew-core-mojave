@@ -18,6 +18,12 @@ class Crystal < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crystal"
+    rebuild 1
+    sha256 mojave: "61b535b59fc154190005c6c67193288c8fd51d374bb8df53fb81356b7d9ec8f0"
+  end
+
   head do
     url "https://github.com/crystal-lang/crystal.git"
 
