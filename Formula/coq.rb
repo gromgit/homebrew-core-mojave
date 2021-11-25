@@ -11,6 +11,12 @@ class Coq < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coq"
+    rebuild 1
+    sha256 mojave: "7dadf2dd908dbb44364a26d5ac7805db2d7ee3c06e3c4be93f52888a67640b3c"
+  end
+
   depends_on "dune" => :build
   depends_on "ocaml-findlib" => :build
   depends_on "ocaml"
