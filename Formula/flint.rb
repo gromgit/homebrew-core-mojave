@@ -6,6 +6,12 @@ class Flint < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/wbhart/flint2.git", branch: "trunk"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flint"
+    rebuild 1
+    sha256 mojave: "20fd9e5ee8f2f0130e3312732ecfa492af0ea1d85434c4c8123e208d79b6f4bd"
+  end
+
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ntl"
