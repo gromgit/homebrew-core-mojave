@@ -5,6 +5,12 @@ class Nqp < Formula
   sha256 "48135bc1b3ce22c1c57ccef46531e7688eec83d6b905b502ffcefd6c23294b49"
   license "Artistic-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nqp"
+    rebuild 1
+    sha256 mojave: "78c53457b5479ba3a4701a890d7c7f02e7b07a6b84e5a2287ea2596745124e54"
+  end
+
   depends_on "libtommath"
   depends_on "moarvm"
 
