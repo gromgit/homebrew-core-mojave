@@ -10,6 +10,12 @@ class Alluxio < Formula
     regex(%r{href=["']?v?(\d+(?:[.-]\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alluxio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1eb657e00fd583900072e98e31d19f620b6f7cf04f9b165ea7f32110de7f9833"
+  end
+
   # Alluxio requires Java 8 or Java 11
   depends_on "openjdk@11"
 
