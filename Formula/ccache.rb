@@ -6,6 +6,12 @@ class Ccache < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/ccache/ccache.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ccache"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3503f88229a6c3a007aa98009e9c8d9c1e60a40091f2507bb2eb7dc034e2def8"
+  end
+
   depends_on "asciidoctor" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
