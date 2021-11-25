@@ -10,6 +10,12 @@ class Dialog < Formula
     regex(/href=.*?dialog[._-]v?(\d+(?:\.\d+)+-\d{6,8})\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dialog"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8ce0ea1a0a8909d2a9b93d70d1b2150a733680fc888f771e0ed0e3b88ece002b"
+  end
+
   uses_from_macos "ncurses"
 
   def install
