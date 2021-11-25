@@ -14,6 +14,7 @@ class Gcab < Formula
 
   bottle do
     sha256 arm64_big_sur: "df16b825f3c8acb716846e922e256b00ecd638b59d0676a4e89e92821886d6eb"
+    sha256 monterey:      "ac0c4fffbfc00d88a05f2a2ba67e4e939b526e475a1b89ee9918f8c5943b076d"
     sha256 big_sur:       "1d850c754fe6688bc5534637a9888215163d187569f80a4b57fc82f0e74aa14b"
     sha256 catalina:      "7ed919ea9c7d4ec04f9d5f361f8628936e016318475fec26fdf6ef5ea56491cc"
     sha256 mojave:        "c9ef02142502a47b006db735b87fe7d55611d46ecc087c697d3142ce8bd9c27a"

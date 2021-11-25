@@ -13,6 +13,7 @@ class GstPluginsGood < Formula
 
   bottle do
     sha256 arm64_big_sur: "f686a1b5f9281dc17de276578ade425e0e3448f0944e6cdeba82fc55a1bae336"
+    sha256 monterey:      "7d3edc03733cf64a394c9baac6e819241d9061243f0de55354e264fb3a7d3216"
     sha256 big_sur:       "0572b3c244f34b8772d7903e5e1c57a615550de15668f431dc306bc50f3af9e8"
     sha256 catalina:      "3adb6e29fbf82dc68d7e19898ab79757d46d648c6f58626133987d0217b96d1c"
     sha256 mojave:        "635e23e10b8a6a987ec61f12821bcd619b7d9692f4151ee21f30789c492d7e5d"

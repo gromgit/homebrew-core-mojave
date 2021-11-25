@@ -7,6 +7,7 @@ class MscGenerator < Formula
 
   bottle do
     sha256 cellar: :any, arm64_big_sur: "4002f6c6b3339dd353f0af7a396a1b86e89f480c2cbcd8b643e1c0bb5926d0b1"
+    sha256 cellar: :any, monterey:      "0cf3951d0ba12ffe6b5e2b4dcba2e2f0b69e471ac3b4f2e100dd101d281d2835"
     sha256 cellar: :any, big_sur:       "90dcd8501b61dde64a68603e2e707b27541acdcc6f6a293bfad99abb99f179d7"
     sha256 cellar: :any, catalina:      "bf2fe8c703116ca931ae8f85916fc056225b4253a19b985d04237ddb76e1e776"
     sha256 cellar: :any, mojave:        "518e35b8b95c33b78c72fcfe3a4a4d75586963719f2a7c21437cb7cd311dbdbd"

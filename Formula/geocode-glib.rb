@@ -8,6 +8,7 @@ class GeocodeGlib < Formula
 
   bottle do
     sha256 cellar: :any,                 arm64_big_sur: "878e80675652cec9dd995eb7d896681db3203a8567cce2b35577fbc952cb8be0"
+    sha256 cellar: :any,                 monterey:      "f45a9fa997d9a9a9b99b9e92e847c2d139881e60bcb8aee458dac82c2d5364a8"
     sha256 cellar: :any,                 big_sur:       "7a36865ee432311c7a36e3541a430a1f32c80935e6b16e11d5454c09a8f773de"
     sha256 cellar: :any,                 catalina:      "52ce343c52ad20417f87bde9889b0086768b657874d94fd39eb54141f20fcedd"
     sha256 cellar: :any,                 mojave:        "e7d30594593bc5fcc430f548d304ec88ff053ab5eebcd6f4bd696fd8b0c4acc7"

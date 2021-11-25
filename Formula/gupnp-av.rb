@@ -6,6 +6,7 @@ class GupnpAv < Formula
 
   bottle do
     sha256 arm64_big_sur: "0eba3a8448818bc514031ca4f2e9c563230436cf384f3301f6baaab7ec979c98"
+    sha256 monterey:      "fbd25ace37381e6e9b87732d678312e6294d178b3a641387c667b7b70f812fa1"
     sha256 big_sur:       "366463a087df79c6303e3e006b1de8c61df120ebdc87807a9e37693f8434fa5c"
     sha256 catalina:      "63a5e6ccc3cc87969fbbfc07714930fb23db1d31ad77f68b6c85d6fa618c2738"
     sha256 mojave:        "77ea79988421bf83540eada6ce6fef863f06b402b074edf5f5b20abbd47361ca"

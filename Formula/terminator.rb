@@ -9,6 +9,7 @@ class Terminator < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "8c177f5b4ceed9612e512051ae5ce29a4d04a9d26e942fbe485e4f5053f437e1"
+    sha256 cellar: :any_skip_relocation, monterey:      "cf82ea3cadca21e1ae94e3b2fdb8e3d814f04d33623203797ec08fda18071ba3"
     sha256 cellar: :any_skip_relocation, big_sur:       "8039dfc9e641c81615932afdb6bec92a512e123079974e4d87acbf6bd904a5fb"
     sha256 cellar: :any_skip_relocation, catalina:      "8c257067fdc58cceaa2f4f68fd569aa408db036faff673fe27f3950224745987"
     sha256 cellar: :any_skip_relocation, mojave:        "cbaae7d439b7f9fb6d2149c3fba76eefefb2120aac26504c60ebaab4d842846b"

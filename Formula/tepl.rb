@@ -7,6 +7,7 @@ class Tepl < Formula
 
   bottle do
     sha256 arm64_big_sur: "ffb98f11bf159e2352d8ed7ca0bb4c62c48f4ba5781c7e2757a02ad5458fc1a0"
+    sha256 monterey:      "cec974116423a8d584025acde11cef9b680be26899e18d8dc986cd0d63b04cc5"
     sha256 big_sur:       "b5c8dfff1540875f6bd03ec4a7e58ba68d5df65597e80eb7e469ce88c6bd4175"
     sha256 catalina:      "0c2d2161a8f65a3728e479d26ba2dc736e163b7fe902ec59666d138bfc0de47e"
     sha256 mojave:        "44b4a1c68e07df9275cb2275f6852e6b713e306f764833c620542a2cb741e565"

@@ -7,6 +7,7 @@ class Zim < Formula
   head "https://github.com/zim-desktop-wiki/zim-desktop-wiki.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, monterey:     "cac5007e5857504e22b3021aa8111798ffacf6a34493210b09d21337d4da81dc"
     sha256 cellar: :any_skip_relocation, big_sur:      "cac5007e5857504e22b3021aa8111798ffacf6a34493210b09d21337d4da81dc"
     sha256 cellar: :any_skip_relocation, catalina:     "cac5007e5857504e22b3021aa8111798ffacf6a34493210b09d21337d4da81dc"
     sha256 cellar: :any_skip_relocation, mojave:       "cac5007e5857504e22b3021aa8111798ffacf6a34493210b09d21337d4da81dc"

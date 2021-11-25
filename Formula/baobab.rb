@@ -7,6 +7,7 @@ class Baobab < Formula
 
   bottle do
     sha256 arm64_big_sur: "99df49e1259144e3b641e6cd6b8b71b30a10cf6d6dec12e2b137914708daf9bc"
+    sha256 monterey:      "e4457c4ed768ee2bb061f7c1995997d1ef87fdab1cb317d47e4b9d693ebe4ab9"
     sha256 big_sur:       "9dfe596e51e700f6973aeccdbcd4047000b63994e3e6d8af62913d684edfc68b"
     sha256 catalina:      "d873858d8bf8c7358f9840d280f94f5247a11393dc079ebbb659ada5bc7660f3"
     sha256 mojave:        "46b4cfbbfe550d56996a7275049e53f2e8d653c46c750ec4cd48e618cd1c83e1"

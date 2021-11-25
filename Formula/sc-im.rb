@@ -4,26 +4,18 @@ class ScIm < Formula
   url "https://github.com/andmarti1424/sc-im/archive/v0.8.2.tar.gz"
   sha256 "7f00c98601e7f7709431fb4cbb83707c87016a3b015d48e5a7c2f018eff4b7f7"
   license "BSD-4-Clause"
-  revision 3
+  revision 4
   head "https://github.com/andmarti1424/sc-im.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sc-im"
-    rebuild 1
-    sha256 mojave: "7e4aea9f42581e7ae40097a14d267f6e10b5da9b8533e3e169bf95c7a535044a"
-  end
-
+  depends_on "pkg-config" => :build
   depends_on "libxls"
   depends_on "libxlsxwriter"
   depends_on "libxml2"
   depends_on "libzip"
+  depends_on "lua"
   depends_on "ncurses"
 
   uses_from_macos "bison" => :build
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     cd "src" do

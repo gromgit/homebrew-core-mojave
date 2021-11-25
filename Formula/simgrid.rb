@@ -13,6 +13,7 @@ class Simgrid < Formula
 
   bottle do
     sha256 arm64_big_sur: "3bcf1b52202b0bf72913983c86bb8d6b5e842cf20c08ff9f30b5e562812d0ec7"
+    sha256 monterey:      "bb805e263f35330965f17104c685ca64ea643bba321ee9c4460ab47f48581e13"
     sha256 big_sur:       "ed874d245adffc5455759d716afea6d4152a37df3296e8689b9b6b43a3f1344a"
     sha256 catalina:      "3553e2e019fe3109b094fd976c9befa272046ebb21856a5a2fd15d95ee054628"
     sha256 mojave:        "d6718c707ad66eba5d138e3289b50d37f43ff3171799a2e25e69e99309d97400"

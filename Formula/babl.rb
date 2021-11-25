@@ -14,6 +14,7 @@ class Babl < Formula
 
   bottle do
     sha256 arm64_big_sur: "a00ab8fc3289e795384974ddbfc26d43631f2e3bc5c5440031835842f6c3aa99"
+    sha256 monterey:      "fce2f8b126bee4b3fd597f8a36afb7e98577542f8209fe12909faefb5224e7a7"
     sha256 big_sur:       "f2e800564684938cfca18fc994eebcb3a2373f7362047513ca1a24f16c1937b0"
     sha256 catalina:      "33616239de78a0b3918cbb825913edd26ea49d2dbd0550a79ed7441052acb0a3"
     sha256 mojave:        "54e1710cab528ac2fd32300a1aa9577e1eb71ceae931792c356d2e5e582b2eaa"

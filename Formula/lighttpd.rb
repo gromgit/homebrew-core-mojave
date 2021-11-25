@@ -4,16 +4,11 @@ class Lighttpd < Formula
   url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.61.tar.xz"
   sha256 "43f0d63d04a1b7c5b8aab07e0612e44ccad0afc0614bab784c5b019872363432"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://download.lighttpd.net/lighttpd/releases-1.4.x/"
     regex(/href=.*?lighttpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighttpd"
-    rebuild 1
-    sha256 mojave: "abef95e7e9378d8bd320f191f9c494d7f19eb7516d1b82d6a807c6ae983d1e41"
   end
 
   depends_on "autoconf" => :build

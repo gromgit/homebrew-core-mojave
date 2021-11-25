@@ -7,16 +7,11 @@ class Curl < Formula
   mirror "http://fresh-center.net/linux/www/legacy/curl-7.80.0.tar.bz2"
   sha256 "dd0d150e49cd950aff35e16b628edf04927f0289df42883750cf952bb858189c"
   license "curl"
+  revision 1
 
   livecheck do
     url "https://curl.se/download/"
     regex(/href=.*?curl[._-]v?(.*?)\.t/i)
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "648b821a5afb867dc80877d8c8f8a2786c8fc6a44462269602bda29d083c63e3"
   end
 
   head do

@@ -7,6 +7,7 @@ class SimpleScan < Formula
 
   bottle do
     sha256 arm64_big_sur: "28589902b7eb3965380a37e8a2566fdda48b4485bcd29b72a4f4a875d1e892b5"
+    sha256 monterey:      "79c8843d4fc8377db0b6e94e381b6fceda9e87aae811f3cf0e4b3d070d7e10ce"
     sha256 big_sur:       "29db6142111c9acaee04a3f6b17c9113b2d23b7a53188b6a21ae3a31454872ca"
     sha256 catalina:      "fe60b1d71b27e3b2cbb20edd2bd8b6d9000c4f2653edb283ab65905dbd897291"
     sha256 mojave:        "4871d0a1a1eff098b418deca15103d2f41bda91904e693e0146f109d92dbbd10"

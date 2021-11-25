@@ -14,6 +14,7 @@ class Libgit2Glib < Formula
 
   bottle do
     sha256 cellar: :any, arm64_big_sur: "14f4f4a3b09727ca9993953c5fa7e0b9d0dd991cd9f782cdd42d254e6317b974"
+    sha256 cellar: :any, monterey:      "f0882a1094ecc41ffba0e08d64de5681e7a71a0ad5126789c854d38c755cf58b"
     sha256 cellar: :any, big_sur:       "88a012ad27e2056c313cad08039c2c2ac534ff6f383baae09363b357fcbf5e7e"
     sha256 cellar: :any, catalina:      "804db5cc23243985293b05e7ab18c54a52e36cb4f339c5d9bbaaee5ac6ebdd39"
     sha256 cellar: :any, mojave:        "bf0aacd695af9b723be16caaba4252e87bb1001ff4710872d4b5eceff7efe8f5"

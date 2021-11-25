@@ -8,6 +8,7 @@ class Libwbxml < Formula
 
   bottle do
     sha256 cellar: :any, arm64_big_sur: "79c3653734dc5a8fbd8707a17e085f8eb3d93367a51aa62f76da1d9ac5001ef2"
+    sha256 cellar: :any, monterey:      "7a26910220690ace39924a8cee2a44295491b4349daa3b35bd1ed11bac09a0d1"
     sha256 cellar: :any, big_sur:       "65a96ce0682ac9e3cec8599ef84c52ce89446c001cb6d3751e3962ae62d3ed82"
     sha256 cellar: :any, catalina:      "4adbd8447466f7d3cbad72d5aff2730a87539dacd0638180cd39a9eaee11e174"
     sha256 cellar: :any, mojave:        "9077d1c9669a92c39590de8280678cbe3d50853e76d69fda6a476ba88d170845"

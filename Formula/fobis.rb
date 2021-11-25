@@ -10,6 +10,7 @@ class Fobis < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "bfa1e5a5e7276be1292321294c418e9f1bac7a964f46d227a2d81fc3ad1b984e"
+    sha256 cellar: :any_skip_relocation, monterey:      "5f9140bb6e751bdd01b64abb3a3d181b9f63ff576fdea3a86efb30fa723567b2"
     sha256 cellar: :any_skip_relocation, big_sur:       "627133905b51d5436b9eb6a8e75080d847a6ea7c36886aa7f81e053fd89970d3"
     sha256 cellar: :any_skip_relocation, catalina:      "0a1685a770c843092bdcd918de2439bc9ed16e75b49e61e93148386b42d326d1"
     sha256 cellar: :any_skip_relocation, mojave:        "6b517fdd37dbbdfce2e3ca628afd4f92ef688c18939e78c2b0487dbc1ac7da5e"

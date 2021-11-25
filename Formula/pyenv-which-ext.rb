@@ -10,6 +10,8 @@ class PyenvWhichExt < Formula
     sha256 cellar: :any_skip_relocation, all: "47846141f51863aeda9dbc0578498ec9d550597581a392eeed1d71979156d3f4"
   end
 
+  deprecate! date: "2021-03-18", because: :deprecated_upstream
+
   depends_on "pyenv"
 
   def install
@@ -18,6 +20,6 @@ class PyenvWhichExt < Formula
   end
 
   test do
-    shell_output("eval \"$(pyenv init -)\" && pyenv which python")
+    shell_output("eval \"$(pyenv init -)\" && pyenv which ls")
   end
 end

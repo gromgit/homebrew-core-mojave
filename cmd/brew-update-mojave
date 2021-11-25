@@ -2,7 +2,7 @@
 # Load personal standard shell library
 # shellcheck source=/dev/null
 if [[ -r ~/etc/lib.bash ]]; then . ~/etc/lib.bash; else echo "FATAL ERROR: ~/etc/lib.bash not found." ; exit 1 ; fi
-need_progs brew sw_vers
+need_progs brew sw_vers rsync
 
 os_name() {
   case "$(sw_vers -productVersion)" in
@@ -32,29 +32,40 @@ real=homebrew-realcore
 [[ -d $real ]] || mv "$main" "$real"
 [[ -d $main ]] || brew tap homebrew/core "$main_url"
 
-find "$real"/ \( -name .git -o -name Formula \) -prune -o \! -type d -print | while read -r f; do
-  f2=${f/${real}/${main}}
-  [[ $f -nt $f2 ]] && {
-    mkdir -p "$(dirname "$f2")"
-    cp -avf "$f" "$f2"
-  }
-done
+#find "$real"/ \( -name .git -o -name Formula \) -prune -o \! -type d -print | while read -r f; do
+#  f2=${f/${real}/${main}}
+#  [[ $f -nt $f2 ]] && {
+#    mkdir -p "$(dirname "$f2")"
+#    rsync -avm "$f" "$f2"
+#  }
+#done
 
-mkdir -p "$main"/Formula
+#mkdir -p "$main"/Formula
 # Copy over everything first
-find "$real"/Formula -type f -print | while read -r f; do
-  f2=${f/${real}/${main}}
-  if [[ $f -nt $f2 ]]; then
-    if grep -Eq "sha256 .*(${my_os}|all):" "$f"; then
-      cp -avf "$f" "$f2"
-    else
-      # Strip out bottle blocks if we don't find our OS listed
-      echo "Stripping $f2" >&2
-      sed '/bottle do/,/end/d' < "$f" > "$f2"
-      brew style --fix "$f2"
-    fi
+#find "$real"/Formula -type f -print | while read -r f; do
+#  f2=${f/${real}/${main}}
+#  if [[ $f -nt $f2 ]]; then
+#    if grep -Eq "sha256 .*(${my_os}|all):" "$f"; then
+#      rsync -avm "$f" "$f2"
+#    else
+#      # Strip out bottle blocks if we don't find our OS listed
+#      echo "Stripping $f2" >&2
+#      sed '/bottle do/,/end/d' < "$f" > "$f2"
+#    fi
+#  fi
+#done
+
+rsync -avum --exclude=.git "$real"/ "$main"/
+find "$main"/Formula -type f -print | while read -r f; do
+  if ! grep -Eq "sha256 .*(${my_os}|all):" "$f"; then
+    # Strip out bottle blocks if we don't find our OS listed
+    echo "Stripping $f" >&2
+    sed '/bottle do/,/end/d' < "$f" > "$HOMEBREW_TEMP"/temp.rb && mv "$HOMEBREW_TEMP"/temp.rb "$f"
   fi
 done
+
+# Do a Big-Bang fix at the end
+cmd brew style --fix homebrew/core
 
 (
   cd "$main" || fatal "update: Can't cd to $main"

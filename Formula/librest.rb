@@ -7,6 +7,7 @@ class Librest < Formula
 
   bottle do
     sha256                               arm64_big_sur: "a565482a9685164d288df713142f23b91dda71fc9c694ea0c613c64320e4aa0a"
+    sha256                               monterey:      "1f51e9bade1234cd3e5f0d8a791ceb386fb8f69000c3fc2195d23fbdf6b00bd8"
     sha256                               big_sur:       "366b341df1c40a648f2847b5f1c13efccfaeb4c3c9610c30fe7e5b3087d07186"
     sha256                               catalina:      "fb2e698cdf400c3f413a707132acd9b55139e2aa26da2f405f5eaebeace6573b"
     sha256                               mojave:        "dbaf452ac76dbc63e161ffc086aac7f6409614ca573c20fe02bd2e87d473e5b2"

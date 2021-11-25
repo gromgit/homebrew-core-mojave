@@ -12,6 +12,7 @@ class Homebank < Formula
 
   bottle do
     sha256 arm64_big_sur: "a1aaa55de58c02e3d231bf3405d9d08e3ad95f11805627d668563e10b8bbaedb"
+    sha256 monterey:      "7ae099593e0c7f3d7ddee72ae9afdc51acf05c00a56b9ba5ae7aa8a598b231dd"
     sha256 big_sur:       "e5b90fc6091d2fdb03ce91eddf19a7dbbc9858414d582872ad285d3cec89e7cd"
     sha256 catalina:      "7dae6924cc50f1f445550ffb09a45518821936e5f6320661700e3b001c645f3e"
     sha256 mojave:        "9effe333c729e3b2c3622d1595f27ef6e187d20a7917adad53cfb922d83f9b91"

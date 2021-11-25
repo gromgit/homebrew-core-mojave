@@ -3,14 +3,9 @@ class Docutils < Formula
 
   desc "Text processing system for reStructuredText"
   homepage "https://docutils.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/docutils/docutils/0.18/docutils-0.18.tar.gz"
-  sha256 "c1d5dab2b11d16397406a282e53953fe495a46d69ae329f55aa98a5c4e3c5fbb"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docutils"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c5480ce8cf185bb07c091402d7ccfef2de6510e863402c43b2355a2a2745615c"
-  end
+  url "https://downloads.sourceforge.net/project/docutils/docutils/0.18.1/docutils-0.18.1.tar.gz"
+  sha256 "679987caf361a7539d76e584cbeddc311e3aee937877c87346f31debc63e9d06"
+  license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
 
   depends_on "python@3.10"
 

@@ -1,16 +1,10 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://github.com/ccache/ccache/releases/download/v4.5/ccache-4.5.tar.xz"
-  sha256 "9cb70a1fabc23632992f5e3b7f64c8b31c3b1dd039030058aec2c241193f209a"
+  url "https://github.com/ccache/ccache/releases/download/v4.5.1/ccache-4.5.1.tar.xz"
+  sha256 "51186ebe0326365f4e6131e1caa8911de7da4aa6718efc00680322d63a759517"
   license "GPL-3.0-or-later"
   head "https://github.com/ccache/ccache.git", branch: "master"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ccache"
-    rebuild 1
-    sha256 cellar: :any, mojave: "94e5674fcd71274f50de226bc1e0af5674d1ad3e0fab28f3d59297b3d72c5b70"
-  end
 
   depends_on "asciidoctor" => :build
   depends_on "cmake" => :build

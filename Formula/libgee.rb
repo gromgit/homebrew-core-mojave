@@ -7,6 +7,7 @@ class Libgee < Formula
 
   bottle do
     sha256 cellar: :any,                 arm64_big_sur: "1cf5cbaa60b52012e61477e1dbcb69b77e9cc16846dc456c855bcbc1d2252563"
+    sha256 cellar: :any,                 monterey:      "e1545f52a853007d2f31792c14d7248a1c8c96c5472cd8b58199b4706d89dd4e"
     sha256 cellar: :any,                 big_sur:       "0e8f110c3e14f4c45142ad2b215a803b70353e13429a73650e0641cfcda986d5"
     sha256 cellar: :any,                 catalina:      "ce00019f9ca5b8dc93081d84d99b4587a66a3d87b726080ead7323bbec65f417"
     sha256 cellar: :any,                 mojave:        "2d77bae2c373c426ae17050025de1ff6183e84673ebfa144c433a45cdbff8781"

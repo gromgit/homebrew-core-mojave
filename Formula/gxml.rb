@@ -7,6 +7,7 @@ class Gxml < Formula
 
   bottle do
     sha256 arm64_big_sur: "33e373491cc352e2b11da05fc36b7c9e66451efcbee7b10c06b8454bda72b92c"
+    sha256 monterey:      "79846b0652593f371cdc95ad36d037c58b51db809b5a0bb6baff00afee0a0c12"
     sha256 big_sur:       "93014bd6358485893840d5e1fcb66bbb2b9528c342d5d38e08525ffd6c8dfd4c"
     sha256 catalina:      "7ac6b48935cda53013a788e02cb0169fd609589beac7b1af2ad6b3b64e3045a2"
     sha256 mojave:        "656bfa0f89deba237c40af306b141291c548befeadd268d7aaca198db78afe91"

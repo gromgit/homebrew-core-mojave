@@ -7,6 +7,7 @@ class Gssdp < Formula
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_big_sur: "af3cfdeebe33dc2235b183b4b5db2dc89cc1746e5f9d1f66497540008ac139ec"
+    sha256 cellar: :any, monterey:      "f35374ce32ada046fbf95553ba19acb981568836b76c5f23e6de07a0552caaac"
     sha256 cellar: :any, big_sur:       "f1b7f55cf138a7b567c9b19f6a053a96e91c9cf1fe74d15d6d45918e80d0ae7b"
     sha256 cellar: :any, catalina:      "0247e477790f650d86a7e093747b7a3d48fd59420e85cdac0700c24eea101fe0"
     sha256 cellar: :any, mojave:        "037dfafa30476082ad6d7c31cdedcda2a45f899a1b2ddba1ab7291f17c59f405"

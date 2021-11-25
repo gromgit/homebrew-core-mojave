@@ -7,6 +7,7 @@ class Libhandy < Formula
 
   bottle do
     sha256 arm64_big_sur: "67c5f4982894646b07942c0f387443c2aac2813167aaa3de9197cd760fc93e5b"
+    sha256 monterey:      "9846518bcebff7818836942e043f03f4e7e8ac07f618646b6d0396407085e1c9"
     sha256 big_sur:       "337f9be107164821d8436c443c20dcb79d66bc3268fac909ace2878432bcc652"
     sha256 catalina:      "2e04f3f8004ac544fea47905a65a6597908b8ced6dadd5c330d87b8a310951d9"
     sha256 mojave:        "a8972dc9efc8c2d6a6fe0f038ebda941a741c3e0d7be57b51b9c634120d1a479"

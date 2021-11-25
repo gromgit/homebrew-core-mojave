@@ -6,7 +6,7 @@ class Maturin < Formula
   license "MIT"
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
-  depends_on "python@3.9" => :test
+  depends_on "python@3.10" => :test
   depends_on "rust"
 
   def install
@@ -21,6 +21,7 @@ class Maturin < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["python@3.10"].opt_bin
     system "cargo", "new", "hello_world", "--bin"
     system bin/"maturin", "build", "-m", "hello_world/Cargo.toml", "-b", "bin", "-o", "dist", "--compatibility", "off"
     system "python3", "-m", "pip", "install", "hello_world", "--no-index", "--find-links", testpath/"dist"

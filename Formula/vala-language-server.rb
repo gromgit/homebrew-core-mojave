@@ -9,6 +9,7 @@ class ValaLanguageServer < Formula
 
   bottle do
     sha256 cellar: :any, arm64_big_sur: "8dd0c7a04c35f113e4790087e83862b0678a3378471710cbab086785443e9a1e"
+    sha256 cellar: :any, monterey:      "22d04a5dfd33e1fee166a4497ec10914eb56d9835af038e49183d864589112bf"
     sha256 cellar: :any, big_sur:       "522ff0afde99dc62e32af3df6d40138c4d115591a7d2c9ddf99a7ffb5c2354d8"
     sha256 cellar: :any, catalina:      "fc5ee5ec8ca3e5d41bc7cb5edd7a85540f5bce64d8d625548d706d884c28f83a"
     sha256 cellar: :any, mojave:        "13333288fba772232a82c3b16c10df48a6d41d4345897cbcba5e21fc0b15a2b4"

@@ -10,6 +10,7 @@ class Eralchemy < Formula
 
   bottle do
     sha256 cellar: :any,                 arm64_big_sur: "d925eb8686a32d2bbf7b9bab62f65f6b761952dcb32923ef7b6428f5325c11a1"
+    sha256 cellar: :any,                 monterey:      "dcf339a6df3abf232c794911db58daa4ed85c47c4ce36c816684f045e01f7a90"
     sha256 cellar: :any,                 big_sur:       "2a5ce41209235c75eeb092f0b6c17c6c46c03f2faada2b2a337fcda7f28a4288"
     sha256 cellar: :any,                 catalina:      "e844701e7824dc9497969cc6592302bf56ac060d5aa18105e1ee2887411a5f12"
     sha256 cellar: :any,                 mojave:        "cfb423a7299d1d307e58aa756675f26ea65ad405e6e2fb707727de49aa36eb64"
