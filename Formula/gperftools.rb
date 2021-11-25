@@ -22,6 +22,12 @@ class Gperftools < Formula
     regex(%r{href=.*?/tag/gperftools[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gperftools"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6d0c69b8cff3521b159cb06058605cd10cc6e6a49424a7fbb1294792e3884f6a"
+  end
+
   head do
     url "https://github.com/gperftools/gperftools.git"
 
