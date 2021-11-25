@@ -9,6 +9,12 @@ class Libpq < Formula
     formula "postgresql"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpq"
+    rebuild 1
+    sha256 mojave: "dd0030880e05c25f4cb217661bbc1dc9ef158a724ef2c5d4efbc19a72a5bfe83"
+  end
+
   keg_only "conflicts with postgres formula"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
