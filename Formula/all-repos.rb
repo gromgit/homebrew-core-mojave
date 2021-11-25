@@ -7,6 +7,12 @@ class AllRepos < Formula
   sha256 "2c42f1cb18aebc2efa601d76fbbadee98a4dc6d71a73b1f29ef9155d191f966b"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/all-repos"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d5e27edea81cd0ef5cd20f99a0f77c783ed77ca91899697cb72a176df79336b3"
+  end
+
   depends_on "python@3.10"
 
   resource "identify" do
