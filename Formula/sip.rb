@@ -8,6 +8,12 @@ class Sip < Formula
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sip"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6bbf0b678a284a4b16e17c03259b3462093cbba1fb6df052dbdefad02c2ec207"
+  end
+
   depends_on "python@3.9"
 
   resource "packaging" do
