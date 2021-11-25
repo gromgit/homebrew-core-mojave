@@ -12,6 +12,12 @@ class Mandoc < Formula
     regex(/href=.*?mandoc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mandoc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bb4fb501dd6a09a387a952e10bf8fa2acc7f6b1adb7f9cd643cb6cbcf0f4a7dc"
+  end
+
   uses_from_macos "zlib"
 
   def install
