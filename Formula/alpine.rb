@@ -12,6 +12,12 @@ class Alpine < Formula
     regex(/href=.*?alpine[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alpine"
+    rebuild 1
+    sha256 mojave: "6df16d35a0021184cd096c506869a9586aa7f7d817f07c1eca63f9b0a9266583"
+  end
+
   depends_on "openssl@1.1"
 
   uses_from_macos "ncurses"
