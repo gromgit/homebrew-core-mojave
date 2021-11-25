@@ -11,6 +11,12 @@ class Xrootd < Formula
     regex(/href=.*?xrootd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xrootd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "89cec180d7608750ec0b68c5b42a76bd8b7bf28e890bfeb090af5c57b4920fd0"
+  end
+
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
   depends_on "readline"
