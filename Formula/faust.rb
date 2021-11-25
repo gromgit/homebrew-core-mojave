@@ -5,6 +5,12 @@ class Faust < Formula
   sha256 "f14577e9f63041ec341f40a64dae5e9362be8ed77571aa389ed7d389484a31d7"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faust"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0a3686d7f3092a871aa31d5a0734cf62cc8cccb5501b519aeb4d39888b8da171"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libmicrohttpd"
