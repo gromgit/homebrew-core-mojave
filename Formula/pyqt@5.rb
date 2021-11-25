@@ -5,6 +5,12 @@ class PyqtAT5 < Formula
   sha256 "80343bcab95ffba619f2ed2467fd828ffeb0a251ad7225be5fc06dcc333af452"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyqt@5"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c186fccbc80966084e1edc4468fb5bbd1cb084758589d0b6e7e11e27461b97b8"
+  end
+
   depends_on "pyqt-builder" => :build
   depends_on "sip"          => :build
   depends_on "python@3.9"
