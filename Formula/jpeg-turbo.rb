@@ -6,6 +6,12 @@ class JpegTurbo < Formula
   license "IJG"
   head "https://github.com/libjpeg-turbo/libjpeg-turbo.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg-turbo"
+    rebuild 1
+    sha256 mojave: "1a6f6e0cff191ac961464503b7fee9db5b58e12e2fd4158362d072852ab59b7b"
+  end
+
   keg_only "libjpeg-turbo is not linked to prevent conflicts with the standard libjpeg"
 
   depends_on "cmake" => :build
