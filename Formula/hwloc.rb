@@ -5,6 +5,12 @@ class Hwloc < Formula
   sha256 "e1f073e44e28c296ff848dead5e9bd6e2426b77f95ead1792358958e859fa83a"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hwloc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "041f83bf52bac8bd8a9b2e6daa653fa9d90eb10441ab9add6a46225b95c90129"
+  end
+
   head do
     url "https://github.com/open-mpi/hwloc.git"
     depends_on "autoconf" => :build
