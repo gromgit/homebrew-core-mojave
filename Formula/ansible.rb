@@ -8,6 +8,12 @@ class Ansible < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible"
+    rebuild 1
+    sha256 cellar: :any, mojave: "15d2ad12430d63b794ff10cae9d522688f2a875fa15336fc28a2a8418bf59412"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "libyaml"
