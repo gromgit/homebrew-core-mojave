@@ -13,6 +13,12 @@ class ExtraCmakeModules < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/extra-cmake-modules"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4c2aa74065c36e86fe41b9b9d44997b0c542703f3283c15b5bbf20bd453593ea"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "qt@5" => :build
   depends_on "sphinx-doc" => :build
