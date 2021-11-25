@@ -6,6 +6,12 @@ class Opam < Formula
   license "LGPL-2.1-only"
   head "https://github.com/ocaml/opam.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opam"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "474d5c04cfd3ccd75b6cfab767a484f54f0c5612d4b1b0f781b9456cccf1b9f2"
+  end
+
   depends_on "ocaml" => [:build, :test]
   depends_on "gpatch"
 
