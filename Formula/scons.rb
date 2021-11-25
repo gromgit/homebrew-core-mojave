@@ -7,6 +7,12 @@ class Scons < Formula
   sha256 "d47081587e3675cc168f1f54f0d74a69b328a2fc90ec4feb85f728677419b879"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scons"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "17e615367f82f081fa935c41535126550601f322c5d33dc8d890f709bda642d2"
+  end
+
   depends_on "python@3.10"
 
   def install
