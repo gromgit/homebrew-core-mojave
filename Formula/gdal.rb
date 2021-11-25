@@ -10,6 +10,12 @@ class Gdal < Formula
     regex(/href=.*?gdal[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdal"
+    rebuild 1
+    sha256 mojave: "a054684ff7d35586622314979d38a224c716274d10395d8df0df6cd77b996146"
+  end
+
   head do
     url "https://github.com/OSGeo/gdal.git"
     depends_on "doxygen" => :build
