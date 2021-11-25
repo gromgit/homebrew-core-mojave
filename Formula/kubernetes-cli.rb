@@ -12,6 +12,12 @@ class KubernetesCli < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0f1ff8e720e6eebd961af4723d887559e32442029f4b297418f6431cf13ba773"
+  end
+
   depends_on "bash" => :build
   depends_on "coreutils" => :build
   depends_on "go@1.16" => :build
