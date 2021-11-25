@@ -5,6 +5,12 @@ class Proj < Formula
   sha256 "de93df9a4aa88d09459ead791f2dbc874b897bf67a5bbb3e4b68de7b1bdef13c"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
+    rebuild 1
+    sha256 mojave: "930bea8eb876c0b0d74044bcd7ab80c031f81eb66c011e4b42fd3a1f25f0c389"
+  end
+
   head do
     url "https://github.com/OSGeo/proj.git"
     depends_on "autoconf" => :build
