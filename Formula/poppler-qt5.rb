@@ -10,6 +10,12 @@ class PopplerQt5 < Formula
     formula "poppler"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poppler-qt5"
+    rebuild 1
+    sha256 mojave: "0dcb5ad43f64c6958851ab9d2373bd3d175e13ee099f9120fb352d5df9f9ae63"
+  end
+
   keg_only "it conflicts with poppler"
 
   depends_on "cmake" => :build
