@@ -6,6 +6,12 @@ class Octave < Formula
   sha256 "6c1555f5aff0e655b88cad8e8bc2b740ec3a6f3f61898e4997359c2af55e5d20"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octave"
+    rebuild 1
+    sha256 mojave: "f516488f52acb47f27023cf030c063b51b9674d9a3d8fdfdd1cfb4fff81c8a0b"
+  end
+
   head do
     url "https://hg.savannah.gnu.org/hgweb/octave", branch: "default", using: :hg
 
