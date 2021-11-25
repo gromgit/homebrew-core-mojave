@@ -10,6 +10,12 @@ class Armadillo < Formula
     regex(%r{url=.*?/armadillo[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/armadillo"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4fbe81388c539377db87c3ea5065f763fceb1bb6dfd64c4056187b72813c29c4"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "arpack"
