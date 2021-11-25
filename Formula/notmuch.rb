@@ -11,6 +11,12 @@ class Notmuch < Formula
     regex(/href=.*?notmuch[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notmuch"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a06565e596c23dc58e8e926f821fb473329389a78119b7953d133f759faf600f"
+  end
+
   depends_on "doxygen" => :build
   depends_on "emacs" => :build
   depends_on "libgpg-error" => :build
