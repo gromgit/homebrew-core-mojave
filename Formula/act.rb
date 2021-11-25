@@ -6,6 +6,12 @@ class Act < Formula
   license "MIT"
   head "https://github.com/nektos/act.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/act"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f2e32c5ec715694c1ea107dd9b48adb5bdd52e25392cd79343703bd34c9620ee"
+  end
+
   depends_on "go" => :build
 
   def install
