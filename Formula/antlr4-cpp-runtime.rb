@@ -10,6 +10,12 @@ class Antlr4CppRuntime < Formula
     regex(/href=.*?antlr4-cpp-runtime[._-]v?(\d+(?:\.\d+)+)-source\.zip/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/antlr4-cpp-runtime"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a029f9985a5c292ee9e3b2f72c8a0eca63adf2c4b761f527c66189111cf271a9"
+  end
+
   depends_on "cmake" => :build
 
   on_linux do
