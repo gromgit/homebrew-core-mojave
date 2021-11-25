@@ -6,6 +6,12 @@ class Luarocks < Formula
   license "MIT"
   head "https://github.com/luarocks/luarocks.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luarocks"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c30819470e3721501953b20db1c9542c6701c6a4e9a83188512d2d1f84411979"
+  end
+
   depends_on "lua@5.1" => :test
   depends_on "lua@5.3" => :test
   depends_on "luajit" => :test unless Hardware::CPU.arm?
