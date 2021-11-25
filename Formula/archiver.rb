@@ -6,6 +6,12 @@ class Archiver < Formula
   license "MIT"
   head "https://github.com/mholt/archiver.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/archiver"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a968caf70a657b999fd35fb1cfc05141a9efda647e1e650edb7c39e0eb062cd8"
+  end
+
   depends_on "go" => :build
 
   def install
