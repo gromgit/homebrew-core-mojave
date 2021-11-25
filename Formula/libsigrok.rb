@@ -30,6 +30,12 @@ class Libsigrok < Formula
     regex(/^libsigrok-(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsigrok"
+    rebuild 1
+    sha256 mojave: "86eec6054ca062ae7aa31d02797237aa3c6b41acb288455a2bf1d6492124d470"
+  end
+
   head do
     url "git://sigrok.org/libsigrok", branch: "master"
 
