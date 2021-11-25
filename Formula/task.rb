@@ -11,6 +11,12 @@ class Task < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/task"
+    rebuild 1
+    sha256 mojave: "b263ec231b6c7ed1b6a4122283d7aa1ab911a890960066ec7aa07764ac0d8467"
+  end
+
   depends_on "cmake" => :build
   depends_on "gnutls"
 
