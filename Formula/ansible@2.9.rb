@@ -15,6 +15,12 @@ class AnsibleAT29 < Formula
     regex(%r{href=.*?/project/ansible/v?(2\.9(?:\.\d+)*)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "908c8724baec410c09eced18065c32c9de48d614102feb3f7cf8525726235ebf"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
