@@ -5,6 +5,12 @@ class Vala < Formula
   sha256 "ed1d5fe4cbc0cd2845d0de4f1ffefb15afb06892d230c7cca695781672e8fb60"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vala"
+    rebuild 1
+    sha256 mojave: "7cd92015a9c97b0b943c3b935b47c03b3923474eb3867f43da75801003fe33c5"
+  end
+
   depends_on "gettext"
   depends_on "glib"
   depends_on "graphviz"
