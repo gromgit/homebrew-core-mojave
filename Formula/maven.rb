@@ -11,6 +11,12 @@ class Maven < Formula
     regex(/href=.*?apache-maven[._-]v?(\d+(?:\.\d+)+)-bin\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maven"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "681e3389b317f16eb9fba2148030082cd4c2f6ec7ab96cd17c120e8a653002cb"
+  end
+
   depends_on "openjdk"
 
   conflicts_with "mvnvm", because: "also installs a 'mvn' executable"
