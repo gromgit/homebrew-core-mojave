@@ -6,6 +6,12 @@ class Libfido2 < Formula
   license "BSD-2-Clause"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libfido2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4608e61e85bd0045f317077a5b7743b588db2a9a0ec33d2e6525c6afa08f93ea"
+  end
+
   depends_on "cmake" => :build
   depends_on "mandoc" => :build
   depends_on "pkg-config" => :build
