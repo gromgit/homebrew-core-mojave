@@ -11,6 +11,12 @@ class Xterm < Formula
     regex(/href=.*?xterm[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xterm"
+    rebuild 1
+    sha256 mojave: "da5ea581c3efde3ed490ba4a01080b5664a6584fa59c94be0fe405f46112a9be"
+  end
+
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "libice"
