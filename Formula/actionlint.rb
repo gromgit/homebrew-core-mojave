@@ -5,6 +5,12 @@ class Actionlint < Formula
   sha256 "de00a948cd5431d18f2d4e0e053b3f6027c306d468779de85d40f63c1c3dbc29"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/actionlint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "066ae7a606d7cb5daa59f7c0314ceb9868f9566793fd804e1edee1a3d1ee6b8b"
+  end
+
   depends_on "go" => :build
   depends_on "ronn" => :build
 
