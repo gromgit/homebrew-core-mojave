@@ -12,6 +12,12 @@ class Docker < Formula
     regex(/^v?(\d+(?:\.\d+)+)(?:[._-]ce)?$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f75d9effa016b608eb72212b5c3f4e559212036a09bb9f8aeb9e226317c53ae4"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
