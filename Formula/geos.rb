@@ -10,6 +10,12 @@ class Geos < Formula
     regex(/href=.*?geos[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geos"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b1af41e04f1f78097a64a72e5ebcfbd7feecf1c555639e3ced2d7c86b0b93a0f"
+  end
+
   depends_on "cmake" => :build
 
   def install
