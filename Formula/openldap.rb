@@ -12,6 +12,12 @@ class Openldap < Formula
     regex(/href=.*?openldap[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openldap"
+    rebuild 1
+    sha256 mojave: "6fcb7cdfd560c6792cff728d2a5ae7a5490e3114643f046bda1804838279f6f5"
+  end
+
   keg_only :provided_by_macos
 
   depends_on "openssl@1.1"
