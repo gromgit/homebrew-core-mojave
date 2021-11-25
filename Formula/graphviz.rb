@@ -8,6 +8,12 @@ class Graphviz < Formula
   version_scheme 1
   head "https://gitlab.com/graphviz/graphviz.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphviz"
+    rebuild 1
+    sha256 mojave: "6cdfa3cc6c94ff845c9dadfa259132ee277582565647b593980b4106b7493f4e"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build
