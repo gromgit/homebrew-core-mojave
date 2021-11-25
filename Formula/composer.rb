@@ -10,6 +10,12 @@ class Composer < Formula
     regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/composer\.phar}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/composer"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2c2a17c5c1cf6d050369232a090445e624d171a4666acf5dbba7cafaaa699f51"
+  end
+
   depends_on "php"
 
   # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
