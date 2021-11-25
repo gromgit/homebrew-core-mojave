@@ -6,6 +6,12 @@ class Liblcf < Formula
   license "MIT"
   head "https://github.com/EasyRPG/liblcf.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblcf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "16d29c52409d913faecd8a67724d2530a7ef31fd025fd623cfa03090546abc7b"
+  end
+
   depends_on "cmake" => :build
   depends_on "icu4c"
 
