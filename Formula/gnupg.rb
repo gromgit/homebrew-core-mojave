@@ -11,6 +11,12 @@ class Gnupg < Formula
     regex(/href=.*?gnupg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnupg"
+    rebuild 1
+    sha256 mojave: "ef4fec2f2e27d949031694ec29a1713cad02fd10b4572e0e7b6b411cdfab3d8f"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "gnutls"
