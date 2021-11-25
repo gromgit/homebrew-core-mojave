@@ -6,6 +6,12 @@ class Fizz < Formula
   license "BSD-2-Clause"
   head "https://github.com/facebookincubator/fizz.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fizz"
+    rebuild 1
+    sha256 cellar: :any, mojave: "19c7e55737385259b13f7f90c04629bea3b26f1411886b87f3804a102e0803e4"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "double-conversion"
