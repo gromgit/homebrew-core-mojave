@@ -17,6 +17,12 @@ class Ki18n < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ki18n"
+    rebuild 1
+    sha256 mojave: "2a9f2ea126436c0d999d749822cc74fbd6a5cb4d712933e5cec7d1f8bce80812"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
