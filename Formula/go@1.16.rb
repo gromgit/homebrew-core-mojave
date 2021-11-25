@@ -11,6 +11,12 @@ class GoAT116 < Formula
     regex(/href=.*?go[._-]?v?(1\.16(?:\.\d+)*)[._-]src\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go@1.16"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "070a48cecb806deed96a563d3fa648f70c78f8994b1a737c78f1bc7d968e292a"
+  end
+
   keg_only :versioned_formula
 
   depends_on "go" => :build
