@@ -10,6 +10,12 @@ class Stk < Formula
     regex(/href=.*?stk[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stk"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c36135d90709672488413074814037af4d4a186e183f3689cd9ce209bac59b46"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
