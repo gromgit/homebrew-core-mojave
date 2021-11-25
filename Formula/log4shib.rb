@@ -10,6 +10,12 @@ class Log4shib < Formula
     regex(/href=.*?log4shib[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/log4shib"
+    rebuild 1
+    sha256 cellar: :any, mojave: "284ad2aa2118d7b43b83b81c12a7b86a9c49d9784eafe6319bc4c7be9ef6e9f6"
+  end
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
