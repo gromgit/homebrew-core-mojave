@@ -11,6 +11,12 @@ class Git < Formula
     regex(/href=.*?git[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git"
+    rebuild 1
+    sha256 mojave: "92058ea24cdd638950945a0c3d7e3874816e5b30e2c4651ab4499f870299d3fe"
+  end
+
   depends_on "gettext"
   depends_on "pcre2"
 
