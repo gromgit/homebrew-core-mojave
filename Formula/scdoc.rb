@@ -5,6 +5,12 @@ class Scdoc < Formula
   sha256 "e9ff9981b5854301789a6778ee64ef1f6d1e5f4829a9dd3e58a9a63eacc2e6f0"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scdoc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "74269de8c36694c82ed7dbac25a317c01d5f441ea1f452a80559edfbbb1d5764"
+  end
+
   def install
     # scdoc sets by default LDFLAGS=-static which doesn't work on macos(x)
     system "make", "LDFLAGS=", "PREFIX=#{prefix}"
