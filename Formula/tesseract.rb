@@ -11,6 +11,12 @@ class Tesseract < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tesseract"
+    rebuild 1
+    sha256 cellar: :any, mojave: "32848b83af2d86e316cd6ea86dc0dd084361d3d3ab6c5adfa525589b004ff215"
+  end
+
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
