@@ -6,6 +6,12 @@ class Flarectl < Formula
   license "BSD-3-Clause"
   head "https://github.com/cloudflare/cloudflare-go.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flarectl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0f86121b9c9004aafbb99457489aaeb4238924b08e09bdfbd059236edd037747"
+  end
+
   depends_on "go" => :build
 
   def install
