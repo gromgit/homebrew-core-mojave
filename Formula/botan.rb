@@ -11,6 +11,12 @@ class Botan < Formula
     regex(/href=.*?Botan[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/botan"
+    rebuild 1
+    sha256 mojave: "12e20f7c43b7337147b0ce9bbf76b1c8dcfd3fc41b5e0ac387dc9648b54ec25c"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "python@3.10"
   depends_on "sqlite"
