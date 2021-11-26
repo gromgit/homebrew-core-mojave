@@ -5,6 +5,12 @@ class CargoInstruments < Formula
   sha256 "e71b29af433f5701483827620866fd6302999d08ddb559578261951da15601cc"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-instruments"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8ae125bf9fe9f010cc01db438425e7a9e0d8c5a4fdfb6b657d0fd6ae747f4786"
+  end
+
   depends_on "rust" => :build
   depends_on :macos
   depends_on "openssl@1.1"
