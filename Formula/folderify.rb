@@ -9,6 +9,12 @@ class Folderify < Formula
   # Default branch is "main" not "master"
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/folderify"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0279647bf74c467d04d96d71dfe54575fff8054e80b1bbccd3b5521ed88e633c"
+  end
+
   depends_on xcode: :build
   depends_on "imagemagick"
   depends_on :macos
