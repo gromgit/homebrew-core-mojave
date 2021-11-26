@@ -8,6 +8,12 @@ class Cruft < Formula
   license "MIT"
   head "https://github.com/cruft/cruft.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cruft"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1425bc40e6f593363c7d9988bd457d2d048835122a404da8d8ad34a868c8525f"
+  end
+
   depends_on "poetry" => :build
   depends_on "python@3.9"
   depends_on "six"
