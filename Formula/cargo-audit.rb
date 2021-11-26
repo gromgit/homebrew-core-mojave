@@ -11,6 +11,12 @@ class CargoAudit < Formula
     regex(%r{^cargo-audit/v?(\d+(?:\.\d+)+)$}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-audit"
+    rebuild 1
+    sha256 cellar: :any, mojave: "da48aae6f1bf758d4d18b59ce675265a993f1e2a7f99a76ab941292426618e22"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@1.1"
 
