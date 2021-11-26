@@ -9,6 +9,12 @@ class EasyrpgPlayer < Formula
     url "https://github.com/EasyRPG/Player.git"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easyrpg-player"
+    rebuild 1
+    sha256 cellar: :any, mojave: "000fdad121dbe234b5894a79ab0d96f99843b101511ba3039c812755ad42b1cd"
+  end
+
   depends_on "cmake" => :build
   depends_on "fmt"
   depends_on "freetype"
