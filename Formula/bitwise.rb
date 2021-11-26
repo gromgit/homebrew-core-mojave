@@ -5,6 +5,12 @@ class Bitwise < Formula
   sha256 "f524f794188a10defc4df673d8cf0b3739f93e58e93aff0cdb8a99fbdcca2ffb"
   license "GPL-3.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bitwise"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7636d01dcdecc2572b4e193161d4ec455864b14eea6d29ca0cf3ce26e4f4f916"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "readline"
