@@ -10,6 +10,12 @@ class Dafny < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dafny"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "905cdfdecec74d640902f08712b1b36d8c13a0b72d40d9eab6c8e6f2c6ce49ee"
+  end
+
   depends_on "gradle" => :build
   depends_on "nuget" => :build
   depends_on arch: :x86_64 # dotnet does not support ARM
