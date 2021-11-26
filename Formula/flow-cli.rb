@@ -11,6 +11,12 @@ class FlowCli < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flow-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1db73483d2a0bdca95961892278e140be8a16142574d03871c9e9aeeb39edfe9"
+  end
+
   depends_on "go" => :build
 
   def install
