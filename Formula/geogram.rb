@@ -7,6 +7,12 @@ class Geogram < Formula
   sha256 "7323d9f6a38fbaff3e07c47955e0c8f310906871d38171536ec8bc0758e816aa"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geogram"
+    rebuild 1
+    sha256 mojave: "5cc4555bfd9f3d2f3e58db407b8e1b91995615bb51efcc2be66621e221d2491f"
+  end
+
   depends_on "cmake" => :build
   depends_on "glfw"
 
