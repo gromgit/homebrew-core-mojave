@@ -7,6 +7,12 @@ class Gmt < Formula
   license "LGPL-3.0-or-later"
   head "https://github.com/GenericMappingTools/gmt.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmt"
+    rebuild 1
+    sha256 mojave: "b86ce07e9fe13f72cf2496d5c51765e194cd8b85c38722249fcc6e884eb813a9"
+  end
+
   depends_on "cmake" => :build
   depends_on "fftw"
   depends_on "gdal"
