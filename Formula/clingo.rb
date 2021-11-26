@@ -10,6 +10,12 @@ class Clingo < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clingo"
+    rebuild 1
+    sha256 mojave: "11b5acea5c86abbe98558374df8d238bc3c71ca67e1899f3af3c491ba67750e0"
+  end
+
   head do
     url "https://github.com/potassco/clingo.git"
     depends_on "bison" => :build
