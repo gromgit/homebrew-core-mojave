@@ -7,6 +7,12 @@ class CloudformationCli < Formula
   sha256 "065ab4a5622e0d03aa000921eeccc1af88cd9d2a30830c43870a14bb64ef42a8"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudformation-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b67b6004d055b5ce059e07447c436b734cff23bbb79d1c62c4788471d00a53ed"
+  end
+
   depends_on "go" => :test
   depends_on "python@3.10"
   depends_on "six"
