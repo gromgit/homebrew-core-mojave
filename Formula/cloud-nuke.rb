@@ -6,6 +6,12 @@ class CloudNuke < Formula
   license "MIT"
   head "https://github.com/gruntwork-io/cloud-nuke.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloud-nuke"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0c57f6ec42b15e87f87d8d219f4ef3d6098c6c6490fd8dec1d9022a815e98e5d"
+  end
+
   depends_on "go" => :build
 
   def install
