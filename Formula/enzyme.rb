@@ -6,6 +6,12 @@ class Enzyme < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/wsmoses/Enzyme.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/enzyme"
+    rebuild 1
+    sha256 mojave: "f83741384a7cd28c10562bdfe682526f180851b1297bafb412c47490cb41b13e"
+  end
+
   depends_on "cmake" => :build
   depends_on "llvm"
 
