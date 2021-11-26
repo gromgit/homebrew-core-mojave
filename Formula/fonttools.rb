@@ -8,6 +8,12 @@ class Fonttools < Formula
   license "MIT"
   head "https://github.com/fonttools/fonttools.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fonttools"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5704a0ca1751b977e886bac6282008de3cc3f3782d935d78fcd3989658ae6f07"
+  end
+
   depends_on "python@3.10"
 
   def install
