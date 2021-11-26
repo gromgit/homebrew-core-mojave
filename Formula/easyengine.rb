@@ -5,6 +5,12 @@ class Easyengine < Formula
   sha256 "f4297cc2377dfb25bf9384de5870a9944d48d78147186cec8a1f74560c77ee8f"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easyengine"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b3c012aba6a6d3e4c4241fd485fccbe51411062c688765720cfd0d7f9ccd6ac9"
+  end
+
   depends_on "dnsmasq"
   depends_on "php"
 
