@@ -8,6 +8,12 @@ class Gupnp < Formula
   license "LGPL-2.0-or-later"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9038c181d54f6679b2b3b747c024862ff05a4c0b74ac911cdf63e3d2f6790d48"
+  end
+
   depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
