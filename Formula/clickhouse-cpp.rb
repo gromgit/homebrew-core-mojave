@@ -6,6 +6,12 @@ class ClickhouseCpp < Formula
   license "Apache-2.0"
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-cpp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e3a0ee3e38c0e5cd9c1f5da8991d03b00a2b079431eb50019ac58f34ffd297bb"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
   depends_on "openssl@1.1"
