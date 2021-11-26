@@ -7,6 +7,12 @@ class Coconut < Formula
   sha256 "1f8d3ba15a4335246dc5c2ae3693042b9ce02398455fea5fc6d1d9dcc242c69b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coconut"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cb158b0bc76dcaa03d4454552d693da31493793c50e06acbad50995544d870bb"
+  end
+
   depends_on "python@3.10"
 
   resource "cPyparsing" do
