@@ -12,6 +12,12 @@ class FfmpegAT28 < Formula
     regex(/href=.*?ffmpeg[._-]v?(2\.8(?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@2.8"
+    rebuild 1
+    sha256 mojave: "787821512c9ec664cd1fad241df509c409cb0737238f4033a3d54ff8aa9303e8"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
