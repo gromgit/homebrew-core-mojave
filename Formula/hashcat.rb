@@ -8,6 +8,12 @@ class Hashcat < Formula
   version_scheme 1
   head "https://github.com/hashcat/hashcat.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hashcat"
+    rebuild 1
+    sha256 mojave: "2a050ddce211384196bbabc466fdfeb7939b89c607c583ec420392e32a9ba7e2"
+  end
+
   depends_on "gnu-sed" => :build
 
   def install
