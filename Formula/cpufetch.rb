@@ -6,6 +6,12 @@ class Cpufetch < Formula
   license "MIT"
   head "https://github.com/Dr-Noob/cpufetch.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpufetch"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2c8f5f451cbfa1e80db42452cf934633dd1e52910228802798db4294922f1f2f"
+  end
+
   def install
     system "make"
     bin.install "cpufetch"
