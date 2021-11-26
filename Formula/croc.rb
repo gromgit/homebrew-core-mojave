@@ -6,6 +6,12 @@ class Croc < Formula
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/croc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "889bf926cfd0a45248f2dbe373297cee598320ba8736649bc4f5a7c8040e9ffb"
+  end
+
   depends_on "go" => :build
 
   def install
