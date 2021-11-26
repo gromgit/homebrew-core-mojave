@@ -11,6 +11,12 @@ class GoCritic < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-critic"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "413312f586518bfe4c3e1c442fedb43dbb4619a86c4fe3b7dfa02e433848e0a9"
+  end
+
   depends_on "go"
 
   def install
