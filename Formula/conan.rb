@@ -8,6 +8,12 @@ class Conan < Formula
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conan"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d49100cc655c3a940248da6f759fb7cc7769c286fe395384e79633b042027615"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "cmake" => :test
   depends_on "libffi"
