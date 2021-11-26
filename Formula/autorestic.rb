@@ -6,6 +6,12 @@ class Autorestic < Formula
   license "Apache-2.0"
   head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autorestic"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a30a35de9f392105d25996d82862d7dcff3b51134c727aa9c53d48876072e6cb"
+  end
+
   depends_on "go" => :build
   depends_on "restic"
 
