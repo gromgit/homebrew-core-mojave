@@ -11,6 +11,12 @@ class Dynare < Formula
     regex(/href=.*?dynare[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynare"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a3974d63d249b2f7b5d5958675ccf48d56471a4baa5c45291e43bfb4b6e8660f"
+  end
+
   head do
     url "https://git.dynare.org/Dynare/dynare.git"
 
