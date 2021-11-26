@@ -8,6 +8,12 @@ class Doc8 < Formula
   license "Apache-2.0"
   head "https://github.com/PyCQA/doc8.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doc8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8b38ed434d225f9818ade1d39545f675e1d7f936a6f855ef4f29efdf0dea768c"
+  end
+
   depends_on "python@3.10"
 
   resource "docutils" do
