@@ -10,6 +10,12 @@ class Cloog < Formula
     regex(/href=.*?cloog[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloog"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4774f004689f9f9fa05a44dd0d88f44b75b99e430f9ea0b700fcd660f888c0e7"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "gmp"
   depends_on "isl@0.18"
