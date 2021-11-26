@@ -10,6 +10,12 @@ class Cdo < Formula
     regex(/href=.*?cdo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdo"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8aaba4259327cb9c689bb034762704625319ddd62469eecbd4464bb9948d7b7f"
+  end
+
   depends_on "eccodes"
   depends_on "hdf5"
   depends_on "netcdf"
