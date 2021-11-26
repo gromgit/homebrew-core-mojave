@@ -10,6 +10,12 @@ class GitSvn < Formula
     formula "git"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-svn"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d132a0e113855d26833d7b5c9727661937ffb8e4a0da9a845f58137cfd00de0f"
+  end
+
   depends_on "git"
   depends_on "subversion"
 
