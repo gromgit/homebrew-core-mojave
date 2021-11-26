@@ -7,6 +7,12 @@ class Dvc < Formula
   sha256 "e28e63bbf256045d16ffccdfbd86721110afe117b6e9472e24ab4fe1e0b68a19"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "13dddd46055a4d0db749fc0b296ae74075dc64985a254a80f1501bc92ab5552e"
+  end
+
   depends_on "pkg-config" => :build
   # for cryptograpy (required by azure deps)
   depends_on "rust" => :build
