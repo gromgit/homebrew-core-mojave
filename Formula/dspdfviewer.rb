@@ -7,6 +7,12 @@ class Dspdfviewer < Formula
   revision 11
   head "https://github.com/dannyedel/dspdfviewer.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dspdfviewer"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3dc6ff0560ab47dcbca028b65c370aa538819f1d6885c6ac1df5f889b3a71e6c"
+  end
+
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
