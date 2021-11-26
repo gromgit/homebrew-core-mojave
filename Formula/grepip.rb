@@ -10,6 +10,12 @@ class Grepip < Formula
     regex(/^grepip[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grepip"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0e85ac627a6ea22f78ae960c3ff0bb28f53dae7eaa6cd9248a2368af7f4ec934"
+  end
+
   depends_on "go" => :build
 
   def install
