@@ -12,6 +12,12 @@ class Clamav < Formula
     regex(/href=.*?clamav[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clamav"
+    rebuild 1
+    sha256 mojave: "983d388030e6200fac2fcb53241cd6c7e4091570be4dd051e212345a3bb560f5"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "json-c"
