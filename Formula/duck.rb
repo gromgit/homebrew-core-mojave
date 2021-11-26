@@ -11,6 +11,12 @@ class Duck < Formula
     regex(/href=.*?duck-src[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duck"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c04036d6a3b6bffb3828c23f04decb007d560e9b51dea3c318fe603c227cf611"
+  end
+
   depends_on "ant" => :build
   depends_on "maven" => :build
   depends_on "pkg-config" => :build
