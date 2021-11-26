@@ -6,6 +6,12 @@ class ElanInit < Formula
   license "Apache-2.0"
   head "https://github.com/leanprover/elan.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elan-init"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f0ab033d8181290d69a8c2521c31617aeb968b38a7625ad4681e6094d8d4f579"
+  end
+
   depends_on "rust" => :build
   # elan-init will run on arm64 Macs, but will fetch Leans that are x86_64.
   depends_on arch: :x86_64
