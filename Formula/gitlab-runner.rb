@@ -12,6 +12,12 @@ class GitlabRunner < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5dc582bb6cbed6fc66d8d60b766c9b9b2206b8118e1001951bf0c7e24d3ec2f6"
+  end
+
   depends_on "go" => :build
 
   def install
