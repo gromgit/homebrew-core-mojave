@@ -6,6 +6,12 @@ class Gosec < Formula
   license "Apache-2.0"
   head "https://github.com/securego/gosec.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gosec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f234d41b1a092420d4198f2fd503fe25815b70e913a53ee32065ef320b5a072e"
+  end
+
   depends_on "go"
 
   def install
