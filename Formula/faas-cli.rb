@@ -12,6 +12,12 @@ class FaasCli < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faas-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "55e100f9a9d7bb9da1ba7f24dde8a274d678a5a8d23a13d4bd0ca28bd51b7966"
+  end
+
   depends_on "go" => :build
 
   def install
