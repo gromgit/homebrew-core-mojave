@@ -12,6 +12,12 @@ class FabricInstaller < Formula
     regex(/["']url["']:\s*["'][^"']*?fabric-installer[._-]v?(\d+(?:\.\d+)+)\.jar/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fabric-installer"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "36de0adb455a3e89c5b3195477c85af4208b816067d2be776e3df223bf824333"
+  end
+
   depends_on "openjdk"
 
   def install
