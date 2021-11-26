@@ -5,6 +5,12 @@ class ElasticsearchAT6 < Formula
   sha256 "3f436ef2e07697e56e6a14cc9abbf0661190d60923691dadb7de5c84476a7b8b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elasticsearch@6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5d956a33ddcf9742c3361020a4383e114db9b8072be891a5e576b279e61b42b9"
+  end
+
   keg_only :versioned_formula
 
   depends_on "openjdk"
