@@ -5,6 +5,12 @@ class Driftctl < Formula
   sha256 "3827a253c70ee5f18091efbff0f922c8f71e7d947c5d4e74294e33f1dfd06b88"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/driftctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0dfcebb7df8c622657b995055d7d64c91d36faec2422416429633d0cd925a0cb"
+  end
+
   depends_on "go" => :build
 
   def install
