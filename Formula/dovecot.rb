@@ -10,6 +10,12 @@ class Dovecot < Formula
     regex(/href=.*?dovecot[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dovecot"
+    rebuild 1
+    sha256 mojave: "950b663046c44d87a23733271aab18f22480b3df596e5b21a94dedcba6b9f631"
+  end
+
   depends_on "openssl@1.1"
 
   uses_from_macos "bzip2"
