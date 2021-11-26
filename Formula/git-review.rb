@@ -8,6 +8,12 @@ class GitReview < Formula
   license "Apache-2.0"
   head "https://opendev.org/opendev/git-review.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-review"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a0e2e9fa2ad2a94d66ba0064cd5382b2c32b8524aada68f2144d6ae23c8839e9"
+  end
+
   depends_on "python@3.10"
 
   resource "certifi" do
