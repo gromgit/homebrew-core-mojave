@@ -11,6 +11,12 @@ class Fheroes2 < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fheroes2"
+    rebuild 1
+    sha256 mojave: "ec0e9c0d4fef27184740459101178c74af2360aa1217f8a0455d5714ffd2b088"
+  end
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
 
