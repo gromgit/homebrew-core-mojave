@@ -6,6 +6,12 @@ class EfmLangserver < Formula
   license "MIT"
   head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/efm-langserver"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "353e61e3fa9e8d134f23a32ec1997e5e05c89142b55f145e342d3870e662d10c"
+  end
+
   depends_on "go" => :build
 
   def install
