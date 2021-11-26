@@ -12,6 +12,12 @@ class Freeswitch < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeswitch"
+    rebuild 1
+    sha256 mojave: "6ab9a6fb7614adf6c4c222fad255568c504637ec5833b3c433ae94f99828a348"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
