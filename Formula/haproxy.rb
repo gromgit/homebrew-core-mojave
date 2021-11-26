@@ -10,6 +10,12 @@ class Haproxy < Formula
     regex(/href=.*?haproxy[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haproxy"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3ac098b53f88e4abc5d5e5bac5103abcc035915eabebc420d20ef8cab0b49ce4"
+  end
+
   depends_on "openssl@1.1"
   depends_on "pcre"
 
