@@ -6,6 +6,12 @@ class Duckdb < Formula
       revision: "88aa81c6b1b851c538145e6431ea766a6e0ef435"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckdb"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3038f1f792018378a7985753f1947e65465d73a72b140d9c50fd77f0a8626c8b"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.9" => :build
   depends_on "utf8proc"
