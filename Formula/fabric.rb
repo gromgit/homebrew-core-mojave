@@ -9,6 +9,12 @@ class Fabric < Formula
   revision 2
   head "https://github.com/fabric/fabric.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fabric"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f4d441fed8e361840595c0f5d2c1a4c0a41f641cc7f7ca91e7cab3a040623451"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@1.1"
   depends_on "python@3.9"
