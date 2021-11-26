@@ -6,6 +6,12 @@ class Atlantis < Formula
   license "Apache-2.0"
   head "https://github.com/runatlantis/atlantis.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atlantis"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a3f277a50d767937b307421c934359c980c65351f02aa6acee66c6275b327c13"
+  end
+
   depends_on "go" => :build
   depends_on "terraform"
 
