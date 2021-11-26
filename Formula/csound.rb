@@ -13,6 +13,12 @@ class Csound < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csound"
+    rebuild 1
+    sha256 mojave: "fd287d9e4e8a5c3e2116eed8bec61805909382e3282b6994c04431314903ec7d"
+  end
+
   depends_on "asio" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
