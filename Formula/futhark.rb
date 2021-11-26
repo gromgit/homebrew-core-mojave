@@ -6,6 +6,12 @@ class Futhark < Formula
   license "ISC"
   head "https://github.com/diku-dk/futhark.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/futhark"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f5362b91d54ec7003e840ea97089f527f0e5f699c74a2f58349f237f78418b43"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "sphinx-doc" => :build
