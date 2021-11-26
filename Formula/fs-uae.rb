@@ -10,6 +10,12 @@ class FsUae < Formula
     regex(/href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fs-uae"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5ec5aff7f1917734159c32dbb8c3bc5594bda9497f541014b1093f2fbb942f12"
+  end
+
   head do
     url "https://github.com/FrodeSolheim/fs-uae.git"
     depends_on "autoconf" => :build
