@@ -6,6 +6,12 @@ class AvroC < Formula
   sha256 "0652590a54ad8e4aa58a2b9ff1f4ce71a64a41b0a05c4529d1c518c61e760643"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avro-c"
+    rebuild 1
+    sha256 mojave: "3ec64ac28e743b54a3ed6ecd408a50d6bf606f6e6da3e8f62c6a6d1ac58adbd5"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "jansson"
