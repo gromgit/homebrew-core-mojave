@@ -7,6 +7,12 @@ class Fceux < Formula
   license "GPL-2.0-only"
   head "https://github.com/TASEmulators/fceux.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fceux"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7fd909ce55ca592b3a529a099302c9dc25e5c2ba405394b640f42310268b198e"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
