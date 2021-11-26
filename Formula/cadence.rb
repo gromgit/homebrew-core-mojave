@@ -11,6 +11,12 @@ class Cadence < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadence"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d9251eec6002b1858e8bff6b20d56ce41c1f8691bc7a3781ec4e05260af2e6a1"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "cadence-workflow", because: "both install a `cadence` executable"
