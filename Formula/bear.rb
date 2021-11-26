@@ -6,6 +6,12 @@ class Bear < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bear"
+    rebuild 1
+    sha256 mojave: "87de50bde0b206d888c4e145f4daeaf5c44eec48ff5304b6ed10e642ff468c56"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "fmt"
