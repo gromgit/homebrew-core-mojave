@@ -7,6 +7,12 @@ class Glances < Formula
   sha256 "5593f5ba8eca69beb91086bc4cc45473c2d4713839e80a26e2acc96264f23926"
   license "LGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glances"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "03e2ee3539e515d4fef7c20135fadd42a8fb45e8b4cad6d68ab35f24c5779f47"
+  end
+
   depends_on "python@3.10"
 
   resource "defusedxml" do
