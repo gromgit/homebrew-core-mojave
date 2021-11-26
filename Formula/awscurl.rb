@@ -9,6 +9,12 @@ class Awscurl < Formula
   revision 1
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscurl"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9f0cef2b99d4b1e6a4b9c745dce3c2019418467097d1142d3c89ace0f40c1507"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.9"
 
