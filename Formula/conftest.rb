@@ -6,6 +6,12 @@ class Conftest < Formula
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/conftest.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conftest"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3685ca8637dfefca931df61aaa7aa2cf1679af04eb80c8c5093878b8cfc98b5f"
+  end
+
   depends_on "go" => :build
 
   def install
