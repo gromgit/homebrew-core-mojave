@@ -7,6 +7,12 @@ class ConsulTemplate < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul-template.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/consul-template"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "321f927b6bd81b6c553c02c1c4fa72db343980d8d7e6df15b1b980049317815a"
+  end
+
   depends_on "go" => :build
 
   def install
