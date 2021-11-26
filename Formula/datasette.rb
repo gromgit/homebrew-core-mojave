@@ -7,6 +7,12 @@ class Datasette < Formula
   license "Apache-2.0"
   head "https://github.com/simonw/datasette.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datasette"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "be0f8b1ed0376635787002835de69cae16ea9e5e79f473983fda675f509f450d"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
