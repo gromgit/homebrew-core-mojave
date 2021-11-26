@@ -6,6 +6,12 @@ class Eigenpy < Formula
   license "BSD-2-Clause"
   head "https://github.com/stack-of-tasks/eigenpy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eigenpy"
+    rebuild 1
+    sha256 mojave: "ae93f6dcb49f45f9b81e336f0a7e8733d437ae9621320bb2f1b49353edfe024e"
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
