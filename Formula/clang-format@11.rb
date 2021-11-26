@@ -5,6 +5,12 @@ class ClangFormatAT11 < Formula
   sha256 "ce8508e318a01a63d4e8b3090ab2ded3c598a50258cc49e2625b9120d4c03ea5"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clang-format@11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e697e805b9022b853c5b71e8a1c0abf78ff6e9e191d71e321979f61f9670d88a"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "ncurses"
