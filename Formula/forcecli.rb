@@ -6,6 +6,12 @@ class Forcecli < Formula
   license "MIT"
   head "https://github.com/ForceCLI/force.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/forcecli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "efca2983d77717495ede17896c8d1346c487ea1ab089ce8a4e1d56d3083f6ff0"
+  end
+
   depends_on "go" => :build
 
   def install
