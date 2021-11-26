@@ -11,6 +11,12 @@ class Fnm < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fnm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9c0358296506b28f2b164ac3f8c2d05c1197b37f92c01e678fe3a4bf9737064e"
+  end
+
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
