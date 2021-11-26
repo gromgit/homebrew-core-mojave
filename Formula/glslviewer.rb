@@ -7,6 +7,12 @@ class Glslviewer < Formula
   revision 1
   head "https://github.com/patriciogonzalezvivo/glslViewer.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glslviewer"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1c8c64a2d0b7a062debe57518edeee3005f10d759cc569141fdf164f0205dc20"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
   depends_on "glfw"
