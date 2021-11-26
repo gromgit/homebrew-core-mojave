@@ -10,6 +10,12 @@ class Halide < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/halide"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e53190e5f2d4f100b1a335c5e1708e5317f6bf1920d5ebc21f3c3dc8ca24dcaa"
+  end
+
   depends_on "cmake" => :build
   depends_on "jpeg"
   depends_on "libpng"
