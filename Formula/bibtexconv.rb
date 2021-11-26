@@ -6,6 +6,12 @@ class Bibtexconv < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bibtexconv"
+    rebuild 1
+    sha256 cellar: :any, mojave: "303580cb4e24b1487e07bb69479cd59143c1bb93adc19357c37be51e5099a8f3"
+  end
+
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
