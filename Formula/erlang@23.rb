@@ -11,6 +11,12 @@ class ErlangAT23 < Formula
     regex(/^OTP[._-]v?(23(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang@23"
+    rebuild 1
+    sha256 cellar: :any, mojave: "358926865f1171a4871219756191b11c10a5ff4fd0857269f7169581aa1a5917"
+  end
+
   keg_only :versioned_formula
 
   depends_on "openssl@1.1"
