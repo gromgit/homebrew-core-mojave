@@ -6,6 +6,12 @@ class Cppcheck < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppcheck"
+    rebuild 1
+    sha256 mojave: "7746e915846780ce951d7bea7ff20fbc44e65ebc076e5858e8d209b8fab6f781"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.9" => [:build, :test]
   depends_on "pcre"
