@@ -13,6 +13,12 @@ class AwscliAT1 < Formula
     regex(/^v?(1(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli@1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "441733d536472cd71854c674b44e3ece4a425c3876ab2fea4d9c642b690542ec"
+  end
+
   keg_only :versioned_formula
 
   depends_on "libyaml" # for faster PyYAML
