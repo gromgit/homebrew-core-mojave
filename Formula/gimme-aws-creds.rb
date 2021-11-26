@@ -8,6 +8,12 @@ class GimmeAwsCreds < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gimme-aws-creds"
+    rebuild 1
+    sha256 cellar: :any, mojave: "413f027d2c3a7f927f40ea306f9997d517bc4c70e309fa187f92c671b56c4d5a"
+  end
+
   depends_on "rust" => :build
 
   depends_on "python@3.10"
