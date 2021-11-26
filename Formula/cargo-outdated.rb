@@ -6,6 +6,12 @@ class CargoOutdated < Formula
   license "MIT"
   head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-outdated"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a00ad7976d9d3e4daf3e1a8608409c2008e8a9f6a23b526121abec39d58284f8"
+  end
+
   depends_on "libgit2"
   depends_on "openssl@1.1"
   depends_on "rust"
