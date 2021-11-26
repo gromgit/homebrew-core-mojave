@@ -6,6 +6,12 @@ class CriTools < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cri-tools"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f0584ba8e79687fd803170ec0a649a44b146ffb8b11f07404c2c115fc5647459"
+  end
+
   depends_on "go" => :build
 
   def install
