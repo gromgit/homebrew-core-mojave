@@ -7,6 +7,12 @@ class Autopep8 < Formula
   sha256 "44f0932855039d2c15c4510d6df665e4730f2b8582704fa48f9c55bd3e17d979"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autopep8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d6ab1a5a10e4c46c4a0d37eeaa35127166642d20cd97ddc2ec6344b26c0d54bf"
+  end
+
   depends_on "python@3.10"
 
   resource "pycodestyle" do
