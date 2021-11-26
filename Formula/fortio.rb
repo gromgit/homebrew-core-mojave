@@ -11,6 +11,12 @@ class Fortio < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fortio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8d7b32e3d5e2251920698f2316c5e9a7de8f7d53f4077baa9df49f61f28d8ae7"
+  end
+
   depends_on "go" => :build
 
   def install
