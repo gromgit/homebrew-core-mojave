@@ -6,6 +6,12 @@ class ContainerStructureTest < Formula
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/container-structure-test.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/container-structure-test"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c42ebeba72490464867219781efd26a7f121541921ffb1de537e874a6853de65"
+  end
+
   depends_on "go" => :build
 
   # Small Docker image to run tests against
