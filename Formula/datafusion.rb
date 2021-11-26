@@ -6,6 +6,12 @@ class Datafusion < Formula
   license "Apache-2.0"
   head "https://github.com/apache/arrow-datafusion.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datafusion"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5a74afda2a1729a54a4955380de1ddcb74db506c22acc5e0f48e8d58307c4b91"
+  end
+
   depends_on "rust" => :build
   # building ballista requires installing rustfmt
   depends_on "rustfmt" => :build
