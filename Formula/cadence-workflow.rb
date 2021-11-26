@@ -7,6 +7,12 @@ class CadenceWorkflow < Formula
   license "MIT"
   head "https://github.com/uber/cadence.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadence-workflow"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c7bbe4f1f0de9708aa251539389c8aaf35eb7ccf0a73ddf4d13ead76fae74cba"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "cadence", because: "both install an `cadence` executable"
