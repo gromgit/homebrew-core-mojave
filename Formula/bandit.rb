@@ -8,6 +8,12 @@ class Bandit < Formula
   license "Apache-2.0"
   head "https://github.com/PyCQA/bandit.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bandit"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0e530d4b4579f0186eb16683c88b9f20356592f42c60dac8072ca4b4ba28bd2b"
+  end
+
   depends_on "python@3.10"
 
   resource "gitdb" do
