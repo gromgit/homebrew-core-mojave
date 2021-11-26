@@ -5,6 +5,12 @@ class CloudformationGuard < Formula
   sha256 "b401664363020474869a81a70d6920a3bfacec12459a601d8f9a7627000dfb56"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudformation-guard"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a7c1ddcfae2045f4224550747e16f390dc877af23f33de4cb5f1284337997f22"
+  end
+
   depends_on "rust" => :build
 
   def install
