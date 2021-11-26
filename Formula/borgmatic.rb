@@ -7,6 +7,12 @@ class Borgmatic < Formula
   sha256 "b8aa9dbf250b95b829827310c9638a17cd52fee160a437283eed23bffcae83cf"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/borgmatic"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c34a5bef78fbc268f5b16f07a503af0d371c8cb65f8a85188ae47184f84a1168"
+  end
+
   depends_on "python@3.10"
 
   resource "attrs" do
