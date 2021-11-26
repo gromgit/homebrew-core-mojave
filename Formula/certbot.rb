@@ -8,6 +8,12 @@ class Certbot < Formula
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certbot"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ef76281943eb8928e01246c2b2297110fde7f36ffdf979dbb7372c6f1d73d129"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "augeas"
   depends_on "dialog"
