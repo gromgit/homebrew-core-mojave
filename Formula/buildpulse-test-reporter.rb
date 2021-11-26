@@ -6,6 +6,12 @@ class BuildpulseTestReporter < Formula
   license "MIT"
   head "https://github.com/buildpulse/test-reporter.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildpulse-test-reporter"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d7007dbf8246164717d8847b5c95e89a3d0742b81b9ecfe983e2717de5d1a5fe"
+  end
+
   depends_on "go" => :build
 
   def install
