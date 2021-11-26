@@ -21,6 +21,12 @@ class Bind < Formula
     regex(/href=.*?bind[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bind"
+    rebuild 1
+    sha256 mojave: "4ef454821f60ea2dbbfa1d2a93e685174aea8822693bef65c9daef8c6d5f5ee8"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "json-c"
   depends_on "libidn2"
