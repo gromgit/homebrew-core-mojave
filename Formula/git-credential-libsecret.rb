@@ -10,6 +10,12 @@ class GitCredentialLibsecret < Formula
     formula "git"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-credential-libsecret"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b5df8815d39a59c05e934df1600a8811cb0d4739ef8e8983f0f1e12398a83a68"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "libsecret"
