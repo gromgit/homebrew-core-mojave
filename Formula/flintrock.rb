@@ -8,6 +8,12 @@ class Flintrock < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flintrock"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9a1c6413c9971b73b4b4842917515778dc689ebdc5403cc32949aed95bab75be"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.9"
   depends_on "six"
