@@ -6,6 +6,12 @@ class Gifski < Formula
   license "AGPL-3.0-only"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gifski"
+    rebuild 1
+    sha256 cellar: :any, mojave: "87fc972d8ee7b55fe353ce21cf52cd41309f40d99b804212490f4d96409297b1"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
