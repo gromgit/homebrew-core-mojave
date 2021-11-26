@@ -5,6 +5,12 @@ class Gofumpt < Formula
   sha256 "17b7a921ae385a91aed8d8c09485736f5a53cda2decc085a390fc7aa270fdef0"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gofumpt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "10f4067057347b757a897c39273e37b7ca7000134a899395ae669a77644c3c8f"
+  end
+
   depends_on "go"
 
   def install
