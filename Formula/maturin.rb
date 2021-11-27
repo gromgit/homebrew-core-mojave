@@ -6,6 +6,12 @@ class Maturin < Formula
   license "MIT"
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maturin"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ab84b7646d055ec069b0c7cb2f62803737d860d05868a0d4fb3ca8b432ceac60"
+  end
+
   depends_on "python@3.10" => :test
   depends_on "rust"
 
