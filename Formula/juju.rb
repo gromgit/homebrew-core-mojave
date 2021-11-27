@@ -13,6 +13,12 @@ class Juju < Formula
     regex(/^juju[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/juju"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "abfb5f5b47ff5aa2b8d27381b68d2f4333c5354f7f6a6560aaa0ea9101d9398b"
+  end
+
   depends_on "go" => :build
 
   def install
