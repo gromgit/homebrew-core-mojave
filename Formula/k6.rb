@@ -5,6 +5,12 @@ class K6 < Formula
   sha256 "52d81754f2d4e23f180eb094b0a203c9162dda177a23b8aa3b96bd84981a31a7"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "70dc42e99cabe1b7e46b8fde7d653692a2ae825a66d95b28023da3325029a7d7"
+  end
+
   depends_on "go" => :build
 
   def install
