@@ -6,6 +6,12 @@ class HopenpgpTools < Formula
   license "AGPL-3.0-or-later"
   head "https://salsa.debian.org/clint/hOpenPGP.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hopenpgp-tools"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5e7a5fd888cee692bb5b69ce9901f927aba890cedee418f4535800d90e7e80a7"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "pkg-config" => :build
