@@ -7,6 +7,12 @@ class Idris2 < Formula
   revision 1
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idris2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "caf1d33a8a9557068c7a216a7db85a160875e70f75d643764f53426f16206108"
+  end
+
   depends_on "coreutils" => :build
   depends_on "gmp" => :build
   depends_on "chezscheme"
