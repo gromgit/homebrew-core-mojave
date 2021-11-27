@@ -6,6 +6,12 @@ class Hugo < Formula
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hugo"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5bc7848b692c089f4a1ae77a574bffbdfcd19f1cc46fff9b09a6f7ee6084413c"
+  end
+
   depends_on "go" => :build
 
   def install
