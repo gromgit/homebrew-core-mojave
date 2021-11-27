@@ -11,6 +11,12 @@ class Kakoune < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kakoune"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dc4a083aee33aa0c6a6449bb7034528decff1c7728f0c4330df32087df56b32a"
+  end
+
   depends_on macos: :high_sierra # needs C++17
   depends_on "ncurses"
 
