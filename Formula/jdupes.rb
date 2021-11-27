@@ -10,6 +10,12 @@ class Jdupes < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jdupes"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "740048360aa52ce9b8224b3d2627d7f8b00ac3ed872a6496effa7baa6f4dab7a"
+  end
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "ENABLE_DEDUPE=1"
   end
