@@ -7,6 +7,12 @@ class K9s < Formula
   license "Apache-2.0"
   head "https://github.com/derailed/k9s.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k9s"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "728f7e556b63195dfe65948392c3c37f098509436cfd95841ed821dbff27785d"
+  end
+
   depends_on "go" => :build
 
   def install
