@@ -13,6 +13,12 @@ class HaskellLanguageServer < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haskell-language-server"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ed202e54e3f3e9f1f44a75cf8e64fbbf6a083dde7d254158b887fca102039bb7"
+  end
+
   depends_on "cabal-install" => [:build, :test]
   depends_on "ghc" => [:build, :test]
 
