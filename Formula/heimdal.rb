@@ -12,6 +12,12 @@ class Heimdal < Formula
     regex(%r{href=.*?/tag/heimdal[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heimdal"
+    rebuild 1
+    sha256 mojave: "954b63ae346e20339d43f4eae757833b101faae8935f862a79527e3118e79095"
+  end
+
   keg_only "conflicts with Kerberos"
 
   depends_on "bison" => :build
