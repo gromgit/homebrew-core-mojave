@@ -5,6 +5,12 @@ class Himalaya < Formula
   sha256 "13567726903243f04a4aa64e96b88e0d0fd5c3ccbe4953357f3a8ef1c569dad9"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/himalaya"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ac928690c8331058c573aa4e5149abfa4760245a72ad0727adb70d8658c2e966"
+  end
+
   depends_on "rust" => :build
 
   on_linux do
