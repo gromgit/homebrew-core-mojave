@@ -7,6 +7,12 @@ class Jc < Formula
   sha256 "c59fa13d260c15e498a65f56df67fcbc2981d4bf9e64bfd6097496595e0248c9"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1fe1c7614e5765c2da7135630bc54098e7e087e226de4944295107b115604123"
+  end
+
   depends_on "python@3.10"
 
   resource "Pygments" do
