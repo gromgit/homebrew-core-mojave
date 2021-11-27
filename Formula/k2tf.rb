@@ -6,6 +6,12 @@ class K2tf < Formula
   license "MPL-2.0"
   head "https://github.com/sl1pm4t/k2tf.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k2tf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "337b79b489404799b18914a18cbc54254abebe38c3fb1928e7855fc375da9afb"
+  end
+
   depends_on "go" => :build
 
   resource("test") do
