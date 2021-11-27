@@ -18,6 +18,12 @@ class Kdoctools < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kdoctools"
+    rebuild 1
+    sha256 mojave: "7bb6f28dd828fadc1ea1c1c3f99cacfc909acf10e17565b3eca78753b7a9e431"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "docbook-xsl" => [:build, :test]
   depends_on "doxygen" => :build
