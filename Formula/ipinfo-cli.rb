@@ -10,6 +10,12 @@ class IpinfoCli < Formula
     regex(/^ipinfo[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipinfo-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2f2574eba37e105d8974409e63b29b63f87b98789c59c3a4fe027900fea53099"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "ipinfo", because: "ipinfo and ipinfo-cli install the same binaries"
