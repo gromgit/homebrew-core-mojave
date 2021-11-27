@@ -13,6 +13,12 @@ class Kcov < Formula
     regex(/^v?(\d+(?:\.\d+)*)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kcov"
+    rebuild 1
+    sha256 mojave: "16cc6b9b84d33bebd928c0e00c24d90ebf05f83cc354a239cc67ef453f78142e"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => :build
