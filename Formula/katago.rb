@@ -10,6 +10,12 @@ class Katago < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/katago"
+    rebuild 1
+    sha256 cellar: :any, mojave: "20b646dcfd9b1cdcf3d783f74664395b7e017dcaf9a171b975e651bfea58b893"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "libzip"
