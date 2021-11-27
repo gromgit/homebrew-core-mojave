@@ -11,6 +11,12 @@ class K3d < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e9daddf711f81f34717d737c49b50b00bc7e683667179c9be7be882facf05cc8"
+  end
+
   depends_on "go" => :build
 
   def install
