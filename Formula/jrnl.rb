@@ -8,6 +8,12 @@ class Jrnl < Formula
   license "GPL-3.0-only"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jrnl"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b7b0711269b9fd6334949d1c4aa9b68937a999c2f9a2e731d2be35cbea2b464c"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.9"
 
