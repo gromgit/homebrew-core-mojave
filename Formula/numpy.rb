@@ -6,6 +6,12 @@ class Numpy < Formula
   license "BSD-3-Clause"
   head "https://github.com/numpy/numpy.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numpy"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f978faf2c7f55de2e1f0a1f525f19d5df17c31f51f9f9b57d49a91299a0c6334"
+  end
+
   depends_on "cython" => :build
   depends_on "gcc" => :build # for gfortran
   depends_on "openblas"
