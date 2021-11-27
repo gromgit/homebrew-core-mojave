@@ -5,6 +5,12 @@ class Helmfile < Formula
   sha256 "5475a041f0a1eb5777cc45e3fb06458ae76b1d4840aec89f2fed509d833d0cde"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmfile"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "20b0632f75372a1dc74bc15e59c870fd18a5b4d941735e7820571831fc9ac0e5"
+  end
+
   depends_on "go" => :build
   depends_on "helm"
 
