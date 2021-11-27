@@ -7,12 +7,6 @@ class Gmsh < Formula
   revision 1
   head "https://gitlab.onelab.info/gmsh/gmsh.git"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmsh"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6b51b73b6ac4f223d6e4ef43e9351240f41d33d4845252c08d6b1c99c7157ec4"
-  end
-
   depends_on "cmake" => :build
   depends_on "cairo"
   depends_on "fltk"

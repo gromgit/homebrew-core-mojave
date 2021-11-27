@@ -10,12 +10,13 @@ class OpenkimModels < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "763adc2f08934f30279506792efee7a17f538927ddc123f0c09f263b0495aa0b"
-    sha256 cellar: :any,                 monterey:      "cf230e121f3333365f469b962aab55714e5795bfaefb4a7a96313b2ee6b4985f"
-    sha256 cellar: :any,                 big_sur:       "4c0c49b3ff34e3656e1d1dce4ebcbec296851ad6c20c417f31b97a2b5f6bb779"
-    sha256 cellar: :any,                 catalina:      "3f8e0b64864f1f03dd0a22801ee2a03ed80540a033f107a2dbfb6f3758beff86"
-    sha256 cellar: :any,                 mojave:        "57c577a620d2cba560232d4d5cd189816580d22f93403330431d3970496a626c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "780e5600aecda03574243907a2e77ddf77a61d2e41a8aee15e5c6b440742e262"
+    sha256 cellar: :any,                 arm64_monterey: "49787002d035ffba2b97927361db755ba032e5b43c515d26f4f409bdbc0a3cc2"
+    sha256 cellar: :any,                 arm64_big_sur:  "763adc2f08934f30279506792efee7a17f538927ddc123f0c09f263b0495aa0b"
+    sha256 cellar: :any,                 monterey:       "cf230e121f3333365f469b962aab55714e5795bfaefb4a7a96313b2ee6b4985f"
+    sha256 cellar: :any,                 big_sur:        "4c0c49b3ff34e3656e1d1dce4ebcbec296851ad6c20c417f31b97a2b5f6bb779"
+    sha256 cellar: :any,                 catalina:       "3f8e0b64864f1f03dd0a22801ee2a03ed80540a033f107a2dbfb6f3758beff86"
+    sha256 cellar: :any,                 mojave:         "57c577a620d2cba560232d4d5cd189816580d22f93403330431d3970496a626c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "780e5600aecda03574243907a2e77ddf77a61d2e41a8aee15e5c6b440742e262"
   end
 
   depends_on "cmake" => :build

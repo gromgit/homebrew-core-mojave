@@ -14,12 +14,13 @@ class Binwalk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "1e034085ca39b0365e95df6280778c66ef0944e1755bb8b7ad9aa4852a694279"
-    sha256 cellar: :any,                 monterey:      "65042e23100ef67cf9f27df953a228a15b079bbe70ede1cb6bdd0f19cc25bca4"
-    sha256 cellar: :any,                 big_sur:       "5863bab81579b7948fe90f4106ab0b71617088b2c2ebeaf5f41d06322f37a0e5"
-    sha256 cellar: :any,                 catalina:      "a5841b3b76b9ceffe00cbeaa1b09fd47bf36bb7047167bd93cbd4feb9112276d"
-    sha256 cellar: :any,                 mojave:        "a8aa94d921b8ded782cbbbc96458d388d53eaf40d7d7be530a24af4477f01e4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96b1f21982d5955fe9e1dd3e7c42b740293bff518cd567c85cc16177c563d2ef"
+    sha256 cellar: :any,                 arm64_monterey: "c4f8b3ab0a10b11ecfb8e8219013f52b671c2c8e3dc488c313df51f181082db1"
+    sha256 cellar: :any,                 arm64_big_sur:  "1e034085ca39b0365e95df6280778c66ef0944e1755bb8b7ad9aa4852a694279"
+    sha256 cellar: :any,                 monterey:       "65042e23100ef67cf9f27df953a228a15b079bbe70ede1cb6bdd0f19cc25bca4"
+    sha256 cellar: :any,                 big_sur:        "5863bab81579b7948fe90f4106ab0b71617088b2c2ebeaf5f41d06322f37a0e5"
+    sha256 cellar: :any,                 catalina:       "a5841b3b76b9ceffe00cbeaa1b09fd47bf36bb7047167bd93cbd4feb9112276d"
+    sha256 cellar: :any,                 mojave:         "a8aa94d921b8ded782cbbbc96458d388d53eaf40d7d7be530a24af4477f01e4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96b1f21982d5955fe9e1dd3e7c42b740293bff518cd567c85cc16177c563d2ef"
   end
 
   depends_on "pkg-config" => :build

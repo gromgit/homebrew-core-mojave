@@ -5,7 +5,8 @@ class Briss < Formula
   sha256 "45dd668a9ceb9cd59529a9fefe422a002ee1554a61be07e6fc8b3baf33d733d9"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "95064b9aa616b6f63cd7f5746cec3865a0441c070aed78716868cbd5aa500ab9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0dde9e491031441296ba34f985de7d37325c03f2f5aae9869da56578e17a3126"
   end
 
   depends_on "openjdk"

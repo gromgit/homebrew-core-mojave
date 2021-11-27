@@ -7,11 +7,13 @@ class Libmatio < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "b3a64b70d10cdfc86f00a4131724c3924e84d7cdc432eab12952859f368019f6"
-    sha256 cellar: :any,                 big_sur:       "06e8056f9862feace810dd233860e9b77af58e20e3eb916f48525c586e08eb42"
-    sha256 cellar: :any,                 catalina:      "84f08acf62972b2fda425f589809892255c401f268b4fbe9465cfdca1a03a3de"
-    sha256 cellar: :any,                 mojave:        "36629f8d449fa124cf0557deec222bb732c0ded477b5109011448726bd4f51d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5737ad4a0096f6ff36ec2d208baf1678f0c267b88c1d02a006fdf57172f966d"
+    sha256 cellar: :any,                 arm64_monterey: "7cbade994b6fb62fe30f8b7893bc807242c19a1c4d3ae4743170528e2ddebe6e"
+    sha256 cellar: :any,                 arm64_big_sur:  "b3a64b70d10cdfc86f00a4131724c3924e84d7cdc432eab12952859f368019f6"
+    sha256 cellar: :any,                 monterey:       "bdb0a023ea5174752d9637169eaa3ee0876996018d60dd8c4c9c46aa82b81197"
+    sha256 cellar: :any,                 big_sur:        "06e8056f9862feace810dd233860e9b77af58e20e3eb916f48525c586e08eb42"
+    sha256 cellar: :any,                 catalina:       "84f08acf62972b2fda425f589809892255c401f268b4fbe9465cfdca1a03a3de"
+    sha256 cellar: :any,                 mojave:         "36629f8d449fa124cf0557deec222bb732c0ded477b5109011448726bd4f51d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5737ad4a0096f6ff36ec2d208baf1678f0c267b88c1d02a006fdf57172f966d"
   end
 
   depends_on "hdf5"

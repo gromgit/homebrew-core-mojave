@@ -6,12 +6,6 @@ class Vtk < Formula
   license "BSD-3-Clause"
   head "https://github.com/Kitware/VTK.git", branch: "master"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vtk"
-    rebuild 1
-    sha256 mojave: "93277b7123dfb3f93833d7ab25fcea7e867d6153f69cc315de363434a9d20a58"
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
   depends_on "double-conversion"

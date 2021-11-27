@@ -13,12 +13,6 @@ class Nginx < Formula
     regex(%r{nginx[._-]v?(\d+(?:\.\d+)+)</a>\nmainline version}i)
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nginx"
-    rebuild 1
-    sha256 mojave: "d0cfb0b8bffdbf2234cce46609cbb7ebcc780338ca8ab1a48b3570482a0757a5"
-  end
-
   depends_on "openssl@1.1"
   depends_on "pcre"
 
@@ -140,7 +134,7 @@ class Nginx < Formula
   end
 
   service do
-    run [opt_bin/"nginx", "-g", "daemon off;"]
+    run [opt_bin/"nginx", "-g", "'daemon off;'"]
     keep_alive false
     working_dir HOMEBREW_PREFIX
   end

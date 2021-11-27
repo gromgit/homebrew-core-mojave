@@ -27,6 +27,7 @@ repo=$(brew --repo homebrew/core)
 cd "$(dirname "$repo")" || fatal "Unable to cd to $(dirname "$repo")"
 main=${repo##*/}
 main_url=https://github.com/gromgit/homebrew-core-${my_os}
+main_ghrepo=${main_url#*github.com}
 real=homebrew-realcore
 
 [[ -d $real ]] || mv "$main" "$real"
@@ -73,6 +74,12 @@ cmd brew style --fix homebrew/core
   find ./* .github/* \! -type d | while read -r f; do
     if [[ ! -e ../"$real/$f" && ! -k "$f" ]]; then
       git rm -fr "$f"
+      if [[ $f == ./Formula/* ]]; then
+        fname=$(basename "$f" .rb)
+        if gh release view "$fname" -R "$main_ghrepo" >&/dev/null; then
+          gh release delete "$fname" -R "$main_ghrepo" -y
+        fi
+      fi
     fi
   done
   # Update the main repo

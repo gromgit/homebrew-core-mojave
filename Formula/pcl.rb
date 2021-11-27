@@ -7,12 +7,6 @@ class Pcl < Formula
   revision 1
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcl"
-    rebuild 1
-    sha256 mojave: "b6f7c9a887cdd13c0ea85d5717cc5d6ee90d5d85b685d4852b9c3240de9353f7"
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "boost"

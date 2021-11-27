@@ -2,9 +2,9 @@ class Minio < Formula
   desc "High Performance, Kubernetes Native Object Storage"
   homepage "https://min.io"
   url "https://github.com/minio/minio.git",
-      tag:      "RELEASE.2021-11-09T03-21-45Z",
-      revision: "f4b55ea7a70f8a065fb7065797696e815241ff93"
-  version "20211109032145"
+      tag:      "RELEASE.2021-11-24T23-19-33Z",
+      revision: "61029fe20b41b8c3e38f94453b4aad86c6683998"
+  version "20211124231933"
   license "AGPL-3.0-or-later"
   head "https://github.com/minio/minio.git"
 
@@ -14,12 +14,6 @@ class Minio < Formula
     strategy :github_latest do |page, regex|
       page.scan(regex).map { |match| match&.first&.gsub(/\D/, "") }
     end
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cbc0185d3beee1f7ee65f90af82ddd95a41883e6b52fd24ef4cb5b0a2595d147"
   end
 
   depends_on "go" => :build

@@ -13,12 +13,13 @@ class KimApi < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_big_sur: "bc69df6522ce9a9f76399e03b78255ae82faedd70c5a8f3d4535de4d3f89f6a8"
-    sha256 cellar: :any,                 monterey:      "0efba513c8067de36eb7ae2b27c538380f8d323a87a63dc7432965ee83c777b6"
-    sha256 cellar: :any,                 big_sur:       "0324105634345be3ed3cb5f7bdd7d31379e84e5afdf966b3a699ad5355b8da49"
-    sha256 cellar: :any,                 catalina:      "2d3e050c3af7adb392213906db110f79bc6c637a68a77231bcd94ca201555f2e"
-    sha256 cellar: :any,                 mojave:        "34a1e8943c72ae99512a7069c08738f57f1b11e0adfb9a6ba5724ad953d06745"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25cab6d99de536975418877447a40e436a884b16423056b06902f3aaf0884a61"
+    sha256 cellar: :any,                 arm64_monterey: "a749243959bbd89189fe9b83da1a9f992de0b8346d08dabe2172415abadc2ffd"
+    sha256 cellar: :any,                 arm64_big_sur:  "bc69df6522ce9a9f76399e03b78255ae82faedd70c5a8f3d4535de4d3f89f6a8"
+    sha256 cellar: :any,                 monterey:       "0efba513c8067de36eb7ae2b27c538380f8d323a87a63dc7432965ee83c777b6"
+    sha256 cellar: :any,                 big_sur:        "0324105634345be3ed3cb5f7bdd7d31379e84e5afdf966b3a699ad5355b8da49"
+    sha256 cellar: :any,                 catalina:       "2d3e050c3af7adb392213906db110f79bc6c637a68a77231bcd94ca201555f2e"
+    sha256 cellar: :any,                 mojave:         "34a1e8943c72ae99512a7069c08738f57f1b11e0adfb9a6ba5724ad953d06745"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25cab6d99de536975418877447a40e436a884b16423056b06902f3aaf0884a61"
   end
 
   depends_on "cmake" => :build

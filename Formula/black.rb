@@ -12,6 +12,12 @@ class Black < Formula
     regex(%r{href=.*?/packages.*?/black[._-]v?(\d+(?:\.\d+)*(?:[a-z]\d+)?)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/black"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9cf1a28383beb6ec4bf6ff44a956e8502a11814f403d37b7514cc0352ccbc55f"
+  end
+
   depends_on "python@3.10"
 
   resource "aiohttp" do

@@ -10,6 +10,12 @@ class NodeAT16 < Formula
     regex(%r{href=["']?v?(16(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@16"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f4022bb4963f1810cbb50285a2f6872204a593dfc921ecabe57de77154433fdc"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build

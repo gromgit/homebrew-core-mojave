@@ -62,7 +62,7 @@ for f in "$@"; do
     cmd git push
   fi
   # Clean up manually afterwards
-  if [[ -z $installed ]]; then
+  if [[ -z $installed && -d $HOMEBREW_CELLAR/$f ]]; then
     cmd brew rm "$f" && cmd brew autoremove
   fi
 done

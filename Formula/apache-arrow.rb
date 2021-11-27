@@ -7,12 +7,6 @@ class ApacheArrow < Formula
   license "Apache-2.0"
   head "https://github.com/apache/arrow.git", branch: "master"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-arrow"
-    rebuild 1
-    sha256 cellar: :any, mojave: "309f8488ed0da32472b35a582982c2f7f15604cfc6b5ce3449d5d82937c26ec8"
-  end
-
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "llvm" => :build

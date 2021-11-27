@@ -9,6 +9,12 @@ class Bzt < Formula
   revision 1
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bzt"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d21f8d90dfbbbcfbd4551df856f4ef83fabe6bc6f475ed5d32feb09c44d00d24"
+  end
+
   depends_on "rust" => :build
   depends_on "numpy"
   depends_on "python@3.9"

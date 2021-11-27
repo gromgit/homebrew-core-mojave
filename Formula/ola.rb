@@ -8,10 +8,12 @@ class Ola < Formula
   head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   bottle do
-    sha256 monterey: "91ed5a5cc4a18099e53d7a91a467f1d1dc2a579dd8eef181164ed67b70aeda1a"
-    sha256 big_sur:  "7ffa9cad84a61a1dcdcd38aa70ae0db523a6d1c48db726b3c43627aeb4289191"
-    sha256 catalina: "90ab760cd58aa7702e04bc58d2286821318d1adf72a64f36c75fb95924038c66"
-    sha256 mojave:   "726e849cbe8f6cbd6ceaceacb0a356e1709b1613fb5efb55faba876852bf55d4"
+    sha256 arm64_monterey: "6e0a27097340bca3f60045a89415a8fe6400c1792c292f174535c69116ad66db"
+    sha256 arm64_big_sur:  "3c50d3e5d76e7d3497f25690053c5218ab2d277fad1d6527bb138f03113bc62a"
+    sha256 monterey:       "91ed5a5cc4a18099e53d7a91a467f1d1dc2a579dd8eef181164ed67b70aeda1a"
+    sha256 big_sur:        "7ffa9cad84a61a1dcdcd38aa70ae0db523a6d1c48db726b3c43627aeb4289191"
+    sha256 catalina:       "90ab760cd58aa7702e04bc58d2286821318d1adf72a64f36c75fb95924038c66"
+    sha256 mojave:         "726e849cbe8f6cbd6ceaceacb0a356e1709b1613fb5efb55faba876852bf55d4"
   end
 
   depends_on "autoconf" => :build

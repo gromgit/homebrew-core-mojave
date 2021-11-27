@@ -4,13 +4,7 @@ class Libgdata < Formula
   url "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz"
   sha256 "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
   license "LGPL-2.1-or-later"
-
-  bottle do
-    sha256 cellar: :any, arm64_big_sur: "f890b86a1e19fe8c0135094bc869356a6dc6279d84e6267742d2f817994c9708"
-    sha256 cellar: :any, big_sur:       "6afaf2089a648f7c81ceff2e491ab3c059fbe751a521f2756a124f3b64135d18"
-    sha256 cellar: :any, catalina:      "5b6500481c8f15817ecf307b1ab9886fb0caffcd133445ec0cdd06c6bcc605e2"
-    sha256 cellar: :any, mojave:        "0ab77d93d64a4257bd46de5d29543057d050a14aa4bc603ffa79c5e9f99695a4"
-  end
+  revision 1
 
   depends_on "gobject-introspection" => :build
   depends_on "intltool" => :build
@@ -21,9 +15,13 @@ class Libgdata < Formula
   depends_on "gtk+3"
   depends_on "json-glib"
   depends_on "liboauth"
-  depends_on "libsoup"
+  depends_on "libsoup@2"
 
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib/"pkgconfig"
+    ENV.prepend_path "XDG_DATA_DIRS", Formula["libsoup@2"].opt_share
+    ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
+
     mkdir "build" do
       system "meson", *std_meson_args,
         "-Dintrospection=true",
@@ -53,7 +51,7 @@ class Libgdata < Formula
     glib = Formula["glib"]
     json_glib = Formula["json-glib"]
     liboauth = Formula["liboauth"]
-    libsoup = Formula["libsoup"]
+    libsoup = Formula["libsoup@2"]
     flags = %W[
       -I#{gettext.opt_include}
       -I#{glib.opt_include}/glib-2.0

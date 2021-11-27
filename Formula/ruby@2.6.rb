@@ -1,23 +1,13 @@
 class RubyAT26 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.8.tar.xz"
-  sha256 "8262e4663169c85787fdc9bfbd04d9eb86eb2a4b56d7f98373a8fcaa18e593eb"
+  url "https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.9.tar.xz"
+  sha256 "6a041d82ae6e0f02ccb1465e620d94a7196489d8a13d6018a160da42ebc1eece"
   license "Ruby"
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
     regex(/href=.*?ruby[._-]v?(2\.6(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    sha256 arm64_monterey: "4f39d27e96dec688c5430545f7a0459d51ae171587af3b5728bf0b4e488160c9"
-    sha256 arm64_big_sur:  "db4973da791592864ef717aa6c2df7cd8fd94f077573c07f4d3acebde8c358b5"
-    sha256 monterey:       "cb24396973a2c71d0b1827afac326324d09725fd91cb03fcd9ee2b8df2e8860e"
-    sha256 big_sur:        "f468588cf536eb0e87d47802c8b2b72e49804674d17f94364f1bd603787e772c"
-    sha256 catalina:       "92f28ded4949798be9f44a3c68624c63e36a6dfb2ab0fbc05f2dee06fc6a28d9"
-    sha256 mojave:         "7b0bd8c3357a44fa869beefc973d484107b9fcaeaf0778768a6112742d3539dd"
-    sha256 x86_64_linux:   "bdd1eb0c87a0b1562a2c7f88f39ec3fd5189e9b36ac57b28e93d8683bf4bb2c3"
   end
 
   keg_only :versioned_formula

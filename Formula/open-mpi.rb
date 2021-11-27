@@ -12,12 +12,13 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "c24af00250fad2b097822d0d6e51f1027915e375dcbc0590b385b30ef8af6453"
-    sha256 monterey:      "0d95be67b57f68afb81d7524098d6a33fb8a9c18538c66f7dbf6b196954f8e3b"
-    sha256 big_sur:       "da310195e62c1a27aea7365b325cb15dd48f99dd673fd1f685f8b5247cfbb48d"
-    sha256 catalina:      "27f25156376078df9cb6e41a57c370cb030f16092ee7dfe85d7a8000f252240e"
-    sha256 mojave:        "4d57102ec2e06043bc97d34130ae5cd9115a6a1718331476f5fbd71d8bef149e"
-    sha256 x86_64_linux:  "0c6558437eedbf31810f41163ddff64c610ec5d5065bb4080e2559961ab3668d"
+    sha256 arm64_monterey: "123ffa8203d626457a3a66117cad431eb95065f230751aca14e6ccdbb40d9327"
+    sha256 arm64_big_sur:  "c24af00250fad2b097822d0d6e51f1027915e375dcbc0590b385b30ef8af6453"
+    sha256 monterey:       "0d95be67b57f68afb81d7524098d6a33fb8a9c18538c66f7dbf6b196954f8e3b"
+    sha256 big_sur:        "da310195e62c1a27aea7365b325cb15dd48f99dd673fd1f685f8b5247cfbb48d"
+    sha256 catalina:       "27f25156376078df9cb6e41a57c370cb030f16092ee7dfe85d7a8000f252240e"
+    sha256 mojave:         "4d57102ec2e06043bc97d34130ae5cd9115a6a1718331476f5fbd71d8bef149e"
+    sha256 x86_64_linux:   "0c6558437eedbf31810f41163ddff64c610ec5d5065bb4080e2559961ab3668d"
   end
 
   head do
@@ -34,14 +35,8 @@ class OpenMpi < Formula
   conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
   def install
-    if MacOS.version == :big_sur
-      # Fix for current GCC on Big Sur, which does not like 11 as version value
-      # (reported at https://github.com/iains/gcc-darwin-arm64/issues/31#issuecomment-750343944)
-      ENV["MACOSX_DEPLOYMENT_TARGET"] = "11.0"
-    else
-      # Otherwise libmpi_usempi_ignore_tkr gets built as a static library
-      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
-    end
+    # Otherwise libmpi_usempi_ignore_tkr gets built as a static library
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
     # Avoid references to the Homebrew shims directory
     %w[

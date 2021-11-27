@@ -11,12 +11,6 @@ class Opencv < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencv"
-    rebuild 1
-    sha256 mojave: "4cebee9f9be1198d238f614f2f0b3f68bc3b8c0063f76ef8384c30c4fd6e3688"
-  end
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ceres-solver"

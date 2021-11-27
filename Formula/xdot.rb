@@ -7,10 +7,11 @@ class Xdot < Formula
   head "https://github.com/jrfonseca/xdot.py.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, monterey: "adec932e49a5bf43f613b4e24123d23dd6365cd63ff770b80471280e8d24dc46"
-    sha256 cellar: :any_skip_relocation, big_sur:  "cde9b3087f5d052432a49145b7e7b91aae192999a842f5764c6ed17cda033206"
-    sha256 cellar: :any_skip_relocation, catalina: "d8f03ae6eeb651fce014693fa933718777d2e1add5dbdd6939460797ca8bb4d0"
-    sha256 cellar: :any_skip_relocation, mojave:   "771363f972fd67d88d8ed836a654248bbc9cc41109881eec54211aedaf507681"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "adec932e49a5bf43f613b4e24123d23dd6365cd63ff770b80471280e8d24dc46"
+    sha256 cellar: :any_skip_relocation, monterey:      "adec932e49a5bf43f613b4e24123d23dd6365cd63ff770b80471280e8d24dc46"
+    sha256 cellar: :any_skip_relocation, big_sur:       "cde9b3087f5d052432a49145b7e7b91aae192999a842f5764c6ed17cda033206"
+    sha256 cellar: :any_skip_relocation, catalina:      "d8f03ae6eeb651fce014693fa933718777d2e1add5dbdd6939460797ca8bb4d0"
+    sha256 cellar: :any_skip_relocation, mojave:        "771363f972fd67d88d8ed836a654248bbc9cc41109881eec54211aedaf507681"
   end
 
   depends_on "adwaita-icon-theme"

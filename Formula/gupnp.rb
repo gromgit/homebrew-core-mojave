@@ -8,12 +8,6 @@ class Gupnp < Formula
   license "LGPL-2.0-or-later"
   revision 1
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9038c181d54f6679b2b3b747c024862ff05a4c0b74ac911cdf63e3d2f6790d48"
-  end
-
   depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
@@ -23,10 +17,15 @@ class Gupnp < Formula
   depends_on "gettext"
   depends_on "glib"
   depends_on "gssdp"
-  depends_on "libsoup"
+  depends_on "libsoup@2"
+  depends_on "libxml2"
   depends_on "python@3.9"
 
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib/"pkgconfig"
+    ENV.prepend_path "XDG_DATA_DIRS", Formula["libsoup@2"].opt_share
+    ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
+
     mkdir "build" do
       ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
@@ -74,7 +73,7 @@ class Gupnp < Formula
            "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
            "-L#{Formula["glib"].opt_lib}",
            "-lglib-2.0", "-lgobject-2.0",
-           "-I#{Formula["libsoup"].opt_include}/libsoup-2.4",
+           "-I#{Formula["libsoup@2"].opt_include}/libsoup-2.4",
            libxml2, "-o", testpath/"test"
     system "./test"
   end

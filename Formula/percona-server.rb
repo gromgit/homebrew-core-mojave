@@ -11,12 +11,6 @@ class PerconaServer < Formula
     regex(/value=.*?Percona-Server[._-]v?(\d+(?:\.\d+)+-\d+)["' >]/i)
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/percona-server"
-    rebuild 1
-    sha256 mojave: "f97d15f759a62f29008bc39b6d3523e36565a6a9e8a9e2f52d43cd8c2af49656"
-  end
-
   pour_bottle? do
     reason "The bottle needs a var/mysql datadir (yours is var/percona)."
     satisfy { datadir == var/"mysql" }
@@ -58,6 +52,13 @@ class PerconaServer < Formula
   resource "boost" do
     url "https://boostorg.jfrog.io/artifactory/main/release/1.73.0/source/boost_1_73_0.tar.bz2"
     sha256 "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+  end
+
+  # Fix build on Monterey.
+  # Remove with the next version.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/fcbea58e245ea562fbb749bfe6e1ab178fd10025/mysql/monterey.diff"
+    sha256 "6709edb2393000bd89acf2d86ad0876bde3b84f46884d3cba7463cd346234f6f"
   end
 
   # Where the database files should be located. Existing installs have them

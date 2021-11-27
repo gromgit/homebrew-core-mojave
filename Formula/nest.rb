@@ -6,11 +6,12 @@ class Nest < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "4360a0644a67b77a7f38c5024f590149358a596d73d75c1d5cb264d6cafb3ade"
-    sha256 monterey:      "3b7ee8c63f2fecf4639911e74baa91ed3a66237ecc56790abc15d6d012ed6bd5"
-    sha256 big_sur:       "5654dd09df57e301826de686012a935ddf37f25b2165c52daefbd20a58f6cbfb"
-    sha256 catalina:      "f90518fa24a2f931a03e27baf400c421b358cb1a64f4d2a757059d3ffa093b72"
-    sha256 mojave:        "845b603df3ce444c2b460eb07880c37e44c92afb5e38bfe04a2161161d6fecdc"
+    sha256 arm64_monterey: "3597909925e145c9bbeeec507d6b2edd069cd2dba0dd6d805438e01abb07280b"
+    sha256 arm64_big_sur:  "4360a0644a67b77a7f38c5024f590149358a596d73d75c1d5cb264d6cafb3ade"
+    sha256 monterey:       "3b7ee8c63f2fecf4639911e74baa91ed3a66237ecc56790abc15d6d012ed6bd5"
+    sha256 big_sur:        "5654dd09df57e301826de686012a935ddf37f25b2165c52daefbd20a58f6cbfb"
+    sha256 catalina:       "f90518fa24a2f931a03e27baf400c421b358cb1a64f4d2a757059d3ffa093b72"
+    sha256 mojave:         "845b603df3ce444c2b460eb07880c37e44c92afb5e38bfe04a2161161d6fecdc"
   end
 
   depends_on "cmake" => :build

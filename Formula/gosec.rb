@@ -1,16 +1,10 @@
 class Gosec < Formula
   desc "Golang security checker"
   homepage "https://securego.io/"
-  url "https://github.com/securego/gosec/archive/v2.9.2.tar.gz"
-  sha256 "626cd3c2bef1eb3ea0838b3e9cd81a0db74fbd6a1557ee3c74add3fad24010f1"
+  url "https://github.com/securego/gosec/archive/v2.9.3.tar.gz"
+  sha256 "391445dd905588016345c01982bfd7e9ede39dc57112b675c5fc965841ec55b9"
   license "Apache-2.0"
   head "https://github.com/securego/gosec.git"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gosec"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f234d41b1a092420d4198f2fd503fe25815b70e913a53ee32065ef320b5a072e"
-  end
 
   depends_on "go"
 

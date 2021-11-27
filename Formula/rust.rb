@@ -15,12 +15,6 @@ class Rust < Formula
     end
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust"
-    rebuild 1
-    sha256 cellar: :any, mojave: "2efd9fc6950d1c731d6a0aa0dae852b971b41c98c2ec31b5f411527e02c6b609"
-  end
-
   head do
     url "https://github.com/rust-lang/rust.git"
 
@@ -60,10 +54,6 @@ class Rust < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
-
-    # Fix build failure for compiler_builtins "error: invalid deployment target
-    # for -stdlib=libc++ (requires OS X 10.7 or later)"
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version if OS.mac?
 
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration

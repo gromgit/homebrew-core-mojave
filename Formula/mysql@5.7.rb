@@ -11,11 +11,13 @@ class MysqlAT57 < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "e23df0f6e8bfc83fe2e982ec60e89be6ca069d35f96981ea6073591563bf7917"
-    sha256 big_sur:       "b85e04576a333c835f3a0e7f21b565b5a374628d6011226e04523c4528fb158a"
-    sha256 catalina:      "fe60bdb3fa8f8c35070243c865d3e7b7eacad528430683d91fb2c0e4abc44829"
-    sha256 mojave:        "948c484748bc757040fdc928e4f9e2e1cd8972211f7b07b28aad2dd9406701cf"
-    sha256 x86_64_linux:  "b6ca44f90f74bf354f5c552f81306d8a3b989fe28de3d76b539cc67e4dcd8e82"
+    sha256 arm64_monterey: "db78d3c777c2712cf651550932d8cfbc6a0d75557ffe292272201a760c81df62"
+    sha256 arm64_big_sur:  "e23df0f6e8bfc83fe2e982ec60e89be6ca069d35f96981ea6073591563bf7917"
+    sha256 monterey:       "5289b66475399406bf4d55e0c853eb1ed44c0c2804d58cc95a658c3f3e27e888"
+    sha256 big_sur:        "b85e04576a333c835f3a0e7f21b565b5a374628d6011226e04523c4528fb158a"
+    sha256 catalina:       "fe60bdb3fa8f8c35070243c865d3e7b7eacad528430683d91fb2c0e4abc44829"
+    sha256 mojave:         "948c484748bc757040fdc928e4f9e2e1cd8972211f7b07b28aad2dd9406701cf"
+    sha256 x86_64_linux:   "b6ca44f90f74bf354f5c552f81306d8a3b989fe28de3d76b539cc67e4dcd8e82"
   end
 
   keg_only :versioned_formula

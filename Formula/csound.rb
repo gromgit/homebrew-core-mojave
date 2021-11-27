@@ -13,12 +13,6 @@ class Csound < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csound"
-    rebuild 1
-    sha256 mojave: "fd287d9e4e8a5c3e2116eed8bec61805909382e3282b6994c04431314903ec7d"
-  end
-
   depends_on "asio" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
@@ -113,8 +107,9 @@ class Csound < Formula
 
   def caveats
     <<~EOS
-      To use the Python bindings, you may need to add to #{shell_profile}:
-        export DYLD_FRAMEWORK_PATH="$DYLD_FRAMEWORK_PATH:#{opt_frameworks}"
+      To use the Python bindings, you may need to set:
+        export DYLD_FALLBACK_FRAMEWORK_PATH="$DYLD_FALLBACK_FRAMEWORK_PATH:#{opt_frameworks}"
+      Exercise caution when adding this to your #{shell_profile}.
 
       To use the Java bindings, you may need to add to #{shell_profile}:
         export CLASSPATH="#{opt_libexec}/csnd6.jar:."
@@ -166,7 +161,7 @@ class Csound < Formula
     EOS
     system bin/"csound", "--orc", "--syntax-check-only", "opcode-existence.orc"
 
-    with_env("DYLD_FRAMEWORK_PATH" => frameworks) do
+    with_env(DYLD_FALLBACK_FRAMEWORK_PATH: frameworks) do
       system Formula["python@3.9"].bin/"python3", "-c", "import ctcsound"
     end
 

@@ -4,19 +4,11 @@ class Libosinfo < Formula
   url "https://releases.pagure.org/libosinfo/libosinfo-1.9.0.tar.xz"
   sha256 "b4f3418154ef3f43d9420827294916aea1827021afc06e1644fc56951830a359"
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://releases.pagure.org/libosinfo/?C=M&O=D"
     regex(/href=.*?libosinfo[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    sha256 arm64_big_sur: "1199868b862e37760d20b26afb666460dd3d3104a9f21861b8265c86085e47c3"
-    sha256 big_sur:       "54aaddce26d9b06828248633b5e1eddfc670ec920c30fcf8bd8b2b7022e5243a"
-    sha256 catalina:      "dbdc6c6b8c1135795a1d160976da8d7c6f95de6cbf0533731e602472330bf92d"
-    sha256 mojave:        "b482b0cd02bf75b2d528cf2d691904ce85826512a0df03aa921564034eb4d1db"
-    sha256 x86_64_linux:  "c5d49269e114512e1a8248673054cf561f0bdbe8e2e15ee591238321496a6164"
   end
 
   depends_on "gobject-introspection" => :build
@@ -26,7 +18,7 @@ class Libosinfo < Formula
   depends_on "vala" => :build
   depends_on "gettext"
   depends_on "glib"
-  depends_on "libsoup"
+  depends_on "libsoup@2"
   depends_on "osinfo-db"
   depends_on "usb.ids"
 

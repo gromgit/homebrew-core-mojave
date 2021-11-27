@@ -5,6 +5,12 @@ class Diamond < Formula
   sha256 "9b79c3a01913999dfa2543f4dd7a3494397a8723ea587207c14683b24e57eac1"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diamond"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2eacf79c48d978f4d254485b61fd2fbf76371188d2b8d6017034a37d108107e3"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "zlib"
