@@ -6,6 +6,12 @@ class Idris < Formula
   license "BSD-3-Clause"
   head "https://github.com/idris-lang/Idris-dev.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idris"
+    rebuild 1
+    sha256 mojave: "89af516ad10d88c9a393b9be735494fc524b6c749aa8bff2b8a180516f5f29ff"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
   depends_on "ghc@8.8"
