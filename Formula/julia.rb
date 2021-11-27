@@ -6,6 +6,12 @@ class Julia < Formula
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https://github.com/JuliaLang/julia.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/julia"
+    rebuild 1
+    sha256 mojave: "f37d247149e1fb3018a609692f8895c8fa3be656533176facb31ca130aabd05a"
+  end
+
   depends_on "python@3.9" => :build
   # https://github.com/JuliaLang/julia/issues/36617
   depends_on arch: :x86_64
