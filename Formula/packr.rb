@@ -5,6 +5,12 @@ class Packr < Formula
   sha256 "bb5e64442b3165b99d9efab7acdbefc0f8faab0204fbeae453d20a736c36960d"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packr"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f1ab4282018d3dbc1bb25bfcc0ec196d73a19d719a72f30fd6ae59912be5271c"
+  end
+
   depends_on "go" => [:build, :test]
 
   def install
