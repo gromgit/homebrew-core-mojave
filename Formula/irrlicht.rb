@@ -13,6 +13,12 @@ class Irrlicht < Formula
     regex(%r{url=.*?/irrlicht[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/irrlicht"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1715275f259b38ff592fa1876dcb56bdcd2967302e563c8a7a14a9f33439f2d0"
+  end
+
   depends_on xcode: :build
 
   depends_on "jpeg"
