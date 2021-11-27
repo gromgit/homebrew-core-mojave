@@ -11,6 +11,12 @@ class Just < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/just"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4272abc5c174e4c127030df72a73eccbff2258f541a8c35a8cd6cad1591b43fe"
+  end
+
   depends_on "rust" => :build
 
   def install
