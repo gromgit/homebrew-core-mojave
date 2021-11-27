@@ -5,6 +5,12 @@ class Librest < Formula
   sha256 "0513aad38e5d3cedd4ae3c551634e3be1b9baaa79775e53b2dba9456f15b01c9"
   revision 4
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librest"
+    rebuild 1
+    sha256 mojave: "9456fdda1321c0b5058ec69fe6b63ef20c13d58efdbff35f8c1ffadc4d37dea1"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
