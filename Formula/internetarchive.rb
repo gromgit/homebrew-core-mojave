@@ -7,6 +7,12 @@ class Internetarchive < Formula
   sha256 "ebd11ecd038c71e75a3aef8d87750b46480169ecaefb23074c4ae48440bf2836"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/internetarchive"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1d96ba9aa0959f46903fc826c362a004c3b566b15d62fbaf7a40b2e795a2ecda"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
