@@ -10,6 +10,12 @@ class Wcslib < Formula
     regex(/href=.*?wcslib[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wcslib"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4bc01a25c5fcedee35c3cae316c1410e9b1bd5a09ab70b9b48679d6b9b78b089"
+  end
+
   depends_on "cfitsio"
 
   def install
