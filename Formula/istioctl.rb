@@ -7,6 +7,12 @@ class Istioctl < Formula
   license "Apache-2.0"
   head "https://github.com/istio/istio.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/istioctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5cdaf84efeb24cd5c61107cb6f9e62740795cd5017ae53dc2d0df703a38d1c99"
+  end
+
   depends_on "go" => :build
   depends_on "go-bindata" => :build
 
