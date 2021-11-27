@@ -11,6 +11,12 @@ class OsinfoDbTools < Formula
     regex(/href=.*?osinfo-db-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osinfo-db-tools"
+    rebuild 1
+    sha256 mojave: "5fc1f83907c44857d7fe4d36f36cf5921561cca841b78a5c20284d1667ebc404"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
