@@ -7,6 +7,12 @@ class Helmsman < Formula
   license "MIT"
   head "https://github.com/Praqma/helmsman.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmsman"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "45519c51b38d029d88a2335f05fa9d624d3665b2eeb4df0c611e52e8ad1328db"
+  end
+
   depends_on "go" => :build
   depends_on "helm"
   depends_on "kubernetes-cli"
