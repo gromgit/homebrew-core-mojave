@@ -5,6 +5,12 @@ class Gssdp < Formula
   sha256 "8676849d57fb822b8728856dbadebf3867f89ee47a0ec47a20045d011f431582"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gssdp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1e84378216876b762e1f178a57835216c0653f48eccc1a9a53917e800101ec9d"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
