@@ -9,6 +9,12 @@ class Ipv6calc < Formula
   sha256 "4d23c471b472271b48421b5d18309492f615c85c75f2abc17c5c5a4d8e3a4635"
   license "GPL-2.0-only"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipv6calc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8ba19f3eb62f8f0fa54f118fe5daf06add4dd581be9fbefd91050fc81e5dc41a"
+  end
+
   uses_from_macos "perl"
 
   on_linux do
