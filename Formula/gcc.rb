@@ -1,6 +1,12 @@
 class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc"
+    rebuild 1
+    sha256 mojave: "cebcd8182929d0ccb9a93994c62fdab2e701e9c44524ca7feb2dae4f07ae05f8"
+  end
   if Hardware::CPU.arm?
     # Branch from the Darwin maintainer of GCC with Apple Silicon support,
     # located at https://github.com/iains/gcc-darwin-arm64 and
