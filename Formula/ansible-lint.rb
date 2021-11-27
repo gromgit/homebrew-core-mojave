@@ -8,6 +8,12 @@ class AnsibleLint < Formula
   license "MIT"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible-lint"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6f888be09009cb6bb7a41f969a92fb60276f1c6baff382cf31f2b9c8bf670115"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "ansible"
   depends_on "libyaml"
