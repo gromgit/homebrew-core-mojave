@@ -7,6 +7,12 @@ class Kn < Formula
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kn"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9361764c880f5c580e314d8d9f0461266844233235ee4e855fa7593e5dbbc663"
+  end
+
   depends_on "go" => :build
 
   def install
