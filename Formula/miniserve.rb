@@ -5,6 +5,12 @@ class Miniserve < Formula
   sha256 "24860f103879fd881a522a7ad8f25f2c9dcd5e01287b0485bcabf3e88c719015"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miniserve"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8839b585cb6030a71bbf59ee37e218f36b42783ee367a7907eafe7f752091e51"
+  end
+
   depends_on "rust" => :build
 
   def install
