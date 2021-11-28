@@ -10,6 +10,12 @@ class Libphonenumber < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libphonenumber"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0d8c1ec2ea68dc45b68b9408742652ba10dea4e9def76d69241f8febcd30acc8"
+  end
+
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "boost"
