@@ -6,6 +6,12 @@ class NatsStreamingServer < Formula
   license "Apache-2.0"
   head "https://github.com/nats-io/nats-streaming-server.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nats-streaming-server"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "343f9f393363fae53142c96578b2cbb82f944fa0dc60037fcb5f41513ae84949"
+  end
+
   depends_on "go" => :build
 
   def install
