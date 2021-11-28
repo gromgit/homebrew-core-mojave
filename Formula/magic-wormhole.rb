@@ -8,6 +8,12 @@ class MagicWormhole < Formula
   license "MIT"
   revision 4
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/magic-wormhole"
+    rebuild 1
+    sha256 cellar: :any, mojave: "420f9ee4414599010486af565c84bbc43827f5c8ee22bc37824cfc95258f4d15"
+  end
+
   depends_on "rust" => :build
   depends_on "libsodium"
   depends_on "openssl@1.1"
