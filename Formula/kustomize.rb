@@ -12,6 +12,12 @@ class Kustomize < Formula
     regex(%r{^kustomize/v?(\d+(?:\.\d+)+)$}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kustomize"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ca0b6e8cf1bc34bafc9478587f50b4f1b9d34423a27cd5800e938da689e025af"
+  end
+
   depends_on "go" => :build
 
   def install
