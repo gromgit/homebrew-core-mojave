@@ -5,6 +5,12 @@ class Lima < Formula
   sha256 "518cee1afeb4d4a61d7eaf5c9f5c588ae3c821c93f5fad62afb5bb4f39a2b7e6"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lima"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3d541544f80a750e907230f26b7cf733e0d4ba26d1714cb85f7a5cc9fbe31fb6"
+  end
+
   depends_on "go" => :build
   depends_on "qemu"
 
