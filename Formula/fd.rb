@@ -6,6 +6,12 @@ class Fd < Formula
   license "Apache-2.0"
   head "https://github.com/sharkdp/fd.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "63aa84b88376ec091c7d813f8ab12161dabef7b9b75d578a72677d67640240b7"
+  end
+
   depends_on "rust" => :build
 
   def install
