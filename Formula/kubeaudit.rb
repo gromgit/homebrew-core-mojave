@@ -6,6 +6,12 @@ class Kubeaudit < Formula
   license "MIT"
   head "https://github.com/Shopify/kubeaudit.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeaudit"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e454125eb06ddf2062f43769c429c392b7300a8e260d3256b479cb733c0bf07d"
+  end
+
   depends_on "go" => :build
 
   def install
