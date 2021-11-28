@@ -10,6 +10,12 @@ class Libxmlsec1 < Formula
     regex(/href=.*?xmlsec1[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxmlsec1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6da1bb73f29486b99e6605140495e7b9d0551ce140586637d046c5fe328db3ac"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "gnutls" # Yes, it wants both ssl/tls variations
   depends_on "libgcrypt"
