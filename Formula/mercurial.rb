@@ -12,6 +12,12 @@ class Mercurial < Formula
     regex(/href=.*?mercurial[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mercurial"
+    rebuild 1
+    sha256 mojave: "ba1abdde36713c9ec5acb0da511f87ae273465507100e6fecf48062882430fd4"
+  end
+
   depends_on "python@3.9"
 
   def install
