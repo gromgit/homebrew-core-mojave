@@ -10,6 +10,12 @@ class Libplctag < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libplctag"
+    rebuild 1
+    sha256 cellar: :any, mojave: "618ab6f3eca4d5f5094eafda4f0678445169759d27f4fdaf6bb2edb451a95b56"
+  end
+
   depends_on "cmake" => :build
 
   def install
