@@ -5,6 +5,12 @@ class Libmobi < Formula
   sha256 "136f81451e51486e57ec2afe5a64e56d6604cf99ee4a2d01fba288ab4dce161f"
   license "LGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmobi"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d820ae1eb6a75f22a2ea2d7d31509624164474929ec973093dfe866bf5ffd5a5"
+  end
+
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
