@@ -10,6 +10,12 @@ class Goredo < Formula
     regex(/href=.*?goredo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goredo"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0cd26f67ea56313d4739851eaee44adeda8026f546391ec5c1310d0366fc4442"
+  end
+
   depends_on "go" => :build
 
   def install
