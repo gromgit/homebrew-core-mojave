@@ -11,6 +11,12 @@ class Libvterm < Formula
     regex(/href=.*?libvterm[._-]v?(\d+(?:\.\d+)+)\./i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvterm"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1891a10a74111422ae354c2f6828c6dbd8732653eb6e3b680279e9fc2bb45aa4"
+  end
+
   depends_on "libtool" => :build
 
   def install
