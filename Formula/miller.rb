@@ -6,6 +6,12 @@ class Miller < Formula
   license "BSD-2-Clause"
   head "https://github.com/johnkerl/miller.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miller"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "77acac9c84e2791facaa5e854219303279402e3e8724d84d41ca5823fb0fc16f"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
