@@ -7,6 +7,12 @@ class KubeScore < Formula
   license "MIT"
   head "https://github.com/zegl/kube-score.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kube-score"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "458d349217f11405e7a184956711387c22f7b70ef9871b0096c3b1174aa583f6"
+  end
+
   depends_on "go" => :build
 
   def install
