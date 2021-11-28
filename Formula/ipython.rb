@@ -8,6 +8,12 @@ class Ipython < Formula
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipython"
+    rebuild 1
+    sha256 cellar: :any, mojave: "525a9db42a2f4156219dd6d00cdd8ba162732ece5ab75f12050fc4b7c6401900"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
   depends_on "zeromq"
