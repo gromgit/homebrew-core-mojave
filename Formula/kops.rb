@@ -11,6 +11,12 @@ class Kops < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kops"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2ac428fb2cdc2449d0ed38038a935eb408f38dc65ba0de532347efcc3bcfeaa8"
+  end
+
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 
