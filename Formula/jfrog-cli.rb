@@ -5,6 +5,12 @@ class JfrogCli < Formula
   sha256 "d8d84c0b3e421fe2b8d96ec20eefaf52f3a077ac06ba0fc879298cab8c3ae4c3"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jfrog-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c58d9b99d00a13513b2072d6c4af7aaa361636a79ded464fd48809939d83bd22"
+  end
+
   depends_on "go" => :build
 
   def install
