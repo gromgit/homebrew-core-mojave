@@ -5,6 +5,12 @@ class Libtensorflow < Formula
   sha256 "bb124905c7fdacd81e7c842b287c169bbf377d29c74c9dacc04f96c9793747bb"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtensorflow"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c4935977b0f3cceaad63410e4536cccc2d9acc2f0790a781b477b1943e1be9e7"
+  end
+
   depends_on "bazel" => :build
   depends_on "numpy" => :build
   depends_on "python@3.9" => :build
