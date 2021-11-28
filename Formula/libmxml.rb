@@ -6,6 +6,12 @@ class Libmxml < Formula
   license "Apache-2.0"
   head "https://github.com/michaelrsweet/mxml.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmxml"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a95ea6c83af742cf9c19bb763883b3276ea1546fd94223ed71f629e1f2cf2826"
+  end
+
   depends_on xcode: :build # for docsetutil
 
   def install
