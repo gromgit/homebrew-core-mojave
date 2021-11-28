@@ -5,6 +5,12 @@ class Mdcat < Formula
   sha256 "2daafb8c9e90f8048810450566b4f4fde11ca76f3b5ec49c4878f68f475f3483"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdcat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2a8ddf5733f0e81de2b236bd651472f0085ce93300666032752ed69fd350984e"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
