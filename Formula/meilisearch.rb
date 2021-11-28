@@ -10,6 +10,12 @@ class Meilisearch < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/meilisearch"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "21f05ec3c0eace083969dfee7aeb17bd4a07cae0ac714fdbac7061d838851dab"
+  end
+
   depends_on "rust" => :build
 
   def install
