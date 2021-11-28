@@ -10,6 +10,12 @@ class MonoLibgdiplus < Formula
     regex(/href=.*?libgdiplus[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mono-libgdiplus"
+    rebuild 1
+    sha256 cellar: :any, mojave: "60151abcc76f3bab8bbae869cbd21abc4bd8d7b2c02169541bf47e5599de3dc9"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "cairo"
   depends_on "fontconfig"
