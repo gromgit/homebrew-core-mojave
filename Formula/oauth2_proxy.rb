@@ -6,6 +6,12 @@ class Oauth2Proxy < Formula
   license "MIT"
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oauth2_proxy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "04c63b4967a34d79897d517b0d4c4d11c8c3b0d21ec3d3f89448bd6344e60419"
+  end
+
   depends_on "go" => :build
 
   def install
