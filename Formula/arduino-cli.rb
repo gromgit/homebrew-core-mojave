@@ -12,6 +12,12 @@ class ArduinoCli < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arduino-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4d181f97840db27b0672ef4d5d718dacf9a74f1ce9855a933805f9a7d06195ab"
+  end
+
   depends_on "go" => :build
 
   def install
