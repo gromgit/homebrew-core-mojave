@@ -5,6 +5,12 @@ class Libxc < Formula
   sha256 "a1f8ffa50a6b06f20a1dd49bc54445799193f4e7d297052caad39cff47cea8b4"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a57ad72d968fbda00fe864d7bae50c7473ca7e66135d495d5f759ba3252fe920"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
