@@ -1,5 +1,11 @@
 class Libgccjit < Formula
   desc "JIT library for the GNU compiler collection"
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgccjit"
+    rebuild 1
+    sha256 mojave: "16fb4077b86ef1f82d9b28882d2a7ce6dd57b91fd3e50da7726f2f25630e0b47"
+  end
   if Hardware::CPU.arm?
     # Branch from the Darwin maintainer of GCC with Apple Silicon support,
     # located at https://github.com/iains/gcc-darwin-arm64 and
