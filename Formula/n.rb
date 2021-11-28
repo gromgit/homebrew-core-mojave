@@ -6,6 +6,12 @@ class N < Formula
   license "MIT"
   head "https://github.com/tj/n.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/n"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "45b9745a25d4d6a49760eff5156490831c57667764630833d82f430e78ebd04c"
+  end
+
   def install
     bin.mkdir
     system "make", "PREFIX=#{prefix}", "install"
