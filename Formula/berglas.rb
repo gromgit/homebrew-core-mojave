@@ -5,6 +5,12 @@ class Berglas < Formula
   sha256 "03ee83b49598f864537aec48ef081d3a79a0cf0f32027d815c37755bf5d31376"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/berglas"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e8747859631052b309bf2b4b2b887800262bc8820065a3b64d58051d1411ba94"
+  end
+
   depends_on "go" => :build
 
   def install
