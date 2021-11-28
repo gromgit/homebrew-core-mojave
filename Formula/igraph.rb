@@ -5,6 +5,12 @@ class Igraph < Formula
   sha256 "c4e3f67892e1e287865d799162406b3f94916ad6f2cc069a9239e36ca495a17a"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/igraph"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9d73bfd2d457a85d2ffa4b6e7f258b55ef0e72ae3316f943c705ba892d09b9d8"
+  end
+
   depends_on "cmake" => :build
   depends_on "arpack"
   depends_on "glpk"
