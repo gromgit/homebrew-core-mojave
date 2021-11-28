@@ -6,6 +6,12 @@ class Broot < Formula
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/broot"
+    rebuild 1
+    sha256 cellar: :any, mojave: "558395878c415d3886f5960b6631d9d4db3fce7d5c083b65e853dce390826c5c"
+  end
+
   depends_on "rust" => :build
   depends_on "libxcb"
 
