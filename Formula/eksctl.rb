@@ -7,6 +7,12 @@ class Eksctl < Formula
   license "Apache-2.0"
   head "https://github.com/weaveworks/eksctl.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eksctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "76a9f82dce6f8ffa00f173f7a44df89e87ac649b2eeac072636ccc6120840694"
+  end
+
   depends_on "counterfeiter" => :build
   depends_on "go" => :build
   depends_on "go-bindata" => :build
