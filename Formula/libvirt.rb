@@ -11,6 +11,12 @@ class Libvirt < Formula
     regex(/href=.*?libvirt[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvirt"
+    rebuild 1
+    sha256 mojave: "e1b3823ff4f55cefcfd262c049a2e608aedf3e4d366c487c6a8193a06fbaebd6"
+  end
+
   depends_on "docutils" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
