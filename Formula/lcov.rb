@@ -10,6 +10,12 @@ class Lcov < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/linux-test-project/lcov.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lcov"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0105592dd3eafd2260d4da074cf6ffb9c02ff94d298ff130598a6e0dfe9ae768"
+  end
+
   uses_from_macos "perl"
   uses_from_macos "zlib"
 
