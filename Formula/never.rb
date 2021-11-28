@@ -12,6 +12,12 @@ class Never < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/never"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "41a8d8504b2aced615f660e1612a684e4cfc6257081575fd669dd33339273b19"
+  end
+
   depends_on "bison" => :build
   depends_on "cmake" => :build
 
