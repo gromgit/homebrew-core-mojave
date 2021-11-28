@@ -5,6 +5,12 @@ class Liqoctl < Formula
   sha256 "4a89c95613d6a2083987aa29bf76eac0d42ae894e422e3995d039fe8c7b3b2d9"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liqoctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "133aa84cb3da2c5fba993c8030141581d662a5d242287bc8ab84543a70e23ca4"
+  end
+
   depends_on "go" => :build
 
   def install
