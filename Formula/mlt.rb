@@ -6,6 +6,12 @@ class Mlt < Formula
   license "LGPL-2.1-only"
   head "https://github.com/mltframework/mlt.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlt"
+    rebuild 1
+    sha256 mojave: "1b5c05f747322dd2c993965f5d4ffd9a415b9e29bb98e767b77a82e8fe654bde"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
