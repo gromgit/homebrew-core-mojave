@@ -6,6 +6,12 @@ class Nnn < Formula
   license "BSD-2-Clause"
   head "https://github.com/jarun/nnn.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nnn"
+    rebuild 1
+    sha256 cellar: :any, mojave: "61e2d40e6b4103c485f8d0110997909fa37931caec66055c513a107bc485c38f"
+  end
+
   depends_on "gnu-sed"
   depends_on "readline"
 
