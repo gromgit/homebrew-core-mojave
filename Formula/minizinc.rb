@@ -7,6 +7,12 @@ class Minizinc < Formula
   revision 1
   head "https://github.com/MiniZinc/libminizinc.git", branch: "develop"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minizinc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "026a6cc1c6e46df5ee879445cf87b928b8460b51ffa9a00965bf1e64fc2e8290"
+  end
+
   depends_on "cmake" => :build
   depends_on "cbc"
   depends_on "gecode"
