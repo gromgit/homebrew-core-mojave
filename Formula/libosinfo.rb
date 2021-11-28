@@ -11,6 +11,12 @@ class Libosinfo < Formula
     regex(/href=.*?libosinfo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libosinfo"
+    rebuild 1
+    sha256 mojave: "5a3eb24d28421943acf031d8b84438163e6cdeab97055da21d192da8fe151fb9"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
