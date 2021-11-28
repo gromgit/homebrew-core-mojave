@@ -6,6 +6,12 @@ class LdFindCodeRefs < Formula
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ld-find-code-refs.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ld-find-code-refs"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "616daebb313ce2d5d93dd99c86c70e5511a6f720ac7219ee101a0439324c1be0"
+  end
+
   depends_on "go" => :build
 
   def install
