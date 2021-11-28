@@ -11,6 +11,12 @@ class Kubeseal < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeseal"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4d2f1b088a550f0d6fa0742f6297d161f42b0ad177b780e34d2e72fd72a3346f"
+  end
+
   depends_on "go" => :build
 
   def install
