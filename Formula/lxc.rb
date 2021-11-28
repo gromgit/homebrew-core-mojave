@@ -10,6 +10,12 @@ class Lxc < Formula
     regex(/href=.*?lxd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lxc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "905931fe55d9f4a6ad21579ca076dc1135bdfe01b163ee73dec862ef2e2c2b98"
+  end
+
   depends_on "go" => :build
 
   def install
