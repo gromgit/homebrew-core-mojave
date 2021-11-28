@@ -6,6 +6,12 @@ class Librespot < Formula
   license "MIT"
   head "https://github.com/librespot-org/librespot.git", branch: "dev"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librespot"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ec2b2e06dbb5142ec0ca8da6a0bfede8c68bb9cbbc247ac716a9ca0fa3514d27"
+  end
+
   depends_on "rust" => :build
 
   on_linux do
