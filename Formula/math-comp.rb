@@ -7,6 +7,12 @@ class MathComp < Formula
   revision 1
   head "https://github.com/math-comp/math-comp.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/math-comp"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d397641d2cf684fd3cf7669506b50409b34e8a280cc3d688a08f52e931874a38"
+  end
+
   depends_on "ocaml" => :build
   depends_on "coq"
 
