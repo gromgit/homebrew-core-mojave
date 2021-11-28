@@ -11,6 +11,12 @@ class Cpl < Formula
     regex(/href=.*?cpl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpl"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9f9ce88a8de392a6f60cd35e667999f93c6e157ac45e2509fdfcccd77ec9b6a7"
+  end
+
   depends_on "cfitsio"
   depends_on "fftw"
   depends_on "wcslib"
