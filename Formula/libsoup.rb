@@ -5,6 +5,12 @@ class Libsoup < Formula
   sha256 "98ef53ed9b4815ec05232155371af803a9928f4652acc685ff02086be16a3ff5"
   license "LGPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsoup"
+    rebuild 1
+    sha256 mojave: "605acff8c7c8a97bca677327098ca9f6fc09a4d2a9a2b363ce294ab25870d40a"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
