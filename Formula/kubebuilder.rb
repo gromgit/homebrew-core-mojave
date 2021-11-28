@@ -7,6 +7,12 @@ class Kubebuilder < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kubebuilder.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubebuilder"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "093a8b17076ef5e91c0d12c5305bb797c2c47f2c5a07c4c40511822a61af0a8d"
+  end
+
   depends_on "git-lfs" => :build
   depends_on "go"
 
