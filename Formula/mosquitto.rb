@@ -12,6 +12,12 @@ class Mosquitto < Formula
     regex(/href=.*?mosquitto[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mosquitto"
+    rebuild 1
+    sha256 mojave: "53aea80128ce3bf0024814bb0993e263a65743776a84ad2c78afdda5ace45f24"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "cjson"
