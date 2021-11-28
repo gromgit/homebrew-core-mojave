@@ -6,6 +6,12 @@ class Neomutt < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/neomutt/neomutt.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neomutt"
+    rebuild 1
+    sha256 mojave: "1d2155fd802b5e0558538859e1ea7fcb9cfa6eba54fc1f6a96e67936055c6181"
+  end
+
   depends_on "docbook-xsl" => :build
   depends_on "gettext"
   depends_on "gpgme"
