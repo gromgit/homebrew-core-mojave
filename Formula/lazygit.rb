@@ -5,6 +5,12 @@ class Lazygit < Formula
   sha256 "584b04e5d5666f863bd742efcce5b8ec30095ff97fd7f6f887e94e94c6eac7d8"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lazygit"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3f2330e4ade0a9bf70aa03deb2bb29fb02e60e8b42a94833ec8621991d46a5d3"
+  end
+
   depends_on "go" => :build
 
   def install
