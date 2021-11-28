@@ -5,6 +5,12 @@ class Lmod < Formula
   sha256 "bec911ff6b20de7d38587d1f9c351f58ed7bdf10cb3938089c82944b5ee0ab0d"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lmod"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3a9b276fbf8ccc758f9839cf8cdc1396ea18f7c1e19b3b9b603cfc7fa46893e3"
+  end
+
   depends_on "luarocks" => :build
   depends_on "pkg-config" => :build
   depends_on "lua"
