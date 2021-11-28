@@ -12,6 +12,12 @@ class Nwchem < Formula
     regex(/^v?(\d+(?:\.\d+)+)-release$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nwchem"
+    rebuild 1
+    sha256 cellar: :any, mojave: "93bcead94df370028bb99e6ea5d739b271dad2ab482f0619bc8e79cda25fe3a0"
+  end
+
   depends_on "gcc" # for gfortran
   depends_on "open-mpi"
   depends_on "openblas"
