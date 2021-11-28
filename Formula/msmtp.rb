@@ -10,6 +10,12 @@ class Msmtp < Formula
     regex(/href=.*?msmtp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/msmtp"
+    rebuild 1
+    sha256 mojave: "77318d0f130ce4e67f900d95637ecb29c2fe9c5fa4e673a6b03548e5925a3e07"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "gnutls"
