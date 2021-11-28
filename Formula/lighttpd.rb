@@ -11,6 +11,12 @@ class Lighttpd < Formula
     regex(/href=.*?lighttpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighttpd"
+    rebuild 1
+    sha256 mojave: "17796c1796a207fdeba815501e95e1376eaefdb3a8f96248df667900fcc1d8b6"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
