@@ -11,6 +11,12 @@ class Libcaca < Formula
     url :stable
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcaca"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2e8f82593fc14bfb49476238a05810c9ce8b91071f66b680d8468c21bd425eba"
+  end
+
   head do
     url "https://github.com/cacalabs/libcaca.git"
 
