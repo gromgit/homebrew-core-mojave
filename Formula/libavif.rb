@@ -5,6 +5,12 @@ class Libavif < Formula
   sha256 "bcd9a1f57f982a9615eb7e2faf87236dc88eb1d0c886f3471c7440ead605060d"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libavif"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bb060f9dcb4d0eaaa1e55ce2ed4ee7a1842b723cd7bdd602a96a1f1b98b822e9"
+  end
+
   depends_on "cmake" => :build
   depends_on "nasm" => :build
   depends_on "aom"
