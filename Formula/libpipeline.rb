@@ -10,6 +10,12 @@ class Libpipeline < Formula
     regex(/href=.*?libpipeline[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpipeline"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7b9b77435c09cd2b10299ee85d9aea506e23918c199e6d66752984c08f43dda2"
+  end
+
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
