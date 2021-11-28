@@ -8,6 +8,12 @@ class Mathlibtools < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mathlibtools"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bb8c47a26ddd4799ac5d182b6087215672efb94ce1d5d28e37fe17a191de46ff"
+  end
+
   depends_on "lean" => :test
   depends_on "python@3.10"
   depends_on "six"
