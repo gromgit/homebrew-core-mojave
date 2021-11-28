@@ -11,6 +11,12 @@ class Mdzk < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdzk"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "077821ea8b5586e05ee058822ac476c2946c8a2df880831055c34b9936f85fc9"
+  end
+
   depends_on "rust" => :build
 
   def install
