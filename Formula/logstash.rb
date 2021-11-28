@@ -12,6 +12,12 @@ class Logstash < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logstash"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e426751a051e92d02a3416a415dfdaa6ac8c24d35f20653d73e56c9d2ce95c53"
+  end
+
   depends_on "openjdk@11"
 
   uses_from_macos "ruby" => :build
