@@ -7,6 +7,12 @@ class DockerSquash < Formula
   sha256 "ed8a8a0f715aa6179e64c54a22dba7f2de6f80349041ebe797e6bb0f3b444962"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-squash"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "23f6625689c05bc031a4e06d577b4b3fd8de23f0b4e3f6d088a58758f46af479"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
