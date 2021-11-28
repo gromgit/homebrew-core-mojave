@@ -5,6 +5,12 @@ class Benthos < Formula
   sha256 "7fec076aa698a22c7920910e53efb8e5a1579d92cd16b7597c0062c833ca7ffa"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/benthos"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1873b94fe15ed7358ec5291464b7c7f2a5b58416311f7176c29fff397a0bd50a"
+  end
+
   depends_on "go" => :build
 
   def install
