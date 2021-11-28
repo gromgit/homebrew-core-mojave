@@ -6,6 +6,12 @@ class Kahip < Formula
   license "MIT"
   head "https://github.com/KaHIP/KaHIP.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kahip"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9fe6645ff5ef4c1d9c6f8ad408f132704bbd7c232fb780009009def823a25f7a"
+  end
+
   depends_on "cmake" => :build
   depends_on "open-mpi"
 
