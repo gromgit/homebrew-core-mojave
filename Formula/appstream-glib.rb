@@ -6,6 +6,12 @@ class AppstreamGlib < Formula
   license "LGPL-2.1-or-later"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/appstream-glib"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7da39e49bff5583d6bce8499212122174798e63cc31ca522817a576d8e140148"
+  end
+
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
