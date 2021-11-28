@@ -11,6 +11,12 @@ class Nomad < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nomad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bef10e09f242866464c6f8d60c9ea33d6424fd119c392b9456144e25b5dd49d1"
+  end
+
   depends_on "go" => :build
 
   def install
