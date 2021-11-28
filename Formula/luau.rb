@@ -6,6 +6,12 @@ class Luau < Formula
   license "MIT"
   head "https://github.com/Roblox/luau.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luau"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d3d0e0752f517fb1a1b2576a252856a286c40a9ddde925ff146646ceda9195c4"
+  end
+
   depends_on "cmake" => :build
 
   on_linux do
