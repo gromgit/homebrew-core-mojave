@@ -7,6 +7,12 @@ class Jello < Formula
   sha256 "200057e2c43184c2b3c2a707a5810f134ff9e1cfb18201eb9f2fa03fc0484501"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jello"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d3ef2edc3a4793f0de239ab2ec07466986fb35a6139928044ccaf7d05acb128d"
+  end
+
   depends_on "python@3.10"
 
   resource "Pygments" do
