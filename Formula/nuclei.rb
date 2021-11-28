@@ -6,6 +6,12 @@ class Nuclei < Formula
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nuclei"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b7ebf21d9f55540d5a17fe9baebb5317529bb8a7c4c7d67f7d535ad31248f1c2"
+  end
+
   depends_on "go" => :build
 
   def install
