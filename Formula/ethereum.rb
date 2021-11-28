@@ -11,6 +11,12 @@ class Ethereum < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ethereum"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "47014985c062d2f2a6dd4116fa6c805c92f82dc003cabfd874c4597cbc616854"
+  end
+
   depends_on "go" => :build
 
   def install
