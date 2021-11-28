@@ -14,6 +14,12 @@ class MariadbConnectorOdbc < Formula
     regex(/href=.*?mariadb-connector-odbc[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb-connector-odbc"
+    rebuild 1
+    sha256 mojave: "7b6182603ba195de58f83872597101331ecc4985a5e9f39f58c174cadea90b83"
+  end
+
   depends_on "cmake" => :build
   depends_on "mariadb-connector-c"
   depends_on "openssl@1.1"
