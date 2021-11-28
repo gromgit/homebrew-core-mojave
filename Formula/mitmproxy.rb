@@ -9,6 +9,12 @@ class Mitmproxy < Formula
   revision 1
   head "https://github.com/mitmproxy/mitmproxy.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mitmproxy"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5e8759be0db79d814613870ac5d94cb415679d0831d0bff7e4d358e8f8fba620"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "openssl@1.1"
   depends_on "protobuf"
