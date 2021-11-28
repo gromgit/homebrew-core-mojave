@@ -16,6 +16,12 @@ class Mu < Formula
     regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mu"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0c0329b31c2cd9ac8a72e5ef83e8ac1ba17e628359b890deccd6302bbfe7f1fc"
+  end
+
   head do
     url "https://github.com/djcb/mu.git"
 
