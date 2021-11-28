@@ -6,6 +6,12 @@ class Kubevela < Formula
       revision: "066c448c1ae5a339e4f8dfc17b60085f137e9de4"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubevela"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e6bae5b023a6f39f86d407ce5b97dd150aec685ae5be195ad5517c788d9c38a2"
+  end
+
   depends_on "go" => :build
 
   def install
