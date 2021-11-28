@@ -5,6 +5,12 @@ class Nvc < Formula
   sha256 "a9232d645321f5f560fc466cae43d2e514db801b9e4a9bcb24f881c473206513"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nvc"
+    rebuild 1
+    sha256 mojave: "0d6cb1c923d2d47dad0c33a7ffe6dc16eae8ac25ba36c9e1c33ff18c98895084"
+  end
+
   head do
     url "https://github.com/nickg/nvc.git"
 
