@@ -7,6 +7,12 @@ class Moto < Formula
   sha256 "fef15c831b1356b22beeb4f1b4694945597485bdc111039f1b304ab091141444"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moto"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ef8809f298e504c862adbda99a1857e5195c32faaedb3fb7eacbbe92e6768f73"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "python@3.9"
 
