@@ -5,6 +5,12 @@ class Mydumper < Formula
   sha256 "ddd0427f572467589cdb024a4ef746d30b4214c804954612f4e07510607cf7a7"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mydumper"
+    rebuild 1
+    sha256 cellar: :any, mojave: "40b2f21a53c92b4175b9699d5aa1b3c6dcd8a40ea995551778a1f268279a0737"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build
