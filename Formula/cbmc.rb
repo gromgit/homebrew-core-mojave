@@ -6,6 +6,12 @@ class Cbmc < Formula
       revision: "99c5a92de15d5d93b67bf0a8ae0fc56da08ec256"
   license "BSD-4-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cbmc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9ac0235ec982857b199335420080a02d46b6dcd358c35a5349752066ea243689"
+  end
+
   depends_on "cmake" => :build
   depends_on "maven" => :build
   depends_on "openjdk" => :build
