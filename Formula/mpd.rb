@@ -6,6 +6,12 @@ class Mpd < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7fd92c2ae5e803d1aa0a6cc5b3aba621c145285000b05b7ee0005e7b59c53ad5"
+  end
+
   depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
