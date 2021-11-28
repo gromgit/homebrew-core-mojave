@@ -14,6 +14,12 @@ class Ntopng < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ntopng"
+    rebuild 1
+    sha256 mojave: "3876b75f242ea6af0caabfaf592ef696875c7eae6068cf25595e37637b031e04"
+  end
+
   head do
     url "https://github.com/ntop/ntopng.git", branch: "dev"
 
