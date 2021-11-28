@@ -6,6 +6,12 @@ class ArgocdAutopilot < Formula
       revision: "e30842d25699028be53fc7644288fe1d3e6e8e77"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd-autopilot"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f500b64ed2519e4dc9eeaff93ec24cfb44fff1e9dec333ea6b16633b847ec1ba"
+  end
+
   depends_on "go" => :build
 
   def install
