@@ -7,6 +7,12 @@ class NewrelicInfraAgent < Formula
   license "Apache-2.0"
   head "https://github.com/newrelic/infrastructure-agent.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newrelic-infra-agent"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7383153bc01ff977ee8149cf6b6a676f4b5d53bfa406908e158eaf84c62cd9b6"
+  end
+
   # https://github.com/newrelic/infrastructure-agent/issues/723
   depends_on "go@1.16" => :build
   # https://github.com/newrelic/infrastructure-agent/issues/695
