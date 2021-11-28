@@ -17,6 +17,12 @@ class Mame < Formula
     regex(/>\s*MAME v?(\d+(?:\.\d+)+)/im)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mame"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b0e3d2128833808936d1684dd0ab7e4c77a5fc45448e25c11bfa2ff870436360"
+  end
+
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
