@@ -5,6 +5,12 @@ class Navi < Formula
   sha256 "be36c9021a23c94b585e6dc328495a818dea7de6057572ab25858f45f95e2312"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/navi"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "67021ae97ff427a370182a3232c6a91c728080d972c675b9371c493f31598ec7"
+  end
+
   depends_on "rust" => :build
   depends_on "fzf"
 
