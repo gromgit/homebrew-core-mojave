@@ -4,6 +4,12 @@ class Mpi4py < Formula
   url "https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.1.2.tar.gz"
   sha256 "40dd546bece8f63e1131c3ceaa7c18f8e8e93191a762cd446a8cfcf7f9cce770"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpi4py"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f05fc64d24b4c4c424dcb6e26a84c59136feda55dd2b31586cd52bea7cf966fa"
+  end
+
   depends_on "cython" => :build
   depends_on "open-mpi"
   depends_on "python@3.9"
