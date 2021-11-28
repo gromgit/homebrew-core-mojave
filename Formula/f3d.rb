@@ -6,6 +6,12 @@ class F3d < Formula
   license "BSD-3-Clause"
   revision 3
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/f3d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3e667725c8971914aba14b3bcd8189be305adc038e8d0646d89a105c89956812"
+  end
+
   depends_on "cmake" => :build
   depends_on "vtk"
 
