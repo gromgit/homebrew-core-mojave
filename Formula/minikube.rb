@@ -7,6 +7,12 @@ class Minikube < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes/minikube.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minikube"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "37e9074cf7f510335b739b27e66f4db84ed6c3d94b9dfdd4b5e794003bd1cdfa"
+  end
+
   depends_on "go" => :build
   depends_on "go-bindata" => :build
   depends_on "kubernetes-cli"
