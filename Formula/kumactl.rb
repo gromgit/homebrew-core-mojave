@@ -10,6 +10,12 @@ class Kumactl < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kumactl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8eac24557d541ab3dfd5fa864cca5dd8f57e273c38a21cce8b6a1990d4251698"
+  end
+
   depends_on "go" => :build
 
   def install
