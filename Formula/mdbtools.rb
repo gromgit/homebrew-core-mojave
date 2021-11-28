@@ -5,6 +5,12 @@ class Mdbtools < Formula
   sha256 "3446e1d71abdeb98d41e252777e67e1909b186496fda59f98f67032f7fbcd955"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdbtools"
+    rebuild 1
+    sha256 cellar: :any, mojave: "58d3b387258788cda2c4bd3f02cf639a46105be5b2bb83408d41bbdbcc8fb090"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build
