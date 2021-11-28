@@ -7,6 +7,12 @@ class Metricbeat < Formula
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/metricbeat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4a4a791c408e5860a29d81fb8c170691e7e322508060f304cdecc61d01d7c01c"
+  end
+
   depends_on "go" => :build
   depends_on "mage" => :build
   depends_on "python@3.9" => :build
