@@ -10,6 +10,12 @@ class Logcli < Formula
     formula "loki"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logcli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bf518970fedb21899fcaf071b96b625f08f1e415a899ee92746ffc59046ca482"
+  end
+
   depends_on "go" => :build
   depends_on "loki" => :test
 
