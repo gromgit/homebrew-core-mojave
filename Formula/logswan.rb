@@ -5,6 +5,12 @@ class Logswan < Formula
   sha256 "a031b04c2dcfe8195e4225b8dd5781fc76098b9d19d0e4a9cbe1da76a4928eea"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logswan"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ac4ce3dd43e7e46af8d1fd9f2c1f353e79b0a6e3dc1d654445f5028a7c290311"
+  end
+
   depends_on "cmake" => :build
   depends_on "jansson"
   depends_on "libmaxminddb"
