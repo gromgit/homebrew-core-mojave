@@ -5,6 +5,12 @@ class Csvtk < Formula
   sha256 "d944e55d9555733990783bbe45200da5eaef47a13d4eac242ef084d9384d54f8"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csvtk"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "52600fae02a2fe0c10bb70bd15541b0c13875c6be97db5529dfac5fb39f48b94"
+  end
+
   depends_on "go" => :build
 
   resource "homebrew-testdata" do
