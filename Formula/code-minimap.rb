@@ -5,6 +5,12 @@ class CodeMinimap < Formula
   sha256 "feb3a12f3c2d81168f40c988c15b14b838fccecd97d20856319c7d05db16568a"
   license any_of: ["Apache-2.0", "MIT"]
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/code-minimap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bd9f3760aa3d285490f4ee6240f83ff19e88363e2d1b9a713ae448a032cb2d42"
+  end
+
   depends_on "rust" => :build
 
   def install
