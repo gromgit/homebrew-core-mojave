@@ -5,6 +5,12 @@ class Questdb < Formula
   sha256 "2a295d54125083bd0437b5360ec264819d2cf8a2ab78d95e84368e76cb9b9952"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/questdb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2b04cd9649ba9c0ab48915ff96628e8a8ea1e533d1200deb35f4d1a7d080b082"
+  end
+
   depends_on "openjdk@11"
 
   def install
