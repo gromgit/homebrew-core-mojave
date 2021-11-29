@@ -6,6 +6,12 @@ class Terrascan < Formula
   license "Apache-2.0"
   head "https://github.com/accurics/terrascan.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terrascan"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dca047743a1c846e2316c7f9c330acfccff0daaaf6a616c72d0f895569808ba7"
+  end
+
   depends_on "go" => :build
 
   def install
