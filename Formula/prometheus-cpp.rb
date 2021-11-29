@@ -7,6 +7,12 @@ class PrometheusCpp < Formula
   license "MIT"
   head "https://github.com/jupp0r/prometheus-cpp.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prometheus-cpp"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9ea09d50f9f49c1eb58f5bbc6731925972eeb945c54f6641bd98ba1832da844b"
+  end
+
   depends_on "cmake" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
