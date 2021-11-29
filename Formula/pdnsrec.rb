@@ -10,6 +10,12 @@ class Pdnsrec < Formula
     regex(/href=.*?pdns-recursor[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdnsrec"
+    rebuild 1
+    sha256 mojave: "68ba84566eed925dc648373b2c91ef4ee7b2907db15b7f0b3113c7aafa4782c5"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "lua"
