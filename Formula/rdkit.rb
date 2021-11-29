@@ -14,6 +14,12 @@ class Rdkit < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rdkit"
+    rebuild 1
+    sha256 mojave: "190027c566251dd4d63492ac8ad9c7a5e01a9e365ceb9e60a717eeb76f856533"
+  end
+
   depends_on "cmake" => :build
   depends_on "swig" => :build
   depends_on "boost"
