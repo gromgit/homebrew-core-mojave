@@ -6,6 +6,12 @@ class Pspg < Formula
   license "BSD-2-Clause"
   head "https://github.com/okbob/pspg.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pspg"
+    rebuild 1
+    sha256 cellar: :any, mojave: "247d7c2f7f84a0d34f459efa1721fc4fa0ef1c4ff89314c7e84504990c7a3d4d"
+  end
+
   depends_on "libpq"
   depends_on "ncurses"
   depends_on "readline"
