@@ -8,6 +8,12 @@ class TwinePypi < Formula
   license "Apache-2.0"
   head "https://github.com/pypa/twine.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twine-pypi"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7242c156c87dc2eb126e53c78bdf7b35dc651b4a0ec3324dc5a64032980e9f2f"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
