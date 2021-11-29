@@ -11,6 +11,12 @@ class PhoronixTestSuite < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phoronix-test-suite"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2266b381cc34f00328d462fd155a0564e774b8bde4c71442fa5ea497ffa3352c"
+  end
+
   depends_on "php"
 
   def install
