@@ -6,6 +6,12 @@ class Tfmigrate < Formula
   license "MIT"
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfmigrate"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "158b04bc2f1e2db8ca2618710c055921c3c28794138ec05e60c91dcaaea7a78a"
+  end
+
   depends_on "go" => :build
   depends_on "terraform" => :test
 
