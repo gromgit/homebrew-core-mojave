@@ -6,6 +6,12 @@ class Skylighting < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/skylighting.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skylighting"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5cc319ab73b32297a1746f13acab984b5c676df584095ba46133bb4e9446d919"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 
