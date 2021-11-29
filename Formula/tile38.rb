@@ -7,6 +7,12 @@ class Tile38 < Formula
   license "MIT"
   head "https://github.com/tidwall/tile38.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tile38"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "137c2d51ef3ea55fce3c588d5340fafdc372873f923095ade45181eb63103d98"
+  end
+
   depends_on "go" => :build
 
   def datadir
