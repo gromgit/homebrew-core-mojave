@@ -6,6 +6,12 @@ class Uuu < Formula
   license "BSD-3-Clause"
   head "https://github.com/NXPmicro/mfgtools.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uuu"
+    rebuild 1
+    sha256 mojave: "50709d21981cb7dc3496c3d730d693a4951fa255e7b61c5dc30600b2bd1567e0"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
