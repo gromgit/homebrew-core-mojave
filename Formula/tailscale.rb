@@ -6,6 +6,12 @@ class Tailscale < Formula
       revision: "aee2387d6e54095054010f00d0eea1454ccd3808"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tailscale"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1243e73f1b4c61d7baa6ec728c3f68b824394338f2ffe7f22d1aee490e2670aa"
+  end
+
   depends_on "go" => :build
 
   def install
