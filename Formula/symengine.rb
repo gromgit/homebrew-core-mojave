@@ -5,6 +5,12 @@ class Symengine < Formula
   sha256 "41eb6ae6901c09e53d7f61f0758f9201e81fc534bfeecd4b2bd4b4e6f6768693"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/symengine"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9dfabdc02d3d1501dfd5da6fb8abdcfe8cdb5f4793eb4031b0504ff2d7ec5530"
+  end
+
   depends_on "cmake" => :build
   depends_on "flint"
   depends_on "gmp"
