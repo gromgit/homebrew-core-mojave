@@ -5,6 +5,12 @@ class Smug < Formula
   sha256 "314711f616ea71613fe883fe579e7d3bc0051f540f27c7925a1ce6a0ece69378"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/smug"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a5469fbd6e4d27c2f87e2f4a9e602f92058e58ed0dd99868f351b13e51391c0f"
+  end
+
   depends_on "go" => :build
   depends_on "tmux" => :test
 
