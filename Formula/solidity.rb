@@ -10,6 +10,12 @@ class Solidity < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solidity"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "40e6cd4090e3dbf12b86f6326d3798be4bc7e3f5ff91ad2d3499169f777c042e"
+  end
+
   depends_on "cmake" => :build
   depends_on xcode: ["11.0", :build]
   depends_on "boost"
