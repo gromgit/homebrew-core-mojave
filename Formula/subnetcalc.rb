@@ -6,6 +6,12 @@ class Subnetcalc < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/subnetcalc.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/subnetcalc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7f65e3c3421cf3ce574889a702365287a245c8ed5fb528c3002755faba94ff8e"
+  end
+
   depends_on "cmake" => :build
   depends_on "geoip"
 
