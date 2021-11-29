@@ -6,6 +6,12 @@ class Sqlcipher < Formula
   license "BSD-3-Clause"
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlcipher"
+    rebuild 1
+    sha256 cellar: :any, mojave: "94f7f1c8991d5bd7d44b20385ba012abd10bde4477cfd441ff98145a8eaadc77"
+  end
+
   depends_on "openssl@1.1"
 
   # Build scripts require tclsh. `--disable-tcl` only skips building extension
