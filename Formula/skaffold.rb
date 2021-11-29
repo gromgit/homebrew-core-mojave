@@ -7,6 +7,12 @@ class Skaffold < Formula
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skaffold"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "adb5031bf8f456c4c2d443faef261335c846ac76870e3d87a53ead39ff7154c7"
+  end
+
   depends_on "go" => :build
 
   def install
