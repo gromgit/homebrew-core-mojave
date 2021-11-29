@@ -12,6 +12,12 @@ class SyncGateway < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sync_gateway"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4e8dc030f7bdf7d394d04e697810b96d26afb4b176fd02d3c1f6477bdb5e84b8"
+  end
+
   depends_on "gnupg" => :build
   depends_on "go" => :build
   depends_on "repo" => :build
