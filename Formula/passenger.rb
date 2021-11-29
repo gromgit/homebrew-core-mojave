@@ -6,6 +6,12 @@ class Passenger < Formula
   license "MIT"
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/passenger"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a0f8ec82f277b75536fdf941bcfabd0b1d633d84ce4120d78b7abc3a44399ac2"
+  end
+
   # to build nginx module
   depends_on "nginx" => [:build, :test]
   depends_on "openssl@1.1"
