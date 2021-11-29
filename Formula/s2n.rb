@@ -11,6 +11,12 @@ class S2n < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s2n"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a34585ab6a0fcc254eb7190b16d31d759490de4cc477efa08a7ac464de6f6c2d"
+  end
+
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
 
