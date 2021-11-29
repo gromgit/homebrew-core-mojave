@@ -6,6 +6,12 @@ class Scorecard < Formula
   license "Apache-2.0"
   head "https://github.com/ossf/scorecard.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scorecard"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6182415f6cf63d8a0ec87781b8f9e5dcec4d25d75917dea62ddba1e22cbf6180"
+  end
+
   depends_on "go" => :build
 
   def install
