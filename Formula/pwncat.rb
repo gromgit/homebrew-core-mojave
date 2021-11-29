@@ -8,6 +8,12 @@ class Pwncat < Formula
   license "MIT"
   head "https://github.com/cytopia/pwncat.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pwncat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e26a88f477f2fdd064dade449b79669153376072c633766d691dee20354be031"
+  end
+
   depends_on "python@3.10"
 
   def install
