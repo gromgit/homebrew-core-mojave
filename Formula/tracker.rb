@@ -12,6 +12,12 @@ class Tracker < Formula
     regex(/tracker[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tracker"
+    rebuild 1
+    sha256 mojave: "34c7ee38ef1e16704e1775abf4808302c7507b4a00c1eb0e3f4bf98c9e8d7271"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
