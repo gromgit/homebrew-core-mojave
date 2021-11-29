@@ -6,6 +6,12 @@ class Pueue < Formula
   license "MIT"
   head "https://github.com/Nukesor/pueue.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pueue"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "57c9d28daf79fbc5f1dd3dd080f9e5c33d274908f8c95b692f5110636b657856"
+  end
+
   depends_on "rust" => :build
 
   def install
