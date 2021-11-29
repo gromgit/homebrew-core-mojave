@@ -10,6 +10,12 @@ class R < Formula
     regex(%r{href=(?:["']?|.*?/)R[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/r"
+    rebuild 1
+    sha256 mojave: "0caec3c9c3a0e80aa626f832253a71253b57a958807b0eebbeabcad895fdefda"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "cairo"
   depends_on "gcc" # for gfortran
