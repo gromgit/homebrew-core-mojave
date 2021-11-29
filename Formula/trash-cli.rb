@@ -8,6 +8,12 @@ class TrashCli < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trash-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b428dffebf060fc295c563cf58b79f5a88d37c48a594a06dc13bb3e8d8f94e0d"
+  end
+
   depends_on "python@3.10"
 
   conflicts_with "macos-trash", because: "both install a `trash` binary"
