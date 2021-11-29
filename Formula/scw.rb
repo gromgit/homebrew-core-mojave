@@ -5,6 +5,12 @@ class Scw < Formula
   sha256 "7baa6d7af5602703bc9b1f54beb5a36642151cc12d6584d6ab76df8bb088365e"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scw"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6434e84eb23a131180af5dd25c8dcb0e070b37de3fd22782c6ccf727d719b8bb"
+  end
+
   depends_on "go" => :build
 
   def install
