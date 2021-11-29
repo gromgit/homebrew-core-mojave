@@ -15,6 +15,12 @@ class Teleport < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teleport"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b4f6e6481b840e4ea15b1d488449c7e0d347e43c87ccead67a12618e9c0a59e5"
+  end
+
   depends_on "go" => :build
 
   uses_from_macos "curl" => :test
