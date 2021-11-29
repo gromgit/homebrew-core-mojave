@@ -5,6 +5,12 @@ class Terragrunt < Formula
   sha256 "b17dd616d7fc62918d169bb1231aa3c1448cc86ea6d98db16c91063b86ae3fcd"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terragrunt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cc16911f91f8a4d94f3ac055f029161d6a47b2d6b14d6cb23e4cafbd206e2905"
+  end
+
   depends_on "go" => :build
   depends_on "terraform"
 
