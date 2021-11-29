@@ -11,6 +11,12 @@ class OryHydra < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ory-hydra"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "710b21c7c0f98a8f30d81d1c3819d5f43b013c38d2d37d2fbd1309d9205c1eaa"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "hydra", because: "both install `hydra` binaries"
