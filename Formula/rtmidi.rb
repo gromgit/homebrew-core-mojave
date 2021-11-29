@@ -10,6 +10,12 @@ class Rtmidi < Formula
     regex(/href=.*?rtmidi[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtmidi"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8d0abf4c3f7da6a655ef4f6aa6f78931a555d868254a2914e2825c83d60e8d10"
+  end
+
   head do
     url "https://github.com/thestk/rtmidi.git", branch: "master"
 
