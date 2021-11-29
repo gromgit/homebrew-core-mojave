@@ -10,6 +10,12 @@ class Sonarqube < Formula
     regex(/href=.*?sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonarqube"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3df557e89c5d656ad3e24d054a821dacb71f20608614847a7df049c413bd6315"
+  end
+
   # sonarqube ships pre-built x86_64 binaries
   depends_on arch: :x86_64
   depends_on "openjdk@11"
