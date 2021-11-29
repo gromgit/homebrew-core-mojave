@@ -10,6 +10,12 @@ class Oil < Formula
     regex(/href=.*?oil[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oil"
+    rebuild 1
+    sha256 mojave: "a21bd1f71d48934328705c349b8b37c6c65070278b77252f98dc1bbdcf039a1d"
+  end
+
   depends_on "readline"
 
   conflicts_with "omake", because: "both install 'osh' binaries"
