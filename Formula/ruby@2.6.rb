@@ -10,6 +10,12 @@ class RubyAT26 < Formula
     regex(/href=.*?ruby[._-]v?(2\.6(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@2.6"
+    rebuild 1
+    sha256 mojave: "73f88e8d991ebe851aa66f492805aa345566eb04eb6da1e175c0b30686eb0ebf"
+  end
+
   keg_only :versioned_formula
 
   deprecate! date: "2022-04-05", because: :unsupported
