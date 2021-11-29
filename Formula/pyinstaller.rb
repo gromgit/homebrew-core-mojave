@@ -8,6 +8,12 @@ class Pyinstaller < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyinstaller"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e0b29c8858f17fbf50667fc320fd83af8cbfa74e50d300f6f43df19008c633db"
+  end
+
   depends_on "python@3.10"
 
   resource "altgraph" do
