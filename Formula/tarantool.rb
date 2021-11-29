@@ -8,6 +8,12 @@ class Tarantool < Formula
   version_scheme 1
   head "https://github.com/tarantool/tarantool.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarantool"
+    rebuild 1
+    sha256 mojave: "cee74f82b85b715ba7437b3df7975eb494077de562db16af4acc08c4bd772b7f"
+  end
+
   depends_on "cmake" => :build
   depends_on "icu4c"
   depends_on "libyaml"
