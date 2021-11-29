@@ -8,6 +8,12 @@ class TrezorAgent < Formula
   license "LGPL-3.0"
   revision 3
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trezor-agent"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8bf16faee9b211233b20da8e114ceadef3ddbf7d6ee08d86adf389bca0a744f3"
+  end
+
   depends_on "libusb"
   depends_on "pillow"
   depends_on "python@3.9"
