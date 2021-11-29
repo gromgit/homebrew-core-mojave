@@ -11,6 +11,12 @@ class Stockfish < Formula
     regex(/^sf[._-]v?(\d+(?:\.\d+)*)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stockfish"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4e6fa5cc87a3da0d00f9ef8efaebe45d11c969e0671a041de76a6e4e951d583e"
+  end
+
   on_linux do
     depends_on "gcc" # For C++17
   end
