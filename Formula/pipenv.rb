@@ -7,6 +7,12 @@ class Pipenv < Formula
   sha256 "1bde859e8bbd1d21d503fd995bc0170048d6da7686ab885f074592c99a16e8f3"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipenv"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "83d182b9daadf2883d889fe7a32ba446bc70f31ae2af4270ac76d550f7d3a07c"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
