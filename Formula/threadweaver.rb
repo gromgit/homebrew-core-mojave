@@ -13,6 +13,12 @@ class Threadweaver < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/threadweaver"
+    rebuild 1
+    sha256 mojave: "970534371f954fae3e8247b02348f5933e7d5b22543bb746a10b060b41419fbb"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
