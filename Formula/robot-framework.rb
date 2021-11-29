@@ -9,6 +9,12 @@ class RobotFramework < Formula
   revision 1
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/robot-framework"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c5bb7533630d3b623932e9c53249fab3850b2499d4ba8077d48ef592bcfadd2e"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@1.1"
   depends_on "python@3.9"
