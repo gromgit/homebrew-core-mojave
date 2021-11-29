@@ -6,6 +6,12 @@ class Rocksdb < Formula
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
   head "https://github.com/facebook/rocksdb.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rocksdb"
+    rebuild 1
+    sha256 cellar: :any, mojave: "907deab9e08d23c925d3e25990f905d2b5174e4e352d0f815daede43028167cd"
+  end
+
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "lz4"
