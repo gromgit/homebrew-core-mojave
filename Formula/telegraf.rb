@@ -11,6 +11,12 @@ class Telegraf < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/telegraf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "72fb673129f57328af93b42a52f9cfdda678ff0fbb2b3cc052371bd622565f55"
+  end
+
   depends_on "go" => :build
 
   def install
