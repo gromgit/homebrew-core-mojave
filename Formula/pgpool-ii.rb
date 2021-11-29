@@ -9,6 +9,12 @@ class PgpoolIi < Formula
     regex(/href=.*?pgpool-II[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgpool-ii"
+    rebuild 1
+    sha256 mojave: "14080c3a44ed64aa9d521198466a97b8886b2db320be6c53de52c9bf2c7a0e44"
+  end
+
   depends_on "postgresql"
 
   # Fix -flat_namespace being used on Big Sur and later.
