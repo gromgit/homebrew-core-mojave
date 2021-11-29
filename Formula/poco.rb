@@ -11,6 +11,12 @@ class Poco < Formula
     regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poco"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1d0f3c9f549860c1d44a418cb3e6694e2f3abcdaac8816e7a49573a98532cf45"
+  end
+
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
 
