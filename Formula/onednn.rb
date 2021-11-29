@@ -11,6 +11,12 @@ class Onednn < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onednn"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cb8f27948d9b995a5b39e2a0902a6d1622591ed582b4194fc81426ef716840e4"
+  end
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 
