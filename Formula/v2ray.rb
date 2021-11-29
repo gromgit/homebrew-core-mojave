@@ -11,6 +11,12 @@ class V2ray < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v2ray"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "71dcf61156db25a9f0fee7531fb713a090c7ad4672353423df569a0ba290b166"
+  end
+
   depends_on "go" => :build
 
   resource "geoip" do
