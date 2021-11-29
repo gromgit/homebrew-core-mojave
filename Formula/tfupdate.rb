@@ -6,6 +6,12 @@ class Tfupdate < Formula
   license "MIT"
   head "https://github.com/minamijoyo/tfupdate.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfupdate"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bccb9396bd23464f1970ebd5c3d39acd209ff00a13020785179b296ec5052b0d"
+  end
+
   depends_on "go" => :build
   depends_on "terraform" => :test
 
