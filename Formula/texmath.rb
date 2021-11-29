@@ -6,6 +6,12 @@ class Texmath < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/texmath.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/texmath"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fd06259ecfe4c775b948ddf4f2c88c70ff7cbddae7287edfc25231695f7cc6bc"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 
