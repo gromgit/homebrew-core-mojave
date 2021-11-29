@@ -6,6 +6,12 @@ class Tbox < Formula
   license "Apache-2.0"
   head "https://github.com/tboox/tbox.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tbox"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0b6541bf024d3099d95efd17ba7de7e1e074d5b48a5944d4f331a072c82d1fd4"
+  end
+
   depends_on "xmake" => :build
 
   def install
