@@ -11,6 +11,12 @@ class SwiProlog < Formula
     regex(/href=.*?swipl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swi-prolog"
+    rebuild 1
+    sha256 mojave: "2671e43200c5e5b91cce256031334335880292317ceb2487b68e14693942dd89"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "berkeley-db"
