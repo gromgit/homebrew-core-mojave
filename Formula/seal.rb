@@ -5,6 +5,12 @@ class Seal < Formula
   sha256 "12676de5766b8e2d641d6e45e92114ccdf8debd6f6d44b42a2ecc39a59b0bf13"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/seal"
+    rebuild 1
+    sha256 mojave: "6f48cb77d10529db19db743b327608715b5291091f801657e7e91ee7520d2638"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "cpp-gsl"
   depends_on "zstd"
