@@ -6,6 +6,12 @@ class Tendermint < Formula
   license "Apache-2.0"
   head "https://github.com/tendermint/tendermint.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tendermint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "677864bda457a2ec68c03a449bb390d9245831bfe3bdd0f15c6b78316f1caac3"
+  end
+
   depends_on "go" => :build
 
   def install
