@@ -6,6 +6,12 @@ class Texlab < Formula
   license "GPL-3.0-only"
   head "https://github.com/latex-lsp/texlab.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/texlab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9b05d4652288e8f9ee6f9e5e2a505c4fd2ea9cf0320a718468946c0d9d190bb0"
+  end
+
   depends_on "rust" => :build
 
   def install
