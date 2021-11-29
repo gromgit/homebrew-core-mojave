@@ -6,6 +6,12 @@ class Starship < Formula
   license "ISC"
   head "https://github.com/starship/starship.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/starship"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cee19cc1c15a7a51529ce17bae5246a4aba610afa0b49bb8787eda316b8710d5"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@1.1"
 
