@@ -11,6 +11,12 @@ class ShibbolethSp < Formula
     regex(/href=.*?shibboleth-sp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shibboleth-sp"
+    rebuild 1
+    sha256 mojave: "86d09554aa9a5d33162064caec800c07b0eb20db7c61dd5fa8997f53bc02dee2"
+  end
+
   depends_on "apr" => :build
   depends_on "apr-util" => :build
   depends_on "pkg-config" => :build
