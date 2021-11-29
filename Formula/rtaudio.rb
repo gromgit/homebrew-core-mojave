@@ -10,6 +10,12 @@ class Rtaudio < Formula
     regex(/href=.*?rtaudio[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtaudio"
+    rebuild 1
+    sha256 cellar: :any, mojave: "df1a94f64c05b89d9430596f311497870ac58f0c6cb759838b3400ad8c85ad85"
+  end
+
   head do
     url "https://github.com/thestk/rtaudio.git", branch: "master"
 
