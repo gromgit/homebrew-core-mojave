@@ -7,6 +7,12 @@ class Pylint < Formula
   sha256 "4f4a52b132c05b49094b28e109febcec6bfb7bc6961c7485a5ad0a0f961df289"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pylint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f0be706273d9b025671952aee7b679e3bb6f45bf559c8b1d232c27635b0b0781"
+  end
+
   depends_on "python@3.10"
 
   resource "astroid" do
