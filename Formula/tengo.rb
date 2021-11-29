@@ -5,6 +5,12 @@ class Tengo < Formula
   sha256 "487331f79a3742fc05817d6210f6fb751b3ade90826910dde634037c60804f4e"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tengo"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a881c4ea452fea6f618f9f4e70f95d5d2b9f3b025ef0b7b015b5854df514f16e"
+  end
+
   depends_on "go" => :build
 
   def install
