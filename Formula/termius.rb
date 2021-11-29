@@ -9,6 +9,12 @@ class Termius < Formula
   revision 2
   head "https://github.com/termius/termius-cli.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/termius"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cd65ccec3dd3498b952d582d4242c815937e523e016e59633060e03f2f397a4d"
+  end
+
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "openssl@1.1"
