@@ -10,6 +10,12 @@ class Suricata < Formula
     regex(/href=.*?suricata[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/suricata"
+    rebuild 1
+    sha256 mojave: "e5985600b9203d331e7acd95760dc9b96f53815fd5260279bc9ead395d5bcfa3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "jansson"
