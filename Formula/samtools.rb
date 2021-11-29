@@ -5,6 +5,12 @@ class Samtools < Formula
   sha256 "9341dabaa98b0ea7d60fd47e42af25df43a7d3d64d8e654cdf852974546b7d74"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/samtools"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ce3f09a2554aa47a20542cffbadd75b6647075e0a40acfe1e5361a6c1c5d8357"
+  end
+
   depends_on "htslib"
 
   uses_from_macos "ncurses"
