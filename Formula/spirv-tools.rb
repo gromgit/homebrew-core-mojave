@@ -5,6 +5,12 @@ class SpirvTools < Formula
   sha256 "d68de260708dda785d109ff1ceeecde2d2ab71142fa5bf59061bb9f47dd3bb2c"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spirv-tools"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e9db07dcef6e46afb3d35b988da9beea8ba4f821fc8eeeb0857486b22429d31d"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.9" => :build
 
