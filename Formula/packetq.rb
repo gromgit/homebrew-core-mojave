@@ -10,6 +10,12 @@ class Packetq < Formula
     regex(/href=.*?packetq[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packetq"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "babc72f026bfaa2453a1dbba0357af3054da25010f89eda8c3ae22fa644b3ce3"
+  end
+
   uses_from_macos "zlib"
 
   def install
