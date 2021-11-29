@@ -6,6 +6,12 @@ class Tldr < Formula
   license "MIT"
   head "https://github.com/tldr-pages/tldr-c-client.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tldr"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8e8dab042e0a45bfd6ee134504bc1efd66820159bd206bddf03f6ec45ea58026"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libzip"
 
