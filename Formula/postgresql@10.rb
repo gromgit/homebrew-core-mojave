@@ -11,6 +11,12 @@ class PostgresqlAT10 < Formula
     regex(%r{href=["']?v?(10(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@10"
+    rebuild 1
+    sha256 mojave: "2ff53566a4857606334054e88546da66025b183d4aee130abe7db61f0b27cc7a"
+  end
+
   keg_only :versioned_formula
 
   # https://www.postgresql.org/support/versioning/
