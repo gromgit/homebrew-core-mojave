@@ -6,6 +6,12 @@ class Simdjson < Formula
   license "Apache-2.0"
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simdjson"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e19a49c0e6aea7b3c0d5432c0b19093fcb353d514b2481bd59052acdbb4229ed"
+  end
+
   depends_on "cmake" => :build
 
   on_linux do
