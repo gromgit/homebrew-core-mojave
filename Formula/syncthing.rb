@@ -11,6 +11,12 @@ class Syncthing < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/syncthing"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "217ab6fe52b38589dbdf72ba570b9a93e9d20d5109a8e182d4080af12acf8d08"
+  end
+
   depends_on "go" => :build
 
   def install
