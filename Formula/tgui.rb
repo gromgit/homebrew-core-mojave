@@ -5,6 +5,12 @@ class Tgui < Formula
   sha256 "9f1835d9be1924694b6399fa1e7fe079e8abebb77ad602b8b2fea2572dfbe12b"
   license "Zlib"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tgui"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ec63cc5551f5e7073558aede32eadddc504f1eb49573089b05a7bd821d10ce55"
+  end
+
   depends_on "cmake" => :build
   depends_on "sfml"
 
