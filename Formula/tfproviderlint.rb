@@ -6,6 +6,12 @@ class Tfproviderlint < Formula
   license "MPL-2.0"
   head "https://github.com/bflad/tfproviderlint.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfproviderlint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "08c5be6c98820151db07ec092b52d0649f0f4e6b627212437b63e930f1b7f6f0"
+  end
+
   depends_on "go" => [:build, :test]
 
   resource "test_resource" do
