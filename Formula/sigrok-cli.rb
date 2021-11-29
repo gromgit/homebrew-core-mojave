@@ -10,6 +10,12 @@ class SigrokCli < Formula
     regex(/href=.*?sigrok-cli[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sigrok-cli"
+    rebuild 1
+    sha256 cellar: :any, mojave: "34973b5a7e2c21204f6869cb05da7580fea984513c27e5968fba0e1c8a731d9e"
+  end
+
   head do
     url "git://sigrok.org/sigrok-cli", branch: "master"
 
