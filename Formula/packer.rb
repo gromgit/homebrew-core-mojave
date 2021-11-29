@@ -11,6 +11,12 @@ class Packer < Formula
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packer"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "874e28220a3f596aeaf0145d15af5bd8b435635a74cc3008f7aca70a3b24140b"
+  end
+
   depends_on "go" => :build
 
   def install
