@@ -10,6 +10,12 @@ class Scamper < Formula
     regex(/href=.*?scamper(?:-cvs)?[._-]v?(\d{6,8}[a-z]?)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scamper"
+    rebuild 1
+    sha256 cellar: :any, mojave: "31f2e1e3eafacd4a990529f5cec42f330b7c81116a68d82a347e1e2d94858b42"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
 
