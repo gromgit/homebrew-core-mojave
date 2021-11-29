@@ -11,6 +11,12 @@ class Scotch < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scotch"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4956fd8e0ca65861de7e8ce1b8b55353b9b6cb9c0d20f39fbc486eb613b53ad1"
+  end
+
   depends_on "open-mpi"
 
   uses_from_macos "bison"
