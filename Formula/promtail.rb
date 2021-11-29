@@ -9,6 +9,12 @@ class Promtail < Formula
     formula "loki"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/promtail"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f35c1bec402c98325c20c4cad01786b5db83355e241e73cfaf6e5780c3c2b80a"
+  end
+
   depends_on "go" => :build
 
   on_linux do
