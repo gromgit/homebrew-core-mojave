@@ -11,6 +11,12 @@ class RomTools < Formula
     formula "mame"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rom-tools"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1f998a4fae6f52567a6380ef906cf816e8fa496cc9df9a4d9aa0319f6f6b31b3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
   depends_on "flac"
