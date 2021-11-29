@@ -17,6 +17,12 @@ class Puzzles < Formula
     regex(/version v?(\d{6,8})(?:\.[a-z0-9]+)?/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/puzzles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "85ac1fd6c2d474bc890b18e45c0a4f60df83bb0e624e7397bd0c21f4db20a1ce"
+  end
+
   depends_on "cmake" => :build
   depends_on "halibut" => :build
 
