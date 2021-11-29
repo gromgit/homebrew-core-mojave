@@ -7,6 +7,12 @@ class Snort < Formula
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snort"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1dfafcb08b824858e35007dccdc8f2fc0886b553154b13f9f42ae9f3c42ef5a7"
+  end
+
   depends_on "cmake" => :build
   depends_on "flatbuffers" => :build
   depends_on "flex" => :build # need flex>=2.6.0
