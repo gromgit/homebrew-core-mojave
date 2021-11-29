@@ -7,6 +7,12 @@ class QpidProton < Formula
   license "Apache-2.0"
   head "https://gitbox.apache.org/repos/asf/qpid-proton.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qpid-proton"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9570979f98b45de816fead917224dd5578fc3c174bad4c58399c992da5da3b8d"
+  end
+
   depends_on "cmake" => :build
   depends_on "libuv"
   depends_on "openssl@1.1"
