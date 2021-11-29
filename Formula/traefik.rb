@@ -6,6 +6,12 @@ class Traefik < Formula
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/traefik"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5ee1aa5f9f434dd032117b8b1ba0d066914c920c79d691e91d3644a47bad2899"
+  end
+
   depends_on "go" => :build
   depends_on "go-bindata" => :build
 
