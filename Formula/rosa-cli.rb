@@ -12,6 +12,12 @@ class RosaCli < Formula
     regex(%r{href=.*?/tag/v?(\d+\.\d+\.\d+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rosa-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "422263b4b3646c305ca40cf451b449ed8ce80f94db2bc96b187500eec6536c59"
+  end
+
   depends_on "go" => :build
   depends_on "awscli"
 
