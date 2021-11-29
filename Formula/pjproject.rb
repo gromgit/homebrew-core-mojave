@@ -11,6 +11,12 @@ class Pjproject < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pjproject"
+    rebuild 1
+    sha256 cellar: :any, mojave: "36ff83146a5caea17445568a652c7e54228759fdabc66d59cc580882c6e47646"
+  end
+
   depends_on macos: :high_sierra # Uses Security framework API enum cases introduced in 10.13.4
   depends_on "openssl@1.1"
 
