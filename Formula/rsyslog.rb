@@ -10,6 +10,12 @@ class Rsyslog < Formula
     regex(/href=.*?rsyslog[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rsyslog"
+    rebuild 1
+    sha256 mojave: "7ee13247e904e91704627633719149bbd28e8eda438b1d2eb143a1a4d657f178"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libestr"
 
