@@ -12,6 +12,12 @@ class PamU2f < Formula
     regex(/href=.*?pam_u2f[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pam-u2f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9a63da1df0c56e91c20dd74d71235a6350434c9d902f94d55c3f9fa637bee7bf"
+  end
+
   depends_on "asciidoc" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
