@@ -10,6 +10,12 @@ class Spot < Formula
     regex(/href=.*?spot[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spot"
+    rebuild 1
+    sha256 cellar: :any, mojave: "caa9088699b7d2d2e61a1be6b52348beea3d617f7a5777dac9313921278344fa"
+  end
+
   depends_on "python@3.10" => :build
 
   on_linux do
