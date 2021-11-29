@@ -11,6 +11,12 @@ class Sleuthkit < Formula
     regex(%r{href=.*?/tag/sleuthkit[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sleuthkit"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dca16f5772c7d0206bbe87ee005e15cc494bf27689c97a67e8e10483f5f3368b"
+  end
+
   depends_on "ant" => :build
   depends_on "afflib"
   depends_on "libewf"
