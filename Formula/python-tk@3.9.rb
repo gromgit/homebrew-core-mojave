@@ -9,6 +9,12 @@ class PythonTkAT39 < Formula
     formula "python@3.9"
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-tk@3.9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ce0c096772bbb9ccd740c7e5518ad999c9a51568306d39579f37dbb59f700bea"
+  end
+
   depends_on "python@3.9"
   depends_on "tcl-tk"
 
