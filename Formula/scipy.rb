@@ -6,6 +6,12 @@ class Scipy < Formula
   license "BSD-3-Clause"
   head "https://github.com/scipy/scipy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scipy"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d5748d1682879bb04592d4448f27d78c80561b0afc5229e19d57b9acf1be6848"
+  end
+
   depends_on "cython" => :build
   depends_on "pythran" => :build
   depends_on "swig" => :build
