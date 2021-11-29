@@ -12,6 +12,12 @@ class OperatorSdk < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/operator-sdk"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6fb6c2b0e1cb9f28a4131dd703316100b2fe09ac2bc46a9c3a4ca4c9b555cc09"
+  end
+
   depends_on "go"
 
   def install
