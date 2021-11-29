@@ -5,6 +5,12 @@ class OpenImageDenoise < Formula
   sha256 "e70d27ce24b41364782376c1b3b4f074f77310ccfe5f8ffec4a13a347e48a0ea"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-image-denoise"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ad7ea479958526ff5d6fd4871063dd4a54d5025a6cbd7b1437ff87c67c36a112"
+  end
+
   depends_on "cmake" => :build
   depends_on "ispc" => :build
   # clang: error: unknown argument: '-fopenmp-simd'
