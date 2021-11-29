@@ -10,6 +10,12 @@ class Pgroonga < Formula
     regex(/href=.*?pgroonga[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgroonga"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1f69f29ea56a7fb43209fbbf0134ad1991e776c511afa9bffe3afca5e97c9fcb"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "groonga"
   depends_on "postgresql"
