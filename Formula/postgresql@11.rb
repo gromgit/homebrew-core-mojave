@@ -11,6 +11,12 @@ class PostgresqlAT11 < Formula
     regex(%r{href=["']?v?(11(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@11"
+    rebuild 1
+    sha256 mojave: "f21dafe12e1de172187a202df3176e1a604febb65f0930c689581d5008666762"
+  end
+
   keg_only :versioned_formula
 
   # https://www.postgresql.org/support/versioning/
