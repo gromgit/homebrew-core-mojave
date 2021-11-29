@@ -6,6 +6,12 @@ class Raylib < Formula
   license "Zlib"
   head "https://github.com/raysan5/raylib.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/raylib"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9d597f3795c5ba6f79f8f91d2839f205fa6e247c72c8d549c88a0f641a41d209"
+  end
+
   depends_on "cmake" => :build
 
   on_linux do
