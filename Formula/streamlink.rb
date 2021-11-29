@@ -8,6 +8,12 @@ class Streamlink < Formula
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/streamlink"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4f7ddbbb7119fa8e150d0d3398ae1070766c12f81f4a54b4c2fa3d0ee46dbda1"
+  end
+
   depends_on "python@3.10"
 
   uses_from_macos "libffi"
