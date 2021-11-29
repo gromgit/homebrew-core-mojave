@@ -13,6 +13,12 @@ class Podman < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/podman"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "18045ce134740b8b64223e3976b639cd0b45e1e28ebd1d6a58a5efd91f6c07b4"
+  end
+
   head do
     url "https://github.com/containers/podman.git", branch: "main"
 
