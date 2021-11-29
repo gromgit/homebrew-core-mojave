@@ -17,6 +17,12 @@ class Uwsgi < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uwsgi"
+    rebuild 1
+    sha256 mojave: "b68226be0588f1b2f5d0bee3f05997f5baaef3b3a33fea10dd007cd66b2fa1a9"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
   depends_on "pcre"
