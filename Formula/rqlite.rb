@@ -6,6 +6,12 @@ class Rqlite < Formula
   license "MIT"
   head "https://github.com/rqlite/rqlite.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rqlite"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "40b779661adae0e19f3c3780b8a798ac8fe369a0b541594ea5d8861521c2a806"
+  end
+
   depends_on "go" => :build
 
   def install
