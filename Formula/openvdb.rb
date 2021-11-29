@@ -6,6 +6,12 @@ class Openvdb < Formula
   license "MPL-2.0"
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openvdb"
+    rebuild 1
+    sha256 mojave: "b2aebaf41c7a0cf0cc6f4c553a542431fdab974e9c84dba93a848edc38245939"
+  end
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "boost"
