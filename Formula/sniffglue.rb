@@ -5,6 +5,12 @@ class Sniffglue < Formula
   sha256 "9c3347603550349c9686639f81a933eb12bcc76efa6c46c37888cd2aaf785e39"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sniffglue"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cf6904446901b6fb97750818d4db8639e65188b45243d9f050df0602a037c391"
+  end
+
   depends_on "rust" => :build
 
   uses_from_macos "libpcap"
