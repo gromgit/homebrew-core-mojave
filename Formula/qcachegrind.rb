@@ -12,6 +12,12 @@ class Qcachegrind < Formula
     regex(%r{href=.*?v?(\d+\.\d+\.(?:(?![89]\d)\d+)(?:\.\d+)*)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qcachegrind"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a1c7cbc80538457ff277d367a194719fac543fd3e4a2fd93fcb8aa41852e664b"
+  end
+
   depends_on "graphviz"
   depends_on "qt@5"
 
