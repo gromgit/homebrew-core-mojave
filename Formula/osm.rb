@@ -6,6 +6,12 @@ class Osm < Formula
       revision: "c01aefae509d59735d7908a32a359327ff3f2322"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a07d4ffb317b93f152dfe9d1e239a78f19176dbc0778f7934db263688724edf6"
+  end
+
   depends_on "go" => :build
   depends_on "helm" => :build
 
