@@ -8,6 +8,12 @@ class Pwntools < Formula
   license "MIT"
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pwntools"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cba515a9bb2cd76cd1574e8cccaee8f5459adf36e5015fcaa78b156df4702761"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@1.1"
   depends_on "python@3.9"
