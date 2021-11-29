@@ -5,6 +5,12 @@ class Psalm < Formula
   sha256 "7605fae9a6e1b9ffa6e88ad077cec56a19454e5ec1a7192f387ce76472dd73b4"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/psalm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4962d8fa6b5ee1d1217be29d780e2739255f5fa3215b5f87056ce59be3aaeb30"
+  end
+
   depends_on "composer" => :test
   depends_on "php"
 
