@@ -10,6 +10,12 @@ class Pdns < Formula
     regex(/href=.*?pdns[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdns"
+    rebuild 1
+    sha256 mojave: "ce8ae496d48311b0597d483fe00d24b9b671963dffd8b7ff0dfd9a40a9bd8d4a"
+  end
+
   head do
     url "https://github.com/powerdns/pdns.git"
 
