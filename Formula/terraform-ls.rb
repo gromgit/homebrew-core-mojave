@@ -11,6 +11,12 @@ class TerraformLs < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform-ls"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "139ac0fcc343e67bfff2530bcf82ccaecfdc7bbc596fce23a1f9491c2c651527"
+  end
+
   depends_on "go" => :build
 
   def install
