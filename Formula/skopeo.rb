@@ -5,6 +5,12 @@ class Skopeo < Formula
   sha256 "624fd87dd8de7623f8c19c09715dd6b37820101e605ff5951cc512cf50d067a1"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skopeo"
+    rebuild 1
+    sha256 mojave: "92390d40600f8dd773cfbec656f337e32b0e91ec903b03ec6ae9f77e0be72d14"
+  end
+
   depends_on "go" => :build
   depends_on "gpgme"
 
