@@ -5,6 +5,12 @@ class SoundTouch < Formula
   sha256 "42633774f372d8cb0a33333a0ea3b30f357c548626526ac9f6ce018c94042692"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sound-touch"
+    rebuild 1
+    sha256 cellar: :any, mojave: "80a4d7f879023513b11e07db5ddc99fee0a06e2eef2bff32fab7154992933f6c"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
