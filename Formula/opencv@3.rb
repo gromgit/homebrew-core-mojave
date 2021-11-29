@@ -5,6 +5,12 @@ class OpencvAT3 < Formula
   sha256 "5e37b791b2fe42ed39b52d9955920b951ee42d5da95f79fbc9765a08ef733399"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencv@3"
+    rebuild 1
+    sha256 mojave: "5cf89ef5d49577dfb03c8353633c5437f2cdfc8c177b2feef513823cbf54f704"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
