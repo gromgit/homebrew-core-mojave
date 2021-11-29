@@ -11,6 +11,12 @@ class PkgConfigWrapper < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pkg-config-wrapper"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "97d1ddf82637bd4aae42593d76b1e9f80c7d22a6f84a617a4938a4b02488d1c3"
+  end
+
   depends_on "go" => :build
   depends_on "pkg-config"
 
