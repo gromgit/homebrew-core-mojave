@@ -7,6 +7,12 @@ class Sail < Formula
   sha256 "e81ea993a31afd23b22d8db389261f4c79d0378eb87e627da1a8e87449107cff"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sail"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9e3c56b0fab886f0aa0b481c5a43035ce6a35e3747580bbc2da1826cfc87f74f"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.10"
   depends_on "six"
