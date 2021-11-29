@@ -5,6 +5,12 @@ class Sonic < Formula
   sha256 "e07baccdc24dea6a6c0e6ef32e7faa3945318cfb2577127806c8558f1809283d"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonic"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "eb23d2084de5ac787bff07e4358a8f43f262ddc83df57c5aff6809abcbcab21d"
+  end
+
   depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build
