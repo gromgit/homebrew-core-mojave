@@ -6,6 +6,12 @@ class Shfmt < Formula
   license "BSD-3-Clause"
   head "https://github.com/mvdan/sh.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shfmt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f1b1cd655ef9200c49895f81b2cde56f1b0cfbbcbc59543a4b2e7cc582d81fb2"
+  end
+
   depends_on "go" => :build
   depends_on "scdoc" => :build
 
