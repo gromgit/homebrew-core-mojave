@@ -6,6 +6,12 @@ class Uncrustify < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/uncrustify/uncrustify.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uncrustify"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b65e470e299552b8c3beb860d71939caa15a176fcd8ca2f5eb914e0e76f1b9e"
+  end
+
   depends_on "cmake" => :build
 
   on_linux do
