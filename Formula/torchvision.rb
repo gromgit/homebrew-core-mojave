@@ -5,6 +5,12 @@ class Torchvision < Formula
   sha256 "32a06ccf755e4d75006ce03701f207652747a63dbfdf65f0f20a1b6f93a2e834"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/torchvision"
+    rebuild 1
+    sha256 mojave: "e6702298939a11f4c216c5a2ff68953cad47a4469461a1fc440aacddd73aeb32"
+  end
+
   depends_on "cmake" => :build
   depends_on "jpeg"
   depends_on "libpng"
