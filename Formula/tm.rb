@@ -6,6 +6,12 @@ class Tm < Formula
   license "Apache-2.0"
   head "https://github.com/triggermesh/tm.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "390890ec3d9672f7bedea62e65cfef15117a400eae94dc04ab309d1778a0f623"
+  end
+
   depends_on "go" => :build
 
   def install
