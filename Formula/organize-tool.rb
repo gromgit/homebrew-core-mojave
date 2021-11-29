@@ -8,6 +8,12 @@ class OrganizeTool < Formula
   license "MIT"
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/organize-tool"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5de7893e99f3dfb59da7b99f5fa3d61f776140ca690bb81616a039c86002d62a"
+  end
+
   depends_on "freetype"
   depends_on "openjpeg"
   depends_on "python@3.10"
