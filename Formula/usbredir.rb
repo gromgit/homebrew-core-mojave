@@ -10,6 +10,12 @@ class Usbredir < Formula
     regex(/href=.*?usbredir[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/usbredir"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b83fd8967e14b42b422bb513988d6d79f6a895f61612dfa06b9081559db845b7"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
