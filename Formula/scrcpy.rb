@@ -5,6 +5,12 @@ class Scrcpy < Formula
   sha256 "0c667e7de043a67a740be99d3f236a7aa4107ff62c408e7c462f4fe291f045a7"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scrcpy"
+    rebuild 1
+    sha256 mojave: "a4546b8d3ce55ca58b8ddd57c873f5676e31ca2d9d7f222332d3754526e90378"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
