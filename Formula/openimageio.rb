@@ -12,6 +12,12 @@ class Openimageio < Formula
     regex(%r{href=.*?/tag/(?:Release[._-])?v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openimageio"
+    rebuild 1
+    sha256 mojave: "a86714fc99595291ff9acfb8beffe2e839a0102615a5cf7a33c123e682b0a7c2"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
