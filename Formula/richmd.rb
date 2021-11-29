@@ -7,6 +7,12 @@ class Richmd < Formula
   sha256 "8bfe4546d56b4131298d3a9e571a0742de342f1593770bd0d4707299f772a0af"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/richmd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ef1945ea027ee644a7a75596b806052715e0c3f6a0023fc4217652a4265ca8ca"
+  end
+
   depends_on "python@3.10"
 
   resource "colorama" do
