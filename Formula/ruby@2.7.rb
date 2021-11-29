@@ -10,6 +10,12 @@ class RubyAT27 < Formula
     regex(/href=.*?ruby[._-]v?(2\.7(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@2.7"
+    rebuild 1
+    sha256 mojave: "9487cc469d869c5f575986705045b575204af68f1a5cc979c366de3c439b4cef"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
