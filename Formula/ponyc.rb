@@ -6,6 +6,12 @@ class Ponyc < Formula
       revision: "18c59df20206e34ab6379e31fb2d75d762b4ca6e"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ponyc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7bfd560cacf4a768c2e24730067a4475f879ecb5a2a7e2fae7191606380b37dd"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "zlib"
