@@ -6,6 +6,12 @@ class Okteto < Formula
   license "Apache-2.0"
   head "https://github.com/okteto/okteto.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/okteto"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "552ad97f8bb2e006934499cc61110530875be0290535aca27083c0684370fd0e"
+  end
+
   depends_on "go" => :build
 
   def install
