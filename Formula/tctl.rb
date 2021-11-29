@@ -5,6 +5,12 @@ class Tctl < Formula
   sha256 "3276bb3a030c7c96bfc56535dd7bf28c41ff8064c467b4e4cfba1c694879b97b"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "09e867fe9ba4a8bcd0705e536db77074e584d15cc44fb022d7db1fc3dd910112"
+  end
+
   depends_on "go" => :build
 
   def install
