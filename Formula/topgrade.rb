@@ -5,6 +5,12 @@ class Topgrade < Formula
   sha256 "c60dd5ae7d1d3bcfe941ead9f088c4b0413b9a4561fb9154429faf86a43e0983"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/topgrade"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a04b29c40401a8c0f6fee71a5ab4e882cb1cdcc48044302c6d40fb0bf7b7aefc"
+  end
+
   depends_on "rust" => :build
   depends_on xcode: :build if MacOS::CLT.version >= "11.4" # libxml2 module bug
 
