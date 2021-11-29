@@ -5,6 +5,12 @@ class Rakudo < Formula
   sha256 "b174c7537328efb5e3f74245e79fa7159b70131b84c597916cf5a65c2aca24a1"
   license "Artistic-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rakudo"
+    rebuild 1
+    sha256 mojave: "b15dc2df1167de7b452846ae5b077cae194dd140cfe3f3a749ac04f719ab1b67"
+  end
+
   depends_on "nqp"
 
   conflicts_with "rakudo-star"
