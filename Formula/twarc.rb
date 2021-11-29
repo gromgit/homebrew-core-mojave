@@ -7,6 +7,12 @@ class Twarc < Formula
   sha256 "459bc8fedfbe7ae56b670c75ae52cbbd594974849d9b62432f00b21e1244e13c"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twarc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "27f922cec54cc9facacf2221dc34c1d8499b078d68860842e809fe520febff4a"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
