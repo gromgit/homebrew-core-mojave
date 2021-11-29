@@ -10,6 +10,12 @@ class Petsc < Formula
     regex(/href=.*?petsc-lite[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/petsc"
+    rebuild 1
+    sha256 mojave: "89e6620577f957e612d430aac6dccf98d5ebf33e3558360753d3455f7f37f156"
+  end
+
   depends_on "hdf5"
   depends_on "hwloc"
   depends_on "metis"
