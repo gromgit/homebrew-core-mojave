@@ -6,6 +6,12 @@ class Purescript < Formula
   license "BSD-3-Clause"
   head "https://github.com/purescript/purescript.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/purescript"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1edc6565effe553da200ff9c6456de9171394d2de484b8b556188009cabb6ea0"
+  end
+
   depends_on "ghc" => :build
   depends_on "haskell-stack" => :build
 
