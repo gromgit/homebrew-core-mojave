@@ -8,6 +8,12 @@ class Sqlmap < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlmap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bfaa3a9eb4e48d01286e72b638c089def86a37e7ca639160f4a489b38f9e796c"
+  end
+
   depends_on "python@3.10"
 
   uses_from_macos "sqlite" => :test
