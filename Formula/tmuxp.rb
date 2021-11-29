@@ -7,6 +7,12 @@ class Tmuxp < Formula
   sha256 "91a73dceda6c6fb700d25e9d21380ab8af4ca84da1e7086a0324f498d409c39f"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tmuxp"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "384401386a45ae7177de66edf3186f5d78a894e2a990e1ab7d5e430638201db0"
+  end
+
   depends_on "python@3.10"
   depends_on "tmux"
 
