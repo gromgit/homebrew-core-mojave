@@ -6,6 +6,12 @@ class Tflint < Formula
   license "MPL-2.0"
   head "https://github.com/terraform-linters/tflint.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tflint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "62dc09d3ec97538c13e3e2ba00cfd63c573d3536aef6880c43f2ee4615c57d0d"
+  end
+
   depends_on "go" => :build
 
   def install
