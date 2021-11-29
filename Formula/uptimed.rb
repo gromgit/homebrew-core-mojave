@@ -5,6 +5,12 @@ class Uptimed < Formula
   sha256 "48656498ac30c59b902e98dc5e411e97cbb96278a01946bdf0941d8da72b2ae1"
   license "GPL-2.0-only"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uptimed"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dd4774d63a3668f3c0db935508e7ef1622a6144db2a2544717b6ae71faab2480"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
