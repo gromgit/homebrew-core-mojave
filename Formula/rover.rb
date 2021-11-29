@@ -6,6 +6,12 @@ class Rover < Formula
   license "MIT"
   head "https://github.com/apollographql/rover.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rover"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3ff8ab85d7ea594f48a4e38faa402c704acc2728c9c44280fb8cddbff8fa8471"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@1.1"
 
