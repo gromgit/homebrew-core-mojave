@@ -6,6 +6,12 @@ class Yaegi < Formula
   license "Apache-2.0"
   head "https://github.com/containous/yaegi.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaegi"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "44cda772c0b82ebbdc929dde1375281187a917205cb5160b40a7038607f8ba84"
+  end
+
   depends_on "go" => :build
 
   def install
