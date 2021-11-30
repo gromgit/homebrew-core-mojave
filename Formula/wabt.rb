@@ -12,6 +12,12 @@ class Wabt < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wabt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b57fbfb3cb80c9fc78ffa5a3d200f54bdf02783c9039817a18896b8077572f7b"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.10" => :build
 
