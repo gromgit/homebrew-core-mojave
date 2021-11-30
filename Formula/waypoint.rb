@@ -6,6 +6,12 @@ class Waypoint < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/waypoint.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/waypoint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "50e5d2104077d19411d05c0b5df7566364eecf2ca26bd3983366fec6442cdb78"
+  end
+
   depends_on "go" => :build
   depends_on "go-bindata" => :build
 
