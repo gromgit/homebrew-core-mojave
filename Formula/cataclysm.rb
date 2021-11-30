@@ -13,6 +13,12 @@ class Cataclysm < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cataclysm"
+    rebuild 1
+    sha256 cellar: :any, mojave: "83d2f37d27f8d3dfb999313f2863bc65cdfbc71200fccceb8c615e80216eace3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "libogg"
