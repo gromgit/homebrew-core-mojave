@@ -13,6 +13,12 @@ class Ace < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ace"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e323bca333e0033e871ab71499b906ae3301e4686ba87d7156ed14cf3b71f023"
+  end
+
   def install
     ln_sf "config-macosx.h", "ace/config.h"
     ln_sf "platform_macosx.GNU", "include/makeinclude/platform_macros.GNU"
