@@ -12,6 +12,12 @@ class Wireshark < Formula
     regex(/Stable Release \((\d+(?:\.\d+)*)/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wireshark"
+    rebuild 1
+    sha256 mojave: "09354318455b8c928d24fd0bc08c16973f0328af85681dc97d927353a7a2c984"
+  end
+
   depends_on "cmake" => :build
   depends_on "c-ares"
   depends_on "glib"
