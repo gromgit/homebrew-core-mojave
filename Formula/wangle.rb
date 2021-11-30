@@ -6,6 +6,12 @@ class Wangle < Formula
   license "Apache-2.0"
   head "https://github.com/facebook/wangle.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wangle"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9b6c73326172a12dca3350ec5493c53393d949a054ab7d0f765de2cb9e1dadb7"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "double-conversion"
