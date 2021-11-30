@@ -11,6 +11,12 @@ class Dnsperf < Formula
     regex(/href=.*?dnsperf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsperf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "327d4ce4aaa8d90c698137805a264db5a40d05c9253cbb77f99c7059c5c45530"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "concurrencykit"
   depends_on "ldns"
