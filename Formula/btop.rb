@@ -5,6 +5,12 @@ class Btop < Formula
   sha256 "997376596cc6ca808b5a26f9fe25da274c19c2970aaf757943a009f4c28b758c"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/btop"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1f11b1f98bf2735001b1d4d697939a7b9fe60fc92476f164e7c97730b52c47df"
+  end
+
   depends_on "coreutils" => :build
   depends_on "gcc"
 
