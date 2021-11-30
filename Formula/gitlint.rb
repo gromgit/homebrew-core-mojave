@@ -7,6 +7,12 @@ class Gitlint < Formula
   sha256 "772dfd33effaa8515ca73e901466aa938c19ced894bec6783d19691f57429691"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlint"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2cdbe1719ef3eace42b8e1ba4be04280f8a70fc5bfd9c9555dbc751ddd6ca868"
+  end
+
   depends_on "python@3.10"
 
   resource "arrow" do
