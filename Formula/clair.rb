@@ -10,6 +10,12 @@ class Clair < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clair"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c4120a6eded77712a867ba8c0e22893435b1483368bd92d7d9bedeb87bc89eb0"
+  end
+
   depends_on "go" => :build
   depends_on "rpm"
   depends_on "xz"
