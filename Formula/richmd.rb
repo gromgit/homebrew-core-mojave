@@ -3,15 +3,9 @@ class Richmd < Formula
 
   desc "Format Markdown in the terminal with Rich"
   homepage "https://github.com/willmcgugan/rich"
-  url "https://files.pythonhosted.org/packages/d3/09/e30866c844516d4f15e5b0c436250aaa17a94cc41cf33df2eac78af4243f/rich-10.14.0.tar.gz"
-  sha256 "8bfe4546d56b4131298d3a9e571a0742de342f1593770bd0d4707299f772a0af"
+  url "https://files.pythonhosted.org/packages/09/a4/4d197cad5b8e85085e6593628131bd0fec903c1f61e158326d80cd6c1c6b/rich-10.15.1.tar.gz"
+  sha256 "93d0ea3c35ecfd8703dbe52b76885e224ad8d68c7766c921c726b14b22a57b7d"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/richmd"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ef1945ea027ee644a7a75596b806052715e0c3f6a0023fc4217652a4265ca8ca"
-  end
 
   depends_on "python@3.10"
 

@@ -12,12 +12,6 @@ class Docker < Formula
     regex(/^v?(\d+(?:\.\d+)+)(?:[._-]ce)?$/i)
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f75d9effa016b608eb72212b5c3f4e559212036a09bb9f8aeb9e226317c53ae4"
-  end
-
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
@@ -32,7 +26,7 @@ class Docker < Formula
       ldflags = ["-X \"github.com/docker/cli/cli/version.BuildTime=#{time.iso8601}\"",
                  "-X github.com/docker/cli/cli/version.GitCommit=#{Utils.git_short_head}",
                  "-X github.com/docker/cli/cli/version.Version=#{version}",
-                 "-X \"github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community\""].join(" ")
+                 "-X \"github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community\""]
       system "go", "build", *std_go_args(ldflags: ldflags), "github.com/docker/cli/cmd/docker"
 
       Pathname.glob("man/*.[1-8].md") do |md|

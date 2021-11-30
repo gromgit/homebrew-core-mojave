@@ -3,16 +3,10 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/a7/d5/fad8326357b6f1aa6ed843ace9ea3f100167bddc238cf01166f34206aa90/streamlink-3.0.2.tar.gz"
-  sha256 "d4d0fbf2067af32d2c3e8a6bea7ea1cef6a28020fe452a80d8bd55c2a5fed68a"
+  url "https://files.pythonhosted.org/packages/aa/43/650e13e9db710bee282adf58cca01878ca66aa1213d59ced5b7bf76163f1/streamlink-3.0.3.tar.gz"
+  sha256 "a042bda7a3aea864a6d897607e727e374b09b51abac02a15086714d0634430b2"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/streamlink"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4f7ddbbb7119fa8e150d0d3398ae1070766c12f81f4a54b4c2fa3d0ee46dbda1"
-  end
 
   depends_on "python@3.10"
 

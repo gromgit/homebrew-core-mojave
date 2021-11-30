@@ -10,19 +10,13 @@ class Dolt < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dolt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0547ffbf94416523053d32cafb8a6a03bbb9b02f0e8ccc06e46c4e717b741347"
-  end
-
   depends_on "go" => :build
 
   def install
     chdir "go" do
       system "go", "build", *std_go_args, "./cmd/dolt"
-      system "go", "build", *std_go_args, "-o", bin/"git-dolt", "./cmd/git-dolt"
-      system "go", "build", *std_go_args, "-o", bin/"git-dolt-smudge", "./cmd/git-dolt-smudge"
+      system "go", "build", *std_go_args(output: bin/"git-dolt"), "./cmd/git-dolt"
+      system "go", "build", *std_go_args(output: bin/"git-dolt-smudge"), "./cmd/git-dolt-smudge"
     end
   end
 

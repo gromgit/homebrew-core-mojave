@@ -16,7 +16,8 @@ class Embulk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2ab7a8a004f97f65e320145bbb8a29ac6a7a4c076078fef29ba5f0ab0fea149c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c1b31ac422dff1e3232caf302ebb9f5673c08abd9fd723820e83fc903db5254a"
   end
 
   depends_on arch: :x86_64 # openjdk@8 is not supported on ARM

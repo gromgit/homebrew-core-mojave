@@ -6,12 +6,6 @@ class Doctl < Formula
   license "Apache-2.0"
   head "https://github.com/digitalocean/doctl.git"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a9fe615eb8ba5bba1f61c51e3229a66178d2e5c96b627485424bd8593b058342"
-  end
-
   depends_on "go" => :build
 
   def install
@@ -21,7 +15,7 @@ class Doctl < Formula
       #{base_flag}.Minor=#{version.minor}
       #{base_flag}.Patch=#{version.patch}
       #{base_flag}.Label=release
-    ].join(" ")
+    ]
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/doctl"
 

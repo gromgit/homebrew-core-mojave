@@ -1,26 +1,15 @@
 class Ldns < Formula
   desc "DNS library written in C"
   homepage "https://nlnetlabs.nl/projects/ldns/"
-  url "https://nlnetlabs.nl/downloads/ldns/ldns-1.7.1.tar.gz"
-  sha256 "8ac84c16bdca60e710eea75782356f3ac3b55680d40e1530d7cea474ac208229"
+  url "https://nlnetlabs.nl/downloads/ldns/ldns-1.8.0.tar.gz"
+  sha256 "82512507698031c37902e941c84deca3edad8cf791e7c3275a2d99d4e53f8cfc"
   license "BSD-3-Clause"
-  revision 4
 
   # https://nlnetlabs.nl/downloads/ldns/ since the first-party site has a
   # tendency to lead to an `execution expired` error.
   livecheck do
     url "https://github.com/NLnetLabs/ldns.git"
     regex(/^(?:release-)?v?(\d+(?:\.\d+)+)$/i)
-  end
-
-  bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c465f15a046a754c2bfd1c637201244d1dde5eea60b622ec851915f03123b91c"
-    sha256 cellar: :any,                 arm64_big_sur:  "8bd8186ef4b0e89f852828f66a99952bb9a6635dae7090fc6a569b33e3d86667"
-    sha256 cellar: :any,                 monterey:       "715d686d4cd96158117854f1aa1850dace62a2a442f5b5a4b701f11c72fcec80"
-    sha256 cellar: :any,                 big_sur:        "311ced9ff7f664b64f10939ba335fb3458d7b020e4f293a36a9fa10c92203620"
-    sha256 cellar: :any,                 catalina:       "014c23349aa56ea585da062b287e19999ed83609e3b75626cdd4b3ca4cdb9555"
-    sha256 cellar: :any,                 mojave:         "8228a7d9fdcb7e6c5210e9b4ce3975a68c36764a6c3025ded8abd2b60bef3c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "886bf69bb1a7215a5e9626ac6cbb04fd52cc4ddd2cdec9769ffc77480099a4d3"
   end
 
   depends_on "swig" => :build
@@ -48,9 +37,10 @@ class Ldns < Formula
     system "./configure", *args
 
     if OS.mac?
+      # FIXME: Turn this into a proper patch and send it upstream.
       inreplace "Makefile" do |s|
-        s.change_make_var! "PYTHON_LDFLAGS", "-undefined dynamic_lookup"
-        s.gsub!(/(\$\(PYTHON_LDFLAGS\).*) -no-undefined/, "\\1")
+        s.change_make_var! "PYTHON_LIBS", "-undefined dynamic_lookup"
+        s.gsub!(/(\$\(PYTHON_CFLAGS\).*) -no-undefined/, "\\1")
       end
     end
 

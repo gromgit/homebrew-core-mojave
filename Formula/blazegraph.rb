@@ -11,7 +11,8 @@ class Blazegraph < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e84fba2f0906deaa65d7eea65893f4465238b482a71c4fc41f785c6f18fc27fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3f006e1ce3a63d62b14b3274a11417ac02fa7585e5036bcba32fe4264deda8e3"
   end
 
   # Dependencies can be lifted in the upcoming release, > 2.1.5

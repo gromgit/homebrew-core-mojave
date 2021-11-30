@@ -8,12 +8,6 @@ class Circleci < Formula
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circleci"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2213075ff49f69cb6198781063d425d33d4516154e50d4395107be9c1ebf1bf2"
-  end
-
   depends_on "go" => :build
   depends_on "packr" => :build
 
@@ -26,7 +20,7 @@ class Circleci < Formula
       -X github.com/CircleCI-Public/circleci-cli/version.Version=#{version}
       -X github.com/CircleCI-Public/circleci-cli/version.Commit=#{Utils.git_short_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "))
+    system "go", "build", *std_go_args(ldflags: ldflags)
 
     output = Utils.safe_popen_read("#{bin}/circleci", "--skip-update-check", "completion", "bash")
     (bash_completion/"circleck").write output

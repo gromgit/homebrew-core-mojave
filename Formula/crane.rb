@@ -5,18 +5,15 @@ class Crane < Formula
   sha256 "f2e4d7f2e57811a706e669e75c5d43377d5967ab1846a83304e91b9f35ffce06"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crane"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9cb79e31066953f2b6f6974c8ac1a851305e003d34d438f4a0732b25cc3dd14c"
-  end
-
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "-ldflags",
-      "-s -w -X github.com/google/go-containerregistry/cmd/crane/cmd.Version=#{version}",
-      "./cmd/crane"
+    ldflags = %W[
+      -s -w
+      -X github.com/google/go-containerregistry/cmd/crane/cmd.Version=#{version}
+    ]
+
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/crane"
   end
 
   test do

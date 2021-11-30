@@ -7,8 +7,8 @@ class ScmManager < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3f20a7255368f9e664b6901f4760ae890b9adced776659c004b4240df695a3e3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f67a33413e0dc33d7f3f964786e23fa173ffb2c8f7ea0498c31c7ac670ece038"
   end
 
   depends_on arch: :x86_64 # openjdk@8 is not supported on ARM

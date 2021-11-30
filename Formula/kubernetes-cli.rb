@@ -1,26 +1,28 @@
 class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
-  url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.22.4",
-      revision: "b695d79d4f967c403a96986f1750a35eb75e75f1"
   license "Apache-2.0"
-  head "https://github.com/kubernetes/kubernetes.git"
+
+  stable do
+    url "https://github.com/kubernetes/kubernetes.git",
+        tag:      "v1.22.4",
+        revision: "b695d79d4f967c403a96986f1750a35eb75e75f1"
+    depends_on "go@1.16" => :build
+  end
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0f1ff8e720e6eebd961af4723d887559e32442029f4b297418f6431cf13ba773"
+  # HEAD builds with Go 1.17. Consolidate once v1.23 is released
+  head do
+    url "https://github.com/kubernetes/kubernetes.git"
+    depends_on "go" => :build
   end
 
   depends_on "bash" => :build
   depends_on "coreutils" => :build
-  depends_on "go@1.16" => :build
 
   uses_from_macos "rsync" => :build
 

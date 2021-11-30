@@ -12,7 +12,8 @@ class JvmMon < Formula
   end
 
   bottle do
-    sha256 cellar: :any, all: "27e30abfe7f273fa4e1194cc674c979b07694a44be43485c360a60bf533e183e"
+    rebuild 1
+    sha256 cellar: :any, all: "054e482f025dfb8f3487dadd1a6c4faea207c16b8fe56ecfbdbe293745ddb8b9"
   end
 
   depends_on arch: :x86_64 # openjdk@8 is not supported on ARM

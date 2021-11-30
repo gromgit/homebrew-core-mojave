@@ -5,17 +5,12 @@ class Freeswitch < Formula
       tag:      "v1.10.7",
       revision: "883d2cb662bed0316e157bd3beb9853e96c60d02"
   license "MPL-1.1"
+  revision 1
   head "https://github.com/signalwire/freeswitch.git"
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeswitch"
-    rebuild 1
-    sha256 mojave: "6ab9a6fb7614adf6c4c222fad255568c504637ec5833b3c433ae94f99828a348"
   end
 
   depends_on "autoconf" => :build

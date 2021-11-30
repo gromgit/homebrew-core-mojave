@@ -8,11 +8,7 @@ class Q < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/harelba/q.git", branch: "master"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/q"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d1360bf89b6d818cb87a01b78c6c73f6795de60142d1c8495d3db7ab229a5181"
-  end
+  deprecate! date: "2021-11-30", because: "requires PyOxidizer, which is a disallowed dependency in homebrew/core"
 
   depends_on "ronn" => :build
   depends_on "python@3.9"

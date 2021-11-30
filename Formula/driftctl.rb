@@ -1,15 +1,9 @@
 class Driftctl < Formula
   desc "Detect, track and alert on infrastructure drift"
   homepage "https://driftctl.com"
-  url "https://github.com/cloudskiff/driftctl/archive/v0.16.1.tar.gz"
-  sha256 "3827a253c70ee5f18091efbff0f922c8f71e7d947c5d4e74294e33f1dfd06b88"
+  url "https://github.com/cloudskiff/driftctl/archive/v0.17.0.tar.gz"
+  sha256 "e50c84cf26b29cf0738fc960fc3afd34a0f784714c2abbc26259a34ed6ed854e"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/driftctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0dfcebb7df8c622657b995055d7d64c91d36faec2422416429633d0cd925a0cb"
-  end
 
   depends_on "go" => :build
 
@@ -20,7 +14,7 @@ class Driftctl < Formula
       -s -w
       -X github.com/cloudskiff/driftctl/build.env=release
       -X github.com/cloudskiff/driftctl/pkg/version.version=v#{version}
-    ].join(" ")
+    ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 

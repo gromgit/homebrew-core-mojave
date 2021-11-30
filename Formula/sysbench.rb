@@ -8,11 +8,13 @@ class Sysbench < Formula
   head "https://github.com/akopytov/sysbench.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "8f5fd6827291b2eb5f3a5b4c842a059182802d2ad97dcbd894046e5b2750914f"
-    sha256 cellar: :any,                 big_sur:       "a9c638a46ddda6841018ad7354673315882a83e2aad7a480f46663db25e3c553"
-    sha256 cellar: :any,                 catalina:      "f85e28b078ef05d9a155d0655275e6a9418494d94ab3dd524607a9c6ca84806b"
-    sha256 cellar: :any,                 mojave:        "a29e37acd73943d5a1d72e6a5cb2f0812e2be3aeb061f919d271a8b31f2ac412"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f9cf704a34e18ddf2b4e826500a6b98b6e0df6e9b2dcf85e93dfe9f5fa2988f"
+    sha256 cellar: :any,                 arm64_monterey: "a2e6d63cc73dbf9a22e3894dc69582f395a6e3aa2abb7add620c9fda852d07f0"
+    sha256 cellar: :any,                 arm64_big_sur:  "8f5fd6827291b2eb5f3a5b4c842a059182802d2ad97dcbd894046e5b2750914f"
+    sha256 cellar: :any,                 monterey:       "51e65a1c503cd2f938629137647592fa4744577987bcd3759fcc7fc2b139a092"
+    sha256 cellar: :any,                 big_sur:        "a9c638a46ddda6841018ad7354673315882a83e2aad7a480f46663db25e3c553"
+    sha256 cellar: :any,                 catalina:       "f85e28b078ef05d9a155d0655275e6a9418494d94ab3dd524607a9c6ca84806b"
+    sha256 cellar: :any,                 mojave:         "a29e37acd73943d5a1d72e6a5cb2f0812e2be3aeb061f919d271a8b31f2ac412"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f9cf704a34e18ddf2b4e826500a6b98b6e0df6e9b2dcf85e93dfe9f5fa2988f"
   end
 
   depends_on "autoconf" => :build

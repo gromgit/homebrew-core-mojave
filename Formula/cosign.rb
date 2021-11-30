@@ -7,12 +7,6 @@ class Cosign < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cosign"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "594803a1b8aadcefd5226cd0a81c74d1806b562d7854d4f60fabc3f0bbafe66c"
-  end
-
   depends_on "go" => :build
 
   def install
@@ -23,7 +17,7 @@ class Cosign < Formula
       -X #{pkg}.gitCommit=#{Utils.git_head}
       -X #{pkg}.gitTreeState="clean"
       -X #{pkg}.buildDate=#{time.iso8601}
-    ].join(" ")
+    ]
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cosign"
   end

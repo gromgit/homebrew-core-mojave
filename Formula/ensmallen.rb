@@ -7,9 +7,8 @@ class Ensmallen < Formula
   head "https://github.com/mlpack/ensmallen.git"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ensmallen"
     rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c99872b040ce0d990c8cd242aab9908c5ef03b5de2431a3a4c19d083c1f7b978"
+    sha256 cellar: :any_skip_relocation, all: "2ef33153c33e13c5efacafa6efa8c4f08820571fbf8eeca86302bcee9df5b027"
   end
 
   depends_on "cmake" => :build

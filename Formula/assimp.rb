@@ -1,16 +1,10 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
   homepage "https://www.assimp.org/"
-  url "https://github.com/assimp/assimp/archive/v5.1.1.tar.gz"
-  sha256 "ccb71bcbd8b5047b3779f1732958ccdb7ada3f64e254f4293d9570a47e1ce803"
+  url "https://github.com/assimp/assimp/archive/v5.1.2.tar.gz"
+  sha256 "17aff648d50dfd8fd07365684fe956812673044d759cfba28f8112bf98a2be7f"
   license :cannot_represent
   head "https://github.com/assimp/assimp.git", branch: "master"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/assimp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "28b8d894272fd9e19e0a71a5a6f0a711b2390043dbd8d8ac2b3ea1d4e6f14b43"
-  end
 
   depends_on "cmake" => :build
 

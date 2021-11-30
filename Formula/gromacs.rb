@@ -10,6 +10,12 @@ class Gromacs < Formula
     regex(/href=.*?gromacs[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gromacs"
+    rebuild 1
+    sha256 mojave: "2ca5112a4044354c5a7d3995b4b68a31fe75a5136cbbe21e1bb247e4698f1013"
+  end
+
   depends_on "cmake" => :build
   depends_on "fftw"
   depends_on "gcc" # for OpenMP

@@ -1,15 +1,9 @@
 class Packr < Formula
   desc "Easy way to embed static files into Go binaries"
   homepage "https://github.com/gobuffalo/packr"
-  url "https://github.com/gobuffalo/packr/archive/v2.8.2.tar.gz"
-  sha256 "bb5e64442b3165b99d9efab7acdbefc0f8faab0204fbeae453d20a736c36960d"
+  url "https://github.com/gobuffalo/packr/archive/v2.8.3.tar.gz"
+  sha256 "67352bb3a73f6b183d94dd94f1b5be648db6311caa11dcfd8756193ebc0e2db9"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packr"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f1ab4282018d3dbc1bb25bfcc0ec196d73a19d719a72f30fd6ae59912be5271c"
-  end
 
   depends_on "go" => [:build, :test]
 

@@ -5,8 +5,8 @@ class Lolcode < Formula
   # 0.11.x accidentally, should move back to stable when possible.
   url "https://github.com/justinmeza/lci/archive/v0.11.2.tar.gz"
   sha256 "cb1065936d3a7463928dcddfc345a8d7d8602678394efc0e54981f9dd98c27d2"
-  license "GPL-3.0"
-  head "https://github.com/justinmeza/lolcode.git"
+  license "GPL-3.0-or-later"
+  head "https://github.com/justinmeza/lci.git"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "65cf3b809d4ad69918a45976eb04f22f93c785638336e2ae1ba862ef8eeade4a"
@@ -19,9 +19,14 @@ class Lolcode < Formula
     sha256 cellar: :any_skip_relocation, sierra:         "47b268e8334d901868a6498738772b1c776fe34ab249befa702658489e53dff9"
     sha256 cellar: :any_skip_relocation, el_capitan:     "74920cea828644c7ad0fe3b12ee5c9a4c06a46ec37c2826280327e37e30f5513"
     sha256 cellar: :any_skip_relocation, yosemite:       "571a57a0fa8b60aac62ce3a358c0b123efcd2af9ec4004c51194c549ad8dd3f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb5c917e5a669e5fa18ee60946f30fd1bcbd4a257489e440ba694444f9beaf1d"
   end
 
   depends_on "cmake" => :build
+
+  on_linux do
+    depends_on "readline"
+  end
 
   conflicts_with "lci", because: "both install `lci` binaries"
 

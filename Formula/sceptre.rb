@@ -7,6 +7,12 @@ class Sceptre < Formula
   sha256 "34e3bda077c87d22f6be2731baf18123a6be6d716d49c6b4e4a4024b3c435ee8"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sceptre"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f3cbe94c5dbe0284c45bb84d49197deda62e9642e741705baa2eaf54f5c61f5d"
+  end
+
   depends_on "python@3.9"
   depends_on "six"
 

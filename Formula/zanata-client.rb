@@ -12,7 +12,8 @@ class ZanataClient < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2a46f0171f5febaf2693bb9a76f7a28fd221fc2a2213177d19b33af25dbe5a71"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4e9a444168ef8759f044a71501e69d0d5f5d8e22dd29038bc8f784751341aa8d"
   end
 
   depends_on arch: :x86_64

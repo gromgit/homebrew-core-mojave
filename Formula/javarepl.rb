@@ -7,7 +7,8 @@ class Javarepl < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8dfb5aa35857100594bac67ad0fe445030f8a2725e004d0305e589c1ed08e01c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "fb7f0cc6ad4aa7b39635b74969d7eafd2e665085d0b4bb58f63598806b050a8f"
   end
 
   depends_on arch: :x86_64 # openjdk@8 is not supported on ARM

@@ -12,10 +12,11 @@ class Caffe < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "22169addf9ac9ae8a7b3477716499799fd85a4aeccb732a0c580a87d1b171e59"
-    sha256 cellar: :any, big_sur:       "b7f91af462268b50722ce6f993232034c297e01765ea9016cc46543c9d50a2dd"
-    sha256 cellar: :any, catalina:      "691fb884f9a4a8db955e318ea71a2a6c6908feb3f3fa1271fd3a6ec56e641571"
-    sha256 cellar: :any, mojave:        "5f1c675912742ac91bf9bddb0360509b6f307a122bc8329d5c02be23df6c420c"
+    sha256 cellar: :any, arm64_monterey: "9f3317ce440f2a169ae23871d183397a62af7ca3f1ecbf925c1b57cedf7000e4"
+    sha256 cellar: :any, arm64_big_sur:  "22169addf9ac9ae8a7b3477716499799fd85a4aeccb732a0c580a87d1b171e59"
+    sha256 cellar: :any, big_sur:        "b7f91af462268b50722ce6f993232034c297e01765ea9016cc46543c9d50a2dd"
+    sha256 cellar: :any, catalina:       "691fb884f9a4a8db955e318ea71a2a6c6908feb3f3fa1271fd3a6ec56e641571"
+    sha256 cellar: :any, mojave:         "5f1c675912742ac91bf9bddb0360509b6f307a122bc8329d5c02be23df6c420c"
   end
 
   depends_on "cmake" => :build

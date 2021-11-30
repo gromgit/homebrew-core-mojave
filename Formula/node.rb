@@ -11,12 +11,6 @@ class Node < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aa5113ee307a0d49894099add8eeebe8b2c7ec62b4081b033b0c748c6110b5c2"
-  end
-
   depends_on "pkg-config" => :build
   depends_on "brotli"
   depends_on "c-ares"
@@ -88,7 +82,7 @@ class Node < Formula
     # Enabling LTO errors on Linux with:
     # terminate called after throwing an instance of 'std::out_of_range'
     # LTO is unpleasant if you have to build from source.
-    # args << "--enable-lto" if OS.mac? && build.bottle?
+    args << "--enable-lto" if OS.mac? && build.bottle?
 
     system "./configure", *args
     system "make", "install"

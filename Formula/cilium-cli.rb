@@ -5,17 +5,11 @@ class CiliumCli < Formula
   sha256 "ca11474ced97ea7958305cea3d6e80837580764d546874b1e997eb15fef86f74"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cilium-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b0b26f2d5315e1c38660424fe173dd1430d0d0371912f7b2d86b146163548bf7"
-  end
-
   depends_on "go" => :build
 
   def install
     ldflags = "-s -w -X github.com/cilium/cilium-cli/internal/cli/cmd.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "-o", "#{bin}/cilium", "./cmd/cilium"
+    system "go", "build", *std_go_args(output: bin/"cilium", ldflags: ldflags), "./cmd/cilium"
 
     bash_output = Utils.safe_popen_read(bin/"cilium", "completion", "bash")
     (bash_completion/"cilium").write bash_output

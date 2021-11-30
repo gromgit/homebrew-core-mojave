@@ -4,16 +4,22 @@ class PhpCsFixerAT2 < Formula
   url "https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.19.3/php-cs-fixer.phar"
   sha256 "64238c2940e273f6182abe5279fea0df3707ac3d18f30909f0ab4fb6f9018f94"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62f0ceae3aec334450704706f22b62d66dc966347a4a7c3324566e530746ffea"
+    sha256 cellar: :any_skip_relocation, all: "55e00c9bf800348c73ec404b416b749b35a9a608a4f68380b8a1cb66005832d7"
   end
 
   keg_only :versioned_formula
-  depends_on "php"
+  depends_on "php@8.0"
 
   def install
-    bin.install "php-cs-fixer.phar" => "php-cs-fixer"
+    libexec.install "php-cs-fixer.phar"
+
+    (bin/"php-cs-fixer").write <<~EOS
+      #!#{Formula["php@8.0"].opt_bin}/php
+      <?php require '#{libexec}/php-cs-fixer.phar';
+    EOS
   end
 
   test do

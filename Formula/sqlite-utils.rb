@@ -6,6 +6,12 @@ class SqliteUtils < Formula
   sha256 "509099fce5f25faada6e76b6fb90e8ef5ba0f1715177933a816718be0c8e7244"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlite-utils"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ab910f3d60c4121e76a81d09e87771df34774a08e3b04d1dbb7dfe357d9b4438"
+  end
+
   depends_on "python-tabulate"
   depends_on "python@3.9"
   depends_on "six"

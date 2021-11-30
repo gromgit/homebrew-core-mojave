@@ -7,11 +7,12 @@ class Openalpr < Formula
   revision 2
 
   bottle do
-    sha256 arm64_big_sur: "4413a608d96584a63180fcb7a8d1c794ef8277010b9bd76f03c3bdfd60e3fe5a"
-    sha256 big_sur:       "a686b58100f9c397a2be1eb70595c773440e26e652a8539745bcfebd38359b12"
-    sha256 catalina:      "c1ba59a1d018a65f019ea162dd44efefc28ef54720f5b702c3763f21b5bdbb65"
-    sha256 mojave:        "6b61f23a1832eaea3acebf2ac5333d96eaa2ac9f978b8c1dbe6cfabadf0e980c"
-    sha256 x86_64_linux:  "a37d2f029a47097ea7c81936ed0400451780ae75594cf4aae10cc1647e5bc93e"
+    sha256 arm64_monterey: "a4bb4a3fb2875fcc0c2a8e0b3f7ac7656cd3db6a5b0a23c87c8290a81a2c6453"
+    sha256 arm64_big_sur:  "4413a608d96584a63180fcb7a8d1c794ef8277010b9bd76f03c3bdfd60e3fe5a"
+    sha256 big_sur:        "a686b58100f9c397a2be1eb70595c773440e26e652a8539745bcfebd38359b12"
+    sha256 catalina:       "c1ba59a1d018a65f019ea162dd44efefc28ef54720f5b702c3763f21b5bdbb65"
+    sha256 mojave:         "6b61f23a1832eaea3acebf2ac5333d96eaa2ac9f978b8c1dbe6cfabadf0e980c"
+    sha256 x86_64_linux:   "a37d2f029a47097ea7c81936ed0400451780ae75594cf4aae10cc1647e5bc93e"
   end
 
   depends_on "cmake" => :build
