@@ -6,6 +6,12 @@ class Gocloc < Formula
   license "MIT"
   head "https://github.com/hhatto/gocloc.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gocloc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ae8de3dfa4b60ba016ab838f21a99b1d772cf5fc1d8e215402d4550689a5a56b"
+  end
+
   depends_on "go" => :build
 
   def install
