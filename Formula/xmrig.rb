@@ -11,6 +11,12 @@ class Xmrig < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmrig"
+    rebuild 1
+    sha256 mojave: "24160bd49e6cd02a370800eddde92485025ff75bfea40b46ab84e23be4186426"
+  end
+
   depends_on "cmake" => :build
   depends_on "hwloc"
   depends_on "libmicrohttpd"
