@@ -12,6 +12,12 @@ class Ldns < Formula
     regex(/^(?:release-)?v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldns"
+    rebuild 1
+    sha256 cellar: :any, mojave: "743c346a54f9362755a3ae1dfcf4f81b6eceff670081fdd3b84764fa8de98297"
+  end
+
   depends_on "swig" => :build
   depends_on "openssl@1.1"
   depends_on "python@3.9"
