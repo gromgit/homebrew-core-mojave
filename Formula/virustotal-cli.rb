@@ -5,6 +5,12 @@ class VirustotalCli < Formula
   sha256 "830765151a76a0efe93786de179e3a5cf816710c87ec4ae606c4f3b6e5565d2e"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/virustotal-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "68082a53e69af0567ad7af314f07c72e6b3969a8a4efa16b0ad87c1c0cb3749d"
+  end
+
   depends_on "go" => :build
 
   def install
