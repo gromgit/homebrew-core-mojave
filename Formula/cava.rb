@@ -6,6 +6,12 @@ class Cava < Formula
   license "MIT"
   head "https://github.com/karlstav/cava.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cava"
+    rebuild 1
+    sha256 cellar: :any, mojave: "06e448ff0b6b6e0c19e3372da89110775d7b6edc184caa7bc00af8cabb8ac35f"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool"  => :build
