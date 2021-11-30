@@ -7,6 +7,12 @@ class GitAnnex < Formula
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-annex"
+    rebuild 1
+    sha256 cellar: :any, mojave: "50952f918319750e84bbac869315164758b398a85ea341ad3a50eed65f02beb3"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "pkg-config" => :build
