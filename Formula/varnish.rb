@@ -12,6 +12,12 @@ class Varnish < Formula
     regex(/href=.*?varnish[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/varnish"
+    rebuild 1
+    sha256 mojave: "07e72d3b35bb720925df7c24188c22a62ae94a5a04b7e8d13d26c22d953045ff"
+  end
+
   depends_on "docutils" => :build
   depends_on "graphviz" => :build
   depends_on "pkg-config" => :build
