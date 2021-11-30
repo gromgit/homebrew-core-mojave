@@ -6,6 +6,12 @@ class Doctl < Formula
   license "Apache-2.0"
   head "https://github.com/digitalocean/doctl.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doctl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9c37ec663b12a3b07228fe4ef4d56fd8cc5b7748b5d760555d5820daf780303d"
+  end
+
   depends_on "go" => :build
 
   def install
