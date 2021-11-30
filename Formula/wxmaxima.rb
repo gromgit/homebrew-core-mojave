@@ -6,6 +6,12 @@ class Wxmaxima < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wxmaxima"
+    rebuild 1
+    sha256 mojave: "c71bc794e6d117d75f5e8d709da8431c9ada00c7d12c193f96504d2fa40ce59b"
+  end
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "ninja" => :build
