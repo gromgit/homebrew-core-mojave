@@ -8,6 +8,12 @@ class GalleryDl < Formula
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gallery-dl"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b4ae97908040219aff025f5c2e3441f37e1ec6137c1e6ea01b538219f66f3f83"
+  end
+
   depends_on "python@3.10"
 
   resource "certifi" do
