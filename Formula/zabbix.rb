@@ -6,6 +6,12 @@ class Zabbix < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/zabbix/zabbix.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zabbix"
+    rebuild 1
+    sha256 mojave: "3297e8138ee262bdf5f2b7273b13ef10765c4b76074d3e1900fb81d81abb672e"
+  end
+
   depends_on "openssl@1.1"
   depends_on "pcre"
 
