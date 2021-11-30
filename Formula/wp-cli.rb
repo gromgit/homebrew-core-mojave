@@ -10,6 +10,12 @@ class WpCli < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wp-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d24a2689b7f74ea648836c7108d304dc9df9b9ba86260317f9233192e5a49c7a"
+  end
+
   depends_on "php"
 
   # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
