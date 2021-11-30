@@ -11,6 +11,12 @@ class Frum < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frum"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "09f91f481083dc795adfcbdb831df0c0cb5aa7f972d4a7f8cf3665912e1866f9"
+  end
+
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
