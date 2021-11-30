@@ -11,6 +11,12 @@ class Htop < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htop"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8b59d9d1b1f9f7f3f8d69067fe75814f9c45a198fd2d494146a33357421aad70"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
