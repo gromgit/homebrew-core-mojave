@@ -8,6 +8,12 @@ class Awscli < Formula
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2342404e8e81f93d55fd2d1fe3947e863db1c99f4e23c09589b8ef9db47e6325"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.9"
   depends_on "six"
