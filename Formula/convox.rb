@@ -11,6 +11,12 @@ class Convox < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/convox"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fa4c3f407fa51c1cb64f90d1793bdbbd508d627c821ef65876243a95eebf12b4"
+  end
+
   depends_on "go" => :build
 
   # Support go 1.17, remove when upstream patch is merged/released
