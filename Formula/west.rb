@@ -8,6 +8,12 @@ class West < Formula
   license "Apache-2.0"
   head "https://github.com/zephyrproject-rtos/west.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/west"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "22cd333140d640ef011db1d63686e4ed4852105f79600737d9e9c343cec39bb3"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
