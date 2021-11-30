@@ -13,6 +13,12 @@ class V8 < Formula
     regex(/"v8_version": "v?(\d+(?:\.\d+)+)"/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9b8274ee0231693c9f3ed0e48513efb8b391786dc2eb2566941752e140507aa6"
+  end
+
   depends_on "ninja" => :build
   depends_on "python@3.9" => :build
 
