@@ -11,6 +11,12 @@ class Chicken < Formula
     regex(/href=.*?chicken[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chicken"
+    rebuild 1
+    sha256 mojave: "0fdee40466fec8424711f133efef9815bc1b6ec5171b2fc4763909e70609997e"
+  end
+
   def install
     ENV.deparallelize
 
