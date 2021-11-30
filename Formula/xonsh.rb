@@ -8,6 +8,12 @@ class Xonsh < Formula
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xonsh"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0b8715f38f3ebe1a37f104b569bc02390986a04b04e36d4e8993082e6979bf45"
+  end
+
   depends_on "python@3.10"
 
   # Resources based on `pip3 install xonsh[ptk,pygments,proctitle]`
