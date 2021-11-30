@@ -7,6 +7,12 @@ class Cosign < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cosign"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "47f7c4b47119a62d0c890e0e041d91cb2f81b2f1a200082a23a3d4994d4d70b6"
+  end
+
   depends_on "go" => :build
 
   def install
