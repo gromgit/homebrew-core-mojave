@@ -6,6 +6,12 @@ class Certigo < Formula
   license "Apache-2.0"
   head "https://github.com/square/certigo.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certigo"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "77517faab3ab3429dd1f3712808a0f1befa816e23528d168a99d8864ee15cc66"
+  end
+
   depends_on "go" => :build
 
   def install
