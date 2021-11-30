@@ -6,6 +6,12 @@ class DockerCompose < Formula
   license "Apache-2.0"
   head "https://github.com/docker/compose.git", branch: "v2"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-compose"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4d727253bb6c81513e50c49f989d6089fe90aec77808c3a24b3f5dadc9412c5d"
+  end
+
   depends_on "go" => :build
 
   def install
