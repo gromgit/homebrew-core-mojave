@@ -6,6 +6,12 @@ class When < Formula
   license "GPL-2.0-only"
   head "https://github.com/bcrowell/when.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/when"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "695cb402c07423b6f09481b3db9313396191242353b86ee32dff64eb80580c95"
+  end
+
   def install
     system "make", "prefix=#{prefix}", "install"
   end
