@@ -6,6 +6,12 @@ class Infracost < Formula
   license "Apache-2.0"
   head "https://github.com/infracost/infracost.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/infracost"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a233d030b72823c2771fab94c922df3fdb98cb1e6cf5b5795bdf4c271e853ed6"
+  end
+
   depends_on "go" => :build
   depends_on "terraform" => :test
 
