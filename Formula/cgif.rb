@@ -5,6 +5,12 @@ class Cgif < Formula
   sha256 "160e88bc126ad0f1fa6ae07b7660852242efefe687bc0181e3b5acea01939bd4"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgif"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bb818318de6e1274e5031ca442c50ef9d98014640721a5eee13b9617ab951b04"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
 
