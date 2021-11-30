@@ -6,6 +6,12 @@ class Watchman < Formula
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/watchman"
+    rebuild 1
+    sha256 cellar: :any, mojave: "add2e8df56918fabc9c70860b89eca19ef61fbb650aa622afc69bc423da2f90a"
+  end
+
   # https://github.com/facebook/watchman/issues/963
   pour_bottle? only_if: :default_prefix
 
