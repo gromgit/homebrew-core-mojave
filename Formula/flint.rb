@@ -11,6 +11,12 @@ class Flint < Formula
     regex(/href=.*?flint[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flint"
+    rebuild 1
+    sha256 mojave: "51c318eef46e1430453cb150c998698f1fba8f63ff255920268449da4421da5e"
+  end
+
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ntl"
