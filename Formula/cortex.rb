@@ -10,6 +10,12 @@ class Cortex < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cortex"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c73b3c407778ed1c0c2d887e5dee3c618bdaf3f5084305bc87647e821e519a16"
+  end
+
   depends_on "go" => :build
 
   def install
