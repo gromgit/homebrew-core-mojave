@@ -11,6 +11,12 @@ class Dnscontrol < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnscontrol"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1f72fa3c829df52f09a595895653e0381788e3375bd009e552896dea7ef01205"
+  end
+
   depends_on "go" => :build
 
   def install
