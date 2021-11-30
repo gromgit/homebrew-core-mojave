@@ -6,6 +6,12 @@ class Yosys < Formula
   license "ISC"
   head "https://github.com/YosysHQ/yosys.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yosys"
+    rebuild 1
+    sha256 mojave: "802bd9f93ca2067f8d1289fbf6318a99cbf06dd3745992ac26a264c3fa06f484"
+  end
+
   depends_on "bison" => :build
   depends_on "pkg-config" => :build
   depends_on "libffi"
