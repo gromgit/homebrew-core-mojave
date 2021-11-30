@@ -5,6 +5,12 @@ class Gdu < Formula
   sha256 "bf47786642cae3359d918758f4527a10a80e01805566bec607bc8c2d8f35d4c6"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdu"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6208e5ad64af73c0d82e0fa84e6c63a3a52fe6c3e9b5a7ae7146e00f374a6d38"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "coreutils", because: "both install `gdu` binaries"
