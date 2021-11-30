@@ -6,6 +6,12 @@ class Dbdeployer < Formula
   license "Apache-2.0"
   head "https://github.com/datacharmer/dbdeployer.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbdeployer"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "63b0b2550e99f89c3c00507956ea33280ef57b566fe1ba4bc385ea1216589a90"
+  end
+
   depends_on "go" => :build
 
   def install
