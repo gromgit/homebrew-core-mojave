@@ -7,6 +7,12 @@ class Vim < Formula
   license "Vim"
   head "https://github.com/vim/vim.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vim"
+    rebuild 1
+    sha256 mojave: "e0a6171301d677b64a05e35186f48fa734f7eaba1f109e6c710ad3bd31fc81af"
+  end
+
   depends_on "gettext"
   depends_on "lua"
   depends_on "ncurses"
