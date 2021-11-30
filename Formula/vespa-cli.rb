@@ -11,6 +11,12 @@ class VespaCli < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vespa-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3b3703650e35fab9354d99a6d56aff707e00cc88ba2ae59a4d3cc86e0e4ef7e2"
+  end
+
   depends_on "go" => :build
 
   def install
