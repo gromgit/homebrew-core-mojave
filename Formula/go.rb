@@ -12,6 +12,12 @@ class Go < Formula
     regex(/href=.*?go[._-]?v?(\d+(?:\.\d+)+)[._-]src\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go"
+    rebuild 1
+    sha256 mojave: "f90e41da4306872010b7681499c6ffb31cfa897cb97f52be7ceff53b0a14edbe"
+  end
+
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do
     on_macos do
