@@ -6,6 +6,12 @@ class GitDelta < Formula
   license "MIT"
   head "https://github.com/dandavison/delta.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-delta"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "598bf9425bd404b8c76a3b681898d5b6cd645734060609799d27b17339f2d916"
+  end
+
   depends_on "rust" => :build
   uses_from_macos "zlib"
 
