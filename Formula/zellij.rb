@@ -5,6 +5,12 @@ class Zellij < Formula
   sha256 "aa2cc622f924c1d41a8b1b616aae3d7b989e483bca1041061db43b6d0c6c9f52"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zellij"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6358978b3c2e8b4eb369c5cfbff409ccf4bd4db02f17854b7636e62abec7725c"
+  end
+
   depends_on "rust" => :build
 
   def install
