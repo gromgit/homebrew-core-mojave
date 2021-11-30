@@ -10,6 +10,12 @@ class Ruby < Formula
     regex(/href=.*?ruby[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby"
+    rebuild 1
+    sha256 mojave: "43b9bd4c1a20ece1c0707579c7ca0be8838e6c1ccd654bd663f1e3398a7496ab"
+  end
+
   head do
     url "https://github.com/ruby/ruby.git", branch: "trunk"
     depends_on "autoconf" => :build
