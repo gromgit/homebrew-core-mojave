@@ -10,6 +10,12 @@ class Xxhash < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xxhash"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c48faaffd774a35ed8341378fb6369d2c3709f7617fdb52444a37c3749eae5a6"
+  end
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
