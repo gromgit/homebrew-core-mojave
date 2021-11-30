@@ -5,6 +5,12 @@ class I2pd < Formula
   sha256 "4443f484ad40753e892170a26c8ee8126e8338bf416d04eab0c55c1c94a4e193"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i2pd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "337ddc06170ef880e242671618b76bb89bc94c12de96616cc8d4835e991a48eb"
+  end
+
   depends_on "boost"
   depends_on "miniupnpc"
   depends_on "openssl@1.1"
