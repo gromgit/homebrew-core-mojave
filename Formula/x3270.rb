@@ -10,6 +10,12 @@ class X3270 < Formula
     regex(/href=.*?suite3270[._-]v?(\d+(?:\.\d+)+(?:ga\d+)?)(?:-src)?\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x3270"
+    rebuild 1
+    sha256 mojave: "2bfb3d73a096cba9ba8b09d1d7c95b8874740d1effef4da33391ad216d45d6d8"
+  end
+
   depends_on "readline"
 
   uses_from_macos "tcl-tk"
