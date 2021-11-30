@@ -6,6 +6,12 @@ class Dasel < Formula
   license "MIT"
   head "https://github.com/TomWright/dasel.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dasel"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "17dd52bc7e7123accfc67e29ee5206949fc83561dd67eab6135e35d841f90bc2"
+  end
+
   depends_on "go" => :build
 
   def install
