@@ -6,6 +6,12 @@ class Assimp < Formula
   license :cannot_represent
   head "https://github.com/assimp/assimp.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/assimp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "19bf6644431559cc1f469643f826e450d979b648aeffb239200da90279f4a843"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "zlib"
