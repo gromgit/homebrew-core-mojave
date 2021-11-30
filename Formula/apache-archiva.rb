@@ -7,6 +7,12 @@ class ApacheArchiva < Formula
   license all_of: ["Apache-2.0", "GPL-2.0-only"]
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-archiva"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a25fd073f89ab3722966134db924a5850ea90b6d1264ca6b4ecd99ea60561833"
+  end
+
   depends_on "ant" => :build
   depends_on "java-service-wrapper"
   depends_on "openjdk"
