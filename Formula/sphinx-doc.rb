@@ -7,6 +7,12 @@ class SphinxDoc < Formula
   sha256 "32a5b3e9a1b176cc25ed048557d4d3d01af635e6b76c5bc7a43b0a34447fbd45"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sphinx-doc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6aa0f09512687a62069e59267614824da1cb4ed72c5edddc8a34d774e1ec209e"
+  end
+
   keg_only <<~EOS
     this formula is mainly used internally by other formulae.
     Users are advised to use `pip` to install sphinx-doc
