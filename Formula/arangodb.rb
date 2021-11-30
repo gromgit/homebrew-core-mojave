@@ -11,6 +11,12 @@ class Arangodb < Formula
     regex(/href=.*?ArangoDB[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arangodb"
+    rebuild 1
+    sha256 mojave: "dc35987b9aaf19ec2e1a33390330f04c03c0a68a5a067de1300e4153d216f195"
+  end
+
   depends_on "ccache" => :build
   depends_on "cmake" => :build
   depends_on "go@1.13" => :build
