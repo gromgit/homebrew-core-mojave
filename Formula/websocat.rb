@@ -10,6 +10,12 @@ class Websocat < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/websocat"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6c3bbc8462a1e614ceb7b433c081ded198d542d93938ed5693800eefe16e4398"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
 
