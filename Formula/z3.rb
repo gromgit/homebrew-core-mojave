@@ -12,6 +12,12 @@ class Z3 < Formula
     regex(%r{href=.*?/tag/z3[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/z3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c566e5129f3a1319db4900a5b5c4c83ec5efdd984535501a529348c14fb3c894"
+  end
+
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
   depends_on "python@3.10" => :build
