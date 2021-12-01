@@ -5,6 +5,12 @@ class Vale < Formula
   sha256 "4e039ac35c874e62f3380a619041c721ed7eedc1fb70b52cc3f78e632f2eddc4"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vale"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3a70d4b6efdf7b71492db903bd0ec484a091e2fcd720726b7cd2455fddefa990"
+  end
+
   depends_on "go" => :build
 
   def install
