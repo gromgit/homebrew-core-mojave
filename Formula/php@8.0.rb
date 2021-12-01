@@ -12,6 +12,12 @@ class PhpAT80 < Formula
     regex(/href=.*?php[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
+    rebuild 1
+    sha256 mojave: "398bdec981a6369134e6e661a4552b858508d2a02f1cc5ee074244dc5402afa5"
+  end
+
   keg_only :versioned_formula
 
   deprecate! date: "2022-11-26", because: :versioned_formula
