@@ -12,6 +12,12 @@ class GstPluginsGood < Formula
     regex(/href=.*?gst-plugins-good[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-plugins-good"
+    rebuild 1
+    sha256 mojave: "4c2e6ea9988abe33bf5390cdaf26651ed168a5bbc2729960527d1b7a579540ae"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
