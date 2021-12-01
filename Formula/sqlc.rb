@@ -6,6 +6,12 @@ class Sqlc < Formula
   license "MIT"
   head "https://github.com/kyleconroy/sqlc.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5541a5a12edc73b890807714687591e3a229c7597b7398fb2d51f42984293204"
+  end
+
   depends_on "go" => :build
 
   def install
