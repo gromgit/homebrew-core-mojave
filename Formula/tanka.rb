@@ -12,6 +12,12 @@ class Tanka < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tanka"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4e64a0655bb09d1f1a9469972350aa7b5ffd9c2541abb5b0e700be770d082903"
+  end
+
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 
