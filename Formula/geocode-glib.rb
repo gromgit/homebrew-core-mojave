@@ -6,6 +6,12 @@ class GeocodeGlib < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geocode-glib"
+    rebuild 1
+    sha256 cellar: :any, mojave: "692386fc08bd34df27e054a21fcdb5aa34d04d4bf2b205c292ce69c6996ced61"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
