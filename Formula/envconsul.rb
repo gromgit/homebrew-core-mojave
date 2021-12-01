@@ -6,6 +6,12 @@ class Envconsul < Formula
       revision: "265f933f17eb918e38b24fd1a7b1eab1fc723df5"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/envconsul"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5941b98630ea08408d5294d4106444ee49b25ec9e8fbff47bfd8c9cf020f1d72"
+  end
+
   depends_on "go" => :build
   depends_on "consul" => :test
 
