@@ -11,6 +11,12 @@ class TaskwarriorTui < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/taskwarrior-tui"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "353135b840619b91fd37917f8aa61ed3f5d6cdf3c7eb2f666fb5048dd034f9df"
+  end
+
   depends_on "rust" => :build
   depends_on "task"
 
