@@ -8,6 +8,12 @@ class Appium < Formula
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/appium"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "26781eed747647f5bca97aa65ca57cf3ae57f2a58ecce11be728ee0a14693e58"
+  end
+
   depends_on "node"
 
   def install
