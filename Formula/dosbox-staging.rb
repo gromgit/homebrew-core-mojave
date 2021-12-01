@@ -7,6 +7,12 @@ class DosboxStaging < Formula
   revision 1
   head "https://github.com/dosbox-staging/dosbox-staging.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-staging"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c777bc36d718cb28187122380b6d0761a43031b3169985ff1bef5642fdb4dcb3"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
