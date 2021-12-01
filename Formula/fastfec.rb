@@ -5,6 +5,12 @@ class Fastfec < Formula
   sha256 "8c508e0a93416a1ce5609536152dcbdab0df414c3f3a791e11789298455d1c71"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastfec"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aa940952ff98c6bc3a331a709ffab5e00d490ea1f18c580d31155b207a8b1bea"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
   depends_on "pcre"
