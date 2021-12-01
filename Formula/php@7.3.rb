@@ -13,6 +13,12 @@ class PhpAT73 < Formula
     regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@7.3"
+    rebuild 1
+    sha256 mojave: "e5281737185041cff54274378b3cd17b5c95a9a63ca4d31bb4b23585d28c6d4b"
+  end
+
   keg_only :versioned_formula
 
   disable! date: "2021-12-06", because: :versioned_formula
