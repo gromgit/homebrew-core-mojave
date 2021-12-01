@@ -10,6 +10,12 @@ class Po4a < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/mquinson/po4a.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/po4a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "158716082b70e49bea60579ec64c2358295a47e2d64c14e02340f0cce3b88c03"
+  end
+
   depends_on "docbook-xsl" => :build
   depends_on "gettext"
   depends_on "perl"
