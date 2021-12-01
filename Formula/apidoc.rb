@@ -7,6 +7,12 @@ class Apidoc < Formula
   sha256 "58cfd5bfcc93727d978b1332853c3b0f752aa8e78d29f96e21df87aabfcb95c6"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apidoc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d19ee6f9fff3ed0ab1e11893c0a321032fb9d63448659646e8c44765a581db2c"
+  end
+
   depends_on "node"
 
   on_macos do
