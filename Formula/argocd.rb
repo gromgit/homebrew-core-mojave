@@ -6,6 +6,12 @@ class Argocd < Formula
       revision: "a408e299ffa743213df3aa9135bf7945644ec936"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ec6aa8e652397c7090bf3b7c260d956f62407b208502b443fe362989ec68013b"
+  end
+
   depends_on "go" => :build
   depends_on "node@14" => :build
   depends_on "yarn" => :build
