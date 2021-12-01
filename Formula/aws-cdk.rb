@@ -7,6 +7,12 @@ class AwsCdk < Formula
   sha256 "dec7ffde4e9a3e49e71d25bb5e07a6ca5fc8fcdc71e45b3008a6965e296a2a06"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-cdk"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6e3661e34ae6af46873dd196cf85edf5ee025a853ac1612d275550a3bdb53bf3"
+  end
+
   depends_on "node"
 
   def install
