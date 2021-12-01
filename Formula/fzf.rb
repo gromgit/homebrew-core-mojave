@@ -6,18 +6,12 @@ class Fzf < Formula
   license "MIT"
   head "https://github.com/junegunn/fzf.git"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fzf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "87f57192e663e98bf10843e3f98254bb0e9bd9ac8a2939c2c69ba959b4ec1984"
-  end
-
   depends_on "go" => :build
 
   uses_from_macos "ncurses"
 
   def install
-    system "go", "build", *std_go_args, "-ldflags", "-s -w -X main.version=#{version} -X main.revision=brew"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.revision=brew")
 
     prefix.install "install", "uninstall"
     (prefix/"shell").install %w[bash zsh fish].map { |s| "shell/key-bindings.#{s}" }

@@ -1,8 +1,8 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://github.com/haskell/haskell-language-server/archive/1.5.0.tar.gz"
-  sha256 "fb801c0693cb98446667b94bd858dcaaca2c1e18ec12bf260c4c928023bdfd06"
+  url "https://github.com/haskell/haskell-language-server/archive/1.5.1.tar.gz"
+  sha256 "fa2b1d39d413283202ee1f75e4ad9fc44544535741370d6f1e63afd5878d9e40"
   license "Apache-2.0"
   head "https://github.com/haskell/haskell-language-server.git"
 
@@ -13,12 +13,6 @@ class HaskellLanguageServer < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haskell-language-server"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ed202e54e3f3e9f1f44a75cf8e64fbbf6a083dde7d254158b887fca102039bb7"
-  end
-
   depends_on "cabal-install" => [:build, :test]
   depends_on "ghc" => [:build, :test]
 
@@ -26,6 +20,9 @@ class HaskellLanguageServer < Formula
     depends_on "ghc@8.6" => [:build, :test]
     depends_on "ghc@8.8" => [:build, :test]
   end
+
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   def ghcs
     deps.map(&:to_formula)

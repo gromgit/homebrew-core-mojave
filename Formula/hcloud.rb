@@ -5,17 +5,11 @@ class Hcloud < Formula
   sha256 "ea8b08702f7285d5e886fc8797287ac05747eb66ad1d77d041725f9cf6c88893"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcloud"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d2ea65a0c8f8aea2f72345b7cc080cf9e589d7a6b10dc0b2ae9f5740737ad6a7"
-  end
-
   depends_on "go" => :build
 
   def install
     ldflags = "-s -w -X github.com/hetznercloud/cli/internal/version.Version=v#{version}"
-    system "go", "build", *std_go_args, "-ldflags", ldflags, "./cmd/hcloud"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/hcloud"
 
     output = Utils.safe_popen_read("#{bin}/hcloud", "completion", "bash")
     (bash_completion/"hcloud").write output

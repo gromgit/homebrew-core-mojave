@@ -6,16 +6,10 @@ class Gostatic < Formula
   license "ISC"
   head "https://github.com/piranha/gostatic.git"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gostatic"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "44875e329a6f39c13318d9e3be60c7a3b5433d8e23b413b7a3d6292ff352787c"
-  end
-
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "-ldflags", "-s -w"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
