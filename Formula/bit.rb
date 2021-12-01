@@ -9,6 +9,12 @@ class Bit < Formula
   revision 1
   head "https://github.com/teambit/bit.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bit"
+    rebuild 1
+    sha256 mojave: "8424ae219502654a6ee59514149b39b7d6b7ea5eed8fcd3d144dfc07577de722"
+  end
+
   depends_on arch: :x86_64 # installs an x86_64 `node.napi.node`
   depends_on "node"
 
