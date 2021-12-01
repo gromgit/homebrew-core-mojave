@@ -7,6 +7,12 @@ class Restview < Formula
   sha256 "5951aa2182e7a9aa3ab906dbd0f0d33df8fe93e66318a8689649c1228ad74cd8"
   license "GPL-3.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restview"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a0891d2795f9c310a46b130bed5ae164b9887782279f7dea8840e3a2ab706329"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
