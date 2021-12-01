@@ -10,6 +10,12 @@ class Solana < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f7dc82567ec8d795ee0327c469e4dc59cc0905c43ca7fac432dec53ac8ef7192"
+  end
+
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
