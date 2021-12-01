@@ -6,6 +6,12 @@ class Xh < Formula
   license "MIT"
   head "https://github.com/ducaale/xh.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xh"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "594de5c4141f3f2468f31174ab3ad19af02ee63f57e73ffd0dbe7ab93d53515a"
+  end
+
   depends_on "rust" => :build
 
   def install
