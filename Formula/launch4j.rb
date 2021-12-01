@@ -7,6 +7,12 @@ class Launch4j < Formula
   license all_of: ["BSD-3-Clause", "MIT"]
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/launch4j"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fee136127e440a99caf9873c9eaa61096faa0acc7eab1449a6cf034dd0cf5699"
+  end
+
   depends_on "ant" => :build
   depends_on arch: :x86_64
   # Installs a pre-built `ld` and `windres` file with linkage to zlib
