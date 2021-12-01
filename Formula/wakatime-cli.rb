@@ -7,6 +7,12 @@ class WakatimeCli < Formula
   license "BSD-3-Clause"
   version_scheme 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wakatime-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "212b6a49e68d0394b8281d63eb285dc2a2b6935f306da87959fed5ca11c590c0"
+  end
+
   depends_on "go" => :build
 
   def install
