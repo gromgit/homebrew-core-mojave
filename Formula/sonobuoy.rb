@@ -5,6 +5,12 @@ class Sonobuoy < Formula
   sha256 "a8e90bed7498a676d9a9d528529f303d58fd76bbedc5c32ef40722c50b0f3f17"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonobuoy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "60517811502e7cb90ad3fd4c293342d56b42cad4de5372c2dca051e3e656da83"
+  end
+
   depends_on "go" => :build
 
   def install
