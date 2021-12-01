@@ -6,6 +6,12 @@ class NewrelicCli < Formula
   license "Apache-2.0"
   head "https://github.com/newrelic/newrelic-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newrelic-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f243376090df35f09ead1955c2e2b3c0db90de650ceff7452f8624e3e93c2c25"
+  end
+
   depends_on "go" => :build
 
   def install
