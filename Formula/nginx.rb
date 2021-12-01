@@ -13,6 +13,12 @@ class Nginx < Formula
     regex(%r{nginx[._-]v?(\d+(?:\.\d+)+)</a>\nmainline version}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nginx"
+    rebuild 1
+    sha256 mojave: "0ab35df49dbe7e0d2e31f6f64bcb1efa15b4c89493b13ec4392b2ccb44336396"
+  end
+
   depends_on "openssl@1.1"
   depends_on "pcre"
 
