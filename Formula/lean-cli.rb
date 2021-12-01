@@ -6,6 +6,12 @@ class LeanCli < Formula
   license "Apache-2.0"
   head "https://github.com/leancloud/lean-cli.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lean-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0e96b431c869d34af7f885b0c09577ca1d4a81bfafd217d995c95fd84503d870"
+  end
+
   depends_on "go" => :build
 
   def install
