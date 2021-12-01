@@ -7,6 +7,12 @@ class Octave < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octave"
+    rebuild 1
+    sha256 mojave: "9801013de60f122160930db3eb65a7c254541ae55c9c3b4c48f46d876e2845e7"
+  end
+
   head do
     url "https://hg.savannah.gnu.org/hgweb/octave", branch: "default", using: :hg
 
