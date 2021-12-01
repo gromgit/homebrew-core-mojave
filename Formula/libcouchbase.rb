@@ -6,6 +6,12 @@ class Libcouchbase < Formula
   license "Apache-2.0"
   head "https://github.com/couchbase/libcouchbase.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcouchbase"
+    rebuild 1
+    sha256 mojave: "03f9c34589d0cff2b6fb96d2ba912cc7e763c293019a522009907319098e728d"
+  end
+
   depends_on "cmake" => :build
   depends_on "libev"
   depends_on "libevent"
