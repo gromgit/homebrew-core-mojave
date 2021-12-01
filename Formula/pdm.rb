@@ -8,6 +8,12 @@ class Pdm < Formula
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fb64bcbe741d9d506ecd82099c9da3046872f8ccba9e8b0e48359cd0fb3f78b7"
+  end
+
   depends_on "python@3.10"
   depends_on "six"
 
