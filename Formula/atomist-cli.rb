@@ -8,6 +8,12 @@ class AtomistCli < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atomist-cli"
+    rebuild 1
+    sha256 mojave: "33707378785eccb2acfe320e89e038ec22fb15f65ef31923a6551e817249ab17"
+  end
+
   depends_on "node"
 
   on_macos do
