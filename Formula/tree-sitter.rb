@@ -8,6 +8,12 @@ class TreeSitter < Formula
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tree-sitter"
+    rebuild 1
+    sha256 cellar: :any, mojave: "df083d4c0dedac71a3111fb1e2dfa2ba70be0a8bace5808b9d493dad81e72c60"
+  end
+
   depends_on "emscripten" => [:build, :test]
   depends_on "node" => [:build, :test]
   depends_on "rust" => :build
