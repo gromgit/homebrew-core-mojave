@@ -13,6 +13,12 @@ class Openssh < Formula
     regex(/href=.*?openssh[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssh"
+    rebuild 1
+    sha256 mojave: "3184c42bfb5ea8e100eb7d991d25055199dec7bdc69a97061b699e39cae8dadc"
+  end
+
   # Please don't resubmit the keychain patch option. It will never be accepted.
   # https://archive.is/hSB6d#10%25
 
