@@ -11,6 +11,12 @@ class Visp < Formula
     regex(/href=.*?visp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/visp"
+    rebuild 1
+    sha256 mojave: "d785759810f209266acfd9e4f1bdb0155c375a4eb020cc2408d2b736dc3048d2"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "eigen"
