@@ -6,6 +6,12 @@ class Mdbook < Formula
   license "MPL-2.0"
   head "https://github.com/rust-lang/mdBook.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdbook"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0694a7f515c33a219eec3773eb749ff3cc2b0c2c36fe5d8eb80533f755130505"
+  end
+
   depends_on "rust" => :build
 
   def install
