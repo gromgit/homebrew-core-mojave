@@ -7,6 +7,12 @@ class Localstack < Formula
   sha256 "952ee1acfd734f58f4fcf1ea40fe4704c932ff4c87168462e297471e14c0c547"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/localstack"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2b6cda99a7d5ccd3bbd18ef257bed885952a86988714876c35439f5878ce55d0"
+  end
+
   depends_on "docker" => :test
   depends_on "python-tabulate"
   depends_on "python@3.9"
