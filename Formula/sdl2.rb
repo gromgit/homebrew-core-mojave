@@ -10,6 +10,12 @@ class Sdl2 < Formula
     regex(/href=.*?SDL2[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "12a058436e5439143be37c492f31a4c8ac0d312528b488e5ed01f43d5e6df0d4"
+  end
+
   head do
     url "https://github.com/libsdl-org/SDL.git", branch: "main"
 
