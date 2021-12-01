@@ -7,6 +7,12 @@ class Esbuild < Formula
   sha256 "1cee1529b3337290dfddfe859ed7231700fbd21260f67159c73d146e6c01113e"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esbuild"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a25f847a0ca12daa4f20253c261c84f2deabe03431ee032cdffad84eee515b1a"
+  end
+
   depends_on "node"
 
   def install
