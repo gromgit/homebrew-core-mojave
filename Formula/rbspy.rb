@@ -5,6 +5,12 @@ class Rbspy < Formula
   sha256 "686f42289bd5ca8818dd87353fb22945cf4f78ee2714d8dd47f691b56852e43c"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbspy"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2c75d24fec414dc17657e529c1e274c6788b1db4c2afed0a258bc3a7403cc00a"
+  end
+
   depends_on "rust" => :build
 
   def install
