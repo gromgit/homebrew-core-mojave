@@ -6,6 +6,12 @@ class Fzf < Formula
   license "MIT"
   head "https://github.com/junegunn/fzf.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fzf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "56bc657abafe27743cc478922e6020425fe5a347f2da3c70e3ea81114a7f8436"
+  end
+
   depends_on "go" => :build
 
   uses_from_macos "ncurses"
