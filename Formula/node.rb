@@ -11,6 +11,12 @@ class Node < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ced8fae3cff6c9de7ae085555fef82e55ca75093349ee34871254754056826a9"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "brotli"
   depends_on "c-ares"
