@@ -6,6 +6,12 @@ class Argo < Formula
       revision: "8771ca279c329753e420dbdd986a9c914876b151"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argo"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a113a8d84ff30aa95037a4ea75c1f281c9d8e91fbd9d0bb23c4ba169a0d44bdb"
+  end
+
   depends_on "go" => :build
   depends_on "node@14" => :build
   depends_on "yarn" => :build
