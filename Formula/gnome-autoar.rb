@@ -13,6 +13,12 @@ class GnomeAutoar < Formula
     regex(/gnome-autoar[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnome-autoar"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b76761b6210d8365b4cdf8a98608be40513f920d7fd7b840ff7f5457eb28bd19"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "gtk+3"
