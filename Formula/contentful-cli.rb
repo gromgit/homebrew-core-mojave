@@ -8,6 +8,12 @@ class ContentfulCli < Formula
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/contentful-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3f44581bc86185fba80cb0d28aa12c1e630b8c3bf6ccac1324ccfe48a0559436"
+  end
+
   depends_on "node"
 
   def install
