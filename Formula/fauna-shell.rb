@@ -7,6 +7,12 @@ class FaunaShell < Formula
   sha256 "a6dc40319b61efd1a3e3804e670d02d85a2424c251cb9288bc9a422f0995d8c6"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fauna-shell"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "af339a2f5571518d5e91d1004ace371b9977cf608eaf6de2212721e204395568"
+  end
+
   depends_on "node"
 
   def install
