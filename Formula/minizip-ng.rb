@@ -6,6 +6,12 @@ class MinizipNg < Formula
   license "Zlib"
   head "https://github.com/zlib-ng/minizip-ng.git", branch: "dev"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minizip-ng"
+    rebuild 1
+    sha256 cellar: :any, mojave: "746ef1bbb43057a30bf48066e3292501d66d497173bee4278ecdefdaaa383655"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "xz"
