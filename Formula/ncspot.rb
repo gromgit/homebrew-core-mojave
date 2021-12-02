@@ -5,6 +5,12 @@ class Ncspot < Formula
   sha256 "19f36d621069dc207d058fc09a3d80c96b09eb9b45a1c91a69008b3e329c9aef"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncspot"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4e74d4be1c82f2c1a59133dc79b0fa876922090bfa019e0e8dc927ca94912025"
+  end
+
   depends_on "python@3.9" => :build
   depends_on "rust" => :build
   depends_on "portaudio"
