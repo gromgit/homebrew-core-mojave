@@ -7,6 +7,12 @@ class Rollup < Formula
   sha256 "293e59c82aeba3a4b7858e0441903b49858aace534c2e1ff8af7361c82b9f439"
   license all_of: ["ISC", "MIT"]
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rollup"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b39abf7343388920bfccaeacbc185b029b5ef496403953989e6e4c6967615ef0"
+  end
+
   depends_on "node"
 
   def install
