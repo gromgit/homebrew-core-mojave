@@ -8,6 +8,12 @@ class GitlabCiLocal < Formula
   license "MIT"
   head "https://github.com/firecow/gitlab-ci-local.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-ci-local"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "63d09e62a52cc7dadfe69990302a94bae8042e25ef6646b36ed2b05377423f87"
+  end
+
   depends_on "node"
 
   def install
