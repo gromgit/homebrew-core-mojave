@@ -6,6 +6,12 @@ class Sevenzip < Formula
   sha256 "675eaa90de3c6a3cd69f567bba4faaea309199ca75a6ad12bac731dcdae717ac"
   license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause"]
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sevenzip"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f4cfa11a2b835d9a74e5bac0f4867141b6ea8be86248969f6cabf3ad8ad8348d"
+  end
+
   def install
     cd "CPP/7zip/Bundles/Alone2" do
       mac_suffix = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch
