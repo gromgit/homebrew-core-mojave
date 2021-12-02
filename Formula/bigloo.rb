@@ -10,6 +10,12 @@ class Bigloo < Formula
     regex(/bigloo-latest\.t.+?\(([^)]+?)\)/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bigloo"
+    rebuild 1
+    sha256 mojave: "8fe11163044a9ff5e6f68a6dacbea83f967e50ad494115125311526cdf99f5c8"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
