@@ -12,6 +12,12 @@ class Pnpm < Formula
     regex(/["']version["']:\s*?["']([^"']+)["']/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pnpm"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0890e225c0a56ba75a0e52ee61b9b69f6e4dd1beba2f32c57d01d1c10d33bf63"
+  end
+
   depends_on "node"
 
   conflicts_with "corepack", because: "both installs `pnpm` and `pnpx` binaries"
