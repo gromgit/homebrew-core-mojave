@@ -8,6 +8,12 @@ class Serverless < Formula
   license "MIT"
   head "https://github.com/serverless/serverless.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serverless"
+    rebuild 1
+    sha256 mojave: "fb899b0520bd3f2c0f745e192efc639205110b6d0a51dbf1d60f5bb2a7c3b4f1"
+  end
+
   depends_on "node"
 
   def install
