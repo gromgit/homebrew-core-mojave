@@ -7,6 +7,12 @@ class Gojq < Formula
   license "MIT"
   head "https://github.com/itchyny/gojq.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gojq"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9195ff910b9e0bc0f5eb905557d5c48a1e41aba78175dbb9b58f51c11f4ad8fc"
+  end
+
   depends_on "go" => :build
 
   def install
