@@ -5,6 +5,12 @@ class Gitleaks < Formula
   sha256 "1d932828cc7758a775e413abfe20d4f20d48b58fccbfbdb688abfeec70bbb7bc"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitleaks"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c83008f570460eed468aefe60ab9865106a50a2160a144aec36c059efe2ad3d5"
+  end
+
   depends_on "go" => :build
 
   def install
