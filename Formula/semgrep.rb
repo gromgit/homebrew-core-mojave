@@ -15,6 +15,12 @@ class Semgrep < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/semgrep"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d3c22a76de963b55b599b061c4f091e64bb3c9e2102c224ae023d0d1925623cc"
+  end
+
   depends_on "cmake" => :build
   depends_on "coreutils"=> :build
   depends_on "dune" => :build
