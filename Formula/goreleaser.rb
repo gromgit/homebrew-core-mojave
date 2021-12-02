@@ -7,6 +7,12 @@ class Goreleaser < Formula
   license "MIT"
   head "https://github.com/goreleaser/goreleaser.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goreleaser"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "045e752d4fd139077eefcbdc66685cbab1385a441c840ed6ef93c5fb1b4938a6"
+  end
+
   depends_on "go" => :build
 
   def install
