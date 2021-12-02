@@ -11,6 +11,12 @@ class Homebank < Formula
     regex(/href=.*?homebank[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homebank"
+    rebuild 1
+    sha256 mojave: "08b060dd71ceab371e9c9015322d0e9b61482f777ad1d15c7cd7c796050e98bc"
+  end
+
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
