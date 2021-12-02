@@ -6,6 +6,12 @@ class Rizin < Formula
   license "LGPL-3.0-only"
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rizin"
+    rebuild 1
+    sha256 mojave: "9689fcdd3a5816c3ac8f84c9a461bf4828429b0619a99fe53dbf03ff39ad26b6"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
