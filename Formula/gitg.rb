@@ -5,6 +5,12 @@ class Gitg < Formula
   sha256 "24a4aabf8a42aa2e783e1fb5996ebb3c2a82a01b9689269f1329517ef124ef5a"
   revision 7
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitg"
+    rebuild 1
+    sha256 mojave: "1a337cc06acb3860c8f85828f23d60ec9e6de6d0d78c0cc5db6938868aa351dc"
+  end
+
   depends_on "intltool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
