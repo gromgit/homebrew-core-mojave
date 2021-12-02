@@ -6,6 +6,12 @@ class ArgocdVaultPlugin < Formula
       revision: "947668d260d7e630b3dbc7d9dadfc4ed0650ccd3"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd-vault-plugin"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b15d070597c2550b0d2c7c8682ed642a5f3c4a9a3ee42ddf4ae1797cd00af12"
+  end
+
   depends_on "go" => :build
 
   def install
