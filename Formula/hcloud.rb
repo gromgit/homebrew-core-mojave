@@ -5,6 +5,12 @@ class Hcloud < Formula
   sha256 "ea8b08702f7285d5e886fc8797287ac05747eb66ad1d77d041725f9cf6c88893"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcloud"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2f9fa7714731d3f55e0d4520d915935eed72d93bf2a710308f3bdd32d8c41d12"
+  end
+
   depends_on "go" => :build
 
   def install
