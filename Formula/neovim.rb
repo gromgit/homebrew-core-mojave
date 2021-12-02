@@ -6,6 +6,12 @@ class Neovim < Formula
   license "Apache-2.0"
   head "https://github.com/neovim/neovim.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neovim"
+    rebuild 1
+    sha256 mojave: "9fae4ca87f073e06ce5517664406bd3362f84376372c938f35f477f2ca2a25c2"
+  end
+
   depends_on "cmake" => :build
   # Libtool is needed to build `libvterm`.
   # Remove this dependency when we use the formula.
