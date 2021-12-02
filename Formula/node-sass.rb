@@ -7,6 +7,12 @@ class NodeSass < Formula
   sha256 "b9aa8a6b9ede9f8187e3405e0df2480e7a759c4a77bdf45a666526c3c49e556c"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node-sass"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "29401b7fb3ff30be7c01ea350e8a3da815cc68e341ba90011dbc0ee7b500ab51"
+  end
+
   depends_on "node"
 
   def install
