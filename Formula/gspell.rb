@@ -6,6 +6,12 @@ class Gspell < Formula
   license "LGPL-2.1-or-later"
   revision 4
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gspell"
+    rebuild 1
+    sha256 mojave: "4022e141bd181201caff952374b76777764fca2be26eb6cff24b45dd54be30a4"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gtk-doc" => :build
