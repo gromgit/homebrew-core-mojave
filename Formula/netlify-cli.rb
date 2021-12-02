@@ -8,6 +8,12 @@ class NetlifyCli < Formula
   license "MIT"
   head "https://github.com/netlify/cli.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netlify-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "619a2942d7f4de231a46949f042fc5e18883c2cf7ce65083aa0b08f4830c5f5a"
+  end
+
   depends_on "node"
 
   uses_from_macos "expect" => :test
