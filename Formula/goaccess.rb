@@ -11,6 +11,12 @@ class Goaccess < Formula
     regex(/href=.*?goaccess[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goaccess"
+    rebuild 1
+    sha256 mojave: "ca50aa3a95afe8dc61267705f773b2933c1abed226d0a7215d87c9fcdb9f64e4"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gettext"
