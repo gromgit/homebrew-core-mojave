@@ -7,6 +7,12 @@ class Vite < Formula
   sha256 "c1a37127f2e35ac7bc177f65010e33fa0fe0c6334d82718373c08b99135c1728"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vite"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b1ce3a064fe651b257c4a88e59a86198df267b32543b42b0423f35acf37480c3"
+  end
+
   depends_on "node"
 
   def install
