@@ -6,6 +6,12 @@ class Libgweather < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgweather"
+    rebuild 1
+    sha256 mojave: "718d894b962567ce38c763c57d7f689a88bfc5c7d49f270841e0294e14bf26a1"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
