@@ -6,6 +6,12 @@ class Libchamplain < Formula
   license "LGPL-2.1"
   revision 3
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libchamplain"
+    rebuild 1
+    sha256 cellar: :any, mojave: "57848db6ddd6c0c29e2441fe1e9f0762cf0ac2c88a6dbf617277dcf76d588356"
+  end
+
   depends_on "gnome-common" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
