@@ -8,6 +8,12 @@ class YtDlp < Formula
   license "Unlicense"
   head "https://github.com/yt-dlp/yt-dlp.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yt-dlp"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8ff5842df3fa35ed37d2101aa317527b3abed5afd587fe152c5abe376b9a8342"
+  end
+
   depends_on "python@3.10"
 
   resource "mutagen" do
