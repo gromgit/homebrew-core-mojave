@@ -6,6 +6,12 @@ class Citus < Formula
   license "AGPL-3.0-only"
   head "https://github.com/citusdata/citus.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/citus"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2ce39721e2a25aba429edc2d9d61d7a156236a272a3f7313dd850e94632045be"
+  end
+
   depends_on "lz4"
   depends_on "postgresql"
   depends_on "readline"
