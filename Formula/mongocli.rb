@@ -5,6 +5,12 @@ class Mongocli < Formula
   sha256 "768c6e272a08860a8b70ea9a5ea5a70da3c0c2e8af2b214d100de5e9d1ce745b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongocli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d76fab23ec423795eeb081750b4438dff0e83c165973deba29ba98b51307ab57"
+  end
+
   depends_on "go" => :build
 
   def install
