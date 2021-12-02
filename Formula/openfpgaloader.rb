@@ -6,6 +6,12 @@ class Openfpgaloader < Formula
   license "Apache-2.0"
   head "https://github.com/trabucayre/openFPGALoader.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openfpgaloader"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5e5a4684638ca927b44adfee7c89dc5a944a0a135bd91e5a87c4444b8d068715"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libftdi"
