@@ -7,6 +7,12 @@ class Pulumi < Formula
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pulumi"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a60cea352d391a0b07585cbcba041985ca879ced46ca102b444e0cbe190d4ce3"
+  end
+
   depends_on "go" => :build
 
   def install
