@@ -6,6 +6,12 @@ class Libgdata < Formula
   license "LGPL-2.1-or-later"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgdata"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a5df237ec30aafac92f9b873e27ff90a7713a23e643a126ed2c3d68ee0494dfa"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "intltool" => :build
   depends_on "meson" => :build
