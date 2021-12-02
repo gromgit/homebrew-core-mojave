@@ -5,6 +5,12 @@ class GitTown < Formula
   sha256 "801d16047a5b74ccbe14f300c721289192d6c68115e97852b21a6eec4be71914"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-town"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "171ce7dc703753b3f20b17a46a2f95c654fa895f153bdf2f31e2e0f1de4fec0a"
+  end
+
   depends_on "go" => :build
 
   def install
