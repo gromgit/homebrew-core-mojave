@@ -14,6 +14,12 @@ class Octant < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octant"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ab98e0f9a1d999b338bb52cb4a64c0f1ca21808c773ee3a76217b99f29089caf"
+  end
+
   depends_on "go" => :build
   depends_on "node" => :build
 
