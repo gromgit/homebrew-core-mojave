@@ -10,6 +10,12 @@ class Fltk < Formula
     regex(/href=.*?fltk[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)-source\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fltk"
+    rebuild 1
+    sha256 mojave: "f9459dfc976f9569d0ae4e844541bb0f95b5499daaf741136b94917b778cc46a"
+  end
+
   head do
     url "https://github.com/fltk/fltk.git"
     depends_on "cmake" => :build
