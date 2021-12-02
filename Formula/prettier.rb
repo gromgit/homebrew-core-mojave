@@ -8,6 +8,12 @@ class Prettier < Formula
   license "MIT"
   head "https://github.com/prettier/prettier.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prettier"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "55e6418fe02f13f7d804b0309999340c5d1c960144601078729211ffdc4e2314"
+  end
+
   depends_on "node"
 
   def install
