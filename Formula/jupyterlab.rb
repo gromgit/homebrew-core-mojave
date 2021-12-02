@@ -7,6 +7,12 @@ class Jupyterlab < Formula
   sha256 "f692e0d95338d60f72dde660f16f3955a087775c59ec541ddb25952e3f97e9b1"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jupyterlab"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9ffe1d06fcada6d2a13291136fa27826348f5fb6f0b8ede9f1d199d2d334ec4f"
+  end
+
   depends_on "node"
   depends_on "pandoc"
   depends_on "python@3.9"
