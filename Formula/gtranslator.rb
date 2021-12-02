@@ -6,6 +6,12 @@ class Gtranslator < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtranslator"
+    rebuild 1
+    sha256 mojave: "f259ea2dc38f92d37a8291770bbb733f054db5e676e6e84fbefbf90f114c58d8"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
