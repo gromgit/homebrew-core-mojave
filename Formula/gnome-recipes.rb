@@ -6,6 +6,12 @@ class GnomeRecipes < Formula
       tag:      "2.0.4",
       revision: "d5e9733c49ea4f99e72c065c05ee1a35ef65e67d"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnome-recipes"
+    rebuild 1
+    sha256 mojave: "fe7bce6ce822915bb5cf0d4294d47247e21ada07a06af81cf569a618279a0cc7"
+  end
+
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
