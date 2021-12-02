@@ -11,6 +11,12 @@ class Protobuf < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d3a0b74e39890c42e31ebc9a50ca3db3793c9364c88ef5157fb579653283805a"
+  end
+
   head do
     url "https://github.com/protocolbuffers/protobuf.git"
 
