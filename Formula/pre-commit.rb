@@ -7,6 +7,12 @@ class PreCommit < Formula
   sha256 "fe9897cac830aa7164dbd02a4e7b90cae49630451ce88464bca73db486ba9f65"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pre-commit"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3de2442d0f5841051708d4d7881f2d59390407256021f189eec68e932db563ec"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.10"
   depends_on "six"
