@@ -6,6 +6,12 @@ class Flow < Formula
   license "MIT"
   head "https://github.com/facebook/flow.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flow"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "77f23be2f08283d3f4abbc15ffd6ab1a56946f419c67ec230128f9af80da23a1"
+  end
+
   depends_on "ocaml" => :build
   depends_on "opam" => :build
 
