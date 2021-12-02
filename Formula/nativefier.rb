@@ -7,6 +7,12 @@ class Nativefier < Formula
   sha256 "2c56fd89067cf44ee15c9952976f6b2e46a27a1051599ba20207545229f812ca"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nativefier"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2c4b8c97fdf5c9840c3dbfbedc81fe26548630aeb6bdab1bbe006b99338976b6"
+  end
+
   depends_on "node"
 
   def install
