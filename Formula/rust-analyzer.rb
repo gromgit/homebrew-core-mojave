@@ -7,6 +7,12 @@ class RustAnalyzer < Formula
   version "2021-11-29"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust-analyzer"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "300e3c51d31435f9cd948b2f4de55b28d9af68cbf0ebe4417524c2625ddb6645"
+  end
+
   depends_on "rust" => :build
 
   def install
