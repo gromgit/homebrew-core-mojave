@@ -16,6 +16,12 @@ class Fetchmail < Formula
     regex(%r{url=.*?/branch_\d+(?:\.\d+)*?/fetchmail[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fetchmail"
+    rebuild 1
+    sha256 mojave: "9c6c9224c41081bae0a8c8aeb8f632af6906e2f2f4a3ede6daadc5626c82a7fa"
+  end
+
   depends_on "openssl@1.1"
 
   def install
