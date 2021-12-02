@@ -8,6 +8,12 @@ class GobjectIntrospection < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobject-introspection"
+    rebuild 1
+    sha256 mojave: "df4cb640f710ef7f5c096672bfe0496df7718f2585e7261bd94e459b2f0e3a30"
+  end
+
   depends_on "bison" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
