@@ -12,6 +12,12 @@ class Mrbayes < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mrbayes"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aaab417e92b6198042532f52cc180cf04c3dc8cdf6166fc1a86035370242f372"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "beagle"
   depends_on "open-mpi"
