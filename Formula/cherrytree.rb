@@ -10,6 +10,12 @@ class Cherrytree < Formula
     regex(/href=.*?cherrytree[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cherrytree"
+    rebuild 1
+    sha256 mojave: "146ac61ef5e778a7c21be826aaaeb40dca65eed0ba17194d3946b1c719c908c8"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
