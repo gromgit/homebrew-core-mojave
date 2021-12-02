@@ -6,6 +6,12 @@ class GupnpTools < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp-tools"
+    rebuild 1
+    sha256 mojave: "ece9e88e61e686a6c55c5af3027c226d58e0b1fd57faad1ef825455b75148ca5"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
