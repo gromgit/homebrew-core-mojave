@@ -6,6 +6,12 @@ class Rhit < Formula
   license "MIT"
   head "https://github.com/Canop/rhit.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rhit"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4cca8254bcc5e8b17a9fd53c5a03e480ff9b4edf831dc658a52725e3aea6444a"
+  end
+
   depends_on "rust" => :build
 
   resource "homebrew-testdata" do
