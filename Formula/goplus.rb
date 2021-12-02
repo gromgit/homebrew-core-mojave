@@ -6,6 +6,12 @@ class Goplus < Formula
   license "Apache-2.0"
   head "https://github.com/goplus/gop.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goplus"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7ebe79b156b11d4ba81754d1e5747168cc11ba36ad0a2e01eb4f1ad0c44f93a0"
+  end
+
   depends_on "go"
 
   def install
