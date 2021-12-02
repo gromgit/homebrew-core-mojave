@@ -13,12 +13,13 @@ class JdnssecTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "24738bb6c20a997b7cf23b1dd63e559d339fd1765998c5d65974b9f21775b5d7"
-    sha256 cellar: :any_skip_relocation, big_sur:       "4341a864f01748c3009213510cc983ef29e354c0e486f14c3fd453ad55ac6802"
-    sha256 cellar: :any_skip_relocation, catalina:      "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
-    sha256 cellar: :any_skip_relocation, mojave:        "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "069e93f9f47a8553de4bcbe13dbc64082905b2e4e625093a0cb6456a6743ecee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "069e93f9f47a8553de4bcbe13dbc64082905b2e4e625093a0cb6456a6743ecee"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24738bb6c20a997b7cf23b1dd63e559d339fd1765998c5d65974b9f21775b5d7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4341a864f01748c3009213510cc983ef29e354c0e486f14c3fd453ad55ac6802"
+    sha256 cellar: :any_skip_relocation, catalina:       "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
+    sha256 cellar: :any_skip_relocation, mojave:         "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
+    sha256 cellar: :any_skip_relocation, high_sierra:    "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "069e93f9f47a8553de4bcbe13dbc64082905b2e4e625093a0cb6456a6743ecee"
   end
 
   depends_on "openjdk"

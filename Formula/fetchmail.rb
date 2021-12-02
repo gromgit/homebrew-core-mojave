@@ -1,8 +1,8 @@
 class Fetchmail < Formula
   desc "Client for fetching mail from POP, IMAP, ETRN or ODMR-capable servers"
   homepage "https://www.fetchmail.info/"
-  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.4/fetchmail-6.4.23.tar.xz"
-  sha256 "5f7a5e13731431134a2ca535bbced7adc666d3aeb93169a0830945d91f492300"
+  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.4/fetchmail-6.4.24.tar.xz"
+  sha256 "9c961df25cd922f539218b0b56a77e7a47778e49ed907edaa5b4941ad3b253cf"
   license all_of: [
     "LGPL-2.1-or-later",
     "ISC",

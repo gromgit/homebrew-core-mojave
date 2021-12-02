@@ -6,17 +6,7 @@ class GobjectIntrospection < Formula
   url "https://download.gnome.org/sources/gobject-introspection/1.70/gobject-introspection-1.70.0.tar.xz"
   sha256 "902b4906e3102d17aa2fcb6dad1c19971c70f2a82a159ddc4a94df73a3cafc4a"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
-  revision 1
-
-  bottle do
-    sha256 arm64_monterey: "b3415581141e6a2dd35baf1065aef21bfa07cacd582c8f18a728606750904a0c"
-    sha256 arm64_big_sur:  "743867fe7cd99538df90b4a233e36bbc50878f8d97758efa06403b650baaedd6"
-    sha256 monterey:       "974fbe1764602c4e8a7611203bc6bd78d7a47f66531fdbd294138eaacc8f5dc0"
-    sha256 big_sur:        "8f3959289f6ffde7c6e547ea9736dbb4346302a5ebd8bb9780fa044656fa61f5"
-    sha256 catalina:       "140f94de2c097db9ac7f4a7de0293235a4354fd13f687df2791214d58b24e008"
-    sha256 mojave:         "c7f254c243c5c225c3079616174a22ed507e62cdbb47f23b5fb0bf4a8ef45b2f"
-    sha256 x86_64_linux:   "abbd5d8a9d3e17a05c24913da6ca16818453e8d79f0a7f873d86f8beebdeb67b"
-  end
+  revision 2
 
   depends_on "bison" => :build
   depends_on "meson" => :build
@@ -40,6 +30,14 @@ class GobjectIntrospection < Formula
   patch do
     url "https://gitlab.gnome.org/tschoonj/gobject-introspection/-/commit/a7be304478b25271166cd92d110f251a8742d16b.diff"
     sha256 "740c9fba499b1491689b0b1216f9e693e5cb35c9a8565df4314341122ce12f81"
+  end
+
+  # Fix compatibility with PyInstaller on Monterey.
+  # See: https://github.com/pyinstaller/pyinstaller/issues/6354
+  #      https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/303
+  patch do
+    url "https://gitlab.gnome.org/rokm/gobject-introspection/-/commit/56df7b0f007fe260b2bd26ef9cc331ad73022700.diff"
+    sha256 "56312cd45b2b3a7fd74eaae89843a49b9a06d1423785fb57416a8a61b1cb811f"
   end
 
   def install

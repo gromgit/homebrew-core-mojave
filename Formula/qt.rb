@@ -13,6 +13,12 @@ class Qt < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qt"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1a868aaefd8c86c8ef544198d5f9044e8db04474e164b19be904e9152531b5e5"
+  end
+
   depends_on "cmake"      => [:build, :test]
   depends_on "ninja"      => :build
   depends_on "node"       => :build
