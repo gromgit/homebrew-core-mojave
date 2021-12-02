@@ -6,6 +6,12 @@ class GitCinnabar < Formula
   license "GPL-2.0-only"
   head "https://github.com/glandium/git-cinnabar.git"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cinnabar"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "24c7f43d7416ea792dd310ff7c65b737ea8beaebc999a598c0982716f26146cd"
+  end
+
   depends_on :macos # Due to Python 2
   depends_on "mercurial"
 
