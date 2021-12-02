@@ -6,6 +6,12 @@ class KibanaAT6 < Formula
       revision: "d872739e24c6cdac75501f19bf4fe0a1b198c524"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kibana@6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b43a56ed1fb8e16fb1ce7bcbdd26993e34d96627ac5f2018bb05a2b1f6571ae5"
+  end
+
   keg_only :versioned_formula
 
   depends_on "yarn" => :build
