@@ -7,6 +7,12 @@ class Triton < Formula
   sha256 "e325641d2ba183c484597e196ee74ecf67e6a0bcb459dd7ef49d23c509eec984"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/triton"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e28fffaebd6054f200b2fcbbc8c18a47498748f9bf8902b5c43e41c8bb4e56c2"
+  end
+
   depends_on "node"
 
   def install
