@@ -8,6 +8,12 @@ class Pocsuite3 < Formula
   license "GPL-2.0-only"
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pocsuite3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6d0aa62aba854d1e98df9b38ed0bcca15c5be5888c9377935c18cfbf84265078"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "openssl@1.1"
   depends_on "python@3.9"
