@@ -7,6 +7,12 @@ class Mongosh < Formula
   sha256 "285d7b1bfba1dc3169fc66854290ffe7a99c8fa6dd1f97ff727a6da923660629"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongosh"
+    rebuild 1
+    sha256 mojave: "03b9b03d5066af5b1c2c9578de44e77c16d924b90c567b39dc72c0046cd7ca74"
+  end
+
   depends_on "node@14"
 
   def install
