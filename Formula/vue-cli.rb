@@ -7,6 +7,12 @@ class VueCli < Formula
   sha256 "1b30ab732dd74684212623a1b25853905f3b788d4a2ddb5bf8de80107ee53bf2"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vue-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "900a2d4c517b4b909339def282bc46456c2b8f11a8ae5bfc44512432b56ac0fd"
+  end
+
   depends_on "node"
 
   on_macos do
