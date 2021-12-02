@@ -10,6 +10,12 @@ class Dolt < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dolt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "91b34591457a5262b9a365d37571fd7317e3a0acf5db2c8dff72c8a90b05bbb6"
+  end
+
   depends_on "go" => :build
 
   def install
