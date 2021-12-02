@@ -9,6 +9,12 @@ class Webpack < Formula
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webpack"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ff3e535b0766ac970e413157c0a70f51f8ab64821828e1d27ce60fa676b8de0a"
+  end
+
   depends_on "node"
 
   resource "webpack-cli" do
