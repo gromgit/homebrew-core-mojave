@@ -7,6 +7,12 @@ class MarpCli < Formula
   sha256 "4e8d0644fee834cd9531e1ea5285982d9ed12c79e01483b440eb1a1faca52d1d"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/marp-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0ee83c5352bcad0ba44ebb7788e874b037d7dd1a2b38bb5da75e3d6f94115632"
+  end
+
   depends_on "node"
 
   def install
