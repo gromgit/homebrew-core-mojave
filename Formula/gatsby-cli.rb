@@ -8,6 +8,12 @@ class GatsbyCli < Formula
   sha256 "38259b218da21a6050c5b3686b48a04f049a101ff7f5b2ebf3cfbfa4731c0330"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gatsby-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "40355567c90c005204504151ef1a7b52112a4bb16ec9695e6605d1226fec9f80"
+  end
+
   depends_on "node"
 
   on_macos do
