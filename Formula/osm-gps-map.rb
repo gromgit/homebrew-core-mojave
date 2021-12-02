@@ -6,6 +6,12 @@ class OsmGpsMap < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm-gps-map"
+    rebuild 1
+    sha256 mojave: "0a10a3cead270aea4d5255066a4966bf5afdc8252b3bf54e6d26e1c94be0f737"
+  end
+
   head do
     url "https://github.com/nzjrs/osm-gps-map.git"
     depends_on "autoconf" => :build
