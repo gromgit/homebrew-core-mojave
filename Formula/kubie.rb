@@ -10,6 +10,12 @@ class Kubie < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubie"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "eecefc694bc3dd705a10651bb6378bdfc54084a2ddfb3bd01210cd702bf07aec"
+  end
+
   depends_on "rust" => :build
   depends_on "kubernetes-cli" => :test
 
