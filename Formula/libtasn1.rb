@@ -8,8 +8,8 @@ class Libtasn1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtasn1"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5e73a77724732a94c374c122f4cf6f18c89fd46f8f1a9661d5e3a0f9b384924b"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e706c5c8813f374cebdcbdc834ba6eb596a267606e01d5633eda3c79d5161f68"
   end
 
   def install
