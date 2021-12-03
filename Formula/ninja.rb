@@ -14,8 +14,8 @@ class Ninja < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ninja"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ec1ab81782913f8fe1dfa5dab1b0a57b59de690d3e321547564ebcc563d6ccea"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "26973d694492c399c5708047ccc6b7f686b1925e710680b44bcd0f4c574e1a91"
   end
 
   # Ninja only needs Python for some non-core functionality.
