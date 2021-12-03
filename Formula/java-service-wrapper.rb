@@ -7,8 +7,8 @@ class JavaServiceWrapper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/java-service-wrapper"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e46dfc858e857ba222ea9a032a07c873f77f447e5681ff366466c7752e6194d5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7d163c7c94a3a67a943ab6e49bf145d288ef351c651a324157abcf6dd5adda92"
   end
 
   depends_on "ant" => :build
