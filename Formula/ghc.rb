@@ -17,8 +17,8 @@ class Ghc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc"
-    rebuild 1
-    sha256 mojave: "564b8ac3df4767914a6d28339069a03134fe1413ce183d2d7fb65ead380c6471"
+    rebuild 2
+    sha256 mojave: "0882b974ce6b2f63d9524374a69b05b9710ae35f3fa7ab1e5509bcf21b89a700"
   end
 
   depends_on "python@3.9" => :build
