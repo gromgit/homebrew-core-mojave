@@ -18,6 +18,13 @@ You should also add `export HOMEBREW_CORE_GIT_REMOTE=https://github.com/gromgit/
 Warning: Suspicious https://github.com/Homebrew/homebrew-core git origin remote found.
 ```
 
+## Why is XYZ not the latest version?
+
+Any or all of the following:
+
+1. I don't have a Github-scale infrastructure to build Mojave bottles, and since there are easily a few dozen new Homebrew releases each day, it may take a while for me to catch up.
+2. The latest XYZ may not be available on Mojave--this will be noted in the Caveats section of `brew info XYZ`. For instance, `swift` is permanently stuck at v5.2.5, because later versions require a newer version of Xcode that's not available for Mojave.
+
 ## Hey, something's not working right.
 
 If you find any problems, please [open an issue here](https://github.com/gromgit/homebrew-core-mojave/issues/new/choose). Do **NOT** file an issue in the main Homebrew core repo, they have nothing to do with this.
