@@ -8,8 +8,8 @@ class CabalInstall < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cabal-install"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1017621180a02769b213d77ef057a19c7091d517c353e2ee2096cbc415d9fcf8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "838defd1fba736e7b86164a5eb16de33a0ee31d9e40821f8b6586812311cea26"
   end
 
   depends_on "ghc"
