@@ -9,8 +9,8 @@ class SphinxDoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sphinx-doc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6aa0f09512687a62069e59267614824da1cb4ed72c5edddc8a34d774e1ec209e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "936d3ddcf1b0c6607013686a164c208036213d98fdce7ba313fbf5a9e640dbcb"
   end
 
   keg_only <<~EOS
