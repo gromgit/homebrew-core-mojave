@@ -14,8 +14,8 @@ class Go < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go"
-    rebuild 1
-    sha256 mojave: "f90e41da4306872010b7681499c6ffb31cfa897cb97f52be7ceff53b0a14edbe"
+    rebuild 2
+    sha256 mojave: "aac611fe8af79b0466d845b7d6997334795474ddf3a82898826f9733b5b4aecb"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.
