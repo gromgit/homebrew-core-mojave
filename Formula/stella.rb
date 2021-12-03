@@ -6,6 +6,12 @@ class Stella < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/stella-emu/stella.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stella"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f4f35e1bbbcd2cd0ec6936a0ebb479ebe8cffa925f14e22decaafe4ffa22a165"
+  end
+
   depends_on xcode: :build
   depends_on "libpng"
   depends_on "sdl2"
