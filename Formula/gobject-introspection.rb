@@ -10,8 +10,8 @@ class GobjectIntrospection < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobject-introspection"
-    rebuild 1
-    sha256 mojave: "df4cb640f710ef7f5c096672bfe0496df7718f2585e7261bd94e459b2f0e3a30"
+    rebuild 2
+    sha256 mojave: "001f1627841155c6c7c2fa67637112c833c9091879efe339f7f2d07a9e6cca62"
   end
 
   depends_on "bison" => :build
