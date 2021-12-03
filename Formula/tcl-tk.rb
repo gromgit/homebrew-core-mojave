@@ -13,8 +13,8 @@ class TclTk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcl-tk"
-    rebuild 1
-    sha256 mojave: "4dd53e5f65de7531998c64e711f9648f1c3fa92be989cd4cd6ba090a92ff5cf3"
+    rebuild 2
+    sha256 mojave: "57d794ffc13bb16b6cf743e756784cbfdc25ee1d2bc32972b6188bdafb8daabf"
   end
 
   keg_only :provided_by_macos
