@@ -8,8 +8,8 @@ class Libvmaf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvmaf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "567811e298b9ce9591e0c03dc5256a726b53ab2c0fa373ab6f1705fee15b6bda"
+    rebuild 2
+    sha256 cellar: :any, mojave: "44b2b43a738e26d5e27d993328b3782b91abbfd7bb38fcee6366b3796941b561"
   end
 
   depends_on "meson" => :build
