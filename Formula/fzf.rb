@@ -8,8 +8,8 @@ class Fzf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fzf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "56bc657abafe27743cc478922e6020425fe5a347f2da3c70e3ea81114a7f8436"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d244cf7af9ef08838d636122e044555f97919a179435c97946b5c6aef7a05b55"
   end
 
   depends_on "go" => :build
