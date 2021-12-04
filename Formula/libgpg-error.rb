@@ -12,8 +12,8 @@ class LibgpgError < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgpg-error"
-    rebuild 1
-    sha256 mojave: "c9430e3a78caff834a0063e48ce3444f955b1f64a7e5c3511c086f35f1b16791"
+    rebuild 2
+    sha256 mojave: "385d1df6e82ac40e30b880888fafd6d392668ff863477cff8ac33d7af0de8edd"
   end
 
   def install
