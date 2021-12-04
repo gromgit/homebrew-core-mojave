@@ -16,8 +16,8 @@ class Ffmpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg"
-    rebuild 1
-    sha256 mojave: "04aade8b02d7198e175920d96e925a34e18693115b6de828c441acd1872b39ed"
+    rebuild 2
+    sha256 mojave: "38fba15d58dbd27d59ab498565d8fbf6c03980211c6d31f1ebacbde7c17cb1d5"
   end
 
   depends_on "nasm" => :build
