@@ -16,8 +16,8 @@ class UtilLinux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/util-linux"
-    rebuild 1
-    sha256 mojave: "47b206a20b37805c380b447fef0e4447b159ae9aeec3595d31a3531a900cc72a"
+    rebuild 2
+    sha256 mojave: "af5014c56f108c06ebbcc7e70e482df2bd882020469d5a84ab45ffdbe16a13f9"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
