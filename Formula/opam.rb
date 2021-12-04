@@ -8,8 +8,8 @@ class Opam < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opam"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "474d5c04cfd3ccd75b6cfab767a484f54f0c5612d4b1b0f781b9456cccf1b9f2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "cec3c5e61b2915757f24cccf6b8c9e95ee2287ecac516d460c3f571ac45a5c6f"
   end
 
   depends_on "ocaml" => [:build, :test]
