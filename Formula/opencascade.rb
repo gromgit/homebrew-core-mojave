@@ -21,8 +21,8 @@ class Opencascade < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencascade"
-    rebuild 1
-    sha256 mojave: "bda55080f0ced1d4492e83e9c10d752cd558a88f7ab319dbf58b7d9bacf88241"
+    rebuild 2
+    sha256 mojave: "f4a244ec8f8464dc28654b4f248f23001a8ce0ce5c8848915bd745941a394c52"
   end
 
   depends_on "cmake" => :build
