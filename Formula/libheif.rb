@@ -8,8 +8,8 @@ class Libheif < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libheif"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5bf805a8ed8f4c9d724a2278319bc2004d799a21eb1988ad70020408e20cc373"
+    rebuild 2
+    sha256 cellar: :any, mojave: "857f2c68d84061a6df9bdf0d75af6e844159eafd07e1876fe925740b80562ec3"
   end
 
   depends_on "pkg-config" => :build
