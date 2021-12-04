@@ -10,8 +10,8 @@ class YtDlp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yt-dlp"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8ff5842df3fa35ed37d2101aa317527b3abed5afd587fe152c5abe376b9a8342"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "146bab699de8278f8bd788245375581195bfa51b70f093d263200e13e75302dc"
   end
 
   depends_on "python@3.10"
