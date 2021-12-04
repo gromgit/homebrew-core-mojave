@@ -7,8 +7,8 @@ class SofiaSip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sofia-sip"
-    rebuild 1
-    sha256 cellar: :any, mojave: "40ea6af854452a1ada20bc329ff8df51baa46f5f5cba134516c191a34039ec1f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1d5e5ac3e37a112d041bcbe367cc0b56395d139f58dcb4bb49afae144c9614b2"
   end
 
   depends_on "autoconf" => :build
