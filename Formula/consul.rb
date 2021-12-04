@@ -13,8 +13,8 @@ class Consul < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/consul"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "adfd01f6804141cc1ab440655a36b992f5df8660a95bdb66af2e05882742a16d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9382c6313377980676519186cea70fd60a186d358a3d3ab8d111e802b5892b1e"
   end
 
   depends_on "go" => :build
