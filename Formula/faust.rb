@@ -7,8 +7,8 @@ class Faust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faust"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0a3686d7f3092a871aa31d5a0734cf62cc8cccb5501b519aeb4d39888b8da171"
+    rebuild 2
+    sha256 cellar: :any, mojave: "72b08aff2de9924afc7c97e58a0502d5acd415680a08f1c46a8c83bb8ec39975"
   end
 
   depends_on "cmake" => :build
