@@ -13,8 +13,8 @@ class Exiv2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exiv2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e9eca232dd7895dc8c684bceebe77a8a2a6ad4ee62dacbc761b4151627974a12"
+    rebuild 2
+    sha256 cellar: :any, mojave: "62c02b9c959d8a2fc7e607696128ef75a78d8307380a154b17322fabc5e34743"
   end
 
   depends_on "cmake" => :build
