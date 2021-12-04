@@ -15,8 +15,8 @@ class ExtraCmakeModules < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/extra-cmake-modules"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4c2aa74065c36e86fe41b9b9d44997b0c542703f3283c15b5bbf20bd453593ea"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e95d1525b2d531c8f5c2be512ee6c8fc002ffbb4d40e500d5ca7835dcc1a798a"
   end
 
   depends_on "cmake" => [:build, :test]
