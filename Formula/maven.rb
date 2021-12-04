@@ -13,8 +13,8 @@ class Maven < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maven"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "681e3389b317f16eb9fba2148030082cd4c2f6ec7ab96cd17c120e8a653002cb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d508b3177e6b5e72d29306804dbf4f17abb358405e7facde89dc50631de0d39b"
   end
 
   depends_on "openjdk"
