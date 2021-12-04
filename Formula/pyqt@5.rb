@@ -7,8 +7,8 @@ class PyqtAT5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyqt@5"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c186fccbc80966084e1edc4468fb5bbd1cb084758589d0b6e7e11e27461b97b8"
+    rebuild 2
+    sha256 cellar: :any, mojave: "50c68ab7e4425d494bfa64d387aade187cc754d57f0b60b8b1df04ea8850b9fc"
   end
 
   depends_on "pyqt-builder" => :build
