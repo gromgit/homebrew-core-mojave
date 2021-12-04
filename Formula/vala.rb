@@ -7,8 +7,8 @@ class Vala < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vala"
-    rebuild 1
-    sha256 mojave: "7cd92015a9c97b0b943c3b935b47c03b3923474eb3867f43da75801003fe33c5"
+    rebuild 2
+    sha256 mojave: "9ca588a2aab219b913c36357a77bce346227617e8ac6a375e1d1aa964710cbcb"
   end
 
   depends_on "gettext"
