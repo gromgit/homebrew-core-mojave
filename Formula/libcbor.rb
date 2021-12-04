@@ -7,8 +7,8 @@ class Libcbor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcbor"
-    rebuild 1
-    sha256 cellar: :any, mojave: "defc2eb146197ff1a80f9e7a85ea9dd9f9ba3dd5b3c5bace63783b8b3be78d04"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d402a65f7a61b2576f03ab024ae59a9ffa1b6e3687664549e0d00d893a0e87f6"
   end
 
   depends_on "cmake" => :build
