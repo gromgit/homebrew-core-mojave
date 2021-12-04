@@ -8,8 +8,8 @@ class JpegTurbo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg-turbo"
-    rebuild 1
-    sha256 mojave: "1a6f6e0cff191ac961464503b7fee9db5b58e12e2fd4158362d072852ab59b7b"
+    rebuild 2
+    sha256 mojave: "341b15b76d56da56a0f0ae467bc8b55143a5993a330f0239e2e9a4afbd7a048d"
   end
 
   keg_only "libjpeg-turbo is not linked to prevent conflicts with the standard libjpeg"
