@@ -8,8 +8,8 @@ class Gawk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gawk"
-    rebuild 1
-    sha256 mojave: "ed5d0f1615fa03a53230980caa9d77bac550c0cd6b1fa3f07acfbdf2aca9445f"
+    rebuild 2
+    sha256 mojave: "833ce97b3e353d0e3d1e01a6b1ee6bf3a361ecc52b54778051e2636bc22feca0"
   end
 
   depends_on "gettext"
