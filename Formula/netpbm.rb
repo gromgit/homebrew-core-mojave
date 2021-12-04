@@ -17,8 +17,8 @@ class Netpbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netpbm"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a5bec30fcecea7114ca4e3e06bd0c39dfda63663d09108b86a03302bf38a366a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "da62135dad04f00e126a20a5e1d2855d411a18f0cb935b927a63cf4285a0abaf"
   end
 
   depends_on "jasper"
