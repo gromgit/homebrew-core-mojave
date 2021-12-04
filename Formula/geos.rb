@@ -12,8 +12,8 @@ class Geos < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geos"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b1af41e04f1f78097a64a72e5ebcfbd7feecf1c555639e3ced2d7c86b0b93a0f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a6ed19dd97547ad265c9b5dc517014654c85fc44d54f765012e4a63382759470"
   end
 
   depends_on "cmake" => :build
