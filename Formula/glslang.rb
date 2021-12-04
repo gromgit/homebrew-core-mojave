@@ -12,8 +12,8 @@ class Glslang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glslang"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "33a00e61f14c87aaea7bd197ba8f1b9de37da9f0f157c7fed932d460e0f4b7d2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bcc857fbd90a251480848a11bea79eabb4ce01750e7e22b3aff0b87f7409304b"
   end
 
   depends_on "cmake" => :build
