@@ -29,8 +29,8 @@ class Pcre2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcre2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8fb5eafe75baf8c8bc941692649c29f3a3d19902b478350f0493bfcdfb6b2ba0"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d8c3481370fb4cb998a9dfd1444fce305e399bbd94e6c261dc538d631b5552b5"
   end
 
   head do
