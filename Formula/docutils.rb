@@ -9,8 +9,8 @@ class Docutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docutils"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "69e2a2ac59d1ca2678d3c713263ab1b847f9604d02a6bdb7427172f07c958086"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "cf6d117a6061f9be939bb6c0110d1800d839c7852715a76bf31f5481c80e0c0e"
   end
 
   depends_on "python@3.10"
