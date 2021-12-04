@@ -13,8 +13,8 @@ class Xterm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xterm"
-    rebuild 1
-    sha256 mojave: "da5ea581c3efde3ed490ba4a01080b5664a6584fa59c94be0fe405f46112a9be"
+    rebuild 2
+    sha256 mojave: "d9e03fcc4df72f9fd615b1d28f03d7adf64c6fe8427a3968f7fe42c1d37cc592"
   end
 
   depends_on "fontconfig"
