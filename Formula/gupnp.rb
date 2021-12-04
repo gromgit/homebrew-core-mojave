@@ -10,8 +10,8 @@ class Gupnp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8fbb741fcb871986255e254f6da9e6db30d32826023a7b786f07e6ad679ae0e5"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b7a7a4b35a8ba636d970a13cccd12d4a8fb72163c92fadde5c5fa2930c835c37"
   end
 
   depends_on "docbook-xsl" => :build
