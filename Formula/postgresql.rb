@@ -14,8 +14,8 @@ class Postgresql < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql"
-    rebuild 1
-    sha256 mojave: "d37a6695c792d5fc45e5fa373ef965490c542103b9a77ad0ba986ac5ec796ee6"
+    rebuild 2
+    sha256 mojave: "cd55edc06965a76bf85a2aa2a0dc5088771c29c9643cdcc033b82a726d1abe97"
   end
 
   depends_on "pkg-config" => :build
