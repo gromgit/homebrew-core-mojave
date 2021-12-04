@@ -13,8 +13,8 @@ class Mpg123 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpg123"
-    rebuild 1
-    sha256 mojave: "53d83be91f5d297db98b9ec3e70f619c05a1a933dfaebb800037b841c7874734"
+    rebuild 2
+    sha256 mojave: "7156c3e168a0241c5f1fd27ba5d646e75f606f91124f906bfff4870af0e4fb4e"
   end
 
   def install
