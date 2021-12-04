@@ -8,8 +8,8 @@ class Luarocks < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luarocks"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c30819470e3721501953b20db1c9542c6701c6a4e9a83188512d2d1f84411979"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "21edb998981fa7eb15cbda79de6c29e3f5a21b374f17b14be3de3d20c22fb98c"
   end
 
   depends_on "lua@5.1" => :test
