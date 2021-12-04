@@ -13,8 +13,8 @@ class Coq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coq"
-    rebuild 1
-    sha256 mojave: "7dadf2dd908dbb44364a26d5ac7805db2d7ee3c06e3c4be93f52888a67640b3c"
+    rebuild 2
+    sha256 mojave: "cd0bd79373807a559b916abbf695eb62265f976c9c0028bf21f27762af976e14"
   end
 
   depends_on "dune" => :build
