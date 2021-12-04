@@ -13,8 +13,8 @@ class Gnupg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnupg"
-    rebuild 1
-    sha256 mojave: "ef4fec2f2e27d949031694ec29a1713cad02fd10b4572e0e7b6b411cdfab3d8f"
+    rebuild 2
+    sha256 mojave: "d3607c89cc04948b4ba28ed55bf399ab663d0ef75bab7ea76457e28db5718ce2"
   end
 
   depends_on "pkg-config" => :build
