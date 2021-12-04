@@ -14,8 +14,8 @@ class Mercurial < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mercurial"
-    rebuild 1
-    sha256 mojave: "ba1abdde36713c9ec5acb0da511f87ae273465507100e6fecf48062882430fd4"
+    rebuild 2
+    sha256 mojave: "e1bcaa5a9a0c9646724f1f8599aa0bc5ca1f7ba4d7416e8c77455e4786f7c1d7"
   end
 
   depends_on "python@3.9"
