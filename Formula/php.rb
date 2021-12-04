@@ -14,8 +14,8 @@ class Php < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php"
-    rebuild 1
-    sha256 mojave: "1d4891873723ce490ce1d1985f634b036b063cc7a27190e2a97b667407063bd5"
+    rebuild 2
+    sha256 mojave: "28633c03ff4d2148f0f27e2a0fbac9522d1d654030b3bf43466aeb89b9b5e93a"
   end
 
   head do
