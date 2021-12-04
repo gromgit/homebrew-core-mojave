@@ -13,8 +13,8 @@ class Rav1e < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rav1e"
-    rebuild 1
-    sha256 cellar: :any, mojave: "44d097451428b0ea8aac721e2907cd535e3396e9e5757074beaf3e83a42b1f4e"
+    rebuild 2
+    sha256 cellar: :any, mojave: "bacf361417728d20b3840b3ed48b3ac06f72e1e4ebc48628bf158a1e42e0c91f"
   end
 
   depends_on "cargo-c" => :build
