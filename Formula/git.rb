@@ -13,8 +13,8 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git"
-    rebuild 1
-    sha256 mojave: "92058ea24cdd638950945a0c3d7e3874816e5b30e2c4651ab4499f870299d3fe"
+    rebuild 2
+    sha256 mojave: "7dd38501b3bb836182d2667637da455568e1c451b75b73628ff8daaca78d4057"
   end
 
   depends_on "gettext"
