@@ -8,8 +8,8 @@ class Yara < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yara"
-    rebuild 1
-    sha256 cellar: :any, mojave: "95463df965f7247f40d2c01ad9bb718fd74127cbd12921e08043f84bda9c14d4"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b704cad6764d6baa996a732f11eee02a73ca9cf76ed10f3f4bef5c26d200f946"
   end
 
   depends_on "autoconf" => :build
