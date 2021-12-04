@@ -7,8 +7,8 @@ class Cgif < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgif"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bb818318de6e1274e5031ca442c50ef9d98014640721a5eee13b9617ab951b04"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7363ded9468111e9f282ae6dbf4920754e159db753920fc4e77d43d5270d2dfe"
   end
 
   depends_on "meson" => :build
