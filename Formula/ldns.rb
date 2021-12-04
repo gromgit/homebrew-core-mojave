@@ -14,8 +14,8 @@ class Ldns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldns"
-    rebuild 1
-    sha256 cellar: :any, mojave: "743c346a54f9362755a3ae1dfcf4f81b6eceff670081fdd3b84764fa8de98297"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1765435333c5c6ef3609d2c0e085fe6a8678ff25de1939c3ecf02c763011a333"
   end
 
   depends_on "swig" => :build
