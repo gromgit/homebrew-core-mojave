@@ -13,8 +13,8 @@ class Zig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zig"
-    rebuild 1
-    sha256 cellar: :any, mojave: "84494819c1f65ce2a1d4e0d2a7e7a1311b1d6f7358654f0bc6e8db0e95d2b23f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0dc318990d53a56b632cc9f9bf6b9ffdc1ead586efe7c0c13fd64a4a6bd54f30"
   end
 
   head do
