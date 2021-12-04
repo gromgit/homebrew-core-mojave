@@ -19,8 +19,8 @@ class Emscripten < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emscripten"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bb60f82776450db8d6f207a4a86f1001e24ce10786215854724c0f2ef5033812"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2a9ef0311d85953038649ce78d388f2bcc06088e4cf298abf37437476ba0ba73"
   end
 
   depends_on "cmake" => :build
