@@ -10,8 +10,8 @@ class AwsSdkCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-sdk-cpp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a02b73bdf09bc3e576f27a39707e252f6bf2b1878df5a60a8356fa8695a83282"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a63c58aca7bc887a05604cbdbde59acfe3a75b851522952200d5c3e3f6ba5c21"
   end
 
   depends_on "cmake" => :build
