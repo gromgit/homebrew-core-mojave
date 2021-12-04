@@ -9,8 +9,8 @@ class Aom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aom"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f063df82f82cee479a2d5cd6b5163c2dea0eae0da610ea85e721a40d11d212a4"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2e783bfe292c55f2e2a746fa20c3d412c798c0d8d4a7682166bd2cbf1b06f9a8"
   end
 
   depends_on "cmake" => :build
