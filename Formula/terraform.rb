@@ -13,8 +13,8 @@ class Terraform < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "587ba6ba7cff5c5b615e96839a73e2ed5fcd81e4698fba5f4b62795d4f225c96"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "8b597170345a550cef6e07bcc46bd07b7702d4fd564f529ea3c223ae8de2609f"
   end
 
   depends_on "go" => :build
