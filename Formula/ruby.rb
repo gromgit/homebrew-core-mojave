@@ -12,8 +12,8 @@ class Ruby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby"
-    rebuild 1
-    sha256 mojave: "43b9bd4c1a20ece1c0707579c7ca0be8838e6c1ccd654bd663f1e3398a7496ab"
+    rebuild 2
+    sha256 mojave: "173acd320c93b566d04c804b24b57f50cdd2d4fd7834a86a9209ff5327d81d5c"
   end
 
   head do
