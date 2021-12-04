@@ -8,8 +8,8 @@ class Halibut < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/halibut"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e7762a62dc071bee8da539a94ad5d9d310ba57594639319164fb79ecb092915e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c5751845f1851ca9b26dd178346fb6000aa7f16bbb7cf8dc283a09e5b6ae4c7a"
   end
 
   depends_on "cmake" => :build
