@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_72_RTM/src/nss-3.72.tar.gz"
-  sha256 "6ea60a9ff113e493ea2ab25f41ea75a9fbd10af7903f26f703dac8680732d02e"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_73_RTM/src/nss-3.73.tar.gz"
+  sha256 "566d3a68da9b10d7da9ef84eb4fe182f8f04e20d85c55d1bf360bb2c0096d8e5"
   license "MPL-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Nss < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nss"
-    rebuild 1
-    sha256 cellar: :any, mojave: "edf0222416155c8564439b93e2e80ead02873f42222707a770d7ab95f0b006ec"
+    sha256 cellar: :any, mojave: "92e2ebfba88b5e4fc26dc03f6cd16372d89a2e6f08885ed4f30885bc9a71806e"
   end
 
   depends_on "nspr"
