@@ -7,8 +7,8 @@ class Packr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packr"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "16544ccda4874d2ec0d09566a1f868e497cff4b8fc88dd30f33429600c70dc6f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c01537cfc0ea8c2c98ebdd57458df6f2247f001298b2976fcb24b95ab58116ca"
   end
 
   depends_on "go" => [:build, :test]
