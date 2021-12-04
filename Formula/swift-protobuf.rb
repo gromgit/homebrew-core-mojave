@@ -9,8 +9,8 @@ class SwiftProtobuf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swift-protobuf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ffe5a8cf85bb3442a5436219972e910b9ac425382117cdd2f908baf7537b7fc3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "353c73067c5682d6b58c88ffa0021a9018129fee918344c210e995a12f1656a9"
   end
 
   depends_on xcode: ["8.3", :build]
