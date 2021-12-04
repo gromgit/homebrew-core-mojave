@@ -12,8 +12,8 @@ class Composer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/composer"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d0f814133aa0d8bb917897241c6c9cc706ca0c9d017fb6bed759f7d29c77a2ed"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "df69b0deb8f902a8130feda2ad08e28eabb63f609339aeff0c02c04bf27ed1f6"
   end
 
   depends_on "php"
