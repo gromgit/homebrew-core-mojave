@@ -13,8 +13,8 @@ class Erlang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b921a4b512644b07f4cc9c7ef36f4fb85a5ca0c3634fa589569fb04a0e92dead"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2205a9b04f869fb6f34a5be60fdc1ac9fcd856762e93883df06b8391dce8d1cd"
   end
 
   head do
