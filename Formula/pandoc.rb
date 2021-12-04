@@ -8,8 +8,8 @@ class Pandoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pandoc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7f2b884757a26d660d8b9332807a024c1bc5e8e576a80b551f2b0f6b7d3cd956"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ffcb6bd1b940de641382f6adefb557898724601a0cabc8ed96edba27b054ba8a"
   end
 
   depends_on "cabal-install" => :build
