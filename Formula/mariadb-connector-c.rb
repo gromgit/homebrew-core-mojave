@@ -17,8 +17,8 @@ class MariadbConnectorC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb-connector-c"
-    rebuild 1
-    sha256 mojave: "a2c3270691ce537e5a48c52e31294f04e7259d27e623f951d441cdf47ca61899"
+    rebuild 2
+    sha256 mojave: "6bd7b6b1bc25e78a796e66ee53554901bf91874867a703b2a998a0ccefd42fce"
   end
 
   depends_on "cmake" => :build
