@@ -8,7 +8,8 @@ class Folly < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/folly"
-    sha256 cellar: :any, mojave: "c076b391be6ac827e3894b1da5e5ddccecc14d4bc057552a2fe1a23fbcb68df3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "81ade24f995a1d68b96a38b037fe99468db90883b61e5753a045389baef872c3"
   end
 
   depends_on "cmake" => :build
