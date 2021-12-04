@@ -15,8 +15,8 @@ class Asciidoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciidoc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1dc8d4d6a27636b57271b420b4de0a6cebbce54cc3f96c9322f709edfe03d5f6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5f1e6b70db1201226015f559dbdd3691ed894f1ab3af9f6f9325b0bcd3ef4f3f"
   end
 
   depends_on "docbook"
