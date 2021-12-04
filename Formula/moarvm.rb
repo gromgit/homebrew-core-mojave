@@ -12,8 +12,8 @@ class Moarvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moarvm"
-    rebuild 1
-    sha256 mojave: "7f19fa83fd207728f54026b5fd649e644e4ea85e0b4ecce51cb4bf999d6fde88"
+    rebuild 2
+    sha256 mojave: "1e3d6ad0a890b73837a03c68d1c3a0d7281f37b71677267548e2a9ca1d47e147"
   end
 
   depends_on "libatomic_ops"
