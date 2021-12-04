@@ -12,8 +12,8 @@ class Gdal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdal"
-    rebuild 1
-    sha256 mojave: "a054684ff7d35586622314979d38a224c716274d10395d8df0df6cd77b996146"
+    rebuild 2
+    sha256 mojave: "374929f4a023a5dcb1e73a4fb7369b747cbe26cdd3a5d4f8662bc69e43b32ef2"
   end
 
   head do
