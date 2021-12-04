@@ -13,7 +13,8 @@ class Lua < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lua"
-    sha256 cellar: :any, mojave: "8af875a3e707b2b7145e6d7ec3e114413f9f3d2055d7667557bf7e2f07ed50cd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f58a6a0347629cf768a412a073d465203fd4c6e62e2b7a1268bfb69a272f8901"
   end
 
   uses_from_macos "unzip" => :build
