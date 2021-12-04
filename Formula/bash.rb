@@ -74,7 +74,8 @@ class Bash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bash"
-    sha256 mojave: "0c218c895d4a8df0ef853ac2de9fb24974c84f557b5b7d57e611ccdfec43d872"
+    rebuild 1
+    sha256 mojave: "8cdb64e214b0e22b08e02da5a4f28785abd62857b980bba7e5928c9d22844fa4"
   end
 
   def install
