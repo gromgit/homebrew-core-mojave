@@ -16,8 +16,8 @@ class Curl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "95e813ea93e0e98782697e7bfe2e506e4bef130db296093af16ff343347378fa"
+    rebuild 2
+    sha256 cellar: :any, mojave: "217f2c670a8b5cc4fb837b6a0f0bf86b11b0240efc184162e58bb1b08d02c9e7"
   end
 
   head do
