@@ -14,8 +14,8 @@ class Docker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ac0e20c850b284d17950f30e0140a135ad82de3ab22336f256ecf4bac1863040"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c977f1f5bfb92c19922b0460057c595e5389ed0a9ea1d52a54e88568c4ea7e81"
   end
 
   depends_on "go" => :build
