@@ -13,8 +13,8 @@ class GoAT116 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go@1.16"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "070a48cecb806deed96a563d3fa648f70c78f8994b1a737c78f1bc7d968e292a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d95aa05d1b7c523425cc29127b849589bd989e310c5c655157c0b78d5ca5e31d"
   end
 
   keg_only :versioned_formula
