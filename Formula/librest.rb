@@ -7,8 +7,8 @@ class Librest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librest"
-    rebuild 1
-    sha256 mojave: "9456fdda1321c0b5058ec69fe6b63ef20c13d58efdbff35f8c1ffadc4d37dea1"
+    rebuild 2
+    sha256 mojave: "59fc9508ce6ae875165403676cce8cdc5a399b4c02ce8310f9348cd10fb058d9"
   end
 
   depends_on "gobject-introspection" => :build
