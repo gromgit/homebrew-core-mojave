@@ -8,8 +8,8 @@ class Embree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/embree"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6cb381b4cb152c8544d07b18b2f3cc21f29904e20d7ae2546bc12e04b289ec8b"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8169eed40a58e9e54e6950c06c48486252456e15d8e264c35e80b5f468cf9d58"
   end
 
   depends_on "cmake" => :build
