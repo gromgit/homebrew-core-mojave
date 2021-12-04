@@ -7,8 +7,8 @@ class LibsoupAT2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsoup@2"
-    rebuild 1
-    sha256 mojave: "bb1e07bdcf01d3d4cecd0399b5976fca2761b878ec354d7e571bf61a205f8c91"
+    rebuild 2
+    sha256 mojave: "b641fa90e8f8c723eb602ce6d31849f73af2839adf44af668f03476d720632aa"
   end
 
   keg_only :versioned_formula
