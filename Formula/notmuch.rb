@@ -13,8 +13,8 @@ class Notmuch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notmuch"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a06565e596c23dc58e8e926f821fb473329389a78119b7953d133f759faf600f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1b3783ad01b765ce0c91289f6bbd0f3a5b8679114695597b99338ed2ed860aa0"
   end
 
   depends_on "doxygen" => :build
