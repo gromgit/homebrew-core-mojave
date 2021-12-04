@@ -17,8 +17,8 @@ class KubernetesCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "95c3ff2d41a7997a2f1abf26057afe20b92654fa403024143a16d92820fdefb8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "dd1b0be6fd4c3a66994553722afc6b42223bfae46ed0333ea6d9eb480454ab32"
   end
 
   # HEAD builds with Go 1.17. Consolidate once v1.23 is released
