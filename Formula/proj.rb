@@ -7,8 +7,8 @@ class Proj < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
-    rebuild 1
-    sha256 mojave: "930bea8eb876c0b0d74044bcd7ab80c031f81eb66c011e4b42fd3a1f25f0c389"
+    rebuild 2
+    sha256 mojave: "b353fd4d2e42a9c3bd6441b739e51448f7228f56b13c512282617d05fb08b4fd"
   end
 
   head do
