@@ -8,7 +8,8 @@ class Rustfmt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rustfmt"
-    sha256 cellar: :any_skip_relocation, mojave: "4066a738441b6b4a285a7f43d81b6a296fb415806beaef57b681f06f39fc0351"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "83231dcf6665bf569d25c27806590ca69fab7b43a45e4786f62f03e2c2dabdb1"
   end
 
   depends_on "rustup-init" => :build
