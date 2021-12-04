@@ -8,8 +8,8 @@ class Ccache < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ccache"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3503f88229a6c3a007aa98009e9c8d9c1e60a40091f2507bb2eb7dc034e2def8"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e99f327e277bc8c924164cc25a64cc408c4b5aacea11f7c2d57173279d1ef873"
   end
 
   depends_on "asciidoctor" => :build
