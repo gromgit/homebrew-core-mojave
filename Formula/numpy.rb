@@ -8,8 +8,8 @@ class Numpy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numpy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f978faf2c7f55de2e1f0a1f525f19d5df17c31f51f9f9b57d49a91299a0c6334"
+    rebuild 2
+    sha256 cellar: :any, mojave: "233001870423686ff4d107bde197122952dac3557d658138b26746c9dcfd4ef4"
   end
 
   depends_on "cython" => :build
