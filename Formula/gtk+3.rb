@@ -13,8 +13,8 @@ class Gtkx3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk+3"
-    rebuild 1
-    sha256 mojave: "afe4e5b4b7c9bbbee99811418d3069e4224f504c04b6d6f8fa3174fe3133237e"
+    rebuild 2
+    sha256 mojave: "8158d93745663648a624158b8c1906da3dd196dcf7b5e31222053b05c7dfa61b"
   end
 
   depends_on "docbook" => :build
