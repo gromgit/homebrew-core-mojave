@@ -12,8 +12,8 @@ class Wcslib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wcslib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4bc01a25c5fcedee35c3cae316c1410e9b1bd5a09ab70b9b48679d6b9b78b089"
+    rebuild 2
+    sha256 cellar: :any, mojave: "4ceeb84f6c277459ddb09609e6fc3edf3848b9ea739a86a2e72d2be5a7cf9141"
   end
 
   depends_on "cfitsio"
