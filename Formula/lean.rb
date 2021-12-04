@@ -15,7 +15,8 @@ class Lean < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lean"
-    sha256 cellar: :any, mojave: "537901058530d56c9236d1a00669b9ea52cf542c3a1b1471188c8ad659748b3a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "565a533b709c0e5dd2ea926acf1416521e3d5fff481b249b31c195618f953e75"
   end
 
   depends_on "cmake" => :build
