@@ -9,8 +9,8 @@ class GitAnnex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-annex"
-    rebuild 1
-    sha256 cellar: :any, mojave: "50952f918319750e84bbac869315164758b398a85ea341ad3a50eed65f02beb3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8ab461d892f1e5504128e7e7445eb2943a4b74713b44d2e7979f2e85b9e561c1"
   end
 
   depends_on "cabal-install" => :build
