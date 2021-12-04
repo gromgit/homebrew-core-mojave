@@ -7,8 +7,8 @@ class Chezscheme < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chezscheme"
-    rebuild 1
-    sha256 mojave: "8b674466f4e7f9046e36a5a6698196708787c3498990709352878cef8ccbd58d"
+    rebuild 2
+    sha256 mojave: "b544479c43272ac36d2e6f6437aa6d5d07030738a63e141637ac75c30c26b08a"
   end
 
   depends_on "libx11" => :build
