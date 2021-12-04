@@ -7,8 +7,8 @@ class Hwloc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hwloc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "041f83bf52bac8bd8a9b2e6daa653fa9d90eb10441ab9add6a46225b95c90129"
+    rebuild 2
+    sha256 cellar: :any, mojave: "3937e50fe26a8e5c50893fc0f3f00abcbbc784d27c89e0959916e0d3addc283c"
   end
 
   head do
