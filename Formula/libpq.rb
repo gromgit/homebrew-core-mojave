@@ -11,8 +11,8 @@ class Libpq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpq"
-    rebuild 1
-    sha256 mojave: "dd0030880e05c25f4cb217661bbc1dc9ef158a724ef2c5d4efbc19a72a5bfe83"
+    rebuild 2
+    sha256 mojave: "2bbf184a006257c42d3ac52069e5763a1145b8d2819e41d5902c8f22316fc12f"
   end
 
   keg_only "conflicts with postgres formula"
