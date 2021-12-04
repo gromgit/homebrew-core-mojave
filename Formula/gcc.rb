@@ -2,19 +2,10 @@ class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
 
-  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision 3
-  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
-
-  livecheck do
-    url :stable
-    regex(%r{href=["']?gcc[._-]v?(\d+(?:\.\d+)+)(?:/?["' >]|\.t)}i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc"
-    rebuild 1
-    sha256 mojave: "cebcd8182929d0ccb9a93994c62fdab2e701e9c44524ca7feb2dae4f07ae05f8"
+    rebuild 2
+    sha256 mojave: "30c3f49352950db927378f49884b9577c780885990dd97bdd24027530ff41977"
   end
   if Hardware::CPU.arm?
     # Branch from the Darwin maintainer of GCC with Apple Silicon support,
@@ -34,8 +25,15 @@ class Gcc < Formula
       sha256 "c0605179a856ca046d093c13cea4d2e024809ec2ad4bf3708543fc3d2e60504b"
     end
   end
+  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
+  revision 3
+  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   # We can't use `url :stable` here due to the ARM-specific branch above.
+  livecheck do
+    url "https://ftp.gnu.org/gnu/gcc/"
+    regex(%r{href=["']?gcc[._-]v?(\d+(?:\.\d+)+)(?:/?["' >]|\.t)}i)
+  end
 
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
