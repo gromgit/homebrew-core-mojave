@@ -7,8 +7,8 @@ class Faad2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faad2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "caeb72ac5478302adb9f19d3f56fc5f41f459171766bc099535001e232ba57bb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a8a8ec97c8b4844100a13568334a0d78286a5dcf6bde98bac8247146cd3f77c3"
   end
 
   depends_on "autoconf" => :build
