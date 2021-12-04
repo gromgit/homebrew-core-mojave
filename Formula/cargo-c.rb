@@ -12,8 +12,8 @@ class CargoC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-c"
-    rebuild 2
-    sha256 cellar: :any, mojave: "3584802fa38fa5d755c46e1c2709529a7a182f48453f6867b94b9dd5c722fa5a"
+    rebuild 3
+    sha256 cellar: :any, mojave: "2cf28becef570fb8383e4544669acd8fc1996b841fa9c1ca229d7be79ad94be9"
   end
 
   depends_on "rust" => :build
