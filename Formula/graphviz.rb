@@ -10,8 +10,8 @@ class Graphviz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphviz"
-    rebuild 1
-    sha256 mojave: "6cdfa3cc6c94ff845c9dadfa259132ee277582565647b593980b4106b7493f4e"
+    rebuild 2
+    sha256 mojave: "5e13eaddb758a1367159a0019038be8d1c8677a70ac6a93b20d06e397a089a55"
   end
 
   depends_on "autoconf" => :build
