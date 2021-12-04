@@ -11,8 +11,8 @@ class Cweb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cweb"
-    rebuild 1
-    sha256 mojave: "619318cf518dc16086236095c3740f8c97dc9c1d61b85bb900e3309ce18ec601"
+    rebuild 2
+    sha256 mojave: "b6df228bd7f51ba19532d274da0fdf2f85f39551050956f16c840a2db2f95dc3"
   end
 
   conflicts_with "texlive", because: "both install `cweb` binaries"
