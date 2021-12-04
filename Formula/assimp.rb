@@ -8,8 +8,8 @@ class Assimp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/assimp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "19bf6644431559cc1f469643f826e450d979b648aeffb239200da90279f4a843"
+    rebuild 2
+    sha256 cellar: :any, mojave: "67c64f351992b566db2a98dd7833a74ba3af58104f11e32c25394ce5a03e81aa"
   end
 
   depends_on "cmake" => :build
