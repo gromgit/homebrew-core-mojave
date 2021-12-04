@@ -10,8 +10,8 @@ class TreeSitter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tree-sitter"
-    rebuild 1
-    sha256 cellar: :any, mojave: "df083d4c0dedac71a3111fb1e2dfa2ba70be0a8bace5808b9d493dad81e72c60"
+    rebuild 2
+    sha256 cellar: :any, mojave: "4ee80655e51a4b239cc9c3d5a88d6bd0502b32d3a0cf0cd0329afde3a4c61a49"
   end
 
   depends_on "emscripten" => [:build, :test]
