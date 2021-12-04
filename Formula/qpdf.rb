@@ -7,8 +7,8 @@ class Qpdf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qpdf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bcfc3e80865e065a3d4ed587936ac6039a82a15dfb7b9e9f86f1fa81500c8504"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c8e3938e85d4944ad3d0c4042de79d612191531eaba244aaa21dcff8fe349481"
   end
 
   depends_on "jpeg"
