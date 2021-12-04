@@ -13,8 +13,8 @@ class Flint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flint"
-    rebuild 1
-    sha256 mojave: "51c318eef46e1430453cb150c998698f1fba8f63ff255920268449da4421da5e"
+    rebuild 2
+    sha256 mojave: "e3912d2dffdf1e775f0b488eb5fa8bf0090426b1d7a57efd7b39d9da0763eee9"
   end
 
   depends_on "gmp"
