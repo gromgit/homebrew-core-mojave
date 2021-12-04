@@ -9,8 +9,8 @@ class ApacheArrow < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-arrow"
-    rebuild 1
-    sha256 cellar: :any, mojave: "fde7636e2dd309b0314d156b544626473e3cc40546f76fd55cf7f3e2d05de3d9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0afa375d11429af58dc09390b2ecc1671111f5da1fde729e0d1d8b0308fb8575"
   end
 
   depends_on "boost" => :build
