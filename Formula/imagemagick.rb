@@ -13,8 +13,8 @@ class Imagemagick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick"
-    rebuild 1
-    sha256 mojave: "28569c315c8e945e8804957532998679c11812955df41b2c2eded41152109f4b"
+    rebuild 2
+    sha256 mojave: "54d43620114eea6fe148ef87e98bfc3b5ab874820271345a4a15cc3e5c2b4add"
   end
 
   depends_on "pkg-config" => :build
