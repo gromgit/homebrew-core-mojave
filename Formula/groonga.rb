@@ -12,8 +12,8 @@ class Groonga < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/groonga"
-    rebuild 1
-    sha256 mojave: "4fa1d85e2af20427e724080e6edcae3c59ef08c6e570331f4be2ffbbfd41e9a4"
+    rebuild 2
+    sha256 mojave: "819fdbc673f75c9ca54fc5f24064210e8e464cfbf321ac68e2568723b63b809a"
   end
 
   head do
