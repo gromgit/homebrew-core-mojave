@@ -15,8 +15,8 @@ class Nginx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nginx"
-    rebuild 1
-    sha256 mojave: "0ab35df49dbe7e0d2e31f6f64bcb1efa15b4c89493b13ec4392b2ccb44336396"
+    rebuild 2
+    sha256 mojave: "2225530990bcbdf1d4cad827423094f26436b9214d69974c64653378e4f7cff9"
   end
 
   depends_on "openssl@1.1"
