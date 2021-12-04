@@ -7,8 +7,8 @@ class Gssdp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gssdp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1e84378216876b762e1f178a57835216c0653f48eccc1a9a53917e800101ec9d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b29f24ac1b637cf10066ddd028abe8610b7b419af3d2c58cafc812625bd5f7f8"
   end
 
   depends_on "gobject-introspection" => :build
