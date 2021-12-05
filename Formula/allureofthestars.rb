@@ -8,8 +8,8 @@ class Allureofthestars < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/allureofthestars"
-    rebuild 1
-    sha256 mojave: "4918ea70d5251e34d9cc250c49725ba384a4ae3e31f50a32305f353f1b00f9bd"
+    rebuild 2
+    sha256 mojave: "b8fdb9780873ef82b35df96affa9e5679f6ac80399ce2703d0c8affc7f860a6a"
   end
 
   depends_on "cabal-install" => :build
