@@ -9,8 +9,8 @@ class Borgmatic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/borgmatic"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c34a5bef78fbc268f5b16f07a503af0d371c8cb65f8a85188ae47184f84a1168"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "612249aa2223ae1e2a706584b216f284d0c05df991ac1742cff81a4e13e56a5f"
   end
 
   depends_on "python@3.10"
