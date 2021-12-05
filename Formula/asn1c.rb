@@ -7,8 +7,8 @@ class Asn1c < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asn1c"
-    rebuild 1
-    sha256 mojave: "d482c7e2f05e99b758d1897aaa48740ef49bd74abfe18842d047b788e2597f3d"
+    rebuild 2
+    sha256 mojave: "7412301f5d991f1074d0389e7cd89419b7470af2226953566704211331dcc9bc"
   end
 
   head do
