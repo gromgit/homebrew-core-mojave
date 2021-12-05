@@ -7,8 +7,8 @@ class Benthos < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/benthos"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1873b94fe15ed7358ec5291464b7c7f2a5b58416311f7176c29fff397a0bd50a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e8cc92598441272e5da339220f60de38e23e1b632aa0c8a7afeecd959d609b61"
   end
 
   depends_on "go" => :build
