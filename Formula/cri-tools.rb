@@ -8,8 +8,8 @@ class CriTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cri-tools"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f0584ba8e79687fd803170ec0a649a44b146ffb8b11f07404c2c115fc5647459"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0193b0c2df5742d3ba81d0cf78c2a9b99eb3cf79b66ac0481b4c65ec43c7e86d"
   end
 
   depends_on "go" => :build
