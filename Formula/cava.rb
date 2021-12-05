@@ -8,8 +8,8 @@ class Cava < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cava"
-    rebuild 1
-    sha256 cellar: :any, mojave: "06e448ff0b6b6e0c19e3372da89110775d7b6edc184caa7bc00af8cabb8ac35f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f3a2bd505d62795293dd1aba6ba55092c2a3e2331e386e087974c8d5416b9888"
   end
 
   depends_on "autoconf" => :build
