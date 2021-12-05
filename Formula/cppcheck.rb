@@ -8,8 +8,8 @@ class Cppcheck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppcheck"
-    rebuild 1
-    sha256 mojave: "7746e915846780ce951d7bea7ff20fbc44e65ebc076e5858e8d209b8fab6f781"
+    rebuild 2
+    sha256 mojave: "9e1ed74e3faa52204346411ec234f3e6e121db356be0f73cf17a43ccb8613a5a"
   end
 
   depends_on "cmake" => :build
