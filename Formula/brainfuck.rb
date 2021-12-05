@@ -8,8 +8,8 @@ class Brainfuck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brainfuck"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6b62d8d65d9f25c5a57241a1f1da80de096d0a26091e88f557c7f21e094e760e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "56ebe6a2940493f27d619e3fa5a5630a5c54dbae679c4800c1306809ee1d3a40"
   end
 
   depends_on "cmake" => :build
