@@ -12,8 +12,8 @@ class Xxhash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xxhash"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c48faaffd774a35ed8341378fb6369d2c3709f7617fdb52444a37c3749eae5a6"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0845c43516f75cded5731dd9c4d661c14ff2d3f71998ec6fe8267b3036a36aae"
   end
 
   def install
