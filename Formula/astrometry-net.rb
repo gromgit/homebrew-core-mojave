@@ -15,8 +15,8 @@ class AstrometryNet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/astrometry-net"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a343c45ac7a4ffe441d89412ae67bac92ca42f6f89989dd3a7650559b5974ad1"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e9323aeaf362f6e21336bdb42627409af9aba7e23a2c46c94fd7fa2963b86d0c"
   end
 
   depends_on "pkg-config" => :build
