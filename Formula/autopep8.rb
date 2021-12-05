@@ -9,8 +9,8 @@ class Autopep8 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autopep8"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d6ab1a5a10e4c46c4a0d37eeaa35127166642d20cd97ddc2ec6344b26c0d54bf"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f9660305fbaf8959add2e776ee2ff9f0c20a555883eea7319a2e632bb16206c3"
   end
 
   depends_on "python@3.10"
