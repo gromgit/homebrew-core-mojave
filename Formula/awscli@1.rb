@@ -15,8 +15,8 @@ class AwscliAT1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli@1"
-    rebuild 1
-    sha256 cellar: :any, mojave: "441733d536472cd71854c674b44e3ece4a425c3876ab2fea4d9c642b690542ec"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8fadba2346514bfccaa85ec0c17a19b267bcbf7fa9e270170f5a6974a7a4d906"
   end
 
   keg_only :versioned_formula
