@@ -7,8 +7,8 @@ class B3sum < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/b3sum"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e038990d8ca66ebfa226bb8ee1514d288b9c324d0692c13e5e432f18c5caf5bd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "63c1cb8b19848c8ad17174de02ceae0a3a63f4dce8a1c03e8f66f49a934e7696"
   end
 
   depends_on "rust" => :build
