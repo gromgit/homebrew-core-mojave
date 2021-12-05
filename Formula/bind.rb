@@ -23,8 +23,8 @@ class Bind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bind"
-    rebuild 1
-    sha256 mojave: "4ef454821f60ea2dbbfa1d2a93e685174aea8822693bef65c9daef8c6d5f5ee8"
+    rebuild 2
+    sha256 mojave: "cb8fffc361487f2d3326f2a552d527d656d338c0b3c6d9b0f96c758664c74cf2"
   end
 
   depends_on "pkg-config" => :build
