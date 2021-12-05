@@ -8,8 +8,8 @@ class ClickhouseCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-cpp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e3a0ee3e38c0e5cd9c1f5da8991d03b00a2b079431eb50019ac58f34ffd297bb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "49be1e91c9f6efe5f4122343fe57b7d542b1e149a551945084bc0a2caedcc607"
   end
 
   depends_on "cmake" => [:build, :test]
