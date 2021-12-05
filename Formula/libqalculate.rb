@@ -7,8 +7,8 @@ class Libqalculate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libqalculate"
-    rebuild 1
-    sha256 mojave: "94a903d7406e61d12759ac11ebc00e603f6ad93d6dec572632732a7c834600c4"
+    rebuild 2
+    sha256 mojave: "07caec69408fda6ace3b8fed7f0b7f03a501da680b7a7470da0c4ffc36af78f7"
   end
 
   depends_on "intltool" => :build
