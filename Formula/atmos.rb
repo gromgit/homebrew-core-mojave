@@ -7,8 +7,8 @@ class Atmos < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atmos"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c6fc848adb0a56868d3650dd41c2dfefcaa60d5a6b5bacb2d5559d26f3d454e9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "52b54b2915cb15a228d34628f96f68229ff79badac8137ee4ab9c9913b1fe65a"
   end
 
   depends_on "go" => :build
