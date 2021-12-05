@@ -15,8 +15,8 @@ class Libtorch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorch"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ee810456751a07cd8955431b61eac4feb77d8f0860f219e8d2bc49d0b41cebd7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f3426c0409610615990dfe6005df21c4987d4c796eb6d887f3ce28a1c5ca8238"
   end
 
   depends_on "cmake" => :build
