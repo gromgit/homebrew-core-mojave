@@ -9,8 +9,8 @@ class CloudformationCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudformation-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b67b6004d055b5ce059e07447c436b734cff23bbb79d1c62c4788471d00a53ed"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "716ac63a42df1007d8b3756e28abfc50d3656b54f38b71b2c5e39e7b64381bc4"
   end
 
   depends_on "go" => :test
