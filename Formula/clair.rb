@@ -12,8 +12,8 @@ class Clair < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clair"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c4120a6eded77712a867ba8c0e22893435b1483368bd92d7d9bedeb87bc89eb0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d0c06f015dbe62627716b390a11fd77b0b5780c8a288b7d766e4d74ad04631f5"
   end
 
   depends_on "go" => :build
