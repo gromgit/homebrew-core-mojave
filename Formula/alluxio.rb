@@ -12,8 +12,8 @@ class Alluxio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alluxio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1eb657e00fd583900072e98e31d19f620b6f7cf04f9b165ea7f32110de7f9833"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3f470e88f65f6d28a41de337c395b3f169f847f49d99f9923050599c2d6ce7d5"
   end
 
   # Alluxio requires Java 8 or Java 11
