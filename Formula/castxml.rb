@@ -13,8 +13,8 @@ class Castxml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/castxml"
-    rebuild 1
-    sha256 cellar: :any, mojave: "33f5898249ea35336dc4a0e551418517ace5f23a3599b9cc252b149b3e59d90a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c1eae1c8d30a13917a8b0193339e63644d9a0b9bca6df26dae59e019be4c23b1"
   end
 
   depends_on "cmake" => :build
