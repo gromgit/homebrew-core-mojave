@@ -7,8 +7,8 @@ class CargoInstruments < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-instruments"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8ae125bf9fe9f010cc01db438425e7a9e0d8c5a4fdfb6b657d0fd6ae747f4786"
+    rebuild 2
+    sha256 cellar: :any, mojave: "cc0418e5e6e2ed0030fd9d572423c1537661c3874114b5e024a20a3633f091aa"
   end
 
   depends_on "rust" => :build
