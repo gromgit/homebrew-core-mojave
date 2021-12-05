@@ -8,8 +8,8 @@ class Archiver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/archiver"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a968caf70a657b999fd35fb1cfc05141a9efda647e1e650edb7c39e0eb062cd8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "8c3a24f3954f8a5a37c485aeec5ba9add30ac2fd24adac913480702ed4f05599"
   end
 
   depends_on "go" => :build
