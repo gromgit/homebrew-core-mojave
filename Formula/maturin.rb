@@ -8,8 +8,8 @@ class Maturin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maturin"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5b4d433ee09e0cdbad77fb5e9f92270a2bc5ddc0b0d68a463dc77cd11190477d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "02ed09a4a0bbf7468eff7fb41609d3bb7ff5244007b9693af1a74b2def0c3ab6"
   end
 
   depends_on "python@3.10" => :test
