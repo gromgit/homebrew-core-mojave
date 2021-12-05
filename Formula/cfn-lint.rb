@@ -9,8 +9,8 @@ class CfnLint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfn-lint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e7c58fcd07f0faa24ff7abd8e8a252783334ef7e64ac06429445bf9debe52e47"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "46dfd35fde4e7f4e5dcc3e5a305fb5a7577ce6419039922682e45ec3d71ee426"
   end
 
   depends_on "python@3.10"
