@@ -7,8 +7,8 @@ class Delve < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/delve"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "211401660270552bf56231eb570489adc738131599e842680dbc5c4ccc34f549"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e6c02b207adb75710c431ea8410a6e728e082611ee24e87178e25c32dbcc2d29"
   end
 
   depends_on "go" => :build
