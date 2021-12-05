@@ -13,8 +13,8 @@ class Xrootd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xrootd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "89cec180d7608750ec0b68c5b42a76bd8b7bf28e890bfeb090af5c57b4920fd0"
+    rebuild 2
+    sha256 cellar: :any, mojave: "502bf081ad2b1ea5fa2eac2e0ee2e8e4c7667304faa31d1768d0474b0b090c7c"
   end
 
   depends_on "cmake" => :build
