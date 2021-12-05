@@ -8,8 +8,8 @@ class Fizz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fizz"
-    rebuild 1
-    sha256 cellar: :any, mojave: "19c7e55737385259b13f7f90c04629bea3b26f1411886b87f3804a102e0803e4"
+    rebuild 2
+    sha256 cellar: :any, mojave: "36643441b265bc0757fa62fdfbe63fef9f5a12a7490c1f7ec8eb24454fa4b829"
   end
 
   depends_on "cmake" => :build
