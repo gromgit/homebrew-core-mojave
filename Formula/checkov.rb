@@ -10,8 +10,8 @@ class Checkov < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/checkov"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d83a42fb1eb2f93963c8ddd48ad815933afde91cbfb067f5d762d209b3c70590"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1f374e40cb3c300fb09b6698b080ba69d023956a8fbaa67da95b68f7bba3a9cc"
   end
 
   depends_on "python-tabulate"
