@@ -8,8 +8,8 @@ class BuildpulseTestReporter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildpulse-test-reporter"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e65e69c3cd2d5a3299be3b6205eb1b31456216135d1483602757af0be7ea10fc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7dcc6e85f01b71a39b3f38ac717504717539c7383a72593c82c5519fd880878f"
   end
 
   depends_on "go" => :build
