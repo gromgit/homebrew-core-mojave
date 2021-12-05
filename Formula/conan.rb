@@ -10,8 +10,8 @@ class Conan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conan"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d49100cc655c3a940248da6f759fb7cc7769c286fe395384e79633b042027615"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "be00f648e37b73ba657ed1af0145931cd1913214e222165d2871f84dea9e0de7"
   end
 
   depends_on "pkg-config" => :build
