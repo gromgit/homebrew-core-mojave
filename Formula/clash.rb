@@ -7,8 +7,8 @@ class Clash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clash"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2af18a885dfb92b0bde6935a88805f43f7a4f7fab079fc956bcb4bd47a0d0039"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "802b0c56bf576bd3a88f46dba7407e11500acafbf9f8caf0512ff52843ba0869"
   end
 
   depends_on "go" => :build
