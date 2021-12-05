@@ -8,8 +8,8 @@ class Croc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/croc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "889bf926cfd0a45248f2dbe373297cee598320ba8736649bc4f5a7c8040e9ffb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "eceacf696e0fbe84989df0acb518ec16edd23a10e51a8a28d704b8784151e4a6"
   end
 
   depends_on "go" => :build
