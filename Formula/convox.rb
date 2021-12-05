@@ -13,8 +13,8 @@ class Convox < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/convox"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fa4c3f407fa51c1cb64f90d1793bdbbd508d627c821ef65876243a95eebf12b4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "321d8068fbb56b5bde7ac82005d959876b33a3c431e96b7252da0daecf99a3a8"
   end
 
   depends_on "go" => :build
