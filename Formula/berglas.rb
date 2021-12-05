@@ -7,8 +7,8 @@ class Berglas < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/berglas"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e8747859631052b309bf2b4b2b887800262bc8820065a3b64d58051d1411ba94"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "60e5ebc3e7653dae83ff53713d2e9083c1dd26b133b85c06c26d53fd242200b3"
   end
 
   depends_on "go" => :build
