@@ -9,8 +9,8 @@ class Datalad < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datalad"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d2c7af15a3d1c7d52fd563f2bd8cac3b77e44faaef9bf2b74de909add1bd70a3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d5427a18ea663a0e7453573307c83fa0032e7d93f1e39c509849e37ba942c26d"
   end
 
   depends_on "git-annex"
