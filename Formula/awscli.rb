@@ -10,8 +10,8 @@ class Awscli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
-    rebuild 1
-    sha256 cellar: :any, mojave: "dd69898d97fdd26da2ccc1a8b28a99da9fa590a9fe5de3ac80b876458db9e953"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1580e947b77be81b159d6f9376fc64af0109bc3ec57b976991679d089d2db2ac"
   end
 
   depends_on "cmake" => :build
