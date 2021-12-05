@@ -9,8 +9,8 @@ class Auditbeat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/auditbeat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2c688c65066100f9e7d2cc448aa9f420fc96f0a58155b322ec8be07ae14f792a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a9a7a9fcd0f996af435ffca56e3672029d012b499b4dd90e1197f268c22123c8"
   end
 
   depends_on "go" => :build
