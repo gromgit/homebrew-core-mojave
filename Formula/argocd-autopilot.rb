@@ -8,8 +8,8 @@ class ArgocdAutopilot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd-autopilot"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3bc0803d8f31c4d1dd1425bdc50f9eed52c9ea51e01571046fc58788b665468e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "57213f813ebd13df3248b0d1f4cf4dd8c4e30d5b677181510a8dee59b6e80660"
   end
 
   depends_on "go" => :build
