@@ -12,8 +12,8 @@ class Antlr4CppRuntime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/antlr4-cpp-runtime"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a029f9985a5c292ee9e3b2f72c8a0eca63adf2c4b761f527c66189111cf271a9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2d5c846842821224d4292a5767c98f51a7fa737a5c49d088c4dba8efb9f2a93a"
   end
 
   depends_on "cmake" => :build
