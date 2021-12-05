@@ -8,8 +8,8 @@ class Dasel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dasel"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "17dd52bc7e7123accfc67e29ee5206949fc83561dd67eab6135e35d841f90bc2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9cfa911ec6892b859ef251d4ae5b83d10f8fe80a81ed23630a4c53a6b28ace62"
   end
 
   depends_on "go" => :build
