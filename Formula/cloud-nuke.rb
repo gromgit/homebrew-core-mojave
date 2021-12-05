@@ -8,8 +8,8 @@ class CloudNuke < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloud-nuke"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d7ecd009046f137c0eec3aca8a55deba985eb8be720c0a56d2d3301e8a9dcad5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6b5aa7af4d89cac3fd6d6fd3cca64b607d3363b19428da5cf626ad42f1761cdd"
   end
 
   depends_on "go" => :build
