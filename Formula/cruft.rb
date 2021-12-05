@@ -10,8 +10,8 @@ class Cruft < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cruft"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1425bc40e6f593363c7d9988bd457d2d048835122a404da8d8ad34a868c8525f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "68aa01c4c7f7a83d0b3d7065813bf88edd390dc938e889137e8d5ee5a7385f83"
   end
 
   depends_on "poetry" => :build
