@@ -8,8 +8,8 @@ class Xmake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmake"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0f11403aa050abf1f14471bd8283b9c5e1e08af91eaa2867cbfb168a99e0a6ee"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2ecbcc6dd171f48f750418a49b0bf6b9ccd226e3d9748a63a29850cf3df8adaf"
   end
 
   on_linux do
