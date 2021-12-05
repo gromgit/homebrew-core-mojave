@@ -10,8 +10,8 @@ class Appium < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/appium"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "26781eed747647f5bca97aa65ca57cf3ae57f2a58ecce11be728ee0a14693e58"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b10552482e369105bb813afe0b17d3a8257052406cf3aa7f3ebc276983c6f673"
   end
 
   depends_on "node"
