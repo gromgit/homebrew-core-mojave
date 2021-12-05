@@ -7,8 +7,8 @@ class Cointop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cointop"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ad531326238600c441cffb108ad7202eb4510fed5e54a5d3826849a694f4aed9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "94a66e9aae526b1a5ac7a524a9badcbbc4e6d1f3f9d5bbd9b936ec50b88c9ec2"
   end
 
   depends_on "go" => :build
