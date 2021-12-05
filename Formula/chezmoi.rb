@@ -9,8 +9,8 @@ class Chezmoi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chezmoi"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dae4d04a939df811d98176f77438808fff460fbda7a7cb04ce589f5fbf83c6a7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6677f27094c1c1752800d249f0f61d7c195e20fcb1aff68952e916b4fa8d3401"
   end
 
   depends_on "go" => :build
