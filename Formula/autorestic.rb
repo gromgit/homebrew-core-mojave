@@ -8,8 +8,8 @@ class Autorestic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autorestic"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a30a35de9f392105d25996d82862d7dcff3b51134c727aa9c53d48876072e6cb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "508c8ebe966c2cdf00aeefce7f27ad1d98cef4f2c7e6b8186264f9268cda3861"
   end
 
   depends_on "go" => :build
