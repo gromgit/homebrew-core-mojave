@@ -8,8 +8,8 @@ class CargoOutdated < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-outdated"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a00ad7976d9d3e4daf3e1a8608409c2008e8a9f6a23b526121abec39d58284f8"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8f0f9ebadff7044b282ee802dd2c3c3e4caadc442f13f153259c90a09c2d148c"
   end
 
   depends_on "libgit2"
