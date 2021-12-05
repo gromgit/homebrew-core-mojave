@@ -12,8 +12,8 @@ class Cdo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdo"
-    rebuild 1
-    sha256 cellar: :any, mojave: "dd0e9e4fc2fa8780fd1dc515cec7c59c634aefb15bc60fa1fbb035eaa6889e18"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5f6b50b316927cb9bd4b1e976432ed54b17ab32389e274c9030201093df574bf"
   end
 
   depends_on "eccodes"
