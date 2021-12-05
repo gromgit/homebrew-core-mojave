@@ -13,8 +13,8 @@ class Arangodb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arangodb"
-    rebuild 1
-    sha256 mojave: "dc35987b9aaf19ec2e1a33390330f04c03c0a68a5a067de1300e4153d216f195"
+    rebuild 2
+    sha256 mojave: "a983c0ee760648a7ddabd0e5eb883eb4455df9b7ef92d82c26af4112054deb6b"
   end
 
   depends_on "ccache" => :build
