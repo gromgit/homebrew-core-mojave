@@ -9,8 +9,8 @@ class AllRepos < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/all-repos"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d5e27edea81cd0ef5cd20f99a0f77c783ed77ca91899697cb72a176df79336b3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "99d2e677180e0460655ef6c42846e622b0c50c6bbefcb4a0f49e848fc83c89ef"
   end
 
   depends_on "python@3.10"
