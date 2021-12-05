@@ -9,8 +9,8 @@ class ApacheArchiva < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-archiva"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a25fd073f89ab3722966134db924a5850ea90b6d1264ca6b4ecd99ea60561833"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "95a421d9eb2589ce04db19b6e457e3461ca294018938759863cbd4498e16ee5b"
   end
 
   depends_on "ant" => :build
