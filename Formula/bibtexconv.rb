@@ -8,8 +8,8 @@ class Bibtexconv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bibtexconv"
-    rebuild 1
-    sha256 cellar: :any, mojave: "303580cb4e24b1487e07bb69479cd59143c1bb93adc19357c37be51e5099a8f3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "da8027b368334a97b71166ad7e00e0620549beff110a3f98d046fbe30f06e254"
   end
 
   depends_on "bison" => :build
