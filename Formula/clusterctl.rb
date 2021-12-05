@@ -20,8 +20,8 @@ class Clusterctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clusterctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "22d2c63cc45f0e0e2a60546abacd4fa11cb574b052e4a1d7d015cfa2020abf36"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "13fc2605368c5f396246fee0655a2be96c8b59c8c949507cc0fb843509ba3653"
   end
 
   depends_on "go" => :build
