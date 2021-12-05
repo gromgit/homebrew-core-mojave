@@ -12,8 +12,8 @@ class Opensaml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opensaml"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6b4cf17288420a01bba571ca31813d35a4d7ccca8ad65b7af3cd6a93d01eed75"
+    rebuild 2
+    sha256 cellar: :any, mojave: "375b8691346d40e320b3398f3820b49e8f03a4f152fc783e83dcfc224daf5621"
   end
 
   depends_on "pkg-config" => :build
