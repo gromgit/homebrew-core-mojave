@@ -8,8 +8,8 @@ class Datafusion < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datafusion"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5a74afda2a1729a54a4955380de1ddcb74db506c22acc5e0f48e8d58307c4b91"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0d1bba5d2f28e3febde32a7795a6fa56ef456e1cf1fd018b8eafe7acc913d397"
   end
 
   depends_on "rust" => :build
