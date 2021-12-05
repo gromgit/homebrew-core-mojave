@@ -8,8 +8,8 @@ class Argo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a113a8d84ff30aa95037a4ea75c1f281c9d8e91fbd9d0bb23c4ba169a0d44bdb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "557b3016a1d99b6be22b32bf57a8c8030cc7e26ae95f48ca42ab7a10f6b03a9a"
   end
 
   depends_on "go" => :build
