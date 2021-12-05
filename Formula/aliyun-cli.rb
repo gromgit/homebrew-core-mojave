@@ -8,8 +8,8 @@ class AliyunCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aliyun-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c2bda2c9e347881fe71fd186dcbbdc5861f463ffceb8f26a6d091b07b0b94232"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3d0a56b4e8bd5b8ad70b496058e1efdca1f28d06819eb3977b6e8e6b94f51d9e"
   end
 
   depends_on "go" => :build
