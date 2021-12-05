@@ -9,8 +9,8 @@ class Apidoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apidoc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d19ee6f9fff3ed0ab1e11893c0a321032fb9d63448659646e8c44765a581db2c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a6da27f009f35687c573d8aeed2e54a144edefd9cba0aac26f4f6bb85f742455"
   end
 
   depends_on "node"
