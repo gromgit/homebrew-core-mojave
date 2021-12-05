@@ -14,8 +14,8 @@ class Clamav < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clamav"
-    rebuild 1
-    sha256 mojave: "983d388030e6200fac2fcb53241cd6c7e4091570be4dd051e212345a3bb560f5"
+    rebuild 2
+    sha256 mojave: "87e4a60e65c47acddceb77bd0ee3aea035f8a554ef14562135308fa22323a887"
   end
 
   depends_on "cmake" => :build
