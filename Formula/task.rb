@@ -13,8 +13,8 @@ class Task < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/task"
-    rebuild 1
-    sha256 mojave: "b263ec231b6c7ed1b6a4122283d7aa1ab911a890960066ec7aa07764ac0d8467"
+    rebuild 2
+    sha256 mojave: "8dbce09b252b547a6a0efd15d905e329396cc096fe3a6b3169e5e855994c75a7"
   end
 
   depends_on "cmake" => :build
