@@ -9,8 +9,8 @@ class B2Tools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/b2-tools"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6671b829a840c49d08bdae11cbdf03122ac0b4e9e1d6becb15fcb65ba746b58a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "baa18df2c04702b31836b328a54a27b5488ffbc82776f3a8d185b8bf1ae87dc1"
   end
 
   depends_on "python@3.10"
