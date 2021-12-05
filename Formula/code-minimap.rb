@@ -7,8 +7,8 @@ class CodeMinimap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/code-minimap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bd9f3760aa3d285490f4ee6240f83ff19e88363e2d1b9a713ae448a032cb2d42"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "34b431704480bf24a87fcc37b9995409364df64f99a76792045761de583134c9"
   end
 
   depends_on "rust" => :build
