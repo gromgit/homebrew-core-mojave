@@ -13,8 +13,8 @@ class Cpl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9f9ce88a8de392a6f60cd35e667999f93c6e157ac45e2509fdfcccd77ec9b6a7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2f1c31be597bdb637d11bbf40592d79e8f8dccdee79763b95898727da053ebac"
   end
 
   depends_on "cfitsio"
