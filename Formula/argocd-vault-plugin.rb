@@ -8,8 +8,8 @@ class ArgocdVaultPlugin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd-vault-plugin"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6b15d070597c2550b0d2c7c8682ed642a5f3c4a9a3ee42ddf4ae1797cd00af12"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4677ca29c63bdc2201b4a15bdfb69c2ce780038c7863d9a259f219b4b3204217"
   end
 
   depends_on "go" => :build
