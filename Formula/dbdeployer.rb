@@ -8,8 +8,8 @@ class Dbdeployer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbdeployer"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "63b0b2550e99f89c3c00507956ea33280ef57b566fe1ba4bc385ea1216589a90"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7ae315d94c3faec3ac2bf05e32cf636a067340a25ca50864198426919d5abd24"
   end
 
   depends_on "go" => :build
