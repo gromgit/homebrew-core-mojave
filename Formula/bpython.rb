@@ -10,8 +10,8 @@ class Bpython < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bpython"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cd0119e3735d16d71bc0645d7907cc609ff9598d3f68e32c97dfe81b073d735a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3fbfe1571323c094ed8a701f7e4aa82998df9326ada9c23d074e67d61c66a0e3"
   end
 
   depends_on "python@3.10"
