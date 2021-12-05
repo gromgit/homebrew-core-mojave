@@ -9,8 +9,8 @@ class AngularCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/angular-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "64de5e489d7d120a0075e8f9310ddf30c0ea413cf03bca38bc92d60ff71a08e5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "695986f15e4fcf83f297b6b2562f2bc864a678689bc0b8c33ec5919520ce24e1"
   end
 
   depends_on "node"
