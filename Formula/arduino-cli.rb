@@ -14,8 +14,8 @@ class ArduinoCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arduino-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0268f51704c13b4b05b1f06ef0219fca388f6821a44f650ff4151e142c5c35e9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "138837a0014760e3273df1f9e3af6f05e5e58d41aea1e045df48ae96bb72b44f"
   end
 
   depends_on "go" => :build
