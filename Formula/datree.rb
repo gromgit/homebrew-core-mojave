@@ -13,7 +13,8 @@ class Datree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datree"
-    sha256 cellar: :any_skip_relocation, mojave: "89125b52c238f9bcf2ab65554c0bc7d25317c26f2307481563c9fa11adf5e3e3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cc4b9d2997aa59082cfde8eb1d665a30a42013fc101e8f9e5f8f46ef28f24f8c"
   end
 
   depends_on "go" => :build
