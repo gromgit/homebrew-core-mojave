@@ -12,8 +12,8 @@ class Bigloo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bigloo"
-    rebuild 1
-    sha256 mojave: "8fe11163044a9ff5e6f68a6dacbea83f967e50ad494115125311526cdf99f5c8"
+    rebuild 2
+    sha256 mojave: "2cc08930f2d252eec4cbcd95052a29f8ab84d20de5a1ac3ba884e8af8a0f54d7"
   end
 
   depends_on "autoconf" => :build
