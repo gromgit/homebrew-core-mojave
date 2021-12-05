@@ -8,8 +8,8 @@ class ContainerStructureTest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/container-structure-test"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c42ebeba72490464867219781efd26a7f121541921ffb1de537e874a6853de65"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "893e55be509a94a03f48b0cd94b255829fb85274c2c1ca84058b61b0b30ea475"
   end
 
   depends_on "go" => :build
