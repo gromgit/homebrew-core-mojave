@@ -8,8 +8,8 @@ class Conftest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conftest"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3685ca8637dfefca931df61aaa7aa2cf1679af04eb80c8c5093878b8cfc98b5f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "72cd68534b8cfde15edb5fd19a101918aac7e898843658578be576b9860a4574"
   end
 
   depends_on "go" => :build
