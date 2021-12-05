@@ -12,8 +12,8 @@ class Abcmidi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abcmidi"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7e42bd798c5ab6ffe9c001e81a131383f41facd35a6a32d54982410083fa7f0e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "02e97b358a32e2a1468e9924101f41fde7f3436f3431efbfd1d65a95ee30ea22"
   end
 
   def install
