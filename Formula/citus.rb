@@ -8,8 +8,8 @@ class Citus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/citus"
-    rebuild 1
-    sha256 cellar: :any, mojave: "2ce39721e2a25aba429edc2d9d61d7a156236a272a3f7313dd850e94632045be"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ba060220f0b85c062c610cbdbb793b17c2b779f9b48e00ddb86f5bfff19f27a9"
   end
 
   depends_on "lz4"
