@@ -9,8 +9,8 @@ class Cosign < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cosign"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "47f7c4b47119a62d0c890e0e041d91cb2f81b2f1a200082a23a3d4994d4d70b6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "df99ebc35de20692c7725d5517fcb77922d1998f1245e5c5a71378c22e6f0189"
   end
 
   depends_on "go" => :build
