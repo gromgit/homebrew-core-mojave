@@ -13,8 +13,8 @@ class AnycableGo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/anycable-go"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9367f1e62e800cff25318082249cc67fc6e55d24b3093564dc929bc3e72db83d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c0ae76be1944a6fba2636cab6ce1c0090f263ee6d86c82b98db3f9d5f31d4155"
   end
 
   depends_on "go" => :build
