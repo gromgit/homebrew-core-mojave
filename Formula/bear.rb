@@ -8,8 +8,8 @@ class Bear < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bear"
-    rebuild 1
-    sha256 mojave: "87de50bde0b206d888c4e145f4daeaf5c44eec48ff5304b6ed10e642ff468c56"
+    rebuild 2
+    sha256 mojave: "acf82da830ea6d282ac82ec0e5194f2ff2e581936e1ac96d92f411b3c3611de4"
   end
 
   depends_on "cmake" => :build
