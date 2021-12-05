@@ -8,8 +8,8 @@ class Caddy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caddy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dec456aebd13f0fe949602c46570ae059130ee439ba91f491a944aef42105b1f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6da06fdc7bd343817a086338b5078e7e28d64107fbf31aa470c680d2f687d838"
   end
 
   depends_on "go" => :build
