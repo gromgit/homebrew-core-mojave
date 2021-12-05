@@ -8,8 +8,8 @@ class AvroC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avro-c"
-    rebuild 1
-    sha256 mojave: "3ec64ac28e743b54a3ed6ecd408a50d6bf606f6e6da3e8f62c6a6d1ac58adbd5"
+    rebuild 2
+    sha256 mojave: "187924f2a62751e35a7fc2778d838d06157c44ee65d0a5c857aaf6db8f38fc91"
   end
 
   depends_on "cmake" => :build
