@@ -8,8 +8,8 @@ class Arb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arb"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4f8cfb6775e0c6c7ce8cd316ba0ec6e2ce9354a4f0bbb12603c2ed008d2bf2cf"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a30147a7806f3c843a98962109c961a369b0c2948c2eedf98f8bc935ecccbc8f"
   end
 
   depends_on "cmake" => :build
