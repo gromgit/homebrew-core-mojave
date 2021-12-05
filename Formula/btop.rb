@@ -7,8 +7,8 @@ class Btop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/btop"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1f11b1f98bf2735001b1d4d697939a7b9fe60fc92476f164e7c97730b52c47df"
+    rebuild 2
+    sha256 cellar: :any, mojave: "887b3b456dac7b95e925e8c80a5c11e9eaba94c1ea00511193656553c15ebde5"
   end
 
   depends_on "coreutils" => :build
