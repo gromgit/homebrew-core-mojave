@@ -8,8 +8,8 @@ class Cbmc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cbmc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9ac0235ec982857b199335420080a02d46b6dcd358c35a5349752066ea243689"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6043a8664362133e3fb30d1e05a72a2dde3765e8ba5b038c979279a4aa752825"
   end
 
   depends_on "cmake" => :build
