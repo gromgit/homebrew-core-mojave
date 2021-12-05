@@ -9,8 +9,8 @@ class Datasette < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datasette"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "502615ad2c1282ceb66564096208f148e9a5e3863d50ebc4405be2c8701c7aee"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6be5fc54411694db10703dd0cbae2c2f7b3b20751af79c8a7400433113dac433"
   end
 
   depends_on "python@3.10"
