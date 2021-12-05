@@ -7,8 +7,8 @@ class Cnats < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cnats"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0c42de1141a20c80c239200578840bf30afec22a32595ddf3da9233214ebb9c6"
+    rebuild 2
+    sha256 cellar: :any, mojave: "268e24df26bb5d862dd6270c09b963560c6dc9235159d00a100230fbc7894337"
   end
 
   depends_on "cmake" => :build
