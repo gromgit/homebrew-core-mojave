@@ -10,8 +10,8 @@ class AtomistCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atomist-cli"
-    rebuild 1
-    sha256 mojave: "33707378785eccb2acfe320e89e038ec22fb15f65ef31923a6551e817249ab17"
+    rebuild 2
+    sha256 mojave: "0332dd8aaf87ce6fc54605939809ab1834d1c2c9cc21d987276200eda8843498"
   end
 
   depends_on "node"
