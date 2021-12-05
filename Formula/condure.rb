@@ -7,8 +7,8 @@ class Condure < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/condure"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bdd99c995df61a52c8753ba47b8286e25199c9a7d621e407f9efaf240b6e340c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7e6280162c2537d27e1aa432ccf9a58d5c15ce354fb74377556ae45c8325a4ec"
   end
 
   depends_on "pkg-config" => :build
