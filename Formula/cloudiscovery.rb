@@ -9,8 +9,8 @@ class Cloudiscovery < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudiscovery"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e7a8ea76db078db9ab001f843ecf30143d6d87035e167f2bcbed42daae602a6f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1324a87689c6f2ebeb5b4d83761f95688855be0a758fb0ed92509fd17ca10c8f"
   end
 
   depends_on "python@3.10"
