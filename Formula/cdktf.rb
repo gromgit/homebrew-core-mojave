@@ -9,8 +9,8 @@ class Cdktf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdktf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4156a61121b5ed95c648f3ca6d5d813b37be8ef47151702cf8dc9eec4d65d978"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5b5e64bc737f31968a546d579155c4ad8a2a5ec8edb9298dd18b66a0a37e0e41"
   end
 
   depends_on "node"
