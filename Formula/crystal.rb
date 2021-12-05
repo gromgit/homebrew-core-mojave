@@ -20,8 +20,8 @@ class Crystal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crystal"
-    rebuild 1
-    sha256 mojave: "61b535b59fc154190005c6c67193288c8fd51d374bb8df53fb81356b7d9ec8f0"
+    rebuild 2
+    sha256 mojave: "6d520de33f88885ec5220152356ea4794d5667bfff79e84dbcb88ff2dbe517b0"
   end
 
   head do
