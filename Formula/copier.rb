@@ -9,8 +9,8 @@ class Copier < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/copier"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "87b0e753e5a862b2081dd70a13b043d31312db1a530046b8802d458a534ae597"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9b0b270f312be4ad82ab08a7976e36f6764d00ac590ade7608bf5d2c2a10b794"
   end
 
   depends_on "poetry" => :build
