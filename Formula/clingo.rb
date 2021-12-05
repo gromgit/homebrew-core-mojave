@@ -12,8 +12,8 @@ class Clingo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clingo"
-    rebuild 1
-    sha256 mojave: "11b5acea5c86abbe98558374df8d238bc3c71ca67e1899f3af3c491ba67750e0"
+    rebuild 2
+    sha256 mojave: "ab64325ee28aba13ebe53e48496e5f9232973438ea06402584ca3e87bee27008"
   end
 
   head do
