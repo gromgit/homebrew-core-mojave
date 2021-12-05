@@ -12,8 +12,8 @@ class Cloog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloog"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4774f004689f9f9fa05a44dd0d88f44b75b99e430f9ea0b700fcd660f888c0e7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c942a979ceb1eb57aaa128406d798aa201f15e5ae571c5374a30ce7360a6b52f"
   end
 
   depends_on "pkg-config" => :build
