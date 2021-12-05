@@ -8,7 +8,8 @@ class MongoCDriver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongo-c-driver"
-    sha256 mojave: "d1519bbf1f2006dbfda5818e396346c82d6f36cfbccd3647f85143b13eff3411"
+    rebuild 1
+    sha256 mojave: "3d38f93e3ca4da457edf1b655907b6b31a82046beccf8ab184740075e0cb067b"
   end
 
   depends_on "cmake" => :build
