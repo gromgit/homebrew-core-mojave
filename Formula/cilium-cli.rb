@@ -7,8 +7,8 @@ class CiliumCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cilium-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8f03eab8badab166ee902101ff18746c998d0c38d1b306ad0b3696da5d6dc17c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6a25267464136989ddf79c350323a27eb2c472e8515fe0a519eb809e14b968f1"
   end
 
   depends_on "go" => :build
