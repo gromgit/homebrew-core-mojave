@@ -7,8 +7,8 @@ class Azcopy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/azcopy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2e12c0fd6cecb877ff14341aa66be5182229fd88f57f54e457c6f25eaabae472"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "fcf69bd715de598a90b43aa822a0395ce1dee08a70571ce52bd62e8e280289de"
   end
 
   depends_on "go" => :build
