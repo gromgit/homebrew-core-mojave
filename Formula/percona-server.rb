@@ -11,6 +11,12 @@ class PerconaServer < Formula
     regex(/value=.*?Percona-Server[._-]v?(\d+(?:\.\d+)+-\d+)["' >]/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/percona-server"
+    rebuild 1
+    sha256 mojave: "60d1fcf1590300c5d69f95db8b1f3d38f4e8aca7033d85fb22e7fc2d3aef74d0"
+  end
+
   pour_bottle? do
     reason "The bottle needs a var/mysql datadir (yours is var/percona)."
     satisfy { datadir == var/"mysql" }
