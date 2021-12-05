@@ -9,8 +9,8 @@ class Archey4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/archey4"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cc70b76b28d5e935bbbc35669555b6356735b2f02b972b9bc1399e0b752df667"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "64f6418c77db68184e764372df1f5a71f7bc21df8f2e35ce3e43b41763be88af"
   end
 
   depends_on "python@3.10"
