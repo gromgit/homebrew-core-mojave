@@ -7,8 +7,8 @@ class CloudformationGuard < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudformation-guard"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a7c1ddcfae2045f4224550747e16f390dc877af23f33de4cb5f1284337997f22"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "aa25d7c32c2e00dacf25c904908e2f856a04f261b6dd8f7d673e089000658992"
   end
 
   depends_on "rust" => :build
