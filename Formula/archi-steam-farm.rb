@@ -14,8 +14,8 @@ class ArchiSteamFarm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/archi-steam-farm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "14d62a84e011a3d457bef1ab07e508b4c3b7c9a57195dbcd7ceb0f3c12c97708"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a863cd57c7d2fb074b43398291c8e22dd1bbdadf0740b2c6cade7a5e3f22f730"
   end
 
   depends_on arch: :x86_64 # dotnet does not support ARM
