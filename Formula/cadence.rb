@@ -13,8 +13,8 @@ class Cadence < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadence"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7689d06bdf8da4c9517b29e08af1f567910fb1728a399d870565862268e15527"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5d33a0686b1d381764ed3f3133c3b5e575c36267e71d3f495c122a10e27a8ab3"
   end
 
   depends_on "go" => :build
