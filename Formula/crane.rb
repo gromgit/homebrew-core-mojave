@@ -7,8 +7,8 @@ class Crane < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crane"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "81c34772d4ee29f3d863e6083c2b0264f1b4adaa80ee709083f5871ea0144454"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "26fed56e85f631dfa969a3f63f10189656240f75fd0d0eaea4a870227a0b96e8"
   end
 
   depends_on "go" => :build
