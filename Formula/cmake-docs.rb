@@ -17,8 +17,8 @@ class CmakeDocs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake-docs"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "256ee13d114ab3b74c8eb032699c498f9bf45f7bac48be4304f135acbc8c6c98"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3311bb9b89da02bde1afe2f08d25bbba20f07ee2674c1217b8698a16f0184c7f"
   end
 
   depends_on "cmake" => :build
