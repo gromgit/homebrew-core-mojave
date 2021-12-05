@@ -12,8 +12,8 @@ class Dafny < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dafny"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "905cdfdecec74d640902f08712b1b36d8c13a0b72d40d9eab6c8e6f2c6ce49ee"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "859bb9ae6374c600fc8934f58bb19244593cfbdbd6d12feb549c9ad0f58b3917"
   end
 
   depends_on "gradle" => :build
