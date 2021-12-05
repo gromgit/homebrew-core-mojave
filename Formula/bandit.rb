@@ -10,8 +10,8 @@ class Bandit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bandit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0e530d4b4579f0186eb16683c88b9f20356592f42c60dac8072ca4b4ba28bd2b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0e6ee3e46c2bad36bc8e194c1a6fa89337d5324a89b6b63fc02e790fdab9fb86"
   end
 
   depends_on "python@3.10"
