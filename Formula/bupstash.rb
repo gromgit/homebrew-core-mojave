@@ -7,8 +7,8 @@ class Bupstash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bupstash"
-    rebuild 1
-    sha256 cellar: :any, mojave: "61a39ee1e9e9854a1ad727c858c1450158a2664db471f0349c8af906296048fd"
+    rebuild 2
+    sha256 cellar: :any, mojave: "20a45e2b992acabad4645d4b906c8db66166ac5d594f5d9c9126cbf0a7de5e6d"
   end
 
   depends_on "pkg-config" => :build
