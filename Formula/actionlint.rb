@@ -7,8 +7,8 @@ class Actionlint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/actionlint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "066ae7a606d7cb5daa59f7c0314ceb9868f9566793fd804e1edee1a3d1ee6b8b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "05b65dd9bc00452b6409cbd35b2852b9f8fcda321c2903870d727ad156c416c1"
   end
 
   depends_on "go" => :build
