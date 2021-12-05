@@ -7,8 +7,8 @@ class Nqp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nqp"
-    rebuild 1
-    sha256 mojave: "78c53457b5479ba3a4701a890d7c7f02e7b07a6b84e5a2287ea2596745124e54"
+    rebuild 2
+    sha256 mojave: "3bb7765ab4d1333178a79775d19e4ba62df6a338e3451e5a93169a7c0bf1dacf"
   end
 
   depends_on "libtommath"
