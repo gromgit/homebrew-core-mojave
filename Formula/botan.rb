@@ -13,8 +13,8 @@ class Botan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/botan"
-    rebuild 1
-    sha256 mojave: "12e20f7c43b7337147b0ce9bbf76b1c8dcfd3fc41b5e0ac387dc9648b54ec25c"
+    rebuild 2
+    sha256 mojave: "927c7a617fb805ce0b2f153fe4d273c7cf2e8eda4abf2d81d17754aa526a7aa8"
   end
 
   depends_on "pkg-config" => :build
