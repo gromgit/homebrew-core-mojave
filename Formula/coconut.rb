@@ -9,8 +9,8 @@ class Coconut < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coconut"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cb158b0bc76dcaa03d4454552d693da31493793c50e06acbad50995544d870bb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "06c74e35e776091a596b2497b4fbaa941904a3a0a7517c74074b6951b7ad4c2b"
   end
 
   depends_on "python@3.10"
