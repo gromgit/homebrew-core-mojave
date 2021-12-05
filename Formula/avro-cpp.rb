@@ -8,8 +8,8 @@ class AvroCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avro-cpp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f065d16a30ac70a1ee624eab31a0c87698eceb92c2e5cd9d1d51b8c596f90642"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c6a0156a50e7274aef173135df98f36cf885f7bc921d8178058e25dbdcb268b8"
   end
 
   depends_on "cmake" => :build
