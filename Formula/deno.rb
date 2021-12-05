@@ -7,8 +7,8 @@ class Deno < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deno"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ca40cc3cc20fbf7174663dcb4b49bc698101bf6d297cc2dd89bd9dbf77b670f2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3b6d09f0a02a2c17177f8bc71563c49e0ca330a8caa1a99cc14d095f9166defa"
   end
 
   depends_on "llvm" => :build
