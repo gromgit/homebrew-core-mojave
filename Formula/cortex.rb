@@ -12,8 +12,8 @@ class Cortex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cortex"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c73b3c407778ed1c0c2d887e5dee3c618bdaf3f5084305bc87647e821e519a16"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "96e1626cefb43e4db1967b1a117aa964c03b1d1c134a5ff7f3f34fe3df87c2eb"
   end
 
   depends_on "go" => :build
