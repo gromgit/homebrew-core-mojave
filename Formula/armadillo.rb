@@ -12,8 +12,8 @@ class Armadillo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/armadillo"
-    rebuild 1
-    sha256 cellar: :any, mojave: "fd1311eb8bf5c70adf723340410c151da2f956cde00047abc926cacf773425b3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "135065759231865a5c3bd5cbb8ed117b5c2895c65ab0d275d0e6d7744980c1ff"
   end
 
   depends_on "cmake" => :build
