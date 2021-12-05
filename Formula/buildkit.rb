@@ -14,7 +14,8 @@ class Buildkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildkit"
-    sha256 cellar: :any_skip_relocation, mojave: "e7682f5d720d9890b14ce6f9965201e93678fb0d57c4c771ae0db39ea8ab46e4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0231aa5094a6e459107bd4094a5d213687c7100da39f4d64195a0934ba53ed30"
   end
 
   depends_on "go" => :build
