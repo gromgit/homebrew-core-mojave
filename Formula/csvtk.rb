@@ -7,8 +7,8 @@ class Csvtk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csvtk"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "52600fae02a2fe0c10bb70bd15541b0c13875c6be97db5529dfac5fb39f48b94"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "59e543d39f3e147cb80d29ee7edb07203482a49a5cd44c0221d9d6e4cb7d3482"
   end
 
   depends_on "go" => :build
