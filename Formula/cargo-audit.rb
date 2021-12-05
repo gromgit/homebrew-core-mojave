@@ -13,8 +13,8 @@ class CargoAudit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-audit"
-    rebuild 1
-    sha256 cellar: :any, mojave: "da48aae6f1bf758d4d18b59ce675265a993f1e2a7f99a76ab941292426618e22"
+    rebuild 2
+    sha256 cellar: :any, mojave: "dda2b7350ca295a4097c265f634df265b41773c428d36556718e154617cb1bb8"
   end
 
   depends_on "rust" => :build
