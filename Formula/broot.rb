@@ -8,8 +8,8 @@ class Broot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/broot"
-    rebuild 1
-    sha256 cellar: :any, mojave: "558395878c415d3886f5960b6631d9d4db3fce7d5c083b65e853dce390826c5c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ad4057905bf29d423992e803a8e7cce966bd5377f7940bf47a14c8d9d74a530e"
   end
 
   depends_on "rust" => :build
