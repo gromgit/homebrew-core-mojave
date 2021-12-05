@@ -8,8 +8,8 @@ class AppstreamGlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/appstream-glib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7da39e49bff5583d6bce8499212122174798e63cc31ca522817a576d8e140148"
+    rebuild 2
+    sha256 cellar: :any, mojave: "35fdbc8a000c6cd6eaa02ecf31b8ea4d8da0debb1e24e18ec5256272361dbcd9"
   end
 
   depends_on "docbook" => :build
