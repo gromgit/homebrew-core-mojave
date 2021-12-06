@@ -10,8 +10,8 @@ class Ansible < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible"
-    rebuild 1
-    sha256 cellar: :any, mojave: "15d2ad12430d63b794ff10cae9d522688f2a875fa15336fc28a2a8418bf59412"
+    rebuild 2
+    sha256 cellar: :any, mojave: "882884f6182b2506f3636cfc52c54b16764e84c16c68f36c11ebc82523d8b03b"
   end
 
   depends_on "pkg-config" => :build
