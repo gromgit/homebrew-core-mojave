@@ -2,16 +2,15 @@ class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
   homepage "https://www.graphviz.org/"
   url "https://gitlab.com/graphviz/graphviz.git",
-      tag:      "2.49.3",
-      revision: "3425dae078262591d04fec107ec71ab010651852"
+      tag:      "2.50.0",
+      revision: "ca43e4c6a217650447e2928c2e9cb493c73ebd7d"
   license "EPL-1.0"
   version_scheme 1
   head "https://gitlab.com/graphviz/graphviz.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphviz"
-    rebuild 2
-    sha256 mojave: "5e13eaddb758a1367159a0019038be8d1c8677a70ac6a93b20d06e397a089a55"
+    sha256 mojave: "2dc2c30239b4a30efd2194303978a847af7766557d342ae2bfbe768ea71c307d"
   end
 
   depends_on "autoconf" => :build
