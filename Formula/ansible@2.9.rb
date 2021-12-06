@@ -17,8 +17,8 @@ class AnsibleAT29 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.9"
-    rebuild 1
-    sha256 cellar: :any, mojave: "908c8724baec410c09eced18065c32c9de48d614102feb3f7cf8525726235ebf"
+    rebuild 2
+    sha256 cellar: :any, mojave: "06ae05f39d0f514feb6e8b6ef1cf799db4bac21cf932540acd59f87b4586864f"
   end
 
   keg_only :versioned_formula
