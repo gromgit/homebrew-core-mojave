@@ -1,21 +1,14 @@
 class Libmpdclient < Formula
   desc "Library for MPD in the C, C++, and Objective-C languages"
   homepage "https://www.musicpd.org/libs/libmpdclient/"
-  url "https://www.musicpd.org/download/libmpdclient/2/libmpdclient-2.19.tar.xz"
-  sha256 "158aad4c2278ab08e76a3f2b0166c99b39fae00ee17231bd225c5a36e977a189"
+  url "https://www.musicpd.org/download/libmpdclient/2/libmpdclient-2.20.tar.xz"
+  sha256 "18793f68e939c3301e34d8fcadea1f7daa24143941263cecadb80126194e277d"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/MusicPlayerDaemon/libmpdclient.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ff2e2dead72db65e09843a2aba5544c9433b99c66ece05090ebd91d2271b3290"
-    sha256 cellar: :any,                 arm64_big_sur:  "b703e7d52c1be39561ae59034cd4574c6a9ef4a06cd98416503a402b01f7cf7a"
-    sha256 cellar: :any,                 monterey:       "4563058613fd0d8265d19259e825dafde7cfc6ee646911ac9632aa01ad177400"
-    sha256 cellar: :any,                 big_sur:        "ee86de4f5298b45cff0b1ba7446a9d9864fd1752184de585bf05e43a16374708"
-    sha256 cellar: :any,                 catalina:       "866e94308617552de97ecb04f824408fa4f849d1ef79ff9bf5467170c80e3a23"
-    sha256 cellar: :any,                 mojave:         "0db8f7c9e7cd6eb5082397e9270989864042e36c187cba2fa61ae43ca996e32f"
-    sha256 cellar: :any,                 high_sierra:    "71c37d5af98688decfe4440ce87e267064a4a71e0b1a4e11455068b5127edae4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96f6b9b1aec66edeb1646d5bea33cf109c7a46feacde6eecf9dea5653ccb95eb"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmpdclient"
+    sha256 cellar: :any, mojave: "0adb57e930c67051a281fc1750f545624aa8a452f8806ce7f9a2581c94ff2d47"
   end
 
   depends_on "doxygen" => :build
