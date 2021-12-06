@@ -11,13 +11,9 @@ class Urdfdom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ced2cb8a17221d58fee32a3b5ecedaeef6caf43c4a721b1a543a1db2e9a1d30f"
-    sha256 cellar: :any,                 arm64_big_sur:  "144123d35146a73b2faa6a41d05d5660efbc35d8d19b23bffad4bbe4335a4f26"
-    sha256 cellar: :any,                 monterey:       "cbf83550cba6be1cc2ce3eaf4693872d266ba9effe2c0974581d00c1ffdd5079"
-    sha256 cellar: :any,                 big_sur:        "61bdf95fadfdd5ec951efe254a57068f50037e6ee8a5f9e2a46333aca445c283"
-    sha256 cellar: :any,                 catalina:       "75b9eb3c4cbc6a1f7ba49d9c664895f6b523d1c72c4a0829858e4cb85f36e5b1"
-    sha256 cellar: :any,                 mojave:         "2b50fa0f77d4e0255488e1978f7550d007ac16da5caf7b74b73553673a15d0b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ac7538d7996e4e71f976f811dc4b362d40993487dca09ab13dafd4675005b58"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/urdfdom"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9b132c85d15529b03a9b24aee5f4c440e96bb2551e91fa4265f2ebf508b65558"
   end
 
   depends_on "cmake" => :build
@@ -27,8 +23,9 @@ class Urdfdom < Formula
 
   def install
     ENV.cxx11
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -48,5 +45,44 @@ class Urdfdom < Formula
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lurdfdom_world", "-std=c++11",
                     "-o", "test"
     system "./test"
+
+    (testpath/"test.xml").write <<~EOS
+      <robot name="test">
+        <joint name="j1" type="fixed">
+          <parent link="l1"/>
+          <child link="l2"/>
+        </joint>
+        <joint name="j2" type="fixed">
+          <parent link="l1"/>
+          <child link="l2"/>
+        </joint>
+        <link name="l1">
+          <visual>
+            <geometry>
+              <sphere radius="1.349"/>
+            </geometry>
+            <material name="">
+              <color rgba="1.0 0.65 0.0 0.01" />
+            </material>
+          </visual>
+          <inertial>
+            <mass value="8.4396"/>
+            <inertia ixx="0.087" ixy="0.14" ixz="0.912" iyy="0.763" iyz="0.0012" izz="0.908"/>
+          </inertial>
+        </link>
+        <link name="l2">
+          <visual>
+            <geometry>
+              <cylinder radius="3.349" length="7.5490"/>
+            </geometry>
+            <material name="red ish">
+              <color rgba="1 0.0001 0.0 1" />
+            </material>
+          </visual>
+        </link>
+      </robot>
+    EOS
+
+    system "#{bin}/check_urdf", testpath/"test.xml"
   end
 end
