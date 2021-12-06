@@ -10,8 +10,8 @@ class Certbot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certbot"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ef76281943eb8928e01246c2b2297110fde7f36ffdf979dbb7372c6f1d73d129"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a87e578dd7480c70ba0671aaa00dd402e78db48c71bcc16eacdd3077d5c5e502"
   end
 
   depends_on "rust" => :build # for cryptography
