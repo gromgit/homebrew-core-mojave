@@ -8,8 +8,8 @@ class Libfido2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libfido2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4608e61e85bd0045f317077a5b7743b588db2a9a0ec33d2e6525c6afa08f93ea"
+    rebuild 2
+    sha256 cellar: :any, mojave: "36d6a25ed69617a12a9898c20eac66041b7928f6f1a6944dd3576b51f73fa992"
   end
 
   depends_on "cmake" => :build
