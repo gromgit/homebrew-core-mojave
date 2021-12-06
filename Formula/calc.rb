@@ -1,18 +1,13 @@
 class Calc < Formula
   desc "Arbitrary precision calculator"
   homepage "http://www.isthe.com/chongo/tech/comp/calc/"
-  url "https://downloads.sourceforge.net/project/calc/calc/2.13.0.1/calc-2.13.0.1.tar.bz2"
-  sha256 "6ae538f57785c5701a70112ccf007ab5553abd332ae2deaadaf564f401c734ad"
+  url "https://downloads.sourceforge.net/project/calc/calc/2.14.0.8/calc-2.14.0.8.tar.bz2"
+  sha256 "ad6a2c44eeea7e06efca5384f107ffaee7564407a7474d7cd4928a53b1a28386"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_monterey: "7d7667676ed0a0a7dc7cb413fb5f1cb9e47c9eeda5e305e7b85e7f1e8d759149"
-    sha256 arm64_big_sur:  "20a69341f5baf00f5c9fa73998ce3f02939af44146d6eee3177854488e474df4"
-    sha256 monterey:       "59d6596872020d97aad74f8b066e772c4f6e348a201c6fdcd14151ddb0d72267"
-    sha256 big_sur:        "cdc2b4bce30dccf2193ea5a457dfa02e4ae1ba0af97fce660221c5d3882e79a3"
-    sha256 catalina:       "95bce9b12aab68a4d8e30121e0a0be5e0e7447e09bcc11d9d7e371956c724433"
-    sha256 mojave:         "57ac9fb9353e5bd4dd6bf6f62aca96252a064e51d102fd89389934fefa999b2c"
-    sha256 x86_64_linux:   "2caf96b7bf9165d15f2e5bd36226885e499a3b037e3572a845ec353e786a3bbb"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/calc"
+    sha256 mojave: "1bb1dac5cd099152ed4b5b6bbfabb4df5cbd1362a4f814b005218815d42c313b"
   end
 
   depends_on "readline"
