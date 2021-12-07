@@ -8,8 +8,8 @@ class Faudio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faudio"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5fd6243290074d8249eba1c668ced093b3e580d00463c4d72ecefb957d583dc9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6e270cd524f580600ed8bfce942fae89fd1162cd921050a8d4276696974afb54"
   end
 
   depends_on "cmake" => :build
