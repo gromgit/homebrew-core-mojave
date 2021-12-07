@@ -8,8 +8,8 @@ class Futhark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/futhark"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "615247419395830c102ba36ba9bbee5b864b9e83f31beb281ab937b8672bff25"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4591a8bbf4005b447965d40b1c64c026a52a86a02243896061f0e8da3f1ccd06"
   end
 
   depends_on "cabal-install" => :build
