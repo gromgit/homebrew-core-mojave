@@ -9,8 +9,8 @@ class Geogram < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geogram"
-    rebuild 1
-    sha256 mojave: "5cc4555bfd9f3d2f3e58db407b8e1b91995615bb51efcc2be66621e221d2491f"
+    rebuild 2
+    sha256 mojave: "03ed679d5a22aa2486664701c274cac4fed2c562d72b5c3f57256a58f73cb97e"
   end
 
   depends_on "cmake" => :build
