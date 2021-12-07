@@ -13,7 +13,8 @@ class Fastlane < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastlane"
-    sha256 cellar: :any, mojave: "ea7aae3d2ce25d191ce9fd9c7654069f9abfa40821503d938f2d0ce8e8ae32b8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fef7d6be095866ffcc4f9c3b571ff3cbe8d3a929fe410b75e4a7abcadd9d6c9b"
   end
 
   depends_on "ruby"
