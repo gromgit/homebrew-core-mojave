@@ -13,8 +13,8 @@ class Dwarfutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dwarfutils"
-    rebuild 1
-    sha256 mojave: "6839e470ce0276753a67ee0121dcd31514c3cedbbed0f6786b1b7a361fb232bf"
+    rebuild 2
+    sha256 mojave: "76eaa3214e27a5b773385e61b7437491f635d7c571ca7a3545186ff8ca0821cc"
   end
 
   head do
