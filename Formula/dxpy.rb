@@ -9,8 +9,8 @@ class Dxpy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dxpy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "20c47dce0df73277fd9af2c97b8635d2096d20187b032854727fb032a08d7d9a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a5d891a0a58c1499ef7fc5c64fe22fae25407b893effee155a47849a1fdf1658"
   end
 
   depends_on "rust" => :build # for cryptography
