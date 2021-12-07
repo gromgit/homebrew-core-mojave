@@ -9,8 +9,8 @@ class Heartbeat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heartbeat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3b6d5624d325c961216e0d7e0f19418f256dd349206485f44303a8f4dc3ba9da"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0496d1eaf0f1dc03f15a57ddc4dc8979901a8d95ee532898945369fbf7e81c9b"
   end
 
   depends_on "go" => :build
