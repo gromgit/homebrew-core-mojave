@@ -9,8 +9,8 @@ class CyralGimmeDbToken < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cyral-gimme-db-token"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c71f16236652d4ca44de27a19943eb1bff482ec22771e0c991d5aeaa44a7e3ce"
+    rebuild 2
+    sha256 cellar: :any, mojave: "894b0a25271395933f98098960ac1be7fbe66cc6512c8c5881fe902584dbb88f"
   end
 
   depends_on "rust" => :build # for cryptography
