@@ -8,8 +8,8 @@ class DockerCompose < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-compose"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4d727253bb6c81513e50c49f989d6089fe90aec77808c3a24b3f5dadc9412c5d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ad023602c5cadd27795de8d1e7e3779e67b118d6c3de676e02fdd913d7127cfa"
   end
 
   depends_on "go" => :build
