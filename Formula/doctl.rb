@@ -8,8 +8,8 @@ class Doctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9c37ec663b12a3b07228fe4ef4d56fd8cc5b7748b5d760555d5820daf780303d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1cc5d9b4baba88833995aa49318a15dec5a66d65c7256031f148ee1a6713978d"
   end
 
   depends_on "go" => :build
