@@ -9,8 +9,8 @@ class Dfmt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dfmt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "15e15d8e90ab548d9620608084d17914f0918042f4c0c1294c1b4bd71502255d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "20680deb3198c279fa5e44e9040f6ffe6da6d5ba2cd3060372765e92fc954f46"
   end
 
   depends_on "dmd" => :build
