@@ -12,8 +12,8 @@ class Gtk4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk4"
-    rebuild 1
-    sha256 mojave: "79aaa81ec563a6e9145e6c57b2dec3bd41cc6116a4d76329300a9cc9de077423"
+    rebuild 2
+    sha256 mojave: "b8e0a818efdef184c8e715e26cd786469093d54739883bee3e3166f75c524cbe"
   end
 
   depends_on "docbook" => :build
