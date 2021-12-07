@@ -7,8 +7,8 @@ class DockerGen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-gen"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "244afe96498034c78cfdc3ee3cbd7e653e223819acbe3bd33fc1029546c1059c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2189fef04434342a9bd1253e6535baaf394842f1a15593d4d60c051980d0a27b"
   end
 
   depends_on "go" => :build
