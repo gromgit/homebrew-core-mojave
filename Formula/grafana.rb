@@ -8,8 +8,8 @@ class Grafana < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ef14c4cb9ed35a88c05af5c70dafcd02ff816a324eaaddb5a0bf6f237c6b3924"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6fb6d15c7c18879e89fc43c9a987e2d5c28dd310722a9fb44c11543ef587d423"
   end
 
   depends_on "go" => :build
