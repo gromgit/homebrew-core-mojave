@@ -13,8 +13,8 @@ class Fluxctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluxctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f1d0c35a4bba6fd861a2c2543dde69000394cca96f8fe758a11adfb0c7b2c62d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6d5a4e1710eafe68474d86f461ccd91ae806a2f9f6b555ab41540ca370535e93"
   end
 
   depends_on "go" => :build
