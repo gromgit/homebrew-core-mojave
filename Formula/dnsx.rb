@@ -8,8 +8,8 @@ class Dnsx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsx"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4dea9ed7ed3622300c3f005bddc48b5236e935ddc4ea9a89a7f079fa2c6ba971"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0b874bd1d2796d09101ed4785fb88d31189fd481d35e1d5e57af0967a7f7dfca"
   end
 
   depends_on "go" => :build
