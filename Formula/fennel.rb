@@ -7,8 +7,8 @@ class Fennel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fennel"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "956f9cf02519e7edbad390a8633126a984eba636926f683500c8237e667ac7f5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f3f4c37760c81ef4a2bd8a828eb673df37d1f966a7ca3063364579d634a2f5c6"
   end
 
   depends_on "lua"
