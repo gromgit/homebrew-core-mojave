@@ -5,7 +5,7 @@ class Freeswitch < Formula
       tag:      "v1.10.7",
       revision: "883d2cb662bed0316e157bd3beb9853e96c60d02"
   license "MPL-1.1"
-  revision 1
+  revision 2
   head "https://github.com/signalwire/freeswitch.git"
 
   livecheck do
@@ -15,8 +15,7 @@ class Freeswitch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeswitch"
-    rebuild 1
-    sha256 mojave: "a35534fd560c941f2829687772ac302e9565b1bf589be809c1cb0ac9d9022fc6"
+    sha256 mojave: "afefcae80d88e7dd7c58715a0a9516be70a02defb7db503b4d7aaa3e898117e0"
   end
 
   depends_on "autoconf" => :build
