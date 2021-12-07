@@ -7,8 +7,8 @@ class Hebcal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hebcal"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a0533e307328fc6d6ec0281d1b92e216baf94bcd286a707eccddb5f39d6263db"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "af2a734d086ceeb138811ab684a46b6a0e95b14d18aeb7c61e1f62718bf2b139"
   end
 
   depends_on "autoconf" => :build
