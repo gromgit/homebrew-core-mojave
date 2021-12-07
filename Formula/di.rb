@@ -12,8 +12,8 @@ class Di < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/di"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dda18e67b11b5332940baf32c2df9d89c3aa428e90cf09af513116134849deb3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3802fa7bd3462a0a4cfd47dc08626e23872e93dd47a34acd5917e1e9d0cde1be"
   end
 
   def install
