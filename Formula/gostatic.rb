@@ -8,8 +8,8 @@ class Gostatic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gostatic"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ba0e19bdd013c4f74ffac9c2c354d5724ecc64e07ca5916b9a4623af63bc7f8c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1742ee0e6861c1d00a3634e4122eca6e9f9e5ad4743cfab9ddd89d96620f742b"
   end
 
   depends_on "go" => :build
