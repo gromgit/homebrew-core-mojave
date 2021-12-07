@@ -10,8 +10,8 @@ class GalleryDl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gallery-dl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b4ae97908040219aff025f5c2e3441f37e1ec6137c1e6ea01b538219f66f3f83"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0653a3e76991edc47af5579d88ccc127b865216abb81d9dabda0f034bac82009"
   end
 
   depends_on "python@3.10"
