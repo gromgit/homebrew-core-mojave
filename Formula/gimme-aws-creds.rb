@@ -10,8 +10,8 @@ class GimmeAwsCreds < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gimme-aws-creds"
-    rebuild 1
-    sha256 cellar: :any, mojave: "413f027d2c3a7f927f40ea306f9997d517bc4c70e309fa187f92c671b56c4d5a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "de98ebd7e5fa4fd0cfc1615317530ca7ce1c5f6ac72706421949391ec40c184f"
   end
 
   depends_on "rust" => :build
