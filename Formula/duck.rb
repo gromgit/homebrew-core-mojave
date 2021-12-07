@@ -13,8 +13,8 @@ class Duck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duck"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c04036d6a3b6bffb3828c23f04decb007d560e9b51dea3c318fe603c227cf611"
+    rebuild 2
+    sha256 cellar: :any, mojave: "260bd318e7a663956e493c8130dc1349cd4b170bcbac4878bdae95dc4a4ea3e1"
   end
 
   depends_on "ant" => :build
