@@ -9,8 +9,8 @@ class Glances < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glances"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "03e2ee3539e515d4fef7c20135fadd42a8fb45e8b4cad6d68ab35f24c5779f47"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7fbe22498410658e4eda0f1885a0c679f12a9a79894520d94a0a3ac12035bc84"
   end
 
   depends_on "python@3.10"
