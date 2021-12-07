@@ -12,8 +12,8 @@ class Grepip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grepip"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0e85ac627a6ea22f78ae960c3ff0bb28f53dae7eaa6cd9248a2368af7f4ec934"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e0338ef5537ff832b4ba125529cb68277bf0e4b8c24c1155ffb95d5039854373"
   end
 
   depends_on "go" => :build
