@@ -8,8 +8,8 @@ class Gocloc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gocloc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ae8de3dfa4b60ba016ab838f21a99b1d772cf5fc1d8e215402d4550689a5a56b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "22506d410d8615d1fa85b9ccb8995e94d719f78eb9134cba226102d48e487b6e"
   end
 
   depends_on "go" => :build
