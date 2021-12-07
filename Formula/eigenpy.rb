@@ -8,8 +8,8 @@ class Eigenpy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eigenpy"
-    rebuild 1
-    sha256 mojave: "40daa181ca041ef21dd88c58d67208551171d8c37207123cc3f1bd1266063afd"
+    rebuild 2
+    sha256 mojave: "748000c241a23a37239c6e13673f446d99c362f8dfc72584fb80b13143c2c17d"
   end
 
   depends_on "boost" => :build
