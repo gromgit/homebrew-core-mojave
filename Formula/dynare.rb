@@ -13,8 +13,8 @@ class Dynare < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynare"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a3974d63d249b2f7b5d5958675ccf48d56471a4baa5c45291e43bfb4b6e8660f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c4f1fbb59d1f02ca16bbd44c3581705c58b4f57f91c51adcfac22276e469ffd4"
   end
 
   head do
