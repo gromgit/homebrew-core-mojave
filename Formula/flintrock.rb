@@ -10,8 +10,8 @@ class Flintrock < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flintrock"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9a1c6413c9971b73b4b4842917515778dc689ebdc5403cc32949aed95bab75be"
+    rebuild 2
+    sha256 cellar: :any, mojave: "753e9fc4419155267781396dbafcc77ede6a683f67d00870f3579383f3d34eca"
   end
 
   depends_on "rust" => :build
