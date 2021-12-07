@@ -8,8 +8,8 @@ class Gopass < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gopass"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3355869d8ef7d4635b9c52901e397c029855528b77cd6b5febabae4167d1b6bb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a2a515e42288f61af7e08bb10b62c26ddad5d46e239850fda4ce0a8c8172d3fd"
   end
 
   depends_on "go" => :build
