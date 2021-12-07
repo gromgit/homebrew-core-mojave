@@ -8,7 +8,8 @@ class Gau < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gau"
-    sha256 cellar: :any_skip_relocation, mojave: "6221cec376bf0285d26ca8fc71cd49101a344c83f0e262a8edd670deb19d2865"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "666414fe5159775e677c15e75a397c30a919aa57303370e293daaab80d249a20"
   end
 
   depends_on "go" => :build
