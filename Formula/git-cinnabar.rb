@@ -8,8 +8,8 @@ class GitCinnabar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cinnabar"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "24c7f43d7416ea792dd310ff7c65b737ea8beaebc999a598c0982716f26146cd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "eb8d9c09c221770c28261cb47cea259f4063c2270d32f67c2edf1c6d78f8e941"
   end
 
   depends_on :macos # Due to Python 2
