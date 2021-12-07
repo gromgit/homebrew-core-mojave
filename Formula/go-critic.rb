@@ -13,8 +13,8 @@ class GoCritic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-critic"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "413312f586518bfe4c3e1c442fedb43dbb4619a86c4fe3b7dfa02e433848e0a9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e157322c92741946c3eb8fe37b17aa1eb24a0472a2b2658ed2a644ae9db192e2"
   end
 
   depends_on "go"
