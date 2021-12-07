@@ -7,8 +7,8 @@ class Fastfec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastfec"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aa940952ff98c6bc3a331a709ffab5e00d490ea1f18c580d31155b207a8b1bea"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0e1d4daf81149d1fdf470cdc9982934302ce278e490e072c9943d1361572a7ad"
   end
 
   depends_on "pkg-config" => :build
