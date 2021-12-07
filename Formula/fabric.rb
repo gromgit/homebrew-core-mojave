@@ -11,8 +11,8 @@ class Fabric < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fabric"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f4d441fed8e361840595c0f5d2c1a4c0a41f641cc7f7ca91e7cab3a040623451"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8138505f6772615f2b20510934e48dc96d90e1466bba2528a80ade05fa965da1"
   end
 
   depends_on "rust" => :build
