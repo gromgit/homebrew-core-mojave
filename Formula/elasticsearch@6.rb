@@ -7,8 +7,8 @@ class ElasticsearchAT6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elasticsearch@6"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5d956a33ddcf9742c3361020a4383e114db9b8072be891a5e576b279e61b42b9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c1c2b2ed75b168e34064cec1f63f5cc4e6658f62879eab71f2050b140010a126"
   end
 
   keg_only :versioned_formula
