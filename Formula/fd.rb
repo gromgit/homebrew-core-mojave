@@ -8,8 +8,8 @@ class Fd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fd"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "63aa84b88376ec091c7d813f8ab12161dabef7b9b75d578a72677d67640240b7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "784babca4b12d8c610326a9af36337ea3e91094202011ec9a96fbc7bd9a52dc5"
   end
 
   depends_on "rust" => :build
