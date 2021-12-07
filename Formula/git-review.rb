@@ -10,8 +10,8 @@ class GitReview < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-review"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a0e2e9fa2ad2a94d66ba0064cd5382b2c32b8524aada68f2144d6ae23c8839e9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "432eb0f5ec3012ab9784b87c96ee21005e882f144d20063f8cb453fe69695345"
   end
 
   depends_on "python@3.10"
