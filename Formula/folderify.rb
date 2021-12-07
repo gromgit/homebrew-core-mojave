@@ -11,8 +11,8 @@ class Folderify < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/folderify"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0279647bf74c467d04d96d71dfe54575fff8054e80b1bbccd3b5521ed88e633c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "8e00d251b27e7bfcaea19941b4831b40f9a4592167892f58d2b975d38d8cdb31"
   end
 
   depends_on xcode: :build
