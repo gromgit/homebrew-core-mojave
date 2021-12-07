@@ -8,8 +8,8 @@ class Dprint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dprint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2b0d7a4741dde5e0b67ee99f52fb88856d379a7cadfcea09613939ecd938cad9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "28e2aee9efdfffae7c8ea68bbde4baba61434cea4c752598952dc8850690e954"
   end
 
   depends_on "rust" => :build
