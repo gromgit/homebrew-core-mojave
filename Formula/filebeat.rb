@@ -11,8 +11,8 @@ class Filebeat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/filebeat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ef5b582c44cac601fba0d37fb6d5672ff9d1b20d9c34548edf11e196d94dc0b9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5fa4a569054b0d9aacd26e9ec20e566f723fd69bdba802a0bb5c3c6a8e6abed1"
   end
 
   depends_on "go" => :build
