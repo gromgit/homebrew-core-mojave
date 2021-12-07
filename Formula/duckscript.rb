@@ -8,8 +8,8 @@ class Duckscript < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckscript"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8b49628e3e8a02e727c16a94551f4ed246418ea104a08c1bf793f4dd7699b068"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1db17ce6e4761c2e3caa30cc2429dc1b2875efc1dbd38182c918a4253c8633b5"
   end
 
   depends_on "rust" => :build
