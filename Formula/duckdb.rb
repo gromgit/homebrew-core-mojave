@@ -8,8 +8,8 @@ class Duckdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckdb"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3038f1f792018378a7985753f1947e65465d73a72b140d9c50fd77f0a8626c8b"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f72990256b682d137175ac94f2e3e684cd4dab1350cea3228c624bf90e0b96a8"
   end
 
   depends_on "cmake" => :build
