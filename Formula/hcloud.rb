@@ -7,8 +7,8 @@ class Hcloud < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcloud"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2f9fa7714731d3f55e0d4520d915935eed72d93bf2a710308f3bdd32d8c41d12"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "939619ea124727fae0b1aba402bdf89cdd62e7b300afbd1e6fe3a5349b54d319"
   end
 
   depends_on "go" => :build
