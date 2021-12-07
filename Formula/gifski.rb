@@ -8,8 +8,8 @@ class Gifski < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gifski"
-    rebuild 1
-    sha256 cellar: :any, mojave: "87fc972d8ee7b55fe353ce21cf52cd41309f40d99b804212490f4d96409297b1"
+    rebuild 2
+    sha256 cellar: :any, mojave: "665264aae6feb4a5c187c279b83a9a6b8df95cb8f2553dd07ad383964bdf1437"
   end
 
   depends_on "pkg-config" => :build
