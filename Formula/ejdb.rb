@@ -8,8 +8,8 @@ class Ejdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejdb"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1128167de90b5195b566e7378ae76217bcad00966a89d7e26652e544f2dd21df"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1a0ba1834e60128b1ede96473502d77ddde6d400209cd853cddf4143a7ec7dfb"
   end
 
   depends_on "cmake" => :build
