@@ -10,8 +10,8 @@ class Flit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9780a7eec4a73e42732151dbf684d588dc5fd5ca322df17d00162e28baf1718d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "81d5d39aa71c721c1e11a2ed024145bf8a1660d12903d66da2a7531780a467fb"
   end
 
   depends_on "python@3.10"
