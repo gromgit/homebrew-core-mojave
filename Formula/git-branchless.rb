@@ -1,15 +1,14 @@
 class GitBranchless < Formula
   desc "High-velocity, monorepo-scale workflow for Git"
   homepage "https://github.com/arxanas/git-branchless"
-  url "https://github.com/arxanas/git-branchless/archive/refs/tags/v0.3.7.tar.gz"
-  sha256 "d23341766c0f81fc5e0768a399139738d472bcdd315c62b2b5ac9ac857d0d501"
+  url "https://github.com/arxanas/git-branchless/archive/refs/tags/v0.3.8.tar.gz"
+  sha256 "9046d5b93c8bc959b7d8ab5238d3656c7e5463e2b68951300a1feb86aa533276"
   license "GPL-2.0-only"
   head "https://github.com/arxanas/git-branchless.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-branchless"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7d352412628a00673f6b8f108b31ce1d1d150c72e71eb00b3a74ccb5e39fae88"
+    sha256 cellar: :any, mojave: "ca3fbddc068bed3fee73c309f21240cafdf5f2d772fb3318477a029e878ce89d"
   end
 
   depends_on "rust" => :build
