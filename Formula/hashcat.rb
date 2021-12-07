@@ -10,8 +10,8 @@ class Hashcat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hashcat"
-    rebuild 1
-    sha256 mojave: "2a050ddce211384196bbabc466fdfeb7939b89c607c583ec420392e32a9ba7e2"
+    rebuild 2
+    sha256 mojave: "23ec6dfc7496480c3a63eaace2f9d1cffa59a02ec1d5b69de748083951520724"
   end
 
   depends_on "gnu-sed" => :build
