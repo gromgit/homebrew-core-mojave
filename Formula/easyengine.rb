@@ -7,8 +7,8 @@ class Easyengine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easyengine"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b3c012aba6a6d3e4c4241fd485fccbe51411062c688765720cfd0d7f9ccd6ac9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0d29786d4fb569923b2d85e1d76c55a3e0b44acda5bc7db33f0b495e3c6664fa"
   end
 
   depends_on "dnsmasq"
