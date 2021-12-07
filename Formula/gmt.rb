@@ -9,8 +9,8 @@ class Gmt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmt"
-    rebuild 1
-    sha256 mojave: "b86ce07e9fe13f72cf2496d5c51765e194cd8b85c38722249fcc6e884eb813a9"
+    rebuild 2
+    sha256 mojave: "3639bf80bb3c937c8ea2f263be8285eb3720c0a2f6fcb03ad17c0a1713a39d91"
   end
 
   depends_on "cmake" => :build
