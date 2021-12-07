@@ -12,8 +12,8 @@ class Halide < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/halide"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e53190e5f2d4f100b1a335c5e1708e5317f6bf1920d5ebc21f3c3dc8ca24dcaa"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b1da0d77745fab797b6f03afc68c9f9a47de0ecc1c70646b62542b1d16af51f7"
   end
 
   depends_on "cmake" => :build
