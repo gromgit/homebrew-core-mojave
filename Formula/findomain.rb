@@ -7,8 +7,8 @@ class Findomain < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/findomain"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1a6623b44f77c920e1775b74b6799a2ae6343a5e59352ff03f515002aafe95b1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b909e86eba40131f24101a24a97043c2948781a78ed9e27b8d3a473bdb32e4e4"
   end
 
   depends_on "rust" => :build
