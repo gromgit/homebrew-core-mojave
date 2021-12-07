@@ -7,8 +7,8 @@ class GitCliff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cliff"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "881c757abba84f21a6d52ce1a756bbad39b0ecaeae318b0fed7fc66f96365122"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7c42b676bd4c90bf410f3cc9af5aa4bb56ca8eca36bd0bfade8d58a0afd6e470"
   end
 
   depends_on "rust" => :build
