@@ -9,8 +9,8 @@ class Esptool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esptool"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6901eb5f679eb73769ebf43f1af04f910000a9f76f488e070a7d354a5877059a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e95dcf04c2e3c0dfc75a67945c60798a8dbc89ec3258efa6970b52ad9e2b33fd"
   end
 
   depends_on "rust" => :build
