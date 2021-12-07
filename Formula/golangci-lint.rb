@@ -9,8 +9,8 @@ class GolangciLint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/golangci-lint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3128b40b872c66f4aee6923f2c69ad4eb00bc309842ab92f24018338c98dc69a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d1b054677f62e243299511b80980f735f8a99affe16f9c6b5054f9a36146628a"
   end
 
   depends_on "go"
