@@ -7,8 +7,8 @@ class FuncE < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/func-e"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ff6fec74a88b2f7ccdd3e3fbea44560dc3a4af3066eb9d85806fe412e1be7296"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7c6d569953525b702f0df31ec3ce1b8fe5aa3941cb66b4f72a099350606580a1"
   end
 
   depends_on "go" => :build
