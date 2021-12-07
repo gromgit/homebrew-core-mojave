@@ -14,8 +14,8 @@ class FfmpegAT28 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@2.8"
-    rebuild 1
-    sha256 mojave: "787821512c9ec664cd1fad241df509c409cb0737238f4033a3d54ff8aa9303e8"
+    rebuild 2
+    sha256 mojave: "45fd8a112aba804dccd47a60b76631dca732916da7d23a5e0b5fd68b3d4dc743"
   end
 
   keg_only :versioned_formula
