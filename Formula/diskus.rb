@@ -7,8 +7,8 @@ class Diskus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diskus"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1c79b69278e8a8a634451cafd30e5891a2de44c3f741698fa67f9171d6ca126c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "932f49cfe8dde884aa2cc8c81810b325f322d8c054b958fc82e7ce71ac94ce5a"
   end
 
   depends_on "rust" => :build
