@@ -9,8 +9,8 @@ class DosboxStaging < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-staging"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c777bc36d718cb28187122380b6d0761a43031b3169985ff1bef5642fdb4dcb3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1b4cf21b6203d47c45bdcc8f386019ee1f799e86621c4918963965bb2f04ac90"
   end
 
   depends_on "meson" => :build
