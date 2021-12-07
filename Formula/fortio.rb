@@ -13,8 +13,8 @@ class Fortio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fortio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f7c90a2e2e2700aaa57499eed3962ae881afeb0c189d90226417ced989a0e25e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "587d904ce1aa8616173c26ffb8eb413dcc66a1f00a2a865fe6f62f08b29adf78"
   end
 
   depends_on "go" => :build
