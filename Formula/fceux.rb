@@ -9,8 +9,8 @@ class Fceux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fceux"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7fd909ce55ca592b3a529a099302c9dc25e5c2ba405394b640f42310268b198e"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b0a3af3dd81cac7f256f0915965b75c56756bf3ff3c92a8e4d34e0c9ecf3015f"
   end
 
   depends_on "cmake" => :build
