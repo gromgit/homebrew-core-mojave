@@ -8,8 +8,8 @@ class Direnv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/direnv"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "17475fc5efa8b01bd69406b2c93e7e9ad3099c436390725178a73649872cac27"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "896cec453a39fcec17d34f64dbe934205df9b6664d3e81a550bee2b2ebc84665"
   end
 
   depends_on "go" => :build
