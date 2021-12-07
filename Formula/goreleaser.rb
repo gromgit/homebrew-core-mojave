@@ -9,8 +9,8 @@ class Goreleaser < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goreleaser"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "045e752d4fd139077eefcbdc66685cbab1385a441c840ed6ef93c5fb1b4938a6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ef6453cd16ba6548d1b061f9b3969a648a268a57b79f535ae90c87b05c0ee970"
   end
 
   depends_on "go" => :build
