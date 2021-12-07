@@ -9,8 +9,8 @@ class Gitlint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2cdbe1719ef3eace42b8e1ba4be04280f8a70fc5bfd9c9555dbc751ddd6ca868"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4dda617b7e65a5e71a3863f4d8dcecdd647e160d08c592350e4c45f83694f4fd"
   end
 
   depends_on "python@3.10"
