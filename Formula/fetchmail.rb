@@ -18,8 +18,8 @@ class Fetchmail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fetchmail"
-    rebuild 1
-    sha256 mojave: "9c6c9224c41081bae0a8c8aeb8f632af6906e2f2f4a3ede6daadc5626c82a7fa"
+    rebuild 2
+    sha256 mojave: "859d14f228a731fbbded6e5ce4350a36165cbd5e6f74d45fd67eff2239b7d688"
   end
 
   depends_on "openssl@1.1"
