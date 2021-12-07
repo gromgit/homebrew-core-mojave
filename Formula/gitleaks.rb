@@ -1,14 +1,13 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https://github.com/zricethezav/gitleaks"
-  url "https://github.com/zricethezav/gitleaks/archive/v8.0.6.tar.gz"
-  sha256 "1d932828cc7758a775e413abfe20d4f20d48b58fccbfbdb688abfeec70bbb7bc"
+  url "https://github.com/zricethezav/gitleaks/archive/v8.1.0.tar.gz"
+  sha256 "a3eb94cafcbf08752856c49403e945fdb118b94b6ab3167dca2edf354cb4ecb5"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitleaks"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c83008f570460eed468aefe60ab9865106a50a2160a144aec36c059efe2ad3d5"
+    sha256 cellar: :any_skip_relocation, mojave: "b48f9e6678e75b709408ffff0c5e7b11ce149b9f9cf6c08b7033807383d6752a"
   end
 
   depends_on "go" => :build
@@ -16,6 +15,15 @@ class Gitleaks < Formula
   def install
     ldflags = "-X github.com/zricethezav/gitleaks/v#{version.major}/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
+
+    bash_output = Utils.safe_popen_read(bin/"gitleaks", "completion", "bash")
+    (bash_completion/"gitleaks").write bash_output
+
+    zsh_output = Utils.safe_popen_read(bin/"gitleaks", "completion", "zsh")
+    (zsh_completion/"_gitleaks").write zsh_output
+
+    fish_output = Utils.safe_popen_read(bin/"gitleaks", "completion", "fish")
+    (fish_completion/"gitleaks.fish").write fish_output
   end
 
   test do
