@@ -11,8 +11,8 @@ class Credstash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/credstash"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4023745615f338280d0f4e29f562e2886feb4035f9f19c044e2fb08ed6e51270"
+    rebuild 2
+    sha256 cellar: :any, mojave: "053058da4e946ac83cab640dbb426660cd10358d45bf3a1256c22714a0e324f5"
   end
 
   depends_on "rust" => :build
