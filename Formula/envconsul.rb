@@ -8,8 +8,8 @@ class Envconsul < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/envconsul"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5941b98630ea08408d5294d4106444ee49b25ec9e8fbff47bfd8c9cf020f1d72"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3d2164bee53be2ac6551d8ef93816aa61a6b373774dcd430d392835cddb6db98"
   end
 
   depends_on "go" => :build
