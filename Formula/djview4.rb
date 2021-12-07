@@ -13,8 +13,8 @@ class Djview4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djview4"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8e478bddcc4a02a28074c239fdcee16e6e2815ddc41dae5b506b9e958ee3d7ad"
+    rebuild 2
+    sha256 cellar: :any, mojave: "223320b1bfb23d960657ac094ba3aefa3d13de0a3ae7b91b9cebed567998a1b9"
   end
 
   depends_on "autoconf" => :build
