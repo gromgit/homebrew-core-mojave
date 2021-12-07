@@ -9,8 +9,8 @@ class Gojq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gojq"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9195ff910b9e0bc0f5eb905557d5c48a1e41aba78175dbb9b58f51c11f4ad8fc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "950ee6e0ff835e59c9efcc28cd5a1bb5a62805ac4435dc1051fe36fa1d775f01"
   end
 
   depends_on "go" => :build
