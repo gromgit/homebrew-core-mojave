@@ -9,8 +9,8 @@ class Eksctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eksctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "76a9f82dce6f8ffa00f173f7a44df89e87ac649b2eeac072636ccc6120840694"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "64d6f522f4e147273c04f9f0274372ddf2ff8e33bb6c7185b53ce6f1232a6e2d"
   end
 
   depends_on "counterfeiter" => :build
