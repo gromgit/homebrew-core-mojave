@@ -7,8 +7,8 @@ class DuaCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dua-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "78d5f34376b6903a4389f403b5d6ba3da87f049a6c4e2022e404325abbe9cfeb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d29b13dee02c82d1cdf9b051f7b86f8c4e78e7f01f460ebc4de53a11e280eeb5"
   end
 
   depends_on "rust" => :build
