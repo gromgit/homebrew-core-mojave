@@ -7,8 +7,8 @@ class Frugal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frugal"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1d013f82eb43c8c604b042db1b1d1586d4167fd21227701050b7024a995a2564"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2ca2494c3a4b0ba43f757034b2fed393d4463ab9d0d6e2dc5a8c46ec9b12a12a"
   end
 
   depends_on "go" => :build
