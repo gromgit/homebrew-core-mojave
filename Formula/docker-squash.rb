@@ -9,8 +9,8 @@ class DockerSquash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-squash"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "23f6625689c05bc031a4e06d577b4b3fd8de23f0b4e3f6d088a58758f46af479"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ad5e2d336b50b092471253585f52062cc5572f4229e26b67c8fdced12b49e8ca"
   end
 
   depends_on "python@3.10"
