@@ -7,8 +7,8 @@ class Fselect < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fselect"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ea560a9543f9921b2073ecad7cc781b0ccbc9d58c290709487394a2915407f36"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5975477eff5a39a44385a4af638d3dfa3250d5515bf37b61c2c5aefa4199626e"
   end
 
   depends_on "rust" => :build
