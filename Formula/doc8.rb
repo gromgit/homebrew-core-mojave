@@ -10,8 +10,8 @@ class Doc8 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doc8"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8b38ed434d225f9818ade1d39545f675e1d7f936a6f855ef4f29efdf0dea768c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "833ffe7f97410e432b7483904ce5202ec599700ed6ac5bb5d5e18623b7c8ebfe"
   end
 
   depends_on "python@3.10"
