@@ -9,8 +9,8 @@ class Dvc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "595da3f4b5a30da9ff8a9f86453c70b9a8fae2731f2c444716b66fdd1f05419f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7702e5aed307615707aea495f8b4fb00d4a67b0356a63999c7228eb7c01db62d"
   end
 
   depends_on "pkg-config" => :build
