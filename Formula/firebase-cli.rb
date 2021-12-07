@@ -10,8 +10,8 @@ class FirebaseCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/firebase-cli"
-    rebuild 1
-    sha256 mojave: "e555f61451d304626a76b535df238603a5c92c78004b8a0c1c8b03869e11107a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "14811f1c8716352ecbbb96bdb44de7371bae8989a7abeaeee68594bde0cd6f23"
   end
 
   depends_on "node"
