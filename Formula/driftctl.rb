@@ -7,8 +7,8 @@ class Driftctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/driftctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "044f0c65ad132feb6cab88ec947863dd29ebc64cef34ccf8a1c7fd36e8542272"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b3469c1187a52d4383b21530bfef8c6202a27455ad7d2131b5e320d1389abd95"
   end
 
   depends_on "go" => :build
