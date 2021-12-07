@@ -13,8 +13,8 @@ class Goaccess < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goaccess"
-    rebuild 1
-    sha256 mojave: "ca50aa3a95afe8dc61267705f773b2933c1abed226d0a7215d87c9fcdb9f64e4"
+    rebuild 2
+    sha256 mojave: "aeda2484e4ddf77e2dc24ebfe6e27934e019451617d29513a082c7d43290ac79"
   end
 
   depends_on "autoconf" => :build
