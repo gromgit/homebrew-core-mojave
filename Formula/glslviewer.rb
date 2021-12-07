@@ -9,8 +9,8 @@ class Glslviewer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glslviewer"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1c8c64a2d0b7a062debe57518edeee3005f10d759cc569141fdf164f0205dc20"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b8ed3d36e9009978994ce274068f501a2eed9e3eea53b9c6ce55b16897be5197"
   end
 
   depends_on "pkg-config" => :build
