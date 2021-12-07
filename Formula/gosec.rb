@@ -8,8 +8,8 @@ class Gosec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gosec"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1c65fd0271ae4f82f583b5bc58db9269a454ee13798c153decb0b0d96313028e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1f9d3ef4b090153b0608e83995f801ba8f690a12de01144471e1beaaac77ad95"
   end
 
   depends_on "go"
