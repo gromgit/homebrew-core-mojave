@@ -12,8 +12,8 @@ class Haproxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haproxy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3ac098b53f88e4abc5d5e5bac5103abcc035915eabebc420d20ef8cab0b49ce4"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f78595bd92679e8055fa2b45117722c97dfd04af54a92d73a2562b074fc7e543"
   end
 
   depends_on "openssl@1.1"
