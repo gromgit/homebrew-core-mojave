@@ -9,8 +9,8 @@ class FaunaShell < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fauna-shell"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "af339a2f5571518d5e91d1004ace371b9977cf608eaf6de2212721e204395568"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "623607d2c0531af942c64bbfddf9a5c6fb4a68e5717e9a66fe7c719d3bbe2811"
   end
 
   depends_on "node"
