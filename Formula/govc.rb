@@ -7,8 +7,8 @@ class Govc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/govc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c5f4cd733e626deee035096a7c6765370bc11ea69d19cfa78bea2e0d92bfc907"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "02adf8587f211802320f94ca77260829ca4707a6060cd1493ac38a063f9ee3a0"
   end
 
   depends_on "go" => :build
