@@ -7,8 +7,8 @@ class Libxspf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxspf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e92fbe910178d4a526169e959b62464cf2d08df0996eb8ac1f5da17085201db9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "69e386b3ebca8aad3d887700bb250f8300ce60f2aafa04331f9db896a8262e70"
   end
 
   depends_on "cpptest" => :build
