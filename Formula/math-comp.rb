@@ -9,8 +9,8 @@ class MathComp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/math-comp"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d397641d2cf684fd3cf7669506b50409b34e8a280cc3d688a08f52e931874a38"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "343d32acbd7d3228f6297a66b3ffd0a4574dc81ff2dd49f9176f9caba3866a18"
   end
 
   depends_on "ocaml" => :build
