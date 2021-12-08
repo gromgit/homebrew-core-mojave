@@ -7,8 +7,8 @@ class Lesspipe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lesspipe"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4900d11902b3cf3a1be44361d132e3efa6b1024edf308c98a899315717fa13e1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a3c4b8ee798321bc4b320764311323f408584df415a64308d8da32e362267794"
   end
 
   def install
