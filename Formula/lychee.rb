@@ -8,8 +8,8 @@ class Lychee < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lychee"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1a094295be648c22c8136de478c14eae9d706be006e2fdfa90819cb36b7001ca"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e6bfe5408b27b81aaba0abb3e7dc0e8005b405c54f2475c7af2bbed96c4b8df8"
   end
 
   depends_on "rust" => :build
