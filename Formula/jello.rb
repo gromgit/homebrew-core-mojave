@@ -9,8 +9,8 @@ class Jello < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jello"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "90c699518a19136f851ff1af7851ba510eac23e8eac78961e7050c5a7fb37abb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7d6b59a233e85239c7797a5d09f4e2910a85f6c7dfa3f562ad64e50304d56b21"
   end
 
   depends_on "python@3.10"
