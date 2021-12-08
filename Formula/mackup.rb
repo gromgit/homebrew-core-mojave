@@ -10,8 +10,8 @@ class Mackup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mackup"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e67cef9d68b3cc8607f298952944b694db03b3af47909f8f04157951073122cf"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "befc361dd932d24f9fac396202e9d107fda79671224b615e4e11e7cb2049343c"
   end
 
   depends_on "python@3.10"
