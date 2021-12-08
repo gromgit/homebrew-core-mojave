@@ -7,8 +7,8 @@ class Libavif < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libavif"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bb060f9dcb4d0eaaa1e55ce2ed4ee7a1842b723cd7bdd602a96a1f1b98b822e9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a72822054c71da28efe492cce3ad6d14b201a8982cc2de706baf10ac36292f1a"
   end
 
   depends_on "cmake" => :build
