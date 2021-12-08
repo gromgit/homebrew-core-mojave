@@ -7,8 +7,8 @@ class I2pd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i2pd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "337ddc06170ef880e242671618b76bb89bc94c12de96616cc8d4835e991a48eb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c3d0cf96217afdba828e6cd698994b77e83e2f8b42382e83165224dc73ec642f"
   end
 
   depends_on "boost"
