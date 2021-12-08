@@ -8,8 +8,8 @@ class LibjsonRpcCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libjson-rpc-cpp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e7ba00ec373a5b2314f9b36d2f2c9c627b2b5fb4fe8f4cc10298ea4ddb8413d2"
+    rebuild 2
+    sha256 cellar: :any, mojave: "cf9c59b87a00c70a2291d441d83581a08c7010b3950302a5d39c3e89ca2d115e"
   end
 
   depends_on "cmake" => :build
