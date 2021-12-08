@@ -13,8 +13,8 @@ class Htop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htop"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8b59d9d1b1f9f7f3f8d69067fe75814f9c45a198fd2d494146a33357421aad70"
+    rebuild 2
+    sha256 cellar: :any, mojave: "06db940fe0cca98be628e1687523ec73b63e198f4b9215bf4e93cd9be84359dc"
   end
 
   depends_on "autoconf" => :build
