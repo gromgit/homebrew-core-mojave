@@ -7,8 +7,8 @@ class Kompose < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kompose"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "557eb485692a88928f3a5927e93f7a747a71e666132bc41627b7f90e7dec8c3b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ab1f24b6ab134c115ec3067fbca1628bbe64c4af93e59ca61683ffe9ffe88508"
   end
 
   depends_on "go" => :build
