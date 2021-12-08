@@ -13,7 +13,8 @@ class Libopenmpt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libopenmpt"
-    sha256 cellar: :any, mojave: "faffacc2080ff504c0fed4ed317d466ff089894cc1734019bbb1caca06b8e24a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "240778b139f0632ddf3e6b7feca8a41c4638ccf04509eeb9daacde1243ac73be"
   end
 
   depends_on "pkg-config" => :build
