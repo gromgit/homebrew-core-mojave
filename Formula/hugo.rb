@@ -8,8 +8,8 @@ class Hugo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hugo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5bc7848b692c089f4a1ae77a574bffbdfcd19f1cc46fff9b09a6f7ee6084413c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e3e836c681a96ffc897dd0dfbfe7880f9dc16b38166167a518685a056b6570bc"
   end
 
   depends_on "go" => :build
