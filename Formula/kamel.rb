@@ -14,8 +14,8 @@ class Kamel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kamel"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4fd0c2dbb9976763af25172a54f5e1e165a8ef8005013ccf3d8dfc3bf67cee7c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d2dc318c7f7a692284bc2bbedb59d44c0238eea1e075481d46a14e34623ad35a"
   end
 
   depends_on "go" => :build
