@@ -9,8 +9,8 @@ class Idris2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idris2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "caf1d33a8a9557068c7a216a7db85a160875e70f75d643764f53426f16206108"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c61a0c5c0b1e1ea639a8e7e653f87b226497c2603466a217c48cc13d2270ed23"
   end
 
   depends_on "coreutils" => :build
