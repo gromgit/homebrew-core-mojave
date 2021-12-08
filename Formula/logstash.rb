@@ -14,8 +14,8 @@ class Logstash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logstash"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e426751a051e92d02a3416a415dfdaa6ac8c24d35f20653d73e56c9d2ce95c53"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1c43ff4d3aad7235da1e38e14e5ef8123e1035875df680793d03b435cc047f3c"
   end
 
   depends_on "openjdk@11"
