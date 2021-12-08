@@ -8,8 +8,8 @@ class Kubevela < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubevela"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e6bae5b023a6f39f86d407ce5b97dd150aec685ae5be195ad5517c788d9c38a2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "69a0a8bd8cf0a83e4a2a47a26692e113a9397a928630a1657b6735df4a4226d8"
   end
 
   depends_on "go" => :build
