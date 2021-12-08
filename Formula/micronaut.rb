@@ -12,8 +12,8 @@ class Micronaut < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micronaut"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "48591cddbe55e316ea95a2e0ad0bf60f235b5a830a76caf27fb1dba995a5539b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f68b0053feda660b58be1637376f00a15437de0e0c39475fd514465b23705bd8"
   end
 
   # Uses a hardcoded list of supported JDKs. Try switching to `openjdk` on update.
