@@ -8,8 +8,8 @@ class Miller < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miller"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "77acac9c84e2791facaa5e854219303279402e3e8724d84d41ca5823fb0fc16f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bb388ece447ea67dcf572c9feaac56dc28e03b891c8013169f652a6e3f29cb58"
   end
 
   depends_on "autoconf" => :build
