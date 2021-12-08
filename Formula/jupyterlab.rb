@@ -9,8 +9,8 @@ class Jupyterlab < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jupyterlab"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9ffe1d06fcada6d2a13291136fa27826348f5fb6f0b8ede9f1d199d2d334ec4f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "54c10a1019ad9ef3507b17291671f69a683f875942a2c602b9c734d258d2ce56"
   end
 
   depends_on "node"
