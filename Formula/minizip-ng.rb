@@ -8,8 +8,8 @@ class MinizipNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minizip-ng"
-    rebuild 1
-    sha256 cellar: :any, mojave: "746ef1bbb43057a30bf48066e3292501d66d497173bee4278ecdefdaaa383655"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8bc9a234d8e7ad9241075c9043a741d8972bb2a7c91257b86e431fe52ddf0411"
   end
 
   depends_on "cmake" => :build
