@@ -15,8 +15,8 @@ class Kcov < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kcov"
-    rebuild 1
-    sha256 mojave: "16cc6b9b84d33bebd928c0e00c24d90ebf05f83cc354a239cc67ef453f78142e"
+    rebuild 2
+    sha256 mojave: "97c6bb8e7988498e01cdb8fc1e131fbd3282645d516f6b19e3c058d4d0af1114"
   end
 
   depends_on "cmake" => :build
