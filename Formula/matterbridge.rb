@@ -7,8 +7,8 @@ class Matterbridge < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/matterbridge"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "68b99a2b466485691d8760d3d93c7e87eb1df33e7c9ca89e2750cd5b5ca60300"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "41520d7a7fb4ef0cec3b0bb17b1988e83d01f9d0429100bc1e69991bd8e37ba1"
   end
 
   depends_on "go" => :build
