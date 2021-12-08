@@ -9,8 +9,8 @@ class Locust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/locust"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bb3f62bbbb9e741f02e47ced6f41526ee7393d40932f2f3df7a4fc9f730bf8bd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6d670e02ec23c48a37db94d6fbd758ba9bd3b44bd2f8ca20859f7c3e452d7a45"
   end
 
   depends_on "python@3.10"
