@@ -14,8 +14,8 @@ class Kustomize < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kustomize"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ca0b6e8cf1bc34bafc9478587f50b4f1b9d34423a27cd5800e938da689e025af"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d0b11e4452f4fdccb5724040e7407c834c85ab1106e13dd087ad2e70f2f550ce"
   end
 
   depends_on "go" => :build
