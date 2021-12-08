@@ -12,8 +12,8 @@ class Libphonenumber < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libphonenumber"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0d8c1ec2ea68dc45b68b9408742652ba10dea4e9def76d69241f8febcd30acc8"
+    rebuild 2
+    sha256 cellar: :any, mojave: "539b0e201452763717e9ab2b3cef75279a09603e785a1c28931f26b8bff0642e"
   end
 
   depends_on "cmake" => :build
