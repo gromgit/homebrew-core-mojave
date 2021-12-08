@@ -13,8 +13,8 @@ class Libcaca < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcaca"
-    rebuild 1
-    sha256 cellar: :any, mojave: "2e8f82593fc14bfb49476238a05810c9ce8b91071f66b680d8468c21bd425eba"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8a7d6b21ff366e91ed6c5a863bd4510e3bd5f1e51e34a471acbbe2f650567611"
   end
 
   head do
