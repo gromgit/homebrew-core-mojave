@@ -9,8 +9,8 @@ class Istioctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/istioctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5cdaf84efeb24cd5c61107cb6f9e62740795cd5017ae53dc2d0df703a38d1c99"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0de56cd891a600b9d7efc35c4ae8a1a47bfcf5db845160c923afa781b215a316"
   end
 
   depends_on "go" => :build
