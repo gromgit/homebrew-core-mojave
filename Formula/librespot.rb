@@ -8,8 +8,8 @@ class Librespot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librespot"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ec2b2e06dbb5142ec0ca8da6a0bfede8c68bb9cbbc247ac716a9ca0fa3514d27"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6c7f4c67767664cfe60a47418aaa2c9518156aa5d3de96f4b797cc5f0112953c"
   end
 
   depends_on "rust" => :build
