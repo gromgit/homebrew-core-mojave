@@ -7,8 +7,8 @@ class Macchina < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/macchina"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "caf82cd9f33bedf80c74733df67d2ab17f1f2bbe9f3246f0f582845655bdaf05"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "aaf70803f11636acecdeb2ca897fca747bb481663b8ee693f8cd2b8f93df7984"
   end
 
   depends_on "rust" => :build
