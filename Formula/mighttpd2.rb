@@ -7,8 +7,8 @@ class Mighttpd2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mighttpd2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ecc9464cdf9a02163dcd85e2cc7efb9a565840b6302e882976017feae2087fc8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e31568b204ab29cac15728c5219b592079ca9b10555a63eb3eb618272e7a1b41"
   end
 
   depends_on "cabal-install" => :build
