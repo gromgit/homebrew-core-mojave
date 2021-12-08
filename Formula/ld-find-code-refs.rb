@@ -8,8 +8,8 @@ class LdFindCodeRefs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ld-find-code-refs"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "616daebb313ce2d5d93dd99c86c70e5511a6f720ac7219ee101a0439324c1be0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "50f238135e1803ed59cd14ed856acd86eab2a63224872952345cdb822e1586e7"
   end
 
   depends_on "go" => :build
