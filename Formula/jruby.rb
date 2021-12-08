@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.3.0.0/jruby-dist-9.3.0.0-bin.tar.gz"
-  sha256 "2dc1f85936d3ff3adc20d90e5f4894499c585a7ea5fedec67154e2f9ecb1bc9b"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.3.2.0/jruby-dist-9.3.2.0-bin.tar.gz"
+  sha256 "26699ca02beeafa8326573c1125c57a5971ba8b94d15f84e6b3baf2594244f33"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -11,13 +11,8 @@ class Jruby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "2370b5caecbf6b5ee27699744ee84d7101df917514e144314ef95abad66125f6"
-    sha256 cellar: :any,                 arm64_big_sur:  "4e588bf056c56b699fbe79b3f6e3f1726b9a129bd20d7e6132e18e3e7c29ce8c"
-    sha256 cellar: :any,                 monterey:       "114711466814ecaea86a7f44df271686c8a453eac705e2c6ab07f327bc3061bc"
-    sha256 cellar: :any,                 big_sur:        "b7741941d9b16c003932b4143ccfbfa0fe3e942f9bba3c8ef32f596bc29dcdd7"
-    sha256 cellar: :any,                 catalina:       "b7741941d9b16c003932b4143ccfbfa0fe3e942f9bba3c8ef32f596bc29dcdd7"
-    sha256 cellar: :any,                 mojave:         "b7741941d9b16c003932b4143ccfbfa0fe3e942f9bba3c8ef32f596bc29dcdd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22af5cc9e3d2a67c04669b80642c56230a0b5ae387deecf6cd1b4c9a9feca694"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jruby"
+    sha256 cellar: :any, mojave: "94ecc744ddcb04edc00bbdb2c428fbece68167dc8c8fb3ffc19d02782139ca01"
   end
 
   depends_on "openjdk"
