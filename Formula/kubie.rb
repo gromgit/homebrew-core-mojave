@@ -12,8 +12,8 @@ class Kubie < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubie"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "eecefc694bc3dd705a10651bb6378bdfc54084a2ddfb3bd01210cd702bf07aec"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ac43f34b899721fb28148efee775d9f836407d74103f2ab5a42bdbffe17eb9bc"
   end
 
   depends_on "rust" => :build
