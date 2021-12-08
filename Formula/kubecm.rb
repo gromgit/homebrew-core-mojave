@@ -7,8 +7,8 @@ class Kubecm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubecm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1157a2004749e190ee441b033aba837643ad16928274008bdbaa1077272d839e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "43819cbf3ba08cecd13f1cb4c569044e88056ef41de9acf5bfbb8e31cb69a592"
   end
 
   depends_on "go" => :build
