@@ -7,8 +7,8 @@ class Libxc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a57ad72d968fbda00fe864d7bae50c7473ca7e66135d495d5f759ba3252fe920"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ba8c69271b6d7b985d943d4b63f28ad4565366fa7e3d397bb7b0c39eeca5d8ef"
   end
 
   depends_on "autoconf" => :build
