@@ -13,8 +13,8 @@ class Linkerd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/linkerd"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "782b6ee2cbcda60a25c8da633b5741d01fa7b3a4fc0ae861adc8a40bf9768dba"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "743348a07a4f6f5d53c48b68cf17275cca59e6a3e1cf3de8d165f89ba8295375"
   end
 
   depends_on "go" => :build
