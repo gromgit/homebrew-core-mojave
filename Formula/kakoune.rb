@@ -13,8 +13,8 @@ class Kakoune < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kakoune"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dc4a083aee33aa0c6a6449bb7034528decff1c7728f0c4330df32087df56b32a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "20088187720ee1b2d976f7bcdaa777f5bac0f1b9948eadc45746afed2ebf2d41"
   end
 
   depends_on macos: :high_sierra # needs C++17
