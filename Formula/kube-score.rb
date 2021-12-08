@@ -9,8 +9,8 @@ class KubeScore < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kube-score"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "458d349217f11405e7a184956711387c22f7b70ef9871b0096c3b1174aa583f6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0638ba50d600e2dca18cd3fa6628749f5fe08d410030d1ec6a29a0dd4e32b67e"
   end
 
   depends_on "go" => :build
