@@ -13,8 +13,8 @@ class Logtalk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logtalk"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c41d6c96df7d203804b5092cd42f5b0e2d31c3a6341ea166ec6e95cebb20bc9d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "04fbbd64c5ec6392153a313d455155b58e7f008d056d333484223f34c441483a"
   end
 
   depends_on "gnu-prolog"
