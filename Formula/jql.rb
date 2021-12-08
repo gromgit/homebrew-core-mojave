@@ -8,8 +8,8 @@ class Jql < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jql"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ad4b84f3c0d0de57bc76bbe28ef2f10416557075077147c98ec6e0d432bab08a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "60830d8588b4437dde9a8229b154063cf2a4c495cdd82e84763530622ba595f7"
   end
 
   depends_on "rust" => :build
