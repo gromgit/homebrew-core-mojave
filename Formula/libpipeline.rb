@@ -12,8 +12,8 @@ class Libpipeline < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpipeline"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7b9b77435c09cd2b10299ee85d9aea506e23918c199e6d66752984c08f43dda2"
+    rebuild 2
+    sha256 cellar: :any, mojave: "670d7317a62b7e6723ba80be7d7ce7030bf1b63cbb6d666e1f8e36b3fa786435"
   end
 
   def install
