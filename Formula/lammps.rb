@@ -28,8 +28,8 @@ class Lammps < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lammps"
-    rebuild 1
-    sha256 cellar: :any, mojave: "fa6c2240f45c33c6e6b7d6ef91a1e1d72b7e1f275eaaafd721899432687bfce6"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5c0eae7a8b93007143b9a7144fd519602b2a69ede32233d58230ee04de0b4a31"
   end
 
   depends_on "pkg-config" => :build
