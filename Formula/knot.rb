@@ -12,8 +12,8 @@ class Knot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/knot"
-    rebuild 1
-    sha256 mojave: "dfb02a8a5600ae4c0898b2311174d3039c36e9227b3dce4d2cec25a04d5ee0b8"
+    rebuild 2
+    sha256 mojave: "5bccefae87fd29b2a5337896686eaac9c6be15e7d2eab8dea10145fa154f0a68"
   end
 
   head do
