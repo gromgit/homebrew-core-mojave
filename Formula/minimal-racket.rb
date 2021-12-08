@@ -16,8 +16,8 @@ class MinimalRacket < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimal-racket"
-    rebuild 1
-    sha256 mojave: "93e415434dc2377068f96b06c507b31363f29472a434043274affdf1ff660ef4"
+    rebuild 2
+    sha256 mojave: "cc7ff151ff705909c9ee2713e57fd582e1f9d81222664d24fd3575366784a259"
   end
 
   depends_on "openssl@1.1"
