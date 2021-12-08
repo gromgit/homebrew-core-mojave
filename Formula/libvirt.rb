@@ -13,8 +13,8 @@ class Libvirt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvirt"
-    rebuild 1
-    sha256 mojave: "e1b3823ff4f55cefcfd262c049a2e608aedf3e4d366c487c6a8193a06fbaebd6"
+    rebuild 2
+    sha256 mojave: "b78f296b43610fb3e2fa580988aba7ef9523ead1833bf0306b68187c41cad1e0"
   end
 
   depends_on "docutils" => :build
