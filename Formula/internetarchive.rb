@@ -9,8 +9,8 @@ class Internetarchive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/internetarchive"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1d96ba9aa0959f46903fc826c362a004c3b566b15d62fbaf7a40b2e795a2ecda"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d5d758fb9650abe58bf4d551fe9ae36a4aef4797679b9e3bbd2d869b3143a592"
   end
 
   depends_on "python@3.10"
