@@ -8,8 +8,8 @@ class Infracost < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/infracost"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a233d030b72823c2771fab94c922df3fdb98cb1e6cf5b5795bdf4c271e853ed6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a70f6039588b6d0b686d0c4fecb0ef309f5a6ba07062fab6110fd1b296c4f93c"
   end
 
   depends_on "go" => :build
