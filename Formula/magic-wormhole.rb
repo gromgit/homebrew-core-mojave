@@ -10,8 +10,8 @@ class MagicWormhole < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/magic-wormhole"
-    rebuild 1
-    sha256 cellar: :any, mojave: "420f9ee4414599010486af565c84bbc43827f5c8ee22bc37824cfc95258f4d15"
+    rebuild 2
+    sha256 cellar: :any, mojave: "004055208d4fec4a63c6d9b1f0cfb3f07b3d0f131c20aaed7a85db133b4bd432"
   end
 
   depends_on "rust" => :build
