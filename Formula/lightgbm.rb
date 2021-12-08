@@ -8,8 +8,8 @@ class Lightgbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lightgbm"
-    rebuild 1
-    sha256 cellar: :any, mojave: "490a079a5fcecc8eaef97ba07135b4cebca0877dfa482fc9a269f83e129de78b"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a652eba3e55fac279e1a8d074f53116a315d89439e31ab4c07a2e313278a3b6b"
   end
 
   depends_on "cmake" => :build
