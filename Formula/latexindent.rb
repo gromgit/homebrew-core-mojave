@@ -7,8 +7,8 @@ class Latexindent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latexindent"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a9668b4c3e6abb1806cbd293a21495d31a96f98a6bc891ec13c009571e795269"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d62f27e8d52b5b966e874d0d7d27d8202f9910bdf16a6bd3646d4a70c8295adb"
   end
 
   depends_on "perl"
