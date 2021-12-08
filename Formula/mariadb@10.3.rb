@@ -24,8 +24,8 @@ class MariadbAT103 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.3"
-    rebuild 1
-    sha256 mojave: "fee14247def8c89e7d0ee1f28c83437c107de7f555554336011c5d4604aa9b10"
+    rebuild 2
+    sha256 mojave: "ca9a8540a892814ec6c74319b5b4d4bc7af52dd5256e1871e30bd2491e4ce938"
   end
 
   keg_only :versioned_formula
