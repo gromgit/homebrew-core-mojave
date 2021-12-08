@@ -8,8 +8,8 @@ class Libmxml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmxml"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a95ea6c83af742cf9c19bb763883b3276ea1546fd94223ed71f629e1f2cf2826"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c1ad950de784d492d78b7a79d9e9c1c7d80ccc88e5efcc33954e21588b8650a7"
   end
 
   depends_on xcode: :build # for docsetutil
