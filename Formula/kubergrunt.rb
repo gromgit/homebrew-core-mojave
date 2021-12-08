@@ -7,8 +7,8 @@ class Kubergrunt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubergrunt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d7bedafa4abe1bcbc4566d3c16c21610523d155fbf7ecb9ed3f8d83629382541"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1420ef5aadf5759bdd32bfb24f89534fb3e8a114373e35f7a2a12cc42ad51a11"
   end
 
   depends_on "go" => :build
