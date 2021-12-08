@@ -7,7 +7,8 @@ class Ioctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ioctl"
-    sha256 cellar: :any_skip_relocation, mojave: "057e66124c865ee45eb3a260b13b2c51038e16049cf8413e6638f0289a49159f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "52e894383721e914671bd6f83bed2aa44560501c642d37c7f7b3b9c5708fcc40"
   end
 
   depends_on "go" => :build
