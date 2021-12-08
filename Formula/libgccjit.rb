@@ -1,19 +1,10 @@
 class Libgccjit < Formula
   desc "JIT library for the GNU compiler collection"
 
-  homepage "https://gcc.gnu.org/"
-  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision 1
-  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
-
-  livecheck do
-    formula "gcc"
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgccjit"
-    rebuild 1
-    sha256 mojave: "16fb4077b86ef1f82d9b28882d2a7ce6dd57b91fd3e50da7726f2f25630e0b47"
+    rebuild 2
+    sha256 mojave: "367104fa5a7b20bb74c0e68a2ec8ede596e0a664fd078f04c3aa6d721996aa5d"
   end
   if Hardware::CPU.arm?
     # Branch from the Darwin maintainer of GCC with Apple Silicon support,
@@ -32,6 +23,14 @@ class Libgccjit < Formula
       url "https://github.com/iains/gcc-darwin-arm64/commit/20f61faaed3b335d792e38892d826054d2ac9f15.patch?full_index=1"
       sha256 "c0605179a856ca046d093c13cea4d2e024809ec2ad4bf3708543fc3d2e60504b"
     end
+  end
+  homepage "https://gcc.gnu.org/"
+  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
+  revision 1
+  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
+
+  livecheck do
+    formula "gcc"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
