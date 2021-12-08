@@ -13,8 +13,8 @@ class Lighttpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighttpd"
-    rebuild 1
-    sha256 mojave: "17796c1796a207fdeba815501e95e1376eaefdb3a8f96248df667900fcc1d8b6"
+    rebuild 2
+    sha256 mojave: "56095f5230c458fddd61efa1ce914e2c1657425a9d7f4f454ed47615837ec261"
   end
 
   depends_on "autoconf" => :build
