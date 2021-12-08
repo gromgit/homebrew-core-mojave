@@ -9,8 +9,8 @@ class Kn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kn"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9361764c880f5c580e314d8d9f0461266844233235ee4e855fa7593e5dbbc663"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bec4961fde05671227eb90ca0e0dcc87fcc11785dedb75033d56831940cce995"
   end
 
   depends_on "go" => :build
