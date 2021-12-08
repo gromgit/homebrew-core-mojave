@@ -12,8 +12,8 @@ class Libxmlsec1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxmlsec1"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6da1bb73f29486b99e6605140495e7b9d0551ce140586637d046c5fe328db3ac"
+    rebuild 2
+    sha256 cellar: :any, mojave: "309b24b577a5e01f1e7fe02002693904d90f55c60044635c3ab69f302b6abfde"
   end
 
   depends_on "pkg-config" => :build
