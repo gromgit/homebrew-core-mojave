@@ -7,8 +7,8 @@ class Libgr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgr"
-    rebuild 1
-    sha256 mojave: "5c415ea2f9347a5784a22702e1490ea3f561d2e9e9e449a39d5bab58b0ad3a27"
+    rebuild 2
+    sha256 mojave: "5c88dd577b755cab4af317e80ab15e776d28d09329ddab5abc420b19093a2288"
   end
 
   depends_on "cmake" => :build
