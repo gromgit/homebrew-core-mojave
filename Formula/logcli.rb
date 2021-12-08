@@ -12,8 +12,8 @@ class Logcli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logcli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bf518970fedb21899fcaf071b96b625f08f1e415a899ee92746ffc59046ca482"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "aa3128cd8e82936da3095db23d585462e8cd0cf9c066e93bb0ce5dab2956a1f1"
   end
 
   depends_on "go" => :build
