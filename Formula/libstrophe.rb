@@ -8,8 +8,8 @@ class Libstrophe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libstrophe"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c8b6b19cc787429da254e7ed8e6268c68124e8d9d3f01988a059a679a2b0e3b3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "9bf263f23b9528c639e8eaf26f8473a9ccaa545ab4f0aab30cb043224a5258dc"
   end
 
   depends_on "autoconf" => :build
