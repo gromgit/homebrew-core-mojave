@@ -7,8 +7,8 @@ class K6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k6"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "70dc42e99cabe1b7e46b8fde7d653692a2ae825a66d95b28023da3325029a7d7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9e7f87b5a5c8136e06e5a2122d845d55ce8a0804339efc6f724a58247629520d"
   end
 
   depends_on "go" => :build
