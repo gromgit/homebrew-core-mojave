@@ -7,8 +7,8 @@ class Helmfile < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmfile"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "20b0632f75372a1dc74bc15e59c870fd18a5b4d941735e7820571831fc9ac0e5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "aa52ad243da55fd42cbf80d57fec9ed5326358dbc32eb6e723f7cb19d07ad9e5"
   end
 
   depends_on "go" => :build
