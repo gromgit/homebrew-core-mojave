@@ -20,8 +20,8 @@ class Kdoctools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kdoctools"
-    rebuild 1
-    sha256 mojave: "7bb6f28dd828fadc1ea1c1c3f99cacfc909acf10e17565b3eca78753b7a9e431"
+    rebuild 2
+    sha256 mojave: "95a987cd71ba18b6976ec133a06a2e70c92e83e847c157c57c05671c7b647df1"
   end
 
   depends_on "cmake" => [:build, :test]
