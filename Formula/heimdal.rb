@@ -14,8 +14,8 @@ class Heimdal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heimdal"
-    rebuild 1
-    sha256 mojave: "954b63ae346e20339d43f4eae757833b101faae8935f862a79527e3118e79095"
+    rebuild 2
+    sha256 mojave: "434d623d3436c435633f4fecaf3e505c4fb0c8f0d616bc7b2a36d63c85386cad"
   end
 
   keg_only "conflicts with Kerberos"
