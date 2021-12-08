@@ -9,8 +9,8 @@ class MarpCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/marp-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0ee83c5352bcad0ba44ebb7788e874b037d7dd1a2b38bb5da75e3d6f94115632"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "fb9f9cfd7ed5952ab7c04a184b15aad809ae163a34d13a9091f523bd0cac9ee2"
   end
 
   depends_on "node"
