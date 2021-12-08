@@ -8,8 +8,8 @@ class KibanaAT6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kibana@6"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b43a56ed1fb8e16fb1ce7bcbdd26993e34d96627ac5f2018bb05a2b1f6571ae5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "729cf7051b1930ab46734a0823113913bf6bdbe6d394ee4694816fb3a79bcae3"
   end
 
   keg_only :versioned_formula
