@@ -13,8 +13,8 @@ class Libuninameslist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libuninameslist"
-    rebuild 1
-    sha256 cellar: :any, mojave: "164edd87c8e1498ac1090fb5c47fa1d92016c5d5348cb2c0e4f6d3e17dd5e610"
+    rebuild 2
+    sha256 cellar: :any, mojave: "838cd647ccea8006d68810932703a3cbcfec8a845a4e67d150e969a64544f078"
   end
 
   head do
