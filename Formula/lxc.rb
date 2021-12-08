@@ -12,8 +12,8 @@ class Lxc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lxc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "905931fe55d9f4a6ad21579ca076dc1135bdfe01b163ee73dec862ef2e2c2b98"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a8549a40750364633f9d941b486758591ff4d704586f2d98c6b1eaf3063a6c62"
   end
 
   depends_on "go" => :build
