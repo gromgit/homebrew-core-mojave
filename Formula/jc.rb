@@ -3,14 +3,13 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https://github.com/kellyjonbrazil/jc"
-  url "https://files.pythonhosted.org/packages/59/31/dddcca4dc264e26bcb9f563f1604f2322e4e0da137bef36ac06e854647b2/jc-1.17.2.tar.gz"
-  sha256 "c59fa13d260c15e498a65f56df67fcbc2981d4bf9e64bfd6097496595e0248c9"
+  url "https://files.pythonhosted.org/packages/3d/8f/d9ac8adbbc13e43c4c8bcc50128c9fef7a04e9bbe0b7a5d5aaeb95b97573/jc-1.17.3.tar.gz"
+  sha256 "0ded7234ec0ab648724b1bff78ef71c0b078feed462f2bd2a3e34f3cdf040728"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1fe1c7614e5765c2da7135630bc54098e7e087e226de4944295107b115604123"
+    sha256 cellar: :any_skip_relocation, mojave: "1265f1d5fcf5424b92f45818cb1f71121a8d6e970857df6b0213382baa423c3f"
   end
 
   depends_on "python@3.10"
