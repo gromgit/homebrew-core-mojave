@@ -13,8 +13,8 @@ class Kops < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kops"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2ac428fb2cdc2449d0ed38038a935eb408f38dc65ba0de532347efcc3bcfeaa8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5cd2d6e81e335a943e2888f23faab940190d55ed689b53e1df0b825a1e762d70"
   end
 
   depends_on "go" => :build
