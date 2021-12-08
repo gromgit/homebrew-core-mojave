@@ -8,8 +8,8 @@ class Kahip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kahip"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9fe6645ff5ef4c1d9c6f8ad408f132704bbd7c232fb780009009def823a25f7a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b20161c5ab1d65ca621872e822093d05feb4b0e72bd2d32f5d584a7d52e35221"
   end
 
   depends_on "cmake" => :build
