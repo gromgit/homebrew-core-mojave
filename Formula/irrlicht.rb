@@ -15,8 +15,8 @@ class Irrlicht < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/irrlicht"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1715275f259b38ff592fa1876dcb56bdcd2967302e563c8a7a14a9f33439f2d0"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a62f2ded1a60d39e4a96be4b359f71ad75ef2ce39764281da6d65e3262475cfc"
   end
 
   depends_on xcode: :build
