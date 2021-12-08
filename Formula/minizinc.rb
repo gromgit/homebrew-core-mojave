@@ -9,8 +9,8 @@ class Minizinc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minizinc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "026a6cc1c6e46df5ee879445cf87b928b8460b51ffa9a00965bf1e64fc2e8290"
+    rebuild 2
+    sha256 cellar: :any, mojave: "31e902f2bcf3c10a5c8128f23856c59f283f2e7c0bc1f10ccc6d1e1157928672"
   end
 
   depends_on "cmake" => :build
