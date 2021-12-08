@@ -8,8 +8,8 @@ class K2tf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k2tf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "337b79b489404799b18914a18cbc54254abebe38c3fb1928e7855fc375da9afb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "298c98a76b1c2fed1c19b4a2447f2fa1f11e13060acf74a4f1e958fc01fe6cce"
   end
 
   depends_on "go" => :build
