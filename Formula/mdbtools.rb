@@ -7,8 +7,8 @@ class Mdbtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdbtools"
-    rebuild 1
-    sha256 cellar: :any, mojave: "58d3b387258788cda2c4bd3f02cf639a46105be5b2bb83408d41bbdbcc8fb090"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c2d3c9d846ee967e70966b8e5974c9a3523f04be2e669367eb63f61d8daa1a0b"
   end
 
   depends_on "autoconf" => :build
