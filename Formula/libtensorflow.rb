@@ -7,8 +7,8 @@ class Libtensorflow < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtensorflow"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c4935977b0f3cceaad63410e4536cccc2d9acc2f0790a781b477b1943e1be9e7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "732afb9ff9a6da16e24c8a617119d08e072443f0881ef68dca1a0f70a51f4891"
   end
 
   depends_on "bazel" => :build
