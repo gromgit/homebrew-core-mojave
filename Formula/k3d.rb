@@ -13,8 +13,8 @@ class K3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e9daddf711f81f34717d737c49b50b00bc7e683667179c9be7be882facf05cc8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1d226353712f00b1dd68c7bd877aaf45cb589458466b51fa46760cf5eafe3e2a"
   end
 
   depends_on "go" => :build
