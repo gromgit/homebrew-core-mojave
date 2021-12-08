@@ -8,8 +8,8 @@ class Libcouchbase < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcouchbase"
-    rebuild 1
-    sha256 mojave: "03f9c34589d0cff2b6fb96d2ba912cc7e763c293019a522009907319098e728d"
+    rebuild 2
+    sha256 mojave: "9df2ef2836eb9a06cce3f86e6c17b6b58650296c167a379ecf417e8def29d86f"
   end
 
   depends_on "cmake" => :build
