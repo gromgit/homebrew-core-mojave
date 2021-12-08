@@ -1,9 +1,9 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0237.tar.gz"
-  version "0.237"
-  sha256 "92dc0f38ec1a2412c6b9c1403cae610bc13e1d21b4e647ab290d41215a940cae"
+  url "https://github.com/mamedev/mame/archive/mame0238.tar.gz"
+  version "0.238"
+  sha256 "13aa880b097832acf6cda43629f9253bcc8a340748db071028903358ffbe7faf"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -19,8 +19,7 @@ class Mame < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mame"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b0e3d2128833808936d1684dd0ab7e4c77a5fc45448e25c11bfa2ff870436360"
+    sha256 cellar: :any, mojave: "359dcee6c92e30626c2a4c5108c4b6c63f447828650625d003bf6d05438ec315"
   end
 
   depends_on "glm" => :build
