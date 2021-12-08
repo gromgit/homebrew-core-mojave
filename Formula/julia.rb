@@ -8,8 +8,8 @@ class Julia < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/julia"
-    rebuild 1
-    sha256 mojave: "b375ab1889d1895dada26833319c2b222c0c6b35f6006572051c12755f2c0e3e"
+    rebuild 2
+    sha256 mojave: "e4bc92ae9bb64a33504e3d6f4bdc0070e33163d63e160210908af9d3e86bf874"
   end
 
   # Requires the M1 fork of GCC to build
@@ -215,23 +215,20 @@ class Julia < Formula
     ]
     system bin/"julia", *args, "--eval", "using #{jlls.join(", ")}"
 
-    # FIXME: The test below will try, and fail, to load the unversioned LLVM's
-    #        libraries since LLVM is not keg-only on Linux, but that's not what
-    #        we want when Julia depends on a keg-only LLVM (which it currently does).
-    llvm = deps.map(&:to_formula)
-               .find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)$/) }
-    return if OS.linux? && llvm.keg_only?
-
     # Check that Julia can load libraries in lib/"julia".
     # Most of these are symlinks to Homebrew-provided libraries.
     # This also checks that these libraries can be loaded even when
     # the symlinks are broken (e.g. by version bumps).
-    dlext = shared_library("").sub(".", "")
-    libs = (lib/"julia").children
-                        .reject(&:directory?)
+    libs = (lib/"julia").glob(shared_library("*"))
                         .map(&:basename)
                         .map(&:to_s)
-                        .select { |s| s.start_with?("lib") && s.end_with?(dlext) }
+                        .reject do |name|
+                          next true if name.start_with? "sys"
+                          next true if name.start_with? "libjulia-internal"
+                          next true if name.start_with? "libccalltest"
+
+                          false
+                        end
 
     (testpath/"library_test.jl").write <<~EOS
       using Libdl
