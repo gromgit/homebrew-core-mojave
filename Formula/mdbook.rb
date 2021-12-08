@@ -8,8 +8,8 @@ class Mdbook < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdbook"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0694a7f515c33a219eec3773eb749ff3cc2b0c2c36fe5d8eb80533f755130505"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "47bedf87c1266d4395d46fb67bb28b3e02eb964bcde69b70e1bbdfca73dc19f2"
   end
 
   depends_on "rust" => :build
