@@ -8,8 +8,8 @@ class Kubeaudit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeaudit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e454125eb06ddf2062f43769c429c392b7300a8e260d3256b479cb733c0bf07d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1ea6498f62eadc1e3aa489eb88ed645fe9fd38609f1719cdb1bd31ff0456c7f0"
   end
 
   depends_on "go" => :build
