@@ -7,8 +7,8 @@ class Lmod < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lmod"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3a9b276fbf8ccc758f9839cf8cdc1396ea18f7c1e19b3b9b603cfc7fa46893e3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "25a1b6c2c18e2d6239a2b600c48feda8e99a059d8e30ee29cb2b68a214592f62"
   end
 
   depends_on "luarocks" => :build
