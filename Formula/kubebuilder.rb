@@ -9,8 +9,8 @@ class Kubebuilder < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubebuilder"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "093a8b17076ef5e91c0d12c5305bb797c2c47f2c5a07c4c40511822a61af0a8d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0252ef31f75cdfac658ba4dafbc1cec85a95c7b3a044a9329995c19fdb7c3883"
   end
 
   depends_on "git-lfs" => :build
