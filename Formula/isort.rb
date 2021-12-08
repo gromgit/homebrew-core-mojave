@@ -14,8 +14,8 @@ class Isort < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isort"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "107611fa3c26f3624a5d3a2e5a80aa2be14e133d91b6b7672cd8c9d1ae72f646"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "40c0cbbb6642217d626942cfb3a3b4956d86df0e95bdb2ae6f7b01b544e471aa"
   end
 
   depends_on "python@3.10"
