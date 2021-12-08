@@ -9,8 +9,8 @@ class Kubeval < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeval"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c28b297fa409b75e7f3aac7543a29391570bc794cc09dddfcf3cac075ecbc21c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4df6c02e38b3973b8cf8bbed96a7256e050b4c470e6bb5d0c43a2d0c98a9ff98"
   end
 
   depends_on "go" => :build
