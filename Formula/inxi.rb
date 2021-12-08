@@ -8,8 +8,8 @@ class Inxi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inxi"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2a3d79f96fe36c01909ddd0d918ba6583a951f999d723b498dd4b00add24195c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "92651fc01715c0e10b00e2c29f4218aa8adba003321f84d33cf3f4411fa88564"
   end
 
   def install
