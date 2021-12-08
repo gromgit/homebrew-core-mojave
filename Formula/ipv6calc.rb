@@ -11,8 +11,8 @@ class Ipv6calc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipv6calc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8ba19f3eb62f8f0fa54f118fe5daf06add4dd581be9fbefd91050fc81e5dc41a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "760f8cab0bc146976900f6af734d2a64f5f6aaa4146513053114c68d9e9a93d0"
   end
 
   uses_from_macos "perl"
