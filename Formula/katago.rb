@@ -12,8 +12,8 @@ class Katago < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/katago"
-    rebuild 1
-    sha256 cellar: :any, mojave: "20b646dcfd9b1cdcf3d783f74664395b7e017dcaf9a171b975e651bfea58b893"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c79d91cdafc253faff8ffe72735aaa2df622477a1e7854b212d43cb34f5f0a58"
   end
 
   depends_on "cmake" => :build
