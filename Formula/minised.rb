@@ -12,8 +12,8 @@ class Minised < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minised"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4205fdba211c715ff3d90a1d9f91583ae7dea3bc177a5c9d0148782392b0bf4c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "66ad94431174c33887ab56faa2b70a83c9e59bcb76991943836b4f50786dbf38"
   end
 
   def install
