@@ -7,8 +7,8 @@ class Lf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "26b029aca6c0d4204044b3d124a204e06c6e2afad7431e2e15afae98a866292b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "31f79a82efd27cf00a17af07ef4cf1ed065ca868b07ffbde7561d0d3d8610448"
   end
 
   depends_on "go" => :build
