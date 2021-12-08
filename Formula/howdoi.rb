@@ -10,8 +10,8 @@ class Howdoi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/howdoi"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4060c69a3eb0fe4ab9fc107f24c66e2155ae875028db1736fe2cebd53b1450b5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "acb9a78b07fab7a92385d01d1b430c9d7718de88bf39f3f3806681d3ce79d391"
   end
 
   depends_on "python@3.9"
