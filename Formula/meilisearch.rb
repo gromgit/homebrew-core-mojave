@@ -12,8 +12,8 @@ class Meilisearch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/meilisearch"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "21f05ec3c0eace083969dfee7aeb17bd4a07cae0ac714fdbac7061d838851dab"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d1d58e8dec545242a6342cc2c877a3a30777a8224b773225a9f97c5dc4a479aa"
   end
 
   depends_on "rust" => :build
