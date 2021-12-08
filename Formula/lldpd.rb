@@ -11,8 +11,8 @@ class Lldpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lldpd"
-    rebuild 1
-    sha256 mojave: "b7ed4fe0cd4a46dc4b6ce01891b73dbccb2c211235e027a494e2917749bedeb2"
+    rebuild 2
+    sha256 mojave: "8503746a04b3e460eefb781b33edf07c22196fa2aeab1e578c9a46b8e85359fb"
   end
 
   depends_on "pkg-config" => :build
