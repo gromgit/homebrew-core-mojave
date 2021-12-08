@@ -7,8 +7,8 @@ class Miniserve < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miniserve"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8839b585cb6030a71bbf59ee37e218f36b42783ee367a7907eafe7f752091e51"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "58ee46468ab398e620e125785dae5999185bf9c02b2e043b2c44b0a76b8c3e4b"
   end
 
   depends_on "rust" => :build
