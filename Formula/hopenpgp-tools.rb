@@ -8,8 +8,8 @@ class HopenpgpTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hopenpgp-tools"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5e7a5fd888cee692bb5b69ce9901f927aba890cedee418f4535800d90e7e80a7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f5662cc024e3b2f2fe9bd7c8d250e584eb99a77ee878d9d212c5145e77ebc3ab"
   end
 
   depends_on "cabal-install" => :build
