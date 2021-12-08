@@ -13,8 +13,8 @@ class Kubeseal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeseal"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4d2f1b088a550f0d6fa0742f6297d161f42b0ad177b780e34d2e72fd72a3346f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "98230fc9f5ac42067a83785a15ce0d5983f1c6bcb87eb2920819bf0fd92b9f7e"
   end
 
   depends_on "go" => :build
