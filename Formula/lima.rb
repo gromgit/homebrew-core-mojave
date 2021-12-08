@@ -7,8 +7,8 @@ class Lima < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lima"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3d541544f80a750e907230f26b7cf733e0d4ba26d1714cb85f7a5cc9fbe31fb6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0b236c4fd9f044a9de7015c926ef97bb2e23db2b273b0d83debf26caeb844055"
   end
 
   depends_on "go" => :build
