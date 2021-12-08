@@ -9,8 +9,8 @@ class Launch4j < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/launch4j"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fee136127e440a99caf9873c9eaa61096faa0acc7eab1449a6cf034dd0cf5699"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c7e895f8c432bfd7482f1daee534ad66a79e1c5b52c95c578fba5ddce5c4c069"
   end
 
   depends_on "ant" => :build
