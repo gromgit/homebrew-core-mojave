@@ -7,8 +7,8 @@ class Himalaya < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/himalaya"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ac928690c8331058c573aa4e5149abfa4760245a72ad0727adb70d8658c2e966"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "8cc37f7c3dcb478936a1988a7201083bdf4724c317710cdc8a619a99472ece66"
   end
 
   depends_on "rust" => :build
