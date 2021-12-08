@@ -7,8 +7,8 @@ class Lazygit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lazygit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3f2330e4ade0a9bf70aa03deb2bb29fb02e60e8b42a94833ec8621991d46a5d3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "cd5887839bf220bbd08e24faf1072054149dafba32b5a4dab74280e98b995e57"
   end
 
   depends_on "go" => :build
