@@ -7,8 +7,8 @@ class Igraph < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/igraph"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9d73bfd2d457a85d2ffa4b6e7f258b55ef0e72ae3316f943c705ba892d09b9d8"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0de488f84e1914cca8720c1e6a63bc5e23e7aa3aef32cc19bd0c6bf794f75f5f"
   end
 
   depends_on "cmake" => :build
