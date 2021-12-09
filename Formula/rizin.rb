@@ -8,8 +8,8 @@ class Rizin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rizin"
-    rebuild 1
-    sha256 mojave: "9689fcdd3a5816c3ac8f84c9a461bf4828429b0619a99fe53dbf03ff39ad26b6"
+    rebuild 2
+    sha256 mojave: "f2209fc624b4a208be34ed4383f3b6666de516379d552b7712285715392d731e"
   end
 
   depends_on "meson" => :build
