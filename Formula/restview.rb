@@ -9,8 +9,8 @@ class Restview < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restview"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a0891d2795f9c310a46b130bed5ae164b9887782279f7dea8840e3a2ab706329"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "dc63e9968c8c740a36a642273ca208f267f5270c56c5326792d5120b3a9cd8f4"
   end
 
   depends_on "python@3.10"
