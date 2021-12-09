@@ -10,8 +10,8 @@ class Pyinstaller < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyinstaller"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e0b29c8858f17fbf50667fc320fd83af8cbfa74e50d300f6f43df19008c633db"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f6b6a9b87f82beece285412b6d108868a8273e41d42e3b1abe9beff8ad1a01c4"
   end
 
   depends_on "python@3.10"
