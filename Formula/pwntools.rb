@@ -10,8 +10,8 @@ class Pwntools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pwntools"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cba515a9bb2cd76cd1574e8cccaee8f5459adf36e5015fcaa78b156df4702761"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2aba7a40b14d8875bbd9d54ac1f51267d8a0ab48046249e882fff36c500070f4"
   end
 
   depends_on "rust" => :build
