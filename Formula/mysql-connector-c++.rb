@@ -11,8 +11,8 @@ class MysqlConnectorCxx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql-connector-c++"
-    rebuild 1
-    sha256 cellar: :any, mojave: "93f7d86e63be4f8bd010720cfd922f423020a5b001f07b8b9fe4ab4419bf7c51"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c4051d163428d74b02a4732f2790c6a8c68a8afcf8cd70bcc36d4e85235a1ab9"
   end
 
   depends_on "boost" => :build
