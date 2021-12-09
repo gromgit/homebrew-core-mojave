@@ -15,8 +15,8 @@ class Nexus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nexus"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "37c93825b8412296b1ea0511916ac178c17c653f018d8d0d000b60ea0282b30c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b5bbc2d784cb95bab9335797362b791f642a9b0eecb8874d4892344723559c89"
   end
 
   depends_on "maven" => :build
