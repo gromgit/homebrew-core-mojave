@@ -7,8 +7,8 @@ class Questdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/questdb"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2b04cd9649ba9c0ab48915ff96628e8a8ea1e533d1200deb35f4d1a7d080b082"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1521a064a9656378e459570ad57250ca2b6b3b29ce8f5ac0cdba52bae6080325"
   end
 
   depends_on "openjdk@11"
