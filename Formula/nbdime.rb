@@ -9,8 +9,8 @@ class Nbdime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nbdime"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e9931b0bbdb5ba60d9cfb9a79fb3b50de48583ea9174a7d6ae29da2af2fcec29"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "663b77c4d39d1882c61f5d41de5850c212c487d2bfce45563a83d379f01ce4db"
   end
 
   depends_on "python@3.10"
