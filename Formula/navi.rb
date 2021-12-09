@@ -7,8 +7,8 @@ class Navi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/navi"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "67021ae97ff427a370182a3232c6a91c728080d972c675b9371c493f31598ec7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "928ac5afbf7e980bffd2867528fd77cd62447a794a0002e0f9aeeb658e28a7a4"
   end
 
   depends_on "rust" => :build
