@@ -9,8 +9,8 @@ class Nativefier < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nativefier"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2c4b8c97fdf5c9840c3dbfbedc81fe26548630aeb6bdab1bbe006b99338976b6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f533e0f89295166dd9c06619a164e518821cbfc198e7548bf3caf3773085a8dc"
   end
 
   depends_on "node"
