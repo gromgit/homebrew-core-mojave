@@ -8,8 +8,8 @@ class Neomutt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neomutt"
-    rebuild 1
-    sha256 mojave: "1d2155fd802b5e0558538859e1ea7fcb9cfa6eba54fc1f6a96e67936055c6181"
+    rebuild 2
+    sha256 mojave: "93ed396c2c62b4345fbab12c64596f84d9b14be0161c69f4571e0427ea886172"
   end
 
   depends_on "docbook-xsl" => :build
