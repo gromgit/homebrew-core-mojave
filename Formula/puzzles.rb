@@ -19,8 +19,8 @@ class Puzzles < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/puzzles"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "85ac1fd6c2d474bc890b18e45c0a4f60df83bb0e624e7397bd0c21f4db20a1ce"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3db9e20d279cceb6c0a00dc1db689235d0d0d3bb46aff9ae861181bb11027710"
   end
 
   depends_on "cmake" => :build
