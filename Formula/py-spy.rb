@@ -8,8 +8,8 @@ class PySpy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/py-spy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a25b865824445bb4047eead715b8ca54b2bc0cc1c1221597a62ae91631d0e9d2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5f9baaf6af9a73c9884aa95907dc8eb5bb2ed892c48f7e7cede572928cbd0afc"
   end
 
   depends_on "rust" => :build
