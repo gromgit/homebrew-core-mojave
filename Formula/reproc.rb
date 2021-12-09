@@ -8,8 +8,8 @@ class Reproc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reproc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c3f61ac7d9a0861bf3bd259ea75b4e2ce6feef8bfe353b1a615d5a365fb9932a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a3113ab9c2ee6f97b0d90a9af5199077cf227e575a9b49ca6b7e515744a25a3a"
   end
 
   depends_on "cmake" => :build
