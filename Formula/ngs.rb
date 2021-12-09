@@ -1,16 +1,14 @@
 class Ngs < Formula
   desc "Powerful programming language and shell designed specifically for Ops"
   homepage "https://ngs-lang.org/"
-  url "https://github.com/ngs-lang/ngs/archive/v0.2.12.tar.gz"
-  sha256 "bd3f3b7cca4a36150405f26bb9bcc2fb41d0149388d3051472f159072485f962"
+  url "https://github.com/ngs-lang/ngs/archive/v0.2.13.tar.gz"
+  sha256 "7648761edb3695292d3289b91f9644c204d42269b8af697c765707ce192e45b5"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/ngs-lang/ngs.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ngs"
-    rebuild 1
-    sha256 cellar: :any, mojave: "abd753cd557c139856e0cd98c4a59827207b5fbe290ddb5385266a86e5e24e31"
+    sha256 cellar: :any, mojave: "8691af55bba86bcdc4a262141fcc7578179a9d64914af0afcfd68f356d1a751e"
   end
 
   depends_on "cmake" => :build
