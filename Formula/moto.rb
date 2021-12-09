@@ -9,8 +9,8 @@ class Moto < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moto"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ef8809f298e504c862adbda99a1857e5195c32faaedb3fb7eacbbe92e6768f73"
+    rebuild 2
+    sha256 cellar: :any, mojave: "34d530d42bc57c02333cf6aafd6318d49671df68d9c8c378f4b44380d796112c"
   end
 
   depends_on "rust" => :build # for cryptography
