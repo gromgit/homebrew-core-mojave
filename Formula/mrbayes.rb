@@ -14,8 +14,8 @@ class Mrbayes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mrbayes"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aaab417e92b6198042532f52cc180cf04c3dc8cdf6166fc1a86035370242f372"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b65f1502c598c98170381c7b4a68fdac7129d5e20f86077671ba7d733ba502cc"
   end
 
   depends_on "pkg-config" => :build
