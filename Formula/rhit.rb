@@ -8,8 +8,8 @@ class Rhit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rhit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4cca8254bcc5e8b17a9fd53c5a03e480ff9b4edf831dc658a52725e3aea6444a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bc5baf36e3a9334ff3e2dcf45100055f03f08f6c9c8586a94e4a4080adbfb5f8"
   end
 
   depends_on "rust" => :build
