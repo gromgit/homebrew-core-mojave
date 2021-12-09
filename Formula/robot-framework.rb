@@ -11,8 +11,8 @@ class RobotFramework < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/robot-framework"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c5bb7533630d3b623932e9c53249fab3850b2499d4ba8077d48ef592bcfadd2e"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0d22688415cbe6b9afb7e97282495e555758bead127aae4cb202ce7a40c7cbc7"
   end
 
   depends_on "rust" => :build
