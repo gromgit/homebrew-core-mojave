@@ -18,8 +18,8 @@ class Mu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mu"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0c0329b31c2cd9ac8a72e5ef83e8ac1ba17e628359b890deccd6302bbfe7f1fc"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e1c736feaa0f4b1bac17da69e1f3fc17f5e06d910cfc8b42a3631791b0d2a51f"
   end
 
   head do
