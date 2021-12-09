@@ -8,8 +8,8 @@ class Neovim < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neovim"
-    rebuild 1
-    sha256 mojave: "9fae4ca87f073e06ce5517664406bd3362f84376372c938f35f477f2ca2a25c2"
+    rebuild 2
+    sha256 mojave: "8d133d7a561fa992b14ff8887221ed59643ddc15d145c617ecc5a10088f12137"
   end
 
   depends_on "cmake" => :build
