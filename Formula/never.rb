@@ -14,8 +14,8 @@ class Never < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/never"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "41a8d8504b2aced615f660e1612a684e4cfc6257081575fd669dd33339273b19"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ddc14ae17c103e405554ed9fb1aa51ce6dc5dfd5db4641be6a0f666da368aefe"
   end
 
   depends_on "bison" => :build
