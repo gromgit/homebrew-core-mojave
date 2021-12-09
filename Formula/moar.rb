@@ -7,8 +7,8 @@ class Moar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moar"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0df7172b13093d6537f06b2ef89c2815152c8ecad951eea917e97c66546ed0a9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ef861f2274cb5580b338c75fc3c83fee16c1dad144014ca488ae3e6292a4716e"
   end
 
   depends_on "go" => :build
