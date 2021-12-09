@@ -12,8 +12,8 @@ class Mpop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpop"
-    rebuild 1
-    sha256 mojave: "779c1b3338860f3fac4e7e150b3f3d0d449b5b4eebcc7700862b8a662029c90a"
+    rebuild 2
+    sha256 mojave: "15669c8f77117177f30c05bc7d50d0a8a0878c87d5b4a7751bdecf3ae492bc4b"
   end
 
   depends_on "pkg-config" => :build
