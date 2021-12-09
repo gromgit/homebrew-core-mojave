@@ -11,8 +11,8 @@ class PythonTkAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-tk@3.9"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ce0c096772bbb9ccd740c7e5518ad999c9a51568306d39579f37dbb59f700bea"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a147a81c5ff92ab8bcb8466f25855ae77e7ec9b044007d9ffb3c650b9ef5e7ad"
   end
 
   depends_on "python@3.9"
