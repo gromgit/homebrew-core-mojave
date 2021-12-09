@@ -10,8 +10,8 @@ class Mycli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mycli"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9bba83341dfc0a58b079485bc870d6d22adbdd7b68938c7535f6970f4bb1fc52"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7b61531265c65d82ae69552ece7a5ab273e286f3e46f827a09071520b3d960fc"
   end
 
   depends_on "rust" => :build
