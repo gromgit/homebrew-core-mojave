@@ -7,8 +7,8 @@ class Nebula < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nebula"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8b7dadab0ec39147f7cfcdfdfc944a3be1c03a65e514acad90be39509b78833c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ad77844ad682eb55a91c592db606e85d18a04b157afd6a848fc180e8c930f941"
   end
 
   depends_on "go" => :build
