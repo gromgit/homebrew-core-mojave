@@ -7,8 +7,8 @@ class Rbspy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbspy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2c75d24fec414dc17657e529c1e274c6788b1db4c2afed0a258bc3a7403cc00a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d5eeaf62d4901cf56eb74f7003021da443d7be53ed52ee77a3b345c2a6ec64dd"
   end
 
   depends_on "rust" => :build
