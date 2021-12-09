@@ -9,8 +9,8 @@ class NewrelicInfraAgent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newrelic-infra-agent"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7383153bc01ff977ee8149cf6b6a676f4b5d53bfa406908e158eaf84c62cd9b6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bc7ab8f68f842ed2f5a42d8045bd40e5af6113f2e88e937ccf98e8f2be073120"
   end
 
   # https://github.com/newrelic/infrastructure-agent/issues/723
