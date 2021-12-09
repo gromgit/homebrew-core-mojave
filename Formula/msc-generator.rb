@@ -1,16 +1,13 @@
 class MscGenerator < Formula
   desc "Draws signalling charts from textual description"
   homepage "https://sourceforge.net/p/msc-generator"
-  url "https://downloads.sourceforge.net/project/msc-generator/msc-generator/v7.x/msc-generator-7.0.4.tar.gz"
-  sha256 "d79db7c6fb262564374301281cc589682c974b6b7872b37329500f6f79767480"
+  url "https://downloads.sourceforge.net/project/msc-generator/msc-generator/v7.x/msc-generator-7.1.tar.gz"
+  sha256 "cecd1d3ef2dd2018eb95ee1ece5dea37f5f2f7811da2fe6f4a6884898c1eb489"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "4002f6c6b3339dd353f0af7a396a1b86e89f480c2cbcd8b643e1c0bb5926d0b1"
-    sha256 cellar: :any, monterey:      "0cf3951d0ba12ffe6b5e2b4dcba2e2f0b69e471ac3b4f2e100dd101d281d2835"
-    sha256 cellar: :any, big_sur:       "90dcd8501b61dde64a68603e2e707b27541acdcc6f6a293bfad99abb99f179d7"
-    sha256 cellar: :any, catalina:      "bf2fe8c703116ca931ae8f85916fc056225b4253a19b985d04237ddb76e1e776"
-    sha256 cellar: :any, mojave:        "518e35b8b95c33b78c72fcfe3a4a4d75586963719f2a7c21437cb7cd311dbdbd"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/msc-generator"
+    sha256 cellar: :any, mojave: "5ee1597774de5eabfabdb5bed82c45470eecf6b7107d1ebef17ed83b353c30e1"
   end
 
   depends_on "autoconf" => :build
