@@ -7,8 +7,8 @@ class Qtkeychain < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qtkeychain"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5da62c1aa67a4f3694fcb605ca223066e3446382efcd3c45b3c77d9f3ce36ec6"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e6e458a53c7310ea7f6c3384258a00c1c2f7c8c87b3206d78bd61f49e5689477"
   end
 
   depends_on "cmake" => :build
