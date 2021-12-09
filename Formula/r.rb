@@ -12,8 +12,8 @@ class R < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/r"
-    rebuild 1
-    sha256 mojave: "0caec3c9c3a0e80aa626f832253a71253b57a958807b0eebbeabcad895fdefda"
+    rebuild 2
+    sha256 mojave: "f419d489bf825efd563e862abfd882e020e2cd867f359cf1bf98f2221505a42f"
   end
 
   depends_on "pkg-config" => :build
