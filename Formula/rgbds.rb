@@ -13,8 +13,8 @@ class Rgbds < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rgbds"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7c19aca7d8aae49ddd1af81641f59c3cff7a32a0963619b21236f19d9058e311"
+    rebuild 2
+    sha256 cellar: :any, mojave: "41703f802053ff20011b2d895829fa3e93ad1f1b9150a0cd6d15a8c02cb541ed"
   end
 
   depends_on "bison" => :build
