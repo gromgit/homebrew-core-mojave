@@ -12,8 +12,8 @@ class Msmtp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/msmtp"
-    rebuild 1
-    sha256 mojave: "77318d0f130ce4e67f900d95637ecb29c2fe9c5fa4e673a6b03548e5925a3e07"
+    rebuild 2
+    sha256 mojave: "8664cccc39c4438bc3cd733709a55f3c3ac679233a68a7b7f8568d71b2bfdc4d"
   end
 
   depends_on "pkg-config" => :build
