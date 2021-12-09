@@ -7,8 +7,8 @@ class Mongocli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongocli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d76fab23ec423795eeb081750b4438dff0e83c165973deba29ba98b51307ab57"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5ba135df0af8e3a8b86dc5fe13f5a73515045352e28547c0d8fbebf45a5f8458"
   end
 
   depends_on "go" => :build
