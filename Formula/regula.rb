@@ -9,8 +9,8 @@ class Regula < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regula"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "73657e395b849c43ad443c05b2ee6eacd28260149ef090b67c5c0fe4bc6d9eda"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "556cce31de6f7e4b5c9044ea67efd685eabb8c598a32ed0d448e73302eb3300a"
   end
 
   depends_on "go" => :build
