@@ -7,8 +7,8 @@ class Rke < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rke"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "be10867f64fccd10324844a772f713808c9cd78e51542261ce9741b150d51545"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "40a638c3cfd2ef728a4a471bfe0bce0ec7c8aeac482ecd9e1fa19e03a7c010b6"
   end
 
   depends_on "go" => :build
