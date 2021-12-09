@@ -7,8 +7,8 @@ class GitXargs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-xargs"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "356ec7458415c63c07dbab704d26c774ffa3a11af6b3ebf9e243cd540a252011"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4a5a7363bd947ea6f12d661570c0b6c11ef7bcdb5d7cda4b4db4cf051d96daa0"
   end
 
   depends_on "go" => :build
