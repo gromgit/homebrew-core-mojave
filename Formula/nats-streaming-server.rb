@@ -8,8 +8,8 @@ class NatsStreamingServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nats-streaming-server"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "343f9f393363fae53142c96578b2cbb82f944fa0dc60037fcb5f41513ae84949"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "8c0eb31d52d06680d3499975b1970a061af06b04fd7b9c95689197d147f69d03"
   end
 
   depends_on "go" => :build
