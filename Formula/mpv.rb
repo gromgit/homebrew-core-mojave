@@ -8,7 +8,8 @@ class Mpv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpv"
-    sha256 mojave: "b962cb3f5c7c34d40f3bfc6d4ab74d1670bdeea763e48375431e0f44915ef8de"
+    rebuild 1
+    sha256 mojave: "051fdfd25c35c3537006a2b3faf1e43fb4233b0870a7ca748059db4a93412a46"
   end
 
   depends_on "docutils" => :build
