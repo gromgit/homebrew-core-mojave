@@ -9,8 +9,8 @@ class Rollup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rollup"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b39abf7343388920bfccaeacbc185b029b5ef496403953989e6e4c6967615ef0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3aa102ad138f96b98526a28093ac13bf17c9ea22bf31e45b87f5cb5ac914e5a7"
   end
 
   depends_on "node"
