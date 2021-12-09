@@ -12,8 +12,8 @@ class Ngt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ngt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "40924500cc6a6fbca2e008cb633bccca52523c9f3cdcf3a9788e0bf09e2ec185"
+    rebuild 2
+    sha256 cellar: :any, mojave: "9455f1e2928c29f13b0ba70bf7bb5209c9c9c21d41fb58dd19d88d13d3d4d61b"
   end
 
   depends_on "cmake" => :build
