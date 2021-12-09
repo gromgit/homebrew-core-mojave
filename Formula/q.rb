@@ -10,8 +10,8 @@ class Q < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/q"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a0145ebd0d53b99e3238dc46bbde628d37f820e12b492eb0c4145cd0384705f8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5eefb60531e2e7ee284238d8df0a56fb5163170bc442e32df058d327038d1876"
   end
 
   deprecate! date: "2021-11-30", because: "requires PyOxidizer, which is a disallowed dependency in homebrew/core"
