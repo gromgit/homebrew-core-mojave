@@ -10,8 +10,8 @@ class Regipy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regipy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "840531f6d043e1e087354ee05da7d55dd1e69370b1703f70b3ed110155aac9e6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "674a661734b288bc6431216299adc5e4eace85f98693e39b40e623d9c1dbfb37"
   end
 
   depends_on "python-tabulate"
