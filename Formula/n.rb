@@ -8,8 +8,8 @@ class N < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/n"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "45b9745a25d4d6a49760eff5156490831c57667764630833d82f430e78ebd04c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4c47c714b7efb7f35976c37c056c9564247e0c4bf2e04209272d95bc0be1fea4"
   end
 
   def install
