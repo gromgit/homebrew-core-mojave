@@ -12,8 +12,8 @@ class MonoLibgdiplus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mono-libgdiplus"
-    rebuild 1
-    sha256 cellar: :any, mojave: "60151abcc76f3bab8bbae869cbd21abc4bd8d7b2c02169541bf47e5599de3dc9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d44ee78b5d6185217ef3523e446d7af6859ed5294722b6ca7a32e28a84ec92d9"
   end
 
   depends_on "pkg-config" => :build
