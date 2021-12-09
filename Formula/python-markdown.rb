@@ -10,7 +10,8 @@ class PythonMarkdown < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-markdown"
-    sha256 cellar: :any_skip_relocation, mojave: "e93947320e535b92b79a599b5d3b090bd225d50938815b4a33542ab73cddcdb4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f4dd7a340db636bcd211b33b26a03c288c16b775bc0f1184cde65f1e7a474afa"
   end
 
   depends_on "python@3.10"
