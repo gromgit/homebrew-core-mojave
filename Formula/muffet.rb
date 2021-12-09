@@ -1,15 +1,14 @@
 class Muffet < Formula
   desc "Fast website link checker in Go"
   homepage "https://github.com/raviqqe/muffet"
-  url "https://github.com/raviqqe/muffet/archive/v2.4.5.tar.gz"
-  sha256 "370c8d5d179f0edad4cebd1fe5b27b87dd19014f982c5b1a17fd34b7a07c93f4"
+  url "https://github.com/raviqqe/muffet/archive/v2.4.7.tar.gz"
+  sha256 "3a50a5f2e4e5b0f061593e3407720cfb987d4a9a174aff311e885478535245eb"
   license "MIT"
   head "https://github.com/raviqqe/muffet.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/muffet"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cf67eb3cb1f8e5520c8e301358c3ed354a745de308c6aa73a3579013246bd229"
+    sha256 cellar: :any_skip_relocation, mojave: "ca2f7516c23955048d18176b9798ba0e645adeb6a7dafb176264603c4cf43e7d"
   end
 
   depends_on "go" => :build
