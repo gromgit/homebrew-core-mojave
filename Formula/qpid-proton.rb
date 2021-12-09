@@ -9,8 +9,8 @@ class QpidProton < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qpid-proton"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9570979f98b45de816fead917224dd5578fc3c174bad4c58399c992da5da3b8d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "cc0f4114cb4f7be790be953df3b5a4a6d44e88f6fa4f8efaa96a908fb18c3ead"
   end
 
   depends_on "cmake" => :build
