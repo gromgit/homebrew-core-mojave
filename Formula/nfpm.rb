@@ -8,8 +8,8 @@ class Nfpm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nfpm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "10782251d315ce5e552914903813e80b415b6e305b757dad5caeabc0b0930c01"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "92b84acc7c5cebe1f6bbbc33404501eff5015cc342e711c5935b561eb1af26c8"
   end
 
   depends_on "go" => :build
