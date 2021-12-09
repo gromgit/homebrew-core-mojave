@@ -7,8 +7,8 @@ class Mmark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mmark"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0ca3b964be248cd21c63b846443d41f6f7bad6ccda86732a53f17fcd41d189a3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "478c9af87cce1b8567462c267231fde1b6e66f63e1a42750296e0d384fcb1931"
   end
 
   depends_on "go" => :build
