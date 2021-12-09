@@ -14,8 +14,8 @@ class RosaCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rosa-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1c128a9ea361f2d156aae4f69629c287adae893ab76ef5d48290f2a0104bb75e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3cbd8ee33d90161b7e432302d5e57a86a149a1d60fc7e61f3f9919ea66affa7c"
   end
 
   depends_on "go" => :build
