@@ -11,8 +11,8 @@ class Mitmproxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mitmproxy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5e8759be0db79d814613870ac5d94cb415679d0831d0bff7e4d358e8f8fba620"
+    rebuild 2
+    sha256 cellar: :any, mojave: "47f26d82bdc3b4ca7c54824e19a745eea568194838b21ebcf69148a7d65e63b2"
   end
 
   depends_on "rust" => :build # for cryptography
