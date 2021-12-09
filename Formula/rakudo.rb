@@ -7,8 +7,8 @@ class Rakudo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rakudo"
-    rebuild 1
-    sha256 mojave: "b15dc2df1167de7b452846ae5b077cae194dd140cfe3f3a749ac04f719ab1b67"
+    rebuild 2
+    sha256 mojave: "45b6266de43dba2d385d943fe0703baca69f775c3574fc8598c336ee1618e2f7"
   end
 
   depends_on "nqp"
