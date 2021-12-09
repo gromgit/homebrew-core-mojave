@@ -10,8 +10,8 @@ class Pwncat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pwncat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e26a88f477f2fdd064dade449b79669153376072c633766d691dee20354be031"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "52bd311ee332c42ba01ebe5117d50955d56cb30a9f9db7e09ba340877bcdd7c5"
   end
 
   depends_on "python@3.10"
