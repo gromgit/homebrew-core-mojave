@@ -1,19 +1,13 @@
 class PythonYq < Formula
   desc "Command-line YAML and XML processor that wraps jq"
   homepage "https://kislyuk.github.io/yq/"
-  url "https://files.pythonhosted.org/packages/c0/1b/fe6b9ab599384e95c9b7a63e4801409170fccfc107d03573cc4bb5df49f0/yq-2.12.2.tar.gz"
-  sha256 "2f156d0724b61487ac8752ed4eaa702a5737b804d5afa46fa55866951cd106d2"
+  url "https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz"
+  sha256 "fd131fdb1f56716ad8d44cd9eaaf7d3b22d39ba8861ea64a409cc3f4ae263db8"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01daaf8e43008c395ccf72223e825a93aa18a123dcb8d5d84209dbb8ecc87c92"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "01daaf8e43008c395ccf72223e825a93aa18a123dcb8d5d84209dbb8ecc87c92"
-    sha256 cellar: :any_skip_relocation, monterey:       "9cf9533ef71e83cc6736a1f20b108895616644a8e437a73fbe45f6fe0670e46e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9cf9533ef71e83cc6736a1f20b108895616644a8e437a73fbe45f6fe0670e46e"
-    sha256 cellar: :any_skip_relocation, catalina:       "9cf9533ef71e83cc6736a1f20b108895616644a8e437a73fbe45f6fe0670e46e"
-    sha256 cellar: :any_skip_relocation, mojave:         "9cf9533ef71e83cc6736a1f20b108895616644a8e437a73fbe45f6fe0670e46e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01daaf8e43008c395ccf72223e825a93aa18a123dcb8d5d84209dbb8ecc87c92"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-yq"
+    sha256 cellar: :any_skip_relocation, mojave: "95c31f84cfb4de8bd213bc5fa542309cbe389b7528d417d9b10e415675fb983a"
   end
 
   depends_on "jq"
@@ -27,8 +21,8 @@ class PythonYq < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
+    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
+    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "toml" do
