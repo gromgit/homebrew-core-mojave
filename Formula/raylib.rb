@@ -8,8 +8,8 @@ class Raylib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/raylib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9d597f3795c5ba6f79f8f91d2839f205fa6e247c72c8d549c88a0f641a41d209"
+    rebuild 2
+    sha256 cellar: :any, mojave: "84a9d5dde97596998b7494512316954ea293ce20909c83479bd795ca65af39a2"
   end
 
   depends_on "cmake" => :build
