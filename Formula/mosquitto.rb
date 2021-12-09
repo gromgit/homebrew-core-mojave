@@ -14,8 +14,8 @@ class Mosquitto < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mosquitto"
-    rebuild 1
-    sha256 mojave: "53aea80128ce3bf0024814bb0993e263a65743776a84ad2c78afdda5ace45f24"
+    rebuild 2
+    sha256 mojave: "86f57c0e44ef9d6ab2d1fe414e9742ddf40820ca16d098ff838a79523d33a5cc"
   end
 
   depends_on "cmake" => :build
