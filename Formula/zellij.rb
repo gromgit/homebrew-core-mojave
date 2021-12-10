@@ -7,8 +7,8 @@ class Zellij < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zellij"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "eddc37bdf810b590556560c2d54fb4dc6255f86b322944b86cb015bcae3c896e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "43ec3166785f8b477741c921c2b2b024c0c7126e30388033ff613191f60e7ebc"
   end
 
   depends_on "rust" => :build
