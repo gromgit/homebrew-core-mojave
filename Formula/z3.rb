@@ -14,8 +14,8 @@ class Z3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/z3"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c566e5129f3a1319db4900a5b5c4c83ec5efdd984535501a529348c14fb3c894"
+    rebuild 2
+    sha256 cellar: :any, mojave: "758d388b4449bbc3777f4dd2e6680adce35ec7a9d30752dd93090f19cf7642a9"
   end
 
   # Has Python bindings but are supplementary to the main library
