@@ -9,8 +9,8 @@ class Zydis < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zydis"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a7d2cda99718ee88ac8d472b0497a2289e00b9be55c79b01c0b575cfb28d98cb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3f97e852161157729678c9972cb41270b262a95dd67c0373da3c5822f3f63421"
   end
 
   depends_on "cmake" => :build
