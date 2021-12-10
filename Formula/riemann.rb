@@ -1,13 +1,12 @@
 class Riemann < Formula
   desc "Event stream processor"
   homepage "https://riemann.io/"
-  url "https://github.com/riemann/riemann/releases/download/0.3.6/riemann-0.3.6.tar.bz2"
-  sha256 "fa2e22b712ed53144bf3319a418a3cd502ed00fa8e6bcb50443039a2664ee643"
+  url "https://github.com/riemann/riemann/releases/download/0.3.7/riemann-0.3.7.tar.bz2"
+  sha256 "5a926c99bef846130c28674d1dc61c1b84c0f9082996243601ef3d264223680a"
   license "EPL-1.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "4e28a04a6cd3f4cfec8480ccc4442ae5e9a34315c983aa1b2a0ddc1d9d9cf82b"
+    sha256 cellar: :any_skip_relocation, all: "381f8eafa5f3c7be52f321103634ae6ee1d7f61877a5e59a1f7695bc42e96eb2"
   end
 
   depends_on "openjdk"
