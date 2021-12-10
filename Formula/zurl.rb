@@ -8,8 +8,8 @@ class Zurl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zurl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aa0660ca7a7c1ea4cb5395f3ae5ddd61e23869344443bc996ac1dabcdb8a3ea7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "955eaecbc4a5351998c420d020ae8d22db76929bafdf976eefe83ce54992f4e3"
   end
 
   depends_on "pkg-config" => :build
