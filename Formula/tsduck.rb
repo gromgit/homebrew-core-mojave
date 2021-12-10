@@ -6,6 +6,11 @@ class Tsduck < Formula
   license "BSD-2-Clause"
   head "https://github.com/tsduck/tsduck.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tsduck"
+    sha256 cellar: :any, mojave: "285d604e303e36b464c540b1a1cea547c858dd329e36b0b4643c15d194bb180b"
+  end
+
   depends_on "dos2unix" => :build
   depends_on "gnu-sed" => :build
   depends_on "grep" => :build
