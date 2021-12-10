@@ -1,15 +1,14 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
   homepage "https://www.zabbix.com/"
-  url "https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.7.tar.gz"
-  sha256 "b472aff806e0f61d184b2b12cc8b15e65718b44edc3050eb1ccc5b407a6d7209"
+  url "https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.8.tar.gz"
+  sha256 "3f61f8c9360789dc9b163e3797af0ed8474618d475594e4bf33c4198fd830b70"
   license "GPL-2.0-or-later"
   head "https://github.com/zabbix/zabbix.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zabbix"
-    rebuild 1
-    sha256 mojave: "3297e8138ee262bdf5f2b7273b13ef10765c4b76074d3e1900fb81d81abb672e"
+    sha256 mojave: "d607d1c5310bdb90df2712685e2159a6e0832adab4eba22b7efeb25c38fc3183"
   end
 
   depends_on "openssl@1.1"
