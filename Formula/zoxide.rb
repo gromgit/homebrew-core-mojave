@@ -7,8 +7,8 @@ class Zoxide < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zoxide"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1752b7ad56e9c50a423b92f28e0b23c0244556adef62c49cce4fc1eecf98eaa9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ecaeee50dcd85066a9efec1e631f15227838ed2b148b22a287aa539229a4490c"
   end
 
   depends_on "rust" => :build
