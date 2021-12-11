@@ -1,15 +1,14 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/archive/v2021.11.15.00.tar.gz"
-  sha256 "0416369143ca83e764bc532753ac30629a0c5e73dc450505ed1634f89f4220ea"
+  url "https://github.com/facebook/watchman/archive/v2021.11.29.00.tar.gz"
+  sha256 "aed83c9369ecdb6094ea836a312ff0eb95b09d929c1ba3e256ac78a625a8a15a"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/watchman"
-    rebuild 1
-    sha256 cellar: :any, mojave: "add2e8df56918fabc9c70860b89eca19ef61fbb650aa622afc69bc423da2f90a"
+    sha256 mojave: "047da285334819a1bcfc13d8c37ce719deab4487c6f9a26d7b32b68fc218270e"
   end
 
   # https://github.com/facebook/watchman/issues/963
