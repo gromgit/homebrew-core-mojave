@@ -2,6 +2,7 @@ class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
     url "https://ftp.indexdata.com/pub/yaz/yaz-5.31.0.tar.gz"
@@ -20,13 +21,8 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "2b5ea1cae0aa4f18fcf09bc1a79df9cd185d94f6f2029315df6f9e6a1bead3ba"
-    sha256 cellar: :any,                 arm64_big_sur:  "88e9c78b500a5bf61ef7996e873a08508725edeb3d4e2ff364c4c18b9f55fb16"
-    sha256 cellar: :any,                 monterey:       "f3884f5e99387f5dfbb9ae482a1e388fb7ccffc35dd7a42460dbace5bfcfd978"
-    sha256 cellar: :any,                 big_sur:        "968de6c53096f9f0accf06488de7e4ab76428a33eb1bcd27866ae34376b82996"
-    sha256 cellar: :any,                 catalina:       "5a2ead8e67e33724130ae46cfcdd880488f99715816ef803f5b30b64cb3cf898"
-    sha256 cellar: :any,                 mojave:         "2e9e5037cc90d375556fd203e8316e81b0df113a48509bf25df6f581c2dc2f9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1df089100f75e362967e449c15abef1b9ce18f6b38421975614ee19b270609db"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaz"
+    sha256 cellar: :any, mojave: "d47072ae83a5a6d22a43974820cddb8077118f63aab674b3b98d21a26866e471"
   end
 
   head do
@@ -37,6 +33,7 @@ class Yaz < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "gnutls"
   depends_on "icu4c"
 
   uses_from_macos "libxml2"
@@ -45,6 +42,7 @@ class Yaz < Formula
     system "./buildconf.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
+                          "--with-gnutls",
                           "--with-xml2"
     system "make", "install"
   end
