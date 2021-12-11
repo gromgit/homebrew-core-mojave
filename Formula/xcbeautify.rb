@@ -2,16 +2,27 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/thii/xcbeautify"
   url "https://github.com/thii/xcbeautify.git",
-      tag:      "0.10.1",
-      revision: "6e24f64e068f31d4514335e66b2804e02f3480a6"
+      tag:      "0.8.1",
+      revision: "fd7b0b6972809eead52b9016b383cf6d467e00b0"
   license "MIT"
-  head "https://github.com/thii/xcbeautify.git", branch: "master"
+  head "https://github.com/thii/xcbeautify.git"
 
-  depends_on xcode: ["11.4", :build]
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xcbeautify"
+    sha256 cellar: :any_skip_relocation, mojave: "31b2846b91d4b74f20e6bb9b9bb52427da6f2a802f9df587455b8ecd126cf79c"
+  end
+
+  depends_on xcode: ["10.0", :build]
 
   def install
-    system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".build/release/xcbeautify"
+    system "make", "install", "PREFIX=#{prefix}"
+  end
+
+  def caveats
+    <<~EOS
+      This is the last version that is compatible with
+      the latest Xcode available for Mojave (11.3).
+    EOS
   end
 
   test do
