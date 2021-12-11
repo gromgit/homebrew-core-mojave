@@ -12,8 +12,8 @@ class WpCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wp-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d24a2689b7f74ea648836c7108d304dc9df9b9ba86260317f9233192e5a49c7a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "62611a919422b04ae52e78e860dc4614adf80a476b13e3cea8c4e3e7c6fb727b"
   end
 
   depends_on "php"
