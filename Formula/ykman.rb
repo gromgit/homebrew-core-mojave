@@ -11,8 +11,8 @@ class Ykman < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ykman"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e5973704977b52e1b0da03e72f1c95c42dfd3dbbe6e8243024566a3914da51c8"
+    rebuild 2
+    sha256 cellar: :any, mojave: "275040a7679adc88b9517a996cf293e4b77e35ce946c52de202c847d99abf91d"
   end
 
   depends_on "rust" => :build
