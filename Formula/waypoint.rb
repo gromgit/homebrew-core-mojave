@@ -8,8 +8,8 @@ class Waypoint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/waypoint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "50e5d2104077d19411d05c0b5df7566364eecf2ca26bd3983366fec6442cdb78"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "125e5aa9f7e5c94b9150567f51517009fa5eac0a3475e6f0a5cca2cc7e98a273"
   end
 
   depends_on "go" => :build
