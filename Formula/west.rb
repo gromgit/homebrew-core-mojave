@@ -10,8 +10,8 @@ class West < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/west"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "22cd333140d640ef011db1d63686e4ed4852105f79600737d9e9c343cec39bb3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d8ba4b44471f145bd4a4987260db19f2314d8bc6d33126a6fb8d478934d82e8a"
   end
 
   depends_on "python@3.10"
