@@ -8,8 +8,8 @@ class Wxmaxima < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wxmaxima"
-    rebuild 1
-    sha256 mojave: "c71bc794e6d117d75f5e8d709da8431c9ada00c7d12c193f96504d2fa40ce59b"
+    rebuild 2
+    sha256 mojave: "2fbf7ff67a7f83e56c896d883c9ac983786ca36fdf1b7634f4e3303e0decbb88"
   end
 
   depends_on "cmake" => :build
