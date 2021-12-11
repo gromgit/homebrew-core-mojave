@@ -10,8 +10,8 @@ class YouGet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/you-get"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5312f61b29579a3562c0d51e49fcbbf1fcbeb9472bf84c7403302a04d364ed09"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5107ca06d1be4130ed110719c82e778360898033a8746ee458badb7edfef9b97"
   end
 
   depends_on "python@3.10"
