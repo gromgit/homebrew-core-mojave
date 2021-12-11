@@ -13,8 +13,8 @@ class Xmrig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmrig"
-    rebuild 1
-    sha256 mojave: "24160bd49e6cd02a370800eddde92485025ff75bfea40b46ab84e23be4186426"
+    rebuild 2
+    sha256 mojave: "4c92266cc7a21dd1abb594c64ecc45817feb2697bb69510cf1cb895346e3dbc0"
   end
 
   depends_on "cmake" => :build
