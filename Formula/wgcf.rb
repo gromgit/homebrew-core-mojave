@@ -8,8 +8,8 @@ class Wgcf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wgcf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ca3293e6fb4c274508376ac97c7f29dff23b5674ae458b12cbae0959588f2a88"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "fbc931ac47be6437298d2c60240b57e244e3a6ab8d0848c9e7180c423382705d"
   end
 
   depends_on "go" => :build
