@@ -8,7 +8,8 @@ class Xplr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xplr"
-    sha256 cellar: :any_skip_relocation, mojave: "3bea498d16e95dbb534f69b754ef494f17ce39506e239409455bf074a017dd0e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cca0d500b30e4c7407c8398cbdd5b2fbd8b210b0228e86fb62770da09c521dbb"
   end
 
   depends_on "rust" => :build
