@@ -8,8 +8,8 @@ class Xdotool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xdotool"
-    rebuild 1
-    sha256 mojave: "ede8f37a3de4a42c009324e7d261d8394f83435046eee57dd6eb07b39abd99e1"
+    rebuild 2
+    sha256 mojave: "1fa310b217b0fbcba7182a25df30b082168b612624e088700db7400fbf5017fc"
   end
 
   depends_on "pkg-config" => :build
