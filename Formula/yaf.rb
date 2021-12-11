@@ -12,8 +12,8 @@ class Yaf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "62be780cd004889505390297d2656300d392352996ab98609bd3d4520eb29abd"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6b65193f4f62163f486784490962b53f495c67b89c9d394fa2389ba3ee688534"
   end
 
   depends_on "pkg-config" => :build
