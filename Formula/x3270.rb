@@ -12,8 +12,8 @@ class X3270 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x3270"
-    rebuild 1
-    sha256 mojave: "2bfb3d73a096cba9ba8b09d1d7c95b8874740d1effef4da33391ad216d45d6d8"
+    rebuild 2
+    sha256 mojave: "9fe2e8e3a13eabfa6d14c3522ca3f85d7da5b3719abbecbc8582d96ec7d475dc"
   end
 
   depends_on "readline"
