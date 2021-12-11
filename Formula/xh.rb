@@ -8,8 +8,8 @@ class Xh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xh"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "594de5c4141f3f2468f31174ab3ad19af02ee63f57e73ffd0dbe7ab93d53515a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "29c8c5ea32a78ca04e01919d4bc5043579ecf8d0828445564e4be04b8eb5e87c"
   end
 
   depends_on "rust" => :build
