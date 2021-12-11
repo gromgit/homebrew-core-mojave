@@ -1,18 +1,13 @@
 class Youtubedr < Formula
   desc "Download Youtube Video in Golang"
   homepage "https://github.com/kkdai/youtube"
-  url "https://github.com/kkdai/youtube/archive/v2.7.4.tar.gz"
-  sha256 "991b15a0b6941c1bf2c3d691b8b5f2f37b28a041e735813da051cb5a01e38695"
+  url "https://github.com/kkdai/youtube/archive/v2.7.5.tar.gz"
+  sha256 "64de1b1dac4081f7a3ac9bc90a3ef070b7c85c36acb01f03200441ebda989b7e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1fcdf0f3023fb40d45b9401522ad668a97a39a1d580b826a5989ab8028708274"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2ee6ab25e29be16fb8a7e96032ebd1e91848368fdf75504e5ff7e4409db1732d"
-    sha256 cellar: :any_skip_relocation, monterey:       "91b490522cae89c80a15da46cc1a8f729e37b46aca1f6294f5a955b92ebdf145"
-    sha256 cellar: :any_skip_relocation, big_sur:        "80d0c11df93af2a56e092d2aaa7012ae61c781045ceddffe4cdc9872e9efe2f0"
-    sha256 cellar: :any_skip_relocation, catalina:       "80d0c11df93af2a56e092d2aaa7012ae61c781045ceddffe4cdc9872e9efe2f0"
-    sha256 cellar: :any_skip_relocation, mojave:         "80d0c11df93af2a56e092d2aaa7012ae61c781045ceddffe4cdc9872e9efe2f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48ee061f5c900b2c775d4ab135f2feffefd1799d094bb4d5e8482e91329b7e6a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtubedr"
+    sha256 cellar: :any_skip_relocation, mojave: "801cb81f3971547c9dfcb49ba591ef67eb6a4e89f83f4f46bebb93869a1cd1bc"
   end
 
   depends_on "go" => :build
