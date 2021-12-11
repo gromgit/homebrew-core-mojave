@@ -9,8 +9,8 @@ class Wtfutil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wtfutil"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9e4c5bb4189f16c17ac9bcf964a54e572b1f2dc7bcbf7898a00e14f2017f7f01"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ab849995149cf2330b8d5c726645b68880068b83d0394a8002cb1131c4da21a1"
   end
 
   depends_on "go" => :build
