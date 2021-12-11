@@ -12,8 +12,8 @@ class Websocat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/websocat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6c3bbc8462a1e614ceb7b433c081ded198d542d93938ed5693800eefe16e4398"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2f99b1b064f1b5f0bd241af192c131c02179986dbcd9d4e0b49c1670e1dc8334"
   end
 
   depends_on "pkg-config" => :build
