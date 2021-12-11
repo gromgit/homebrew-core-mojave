@@ -7,8 +7,8 @@ class Webdis < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webdis"
-    rebuild 1
-    sha256 cellar: :any, mojave: "057139ddef0e4f513b741a2af8f39b670e2cefd94f1a97996a3a063fad4a1200"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8b5feb16233384751d4c42398e3252e5e9ccd569ed1a35ba66b0871d00d6ce6b"
   end
 
   depends_on "libevent"
