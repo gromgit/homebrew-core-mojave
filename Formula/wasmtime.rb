@@ -14,8 +14,8 @@ class Wasmtime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wasmtime"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f92bcc55dd144e4959709d19e49fb24fb5ffe6d514127e4a2cd01414e0ad6883"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a8ae728a87f926e430fa33874500376aea05219f2788493ba5bfa8dfc041d101"
   end
 
   depends_on "rust" => :build
