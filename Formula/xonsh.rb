@@ -10,8 +10,8 @@ class Xonsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xonsh"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0b8715f38f3ebe1a37f104b569bc02390986a04b04e36d4e8993082e6979bf45"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "df57e740619532662a3ed325fc665ccab96290c3cb29e4bcca841398470e1fa2"
   end
 
   depends_on "python@3.10"
