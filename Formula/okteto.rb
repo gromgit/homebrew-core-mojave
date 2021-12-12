@@ -8,8 +8,8 @@ class Okteto < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/okteto"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "552ad97f8bb2e006934499cc61110530875be0290535aca27083c0684370fd0e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "dc773178a41faedd85872ea5a025df6b09791c6c23b35f3e9ba0f57dda52ce56"
   end
 
   depends_on "go" => :build
