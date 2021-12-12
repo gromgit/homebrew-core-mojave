@@ -1,14 +1,11 @@
 class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
+  url "https://github.com/kubernetes/kubernetes.git",
+      tag:      "v1.23.0",
+      revision: "ab69524f795c42094a6630298ff53f3c3ebab7f4"
   license "Apache-2.0"
-
-  stable do
-    url "https://github.com/kubernetes/kubernetes.git",
-        tag:      "v1.22.4",
-        revision: "b695d79d4f967c403a96986f1750a35eb75e75f1"
-    depends_on "go@1.16" => :build
-  end
+  head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
   livecheck do
     url :stable
@@ -17,18 +14,12 @@ class KubernetesCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "dd1b0be6fd4c3a66994553722afc6b42223bfae46ed0333ea6d9eb480454ab32"
-  end
-
-  # HEAD builds with Go 1.17. Consolidate once v1.23 is released
-  head do
-    url "https://github.com/kubernetes/kubernetes.git"
-    depends_on "go" => :build
+    sha256 cellar: :any_skip_relocation, mojave: "4e5d65c45fc17695339be0deb41b71eba41503f7023574798c8967b3a2f89893"
   end
 
   depends_on "bash" => :build
   depends_on "coreutils" => :build
+  depends_on "go" => :build
 
   uses_from_macos "rsync" => :build
 
@@ -46,16 +37,20 @@ class KubernetesCli < Formula
     bin.install "_output/bin/kubectl"
 
     # Install bash completion
-    output = Utils.safe_popen_read("#{bin}/kubectl", "completion", "bash")
+    output = Utils.safe_popen_read(bin/"kubectl", "completion", "bash")
     (bash_completion/"kubectl").write output
 
     # Install zsh completion
-    output = Utils.safe_popen_read("#{bin}/kubectl", "completion", "zsh")
+    output = Utils.safe_popen_read(bin/"kubectl", "completion", "zsh")
     (zsh_completion/"_kubectl").write output
+
+    # Install fish completion
+    output = Utils.safe_popen_read(bin/"kubectl", "completion", "fish")
+    (fish_completion/"kubectl.fish").write output
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree
-    system "hack/generate-docs.sh"
+    system "hack/update-generated-docs.sh"
     man1.install Dir["docs/man/man1/*.1"]
   end
 
@@ -64,13 +59,10 @@ class KubernetesCli < Formula
     assert_match "kubectl controls the Kubernetes cluster manager.", run_output
 
     version_output = shell_output("#{bin}/kubectl version --client 2>&1")
-
     assert_match "GitTreeState:\"clean\"", version_output
-
     if build.stable?
-      assert_match stable.instance_variable_get(:@resource)
-                         .instance_variable_get(:@specs)[:revision],
-                   version_output
+      revision = stable.instance_variable_get(:@resource).instance_variable_get(:@specs)[:revision]
+      assert_match revision.to_s, version_output
     end
   end
 end
