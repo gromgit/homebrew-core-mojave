@@ -2,15 +2,14 @@ class Cosign < Formula
   desc "Container Signing"
   homepage "https://github.com/sigstore/cosign"
   url "https://github.com/sigstore/cosign.git",
-      tag:      "v1.3.1",
-      revision: "645ebf09fc555762a0494baa30edc08c38435368"
+      tag:      "v1.4.0",
+      revision: "50315fcc82a3d07d6983515bbfa0f2a6c39f7c31"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cosign"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "df99ebc35de20692c7725d5517fcb77922d1998f1245e5c5a71378c22e6f0189"
+    sha256 cellar: :any_skip_relocation, mojave: "9a3c993446ae6061de49723680a0f4f22311c947f0e96404bf9d0a98263a9836"
   end
 
   depends_on "go" => :build
