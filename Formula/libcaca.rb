@@ -9,12 +9,15 @@ class Libcaca < Formula
 
   livecheck do
     url :stable
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.gsub(/\.?beta/, "b") }
+    end
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcaca"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8a7d6b21ff366e91ed6c5a863bd4510e3bd5f1e51e34a471acbbe2f650567611"
+    rebuild 3
+    sha256 cellar: :any, mojave: "c2832a77db377ce823cda956a521852038b1a77aff90da646e1cae96d73b461f"
   end
 
   head do
