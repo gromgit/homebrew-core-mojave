@@ -7,7 +7,7 @@ class Mavsdk < Formula
       tag:      "v0.44.0",
       revision: "ee84bd93b7e0ef802963503a34783772e31eb10e"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -15,13 +15,8 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "2895bd7c66f18384dae10bc22cc3b2ac9d40042f0b344a433fa18dd33d63a4b7"
-    sha256 cellar: :any,                 arm64_big_sur:  "56c0c7dc9b99edd69ee4e68ea0001eb7a8a8339cdde96a9d0c9b76f16bea808c"
-    sha256 cellar: :any,                 monterey:       "e3e888d16a7c099e4bc6b7d17695d018589ca1c6119190101b38cec3c385a164"
-    sha256 cellar: :any,                 big_sur:        "f127b90be741cfaf87ee8276aff3c7cb59a4b593cafd25bf5f5e13ee3c19add1"
-    sha256 cellar: :any,                 catalina:       "8381e3df82b00d8be78e2ce205ce76fda40fab26a6e7df3fa9c772b3cfa79477"
-    sha256 cellar: :any,                 mojave:         "bf2ac852fe6d9d9e88931caa4300e276bb396ce44bc9a818db2c6491290ecdf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d910482cbbab49766b26bba46856e76444d058eea7617c703a31ec6eddfa9428"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mavsdk"
+    sha256 cellar: :any, mojave: "65b236a4a440b3098c8f70a9b785722701ecb91ca95ceb603e753496bd84c689"
   end
 
   depends_on "cmake" => :build
