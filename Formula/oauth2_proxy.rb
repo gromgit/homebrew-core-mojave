@@ -8,8 +8,8 @@ class Oauth2Proxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oauth2_proxy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "04c63b4967a34d79897d517b0d4c4d11c8c3b0d21ec3d3f89448bd6344e60419"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "34f4b9abb0082f25d63f4d0efff8d53db8b7176be6af1b4d2e6c2d1dea191873"
   end
 
   depends_on "go" => :build
