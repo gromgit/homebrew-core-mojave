@@ -7,8 +7,8 @@ class Onefetch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onefetch"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9cddacf2a9ff4778b217244b6a263a8a23a6956604819ca82fa5cb4219bab36b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e9277af2ba33c0162437f34fba5f3e36b18d1d58f8ab1e9cef37eb1fd2a7c5e9"
   end
 
   depends_on "rust" => :build
