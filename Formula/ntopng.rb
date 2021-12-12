@@ -16,8 +16,8 @@ class Ntopng < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ntopng"
-    rebuild 1
-    sha256 mojave: "3876b75f242ea6af0caabfaf592ef696875c7eae6068cf25595e37637b031e04"
+    rebuild 2
+    sha256 mojave: "feada673667a6fe92fc9cb56d80e8ee1c07f8747c14c7ccddb04b8b2de6c8e38"
   end
 
   head do
