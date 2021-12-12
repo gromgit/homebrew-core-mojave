@@ -8,10 +8,15 @@ class Hashcat < Formula
   version_scheme 1
   head "https://github.com/hashcat/hashcat.git"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?hashcat[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hashcat"
-    rebuild 2
-    sha256 mojave: "23ec6dfc7496480c3a63eaace2f9d1cffa59a02ec1d5b69de748083951520724"
+    rebuild 3
+    sha256 mojave: "3c4b6ccd341427ec9360343ae63cb5d3cbac0cc23e1d432c9490b70b50effdb0"
   end
 
   depends_on "gnu-sed" => :build
