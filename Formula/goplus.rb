@@ -1,15 +1,14 @@
 class Goplus < Formula
   desc "Programming language for engineering, STEM education, and data science"
   homepage "https://goplus.org"
-  url "https://github.com/goplus/gop/archive/refs/tags/v1.0.32.tar.gz"
-  sha256 "c008d6fcc8c8f3a08e69774a6e54dce82fae78414b6e5c45b5b619dd0572a139"
+  url "https://github.com/goplus/gop/archive/v1.0.35.tar.gz"
+  sha256 "7af3b987046cadad45b091ddd7cdf5786ec3393ba5ab6471f53220d8b01932be"
   license "Apache-2.0"
   head "https://github.com/goplus/gop.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goplus"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "28f56c31ccc18b608b2b3e88a8792e44e473f165096c60da5230fd1330f7a1fc"
+    sha256 mojave: "8c215b83bba649ef696329a8a24691f38796da7543f999058f346c28636a4df1"
   end
 
   depends_on "go"
@@ -17,10 +16,9 @@ class Goplus < Formula
   def install
     # Patch version to match the version of gop, currently it get version from git tag
     inreplace "env/version.go", /^\tbuildVersion string$/, "\tbuildVersion string = \"v#{version}\"" unless build.head?
-    build_script = build.head? ? "cmd/make.go" : "cmd/install.go"
 
     ENV["GOPROOT_FINAL"] = libexec
-    system "go", "run", build_script, "--install"
+    system "go", "run", "cmd/make.go", "--install"
 
     libexec.install Dir["*"] - Dir[".*"]
     bin.install_symlink Dir[libexec/"bin/*"]
