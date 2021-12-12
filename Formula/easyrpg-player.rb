@@ -11,8 +11,8 @@ class EasyrpgPlayer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easyrpg-player"
-    rebuild 2
-    sha256 cellar: :any, mojave: "db09dac24878e8a77cd2d9139ae8f62aff6ee8d400627e213f486614018d6e53"
+    rebuild 3
+    sha256 cellar: :any, mojave: "16c1356aacb224d9247644b2697ea09d6f07ff4955382cb43625ff9b3a3e3793"
   end
 
   depends_on "cmake" => :build
@@ -32,6 +32,7 @@ class EasyrpgPlayer < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "alsa-lib"
+    depends_on "gcc"
   end
 
   fails_with gcc: "5"
