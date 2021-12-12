@@ -3,15 +3,13 @@ class Gupnp < Formula
 
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.4/gupnp-1.4.0.tar.xz"
-  sha256 "590ffb02b84da2a1aec68fd534bc40af1b37dd3f6223f9d1577fc48ab48be36f"
+  url "https://download.gnome.org/sources/gupnp/1.4/gupnp-1.4.1.tar.xz"
+  sha256 "899196b5e66f03b8e25f046a7a658cd2a6851becb83f2d55345ab3281655dc0c"
   license "LGPL-2.0-or-later"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp"
-    rebuild 2
-    sha256 cellar: :any, mojave: "b7a7a4b35a8ba636d970a13cccd12d4a8fb72163c92fadde5c5fa2930c835c37"
+    sha256 cellar: :any, mojave: "145304c353b9579f5a444ff43f19d089484afec4a9fdbd2c1def3e4df8365bf6"
   end
 
   depends_on "docbook-xsl" => :build
