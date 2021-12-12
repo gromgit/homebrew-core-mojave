@@ -7,8 +7,8 @@ class Nvc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nvc"
-    rebuild 1
-    sha256 mojave: "0d6cb1c923d2d47dad0c33a7ffe6dc16eae8ac25ba36c9e1c33ff18c98895084"
+    rebuild 2
+    sha256 mojave: "5c9528c0f7db48a75061829b5be24a834b968970df22ab0524cbf968b2bbcbb6"
   end
 
   head do
