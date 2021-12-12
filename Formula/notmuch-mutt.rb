@@ -12,8 +12,8 @@ class NotmuchMutt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notmuch-mutt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c3d21d4ab5c05e20494a49186bc93465c7bf2df02dedc8767e840692a9391a05"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0a5b15f8461290c370e277d60887d17b9c75617f1ded380ffd857250f543b33d"
   end
 
   depends_on "notmuch"
