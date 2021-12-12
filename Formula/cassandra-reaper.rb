@@ -1,18 +1,19 @@
 class CassandraReaper < Formula
   desc "Management interface for Cassandra"
   homepage "https://cassandra-reaper.io/"
-  url "https://github.com/thelastpickle/cassandra-reaper/releases/download/2.3.1/cassandra-reaper-2.3.1-release.tar.gz"
-  sha256 "3a6633e43ea99d295f61067f948d9918689589d70e09a541310c4c9fa9ecc268"
+  url "https://github.com/thelastpickle/cassandra-reaper/releases/download/3.0.0/cassandra-reaper-3.0.0-release.tar.gz"
+  sha256 "df185a83b1af26ff0c16105aad3d6a38916234ec375284c1f2103445020ac6c9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fb19757d6d28a30eed71836a8e674e366ca4ac809fddc845f9f2a4f7cd602414"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra-reaper"
+    sha256 cellar: :any_skip_relocation, mojave: "27d12fad56005ce56b5a0d5a29b98f22b23d6555e7918473e7a2a9037fe47c9c"
   end
 
-  depends_on arch: :x86_64 # openjdk@8 does not support ARM
   depends_on "openjdk@8"
 
   def install
+    inreplace "bin/cassandra-reaper", "/usr/share", prefix
     prefix.install "bin"
     etc.install "resource" => "cassandra-reaper"
     share.install "server/target" => "cassandra-reaper"
