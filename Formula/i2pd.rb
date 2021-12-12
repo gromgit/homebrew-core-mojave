@@ -7,8 +7,8 @@ class I2pd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i2pd"
-    rebuild 2
-    sha256 cellar: :any, mojave: "c3d0cf96217afdba828e6cd698994b77e83e2f8b42382e83165224dc73ec642f"
+    rebuild 3
+    sha256 cellar: :any, mojave: "30a5201a2588b965436605035a8626fd46c563504697362c52b77225f935b90d"
   end
 
   depends_on "boost"
@@ -58,11 +58,11 @@ class I2pd < Formula
   end
 
   test do
-    pid = fork do
-      exec "#{bin}/i2pd", "--datadir=#{testpath}", "--daemon"
-    end
+    pidfile = testpath/"i2pd.pid"
+    system bin/"i2pd", "--datadir=#{testpath}", "--pidfile=#{pidfile}", "--daemon"
     sleep 5
-    Process.kill "TERM", pid
     assert_predicate testpath/"router.keys", :exist?, "Failed to start i2pd"
+    pid = pidfile.read.chomp.to_i
+    Process.kill "TERM", pid
   end
 end
