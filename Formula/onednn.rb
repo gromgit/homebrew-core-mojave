@@ -13,8 +13,8 @@ class Onednn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onednn"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cb8f27948d9b995a5b39e2a0902a6d1622591ed582b4194fc81426ef716840e4"
+    rebuild 2
+    sha256 cellar: :any, mojave: "180556eb17c910c2ae6271543b934f8be799ab89a66422383aaed6d6e6e0f0e6"
   end
 
   depends_on "cmake" => :build
