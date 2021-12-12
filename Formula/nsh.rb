@@ -8,8 +8,8 @@ class Nsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nsh"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3e701a1a9ea9c2fe9602cfbba0f73ffa51fb6cb4c96b6b64b5eab0bbd9bffdab"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "65df86c4fb2311782b94da16f9e517b599632983d8a45c73480aa4f3485da033"
   end
 
   depends_on "rust" => :build
