@@ -7,8 +7,8 @@ class Odpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/odpi"
-    rebuild 1
-    sha256 cellar: :any, mojave: "598d3b0cf32316d3e5e84cc0f6de20119e598162c1c52524e26ad0a648871f39"
+    rebuild 2
+    sha256 cellar: :any, mojave: "95c50b25c30a80f72afb1713f5a2db32f3dc07cee963fc05850c0502cb7e43e4"
   end
 
   def install
