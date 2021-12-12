@@ -6,17 +6,13 @@ class Cmark < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "e1fa03a664d685aef0da9a3aa66df403618a037dbf3e633ce2b9c1216d38808a"
-    sha256 cellar: :any,                 arm64_big_sur:  "b5c6f7afba617f9886ba3f16fed0aeccee9f2c72d105236f995986f8ed5daaa6"
-    sha256 cellar: :any,                 monterey:       "0a53b1a9645e2b45e8e109d51d65f044d109ecc23b97b4c63ae2fc6b8f030165"
-    sha256 cellar: :any,                 big_sur:        "957b224ea8c9f23b3260013bf9f60d475cd9a0577ed9fede5ff096ed6035a9b1"
-    sha256 cellar: :any,                 catalina:       "59254ee4c9602976612648c361ccc1288e4af8caca6a1ec5f12b263be1f0944d"
-    sha256 cellar: :any,                 mojave:         "a4ec36e7473ba3fb80859464f712b9848c86fbd7979137d063ae3f1e7458784e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a519030b76311ae6e1a5772b9e19aad6e3e80ed9edc48b520946e58ab9d5320b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmark"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d76cfbba8800c3c1aa13f75ec99f6d1597b55ff0523aa83666107ed5a6ca963c"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
 
   conflicts_with "cmark-gfm", because: "both install a `cmark.h` header"
 
