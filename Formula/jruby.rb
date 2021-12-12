@@ -12,7 +12,8 @@ class Jruby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jruby"
-    sha256 cellar: :any, mojave: "94ecc744ddcb04edc00bbdb2c428fbece68167dc8c8fb3ffc19d02782139ca01"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4ec8118d08883d71c757c7743128237255f44afaeda426059cb7ac976bf7252b"
   end
 
   depends_on "openjdk"
@@ -23,7 +24,7 @@ class Jruby < Formula
 
     cd "bin" do
       # Prefix a 'j' on some commands to avoid clashing with other rubies
-      %w[ast rake rdoc ri racc].each { |f| mv f, "j#{f}" }
+      %w[ast bundle bundler rake rdoc ri racc].each { |f| mv f, "j#{f}" }
       # Delete some unnecessary commands
       rm "gem" # gem is a wrapper script for jgem
       rm "irb" # irb is an identical copy of jirb
