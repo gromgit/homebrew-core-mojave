@@ -1,14 +1,13 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.16.3/deno_src.tar.gz"
-  sha256 "dd3f8a2f072530aba3d67bc9cc14eb3ee48418ae263ac9dbe37612c16300bd4b"
+  url "https://github.com/denoland/deno/releases/download/v1.16.4/deno_src.tar.gz"
+  sha256 "f2f64009ea18e6b9b541f2b62a01e9b06e2a672ff652887e6c0087ffceb3a61e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deno"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "3b6d09f0a02a2c17177f8bc71563c49e0ca330a8caa1a99cc14d095f9166defa"
+    sha256 cellar: :any_skip_relocation, mojave: "085168185b93f4812ba17dd3ef4669f2c5331814b40f5ac8f4e594ce9da4f8b8"
   end
 
   depends_on "llvm" => :build
@@ -24,7 +23,7 @@ class Deno < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "gcc" => :test # CompilerSelectionError: deno cannot be built with any available compilers.
+    depends_on "gcc"
     depends_on "glib"
   end
 
