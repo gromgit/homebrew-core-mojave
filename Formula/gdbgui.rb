@@ -6,17 +6,15 @@ class Gdbgui < Formula
   url "https://files.pythonhosted.org/packages/4b/67/63e55e2fde8628603326e5a9f1882bf831f49b2feaa966aee602fced77ae/gdbgui-0.15.0.1.tar.gz"
   sha256 "6f0ae578b9f7181c783227b692e8ed694a3e5c200b33e8512f2488644465060d"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, monterey:     "66ab0fe289baa0e06dca98ce2c3fbb6179093da983faab5119967ca33554e372"
-    sha256 cellar: :any_skip_relocation, big_sur:      "62870c658d7305914e55b06977f1bdd3599cdb5678b0a9b92cb8998f561bddea"
-    sha256 cellar: :any_skip_relocation, catalina:     "2f3943c95fd3a2345b6e0da211d4aaaa701dd295ff73c5b0e6ca576e357acc34"
-    sha256 cellar: :any_skip_relocation, mojave:       "419065456561b0783e97f2a556d937b9d171b2869db0a34a5c2216363aee2b48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e09f4154e95193c7972f0f55508792397338383125248ef3394cfe17a4a016cc"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdbgui"
+    sha256 cellar: :any_skip_relocation, mojave: "5a616d1c500146b597dc8ae927e00445ec8adce5e5cb8e620077883ba9ae22cd"
   end
 
   depends_on "gdb"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "bidict" do
     url "https://files.pythonhosted.org/packages/bd/7c/83fbbc8568be511bc48704b97ef58f67ff2ab85ec4fcd1dad12cd2323c32/bidict-0.21.2.tar.gz"
