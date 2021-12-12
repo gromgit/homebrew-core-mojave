@@ -7,8 +7,8 @@ class Liqoctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liqoctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "133aa84cb3da2c5fba993c8030141581d662a5d242287bc8ab84543a70e23ca4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2ac86d356e0bed1fa17077e4a36b66559ecb306e0c4127b3a5bceb451341b5fe"
   end
 
   depends_on "go" => :build
