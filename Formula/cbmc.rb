@@ -2,14 +2,13 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https://www.cprover.org/cbmc/"
   url "https://github.com/diffblue/cbmc.git",
-      tag:      "cbmc-5.45.0",
-      revision: "99c5a92de15d5d93b67bf0a8ae0fc56da08ec256"
+      tag:      "cbmc-5.46.0",
+      revision: "98afb5ef3034b6cf53822ca4c0484b5e9d222a50"
   license "BSD-4-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cbmc"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "6043a8664362133e3fb30d1e05a72a2dde3765e8ba5b038c979279a4aa752825"
+    sha256 cellar: :any_skip_relocation, mojave: "e66fc6808187d7b64f34c02b7f71ef1ce3c76c2db39e23144bb52dcfbacc09b0"
   end
 
   depends_on "cmake" => :build
