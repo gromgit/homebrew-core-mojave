@@ -12,11 +12,12 @@ class Glslang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glslang"
-    sha256 cellar: :any_skip_relocation, mojave: "a7b938776352a1d67c31d2e52d43e624e66e69df6776b602c4116d89732d78c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "220de5e98c253ef1b2ea68da1d7e61cf14341c890dd9071a3bcdbf613eb4b47b"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
 
   def install
     args = %w[
