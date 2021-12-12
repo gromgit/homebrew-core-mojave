@@ -9,8 +9,8 @@ class Pipenv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipenv"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "83d182b9daadf2883d889fe7a32ba446bc70f31ae2af4270ac76d550f7d3a07c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2fc7231666d637e217617573896dc6739d9f3a3625e94a35547ab2e855a7a238"
   end
 
   depends_on "python@3.10"
