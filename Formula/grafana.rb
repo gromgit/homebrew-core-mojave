@@ -1,15 +1,14 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://github.com/grafana/grafana/archive/v8.2.5.tar.gz"
-  sha256 "d83e07256a6e55e44e1b63fa0dd505927687336ea6dc89fe7bccfa14d5ba1a97"
+  url "https://github.com/grafana/grafana/archive/v8.3.1.tar.gz"
+  sha256 "b5b818b3aadc2fbe5b083647e803e7bb96ba8df6239502c4dc8431a7ab9ec3a1"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "6fb6d15c7c18879e89fc43c9a987e2d5c28dd310722a9fb44c11543ef587d423"
+    sha256 cellar: :any_skip_relocation, mojave: "e5eae15f1b72fda91969d640a47a74faf12ad2eab7edf921497c1f96c336fa2f"
   end
 
   depends_on "go" => :build
@@ -24,13 +23,13 @@ class Grafana < Formula
   end
 
   def install
+    ENV["NODE_OPTIONS"] = "--max-old-space-size=4096"
     system "make", "gen-go"
     system "go", "run", "build.go", "build"
 
-    system "yarn", "install", "--ignore-engines", "--network-concurrency", "1"
+    system "yarn", "install"
 
-    system "node", "--max_old_space_size=4096", "node_modules/webpack/bin/webpack.js",
-           "--config", "scripts/webpack/webpack.prod.js"
+    system "yarn", "build"
 
     if OS.mac?
       bin.install Dir["bin/darwin-*/grafana-cli"]
