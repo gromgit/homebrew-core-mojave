@@ -6,10 +6,15 @@ class Halibut < Formula
   license all_of: ["MIT", :cannot_represent]
   head "https://git.tartarus.org/simon/halibut.git", branch: "main"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?halibut[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/halibut"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c5751845f1851ca9b26dd178346fb6000aa7f16bbb7cf8dc283a09e5b6ae4c7a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "7ef0e17bc140f8b2284703044c3c9cccbd0340302cf8b5e5fb7159aedf1e7368"
   end
 
   depends_on "cmake" => :build
