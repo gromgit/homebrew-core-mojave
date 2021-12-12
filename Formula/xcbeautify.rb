@@ -20,8 +20,7 @@ class Xcbeautify < Formula
 
   def caveats
     <<~EOS
-      This is the last version that is compatible with
-      the latest Xcode available for Mojave (11.3).
+      IMPORTANT: This is the final `#{name}` release supported under Mojave. No further updates are available.
     EOS
   end
 

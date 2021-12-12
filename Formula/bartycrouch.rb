@@ -19,7 +19,7 @@ class Bartycrouch < Formula
 
   def caveats
     <<~EOS
-      IMPORTANT: This is the final version of #{name} that's compatible with Mojave.
+      IMPORTANT: This is the final `#{name}` release supported under Mojave. No further updates are available.
     EOS
   end
 

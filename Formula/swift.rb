@@ -14,7 +14,7 @@ class Swift < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swift"
-    sha256 mojave:   "b49fe185bb64ab86515c9b51d43046aad807fa70e49668a403385a72cc4a70b7"
+    sha256 mojave: "b49fe185bb64ab86515c9b51d43046aad807fa70e49668a403385a72cc4a70b7"
   end
 
   keg_only :provided_by_macos
@@ -113,7 +113,7 @@ class Swift < Formula
 
   def caveats
     <<~EOS
-      IMPORTANT: This is the final Swift release supported under Mojave. No further updates are available.
+      IMPORTANT: This is the final `#{name}` release supported under Mojave. No further updates are available.
 
       The toolchain has been installed to:
         #{opt_prefix}/Swift-#{version}.xctoolchain
