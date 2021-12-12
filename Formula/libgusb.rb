@@ -3,18 +3,14 @@ class Libgusb < Formula
 
   desc "GObject wrappers for libusb1"
   homepage "https://github.com/hughsie/libgusb"
-  url "https://people.freedesktop.org/~hughsient/releases/libgusb-0.3.8.tar.xz"
-  sha256 "6d7092ec4e8e4405e75d4c8799512f2c31cdb0d7a8381ee37d1015a4c4fc8407"
+  url "https://people.freedesktop.org/~hughsient/releases/libgusb-0.3.9.tar.xz"
+  sha256 "1f51ebe8c91140cffbd1c4d58602c96b884170cae4c74f6f7e302a91d5b7c972"
   license "LGPL-2.1-only"
   head "https://github.com/hughsie/libgusb.git"
 
   bottle do
-    sha256 arm64_big_sur: "162c2f8e2aa821917680b9b0dd147ec962c5f5576f41aebeca22a8e62cb89f71"
-    sha256 monterey:      "5c34c7c9172fbc488ad48889451d628dbae6b76777559004145d881aad5508f0"
-    sha256 big_sur:       "cf83dacead41ee2afadd41cbbb536199b32031766aba49fdc8bf39da285749f3"
-    sha256 catalina:      "a61c7235f3c956d25feb3c26c54bbafd09014dc46612055cdc7739c42a7a4ada"
-    sha256 mojave:        "556215c83c9a7b50315e94b654614ad94a874698e9dfd3649f8316797bccbf5e"
-    sha256 x86_64_linux:  "a3df985eab4a9f01478ff634069c4b743a1c3d38a517db9994aee8df11ccb29a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgusb"
+    sha256 mojave: "4544a642b0188e1a7dd512adcd6e15d1c1b01dea1d582c23c41cd55520dfd400"
   end
 
   depends_on "gobject-introspection" => :build
