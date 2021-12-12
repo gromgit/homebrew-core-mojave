@@ -2,7 +2,7 @@ class Mosh < Formula
   desc "Remote terminal application"
   homepage "https://mosh.org"
   license "GPL-3.0-or-later"
-  revision 16
+  revision 17
 
   stable do
     url "https://mosh.org/mosh-1.3.2.tar.gz"
@@ -20,16 +20,24 @@ class Mosh < Formula
       url "https://raw.githubusercontent.com/macports/macports-ports/72fb5d9a79e581a5033bce38fb00ee25a0c2fdfe/net/mosh/files/patch-version-subdir.diff"
       sha256 "939e5435ce7d9cecb7b2bccaf31294092eb131b5bd41d5776a40d660ffc95982"
     end
+
+    # Fix crashes when mosh gets confused by timestamps. See:
+    # https://github.com/mobile-shell/mosh/issues/1014
+    # https://github.com/mobile-shell/mosh/pull/1124
+    patch do
+      url "https://github.com/mobile-shell/mosh/commit/57b97a4c910e3294b1ed441acea55da2f9ca3cb1.patch?full_index=1"
+      sha256 "6557cb33d4c58476e4bc0ddb1eef417f6ac56eb62e07ee389b00d2d08e6f3171"
+    end
+
+    patch do
+      url "https://github.com/mobile-shell/mosh/commit/87fd565268c5498409d81584b34467bd7e16a81f.patch?full_index=1"
+      sha256 "66f8fff80fa6d7373f88abf940c1fb838d38283b87b4a8ec9bfb1bd271e47ddc"
+    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "f7111b2e7a9264c9e1c20b7b4dc652b344a92d7b03100450d6664de3534a7898"
-    sha256 cellar: :any,                 arm64_big_sur:  "994d3f53c9af51c4bb759dd67de60a8bfffa5a2be1f5ffbd60477abe709b1801"
-    sha256 cellar: :any,                 monterey:       "c6ab04fb7c03b401fb72e0e8805d71985ef31413a2ad540eb4c29b106fdb2528"
-    sha256 cellar: :any,                 big_sur:        "b297986eb2a108d1f38c75e90e12f19953a39bda71ff75860e060f15f26f17d0"
-    sha256 cellar: :any,                 catalina:       "b9f84223c2299ed1ecefcb98fa545d2a53613933280fbc45c9dec32e9d9a9902"
-    sha256 cellar: :any,                 mojave:         "0201d43d7aed512afa30e241423c12b4828f193a7fe3155c173cccb55be56ce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec64cfea75e3ef0eecdae39fafd071aac8e059cc7034f0105ad4b84f862a4778"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mosh"
+    sha256 cellar: :any, mojave: "fe0d37f969e96f67e10a2590aee51409bb078e90ffb792fdcf424a807fe6fcbf"
   end
 
   head do
