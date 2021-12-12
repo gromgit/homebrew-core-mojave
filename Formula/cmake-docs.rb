@@ -1,24 +1,20 @@
 class CmakeDocs < Formula
   desc "Documentation for CMake"
   homepage "https://www.cmake.org/"
-  url "https://github.com/Kitware/CMake/releases/download/v3.22.0/cmake-3.22.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/cmake-3.22.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/cmake-3.22.0.tar.gz"
-  sha256 "998c7ba34778d2dfdb3df8a695469e24b11e2bfa21fbe41b361a3f45e1c9345e"
+  url "https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/cmake-3.22.1.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/cmake-3.22.1.tar.gz"
+  sha256 "0e998229549d7b3f368703d20e248e7ee1f853910d42704aa87918c213ea82c0"
   license "BSD-3-Clause"
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
 
-  # The "latest" release on GitHub has been an unstable version before, so we
-  # check the Git tags instead.
   livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    formula "cmake"
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake-docs"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "3311bb9b89da02bde1afe2f08d25bbba20f07ee2674c1217b8698a16f0184c7f"
+    sha256 cellar: :any_skip_relocation, mojave: "e09ed92fc6f26d382156ef9d2cd41b5a815b7a1f0011a60c85d11fab7fad41ac"
   end
 
   depends_on "cmake" => :build
