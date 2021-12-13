@@ -7,8 +7,8 @@ class Symengine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/symengine"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9dfabdc02d3d1501dfd5da6fb8abdcfe8cdb5f4793eb4031b0504ff2d7ec5530"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0f1a1fed09efcd8af10d7c1cb91bf6de6a621ca5bf2ca7ec91ce737c0a7aae38"
   end
 
   depends_on "cmake" => :build
