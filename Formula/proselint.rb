@@ -10,8 +10,8 @@ class Proselint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proselint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d4edf07b5f5c0910a98c889d5f4d5d6056194e57a64e3c7cc62a9a35dd028a75"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c6d85f2b1902333d078a7891c20178d85fe8d2cb519230e58046e3dbf761ed8e"
   end
 
   depends_on "python@3.9"
