@@ -29,7 +29,8 @@ class Strongswan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/strongswan"
-    sha256 mojave: "316f36ace80c5863f1787ebfefe62f63369cf62a056925cbd53ab31d3257eff6"
+    rebuild 1
+    sha256 mojave: "38b8a1a7609c808dc1e3f9e8c1320e8ae52593a3bbf92a747bd49f3019b0294b"
   end
 
   head do
