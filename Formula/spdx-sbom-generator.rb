@@ -7,8 +7,8 @@ class SpdxSbomGenerator < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spdx-sbom-generator"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a50df30f105990c37e25db9d4f7a0b5944f5646d55bf0cd39d941b9986c4a062"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "90f4c59993a3ca6c24264d32bc4a56ccf4529f39a291abff2cc133af4c04f097"
   end
 
   depends_on "go" => [:build, :test]
