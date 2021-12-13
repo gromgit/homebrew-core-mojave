@@ -11,8 +11,8 @@ class S3cmd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s3cmd"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7ad7329d8e7b5b327ae04f9e5174ee8e8922905bef93de95613fa7b5f704491d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "057ee3d6dfcd8059def2930ac81b61bbce4c58a942f0a6f95bdd9da1492788b7"
   end
 
   depends_on "python@3.9"
