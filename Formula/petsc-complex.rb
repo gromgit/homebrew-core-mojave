@@ -11,8 +11,8 @@ class PetscComplex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/petsc-complex"
-    rebuild 1
-    sha256 mojave: "af951f4276d5e0b219269b0ba7b4171123a255f1086c43acae5dfb63976423a8"
+    rebuild 2
+    sha256 mojave: "45bb44acf8148a5e78c3699d96bc59a914d5b505cf85d9187c9a005f2ba1c754"
   end
 
   depends_on "hdf5"
