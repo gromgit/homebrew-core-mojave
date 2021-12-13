@@ -2,15 +2,14 @@ class RustAnalyzer < Formula
   desc "Experimental Rust compiler front-end for IDEs"
   homepage "https://rust-analyzer.github.io/"
   url "https://github.com/rust-analyzer/rust-analyzer.git",
-       tag:      "2021-11-29",
-       revision: "d9b2291f546abc77d24499339a72a89127464b95"
-  version "2021-11-29"
+       tag:      "2021-12-06",
+       revision: "7d6fcbc0be2151bfa85ec146545b42d8be2fb28c"
+  version "2021-12-06"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust-analyzer"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "300e3c51d31435f9cd948b2f4de55b28d9af68cbf0ebe4417524c2625ddb6645"
+    sha256 cellar: :any_skip_relocation, mojave: "2164cd6d2eea427de1bd000ee3beac00e4c9d457fbb745626241ae77031cc01c"
   end
 
   depends_on "rust" => :build
