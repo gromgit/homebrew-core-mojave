@@ -8,8 +8,8 @@ class Subnetcalc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/subnetcalc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7f65e3c3421cf3ce574889a702365287a245c8ed5fb528c3002755faba94ff8e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c37264918cb97ce1d47856f5e3f031bbbbc1400d182350bba969053a103bfae1"
   end
 
   depends_on "cmake" => :build
