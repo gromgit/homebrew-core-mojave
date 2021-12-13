@@ -13,8 +13,8 @@ class PostgresqlAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@11"
-    rebuild 1
-    sha256 mojave: "f21dafe12e1de172187a202df3176e1a604febb65f0930c689581d5008666762"
+    rebuild 2
+    sha256 mojave: "50a68c5c772f407ade767091a15d94e69d4c39885ec899303907839ebcb76762"
   end
 
   keg_only :versioned_formula
