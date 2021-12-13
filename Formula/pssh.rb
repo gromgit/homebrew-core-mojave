@@ -10,8 +10,8 @@ class Pssh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pssh"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "08c734526c2f89e23d3046c2e5b8ba13b67f2e51afa5d5bbe61a1fcc6e971099"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "06534c1251731840e5a0691965550a8734a145207b031f90b6daaa46a64176ff"
   end
 
   depends_on "python@3.10"
