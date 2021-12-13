@@ -12,8 +12,8 @@ class Perltidy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/perltidy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "648d89b5302cb50761f6f2e0f1c63229f5424ddaa9e9ef1a82b75790649d2a42"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "89effab072cf97dabbde332cdc772c7d499644f2e493ab6ef52319001c082de0"
   end
 
   uses_from_macos "perl"
