@@ -12,8 +12,8 @@ class Pari < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pari"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5b267f1ec77b6f21f8c042a926c3a40067d7dda9544f8a559248adcdbdbe684c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "3170f857ea29f652ab1362a5a10b9d1fe1a3b76adcc063b4eeb6b29960dd9e7b"
   end
 
   depends_on "gmp"
