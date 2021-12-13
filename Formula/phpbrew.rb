@@ -7,8 +7,8 @@ class Phpbrew < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phpbrew"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dff34868c050e503ee99b3ce30c1b6141e982fe3f3a893469317834ccf0622f2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "228e96a145d40c8b9893192cd078c7b8c3738cd28af2b0676b37c076ada0435e"
   end
 
   depends_on "php"
