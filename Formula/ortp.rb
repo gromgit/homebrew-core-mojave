@@ -8,8 +8,8 @@ class Ortp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ortp"
-    rebuild 1
-    sha256 mojave: "704170213fb709ac257a532d926a48fb9dd4625b3fd5557875f94b59f5142d13"
+    rebuild 2
+    sha256 mojave: "223323ff21086ee8c8b920340aa91055d6fafbb7dcfbdb42d0b117385e8e5af8"
   end
 
   depends_on "cmake" => :build
