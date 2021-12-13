@@ -9,8 +9,8 @@ class ScIm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sc-im"
-    rebuild 1
-    sha256 mojave: "ca7b95b4ba4597f4817a1d6f1418466e597d2384d8e0ae5c1604c7a27af150bd"
+    rebuild 2
+    sha256 mojave: "1434ed2b22af1bb3497384a10fa581074fcd847ae9f549cbf4b519bbff1281e6"
   end
 
   depends_on "pkg-config" => :build
