@@ -7,7 +7,8 @@ class Phpstan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phpstan"
-    sha256 cellar: :any_skip_relocation, mojave: "6f85f09c4ceed0e2991bcd34c88d213104adcc80e9be74db8d05c3a491788d98"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "363036a9797dbf6ae39628f6ec3105bd599ca682f831c19825dc58df4ae1fe7b"
   end
 
   depends_on "php" => :test
