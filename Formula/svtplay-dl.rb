@@ -9,8 +9,8 @@ class SvtplayDl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/svtplay-dl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "126e1cc84337c91c3a89f7a8db471db976dfaebb4b65a6ed63e0822259c80561"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f90f2d531828dd9013c7c2fc5dfb89001066337d2594fc2bb2a437ffa505be2a"
   end
 
   depends_on "rust" => :build
