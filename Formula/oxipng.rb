@@ -7,7 +7,8 @@ class Oxipng < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oxipng"
-    sha256 cellar: :any_skip_relocation, mojave: "e05a80f677e273ecc105be83574a3047a87cd141b9b38849c9032cc0c864d6a9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f87582baebc090270fe3166d3b2816daebeb96ca2fd20b2c10610ca7efdcca72"
   end
 
   depends_on "rust" => :build
