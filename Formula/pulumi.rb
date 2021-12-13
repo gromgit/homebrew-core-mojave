@@ -9,8 +9,8 @@ class Pulumi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pulumi"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a60cea352d391a0b07585cbcba041985ca879ced46ca102b444e0cbe190d4ce3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "12879604bd8bf2c9c501b4e30de7aeb570c9e35bdf47852a0199b37914cfe507"
   end
 
   depends_on "go" => :build
