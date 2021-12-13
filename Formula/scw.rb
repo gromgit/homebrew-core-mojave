@@ -7,8 +7,8 @@ class Scw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scw"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6434e84eb23a131180af5dd25c8dcb0e070b37de3fd22782c6ccf727d719b8bb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "da263cc5fb1b1bec28aa56b33c02f19e6dac40b0ba58be3a54c92aa7520bf156"
   end
 
   depends_on "go" => :build
