@@ -7,8 +7,8 @@ class Sextractor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sextractor"
-    rebuild 1
-    sha256 mojave: "ace17683af54cb6e1350d490fb36b47489b9dbf0ab508893358b791e9245920b"
+    rebuild 2
+    sha256 mojave: "8ec8e662bcb0d1d8c0e10cea162a0ebb6279b90117b5d8306e940fb91411edcf"
   end
 
   depends_on "autoconf" => :build
