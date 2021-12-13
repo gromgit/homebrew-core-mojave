@@ -12,8 +12,8 @@ class Rtaudio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtaudio"
-    rebuild 1
-    sha256 cellar: :any, mojave: "df1a94f64c05b89d9430596f311497870ac58f0c6cb759838b3400ad8c85ad85"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5d47894d81e76788e2971a37677f4b691644b733974184829975fecad24b29fa"
   end
 
   head do
