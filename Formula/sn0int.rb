@@ -1,14 +1,13 @@
 class Sn0int < Formula
   desc "Semi-automatic OSINT framework and package manager"
   homepage "https://github.com/kpcyrd/sn0int"
-  url "https://github.com/kpcyrd/sn0int/archive/v0.23.0.tar.gz"
-  sha256 "38600bfb1df61f0640f52ab23b990eb25cd422df95af30bf1d290fb455849a95"
+  url "https://github.com/kpcyrd/sn0int/archive/v0.24.1.tar.gz"
+  sha256 "557080235b04f47a693ed5263a7218cb5c3f5ddc273cac9185145c1bbe4b8ceb"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sn0int"
-    rebuild 1
-    sha256 cellar: :any, mojave: "39863db662978ee2375b2b76a7218e3f28b3e9c12629b8301d10c8bb276993c0"
+    sha256 cellar: :any, mojave: "13d02dc5c936ddb78d6da86293d27aa0317c1fdd40e43ea95b1d29ed625c6281"
   end
 
   depends_on "pkg-config" => :build
