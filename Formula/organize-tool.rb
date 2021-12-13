@@ -10,8 +10,8 @@ class OrganizeTool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/organize-tool"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5de7893e99f3dfb59da7b99f5fa3d61f776140ca690bb81616a039c86002d62a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c129f3a32ceeaa99270de39c22bff17a76684eaf7aab8d9584b31c8d8a30cdbb"
   end
 
   depends_on "freetype"
