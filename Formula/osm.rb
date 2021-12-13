@@ -8,8 +8,8 @@ class Osm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a07d4ffb317b93f152dfe9d1e239a78f19176dbc0778f7934db263688724edf6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ce7dfad0d33f6226367d7e897bc9dbfcb530d9ce98cf3d9c815f9ba9f7f72c5c"
   end
 
   depends_on "go" => :build
