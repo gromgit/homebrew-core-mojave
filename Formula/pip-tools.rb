@@ -9,8 +9,8 @@ class PipTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pip-tools"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a461ced8fa34eb40fdbdf9b9988b218c988b1ee06368859f34995223544a3edc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b7e0f4dc5b89dfdc019ecf5e227cb2165e76e2fa9207db2ad727f5ec7195e5d0"
   end
 
   depends_on "python@3.10"
