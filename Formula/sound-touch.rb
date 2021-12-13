@@ -7,8 +7,8 @@ class SoundTouch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sound-touch"
-    rebuild 1
-    sha256 cellar: :any, mojave: "80a4d7f879023513b11e07db5ddc99fee0a06e2eef2bff32fab7154992933f6c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0d05bc55deb51aa8ccf22613d77158814f09f582ca005b1ed808951a69a90c4b"
   end
 
   depends_on "autoconf" => :build
