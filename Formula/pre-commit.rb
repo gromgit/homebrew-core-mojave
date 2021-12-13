@@ -9,8 +9,8 @@ class PreCommit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pre-commit"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3de2442d0f5841051708d4d7881f2d59390407256021f189eec68e932db563ec"
+    rebuild 2
+    sha256 cellar: :any, mojave: "34fa2e9796364e04c0ee7e87caeb441555bbfa2f5b51863ba9b4c4bd4e0afd11"
   end
 
   depends_on "libyaml"
