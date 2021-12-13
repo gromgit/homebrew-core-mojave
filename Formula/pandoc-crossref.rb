@@ -7,8 +7,8 @@ class PandocCrossref < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pandoc-crossref"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "36fa2e0b6c4c24f5d6c69d6e414ba2949ba0e04082941f93b601fa9203a8b504"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "737a32fda1d75ce194784067ed16a2bdead2fb824862b1f43b3ccb557d987584"
   end
 
   depends_on "cabal-install" => :build
