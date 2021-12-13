@@ -9,8 +9,8 @@ class PrometheusCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prometheus-cpp"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9ea09d50f9f49c1eb58f5bbc6731925972eeb945c54f6641bd98ba1832da844b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c60227e11d31f904d6130b5864f05047334f28026520e2d6395961b395806451"
   end
 
   depends_on "cmake" => :build
