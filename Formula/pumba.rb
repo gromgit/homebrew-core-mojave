@@ -13,8 +13,8 @@ class Pumba < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pumba"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2065ae1fd4164971c34d814c609986c6a5a50af7a95f78280d6c7858b0d374a4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e5387fbe92c17c957f7032c1da6761f2c863033cdc71badfdc6102c797fbdae9"
   end
 
   depends_on "go" => :build
