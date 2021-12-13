@@ -13,8 +13,8 @@ class Packer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packer"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "874e28220a3f596aeaf0145d15af5bd8b435635a74cc3008f7aca70a3b24140b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "020278a5fc83fcfd78ef9db5bdaf2f62f4d1cc145d29397c72461642dc451515"
   end
 
   depends_on "go" => :build
