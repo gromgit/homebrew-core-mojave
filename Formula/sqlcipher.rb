@@ -8,8 +8,8 @@ class Sqlcipher < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlcipher"
-    rebuild 1
-    sha256 cellar: :any, mojave: "94f7f1c8991d5bd7d44b20385ba012abd10bde4477cfd441ff98145a8eaadc77"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1c10e668129417224a513165d099814608c25cbaac3d4aa5ba5aefa1b069610f"
   end
 
   depends_on "openssl@1.1"
