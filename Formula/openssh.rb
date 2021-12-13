@@ -6,7 +6,7 @@ class Openssh < Formula
   version "8.8p1"
   sha256 "4590890ea9bb9ace4f71ae331785a3a5823232435161960ed5fc86588f331fe9"
   license "SSH-OpenSSH"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
@@ -15,8 +15,7 @@ class Openssh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssh"
-    rebuild 1
-    sha256 mojave: "3184c42bfb5ea8e100eb7d991d25055199dec7bdc69a97061b699e39cae8dadc"
+    sha256 mojave: "97b904945e9ae1551f9b7df36041102ac1305448ac9e053afcbdae846d1326c4"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
