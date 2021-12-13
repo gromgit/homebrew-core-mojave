@@ -7,8 +7,8 @@ class SpirvTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spirv-tools"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e9db07dcef6e46afb3d35b988da9beea8ba4f821fc8eeeb0857486b22429d31d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d76a51c654d16ea37c0b5ff68a6fe751d08cea9f5530b9f81c2d97c4ceb21603"
   end
 
   depends_on "cmake" => :build
