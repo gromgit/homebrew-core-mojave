@@ -12,8 +12,8 @@ class Packetq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packetq"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "babc72f026bfaa2453a1dbba0357af3054da25010f89eda8c3ae22fa644b3ce3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0f1457f4ad8d524d8982e1ee4658f1b0fdf165eaa6164f70c172b5b5ce8c64f7"
   end
 
   uses_from_macos "zlib"
