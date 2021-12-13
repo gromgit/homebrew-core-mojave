@@ -8,8 +8,8 @@ class Pueue < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pueue"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "57c9d28daf79fbc5f1dd3dd080f9e5c33d274908f8c95b692f5110636b657856"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ea21b20d9f55490b4033caa4f3a8c4b9d0e99382cb4766af4c46adef920ddcb2"
   end
 
   depends_on "rust" => :build
