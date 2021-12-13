@@ -7,8 +7,8 @@ class Stylua < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stylua"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2140a4295d5d097beff2e20f7126969aa35ae352d86d52f5268a48704a5d349b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c7b08eb3e7645750438c0356c0f523ca0d1cc0b6de4631d2e4d8f37aa76adfd1"
   end
 
   depends_on "rust" => :build
