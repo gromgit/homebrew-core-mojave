@@ -7,8 +7,8 @@ class Shellharden < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shellharden"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "77c24d8da9328d802a9eba8dafd94fb3253e5d8326abc7b755b050a45ab898f5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c8bc5fbcbb6a70867d62c9a453755980adfc31e5d027a894695f151f27a3b714"
   end
 
   depends_on "rust" => :build
