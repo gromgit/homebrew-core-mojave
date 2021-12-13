@@ -8,8 +8,8 @@ class Selene < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/selene"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5adf3c75e2afde499ff44cee22b042f56a54d9b970586a67b76204ca441b9c34"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "aaac2afcee7946d941a359133aa9842a8662f83adedd96639aaf2abe7676b0c2"
   end
 
   depends_on "rust" => :build
