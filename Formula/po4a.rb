@@ -12,8 +12,8 @@ class Po4a < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/po4a"
-    rebuild 1
-    sha256 cellar: :any, mojave: "158716082b70e49bea60579ec64c2358295a47e2d64c14e02340f0cce3b88c03"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e1194dfeb0e4807c9fda0318e81ca9e740e5f85b6c86577dbb36ed7a17f645c0"
   end
 
   depends_on "docbook-xsl" => :build
