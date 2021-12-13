@@ -13,8 +13,8 @@ class Sleuthkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sleuthkit"
-    rebuild 1
-    sha256 cellar: :any, mojave: "dca16f5772c7d0206bbe87ee005e15cc494bf27689c97a67e8e10483f5f3368b"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d7fc660493b94b16c2744ca89f563b4bf1c3be5274b606b5b0a73c7acedadb76"
   end
 
   depends_on "ant" => :build
