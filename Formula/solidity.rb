@@ -12,8 +12,8 @@ class Solidity < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solidity"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "40e6cd4090e3dbf12b86f6326d3798be4bc7e3f5ff91ad2d3499169f777c042e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3e2e38be805e48d72e2be8b92541938d78e08448d1d8c9c9750564950b3b34b2"
   end
 
   depends_on "cmake" => :build
