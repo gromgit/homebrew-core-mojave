@@ -14,8 +14,8 @@ class PhpAT80 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
-    rebuild 1
-    sha256 mojave: "398bdec981a6369134e6e661a4552b858508d2a02f1cc5ee074244dc5402afa5"
+    rebuild 2
+    sha256 mojave: "dc7f8434b60dbd60efc6ef9083967e6de770a462d2c005b7d9ec492c0daca277"
   end
 
   keg_only :versioned_formula
