@@ -9,8 +9,8 @@ class Snort < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snort"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1dfafcb08b824858e35007dccdc8f2fc0886b553154b13f9f42ae9f3c42ef5a7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d7d669626c6cbf076a288f6d74f638690d4031703352313241fab14b2ed2e39d"
   end
 
   depends_on "cmake" => :build
