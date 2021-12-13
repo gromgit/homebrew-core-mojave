@@ -8,8 +8,8 @@ class Sleef < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sleef"
-    rebuild 1
-    sha256 cellar: :any, mojave: "946276fc6a1b8db50c3829d083e5e993e9d60482b5e3c73625520c9a07918e2a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d7a548e064e26ab13f4b360921d2800f76daa99c133dd853aef9663c8800fb36"
   end
 
   depends_on "cmake" => :build
