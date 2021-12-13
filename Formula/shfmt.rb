@@ -8,8 +8,8 @@ class Shfmt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shfmt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f1b1cd655ef9200c49895f81b2cde56f1b0cfbbcbc59543a4b2e7cc582d81fb2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "25ba0fde621d2a05dbacd52a69187ab7d0041e5e5856bcbc6196d653cc76bf2e"
   end
 
   depends_on "go" => :build
