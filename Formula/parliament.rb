@@ -10,8 +10,8 @@ class Parliament < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/parliament"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "69acdacb6149e7c9e239dc4b5e3373948d0e77c2dc5ad9cd5ec67d3941d55290"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4e9135d60de03fbcdbcbb79a14b36a59acbc9ee7157f4d344104680adfaec3bc"
   end
 
   depends_on "python@3.10"
