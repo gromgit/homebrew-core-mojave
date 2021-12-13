@@ -12,8 +12,8 @@ class Scamper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scamper"
-    rebuild 1
-    sha256 cellar: :any, mojave: "31f2e1e3eafacd4a990529f5cec42f330b7c81116a68d82a347e1e2d94858b42"
+    rebuild 2
+    sha256 cellar: :any, mojave: "360edbc0fc8b8a50ed755da276176e00d66fa7c7e2bdffb91f63045a9cfb661e"
   end
 
   depends_on "pkg-config" => :build
