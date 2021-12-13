@@ -12,8 +12,8 @@ class Prometheus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prometheus"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d5a6662f9de923fa838fd27f6be37c5c76bfc9213a2cd445bbef118cd900c260"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d5743ca046688db9b219a2d8b262920d3a3cb5fd00f24dd8f7a68aa01447d707"
   end
 
   depends_on "go" => :build
