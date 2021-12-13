@@ -8,8 +8,8 @@ class Stgit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stgit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "58a2f0196b8431d64ad7473183253231929feecc2b6ff4bfbedac7f30dda03cd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b30ba2817f194cd80332bf3610c256eeb6a7df7029ce169cf25a488e1aed5d93"
   end
 
   depends_on "asciidoc" => :build
