@@ -12,8 +12,8 @@ class SigrokCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sigrok-cli"
-    rebuild 1
-    sha256 cellar: :any, mojave: "34973b5a7e2c21204f6869cb05da7580fea984513c27e5968fba0e1c8a731d9e"
+    rebuild 2
+    sha256 cellar: :any, mojave: "18a4fc640b3557ef7e1caff1d6e365bb796fb7af1cefbacfb21e9830f251bd71"
   end
 
   head do
