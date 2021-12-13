@@ -8,8 +8,8 @@ class Starship < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/starship"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cee19cc1c15a7a51529ce17bae5246a4aba610afa0b49bb8787eda316b8710d5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f210fd5fe80d513d4404d7ca65edb17e9e229340be9f72f4c17a1f792b2940cc"
   end
 
   depends_on "rust" => :build
