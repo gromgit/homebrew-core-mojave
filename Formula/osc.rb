@@ -3,20 +3,14 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://github.com/openSUSE/osc/archive/0.174.0.tar.gz"
-  sha256 "9be35b347fa07ac1235aa364b0e1229c00d5e98e202923d7a8a796e3ca2756ad"
+  url "https://github.com/openSUSE/osc/archive/0.175.0.tar.gz"
+  sha256 "6802efaf1c1b2c89cc0de856c5754a1aecb045d2193a3a42b7a5775ccdbf70fd"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "599f8515898fc6b2592434cfe8920bc6a05becbc1715c820b2cde12386bb5ba6"
-    sha256 cellar: :any,                 arm64_big_sur:  "537ad65c12cb4a633f5f52dada6121947c90750983e289165ed8e2b1fc0ca3d9"
-    sha256 cellar: :any,                 monterey:       "ffdaf4c3e9c80206c4bc722e7d4d9f28ca77dfe84d7d8d29d2624a56ffeba13a"
-    sha256 cellar: :any,                 big_sur:        "da58b8627f227b386b87ac8b558fb79a1d7b90c1ed60674639187928ab00197a"
-    sha256 cellar: :any,                 catalina:       "adb60d9fc75fe8696bde10876cd878ea8ce7b75a6b13401dc7d8c3f3dcbb77ef"
-    sha256 cellar: :any,                 mojave:         "d2bc5039ffcecc4163a88a606790bfa743a77433c86613dfa23421db39aad095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2279bf292ee277d8a3f5d410113f8797d4915fa2b9f27fdf7e20c53274a3e550"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osc"
+    sha256 cellar: :any, mojave: "a6d6b97e09174af039c045ec48e27e56dfc0bece2f1f7bfb39da4d8c644bb8cd"
   end
 
   depends_on "swig" => :build
