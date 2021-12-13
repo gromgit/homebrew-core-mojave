@@ -7,8 +7,8 @@ class Sniffglue < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sniffglue"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cf6904446901b6fb97750818d4db8639e65188b45243d9f050df0602a037c391"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1d5087e93ac29dcd7980aeecfca1650df768d4d5814edc1d298b81205a7cfaad"
   end
 
   depends_on "rust" => :build
