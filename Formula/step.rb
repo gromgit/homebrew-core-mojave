@@ -7,7 +7,8 @@ class Step < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/step"
-    sha256 cellar: :any_skip_relocation, mojave: "72c359bd00b02049b59be06c802c936efcdbed5944118c51c9ef72381c0c5fc7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b49330f7829f19b9af867d224ed6391a4e1a96f456daeabc53f69c9578d6b958"
   end
 
   depends_on "go" => :build
