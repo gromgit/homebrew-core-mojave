@@ -12,8 +12,8 @@ class OrcTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/orc-tools"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fa8952ccc0cf4cc84aa2baa8e9c6a2ec4f5f5777363be867a0f53c9f971f1bf0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "251c3ec707f822901b439b079dc3da3c13bc6f2914fe809cdec8c96514d16b23"
   end
 
   depends_on "openjdk"
