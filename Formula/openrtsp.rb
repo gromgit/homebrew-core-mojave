@@ -14,8 +14,8 @@ class Openrtsp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openrtsp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "27bebf5fd9a487a8092efbcff4ff95e0f7bf1a83229547c8e29189505eff0634"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e9b4fbe4306f80e9d308ca4f6f54fa3a81340cda15906f78621d273d0561a804"
   end
 
   depends_on "openssl@1.1"
