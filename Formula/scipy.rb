@@ -8,8 +8,8 @@ class Scipy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scipy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d5748d1682879bb04592d4448f27d78c80561b0afc5229e19d57b9acf1be6848"
+    rebuild 2
+    sha256 cellar: :any, mojave: "fb90333096aa61299bf431bf4e8a7444279c6ec7f30beab6faf2006581db6628"
   end
 
   depends_on "cython" => :build
