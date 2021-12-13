@@ -2,15 +2,14 @@ class Packetbeat < Formula
   desc "Lightweight Shipper for Network Data"
   homepage "https://www.elastic.co/products/beats/packetbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.15.2",
-      revision: "fd322dad6ceafec40c84df4d2a0694ea357d16cc"
+      tag:      "v7.16.0",
+      revision: "4bcd954491364231b14d7f340500441af2133209"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packetbeat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "04a1d98f95b7ba3ee079f3a765bc06ea845cee5964d32e9b190889404fe7fc86"
+    sha256 cellar: :any_skip_relocation, mojave: "5e7e557f399d72156c937402312820dffbfe9e4c99c9279aa787a324c86e3d3e"
   end
 
   depends_on "go" => :build
