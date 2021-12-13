@@ -13,8 +13,8 @@ class OryHydra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ory-hydra"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "710b21c7c0f98a8f30d81d1c3819d5f43b013c38d2d37d2fbd1309d9205c1eaa"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "01b4bbcfd4e27bf1a312a7d08b2b55af128eca962b7268f8701966676d5a457f"
   end
 
   depends_on "go" => :build
