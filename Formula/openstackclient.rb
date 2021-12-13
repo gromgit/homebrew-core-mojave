@@ -9,8 +9,8 @@ class Openstackclient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openstackclient"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ed27b092f047f6c209b0eb4cafabd141a8ecbf30b6c221e78baf59c3d4b3abcb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "effe4a64a0215ca94ae8314e4c6148ba21a268c073c709eb738cdae31ceaaacc"
   end
 
   depends_on "rust" => :build
