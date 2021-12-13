@@ -15,8 +15,8 @@ class Samba < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/samba"
-    rebuild 1
-    sha256 mojave: "f7f7cbda65462aaab0eb8d3b4b1cd92b2a2c353c291f54022769158cabaa5f9e"
+    rebuild 2
+    sha256 mojave: "82899e31f731ea2653030941cb968ba8cbbff1ac4ac483966d6bbad644dc5113"
   end
 
   # configure requires python3 binary to be present, even when --disable-python is set.
