@@ -8,8 +8,8 @@ class Passenger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/passenger"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a0f8ec82f277b75536fdf941bcfabd0b1d633d84ce4120d78b7abc3a44399ac2"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6f69ee7f2c7227712d893f3d6b0cdb3a9dedb418a061a61abea91d0cfd75b477"
   end
 
   # to build nginx module
