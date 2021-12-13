@@ -7,8 +7,8 @@ class Proper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proper"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8be8c4728a4bf10f4e2596a813ea507d6b99e259f9d5691752666c6ff5e77181"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3c561d528e58251f1e1aa18c8c64557eba75b933e1e83a540a5065108afdb853"
   end
 
   depends_on "rebar3" => :build
