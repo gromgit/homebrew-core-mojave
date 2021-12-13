@@ -7,8 +7,8 @@ class Seal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/seal"
-    rebuild 1
-    sha256 mojave: "6f48cb77d10529db19db743b327608715b5291091f801657e7e91ee7520d2638"
+    rebuild 2
+    sha256 mojave: "bd050b08c305c92cb037b62b905fe59047365bb24ba10a3ad679787b91bdc457"
   end
 
   depends_on "cmake" => [:build, :test]
