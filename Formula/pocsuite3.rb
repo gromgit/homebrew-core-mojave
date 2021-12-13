@@ -10,8 +10,8 @@ class Pocsuite3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pocsuite3"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6d0aa62aba854d1e98df9b38ed0bcca15c5be5888c9377935c18cfbf84265078"
+    rebuild 2
+    sha256 cellar: :any, mojave: "cc5868d63c8ba708074eb0928133d3f69839687480592db272440085fce5146f"
   end
 
   depends_on "rust" => :build # for cryptography
