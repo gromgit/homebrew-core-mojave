@@ -8,8 +8,8 @@ class Sheldon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sheldon"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a10e7ad8cdbbd89036e9071cb6ee6463d193895849e64d30032c24f4374d66e0"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c6b3fc45dea5902d96dfbab10b193d37d309c60e3f203df87e6a16b303fef6fa"
   end
 
   depends_on "rust" => :build
