@@ -3,15 +3,14 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/16/d8/5e0e61d6a97e3bb9d7d5b24bb9c2e502c687d9c5f7ed712b55ba05f2faae/pdm-1.11.0.tar.gz"
-  sha256 "94ceeeb9b9d1c26a7227832ab9665786b34305cb7dcc206e55682a600ebff53b"
+  url "https://files.pythonhosted.org/packages/ac/5d/17295171f7fc132356177eefa6478948584e9232e699d34e482ab2c814e8/pdm-1.11.1.tar.gz"
+  sha256 "3a3af246b0a1261188c40f9b6e46388f1ee0cc118ff745d29bea93d4759c06d1"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fb64bcbe741d9d506ecd82099c9da3046872f8ccba9e8b0e48359cd0fb3f78b7"
+    sha256 cellar: :any_skip_relocation, mojave: "3783863dd173b233dbf089e1b2f05e6b14937eecc7600b13361168300c36d354"
   end
 
   depends_on "python@3.10"
@@ -53,8 +52,8 @@ class Pdm < Formula
   end
 
   resource "pdm-pep517" do
-    url "https://files.pythonhosted.org/packages/07/b1/2e3a45645fa01776e5cdc31a4cf2e55538f4dd61ea60e552b01e8e4813c1/pdm-pep517-0.9.2.tar.gz"
-    sha256 "0190934efbc072fef4d93c547c602fb5a4bd6bb9e65a77138beaa2ea8d975408"
+    url "https://files.pythonhosted.org/packages/dd/7c/ac07ce6293258f1d186bc85d686984565c0c8ffbd249faa0855cb5d50a52/pdm-pep517-0.9.4.tar.gz"
+    sha256 "da8d85baebd2e4f5bbba1c65dc41813fbe4267775cca33e8ba0d64d22ae5e757"
   end
 
   resource "pep517" do
