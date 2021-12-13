@@ -7,8 +7,8 @@ class Pcapplusplus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcapplusplus"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4c6bdb24f338cfa775f909cc26e4245a0290e1709f6fd5b1a1d3fbe9062bd171"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a0e2c703a569c8a89e7886f9a730843725feb7d22c52c020df77088ec83c3682"
   end
 
   uses_from_macos "libpcap"
