@@ -13,8 +13,8 @@ class Pjproject < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pjproject"
-    rebuild 1
-    sha256 cellar: :any, mojave: "36ff83146a5caea17445568a652c7e54228759fdabc66d59cc580882c6e47646"
+    rebuild 2
+    sha256 cellar: :any, mojave: "9e5bb73b588bc8d042b7d63064c918995e9a723d24146baceb7f2b4671e7f557"
   end
 
   depends_on macos: :high_sierra # Uses Security framework API enum cases introduced in 10.13.4
