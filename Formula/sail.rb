@@ -9,8 +9,8 @@ class Sail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sail"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9e3c56b0fab886f0aa0b481c5a43035ce6a35e3747580bbc2da1826cfc87f74f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ad77d4935bc942cf0301ab9f716db8b29db715209f5b5ff1cdd428c1fbc8e134"
   end
 
   depends_on "rust" => :build
