@@ -13,8 +13,8 @@ class Stockfish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stockfish"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4e6fa5cc87a3da0d00f9ef8efaebe45d11c969e0671a041de76a6e4e951d583e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "78055daa3e09019a43dda360fac21481c2bcaf2b18ef07a23e22848f07f311ad"
   end
 
   on_linux do
