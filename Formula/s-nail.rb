@@ -11,8 +11,8 @@ class SNail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s-nail"
-    rebuild 1
-    sha256 mojave: "8a4ed9a0951a23c5fda974fe7bd300146e00e8fd523636de7b77eb61d75c6a37"
+    rebuild 2
+    sha256 mojave: "ee679a2c87cf01a9b1d150bcae93d78312adf9e6b4590a9330c786b87063f2d6"
   end
 
   depends_on "awk" => :build
