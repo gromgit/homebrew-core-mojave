@@ -12,8 +12,8 @@ class Pgroonga < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgroonga"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1f69f29ea56a7fb43209fbbf0134ad1991e776c511afa9bffe3afca5e97c9fcb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "461fb51c0a9dd987284b7c10bcdef3a4ea08171619e36ef4d86b3c3f85b4f198"
   end
 
   depends_on "pkg-config" => :build
