@@ -13,8 +13,8 @@ class Ospray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ospray"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3cf84cd4d23ebd8751e8d4091df1f3d45cbadd6ebb0b34bb6842f31f9581146c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "4be166510601ef798b2ace4ea764ea79ff63d76e3c593aa083905d41cd756a02"
   end
 
   depends_on "cmake" => :build
