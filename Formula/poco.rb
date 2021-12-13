@@ -13,8 +13,8 @@ class Poco < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poco"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1d0f3c9f549860c1d44a418cb3e6694e2f3abcdaac8816e7a49573a98532cf45"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ddac54b6f57fe02bca40df2303b0f8babde61a74fc838557adb17dce1c27dad8"
   end
 
   depends_on "cmake" => :build
