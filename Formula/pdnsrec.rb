@@ -12,8 +12,8 @@ class Pdnsrec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdnsrec"
-    rebuild 1
-    sha256 mojave: "68ba84566eed925dc648373b2c91ef4ee7b2907db15b7f0b3113c7aafa4782c5"
+    rebuild 2
+    sha256 mojave: "8de6b5faba47a63a0f2e3705b121cc66c292fcf6c3b7a712c2462dadbbfd9ceb"
   end
 
   depends_on "pkg-config" => :build
