@@ -8,8 +8,8 @@ class Shellcheck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shellcheck"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9341a80bff324c54045f02c2e302193db22d64261c0a4c810ed8ce35e8510d39"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "973cb17ee120cdf04ce1700c249511557a131a895254b84afe02d6a344b06b5a"
   end
 
   depends_on "cabal-install" => :build
