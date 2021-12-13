@@ -13,8 +13,8 @@ class Openttd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openttd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4d98110863b43ea4f3c6c87684ead7109feef6c1dff7866b6c2f58971c26d954"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2b3421c57ef6aff301fca92787ab5737bd3d4e5c882a094e4fa3fe3873f914dc"
   end
 
   depends_on "cmake" => :build
