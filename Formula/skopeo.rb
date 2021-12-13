@@ -7,8 +7,8 @@ class Skopeo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skopeo"
-    rebuild 1
-    sha256 mojave: "92390d40600f8dd773cfbec656f337e32b0e91ec903b03ec6ae9f77e0be72d14"
+    rebuild 2
+    sha256 mojave: "9217e3e373fd56133c86a0c3bfd2ea335a36a27f2b2ae0e8da295ea43bb6654a"
   end
 
   depends_on "go" => :build
