@@ -15,8 +15,8 @@ class Cataclysm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cataclysm"
-    rebuild 1
-    sha256 cellar: :any, mojave: "83d2f37d27f8d3dfb999313f2863bc65cdfbc71200fccceb8c615e80216eace3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "125578bb0ecc3f3d3e20724ca28de035a7b88d624ce19f462f0874155f378ce1"
   end
 
   depends_on "pkg-config" => :build

@@ -6,6 +6,12 @@ class PysideAT2 < Formula
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyside@2"
+    rebuild 1
+    sha256 mojave: "82b689cb66e0f78b8d09ceeb68d4ca52a75367f686c14daae77575cc9f33afed"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build

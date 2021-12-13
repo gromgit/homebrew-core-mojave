@@ -12,8 +12,8 @@ class Gromacs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gromacs"
-    rebuild 1
-    sha256 mojave: "2ca5112a4044354c5a7d3995b4b68a31fe75a5136cbbe21e1bb247e4698f1013"
+    rebuild 2
+    sha256 mojave: "d7edabbe81ad5da58629f4875dce700a6e901ccb5f0599541c13136a19fbcaf6"
   end
 
   depends_on "cmake" => :build

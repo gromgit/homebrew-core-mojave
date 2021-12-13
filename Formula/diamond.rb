@@ -7,8 +7,8 @@ class Diamond < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diamond"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2eacf79c48d978f4d254485b61fd2fbf76371188d2b8d6017034a37d108107e3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7ead31d3f9e6e5b74cf2bbe66c8b360a6674345609529e6384997d5f538d37b1"
   end
 
   depends_on "cmake" => :build

@@ -11,8 +11,8 @@ class Bzt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bzt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d21f8d90dfbbbcfbd4551df856f4ef83fabe6bc6f475ed5d32feb09c44d00d24"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7f271c3ac3cc74c19bbf7e1ef7dcb9089965795cf0fb8b15d4111bd1af6b7ef8"
   end
 
   depends_on "rust" => :build
