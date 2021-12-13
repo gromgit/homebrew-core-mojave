@@ -10,8 +10,8 @@ class Pgbouncer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgbouncer"
-    rebuild 1
-    sha256 cellar: :any, mojave: "91c887fa1f35542948ba597b3a5d7a11fc19b6b5505ba0a8aca67824c90f5131"
+    rebuild 2
+    sha256 cellar: :any, mojave: "546c789e04d7c8520b615501305183025481e3a20e1fcd3a6cebcc3e7bc36cd7"
   end
 
   depends_on "pkg-config" => :build
