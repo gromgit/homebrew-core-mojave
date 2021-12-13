@@ -7,8 +7,8 @@ class Scrcpy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scrcpy"
-    rebuild 1
-    sha256 mojave: "cd5e269083957042ee848ec744b55b69bfcb47ed72b7f1bbc0c49cfc038617bf"
+    rebuild 2
+    sha256 mojave: "a5ef5d7b7e9a01516aad98245d200fbc5fb04e63e189f7b9485f2f3ea8b5687d"
   end
 
   depends_on "meson" => :build
