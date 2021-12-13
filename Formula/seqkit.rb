@@ -8,7 +8,8 @@ class Seqkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/seqkit"
-    sha256 cellar: :any_skip_relocation, mojave: "6678a5047ec5dbcccb2a475717077fd9024047cb0143e1f13713322fa22b0a4a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fd57a18eed8a4d45a814988233b8755814791d2b4c1fb19eb239474e0344a86b"
   end
 
   depends_on "go" => :build
