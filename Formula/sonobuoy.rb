@@ -7,8 +7,8 @@ class Sonobuoy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonobuoy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "60517811502e7cb90ad3fd4c293342d56b42cad4de5372c2dca051e3e656da83"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1bdc437905aa6b31f0bec7c5190459decc38a4d9e318050193b467c9973927c2"
   end
 
   depends_on "go" => :build
