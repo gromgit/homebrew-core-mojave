@@ -11,8 +11,8 @@ class Stormssh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stormssh"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3ccfad8152c18c2f3abfe51944e026a5f0a0a329d0134f1a7a086ea9acadd86c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "dc87d652a13cb3b945edea18b92495ce8b50d9e9a1924656949808930ad17d25"
   end
 
   depends_on "rust" => :build
