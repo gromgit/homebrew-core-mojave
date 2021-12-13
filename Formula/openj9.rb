@@ -2,8 +2,8 @@ class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
   url "https://github.com/eclipse/openj9.git",
-      tag:      "openj9-0.29.0",
-      revision: "e1e72c497688c765183573526f7418a6fe891e93"
+      tag:      "openj9-0.29.1",
+      revision: "7d055dfcb71452077db01fddfc3ccd845cd461d0"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -18,8 +18,7 @@ class Openj9 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openj9"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cc8bea07b7ec619a9d659f52089aec980e85e19b3109275e36f6e9b7a4e81903"
+    sha256 cellar: :any, mojave: "eb04ff0475598efbc6352fee69ba18cf0b1c75e7dae4fc41bc71e43e3a1e5275"
   end
 
   keg_only :shadowed_by_macos
@@ -50,8 +49,8 @@ class Openj9 < Formula
 
   resource "omr" do
     url "https://github.com/eclipse/openj9-omr.git",
-        tag:      "openj9-0.29.0",
-        revision: "299b6a2d28cf992edf57ca43b67ed6d6917675bf"
+        tag:      "openj9-0.29.1",
+        revision: "e30892e2b525e89712747040b4186b9a055a93ce"
   end
 
   resource "openj9-openjdk-jdk" do
