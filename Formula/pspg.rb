@@ -8,8 +8,8 @@ class Pspg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pspg"
-    rebuild 1
-    sha256 cellar: :any, mojave: "247d7c2f7f84a0d34f459efa1721fc4fa0ef1c4ff89314c7e84504990c7a3d4d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "643af862918dcd943535fe3bfa6e99bb568f6f0b0cfdc3a35d9b012e943006c4"
   end
 
   depends_on "libpq"
