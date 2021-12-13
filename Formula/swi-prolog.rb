@@ -13,8 +13,8 @@ class SwiProlog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swi-prolog"
-    rebuild 1
-    sha256 mojave: "2671e43200c5e5b91cce256031334335880292317ceb2487b68e14693942dd89"
+    rebuild 2
+    sha256 mojave: "671e5f542c9b96e6e069951619ba48ae08f1dbc3b19a3896f1e713b3fbe53ffc"
   end
 
   depends_on "cmake" => :build
