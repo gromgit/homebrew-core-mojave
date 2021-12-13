@@ -12,8 +12,8 @@ class Suricata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/suricata"
-    rebuild 1
-    sha256 mojave: "e5985600b9203d331e7acd95760dc9b96f53815fd5260279bc9ead395d5bcfa3"
+    rebuild 2
+    sha256 mojave: "0f5e1c513fba5de1becb07df716ceed32eebbd4bf7a04ee2d8c451e996a02f9b"
   end
 
   depends_on "pkg-config" => :build
