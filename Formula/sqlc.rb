@@ -8,8 +8,8 @@ class Sqlc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5541a5a12edc73b890807714687591e3a229c7597b7398fb2d51f42984293204"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "00032655001be645f736412c4235ba42daffc7a695d5d3897dbe38c698a6f8e7"
   end
 
   depends_on "go" => :build
