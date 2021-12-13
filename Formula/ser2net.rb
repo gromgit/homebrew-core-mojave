@@ -12,8 +12,8 @@ class Ser2net < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ser2net"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aeedc9ad5a016dc4fb49794da66338b3777519f27f2f6ed73cc6c33c05486654"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5b19a2f8502a126f133db08f25ae95115ffd164ad8c887a76f9e66ee53e22c3f"
   end
 
   depends_on "libyaml"
