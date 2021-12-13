@@ -11,8 +11,8 @@ class Promtail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/promtail"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f35c1bec402c98325c20c4cad01786b5db83355e241e73cfaf6e5780c3c2b80a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "70254d4111af35959ebc4a81c9864b9b9fb7aea704e2d0c0fcaf833a234482fd"
   end
 
   depends_on "go" => :build
