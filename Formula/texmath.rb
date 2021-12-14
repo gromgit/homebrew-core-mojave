@@ -8,8 +8,8 @@ class Texmath < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/texmath"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fd06259ecfe4c775b948ddf4f2c88c70ff7cbddae7287edfc25231695f7cc6bc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "51893669916b778286544b1f371ba751c22178ef35263676c8439022c76e5cff"
   end
 
   depends_on "cabal-install" => :build
