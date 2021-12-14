@@ -7,8 +7,8 @@ class Terragrunt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terragrunt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cc16911f91f8a4d94f3ac055f029161d6a47b2d6b14d6cb23e4cafbd206e2905"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5a6f9df8a178944afed97baba5df8ffaedee931de5c3797c9e1e17a96f1ec87c"
   end
 
   depends_on "go" => :build
