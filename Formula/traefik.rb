@@ -8,8 +8,8 @@ class Traefik < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/traefik"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5ee1aa5f9f434dd032117b8b1ba0d066914c920c79d691e91d3644a47bad2899"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "723f28b5779354b8713a18d8c2953d3496e233ab7723294226d8ed9a37b9b84c"
   end
 
   depends_on "go" => :build
