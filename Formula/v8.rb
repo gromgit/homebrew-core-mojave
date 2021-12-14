@@ -4,8 +4,8 @@ class V8 < Formula
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
   # revert back to GitHub mirror tar.gz archives once it's synced again
   url "https://chromium.googlesource.com/v8/v8.git",
-      tag:      "9.6.180.12",
-      revision: "7a8373f18e2327d7dc52600fc9e52cc2f5b6abf6"
+      tag:      "9.6.180.20",
+      revision: "2fa3b13a180ad29f209e523af0bc64278749471f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -15,8 +15,7 @@ class V8 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v8"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9b8274ee0231693c9f3ed0e48513efb8b391786dc2eb2566941752e140507aa6"
+    sha256 cellar: :any, mojave: "65944876ce9c60aff630a5d9c9432002a59e15b4894b7c0784e087aaa43dcc34"
   end
 
   depends_on "ninja" => :build
@@ -36,13 +35,13 @@ class V8 < Formula
   fails_with gcc: "5"
 
   # Look up the correct resource revisions in the DEP file of the specific releases tag
-  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.6.180.12/DEPS#52
+  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.6.180.20/DEPS#52
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
         revision: "0153d369bbccc908f4da4993b1ba82728055926a"
   end
 
-  # e.g.: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.6.180.12/DEPS#93
+  # e.g.: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.6.180.20/DEPS#93
   resource "v8/base/trace_event/common" do
     url "https://chromium.googlesource.com/chromium/src/base/trace_event/common.git",
         revision: "68d816952258c9d817bba656ee2664b35507f01b"
