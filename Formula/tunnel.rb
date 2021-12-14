@@ -7,8 +7,8 @@ class Tunnel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tunnel"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a6ac6ba5fc1de6c996d5a6780cbbfa58817e9a7ea20064df34acf6bd8fc8de9a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b8ee1eb6e752b6029b2ecde79e64147403189a570a073c5892354c48fc8ac641"
   end
 
   depends_on "go" => :build
