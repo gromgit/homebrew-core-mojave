@@ -8,8 +8,8 @@ class Tfupdate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfupdate"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bccb9396bd23464f1970ebd5c3d39acd209ff00a13020785179b296ec5052b0d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "302e86c810053652b69930b7217c693f252a6d966caeede55b68d2e434d87d09"
   end
 
   depends_on "go" => :build
