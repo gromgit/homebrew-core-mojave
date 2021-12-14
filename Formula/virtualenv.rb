@@ -10,8 +10,8 @@ class Virtualenv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/virtualenv"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9466157139b4853c5838ecf4910a20048a99c0c837b728d446ba2f796a951292"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3c08abb31f473442a27b2a2b859646adf29e19c968385f233cc0f60695fed5b0"
   end
 
   depends_on "python@3.10"
