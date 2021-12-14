@@ -13,8 +13,8 @@ class VespaCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vespa-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "844d8cea07223c9e4e026f85f0698b3745bf5ea19a10a5295e4a1c53deeb0b34"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "dbf994d21d12361b7f69789e754f27319182177523f76068e9340ed2e1b94922"
   end
 
   depends_on "go" => :build
