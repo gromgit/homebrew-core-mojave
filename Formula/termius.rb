@@ -11,8 +11,8 @@ class Termius < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/termius"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cd65ccec3dd3498b952d582d4242c815937e523e016e59633060e03f2f397a4d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "3b5b9211ec91f65717e7031de5c6a100fb9f3a062483ff2fa6893c67bd85da87"
   end
 
   depends_on "rust" => :build
