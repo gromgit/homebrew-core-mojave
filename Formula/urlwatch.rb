@@ -9,8 +9,8 @@ class Urlwatch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/urlwatch"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6e2160a0f029758e8b5dbc3e3a900ea7a37ce40e8fb21d4a5407531f3f3a9e74"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6a0601d0004752b1c67d60d922db60f1ff0ed26cabf3a486cf99b664287fd4fd"
   end
 
   depends_on "python@3.10"
