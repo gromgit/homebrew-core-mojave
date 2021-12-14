@@ -7,8 +7,8 @@ class Tctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "09e867fe9ba4a8bcd0705e536db77074e584d15cc44fb022d7db1fc3dd910112"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "76ef0c8c5a7739861bb291240f335ef8fbf36525fc79eec5d0877d5e7d302540"
   end
 
   depends_on "go" => :build
