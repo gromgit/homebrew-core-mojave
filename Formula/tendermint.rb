@@ -8,8 +8,8 @@ class Tendermint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tendermint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "677864bda457a2ec68c03a449bb390d9245831bfe3bdd0f15c6b78316f1caac3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "969642589dcdbabdb6fd070694ed5e7747fae88cb8233ce87ab157e276d319f6"
   end
 
   depends_on "go" => :build
