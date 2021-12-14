@@ -7,7 +7,8 @@ class TigerVnc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tiger-vnc"
-    sha256 cellar: :any, mojave: "c070345fd9448a81ad2b083581f13fe4a63be1894cfc8bb64bfb79da84d1fa84"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9d8d2a4a9fa701f88725eb218065ab3e4decb1a319dce55d062b9471c42591b4"
   end
 
   depends_on "cmake" => :build
