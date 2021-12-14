@@ -7,8 +7,8 @@ class Vitess < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vitess"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "01d9ecd8610361b869c3c0421223eee9ce7d1505cf4b0e487b04c8c1247ef439"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7d73e9936cc189c2702c11ce5d26ea4d60971db37482c2d9facc0c5840801cab"
   end
 
   depends_on "go" => :build
