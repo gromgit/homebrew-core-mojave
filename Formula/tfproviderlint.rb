@@ -8,8 +8,8 @@ class Tfproviderlint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfproviderlint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "08c5be6c98820151db07ec092b52d0649f0f4e6b627212437b63e930f1b7f6f0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0b63060356b5858af9060f0a51fcf62501ca282bfdf6d882a3bb7f79afa18f7f"
   end
 
   depends_on "go" => [:build, :test]
