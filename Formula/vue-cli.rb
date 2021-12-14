@@ -9,8 +9,8 @@ class VueCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vue-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "900a2d4c517b4b909339def282bc46456c2b8f11a8ae5bfc44512432b56ac0fd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "86597834a19dc7ad07b98e05999cbbf5e6bfb98b3304a7ddc1d4a6091314919f"
   end
 
   depends_on "node"
