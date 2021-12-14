@@ -7,8 +7,8 @@ class Torchvision < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/torchvision"
-    rebuild 1
-    sha256 mojave: "e6702298939a11f4c216c5a2ff68953cad47a4469461a1fc440aacddd73aeb32"
+    rebuild 2
+    sha256 mojave: "70b7e3243a35e5a8747af3b2629240bebc60b1edf896b735c519e19d6536641c"
   end
 
   depends_on "cmake" => :build
