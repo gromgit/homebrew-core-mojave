@@ -12,8 +12,8 @@ class Usbredir < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/usbredir"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b83fd8967e14b42b422bb513988d6d79f6a895f61612dfa06b9081559db845b7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "fd524c38b30b64062d78e4c743e978fbdbea61b323fe39da8d2cf22165df47f3"
   end
 
   depends_on "meson" => :build
