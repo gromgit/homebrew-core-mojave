@@ -8,8 +8,8 @@ class Tailscale < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tailscale"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1243e73f1b4c61d7baa6ec728c3f68b824394338f2ffe7f22d1aee490e2670aa"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0ed243f984ed8c7668a26529bc5aab6b1976db6bbcaeba5e9b1a2ec7e65b172c"
   end
 
   depends_on "go" => :build
