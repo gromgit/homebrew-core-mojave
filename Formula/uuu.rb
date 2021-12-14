@@ -8,8 +8,8 @@ class Uuu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uuu"
-    rebuild 1
-    sha256 mojave: "50709d21981cb7dc3496c3d730d693a4951fa255e7b61c5dc30600b2bd1567e0"
+    rebuild 2
+    sha256 mojave: "cf72bc3cb443806de13d53ed159ec5934582232a8229c2b3a99dede7bd789a52"
   end
 
   depends_on "cmake" => :build
