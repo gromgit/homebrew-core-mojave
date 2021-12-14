@@ -7,8 +7,8 @@ class VirustotalCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/virustotal-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "68082a53e69af0567ad7af314f07c72e6b3969a8a4efa16b0ad87c1c0cb3749d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4e34eb9f44b535d0c5cb7aee9d871beba8314282f8a42bd80468e7a82c9e03ed"
   end
 
   depends_on "go" => :build
