@@ -7,8 +7,8 @@ class Tgui < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tgui"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ec63cc5551f5e7073558aede32eadddc504f1eb49573089b05a7bd821d10ce55"
+    rebuild 2
+    sha256 cellar: :any, mojave: "38ec95c4dfbbc2a6e1c6c0f10d14dfbfdbf4f4cda0beebac548a7527592612de"
   end
 
   depends_on "cmake" => :build
