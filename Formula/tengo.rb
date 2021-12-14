@@ -7,8 +7,8 @@ class Tengo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tengo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a881c4ea452fea6f618f9f4e70f95d5d2b9f3b025ef0b7b015b5854df514f16e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7c0a1e95d3a7bd57697153bed34faa9b8654a24a9ee1c014e614ee17784e3d41"
   end
 
   depends_on "go" => :build
