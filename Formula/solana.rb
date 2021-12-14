@@ -7,13 +7,13 @@ class Solana < Formula
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f7dc82567ec8d795ee0327c469e4dc59cc0905c43ca7fac432dec53ac8ef7192"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f6b0b561a3e033b41fe3831806722167a70df8c90a7251b817aa8e8ae0fec6b9"
   end
 
   depends_on "protobuf" => :build
