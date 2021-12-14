@@ -13,8 +13,8 @@ class TektoncdCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tektoncd-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "75510b22b085829724a58a7812baef798ce3dd7a50ec8187918d9033c91e90a7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "46929ed92bdd3508ade36fcaa7e4801bd80be6dd2e0db5b7d79144afd1867f04"
   end
 
   depends_on "go" => :build
