@@ -14,8 +14,8 @@ class Tanka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tanka"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4e64a0655bb09d1f1a9469972350aa7b5ffd9c2541abb5b0e700be770d082903"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "349dad98f500d2b48e05207f94cc1e76eb82ea296ccfdaeaa9c34040f8c11089"
   end
 
   depends_on "go" => :build
