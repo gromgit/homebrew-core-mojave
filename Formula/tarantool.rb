@@ -10,8 +10,8 @@ class Tarantool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarantool"
-    rebuild 1
-    sha256 mojave: "cee74f82b85b715ba7437b3df7975eb494077de562db16af4acc08c4bd772b7f"
+    rebuild 2
+    sha256 mojave: "d6165e5a3bc5482039ae066b9a6b4865861058eda772403997a81159d72b4240"
   end
 
   depends_on "cmake" => :build
