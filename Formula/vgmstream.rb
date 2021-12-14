@@ -17,7 +17,8 @@ class Vgmstream < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vgmstream"
-    sha256 mojave: "4315d798cf28f06bb267cbc8ed8ba8420701b942754bcb765a7d3de5ca3f979f"
+    rebuild 1
+    sha256 mojave: "97b3012fdd0f8954979e41c4c5f1ef92e70d356f986f502dd1f034e09edafc57"
   end
 
   depends_on "cmake" => :build
