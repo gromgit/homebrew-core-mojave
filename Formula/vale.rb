@@ -7,8 +7,8 @@ class Vale < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vale"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3a70d4b6efdf7b71492db903bd0ec484a091e2fcd720726b7cd2455fddefa990"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "84e9c12df7d3f97521480571cd6cd5770776d9aacd25c6356b8b8179642ece52"
   end
 
   depends_on "go" => :build
