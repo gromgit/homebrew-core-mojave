@@ -8,8 +8,8 @@ class Vtk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vtk"
-    rebuild 1
-    sha256 mojave: "9075d88fb2617bd24a67eb25154e250235ee945a91da93b90d9bfbde4e7c8ddc"
+    rebuild 2
+    sha256 mojave: "07f9d6eee4b403512e103bcd9ff5e353d1de299852a42300166d19f3bd69c8fd"
   end
 
   depends_on "cmake" => [:build, :test]
