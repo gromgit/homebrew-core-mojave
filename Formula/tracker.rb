@@ -14,8 +14,8 @@ class Tracker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tracker"
-    rebuild 1
-    sha256 mojave: "34c7ee38ef1e16704e1775abf4808302c7507b4a00c1eb0e3f4bf98c9e8d7271"
+    rebuild 2
+    sha256 mojave: "d495c2b8cbee13e8df56ed34ad8676c7edd7a11fad90cdb3d8fa83aa61cb56f8"
   end
 
   depends_on "gobject-introspection" => :build
