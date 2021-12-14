@@ -8,8 +8,8 @@ class Tbox < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tbox"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0b6541bf024d3099d95efd17ba7de7e1e074d5b48a5944d4f331a072c82d1fd4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "642dbc4ed943239ce6293d094370fba66cb323fccd48aa0b80a69793901e843d"
   end
 
   depends_on "xmake" => :build
