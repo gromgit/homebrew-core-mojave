@@ -8,8 +8,8 @@ class Tfmigrate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfmigrate"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "158b04bc2f1e2db8ca2618710c055921c3c28794138ec05e60c91dcaaea7a78a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a755d9c19280bab9ca8e17447252e7f5a845e082d0ce90845858e0c53bca944d"
   end
 
   depends_on "go" => :build
