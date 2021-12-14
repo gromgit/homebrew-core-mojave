@@ -9,8 +9,8 @@ class Timg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/timg"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a05c56d898861495499bfa8ec5cfd9cf4b276963cf3fda97be420f6d5810efcd"
+    rebuild 2
+    sha256 cellar: :any, mojave: "dd3e59d705bbbb75e92c4de9a943fb9edbfdb32f485262db52e3ee658d7ad58e"
   end
 
   depends_on "cmake" => :build
