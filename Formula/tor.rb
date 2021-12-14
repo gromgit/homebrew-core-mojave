@@ -20,8 +20,8 @@ class Tor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tor"
-    rebuild 1
-    sha256 mojave: "98bcef5bc4fa1d2f4420f2c9712dfc41268b8fef555e8fda0c76e7630ce2dded"
+    rebuild 2
+    sha256 mojave: "7c09e8380429e96edd9117bd89178e53b3570d346b299be0d6716083d95f7241"
   end
 
   depends_on "pkg-config" => :build
