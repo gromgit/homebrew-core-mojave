@@ -2,15 +2,14 @@ class Tilt < Formula
   desc "Define your dev environment as code. For microservice apps on Kubernetes"
   homepage "https://tilt.dev/"
   url "https://github.com/tilt-dev/tilt.git",
-    tag:      "v0.23.1",
-    revision: "aa566440bcd0aaae05e43f664fcb164b3c92686c"
+    tag:      "v0.23.2",
+    revision: "34b9d2be3392d83bbf32b587a5a9c38612651c21"
   license "Apache-2.0"
   head "https://github.com/tilt-dev/tilt.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tilt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a86db7663be1efb321284b48473fabab2db3739f7ce5f094d36eb6178cbb7b22"
+    sha256 cellar: :any_skip_relocation, mojave: "39179c7bc8c7d5dad378a357111a940d49e6c12a17453cc24ac7fe3ef6002314"
   end
 
   depends_on "go" => :build
