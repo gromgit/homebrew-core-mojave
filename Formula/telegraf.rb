@@ -13,8 +13,8 @@ class Telegraf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/telegraf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "72fb673129f57328af93b42a52f9cfdda678ff0fbb2b3cc052371bd622565f55"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c44ccf69549299ad60112fa23122274a5355fe31b4afe859d3763477b1c0ab4a"
   end
 
   depends_on "go" => :build
