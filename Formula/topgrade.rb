@@ -7,8 +7,8 @@ class Topgrade < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/topgrade"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a04b29c40401a8c0f6fee71a5ab4e882cb1cdcc48044302c6d40fb0bf7b7aefc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3c4e0163a31cdbed69a1981204054c4f885f810e3ab5a58a9b6bbc89ae8f9de6"
   end
 
   depends_on "rust" => :build
