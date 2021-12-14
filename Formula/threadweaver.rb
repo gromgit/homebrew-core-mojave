@@ -15,8 +15,8 @@ class Threadweaver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/threadweaver"
-    rebuild 1
-    sha256 mojave: "970534371f954fae3e8247b02348f5933e7d5b22543bb746a10b060b41419fbb"
+    rebuild 2
+    sha256 mojave: "74a110e6cc975f20301403f496afacfd911bdcfb787e7212ed332b65c2af3979"
   end
 
   depends_on "cmake" => [:build, :test]
