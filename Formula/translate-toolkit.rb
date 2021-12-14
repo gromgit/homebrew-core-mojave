@@ -10,8 +10,8 @@ class TranslateToolkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/translate-toolkit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b651d1ed5a69475a87a98b71e4ce5bb62988c03a1193e11e5438e779dde30cdc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f5200f1ff72ac4022b43f0360cc616083fb63400642412a636058c1575c48c1f"
   end
 
   depends_on "python@3.10"
