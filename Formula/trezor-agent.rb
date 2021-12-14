@@ -10,8 +10,8 @@ class TrezorAgent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trezor-agent"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8bf16faee9b211233b20da8e114ceadef3ddbf7d6ee08d86adf389bca0a744f3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ef606a05821cd8603302003e1d11c48b8edd90ef776ea9af1325cf82f9074713"
   end
 
   depends_on "libusb"
