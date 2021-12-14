@@ -19,8 +19,8 @@ class Uwsgi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uwsgi"
-    rebuild 1
-    sha256 mojave: "b68226be0588f1b2f5d0bee3f05997f5baaef3b3a33fea10dd007cd66b2fa1a9"
+    rebuild 2
+    sha256 mojave: "dadb165c159b1039e3a684bdcef166ee37727b6e25fd153ee6d8f4338fe3e9a0"
   end
 
   depends_on "pkg-config" => :build
