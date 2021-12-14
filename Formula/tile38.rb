@@ -9,8 +9,8 @@ class Tile38 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tile38"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "137c2d51ef3ea55fce3c588d5340fafdc372873f923095ade45181eb63103d98"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "38e477c87c200e9251edb3b2de4a7c6b7712e3e2dd27f65f987bb4616ae286f4"
   end
 
   depends_on "go" => :build
