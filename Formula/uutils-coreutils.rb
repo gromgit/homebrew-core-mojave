@@ -8,8 +8,8 @@ class UutilsCoreutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uutils-coreutils"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "956e96bfd4eeb132108294b830e287e363585c0067cb1948528fc4006248d2d2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e37841b36b8c3033a0d7c2b0aa2aa7902eb000f4bb043b36b7bacdef54450762"
   end
 
   depends_on "make" => :build
