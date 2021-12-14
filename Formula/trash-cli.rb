@@ -10,8 +10,8 @@ class TrashCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trash-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b428dffebf060fc295c563cf58b79f5a88d37c48a594a06dc13bb3e8d8f94e0d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c36198565a47ea288898a3116ef680f6ff25b16807b68f0ab9a86c57cbafc78d"
   end
 
   depends_on "python@3.10"
