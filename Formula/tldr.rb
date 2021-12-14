@@ -8,8 +8,8 @@ class Tldr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tldr"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8e8dab042e0a45bfd6ee134504bc1efd66820159bd206bddf03f6ec45ea58026"
+    rebuild 2
+    sha256 cellar: :any, mojave: "06ded954394dabea9a04987c5764ad91f7267793855e3cb0fbe93975df9e1597"
   end
 
   depends_on "pkg-config" => :build
