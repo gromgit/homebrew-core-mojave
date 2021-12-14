@@ -8,8 +8,8 @@ class Uncrustify < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uncrustify"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6b65e470e299552b8c3beb860d71939caa15a176fcd8ca2f5eb914e0e76f1b9e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "19896711fddca58d926c37bc030bf4ebb23ad63f89a44aa0a8eed4c05d78051b"
   end
 
   depends_on "cmake" => :build
