@@ -7,8 +7,8 @@ class Uptimed < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uptimed"
-    rebuild 1
-    sha256 cellar: :any, mojave: "dd4774d63a3668f3c0db935508e7ef1622a6144db2a2544717b6ae71faab2480"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5d0af2a0ccc316013d70eeb603e046c68185984bd5c45c9ad7097482f6e446a8"
   end
 
   depends_on "autoconf" => :build
