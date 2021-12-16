@@ -8,8 +8,8 @@ class OsmGpsMap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm-gps-map"
-    rebuild 1
-    sha256 mojave: "0a10a3cead270aea4d5255066a4966bf5afdc8252b3bf54e6d26e1c94be0f737"
+    rebuild 2
+    sha256 mojave: "05be0534acd379456b5bfcf2f8966a4eba5ab1e492b7ace2ffbf5bbaa44baca8"
   end
 
   head do
