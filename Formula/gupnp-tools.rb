@@ -8,8 +8,8 @@ class GupnpTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp-tools"
-    rebuild 1
-    sha256 mojave: "ece9e88e61e686a6c55c5af3027c226d58e0b1fd57faad1ef825455b75148ca5"
+    rebuild 2
+    sha256 mojave: "70da1ba520799df1746509a5ee52bada35da0b3125128ffb488addb9bdb6f561"
   end
 
   depends_on "meson" => :build
