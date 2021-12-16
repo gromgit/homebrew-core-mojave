@@ -8,8 +8,8 @@ class Libchamplain < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libchamplain"
-    rebuild 1
-    sha256 cellar: :any, mojave: "57848db6ddd6c0c29e2441fe1e9f0762cf0ac2c88a6dbf617277dcf76d588356"
+    rebuild 2
+    sha256 cellar: :any, mojave: "eb542358289443f6537bb6cdb87c60a5cdacf8e9d3f75e17db9a83c41e5e55a8"
   end
 
   depends_on "gnome-common" => :build
