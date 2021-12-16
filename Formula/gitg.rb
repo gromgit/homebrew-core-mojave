@@ -7,8 +7,8 @@ class Gitg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitg"
-    rebuild 1
-    sha256 mojave: "1a337cc06acb3860c8f85828f23d60ec9e6de6d0d78c0cc5db6938868aa351dc"
+    rebuild 2
+    sha256 mojave: "a21fc9d44a4f0d06eba3ccad1bf4ebe07ac9dee611413cb7cf817ac70934d7dc"
   end
 
   depends_on "intltool" => :build
