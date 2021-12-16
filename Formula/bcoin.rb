@@ -8,6 +8,12 @@ class Bcoin < Formula
   license "MIT"
   head "https://github.com/bcoin-org/bcoin.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcoin"
+    rebuild 1
+    sha256 mojave: "0076920b0f949d179e6b0defff2f09e19d0c3518388b07c77ac46de162f9d082"
+  end
+
   depends_on "python@3.10" => :build
   depends_on "node@16"
 
