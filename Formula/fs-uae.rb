@@ -12,8 +12,8 @@ class FsUae < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fs-uae"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5ec5aff7f1917734159c32dbb8c3bc5594bda9497f541014b1093f2fbb942f12"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a21aa49ba8a43ddd50433e321a2f62c39d6e785741921e91cfc7fa9dfcd984cc"
   end
 
   head do
