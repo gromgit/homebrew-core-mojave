@@ -15,8 +15,8 @@ class GnomeAutoar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnome-autoar"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b76761b6210d8365b4cdf8a98608be40513f920d7fd7b840ff7f5457eb28bd19"
+    rebuild 2
+    sha256 cellar: :any, mojave: "3dbd903cb2daf5440dcfc148ed093dd8e4c6e87524fb59549582d9925a0348c2"
   end
 
   depends_on "meson" => :build
