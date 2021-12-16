@@ -7,8 +7,8 @@ class QalculateGtk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qalculate-gtk"
-    rebuild 1
-    sha256 mojave: "e52b5271909e75061c67757fcaddf0d31a6b0fb0553408402dc81fcc510d4721"
+    rebuild 2
+    sha256 mojave: "12c6b2b22a91a9b41f6ce9a7970d3b7c087da01ed481d7a5baeac6695c21ddd6"
   end
 
   depends_on "intltool" => :build
