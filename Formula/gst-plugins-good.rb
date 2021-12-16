@@ -14,8 +14,8 @@ class GstPluginsGood < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-plugins-good"
-    rebuild 1
-    sha256 mojave: "4c2e6ea9988abe33bf5390cdaf26651ed168a5bbc2729960527d1b7a579540ae"
+    rebuild 2
+    sha256 mojave: "c87d384ea55c07d934dc52506bf96fd95abf83e3796dfa6e3591fa4e9d47c944"
   end
 
   depends_on "meson" => :build
