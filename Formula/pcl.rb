@@ -9,8 +9,8 @@ class Pcl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcl"
-    rebuild 1
-    sha256 mojave: "04b1dc150dbc8186135175bd68a8b31bcabb40bce579333a08bbcbccb7ded042"
+    rebuild 2
+    sha256 mojave: "b047ebaa9f96b467a04b61523deb9b9c485a742824a0da9f9f03e30baa877da4"
   end
 
   depends_on "cmake" => [:build, :test]
