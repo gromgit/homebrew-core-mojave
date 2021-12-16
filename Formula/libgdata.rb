@@ -8,8 +8,8 @@ class Libgdata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgdata"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a5df237ec30aafac92f9b873e27ff90a7713a23e643a126ed2c3d68ee0494dfa"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ce6b0e01dcb70c12ebb74b9f8893f1d8a680ef9ddab4252b1134b25ea35a1844"
   end
 
   depends_on "gobject-introspection" => :build
