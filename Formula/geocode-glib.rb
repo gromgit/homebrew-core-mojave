@@ -8,8 +8,8 @@ class GeocodeGlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geocode-glib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "692386fc08bd34df27e054a21fcdb5aa34d04d4bf2b205c292ce69c6996ced61"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d431d6bff2c6368908d2d4f51db35ad0e52f8545da3b41bf6b837ef65dd9c51a"
   end
 
   depends_on "gobject-introspection" => :build
