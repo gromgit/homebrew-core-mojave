@@ -13,8 +13,8 @@ class Homebank < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homebank"
-    rebuild 1
-    sha256 mojave: "08b060dd71ceab371e9c9015322d0e9b61482f777ad1d15c7cd7c796050e98bc"
+    rebuild 2
+    sha256 mojave: "708ebef16f8fb21f970426f12c3ff5de559c54f0d3c73b9f3af1faa1a0e0ab9c"
   end
 
   depends_on "intltool" => :build
