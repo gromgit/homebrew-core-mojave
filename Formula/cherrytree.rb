@@ -12,8 +12,8 @@ class Cherrytree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cherrytree"
-    rebuild 1
-    sha256 mojave: "146ac61ef5e778a7c21be826aaaeb40dca65eed0ba17194d3946b1c719c908c8"
+    rebuild 2
+    sha256 mojave: "46aaa05d52de38fe2473f53dabe506dba8832a380dbd21f41b4079e70c9cb4ce"
   end
 
   depends_on "cmake" => :build
