@@ -1,9 +1,15 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://github.com/dartsim/dart/archive/v6.12.1.tar.gz"
-  sha256 "e0d47bbc191903b93474da00bbd1042cefdc85f5ead3e9a9282b5f4187d53304"
+  url "https://github.com/dartsim/dart/archive/v6.11.1.tar.gz"
+  sha256 "1a59b9d8f55433ad111089431826cd8abbec71f61c72a8558b655d92164f8de4"
   license "BSD-2-Clause"
+  revision 2
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dartsim"
+    sha256 mojave: "a55cd6829559c589502fe08a8d0109a7b4dee69fc8ae40a76e365f89a17039a8"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -38,6 +44,12 @@ class Dartsim < Formula
 
     # Clean up the build file garbage that has been installed.
     rm_r Dir["#{share}/doc/dart/**/CMakeFiles/"]
+  end
+
+  def caveats
+    <<~EOS
+      IMPORTANT: This is the last version compatible with Mojave's Xcode 11.3 (Clang 4.2.1).
+    EOS
   end
 
   test do
