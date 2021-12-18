@@ -11,7 +11,7 @@ class GccAT49 < Formula
   pour_bottle? only_if: :clt_installed
 
   # https://gcc.gnu.org/gcc-4.9/
-  deprecate! date: "2021-04-11", because: :deprecated_upstream
+  disable! date: "2021-04-11", because: :deprecated_upstream
 
   depends_on maximum_macos: [:high_sierra, :build]
 
