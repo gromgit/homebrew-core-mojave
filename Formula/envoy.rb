@@ -7,8 +7,7 @@ class Envoy < Formula
       tag:      "v1.20.1",
       revision: "ea23f47b27464794980c05ab290a3b73d801405e"
   license "Apache-2.0"
-
-  # Apple M1/arm64 is pending envoyproxy/envoy#16482
+  head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
   depends_on "automake" => :build
   depends_on "bazelisk" => :build
@@ -16,6 +15,9 @@ class Envoy < Formula
   depends_on "coreutils" => :build
   depends_on "libtool" => :build
   depends_on "ninja" => :build
+  # Starting with 1.21, envoy requires a full Xcode installation, not just
+  # command-line tools. See envoyproxy/envoy#16482
+  depends_on xcode: :build
   depends_on macos: :catalina
 
   on_linux do
