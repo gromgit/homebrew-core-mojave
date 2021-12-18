@@ -13,8 +13,8 @@ class Visp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/visp"
-    rebuild 1
-    sha256 mojave: "d785759810f209266acfd9e4f1bdb0155c375a4eb020cc2408d2b736dc3048d2"
+    rebuild 2
+    sha256 mojave: "569b8aa6887647acbf57d29147efb2f37f21b3a4a0daa7c0fd6a3567c9be92ff"
   end
 
   depends_on "cmake" => :build
