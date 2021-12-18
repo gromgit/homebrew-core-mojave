@@ -12,8 +12,8 @@ class Rsyslog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rsyslog"
-    rebuild 1
-    sha256 mojave: "7ee13247e904e91704627633719149bbd28e8eda438b1d2eb143a1a4d657f178"
+    rebuild 2
+    sha256 mojave: "5c6370e9b7ffa8aef8b0dcf6cdeeb23c6f59270696cbd477c2585767a5c7f482"
   end
 
   depends_on "pkg-config" => :build
