@@ -1,18 +1,13 @@
 class Libx11 < Formula
   desc "X.Org: Core X11 protocol client library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libX11-1.7.2.tar.bz2"
-  sha256 "1cfa35e37aaabbe4792e9bb690468efefbfbf6b147d9c69d6f90d13c3092ea6c"
+  url "https://www.x.org/archive/individual/lib/libX11-1.7.3.1.tar.gz"
+  sha256 "d9d2c45f89687cfc915a766aa91f01843ae97607baa1d1027fd208f8e014f71e"
   license "MIT"
 
   bottle do
-    sha256 arm64_monterey: "48e179ebf398452e95cf2664973153f2f0f1f0d96690e1a65beefa0bac63277f"
-    sha256 arm64_big_sur:  "07000e94eab9193f9306fa2fd097ad8910e937c5573e77360d53bd9f9db64e7c"
-    sha256 monterey:       "279e4b31afc2771f59e2528dd795c2894732e786c07ecefc7cfc336e1ae6bed8"
-    sha256 big_sur:        "7aee5576a2669a20c9c0421a5afdce633130aeebe3f610c646f15dd5fe299f34"
-    sha256 catalina:       "d7dede7503227acecc6992b96b2c14472d704cf6a7c71d81efd9a8ea710ba089"
-    sha256 mojave:         "fc897d1f8a8619461f8e50cb7fe20682cd3021393cac7fd3ec94fa4c3c3ee7fd"
-    sha256 x86_64_linux:   "035f49996ae8031ba4531113482e789feb51abeb8877eb8c0681ea615ff8cd93"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libx11"
+    sha256 mojave: "bf95ca7265605313c2d0b03f90104aea9e5feb926142a3b413e7284ae875b423"
   end
 
   depends_on "pkg-config" => :build
