@@ -4,6 +4,7 @@ class Geos < Formula
   url "https://download.osgeo.org/geos/geos-3.10.1.tar.bz2"
   sha256 "a8148eec9636814c8ab0f8f5266ce6f9b914ed65b0d083fc43bb0bbb01f83648"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://download.osgeo.org/geos/"
@@ -12,8 +13,7 @@ class Geos < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geos"
-    rebuild 2
-    sha256 cellar: :any, mojave: "a6ed19dd97547ad265c9b5dc517014654c85fc44d54f765012e4a63382759470"
+    sha256 cellar: :any, mojave: "18515e87febf5735b94abdcda1a385fb6251cffc06af62817ece38c5b6d2f2ef"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +22,9 @@ class Geos < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    system "cmake", "-S", ".", "-B", "static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
+    system "cmake", "--build", "static"
+    lib.install Dir["static/lib/*.a"]
   end
 
   test do
