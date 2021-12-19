@@ -6,10 +6,15 @@ class Neovim < Formula
   license "Apache-2.0"
   head "https://github.com/neovim/neovim.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neovim"
-    rebuild 2
-    sha256 mojave: "8d133d7a561fa992b14ff8887221ed59643ddc15d145c617ecc5a10088f12137"
+    rebuild 3
+    sha256 mojave: "ad1fa5e1b1c1ac611bebeeab5d48c3970d3c43c5d9ae5777c8e9971eeeb3f0ad"
   end
 
   depends_on "cmake" => :build
