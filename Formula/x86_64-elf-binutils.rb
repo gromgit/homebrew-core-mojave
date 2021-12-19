@@ -5,19 +5,15 @@ class X8664ElfBinutils < Formula
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.37.tar.xz"
   sha256 "820d9724f020a3e69cb337893a0b63c2db161dadcb0e06fc11dc29eb1e84a32c"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     formula "binutils"
   end
 
   bottle do
-    sha256 arm64_monterey: "cc2b264def9baf925812bf75622f1132b16de47a940e4e999680ced6ce17580a"
-    sha256 arm64_big_sur:  "c1cc0eeef6981f55e0df57f0e8115956ab5b4d94d043daf805c8833ed843dc1d"
-    sha256 monterey:       "587fe762419c190b723e48506d6ea0a3ee571d0c0d479977c02225fdcba60393"
-    sha256 big_sur:        "085e8d5b89905e85c00951d3f12a6b36ea2e085b07e6af28b4138956b9c53384"
-    sha256 catalina:       "8853d7a257c9cbe3243e9cb48837222768b6a211c0a0b7733cd40effdb56cb72"
-    sha256 mojave:         "efb90bb7f3e96087317c35a824fbe46e4dda1ccaaa6cd2fc26f889b6210b4d5a"
-    sha256 x86_64_linux:   "94bb83f893103b9be998affaec0cc210691fa4b71c27d9491a7598c2c9a30576"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-elf-binutils"
+    sha256 mojave: "927a60ad7fc6e9ab991fa0999120a3dcd5b92899ba821cec095bbe4a1e2f8654"
   end
 
   uses_from_macos "texinfo"
@@ -25,6 +21,7 @@ class X8664ElfBinutils < Formula
   def install
     target = "x86_64-elf"
     system "./configure", "--target=#{target}",
+                          "--enable-targets=x86_64-pep",
                           "--prefix=#{prefix}",
                           "--libdir=#{lib}/#{target}",
                           "--infodir=#{info}/#{target}",
