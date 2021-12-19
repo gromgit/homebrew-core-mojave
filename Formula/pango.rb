@@ -1,14 +1,14 @@
 class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "https://www.pango.org/"
-  url "https://download.gnome.org/sources/pango/1.50/pango-1.50.0.tar.xz"
-  sha256 "dba8b62ddf86e10f73f93c3d2256b73238b2bcaf87037ca229b40bdc040eb3f3"
+  url "https://download.gnome.org/sources/pango/1.50/pango-1.50.1.tar.xz"
+  sha256 "7760a03e9a652a7a10384a55a63c3196bfc645796a45d110131781d4814c81cf"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pango"
-    sha256 cellar: :any, mojave: "d9d33b72b451f39e94d786ba82e4f17b4d56d5f04dc61b5955d8ebf26b8c5796"
+    sha256 cellar: :any, mojave: "90bef6a73c3f2bac64f77d0f8f3c8dc649fd095f36e43572c4614f658fe04666"
   end
 
   depends_on "gobject-introspection" => :build
