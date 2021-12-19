@@ -2,9 +2,9 @@ class Libressl < Formula
   desc "Version of the SSL/TLS protocol forked from OpenSSL"
   homepage "https://www.libressl.org/"
   # Please ensure when updating version the release is from stable branch.
-  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.1.tar.gz"
-  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-3.4.1.tar.gz"
-  sha256 "107ceae6ca800e81cb563584c16afa36d6c7138fade94a2b3e9da65456f7c61c"
+  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.2.tar.gz"
+  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-3.4.2.tar.gz"
+  sha256 "cb82ca7d547336917352fbd23db2fc483c6c44d35157b32780214ec74197b3ce"
   license "OpenSSL"
 
   livecheck do
@@ -13,13 +13,8 @@ class Libressl < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "b3c161f83a811ebc2d949ebc67d0cc4bf6f93cd89361ac1aeec47ef06dae8532"
-    sha256 arm64_big_sur:  "41f4e9f8cdf03ae83c8fdff6867bbd36127c389004fb89a410630c74dac315f9"
-    sha256 monterey:       "806d3b611485fab207bbeb7126643240adb8582f985f3e6546815953eb968611"
-    sha256 big_sur:        "e3c8dae6f39e42a652df8e66f02a0e581e31697fbfdc7465813306c48f6931d5"
-    sha256 catalina:       "4490e48658eab39495b885811d1762666d6c837013c3f990cda1eebf8bb400fc"
-    sha256 mojave:         "7ce48d13e2e1cae8569598a6d456c8843263547fc1753f2a5869e61fd50c6fa6"
-    sha256 x86_64_linux:   "aa3d726e0bf1159fa3ad3cb1657525e1f37e6fcfafb79ff9be07ccd34d559035"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libressl"
+    sha256 mojave: "c979f0a3b255714216ec7765934394574ecbcc118e436bf6b28416634cdd0912"
   end
 
   head do
