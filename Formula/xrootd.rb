@@ -1,8 +1,8 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https://xrootd.slac.stanford.edu/"
-  url "https://xrootd.slac.stanford.edu/download/v5.3.4/xrootd-5.3.4.tar.gz"
-  sha256 "8e18a7c2aba6588ddc8c7ed4635247c35f5bca3741bfdea8b4e336f8c9adcd70"
+  url "https://xrootd.slac.stanford.edu/download/v5.4.0/xrootd-5.4.0.tar.gz"
+  sha256 "23bf63bbc63c8fb45dad8b907a7692624f31427001a1688135e9c8d182a3ee7d"
   license "LGPL-3.0-or-later"
   head "https://github.com/xrootd/xrootd.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Xrootd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xrootd"
-    sha256 cellar: :any, mojave: "925a8cce6f11765c36601934594e71bb94431ee61f30852bd62435868203d402"
+    sha256 cellar: :any, mojave: "32bd0fdc722411c8bd6e51e33f2148ef67ca68a64c4575e3799ba0a5363f3682"
   end
 
   depends_on "cmake" => :build
