@@ -1,8 +1,8 @@
 class Notmuch < Formula
   desc "Thread-based email index, search, and tagging"
   homepage "https://notmuchmail.org/"
-  url "https://notmuchmail.org/releases/notmuch-0.34.tar.xz"
-  sha256 "83e9581542b6e387f61f30cf0f5e2d9038912ee1bb73ad64b84d1d9c543761b6"
+  url "https://notmuchmail.org/releases/notmuch-0.34.2.tar.xz"
+  sha256 "c1f2ceee47f689711222d7205af2a3fe7a4a9d8c32e4e0b24ad66f88df6a47d3"
   license "GPL-3.0-or-later"
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
@@ -13,8 +13,7 @@ class Notmuch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notmuch"
-    rebuild 2
-    sha256 cellar: :any, mojave: "1b3783ad01b765ce0c91289f6bbd0f3a5b8679114695597b99338ed2ed860aa0"
+    sha256 cellar: :any, mojave: "c2153c7b2cc19739070d8517ebd172bbd396c7705ba97caea4673b4f17f6af07"
   end
 
   depends_on "doxygen" => :build
