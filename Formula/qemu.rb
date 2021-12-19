@@ -1,20 +1,14 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-6.1.0.tar.xz"
-  sha256 "eebc089db3414bbeedf1e464beda0a7515aad30f73261abc246c9b27503a3c96"
+  url "https://download.qemu.org/qemu-6.2.0.tar.xz"
+  sha256 "68e15d8e45ac56326e0b9a4afa8b49a3dfe8aba3488221d098c84698bca65b45"
   license "GPL-2.0-only"
-  revision 1
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   bottle do
-    sha256 arm64_monterey: "da4ef0870a91f46aff0c7ad70e55b7a50f42bc2c3987964bd0bc309d2045b9df"
-    sha256 arm64_big_sur:  "94b094a62401c3384e57c572f1009545bd94765426ba39a7b0878cb883d0220a"
-    sha256 monterey:       "77d4932355c38028915d640bc74936f5a7b4c2bb731177914d0275239b996d22"
-    sha256 big_sur:        "5213e72d5dc5641593b415f5e37618cbd3d1e291d25c4e9478c86b5b8a9c8f08"
-    sha256 catalina:       "561fa5f3d141ae025fe5e611957af4b33ff9b5df614e9a307fecce1645fb3170"
-    sha256 mojave:         "5d938b8949e5d2cf4d41cca27ce4bfd5cfc17dc27f0ec45b6e8b27ab99cc2e87"
-    sha256 x86_64_linux:   "a1447609f66aeaf33aefb8f9bbe3119b58a24374e3c4a102ec173128229c4f09"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qemu"
+    sha256 mojave: "bad3b24a61720c6e1002cde12b40bfe2ef52aa86f972d5959c5139a577d49187"
   end
 
   depends_on "libtool" => :build
@@ -43,16 +37,9 @@ class Qemu < Formula
   fails_with gcc: "5"
 
   # 820KB floppy disk image file of FreeDOS 1.2, used to test QEMU
-  resource "test-image" do
+  resource "homebrew-test-image" do
     url "https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/FD12FLOPPY.zip"
     sha256 "81237c7b42dc0ffc8b32a2f5734e3480a3f9a470c50c14a9c4576a2561a35807"
-  end
-
-  if Hardware::CPU.arm?
-    patch do
-      url "https://patchwork.kernel.org/series/548227/mbox/"
-      sha256 "5b9c9779374839ce6ade1b60d1377c3fc118bc43e8482d0d3efa64383e11b6d3"
-    end
   end
 
   def install
@@ -116,7 +103,7 @@ class Qemu < Formula
     assert_match expected, shell_output("#{bin}/qemu-system-x86_64 --version")
     assert_match expected, shell_output("#{bin}/qemu-system-xtensa --version")
     assert_match expected, shell_output("#{bin}/qemu-system-xtensaeb --version")
-    resource("test-image").stage testpath
+    resource("homebrew-test-image").stage testpath
     assert_match "file format: raw", shell_output("#{bin}/qemu-img info FLOPPY.img")
   end
 end
