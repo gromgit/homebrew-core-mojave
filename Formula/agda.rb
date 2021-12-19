@@ -2,22 +2,20 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
-  revision 3
 
   stable do
-    url "https://hackage.haskell.org/package/Agda-2.6.2/Agda-2.6.2.tar.gz"
-    sha256 "072caaad7a405b764423958d2001b68fbfd3fc8f98870cd0a5f0bcaeadfd3095"
+    url "https://hackage.haskell.org/package/Agda-2.6.2.1/Agda-2.6.2.1.tar.gz"
+    sha256 "3c4146539e1f2561a05896e3c18a7d0262d98a28f5c5adcc8cce8d8c9d3cbc0d"
 
     resource "stdlib" do
-      url "https://github.com/agda/agda-stdlib/archive/v1.7.tar.gz"
-      sha256 "180302df8bdd01fd404ae5ee217d4c04376fcfbab2b70958a87109df531e299d"
+      url "https://github.com/agda/agda-stdlib/archive/v1.7.1.tar.gz"
+      sha256 "6f92ae14664e5d1217e8366c647eb23ca88bc3724278f22dc6b80c23cace01df"
     end
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/agda"
-    rebuild 2
-    sha256 mojave: "8d6e79679ca20e79817512c4b7d50e09f7f3e14f01adab7850efe021864d501a"
+    sha256 mojave: "f5237b152b7a4aa3eee52c616fccf8b913b756c8c2bc28abc63eaf93c6af6f3d"
   end
 
   head do
