@@ -3,19 +3,14 @@ class Pythran < Formula
 
   desc "Ahead of Time compiler for numeric kernels"
   homepage "https://pythran.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c4/92/94b344b88bb010186caa65e5730509b4a6d2b1ab59e512ea11a2cbbb36fc/pythran-0.10.0.tar.gz"
-  sha256 "9dac8e1d50f33d4676003e350b1f0c878ce113e6f907920e92dc103352cac5bf"
+  url "https://files.pythonhosted.org/packages/88/9f/161f08131abf7f23920cee29b691de27f10fd97ac09fb2f3532b3a7f9b96/pythran-0.11.0.tar.gz"
+  sha256 "0b2cba712e09f7630879dff69f268460bfe34a6d6000451b47d598558a92a875"
   license "BSD-3-Clause"
   head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "964be980725273e061191cef07e4b44418461d476c04f439e5f4e904276d74bd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fdbcb4eb077761c2c810aab42dec6713be785afacf09ce597d9c7368691888f6"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6f83dfa73268cf39ff35f47326b13554d3f01b58be68aa6fd7652311a360af4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d6f83dfa73268cf39ff35f47326b13554d3f01b58be68aa6fd7652311a360af4"
-    sha256 cellar: :any_skip_relocation, catalina:       "d6f83dfa73268cf39ff35f47326b13554d3f01b58be68aa6fd7652311a360af4"
-    sha256 cellar: :any_skip_relocation, mojave:         "d6f83dfa73268cf39ff35f47326b13554d3f01b58be68aa6fd7652311a360af4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d663943eb426f509e571ac4e29abfdda8a6d969c52e0d9535efceefa3192e2f0"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pythran"
+    sha256 cellar: :any_skip_relocation, mojave: "5f47566932cdae06248dc915a221d3e9fa650c7fe1cf4a3cd057fe5cf23c6934"
   end
 
   depends_on "gcc" # for OpenMP
@@ -30,8 +25,8 @@ class Pythran < Formula
   end
 
   resource "gast" do
-    url "https://files.pythonhosted.org/packages/53/88/e12484298c9c913b68c1de191fa673f8a976036d98efbdcb60014f14c65c/gast-0.5.2.tar.gz"
-    sha256 "f81fcefa8b982624a31c9e4ec7761325a88a0eba60d36d1da90e47f8fe3c67f7"
+    url "https://files.pythonhosted.org/packages/48/a3/0bd844c54ae8141642088b7ae09dd38fec2ec7faa9b7d25bb6a23c1f266f/gast-0.5.3.tar.gz"
+    sha256 "cfbea25820e653af9c7d1807f659ce0a0a9c64f2439421a7bba4f0983f532dea"
   end
 
   resource "ply" do
