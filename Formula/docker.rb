@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/cli.git",
-      tag:      "v20.10.11",
-      revision: "dea9396e184290f638ea873c76db7c80efd5a1d2"
+      tag:      "v20.10.12",
+      revision: "e91ed5707e038b02af3b5120fa0835c5bedfd42e"
   license "Apache-2.0"
   head "https://github.com/docker/cli.git"
 
@@ -14,8 +14,7 @@ class Docker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c977f1f5bfb92c19922b0460057c595e5389ed0a9ea1d52a54e88568c4ea7e81"
+    sha256 cellar: :any_skip_relocation, mojave: "83d92f5e346ce93dc0bb0d2676ad8029fd2a648f5ed74e91d7089bdec7bb9438"
   end
 
   depends_on "go" => :build
@@ -49,6 +48,14 @@ class Docker < Formula
 
   test do
     assert_match "Docker version #{version}", shell_output("#{bin}/docker --version")
-    assert_match "ERROR: Cannot connect to the Docker daemon", shell_output("#{bin}/docker info", 1)
+
+    on_macos do
+      assert_match "ERROR: Cannot connect to the Docker daemon", shell_output("#{bin}/docker info", 1)
+    end
+
+    on_linux do
+      assert_match "ERROR: Got permission denied while trying to connect to the Docker daemon socket",
+        shell_output("#{bin}/docker info", 1)
+    end
   end
 end
