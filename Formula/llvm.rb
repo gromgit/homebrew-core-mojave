@@ -15,7 +15,8 @@ class Llvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm"
-    sha256 cellar: :any, mojave: "6beaa100e933cd12ed1729ee62b034ffbf77372373463e524a48639d6d1b128d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "18d57626742ff5418f9c08b049a2a0eb424ee7541261bcbfba9be172939a0f28"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -314,7 +315,7 @@ class Llvm < Formula
       #   1. installing duplicates of files in the prefix
       #   2. requiring an existing Xcode installation
       xctoolchain = prefix/"Toolchains/LLVM#{llvm_version}.xctoolchain"
-      xcode_version = MacOS::Xcode.installed? ? MacOS::Xcode.version : MacOS::Xcode.latest_version
+      xcode_version = MacOS::Xcode.installed? ? MacOS::Xcode.version : Version.new(MacOS::Xcode.latest_version)
       compat_version = xcode_version < 8 ? "1" : "2"
 
       system "/usr/libexec/PlistBuddy", "-c", "Add:CFBundleIdentifier string org.llvm.#{llvm_version}", "Info.plist"
