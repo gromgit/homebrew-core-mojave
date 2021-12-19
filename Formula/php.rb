@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.1.0.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.0.tar.xz"
-  sha256 "a1317eff0723a2b3d3122bbfe107a1158570ea2822dc35a5fb360086db0f6bbc"
+  url "https://www.php.net/distributions/php-8.1.1.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.1.1.tar.xz"
+  sha256 "33c09d76d0a8bbb5dd930d9dd32e6bfd44e9efcf867563759eb5492c3aff8856"
   license "PHP-3.01"
 
   livecheck do
@@ -14,8 +14,7 @@ class Php < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php"
-    rebuild 2
-    sha256 mojave: "28633c03ff4d2148f0f27e2a0fbac9522d1d654030b3bf43466aeb89b9b5e93a"
+    sha256 mojave: "f6c39bdb965e8acf6b9bbdadacf338f601e58cb1cc92dd866647b339c6650529"
   end
 
   head do
@@ -138,7 +137,6 @@ class Php < Formula
       --enable-pcntl
       --enable-phpdbg
       --enable-phpdbg-readline
-      --enable-phpdbg-webhelper
       --enable-shmop
       --enable-soap
       --enable-sockets
@@ -179,7 +177,6 @@ class Php < Formula
       --with-sqlite3
       --with-tidy=#{Formula["tidy-html5"].opt_prefix}
       --with-unixODBC
-      --with-xmlrpc
       --with-xsl
       --with-zip
       --with-zlib
