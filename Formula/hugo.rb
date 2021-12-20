@@ -1,14 +1,14 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https://gohugo.io/"
-  url "https://github.com/gohugoio/hugo/archive/v0.90.0.tar.gz"
-  sha256 "f7b83a5aa20241a32543427ca870e3e546cfdd31a97e7c63d1114c62b51d7b22"
+  url "https://github.com/gohugoio/hugo/archive/v0.91.0.tar.gz"
+  sha256 "d1401c58fe0aa78cecca4d28e6b204151e8960b0c0d95a2c48f3ddd4a073da9e"
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hugo"
-    sha256 cellar: :any_skip_relocation, mojave: "547c6fc4b6c1e5475bfca0b79c95312fd1d7ba222627a78bfce27205e43ebe56"
+    sha256 cellar: :any_skip_relocation, mojave: "12bdc74106231b846f5b40fa9b7be2716ab11b1ff80a7736c41671896bd4a48c"
   end
 
   depends_on "go" => :build
