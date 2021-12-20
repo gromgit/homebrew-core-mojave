@@ -2,15 +2,14 @@ class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
   url "https://github.com/istio/istio.git",
-      tag:      "1.12.0",
-      revision: "016bc46f4a5e0ef3fa135b3c5380ab7765467c1a"
+      tag:      "1.12.1",
+      revision: "88902a51acfb0383809608ccff169319560f768c"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/istioctl"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "0de56cd891a600b9d7efc35c4ae8a1a47bfcf5db845160c923afa781b215a316"
+    sha256 cellar: :any_skip_relocation, mojave: "56f2598ca65e8b316a78e216059f045488bd0a27065b96f10669957057dd4a50"
   end
 
   depends_on "go" => :build
@@ -24,8 +23,6 @@ class Istioctl < Formula
   end
 
   def install
-    # make parallelization should be fixed in version > 1.12.0
-    ENV.deparallelize
     ENV["VERSION"] = version.to_s
     ENV["TAG"] = version.to_s
     ENV["ISTIO_VERSION"] = version.to_s
