@@ -1,15 +1,14 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform"
   homepage "https://www.infracost.io/docs/"
-  url "https://github.com/infracost/infracost/archive/v0.9.14.tar.gz"
-  sha256 "1c4e62fc70b70be5c5592a2b41c0d869a34b1f4a540ff101d9b6349bba399af4"
+  url "https://github.com/infracost/infracost/archive/v0.9.15.tar.gz"
+  sha256 "1a0239c140e762987687f1e52fef929e434d15566f18008ca3251876a9f9cc03"
   license "Apache-2.0"
   head "https://github.com/infracost/infracost.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/infracost"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "a70f6039588b6d0b686d0c4fecb0ef309f5a6ba07062fab6110fd1b296c4f93c"
+    sha256 cellar: :any_skip_relocation, mojave: "678bddd844510552180b922e145d8b8f6b3030ab2dc4bee43281424c727e08e7"
   end
 
   depends_on "go" => :build
@@ -18,7 +17,7 @@ class Infracost < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-X github.com/infracost/infracost/internal/version.Version=v#{version}"
-    system "go", "build", *std_go_args, "-ldflags", ldflags, "./cmd/infracost"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/infracost"
   end
 
   test do
