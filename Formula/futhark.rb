@@ -1,15 +1,14 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https://futhark-lang.org/"
-  url "https://github.com/diku-dk/futhark/archive/v0.20.7.tar.gz"
-  sha256 "d73e34e989f458c564138bf1b0238944dea53bc1821ffb4cd470eac91ff865e1"
+  url "https://github.com/diku-dk/futhark/archive/v0.21.1.tar.gz"
+  sha256 "af9a94e957970a80d10519fee5039b15146c748e1c59936b4f40c0ccbbab98b5"
   license "ISC"
   head "https://github.com/diku-dk/futhark.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/futhark"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "4591a8bbf4005b447965d40b1c64c026a52a86a02243896061f0e8da3f1ccd06"
+    sha256 cellar: :any_skip_relocation, mojave: "daff0f000faed1966602f034717ef04c2ae68fe1d813d64ea52bfd16e3ecff5a"
   end
 
   depends_on "cabal-install" => :build
