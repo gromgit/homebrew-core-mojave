@@ -1,18 +1,13 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
   homepage "https://libical.github.io/libical/"
-  url "https://github.com/libical/libical/releases/download/v3.0.11/libical-3.0.11.tar.gz"
-  sha256 "1e6c5e10c5a48f7a40c68958055f0e2759d9ab3563aca17273fe35a5df7dbbf1"
+  url "https://github.com/libical/libical/releases/download/v3.0.12/libical-3.0.12.tar.gz"
+  sha256 "35095a4cc1a061a3de0f332c2dc728226cf127fa0baa818e9f8856cee6d35830"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "a808c0aaeb3d08c784dcb5549f6e3b3c41e558f2a98731e072eb9728ccca127b"
-    sha256 cellar: :any,                 arm64_big_sur:  "96f08215d53d105d1828320cb7992482867be06628892c1d9c38f6513008f4ba"
-    sha256 cellar: :any,                 monterey:       "3c2d986b51e7c14b32d7fbb482e54d09338b059b994c05bbef534c2bdddd3324"
-    sha256 cellar: :any,                 big_sur:        "f632f09ff759cb8ee10b877bb1e797e577a806d736fe0faeb39400e29e14eaae"
-    sha256 cellar: :any,                 catalina:       "92914c8ae64d8aa71de95e9e9172696389d9978593aae8053dc0ccf2194713a6"
-    sha256 cellar: :any,                 mojave:         "bc6181c6e46bfc8d6ee3683262f52b8948b684d66e060a468cb5d939a85ca950"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "975d3e9c770f30571fe8cce133253cf93f4436127abda56fb63b6419927dc6c1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libical"
+    sha256 cellar: :any, mojave: "33076c3f0c402278f67840f41c54850cff20eec1cc540624c6cd9e8c2db476b4"
   end
 
   depends_on "cmake" => :build
