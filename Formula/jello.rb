@@ -3,13 +3,13 @@ class Jello < Formula
 
   desc "Filter JSON and JSON Lines data with Python syntax"
   homepage "https://github.com/kellyjonbrazil/jello"
-  url "https://files.pythonhosted.org/packages/39/35/cb9eacaab1d7845fc5f2dd086e31dc980cfeec563a4e070f980ecc6c025a/jello-1.5.0.tar.gz"
-  sha256 "62aff5a06761457ac72285a377cdfd7f8555fe1c791e7c9e7783711266bb4f30"
+  url "https://files.pythonhosted.org/packages/2c/b5/1d5293540c7506296b3777656a24272d192db69e9cce5a9b155df1c74574/jello-1.5.2.tar.gz"
+  sha256 "9f52b526febf4ce6f74d6df44517d1bca7df57a1d76c81f21c7f7c9354f61643"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jello"
-    sha256 cellar: :any_skip_relocation, mojave: "e356e25ec6da3818c44a0f7b196cce5d34cb0a2586db3b0ccb300c2a5825b680"
+    sha256 cellar: :any_skip_relocation, mojave: "08fe6d928c021346c8995b0a2694e18f32ddb1f4304b4e7ee2bcb4c3e95ab3e8"
   end
 
   depends_on "python@3.10"
