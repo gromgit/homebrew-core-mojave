@@ -12,17 +12,13 @@ class Gpsd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ec8c94a333277ff13aba8916ab3d434dc19de4b55cbf110dc7747a6d62b16366"
-    sha256 cellar: :any,                 arm64_big_sur:  "883c90ed12472d9116910ac3bed524ed400b2c1a7a702fd1e61c281a7689ddca"
-    sha256 cellar: :any,                 monterey:       "cd3594200ba2689bee0aec4aa3dd54036128ea5fe87aed2138867cd6f2eb9471"
-    sha256 cellar: :any,                 big_sur:        "9f7217ce185daeb8e0a596db9aca4fb501eb053c37d043d36ebc7cae51edc806"
-    sha256 cellar: :any,                 catalina:       "7abff1947d861eb50d2f631c5d5ef6930d968d882ac64604111ba0495a86c9d5"
-    sha256 cellar: :any,                 mojave:         "39246316c1b4cefa12a9835f2da96b924a71f48ffadd0a7518c3b6df9f6fbd19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68b07cf9cfaf44ccdafbb7096a207f7b57b4ce4d9ba95867c128658f1b45c5a9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpsd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dc85212317c8626424d3bc6ae9376af44999522164cb56ee59fa222a3057d3c5"
   end
 
   depends_on "asciidoctor" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "scons" => :build
 
   uses_from_macos "ncurses"
