@@ -1,25 +1,19 @@
 class Csvprintf < Formula
   desc "Command-line utility for parsing CSV files"
   homepage "https://github.com/archiecobbs/csvprintf"
-  url "https://github.com/archiecobbs/csvprintf/archive/1.3.0.tar.gz"
-  sha256 "f15737526f0505f0a26dbdd7799f7f3acc950001c64b18a5b233b8b0fd301b0c"
+  url "https://github.com/archiecobbs/csvprintf/archive/1.3.1.tar.gz"
+  sha256 "8cd5c7953a94f30eefe5edcee4a76e10e57b60ae9318a1b704c6823b40d09d2f"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csvprintf"
-    sha256 cellar: :any_skip_relocation, mojave: "eb9177ef3e10174db33500bb213e479e03257f42fe2c07eb087bf4843c85df17"
+    sha256 cellar: :any_skip_relocation, mojave: "52463ad216f9dffde2014a8569036e3881886c1ac5b6b06889b5ded8ec4b7444"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
   uses_from_macos "libxslt"
-
-  # Fix for missing 'u_char', remove in next version
-  patch do
-    url "https://github.com/archiecobbs/csvprintf/commit/c8798ed8.patch?full_index=1"
-    sha256 "94142117ec45922d8f6aa001ef17421e76600f761689e096015448fd3424f301"
-  end
 
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
