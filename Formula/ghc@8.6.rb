@@ -11,17 +11,14 @@ class GhcAT86 < Formula
   revision 2
 
   bottle do
-    sha256                               monterey:     "f8935d48a1813d6b4b6b515a447abbbff2a82ad6b297cdecb89cbce7edebab51"
-    sha256                               big_sur:      "d8cc7eb020495417a2674bb0b4129720fef30fd9c5688713501dd5ca6c1dea0f"
-    sha256                               catalina:     "af21e24b89361083a6cd5a27268e0470cdbf2e8616d1d95355df603f58f4e30d"
-    sha256                               mojave:       "ccbe2725d127cc1ddd2142294fd62981d6cd7ab110f56b1faa2560c28276b822"
-    sha256                               high_sierra:  "67a54e9d669e51b8018d064b771d31079421b777b03077dc7f02949ecdf8b0c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01c58d9164965d31c6b66f6063f4ff4d451348d4d3f143a2aa8886249f1c1a8b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@8.6"
+    rebuild 1
+    sha256 mojave: "bda12694a10259cabb20ca861f80fd6eecdc19ebf23de00dc8bd6b33933ab506"
   end
 
   keg_only :versioned_formula
 
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on arch: :x86_64
 
   uses_from_macos "m4" => :build
@@ -60,7 +57,7 @@ class GhcAT86 < Formula
   def install
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
-    ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
+    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3"
 
     args = %w[--enable-numa=no]
     if OS.mac?
