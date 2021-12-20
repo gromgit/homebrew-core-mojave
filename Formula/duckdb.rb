@@ -8,18 +8,18 @@ class Duckdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckdb"
-    rebuild 2
-    sha256 cellar: :any, mojave: "f72990256b682d137175ac94f2e3e684cd4dab1350cea3228c624bf90e0b96a8"
+    rebuild 3
+    sha256 cellar: :any, mojave: "08d91f6eeb9ba33e98e55a4492f2d87f9b494366a84a6841f3441149cf719b9b"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "utf8proc"
 
   def install
     ENV.deparallelize if OS.linux? # amalgamation builds take GBs of RAM
     mkdir "build/amalgamation"
-    system Formula["python@3.9"].opt_bin/"python3", "scripts/amalgamation.py", "--extended"
+    system Formula["python@3.10"].opt_bin/"python3", "scripts/amalgamation.py", "--extended"
     cd "build/amalgamation" do
       system "cmake", "../..", *std_cmake_args, "-DAMALGAMATION_BUILD=ON"
       system "make"
