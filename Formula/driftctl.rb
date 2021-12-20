@@ -1,14 +1,13 @@
 class Driftctl < Formula
   desc "Detect, track and alert on infrastructure drift"
   homepage "https://driftctl.com"
-  url "https://github.com/cloudskiff/driftctl/archive/v0.17.0.tar.gz"
-  sha256 "e50c84cf26b29cf0738fc960fc3afd34a0f784714c2abbc26259a34ed6ed854e"
+  url "https://github.com/snyk/driftctl/archive/v0.18.1.tar.gz"
+  sha256 "6a75838f31ec24d9b53e075d2edc21c5944f45a534588b809f5121a4c8bfb21f"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/driftctl"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "b3469c1187a52d4383b21530bfef8c6202a27455ad7d2131b5e320d1389abd95"
+    sha256 cellar: :any_skip_relocation, mojave: "8b073bfbf77b5eafc9ca57fb706e9d07c11cd2873e55b9971ebb1457bfff2c9a"
   end
 
   depends_on "go" => :build
@@ -18,8 +17,8 @@ class Driftctl < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/cloudskiff/driftctl/build.env=release
-      -X github.com/cloudskiff/driftctl/pkg/version.version=v#{version}
+      -X github.com/snyk/driftctl/build.env=release
+      -X github.com/snyk/driftctl/pkg/version.version=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
