@@ -1,15 +1,14 @@
 class LibjsonRpcCpp < Formula
   desc "C++ framework for json-rpc"
   homepage "https://github.com/cinemast/libjson-rpc-cpp"
-  url "https://github.com/cinemast/libjson-rpc-cpp/archive/v1.4.0.tar.gz"
-  sha256 "8fef7628eadbc0271c685310082ef4c47f1577c3df2e4c8bd582613d1bd10599"
+  url "https://github.com/cinemast/libjson-rpc-cpp/archive/v1.4.1.tar.gz"
+  sha256 "7a057e50d6203e4ea0a10ba5e4dbf344c48b177e5a3bf82e850eb3a783c11eb5"
   license "MIT"
   head "https://github.com/cinemast/libjson-rpc-cpp.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libjson-rpc-cpp"
-    rebuild 2
-    sha256 cellar: :any, mojave: "cf9c59b87a00c70a2291d441d83581a08c7010b3950302a5d39c3e89ca2d115e"
+    sha256 cellar: :any, mojave: "46715f67b087986663405422ceaaa937cb568f084fbce16738356ffd16e5f3ca"
   end
 
   depends_on "cmake" => :build
