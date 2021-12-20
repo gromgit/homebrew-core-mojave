@@ -1,15 +1,14 @@
 class Kahip < Formula
   desc "Karlsruhe High Quality Partitioning"
   homepage "https://algo2.iti.kit.edu/documents/kahip/index.html"
-  url "https://github.com/KaHIP/KaHIP/archive/v3.12.tar.gz"
-  sha256 "df923b94b552772d58b4c1f359b3f2e4a05f7f26ab4ebd00a0ab7d2579f4c257"
+  url "https://github.com/KaHIP/KaHIP/archive/v3.14.tar.gz"
+  sha256 "9da04f3b0ea53b50eae670d6014ff54c0df2cb40f6679b2f6a96840c1217f242"
   license "MIT"
   head "https://github.com/KaHIP/KaHIP.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kahip"
-    rebuild 2
-    sha256 cellar: :any, mojave: "b20161c5ab1d65ca621872e822093d05feb4b0e72bd2d32f5d584a7d52e35221"
+    sha256 cellar: :any, mojave: "b41980d03f13dd8f5cf33ce5ddaed4148733bd03a8ae5498603963608f128362"
   end
 
   depends_on "cmake" => :build
