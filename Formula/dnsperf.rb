@@ -1,10 +1,9 @@
 class Dnsperf < Formula
   desc "Measure DNS performance by simulating network conditions"
   homepage "https://www.dns-oarc.net/tools/dnsperf"
-  url "https://www.dns-oarc.net/files/dnsperf/dnsperf-2.8.0.tar.gz"
-  sha256 "d50b9e05d9688a7b5906447cdca87bf1d8e100b5288e0081db6c3cdd0fea19b3"
+  url "https://www.dns-oarc.net/files/dnsperf/dnsperf-2.9.0.tar.gz"
+  sha256 "952d8b7c9d8a6decbf6f77164728fac6d60bfa1857acc0df8c5404500d0f11dd"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url :homepage
@@ -13,7 +12,7 @@ class Dnsperf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsperf"
-    sha256 cellar: :any, mojave: "e0db5b5ea37c299e6b697a8ca4172bde16330960c0104bca507ca1218b6b2f27"
+    sha256 cellar: :any, mojave: "49606a738559964aa69119b195e5790baf189cad1689065e8ff05e511a330243"
   end
 
   depends_on "pkg-config" => :build
