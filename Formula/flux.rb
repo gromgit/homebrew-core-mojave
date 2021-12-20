@@ -2,8 +2,8 @@ class Flux < Formula
   desc "Lightweight scripting language for querying databases"
   homepage "https://www.influxdata.com/products/flux/"
   url "https://github.com/influxdata/flux.git",
-      tag:      "v0.144.0",
-      revision: "eb10cfb089b18e702dd81e3f64a660425c7c6b82"
+      tag:      "v0.147.0",
+      revision: "8c648bac49c8d9f74cec6ca86995b1c31b387e51"
   license "MIT"
   head "https://github.com/influxdata/flux.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Flux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flux"
-    sha256 cellar: :any, mojave: "b30e79dba1caa83a643659919e40f486b10641f4aa3cf5fff14c3f0d8475f386"
+    sha256 cellar: :any, mojave: "a2e596a0c6edafea52d45a503b703ba4f8ffc30778a3c12f32aec7d524597f77"
   end
 
   depends_on "go" => :build
@@ -27,8 +27,8 @@ class Flux < Formula
   # NOTE: The version here is specified in the go.mod of influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://github.com/influxdata/pkg-config/archive/v0.2.9.tar.gz"
-    sha256 "25843e58a3e6994bdafffbc0ef0844978a3d1f999915d6770cb73505fcf87e44"
+    url "https://github.com/influxdata/pkg-config/archive/v0.2.10.tar.gz"
+    sha256 "460b389eeccf5e2e073ba3c77c04e19181e25e67e55891c75d6a46de811f60ce"
   end
 
   def install
