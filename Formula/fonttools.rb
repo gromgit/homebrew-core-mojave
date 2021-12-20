@@ -3,15 +3,14 @@ class Fonttools < Formula
 
   desc "Library for manipulating fonts"
   homepage "https://github.com/fonttools/fonttools"
-  url "https://files.pythonhosted.org/packages/3c/d5/f722e0d1aed0d547383913c6bc3c4ff35772952057b8e2b8fe3be8df4216/fonttools-4.28.2.zip"
-  sha256 "dca694331af74c8ad47acc5171e57f6b78fac5692bf050f2ab572964577ac0dd"
+  url "https://files.pythonhosted.org/packages/fc/a0/1f1c0953d4ecef4655c00678000e6456c53415b5ab4acbbf83ec252f3388/fonttools-4.28.4.zip"
+  sha256 "581a682a7102a41421e7e484303572c565c1b8e52b1cc9fecd3c159dbe9a02f4"
   license "MIT"
   head "https://github.com/fonttools/fonttools.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fonttools"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "2e4d51eccfc53e95a5a19f3cbfeec41e9cf15350b55efea4d5a942483c4ba57f"
+    sha256 cellar: :any_skip_relocation, mojave: "380e284e18467bbccde91aef1b41550718677e4d5ba050fbc9d5e7bf763d54d6"
   end
 
   depends_on "python@3.10"
