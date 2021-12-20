@@ -3,16 +3,13 @@ require "language/node"
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://github.com/hasura/graphql-engine/archive/v2.0.10.tar.gz"
-  sha256 "ca134148d62985a065705740a7ca884a2f1bfe18c1f11d21b66dc17119630ec5"
+  url "https://github.com/hasura/graphql-engine/archive/v2.1.0.tar.gz"
+  sha256 "45f531f011bb29733abf51e1d71968a2c7f44412958e932be14939e1005d3587"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b860c096eb5e1dff44d852bb19b2a56e81508ebfc953702f102964ff49f3ad82"
-    sha256 cellar: :any_skip_relocation, big_sur:       "2e9eb9e3772e77b731842bca7e698160ba9184453bd8f8a989147dda31f4a1ac"
-    sha256 cellar: :any_skip_relocation, catalina:      "d0d6e9f09b30df5dccfce820c6108dcc9d59323d68ec9ea815977017af6178c7"
-    sha256 cellar: :any_skip_relocation, mojave:        "d6991bd9968d53743e816be3b2ad5de5a68018904160a5a2d93caf9fee45057b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e4c9e55c26b47d4f19e23bcb95370adb40e13caa68d59856630df7e43e001f2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hasura-cli"
+    sha256 cellar: :any_skip_relocation, mojave: "bfccdf01fdb1ac86770804c1743c0a8189bf33c639663e8dae28ed3b0620f037"
   end
 
   depends_on "go" => :build
@@ -25,7 +22,7 @@ class HasuraCli < Formula
       -s -w
       -X github.com/hasura/graphql-engine/cli/v2/version.BuildVersion=#{version}
       -X github.com/hasura/graphql-engine/cli/v2/plugins.IndexBranchRef=master
-    ].join(" ")
+    ]
 
     # Based on `make build-cli-ext`, but only build a single host-specific binary
     cd "cli-ext" do
@@ -39,7 +36,7 @@ class HasuraCli < Formula
       os = OS.kernel_name.downcase
 
       cp "../cli-ext/bin/cli-ext-hasura", "./internal/cliext/static-bin/#{os}/#{arch}/cli-ext"
-      system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"hasura", "./cmd/hasura/"
+      system "go", "build", *std_go_args(output: bin/"hasura", ldflags: ldflags), "./cmd/hasura/"
 
       output = Utils.safe_popen_read("#{bin}/hasura", "completion", "bash")
       (bash_completion/"hasura").write output
