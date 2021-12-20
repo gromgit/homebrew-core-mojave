@@ -1,10 +1,9 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
-  url "https://github.com/halide/Halide/archive/v13.0.1.tar.gz"
-  sha256 "8d4b0ad622ef0ff9e28770cd950baf45a055d1229131be44f8e6333a548183f9"
+  url "https://github.com/halide/Halide/archive/v13.0.2.tar.gz"
+  sha256 "eee68f88cce153cde6aa1d73c844677681dfc6c57ae7f4cb6a0354da0f3b3b80"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +12,7 @@ class Halide < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/halide"
-    sha256 cellar: :any, mojave: "be44fb7552c93ccd236e233995d756e111e820855ce6b1539f76b170e64e0ca1"
+    sha256 cellar: :any, mojave: "6ca959bf04c25b662ad5700981feaa88ff384b5f6c796d33290e358df1fddd8c"
   end
 
   depends_on "cmake" => :build
