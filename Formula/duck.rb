@@ -1,10 +1,10 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.0.0.36226.tar.gz"
-  sha256 "11c5aac7a8175490e8f503f846b33f861ba58a0e9ffdcf095572fbc637253f0d"
+  url "https://dist.duck.sh/duck-src-8.1.1.36550.tar.gz"
+  sha256 "0496edc6273ab0d6e5161cc1dcb4d3554c0e93b42cc2bcebc23a01b58858cf81"
   license "GPL-3.0-only"
-  head "https://svn.cyberduck.io/trunk/"
+  head "https://github.com/iterate-ch/cyberduck.git"
 
   livecheck do
     url "https://dist.duck.sh/"
@@ -13,8 +13,7 @@ class Duck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duck"
-    rebuild 2
-    sha256 cellar: :any, mojave: "260bd318e7a663956e493c8130dc1349cd4b170bcbac4878bdae95dc4a4ea3e1"
+    sha256 cellar: :any, mojave: "54f7bd3c69b32cde6ddb1af975444d6b4188d5c21c95b90b47609bc8208d7324"
   end
 
   depends_on "ant" => :build
@@ -22,7 +21,6 @@ class Duck < Formula
   depends_on "pkg-config" => :build
   depends_on xcode: :build
 
-  depends_on arch: :x86_64
   depends_on "libffi"
   depends_on "openjdk"
 
@@ -43,6 +41,11 @@ class Duck < Formula
   resource "jna" do
     url "https://github.com/java-native-access/jna/archive/refs/tags/5.8.0.tar.gz"
     sha256 "97680b8ddb5c0f01e50f63d04680d0823a5cb2d9b585287094de38278d2e6625"
+  end
+
+  resource "rococoa" do
+    url "https://github.com/iterate-ch/rococoa/archive/refs/tags/0.9.1.tar.gz"
+    sha256 "62c3c36331846384aeadd6014c33a30ad0aaff7d121b775204dc65cb3f00f97b"
   end
 
   resource "JavaNativeFoundation" do
@@ -102,10 +105,20 @@ class Duck < Formula
       end
     end
 
+    resource("rococoa").stage do
+      next unless OS.mac?
+
+      cd "rococoa/rococoa-core" do
+        xcodebuild "VALID_ARCHS=#{Hardware::CPU.arch}", "-project", "rococoa.xcodeproj"
+        buildpath.install shared_library("build/Release/librococoa")
+      end
+    end
+
     os = if OS.mac?
       xcconfig = buildpath/"Overrides.xcconfig"
       xcconfig.write <<~EOS
         OTHER_LDFLAGS = -headerpad_max_install_names
+        VALID_ARCHS=#{Hardware::CPU.arch}
       EOS
       ENV["XCODE_XCCONFIG_FILE"] = xcconfig
 
@@ -128,6 +141,11 @@ class Duck < Formula
       libexec.install Dir["cli/osx/target/duck.bundle/*"]
       rm_rf libdir/"JavaNativeFoundation.framework"
       libdir.install buildpath/"JavaNativeFoundation.framework"
+      # Replace runtime with already installed dependency
+      rm_r "#{libexec}/Contents/PlugIns/Runtime.jre"
+      ln_s Formula["openjdk"].libexec/"openjdk.jdk", "#{libexec}/Contents/PlugIns/Runtime.jre"
+      rm libdir/shared_library("librococoa")
+      libdir.install buildpath/shared_library("librococoa")
     else
       libexec.install Dir["cli/linux/target/release/duck/*"]
     end
