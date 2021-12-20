@@ -14,11 +14,11 @@ class Hsd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hsd"
-    rebuild 2
-    sha256 mojave: "7891bc55eeb56a92712ad47d75950a08b45ec718e11e408a52b29791e96b105c"
+    rebuild 3
+    sha256 mojave: "7ed7d4614b1ed6f5f89642746e8bf204c35a29fc1cdbfb183b349dda588946b4"
   end
 
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "node@10"
   depends_on "unbound"
 
