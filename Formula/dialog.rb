@@ -1,8 +1,8 @@
 class Dialog < Formula
   desc "Display user-friendly message boxes from shell scripts"
   homepage "https://invisible-island.net/dialog/"
-  url "https://invisible-mirror.net/archives/dialog/dialog-1.3-20211107.tgz"
-  sha256 "af97fd6787af2bd6df15de4d1fa4b5d57e22bc7b4c82d35661c21adb9520fdec"
+  url "https://invisible-mirror.net/archives/dialog/dialog-1.3-20211214.tgz"
+  sha256 "cc2965e05c6a8c37070b36b56414eaa560df8d87f2cea21759e28950e9b27a4b"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Dialog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dialog"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "edb1a7275e4a0e8ede285607a0b0396275a5fd77aad2c6c1c94279fbce1b2c52"
+    sha256 cellar: :any_skip_relocation, mojave: "ef50290ba1cfb98fd4fa28253088d5a3050a879fa18e3874577dd266999b8dd4"
   end
 
   uses_from_macos "ncurses"
