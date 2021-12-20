@@ -1,19 +1,18 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https://sourceforge.net/projects/cppcheck/"
-  url "https://github.com/danmar/cppcheck/archive/2.6.2.tar.gz"
-  sha256 "a11602c15bf951ba5bb67655ca6c06986ec64770d8004759a8c53db013286a5e"
+  url "https://github.com/danmar/cppcheck/archive/2.6.3.tar.gz"
+  sha256 "7a49ebb7a54356ade09867f466cb41ee4020ebf3732582762669e5c8903f16c8"
   license "GPL-3.0-or-later"
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppcheck"
-    rebuild 2
-    sha256 mojave: "9e1ed74e3faa52204346411ec234f3e6e121db356be0f73cf17a43ccb8613a5a"
+    sha256 mojave: "5f86882ffa8d96c50ed7fb64756dd8344963474c548471dec2798eeb020a68c3"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.10" => [:build, :test]
   depends_on "pcre"
   depends_on "tinyxml2"
 
@@ -25,7 +24,7 @@ class Cppcheck < Formula
       -DUSE_MATCHCOMPILER=ON
       -DUSE_BUNDLED_TINYXML2=OFF
       -DENABLE_OSS_FUZZ=OFF
-      -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3
+      -DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3
     ]
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
@@ -88,7 +87,7 @@ class Cppcheck < Formula
 
     sample_addon_file = testpath/"sampleaddon.py"
     sample_addon_file.write <<~EOS
-      #!/usr/bin/env #{Formula["python@3.9"].opt_bin}/python3
+      #!/usr/bin/env #{Formula["python@3.10"].opt_bin}/python3
       """A simple test addon for #{name}, prints function names and token count"""
       import sys
       from importlib import machinery, util
@@ -113,7 +112,7 @@ class Cppcheck < Formula
     system "#{bin}/cppcheck", "--dump", test_cpp_file
     test_cpp_file_dump = "#{test_cpp_file}.dump"
     assert_predicate testpath/test_cpp_file_dump, :exist?
-    output = shell_output(Formula["python@3.9"].opt_bin/"python3 #{sample_addon_file} #{test_cpp_file_dump}")
+    output = shell_output(Formula["python@3.10"].opt_bin/"python3 #{sample_addon_file} #{test_cpp_file_dump}")
     assert_match "#{expect_function_names}\n#{expect_token_count}", output
   end
 end
