@@ -2,15 +2,14 @@ class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
   homepage "https://github.com/knative/client"
   url "https://github.com/knative/client.git",
-      tag:      "v0.27.0",
-      revision: "a1cf5bf81f77b9602607735af286fb3cefb3fee2"
+      tag:      "knative-v1.1.0",
+      revision: "530841f1f582945caec3c0f41e54d07fda103e14"
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kn"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "bec4961fde05671227eb90ca0e0dcc87fcc11785dedb75033d56831940cce995"
+    sha256 cellar: :any_skip_relocation, mojave: "7e28f736fb6ad19057345e57d8d5c4c31ec6eeaf240f00b81bfeb2b4539e9b01"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Kn < Formula
       -X knative.dev/client/pkg/kn/commands/version.Version=v#{version}
       -X knative.dev/client/pkg/kn/commands/version.GitRevision=#{Utils.git_head(length: 8)}
       -X knative.dev/client/pkg/kn/commands/version.BuildDate=#{time.iso8601}
-    ].join(" ")
+    ]
 
     system "go", "build", "-mod=vendor", *std_go_args(ldflags: ldflags), "./cmd/..."
   end
