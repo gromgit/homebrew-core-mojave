@@ -1,9 +1,9 @@
 class Druid < Formula
   desc "High-performance, column-oriented, distributed data store"
   homepage "https://druid.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=druid/0.22.0/apache-druid-0.22.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/druid/0.22.0/apache-druid-0.22.0-bin.tar.gz"
-  sha256 "5ce9ba185361a20694fd107ffc818fb42d13a44911d010739227b5c62a8fc1da"
+  url "https://dlcdn.apache.org/druid/0.22.1/apache-druid-0.22.1-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/druid/0.22.1/apache-druid-0.22.1-bin.tar.gz"
+  sha256 "bd83d8f8235c74d47577468d65f96d302e6918b017e6338cfbb040df9157143c"
   license "Apache-2.0"
 
   livecheck do
@@ -12,18 +12,21 @@ class Druid < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2dc0727f083571d26da3e191ebafae6ce7d53b8d96c2bb7a062924cfc4dff3c4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/druid"
+    sha256 cellar: :any_skip_relocation, mojave: "ad7e134eb7daa12f3175bc93f269c471ce7f636d86118d7c0cfaebe8c8dc2450"
   end
 
   depends_on "zookeeper" => :test
-  depends_on arch: :x86_64
   depends_on "openjdk@8"
 
   resource "mysql-connector-java" do
-    url "https://search.maven.org/remotecontent?filepath=mysql/mysql-connector-java/5.1.48/mysql-connector-java-5.1.48.jar"
-    sha256 "56e26caaa3821f5ae4af44f9c74f66cf8b84ea01516ad3803cbb0e9049b6eca8"
+    url "https://search.maven.org/remotecontent?filepath=mysql/mysql-connector-java/5.1.49/mysql-connector-java-5.1.49.jar"
+    sha256 "5bba9ff50e5e637a0996a730619dee19ccae274883a4d28c890d945252bb0e12"
   end
+
+  # Fixes: node.sh: source: not found. Remove with next release
+  # https://github.com/apache/druid/pull/12014
+  patch :DATA
 
   def install
     libexec.install Dir["*"]
@@ -91,3 +94,16 @@ class Druid < Formula
     end
   end
 end
+
+__END__
+diff -Naur apache-druid-0.22.0-old/bin/node.sh apache-druid-0.22.0/bin/node.sh
+--- apache-druid-0.22.0-old/bin/node.sh	2021-11-30 21:39:18.000000000 +0100
++++ apache-druid-0.22.0/bin/node.sh	2021-11-30 21:40:08.000000000 +0100
+@@ -41,7 +41,7 @@
+ PID_DIR="${DRUID_PID_DIR:=var/druid/pids}"
+ WHEREAMI="$(dirname "$0")"
+ WHEREAMI="$(cd "$WHEREAMI" && pwd)"
+-JAVA_BIN_DIR="$(source "$WHEREAMI"/java-util && get_java_bin_dir)"
++JAVA_BIN_DIR="$(. /"$WHEREAMI"/java-util && get_java_bin_dir)"
+
+ pid=$PID_DIR/$nodeType.pid
