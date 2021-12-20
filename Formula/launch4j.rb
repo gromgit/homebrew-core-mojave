@@ -7,10 +7,18 @@ class Launch4j < Formula
   license all_of: ["BSD-3-Clause", "MIT"]
   revision 1
 
+  livecheck do
+    url :stable
+    regex(/^(?:Release_launch4j[._-])?v?(\d+(?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/launch4j"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c7e895f8c432bfd7482f1daee534ad66a79e1c5b52c95c578fba5ddce5c4c069"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "2dbd1f427ab1aaba3622bd55af814edc48618be721929217b66f57fea6387bb3"
   end
 
   depends_on "ant" => :build
