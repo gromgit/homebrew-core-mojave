@@ -1,15 +1,14 @@
 class Glfw < Formula
   desc "Multi-platform library for OpenGL applications"
   homepage "https://www.glfw.org/"
-  url "https://github.com/glfw/glfw/archive/3.3.5.tar.gz"
-  sha256 "32fdb8705784adfe3082f97e0d41e7c515963e977b5a14c467a887cf0da827b5"
+  url "https://github.com/glfw/glfw/archive/3.3.6.tar.gz"
+  sha256 "ed07b90e334dcd39903e6288d90fa1ae0cf2d2119fec516cf743a0a404527c02"
   license "Zlib"
   head "https://github.com/glfw/glfw.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glfw"
-    rebuild 2
-    sha256 cellar: :any, mojave: "171a2341803d2ebc3c027478daab2dab966466b07aa3724807dd22ecd03a095f"
+    sha256 cellar: :any, mojave: "e2215645df5d2ff0159cc89eb0f67a51bcad33cb5cdafa1f09e76b6785093ea9"
   end
 
   depends_on "cmake" => :build
