@@ -1,18 +1,13 @@
 class Graphicsmagick < Formula
   desc "Image processing tools collection"
   homepage "http://www.graphicsmagick.org/"
-  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.36/GraphicsMagick-1.3.36.tar.xz"
-  sha256 "5d5b3fde759cdfc307aaf21df9ebd8c752e3f088bb051dd5df8aac7ba7338f46"
+  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.37/GraphicsMagick-1.3.37.tar.xz"
+  sha256 "90dc22f1a7bd240e4c9065a940962bf13da43c99bcc36cb111cc3c1a0d7477d4"
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
   bottle do
-    sha256 arm64_monterey: "00d636c922ae51de90a6b80fcf86a349a54e4f1f26bbab3dc4b0192824dda0b9"
-    sha256 arm64_big_sur:  "baae9073b2475351eb1d53d23fa0c2fcf75a1611649b3be229a71b693881436e"
-    sha256 monterey:       "671c7fccbc081328ef68e28fe6e129463a2855d7cc4da12e438a5bf5094d63c2"
-    sha256 big_sur:        "e8423e130f6dcdf83c501db944a341257e5b774cd007e1300f8b3cd3d32cafcb"
-    sha256 catalina:       "a09639dfb381b06df090e595f6f1bc343c3619c9643de26c6cfea4073c9527cd"
-    sha256 mojave:         "40b04368925d79d6e6fbe76014e5db18c7378eda414beb1b41de9bb8db6a69a0"
-    sha256 x86_64_linux:   "c8be14cb6bc71dd149d6ad2b49941b9192d375e66b011c99decba30e8dae6438"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphicsmagick"
+    sha256 mojave: "00e76a3169be897c11f4d2a0c5f776b9a9d201704b467bc377130da8823e6359"
   end
 
   depends_on "pkg-config" => :build
