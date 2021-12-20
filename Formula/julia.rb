@@ -4,12 +4,12 @@ class Julia < Formula
   url "https://github.com/JuliaLang/julia/releases/download/v1.7.0/julia-1.7.0.tar.gz"
   sha256 "8e870dbef71bc72469933317a1a18214fd1b4b12f1080784af7b2c56177efcb4"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
+  revision 1
   head "https://github.com/JuliaLang/julia.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/julia"
-    rebuild 2
-    sha256 mojave: "e4bc92ae9bb64a33504e3d6f4bdc0070e33163d63e160210908af9d3e86bf874"
+    sha256 mojave: "abc0936aa230a38524189d5e4ca510ecb57dfda97c254845a14d8c09ef7cca52"
   end
 
   # Requires the M1 fork of GCC to build
