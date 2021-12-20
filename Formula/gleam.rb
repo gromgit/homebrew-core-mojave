@@ -1,13 +1,13 @@
 class Gleam < Formula
   desc "✨ A statically typed language for the Erlang VM"
   homepage "https://gleam.run"
-  url "https://github.com/gleam-lang/gleam/archive/v0.18.0.tar.gz"
-  sha256 "9aead695a3baf2e62b462dbacb588be3f3ac778415afc57ab85087fc7955f0ac"
+  url "https://github.com/gleam-lang/gleam/archive/v0.18.2.tar.gz"
+  sha256 "42e1592312660ab96ce7167e222f8eea00e8c38498cf6d30300355b69af270bb"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gleam"
-    sha256 cellar: :any_skip_relocation, mojave: "4faa38400bfc49083a8b8f5a24bb3c15fc74028d85857ee2d0fbb65d14d0c921"
+    sha256 cellar: :any_skip_relocation, mojave: "b73288cdd8a907ebfd83ca8efc32267282d2940601d02e47db014eb329712627"
   end
 
   depends_on "rust" => :build
