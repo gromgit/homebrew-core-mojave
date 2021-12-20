@@ -4,6 +4,7 @@ class Ginac < Formula
   url "https://www.ginac.de/ginac-1.8.1.tar.bz2"
   sha256 "f1695dbd6b187061ef3fba507648c9d6dba438f733b058c16f9278cbdcf5e1ab"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.ginac.de/Download.html"
@@ -11,16 +12,13 @@ class Ginac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "1fab055efe4ce1208e59f0a91dc7f34abd4a2890d07f04fe8dce3e8d7eaee80b"
-    sha256 cellar: :any,                 big_sur:      "d1001c3d4a1975402462d266d715a584dc63b8ea9221cd680de70818237785f1"
-    sha256 cellar: :any,                 catalina:     "3b28c3417ab90c06f4d86556bc51d51e7c17b05930adba6b71bd7091e22ade48"
-    sha256 cellar: :any,                 mojave:       "bb5a12c6fa1e5ad8e5d29304c0ca6e7bef7bf83799545ee45a4b5608a0ef7a88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "218209fcd3fab207b046dc8bbb781f8cf4831e97df1c38c657258d2ddd517d38"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ginac"
+    sha256 cellar: :any, mojave: "29dc8df6facb69e2a3d5c5c2fe6ccf4e2eb2aee3f55d31fdffe0afa4086ac55e"
   end
 
   depends_on "pkg-config" => :build
   depends_on "cln"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "readline"
 
   # Fix -flat_namespace being used on Big Sur and later.
