@@ -2,8 +2,8 @@ class K3d < Formula
   desc "Little helper to run Rancher Lab's k3s in Docker"
   homepage "https://k3d.io"
   url "https://github.com/rancher/k3d.git",
-    tag:      "v5.1.0",
-    revision: "5a48613165554f87e1127d71feb387cbab1c9472"
+    tag:      "v5.2.2",
+    revision: "0c57cf24ca65fecba4dd24624a27364def22fbca"
   license "MIT"
 
   livecheck do
@@ -13,8 +13,7 @@ class K3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "1d226353712f00b1dd68c7bd877aaf45cb589458466b51fa46760cf5eafe3e2a"
+    sha256 cellar: :any_skip_relocation, mojave: "11b0caf0dc3da29a26b60f9522e4f275a11c796fcede55abef4d327fe1c532c6"
   end
 
   depends_on "go" => :build
@@ -34,7 +33,7 @@ class K3d < Formula
 
     system "go", "build",
            "-mod", "vendor",
-           *std_go_args(ldflags: ldflags.join(" "))
+           *std_go_args(ldflags: ldflags)
 
     # Install bash completion
     output = Utils.safe_popen_read(bin/"k3d", "completion", "bash")
