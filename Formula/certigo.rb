@@ -6,10 +6,15 @@ class Certigo < Formula
   license "Apache-2.0"
   head "https://github.com/square/certigo.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certigo"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "2070f5888baae8758dc6947a5a77083fb9a08228f9bb1fc073664d2f9a23b6b9"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "f2f23ba01a123b809eddfa10a036f9178b727c0e35ca3bfb6dffc83aebd0b289"
   end
 
   depends_on "go" => :build
