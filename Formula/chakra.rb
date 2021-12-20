@@ -7,13 +7,13 @@ class Chakra < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, big_sur:  "e89bbc179ff9477dcf8589c6b8ac1caedd528f1a4247cb66f20f5af2e3544421"
-    sha256 cellar: :any, catalina: "44f4599ea428559b326091374b7d0bcbcf987496f40e513b9cd4fffba7576d37"
-    sha256 cellar: :any, mojave:   "8e7489e2c043d1669446d5743352ed36ed72a94d8fc9c1bb5e2b666ab404c450"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chakra"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1dc5c784841236711dde7d4d8294b44176452d2602f140732b3bfbb8ae66f57a"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "icu4c"
 
   uses_from_macos "llvm" => [:build, :test]
