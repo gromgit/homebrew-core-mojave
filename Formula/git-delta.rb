@@ -1,14 +1,14 @@
 class GitDelta < Formula
   desc "Syntax-highlighting pager for git and diff output"
   homepage "https://github.com/dandavison/delta"
-  url "https://github.com/dandavison/delta/archive/0.11.0.tar.gz"
-  sha256 "55e6aa28869247a7fca7aa9229ea2ebeae75e79becb22988e645301778f7388b"
+  url "https://github.com/dandavison/delta/archive/0.11.3.tar.gz"
+  sha256 "cf68f43d4d26c10551c0137a7e718719958e52267d83f29a8f7794af12095b9e"
   license "MIT"
   head "https://github.com/dandavison/delta.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-delta"
-    sha256 cellar: :any_skip_relocation, mojave: "d36715584cee5102a8965b5b41f4713a12d202d1a36b6d6c3b1afc5fa6953f4d"
+    sha256 cellar: :any_skip_relocation, mojave: "6b5e590caf8318423c85f745defb93fa0c333072d544acac518d5571c7708110"
   end
 
   depends_on "rust" => :build
