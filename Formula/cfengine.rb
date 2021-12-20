@@ -1,8 +1,8 @@
 class Cfengine < Formula
   desc "Help manage and understand IT infrastructure"
   homepage "https://cfengine.com/"
-  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-3.18.1.tar.gz"
-  sha256 "9d22db44a0a879c6edae5759fc481ac86ff13f81374fb835fe5e73fe8bc57681"
+  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-3.19.0.tar.gz"
+  sha256 "bb43b23f76e6bd4f54e250675cfe8a01376326fa2c6c63c2a9e9bd091685d867"
   license all_of: ["BSD-3-Clause", "GPL-2.0-or-later", "GPL-3.0-only", "LGPL-2.0-or-later"]
 
   livecheck do
@@ -12,7 +12,7 @@ class Cfengine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfengine"
-    sha256 mojave: "72a57bd06440d05470d1b3ee91c78565e569a3869f4711f55c1401d422d98cb4"
+    sha256 mojave: "0be6ab474690415f86880764f4f047d5208fa920bd9c40ecfc3aa4d3b78aa193"
   end
 
   depends_on "lmdb"
