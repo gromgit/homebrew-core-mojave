@@ -1,8 +1,8 @@
 class Consul < Formula
   desc "Tool for service discovery, monitoring and configuration"
   homepage "https://www.consul.io"
-  url "https://github.com/hashicorp/consul/archive/refs/tags/v1.10.4.tar.gz"
-  sha256 "6e3da1fb589586af4d68b2e924ccdb9f4aad644826aae452c31744c658eb66e4"
+  url "https://github.com/hashicorp/consul/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "e548902d6a9c92bcc07fc1af33049078fb34a371e9853be6b0d6a69cf2a2c208"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul.git", branch: "main"
 
@@ -13,17 +13,10 @@ class Consul < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/consul"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "9382c6313377980676519186cea70fd60a186d358a3d3ab8d111e802b5892b1e"
+    sha256 cellar: :any_skip_relocation, mojave: "f4d57ed06cadb736d5ea6f139f7d19177503ae91a5b1d7178df765c1989e7eb2"
   end
 
   depends_on "go" => :build
-
-  # Support go 1.17, remove after next release
-  patch do
-    url "https://github.com/hashicorp/consul/commit/e43cf462679b6fdd8b15ac7891747e970029ac4a.patch?full_index=1"
-    sha256 "4f0edde54f0caa4c7290b17f2888159a4e0b462b5c890e3068a41d4c3582ca2f"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
