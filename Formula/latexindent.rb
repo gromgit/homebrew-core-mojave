@@ -1,14 +1,13 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://ctan.org/pkg/latexindent"
-  url "https://github.com/cmhughes/latexindent.pl/archive/V3.13.2.tar.gz"
-  sha256 "d63e5dc6c03261bd6abea9f3190e6be09d67683f5ad87247924690b63644a60d"
+  url "https://github.com/cmhughes/latexindent.pl/archive/V3.13.3.tar.gz"
+  sha256 "cc6df51754f2bed022eaaecb00576162c9a1127c6ca7beb67218ac9278aff132"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latexindent"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d62f27e8d52b5b966e874d0d7d27d8202f9910bdf16a6bd3646d4a70c8295adb"
+    sha256 cellar: :any_skip_relocation, mojave: "1f669d7ec0d0eba620f8675cbf2894623c4420fff9f4c46b637ca50194ee0fd9"
   end
 
   depends_on "perl"
@@ -26,8 +25,8 @@ class Latexindent < Formula
   end
 
   resource "Class::Data::Inheritable" do
-    url "https://cpan.metacpan.org/authors/id/T/TM/TMTM/Class-Data-Inheritable-0.08.tar.gz"
-    sha256 "9967feceea15227e442ec818723163eb6d73b8947e31f16ab806f6e2391af14a"
+    url "https://cpan.metacpan.org/authors/id/R/RS/RSHERER/Class-Data-Inheritable-0.09.tar.gz"
+    sha256 "44088d6e90712e187b8a5b050ca5b1c70efe2baa32ae123e9bd8f59f29f06e4d"
   end
 
   resource "Devel::GlobalDestruction" do
@@ -146,8 +145,8 @@ class Latexindent < Formula
   end
 
   resource "Try::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz"
-    sha256 "da5bd0d5c903519bbf10bb9ba0cb7bcac0563882bcfe4503aee3fb143eddef6b"
+    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.31.tar.gz"
+    sha256 "3300d31d8a4075b26d8f46ce864a1d913e0e8467ceeba6655d5d2b2e206c11be"
   end
 
   resource "Unicode::LineBreak" do
