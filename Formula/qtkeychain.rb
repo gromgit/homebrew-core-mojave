@@ -1,14 +1,13 @@
 class Qtkeychain < Formula
   desc "Platform-independent Qt API for storing passwords securely"
   homepage "https://github.com/frankosterfeld/qtkeychain"
-  url "https://github.com/frankosterfeld/qtkeychain/archive/v0.13.1.tar.gz"
-  sha256 "dc84aea039b81f2613c7845d2ac88bad1cf3a06646ec8af0f7276372bb010c11"
+  url "https://github.com/frankosterfeld/qtkeychain/archive/v0.13.2.tar.gz"
+  sha256 "20beeb32de7c4eb0af9039b21e18370faf847ac8697ab3045906076afbc4caa5"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qtkeychain"
-    rebuild 2
-    sha256 cellar: :any, mojave: "e6e458a53c7310ea7f6c3384258a00c1c2f7c8c87b3206d78bd61f49e5689477"
+    sha256 cellar: :any, mojave: "8b651570f0bb9feebb7d20bb022c70d9a4bb5e5359780116ada2853d31fb980a"
   end
 
   depends_on "cmake" => :build
