@@ -4,12 +4,12 @@ class Mpv < Formula
   url "https://github.com/mpv-player/mpv/archive/v0.34.0.tar.gz"
   sha256 "f654fb6275e5178f57e055d20918d7d34e19949bc98ebbf4a7371902e88ce309"
   license :cannot_represent
+  revision 1
   head "https://github.com/mpv-player/mpv.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpv"
-    rebuild 1
-    sha256 mojave: "051fdfd25c35c3537006a2b3faf1e43fb4233b0870a7ca748059db4a93412a46"
+    sha256 mojave: "ee5068a0762db4940eab02df30a446dd91dab58ea552b6595057f39b809a7abb"
   end
 
   depends_on "docutils" => :build
