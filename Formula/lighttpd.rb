@@ -1,8 +1,8 @@
 class Lighttpd < Formula
   desc "Small memory footprint, flexible web-server"
   homepage "https://www.lighttpd.net/"
-  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.61.tar.xz"
-  sha256 "43f0d63d04a1b7c5b8aab07e0612e44ccad0afc0614bab784c5b019872363432"
+  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.63.tar.xz"
+  sha256 "2aef7f0102ebf54a1241a1c3ea8976892f8684bfb21697c9fffb8de0e2d6eab9"
   license "BSD-3-Clause"
   revision 1
 
@@ -13,8 +13,7 @@ class Lighttpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighttpd"
-    rebuild 2
-    sha256 mojave: "56095f5230c458fddd61efa1ce914e2c1657425a9d7f4f454ed47615837ec261"
+    sha256 mojave: "8851285cde26746c927b1e74c954d59b1107f7218297d2e29d040c6dab1818ad"
   end
 
   depends_on "autoconf" => :build
@@ -23,7 +22,7 @@ class Lighttpd < Formula
   depends_on "pkg-config" => :build
   depends_on "openldap"
   depends_on "openssl@1.1"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   # default max. file descriptors; this option will be ignored if the server is not started as root
   MAX_FDS = 512
@@ -50,10 +49,12 @@ class Lighttpd < Formula
       --disable-silent-rules
       --prefix=#{prefix}
       --sbindir=#{bin}
-      --with-openssl
-      --with-ldap
-      --with-zlib
       --with-bzip2
+      --with-ldap
+      --with-openssl
+      --without-pcre
+      --with-pcre2
+      --with-zlib
     ]
 
     # autogen must be run, otherwise prebuilt configure may complain
@@ -81,11 +82,11 @@ class Lighttpd < Formula
 
         s.sub!(/^server\.username\s*=\s*".+"$/, 'server.username  = "_www"')
         s.sub!(/^server\.groupname\s*=\s*".+"$/, 'server.groupname = "_www"')
-        s.sub!(/^server\.network-backend\s*=\s*"sendfile"$/, 'server.network-backend = "writev"')
+        s.sub!(/^#server\.network-backend\s*=\s*"sendfile"$/, 'server.network-backend = "writev"')
 
         # "max-connections == max-fds/2",
         # https://redmine.lighttpd.net/projects/1/wiki/Server_max-connectionsDetails
-        s.sub!(/^server\.max-connections = .+$/, "server.max-connections = " + (MAX_FDS / 2).to_s)
+        s.sub!(/^#server\.max-connections = .+$/, "server.max-connections = " + (MAX_FDS / 2).to_s)
       end
     end
 
