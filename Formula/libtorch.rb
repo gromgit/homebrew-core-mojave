@@ -4,8 +4,8 @@ class Libtorch < Formula
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
   url "https://github.com/pytorch/pytorch.git",
-      tag:      "v1.10.0",
-      revision: "36449ea93134574c2a22b87baad3de0bf8d64d42"
+      tag:      "v1.10.1",
+      revision: "302ee7bfb604ebef384602c56e3853efed262030"
   license "BSD-3-Clause"
 
   livecheck do
@@ -15,8 +15,7 @@ class Libtorch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorch"
-    rebuild 2
-    sha256 cellar: :any, mojave: "f3426c0409610615990dfe6005df21c4987d4c796eb6d887f3ce28a1c5ca8238"
+    sha256 cellar: :any, mojave: "e8ccaac0b93c2d85308f04c2e56cb5d287c21535e3ac7a1b53783ef1a2cb7220"
   end
 
   depends_on "cmake" => :build
