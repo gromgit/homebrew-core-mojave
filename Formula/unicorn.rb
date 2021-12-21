@@ -6,16 +6,13 @@ class Unicorn < Formula
   head "https://github.com/unicorn-engine/unicorn.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 monterey:     "ff8f7998c9431695a9e43a5c25de40bc509bed4d23b1178cfe22b3e4c81f0a5e"
-    sha256 cellar: :any,                 big_sur:      "8f7ec73074e986c355944923dfc2c4828b9a545e66f9112e92b20cd11cf3b1b4"
-    sha256 cellar: :any,                 catalina:     "11c4212e8e10b202eb2b9c4d4704d9c18619523d1ed31b98eb7eb5288a4ea7c1"
-    sha256 cellar: :any,                 mojave:       "3725cd02674803b1491af58d6552a842af5ed8e1bd16b2144dd1e971748502aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e3136c1be33d317e52a1689c24ad785617a3102dcd69052fe0a43e63638c7cc"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unicorn"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7c54a440aad01f7922f14a573f2784d0a7e397ebd8d48a474adc009fa6b62622"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.10" => [:build, :test]
 
   def install
     ENV["PREFIX"] = prefix
@@ -26,7 +23,7 @@ class Unicorn < Formula
     system "make", "install"
 
     cd "bindings/python" do
-      system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
+      system Formula["python@3.10"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
     end
   end
 
@@ -78,6 +75,6 @@ class Unicorn < Formula
                    "-pthread", "-lpthread", "-lm", "-L#{lib}", "-lunicorn"
     system testpath/"test1"
 
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import unicorn; print(unicorn.__version__)"
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "import unicorn; print(unicorn.__version__)"
   end
 end
