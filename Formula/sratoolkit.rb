@@ -4,8 +4,8 @@ class Sratoolkit < Formula
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
 
   stable do
-    url "https://github.com/ncbi/sra-tools/archive/2.11.2.tar.gz"
-    sha256 "17ff39d3a905142be63477a206bac3aa76a417e40979f06a8f1eed49fe8c43d4"
+    url "https://github.com/ncbi/sra-tools/archive/2.11.3.tar.gz"
+    sha256 "6339dc398e04505cc7aa889e0266713e2b9dbd2309300e6fba62874051ca144d"
 
     resource "ngs-sdk" do
       url "https://github.com/ncbi/ngs/archive/2.11.2.tar.gz"
@@ -23,10 +23,8 @@ class Sratoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:      "3ae6079cc1870308094b419e8141565c29030e139a2b3dd0065da4a64191a32b"
-    sha256 cellar: :any, catalina:     "67df1b84b24a39677517d5f0af6d4d06a99a3aa5c5ae39d3a2af821669868649"
-    sha256 cellar: :any, mojave:       "88cdb2651f23202d8f4c97df82e139edfcd2315d2be92021197e9183da007368"
-    sha256               x86_64_linux: "f38509ce3f74c56476ae20c67b02ac3f5321ade2eb7c39dc9b24e8ef454c9d12"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sratoolkit"
+    sha256 cellar: :any, mojave: "e371d3b2b982b814734eab79a9169f2d0025a21d9bbb9ed29019eea92860ffc8"
   end
 
   head do
