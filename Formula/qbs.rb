@@ -1,8 +1,8 @@
 class Qbs < Formula
   desc "Build tool for developing projects across multiple platforms"
   homepage "https://wiki.qt.io/Qbs"
-  url "https://download.qt.io/official_releases/qbs/1.20.1/qbs-src-1.20.1.tar.gz"
-  sha256 "3a3b486a68bc00a670101733cdcdce647cfdc36588366d8347bc28fd11cc6a0b"
+  url "https://download.qt.io/official_releases/qbs/1.21.0/qbs-src-1.21.0.tar.gz"
+  sha256 "bfed9d93f94989986dd72e81fac5f39e30de058431133a21aaf9971455b335e7"
   license :cannot_represent
   head "https://code.qt.io/qbs/qbs.git", branch: "master"
 
@@ -12,11 +12,8 @@ class Qbs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "67dfbdb18377e3bba450d7e607a4a226ee0ddb813f1bf708508892f8d8468a59"
-    sha256 cellar: :any, arm64_big_sur:  "92aac9bdcf321990f97af795af823b02b0f3e747e32b96e2f55f2be34ba5e31f"
-    sha256 cellar: :any, big_sur:        "c3d85f2b1e1f08d4f1eafa5635f892d2fd30929b61b78a350904f2e94eb5ccb4"
-    sha256 cellar: :any, catalina:       "13e3ffaf58f1778c57fd83eb8da7949dfadd639a25ca259fab7197411cf16cdb"
-    sha256 cellar: :any, mojave:         "7e224f3dc560b76aef993ed1b72c8dd51a839928fa3351e77cec37b333b3d534"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qbs"
+    sha256 cellar: :any, mojave: "30abddc0f3bce591ae1e7caf30696acbeed674bde8ee053f36a600c92f36f719"
   end
 
   depends_on "cmake" => :build
