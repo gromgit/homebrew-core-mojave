@@ -6,10 +6,16 @@ class Uuu < Formula
   license "BSD-3-Clause"
   head "https://github.com/NXPmicro/mfgtools.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(%r{href=["']?[^"' >]*?/tag/(?:uuu[._-])?v?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uuu"
-    rebuild 2
-    sha256 mojave: "cf72bc3cb443806de13d53ed159ec5934582232a8229c2b3a99dede7bd789a52"
+    rebuild 3
+    sha256 mojave: "818fbebceb153e9062962442c88191b6097d01c1b2c88adee9c3f75f6b595f71"
   end
 
   depends_on "cmake" => :build
