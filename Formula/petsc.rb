@@ -1,8 +1,8 @@
 class Petsc < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (real)"
   homepage "https://www.mcs.anl.gov/petsc/"
-  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.1.tar.gz"
-  sha256 "909cf7bce7b6a0ddb2580a1ac9502aa01631ec4105c716594c1804f0ee1ea06a"
+  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.2.tar.gz"
+  sha256 "7ab257ae150d4837ac8d3872a1d206997962578785ec2427639ceac46d131bbc"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,8 +12,7 @@ class Petsc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/petsc"
-    rebuild 2
-    sha256 mojave: "a0a506b156cf51711ae3d68ee196d515c77b46a987e9ce532e07bf344b294afa"
+    sha256 mojave: "9d23a06143693288df63452ed5862f3d118df6ee76fe785abaabc4b0cb04dc55"
   end
 
   depends_on "hdf5"
