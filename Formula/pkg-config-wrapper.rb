@@ -1,8 +1,8 @@
 class PkgConfigWrapper < Formula
   desc "Easier way to include C code in your Go program"
   homepage "https://github.com/influxdata/pkg-config"
-  url "https://github.com/influxdata/pkg-config/archive/v0.2.9.tar.gz"
-  sha256 "25843e58a3e6994bdafffbc0ef0844978a3d1f999915d6770cb73505fcf87e44"
+  url "https://github.com/influxdata/pkg-config/archive/v0.2.10.tar.gz"
+  sha256 "460b389eeccf5e2e073ba3c77c04e19181e25e67e55891c75d6a46de811f60ce"
   license "MIT"
   head "https://github.com/influxdata/pkg-config.git", branch: "master"
 
@@ -13,8 +13,7 @@ class PkgConfigWrapper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pkg-config-wrapper"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "51292c7be979df0eff0b08973ac9224fe2387732fca06c503abf90c1350cddab"
+    sha256 cellar: :any_skip_relocation, mojave: "b0a019fa69983f6777a878a89794b60ab19fc309ac54a10178d474f9dcf4f6ce"
   end
 
   depends_on "go" => :build
