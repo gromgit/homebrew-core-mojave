@@ -11,16 +11,13 @@ class StoneSoup < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "089093ea13f1237329dc6c762a7df469b4dcf734c8a611244b4f2526c428b947"
-    sha256 arm64_big_sur:  "0a30fa05afe4133864ff9d34ac0c178891e4039eb875c049c667f6130950142d"
-    sha256 monterey:       "7831442ff2da48ecffa3473c359183fadbe5703d208ab4d938f6b5fb3c503cb5"
-    sha256 big_sur:        "b59a64c7a12efba902fea1f6d3380cbb44681db72fa201d9a43b416f82c5da79"
-    sha256 catalina:       "068b36da3eceee5d209883187db48845f4dd4e2c3b6c2c71ae216d4c1060a24d"
-    sha256 mojave:         "6efef64444104587d0066d3ad1794531eed88017080016d4927c2248558d2af4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stone-soup"
+    rebuild 1
+    sha256 mojave: "47f325731bd036b509fec2d935fd871c7175ab8fe9ed583e60cda046373bfeab"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "lua@5.1"
   depends_on "pcre"
   depends_on "sqlite"
@@ -32,7 +29,7 @@ class StoneSoup < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin"
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", buildpath/"vendor/lib/python#{xy}/site-packages"
 
