@@ -1,16 +1,14 @@
 class Luvit < Formula
   desc "Asynchronous I/O for Lua"
   homepage "https://luvit.io"
-  url "https://github.com/luvit/luvit/archive/2.18.0.tar.gz"
-  sha256 "3c6824878189ca41059d6d4cd8b1646de0ec6b4be1de71b2084f98c36c38e84e"
+  url "https://github.com/luvit/luvit/archive/2.18.1.tar.gz"
+  sha256 "b792781d77028edb7e5761e96618c96162bd68747b8fced9a6fc52f123837c2c"
   license "Apache-2.0"
   head "https://github.com/luvit/luvit.git"
 
   bottle do
-    sha256 cellar: :any, monterey: "010eed765a7f08a3674277000ea35ac980a69dd2746bb98ade221186681676e3"
-    sha256 cellar: :any, big_sur:  "f5d4e01cac025c30275ca2caf6cd692565121a5c40674e82ed28264f3fcdfd94"
-    sha256 cellar: :any, catalina: "25f788eba25ec7dd095172eb94f9afb08b259040656fb26c8173bc784857e18b"
-    sha256 cellar: :any, mojave:   "e9d97bb1ea6f67020c8f02c3009edf46b45d249654df5ea134889526c082ba97"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luvit"
+    sha256 cellar: :any, mojave: "7f3baa114a2449802805927393410ec45215c31a865f500c76a3644882a7084d"
   end
 
   depends_on "cmake" => :build
