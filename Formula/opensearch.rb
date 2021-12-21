@@ -1,13 +1,13 @@
 class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https://github.com/opensearch-project/OpenSearch"
-  url "https://github.com/opensearch-project/OpenSearch/archive/1.2.0.tar.gz"
-  sha256 "d140f90849e73e14a64767e0cbe029d8e54d00d3cc70a13681766e2739e77121"
+  url "https://github.com/opensearch-project/OpenSearch/archive/1.2.2.tar.gz"
+  sha256 "91c20afd7fdc305b1367a2dee80196e888cd7dbc63194dd23a05555e86d36f13"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opensearch"
-    sha256 cellar: :any_skip_relocation, mojave: "3f221302ccf426b471b08743fe45173a8234773ccf4c49f750693e6f36a9fb7b"
+    sha256 cellar: :any_skip_relocation, mojave: "fd317288f651c0afd0eba1c166cb1085d5ac569f3f5231e7b7e145a79e55634a"
   end
 
   depends_on "gradle@6" => :build
