@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
-  url "https://github.com/rdkit/rdkit/archive/Release_2021_09_2.tar.gz"
-  sha256 "1a6b41e4c5e2f1a98acfc9c0aa46aa32a97323f0531457d69fcdc70c4a964140"
+  url "https://github.com/rdkit/rdkit/archive/Release_2021_09_3.tar.gz"
+  sha256 "3d9d47e9ea3f7563ca83bf24fc6d3419c3892ea77d831e1cf68d81f602ad1afc"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -16,8 +16,7 @@ class Rdkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rdkit"
-    rebuild 2
-    sha256 mojave: "bedbb373a84efaceae5d84cf0b01b24d4cc65e6ab0b7c4f1618651875bc211f3"
+    sha256 mojave: "1497e36cbeb8bf32f85998802df793a8ba15def53fee4c6355a396c79e593afc"
   end
 
   depends_on "cmake" => :build
