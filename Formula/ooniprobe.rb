@@ -1,9 +1,9 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://github.com/ooni/probe-cli/archive/v3.10.1.tar.gz"
-  sha256 "2b81c14133f39ac91c4ea6761be7a27d768cd88989b52ae72376d1d7b69de322"
-  license "BSD-3-Clause"
+  url "https://github.com/ooni/probe-cli/archive/v3.13.0.tar.gz"
+  sha256 "a055aed8c2d0d898b7cdb843cf247cf3b593c8ac7045103c08b3088b7d4d1737"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
@@ -11,12 +11,8 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb7cd7169ba6aec0328574528a405a1b037fb9039f642a3a5e87144ec13eea72"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "746cd38569b353bd25d8984e90b83754c7ec5c1ee48417ff007d43a8a935fb5e"
-    sha256 cellar: :any_skip_relocation, monterey:       "36f081fc1520b637fb18f032eef6cbdfb706ff8cf5daa0f3e11507d5a1a38b2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "89e6b871207538537ae7dfd73c5cd40885aad95e2440fce531100df0b4957dd5"
-    sha256 cellar: :any_skip_relocation, catalina:       "b8268996f24122c5bf53c27b225f5fca1b8cd16b217eb8ecdf8395aabead0348"
-    sha256 cellar: :any_skip_relocation, mojave:         "6e049ae4eb2529c020aa4dd5d09fcfdde562a05b99f9ad41a9183ac38dab8054"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ooniprobe"
+    sha256 cellar: :any_skip_relocation, mojave: "843fb9bde7fc696061aafe15b729d0e341213237e77ee26fe3f88c05ca0d850e"
   end
 
   depends_on "go" => :build
