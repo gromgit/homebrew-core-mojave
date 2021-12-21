@@ -14,8 +14,8 @@ class Vgrep < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vgrep"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "6aa670feb1a7f6118b16317bc54ff505e8bdf826b30b1fd1a4444bbcab9957c4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "cd6f7623c468695b8cacd7a0d7de233c215433544cc61b71c2e8c7ee301407bf"
   end
 
   depends_on "go" => :build
@@ -30,6 +30,7 @@ class Vgrep < Formula
   test do
     (testpath/"test.txt").write "Hello from Homebrew!\n"
     output = shell_output("#{bin}/vgrep -w Homebrew --no-less .")
-    assert_match "Hello from \e[01;31m\e[KHomebrew\e[m\e[K!\n", output
+    assert_match "Hello from", output
+    assert_match "Homebrew", output
   end
 end
