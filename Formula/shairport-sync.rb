@@ -1,8 +1,8 @@
 class ShairportSync < Formula
   desc "AirTunes emulator that adds multi-room capability"
   homepage "https://github.com/mikebrady/shairport-sync"
-  url "https://github.com/mikebrady/shairport-sync/archive/3.3.8.tar.gz"
-  sha256 "c92f9a2d86dd1138673abc66e0010c94412ad6a46da8f36c3d538f4fa6b9faca"
+  url "https://github.com/mikebrady/shairport-sync/archive/3.3.9.tar.gz"
+  sha256 "17990cb2620551caa07a1c3b371889e55803071eaada04e958c356547a7e1795"
   license "MIT"
   head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
@@ -12,12 +12,8 @@ class ShairportSync < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_big_sur: "5ba3c8e5edb375fc0704715f2af591a95bccc371d30f19d6af77b27069de80c5"
-    sha256 big_sur:       "f901fdd19cf7effc603519cc071703014c52264434d6da2eac51da37323a12ce"
-    sha256 catalina:      "f7e414e4106c07a4ec3db03f1d0219280d47eedbef5c65f30ac3c488e5978cd4"
-    sha256 mojave:        "7258fbd051a45b0fd5524b1017c6435be4471c4ccaef63b4c733c2ed2efb31ac"
-    sha256 x86_64_linux:  "0502a7c91fe4f656ce22633c52de830d1f7a783b31af0740234f808d0ce16dde"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shairport-sync"
+    sha256 mojave: "f471ff1d36a8cd03a2ee52b5d80380884615d89163b3cc9d4106874f7d4892b1"
   end
 
   depends_on "autoconf" => :build
