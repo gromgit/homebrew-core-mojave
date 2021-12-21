@@ -1,8 +1,8 @@
 class TraefikAT1 < Formula
   desc "Modern reverse proxy (v1.7)"
   homepage "https://traefik.io/"
-  url "https://github.com/traefik/traefik/releases/download/v1.7.30/traefik-v1.7.30.src.tar.gz"
-  sha256 "021e00c5ca1138b31330bab83db0b79fa89078b074f0120faba90e5f173104db"
+  url "https://github.com/traefik/traefik/archive/refs/tags/v1.7.34.tar.gz"
+  sha256 "0f068c2720dadd66ce303863a80d2386a4d13b5475d4219ba3e65b8445c653f2"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,8 @@ class TraefikAT1 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "0ea0ad8d89150568cc4f33c1cdaf0cc84c7e77bec0374764d4d3882820434d22"
-    sha256 cellar: :any_skip_relocation, big_sur:       "6305adbf2774f44e0bda394fbd0f332309aed8dcf7432ce9eba655f693d90c61"
-    sha256 cellar: :any_skip_relocation, catalina:      "c0caa4ed372cb322cf1bc5f7436206ab19ac3c555cecad63f17ec63b94054f3f"
-    sha256 cellar: :any_skip_relocation, mojave:        "d0f8d61c8c23ce1b8dfd65a9f888a3b00f7f55df9480bde0486cb6176437f70c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/traefik@1"
+    sha256 cellar: :any_skip_relocation, mojave: "547ff4b53cb006800cf6c829d2d4a85e44468a583a3d7f1e9bca2059cb30dd56"
   end
 
   keg_only :versioned_formula
@@ -24,22 +21,16 @@ class TraefikAT1 < Formula
   depends_on "go-bindata" => :build
   depends_on "node@14" => :build
   depends_on "yarn" => :build
+  depends_on :macos # Due to Python 2 for node-sass <= 4
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "auto"
-    (buildpath/"src/github.com/traefik/traefik").install buildpath.children
-
-    cd "src/github.com/traefik/traefik" do
-      cd "webui" do
-        system "yarn", "upgrade"
-        system "yarn", "install"
-        system "yarn", "run", "build"
-      end
-      system "go", "generate"
-      system "go", "build", "-o", bin/"traefik", "./cmd/traefik"
-      prefix.install_metafiles
+    cd "webui" do
+      system "yarn", "upgrade"
+      system "yarn", "install"
+      system "yarn", "run", "build"
     end
+    system "go", "generate"
+    system "go", "build", *std_go_args(output: bin/"traefik", ldflags: "-s -w"), "./cmd/traefik"
   end
 
   service do
