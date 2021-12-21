@@ -1,16 +1,15 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://github.com/snort3/snort3/archive/3.1.17.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.17.0.tar.gz"
-  sha256 "0878f5a3d355796f281c4efba9a4a9b0f35afa1315961fca9a85545c4d68c052"
+  url "https://github.com/snort3/snort3/archive/3.1.18.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.1.18.0.tar.gz"
+  sha256 "6e45c16b1815d832b5d6edcd2b705e7838e25c76bfd54b3e86c55ecba6de420a"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snort"
-    rebuild 2
-    sha256 cellar: :any, mojave: "d7d669626c6cbf076a288f6d74f638690d4031703352313241fab14b2ed2e39d"
+    sha256 cellar: :any, mojave: "63cff8a8470c4a0e0859b737021905dae8b2d46504b8ec350b9876d6ab04c9bf"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +32,15 @@ class Snort < Formula
 
   on_linux do
     depends_on "libunwind"
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
+
+  # PR ref, https://github.com/snort3/snort3/pull/225
+  patch do
+    url "https://github.com/snort3/snort3/commit/704c9d2127377b74d1161f5d806afa8580bd29bf.patch?full_index=1"
+    sha256 "4a96e428bd073590aafe40463de844069a0e6bbe07ada5c63ce1746a662ac7bd"
   end
 
   def install
