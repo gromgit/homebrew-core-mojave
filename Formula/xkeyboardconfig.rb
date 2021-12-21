@@ -7,13 +7,15 @@ class Xkeyboardconfig < Formula
   head "https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "398ac2d1d40d278c0fd762e2d092db031ae082e0279a376a7e956c423b21d200"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xkeyboardconfig"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0e38b424812f6c9a373e850a76fadb56e6fc9a0545885fa5ac5869f064c4decf"
   end
 
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   uses_from_macos "libxslt" => :build
 
   def install
