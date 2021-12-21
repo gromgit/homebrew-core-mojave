@@ -1,8 +1,8 @@
 class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.org/"
-  url "https://github.com/sonatype/nexus-public/archive/release-3.36.0-01.tar.gz"
-  sha256 "416ae0798176eb3787a79fa4ab67460667da946eef8ab4568d51e991a6be3a99"
+  url "https://github.com/sonatype/nexus-public/archive/release-3.37.0-01.tar.gz"
+  sha256 "ee7611ce5f8a7b092778ff7d7b18231f227c67a93d809d6da1a75f9877c29a9a"
   license "EPL-1.0"
 
   # As of writing, upstream is publishing both v2 and v3 releases. The "latest"
@@ -15,8 +15,7 @@ class Nexus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nexus"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "b5bbc2d784cb95bab9335797362b791f642a9b0eecb8874d4892344723559c89"
+    sha256 cellar: :any_skip_relocation, mojave: "05915c79a0ac5df7de19e408dbfba4bc4fe3b026dbd7ca9134171ff47e839772"
   end
 
   depends_on "maven" => :build
