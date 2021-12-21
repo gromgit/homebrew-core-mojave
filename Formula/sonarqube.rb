@@ -12,17 +12,31 @@ class Sonarqube < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonarqube"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "27f90d24ee0eafa1b6eccda1843c1c29cee4efc6b88e046f752fd5b157b93f20"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "584e79b50ed3347a42282b40ca2e01da40df708ece55b7625e8799d2f901b691"
   end
 
-  # sonarqube ships pre-built x86_64 binaries
-  depends_on arch: :x86_64
+  depends_on "java-service-wrapper"
   depends_on "openjdk@11"
 
   conflicts_with "sonarqube-lts", because: "both install the same binaries"
 
   def install
+    # Use Java Service Wrapper 3.5.46 which is Apple Silicon compatible
+    # Java Service Wrapper doesn't support the  wrapper binary to be symlinked, so it's copied
+    jsw_libexec = Formula["java-service-wrapper"].opt_libexec
+    ln_s jsw_libexec/"lib/wrapper.jar", "#{buildpath}/lib/jsw/wrapper-3.5.46.jar"
+    ln_s jsw_libexec/"lib/libwrapper.dylib", "#{buildpath}/bin/macosx-universal-64/lib/"
+    cp jsw_libexec/"bin/wrapper", "#{buildpath}/bin/macosx-universal-64/"
+    cp jsw_libexec/"scripts/App.sh.in", "#{buildpath}/bin/macosx-universal-64/sonar.sh"
+    sonar_sh_file = "bin/macosx-universal-64/sonar.sh"
+    inreplace sonar_sh_file, "@app.name@", "SonarQube"
+    inreplace sonar_sh_file, "@app.long.name@", "SonarQube"
+    inreplace sonar_sh_file, "../conf/wrapper.conf", "../../conf/wrapper.conf"
+    inreplace "conf/wrapper.conf", "wrapper-3.2.3.jar", "wrapper-3.5.46.jar"
+    rm "lib/jsw/wrapper-3.2.3.jar"
+    rm "bin/macosx-universal-64/lib/libwrapper.jnilib"
+
     # Delete native bin directories for other systems
     remove, keep = if OS.mac?
       ["linux", "macosx-universal"]
