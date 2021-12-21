@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://github.com/djcb/mu/releases/download/1.6.8/mu-1.6.8.tar.xz"
-  sha256 "d175272bec399c956393c8e2afa5e16f503b65417edc7e3224b50edd6d1f9750"
+  url "https://github.com/djcb/mu/releases/download/1.6.10/mu-1.6.10.tar.xz"
+  sha256 "0bc224aab2bfe40b5209af14e0982e637789292b7979872658d4498b29e900b6"
   license "GPL-3.0-or-later"
 
   # We restrict matching to versions with an even-numbered minor version number,
@@ -18,8 +18,7 @@ class Mu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mu"
-    rebuild 2
-    sha256 cellar: :any, mojave: "e1c736feaa0f4b1bac17da69e1f3fc17f5e06d910cfc8b42a3631791b0d2a51f"
+    sha256 cellar: :any, mojave: "2716a44c09e02be9da30729eb2d3f4f25547ec30a063ce178a7b90dbaa4459b1"
   end
 
   head do
