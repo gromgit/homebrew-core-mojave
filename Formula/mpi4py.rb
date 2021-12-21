@@ -1,12 +1,14 @@
 class Mpi4py < Formula
   desc "Python bindings for MPI"
-  homepage "https://mpi4py.readthedocs.io"
-  url "https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.1.3.tar.gz"
+  homepage "https://mpi4py.github.io/"
+  url "https://github.com/mpi4py/mpi4py/releases/download/3.1.3/mpi4py-3.1.3.tar.gz"
   sha256 "f1e9fae1079f43eafdd9f817cdb3fd30d709edc093b5d5dada57a461b2db3008"
+  license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpi4py"
-    sha256 cellar: :any, mojave: "e27eb3d2b988fa141c1b615573937fa5e17ff4f19fed5876496ddf2673163158"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bc81d0a4ee4d57b3f6824a45f37eb8856578f83e8ff6bf4ccfacd8fb6e3e4a08"
   end
 
   depends_on "cython" => :build
