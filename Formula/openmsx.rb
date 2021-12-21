@@ -13,15 +13,12 @@ class Openmsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "8973febf561305e42e379c90018c1f09d5ab18129c36f41fdd07ee1677d017ca"
-    sha256 cellar: :any, arm64_big_sur:  "1a4c53f573b29eaef8b6454622bd18e02b0369b8bc9c5e51493d0b2022b10b9b"
-    sha256 cellar: :any, monterey:       "776c25742abbda02e552f0401268c3ee623cfdf1cca5078fdcb95b9077898fbd"
-    sha256 cellar: :any, big_sur:        "7204df7abcba41b2a74ba2d6b969b610a56bf36e332a9f25c280bd74c88ddc87"
-    sha256 cellar: :any, catalina:       "1a5c7befdf1a6faa24d6a1043c6bc2ee722cb118b8bb788323f01434d15e94b3"
-    sha256 cellar: :any, mojave:         "57e29bb1e9e2ed95d628b7933c1929eb99da46f9bfc4885bc9b072a94afd6c0e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openmsx"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6deed251380c5875e969e3cbf5982d5d00ecd6a2736d9ee35e217d551a1f6ae4"
   end
 
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "freetype"
   depends_on "glew"
   depends_on "libogg"
