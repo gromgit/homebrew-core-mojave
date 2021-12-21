@@ -6,20 +6,16 @@ class NeovimRemote < Formula
   url "https://files.pythonhosted.org/packages/cc/d8/82aec85fc7ad0853afca2c88e73ecc7d3a50c66988c44aa9748ccbc9b689/neovim-remote-2.4.0.tar.gz"
   sha256 "f199ebb61c3decf462feed4e7d467094ed38d8afaf43620736b5983a12fe2427"
   license "MIT"
+  revision 1
   head "https://github.com/mhinz/neovim-remote.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1903bb14294d18d5912c533aabfa46320f287cbd7044b279cf5d58fe5a05b7c0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb32806679e25729e2106e7ee35082d41b460a49305e51402121a21a013f8924"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca93482c64d5d855eb90da32566207d939bd02c2febf7788604e67da115b11cd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f94e3d59bc081404b883cd5fa4e8ddd48e33d060fc25099c0070ba52e8ac9682"
-    sha256 cellar: :any_skip_relocation, catalina:       "1bb77fdf6276df0833eed58107681ff725a0b0c6746a5e19c7c98428b903799d"
-    sha256 cellar: :any_skip_relocation, mojave:         "a08d1b3bbae29235c707c59a345ce343a6994e4f9460bbcf16f8279a2e13683e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21360429be62c3459f9181cf4ea899bd8cc077de3758f7efed86e2b7d92d3f5e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neovim-remote"
+    sha256 cellar: :any_skip_relocation, mojave: "c899704b39ec9418b3a0c92d135827391d2c4f7eef17318607da65532fb4f911"
   end
 
   depends_on "neovim"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "greenlet" do
     url "https://files.pythonhosted.org/packages/47/6d/be10df2b141fcb1020c9605f7758881b5af706fb09a05b737e8eb7540387/greenlet-1.1.0.tar.gz"
