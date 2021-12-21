@@ -1,8 +1,8 @@
 class Ucon64 < Formula
   desc "ROM backup tool and emulator's Swiss Army knife program"
   homepage "https://ucon64.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/ucon64/ucon64/ucon64-2.2.1/ucon64-2.2.1-src.tar.gz"
-  sha256 "e814f427a59866e16fe757bf4af51004ac68be29cabd78944590878f1df73f79"
+  url "https://downloads.sourceforge.net/project/ucon64/ucon64/ucon64-2.2.2/ucon64-2.2.2-src.tar.gz"
+  sha256 "e100ad4a30f6c19abde98e361c6a0ecac4e40477f54cfb75498c5ccd21fb3a18"
   license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/ucon64/svn/trunk/ucon64"
 
@@ -12,19 +12,14 @@ class Ucon64 < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "bf1ddba8eabebcfa8c9079574610d5b0ff78c45afba3bab9379f7364b338921a"
-    sha256 arm64_big_sur:  "2f96fb8d33b2dee04afead4f3efcae1d56a34131291446de18300278e10c1df2"
-    sha256 monterey:       "9ebb44abe1af58cfd731be69d82408eb30b186ca159af8b7e3a6eca653ee6b61"
-    sha256 big_sur:        "b6b2a89d3da04d4a6ff3ce5fa39f9439ca0c2068d5f66a4a32e9abb4d09be329"
-    sha256 catalina:       "a935bde7d18d023d03b38631b9fdb8229bc6b4514bd693cd832515295cc47a7b"
-    sha256 mojave:         "3652059ae186bbd01f2fc85586629ac47b2067d0b851d71858d66fb3f4080523"
-    sha256 x86_64_linux:   "5b38376946717a9baaafa0efd9fa066e9ee1a3bb383dc69c69bc872faa6358a8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ucon64"
+    sha256 mojave: "0f47a5a2547239d17aff2aa2c0304f67d64b9686da47552f1c136630f0c0550c"
   end
 
   uses_from_macos "unzip" => [:build, :test]
   uses_from_macos "zlib"
 
-  resource "super_bat_puncher_demo" do
+  resource "homebrew-super_bat_puncher_demo" do
     url "http://morphcat.de/superbatpuncher/Super%20Bat%20Puncher%20Demo.zip"
     sha256 "d74cb3ba11a4ef5d0f8d224325958ca1203b0d8bb4a7a79867e412d987f0b846"
   end
@@ -59,7 +54,7 @@ class Ucon64 < Formula
   end
 
   test do
-    resource("super_bat_puncher_demo").stage testpath
+    resource("homebrew-super_bat_puncher_demo").stage testpath
 
     assert_match "00000000  4e 45 53 1a  08 00 11 00  00 00 00 00  00 00 00 00",
                  shell_output("#{bin}/ucon64 \"#{testpath}/Super Bat Puncher Demo.nes\"")
