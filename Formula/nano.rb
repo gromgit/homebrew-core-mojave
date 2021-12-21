@@ -1,8 +1,8 @@
 class Nano < Formula
   desc "Free (GNU) replacement for the Pico text editor"
   homepage "https://www.nano-editor.org/"
-  url "https://www.nano-editor.org/dist/v5/nano-5.9.tar.xz"
-  sha256 "757db8cda4bb2873599e47783af463e3b547a627b0cabb30ea7bf71fb4c24937"
+  url "https://www.nano-editor.org/dist/v6/nano-6.0.tar.xz"
+  sha256 "93ac8cb68b4ad10e0aaeb80a2dd15c5bb89eb665a4844f7ad01c67efcb169ea2"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,8 @@ class Nano < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "fe7852eeca20f30bdc7b5bc11363dec0083cbea53e5e5c1298b5b644d5464f68"
-    sha256 arm64_big_sur:  "9f74d4771f921ba8b96598ff34535334774646464fc0cb5cd9ea73bcb08cde23"
-    sha256 monterey:       "2ad1ac998cfd3a137769aa0a9b5fb32127993a9f95d4ea66c1cb2f0e339bac9f"
-    sha256 big_sur:        "fed1c216a7e0a13b7d1570e4b2425309069550dd6b4ebd6f4f5496763cbffb6d"
-    sha256 catalina:       "fd5b65bf8dc3b4125ff5053a12c62f13657c2ee9a48e5b88dbadb36fa050652b"
-    sha256 mojave:         "01a2a1ac57a8d98a806a60ca7c377f3708cc526dd033a1e593ce290419332f78"
-    sha256 x86_64_linux:   "63a9579e3a59d6367e878c82848c4ee4add2aa770b759c4e0ada513a68ed6032"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nano"
+    sha256 mojave: "7a8498399d4cc4caec1d6b05cf65f1efa7da918dd3b40f19b1d193a47769d5b6"
   end
 
   depends_on "pkg-config" => :build
