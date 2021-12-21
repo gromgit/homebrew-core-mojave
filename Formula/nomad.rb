@@ -1,8 +1,8 @@
 class Nomad < Formula
   desc "Distributed, Highly Available, Datacenter-Aware Scheduler"
   homepage "https://www.nomadproject.io"
-  url "https://github.com/hashicorp/nomad/archive/v1.2.2.tar.gz"
-  sha256 "0ffbcf50c398f87db5e4594979f50ea9450427aed442d890fd7dc726198c918d"
+  url "https://github.com/hashicorp/nomad/archive/v1.2.3.tar.gz"
+  sha256 "36e074f34091043a2b5d115496f371fb9df048134f402bb5943e17bcb2f911ff"
   license "MPL-2.0"
   head "https://github.com/hashicorp/nomad.git", branch: "main"
 
@@ -13,8 +13,7 @@ class Nomad < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nomad"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "760877af6fbf16462aca63d5d1d6261a8e222026154837c4380cf91fbf806f51"
+    sha256 cellar: :any_skip_relocation, mojave: "67dfa77523bd4b0f2a2214d9b83f6e8fccb1364a490c275e21c17d7f6722f91a"
   end
 
   depends_on "go" => :build
