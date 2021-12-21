@@ -1,8 +1,8 @@
 class SwaggerCodegenAT2 < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/swagger-codegen/"
-  url "https://github.com/swagger-api/swagger-codegen/archive/v2.4.23.tar.gz"
-  sha256 "a05930aa3f514e0f8533367a84a9172be96e3d0ec0527118e934e46cc68835d7"
+  url "https://github.com/swagger-api/swagger-codegen/archive/v2.4.24.tar.gz"
+  sha256 "be7a777be542f97b9d0b289c0e78bf4afb381ddc30b73e6a902dc8d6f74ba43b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,10 +11,8 @@ class SwaggerCodegenAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "aabed284837100eff46261bdae1fb7f70858becc4dc322b405b1cb4f1ecf4469"
-    sha256 cellar: :any_skip_relocation, catalina:     "783ed614be01173501e9bd3537045e5e6d88b83d72a75cd2fae04bab59c3d9ce"
-    sha256 cellar: :any_skip_relocation, mojave:       "790cb84f620ecd9d631f9b959376feafb34dc66e80cb848aad5023cda9017c2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae54df6667c7dd2d828718b646ec5be079922bb85691ed44d976bb4fdeb6e6f1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swagger-codegen@2"
+    sha256 cellar: :any_skip_relocation, mojave: "2de8c2465b81958e178a4fb45a3cf2db0f2d9cc3d5cb3b4208f9621e1368d9cf"
   end
 
   keg_only :versioned_formula
