@@ -1,10 +1,9 @@
 class ShibbolethSp < Formula
   desc "Shibboleth 2 Service Provider daemon"
   homepage "https://wiki.shibboleth.net/confluence/display/SHIB2"
-  url "https://shibboleth.net/downloads/service-provider/3.2.3/shibboleth-sp-3.2.3.tar.bz2"
-  sha256 "a02b441c09dc766ca65b78fe631277a17c5eb2f0a441b035cdb6a4720fb94024"
+  url "https://shibboleth.net/downloads/service-provider/3.3.0/shibboleth-sp-3.3.0.tar.bz2"
+  sha256 "f175bd0dc695a8b7cbe78f6156b14f7f407e1742d045d9a8e3f2cf1078c04704"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://shibboleth.net/downloads/service-provider/latest/"
@@ -13,8 +12,7 @@ class ShibbolethSp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shibboleth-sp"
-    rebuild 2
-    sha256 mojave: "e7732f0a591d99814ff1caeb56187c5b34a7b7648ac0f2321cbf0d5295a43e1e"
+    sha256 mojave: "6b7bd85f2b5b3e21e0e4d746fc8de7aee2b8f724f9757392bbfb87a45941f39e"
   end
 
   depends_on "apr" => :build
