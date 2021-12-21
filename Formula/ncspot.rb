@@ -1,16 +1,16 @@
 class Ncspot < Formula
   desc "Cross-platform ncurses Spotify client written in Rust"
   homepage "https://github.com/hrkfdn/ncspot"
-  url "https://github.com/hrkfdn/ncspot/archive/v0.9.2.tar.gz"
-  sha256 "406eb92593768757b7fb38e54175a367d794f6d880dfc4ac92c1fa9882b88e23"
+  url "https://github.com/hrkfdn/ncspot/archive/v0.9.3.tar.gz"
+  sha256 "ed873d007ce356e8c6eed56226533b686682a98d2a37487668416539d4e10e78"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncspot"
-    sha256 cellar: :any, mojave: "e8a29712212cd2029d3eec0312c8b21aa969a73cb631e12cc49afac03bb6f471"
+    sha256 cellar: :any, mojave: "9150e21b14ba2835519891903c6cf583c493e9923b9bc664fe4f182314641c98"
   end
 
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "rust" => :build
   depends_on "portaudio"
 
