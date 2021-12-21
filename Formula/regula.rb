@@ -2,15 +2,14 @@ class Regula < Formula
   desc "Checks infrastructure as code templates using Open Policy Agent/Rego"
   homepage "https://regula.dev/"
   url "https://github.com/fugue/regula.git",
-      tag:      "v2.1.0",
-      revision: "961732acedf1a6e792c005d5add19868f818770b"
+      tag:      "v2.2.1",
+      revision: "fd6b3c923158fb1fe399449ae3c84cc9872cdf73"
   license "Apache-2.0"
   head "https://github.com/fugue/regula.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regula"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "556cce31de6f7e4b5c9044ea67efd685eabb8c598a32ed0d448e73302eb3300a"
+    sha256 cellar: :any_skip_relocation, mojave: "da3626d6a36fbe0f734ec48b6aa43f96adfa9665ccf15ae114df49e927d88b6b"
   end
 
   depends_on "go" => :build
