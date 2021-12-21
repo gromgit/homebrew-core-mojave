@@ -19,12 +19,13 @@ class Mame < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mame"
-    sha256 cellar: :any, mojave: "359dcee6c92e30626c2a4c5108c4b6c63f447828650625d003bf6d05438ec315"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6aa4fe00d4b686231c538690fd956eb4b4fd597904ba8c01f80989f3de762220"
   end
 
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "rapidjson" => :build
   depends_on "sphinx-doc" => :build
   depends_on "flac"
@@ -58,7 +59,7 @@ class Mame < Formula
     # Use bundled asio and lua instead of latest version.
     # https://github.com/mamedev/mame/issues/5721
     # https://github.com/mamedev/mame/issues/5349
-    system "make", "PYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3",
+    system "make", "PYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3",
                    "USE_LIBSDL=1",
                    "USE_SYSTEM_LIB_EXPAT=1",
                    "USE_SYSTEM_LIB_ZLIB=1",
