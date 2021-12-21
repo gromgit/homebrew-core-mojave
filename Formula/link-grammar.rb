@@ -12,13 +12,9 @@ class LinkGrammar < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "ec045f2765a030154e362c10d229e14a5a56ae0c771c058729d1e826e33d8a1f"
-    sha256 arm64_big_sur:  "a6de3d0c3f02e8ca2347cac43ff3498785ae4e5071ee217fae3e9b52b859d571"
-    sha256 monterey:       "94a6939194cb13e552a15f17272144b2fd2bf8c745ed3bf65cc50fa555e67189"
-    sha256 big_sur:        "8241b4a41adb497f60591729036512f86eb11976bf3b2277d90b0c30e144d62e"
-    sha256 catalina:       "024139fa467dc7c8826e092a9eb22c5f30bba6ada219cf552d60b709b77a04da"
-    sha256 mojave:         "0697d8408060f2367970378d5166b311a57d8a0b6fa03eea4e9668b99dc10df4"
-    sha256 x86_64_linux:   "82f640caade0e547641890ecda4967c19146366b2b071cc608b20cbc2590d18d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/link-grammar"
+    rebuild 1
+    sha256 mojave: "bd7f2b13b9024d3923672351cbb01b2cbc0fed9d44ff15637469d43d4b032eb6"
   end
 
   depends_on "ant" => :build
@@ -27,7 +23,7 @@ class LinkGrammar < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
 
   uses_from_macos "sqlite"
 
