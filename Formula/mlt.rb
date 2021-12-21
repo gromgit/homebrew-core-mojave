@@ -8,8 +8,8 @@ class Mlt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlt"
-    rebuild 1
-    sha256 mojave: "1b5c05f747322dd2c993965f5d4ffd9a415b9e29bb98e767b77a82e8fe654bde"
+    rebuild 2
+    sha256 mojave: "74e1e2e08caab8fd5dd80004cb73cbad13f3fc3ad461120e83cc33689cdc7790"
   end
 
   depends_on "cmake" => :build
