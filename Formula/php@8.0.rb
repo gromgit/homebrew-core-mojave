@@ -2,20 +2,19 @@ class PhpAT80 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.0.13.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.0.13.tar.xz"
-  sha256 "cd976805ec2e9198417651027dfe16854ba2c2c388151ab9d4d268513d52ed52"
+  url "https://www.php.net/distributions/php-8.0.14.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.14.tar.xz"
+  sha256 "fbde8247ac200e4de73449d9fefc8b495d323b5be9c10cdb645fb431c91156e3"
   license "PHP-3.01"
 
   livecheck do
     url "https://www.php.net/downloads"
-    regex(/href=.*?php[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
-    rebuild 2
-    sha256 mojave: "dc7f8434b60dbd60efc6ef9083967e6de770a462d2c005b7d9ec492c0daca277"
+    sha256 mojave: "8b65e0481e835a1681bb97ebf5c65b73ce1a038ab25d86a6e85b054d413fdc29"
   end
 
   keg_only :versioned_formula
@@ -180,7 +179,6 @@ class PhpAT80 < Formula
       --with-sqlite3
       --with-tidy=#{Formula["tidy-html5"].opt_prefix}
       --with-unixODBC
-      --with-xmlrpc
       --with-xsl
       --with-zip
       --with-zlib
