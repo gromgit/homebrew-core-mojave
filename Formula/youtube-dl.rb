@@ -3,21 +3,16 @@ class YoutubeDl < Formula
 
   desc "Download YouTube videos from the command-line"
   homepage "https://youtube-dl.org/"
-  url "https://files.pythonhosted.org/packages/c6/75/05979677d9abc76851d13d8db3951e39017ac223545adab6e8576fa0cbe7/youtube_dl-2021.6.6.tar.gz"
-  sha256 "cb2d3ee002158ede783e97a82c95f3817594df54367ea6a77ce5ceea4772f0ab"
+  url "https://files.pythonhosted.org/packages/01/4f/ab0d0806f4d818168d0ec833df14078c9d1ddddb5c42fa7bfb6f15ecbfa7/youtube_dl-2021.12.17.tar.gz"
+  sha256 "bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a010e2e9bef8c7bca72c05aeadb4cbad5fc753f055b073ac249da1b32f1ba4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8488b8408d6382b7bce6359cc18f7e14ab5f250152f18f69d250fbc6dd4f081"
-    sha256 cellar: :any_skip_relocation, monterey:       "7c22c8dc98b7f2a4721fe9037419bbd6c11aa8c9124e23958e83cacc04653107"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f4c3781a6c30a1da5319e581cac99be7fd533295fa8780ef66c3bf696f755e5f"
-    sha256 cellar: :any_skip_relocation, catalina:       "f4c3781a6c30a1da5319e581cac99be7fd533295fa8780ef66c3bf696f755e5f"
-    sha256 cellar: :any_skip_relocation, mojave:         "f4c3781a6c30a1da5319e581cac99be7fd533295fa8780ef66c3bf696f755e5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cf1a12113ca9116896c792441ac44197a47df59a347eb09685dd6476fdb3ef3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtube-dl"
+    sha256 cellar: :any_skip_relocation, mojave: "a8da6929ac2005f3bf5e004ccd1f860c6368cc49ea4d4846a0b902d21cc0cb7b"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   def install
     virtualenv_install_with_resources
