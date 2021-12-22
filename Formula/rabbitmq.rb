@@ -11,10 +11,11 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1e5c7b9a5dd11571857d2475a1889b7bdc843a3839f029b4d9a60a35837fcbf1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8b4806c29cc5ae32e53bc4132fe6751c67033bb878937e36c1924676c7c05c4f"
   end
 
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "erlang"
 
   def install

@@ -1,26 +1,21 @@
 class Tika < Formula
   desc "Content analysis toolkit"
   homepage "https://tika.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tika/2.1.0/tika-app-2.1.0.jar"
-  mirror "https://archive.apache.org/dist/tika/2.1.0/tika-app-2.1.0.jar"
-  sha256 "0a93cdffebe1f1f0aca5b203538cafd66579a65409a8d565b93d3b8150e4e69c"
+  url "https://www.apache.org/dyn/closer.lua?path=tika/2.2.0/tika-app-2.2.0.jar"
+  mirror "https://archive.apache.org/dist/tika/2.2.0/tika-app-2.2.0.jar"
+  sha256 "fc5697c725cc091c004e2c80034f8fca06748a7276e36e6f6b225b4bc76627c5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8286072b39465e702e61c8992a642058310816112f82e126a43116c3c419d523"
-    sha256 cellar: :any_skip_relocation, big_sur:       "8286072b39465e702e61c8992a642058310816112f82e126a43116c3c419d523"
-    sha256 cellar: :any_skip_relocation, catalina:      "8286072b39465e702e61c8992a642058310816112f82e126a43116c3c419d523"
-    sha256 cellar: :any_skip_relocation, mojave:        "8286072b39465e702e61c8992a642058310816112f82e126a43116c3c419d523"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55267fe3a78db796ced8d71ad0e0951c1b54937f6522bdf31178e16182ec8bbf"
-    sha256 cellar: :any_skip_relocation, all:           "84ec65ecc02f04875be46cd0143dfbbb33c2fff642cb5b0f70936ae68e8264b8"
+    sha256 cellar: :any_skip_relocation, all: "2654871c700d815f4b3fa8a8db634ab442a6fd512db639f99460c5032643e09f"
   end
 
   depends_on "openjdk"
 
   resource "server" do
-    url "https://www.apache.org/dyn/closer.lua?path=tika/2.1.0/tika-server-standard-2.1.0.jar"
-    mirror "https://archive.apache.org/dist/tika/2.1.0/tika-server-standard-2.1.0.jar"
-    sha256 "845c3e2983255dd080bb140d4b7a8d3180c900c26f034ced1ab72530e81f5b61"
+    url "https://www.apache.org/dyn/closer.lua?path=tika/2.2.0/tika-server-standard-2.2.0.jar"
+    mirror "https://archive.apache.org/dist/tika/2.2.0/tika-server-standard-2.2.0.jar"
+    sha256 "5049043fccf5ddc3c545851e0d45d0f73be20d7a7cc2b833fbd99c2d70f316f1"
   end
 
   def install

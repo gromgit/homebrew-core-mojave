@@ -44,6 +44,7 @@
   },
   "buku": {
     "package_name": "buku[server]",
+    "extra_packages": ["flask==1.1.4"],
     "exclude_packages": ["six"]
   },
   "certbot": {
@@ -182,7 +183,7 @@
   },
   "moto": {
     "package_name": "moto[all,server]",
-    "exclude_packages": ["junit-xml"],
+    "exclude_packages": ["junit-xml", "six"],
     "extra_packages": ["junit-xml-2"]
   },
   "mycli": {
@@ -226,6 +227,9 @@
   "pgcli": {
     "exclude_packages": ["six", "tabulate"]
   },
+  "pip-audit": {
+    "exclude_packages": ["six"]
+  },
   "pipenv": {
     "exclude_packages": ["six"]
   },
@@ -236,9 +240,11 @@
   "platformio": {
     "exclude_packages": ["tabulate"]
   },
+  "pocsuite3": {
+    "exclude_packages": ["six"]
+  },
   "poetry": {
-    "exclude_packages": ["six"],
-    "extra_packages": ["importlib-metadata", "typing-extensions"]
+    "exclude_packages": ["six"]
   },
   "pre-commit": {
     "exclude_packages": ["six"]
@@ -418,6 +424,9 @@
     "exclude_packages": ["numpy"]
   },
   "semgrep": "semgrep",
+  "shallow-backup": {
+    "exclude_packages": ["six"]
+  },
   "sphinx-doc": {
     "extra_packages": ["numpydoc"]
   },

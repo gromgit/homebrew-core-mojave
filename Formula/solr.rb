@@ -1,13 +1,13 @@
 class Solr < Formula
   desc "Enterprise search platform from the Apache Lucene project"
   homepage "https://solr.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=lucene/solr/8.10.1/solr-8.10.1.tgz"
-  mirror "https://archive.apache.org/dist/lucene/solr/8.10.1/solr-8.10.1.tgz"
-  sha256 "42cd0efd48ef3eb75ca06135889b21045884e95f085f4535685f5dfc89a5858a"
+  url "https://www.apache.org/dyn/closer.lua?path=lucene/solr/8.11.0/solr-8.11.0.tgz"
+  mirror "https://archive.apache.org/dist/lucene/solr/8.11.0/solr-8.11.0.tgz"
+  sha256 "ba69bffc624e5c1e35b3b2e0929d82f2ba7871d7ba5941f202c2b97945eb730c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "05fa5d11df5c036aade9a389d1231e159074ab64b8276adf05c675ecd7ddb538"
+    sha256 cellar: :any_skip_relocation, all: "b433e41513242eb4e967c5bb04367327fb1cfb91ac379bbc33b4ee80fd8b52d9"
   end
 
   depends_on :macos # test failed on linux

@@ -6,12 +6,18 @@ class IsoCodes < Formula
   license "LGPL-2.1-or-later"
   head "https://salsa.debian.org/iso-codes-team/iso-codes.git"
 
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/i/iso-codes/"
+    regex(/href=.*?iso-codes[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c27f3b850cca2166c7cb79fad9ad835f622e2f742a2e2ce4dd773b9fb8733a1b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "613c6efbb22e9ca0b242d79edb9c9dd5493dfd484ee737e70da547424a6a6cc7"
   end
 
   depends_on "gettext" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
 
   def install
     system "./configure", "--prefix=#{prefix}"

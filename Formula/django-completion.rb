@@ -1,10 +1,10 @@
 class DjangoCompletion < Formula
   desc "Bash completion for Django"
   homepage "https://www.djangoproject.com/"
-  url "https://github.com/django/django/archive/3.2.7.tar.gz"
-  sha256 "f3a439d4521e9c76a828f743ee7130c95065cc05aa3fa6287708cc0919ed9fc1"
+  url "https://github.com/django/django/archive/4.0.tar.gz"
+  sha256 "9e506189283b0983b1458b48defff9134f5ca1b90446e89d0bcdb305e45cacac"
   license "BSD-3-Clause"
-  head "https://github.com/django/django.git"
+  head "https://github.com/django/django.git", branch: "main"
 
   livecheck do
     url :stable
@@ -12,7 +12,7 @@ class DjangoCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8c4acae7e61fac256e9b0b95a3f0513645dce9a1b241aa5d7e8f96201a323640"
+    sha256 cellar: :any_skip_relocation, all: "9a498300ed8b4118eabf84609294ee6f7bf1682f6a657a6df75c9eea01d0d150"
   end
 
   def install
@@ -21,6 +21,6 @@ class DjangoCompletion < Formula
 
   test do
     assert_match "-F _django_completion",
-      shell_output("source #{bash_completion}/django && complete -p django-admin.py")
+      shell_output("bash -c 'source #{bash_completion}/django && complete -p django-admin'")
   end
 end

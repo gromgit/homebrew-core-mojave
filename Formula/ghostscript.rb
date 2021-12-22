@@ -59,7 +59,7 @@ class Ghostscript < Formula
 
   patch do
     url "http://git.ghostscript.com/?p=ghostpdl.git;a=patch;h=830afae5454dea3bff903869d82022306890a96c"
-    sha256 "b0b7a042e50f3eb5f7de8f8e833397953f8730030c71572ae372f44f7144c9bb"
+    sha256 "9c282e3f732b5c182ab761e187850d9f4c29d938a93e3785d9cb6ced13111d6c"
   end
 
   def install
