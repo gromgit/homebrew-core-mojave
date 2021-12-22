@@ -1,14 +1,14 @@
 class YleDl < Formula
   desc "Download Yle videos from the command-line"
   homepage "https://aajanki.github.io/yle-dl/index-en.html"
-  url "https://files.pythonhosted.org/packages/d3/fd/6fb8f17bf3d25c611450b1d1364e0081437819e548579620e57fc8c7d0eb/yle-dl-20211207.tar.gz"
-  sha256 "ea361ae3a9d7eec022b449a91039881615b7486c567903915ca9d27aa654faac"
+  url "https://files.pythonhosted.org/packages/7b/1b/f0890aa97808ee8dc1da87250bcc169c688bb530e2a6de0303a5145594c7/yle-dl-20211213.tar.gz"
+  sha256 "39123bbb42f9f2b8ed25f5f815590df19ac773b61e5f60b6860cb7932c3cf486"
   license "GPL-3.0-or-later"
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yle-dl"
-    sha256 cellar: :any_skip_relocation, mojave: "4c6ea19e97cdbeb786f66b3f86be94f9c64d7d5b2399f768a8b742d3dd75b965"
+    sha256 cellar: :any_skip_relocation, mojave: "1c9f178dbf1105952c9ad8e01ec147ae863cd9d55fe4d6b65f41b573954ba9bf"
   end
 
   depends_on "ffmpeg"
@@ -57,8 +57,8 @@ class YleDl < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/fe/4c/a4dbb4e389f75e69dbfb623462dfe0d0e652107a95481d40084830d29b37/lxml-4.6.4.tar.gz"
-    sha256 "daf9bd1fee31f1c7a5928b3e1059e09a8d683ea58fb3ffc773b6c88cb8d1399c"
+    url "https://files.pythonhosted.org/packages/84/74/4a97db45381316cd6e7d4b1eb707d7f60d38cb2985b5dfd7251a340404da/lxml-4.7.1.tar.gz"
+    sha256 "a1613838aa6b89af4ba10a0f3a972836128801ed008078f8c1244e65958f1b24"
   end
 
   resource "requests" do
