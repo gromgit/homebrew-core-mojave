@@ -7,6 +7,8 @@ class Xcprojectlint < Formula
   license "Apache-2.0"
   head "https://github.com/americanexpress/xcprojectlint.git", branch: "master"
 
+  disable! date: "2021-12-23", because: "is not compatible with Mojave"
+
   depends_on xcode: ["12.0", :build]
 
   def install
