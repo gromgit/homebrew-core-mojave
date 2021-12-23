@@ -15,7 +15,8 @@ class Gcore < Formula
     sha256 cellar: :any_skip_relocation, yosemite:    "e215d77d74b8c878a7d7449aada4817714b13024d6bfad78b2b700271e6218ec"
   end
 
-  keg_only :provided_by_macos
+  # Comment out to avoid triggering uses_from_macos Rubocop
+  # keg_only :provided_by_macos
 
   disable! date: "2020-12-11", because: :unmaintained
 
