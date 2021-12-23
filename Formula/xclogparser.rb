@@ -1,11 +1,16 @@
 class Xclogparser < Formula
   desc "Tool to parse the SLF serialization format used by Xcode"
   homepage "https://github.com/spotify/XCLogParser"
-  url "https://github.com/spotify/XCLogParser/archive/v0.2.28.tar.gz"
-  sha256 "b47885b599b9dce44a69e5b30d9da32f7abf9f25e5decd12f5f3313322e93242"
+  url "https://github.com/spotify/XCLogParser/archive/v0.2.21.tar.gz"
+  sha256 "ee0a031bd096766046af7904595685bb154d3d3f777123615fefa4c5927f9a59"
   license "Apache-2.0"
 
-  depends_on xcode: "12.0"
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xclogparser"
+    sha256 cellar: :any_skip_relocation, mojave: "36eccfe179576772ac5f94087f811cb1da786397216ee5852effaafd0b5ee3ab"
+  end
+
+  depends_on xcode: "11.0"
 
   resource "test_log" do
     url "https://github.com/tinder-maxwellelliott/XCLogParser/releases/download/0.2.9/test.xcactivitylog"
