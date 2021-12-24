@@ -1,17 +1,16 @@
 class Wallpaper < Formula
   desc "Manage the desktop wallpaper"
   homepage "https://github.com/sindresorhus/macos-wallpaper"
-  url "https://github.com/sindresorhus/macos-wallpaper/archive/v2.1.0.tar.gz"
-  sha256 "4925247524535c0cc128dcc4d87f5538a5ce3b5d3a3c211127fd646ee00252b6"
-  license "MIT"
-  revision 1
-  head "https://github.com/sindresorhus/macos-wallpaper.git", branch: "main"
+  url "https://github.com/sindresorhus/macos-wallpaper/archive/v2.0.0.tar.gz"
+  sha256 "49ab6121dcc78d17aae3219ceeeb1846792855179f11021192e5c42e500b166c"
+  head "https://github.com/sindresorhus/macos-wallpaper.git"
 
-  depends_on xcode: ["11.4", :build]
-  depends_on :macos
+  disable! date: "2021-12-24", because: "fails testing under Mojave"
+
+  depends_on xcode: ["10.0", :build]
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", "-c", "release", "-Xswiftc", "-static-stdlib", "--disable-sandbox"
     bin.install ".build/release/wallpaper"
   end
 
