@@ -5,6 +5,8 @@ class Xcinfo < Formula
   sha256 "7d5c34c7c4deda28b101c747d89ca6535fd1d50ea26c957e50d18ebeea3da8bb"
   license "MIT"
 
+  disable! date: "2021-12-24", because: "is not compatible with Mojave"
+
   depends_on xcode: ["12.4", :build]
   depends_on macos: :catalina
 
