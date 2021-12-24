@@ -2,18 +2,21 @@ class Swiftlint < Formula
   desc "Tool to enforce Swift style and conventions"
   homepage "https://github.com/realm/SwiftLint"
   url "https://github.com/realm/SwiftLint.git",
-      tag:      "0.45.1",
-      revision: "95349376fdba465a6cd1b21b4ea65ffd5fdb14b4"
+      tag:      "0.41.0",
+      revision: "d91c2179bb55111790e7053c039d5d7a600dfa3d"
   license "MIT"
-  head "https://github.com/realm/SwiftLint.git", branch: "master"
+  head "https://github.com/realm/SwiftLint.git"
 
-  depends_on xcode: ["12.5", :build]
-  depends_on :macos # Depends on Swift.  May work on Linux once a Swift bottle is available for that OS.
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swiftlint"
+    sha256 cellar: :any_skip_relocation, mojave: "06959689b326f242240e1043efe75fb134fa70d7f4e5172f0998224d0d82db73"
+  end
+
+  depends_on xcode: ["10.2", :build]
   depends_on xcode: "8.0"
 
   def install
-    system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".build/release/swiftlint"
+    system "make", "prefix_install", "PREFIX=#{prefix}", "TEMPORARY_FOLDER=#{buildpath}/SwiftLint.dst"
   end
 
   test do
