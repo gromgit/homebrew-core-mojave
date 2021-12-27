@@ -6,6 +6,8 @@ class Dartsim < Formula
   license "BSD-2-Clause"
   revision 2
 
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dartsim"
     sha256 mojave: "a55cd6829559c589502fe08a8d0109a7b4dee69fc8ae40a76e365f89a17039a8"
@@ -44,12 +46,6 @@ class Dartsim < Formula
 
     # Clean up the build file garbage that has been installed.
     rm_r Dir["#{share}/doc/dart/**/CMakeFiles/"]
-  end
-
-  def caveats
-    <<~EOS
-      IMPORTANT: This is the last version compatible with Mojave's Xcode 11.3 (Clang 4.2.1).
-    EOS
   end
 
   test do

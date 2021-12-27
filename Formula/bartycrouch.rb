@@ -6,6 +6,8 @@ class Bartycrouch < Formula
       revision: "7d4cfec9530c7364727a4461712b54909f8d4a90"
   head "https://github.com/Flinesoft/BartyCrouch.git"
 
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bartycrouch"
     sha256 cellar: :any_skip_relocation, mojave: "1133c4b25f7e0d730cdaf2470188b8d383db7c6cd4d82ce6d0d720f4b5acb2b9"
@@ -15,12 +17,6 @@ class Bartycrouch < Formula
 
   def install
     system "make", "install", "prefix=#{prefix}"
-  end
-
-  def caveats
-    <<~EOS
-      IMPORTANT: This is the final `#{name}` release supported under Mojave. No further updates are available.
-    EOS
   end
 
   test do

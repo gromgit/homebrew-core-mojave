@@ -12,6 +12,8 @@ class Swiftlint < Formula
     sha256 cellar: :any_skip_relocation, mojave: "06959689b326f242240e1043efe75fb134fa70d7f4e5172f0998224d0d82db73"
   end
 
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
+
   depends_on xcode: ["10.2", :build]
   depends_on xcode: "8.0"
 

@@ -12,6 +12,8 @@ class Swift < Formula
     regex(/Releases<.*?>Swift v?(\d+(?:\.\d+)+)</im)
   end
 
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swift"
     sha256 mojave: "b49fe185bb64ab86515c9b51d43046aad807fa70e49668a403385a72cc4a70b7"
@@ -113,8 +115,6 @@ class Swift < Formula
 
   def caveats
     <<~EOS
-      IMPORTANT: This is the final `#{name}` release supported under Mojave. No further updates are available.
-
       The toolchain has been installed to:
         #{opt_prefix}/Swift-#{version}.xctoolchain
 

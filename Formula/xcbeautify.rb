@@ -7,6 +7,8 @@ class Xcbeautify < Formula
   license "MIT"
   head "https://github.com/thii/xcbeautify.git"
 
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xcbeautify"
     sha256 cellar: :any_skip_relocation, mojave: "31b2846b91d4b74f20e6bb9b9bb52427da6f2a802f9df587455b8ecd126cf79c"
@@ -16,12 +18,6 @@ class Xcbeautify < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
-  end
-
-  def caveats
-    <<~EOS
-      IMPORTANT: This is the final `#{name}` release supported under Mojave. No further updates are available.
-    EOS
   end
 
   test do
