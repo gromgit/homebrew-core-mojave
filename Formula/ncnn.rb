@@ -6,6 +6,12 @@ class Ncnn < Formula
   license "BSD-3-Clause"
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncnn"
+    rebuild 1
+    sha256 cellar: :any, mojave: "82f46e9e41723cba1223a48f95f469b5358a1460c09a08e9bebedc2b5ece3ab0"
+  end
+
   depends_on "cmake" => :build
   depends_on "protobuf"
 
