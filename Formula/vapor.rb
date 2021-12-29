@@ -6,6 +6,8 @@ class Vapor < Formula
   license "MIT"
   head "https://github.com/vapor/toolbox.git", branch: "main"
 
+  disable! date: "2021-12-23", because: "is not compatible with Mojave"
+
   depends_on xcode: "11.4"
 
   def install
