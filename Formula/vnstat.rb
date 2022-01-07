@@ -4,7 +4,7 @@ class Vnstat < Formula
   url "https://humdi.net/vnstat/vnstat-2.8.tar.gz"
   sha256 "03f858a7abf6bd85bb8cd595f3541fc3bd31f8f400ec092ef3034825ccb77c25"
   license "GPL-2.0-only"
-  head "https://github.com/vergoh/vnstat.git"
+  head "https://github.com/vergoh/vnstat.git", branch: "master"
 
   bottle do
     sha256 arm64_monterey: "17d72eee03c37131ab65a80500885f44f5b96cdd242eb25dcb887a08eac29bfe"
@@ -52,34 +52,12 @@ class Vnstat < Formula
     EOS
   end
 
-  plist_options startup: true, manual: "#{HOMEBREW_PREFIX}/opt/vnstat/bin/vnstatd --nodaemon --config #{HOMEBREW_PREFIX}/etc/vnstat.conf"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>#{opt_bin}/vnstatd</string>
-            <string>--nodaemon</string>
-            <string>--config</string>
-            <string>#{etc}/vnstat.conf</string>
-          </array>
-          <key>KeepAlive</key>
-          <true/>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>WorkingDirectory</key>
-          <string>#{var}</string>
-          <key>ProcessType</key>
-          <string>Background</string>
-        </dict>
-      </plist>
-    EOS
+  plist_options startup: true
+  service do
+    run [opt_bin/"vnstatd", "--nodaemon", "--config", etc/"vnstat.conf"]
+    keep_alive true
+    working_dir var
+    process_type :background
   end
 
   test do

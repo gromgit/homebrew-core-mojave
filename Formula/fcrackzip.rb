@@ -21,6 +21,7 @@ class Fcrackzip < Formula
     sha256 cellar: :any_skip_relocation, sierra:         "ce2d79b833f5805cbc475711a38db0a7a791b793b24b094e68f3ed54dfe5fd82"
     sha256 cellar: :any_skip_relocation, el_capitan:     "169a5e7ea0e7ee9d04dc7ecce5288ef3a096fc9875d9af134b342878ce8c55fd"
     sha256 cellar: :any_skip_relocation, yosemite:       "1e9a5e3d9d37ce1bf7338d3f12f84bf67b31de4e2a6eb1511f90458c45b1b810"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "202f6dd5415938783fa35cbb72f978148667cfc5b98fe1d7dfb6f62d833c80d9"
   end
 
   uses_from_macos "zip" => :test
@@ -35,7 +36,7 @@ class Fcrackzip < Formula
   test do
     (testpath/"secret").write "homebrew"
     system "zip", "-qe", "-P", "a", "secret.zip", "secret"
-    assert_equal "PASSWORD FOUND!!!!: pw == a",
-                 shell_output("#{bin}/fcrackzip -u -l 1 secret.zip").strip
+    assert_match "possible pw found: a ()",
+                 shell_output("#{bin}/fcrackzip -c a -l 1 secret.zip").strip
   end
 end

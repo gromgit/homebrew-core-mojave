@@ -4,7 +4,12 @@ class Libxkbcommon < Formula
   url "https://xkbcommon.org/download/libxkbcommon-1.3.1.tar.xz"
   sha256 "b3c710d27a2630054e1e1399c85b7f330ef03359b460f0c1b3b587fd01fe9234"
   license "MIT"
-  head "https://github.com/xkbcommon/libxkbcommon.git"
+  head "https://github.com/xkbcommon/libxkbcommon.git", branch: "master"
+
+  livecheck do
+    url :homepage
+    regex(/href=.*?libxkbcommon[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     sha256 arm64_monterey: "a0e6a5b584a7f3fc1d50a73fe23219fece03acfccde7aefc64eb02b387ada6bd"

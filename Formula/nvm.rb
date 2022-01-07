@@ -1,17 +1,28 @@
 class Nvm < Formula
   desc "Manage multiple Node.js versions"
   homepage "https://github.com/nvm-sh/nvm"
-  url "https://github.com/creationix/nvm/archive/v0.39.0.tar.gz"
-  sha256 "1a3cf49095b36a313a82719a39ca63ed9097934504f29781b2c32decbdb6fec4"
+  url "https://github.com/creationix/nvm/archive/v0.39.1.tar.gz"
+  sha256 "4b6f6af05f94839b1116d661adb7d3af4ac17a7f10c280cdf84be084c7ab3b61"
   license "MIT"
+  revision 1
   head "https://github.com/nvm-sh/nvm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0c15f715d32469ef94e2f6927c32b1e753da63d78231e025924adb389b7cc460"
+    sha256 cellar: :any_skip_relocation, all: "6e14c8a2bf94212545c1ebac9a722df168c318d0e8af2fc75b729a07fea54efe"
   end
 
   def install
-    prefix.install "nvm.sh", "nvm-exec"
+    (prefix/"nvm.sh").write <<~EOS
+      # $NVM_DIR should be "$HOME/.nvm" by default to avoid user-installed nodes destroyed every update
+      [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+      \\. #{libexec}/nvm.sh
+      # "nvm exec" and certain 3rd party scripts expect "nvm.sh" and "nvm-exec" to exist under $NVM_DIR
+      [ -e "$NVM_DIR" ] || mkdir -p "$NVM_DIR"
+      [ -e "$NVM_DIR/nvm.sh" ] || ln -s #{opt_libexec}/nvm.sh "$NVM_DIR/nvm.sh"
+      [ -e "$NVM_DIR/nvm-exec" ] || ln -s #{opt_libexec}/nvm-exec "$NVM_DIR/nvm-exec"
+    EOS
+    libexec.install "nvm.sh", "nvm-exec"
+    prefix.install_symlink libexec/"nvm-exec"
     bash_completion.install "bash_completion" => "nvm"
   end
 

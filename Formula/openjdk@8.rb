@@ -7,6 +7,7 @@ class OpenjdkAT8 < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any,                 monterey:     "d6904e2576f8876bae57288f6655686799506763ff49eb0939082c404f84dd02"
     sha256 cellar: :any,                 big_sur:      "5bcb2cbf4502f83cb2bfa439c8b838cc6573a39bd1c230cd51b076ba40d3198d"
     sha256 cellar: :any,                 catalina:     "3aef1fb4ca615ab2700103502213b4346f1867a95d34a2981689d8bba81faedc"
     sha256 cellar: :any,                 mojave:       "8f036a79d42e0ea7719ba6cad997cf6aec791c163bef744a929375a2e9c69779"
@@ -16,6 +17,7 @@ class OpenjdkAT8 < Formula
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
+  depends_on "gawk" => :build if MacOS.version > :big_sur
   depends_on "pkg-config" => :build
   depends_on "freetype"
 
