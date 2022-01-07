@@ -23,7 +23,7 @@
     "exclude_packages": ["six", "tabulate"]
   },
   "aws-google-auth": {
-    "exclude_packages": ["pillow", "tabulate"]
+    "exclude_packages": ["pillow", "six", "tabulate"]
   },
   "awscli@1": {
     "exclude_packages": ["six"]
@@ -32,6 +32,9 @@
     "exclude_packages": ["six"]
   },
   "b2-tools": {
+    "exclude_packages": ["six"]
+  },
+  "bandcamp-dl": {
     "exclude_packages": ["six"]
   },
   "black": "black[d]",
@@ -75,6 +78,9 @@
     "exclude_packages": ["six"]
   },
   "cppman": {
+    "exclude_packages": ["six"]
+  },
+  "credstash": {
     "exclude_packages": ["six"]
   },
   "csvkit": {
@@ -146,6 +152,9 @@
   "ipython": {
     "exclude_packages": ["six"],
     "extra_packages": ["ipykernel"]
+  },
+  "iredis": {
+    "exclude_packages": ["six"]
   },
   "jenkins-job-builder": {
     "exclude_packages": ["six"]
@@ -287,7 +296,10 @@
   "s4cmd": {
     "exclude_packages": ["six"]
   },
-  "sail": "sailed-io",
+  "sail": {
+    "package_name": "sailed-io",
+    "exclude_packages": ["six"]
+  },
   "salt": {
     "extra_packages": ["pycryptodome", "pygit2"],
     "exclude_packages": [
