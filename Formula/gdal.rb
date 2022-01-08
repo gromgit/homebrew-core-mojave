@@ -1,8 +1,8 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://www.gdal.org/"
-  url "https://download.osgeo.org/gdal/3.3.3/gdal-3.3.3.tar.xz"
-  sha256 "1e8fc8b19c77238c7f4c27857d04857b65d8b7e8050d3aac256d70fa48a21e76"
+  url "https://download.osgeo.org/gdal/3.4.1/gdal-3.4.1.tar.xz"
+  sha256 "332f053516ca45101ef0f7fa96309b64242688a8024780a5d93be0230e42173d"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class Gdal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdal"
-    rebuild 2
-    sha256 mojave: "374929f4a023a5dcb1e73a4fb7369b747cbe26cdd3a5d4f8662bc69e43b32ef2"
+    sha256 mojave: "bd34692d9c898de26b5530f7b2d328e8507472c020aaaa7c8700b01ad99a296a"
   end
 
   head do
