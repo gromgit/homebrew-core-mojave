@@ -3,15 +3,14 @@ require "language/node"
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://github.com/tree-sitter/tree-sitter/archive/v0.20.1.tar.gz"
-  sha256 "12a3f7206af3028dbe8a0de50d8ebd6d7010bf762db918acae76fc7585f1258d"
+  url "https://github.com/tree-sitter/tree-sitter/archive/v0.20.2.tar.gz"
+  sha256 "2a0445f8172bbf83db005aedb4e893d394e2b7b33251badd3c94c2c5cc37c403"
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tree-sitter"
-    rebuild 2
-    sha256 cellar: :any, mojave: "4ee80655e51a4b239cc9c3d5a88d6bd0502b32d3a0cf0cd0329afde3a4c61a49"
+    sha256 cellar: :any, mojave: "d2db2fc2f022e5b50f97cda689a3951e8fd38ba516b2fb57ae5f4f7b52682837"
   end
 
   depends_on "emscripten" => [:build, :test]
