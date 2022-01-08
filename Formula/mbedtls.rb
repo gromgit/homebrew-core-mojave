@@ -1,8 +1,8 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSL/TLS library"
   homepage "https://tls.mbed.org/"
-  url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-3.0.0.tar.gz"
-  sha256 "377d376919be19f07c7e7adeeded088a525be40353f6d938a78e4f986bce2ae0"
+  url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-3.1.0.tar.gz"
+  sha256 "64d01a3b22b91cf3a25630257f268f11bc7bfa37981ae6d397802dd4ccec4690"
   license "Apache-2.0"
   head "https://github.com/ARMmbed/mbedtls.git", branch: "development"
 
@@ -14,8 +14,7 @@ class Mbedtls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbedtls"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a68cad06ac2341ed62835c1525cca272cc254f0a703f5153728f664f332b4dc2"
+    sha256 cellar: :any, mojave: "12e581bf6c86f7a36080c8b0248816c277c545bc322b78cf4bc735925f7cb33e"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +32,7 @@ class Mbedtls < Formula
                     "-DUSE_SHARED_MBEDTLS_LIBRARY=On",
                     "-DPython3_EXECUTABLE=#{which("python3")}",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DGEN_FILES=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
     # We run CTest because this is a crypto library. Running tests in parallel causes failures.
