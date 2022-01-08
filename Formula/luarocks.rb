@@ -4,12 +4,17 @@ class Luarocks < Formula
   url "https://luarocks.org/releases/luarocks-3.8.0.tar.gz"
   sha256 "56ab9b90f5acbc42eb7a94cf482e6c058a63e8a1effdf572b8b2a6323a06d923"
   license "MIT"
-  head "https://github.com/luarocks/luarocks.git"
+  head "https://github.com/luarocks/luarocks.git", branch: "master"
+
+  livecheck do
+    url :homepage
+    regex(%r{/luarocks[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luarocks"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "21edb998981fa7eb15cbda79de6c29e3f5a21b374f17b14be3de3d20c22fb98c"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "42457f81232204992d1a978d899d42f3be2324a0cebb4b3ac1f1b537c621ab75"
   end
 
   depends_on "lua@5.1" => :test
