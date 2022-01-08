@@ -1,19 +1,14 @@
 class Hidapi < Formula
   desc "Library for communicating with USB and Bluetooth HID devices"
   homepage "https://github.com/libusb/hidapi"
-  url "https://github.com/libusb/hidapi/archive/hidapi-0.11.0.tar.gz"
-  sha256 "391d8e52f2d6a5cf76e2b0c079cfefe25497ba1d4659131297081fc0cd744632"
+  url "https://github.com/libusb/hidapi/archive/hidapi-0.11.2.tar.gz"
+  sha256 "bc4ac0f32a6b21ef96258a7554c116152e2272dacdec1e4620fc44abeea50c27"
   license :cannot_represent
-  head "https://github.com/libusb/hidapi.git"
+  head "https://github.com/libusb/hidapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "065513adb8485ea792f77c55a1ea9dcfb91c5c7aa4ed0fe2e033f847ffed425e"
-    sha256 cellar: :any,                 arm64_big_sur:  "785868d1b729ada62b76b49e1d1340a347b88db0c9a69a12d3417bd5539e750d"
-    sha256 cellar: :any,                 monterey:       "9551ebd0d5afd76d70008401cfe60810e7e1483e00727cbe919c0861aabcf3e1"
-    sha256 cellar: :any,                 big_sur:        "33612c008465ce62b39f1aeb519eaa58bd1d8e1296b118894765d4729b505f2b"
-    sha256 cellar: :any,                 catalina:       "a90ba3cd69ce428830a5dfba205cf375fd962b19b5653a702b7c1d8616fa62d0"
-    sha256 cellar: :any,                 mojave:         "35827213bd2b8b87c8574d7cf5f4fd18795dbf267d0b9355b4d0e528f9894b4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1441c545caecc11f3c611d494cd07d253909baa7572ad844374b93c0fef5dfaa"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hidapi"
+    sha256 cellar: :any, mojave: "ced8b673abb0036058181d51a78a020bef7cc21576089b27681fab8968c960c1"
   end
 
   depends_on "cmake" => :build
