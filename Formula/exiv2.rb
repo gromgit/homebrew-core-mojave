@@ -4,7 +4,8 @@ class Exiv2 < Formula
   url "https://www.exiv2.org/builds/exiv2-0.27.5-Source.tar.gz"
   sha256 "35a58618ab236a901ca4928b0ad8b31007ebdc0386d904409d825024e45ea6e2"
   license "GPL-2.0-or-later"
-  head "https://github.com/Exiv2/exiv2.git"
+  revision 1
+  head "https://github.com/Exiv2/exiv2.git", branch: "main"
 
   livecheck do
     url "https://www.exiv2.org/builds/"
@@ -13,8 +14,7 @@ class Exiv2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exiv2"
-    rebuild 2
-    sha256 cellar: :any, mojave: "62c02b9c959d8a2fc7e607696128ef75a78d8307380a154b17322fabc5e34743"
+    sha256 cellar: :any, mojave: "b34cadf94c6b650db805c9801804bdffc3b7b0d24e8f3a409b9fddb8ac6b7ba7"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +38,7 @@ class Exiv2 < Formula
       -DEXIV2_ENABLE_WEBREADY=ON
       -DEXIV2_ENABLE_CURL=ON
       -DEXIV2_ENABLE_SSH=ON
+      -DEXIV2_ENABLE_BMFF=ON
       -DEXIV2_BUILD_SAMPLES=OFF
       -DSSH_LIBRARY=#{Formula["libssh"].opt_lib}/#{shared_library("libssh")}
       -DSSH_INCLUDE_DIR=#{Formula["libssh"].opt_include}
