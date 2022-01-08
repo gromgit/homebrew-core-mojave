@@ -1,8 +1,8 @@
 class Groonga < Formula
   desc "Fulltext search engine and column store"
   homepage "https://groonga.org/"
-  url "https://packages.groonga.org/source/groonga/groonga-11.1.0.tar.gz"
-  sha256 "762d6ecd36717912debdc492e5dff26dae58ead772db51f636053b66b65339b2"
+  url "https://packages.groonga.org/source/groonga/groonga-11.1.1.tar.gz"
+  sha256 "f1633b31e9ba74ee7879e2e57ba15cb9c0c26dd5430d3748cec22a7bb1669c0d"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Groonga < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/groonga"
-    sha256 mojave: "216da737a34577364a54c8379b2d2c8de4b776f0b263f86dc243d4a21bf8db3b"
+    sha256 mojave: "7e3df90356e4c92a30afc19b058732896cce85e738a2e1b0c39d17e5dbeb4366"
   end
 
   head do
@@ -38,8 +38,8 @@ class Groonga < Formula
   link_overwrite "lib/pkgconfig/groonga-normalizer-mysql.pc"
 
   resource "groonga-normalizer-mysql" do
-    url "https://packages.groonga.org/source/groonga-normalizer-mysql/groonga-normalizer-mysql-1.1.5.tar.gz"
-    sha256 "22f1ac0ac766675e4edecb4c9f5a73454e6555dbeba8d259f6ef36483fbcdf52"
+    url "https://packages.groonga.org/source/groonga-normalizer-mysql/groonga-normalizer-mysql-1.1.8.tar.gz"
+    sha256 "0ed23e0c0b4d4dca23c57bbd98fe3d051c3f3ddacbbe55d07fddb6c53142cae5"
   end
 
   def install
