@@ -1,8 +1,8 @@
 class Rav1e < Formula
   desc "Fastest and safest AV1 video encoder"
   homepage "https://github.com/xiph/rav1e"
-  url "https://github.com/xiph/rav1e/archive/v0.5.0.tar.gz"
-  sha256 "ee56c49dbb50a0810257445e434edb99da01c968da0635403f31bd9677886871"
+  url "https://github.com/xiph/rav1e/archive/v0.5.1.tar.gz"
+  sha256 "7b3060e8305e47f10b79f3a3b3b6adc3a56d7a58b2cb14e86951cc28e1b089fd"
   license "BSD-2-Clause"
   head "https://github.com/xiph/rav1e.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Rav1e < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rav1e"
-    rebuild 2
-    sha256 cellar: :any, mojave: "bacf361417728d20b3840b3ed48b3ac06f72e1e4ebc48628bf158a1e42e0c91f"
+    sha256 cellar: :any, mojave: "33336cbbe2a94d7739be33d2555fab6310a618a3e1096b3ebf04001af1dd68a0"
   end
 
   depends_on "cargo-c" => :build
