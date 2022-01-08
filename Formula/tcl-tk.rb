@@ -5,6 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.12-src.tar.gz"
   sha256 "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
   license "TCL"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +14,7 @@ class TclTk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcl-tk"
-    rebuild 2
-    sha256 mojave: "57d794ffc13bb16b6cf743e756784cbfdc25ee1d2bc32972b6188bdafb8daabf"
+    sha256 mojave: "8bf319d00369cd411183b484afea4b55daf0c626726ab849379c3289775b34ec"
   end
 
   keg_only :provided_by_macos
@@ -122,6 +122,16 @@ class TclTk < Formula
 
     # Conflicts with perl
     mv man/"man3/Thread.3", man/"man3/ThreadTclTk.3"
+
+    # Use the sqlite-analyzer formula instead
+    # https://github.com/Homebrew/homebrew-core/pull/82698
+    rm bin/"sqlite3_analyzer"
+  end
+
+  def caveats
+    <<~EOS
+      The sqlite3_analyzer binary is in the `sqlite-analyzer` formula.
+    EOS
   end
 
   test do
