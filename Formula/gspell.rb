@@ -4,12 +4,11 @@ class Gspell < Formula
   url "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz"
   sha256 "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4"
   license "LGPL-2.1-or-later"
-  revision 4
+  revision 5
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gspell"
-    rebuild 2
-    sha256 mojave: "7a5857d8b9f5fd3fb5ae8c7a2f96dfcd526d87657dd5a076d892b5631d451b4e"
+    sha256 mojave: "1680078a69b7161a4af8fde5da79ea709642bcac95346bff7f33b68eea9da967"
   end
 
   depends_on "autoconf" => :build
