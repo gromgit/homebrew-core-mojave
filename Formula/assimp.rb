@@ -1,27 +1,38 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
   homepage "https://www.assimp.org/"
-  url "https://github.com/assimp/assimp/archive/v5.1.2.tar.gz"
-  sha256 "17aff648d50dfd8fd07365684fe956812673044d759cfba28f8112bf98a2be7f"
+  url "https://github.com/assimp/assimp/archive/v5.1.5.tar.gz"
+  sha256 "d62b58ed3b35c20f89570863a5415df97cb1b301b444d39687140fc883717ced"
   license :cannot_represent
   head "https://github.com/assimp/assimp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/assimp"
-    rebuild 2
-    sha256 cellar: :any, mojave: "67c64f351992b566db2a98dd7833a74ba3af58104f11e32c25394ce5a03e81aa"
+    sha256 cellar: :any, mojave: "5a951c013a866172865eaf6dc65cded292f3a3206bfa22f99ddd8bd494863af7"
   end
 
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
+
   def install
-    args = std_cmake_args
-    args << "-DASSIMP_BUILD_TESTS=OFF"
-    args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", *args
-    system "make", "install"
+    args = std_cmake_args + %W[
+      -GNinja
+      -DASSIMP_BUILD_TESTS=OFF
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    mkdir "build" do
+      system "cmake", *args, ".."
+      system "ninja", "install"
+    end
   end
 
   test do
