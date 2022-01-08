@@ -1,8 +1,8 @@
 class Composer < Formula
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org/"
-  url "https://getcomposer.org/download/2.1.14/composer.phar"
-  sha256 "d44a904520f9aaa766e8b4b05d2d9a766ad9a6f03fa1a48518224aad703061a4"
+  url "https://getcomposer.org/download/2.2.3/composer.phar"
+  sha256 "721cc27f81c6485fff70e6f56b9f2aadae770a1f8974a384c34e35987a230d8c"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class Composer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/composer"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "df69b0deb8f902a8130feda2ad08e28eabb63f609339aeff0c02c04bf27ed1f6"
+    sha256 cellar: :any_skip_relocation, mojave: "6e38ccbee2ababa044be4b3b2fb58fc371239aaf5ee1defd258c896d61c9a048"
   end
 
   depends_on "php"
