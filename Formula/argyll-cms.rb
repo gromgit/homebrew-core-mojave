@@ -1,8 +1,8 @@
 class ArgyllCms < Formula
   desc "ICC compatible color management system"
   homepage "https://www.argyllcms.com/"
-  url "https://www.argyllcms.com/Argyll_V2.2.1_src.zip"
-  sha256 "24cbef0e81a7ce8424957cbcb399cdea2f069f64866536d181e879ce1ed18ff8"
+  url "https://www.argyllcms.com/Argyll_V2.3.0_src.zip"
+  sha256 "daa21b6de8e20b5319a10ea8f72829d32eadae14c6581b50972f2f8dd5cde924"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,18 +11,18 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "9847a3b7f40b2a075b10926264fd60abd6fe38023394aee9338548e36f88bc98"
-    sha256 cellar: :any, arm64_big_sur:  "cd01b34b8340af770348c75ba24f241c4165a343fd470e9104ce6680f9a67987"
-    sha256 cellar: :any, monterey:       "1048438b7f241d538952346e4e2f145a52743149f436cdf0b9f7c644dcf1a2f8"
-    sha256 cellar: :any, big_sur:        "23d23cf1ec9dd7d5d128ac055031a7dadfe60942cb013b90d40922dfec564ea8"
-    sha256 cellar: :any, catalina:       "48ad5563ffb6bdb54671d4e11605a14963c5c0a82e632c710e97086f650b0ae1"
-    sha256 cellar: :any, mojave:         "198c516d829ff22b66f948768ec5841228e002ed840f647a799aab79b202657f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argyll-cms"
+    sha256 cellar: :any, mojave: "6c81f50b2c340fdac16526fccae3e1d8cd9b52f84460775258ae929ae3c4dbb3"
   end
 
   depends_on "jam" => :build
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
+
+  on_linux do
+    depends_on "libx11"
+  end
 
   conflicts_with "num-utils", because: "both install `average` binaries"
 
