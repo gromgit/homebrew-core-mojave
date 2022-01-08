@@ -6,12 +6,11 @@ class AnsibleAT28 < Formula
   url "https://files.pythonhosted.org/packages/e6/a3/d68781949f0b6d261ef8f17a4d1c6ee75df261ff168f4ead585604899e26/ansible-2.8.20.tar.gz"
   sha256 "f0672d138cf79cd39197952df0f8c761aac27c639a8ff7bdbd62cf463a7edaea"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 big_sur:      "abd5d1109b0593d60b05108569a2577d1fd4d7db867d44f3eb9c065026b039b0"
-    sha256 cellar: :any,                 catalina:     "1f0aadb1cec6353c5adcc417b5a2d94017aabaffec889768187d6a421f2b60c3"
-    sha256 cellar: :any,                 mojave:       "488ac63c1996e2ed2674d6898453518475a38f2c9ca61513f06f5e8d98c79a43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dfcf6338976ecdf5fbae8b1fccb6297f84c719a58ada4fdc3bfb71e5251d17ae"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.8"
+    sha256 cellar: :any, mojave: "7f5c1a064650d4453783b5d66948789c86cd6f38b6fa0feb63d2dc7dc969d2aa"
   end
 
   keg_only :versioned_formula
@@ -67,8 +66,8 @@ class AnsibleAT28 < Formula
 
   ### extras for requests[security]
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz"
-    sha256 "3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713"
+    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
+    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
   end
 
   resource "idna" do
