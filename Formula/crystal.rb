@@ -4,8 +4,8 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/1.2.2.tar.gz"
-    sha256 "6d963a71ef5f6c73faa272a0f81b50e9ddbf814b1ec07e557ce5c95f84d6077e"
+    url "https://github.com/crystal-lang/crystal/archive/1.3.0.tar.gz"
+    sha256 "d27d32de4458888f9edfc89f5bb3cb332dd42b8ead11b26966677e53e1174b58"
 
     resource "shards" do
       url "https://github.com/crystal-lang/shards/archive/v0.16.0.tar.gz"
@@ -20,8 +20,7 @@ class Crystal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crystal"
-    rebuild 2
-    sha256 mojave: "6d520de33f88885ec5220152356ea4794d5667bfff79e84dbcb88ff2dbe517b0"
+    sha256 mojave: "b7e7cbfc3ec6cc9733cc4479261cf73a90070aaa41c1555fc105fbf61618efb2"
   end
 
   head do
@@ -36,10 +35,16 @@ class Crystal < Formula
   depends_on "gmp" # std uses it but it's not linked
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm@11"
+  depends_on "llvm"
   depends_on "openssl@1.1" # std uses it but it's not linked
   depends_on "pcre"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   # Every new crystal release is built from the previous one. The exceptions are
   # when crystal make a minor release (only bug fixes). Resason is because those
@@ -53,19 +58,22 @@ class Crystal < Formula
       sha256 "ce9e671abec489a95df39e347d109e6a99b7388dffe1942b726cb62e2f433ac3"
     end
     on_linux do
-      url "https://github.com/crystal-lang/crystal/releases/download/1.1.1/crystal-1.1.1-1-linux-x86_64.tar.gz"
-      version "1.1.1-1"
-      sha256 "e78873f8185b45f8c6e480a6d2a6a4f3a8b4ee7ca2594e8170dd123a41566704"
+      url "https://github.com/crystal-lang/crystal/releases/download/1.2.2/crystal-1.2.2-1-linux-x86_64.tar.gz"
+      version "1.2.2-1"
+      sha256 "b16e67862856ffa0e4abde62def24d5acd83d42b5086e8e1c556e040201ab3a1"
     end
   end
 
   def install
+    llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
+               .to_formula
+
     (buildpath/"boot").install resource("boot")
     ENV.append_path "PATH", "boot/bin"
     ENV.append_path "CRYSTAL_LIBRARY_PATH", Formula["bdw-gc"].opt_lib
     ENV.append_path "CRYSTAL_LIBRARY_PATH", ENV["HOMEBREW_LIBRARY_PATHS"]
     ENV.append_path "CRYSTAL_LIBRARY_PATH", Formula["libevent"].opt_lib
-    ENV.append_path "LLVM_CONFIG", Formula["llvm@11"].opt_bin/"llvm-config"
+    ENV.append_path "LLVM_CONFIG", llvm.opt_bin/"llvm-config"
 
     # Build crystal
     crystal_build_opts = []
