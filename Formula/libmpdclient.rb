@@ -4,11 +4,17 @@ class Libmpdclient < Formula
   url "https://www.musicpd.org/download/libmpdclient/2/libmpdclient-2.20.tar.xz"
   sha256 "18793f68e939c3301e34d8fcadea1f7daa24143941263cecadb80126194e277d"
   license "BSD-3-Clause"
-  head "https://github.com/MusicPlayerDaemon/libmpdclient.git"
+  head "https://github.com/MusicPlayerDaemon/libmpdclient.git", branch: "master"
+
+  livecheck do
+    url :homepage
+    regex(/href=.*?libmpdclient[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmpdclient"
-    sha256 cellar: :any, mojave: "0adb57e930c67051a281fc1750f545624aa8a452f8806ce7f9a2581c94ff2d47"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ce86ab9a36b625dfa132abf0a7ea834749aafadb73594f0d273533bfd583bea8"
   end
 
   depends_on "doxygen" => :build
