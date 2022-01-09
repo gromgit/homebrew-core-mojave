@@ -1,10 +1,9 @@
 class Ginac < Formula
   desc "Not a Computer algebra system"
   homepage "https://www.ginac.de/"
-  url "https://www.ginac.de/ginac-1.8.1.tar.bz2"
-  sha256 "f1695dbd6b187061ef3fba507648c9d6dba438f733b058c16f9278cbdcf5e1ab"
+  url "https://www.ginac.de/ginac-1.8.2.tar.bz2"
+  sha256 "bfcd751abcaf8afddb83958c2ad22763a75ea24032553e503ee9b38e3ea3b6c3"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www.ginac.de/Download.html"
@@ -13,7 +12,7 @@ class Ginac < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ginac"
-    sha256 cellar: :any, mojave: "29dc8df6facb69e2a3d5c5c2fe6ccf4e2eb2aee3f55d31fdffe0afa4086ac55e"
+    sha256 cellar: :any, mojave: "5ddb014ea35489865cb25f4ebf8d432e8fbe4fd2902e214ed92c62f29aa471fa"
   end
 
   depends_on "pkg-config" => :build
