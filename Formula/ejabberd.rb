@@ -12,7 +12,8 @@ class Ejabberd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejabberd"
-    sha256 cellar: :any, mojave: "c073d4fa187b6ed123e74d33abd92f18f1ed3de41011c399216c7abd06f6597c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "227c8e0c37b8e4282be7bf3b65abb339515ed0b5d40f78d9291340d89eff9b7a"
   end
 
   head do
@@ -78,33 +79,10 @@ class Ejabberd < Formula
     EOS
   end
 
-  plist_options manual: "#{HOMEBREW_PREFIX}/sbin/ejabberdctl start"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-        <key>EnvironmentVariables</key>
-        <dict>
-          <key>HOME</key>
-          <string>#{var}/lib/ejabberd</string>
-        </dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_sbin}/ejabberdctl</string>
-          <string>start</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>WorkingDirectory</key>
-        <string>#{var}/lib/ejabberd</string>
-      </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_sbin/"ejabberdctl", "start"]
+    environment_variables HOME: var/"lib/ejabberd"
+    working_dir var/"lib/ejabberd"
   end
 
   test do
