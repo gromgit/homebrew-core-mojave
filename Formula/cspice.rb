@@ -2,8 +2,8 @@ class Cspice < Formula
   desc "Observation geometry system for robotic space science missions"
   homepage "https://naif.jpl.nasa.gov/naif/toolkit.html"
   url "https://naif.jpl.nasa.gov/pub/naif/toolkit/C/MacIntel_OSX_AppleC_64bit/packages/cspice.tar.Z"
-  version "66"
-  sha256 "f5d48c4b0d558c5d71e8bf6fcdf135b0943210c1ff91f8191dfc447419a6b12e"
+  version "67"
+  sha256 "6f4980445fee4d363dbce6f571819f4a248358d2c1bebca47e0743eedfe9935e"
 
   # The `stable` tarball is unversioned, so we have to identify the latest
   # version from text on the homepage.
@@ -13,12 +13,8 @@ class Cspice < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, catalina:    "a8674cfcd5ef55ec8061890728960dd910aa23533c2c4868e93915c77b6e5c8c"
-    sha256 cellar: :any_skip_relocation, mojave:      "a08696e53b60d3255a28ca8c52fc6ba992d95f345f31dea6506a64227d10ceac"
-    sha256 cellar: :any_skip_relocation, high_sierra: "dac29486067ad080407dfd76641a8902103ce333750d5e2c9723409806f2ab61"
-    sha256 cellar: :any_skip_relocation, sierra:      "5ffb3eec6da9aa84ff58330734d024df9ea1378b1cc93365736b66d4315c47b9"
-    sha256 cellar: :any_skip_relocation, el_capitan:  "ceec1738779c07c06bd21b5c81816fb66854b728a1a098fe5ac1f37a176ee32f"
-    sha256 cellar: :any_skip_relocation, yosemite:    "ff72f9d54707e03e86016b286117528720134acd4f23bd6e6b4402c8cd4def73"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cspice"
+    sha256 cellar: :any_skip_relocation, mojave: "6a5c516161e8334f6a67a4c20b1a36e863fed74f282d5b8b9796a110090afbbc"
   end
 
   conflicts_with "openhmd", because: "both install `simple` binaries"
