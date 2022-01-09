@@ -2,20 +2,15 @@ class Duplicity < Formula
   include Language::Python::Virtualenv
 
   desc "Bandwidth-efficient encrypted backup"
-  homepage "https://launchpad.net/duplicity"
+  homepage "https://gitlab.com/duplicity/duplicity"
   url "https://files.pythonhosted.org/packages/84/65/5ca97dade5527b6a93757e88455c53b0d7002322f9d47d848c35902ef431/duplicity-0.8.20.tar.gz"
   sha256 "488af2ecadb059214074f2b3ac51bf9d7de55a800e37ccc2f1075cd0a74940e3"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "4d4a669e32edb2f371d1d378cfcea8c4afd0a14c2902481ab130d5b54d93a93b"
-    sha256 cellar: :any,                 arm64_big_sur:  "6c6b66266734d719cf06275cc51da33f1250fbdfdecfe925b2ea9cbbbc43075a"
-    sha256 cellar: :any,                 monterey:       "dc9c7cb7a0265b478aea97821aeab7158e7c45ad0065ecb8d5aebfbb1b618bb9"
-    sha256 cellar: :any,                 big_sur:        "6a0149ec7cee5ae2b9e94ba3abda42976c1c3930840405d5c4935d294148a9bc"
-    sha256 cellar: :any,                 catalina:       "2c1188acf3647c4d69cd838ef872c5510d2a4dde419930e8c9407b8684ef1cf6"
-    sha256 cellar: :any,                 mojave:         "9ce160d22e8f610640b7966d06eeec924c15601ee9604f4d72f6c47f420e6508"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "667182e0c461b0fb907b3587d332506d3a4db4ee0d72c46bd43f4c1990fcc58b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duplicity"
+    sha256 cellar: :any, mojave: "65d0d12a8cdea9daf2794a3ff438ad5519e57996216f98067fd1f50e6138b890"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -114,8 +109,8 @@ class Duplicity < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz"
-    sha256 "3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713"
+    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
+    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
   end
 
   resource "debtcollector" do
