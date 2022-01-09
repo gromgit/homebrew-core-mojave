@@ -1,14 +1,13 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.14.11.tar.gz"
-  sha256 "31c95fc4e9e034f9ba892397dc3d3844635c6b03852983fcf3b0cc326b751c83"
+  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "f90ff47d6fd92528cea14c82f5744861675b3bb69f322542a4442ddea4dc42ad"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dua-cli"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d29b13dee02c82d1cdf9b051f7b86f8c4e78e7f01f460ebc4de53a11e280eeb5"
+    sha256 cellar: :any_skip_relocation, mojave: "6b265038784336ccbdbb3b10f68ca58490697b1ca0424917ff62ce87bdafc612"
   end
 
   depends_on "rust" => :build
