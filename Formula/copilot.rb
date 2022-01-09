@@ -16,7 +16,8 @@ class Copilot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/copilot"
-    sha256 cellar: :any_skip_relocation, mojave: "689c2c0d4da4eecab7d411b513bf42a43936fd255843ce1b04913851343d714c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "45f3b550696049e5f63b06c4fd8044a92a08cfec18038d59fc9c6ceb76ed6468"
   end
 
   depends_on "go" => :build
@@ -31,11 +32,14 @@ class Copilot < Formula
 
     bin.install "bin/local/copilot"
 
-    output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/copilot", "completion", "bash")
+    output = Utils.safe_popen_read(bin/"copilot", "completion", "bash")
     (bash_completion/"copilot").write output
 
-    output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/copilot", "completion", "zsh")
+    output = Utils.safe_popen_read(bin/"copilot", "completion", "zsh")
     (zsh_completion/"_copilot").write output
+
+    output = Utils.safe_popen_read(bin/"copilot", "completion", "fish")
+    (fish_completion/"copilot.fish").write output
   end
 
   test do
