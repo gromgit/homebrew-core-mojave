@@ -1,15 +1,14 @@
 class EfmLangserver < Formula
   desc "General purpose Language Server"
   homepage "https://github.com/mattn/efm-langserver"
-  url "https://github.com/mattn/efm-langserver/archive/v0.0.38.tar.gz"
-  sha256 "989cdc330f8a3141d019949830fb83952ce426c679ffcd6d41bfe29022134609"
+  url "https://github.com/mattn/efm-langserver/archive/v0.0.39.tar.gz"
+  sha256 "2f333e0ba1451ca731b47b27713c961c8223bf081c5f4addff386a55fccd9fb0"
   license "MIT"
   head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/efm-langserver"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d1596163d7d9dfa4a049ddc52d92d32d3c86a19223b88e1e0540516a24e370a0"
+    sha256 cellar: :any_skip_relocation, mojave: "b8920dbbe4ab6bfc638b7aa61026fb343833b4a70c39ebd51ef327e5f9c3f445"
   end
 
   depends_on "go" => :build
