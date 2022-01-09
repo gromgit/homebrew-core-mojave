@@ -9,7 +9,8 @@ class Eksctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eksctl"
-    sha256 cellar: :any_skip_relocation, mojave: "c5ace3ff3154940f07d3e530a182fe941b62d355dfe128373c8c6a785310c69d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "92638a590dba633e42180d5559df3bd0134cd7d27a2e78881f19af706405eeff"
   end
 
   depends_on "counterfeiter" => :build
@@ -23,12 +24,12 @@ class Eksctl < Formula
     system "make", "build"
     bin.install "eksctl"
 
-    bash_output = Utils.safe_popen_read("#{bin}/eksctl", "completion", "bash")
+    bash_output = Utils.safe_popen_read(bin/"eksctl", "completion", "bash")
     (bash_completion/"eksctl").write bash_output
-    zsh_output = Utils.safe_popen_read("#{bin}/eksctl", "completion", "zsh")
+    zsh_output = Utils.safe_popen_read(bin/"eksctl", "completion", "zsh")
     (zsh_completion/"_eksctl").write zsh_output
-    fish_output = Utils.safe_popen_read("#{bin}/eksctl", "completion", "fish")
-    (zsh_completion/"eksctl.fish").write fish_output
+    fish_output = Utils.safe_popen_read(bin/"eksctl", "completion", "fish")
+    (fish_completion/"eksctl.fish").write fish_output
   end
 
   test do
