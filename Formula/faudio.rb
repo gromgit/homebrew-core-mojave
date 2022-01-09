@@ -1,15 +1,14 @@
 class Faudio < Formula
   desc "Accuracy-focused XAudio reimplementation for open platforms"
   homepage "https://fna-xna.github.io/"
-  url "https://github.com/FNA-XNA/FAudio/archive/21.12.tar.gz"
-  sha256 "c69d1b7098c018a787311d6f2bfdbc3782e88407f219ea53213f052284f9cb14"
+  url "https://github.com/FNA-XNA/FAudio/archive/22.01.tar.gz"
+  sha256 "e6b7c0ced90f5a3e1363f95ad990a99afee6784a35320719df48af45d1f07c7d"
   license "Zlib"
   head "https://github.com/FNA-XNA/FAudio.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faudio"
-    rebuild 2
-    sha256 cellar: :any, mojave: "6e270cd524f580600ed8bfce942fae89fd1162cd921050a8d4276696974afb54"
+    sha256 cellar: :any, mojave: "7059ca08f2b5f3774b4adfdec4c705551a573c8948e102c5cdab87c234c7b24d"
   end
 
   depends_on "cmake" => :build
