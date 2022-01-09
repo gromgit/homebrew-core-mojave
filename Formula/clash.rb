@@ -1,14 +1,13 @@
 class Clash < Formula
   desc "Rule-based tunnel in Go"
   homepage "https://github.com/Dreamacro/clash"
-  url "https://github.com/Dreamacro/clash/archive/v1.8.0.tar.gz"
-  sha256 "e1bae0ba88a0e2ba36702f95fe95fdc8fee58db4751b5b108ea600563c36a972"
+  url "https://github.com/Dreamacro/clash/archive/v1.9.0.tar.gz"
+  sha256 "a276b1e7247e847fe44fe336a67bdecbb442748a1e7fa01d9c1ce0d52f9168ef"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clash"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "802b0c56bf576bd3a88f46dba7407e11500acafbf9f8caf0512ff52843ba0869"
+    sha256 cellar: :any_skip_relocation, mojave: "02e6eddde686a0b4be1d8395c378ed14a509f723a67acec4ba31f5e409631bb8"
   end
 
   depends_on "go" => :build
