@@ -3,14 +3,11 @@ class EasyTag < Formula
   homepage "https://projects.gnome.org/easytag"
   url "https://download.gnome.org/sources/easytag/2.4/easytag-2.4.3.tar.xz"
   sha256 "fc51ee92a705e3c5979dff1655f7496effb68b98f1ada0547e8cbbc033b67dd5"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 arm64_big_sur: "d710681540b59898e8eb6560a5970ba0862d726f47b4ea2f2deda97d199ca619"
-    sha256 big_sur:       "0f5db8b133620eeea75819572f9bb644ad42c0608ca72a1e0972fa87e791eab8"
-    sha256 catalina:      "cf6e6683991f2aaf8072b3ff0ab1c645ecf189ca009787ed179022d65d8111e4"
-    sha256 mojave:        "bc97c0feed958d5af987bf691e669e4e358d06f072568e5c68eb746a852a7bdb"
-    sha256 high_sierra:   "7e95b30ce2c317eb3ced35ae007d3396e4f3e0dfada0a88914695341ecd03c83"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easy-tag"
+    sha256 mojave: "f1ae0e14fb55305b1342f01b9aa42d59c95dec49c6a970dcbc2ac466eae18d3b"
   end
 
   depends_on "intltool" => :build
