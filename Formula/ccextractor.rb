@@ -4,11 +4,12 @@ class Ccextractor < Formula
   url "https://github.com/CCExtractor/ccextractor/archive/v0.94.tar.gz"
   sha256 "9c7be386257c69b5d8cd9d7466dbf20e3a45cea950cc8ca7486a956c3be54a42"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/ccextractor/ccextractor.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ccextractor"
-    sha256 cellar: :any, mojave: "45b1a38fa537f82d69c60302abe0c11f399d9f3ca13b58d196160fcd5fb723a3"
+    sha256 cellar: :any, mojave: "3f2c58c862dafec6db656477105144430a48c71ab6a4e71634b9999f39b951c4"
   end
 
   depends_on "pkg-config" => :build
