@@ -9,8 +9,8 @@ class FaunaShell < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fauna-shell"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "623607d2c0531af942c64bbfddf9a5c6fb4a68e5717e9a66fe7c719d3bbe2811"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "ab893414a8dec527802e17851e43899419f9b5ad5778ac7968133a095cfe3261"
   end
 
   depends_on "node"
@@ -23,6 +23,10 @@ class FaunaShell < Formula
   test do
     output = shell_output("#{bin}/fauna list-endpoints 2>&1", 1)
     assert_match "No endpoints defined", output
+
+    # FIXME: This test seems to stall indefinitely on Linux.
+    # https://github.com/jdxcode/password-prompt/issues/12
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
     pipe_output("#{bin}/fauna add-endpoint https://db.fauna.com:443", "your_fauna_secret\nfauna_endpoint\n")
 
