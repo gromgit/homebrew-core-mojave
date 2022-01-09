@@ -1,13 +1,13 @@
 class Btop < Formula
   desc "Resource monitor. C++ version and continuation of bashtop and bpytop"
   homepage "https://github.com/aristocratos/btop"
-  url "https://github.com/aristocratos/btop/archive/refs/tags/v1.1.3.tar.gz"
-  sha256 "c50c2278b398094b394dec034abb9c77b85eb7e8e9ec83df6f03ea85454d2aba"
+  url "https://github.com/aristocratos/btop/archive/refs/tags/v1.1.4.tar.gz"
+  sha256 "f5e039ed235aaa24c7c7f8492043b6a251913ce8db688defc46aa83091d40ba1"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/btop"
-    sha256 cellar: :any, mojave: "c9ea73d891c6a636cb8c27676eee74cbb3426dc47485d2f6dfa61520f437b5d6"
+    sha256 cellar: :any, mojave: "c6e22552ca41b3cd4ef7b17f09b0527db823c1e46f705153badc2cc9203a5966"
   end
 
   depends_on "coreutils" => :build
