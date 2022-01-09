@@ -1,11 +1,11 @@
 class DosboxX < Formula
   desc "DOSBox with accurate emulation and wide testing"
   homepage "https://dosbox-x.com/"
-  url "https://github.com/joncampbell123/dosbox-x/archive/dosbox-x-v0.83.20.tar.gz"
-  sha256 "5a7eb5c7de8c540ce8d41914e43393bfbd17c99ace48311b646e5df0d08e80b2"
+  url "https://github.com/joncampbell123/dosbox-x/archive/dosbox-x-v0.83.21.tar.gz"
+  sha256 "ec13bf16a9761c755df25f8b780aee589e328bcd490ac372538f8a87846456a2"
   license "GPL-2.0-or-later"
   version_scheme 1
-  head "https://github.com/joncampbell123/dosbox-x.git"
+  head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
 
   livecheck do
     url :stable
@@ -14,8 +14,7 @@ class DosboxX < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-x"
-    rebuild 2
-    sha256 cellar: :any, mojave: "2399abf9cfefba9378b61ed9c0ae81a3fa48fea488a6711f42489a2a4f02ca85"
+    sha256 cellar: :any, mojave: "b3683b7f683fd59a908a224b4fb18a42ccb462e1dff72c957dcdad2f2f181b9e"
   end
 
   depends_on "autoconf" => :build
