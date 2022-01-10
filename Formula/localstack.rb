@@ -3,13 +3,13 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://github.com/localstack/localstack"
-  url "https://files.pythonhosted.org/packages/d6/0d/631fd13ffd4b2b72da7816849624e74e13e2a5ccf07d180354e8add74c74/localstack-0.13.1.1.tar.gz"
-  sha256 "cfc50793fccd3e162a486d5b97ee878f98d38e04c112b5d7beab9174ce3df64b"
+  url "https://files.pythonhosted.org/packages/54/3e/acf24833604558f5bbd30f688d43a3ab8f86d83e6bf41e0633a09d38f29d/localstack-0.13.2.1.tar.gz"
+  sha256 "a90d7a3b42c8ff78ab1918bdfef2d5a3e935556598a12748b61cef6e0758cb22"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/localstack"
-    sha256 cellar: :any_skip_relocation, mojave: "aafffa1f3f2135ec5d7a6e21171dd4c38f9c8419903957ad407072da98281956"
+    sha256 cellar: :any_skip_relocation, mojave: "04ffd407c828823836090f9dbd0086d3e60a7a90f9b30be8445317792a315f78"
   end
 
   depends_on "docker" => :test
@@ -22,13 +22,13 @@ class Localstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7c/16/f1311747c6eb9a4f69b9a07e82e7836f4e8c925f9006f24f715a8f3ec0c6/boto3-1.20.24.tar.gz"
-    sha256 "739705b28e6b2329ea3b481ba801d439c296aaf176f7850729147ba99bbf8a9a"
+    url "https://files.pythonhosted.org/packages/63/81/22ecf9fd7a283ee3936c23552f370dfd261302d55b24dceabc25f9ab4254/boto3-1.20.26.tar.gz"
+    sha256 "9c13f5c8fadf29088fac5feab849399169b6e8438c3b9a2310abdb7e5013ab65"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2e/32/9103b5c8a8e2596f39e6db658f1e2f4193ecdacec7539854c09ed4612699/botocore-1.23.24.tar.gz"
-    sha256 "43006b4f52d7bb655319d3da0f615cdbee7762853acc1ebcb1d49f962e6b4806"
+    url "https://files.pythonhosted.org/packages/d0/c0/0f8026e7d0bbb633ab048cdd121aa4446e30c39aada083af4d724be0822a/botocore-1.23.26.tar.gz"
+    sha256 "0a933e3af6ecf79666beb2dfcb52a60f8ad1fee7df507f2a9202fe26fe569483"
   end
 
   resource "certifi" do
@@ -57,8 +57,8 @@ class Localstack < Formula
   end
 
   resource "deepdiff" do
-    url "https://files.pythonhosted.org/packages/75/ee/d6a0129ae8ade3e8082e2b92d9f1e93bf7f727d828243bd4de04c2d9b581/deepdiff-5.6.0.tar.gz"
-    sha256 "e3f1c3a375c7ea5ca69dba6f7920f9368658318ff1d8a496293c79481f48e649"
+    url "https://files.pythonhosted.org/packages/44/46/94a28a8a12889f61ab5a63f68665123d1b671b6eaf861d3ad3ed65614bf1/deepdiff-5.7.0.tar.gz"
+    sha256 "838766484e323dcd9dec6955926a893a83767dc3f3f94542773e6aa096efe5d4"
   end
 
   resource "dill" do
@@ -97,13 +97,13 @@ class Localstack < Formula
   end
 
   resource "localstack-client" do
-    url "https://files.pythonhosted.org/packages/2d/ca/19845cbd83383527a2ea85e940db448dd5c6c95876ade7c1ae142fb6d9a6/localstack-client-1.28.tar.gz"
-    sha256 "fd4bfa81444134ac7bd115876c8b0e63d0c34b66e448866cad7d61a86f3abe9c"
+    url "https://files.pythonhosted.org/packages/dc/52/af349e50342d1316e0fbd62aedf8faeebfbab23d56886d276203448f8656/localstack-client-1.29.tar.gz"
+    sha256 "c270f7ec67fbdf092fa4af9e0036582733ccbfd82efd5ffd0b1a241c6b86d1ac"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/a9/ad/b3e607835af426b60199cedcc5c66f3d3bb29db33a9d491cceb07704e8ef/localstack-ext-0.13.0.27.tar.gz"
-    sha256 "8ad731e316bbd126e5f5c01a3e2a3d766ee4fb32aeb0af390305a5e53f29ad37"
+    url "https://files.pythonhosted.org/packages/4e/20/45a291e2c148ca75d79d7f51bbdac3f40034f51b38f9687bcddc8c9b4a65/localstack-ext-0.13.2.1.tar.gz"
+    sha256 "b727af6f37fabda449bfee9c3f2ba5933a705d758f925974257f397c8b4c312c"
   end
 
   resource "localstack-plugin-loader" do
@@ -122,8 +122,8 @@ class Localstack < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/b0/7276de53321c12981717490516b7e612364f2cb372ee8901bd4a66a000d7/psutil-5.8.0.tar.gz"
-    sha256 "0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6"
+    url "https://files.pythonhosted.org/packages/47/b6/ea8a7728f096a597f0032564e8013b705aa992a0990becd773dcc4d7b4a7/psutil-5.9.0.tar.gz"
+    sha256 "869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25"
   end
 
   resource "pyaes" do
