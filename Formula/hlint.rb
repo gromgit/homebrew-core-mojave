@@ -1,14 +1,14 @@
 class Hlint < Formula
   desc "Haskell source code suggestions"
   homepage "https://github.com/ndmitchell/hlint"
-  url "https://hackage.haskell.org/package/hlint-3.3.5/hlint-3.3.5.tar.gz"
-  sha256 "812218e0e3eeceebe9ba8c9767543e2381ae163dafc81a762274951965493edf"
+  url "https://hackage.haskell.org/package/hlint-3.3.6/hlint-3.3.6.tar.gz"
+  sha256 "ae2526f4ca5c4c7090a451b1e0dedddcad98b0ab7d07c05b20de72da41b78e3c"
   license "BSD-3-Clause"
-  head "https://github.com/ndmitchell/hlint.git"
+  head "https://github.com/ndmitchell/hlint.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hlint"
-    sha256 cellar: :any_skip_relocation, mojave: "85e5f3a6a55dcd71f0ca3b09e29eb674eb7b8e1c7e4048ff877168f1b6ced3a1"
+    sha256 cellar: :any_skip_relocation, mojave: "f27229ef0694aadd4aa80262b143d027bc6ad1716af0c9ad4336ad60a2bee6ff"
   end
 
   depends_on "cabal-install" => :build
