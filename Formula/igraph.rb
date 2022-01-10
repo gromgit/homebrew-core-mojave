@@ -1,14 +1,13 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://github.com/igraph/igraph/releases/download/0.9.5/igraph-0.9.5.tar.gz"
-  sha256 "c4e3f67892e1e287865d799162406b3f94916ad6f2cc069a9239e36ca495a17a"
+  url "https://github.com/igraph/igraph/releases/download/0.9.6/igraph-0.9.6.tar.gz"
+  sha256 "7c299ec54eecfe413758c332a42c4cb71d02d2951b2ac232584d317c5792f387"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/igraph"
-    rebuild 2
-    sha256 cellar: :any, mojave: "0de488f84e1914cca8720c1e6a63bc5e23e7aa3aef32cc19bd0c6bf794f75f5f"
+    sha256 cellar: :any, mojave: "8d4fa1b6fcf9c483f87f45ccaea6bf977688f81a18fd66d27e86c0ecb0fc71b0"
   end
 
   depends_on "cmake" => :build
