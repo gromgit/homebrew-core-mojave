@@ -1,10 +1,11 @@
 class Libvirt < Formula
   desc "C virtualization API"
-  homepage "https://www.libvirt.org"
-  url "https://libvirt.org/sources/libvirt-7.9.0.tar.xz"
-  sha256 "829cf2b5f574279c40f0446e1168815d3f36b89710560263ca2ce70256f72e8c"
+  homepage "https://libvirt.org/"
+  url "https://libvirt.org/sources/libvirt-7.10.0.tar.xz"
+  sha256 "cb318014af097327928c6e3d72922e3be02a3e6401247b2aa52d9ab8e0b480f9"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  head "https://github.com/libvirt/libvirt.git", branch: "master"
+  revision 1
+  head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
   livecheck do
     url "https://libvirt.org/sources/"
@@ -13,8 +14,7 @@ class Libvirt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvirt"
-    rebuild 2
-    sha256 mojave: "b78f296b43610fb3e2fa580988aba7ef9523ead1833bf0306b68187c41cad1e0"
+    sha256 mojave: "b2163b6efd00e892f299ec51a26a66aaa7aafa33e4dc11328cd2aa28ab79964b"
   end
 
   depends_on "docutils" => :build
@@ -44,6 +44,25 @@ class Libvirt < Formula
     depends_on "libtirpc"
   end
 
+  # Don't generate accelerator command line on macOS
+  #
+  # This makes it once again possible to use the
+  #
+  #   <qemu:commandline>
+  #     <qemu:arg value='-machine'/>
+  #     <qemu:arg value='q35,accel=hvf'/>
+  #   </qemu:commandline>
+  #
+  # workaround to enable hardware acceleration.
+  #
+  # Drop once proper HVF support is added to libvirt.
+  #
+  # https://gitlab.com/libvirt/libvirt/-/issues/147
+  patch do
+    url "https://gitlab.com/abologna/libvirt/-/commit/da138afc3609a92d473fddcffa54b2020759f986.diff"
+    sha256 "4eb3c9f0ca140a4d8eb5002acde0b6f1234011f82df7d8cc85252be35e8a5cff"
+  end
+
   def install
     mkdir "build" do
       args = %W[
@@ -54,6 +73,7 @@ class Libvirt < Formula
         -Ddriver_qemu=enabled
         -Ddriver_network=enabled
         -Dinit_script=none
+        -Dqemu_datadir=#{Formula["qemu"].opt_pkgshare}
       ]
       system "meson", *std_meson_args, *args, ".."
       system "meson", "compile"
