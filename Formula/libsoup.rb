@@ -1,13 +1,13 @@
 class Libsoup < Formula
   desc "HTTP client/server library for GNOME"
   homepage "https://wiki.gnome.org/Projects/libsoup"
-  url "https://download.gnome.org/sources/libsoup/3.0/libsoup-3.0.3.tar.xz"
-  sha256 "5165b04dadae3027e9a2882d868694b4586affd778c194982ae4de2373d2e25e"
+  url "https://download.gnome.org/sources/libsoup/3.0/libsoup-3.0.4.tar.xz"
+  sha256 "5bd38b5e091f707fd7fa3ed7c37aacca3f8e16c65787f1cc17dc38d1dcde567b"
   license "LGPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsoup"
-    sha256 mojave: "23439388550011764f1637f62725af9dae42a985a3a5c5b548055d52469bdcaa"
+    sha256 mojave: "b9788145307be9dc157ddb7e6659c35c9a4ec8a46ec636b4f32b0923d5318208"
   end
 
   depends_on "gobject-introspection" => :build
