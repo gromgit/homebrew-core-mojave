@@ -3,8 +3,8 @@ class Libngspice < Formula
   homepage "https://ngspice.sourceforge.io/"
 
   stable do
-    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/35/ngspice-35.tar.gz"
-    sha256 "c1b7f5c276db579acb3f0a7afb64afdeb4362289a6cab502d4ca302d6e5279ec"
+    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/36/ngspice-36.tar.gz"
+    sha256 "4f818287efba245341046635b757ae81f879549b326a4316b5f6e697aa517f8c"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -18,13 +18,8 @@ class Libngspice < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "9f5d30370d1a437b7c2b21fb94691efd3f3b4e9c163f6213667e412b56d58a6b"
-    sha256 arm64_big_sur:  "01054bb2006ea4677a5e1b95910e57b8ced84f9e778a89b01da3edb34d05725c"
-    sha256 monterey:       "6009678f01f68f1e8561cbd6bce2f8d7c5cf944dac9c857788b839455132df01"
-    sha256 big_sur:        "e131229e4c554e7831094bb19e1a4741385877eb0bf2cabfca9b6179476b9479"
-    sha256 catalina:       "17794a5f1e6e1b9a4bd8c45b4a45ab5cbf7755885eee0508948e1991e24cd2ec"
-    sha256 mojave:         "855fd851ca4492c2c8476763f8cc4ce6cc67681e37560d76786e685f61db18e2"
-    sha256 x86_64_linux:   "28f28030b9a69ccb91734230d407e3cdb04cf757c179e5cafbab6c7cf65af402"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libngspice"
+    sha256 cellar: :any, mojave: "870e3090c44c03ce5caa56994b174f95972c7c53ab4de9a0b61a8f208cb07994"
   end
 
   head do
@@ -51,6 +46,9 @@ class Libngspice < Formula
 
     system "./configure", *args
     system "make", "install"
+
+    # remove script files
+    rm_rf Dir[share/"ngspice/scripts"]
   end
 
   test do
