@@ -2,10 +2,10 @@ class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
   url "https://github.com/apache/camel-k.git",
-      tag:      "v1.6.1",
-      revision: "7f1a34f473275b3c40eb0e1c369901c030a71c93"
+      tag:      "v1.7.0",
+      revision: "706c85dc9e94f38a22c0d4f840ec3646ccb23c40"
   license "Apache-2.0"
-  head "https://github.com/apache/camel-k.git"
+  head "https://github.com/apache/camel-k.git", branch: "main"
 
   livecheck do
     url :stable
@@ -14,12 +14,12 @@ class Kamel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kamel"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d2dc318c7f7a692284bc2bbedb59d44c0238eea1e075481d46a14e34623ad35a"
+    sha256 cellar: :any_skip_relocation, mojave: "1fcf74da71d85987bf641e3cbd30ee4d4f09f88b6d898fd07e0b31db4f02cf08"
   end
 
   depends_on "go" => :build
   depends_on "openjdk@11" => :build
+  depends_on "kubernetes-cli"
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("11")
@@ -50,7 +50,7 @@ class Kamel < Formula
     assert_match "Error: run expects at least 1 argument, received 0", run_output
 
     run_none_output = shell_output("echo $(#{bin}/kamel run None.java 2>&1)")
-    assert_match "cannot read sources: Missing file or unsupported scheme in None.java", run_none_output
+    assert_match "cannot read sources: missing file or unsupported scheme in None.java", run_none_output
 
     reset_output = shell_output("echo $(#{bin}/kamel reset 2>&1)")
     assert_match "Error: cannot get command client: invalid configuration", reset_output
