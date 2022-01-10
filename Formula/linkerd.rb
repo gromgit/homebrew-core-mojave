@@ -13,8 +13,8 @@ class Linkerd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/linkerd"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "743348a07a4f6f5d53c48b68cf17275cca59e6a3e1cf3de8d165f89ba8295375"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "276b6f2f67678101b1de9b1951e8516579a1fc4059be0e3cad9bfaa76b7f0643"
   end
 
   depends_on "go" => :build
@@ -24,16 +24,19 @@ class Linkerd < Formula
 
     system "bin/build-cli-bin"
     bin.install Dir["target/cli/*/linkerd"]
+    prefix.install_metafiles
 
     # Install bash completion
-    output = Utils.safe_popen_read("#{bin}/linkerd", "completion", "bash")
+    output = Utils.safe_popen_read(bin/"linkerd", "completion", "bash")
     (bash_completion/"linkerd").write output
 
     # Install zsh completion
-    output = Utils.safe_popen_read("#{bin}/linkerd", "completion", "zsh")
-    (zsh_completion/"linkerd").write output
+    output = Utils.safe_popen_read(bin/"linkerd", "completion", "zsh")
+    (zsh_completion/"_linkerd").write output
 
-    prefix.install_metafiles
+    # Install fish completion
+    output = Utils.safe_popen_read(bin/"linkerd", "completion", "fish")
+    (fish_completion/"linkerd.fish").write output
   end
 
   test do
@@ -42,9 +45,8 @@ class Linkerd < Formula
 
     version_output = shell_output("#{bin}/linkerd version --client 2>&1")
     assert_match "Client version: ", version_output
-    stable_resource = stable.instance_variable_get(:@resource)
-    assert_match stable_resource.instance_variable_get(:@specs)[:tag], version_output if build.stable?
+    assert_match stable.specs[:tag], version_output if build.stable?
 
-    system "#{bin}/linkerd", "install", "--ignore-cluster"
+    system bin/"linkerd", "install", "--ignore-cluster"
   end
 end
