@@ -5,13 +5,15 @@ class DosboxStaging < Formula
   sha256 "85359efb7cd5c5c0336d88bdf023b7b462a8233490e00274fef0b85cca2f5f3c"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/dosbox-staging/dosbox-staging.git"
+  head "https://github.com/dosbox-staging/dosbox-staging.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-staging"
-    rebuild 2
-    sha256 cellar: :any, mojave: "1b4cf21b6203d47c45bdcc8f386019ee1f799e86621c4918963965bb2f04ac90"
+    rebuild 3
+    sha256 cellar: :any, mojave: "d9fe2e83a60a1f4dedfb0f902b6e35fd08a7703b7af9b420f921666f52057413"
   end
+
+  deprecate! date: "2022-01-10", because: "later versions are not compatible with Mojave"
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
