@@ -1,13 +1,13 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://github.com/TACC/Lmod/archive/8.6.1.tar.gz"
-  sha256 "80d2de4886fd2ff4926222543958629ef5caa4fddb2cb7ecea3ed27f6e686e89"
+  url "https://github.com/TACC/Lmod/archive/8.6.4.tar.gz"
+  sha256 "222e08e429dbac77b0e1a6a752f6ace29863495185459c827c3fd5fc699e14cd"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lmod"
-    sha256 cellar: :any_skip_relocation, mojave: "c7482b139c747b3037785e8fb4df099dde38e4691196c9cf2351b0754c9d0cc2"
+    sha256 cellar: :any_skip_relocation, mojave: "30e389cee8282e011c66cf6d97e8e5bcd3756b52d8ae10dcb6603a9f4455b203"
   end
 
   depends_on "luarocks" => :build
@@ -61,7 +61,7 @@ class Lmod < Formula
 
     (testpath/"lmodtest.sh").write <<~EOS
       #!/bin/sh
-      source #{sh_init}
+      . #{sh_init}
       module list
     EOS
 
