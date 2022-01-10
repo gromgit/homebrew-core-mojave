@@ -5,12 +5,12 @@ class Gmt < Formula
   mirror "https://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.xz"
   sha256 "69e29b62ee802a3a64260d6a1e023f1350e3bf4070221aa1307bf8a9e56c1ee5"
   license "LGPL-3.0-or-later"
-  head "https://github.com/GenericMappingTools/gmt.git"
+  revision 1
+  head "https://github.com/GenericMappingTools/gmt.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmt"
-    rebuild 2
-    sha256 mojave: "3639bf80bb3c937c8ea2f263be8285eb3720c0a2f6fcb03ad17c0a1713a39d91"
+    sha256 mojave: "8a405ba34ec4c024b5b357b8beb79c3abe44482a7020aef9bd70cc2024f4baf1"
   end
 
   depends_on "cmake" => :build
