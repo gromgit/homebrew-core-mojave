@@ -2,10 +2,10 @@ class K3sup < Formula
   desc "Utility to create k3s clusters on any local or remote VM"
   homepage "https://k3sup.dev"
   url "https://github.com/alexellis/k3sup.git",
-      tag:      "0.11.1",
-      revision: "95cf0b1332c3b2b7eed4bb2d7154bec790b8ea41"
+      tag:      "0.11.3",
+      revision: "e2bb18116d3686bf53cf40fe0998af7b6c9cf8a6"
   license "MIT"
-  head "https://github.com/alexellis/k3sup.git"
+  head "https://github.com/alexellis/k3sup.git", branch: "master"
 
   livecheck do
     url :stable
@@ -14,7 +14,7 @@ class K3sup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3sup"
-    sha256 cellar: :any_skip_relocation, mojave: "303c5e0b9430ac7e734d803a2964c0cd4ef2bf9cefe23620bc749c06ea8e7a62"
+    sha256 cellar: :any_skip_relocation, mojave: "b9b2c1e6302712932dd2bebb39afd23f5f29948b3cc49448aa2527727665dfde"
   end
 
   depends_on "go" => :build
