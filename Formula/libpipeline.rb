@@ -1,8 +1,8 @@
 class Libpipeline < Formula
   desc "C library for manipulating pipelines of subprocesses"
   homepage "https://libpipeline.nongnu.org/"
-  url "https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-1.5.4.tar.gz"
-  sha256 "db785bddba0a37ef14b4ef82ae2d18b8824e6983dfb9910319385e28df3f1a9c"
+  url "https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-1.5.5.tar.gz"
+  sha256 "0c8367f8b82bb721b50647a647115b6e62a37e3b2e954a9685e4d933f30c00cc"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Libpipeline < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpipeline"
-    rebuild 2
-    sha256 cellar: :any, mojave: "670d7317a62b7e6723ba80be7d7ce7030bf1b63cbb6d666e1f8e36b3fa786435"
+    sha256 cellar: :any, mojave: "37aad75764af06b145b1d3fdcac684ddac2a32715729030128530296153cb9f1"
   end
 
   def install
