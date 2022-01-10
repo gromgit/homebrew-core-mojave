@@ -6,11 +6,17 @@ class Libgusb < Formula
   url "https://people.freedesktop.org/~hughsient/releases/libgusb-0.3.9.tar.xz"
   sha256 "1f51ebe8c91140cffbd1c4d58602c96b884170cae4c74f6f7e302a91d5b7c972"
   license "LGPL-2.1-only"
-  head "https://github.com/hughsie/libgusb.git"
+  head "https://github.com/hughsie/libgusb.git", branch: "main"
+
+  livecheck do
+    url "https://people.freedesktop.org/~hughsient/releases/"
+    regex(/href=.*?libgusb[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgusb"
-    sha256 mojave: "4544a642b0188e1a7dd512adcd6e15d1c1b01dea1d582c23c41cd55520dfd400"
+    rebuild 1
+    sha256 mojave: "28d7a111d4a16b326da1b855f40a4e006179745a80087bceceabba5a3911ee64"
   end
 
   depends_on "gobject-introspection" => :build
