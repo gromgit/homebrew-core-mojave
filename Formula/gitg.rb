@@ -1,14 +1,12 @@
 class Gitg < Formula
   desc "GNOME GUI client to view git repositories"
   homepage "https://wiki.gnome.org/Apps/Gitg"
-  url "https://download.gnome.org/sources/gitg/3.32/gitg-3.32.1.tar.xz"
-  sha256 "24a4aabf8a42aa2e783e1fb5996ebb3c2a82a01b9689269f1329517ef124ef5a"
-  revision 7
+  url "https://download.gnome.org/sources/gitg/41/gitg-41.tar.xz"
+  sha256 "7fb61b9fb10fbaa548d23d7065babd72ad63e621de55840c065ce6e3986c4629"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitg"
-    rebuild 2
-    sha256 mojave: "a21fc9d44a4f0d06eba3ccad1bf4ebe07ac9dee611413cb7cf817ac70934d7dc"
+    sha256 mojave: "2af43d2bdf2cf65a5bf8abc46e6f514bc5d47b8fd4cdad93be6f4289c4d15566"
   end
 
   depends_on "intltool" => :build
@@ -18,10 +16,11 @@ class Gitg < Formula
   depends_on "vala" => :build
   depends_on "adwaita-icon-theme"
   depends_on "gobject-introspection"
+  depends_on "gspell"
   depends_on "gtk+3"
-  depends_on "gtksourceview3"
-  depends_on "gtkspell3"
+  depends_on "gtksourceview4"
   depends_on "hicolor-icon-theme"
+  depends_on "json-glib"
   depends_on "libdazzle"
   depends_on "libgee"
   depends_on "libgit2"
@@ -29,13 +28,6 @@ class Gitg < Formula
   depends_on "libpeas"
   depends_on "libsecret"
   depends_on "libsoup@2"
-
-  # Fix libgitg compile on macOS from https://gitlab.gnome.org/GNOME/gitg/-/merge_requests/142
-  # Remove for next version
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gitg/-/commit/67f5cd6925e8bf1e4c7e5b65fe9370c2cdd1d273.diff"
-    sha256 "b9b842d1be3e435ce14a57d30702138a0e08ba0f9ef95249876fc05aeac2417c"
-  end
 
   def install
     ENV["DESTDIR"] = "/"
