@@ -1,17 +1,13 @@
 class Gitbackup < Formula
   desc "Tool to backup your Bitbucket, GitHub and GitLab repositories"
   homepage "https://github.com/amitsaha/gitbackup"
-  url "https://github.com/amitsaha/gitbackup/archive/refs/tags/0.6.tar.gz"
-  sha256 "66edd50945a689abcd07aad5047317dc17cb17ec5e813f63c3520394696a6fcb"
+  url "https://github.com/amitsaha/gitbackup/archive/v0.8.0.tar.gz"
+  sha256 "b94bc7c55b5c086ba1504adceef74d0f0eb8c159f94cb84b23863e97f74fe217"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5f62d23d84ae854af037a7821b0cf5e1176492683c0c2ee1587d734732020be"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7be6e6c6769e5e9ddf40052e9e2f346f0b99bc6fa463fce8064c6a14e9f3742"
-    sha256 cellar: :any_skip_relocation, monterey:       "fbff60f9becb301c4b12108417c121d81d99ffbc22e6c4cb917800d333895c53"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3770d11ffc568d1bc4e037c99af6bcfd1cc448e015d7dc5603f1277f4a08b21f"
-    sha256 cellar: :any_skip_relocation, catalina:       "3770d11ffc568d1bc4e037c99af6bcfd1cc448e015d7dc5603f1277f4a08b21f"
-    sha256 cellar: :any_skip_relocation, mojave:         "3770d11ffc568d1bc4e037c99af6bcfd1cc448e015d7dc5603f1277f4a08b21f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitbackup"
+    sha256 cellar: :any_skip_relocation, mojave: "464f30bd128dfb46f01bace2f652a9175c8d5dd03ce8d997ae03acb92bc8662f"
   end
 
   depends_on "go" => :build
