@@ -1,16 +1,15 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-8.20211123/git-annex-8.20211123.tar.gz"
-  sha256 "7496b79725f8ce534abbe93a30ca07265c67a5b1df9b12c302bbab000c842d45"
+  url "https://hackage.haskell.org/package/git-annex-8.20211231/git-annex-8.20211231.tar.gz"
+  sha256 "27565e2bf842c5cc76c82b8682c02f20270570a9a923556356a0b28d681eea32"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-annex"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8ab461d892f1e5504128e7e7445eb2943a4b74713b44d2e7979f2e85b9e561c1"
+    sha256 cellar: :any, mojave: "f96a20a0a04cbc1e07677bd26186c40d2d72d5482727b2b0c128c6c7acd59e21"
   end
 
   depends_on "cabal-install" => :build
