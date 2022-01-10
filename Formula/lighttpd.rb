@@ -13,7 +13,8 @@ class Lighttpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighttpd"
-    sha256 mojave: "8851285cde26746c927b1e74c954d59b1107f7218297d2e29d040c6dab1818ad"
+    rebuild 1
+    sha256 mojave: "b8c97bcd86e701d73717d4b892d6c886fb9e577282f54a4d5d96435157af2a43"
   end
 
   depends_on "autoconf" => :build
@@ -26,22 +27,6 @@ class Lighttpd < Formula
 
   # default max. file descriptors; this option will be ignored if the server is not started as root
   MAX_FDS = 512
-
-  def config_path
-    etc/"lighttpd"
-  end
-
-  def log_path
-    var/"log/lighttpd"
-  end
-
-  def www_path
-    var/"www"
-  end
-
-  def run_path
-    var/"lighttpd"
-  end
 
   def install
     args = %W[
@@ -63,15 +48,15 @@ class Lighttpd < Formula
     system "./configure", *args
     system "make", "install"
 
-    unless File.exist? config_path
-      config_path.install "doc/config/lighttpd.conf", "doc/config/modules.conf"
-      (config_path/"conf.d/").install Dir["doc/config/conf.d/*.conf"]
-      inreplace config_path+"lighttpd.conf" do |s|
-        s.sub!(/^var\.log_root\s*=\s*".+"$/, "var.log_root    = \"#{log_path}\"")
-        s.sub!(/^var\.server_root\s*=\s*".+"$/, "var.server_root = \"#{www_path}\"")
-        s.sub!(/^var\.state_dir\s*=\s*".+"$/, "var.state_dir   = \"#{run_path}\"")
-        s.sub!(/^var\.home_dir\s*=\s*".+"$/, "var.home_dir    = \"#{run_path}\"")
-        s.sub!(/^var\.conf_dir\s*=\s*".+"$/, "var.conf_dir    = \"#{config_path}\"")
+    unless File.exist? etc/"lighttpd"
+      (etc/"lighttpd").install "doc/config/lighttpd.conf", "doc/config/modules.conf"
+      (etc/"lighttpd/conf.d/").install Dir["doc/config/conf.d/*.conf"]
+      inreplace etc + "lighttpd/lighttpd.conf" do |s|
+        s.sub!(/^var\.log_root\s*=\s*".+"$/, "var.log_root    = \"#{var}/log/lighttpd\"")
+        s.sub!(/^var\.server_root\s*=\s*".+"$/, "var.server_root = \"#{var}/www\"")
+        s.sub!(/^var\.state_dir\s*=\s*".+"$/, "var.state_dir   = \"#{var}/lighttpd\"")
+        s.sub!(/^var\.home_dir\s*=\s*".+"$/, "var.home_dir    = \"#{var}/lighttpd\"")
+        s.sub!(/^var\.conf_dir\s*=\s*".+"$/, "var.conf_dir    = \"#{etc}/lighttpd\"")
         s.sub!(/^server\.port\s*=\s*80$/, "server.port = 8080")
         s.sub!(%r{^server\.document-root\s*=\s*server_root \+ "/htdocs"$}, "server.document-root = server_root")
 
@@ -90,63 +75,29 @@ class Lighttpd < Formula
       end
     end
 
-    log_path.mkpath
-    (www_path/"htdocs").mkpath
-    run_path.mkpath
+    (var/"log/lighttpd").mkpath
+    (var/"www/htdocs").mkpath
+    (var/"lighttpd").mkpath
   end
 
   def caveats
     <<~EOS
-      Docroot is: #{www_path}
+      Docroot is: #{var}/www
 
-      The default port has been set in #{config_path}/lighttpd.conf to 8080 so that
+      The default port has been set in #{etc}/lighttpd/lighttpd.conf to 8080 so that
       lighttpd can run without sudo.
     EOS
   end
 
-  plist_options manual: "lighttpd -f #{HOMEBREW_PREFIX}/etc/lighttpd/lighttpd.conf"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/lighttpd</string>
-          <string>-D</string>
-          <string>-f</string>
-          <string>#{config_path}/lighttpd.conf</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>KeepAlive</key>
-        <false/>
-        <key>WorkingDirectory</key>
-        <string>#{HOMEBREW_PREFIX}</string>
-        <key>StandardErrorPath</key>
-        <string>#{log_path}/output.log</string>
-        <key>StandardOutPath</key>
-        <string>#{log_path}/output.log</string>
-        <key>HardResourceLimits</key>
-        <dict>
-          <key>NumberOfFiles</key>
-          <integer>#{MAX_FDS}</integer>
-        </dict>
-        <key>SoftResourceLimits</key>
-        <dict>
-          <key>NumberOfFiles</key>
-          <integer>#{MAX_FDS}</integer>
-        </dict>
-      </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"lighttpd", "-D", "-f", etc/"lighttpd/lighttpd.conf"]
+    keep_alive false
+    error_log_path var/"log/lighttpd/output.log"
+    log_path var/"log/lighttpd/output.log"
+    working_dir HOMEBREW_PREFIX
   end
 
   test do
-    system "#{bin}/lighttpd", "-t", "-f", config_path/"lighttpd.conf"
+    system "#{bin}/lighttpd", "-t", "-f", etc/"lighttpd/lighttpd.conf"
   end
 end
