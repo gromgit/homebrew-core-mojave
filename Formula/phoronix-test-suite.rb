@@ -1,8 +1,8 @@
 class PhoronixTestSuite < Formula
   desc "Open-source automated testing/benchmarking software"
   homepage "https://www.phoronix-test-suite.com/"
-  url "https://github.com/phoronix-test-suite/phoronix-test-suite/archive/v10.6.1.tar.gz"
-  sha256 "136d875a7ad9ec97b437638694fc25818b9262c90017c317d7a16c2255a9492f"
+  url "https://github.com/phoronix-test-suite/phoronix-test-suite/archive/v10.8.0.tar.gz"
+  sha256 "96dfb81adff1dfbe447ad8d550634a6d197a34693f3512fc4f2dbe29f7de0f43"
   license "GPL-3.0-or-later"
   head "https://github.com/phoronix-test-suite/phoronix-test-suite.git", branch: "master"
 
@@ -13,8 +13,7 @@ class PhoronixTestSuite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phoronix-test-suite"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "e9419a55fc49cb04eb679598256fb376be4a3928289ab88ba31f08f78f9c12c2"
+    sha256 cellar: :any_skip_relocation, mojave: "b0e93a748804846edbae06751c573a8909233df98385b9c94d2d0161a0b3c597"
   end
 
   depends_on "php"
