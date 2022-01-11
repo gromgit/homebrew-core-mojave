@@ -1,15 +1,14 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/v0.34.0.tar.gz"
-  sha256 "f654fb6275e5178f57e055d20918d7d34e19949bc98ebbf4a7371902e88ce309"
+  url "https://github.com/mpv-player/mpv/archive/v0.34.1.tar.gz"
+  sha256 "32ded8c13b6398310fa27767378193dc1db6d78b006b70dbcbd3123a1445e746"
   license :cannot_represent
-  revision 1
-  head "https://github.com/mpv-player/mpv.git"
+  head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpv"
-    sha256 mojave: "ee5068a0762db4940eab02df30a446dd91dab58ea552b6595057f39b809a7abb"
+    sha256 mojave: "b1be7bcec6a023a86ed10be3888d2a978138cfb2a3f8effc0e8ee1ae9e8455de"
   end
 
   depends_on "docutils" => :build
