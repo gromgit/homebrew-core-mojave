@@ -4,6 +4,7 @@ class Pdal < Formula
   url "https://github.com/PDAL/PDAL/releases/download/2.3.0/PDAL-2.3.0-src.tar.gz"
   sha256 "5b0b92258874ef722b5027054d64c8b318b524e7a9b2b250d0330d76e19b8618"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
   # The upstream GitHub repository sometimes tags a commit with only a
@@ -18,10 +19,8 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "bab6bc4359165c0114f42bfaa336efd455f4be53504b4c9ccd730f69fa4138e6"
-    sha256 big_sur:       "c5b53c3b047b1cc147c4b7a2b32337c219f29b04ca5badb054ba2c5d282f6d6f"
-    sha256 catalina:      "5ed3e147a0d6078d4757b59ec97edd1b582c6e696f0c1a7b458deed020be38c7"
-    sha256 mojave:        "c907f76ffd95101e6d7555cc0f7da93c0380e03a54973b03c02e0be0998e8b79"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdal"
+    sha256 mojave: "a991a803e45d3802e9c86c9c3c85822ed50fa6e40cb779ff66fc6b5dfa069d85"
   end
 
   depends_on "cmake" => :build
