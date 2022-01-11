@@ -3,14 +3,15 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/7c/9c/79ceb6b086ed4994f173adb627c81d05257cf21790617f37c7be8988e0d9/oci-cli-3.4.0.tar.gz"
-  sha256 "e013ae6ef983dccfeb891663c4c965a450e573f0f14b5da7735324c1ff2533fc"
+  url "https://files.pythonhosted.org/packages/fa/8d/67c86557fa04ed68e3cce481a4e2797fef11838df07b2aff3213633f93b0/oci-cli-3.4.1.tar.gz"
+  sha256 "3a70004f03d1f6ee70ac2959ec474109166e3ff1276b2e95476f5d1337d68728"
   license any_of: ["UPL-1.0", "Apache-2.0"]
+  revision 1
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oci-cli"
-    sha256 cellar: :any, mojave: "4dfa88258b0c759aa04524d23da54183fbb7ad976863ed86b8d815d5e850aa78"
+    sha256 cellar: :any, mojave: "a2dc1f7836872bbf0eed8433aa9596f2b47ad97800b5d236c5f257f6aedbf5fc"
   end
 
   depends_on "rust" => :build
@@ -43,8 +44,8 @@ class OciCli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz"
-    sha256 "3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713"
+    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
+    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
   end
 
   resource "jmespath" do
@@ -53,8 +54,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/16/56/ffeb1f64dcb640eafee19e7baa5244248198d4c88081182498f718077438/oci-2.53.0.tar.gz"
-    sha256 "9d87f932474d138f4d38d55f1d7de898c80996c76e10ee5ecee3853a5cb2307e"
+    url "https://files.pythonhosted.org/packages/ce/76/e3b9b03fd3b7513f5771961e8cf63e250fe6378f2b7a457eeda6fb6b23bf/oci-2.53.1.tar.gz"
+    sha256 "c7636c86597a1079852a32b5fc342de672d38896e41ff6691851b08a9b712a8e"
   end
 
   resource "pycparser" do
