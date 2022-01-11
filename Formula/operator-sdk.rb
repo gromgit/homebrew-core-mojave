@@ -14,8 +14,8 @@ class OperatorSdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/operator-sdk"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "ce14555eb893890f5f516cecd1a0cabb481ea7c371282a4d2f9a78acffa7da12"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "6f86c8163caf2345543a2e98e04ec896063d981050bc37012361e1a497b790fc"
   end
 
   depends_on "go"
@@ -25,12 +25,16 @@ class OperatorSdk < Formula
     system "make", "install"
 
     # Install bash completion
-    output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "bash")
+    output = Utils.safe_popen_read(bin/"operator-sdk", "completion", "bash")
     (bash_completion/"operator-sdk").write output
 
     # Install zsh completion
-    output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "zsh")
+    output = Utils.safe_popen_read(bin/"operator-sdk", "completion", "zsh")
     (zsh_completion/"_operator-sdk").write output
+
+    # Install fish completion
+    output = Utils.safe_popen_read(bin/"operator-sdk", "completion", "fish")
+    (fish_completion/"operator-sdk.fish").write output
   end
 
   test do
