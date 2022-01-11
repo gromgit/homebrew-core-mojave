@@ -7,6 +7,12 @@ class Openrct2 < Formula
   license "GPL-3.0-only"
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openrct2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "99b0b81bd834533b231e6b5d0c2d1c07eab43ab920051e1ec444eba4aef6981a"
+  end
+
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "pkg-config" => :build
