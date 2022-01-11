@@ -24,8 +24,8 @@ class MariadbAT104 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.4"
-    rebuild 2
-    sha256 mojave: "60ec91f457454efa297845e9485f841d3ffce3ad6ac47a71197bb2f1919e294a"
+    rebuild 3
+    sha256 mojave: "c8c776157b1897974bc16ceb9081220fd565e0506b7b8c0af885edfdc1f61898"
   end
 
   keg_only :versioned_formula
@@ -161,30 +161,10 @@ class MariadbAT104 < Formula
     EOS
   end
 
-  plist_options manual: "mysql.server start"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-        <key>KeepAlive</key>
-        <true/>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/mysqld_safe</string>
-          <string>--datadir=#{var}/mysql</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>WorkingDirectory</key>
-        <string>#{var}</string>
-      </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"mysqld_safe", "--datadir", var/"mysql"]
+    keep_alive true
+    working_dir var
   end
 
   test do
