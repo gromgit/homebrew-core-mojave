@@ -4,12 +4,11 @@ class Osmcoastline < Formula
   url "https://github.com/osmcode/osmcoastline/archive/v2.3.1.tar.gz"
   sha256 "ab4a94b9bc5a5ab37b14ac4e9cbdf113d5fcf2d5a040a4eed958ffbc6cc1aa63"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "e0820b1a6cd6e77dfdd742f29404c5f1b78f9b198a59c7019152e4e9d9608d72"
-    sha256 cellar: :any, big_sur:       "f4de31702d99101baff041d2b96bc4bd58f1bd728c07353f5c9f753551ba3d31"
-    sha256 cellar: :any, catalina:      "eb5bba76581312e9b070eb5f83b8d98e9862d0f33b13808f5a6f0a33ce3c0973"
-    sha256 cellar: :any, mojave:        "37f1b4c9d9fb60ed418eb69292c7f3b9de2cc3b7599f2ba8fed69a1b1ee88d13"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osmcoastline"
+    sha256 cellar: :any, mojave: "62db9acf4c54dc48304f0d33c50749afcca9c5af86e53f560a849a2185097f64"
   end
 
   depends_on "cmake" => :build
@@ -17,6 +16,7 @@ class Osmcoastline < Formula
   depends_on "gdal"
   depends_on "geos"
   depends_on "libspatialite"
+  depends_on "lz4"
 
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
