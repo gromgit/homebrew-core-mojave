@@ -4,6 +4,7 @@ class Opencv < Formula
   url "https://github.com/opencv/opencv/archive/4.5.4.tar.gz"
   sha256 "c20bb83dd790fc69df9f105477e24267706715a9d3c705ca1e7f613c7b3bad3d"
   license "Apache-2.0"
+  revision 2
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Opencv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencv"
-    sha256 mojave: "34b38c5e393eb8b76f9c1b3fa1100ad763fff5735a9f195354879a7b7f8654b7"
+    sha256 mojave: "6b9bc7f61196196d51343e98720cea03f0fe5315ab01f4a1279a1bb32c8f2d01"
   end
 
   depends_on "cmake" => :build
