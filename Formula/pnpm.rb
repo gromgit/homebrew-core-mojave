@@ -3,8 +3,8 @@ class Pnpm < Formula
 
   desc "📦🚀 Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://registry.npmjs.org/pnpm/-/pnpm-6.24.0.tgz"
-  sha256 "2540d2376190543462d7e3d30cedec3093d27bd423231f40bf1eec0b19f127b6"
+  url "https://registry.npmjs.org/pnpm/-/pnpm-6.24.4.tgz"
+  sha256 "fdcd9195cc9f86a93bf5dc5f0bd254217d23a15ec09d1a315fa573962f57bd7f"
   license "MIT"
 
   livecheck do
@@ -14,7 +14,7 @@ class Pnpm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pnpm"
-    sha256 cellar: :any_skip_relocation, mojave: "de3bdcf0762cd93bf3a1c754330eb14bd09e2b7e7ba6d3228927a5682f110b0e"
+    sha256 cellar: :any_skip_relocation, mojave: "f5109c5ade8a8c994f2e82a3be861343d25f726e8c030f963b24a3ee0a8e0610"
   end
 
   depends_on "node"
