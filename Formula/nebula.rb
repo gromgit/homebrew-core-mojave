@@ -4,17 +4,18 @@ class Nebula < Formula
   url "https://github.com/slackhq/nebula/archive/v1.5.2.tar.gz"
   sha256 "391ac38161561690a65c0fa5ad65a2efb2d187323cc8ee84caa95fa24cb6c36a"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nebula"
-    sha256 cellar: :any_skip_relocation, mojave: "15a503c6ac19d80da1da831c6b71f43b1341001e12495daa55b6e50186c74c1a"
+    sha256 cellar: :any_skip_relocation, mojave: "3062dbc1b1bb998fe479edab971aa765acb115d67722fadef68287700b69ea60"
   end
 
   depends_on "go" => :build
 
   def install
     ENV["BUILD_NUMBER"] = version
-    system "make", "bin"
+    system "make", "service"
     bin.install "./nebula"
     bin.install "./nebula-cert"
     prefix.install_metafiles
