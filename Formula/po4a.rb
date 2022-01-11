@@ -5,15 +5,14 @@ class Po4a < Formula
 
   desc "Documentation translation maintenance tool"
   homepage "https://po4a.org"
-  url "https://github.com/mquinson/po4a/releases/download/v0.65/po4a-0.65.tar.gz"
-  sha256 "1797651c6e47bc83dae9a58b1ddeaf0200c750155f45f5123287a8c30039a180"
+  url "https://github.com/mquinson/po4a/releases/download/v0.66/po4a-0.66.tar.gz"
+  sha256 "854a75b91b2b39f4c2a4ed244dba22c9b01be675e2bd1448dce68c8e90d2f2ff"
   license "GPL-2.0-or-later"
   head "https://github.com/mquinson/po4a.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/po4a"
-    rebuild 2
-    sha256 cellar: :any, mojave: "e1194dfeb0e4807c9fda0318e81ca9e740e5f85b6c86577dbb36ed7a17f645c0"
+    sha256 cellar: :any, mojave: "3db464623e83937e19d17f1df009f139470683323c15008f7554dd15777a9ceb"
   end
 
   depends_on "docbook-xsl" => :build
