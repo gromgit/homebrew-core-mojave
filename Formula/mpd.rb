@@ -4,11 +4,17 @@ class Mpd < Formula
   url "https://www.musicpd.org/download/mpd/0.23/mpd-0.23.5.tar.xz"
   sha256 "f22c2c25093a05f4566f9cd7207cfbcd8405af67ed29a989bcf8905f80b7a299"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
+
+  livecheck do
+    url "https://www.musicpd.org/download.html"
+    regex(/href=.*?mpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpd"
-    sha256 cellar: :any, mojave: "ad897007cce7eb3a0bc1a345f15453d87f1c32392782150b11153986fc878aea"
+    sha256 cellar: :any, mojave: "c496fc12842d459a9a23d2412da65e6179be4f219d67fa27bd277ea893dfa050"
   end
 
   depends_on "boost" => :build
