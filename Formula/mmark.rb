@@ -1,13 +1,13 @@
 class Mmark < Formula
   desc "Powerful markdown processor in Go geared towards the IETF"
   homepage "https://mmark.miek.nl/"
-  url "https://github.com/mmarkdown/mmark/archive/v2.2.23.tar.gz"
-  sha256 "8c4ebb780f86f17647de1d81532bf6900498ec48edcdf03de6ef6e68287ae510"
+  url "https://github.com/mmarkdown/mmark/archive/v2.2.24.tar.gz"
+  sha256 "29bbd279192cf79701f82cc468c4bde475362fb2d3749d605ddecd155780ddda"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mmark"
-    sha256 cellar: :any_skip_relocation, mojave: "3d19edee1b8c0b258365dc47126fd1e4cde4697ec7e9b008bca704bd354d9109"
+    sha256 cellar: :any_skip_relocation, mojave: "6e092a6947381abd978eabce25faf177b4a3c383372282b9fe84ede67afbfe69"
   end
 
   depends_on "go" => :build
