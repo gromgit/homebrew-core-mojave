@@ -4,8 +4,8 @@ class Mapnik < Formula
   url "https://github.com/mapnik/mapnik/releases/download/v3.1.0/mapnik-v3.1.0.tar.bz2"
   sha256 "43d76182d2a975212b4ad11524c74e577576c11039fdab5286b828397d8e6261"
   license "LGPL-2.1-or-later"
-  revision 4
-  head "https://github.com/mapnik/mapnik.git"
+  revision 5
+  head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,13 +13,12 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "3ef717b40002e1bb09aa23fa69324a024a9af7322bd5bfa5fd2fe88f107d9d85"
-    sha256 cellar: :any, big_sur:       "9cf5f1873889a50fa8f661954cf3723dd80de77a97394097f47907c5a7ea27fc"
-    sha256 cellar: :any, catalina:      "f05ea69e03c726dde0d4b9711cd4fc94ce35e2e1f2a3abe75dc66949d34c563f"
-    sha256 cellar: :any, mojave:        "6416e7fa9760c9faed77382cce3e2209a28283e1174bde8bf394168d2cdc9947"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mapnik"
+    sha256 cellar: :any, mojave: "6728791bb75fbeb01e9bd366b248e8e974fc6246511229750d3b13d64e53b800"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python@3.9" => :build
   depends_on "boost"
   depends_on "cairo"
   depends_on "freetype"
@@ -35,6 +34,8 @@ class Mapnik < Formula
 
   def install
     ENV.cxx11
+
+    ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
 
     # Work around "error: no member named 'signbit' in the global namespace"
     # encountered when trying to detect boost regex in configure
@@ -82,6 +83,8 @@ class Mapnik < Formula
       WEBP_INCLUDES=#{webp}/include
       WEBP_LIBS=#{webp}/lib
     ]
+
+    inreplace "Makefile", "PYTHON = python", "PYTHON = python3"
 
     system "./configure", *args
     system "make"
