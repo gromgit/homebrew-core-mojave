@@ -1,8 +1,8 @@
 class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io/"
-  url "https://github.com/neovim/neovim/archive/v0.6.0.tar.gz"
-  sha256 "2cfd600cfa5bb57564cc22ffbbbcb2c91531053fc3de992df33656614384fa4c"
+  url "https://github.com/neovim/neovim/archive/v0.6.1.tar.gz"
+  sha256 "dd882c21a52e5999f656cae3f336b5fc702d52addd4d9b5cd3dc39cfff35e864"
   license "Apache-2.0"
   head "https://github.com/neovim/neovim.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Neovim < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neovim"
-    rebuild 3
-    sha256 mojave: "ad1fa5e1b1c1ac611bebeeab5d48c3970d3c43c5d9ae5777c8e9971eeeb3f0ad"
+    sha256 mojave: "e2c2050d6b2fded2af150c840d88f4aaa0e93d6a0d93087b7e913b37cc7e5fdd"
   end
 
   depends_on "cmake" => :build
@@ -64,8 +63,12 @@ class Neovim < Formula
       r.stage(buildpath/"deps-build/build/src"/r.name)
     end
 
-    ENV.prepend_path "LUA_PATH", "#{buildpath}/deps-build/share/lua/5.1/?.lua"
-    ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.1/?.so"
+    # The path separator for `LUA_PATH` and `LUA_CPATH` is `;`.
+    ENV.prepend "LUA_PATH", buildpath/"deps-build/share/lua/5.1/?.lua", ";"
+    ENV.prepend "LUA_CPATH", buildpath/"deps-build/lib/lua/5.1/?.so", ";"
+    # Don't clobber the default search path
+    ENV.append "LUA_PATH", ";", ";"
+    ENV.append "LUA_CPATH", ";", ";"
     lua_path = "--lua-dir=#{Formula["luajit-openresty"].opt_prefix}"
 
     cd "deps-build/build/src" do
