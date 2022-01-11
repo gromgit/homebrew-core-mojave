@@ -1,13 +1,13 @@
 class Notcurses < Formula
   desc "Blingful character graphics/TUI library"
   homepage "https://nick-black.com/dankwiki/index.php/Notcurses"
-  url "https://github.com/dankamongmen/notcurses/archive/v3.0.1.tar.gz"
-  sha256 "32041c300e92fc0fe56c19e65d1d1e374e824c781dfcd4f959ab0dcdbb90cdb2"
+  url "https://github.com/dankamongmen/notcurses/archive/v3.0.3.tar.gz"
+  sha256 "3be27640578f5b79c921d018cb14448867326737bc0d512c9f11c047dc9e478a"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notcurses"
-    sha256 mojave: "194b35f0f4bdd95e6e405f54b009e0782592c7b20b97d964f5a2071105fb35a3"
+    sha256 mojave: "d6d517e185d005fc4e36953b942f09fee1ec0203340791458ec1240acd2bc66e"
   end
 
   depends_on "cmake" => :build
