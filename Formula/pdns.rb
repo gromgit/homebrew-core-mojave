@@ -12,8 +12,8 @@ class Pdns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdns"
-    rebuild 2
-    sha256 mojave: "4d80038a749210e0a39516ebad2f2674c966a537c1272fa4b11f4b94ac9cd1b5"
+    rebuild 3
+    sha256 mojave: "0bda7c5d6d1ac4f2015b3f4927bbeef6307cef4eded4f0f49320eca2dfc23c76"
   end
 
   head do
@@ -54,30 +54,9 @@ class Pdns < Formula
     system "make", "install"
   end
 
-  plist_options manual: "pdns_server start"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-        <key>KeepAlive</key>
-        <true/>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{sbin}/pdns_server</string>
-        </array>
-        <key>EnvironmentVariables</key>
-        <key>KeepAlive</key>
-        <true/>
-        <key>SHAuthorizationRight</key>
-        <string>system.preferences</string>
-      </dict>
-      </plist>
-    EOS
+  service do
+    run opt_sbin/"pdns_server"
+    keep_alive true
   end
 
   test do
