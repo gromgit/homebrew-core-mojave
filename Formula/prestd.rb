@@ -1,8 +1,8 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
   homepage "https://github.com/prest/prest"
-  url "https://github.com/prest/prest/archive/v1.0.12.tar.gz"
-  sha256 "faffa19741dc8c23930043a46e646f86722e969eff8535fe3cc3c469a0d5489f"
+  url "https://github.com/prest/prest/archive/v1.0.14.tar.gz"
+  sha256 "65716a72f7dca448e0b4c7082dd8c7dee57c29320eae5c44b2f38fab0d77dae7"
   license "MIT"
   head "https://github.com/prest/prest.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Prestd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prestd"
-    sha256 cellar: :any_skip_relocation, mojave: "a183f5aa0544ec2876d601ef95c6f6ec3740f2d1fc2c9a0703b48b1b00946531"
+    sha256 cellar: :any_skip_relocation, mojave: "5470c6035bd0c857990669f5022cf0d6e4b3b960fdc0a058251ed34ac9403003"
   end
 
   depends_on "go" => :build
