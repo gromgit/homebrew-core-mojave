@@ -2,7 +2,7 @@ class Mosh < Formula
   desc "Remote terminal application"
   homepage "https://mosh.org"
   license "GPL-3.0-or-later"
-  revision 17
+  revision 18
 
   stable do
     url "https://mosh.org/mosh-1.3.2.tar.gz"
@@ -35,13 +35,18 @@ class Mosh < Formula
     end
   end
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?mosh[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mosh"
-    sha256 cellar: :any, mojave: "fe0d37f969e96f67e10a2590aee51409bb078e90ffb792fdcf424a807fe6fcbf"
+    sha256 cellar: :any, mojave: "6ffdd0a1b9e9b6c09593bf3f8eec37dc65f29d88c64411ea8258b1cbc1b291d9"
   end
 
   head do
-    url "https://github.com/mobile-shell/mosh.git"
+    url "https://github.com/mobile-shell/mosh.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
