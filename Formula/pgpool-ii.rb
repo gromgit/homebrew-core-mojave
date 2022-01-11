@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.2.6.tar.gz"
-  sha256 "8429173db067e8fed27a3c335ee365584148b3c799b9c24016c4d676a91e9532"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.3.0.tar.gz"
+  sha256 "1650cb7db960c83386dade17372f2306c427d05f42e2a94559abc183576dd213"
 
   livecheck do
     url "https://www.pgpool.net/mediawiki/index.php/Downloads"
@@ -11,8 +11,7 @@ class PgpoolIi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgpool-ii"
-    rebuild 2
-    sha256 mojave: "5bc38f5b8b7a9d811d74f53b509818687aedd222dd805140ef4e7daea14e48fd"
+    sha256 mojave: "bfd136d66c535c75abaf143f10da72cbc5d9d62ebd2770ca62de1d272b8c3b51"
   end
 
   depends_on "postgresql"
