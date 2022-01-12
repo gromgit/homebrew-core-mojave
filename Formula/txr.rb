@@ -1,8 +1,8 @@
 class Txr < Formula
   desc "Original, new programming language for convenient data munging"
   homepage "https://www.nongnu.org/txr/"
-  url "http://www.kylheku.com/cgit/txr/snapshot/txr-272.tar.bz2"
-  sha256 "b3c2a82198dc97633aa40ced6fff6fec39c78a905b06dc08e7b74176bda03543"
+  url "http://www.kylheku.com/cgit/txr/snapshot/txr-273.tar.bz2"
+  sha256 "974a3ad0d92d22c2a7ef6d243bcc73c9240130056b7d8861599f0be4af10ad48"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,8 +12,7 @@ class Txr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/txr"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8710b1211584a0139ab8331f6dbb1043df81398303d166a5d4bf13809b1afff0"
+    sha256 cellar: :any, mojave: "6cf068a86ace649b2318db91901ca7e94ba289d633c61003e20b75af5d2a20da"
   end
 
   depends_on "libffi"
