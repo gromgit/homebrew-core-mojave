@@ -3,20 +3,14 @@ class Supervisor < Formula
 
   desc "Process Control System"
   homepage "http://supervisord.org/"
-  url "https://files.pythonhosted.org/packages/d3/7f/c780b7471ba0ff4548967a9f7a8b0bfce222c3a496c3dfad0164172222b0/supervisor-4.2.2.tar.gz"
-  sha256 "5b2b8882ec8a3c3733cce6965cc098b6d80b417f21229ab90b18fe551d619f90"
+  url "https://files.pythonhosted.org/packages/b3/41/2806c3c66b3e4a847843821bc0db447a58b7a9b0c39a49b354f287569130/supervisor-4.2.4.tar.gz"
+  sha256 "40dc582ce1eec631c3df79420b187a6da276bbd68a4ec0a8f1f123ea616b97a2"
   license "BSD-3-Clause-Modification"
-  revision 1
   head "https://github.com/Supervisor/supervisor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19ca7572ee9fed86ba1cc5ad5c4ffe0df7f094307e78b623d75dea464b274592"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "19ca7572ee9fed86ba1cc5ad5c4ffe0df7f094307e78b623d75dea464b274592"
-    sha256 cellar: :any_skip_relocation, monterey:       "03bb01ee8b90ea72e8d5fd27994f7b5e002576b467bdda3b6011e8af63d9777e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "03bb01ee8b90ea72e8d5fd27994f7b5e002576b467bdda3b6011e8af63d9777e"
-    sha256 cellar: :any_skip_relocation, catalina:       "03bb01ee8b90ea72e8d5fd27994f7b5e002576b467bdda3b6011e8af63d9777e"
-    sha256 cellar: :any_skip_relocation, mojave:         "03bb01ee8b90ea72e8d5fd27994f7b5e002576b467bdda3b6011e8af63d9777e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af1065b2eca37b2678c416ec8274516fe1989b1d60debfc5057464f2f07fa84e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/supervisor"
+    sha256 cellar: :any_skip_relocation, mojave: "7831c5348e5af718d21a3f806c1fd9c35da9a75c8a61a3aa91c639c17cf7989f"
   end
 
   depends_on "python@3.10"
