@@ -5,15 +5,11 @@ class VstsCli < Formula
   homepage "https://docs.microsoft.com/en-us/cli/vsts"
   url "https://files.pythonhosted.org/packages/f9/c2/3ed698480ab30d2807fc961eef152099589aeaec3f1407945a4e07275de5/vsts-cli-0.1.4.tar.gz"
   sha256 "27defe1d8aaa1fcbc3517274c0fdbd42b5ebe2c1c40edfc133d98fe4bb7114de"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "b2f52a216bc861399d8a1601aec22f167571879a6bab184682a2aa03833ed2ef"
-    sha256 cellar: :any, arm64_big_sur:  "046a0a188502277cfefe4ac62665a654aa161e2e727382c182be93c47c72252f"
-    sha256 cellar: :any, monterey:       "a21d41bf262c415e8f22fc5411d00629c58e0bf3f532efccbfe0a97fb545d288"
-    sha256 cellar: :any, big_sur:        "c3bdc4320322286d34f0030a787ae04059822d352fe5de2a136932b0d787b5cb"
-    sha256 cellar: :any, catalina:       "cabfe93b0a12cb130c8acc879f6858083d8e80bbfe727eb3e4f653410943cf5b"
-    sha256 cellar: :any, mojave:         "c6857c4daa283ec757a22d1bde0f628d5201e92d3b98c51aa6153537ad7bee31"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vsts-cli"
+    sha256 cellar: :any, mojave: "cc51e21a3c7da38d0fe6ca192a607f930e256b3a28282fc776954baaa5509f68"
   end
 
   # https://github.com/Azure/azure-devops-cli-extension/pull/219#issuecomment-456404611
@@ -54,8 +50,8 @@ class VstsCli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/2d/2154d8cb773064570f48ec0b60258a4522490fcb115a6c7c9423482ca993/cryptography-3.4.6.tar.gz"
-    sha256 "2d32223e5b0ee02943f32b19245b61a62db83a882f0e76cc564e1cec60d48f87"
+    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
+    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
   end
 
   resource "entrypoints" do
