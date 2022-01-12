@@ -1,13 +1,13 @@
 class Ugrep < Formula
   desc "Ultra fast grep with query UI, fuzzy search, archive search, and more"
   homepage "https://github.com/Genivia/ugrep"
-  url "https://github.com/Genivia/ugrep/archive/v3.3.12.tar.gz"
-  sha256 "24f7de6d1dc2263a75b455c461c2d04b3a719d4165b6383c99d270b99758878e"
+  url "https://github.com/Genivia/ugrep/archive/v3.5.0.tar.gz"
+  sha256 "9f8469e111ee665f6f03e3a8c0e4b06e632ce3fcb90e955b8979696973cfa0db"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ugrep"
-    sha256 mojave: "b55cd6866ebde5391fa7d87b22393b8ed70b128f16b0abddce9ad241d8d600bc"
+    sha256 mojave: "92c4ca6bc7cb2aa81d70e63022b51f2ae614fefa31bf42b8170beb15fb155bb1"
   end
 
   depends_on "pcre2"
