@@ -1,15 +1,14 @@
 class Sevenzip < Formula
   desc "7-Zip is a file archiver with a high compression ratio"
   homepage "https://7-zip.org"
-  url "https://7-zip.org/a/7z2106-src.7z"
-  version "21.06"
-  sha256 "675eaa90de3c6a3cd69f567bba4faaea309199ca75a6ad12bac731dcdae717ac"
+  url "https://7-zip.org/a/7z2107-src.tar.xz"
+  version "21.07"
+  sha256 "213d594407cb8efcba36610b152ca4921eda14163310b43903d13e68313e1e39"
   license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sevenzip"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "ee94908214143cc709e852aca1a014244a0c43a3828e6cf5de2bad90d842a568"
+    sha256 cellar: :any_skip_relocation, mojave: "a89bf7108595e49d8dd521909e140e1ad3cd6e41c7dc729b942590379487b586"
   end
 
   def install
