@@ -1,17 +1,13 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https://github.com/launchbadge/sqlx"
-  url "https://github.com/launchbadge/sqlx/archive/v0.5.9.tar.gz"
-  sha256 "47d2e35110c117681f267fe5ad543b0105a09434b38101c5ce2441f4cfd2ba7c"
+  url "https://github.com/launchbadge/sqlx/archive/v0.5.10.tar.gz"
+  sha256 "e2fd9d89cdaf1cf9f91d83a7b29d533ef72da1e8b6e138b4b36df8c8a38efe78"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c79b1800a71eaf3aef1e461b4105d6f1bdbcba919e6232911ec8926800ed18cb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fdebbfe79a45af7785c58f8cbfa3e9ca0e76835b9bc00d651510d0219635787d"
-    sha256 cellar: :any_skip_relocation, monterey:       "76250987011fbf62e624e48542cd1aee38ad0482479a8257f47f5e5c684535b1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "851d67fa337bb014d0dde1b906249762f16a9ea592e5f210223e4ee83d24fac6"
-    sha256 cellar: :any_skip_relocation, catalina:       "e2b4fa3f70a85aae39d586cb221c10270ac7d1ea83598f433b238bd8d9770159"
-    sha256 cellar: :any_skip_relocation, mojave:         "e082233ec21cccc714ce75f4d3bea950ea078592cf7ac67228df49544c82e9fd"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlx-cli"
+    sha256 cellar: :any_skip_relocation, mojave: "832a172aaea7a716ca81ffe53c663edd2249aaf5df35146d77b374984f140c2d"
   end
 
   depends_on "rust" => :build
