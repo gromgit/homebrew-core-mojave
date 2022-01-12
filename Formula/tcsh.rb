@@ -1,9 +1,9 @@
 class Tcsh < Formula
   desc "Enhanced, fully compatible version of the Berkeley C shell"
   homepage "https://www.tcsh.org/"
-  url "https://astron.com/pub/tcsh/tcsh-6.23.01.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/tcsh/tcsh-6.23.01.tar.gz"
-  sha256 "816c5204b9a0ee9ba88515a98af398fffd3f46fc8791943a1ff38d473055ba6d"
+  url "https://astron.com/pub/tcsh/tcsh-6.23.02.tar.gz"
+  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/tcsh/tcsh-6.23.02.tar.gz"
+  sha256 "c03f80405136731b3091da735a81cdd848008510324ab325f235aff709e446eb"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,7 +13,7 @@ class Tcsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcsh"
-    sha256 mojave: "732443c68c68b83a844afb1aecea65ac3ff7f8ec717ea85ad6bde21ede66b018"
+    sha256 mojave: "65e6c47a397e03b4bd0a121bf4a34c91a7d712dba7b630669fd3a2077ad12cb6"
   end
 
   uses_from_macos "ncurses"
