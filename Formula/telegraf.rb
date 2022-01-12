@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Server-level metric gathering agent for InfluxDB"
   homepage "https://www.influxdata.com/"
-  url "https://github.com/influxdata/telegraf/archive/v1.20.4.tar.gz"
-  sha256 "75b6edbee5084bdf6e8cc216588d17b3e248d141baef5e917036f172099d6732"
+  url "https://github.com/influxdata/telegraf/archive/v1.21.2.tar.gz"
+  sha256 "2a6c0722c6999c438d316d5971502aa79abd92134c265ee0e53596cc125d175b"
   license "MIT"
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Telegraf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/telegraf"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c44ccf69549299ad60112fa23122274a5355fe31b4afe859d3763477b1c0ab4a"
+    sha256 cellar: :any_skip_relocation, mojave: "61d33be3aed22fd0d794679e6a17c751327f90a9c5ad59d95150eae922d473ed"
   end
 
   depends_on "go" => :build
