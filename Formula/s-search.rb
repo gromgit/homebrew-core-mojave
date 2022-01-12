@@ -1,14 +1,14 @@
 class SSearch < Formula
   desc "Web search from the terminal"
   homepage "https://github.com/zquestz/s"
-  url "https://github.com/zquestz/s/archive/v0.6.2.tar.gz"
-  sha256 "acc38953fcb21e1dd2cd761b9d2bf8272aa6aa30fed2adb657f2dba7e4df872f"
+  url "https://github.com/zquestz/s/archive/v0.6.4.tar.gz"
+  sha256 "5829a18da40cb5a936f32240b4244d2a0543cb85dc3d5e013ae5aa08557c148f"
   license "MIT"
   head "https://github.com/zquestz/s.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s-search"
-    sha256 cellar: :any_skip_relocation, mojave: "597e560fc994241ce7ecff7bd2166decae5967a3b11825947aafdf1cfedb9d08"
+    sha256 cellar: :any_skip_relocation, mojave: "17137a827a46d71ccecef35d02d658cef71ae0b7bc49a654c5447e87e8ef0030"
   end
 
   depends_on "go" => :build
