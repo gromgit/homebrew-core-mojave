@@ -1,19 +1,13 @@
 class Travis < Formula
   desc "Command-line client for Travis CI"
   homepage "https://github.com/travis-ci/travis.rb/"
-  url "https://github.com/travis-ci/travis.rb/archive/v1.10.0.tar.gz"
-  sha256 "b63991faebbd5da0e92bf1547775b69a0dbed01dd57e8b469d23a2a7bd79da43"
+  url "https://github.com/travis-ci/travis.rb/archive/v1.11.0.tar.gz"
+  sha256 "76cb0821aeb60e3e302932365dd437a393674de80e02972873bf3e511af564ca"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "e568ccee54871068ca97e2715e9b15a920d83250c5668c03ed67c0ea5d633224"
-    sha256 cellar: :any,                 arm64_big_sur:  "59b6dd40d8c0ecf2de6ddab1e51368395983e9dda5e2c9631e61d1017621f9f1"
-    sha256 cellar: :any,                 monterey:       "0946624c137c7525299a3b6242211a9eabb11b22b3d3772054ee207a17f7b480"
-    sha256 cellar: :any,                 big_sur:        "bac02798e1f466f44fa0d87bf267a42cf1c27b1a629dcff9ba08ac1403509e9b"
-    sha256 cellar: :any,                 catalina:       "2ea207de733fba0ab4768160765257c95e0ae609f8e0a22e082087707b69ba1a"
-    sha256 cellar: :any,                 mojave:         "b4f6b027ae0f34335b7096212ffd4189bf6baf3e9c6d6f00ef2dd0252cc913a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03e524347d11fc6f54a250ec835355a579002b7d7e984c4133a0b6ddef259069"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/travis"
+    sha256 cellar: :any, mojave: "b397f59e2c50ce885e05c9304e272628d0bb643f21d39230bf205fdb3dec13b4"
   end
 
   depends_on "pkg-config" => :build
