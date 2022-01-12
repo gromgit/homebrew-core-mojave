@@ -4,13 +4,13 @@ class Px < Formula
   desc "Ps and top for human beings (px / ptop)"
   homepage "https://github.com/walles/px"
   url "https://github.com/walles/px.git",
-      tag:      "1.5.6",
-      revision: "015793f9ef7b228812a8a887a51c0b2b0604fd4e"
+      tag:      "1.6.1",
+      revision: "e513e51de56d581b8ea1483acebf24547caec86d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/px"
-    sha256 cellar: :any_skip_relocation, mojave: "358f3121db83283c84d9ebe760433e8992e7051a61bb9545a756444028db57e4"
+    sha256 cellar: :any_skip_relocation, mojave: "b0ff46a8914249479e7168fcfb1e091f946c7d2f248f592af63d39e2ebbf0e79"
   end
 
   depends_on "python@3.10"
