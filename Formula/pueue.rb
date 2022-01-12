@@ -1,15 +1,14 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
   homepage "https://github.com/Nukesor/pueue"
-  url "https://github.com/Nukesor/pueue/archive/v1.0.4.tar.gz"
-  sha256 "c4ddb496f86ab4c10b322d5a64be4f96f6c8779796983f4500fe341300b65072"
+  url "https://github.com/Nukesor/pueue/archive/v1.0.6.tar.gz"
+  sha256 "e8df48831f4d9ae8fe5dc7a8428660b4c87c4fb3bf8d1ae620e030af74269ffa"
   license "MIT"
   head "https://github.com/Nukesor/pueue.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pueue"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "ea21b20d9f55490b4033caa4f3a8c4b9d0e99382cb4766af4c46adef920ddcb2"
+    sha256 cellar: :any_skip_relocation, mojave: "bd0064a9b7ab126fc633919e8115fc2af862060bac53a91cd775a647ec984a63"
   end
 
   depends_on "rust" => :build
