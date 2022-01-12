@@ -1,13 +1,14 @@
 class Teku < Formula
   desc "Java Implementation of the Ethereum 2.0 Beacon Chain"
   homepage "https://docs.teku.consensys.net/"
-  url "https://github.com/ConsenSys/teku/archive/refs/tags/21.12.2.tar.gz"
-  sha256 "fdd2e23ee8228b0bcb883f3bdfb4c24b82b21346a0444309e933ff019d5c3f39"
+  url "https://github.com/ConsenSys/teku.git",
+        tag:      "22.1.0",
+        revision: "5b85ef197f5468c32b4aeb869ebe74201b9875bf"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teku"
-    sha256 cellar: :any_skip_relocation, mojave: "945d4120048e0a552e885fa186f6c50c657bcc06a04a2bba8e934e2ea4aba764"
+    sha256 cellar: :any_skip_relocation, mojave: "c5fff09a7ba5132088cc919f2c3d1b93b4d95c8d639e1451abe4962fbe4e89ac"
   end
 
   depends_on "gradle" => :build
@@ -28,7 +29,7 @@ class Teku < Formula
     fork do
       exec bin/"teku", "--rest-api-enabled", "--rest-api-port=#{rest_port}", "--p2p-enabled=false"
     end
-    sleep 10
+    sleep 15
 
     output = shell_output("curl -sS -XGET http://127.0.0.1:#{rest_port}/eth/v1/node/syncing")
     assert_match "is_syncing", output
