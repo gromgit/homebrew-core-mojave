@@ -5,7 +5,7 @@
    license "MIT"
  
 -  uses_from_macos "ruby"
-+  depends_on "ruby"
++  uses_from_macos "ruby", since: :catalina
  
    def install
      ENV["GEM_HOME"] = libexec
