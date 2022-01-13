@@ -8,10 +8,10 @@ class ImapBackup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imap-backup"
-    sha256 cellar: :any_skip_relocation, mojave: "c9e3279ef109f89fff17d9cc902c4dd4fff1f7b0f6f9c209712875af632ab4f2"
+    sha256 cellar: :any_skip_relocation, mojave: "258406d796db5cf41a8edd5556f786874cc634b334e3aabb59a517f2600baa63"
   end
 
-  depends_on "ruby"
+  uses_from_macos "ruby", since: :catalina
 
   def install
     ENV["GEM_HOME"] = libexec
