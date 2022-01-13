@@ -1,8 +1,8 @@
 class Sdl2 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https://www.libsdl.org/"
-  url "https://libsdl.org/release/SDL2-2.0.18.tar.gz"
-  sha256 "94d40cd73dbfa10bb6eadfbc28f355992bb2d6ef6761ad9d4074eff95ee5711c"
+  url "https://libsdl.org/release/SDL2-2.0.20.tar.gz"
+  sha256 "c56aba1d7b5b0e7e999e4a7698c70b63a3394ff9704b5f6e1c57e0c16f04dd06"
   license "Zlib"
 
   livecheck do
@@ -12,8 +12,7 @@ class Sdl2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2"
-    rebuild 2
-    sha256 cellar: :any, mojave: "32cf3c8a45433d529bb7f76e8a468e633f6ec7e13881f01c9bef190501a19a40"
+    sha256 cellar: :any, mojave: "42720ace8a523ef040f1a599d9a1af98dc1b2a01bdd485fbddf887781407e036"
   end
 
   head do
