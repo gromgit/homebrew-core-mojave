@@ -1,5 +1,5 @@
---- Formula/imap-backup.rb.orig	2022-01-13 15:05:21.000000000 +0800
-+++ Formula/imap-backup.rb	2022-01-13 15:05:07.000000000 +0800
+--- a/Formula/imap-backup.rb	2022-01-13 15:05:21.000000000 +0800
++++ b/Formula/imap-backup.rb	2022-01-13 15:05:07.000000000 +0800
 @@ -6,7 +6,7 @@
  
    license "MIT"
