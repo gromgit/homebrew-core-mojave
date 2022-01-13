@@ -9,10 +9,10 @@ class Solargraph < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solargraph"
-    sha256 cellar: :any, mojave: "de88e2fd03b63a83c468774e3cfc5c0e56588788fc500f54dddb6d13f1180d7d"
+    sha256 cellar: :any, mojave: "7320f37d9df23f7ce2e14b0e84a3c1573ec489bdb4e20e3471a20c8d44575f53"
   end
 
-  depends_on "ruby"
+  uses_from_macos "ruby", since: :catalina
 
   def install
     ENV["GEM_HOME"] = libexec
