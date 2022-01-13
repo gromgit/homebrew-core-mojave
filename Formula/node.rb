@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v17.2.0/node-v17.2.0.tar.xz"
-  sha256 "2b47cc7b5ec189d7b637454732f36f8d3c2c0ef81bec3c278b566f67159e659a"
+  url "https://nodejs.org/dist/v17.3.1/node-v17.3.1.tar.xz"
+  sha256 "cf088f7854aa78d5aef7f9bc58bdb8d7342a0197ba24af62afd2fc3233f21d1c"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    sha256 cellar: :any, mojave: "dc33f4cb683368d46a89071fe4bb4f8d1d6a848dce727d8784d3454900db7a99"
+    sha256 cellar: :any, mojave: "8bfdabea2493169bf94eb5a0f12da07779f958207f4127019c76a60855ec9e5c"
   end
 
   depends_on "pkg-config" => :build
@@ -48,8 +48,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-8.1.4.tgz"
-    sha256 "3959175ecd0a8ad86a6e8a63819fb200fb10a795f077ae22b241bac639bb6a17"
+    url "https://registry.npmjs.org/npm/-/npm-8.3.0.tgz"
+    sha256 "b02b4d1d9f8904bd6e5542af79ae052c023fa2efe2ae6d085cdff464dc8ca848"
   end
 
   # Fixes node incorrectly building vendored OpenSSL when we want system OpenSSL.
@@ -71,6 +71,7 @@ class Node < Formula
     args = %W[
       --prefix=#{prefix}
       --without-npm
+      --without-corepack
       --with-intl=system-icu
       --shared-libuv
       --shared-nghttp2
