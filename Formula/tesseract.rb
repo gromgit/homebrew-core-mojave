@@ -1,8 +1,8 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https://github.com/tesseract-ocr/"
-  url "https://github.com/tesseract-ocr/tesseract/archive/5.0.0.tar.gz"
-  sha256 "72467b7876dc0c39ef7fbcb0f793f73aee1c78d9fabab3ab19cbac1eb42e9fed"
+  url "https://github.com/tesseract-ocr/tesseract/archive/5.0.1.tar.gz"
+  sha256 "b5b0e561650ed67feb1e9de38d4746121d302ae4c876c95b99b8b6f9f89d5c58"
   license "Apache-2.0"
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
@@ -13,16 +13,15 @@ class Tesseract < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tesseract"
-    sha256 cellar: :any, mojave: "c1eeea98ac2f8c056597f218b882bbc76d00452c10eee5d5d854780758934ea4"
+    sha256 cellar: :any, mojave: "b193e4d5eb6f705519b3cabfb624f9fe36eac25e5a09456a63ea633167f5c55e"
   end
 
   depends_on "autoconf" => :build
-  depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "leptonica"
-  depends_on "libtiff"
+  depends_on "libarchive"
 
   on_linux do
     depends_on "gcc"
