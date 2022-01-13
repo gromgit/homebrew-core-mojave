@@ -12,7 +12,8 @@ class PerconaServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/percona-server"
-    sha256 mojave: "ef1dfbf8c2452ff0b6ced088820e36b080dc3cabdccda66580557146920e0abd"
+    rebuild 1
+    sha256 mojave: "4b1efb01353f7175f8e786276b2bd5ed81ee7405bb814023865272c1cac379e5"
   end
 
   depends_on "cmake" => :build
@@ -184,7 +185,7 @@ class PerconaServer < Formula
   end
 
   service do
-    run [opt_bin/"mysqld_safe", "--datadir", var/"mysql"]
+    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
     keep_alive true
     working_dir var/"mysql"
   end
