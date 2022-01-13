@@ -1,13 +1,13 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
   homepage "https://vitess.io"
-  url "https://github.com/vitessio/vitess/archive/v12.0.1.tar.gz"
-  sha256 "f5c0d93c57e5926d4c29e3a4f3d0938b8a06d29cdc33ab66c8791322b378feb3"
+  url "https://github.com/vitessio/vitess/archive/v12.0.3.tar.gz"
+  sha256 "f517a013fec7751a7da43ca2a11a4827d75ba1fbafd310bb10b9b3066549df60"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vitess"
-    sha256 cellar: :any_skip_relocation, mojave: "b6045d0630cbe23f9a9a27bb4812dbfc1464029180874d7cc97ef5600ef77947"
+    sha256 cellar: :any_skip_relocation, mojave: "7547ea0d0f269733cdb6c2a86c0830ace70cbdf688f29011ba84803de8aa1e38"
   end
 
   depends_on "go" => :build
