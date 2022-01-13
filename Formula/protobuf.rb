@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://github.com/protocolbuffers/protobuf/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.2/protobuf-all-3.19.2.tar.gz"
-  sha256 "85f9f59e5ab0dd1d8d4d71673717fdacbf4f1c9fb4cdda6ed71249c6548c4544"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.3/protobuf-all-3.19.3.tar.gz"
+  sha256 "84cca73ed97abce159c381e682ba0237bc21952359b07d8d45dc7e6399edd923"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Protobuf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf"
-    sha256 cellar: :any, mojave: "7114213288ac9f5ffd4218aa3dbcd18c4317c534a1809c1a911cc0f5dce1f702"
+    sha256 cellar: :any, mojave: "fca3e6ee089035e47efb7959a098688636b4051947d1b0fe1fb7e68a3d1a855e"
   end
 
   head do
