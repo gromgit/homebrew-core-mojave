@@ -1,14 +1,14 @@
 class DoubleConversion < Formula
   desc "Binary-decimal and decimal-binary routines for IEEE doubles"
   homepage "https://github.com/google/double-conversion"
-  url "https://github.com/google/double-conversion/archive/v3.1.6.tar.gz"
-  sha256 "8a79e87d02ce1333c9d6c5e47f452596442a343d8c3e9b234e8a62fce1b1d49c"
+  url "https://github.com/google/double-conversion/archive/v3.2.0.tar.gz"
+  sha256 "3dbcdf186ad092a8b71228a5962009b5c96abde9a315257a3452eb988414ea3b"
   license "BSD-3-Clause"
-  head "https://github.com/google/double-conversion.git"
+  head "https://github.com/google/double-conversion.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/double-conversion"
-    sha256 cellar: :any, mojave: "5397d745c4bffbcb2e5cfbdbb1be46541cb9b2700a81ae0cc4688fbb7d97ada5"
+    sha256 cellar: :any, mojave: "1eb22729160400f075da2d9c542b2283acb907e7289a13963547726513029b45"
   end
 
   depends_on "cmake" => :build
