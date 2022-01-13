@@ -12,14 +12,14 @@ class Swift < Formula
     regex(/Releases<.*?>Swift v?(\d+(?:\.\d+)+)</im)
   end
 
-  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swift"
     sha256 mojave: "b49fe185bb64ab86515c9b51d43046aad807fa70e49668a403385a72cc4a70b7"
   end
 
   keg_only :provided_by_macos
+
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build

@@ -1,10 +1,9 @@
 class Lablgtk < Formula
   desc "Objective Caml interface to gtk+"
   homepage "http://lablgtk.forge.ocamlcore.org"
-  url "https://github.com/garrigue/lablgtk/archive/2.18.11.tar.gz"
-  sha256 "ff3c551df4e220b0c0fb9a3da6429413bff14f8fc93f4dd6807a35463982c863"
+  url "https://github.com/garrigue/lablgtk/archive/2.18.12.tar.gz"
+  sha256 "43b2640b6b6d6ba352fa0c4265695d6e0b5acb8eb1da17290493e99ae6879b18"
   license "LGPL-2.1"
-  revision 3
 
   livecheck do
     url :stable
@@ -12,11 +11,8 @@ class Lablgtk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "684afad25502ebfcdb6c20d870590c98310de235efbde39c1b4950635b3d8f86"
-    sha256 cellar: :any, monterey:      "65fa6135c87d0e578128c562a4d621451a92bec1262035edcfe8602e34fc41a3"
-    sha256 cellar: :any, big_sur:       "5a7b9fb8ff6ac9d8ce0f952c59e5705f295849df5f00e10b4771f2edbd4fb056"
-    sha256 cellar: :any, catalina:      "e9e7ed3fba9b4aea756fd38e46b178d9cbafd588fd4b6160683e08ba1ba2ae3a"
-    sha256 cellar: :any, mojave:        "60ecd5b76592917ec79b3fd2851d655eac39f3c08b945f24d154e4743a16fca1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lablgtk"
+    sha256 cellar: :any, mojave: "45a0abf56b3c4babd28a5a6cbf127d50daa59c15ec5d3b775b3eb30b5f4e0f42"
   end
 
   depends_on "pkg-config" => :build

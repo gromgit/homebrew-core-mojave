@@ -1,8 +1,8 @@
 class Rhino < Formula
   desc "JavaScript engine"
-  homepage "https://www.mozilla.org/rhino/"
-  url "https://github.com/mozilla/rhino/releases/download/Rhino1_7_13_Release/rhino-1.7.13.zip"
-  sha256 "8531e0e0229140c80d743ece77ffda155d4eb3fa56cca4f36fbfba1088478b3e"
+  homepage "https://mozilla.github.io/rhino/"
+  url "https://github.com/mozilla/rhino/releases/download/Rhino1_7_14_Release/rhino-1.7.14.zip"
+  sha256 "bf4d2d0c5ff8889fd494486db09291cb7965f0bf2f93ef005d3b08070a5a4f5c"
   license "MPL-2.0"
 
   livecheck do
@@ -14,8 +14,7 @@ class Rhino < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "6e4b37521b15f564ab82aad7b1a727b9158becee6472af1a26a21884d2baf44d"
+    sha256 cellar: :any_skip_relocation, all: "0d158d59b8822455d058f47f138f79331189aa286b1354b241c4d8b547861016"
   end
 
   depends_on "openjdk@11"

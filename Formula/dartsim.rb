@@ -6,12 +6,12 @@ class Dartsim < Formula
   license "BSD-2-Clause"
   revision 2
 
-  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dartsim"
     sha256 mojave: "a55cd6829559c589502fe08a8d0109a7b4dee69fc8ae40a76e365f89a17039a8"
   end
+
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
