@@ -1,0 +1,11 @@
+--- Formula/solargraph.rb.orig	2022-01-13 15:06:48.000000000 +0800
++++ Formula/solargraph.rb	2022-01-13 15:07:00.000000000 +0800
+@@ -7,7 +7,7 @@
+       revision: "e50a6dc4b43e2183e245aded8d23f0003d8c6bf7"
+   license "MIT"
+ 
+-  uses_from_macos "ruby"
++  depends_on "ruby"
+ 
+   def install
+     ENV["GEM_HOME"] = libexec
