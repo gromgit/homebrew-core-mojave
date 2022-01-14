@@ -9,7 +9,8 @@ class Solargraph < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solargraph"
-    sha256 cellar: :any, mojave: "7320f37d9df23f7ce2e14b0e84a3c1573ec489bdb4e20e3471a20c8d44575f53"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8b8e8cc775772971ab6e989413f3118575168272eb613ba7d9f9bac2df2588a7"
   end
 
   uses_from_macos "ruby", since: :catalina
