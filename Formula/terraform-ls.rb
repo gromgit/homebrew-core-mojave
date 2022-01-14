@@ -1,8 +1,8 @@
 class TerraformLs < Formula
   desc "Terraform Language Server"
   homepage "https://github.com/hashicorp/terraform-ls"
-  url "https://github.com/hashicorp/terraform-ls/archive/v0.25.0.tar.gz"
-  sha256 "4a18351561b56436fdb621bc13551e5b1eac88f1fa0e746b23cce8de78ffa0c1"
+  url "https://github.com/hashicorp/terraform-ls/archive/v0.25.2.tar.gz"
+  sha256 "ec028b03bb80a220e6ebed17c470ac6319839f53c6ad0a83b0e060e08a197ac1"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform-ls.git", branch: "main"
 
@@ -13,7 +13,7 @@ class TerraformLs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform-ls"
-    sha256 cellar: :any_skip_relocation, mojave: "7c94b4249a9de05df07791c1e256749573c62e5010f72cf87b7ba5727ea10308"
+    sha256 cellar: :any_skip_relocation, mojave: "0f30d020ebef701acbd0a4418086ad8fddd41b6c22315d6c1fe31c4d6a7e0f24"
   end
 
   depends_on "go" => :build
