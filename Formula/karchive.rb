@@ -1,8 +1,8 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.88/karchive-5.88.0.tar.xz"
-  sha256 "4b9979a3f0c1acb9822e0bea4b84e84970b9ca0a0e4daf914a35fe079f4ceae3"
+  url "https://download.kde.org/stable/frameworks/5.90/karchive-5.90.0.tar.xz"
+  sha256 "a6e2f3a7cb1aef7db7b4f7dfb9ffb1d929d0d5b147c25a93fbc0b794dfcd2110"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
@@ -20,8 +20,7 @@ class Karchive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/karchive"
-    rebuild 2
-    sha256 mojave: "708deb1c4bca06744de3bfced50b8f5810e7847ee789bdd304084d0697ad4064"
+    sha256 mojave: "b6ac8af345cb01755aa77ee97c27205f715b64ba78bbc7b8de8630030a989917"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -31,6 +30,7 @@ class Karchive < Formula
 
   depends_on "qt@5"
   depends_on "xz"
+  depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
@@ -42,11 +42,13 @@ class Karchive < Formula
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
+    args = std_cmake_args + %w[
+      -S .
+      -B build
+      -DBUILD_QCH=ON
+    ]
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -55,8 +57,10 @@ class Karchive < Formula
 
   test do
     ENV.delete "CPATH"
-    args = std_cmake_args
-    args << "-DQt5Core_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Core"}"
+    args = std_cmake_args + %W[
+      -DQt5Core_DIR=#{Formula["qt@5"].opt_lib}/cmake/Qt5Core
+      -DQT_MAJOR_VERSION=5
+    ]
 
     %w[bzip2gzip
        helloworld
