@@ -1,8 +1,8 @@
 class Threadweaver < Formula
   desc "Helper for multithreaded programming"
   homepage "https://api.kde.org/frameworks/threadweaver/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.88/threadweaver-5.88.0.tar.xz"
-  sha256 "b2f3079158a52c8e49ea0989e18a509dc9693f6a26f0739b133bee0f4b02df1f"
+  url "https://download.kde.org/stable/frameworks/5.90/threadweaver-5.90.0.tar.xz"
+  sha256 "e3fd3815b1732e5157d5d7ab2d27dd447a8d60ff50019ae9f0e5665b3ffd30bb"
   license "LGPL-2.0-or-later"
   head "https://invent.kde.org/frameworks/threadweaver.git", branch: "master"
 
@@ -15,8 +15,7 @@ class Threadweaver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/threadweaver"
-    rebuild 2
-    sha256 mojave: "74a110e6cc975f20301403f496afacfd911bdcfb787e7212ed332b65c2af3979"
+    sha256 mojave: "640ebe424b6024b5336242586be1fb51a9e0f6b3c0ce46273acbf13e4ef62629"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,11 +25,13 @@ class Threadweaver < Formula
   depends_on "qt@5"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
+    args = std_cmake_args + %w[
+      -S .
+      -B build
+      -DBUILD_QCH=ON
+    ]
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -39,7 +40,7 @@ class Threadweaver < Formula
 
   test do
     ENV.delete "CPATH"
-    qt5_arg = "-DQt5Core_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Core"}"
+    qt5_arg = "-DQt5Core_DIR=#{Formula["qt@5"].opt_lib}/cmake/Qt5Core"
     system "cmake", (pkgshare/"examples/HelloWorld"), *std_cmake_args, qt5_arg
     system "make"
 
