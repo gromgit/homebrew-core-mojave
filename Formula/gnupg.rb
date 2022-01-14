@@ -1,10 +1,9 @@
 class Gnupg < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.3.tar.bz2"
-  sha256 "5789b86da6a1a6752efb38598f16a77af51170a8494039c3842b085032e8e937"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.4.tar.bz2"
+  sha256 "f3468ecafb1d7f9ad7b51fd1db7aebf17ceb89d2efa8a05cf2f39b4d405402ae"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gnupg/"
@@ -13,8 +12,7 @@ class Gnupg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnupg"
-    rebuild 2
-    sha256 mojave: "d3607c89cc04948b4ba28ed55bf399ab663d0ef75bab7ea76457e28db5718ce2"
+    sha256 mojave: "d04b5714315fd9762bb97d068e46fc719c5d84aa741a52a4fb0e7bf9a942f120"
   end
 
   depends_on "pkg-config" => :build
@@ -34,14 +32,10 @@ class Gnupg < Formula
     depends_on "libidn"
   end
 
-  # Silence warning about /proc.
-  # Remove with the next release.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/890be5f6af88e7913d177af87a50129049e681bb/gnupg/2.3.3-proc-error.patch"
-    sha256 "c4ee02929a03935121b8a2db01e83fbe046a07f104514b2d1cba453c47464204"
-  end
-
   def install
+    libusb = Formula["libusb"]
+    ENV.append "CPPFLAGS", "-I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
+
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
