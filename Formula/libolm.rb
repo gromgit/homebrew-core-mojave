@@ -1,13 +1,13 @@
 class Libolm < Formula
   desc "Implementation of the Double Ratchet cryptographic ratchet"
   homepage "https://gitlab.matrix.org/matrix-org/olm"
-  url "https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.8/olm-3.2.8.tar.gz"
-  sha256 "f566a52e69e1e5ffe0be14bc48062f80bea791fa7bb6c8b2129fa44b67de6ec3"
+  url "https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.10/olm-3.2.10.tar.gz"
+  sha256 "e3be900ce7983f2ce9c4507431d7c784b5ebe09b58f4f8b68e8adabdad010b59"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libolm"
-    sha256 cellar: :any, mojave: "127f0c486c9e2b87fd844a1893151886eef736528e752722d5917e49fba82d00"
+    sha256 cellar: :any, mojave: "221bd8777bc790e485bac0f15c37ada2583ad5bc4aba5fe879fbaeb972b0228f"
   end
 
   depends_on "cmake" => :build
