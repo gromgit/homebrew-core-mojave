@@ -3,8 +3,8 @@ class Libgusb < Formula
 
   desc "GObject wrappers for libusb1"
   homepage "https://github.com/hughsie/libgusb"
-  url "https://people.freedesktop.org/~hughsient/releases/libgusb-0.3.9.tar.xz"
-  sha256 "1f51ebe8c91140cffbd1c4d58602c96b884170cae4c74f6f7e302a91d5b7c972"
+  url "https://people.freedesktop.org/~hughsient/releases/libgusb-0.3.10.tar.xz"
+  sha256 "0eb0b9ab0f8bba0c59631c809c37b616ef34eb3c8e000b0b9b71cf11e4931bdc"
   license "LGPL-2.1-only"
   head "https://github.com/hughsie/libgusb.git", branch: "main"
 
@@ -15,8 +15,7 @@ class Libgusb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgusb"
-    rebuild 1
-    sha256 mojave: "28d7a111d4a16b326da1b855f40a4e006179745a80087bceceabba5a3911ee64"
+    sha256 mojave: "ff6f42ff9518dd842693e25175f391ab5210161517d5202ed73ecbc6e0151f97"
   end
 
   depends_on "gobject-introspection" => :build
