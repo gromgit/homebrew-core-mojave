@@ -1,8 +1,8 @@
 class NodeAT14 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v14.18.2/node-v14.18.2.tar.xz"
-  sha256 "3e8a9ce10f8bcd3628eb6dd049f7f03c84ba9219be6f9743e2221154b9cc680b"
+  url "https://nodejs.org/dist/v14.18.3/node-v14.18.3.tar.xz"
+  sha256 "783ac443cd343dd6c68d2abcf7e59e7b978a6a428f6a6025f9b84918b769d608"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class NodeAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@14"
-    rebuild 3
-    sha256 cellar: :any, mojave: "e000cb1081c56755a8f3b6643d3906adac3a49488e778816b4c4903419da2566"
+    sha256 cellar: :any, mojave: "6cadca859071d0a967f77fcc010159e58931ae3413041cf56f6344ca58877198"
   end
 
   keg_only :versioned_formula
