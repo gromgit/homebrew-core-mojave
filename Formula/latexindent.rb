@@ -1,13 +1,13 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://ctan.org/pkg/latexindent"
-  url "https://github.com/cmhughes/latexindent.pl/archive/V3.13.3.tar.gz"
-  sha256 "cc6df51754f2bed022eaaecb00576162c9a1127c6ca7beb67218ac9278aff132"
+  url "https://github.com/cmhughes/latexindent.pl/archive/V3.14.tar.gz"
+  sha256 "59ad9808a140cb9b6a39b20dae0ce690ce8292491030f2a81a4c36060b49c667"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latexindent"
-    sha256 cellar: :any_skip_relocation, mojave: "1f669d7ec0d0eba620f8675cbf2894623c4420fff9f4c46b637ca50194ee0fd9"
+    sha256 cellar: :any_skip_relocation, mojave: "58d7ea9e99be95e70cd0f5ae2bd9be5dc5e1fd6561d44cb9c0348d77c90e1786"
   end
 
   depends_on "perl"
@@ -80,8 +80,8 @@ class Latexindent < Formula
   end
 
   resource "MRO::Compat" do
-    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/MRO-Compat-0.14_01.tar.gz"
-    sha256 "bc214d7964bc72f5a4015cc6b0d27376071cb64bd955280fea40c046b64d911a"
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/MRO-Compat-0.15.tar.gz"
+    sha256 "0d4535f88e43babd84ab604866215fc4d04398bd4db7b21852d4a31b1c15ef61"
   end
 
   resource "Module::Build" do
