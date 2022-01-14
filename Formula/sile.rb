@@ -1,18 +1,13 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://github.com/sile-typesetter/sile/releases/download/v0.12.0/sile-0.12.0.tar.xz"
-  sha256 "c983a2b32d171ba392191eb29de2c3b433452d6cb514f270b17a7b3889fb6de6"
+  url "https://github.com/sile-typesetter/sile/releases/download/v0.12.1/sile-0.12.1.tar.xz"
+  sha256 "91086ff951322b283fcab178bb9d681460ba50b6dbdeae25dc2055e18bc688b7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d81611b4aac21e41508e2b4e0dbda0bc60a167465bf279b228b28e06df6c47c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "46ab35a88b16fd67f7fbe20e6241b1d51457ec3a06f2ff32aac804b40a0f7d94"
-    sha256 cellar: :any,                 monterey:       "f718a578c47d40862b89f8c1c01ee39426d74e5eaabd1c6a2fe3d58702a48dc7"
-    sha256 cellar: :any,                 big_sur:        "577a2fb134f9d238f97e4ab479991546417bd22d644e78a02f2c6f4b4301b58b"
-    sha256 cellar: :any,                 catalina:       "c53f0f67e11a4c24c0bb6b5b27c00725ebc0497135785220dbef8971d015c5b7"
-    sha256 cellar: :any,                 mojave:         "4dd937145f1e4ff23d779b8e25bcff230fe288da76825b622de7e80a44947426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59653464acc2cf9ed9f230bfd962e38c144b68bf3197f0dc2a9f46cd93f0b6a8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sile"
+    sha256 mojave: "4a67e89c32c1e41888c0ad4d0409543ac4b537db17bce8c4138a105cd226f1e9"
   end
 
   head do
@@ -104,8 +99,8 @@ class Sile < Formula
   end
 
   resource "penlight" do
-    url "https://luarocks.org/manifests/tieske/penlight-1.11.0-1.src.rock"
-    sha256 "4bc3e5a5869313a326fe39f23a6d02c4e13d1780cb4559f0aed04c414b1297cf"
+    url "https://luarocks.org/manifests/tieske/penlight-1.12.0-1.src.rock"
+    sha256 "99e2d88d5539901989f785100c8d216ef8e9461e08f93a850e9ea6abc9952927"
   end
 
   # Depends on luafilesystem and penlight
