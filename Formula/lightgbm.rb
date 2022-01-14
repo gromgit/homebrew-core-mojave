@@ -2,14 +2,13 @@ class Lightgbm < Formula
   desc "Fast, distributed, high performance gradient boosting framework"
   homepage "https://github.com/microsoft/LightGBM"
   url "https://github.com/microsoft/LightGBM.git",
-      tag:      "v3.3.1",
-      revision: "d4851c3381495d9a065d49e848fbf291a408477d"
+      tag:      "v3.3.2",
+      revision: "dce7e58b020bc14b69eefc31546c366971ecb2d9"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lightgbm"
-    rebuild 2
-    sha256 cellar: :any, mojave: "a652eba3e55fac279e1a8d074f53116a315d89439e31ab4c07a2e313278a3b6b"
+    sha256 cellar: :any, mojave: "bc05d633b376671bd77abd54bf0866736224358beb77721bfff2ffa3a6f255a5"
   end
 
   depends_on "cmake" => :build
