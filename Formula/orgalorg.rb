@@ -2,18 +2,14 @@ class Orgalorg < Formula
   desc "Parallel SSH commands executioner and file synchronization tool"
   homepage "https://github.com/reconquest/orgalorg"
   url "https://github.com/reconquest/orgalorg.git",
-      tag:      "1.1.1",
-      revision: "c51061ef46e1ba8e4eafdb07094287721c6a18cd"
+      tag:      "1.2.0",
+      revision: "5024122fb3efaad577fa509e2d17aab1f12217de"
   license "MIT"
   head "https://github.com/reconquest/orgalorg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aef096f46e7f1b3e73550cdf36718bf4b2b9930f7ab492a82665de8f5f1a81df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14f5394a84d3ae2ef72ff633b5afb8e011f43fd216ce5f01ccb23bce6d3ca226"
-    sha256 cellar: :any_skip_relocation, monterey:       "4110c9de1aa1955a423499e00ae4679b16c00c9cd3c0f03dfdeb20d5c86dc0d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8ee602e0813c28324540867783c06e6893e3ea775ea645c091212d90c7c41c9f"
-    sha256 cellar: :any_skip_relocation, catalina:       "6e241d28394d4b0f590088dbd65c06403c460d407885429ba459ab4aa2f6ccb2"
-    sha256 cellar: :any_skip_relocation, mojave:         "b0a92196ed8cf01b592c724da59f22c3695e6799f170301dbee6f4bb1bb95c95"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/orgalorg"
+    sha256 cellar: :any_skip_relocation, mojave: "9ca319cb5a4a8be08e98d283d0fab269658883ffe65cdc86f1eefc016e060cf7"
   end
 
   depends_on "go" => :build
