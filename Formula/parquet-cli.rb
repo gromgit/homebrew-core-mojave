@@ -8,13 +8,9 @@ class ParquetCli < Formula
   head "https://github.com/apache/parquet-mr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ec90d31e13d0630ed26cd3da219a448fafb672a4277ee277d8ab4c1e68fabcc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3c9cf0f2d194f6ea74d86187d07fea91b26a1dba7911d9648eaefa8b6039c6b"
-    sha256 cellar: :any_skip_relocation, monterey:       "22799743778180bab374cc78565237689ae3a6405ded0022c46bd156b8f3cd12"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a0b9c8859d7dfb3c6e66cef92b191b7a4861338e02be1694ba70f86c646e56db"
-    sha256 cellar: :any_skip_relocation, catalina:       "1cd95d2c049e2d049e799f27dda903fb6497d4701f86924fec4ac8470455dae2"
-    sha256 cellar: :any_skip_relocation, mojave:         "f1c5eb930f2c094ba7e3ef80856420b01f96ce197705f5da0b39039a54ffa498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75ce0a3f58329686ecec3060d3ffd715265cdccfc0f80d443833d2a7bd03b812"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/parquet-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9f555d8a9092e3a6d527c5fb8bfed76609502de1b1ad4e274aa1445c3ec5d3fc"
   end
 
   depends_on "maven" => :build
@@ -25,6 +21,13 @@ class ParquetCli < Formula
   resource("test-parquet") do
     url "https://gist.github.com/bayandin/2144b5fc6052153c1a33fd2679d50d95/raw/7d793910a1afd75ee4677f8c327491f7bdd2256b/homebrew.parquet"
     sha256 "5caf572cb0df5ce9d6893609de82d2369b42c3c81c611847b6f921d912040118"
+  end
+
+  # Patches snappy to 1.1.8.3 for MacOS arm64 support, won't be needed in >= 1.13.0
+  # See https://issues.apache.org/jira/browse/PARQUET-2025
+  patch do
+    url "https://github.com/apache/parquet-mr/commit/095c78fec3378189296d38fede1255b0a4d05fd4.patch?full_index=1"
+    sha256 "9a5b54275c2426a56e246bdf4b7a799d5af8efe85c2dcdc3c32e23da3101f9d7"
   end
 
   def install
