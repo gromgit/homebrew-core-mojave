@@ -1,14 +1,14 @@
 class Httpx < Formula
   desc "Fast and multi-purpose HTTP toolkit"
   homepage "https://github.com/projectdiscovery/httpx"
-  url "https://github.com/projectdiscovery/httpx/archive/v1.1.4.tar.gz"
-  sha256 "9726db14c0f13ccd12de84f4766c815100a52fbb755c4fdfc8a6f645daf81241"
+  url "https://github.com/projectdiscovery/httpx/archive/v1.1.5.tar.gz"
+  sha256 "e79dc2cf645c5be833d86aeb355fa4431594b5ca2ec39e0e389a7274f6ba9c7a"
   license "MIT"
-  head "https://github.com/projectdiscovery/httpx.git"
+  head "https://github.com/projectdiscovery/httpx.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/httpx"
-    sha256 cellar: :any_skip_relocation, mojave: "7ca9a4f62bf38abbeec93ad280e828853630eb4e836688fc5a6c2e5c21a17c52"
+    sha256 cellar: :any_skip_relocation, mojave: "1198be4e321115c49d958ee221025de373ad44c20fabb40cf94c42994332ba71"
   end
 
   depends_on "go" => :build
