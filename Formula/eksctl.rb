@@ -2,15 +2,14 @@ class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
   homepage "https://eksctl.io"
   url "https://github.com/weaveworks/eksctl.git",
-      tag:      "0.77.0",
-      revision: "d7e5bc8cb027b6b44aaf7c238988e29a354bf913"
+      tag:      "0.78.0",
+      revision: "a23e50495d0ffe9645575aa524845022aad79c07"
   license "Apache-2.0"
   head "https://github.com/weaveworks/eksctl.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eksctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "92638a590dba633e42180d5559df3bd0134cd7d27a2e78881f19af706405eeff"
+    sha256 cellar: :any_skip_relocation, mojave: "6e91de869f668c25799d562a9c2198e079631401639d4c598bf7ad1db366446f"
   end
 
   depends_on "counterfeiter" => :build
