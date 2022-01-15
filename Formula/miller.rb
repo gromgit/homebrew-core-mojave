@@ -1,30 +1,20 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
   homepage "https://github.com/johnkerl/miller"
-  url "https://github.com/johnkerl/miller/releases/download/v5.10.3/miller-5.10.3.tar.gz"
-  sha256 "bbab4555c2bc207297554b0593599ea2cd030a48ad1350d00e003620e8d3c0ea"
+  url "https://github.com/johnkerl/miller/releases/download/v6.0.0/miller-6.0.0.tar.gz"
+  sha256 "b5e04ccbcb021bebbd758db4ae844712eb4fcfc67e6aaf39e24f751f45cfd0cd"
   license "BSD-2-Clause"
-  head "https://github.com/johnkerl/miller.git"
+  head "https://github.com/johnkerl/miller.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miller"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "bb388ece447ea67dcf572c9feaac56dc28e03b891c8013169f652a6e3f29cb58"
+    sha256 cellar: :any_skip_relocation, mojave: "1ab6d7678e7d5c8ddfab6b591fadaea9fde4a7c5c7a8d10c0cd16dec18343576"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-
-  uses_from_macos "flex" => :build
+  depends_on "go" => :build
 
   def install
-    # Profiling build fails with Xcode 11, remove it
-    inreplace "c/Makefile.am", /noinst_PROGRAMS=\s*mlrg/, ""
-    system "autoreconf", "-fvi"
-
-    system "./configure", "--prefix=#{prefix}", "--disable-silent-rules",
-                          "--disable-dependency-tracking"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
