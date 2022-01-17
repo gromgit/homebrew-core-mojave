@@ -1,14 +1,19 @@
 class Treefrog < Formula
   desc "High-speed C++ MVC Framework for Web Application"
   homepage "https://www.treefrogframework.org/"
-  url "https://github.com/treefrogframework/treefrog-framework/archive/v2.2.0.tar.gz"
-  sha256 "9989b4f2fd5b00b603acdf293d74e0261115bd297d706e6d9af6f3dfdf5c108f"
+  url "https://github.com/treefrogframework/treefrog-framework/archive/v2.3.0.tar.gz"
+  sha256 "e73f2c29d01fb4a41eefd4fc1394c8bf5aaa7d1646fcea88701c6de5621c8d05"
   license "BSD-3-Clause"
   head "https://github.com/treefrogframework/treefrog-framework.git", branch: "master"
 
   livecheck do
     url :head
     regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/treefrog"
+    sha256 mojave: "99a5a3e9d9ec13cb6be24f0284210e88c8ad8d1cf755829fca405bf5c70139ec"
   end
 
   depends_on xcode: :build
