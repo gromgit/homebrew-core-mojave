@@ -6,6 +6,12 @@ class Pdftoipe < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdftoipe"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dbb7585cb02ec846581c649e48d99d0d8f18373268abb29333627f8458547f2b"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "poppler"
 
