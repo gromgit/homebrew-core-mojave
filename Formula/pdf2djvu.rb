@@ -6,6 +6,12 @@ class Pdf2djvu < Formula
   license "GPL-2.0-only"
   head "https://github.com/jwilk/pdf2djvu.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdf2djvu"
+    rebuild 1
+    sha256 mojave: "7be51e74ae72ec5081ac6524be0717ba1c93eabe29206da74a79d19dc49bf319"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "djvulibre"
   depends_on "exiv2"
