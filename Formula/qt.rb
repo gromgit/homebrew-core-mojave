@@ -1,8 +1,8 @@
 class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz"
-  sha256 "e03fffc5c3b5fea09dcc161444df7dfbbe24e8a8ce9377014ec21b66f48d43cd"
+  url "https://download.qt.io/official_releases/qt/6.2/6.2.0/single/qt-everywhere-src-6.2.0.tar.xz"
+  sha256 "60c2dc0ee86dd338e5c5194bd95922abfc097841e3e855693dfb4f5aaf0db4db"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
@@ -15,15 +15,14 @@ class Qt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1a868aaefd8c86c8ef544198d5f9044e8db04474e164b19be904e9152531b5e5"
+    sha256 cellar: :any, mojave: "59141850b0fdb931a8158f7f43fe84e22e75940b6078ff6c114a08ee42a4f1f0"
   end
 
   depends_on "cmake"      => [:build, :test]
   depends_on "ninja"      => :build
   depends_on "node"       => :build
   depends_on "pkg-config" => :build
-  depends_on xcode: :build
+  depends_on xcode: [:build, :test] if MacOS.version <= :mojave
 
   depends_on "assimp"
   depends_on "brotli"
@@ -89,17 +88,6 @@ class Qt < Formula
   end
 
   fails_with gcc: "5"
-
-  # Fix build with assimp 5.1.
-  # Remove with 6.3.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/0bfbbefc45142ec9be248ed66229782138bc7bc1/qt/qtquick3d-assimp-5.1.patch"
-    sha256 "31ae338ebcea3e423f3f10b9bc470ba3b46b0e35dd2b5ae1c067025f6bc0c109"
-    directory "qtquick3d"
-  end
-
-  # Fix build with Xcode 13+ and a performance regression. Already merged and should be removed in next release.
-  patch :DATA
 
   def install
     # FIXME: GN requires clang in clangBasePath/bin
@@ -273,44 +261,3 @@ class Qt < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/qtbase/src/plugins/platforms/cocoa/qiosurfacegraphicsbuffer.h b/src/plugins/platforms/cocoa/qiosurfacegraphicsbuffer.h
-index 5d4b6d6a71..cc7193d8b7 100644
---- a/qtbase/src/plugins/platforms/cocoa/qiosurfacegraphicsbuffer.h
-+++ b/qtbase/src/plugins/platforms/cocoa/qiosurfacegraphicsbuffer.h
-@@ -43,6 +43,7 @@
- #include <qpa/qplatformgraphicsbuffer.h>
- #include <private/qcore_mac_p.h>
- 
-+#include <CoreGraphics/CGColorSpace.h>
- #include <IOSurface/IOSurface.h>
- 
- QT_BEGIN_NAMESPACE
-
----
- qtbase/src/widgets/widgets/qscrollarea.cpp | 11 +++++++----
- 1 file changed, 7 insertions(+), 4 deletions(-)
-
-diff --git a/qtbase/src/widgets/widgets/qscrollarea.cpp b/src/widgets/widgets/qscrollarea.cpp
-index f880240ea72..e8fdadb6483 100644
---- a/qtbase/src/widgets/widgets/qscrollarea.cpp
-+++ b/qtbase/src/qtbase/widgets/widgets/qscrollarea.cpp
-@@ -203,10 +203,13 @@ void QScrollAreaPrivate::updateScrollBars()
-             if (vbarpolicy == Qt::ScrollBarAsNeeded) {
-                 int vbarWidth = vbar->sizeHint().width();
-                 QSize m_hfw = m.expandedTo(min).boundedTo(max);
--                while (h > m.height() && vbarWidth) {
--                    --vbarWidth;
--                    --m_hfw.rwidth();
--                    h = widget->heightForWidth(m_hfw.width());
-+                // is there any point in searching?
-+                if (widget->heightForWidth(m_hfw.width() - vbarWidth) <= m.height()) {
-+                    while (h > m.height() && vbarWidth) {
-+                        --vbarWidth;
-+                        --m_hfw.rwidth();
-+                        h = widget->heightForWidth(m_hfw.width());
-+                    }
-                 }
-                 max = QSize(m_hfw.width(), qMax(m_hfw.height(), h));
-             }
