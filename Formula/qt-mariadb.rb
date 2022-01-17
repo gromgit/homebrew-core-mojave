@@ -1,12 +1,17 @@
 class QtMariadb < Formula
   desc "Qt SQL Database Driver"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.2/6.2.1/submodules/qtbase-everywhere-src-6.2.1.tar.xz"
-  sha256 "2c5f07b5c3ea27d3fc1a46686ea3fb6724f94dddf1fb007de3eb0bdb87429079"
+  url "https://download.qt.io/official_releases/qt/6.2/6.2.0/submodules/qtbase-everywhere-src-6.2.0.tar.xz"
+  sha256 "fdfff0716d093bcb6bcd53746ce1d3c9701a6bf3326d47813866d43949b47769"
   license all_of: ["LGPL-2.1-only", "LGPL-3.0-only"]
 
   livecheck do
     formula "qt"
+  end
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qt-mariadb"
+    sha256 cellar: :any, mojave: "5aa2e3fa1777f54dfa470c01b3ba12a8e0b3874b2ee0a2249518ff2509369f9e"
   end
 
   depends_on "cmake" => [:build, :test]
