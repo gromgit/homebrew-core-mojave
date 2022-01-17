@@ -12,7 +12,6 @@ class Sonarqube < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonarqube"
-    rebuild 3
     sha256 cellar: :any_skip_relocation, mojave: "584e79b50ed3347a42282b40ca2e01da40df708ece55b7625e8799d2f901b691"
   end
 
