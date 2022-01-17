@@ -11,6 +11,12 @@ class Poppler < Formula
     regex(/href=.*?poppler[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poppler"
+    rebuild 1
+    sha256 mojave: "bd8d43f92c5786bf048ca8b2b0bd6538c62d1a42b5e330dee70a53e817d3c94d"
+  end
+
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
