@@ -1,8 +1,8 @@
 class Vips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.12.0/vips-8.12.0.tar.gz"
-  sha256 "8abe9364990b64a95cd4cbe36614b1f8b5d5f0b480e6118128f83ffc2a9ae19d"
+  url "https://github.com/libvips/libvips/releases/download/v8.12.1/vips-8.12.1.tar.gz"
+  sha256 "474d8439244cd26c504812fd623259f806c32553b38d2a54798c9766135f5a5c"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -10,14 +10,25 @@ class Vips < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vips"
+    sha256 mojave: "aee8fd5366018b03b32867760b9a99602172d65bfbdba4df314108c3bc504ef8"
+  end
+
   depends_on "pkg-config" => :build
+  depends_on "cairo"
   depends_on "cfitsio"
   depends_on "cgif"
   depends_on "fftw"
   depends_on "fontconfig"
+  depends_on "freetype"
+  depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
+  depends_on "harfbuzz"
+  depends_on "hdf5"
   depends_on "imagemagick"
+  depends_on "imath"
   depends_on "jpeg-xl"
   depends_on "libexif"
   depends_on "libgsf"
@@ -28,20 +39,26 @@ class Vips < Formula
   depends_on "librsvg"
   depends_on "libspng"
   depends_on "libtiff"
+  depends_on "libxml2"
   depends_on "little-cms2"
   depends_on "mozjpeg"
   depends_on "openexr"
+  depends_on "openjpeg"
   depends_on "openslide"
   depends_on "orc"
   depends_on "pango"
   depends_on "poppler"
   depends_on "webp"
 
+  uses_from_macos "expat"
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "gcc"
     depends_on "gobject-introspection"
   end
+
+  fails_with gcc: "5"
 
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
