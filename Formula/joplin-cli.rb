@@ -7,6 +7,12 @@ class JoplinCli < Formula
   sha256 "5ae8c2cfbb54b55bba18f7cd413ba7bd7ef03412021322b65df53216fd7db4be"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/joplin-cli"
+    rebuild 1
+    sha256 mojave: "c689c12132c91cad474705f115ab8de26fbba42e174d8c2ba29dc961b063ffce"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "node"
   depends_on "sqlite"
