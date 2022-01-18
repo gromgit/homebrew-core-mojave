@@ -3,15 +3,14 @@ class AwsSdkCpp < Formula
   homepage "https://github.com/aws/aws-sdk-cpp"
   # aws-sdk-cpp should only be updated every 10 releases on multiples of 10
   url "https://github.com/aws/aws-sdk-cpp.git",
-      tag:      "1.9.150",
-      revision: "301a4f3f57eea2d80274b6656e36c79fad6fff1a"
+      tag:      "1.9.170",
+      revision: "fb8cbebf2fd62720b65aeff841ad2950e73d8ebd"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-sdk-cpp"
-    rebuild 2
-    sha256 cellar: :any, mojave: "a63c58aca7bc887a05604cbdbde59acfe3a75b851522952200d5c3e3f6ba5c21"
+    sha256 cellar: :any, mojave: "f8d15669d2e8c885e52a0b00e895836d4988867675faf1e613f0e3b0ece52cff"
   end
 
   depends_on "cmake" => :build
@@ -23,12 +22,6 @@ class AwsSdkCpp < Formula
   end
 
   fails_with gcc: "5"
-
-  # Patch for cmake 3.22 (pr-1810)
-  patch do
-    url "https://github.com/aws/aws-sdk-cpp/commit/2dfc61333.patch?full_index=1"
-    sha256 "9646624895be14a4e253a0ac71535dc12eb2b93bdfda9d98aab9736fd9370546"
-  end
 
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
