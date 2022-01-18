@@ -1,8 +1,8 @@
 class Scotch < Formula
   desc "Package for graph partitioning, graph clustering, and sparse matrix ordering"
   homepage "https://gitlab.inria.fr/scotch/scotch"
-  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v6.1.2/scotch-v6.1.2.tar.bz2"
-  sha256 "6e820a64cc2105749e3d1dfbfc9aed33597a85927b6f56d073a6ef602724ea2d"
+  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v6.1.3/scotch-v6.1.3.tar.bz2"
+  sha256 "99f2044b2eca8b2fbf7199dd222748bc4e70a3e65b382b3a067a51194f119fb2"
   license "CECILL-C"
   head "https://gitlab.inria.fr/scotch/scotch.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Scotch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scotch"
-    rebuild 2
-    sha256 cellar: :any, mojave: "33510827e59456b7633249b4f37a9ef48db985dcb27a5cb497acdb57b8a5b2da"
+    sha256 cellar: :any, mojave: "3ac4823c7a4c839df0107d480e54b27bb7eb6c1893fde1008ba03cf8b06f289a"
   end
 
   depends_on "open-mpi"
