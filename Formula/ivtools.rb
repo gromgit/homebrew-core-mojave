@@ -4,10 +4,11 @@ class Ivtools < Formula
   url "https://github.com/vectaport/ivtools/archive/refs/tags/ivtools-2.0.11d.tar.gz"
   sha256 "8c6fe536dff923f7819b4210a706f0abe721e13db8a844395048ded484fb2437"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ivtools"
-    sha256 mojave: "b2125d283aa61c3c7e96b55beaee137af52f1924569a8321e238e7aacc029892"
+    sha256 mojave: "22acd1526aabf05a7f6407537362428e4381f50f9a81f28d8e0929b5a66790ad"
   end
 
   depends_on "ace"
@@ -21,6 +22,9 @@ class Ivtools < Formula
     system "./configure", *std_configure_args, *args
     system "make"
     system "make", "install"
+
+    # Conflicts with dialog
+    mv man3/"Dialog.3", man3/"Dialog_ivtools.3"
   end
 
   test do
