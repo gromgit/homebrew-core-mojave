@@ -3,14 +3,14 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.4.9.tar.gz"
-  sha256 "042a975a2a9b741117cf4f9a05c7bf542d1e6e3abd9f683394e3ff1058869e47"
+  url "https://github.com/aws/aws-cli/archive/2.4.10.tar.gz"
+  sha256 "4959a596c6d7d6f964a5850d6afdd8dd324d892fe386a34304e4e824aa15afc1"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
-    sha256 cellar: :any, mojave: "9f07ce3c002664eabc09b1e075b0b2aec228957d04e19e6f9f9df1d8e0a4cbd4"
+    sha256 cellar: :any, mojave: "fec913c872af5e082ea36663a2fbabc53aa27c09f3ffe06ade37ce7e2e206e71"
   end
 
   depends_on "cmake" => :build
@@ -80,8 +80,8 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/80/be/3ee43b6c5757cabea19e75b8f46eaf05a2f5144107d7db48c7cf3a864f73/urllib3-1.26.7.tar.gz"
-    sha256 "4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece"
+    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
+    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
   end
 
   resource "wcwidth" do
