@@ -3,14 +3,14 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/27/58/5067bb6527c1a1c29198d5f164ea11072c85fc0daf497d8584d1bfde97cc/pdm-1.12.2.tar.gz"
-  sha256 "3e870eb8500e6dc76ec3d905e8d644c17c58c79e03bf54072405cd0b8289eebd"
+  url "https://files.pythonhosted.org/packages/34/0b/c58cc3ecd971a809dd39513c7f5fbd915bbb1e3eaffead26d15c66beddf6/pdm-1.12.6.tar.gz"
+  sha256 "3172844768a353edb23e7b01147d1cbbf8631c8e2e36dfbe02a8201f9ae19da5"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdm"
-    sha256 cellar: :any_skip_relocation, mojave: "114b5a0998c1099d334258ba01857e7645ac7a55bf549521e4c37f2845e4e0a4"
+    sha256 cellar: :any_skip_relocation, mojave: "c7b278f569c9faa7cd6ff411b331b4ba73526e0c5cdedcd5b0d3e4cebd9a2844"
   end
 
   depends_on "python@3.10"
