@@ -1,14 +1,14 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
   homepage "https://webassembly.org/"
-  url "https://github.com/WebAssembly/binaryen/archive/version_104.tar.gz"
-  sha256 "a6acabb159fcc5b1d8c9506f5036dcd1e4446952b572903b256af955e959780d"
+  url "https://github.com/WebAssembly/binaryen/archive/version_105.tar.gz"
+  sha256 "c5ec27c157d3b33ce4360607cc6afe565fa490094237895db2162b3a7d667da2"
   license "Apache-2.0"
   head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/binaryen"
-    sha256 cellar: :any, mojave: "0578f2add8ac5781f7ec78eee4feef3aaa6f9b651685d3bfde9a21706f5e7225"
+    sha256 cellar: :any, mojave: "98111eeb3a8244b9c468057b8164048f4976265b024213d4dfd7d7c02ae2df6b"
   end
 
   depends_on "cmake" => :build
