@@ -1,13 +1,13 @@
 class Gifski < Formula
   desc "Highest-quality GIF encoder based on pngquant"
   homepage "https://gif.ski/"
-  url "https://github.com/ImageOptim/gifski/archive/1.6.0.tar.gz"
-  sha256 "47733f7b90f40a5ed8abd6cf3a88a4fa9edaaf1a94ae1a996782d118ebc6b740"
+  url "https://github.com/ImageOptim/gifski/archive/1.6.1.tar.gz"
+  sha256 "c783b63338c43c51664c48035294ee0adbc69c3d22166e59a8de1a505fb3e671"
   license "AGPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gifski"
-    sha256 cellar: :any, mojave: "63e6a6092d851007374c1c4491c7ff11009447d62c79b2f0e68b8edb8159e78a"
+    sha256 cellar: :any, mojave: "6300f281587479bebbe5f01d98819a33e489843be645f712ad44af475e6fbaf5"
   end
 
   depends_on "pkg-config" => :build
