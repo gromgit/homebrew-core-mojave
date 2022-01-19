@@ -13,7 +13,8 @@ class Mono < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mono"
-    sha256 mojave: "77b29505cc6ced223db6bcd2b3d2413ae2dc7752f491f56b518ff5758430ed4c"
+    rebuild 1
+    sha256 mojave: "2c66c307ff61a1b91e262ee50c2992ec26157b09c50d03aff3fbea502c57065c"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,7 @@ class Mono < Formula
 
   conflicts_with "xsd", because: "both install `xsd` binaries"
   conflicts_with cask: "mono-mdk"
-  conflicts_with cask: "mono-mdk-for-visual-studio"
+  conflicts_with cask: "homebrew/cask-versions/mono-mdk-for-visual-studio"
 
   # xbuild requires the .exe files inside the runtime directories to
   # be executable
