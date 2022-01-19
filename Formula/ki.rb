@@ -1,17 +1,14 @@
 class Ki < Formula
   desc "Kotlin Language Interactive Shell"
   homepage "https://github.com/Kotlin/kotlin-interactive-shell"
-  url "https://github.com/Kotlin/kotlin-interactive-shell/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "46913b17c85711213251948342d0f4d0fec7dc98dd11c1f24eedb0409338e273"
+  url "https://github.com/Kotlin/kotlin-interactive-shell/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "b6e3ccb5ceb5a3e07d79b9f0684cec46ba0c5d4ded2346909048c72c9904d1c1"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/Kotlin/kotlin-interactive-shell.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "05d9b0a276072071f22ea6dd9fd1b3b53b19dff3d94885331e8c85019ff7d12a"
-    sha256 cellar: :any_skip_relocation, big_sur:       "208b95b7de1a9700dae6121fccee564a10080e18be39e4d690cfc04137efc9c7"
-    sha256 cellar: :any_skip_relocation, catalina:      "0d8918ccdeccdccd33c8d3712b67afd9355ac807b87b7e34308b169618dc993e"
-    sha256 cellar: :any_skip_relocation, mojave:        "e142eb441e6c5989155f7c57f257a2d02d42c764fff7974f21b3e82dcc00446a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ki"
+    sha256 cellar: :any_skip_relocation, mojave: "22076bd9e4e97f98807e3e4ca110a3d481853738f45607e3e5716c2bc1cbfb04"
   end
 
   depends_on "maven" => :build
