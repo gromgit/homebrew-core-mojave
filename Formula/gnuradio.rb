@@ -6,8 +6,8 @@ class Gnuradio < Formula
   url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.9.3.0.tar.gz"
   sha256 "4073ac72524f95fed4bda7dd553cb946f66d2e00bd07c4ae7758f1b787d507e0"
   license "GPL-3.0-or-later"
-  revision 1
-  head "https://github.com/gnuradio/gnuradio.git"
+  revision 2
+  head "https://github.com/gnuradio/gnuradio.git", branch: "master"
 
   livecheck do
     url :stable
@@ -15,9 +15,8 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "beb3e5d07af93967affe34ca80b61ec7a252644d3e364cfe8bc6452167af2bf5"
-    sha256 cellar: :any, catalina: "d4fb4229c6862233fd9c67c109e7e73efdba41bdf4f3080c4550c5ed453c7d6f"
-    sha256 cellar: :any, mojave:   "a71eb5fee4303983f6b6c3bbd4b128325cd623cb221f9014656efce0dce69e58"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnuradio"
+    sha256 mojave: "e7f881f1d140590d5756437e07648dcc40d0604e4f3826afc74a34044cf3b381"
   end
 
   depends_on "cmake" => :build
@@ -26,6 +25,7 @@ class Gnuradio < Formula
   depends_on "pybind11" => :build
   depends_on "adwaita-icon-theme"
   depends_on "boost"
+  depends_on "cppzmq"
   depends_on "fftw"
   depends_on "gmp"
   depends_on "gsl"
@@ -70,11 +70,6 @@ class Gnuradio < Formula
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
-  resource "cppzmq" do
-    url "https://raw.githubusercontent.com/zeromq/cppzmq/46fc0572c5e9f09a32a23d6f22fd79b841f77e00/zmq.hpp"
-    sha256 "964031c0944f913933f55ad1610938105a6657a69d1ac5a6dd50e16a679104d5"
-  end
-
   # patch to build with qt6
   # PR ref, https://github.com/gnuradio/gnuradio/pull/5034
   patch do
@@ -101,8 +96,6 @@ class Gnuradio < Formula
       s.gsub! "${CMAKE_C_COMPILER}", ENV.cc
       s.gsub! "${CMAKE_CXX_COMPILER}", ENV.cxx
     end
-
-    resource("cppzmq").stage include.to_s
 
     args = std_cmake_args + %W[
       -DGR_PKG_CONF_DIR=#{etc}/gnuradio/conf.d
