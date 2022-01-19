@@ -3,13 +3,13 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "http://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/d4/0f/3c74d419a1d2e1c683cc174b8a0fac36dfb0d14c8b9b28905e1ca401ec03/mypy-0.920.tar.gz"
-  sha256 "a55438627f5f546192f13255a994d6d1cf2659df48adcf966132b4379fd9c86b"
+  url "https://files.pythonhosted.org/packages/4b/b2/9c71fd84086e96518b1d7a940788d704d3a67aead3e3a7ff9bf8e9b5746d/mypy-0.931.tar.gz"
+  sha256 "0038b21890867793581e4cb0d810829f5fd4441aa75796b53033af3aa30430ce"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mypy"
-    sha256 cellar: :any_skip_relocation, mojave: "b0a3c18dec78eaa5b89c7348635d55c1091e3f0e218d949974b5aec77fc8ff3d"
+    sha256 cellar: :any_skip_relocation, mojave: "c21cdd852f1e93a4c60129184954a0491fb9101a9bb1d0873f96fe68613902fb"
   end
 
   depends_on "python@3.10"
