@@ -3,18 +3,13 @@ require "language/node"
 class Newman < Formula
   desc "Command-line collection runner for Postman"
   homepage "https://www.getpostman.com"
-  url "https://registry.npmjs.org/newman/-/newman-5.3.0.tgz"
-  sha256 "ea4bba024f2c67a18c26db376d25d07039f782a591f333f85774c33df992f378"
+  url "https://registry.npmjs.org/newman/-/newman-5.3.1.tgz"
+  sha256 "b32c2097b5b959223d63277e7d88ecb4820ff13c11fc466884fe2c29081a5cef"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed8aefe21f414463cf04744841f68216c30aa55d1e3cff0177437d670c047ac0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4cdf08e832543aea81630dfd577e6547897b6782201253803528634d9197a74"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e441243ce409d13eaa6c7a3914fcfaf37d5f08ada406fb8dd71e2310d16167c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b2f025e48984e411788de3fa5678e4e70ffc84487d61fb37095ab17a498523e0"
-    sha256 cellar: :any_skip_relocation, catalina:       "b2f025e48984e411788de3fa5678e4e70ffc84487d61fb37095ab17a498523e0"
-    sha256 cellar: :any_skip_relocation, mojave:         "b2f025e48984e411788de3fa5678e4e70ffc84487d61fb37095ab17a498523e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4cdf08e832543aea81630dfd577e6547897b6782201253803528634d9197a74"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newman"
+    sha256 cellar: :any_skip_relocation, mojave: "d1321f090a33c5803009120f0bb2e2ec0eddc2fe97de63e482c8b025a0034db5"
   end
 
   depends_on "node"
