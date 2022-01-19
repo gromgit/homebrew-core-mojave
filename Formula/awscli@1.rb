@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/32/2d/a4e09a2964dabcc51232c8d90bc363491f9ff81f4947409030a05f87ad06/awscli-1.22.10.tar.gz"
-  sha256 "0dd718a1a2f90e98f01a52969d04a9106eac185dfa5d67f3289ecdbbde13ff0d"
+  url "https://files.pythonhosted.org/packages/e6/c7/2a595b4fb638f9903cc144e00a033475684658397fd37d32a9e9b4bd4b7b/awscli-1.22.30.tar.gz"
+  sha256 "48cacf396ec3cfae82e64844d0bddd156e676679cc41df4934571e87a092de15"
   license "Apache-2.0"
 
   livecheck do
@@ -15,8 +15,7 @@ class AwscliAT1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli@1"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8fadba2346514bfccaa85ec0c17a19b267bcbf7fa9e270170f5a6974a7a4d906"
+    sha256 cellar: :any, mojave: "9fb826377acb71e2195d97136ec495ad59a8ff9c701697eaf837614969147e45"
   end
 
   keg_only :versioned_formula
@@ -29,8 +28,8 @@ class AwscliAT1 < Formula
   uses_from_macos "groff"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/26/79/ba027d96c5a670fb0715f483afa4eff5ecb2456aba302b7367b12b282453/botocore-1.23.10.tar.gz"
-    sha256 "0adda9a4a95221027312eaaee0ec9fe2239fb2f285fced3ddca54b1310b864ee"
+    url "https://files.pythonhosted.org/packages/af/eb/defb1a74e7d3b0a62b5d4688a661d6ac9f1b1593182fa1470a6916730eb0/botocore-1.23.30.tar.gz"
+    sha256 "c6a60cffe095296b78ff03adae0fdf2875210a74531a0d1f68206091203573fe"
   end
 
   resource "colorama" do
@@ -74,8 +73,8 @@ class AwscliAT1 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/80/be/3ee43b6c5757cabea19e75b8f46eaf05a2f5144107d7db48c7cf3a864f73/urllib3-1.26.7.tar.gz"
-    sha256 "4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece"
+    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
+    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
   end
 
   def install
