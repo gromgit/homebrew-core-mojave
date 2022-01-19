@@ -13,7 +13,8 @@ class Omniorb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/omniorb"
-    sha256 cellar: :any, mojave: "3509f7a64d8fef3e61b8ef37cdc87972f8576312ab9ebdc33c02fb507da8fba3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d6143d3cb3ec76d52fe8eb1d9761786c2c263b3dc935f10a9fc54b62102c0325"
   end
 
   depends_on "pkg-config" => :build
@@ -25,17 +26,20 @@ class Omniorb < Formula
   end
 
   def install
+    ENV["PYTHON"] = which("python3")
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
 
     resource("bindings").stage do
-      system "./configure", "--prefix=#{prefix}", "PYTHON=python3"
+      system "./configure", "--prefix=#{prefix}"
       system "make", "install"
     end
   end
 
   test do
     system "#{bin}/omniidl", "-h"
+    system "#{bin}/omniidl", "-bcxx", "-u"
+    system "#{bin}/omniidl", "-bpython", "-u"
   end
 end
