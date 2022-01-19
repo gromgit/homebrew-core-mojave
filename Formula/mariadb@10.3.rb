@@ -24,8 +24,8 @@ class MariadbAT103 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.3"
-    rebuild 3
-    sha256 mojave: "8abda244d385f10a1418deac525a3eca84a0faff92e04dc54d7fb59d76702a80"
+    rebuild 4
+    sha256 mojave: "ba10de8d1860924cc2074d6b295f20bfe88544333e7cedcf0f29b01281aa6a00"
   end
 
   keg_only :versioned_formula
@@ -165,7 +165,7 @@ class MariadbAT103 < Formula
   end
 
   service do
-    run [opt_bin/"mysqld_safe", "--datadir", var/"mysql"]
+    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
     keep_alive true
     working_dir var
   end
