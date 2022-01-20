@@ -4,10 +4,19 @@ class Envoy < Formula
   # Switch to a tarball when the following issue is resolved:
   # https://github.com/envoyproxy/envoy/issues/2181
   url "https://github.com/envoyproxy/envoy.git",
-      tag:      "v1.20.1",
-      revision: "ea23f47b27464794980c05ab290a3b73d801405e"
+      tag:      "v1.21.0",
+      revision: "a9d72603c68da3a10a1c0d021d01c7877e6f2a30"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
+
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf22e01df08c56e453469d1b9057bc4735bbbcb15edb6e81a557a10e103897a0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "82a538bffdfe021e54774e9713351c8555bbb7b2766c6f9b96998918fdcaaa11"
+    sha256 cellar: :any_skip_relocation, monterey:       "da08bf14e846b5f09e0f2e17866e55ccaf5412b726b62f2c17d0836fc660126d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "327d71692facbe6dcaf66e07ddb718653d4f8d0dcc2bf0121cd6af4f0a874e19"
+    sha256 cellar: :any_skip_relocation, catalina:       "89cd16d7a6a786bbaaf9acb65617c4783dc71a2f222d0a73141e1a9c8bc65985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d0b57f5e87b1e480267adbb5e49a1d96d967323ea97f283c9255c4d3e1f490d"
+  end
 
   depends_on "automake" => :build
   depends_on "bazelisk" => :build
@@ -24,7 +33,7 @@ class Envoy < Formula
     # GCC added as a test dependency to work around Homebrew issue. Otherwise `brew test` fails.
     # CompilerSelectionError: envoy cannot be built with any available compilers.
     depends_on "gcc@9" => [:build, :test]
-    depends_on "python@3.9" => :build
+    depends_on "python@3.10" => :build
   end
 
   # https://github.com/envoyproxy/envoy/tree/main/bazel#supported-compiler-versions
@@ -42,7 +51,7 @@ class Envoy < Formula
     env_path = if OS.mac?
       "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin"
     else
-      "#{Formula["python@3.9"].opt_libexec}/bin:#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin"
+      "#{Formula["python@3.10"].opt_bin}:#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin"
     end
     args = %W[
       --compilation_mode=opt
@@ -52,6 +61,12 @@ class Envoy < Formula
       --action_env=PATH=#{env_path}
       --host_action_env=PATH=#{env_path}
     ]
+
+    if OS.linux?
+      # Disable extension `tcp_stats` which requires Linux headers >= 4.6
+      # It's a directive with absolute path `#include </usr/include/linux/tcp.h>`
+      args << "--//source/extensions/transport_sockets/tcp_stats:enabled=false"
+    end
 
     system Formula["bazelisk"].opt_bin/"bazelisk", "build", *args, "//source/exe:envoy-static"
     bin.install "bazel-bin/source/exe/envoy-static" => "envoy"
