@@ -13,12 +13,13 @@ class Msitools < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "a8efd95e41c4b40428c1e2c6f2b3abafa76f99781d26c64cbe0ca80f27b8ab06"
-    sha256 monterey:      "1539a360dda3393169191eb9e2d97822814c9d84478bf788d4a80508966b9f58"
-    sha256 big_sur:       "ec00cadc6477adbd6c6b5ddd107586b31cfe8ecc78f9df7ff264c5b3b2990944"
-    sha256 catalina:      "f757655d692ef4acf1192c6fa4459a77b4480e0303589b158b862a0a1497afef"
-    sha256 mojave:        "ad7526c586e2bb15a4325798af37c278448315fe4434daa6553258a00ac13cd4"
-    sha256 x86_64_linux:  "c2113c131d937a5d93c81c7f0a1cb8b301bae73353e986b048ccfd45c525e811"
+    sha256 arm64_monterey: "1738ad06a080d802f991037d76fe78069ba16e601a27ef5a2c71a65463985db0"
+    sha256 arm64_big_sur:  "a8efd95e41c4b40428c1e2c6f2b3abafa76f99781d26c64cbe0ca80f27b8ab06"
+    sha256 monterey:       "1539a360dda3393169191eb9e2d97822814c9d84478bf788d4a80508966b9f58"
+    sha256 big_sur:        "ec00cadc6477adbd6c6b5ddd107586b31cfe8ecc78f9df7ff264c5b3b2990944"
+    sha256 catalina:       "f757655d692ef4acf1192c6fa4459a77b4480e0303589b158b862a0a1497afef"
+    sha256 mojave:         "ad7526c586e2bb15a4325798af37c278448315fe4434daa6553258a00ac13cd4"
+    sha256 x86_64_linux:   "c2113c131d937a5d93c81c7f0a1cb8b301bae73353e986b048ccfd45c525e811"
   end
 
   depends_on "bison" => :build
