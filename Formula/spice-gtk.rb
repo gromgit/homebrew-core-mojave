@@ -13,10 +13,12 @@ class SpiceGtk < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "33653df442811987bf281eae7be51394129b2640fb934bb83a29aab64e89d9ec"
-    sha256 big_sur:       "e51c47902eb3a8d5bf146330d3ed7a8965ce66b3d6d425ef5a39ebf4965c3a2c"
-    sha256 catalina:      "a6346dd1e7a827900d7dbeaa647588fa56af3dfc72dec3686241eff1f94deaca"
-    sha256 mojave:        "512587bfec950e40a3df1f3254427ca736af13c4e222701f32ca7a53c50d4c0f"
+    sha256 arm64_monterey: "b1ab5bfc60085e400a90a30e44d8b4a4f5310b3c5b53097865b10ba2c270b86c"
+    sha256 arm64_big_sur:  "33653df442811987bf281eae7be51394129b2640fb934bb83a29aab64e89d9ec"
+    sha256 monterey:       "f43ab21e3f982f1957031d112de7e4361e61a3a8c899e04e88bd0ffe1ac75826"
+    sha256 big_sur:        "e51c47902eb3a8d5bf146330d3ed7a8965ce66b3d6d425ef5a39ebf4965c3a2c"
+    sha256 catalina:       "a6346dd1e7a827900d7dbeaa647588fa56af3dfc72dec3686241eff1f94deaca"
+    sha256 mojave:         "512587bfec950e40a3df1f3254427ca736af13c4e222701f32ca7a53c50d4c0f"
   end
 
   depends_on "gobject-introspection" => :build
