@@ -6,12 +6,13 @@ class Libhandy < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "67c5f4982894646b07942c0f387443c2aac2813167aaa3de9197cd760fc93e5b"
-    sha256 monterey:      "9846518bcebff7818836942e043f03f4e7e8ac07f618646b6d0396407085e1c9"
-    sha256 big_sur:       "337f9be107164821d8436c443c20dcb79d66bc3268fac909ace2878432bcc652"
-    sha256 catalina:      "2e04f3f8004ac544fea47905a65a6597908b8ced6dadd5c330d87b8a310951d9"
-    sha256 mojave:        "a8972dc9efc8c2d6a6fe0f038ebda941a741c3e0d7be57b51b9c634120d1a479"
-    sha256 x86_64_linux:  "17515106b873bbdbc591ca0daca12c043485e6a52b478cff912f9a835620c825"
+    sha256 arm64_monterey: "a1bc08ba132d264744d3f8f5101d6997bae896e4ce3f0d420c9d2ace092aec2d"
+    sha256 arm64_big_sur:  "67c5f4982894646b07942c0f387443c2aac2813167aaa3de9197cd760fc93e5b"
+    sha256 monterey:       "9846518bcebff7818836942e043f03f4e7e8ac07f618646b6d0396407085e1c9"
+    sha256 big_sur:        "337f9be107164821d8436c443c20dcb79d66bc3268fac909ace2878432bcc652"
+    sha256 catalina:       "2e04f3f8004ac544fea47905a65a6597908b8ced6dadd5c330d87b8a310951d9"
+    sha256 mojave:         "a8972dc9efc8c2d6a6fe0f038ebda941a741c3e0d7be57b51b9c634120d1a479"
+    sha256 x86_64_linux:   "17515106b873bbdbc591ca0daca12c043485e6a52b478cff912f9a835620c825"
   end
 
   depends_on "gettext" => :build
