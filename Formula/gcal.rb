@@ -4,7 +4,7 @@ class Gcal < Formula
   url "https://ftp.gnu.org/gnu/gcal/gcal-4.1.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcal/gcal-4.1.tar.xz"
   sha256 "91b56c40b93eee9bda27ec63e95a6316d848e3ee047b5880ed71e5e8e60f61ab"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6bed6280c29bc0e46bfbc4c1a3c48e2199713bfd4e51ca2f831d4a9c353d0f6c"
@@ -17,9 +17,19 @@ class Gcal < Formula
     sha256 cellar: :any_skip_relocation, sierra:         "f120585bc8538eb1ab7c71ec240b150472cbf7b42e7fc6a3f008c15104d81e7c"
     sha256 cellar: :any_skip_relocation, el_capitan:     "c94d7232ff507f387fad5ba5fb0d09b1548e695cf7e1da284846a5ee828f2d03"
     sha256 cellar: :any_skip_relocation, yosemite:       "b50b10e57eea6d6fa84c35769401b0da3bde02bade28e137bc1263d492c60c3f"
+    sha256                               x86_64_linux:   "c50c7177f7d542efece33e069e918ecff4fcd08ae288d5b7ed9d0f232ff6daa4"
+  end
+
+  uses_from_macos "texinfo" => :build
+
+  on_linux do
+    depends_on "ncurses"
   end
 
   def install
+    # @setshortcontentsaftertitlepage was removed in Texinfo 6.3
+    inreplace "doc/en/gcal.texi", "@setshortcontentsaftertitlepage\n", "" if OS.linux?
+
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "install"
     system "make", "-C", "doc/en", "html"
