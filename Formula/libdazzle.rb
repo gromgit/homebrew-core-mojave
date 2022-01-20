@@ -6,12 +6,13 @@ class Libdazzle < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "19a89188d9106e7dcfd8942639c805be8ffb3be4bf2c8ac829ae523ac865c412"
-    sha256 monterey:      "b69d385c3373db9a8e3b3d3896323a8e07cba96dc17e598c33b6f7825a194971"
-    sha256 big_sur:       "1e262a7cfae434d1cefd1534d93789a31d0d67057cb471dfac8a26b7f2d3b4a9"
-    sha256 catalina:      "b8048d5e661054c8052a007c839c3e2d958a382385a0f43407147942b1ccac3f"
-    sha256 mojave:        "33f973cd8094b7986075211f305fa98aac38f55954968f4b1100e47b380fca77"
-    sha256 x86_64_linux:  "a9efd6ca0568517831040da926c622c391bcc02eb38ceae3c5e2aa2e6f16a28f"
+    sha256 arm64_monterey: "b07dec42cc44260933cec2ef51a23ff1cfaeb4692232ef770cd0da09a368609e"
+    sha256 arm64_big_sur:  "19a89188d9106e7dcfd8942639c805be8ffb3be4bf2c8ac829ae523ac865c412"
+    sha256 monterey:       "b69d385c3373db9a8e3b3d3896323a8e07cba96dc17e598c33b6f7825a194971"
+    sha256 big_sur:        "1e262a7cfae434d1cefd1534d93789a31d0d67057cb471dfac8a26b7f2d3b4a9"
+    sha256 catalina:       "b8048d5e661054c8052a007c839c3e2d958a382385a0f43407147942b1ccac3f"
+    sha256 mojave:         "33f973cd8094b7986075211f305fa98aac38f55954968f4b1100e47b380fca77"
+    sha256 x86_64_linux:   "a9efd6ca0568517831040da926c622c391bcc02eb38ceae3c5e2aa2e6f16a28f"
   end
 
   depends_on "gobject-introspection" => :build
