@@ -8,11 +8,12 @@ class Dnsviz < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "e70c11a9ccb3daf97c76cab2632520d2abac3678dd5712cba719e67d921e65cb"
-    sha256 cellar: :any, monterey:      "b80d337b9793d9de352301d1822278bff183099924dd36e920db62e4a8bba78c"
-    sha256 cellar: :any, big_sur:       "dfff42e474d4c0e7f26d2a87161f85478646745d2528fcffb38859401f1b6e6b"
-    sha256 cellar: :any, catalina:      "4323bcd148cdada2c26229d2bc0b9b63236d5ba4e1cae635272a7a599cfbd9d4"
-    sha256 cellar: :any, mojave:        "5580679f91243fb6d6823f2ba1d55e468983734e9753f94e70c455bd70c3b072"
+    sha256 cellar: :any, arm64_monterey: "56c68dbe7136d4dd190c8f4ca523dc3874f655aba5be6212f266758491d73b8d"
+    sha256 cellar: :any, arm64_big_sur:  "e70c11a9ccb3daf97c76cab2632520d2abac3678dd5712cba719e67d921e65cb"
+    sha256 cellar: :any, monterey:       "b80d337b9793d9de352301d1822278bff183099924dd36e920db62e4a8bba78c"
+    sha256 cellar: :any, big_sur:        "dfff42e474d4c0e7f26d2a87161f85478646745d2528fcffb38859401f1b6e6b"
+    sha256 cellar: :any, catalina:       "4323bcd148cdada2c26229d2bc0b9b63236d5ba4e1cae635272a7a599cfbd9d4"
+    sha256 cellar: :any, mojave:         "5580679f91243fb6d6823f2ba1d55e468983734e9753f94e70c455bd70c3b072"
   end
 
   depends_on "pkg-config" => :build
