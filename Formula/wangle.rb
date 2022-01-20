@@ -1,14 +1,14 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://github.com/facebook/wangle/releases/download/v2022.01.03.00/wangle-v2022.01.03.00.tar.gz"
-  sha256 "bce2875bb6d665eabc36bb0359300a934f454a3b41093eed59d963917701a1b7"
+  url "https://github.com/facebook/wangle/releases/download/v2022.01.17.00/wangle-v2022.01.17.00.tar.gz"
+  sha256 "64ef567ed331cc6c3f9107a344d347e795beb2cb61d255e46130b1f5ead25cb3"
   license "Apache-2.0"
   head "https://github.com/facebook/wangle.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wangle"
-    sha256 cellar: :any, mojave: "8cb9ade68e6e2acb37bd21cfee66789c34b9488a85ab81a20ec3455badd7fbdd"
+    sha256 cellar: :any, mojave: "d036c995519aeb97ed7c4c208bc0d9460bafb7b3b3c8a6836f22da8fb00ac045"
   end
 
   depends_on "cmake" => :build
@@ -77,14 +77,14 @@ class Wangle < Formula
     port = free_port
     ohai "Starting EchoServer on port #{port}"
     fork { exec testpath/"EchoServer", "-port", port.to_s }
-    sleep 3
+    sleep 10
 
     require "pty"
     output = ""
     PTY.spawn(testpath/"EchoClient", "-port", port.to_s) do |r, w, pid|
       ohai "Sending data via EchoClient"
       w.write "Hello from Homebrew!\nAnother test line.\n"
-      sleep 3
+      sleep 20
       Process.kill "TERM", pid
       begin
         ohai "Reading received data"
