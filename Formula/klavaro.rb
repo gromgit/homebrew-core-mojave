@@ -11,11 +11,12 @@ class Klavaro < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "f8134898ced1370ca151f5ed12042f5ea38a527f715369b6e59ebc7b1500d616"
-    sha256 monterey:      "0cecac2787231738ec7e647f32f06171118d243c941160049611de7cc7cb0c52"
-    sha256 big_sur:       "d6d1c7aaf96acb9061577df307bb98cb4d0b87e28b930d3a875b551d498d9f6e"
-    sha256 catalina:      "76b1fc9787963e805dfe796c68450265d129797867bc1ac13a66bd489514cd32"
-    sha256 mojave:        "886f52a4f91c189d2f5a3f9c68d2490842f0cb0d66f2d5d8b904b104c56fdf07"
+    sha256 arm64_monterey: "a961d4e3a5b19f56257c164d72795209975d95063710c2cca9bd01f2b33ca19c"
+    sha256 arm64_big_sur:  "f8134898ced1370ca151f5ed12042f5ea38a527f715369b6e59ebc7b1500d616"
+    sha256 monterey:       "0cecac2787231738ec7e647f32f06171118d243c941160049611de7cc7cb0c52"
+    sha256 big_sur:        "d6d1c7aaf96acb9061577df307bb98cb4d0b87e28b930d3a875b551d498d9f6e"
+    sha256 catalina:       "76b1fc9787963e805dfe796c68450265d129797867bc1ac13a66bd489514cd32"
+    sha256 mojave:         "886f52a4f91c189d2f5a3f9c68d2490842f0cb0d66f2d5d8b904b104c56fdf07"
   end
 
   depends_on "intltool" => :build
