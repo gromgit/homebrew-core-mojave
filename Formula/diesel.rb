@@ -3,8 +3,8 @@ class Diesel < Formula
   homepage "https://diesel.rs"
   url "https://github.com/diesel-rs/diesel/archive/v1.4.8.tar.gz"
   sha256 "229b40ba777c2728430112c6e89d591a62198851890b2d0a5cab3472effba240"
-  license "Apache-2.0"
-  head "https://github.com/diesel-rs/diesel.git"
+  license any_of: ["Apache-2.0", "MIT"]
+  head "https://github.com/diesel-rs/diesel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "85be5b41c363303961b15c603535645e6b96e4824224431d08b50f668ea35aa6"
