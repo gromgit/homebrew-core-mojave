@@ -1,8 +1,8 @@
 class Trino < Formula
   desc "Distributed SQL query engine for big data"
   homepage "https://trino.io"
-  url "https://search.maven.org/remotecontent?filepath=io/trino/trino-server/365/trino-server-365.tar.gz"
-  sha256 "8c47154f5a8d8b9d8f986fb528a7521d4c84d7633d5c29bf01157e678ee7baa4"
+  url "https://search.maven.org/remotecontent?filepath=io/trino/trino-server/368/trino-server-368.tar.gz"
+  sha256 "794a7df6faae51895183b52c6d7f36f0a9715140fab317dac5400f71729c05cd"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Trino < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0abd555023f06d94a1b15007cf1e15605190e491a878af49a24da8c184d6415d"
+    sha256 cellar: :any_skip_relocation, all: "d7dd44d6043f605da64b0eb8cff7f592eeabc8833de5561ef4c20dcc06219d92"
   end
 
   depends_on "gnu-tar" => :build
@@ -20,13 +20,13 @@ class Trino < Formula
   depends_on "openjdk"
 
   resource "trino-src" do
-    url "https://github.com/trinodb/trino/archive/365.tar.gz", using: :nounzip
-    sha256 "63bb13d004920e7c4f555ef5194ed474861e8a82e7be09c444c312ebe68a9c44"
+    url "https://github.com/trinodb/trino/archive/368.tar.gz", using: :nounzip
+    sha256 "c3dc2c8befc0b1d4ac0ebaf1560cd1caa22426a34acd35fac55bdf898a62965c"
   end
 
   resource "trino-cli" do
-    url "https://search.maven.org/remotecontent?filepath=io/trino/trino-cli/365/trino-cli-365-executable.jar"
-    sha256 "38654308bb3a84402360b616a71d1b68fd6a5f75930165a40b30e43f9a09d5c6"
+    url "https://search.maven.org/remotecontent?filepath=io/trino/trino-cli/368/trino-cli-368-executable.jar"
+    sha256 "87956d931fcd4fc4e7305d85dafd94c13646f9630808632f5d5ed5f1240548d8"
   end
 
   def install
