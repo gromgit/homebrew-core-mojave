@@ -1,14 +1,14 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/v2022.01.03.00.tar.gz"
-  sha256 "364ebc7087487a1780636e4be8a08e51272dde26dc9ff89f4e785483f64925cc"
+  url "https://github.com/facebook/folly/archive/v2022.01.17.00.tar.gz"
+  sha256 "22e774d9545764d8f83a1502c4b998e59f544fa5f9776c9c0389c4d51f0b87aa"
   license "Apache-2.0"
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/folly"
-    sha256 cellar: :any, mojave: "14542ede1ba84e53376a8a94a631c8df199d0014c9b96437b315ce2c97dee352"
+    sha256 cellar: :any, mojave: "0f1303cf481af576f5c6c53cca27029bfbb47cd540320b7e21bdefd58021d411"
   end
 
   depends_on "cmake" => :build
