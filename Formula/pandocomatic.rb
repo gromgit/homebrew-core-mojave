@@ -6,7 +6,8 @@ class Pandocomatic < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1773c8a03cb393930e09490dd4d2897be016ab6c0d63a59628d2f0aaab73b2c8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1b44f290cd904b2100f258a322e255c9699bcd63e61c275a4203f93ab07f198b"
   end
 
   depends_on "pandoc"
@@ -28,7 +29,8 @@ class Pandocomatic < Formula
     EOS
     expected_html = <<~EOS
       <h1 id="homebrew">Homebrew</h1>
-      <p>A package manager for humans. Cats should take a look at Tigerbrew.</p>
+      <p>A package manager for humans. Cats should take a look at
+      Tigerbrew.</p>
     EOS
     system "#{bin}/pandocomatic", "-i", "test.md", "-o", "test.html"
     assert_equal expected_html, (testpath/"test.html").read
