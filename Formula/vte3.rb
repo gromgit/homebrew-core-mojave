@@ -6,12 +6,13 @@ class Vte3 < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "805b98e4a5b77ac8385fdf15c555bdbc6cfa19fa586e140d7f030366c80b1f69"
-    sha256 monterey:      "3967df10f8100cc5a5e99f740b6cade8d3f58fcb9589cc974fd6292a60a2fa4e"
-    sha256 big_sur:       "80db6f9c0b62cd99beaf9eaadde7be8cfe3c09a54eb9b385bd103891d7a12af8"
-    sha256 catalina:      "ad7a7e195ce43afdf30eff81f83e606b79e78db8e6ed39f0370ef34ebeeb39e4"
-    sha256 mojave:        "2404d321dc1eb3e61c5f6282c214395beae288e97ae62d6d6b5afe3edd9b7adf"
-    sha256 x86_64_linux:  "fb813f9bc1317086d4e1374aa003f0796084aeabc85fa077a40e0a785b877a54"
+    sha256 arm64_monterey: "9f516a4870878d39bf2913997df595b7e153829c3e3aee764a0e81bdba3c6152"
+    sha256 arm64_big_sur:  "805b98e4a5b77ac8385fdf15c555bdbc6cfa19fa586e140d7f030366c80b1f69"
+    sha256 monterey:       "3967df10f8100cc5a5e99f740b6cade8d3f58fcb9589cc974fd6292a60a2fa4e"
+    sha256 big_sur:        "80db6f9c0b62cd99beaf9eaadde7be8cfe3c09a54eb9b385bd103891d7a12af8"
+    sha256 catalina:       "ad7a7e195ce43afdf30eff81f83e606b79e78db8e6ed39f0370ef34ebeeb39e4"
+    sha256 mojave:         "2404d321dc1eb3e61c5f6282c214395beae288e97ae62d6d6b5afe3edd9b7adf"
+    sha256 x86_64_linux:   "fb813f9bc1317086d4e1374aa003f0796084aeabc85fa077a40e0a785b877a54"
   end
 
   depends_on "gobject-introspection" => :build
