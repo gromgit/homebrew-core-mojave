@@ -1,14 +1,13 @@
 class P11Kit < Formula
   desc "Library to load and enumerate PKCS#11 modules"
   homepage "https://p11-glue.freedesktop.org"
-  url "https://github.com/p11-glue/p11-kit/releases/download/0.24.0/p11-kit-0.24.0.tar.xz"
-  sha256 "81e6140584f635e4e956a1b93a32239acf3811ff5b2d3a5c6094e94e99d2c685"
+  url "https://github.com/p11-glue/p11-kit/releases/download/0.24.1/p11-kit-0.24.1.tar.xz"
+  sha256 "d8be783efd5cd4ae534cee4132338e3f40f182c3205d23b200094ec85faaaef8"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/p11-kit"
-    sha256 mojave: "e3b8c832d24251d8441b54ed6c3b11a4f883650ca91f0a44d369f2d17ec67855"
+    sha256 mojave: "6f6eff31b899e7e34ffb6c5fc6f73c49f2d6c0be9afcceb533d9118eeaf589e0"
   end
 
   head do
