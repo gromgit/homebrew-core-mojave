@@ -15,12 +15,13 @@ class Goffice < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "e571776d6027505872945c458da49905765f260bc76c197f83565ff1f9c06a6b"
-    sha256 monterey:      "d15ea11e14aac441e2fc89b977e5799d6248ec3dd4a89b8098c3a4a30f1e37a9"
-    sha256 big_sur:       "4cbc19a7ea37b8d511e2c908ab810c5655d76af9f13cffbaafdc39bac01ad009"
-    sha256 catalina:      "b21162268cc6c6dc2bdb7c63f6ea7b95eb3db9228f75536b98bf7fabff4ea9e8"
-    sha256 mojave:        "e7e8f0d817617e0b4450bc77905d988cd06918e45992881eeaba24c61b2e4030"
-    sha256 x86_64_linux:  "624e24a561aa035fec52a249672fc38368754cb64c00f4b2b72e22bb53fa0f7b"
+    sha256 arm64_monterey: "b26fd038ad12eb20f186156cb361ef582bf2dbc159e346d0dbfedb3f4e7c3dad"
+    sha256 arm64_big_sur:  "e571776d6027505872945c458da49905765f260bc76c197f83565ff1f9c06a6b"
+    sha256 monterey:       "d15ea11e14aac441e2fc89b977e5799d6248ec3dd4a89b8098c3a4a30f1e37a9"
+    sha256 big_sur:        "4cbc19a7ea37b8d511e2c908ab810c5655d76af9f13cffbaafdc39bac01ad009"
+    sha256 catalina:       "b21162268cc6c6dc2bdb7c63f6ea7b95eb3db9228f75536b98bf7fabff4ea9e8"
+    sha256 mojave:         "e7e8f0d817617e0b4450bc77905d988cd06918e45992881eeaba24c61b2e4030"
+    sha256 x86_64_linux:   "624e24a561aa035fec52a249672fc38368754cb64c00f4b2b72e22bb53fa0f7b"
   end
 
   head do
