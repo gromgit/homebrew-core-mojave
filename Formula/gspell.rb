@@ -8,6 +8,7 @@ class Gspell < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gspell"
+    rebuild 1
     sha256 mojave: "1680078a69b7161a4af8fde5da79ea709642bcac95346bff7f33b68eea9da967"
   end
 
