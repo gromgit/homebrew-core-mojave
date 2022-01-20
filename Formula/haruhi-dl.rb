@@ -17,6 +17,8 @@ class HaruhiDl < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "127ff0efc125444133103fd03f0f8b51c2492b1cf9af89db62eb78db12fabc94"
   end
 
+  deprecate! date: "2022-01-15", because: :deprecated_upstream
+
   depends_on "python@3.10"
 
   def install
