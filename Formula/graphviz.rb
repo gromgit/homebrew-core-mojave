@@ -6,11 +6,12 @@ class Graphviz < Formula
       revision: "ca43e4c6a217650447e2928c2e9cb493c73ebd7d"
   license "EPL-1.0"
   version_scheme 1
-  head "https://gitlab.com/graphviz/graphviz.git"
+  head "https://gitlab.com/graphviz/graphviz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphviz"
-    sha256 mojave: "2dc2c30239b4a30efd2194303978a847af7766557d342ae2bfbe768ea71c307d"
+    rebuild 1
+    sha256 mojave: "f292e8a39deebcc125a758f5d0fdc015ab0b05c55c2e15cb923f0355f9414c28"
   end
 
   depends_on "autoconf" => :build
