@@ -12,7 +12,8 @@ class NodeAT16 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@16"
-    sha256 cellar: :any, mojave: "df918c4a5da9ad41e42d49a187851f831da67988d951d1cbd60ccec4e85db235"
+    rebuild 1
+    sha256 cellar: :any, mojave: "34d0e90b14cb8facca67803cac8115d5394916c62624d552dbd22180cd6bee44"
   end
 
   keg_only :versioned_formula
