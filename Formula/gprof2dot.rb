@@ -6,15 +6,16 @@ class Gprof2dot < Formula
   url "https://files.pythonhosted.org/packages/0f/80/11d3ec1703cc61606ddc68851747d1d1df3700d5e6c2b559af6dbeb398c5/gprof2dot-2021.2.21.tar.gz"
   sha256 "1223189383b53dcc8ecfd45787ac48c0ed7b4dbc16ee8b88695d053eea1acabf"
   license "LGPL-3.0-or-later"
-  head "https://github.com/jrfonseca/gprof2dot.git"
+  head "https://github.com/jrfonseca/gprof2dot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ff5a7c93c9ee8fda75fb559b15771a9833e232678ada2f36f5d378d86ec18e11"
-    sha256 cellar: :any_skip_relocation, monterey:      "8ed5194093f519cf56d1631cf17fd36769a40f5a9bfbddff7b91f3ba3b31c0fc"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7fde10f750d764840f63e58ffbeab678c565859810288d7bd3b6978d50bcd655"
-    sha256 cellar: :any_skip_relocation, catalina:      "5c47790338ce21e3a7cbe32e9c366ddf1c451057d72bfe6f9c09ffb62d0b18c6"
-    sha256 cellar: :any_skip_relocation, mojave:        "6a2ab69926fa5a54cb4f263f9f99398292bdb7aaaf252a34f6d6ba412c627599"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "048208c256d6724196a87002d5058b0dd29c0df771d53c5c4c11a7b3a10e6a85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0587426a517de3e2154c948a3bc480c9bd2b585dc84fe32ea30364743c90461d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ff5a7c93c9ee8fda75fb559b15771a9833e232678ada2f36f5d378d86ec18e11"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ed5194093f519cf56d1631cf17fd36769a40f5a9bfbddff7b91f3ba3b31c0fc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7fde10f750d764840f63e58ffbeab678c565859810288d7bd3b6978d50bcd655"
+    sha256 cellar: :any_skip_relocation, catalina:       "5c47790338ce21e3a7cbe32e9c366ddf1c451057d72bfe6f9c09ffb62d0b18c6"
+    sha256 cellar: :any_skip_relocation, mojave:         "6a2ab69926fa5a54cb4f263f9f99398292bdb7aaaf252a34f6d6ba412c627599"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "048208c256d6724196a87002d5058b0dd29c0df771d53c5c4c11a7b3a10e6a85"
   end
 
   depends_on "graphviz"
