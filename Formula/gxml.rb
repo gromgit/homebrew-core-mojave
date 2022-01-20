@@ -6,13 +6,14 @@ class Gxml < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "33e373491cc352e2b11da05fc36b7c9e66451efcbee7b10c06b8454bda72b92c"
-    sha256 monterey:      "79846b0652593f371cdc95ad36d037c58b51db809b5a0bb6baff00afee0a0c12"
-    sha256 big_sur:       "93014bd6358485893840d5e1fcb66bbb2b9528c342d5d38e08525ffd6c8dfd4c"
-    sha256 catalina:      "7ac6b48935cda53013a788e02cb0169fd609589beac7b1af2ad6b3b64e3045a2"
-    sha256 mojave:        "656bfa0f89deba237c40af306b141291c548befeadd268d7aaca198db78afe91"
-    sha256 high_sierra:   "c206e3ea69e32dce78804db3d9e0ab2d10a441a4677614324fd46e1e53bdb5e7"
-    sha256 x86_64_linux:  "e0fc25edebbe9a8fe4ac0ef484870d6f3481ff6d467314b793a933b66b32bcab"
+    sha256 arm64_monterey: "7fe768a5398f9cb19eb57263e3b9b57716b48a149b175ff9b970eb1e898fbacd"
+    sha256 arm64_big_sur:  "33e373491cc352e2b11da05fc36b7c9e66451efcbee7b10c06b8454bda72b92c"
+    sha256 monterey:       "79846b0652593f371cdc95ad36d037c58b51db809b5a0bb6baff00afee0a0c12"
+    sha256 big_sur:        "93014bd6358485893840d5e1fcb66bbb2b9528c342d5d38e08525ffd6c8dfd4c"
+    sha256 catalina:       "7ac6b48935cda53013a788e02cb0169fd609589beac7b1af2ad6b3b64e3045a2"
+    sha256 mojave:         "656bfa0f89deba237c40af306b141291c548befeadd268d7aaca198db78afe91"
+    sha256 high_sierra:    "c206e3ea69e32dce78804db3d9e0ab2d10a441a4677614324fd46e1e53bdb5e7"
+    sha256 x86_64_linux:   "e0fc25edebbe9a8fe4ac0ef484870d6f3481ff6d467314b793a933b66b32bcab"
   end
 
   depends_on "gobject-introspection" => :build
