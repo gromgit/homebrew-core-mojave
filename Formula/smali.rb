@@ -8,6 +8,7 @@ class Smali < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0ae90cfbf519caf36fa5c2ee2c9059a41d9f39ab1652c5d883e9267552bbe699"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fa384e0623d92232575207c1d393204e05254206e9309b9160be038f698bcb11"
+    sha256 cellar: :any_skip_relocation, monterey:       "1de39f5a3d88ebb0cfc415c165f2c431c6c64ae9075eeecd8c1616cf7e63ee2c"
     sha256 cellar: :any_skip_relocation, big_sur:        "508115afcebb6b4fe2b6491652cc386633144cb48669fd4624eb60542fa43fd8"
     sha256 cellar: :any_skip_relocation, catalina:       "95c45f88283b8e8e7a4563440bb9e3ed10f93dfe43eac5e927ae1ebae65dac0b"
     sha256 cellar: :any_skip_relocation, mojave:         "44fc500be24c9cc38b5c7031cf600019083c5385e18bd067eeacb1424061d0c9"
