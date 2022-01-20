@@ -10,7 +10,8 @@ class GobjectIntrospection < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobject-introspection"
-    sha256 mojave: "125d2c4a53d574b4c65c101ff217e2178f1ef7399dd82ff85d4427a70d9506e5"
+    rebuild 1
+    sha256 mojave: "ae22e09c69f95e119568769fd86ceab5ffde498fd9b469b1c04852b201452723"
   end
 
   depends_on "bison" => :build
@@ -76,6 +77,14 @@ class GobjectIntrospection < Formula
   patch do
     url "https://gitlab.gnome.org/rokm/gobject-introspection/-/commit/56df7b0f007fe260b2bd26ef9cc331ad73022700.diff"
     sha256 "56312cd45b2b3a7fd74eaae89843a49b9a06d1423785fb57416a8a61b1cb811f"
+  end
+
+  # Upstream patch for doctemplates error
+  # Review for removal at version bump
+  # See: https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/414
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gobject-introspection/-/commit/effb1e09dee263cdac4ec593e8caf316e6f01fe2.diff"
+    sha256 "e0f4932f230a26563c0948b83d3ec347b7ecd195503a6d4f1519a276a8022b95"
   end
 
   def install
