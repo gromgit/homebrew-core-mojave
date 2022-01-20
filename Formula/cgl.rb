@@ -1,8 +1,8 @@
 class Cgl < Formula
   desc "Cut Generation Library"
   homepage "https://github.com/coin-or/Cgl"
-  url "https://github.com/coin-or/Cgl/archive/releases/0.60.3.tar.gz"
-  sha256 "cfeeedd68feab7c0ce377eb9c7b61715120478f12c4dd0064b05ad640e20f3fb"
+  url "https://github.com/coin-or/Cgl/archive/releases/0.60.4.tar.gz"
+  sha256 "57db498a0b7e1f3614ca061a93b23dc7e65017f092457c7366fa7d78397b5657"
   license "EPL-1.0"
 
   livecheck do
@@ -11,14 +11,8 @@ class Cgl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ace78b5fcb1f9a87eec6c6c04cbfcbc9dee6840f516853f5b3ddf9ef8efeb981"
-    sha256 cellar: :any,                 arm64_big_sur:  "22a1b60daec4025069498452fef640837d4cf77618aa587b728365ac09c69458"
-    sha256 cellar: :any,                 monterey:       "a4bce4cbcb490d1ae1393718f808d5a12f81ed8f721716466f76fb17dc3ea9b9"
-    sha256 cellar: :any,                 big_sur:        "17536b04cb964956f52a00e5c3629c2d94d85bfe1317f6b57e141af71cf7ad2e"
-    sha256 cellar: :any,                 catalina:       "6eb179515b4cf06ad8bb484e6384f6cdae99297f523372b082ef079ed84cafd4"
-    sha256 cellar: :any,                 mojave:         "acdb179fb8b29973e75a674a12fa24f164b753300c625f1a4dc3ca8f3cd9dcf4"
-    sha256 cellar: :any,                 high_sierra:    "2cc6712792b9b5fec15ec479492f4da50f371ce37af53fece6bce474f93cf336"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6220599a7bc6d47dd172158615293ef62b40e5ef5337d4f50dfd01081451cb41"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgl"
+    sha256 cellar: :any, mojave: "74c5726e98c84863e21e53381afab6b55452a24db26299f3327bfe0c0c66c75e"
   end
 
   depends_on "pkg-config" => :build
