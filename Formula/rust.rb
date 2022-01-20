@@ -2,6 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.57.0-src.tar.gz"
@@ -17,7 +18,7 @@ class Rust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust"
-    sha256 cellar: :any, mojave: "bd7709155145e206312b4823c9bcc82a47898149fcb7a73274391e9119ad1b0b"
+    sha256 cellar: :any, mojave: "be6d21a5e62bd11c7f5956cda7b23c890af6dbf33d82e659442812a2aff18c14"
   end
 
   head do
@@ -57,13 +58,10 @@ class Rust < Formula
     end
   end
 
+  # Pass `--enable-vendor` to `configure` when this patch is no longer needed.
   # Make sure object files in static archives have distinct names.
   # https://github.com/rust-lang/compiler-builtins/issues/443
-  patch do
-    url "https://github.com/rust-lang/compiler-builtins/commit/eaab9d29ecbf538369d7f26953425eb78dae8229.patch?full_index=1"
-    sha256 "2eaafddf3dad416431b42f3a5e222a2d4261ab026a165c7f23d6ec378a0ccff5"
-    directory "vendor/compiler_builtins"
-  end
+  patch :p0, :DATA
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
@@ -126,3 +124,19 @@ class Rust < Formula
                  (testpath/"hello_world").cd { `#{bin}/cargo run`.split("\n").last }
   end
 end
+
+__END__
+--- Cargo.lock.orig	2022-01-05 23:36:31.734319021 +0800
++++ Cargo.lock	2022-01-05 23:37:17.531044204 +0800
+@@ -658,9 +658,9 @@
+
+ [[package]]
+ name = "compiler_builtins"
+-version = "0.1.49"
++version = "0.1.55"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "20b1438ef42c655665a8ab2c1c6d605a305f031d38d9be689ddfef41a20f3aa2"
++checksum = "c9ac60765140c97aaf531dae151a287646b0805ec725805da9e2a3ee31cd501c"
+ dependencies = [
+  "cc",
+  "rustc-std-workspace-core",
