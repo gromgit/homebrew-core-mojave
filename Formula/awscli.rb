@@ -3,14 +3,14 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.4.10.tar.gz"
-  sha256 "4959a596c6d7d6f964a5850d6afdd8dd324d892fe386a34304e4e824aa15afc1"
+  url "https://github.com/aws/aws-cli/archive/2.4.12.tar.gz"
+  sha256 "a5f7f9f7ed114bc5d8e4423d4b9d41d91c60d0b8f35129e32f57da6217be86d6"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
-    sha256 cellar: :any, mojave: "fec913c872af5e082ea36663a2fbabc53aa27c09f3ffe06ade37ce7e2e206e71"
+    sha256 cellar: :any, mojave: "4b1adafe6be8dcf3bec246d9bb8a8192ca039c2bc4e96c9788506317aa103e6b"
   end
 
   depends_on "cmake" => :build
@@ -100,7 +100,12 @@ class Awscli < Formula
       ENV.prepend "LDFLAGS", "-L./build/deps/install/lib"
     end
 
-    virtualenv_install_with_resources
+    # setuptools>=60 prefers its own bundled distutils, which is incompatabile with docutils~=0.15
+    # Force the previous behavior of using distutils from the stdlib
+    # Remove when fixed upstream: https://github.com/aws/aws-cli/pull/6011
+    with_env(SETUPTOOLS_USE_DISTUTILS: "stdlib") do
+      virtualenv_install_with_resources
+    end
     pkgshare.install "awscli/examples"
 
     rm Dir[bin/"{aws.cmd,aws_bash_completer,aws_zsh_completer.sh}"]
