@@ -1,10 +1,9 @@
 class Iozone < Formula
   desc "File system benchmark tool"
   homepage "https://www.iozone.org/"
-  url "https://www.iozone.org/src/current/iozone3_492.tgz"
-  sha256 "93c9142d61e6a71ea43b0a266bad7f49f07ce5f5d31b36f8edf4dd386795c483"
+  url "https://www.iozone.org/src/current/iozone3_493.tgz"
+  sha256 "5a52f5017e022e737f5b55f320cc6ada0f2a8c831a5f996cce2a44e03e91c038"
   license :cannot_represent
-  revision 1
 
   livecheck do
     url "https://www.iozone.org/src/current/"
@@ -16,7 +15,7 @@ class Iozone < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iozone"
-    sha256 cellar: :any_skip_relocation, mojave: "0e8e1b446ec98922f8a619761a8cbd77dc9f53a162d5e467c1c2ed73d1e60048"
+    sha256 cellar: :any_skip_relocation, mojave: "e5fb9c4c8b297f4d1f73061971f74f407dd0df4e3d2fb50d13dbc7f79a9f475d"
   end
 
   def install
