@@ -13,8 +13,8 @@ class OsinfoDbTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osinfo-db-tools"
-    rebuild 2
-    sha256 mojave: "b3520e836ec0983c747504f0379905b6923e42d0bb956235974eb620217e06fd"
+    rebuild 3
+    sha256 mojave: "4129abfeec36169c8c18691d6ba05c26753e03a45780d9f6fe3260b74bfe796e"
   end
 
   depends_on "meson" => :build
