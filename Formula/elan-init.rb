@@ -3,13 +3,13 @@ class ElanInit < Formula
   homepage "https://github.com/leanprover/elan"
   url "https://github.com/leanprover/elan/archive/v1.3.1.tar.gz"
   sha256 "8e1380a1cb20cec54f07e30519ad7bc0179d9e3d68d33c02d0476248322b5015"
-  license "Apache-2.0"
-  head "https://github.com/leanprover/elan.git"
+  license any_of: ["Apache-2.0", "MIT"]
+  head "https://github.com/leanprover/elan.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elan-init"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c06f56a630ed8b2664d60c3fbda7c035b560ba36c9fd6429444d5980ee1d4dbf"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "da44043f70ce22e442cc48f7f8ae81ca08f9e4ce7d4963535929be4ae994da97"
   end
 
   depends_on "rust" => :build
