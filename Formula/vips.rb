@@ -12,7 +12,8 @@ class Vips < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vips"
-    sha256 mojave: "aee8fd5366018b03b32867760b9a99602172d65bfbdba4df314108c3bc504ef8"
+    rebuild 1
+    sha256 mojave: "bb7179ee8ef339ce9bfd89604f7aff3173fdbbeae9b141e40d6b16d4aaa066c3"
   end
 
   depends_on "pkg-config" => :build
