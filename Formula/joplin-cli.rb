@@ -9,8 +9,8 @@ class JoplinCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/joplin-cli"
-    rebuild 1
-    sha256 mojave: "c689c12132c91cad474705f115ab8de26fbba42e174d8c2ba29dc961b063ffce"
+    rebuild 2
+    sha256 mojave: "0376d63b3ad8b8a0261b35126882187151580753cdfb874f8e127d5d86388104"
   end
 
   depends_on "pkg-config" => :build
