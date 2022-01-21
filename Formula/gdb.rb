@@ -1,16 +1,15 @@
 class Gdb < Formula
   desc "GNU debugger"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-11.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-11.1.tar.xz"
-  sha256 "cccfcc407b20d343fb320d4a9a2110776dd3165118ffd41f4b1b162340333f94"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-11.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-11.2.tar.xz"
+  sha256 "1497c36a71881b8671a9a84a0ee40faab788ca30d7ba19d8463c3cc787152e32"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdb"
-    sha256 mojave: "e7106a17083d37da960c7258d5b286b1c3a8e3eae1f32793178554fdc5ba629f"
+    sha256 mojave: "3604cd6a081d79eb74b1a9b7a3b0e47e7cd0b488aba65183ecc770313fe7add3"
   end
 
   depends_on "gmp"
