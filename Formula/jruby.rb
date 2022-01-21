@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.3.2.0/jruby-dist-9.3.2.0-bin.tar.gz"
-  sha256 "26699ca02beeafa8326573c1125c57a5971ba8b94d15f84e6b3baf2594244f33"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.3.3.0/jruby-dist-9.3.3.0-bin.tar.gz"
+  sha256 "3da828cbe287d5468507f1c2c42bef6cf34bc5361bcd6a5d99c207b21b9fdc5c"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -12,8 +12,7 @@ class Jruby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jruby"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4ec8118d08883d71c757c7743128237255f44afaeda426059cb7ac976bf7252b"
+    sha256 cellar: :any, mojave: "f18e20c760c97fec3c298e79f1ad2d5a0929a96f0f6500ce9f9fadb168ae472d"
   end
 
   depends_on "openjdk"
