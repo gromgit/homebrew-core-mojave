@@ -2,6 +2,7 @@ class Avrdude < Formula
   desc "Atmel AVR MCU programmer"
   homepage "https://savannah.nongnu.org/projects/avrdude/"
   license "GPL-2.0-or-later"
+  revision 1
 
   stable do
     url "https://download.savannah.gnu.org/releases/avrdude/avrdude-6.4.tar.gz"
@@ -22,7 +23,7 @@ class Avrdude < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avrdude"
-    sha256 mojave: "de9c2943de3c7aa3d1419cfb8e053c470796af2d7e8d341837f206bc4dd7f4a5"
+    sha256 mojave: "b17bf1487a0c03df2ed77efffd5098dc542bf69569d57c608a21a12fc7a1c4e9"
   end
 
   head do
@@ -34,6 +35,7 @@ class Avrdude < Formula
   end
 
   depends_on "automake" => :build
+  depends_on "hidapi"
   depends_on "libftdi0"
   depends_on "libhid"
   depends_on "libusb-compat"
