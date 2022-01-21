@@ -1,14 +1,14 @@
 class Inxi < Formula
   desc "Full featured CLI system information tool"
   homepage "https://smxi.org/docs/inxi.htm"
-  url "https://github.com/smxi/inxi/archive/3.3.10-1.tar.gz"
-  sha256 "0d4faa8a1b3f048d6f4ce49c64eb0e4628c63d16ffafad124cbebaca6922a302"
+  url "https://github.com/smxi/inxi/archive/3.3.12-1.tar.gz"
+  sha256 "fce1a764849bac981c363bcb333ffcdf546740545f41073a64548b8e3b882195"
   license "GPL-3.0-or-later"
-  head "https://github.com/smxi/inxi.git"
+  head "https://github.com/smxi/inxi.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inxi"
-    sha256 cellar: :any_skip_relocation, mojave: "b81284918e2e159b895e0111e6f0593e61f7e4bbf2ed51fc37445227e6c5bbd8"
+    sha256 cellar: :any_skip_relocation, mojave: "d0f0a2d590c75997729afc3a917952fa4f68c115e21b34f45e1c9910a364a84c"
   end
 
   def install
