@@ -2,13 +2,13 @@ class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
   homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
   url "https://github.com/alexellis/arkade.git",
-      tag:      "0.8.11",
-      revision: "f6c134889f89c4bfe1b06f0f97037f16caf2b6a3"
+      tag:      "0.8.12",
+      revision: "fda8a74d6a8ee80f135cdd6474ed2fdcb1ed3bcc"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arkade"
-    sha256 cellar: :any_skip_relocation, mojave: "46bca2991c840a9b88f59bc8441b9abac661c0f45e351b7c57247cb5734907bd"
+    sha256 cellar: :any_skip_relocation, mojave: "4e74a3b3152ff57eff5539e74b465c68af52861833df8a9d15fae60b977ef531"
   end
 
   depends_on "go" => :build
