@@ -8,7 +8,8 @@ class Enzyme < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/enzyme"
-    sha256 mojave: "7a543039588c16e1e420adc70fbc64c508a344569ceebc1b68b1a5e299e71869"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ad1e20bc6a02429ab28d5ce8890647f88fa62500934715dc0804ad33131c61fe"
   end
 
   depends_on "cmake" => :build
