@@ -3,14 +3,14 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/67/f6/cc1e1007092364470ee1577655ee4e571858c5f622c4b73f73e7e5bc212a/commitizen-2.20.2.tar.gz"
-  sha256 "4b8f5c0faa2603f05f4835dcaba318fbaa062e75c9041051547ff0d1e4bcead1"
+  url "https://files.pythonhosted.org/packages/ee/a4/438c4f67cb07d4bb237b09a3bb0ab17272a01dd1f3cf1204b7092d7a110f/commitizen-2.20.4.tar.gz"
+  sha256 "33fe190935412011a9e9e0a3fc80f4b874bc250461a9374b1169f2d86cb81901"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/commitizen"
-    sha256 cellar: :any_skip_relocation, mojave: "b4124423556c502003579bfddbc5e832362e135a4caa2a92b2a8cdf72f4b296f"
+    sha256 cellar: :any_skip_relocation, mojave: "7b4e1d1c06b2087e28b6de25d3f32685a3294e280131edf548c0b764a90f179f"
   end
 
   depends_on "python@3.10"
@@ -71,8 +71,8 @@ class Commitizen < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/65/ed/7b7216101bc48627b630693b03392f33827901b81d4e1360a76515e3abc4/tomlkit-0.7.2.tar.gz"
-    sha256 "d7a454f319a7e9bd2e249f239168729327e4dd2d27b17dc68be264ad1ce36754"
+    url "https://files.pythonhosted.org/packages/0f/96/ee6ba35c61186fbf084cb3077374d50eef36ab59cb8c6513317caa190935/tomlkit-0.8.0.tar.gz"
+    sha256 "29e84a855712dfe0e88a48f6d05c21118dbafb283bb2eed614d46f80deb8e9a1"
   end
 
   resource "typing-extensions" do
