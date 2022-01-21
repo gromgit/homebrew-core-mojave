@@ -4,18 +4,21 @@ class Idris < Formula
   url "https://github.com/idris-lang/Idris-dev/archive/v1.3.4.tar.gz"
   sha256 "7289f5e2501b7a543d81035252ca9714003f834f58b558f45a16427a3c926c0f"
   license "BSD-3-Clause"
-  head "https://github.com/idris-lang/Idris-dev.git"
+  head "https://github.com/idris-lang/Idris-dev.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idris"
-    rebuild 2
-    sha256 mojave: "bd0ffb6f12e31773c0a893c1cc111cc7c8014db694cbedceff515c814d8d8f23"
+    rebuild 3
+    sha256 mojave: "c26ea5e4940e60b8452c84711513b777644590f3ed374027860048b408d4b946"
   end
 
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
   depends_on "ghc@8.8"
   depends_on "libffi"
+
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   def install
     system "cabal", "v2-update"
