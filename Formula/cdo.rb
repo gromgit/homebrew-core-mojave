@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/26654/cdo-2.0.2.tar.gz"
-  sha256 "34dfdd0d4126cfd35fc69e37e60901c8622d13ec5b3fa5f0fe6a1cc866cc5a70"
+  url "https://code.mpimet.mpg.de/attachments/download/26676/cdo-2.0.3.tar.gz"
+  sha256 "25520260ccb4e5324c27fa2160dfafc8152b180dd7f0133bd80425df3ef7c65a"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Cdo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdo"
-    sha256 cellar: :any, mojave: "dcfbccbde598f9ef8559ce202266879779c863f3f02ce1bea3b107ed16c29281"
+    sha256 cellar: :any, mojave: "78bc1b84ebc873935ab70a2e47985bfeece08e538d27966ceec4fba2ff365f43"
   end
 
   depends_on "eccodes"
