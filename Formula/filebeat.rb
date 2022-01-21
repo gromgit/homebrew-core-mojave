@@ -2,16 +2,16 @@ class Filebeat < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
   homepage "https://www.elastic.co/products/beats/filebeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.16.1",
-      revision: "7e56c4a053a2fe26c0cac168dd974780428a2aa6"
+      tag:      "v7.16.3",
+      revision: "d420ccdaf201e32a524632b5da729522e50257ae"
   # Outside of the "x-pack" folder, source code in a given file is licensed
   # under the Apache License Version 2.0
   license "Apache-2.0"
-  head "https://github.com/elastic/beats.git"
+  head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/filebeat"
-    sha256 cellar: :any_skip_relocation, mojave: "dd7924d4df5131b6d910414fe7880d51b41359eb2398fcaa14e2afdac753e94a"
+    sha256 cellar: :any_skip_relocation, mojave: "a5bc556ef02d9ed39fccb54c8d27e537ce3057484b2ff094e7b56861f0a4fb5b"
   end
 
   depends_on "go" => :build
