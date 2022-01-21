@@ -1,13 +1,13 @@
 class Chroma < Formula
   desc "General purpose syntax highlighter in pure Go"
   homepage "https://github.com/alecthomas/chroma"
-  url "https://github.com/alecthomas/chroma/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "c13f99b0ce34cecfaaea448ad134e6293b316128a6b0f67af5e70cc6525f1b6e"
+  url "https://github.com/alecthomas/chroma/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "98a517ae99f48e3b54d5c8cd7473d5c544f51bee7a4be17f5175736fce37da56"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chroma"
-    sha256 cellar: :any_skip_relocation, mojave: "0bd6b5c3c9b3f9cb29e0024c237a17dd5638685ea76857580b066a4f2217f827"
+    sha256 cellar: :any_skip_relocation, mojave: "4026b3b5472f2e84f77c31f45ccb94fecbef7da4d6f4abda3a625e1b326ce7ba"
   end
 
   depends_on "go" => :build
