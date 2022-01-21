@@ -12,7 +12,8 @@ class Freeciv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeciv"
-    sha256 mojave: "d0ea01ac6f093b989ec16facd679430e0170b304b38ab66102bed6874bd62646"
+    rebuild 1
+    sha256 mojave: "c16f88ef61986a5366e8610601abfdbeae0f237b6c28b48f2467f92f195c2138"
   end
 
   head do
