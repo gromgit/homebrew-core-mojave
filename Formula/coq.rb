@@ -1,8 +1,8 @@
 class Coq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://coq.inria.fr/"
-  url "https://github.com/coq/coq/archive/V8.14.1.tar.gz"
-  sha256 "3cbfc1e1a72b16d4744f5b64ede59586071e31d9c11c811a0372060727bfd9c3"
+  url "https://github.com/coq/coq/archive/V8.15.0.tar.gz"
+  sha256 "73466e61f229b23b4daffdd964be72bd7a110963b9d84bd4a86bb05c5dc19ef3"
   license "LGPL-2.1-only"
   head "https://github.com/coq/coq.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Coq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coq"
-    rebuild 2
-    sha256 mojave: "cd0bd79373807a559b916abbf695eb62265f976c9c0028bf21f27762af976e14"
+    sha256 mojave: "e2918cb23bb6ee08c9f1e40c4a3bb6abc2a668573afe9cc20dc0699f258e37f4"
   end
 
   depends_on "dune" => :build
@@ -28,7 +27,7 @@ class Coq < Formula
   def install
     system "./configure", "-prefix", prefix,
                           "-mandir", man,
-                          "-coqdocdir", "#{pkgshare}/latex",
+                          "-docdir", "#{pkgshare}/latex",
                           "-coqide", "no",
                           "-with-doc", "no"
     system "make", "world"
