@@ -3,12 +3,12 @@ class Diskus < Formula
   homepage "https://github.com/sharkdp/diskus"
   url "https://github.com/sharkdp/diskus/archive/v0.7.0.tar.gz"
   sha256 "64b1b2e397ef4de81ea20274f98ec418b0fe19b025860e33beaba5494d3b8bd1"
-  license "Apache-2.0"
+  license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diskus"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "932f49cfe8dde884aa2cc8c81810b325f322d8c054b958fc82e7ce71ac94ce5a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "2d8da4e115ab8d79893a7d00cf10a61b2d4d071e61c3815f58e28fd7909c44e8"
   end
 
   depends_on "rust" => :build
