@@ -1,8 +1,8 @@
 class Clair < Formula
   desc "Vulnerability Static Analysis for Containers"
   homepage "https://github.com/quay/clair"
-  url "https://github.com/quay/clair/archive/v4.3.5.tar.gz"
-  sha256 "e35144ea84d224e671fa4f634cf4a40109ae5dbab09491133b375d1558b2adbb"
+  url "https://github.com/quay/clair/archive/v4.3.6.tar.gz"
+  sha256 "6a696c53be08d3ca72b5a4226ff2c2dec6fc39eddcb17732ec1d55d32d753b42"
   license "Apache-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Clair < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clair"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d0c06f015dbe62627716b390a11fd77b0b5780c8a288b7d766e4d74ad04631f5"
+    sha256 cellar: :any_skip_relocation, mojave: "f820894b6fb98cc3b9f4703d855a1cf18fe7b14d4b39dd2e55e1b57a48ef0803"
   end
 
   depends_on "go" => :build
