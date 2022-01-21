@@ -1,13 +1,13 @@
 class ElasticsearchAT6 < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-6.8.22.tar.gz"
-  sha256 "836a50df324a98837dcadbc7d55782cc9525f15cc6a8aa0c657e199667ebb996"
+  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-6.8.23.tar.gz"
+  sha256 "60e77b5ca3ce11771469bcc2e009c49c8aadb831faebd170e7abcedc16b3e36d"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elasticsearch@6"
-    sha256 cellar: :any_skip_relocation, mojave: "f146a1ba2bc6f734a8cffcad3b9fcbd9f4053a0bea720985b22ef8cdcc35dcf1"
+    sha256 cellar: :any_skip_relocation, mojave: "78996e3b74f69ff883b3a2aa3b37a75d840a6b833c6a73d23bf0ad0bca093044"
   end
 
   keg_only :versioned_formula
