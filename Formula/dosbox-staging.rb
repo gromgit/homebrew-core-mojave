@@ -1,25 +1,30 @@
 class DosboxStaging < Formula
   desc "Modernized DOSBox soft-fork"
   homepage "https://dosbox-staging.github.io/"
-  url "https://github.com/dosbox-staging/dosbox-staging/archive/v0.77.1.tar.gz"
-  sha256 "85359efb7cd5c5c0336d88bdf023b7b462a8233490e00274fef0b85cca2f5f3c"
+  url "https://github.com/dosbox-staging/dosbox-staging/archive/v0.78.1.tar.gz"
+  sha256 "dcd93ce27f5f3f31e7022288f7cbbc1f1f6eb7cc7150c2c085eeff8ba76c3690"
   license "GPL-2.0-or-later"
   revision 1
   head "https://github.com/dosbox-staging/dosbox-staging.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-staging"
-    rebuild 3
-    sha256 cellar: :any, mojave: "d9fe2e83a60a1f4dedfb0f902b6e35fd08a7703b7af9b420f921666f52057413"
+  # New releases of dosbox-staging are indicated by a GitHub release (and
+  # an announcement on the homepage), not just a new version tag.
+  livecheck do
+    url :stable
+    strategy :github_latest
   end
 
-  deprecate! date: "2022-01-10", because: "later versions are not compatible with Mojave"
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-staging"
+    sha256 cellar: :any, mojave: "81c3ad904d4a89117251481835e3efe58d4fb93f96653830a2750f587fee8d0a"
+  end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "fluid-synth"
   depends_on "libpng"
+  depends_on "libslirp"
   depends_on "mt32emu"
   depends_on "opusfile"
   depends_on "sdl2"
