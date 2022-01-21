@@ -1,15 +1,14 @@
 class Gau < Formula
   desc "Open Threat Exchange, Wayback Machine, and Common Crawl URL fetcher"
   homepage "https://github.com/lc/gau"
-  url "https://github.com/lc/gau/archive/v2.0.6.tar.gz"
-  sha256 "1728c341b147388fa8e60784c4b3895391be25f1e2e1b1cbb734329be7603693"
+  url "https://github.com/lc/gau/archive/v2.0.8.tar.gz"
+  sha256 "9604f0b7bf258547778a155afd2c58d32eeeb82d3bcbcbe97616ccefd1287d9a"
   license "MIT"
   head "https://github.com/lc/gau.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gau"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "666414fe5159775e677c15e75a397c30a919aa57303370e293daaab80d249a20"
+    sha256 cellar: :any_skip_relocation, mojave: "31676930acdeea2ab852010ea62923a33193fd51f0654acbf483807c630dea1a"
   end
 
   depends_on "go" => :build
