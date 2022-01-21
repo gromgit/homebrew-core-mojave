@@ -1,18 +1,13 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://github.com/ispc/ispc/archive/v1.16.1.tar.gz"
-  sha256 "e5dcd0d85df6ed5feb454ad9ec295083a07d7459fcaba00d5dd6266ceb476399"
+  url "https://github.com/ispc/ispc/archive/v1.17.0.tar.gz"
+  sha256 "37fb1055d6c6b232e112d8d50145d726824ed4d8da93a7396315dceba6c76e62"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "a9e533da0a8a1ad0327cbe13cf4e73712fd83d40eeff92286e9b2b404a6be58b"
-    sha256 cellar: :any, arm64_big_sur:  "816feef4722edd8866c394110c503338eaba0bb373c87ddb9a898dc56b1adac7"
-    sha256 cellar: :any, monterey:       "b0d22d24b1a89933c5ccc6b73968641c3ebc99839cb5e7fdbe2135cc9ce4673d"
-    sha256 cellar: :any, big_sur:        "a82168d4f3a51a8078eb3603a9e3810f5a81e32e131fce032f4b505d6d0147e7"
-    sha256 cellar: :any, catalina:       "168dcec41346433e47d5478793216c86b96c4e9c2a31673e21de60b5f6a95427"
-    sha256 cellar: :any, mojave:         "d19b58b941d33a38e574e351d85445c5f8aee6c9ca6a164db874a2753138ae1c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ispc"
+    sha256 cellar: :any, mojave: "5c438cfbdea13e1d73355d6d587e5c06167dfcbbae48bbc97dafd6e787094837"
   end
 
   depends_on "bison" => :build
