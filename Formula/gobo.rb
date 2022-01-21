@@ -1,14 +1,13 @@
 class Gobo < Formula
   desc "Free and portable Eiffel tools and libraries"
   homepage "http://www.gobosoft.com/"
-  url "https://downloads.sourceforge.net/project/gobo-eiffel/gobo-eiffel/20.05/gobo2005-src.tar.gz"
-  sha256 "047b6710abd94d1c1366316b4411d5cc1a3752bb60155c24e2a6d81494d63e5b"
+  url "https://downloads.sourceforge.net/project/gobo-eiffel/gobo-eiffel/22.01/gobo2201-src.tar.gz"
+  sha256 "ed2d82ce3c271e60914a42bde1d1c99446df8902ae1b62fd0e4dca2b99de8068"
+  license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:     "1f302b672e67e600556c1d5e30751bb0ca1a47f19f8167bf7661b1fd9dc9e7d4"
-    sha256 cellar: :any_skip_relocation, catalina:    "a7cd43939f9300895b1b9261ae14dfab076c9daca40f553d1b6b7b263e6b5b98"
-    sha256 cellar: :any_skip_relocation, mojave:      "a4177e9921a0ccb52b426aea6bd000b3492545f763549fa979d082693041b41c"
-    sha256 cellar: :any_skip_relocation, high_sierra: "72337bad76bfb21be107f01d587c6f4f968e5f4e1b94343e936e7086e59d6308"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobo"
+    sha256 cellar: :any_skip_relocation, mojave: "4d8a09514869529d8493163d84de0d1b117dfdc355020dad01455b7f43f71ffe"
   end
 
   depends_on "eiffelstudio" => :test
