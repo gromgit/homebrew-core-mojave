@@ -1,8 +1,8 @@
 class Cherrytree < Formula
   desc "Hierarchical note taking application featuring rich text and syntax highlighting"
   homepage "https://www.giuspen.com/cherrytree/"
-  url "https://www.giuspen.com/software/cherrytree_0.99.43.tar.xz"
-  sha256 "122e091a97a2e8c6e4d2597bc0a4ccc837d75949171160628d85259b45ba84d2"
+  url "https://www.giuspen.com/software/cherrytree_0.99.45.tar.xz"
+  sha256 "87649f594b8e6e8fb9426d437b1cd651240e073624ffbe0e5268b686759af2a5"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Cherrytree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cherrytree"
-    rebuild 2
-    sha256 mojave: "46aaa05d52de38fe2473f53dabe506dba8832a380dbd21f41b4079e70c9cb4ce"
+    sha256 mojave: "26060241232695cd772884a7489a7226692dcbe8cd9943f4360ae3c2e4db60e0"
   end
 
   depends_on "cmake" => :build
