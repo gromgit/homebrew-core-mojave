@@ -2,15 +2,14 @@ class Fceux < Formula
   desc "All-in-one NES/Famicom Emulator"
   homepage "https://fceux.com/"
   url "https://github.com/TASEmulators/fceux.git",
-      tag:      "fceux-2.6.0",
-      revision: "1ca8b8e9d0c401b8a9687b019af30aa088d1c4d2"
+      tag:      "fceux-2.6.1",
+      revision: "7173d283c3a12f634ad5189c5a90ff495e1d266a"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fceux"
-    sha256 cellar: :any, mojave: "0d00ce913a639191a3f0422006289f7099ae4327550158ae768a0cc07c3d7a55"
+    sha256 cellar: :any, mojave: "4861b2f49a575c07f2571f0f4f6acf530b30f37f788d04f322ccc4052022cf46"
   end
 
   depends_on "cmake" => :build
