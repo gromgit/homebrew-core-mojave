@@ -4,13 +4,13 @@ class GatsbyCli < Formula
   desc "Gatsby command-line interface"
   homepage "https://www.gatsbyjs.org/docs/gatsby-cli/"
   # gatsby-cli should only be updated every 10 releases on multiples of 10
-  url "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-4.4.0.tgz"
-  sha256 "4790ad93ace7760a295353210c150ffdc8244fbddc7c8c47f7f4626a85685032"
+  url "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-4.5.0.tgz"
+  sha256 "8c528ccb4f2e7ef24ef53cc65c9e36ef057d63aa85801fe5cb2204f5e97c7f80"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gatsby-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "f68a4abf62ed9632ee8f223d400ee818202acdd3a27d6ba08150fd5381e64728"
+    sha256 cellar: :any_skip_relocation, mojave: "5486c67e1e101e64ede55bb71770966ffb4ebdeefe1e9c74b9bbd1c753c9eeb7"
   end
 
   depends_on "node"
