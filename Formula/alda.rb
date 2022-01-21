@@ -1,13 +1,13 @@
 class Alda < Formula
   desc "Music programming language for musicians"
   homepage "https://alda.io"
-  url "https://github.com/alda-lang/alda/archive/refs/tags/release-2.1.0.tar.gz"
-  sha256 "fbf3a297eb79adf3301a5cf8e8aaa2cd8deaa841390ddc819491ecf67cc9062b"
+  url "https://github.com/alda-lang/alda/archive/refs/tags/release-2.2.0.tar.gz"
+  sha256 "315875daf0df5540e31463bf2fd71d16804258e8a11985cfb8c3216acfbe2087"
   license "EPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alda"
-    sha256 cellar: :any_skip_relocation, mojave: "6b83e11f06d924ec1004f8d0285d5035bb05517cfba1da1d123c2c821e6108ae"
+    sha256 cellar: :any_skip_relocation, mojave: "53daa10e3ba58e333e25780d9a93327e204d0a2905f27a098f446c15bdcf7405"
   end
 
   depends_on "go" => :build
