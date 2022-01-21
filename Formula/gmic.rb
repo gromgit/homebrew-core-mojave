@@ -1,10 +1,10 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.0.0.tar.gz"
-  sha256 "3f056bb9e6dbf0674af4c8dce59f4198172187662f7fbb36cc63ebc8c1b71120"
+  url "https://gmic.eu/files/source/gmic_3.0.1.tar.gz"
+  sha256 "6cc20a20e3ab53ce485ccf6e044a30141b3d62cf7743b83bb04906ff29453035"
   license "CECILL-2.1"
-  head "https://github.com/dtschump/gmic.git"
+  head "https://github.com/dtschump/gmic.git", branch: "master"
 
   livecheck do
     url "https://gmic.eu/files/source/"
@@ -13,7 +13,7 @@ class Gmic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmic"
-    sha256 cellar: :any, mojave: "6fa0188d37d252253ff8d83a8d0ac69438a278509bec1cac3cee68ac86df1001"
+    sha256 cellar: :any, mojave: "56be301a074c6c3d14f756cd65fa4b81b282716349365bf22eac88b3ed278bd8"
   end
 
   depends_on "cmake" => :build
