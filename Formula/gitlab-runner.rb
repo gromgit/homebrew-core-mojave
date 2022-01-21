@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v14.6.0",
-      revision: "5316d4acc957286b43fe29e64684af694de6841d"
+      tag:      "v14.7.0",
+      revision: "98daeee0966d3e43b93eb548df6c1454fbd39709"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -14,17 +14,10 @@ class GitlabRunner < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
-    sha256 cellar: :any_skip_relocation, mojave: "a229ce1de67923569e798bb945710f9d2d0760001625e963d11388196f87095c"
+    sha256 cellar: :any_skip_relocation, mojave: "8b944826447909ffb55432505eaa7d4d715cc7ab91ce86ea3b549b19f3f0e6a3"
   end
 
   depends_on "go" => :build
-
-  # Remove patch for Go FD=0 bug (CVE-2021-44717), as go is already patched against this CVE.
-  # Remove during v14.7.0 update.
-  patch do
-    url "https://gitlab.com/gitlab-org/gitlab-runner/-/commit/99f7b8063024357389f07f1e977d280ec35195e1.diff"
-    sha256 "115eb6f9c02eaa05fea945d76a42ef5585cac7c5ee9938cab0183330401506a6"
-  end
 
   def install
     proj = "gitlab.com/gitlab-org/gitlab-runner"
