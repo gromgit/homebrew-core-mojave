@@ -4,8 +4,8 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/1.3.0.tar.gz"
-    sha256 "d27d32de4458888f9edfc89f5bb3cb332dd42b8ead11b26966677e53e1174b58"
+    url "https://github.com/crystal-lang/crystal/archive/1.3.2.tar.gz"
+    sha256 "0dceb2fde610c479466ebe1ce03745c51ba9def9f0da3aff1601532693741e0a"
 
     resource "shards" do
       url "https://github.com/crystal-lang/shards/archive/v0.16.0.tar.gz"
@@ -20,7 +20,7 @@ class Crystal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crystal"
-    sha256 mojave: "b7e7cbfc3ec6cc9733cc4479261cf73a90070aaa41c1555fc105fbf61618efb2"
+    sha256 mojave: "e6de8587de44546c9d581ee682d8862915d262b25c805054c37358ce86b618b1"
   end
 
   head do
