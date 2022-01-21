@@ -4,22 +4,20 @@ class Hydra < Formula
   url "https://github.com/vanhauser-thc/thc-hydra/archive/v9.2.tar.gz"
   sha256 "1a28f064763f9144f8ec574416a56ef51c0ab1ae2276e35a89ceed4f594ec5d2"
   license "AGPL-3.0-only"
-  head "https://github.com/vanhauser-thc/thc-hydra.git"
+  revision 1
+  head "https://github.com/vanhauser-thc/thc-hydra.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "690b9daa523f9fdf95925cb2c8225ffb77df1e212d5b8267a05c63ba16ec21fe"
-    sha256 cellar: :any,                 arm64_big_sur:  "17478cc89073f649064ce5ed78103261eef8543df11a2601fdcfb6d19ad44154"
-    sha256 cellar: :any,                 monterey:       "84398f2873043a1d3964833c398a60aa96e6ecbee7be814bdcb097373c6df103"
-    sha256 cellar: :any,                 big_sur:        "e3077504146989bf221da7acd53224ecec02d95349682c98f3132e9795d79481"
-    sha256 cellar: :any,                 catalina:       "310e71af53f35765106b99e890a4989f9b3856e09822f68201e288ebe0c91ff9"
-    sha256 cellar: :any,                 mojave:         "61dce3743fe0b7ce2db21bd833c3a99fea8c571f2c97ce57930ffb078516af4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3033a68716117810a4882047a77587f0aa8b6b4a0f7c51c447ef5c5024fe211c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hydra"
+    sha256 cellar: :any, mojave: "35b7d0dcb9c908e42a793c1a9434bfc3a920b1432a49f951cc50d8c2c01bb6af"
   end
 
   depends_on "pkg-config" => :build
   depends_on "libssh"
   depends_on "mysql-client"
   depends_on "openssl@1.1"
+  depends_on "pcre"
+  uses_from_macos "ncurses"
 
   conflicts_with "ory-hydra", because: "both install `hydra` binaries"
 
@@ -27,9 +25,23 @@ class Hydra < Formula
     inreplace "configure" do |s|
       # Link against our OpenSSL
       # https://github.com/vanhauser-thc/thc-hydra/issues/80
-      s.gsub! "/opt/local/lib", Formula["openssl@1.1"].opt_lib
-      s.gsub! "/opt/local/*ssl", Formula["openssl@1.1"].opt_lib
-      s.gsub! "/opt/*ssl/include", Formula["openssl@1.1"].opt_include
+      s.gsub!(/^SSL_PATH=""$/, "SSL_PATH=#{Formula["openssl@1.1"].opt_lib}")
+      s.gsub!(/^SSL_IPATH=""$/, "SSL_IPATH=#{Formula["openssl@1.1"].opt_include}")
+      s.gsub!(/^SSLNEW=""$/, "SSLNEW=YES")
+      s.gsub!(/^CRYPTO_PATH=""$/, "CRYPTO_PATH=#{Formula["openssl@1.1"].opt_lib}")
+      s.gsub!(/^SSH_PATH=""$/, "SSH_PATH=#{Formula["libssh"].opt_lib}")
+      s.gsub!(/^SSH_IPATH=""$/, "SSH_IPATH=#{Formula["libssh"].opt_include}")
+      s.gsub!(/^MYSQL_PATH=""$/, "MYSQL_PATH=#{Formula["mysql-client"].opt_lib}")
+      s.gsub!(/^MYSQL_IPATH=""$/, "MYSQL_IPATH=#{Formula["mysql-client"].opt_include}/mysql")
+      s.gsub!(/^PCRE_PATH=""$/, "PCRE_PATH=#{Formula["pcre"].opt_lib}")
+      s.gsub!(/^PCRE_IPATH=""$/, "PCRE_IPATH=#{Formula["pcre"].opt_include}")
+      if OS.mac?
+        s.gsub!(/^CURSES_PATH=""$/, "CURSES_PATH=#{MacOS.sdk_path_if_needed}/usr/lib")
+        s.gsub!(/^CURSES_IPATH=""$/, "CURSES_IPATH=#{MacOS.sdk_path_if_needed}/usr/include")
+      else
+        s.gsub!(/^CURSES_PATH=""$/, "CURSES_PATH=#{Formula["ncurses"].opt_lib}")
+        s.gsub!(/^CURSES_IPATH=""$/, "CURSES_IPATH=#{Formula["ncurses"].opt_include}")
+      end
       # Avoid opportunistic linking of everything
       %w[
         gtk+-2.0
@@ -57,6 +69,6 @@ class Hydra < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/hydra", 255)
+    assert_match(/ mysql .* ssh /, shell_output("#{bin}/hydra", 255))
   end
 end
