@@ -10,7 +10,8 @@ class Ford < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ford"
-    sha256 cellar: :any_skip_relocation, mojave: "6cf1a07b36e26539e3a39cd7def022d5dd27355435f19b1b4ca85ec0098c2ab3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5e93e0bc3950ceacb6cc72a1da85c394b7c4d412470b4819b29f65b46eeddebf"
   end
 
   depends_on "graphviz"
