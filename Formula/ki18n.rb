@@ -19,7 +19,8 @@ class Ki18n < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ki18n"
-    sha256 mojave: "0a8a8b901d72c9ba2520285eecd020a2efb2fd172c45624f27d9c0198c151eeb"
+    rebuild 1
+    sha256 mojave: "8c813bedd1ac62d315aff2705260805140f99c802d9095205cdf784b4a2f1241"
   end
 
   depends_on "cmake" => [:build, :test]
