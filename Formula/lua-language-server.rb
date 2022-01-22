@@ -3,14 +3,14 @@ class LuaLanguageServer < Formula
   homepage "https://github.com/sumneko/lua-language-server"
   # pull from git tag to get submodules
   url "https://github.com/sumneko/lua-language-server.git",
-      tag:      "2.5.5",
-      revision: "4f74c75c6a777f17752178dea8e5a92179db86e0"
+      tag:      "2.6.0",
+      revision: "2d1119fac03e102a376140006a3eb9c8a4c59e3b"
   license "MIT"
   head "https://github.com/sumneko/lua-language-server.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lua-language-server"
-    sha256 cellar: :any_skip_relocation, mojave: "5730eec3fa8fb07218762c9cd57f74ad82cc7e995bdf3ff4656e737a82750d9e"
+    sha256 cellar: :any_skip_relocation, mojave: "fdd34cbb43a6d50614cd6d67bfeafe1c0c6eb6259309c38e4232515e8efde7d9"
   end
 
   depends_on "ninja" => :build
@@ -41,8 +41,16 @@ class LuaLanguageServer < Formula
   end
 
   test do
-    output = /Content-Length: \d+\r\n\r\n/
+    require "pty"
+    output = /^Content-Length: \d+\s*$/
 
-    assert_match output, pipe_output("#{bin}/lua-language-server", 0)
+    stdout, stdin, lua_ls = PTY.spawn bin/"lua-language-server"
+    sleep 5
+    stdin.write "\n"
+    sleep 25
+    assert_match output, stdout.readline
+  ensure
+    Process.kill "TERM", lua_ls
+    Process.wait lua_ls
   end
 end
