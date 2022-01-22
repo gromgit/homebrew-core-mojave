@@ -7,7 +7,8 @@ class Libsoup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsoup"
-    sha256 mojave: "b9788145307be9dc157ddb7e6659c35c9a4ec8a46ec636b4f32b0923d5318208"
+    rebuild 1
+    sha256 mojave: "f8a602634f8cd760999155c3bc22bc84a76d5e40b926b2697b36884c064de89d"
   end
 
   depends_on "gobject-introspection" => :build
