@@ -13,7 +13,8 @@ class Libgit2Glib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgit2-glib"
-    sha256 mojave: "0ebdf631b34a787041b448103564a612d085d043997906f4acc45dcb757ed109"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3218c05187c02c557958d36d6d07bb0d6080a07097817f2ee432020a2db2ba4b"
   end
 
   depends_on "gobject-introspection" => :build
