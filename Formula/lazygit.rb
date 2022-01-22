@@ -1,14 +1,13 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://github.com/jesseduffield/lazygit/archive/v0.31.4.tar.gz"
-  sha256 "584b04e5d5666f863bd742efcce5b8ec30095ff97fd7f6f887e94e94c6eac7d8"
+  url "https://github.com/jesseduffield/lazygit/archive/v0.32.2.tar.gz"
+  sha256 "44a735c4ee78838dc918e82bd5070b154600cd24992259fd698f2116a797012b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lazygit"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "cd5887839bf220bbd08e24faf1072054149dafba32b5a4dab74280e98b995e57"
+    sha256 cellar: :any_skip_relocation, mojave: "1ca0ffb2177f0e27f6972ef891f58ed2e9a9cd917bbc35c6663161e4efe685cf"
   end
 
   depends_on "go" => :build
