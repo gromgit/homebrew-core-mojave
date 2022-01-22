@@ -20,7 +20,8 @@ class Karchive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/karchive"
-    sha256 mojave: "b6ac8af345cb01755aa77ee97c27205f715b64ba78bbc7b8de8630030a989917"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cc4aef45a141ae71aae30be202bdda35f801454bb22963305d56940242a3f818"
   end
 
   depends_on "cmake" => [:build, :test]
