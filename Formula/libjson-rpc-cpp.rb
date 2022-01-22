@@ -4,11 +4,12 @@ class LibjsonRpcCpp < Formula
   url "https://github.com/cinemast/libjson-rpc-cpp/archive/v1.4.1.tar.gz"
   sha256 "7a057e50d6203e4ea0a10ba5e4dbf344c48b177e5a3bf82e850eb3a783c11eb5"
   license "MIT"
-  head "https://github.com/cinemast/libjson-rpc-cpp.git"
+  revision 1
+  head "https://github.com/cinemast/libjson-rpc-cpp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libjson-rpc-cpp"
-    sha256 cellar: :any, mojave: "46715f67b087986663405422ceaaa937cb568f084fbce16738356ffd16e5f3ca"
+    sha256 cellar: :any, mojave: "9c9116c0808362139b0b4c747f784ffd223178add467a8b96c21311999cdeb19"
   end
 
   depends_on "cmake" => :build
