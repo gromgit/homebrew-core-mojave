@@ -15,6 +15,7 @@ class Libgusb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgusb"
+    rebuild 1
     sha256 mojave: "ff6f42ff9518dd842693e25175f391ab5210161517d5202ed73ecbc6e0151f97"
   end
 
