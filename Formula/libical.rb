@@ -1,13 +1,13 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
   homepage "https://libical.github.io/libical/"
-  url "https://github.com/libical/libical/releases/download/v3.0.12/libical-3.0.12.tar.gz"
-  sha256 "35095a4cc1a061a3de0f332c2dc728226cf127fa0baa818e9f8856cee6d35830"
+  url "https://github.com/libical/libical/releases/download/v3.0.13/libical-3.0.13.tar.gz"
+  sha256 "02543b08897f3b75c76c360a335900ccfb027d2f5120176c777340e67e763ad4"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libical"
-    sha256 cellar: :any, mojave: "33076c3f0c402278f67840f41c54850cff20eec1cc540624c6cd9e8c2db476b4"
+    sha256 cellar: :any, mojave: "269933e8ad9de28ea2f06253cb227d1cb50b7817229a9094585273e683c7f576"
   end
 
   depends_on "cmake" => :build
