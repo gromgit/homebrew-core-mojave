@@ -1,20 +1,18 @@
 class Lighttpd < Formula
   desc "Small memory footprint, flexible web-server"
   homepage "https://www.lighttpd.net/"
-  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.63.tar.xz"
-  sha256 "2aef7f0102ebf54a1241a1c3ea8976892f8684bfb21697c9fffb8de0e2d6eab9"
+  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.64.tar.xz"
+  sha256 "e1489d9fa7496fbf2e071c338b593b2300d38c23f1e5967e52c9ef482e1b0e26"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
-    url "https://download.lighttpd.net/lighttpd/releases-1.4.x/"
+    url "https://www.lighttpd.net/download/"
     regex(/href=.*?lighttpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighttpd"
-    rebuild 1
-    sha256 mojave: "b8c97bcd86e701d73717d4b892d6c886fb9e577282f54a4d5d96435157af2a43"
+    sha256 mojave: "1b4cd980c2b2ae48384c75f69bc8bdb0292fb8e88a8ffc666aa9e1563dad6c64"
   end
 
   depends_on "autoconf" => :build
