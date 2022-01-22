@@ -18,8 +18,8 @@ class Libsigrokdecode < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsigrokdecode"
-    rebuild 2
-    sha256 mojave: "14440614aff1a9f839892263c8b2e1a74309cd2e55cfb8ad3d45be5c0b126655"
+    rebuild 3
+    sha256 mojave: "c7d1ac2a8216a5f770cd0db83882042b1d56dde1c1763beda24ab0afb76c6a3c"
   end
 
   depends_on "autoconf" => :build
