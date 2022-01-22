@@ -13,8 +13,8 @@ class Libosinfo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libosinfo"
-    rebuild 2
-    sha256 mojave: "7424bc4c9ba7f7d00228209203e3ad9b71cbf252828fc569dca51ccfb897d7cd"
+    rebuild 3
+    sha256 mojave: "fa4187a3bccf9e711efb4f4f38bc506209851da8c1e3c3a7107d8cba8b6a3679"
   end
 
   depends_on "gobject-introspection" => :build
