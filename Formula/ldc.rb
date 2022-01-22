@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://github.com/ldc-developers/ldc/releases/download/v1.28.0/ldc-1.28.0-src.tar.gz"
-  sha256 "17fee8bb535bcb8cda0a45947526555c46c045f302a7349cc8711b254e54cf09"
+  url "https://github.com/ldc-developers/ldc/releases/download/v1.28.1/ldc-1.28.1-src.tar.gz"
+  sha256 "654958bca5378cd97819f2ef61d3f220aa652a9d2b5ff41d6f2109302ae6eb94"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
@@ -12,23 +12,27 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "47bb936d40170308b783fd5e0adef4cf257919ec57822d3a5aecbca18c8d69c3"
-    sha256 arm64_big_sur:  "afdbe7f9e8b4a219d9c2b1444a6fe36236d646d28185a374ae8187d952738e80"
-    sha256 monterey:       "82ebc9d435c683f4277495124f1baa6067ded552040caa9db2aeaa10bd3e64db"
-    sha256 big_sur:        "bb36be3563085a2485452a5584c2827ae217b284c86d4cfbc30c66bb722cc07c"
-    sha256 catalina:       "051f7d508c7668c78a72442f49d213c61ef83e82ca9870b2395d96761eb98378"
-    sha256 mojave:         "b2b21fd07e64980443ee696de4f1ff362f4c9db25086e750da33c9fafab1202a"
-    sha256 x86_64_linux:   "a7bb1dc2d9df62c276b0f02ff9248f017e5c43b454bc8eeac6406943c88c48bd"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldc"
+    sha256 mojave: "c533be1523fd0e4f8c8e2d58df22371a590e08341c0140b1ad545a6bf1037e13"
   end
 
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "pkg-config" => :build
-  depends_on "llvm@12"
 
   uses_from_macos "libxml2" => :build
   # CompilerSelectionError: ldc cannot be built with any available compilers.
   uses_from_macos "llvm" => [:build, :test]
+
+  on_macos do
+    depends_on "llvm"
+  end
+
+  on_linux do
+    # When built with LLVM, errors with:
+    # undefined reference to `std::__throw_bad_array_new_length()'
+    depends_on "llvm@12"
+  end
 
   fails_with :gcc
 
@@ -54,30 +58,26 @@ class Ldc < Formula
   def llvm
     deps.reject { |d| d.build? || d.test? }
         .map(&:to_formula)
-        .find { |f| f.name.match? "^llvm" }
+        .find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install
     ENV.cxx11
     (buildpath/"ldc-bootstrap").install resource("ldc-bootstrap")
 
-    if OS.linux?
-      # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].lib
-    end
+    # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
+    ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].lib if OS.linux?
 
-    mkdir "build" do
-      args = std_cmake_args + %W[
-        -DLLVM_ROOT_DIR=#{llvm.opt_prefix}
-        -DINCLUDE_INSTALL_DIR=#{include}/dlang/ldc
-        -DD_COMPILER=#{buildpath}/ldc-bootstrap/bin/ldmd2
-      ]
-      args << "-DCMAKE_INSTALL_RPATH=#{rpath};@loader_path/#{llvm.opt_lib.relative_path_from(lib)}" if OS.mac?
+    args = %W[
+      -DLLVM_ROOT_DIR=#{llvm.opt_prefix}
+      -DINCLUDE_INSTALL_DIR=#{include}/dlang/ldc
+      -DD_COMPILER=#{buildpath}/ldc-bootstrap/bin/ldmd2
+    ]
+    args << "-DCMAKE_INSTALL_RPATH=#{rpath};@loader_path/#{llvm.opt_lib.relative_path_from(lib)}" if OS.mac?
 
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
