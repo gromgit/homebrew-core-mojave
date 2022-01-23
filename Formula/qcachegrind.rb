@@ -14,6 +14,7 @@ class Qcachegrind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qcachegrind"
+    rebuild 1
     sha256 cellar: :any, mojave: "68c8af31100e5aa26b24b9b95e480d794610069a31f6064f7e07b7db8278a6b5"
   end
 
