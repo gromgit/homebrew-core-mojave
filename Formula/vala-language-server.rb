@@ -7,7 +7,8 @@ class ValaLanguageServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vala-language-server"
-    sha256 cellar: :any, mojave: "bd0a5f076381ff33c7daeefd63c09e74f048b5aa21a847929418cd67c702bf05"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e4af5f3b0c6dd2a29aa6e78eea43674ef22acd3f6b66ff3958842da2a5aa7a79"
   end
 
   depends_on "meson" => :build
