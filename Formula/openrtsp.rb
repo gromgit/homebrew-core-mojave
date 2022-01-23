@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2022.01.06.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2022.01.06.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2022.01.11.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2022.01.11.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "b6bfdaa51f1398c57c8d16bd389b9da776a13bd7c066ca8be6999822ac02e087"
+  sha256 "3c72cf04ae80655e9d566f18114a01b9a5f12fb4123350286922e03a09af37ec"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,7 +14,7 @@ class Openrtsp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openrtsp"
-    sha256 cellar: :any, mojave: "c91350ea9e60618b5813cd6f95c6f6b1fe2d2ec929c94029c8283c673465895f"
+    sha256 cellar: :any, mojave: "1fc7939e11e1ccdf2551846dd4b3579a5905dd8fc7413b18e3ea307c27f87cff"
   end
 
   depends_on "openssl@1.1"
@@ -26,7 +26,8 @@ class Openrtsp < Formula
       Formula["openssl@1.1"].opt_lib/"libssl.dylib",
     ]
 
-    system "./genMakefiles", "macosx-no-openssl"
+    os_flag = OS.mac? ? "macosx-no-openssl" : "linux-no-openssl"
+    system "./genMakefiles", os_flag
     system "make", "PREFIX=#{prefix}",
            "LIBS_FOR_CONSOLE_APPLICATION=#{libs.join(" ")}", "install"
 
