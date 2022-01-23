@@ -3,11 +3,12 @@ class Tealdeer < Formula
   homepage "https://github.com/dbrgn/tealdeer"
   url "https://github.com/dbrgn/tealdeer/archive/v1.5.0.tar.gz"
   sha256 "00902a50373ab75fedec4578c6c2c02523fad435486918ad9a86ed01f804358a"
-  license "Apache-2.0"
+  license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tealdeer"
-    sha256 cellar: :any_skip_relocation, mojave: "dea0166fa14fd3e846e505758c69fadd11a47b7d1f3f5fd854fbdcdbe322dc05"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "883265f48177b858b8284fd81ba58832d9e14827896b2694848ebe5a1cc8933c"
   end
 
   depends_on "rust" => :build
