@@ -1,14 +1,14 @@
 class Swiftformat < Formula
   desc "Formatting tool for reformatting Swift code"
   homepage "https://github.com/nicklockwood/SwiftFormat"
-  url "https://github.com/nicklockwood/SwiftFormat/archive/0.49.1.tar.gz"
-  sha256 "7f6ec67f093df69e35b236331bcba93f3cb6c93d807bb874dda932ffcbc11a79"
+  url "https://github.com/nicklockwood/SwiftFormat/archive/0.49.2.tar.gz"
+  sha256 "a9441633ad6dbf2cb8aa9ad7e5f29027373a4b0b7c5d6496682edca378070480"
   license "MIT"
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swiftformat"
-    sha256 cellar: :any_skip_relocation, mojave: "4c55c09ce69d70f2539fa745d31d31cc67370308983332c89eea918f342ff98f"
+    sha256 cellar: :any_skip_relocation, mojave: "ee7276299afe536f32a9a24bec4bde420fa0e0cf120a4f4fcd0ff99137e88f8c"
   end
 
   depends_on xcode: ["10.1", :build]
