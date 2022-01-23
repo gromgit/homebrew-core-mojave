@@ -1,10 +1,10 @@
 class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
-  url "https://github.com/draios/sysdig/archive/0.27.1.tar.gz"
-  sha256 "b9d05854493d245a7a7e75f77fc654508f720aab5e5e8a3a932bd8eb54e49bda"
+  url "https://github.com/draios/sysdig/archive/0.28.0.tar.gz"
+  sha256 "817e595d501acf3fe11dc659a154aadbba848dd87ae801f5bf34a42e84979f37"
   license "Apache-2.0"
-  revision 4
+  revision 3
 
   livecheck do
     url :stable
@@ -13,7 +13,7 @@ class Sysdig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysdig"
-    sha256 mojave: "c28eb25c875b56480b7695599d15e276696dee37d51a1774f61664bfd827505d"
+    sha256 mojave: "a17ca6d7bed103ca63e6e836337888ecabb494cf0ee3a787e3eff989c1a26628"
   end
 
   depends_on "cmake" => :build
@@ -39,16 +39,9 @@ class Sysdig < Formula
   fails_with gcc: "5" # C++17
 
   # More info on https://gist.github.com/juniorz/9986999
-  resource "sample_file" do
+  resource "homebrew-sample_file" do
     url "https://gist.githubusercontent.com/juniorz/9986999/raw/a3556d7e93fa890a157a33f4233efaf8f5e01a6f/sample.scap"
     sha256 "efe287e651a3deea5e87418d39e0fe1e9dc55c6886af4e952468cd64182ee7ef"
-  end
-
-  # Fix build with GRPC 1.41. Reported upstream at:
-  # https://github.com/draios/sysdig/issues/1778
-  patch do
-    url "https://raw.githubusercontent.com/archlinux/svntogit-community/d0e6e96ed2f95336d1f75266fcf896034268abe4/trunk/0.27.1-grpc-absl-sync.patch"
-    sha256 "9390c4c2d8aef6110aae63835aab07585bbe9856c820020750e0ba678e4da653"
   end
 
   def install
@@ -71,7 +64,7 @@ class Sysdig < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgshare/"demos").install resource("sample_file").files("sample.scap")
+    (pkgshare/"demos").install resource("homebrew-sample_file").files("sample.scap")
   end
 
   test do
