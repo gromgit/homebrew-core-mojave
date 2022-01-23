@@ -1,8 +1,8 @@
 class Pigz < Formula
   desc "Parallel gzip"
   homepage "https://zlib.net/pigz/"
-  url "https://zlib.net/pigz/pigz-2.6.tar.gz"
-  sha256 "2eed7b0d7449d1d70903f2a62cd6005d262eb3a8c9e98687bc8cbb5809db2a7d"
+  url "https://zlib.net/pigz/pigz-2.7.tar.gz"
+  sha256 "b4c9e60344a08d5db37ca7ad00a5b2c76ccb9556354b722d56d55ca7e8b1c707"
   license "Zlib"
 
   livecheck do
@@ -11,13 +11,8 @@ class Pigz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "32071d100a093f1541cb77fdbe856d2b27f686285262e32c24a5d4d8c6ce4507"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "487e4803119cf79952f0604f7c22f400299412210e771d1a5312f75b19903751"
-    sha256 cellar: :any_skip_relocation, monterey:       "2276df8aa169d851c1e063447b977036b227104df789a0221e7a28cbb11746dd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6ed76215af752e06d11b176c3c169a55f76cf2010c01e67e62f7543081137b5e"
-    sha256 cellar: :any_skip_relocation, catalina:       "c1e5284c99ef13e0401035597901b5b63d19bbb642fd7206d648193c89d0e6e7"
-    sha256 cellar: :any_skip_relocation, mojave:         "0d382426d9bf386f21f8412317b58d05fcaf6ada17b260a1b6e95e8f2e955cf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64575f4f87a063b1457a787e4731fde45f31952bde49e0a0123fa29fce2d29d2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pigz"
+    sha256 cellar: :any_skip_relocation, mojave: "caff530c18cb771c35e83ba43f6dfe8fafac5072345aae61b853b1270c770862"
   end
 
   uses_from_macos "zlib"
