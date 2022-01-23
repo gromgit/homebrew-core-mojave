@@ -1,8 +1,8 @@
 class Mlkit < Formula
   desc "Compiler for the Standard ML programming language"
   homepage "https://melsman.github.io/mlkit"
-  url "https://github.com/melsman/mlkit/archive/v4.6.0.tar.gz"
-  sha256 "361756998e7828bbea12cdde150f3c484a7a41d14502788d199f7bb97d3bca51"
+  url "https://github.com/melsman/mlkit/archive/v4.6.1.tar.gz"
+  sha256 "63fda6db4997bc2c422217c4868ae09967bf8bdc7ae552908ad5daa9b43a7a35"
   license "GPL-2.0-or-later"
   head "https://github.com/melsman/mlkit.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Mlkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlkit"
-    sha256 mojave: "3a3304f0696cd9827dd563c937f0ff8abf299ae9b70a9ab648fab0e40e46ab99"
+    sha256 mojave: "c8b86db4eff558267a2ccfbcbef18a2c525a23342520db15ad249076d89dd853"
   end
 
   depends_on "autoconf" => :build
