@@ -4,7 +4,7 @@ class Wasmtime < Formula
   url "https://github.com/bytecodealliance/wasmtime.git",
       tag:      "v0.33.0",
       revision: "8043c1f919a77905255eded33e4e51a6fbfd1de1"
-  license "Apache-2.0"
+  license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
   livecheck do
@@ -14,7 +14,8 @@ class Wasmtime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wasmtime"
-    sha256 cellar: :any_skip_relocation, mojave: "43c77bbebaba03317488d7f70910a4ec310838a877daa2e29b2059520fb4aab1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "204e97fbc49296266628fa7032e593a6c95355f5c20c343da840254898c305d6"
   end
 
   depends_on "rust" => :build
