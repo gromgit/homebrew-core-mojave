@@ -1,19 +1,19 @@
 class OpenMesh < Formula
   desc "Generic data structure to represent and manipulate polygonal meshes"
   homepage "https://openmesh.org/"
-  url "https://www.openmesh.org/media/Releases/8.1/OpenMesh-8.1.tar.bz2"
-  sha256 "9bc43a3201ba27ed63de66c4c09e23746272882c37a3451e71f0cf956f9be076"
-  head "https://www.graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh.git"
+  url "https://www.openmesh.org/media/Releases/9.0/OpenMesh-9.0.tar.bz2"
+  sha256 "69311a75b6060993b07fef005b328ea62178c13fbb0c44773874137231510218"
+  license "BSD-3-Clause"
+  head "https://www.graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh.git", branch: "master"
+
+  livecheck do
+    url "https://www.openmesh.org/download/"
+    regex(/href=.*?OpenMesh[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "e066cb3914efa547fa06a4dfdbb4f5d4ecaf54c4eeaeecd4d41d4a0f3d16d23a"
-    sha256 cellar: :any,                 arm64_big_sur:  "4602ad1fc42a6aa33f4198ad3a3ea165e65303936d16444a5002821d013463cb"
-    sha256 cellar: :any,                 monterey:       "33029db8032f79b73a8e49a5f6cf79e95f9ea74615c09c60c49b443867000341"
-    sha256 cellar: :any,                 big_sur:        "1162cfaad47a077402ef01854605a5fe5ab7e696ea56ab9352f753c25df231d6"
-    sha256 cellar: :any,                 catalina:       "40eabd6160d88b74bb3298b42dfce249c327bee9a596b5911a4015462b457dfb"
-    sha256 cellar: :any,                 mojave:         "3c523efbed147ef236ba22b7fdfc8fddae883b4ce7b9f03e970af199416adbe5"
-    sha256 cellar: :any,                 high_sierra:    "a1b6514505ea011f01e8a61fd20dec9f31b900a42e8581e24a23beca738dc5f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0df53a37289dcca304749919744bfea1cb028291638b668dff65b804c9094dd1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-mesh"
+    sha256 cellar: :any, mojave: "c3ed031e0597208b358ca5eb30a617ab54e706655d69e008fbb8a28cff4c7d2c"
   end
 
   depends_on "cmake" => :build
