@@ -1,13 +1,13 @@
 class Tctl < Formula
   desc "Temporal CLI (tctl)"
   homepage "https://temporal.io/"
-  url "https://github.com/temporalio/temporal/archive/v1.14.2.tar.gz"
-  sha256 "bdb37931fa16867d9b3f5af50979369e9211b2bd95de42ed1d908531296edbaf"
+  url "https://github.com/temporalio/temporal/archive/v1.14.3.tar.gz"
+  sha256 "00b6404be565f6c9886efcbcd1796b5ba8ac3199cf12fb9228dbd798bf2ea7d0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tctl"
-    sha256 cellar: :any_skip_relocation, mojave: "773ecb9462cd5b61e75d46eb8a28b2744fe50448f47f146677eb67cb80f0217b"
+    sha256 cellar: :any_skip_relocation, mojave: "6195f832a3014b1f1b6e021b77199c86bd4d044e2f39a9dec13da763e35646fb"
   end
 
   depends_on "go" => :build
