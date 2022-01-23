@@ -1,16 +1,15 @@
 class Pcl < Formula
   desc "Library for 2D/3D image and point cloud processing"
   homepage "https://pointclouds.org/"
-  url "https://github.com/PointCloudLibrary/pcl/archive/pcl-1.12.0.tar.gz"
-  sha256 "21dfa9a268de9675c1f94d54d9402e4e02120a0aa4215d064436c52b7d5bd48f"
+  url "https://github.com/PointCloudLibrary/pcl/archive/pcl-1.12.1.tar.gz"
+  sha256 "dc0ac26f094eafa7b26c3653838494cc0a012bd1bdc1f1b0dc79b16c2de0125a"
   license "BSD-3-Clause"
   revision 1
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcl"
-    rebuild 2
-    sha256 mojave: "b047ebaa9f96b467a04b61523deb9b9c485a742824a0da9f9f03e30baa877da4"
+    sha256 cellar: :any, mojave: "2a9526653225eea78ef550dc57b5485c9430fb65ce2e96c52d6ff2cd3735761d"
   end
 
   depends_on "cmake" => [:build, :test]
