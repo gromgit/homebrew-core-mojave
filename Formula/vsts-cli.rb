@@ -5,11 +5,13 @@ class VstsCli < Formula
   homepage "https://docs.microsoft.com/en-us/cli/vsts"
   url "https://files.pythonhosted.org/packages/f9/c2/3ed698480ab30d2807fc961eef152099589aeaec3f1407945a4e07275de5/vsts-cli-0.1.4.tar.gz"
   sha256 "27defe1d8aaa1fcbc3517274c0fdbd42b5ebe2c1c40edfc133d98fe4bb7114de"
+  license "MIT"
   revision 5
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vsts-cli"
-    sha256 cellar: :any, mojave: "cc51e21a3c7da38d0fe6ca192a607f930e256b3a28282fc776954baaa5509f68"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7a6486cb4bc312dc3e60c70283d2de36a1ed8a8b09ccdc0df580353098d4b46b"
   end
 
   # https://github.com/Azure/azure-devops-cli-extension/pull/219#issuecomment-456404611
