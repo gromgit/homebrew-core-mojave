@@ -1,14 +1,13 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://github.com/lunaryorn/mdcat"
-  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.24.2.tar.gz"
-  sha256 "2daafb8c9e90f8048810450566b4f4fde11ca76f3b5ec49c4878f68f475f3483"
+  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.25.1.tar.gz"
+  sha256 "97d789b1e95c90383a79bdf0167d71d3151c9b441e52f553829d0ba4c4cc4e32"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdcat"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "a9231f8056778ed495789d3e3c7568b6398b3df997859a02878db9a3d009f832"
+    sha256 cellar: :any_skip_relocation, mojave: "63f8799dd5ac2504e6e0bd4e121a89f65c22fdaf04ddac8466d798239e4dd2f1"
   end
 
   depends_on "cmake" => :build
