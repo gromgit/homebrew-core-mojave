@@ -1,14 +1,13 @@
 class Navi < Formula
   desc "Interactive cheatsheet tool for the command-line"
   homepage "https://github.com/denisidoro/navi"
-  url "https://github.com/denisidoro/navi/archive/v2.18.0.tar.gz"
-  sha256 "be36c9021a23c94b585e6dc328495a818dea7de6057572ab25858f45f95e2312"
+  url "https://github.com/denisidoro/navi/archive/v2.19.0.tar.gz"
+  sha256 "dfcefd8deb4c472517640e5ff285ec9f8cfc54546e6616917bfd8d6bc0f2e086"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/navi"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "928ac5afbf7e980bffd2867528fd77cd62447a794a0002e0f9aeeb658e28a7a4"
+    sha256 cellar: :any_skip_relocation, mojave: "d5aa76b427616d8fe16527bf187a4cc5e24728d4bc675ee3789512a1c72837fa"
   end
 
   depends_on "rust" => :build
