@@ -3,12 +3,13 @@ class WasmPack < Formula
   homepage "https://rustwasm.github.io/wasm-pack/"
   url "https://github.com/rustwasm/wasm-pack/archive/v0.10.2.tar.gz"
   sha256 "533b7f63c04411e5d771d406b1c56134e3045b48fb1673985ad8fed1bc937517"
-  license "Apache-2.0"
+  license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rustwasm/wasm-pack.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wasm-pack"
-    sha256 cellar: :any_skip_relocation, mojave: "ece2a68c697db90d8381f922f81b862378d8eb9b33ffdbdbecadba6730795706"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8ce380a27f1b12536f36dc8aaf82ea654260f921cdf3e59a8a30aae72bf78412"
   end
 
   depends_on "rust" => :build
