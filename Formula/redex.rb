@@ -2,7 +2,7 @@ class Redex < Formula
   desc "Bytecode optimizer for Android apps"
   homepage "https://fbredex.com"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/facebook/redex.git", branch: "master"
 
   stable do
@@ -22,11 +22,8 @@ class Redex < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, big_sur:     "84dd055e027a7944cb87c73427009c046d5b735e7e2c42ee11c0c52795a9adaa"
-    sha256 cellar: :any, catalina:    "2e6e4910a6ac40f83252859c90a9fc69e09f9e4c9027772fbf245b926f4f72f7"
-    sha256 cellar: :any, mojave:      "56d21fc922c0f90ef8fd07b5ec65240e971e9a73d92b9f8b3c19b5f74043cb96"
-    sha256 cellar: :any, high_sierra: "65a056c1422c091bde3a7ed24dd01ee5f8b6bad7b0ceac3cc360257145863eb0"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/redex"
+    sha256 cellar: :any, mojave: "43f70a678f9547905c12d743894224f94ec178cf8b7c06b0454f980e983fff9d"
   end
 
   depends_on "autoconf" => :build
