@@ -2,14 +2,14 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/v8.2.4050.tar.gz"
-  sha256 "66d9b67ce20cfde5b52d74b996e22d9be14298aabc46ee65575197badce1f8bc"
+  url "https://github.com/vim/vim/archive/v8.2.4150.tar.gz"
+  sha256 "d3238641a8318e89971832374c06e700a9ded7fa868b88d36e091187a16ecaaa"
   license "Vim"
   head "https://github.com/vim/vim.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vim"
-    sha256 mojave: "c687b6c21ddf851824e6c59bde37c45cee7d432455de21996f0402ee53d0d138"
+    sha256 mojave: "cb808b59c099cbccd0fd24b4539f09b423170818dc2010ca9326341886805150"
   end
 
   depends_on "gettext"
