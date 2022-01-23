@@ -14,8 +14,8 @@ class Varnish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/varnish"
-    rebuild 2
-    sha256 mojave: "39e59c960fbf02137136b99340a2f73b308940e7c74b283e4e7fce2416fc2f56"
+    rebuild 3
+    sha256 mojave: "8614868dbdb4c55734885aaac103c507b166e372fb5d458fe48e6e26b62fe5b5"
   end
 
   depends_on "docutils" => :build
@@ -25,6 +25,9 @@ class Varnish < Formula
   depends_on "sphinx-doc" => :build
   depends_on "pcre2"
 
+  uses_from_macos "libedit"
+  uses_from_macos "ncurses"
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
@@ -32,7 +35,7 @@ class Varnish < Formula
   end
 
   def install
-    ENV["PYTHON"] = which("python3")
+    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3"
 
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
@@ -43,6 +46,9 @@ class Varnish < Formula
     # can install VMODs and VCL.
     ENV.append_to_cflags "-DVARNISH_VMOD_DIR='\"#{HOMEBREW_PREFIX}/lib/varnish/vmods\"'"
     ENV.append_to_cflags "-DVARNISH_VCL_DIR='\"#{pkgetc}:#{HOMEBREW_PREFIX}/share/varnish/vcl\"'"
+
+    # Fix missing pthread symbols on Linux
+    ENV.append_to_cflags "-pthread" if OS.linux?
 
     system "make", "install", "CFLAGS=#{ENV.cflags}"
 
