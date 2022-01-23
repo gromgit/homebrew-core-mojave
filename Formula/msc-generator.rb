@@ -7,7 +7,8 @@ class MscGenerator < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/msc-generator"
-    sha256 cellar: :any, mojave: "5ee1597774de5eabfabdb5bed82c45470eecf6b7107d1ebef17ed83b353c30e1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d87389337781823f3cb66688ffe769337f31643c1fa7e5e525e12e22fe8da343"
   end
 
   depends_on "autoconf" => :build
