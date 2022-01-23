@@ -1,8 +1,8 @@
 class Onednn < Formula
   desc "Basic building blocks for deep learning applications"
   homepage "https://01.org/oneDNN"
-  url "https://github.com/oneapi-src/oneDNN/archive/v2.5.tar.gz"
-  sha256 "d7a47caeb28d2c67dc8fa0d0f338b11fbf25b473a608f04cfed913aea88815a9"
+  url "https://github.com/oneapi-src/oneDNN/archive/v2.5.2.tar.gz"
+  sha256 "11d50235afa03571dc70bb6d96a98bfb5d9b53e8c00cc2bfbde78588bd01f6a3"
   license "Apache-2.0"
   head "https://github.com/oneapi-src/onednn.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Onednn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onednn"
-    sha256 cellar: :any, mojave: "f9d74e6309f4b1fde45c391713c2d1f719410602279c777c412d61501ba4b4ec"
+    sha256 cellar: :any, mojave: "89118b3ce3c69ad88d54427b3367661e5555c4a804fb3513b11f35f42305d3b7"
   end
 
   depends_on "cmake" => :build
