@@ -1,8 +1,8 @@
 class Spot < Formula
   desc "Platform for LTL and ω-automata manipulation"
   homepage "https://spot.lrde.epita.fr/"
-  url "https://www.lrde.epita.fr/dload/spot/spot-2.10.2.tar.gz"
-  sha256 "c1c4ba4f1c87919b3d2749280c7e9959a7d82a4a43a97a19eca0a3ca22605066"
+  url "https://www.lrde.epita.fr/dload/spot/spot-2.10.3.tar.gz"
+  sha256 "897e95486173748f2b65eecbd99a234b7f6877f2186e868da7ace5671804019f"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Spot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spot"
-    sha256 cellar: :any, mojave: "89766188f3e56549e865d0c47261d20c28e04a2a3dc3f5f2802a8e4acfc31aee"
+    sha256 cellar: :any, mojave: "12ba58e59517fd4b1ec01192aaaf10134014e1dd4eb66d600e2ad35917ff4ae1"
   end
 
   depends_on "python@3.10" => :build
