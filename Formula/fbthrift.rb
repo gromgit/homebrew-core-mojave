@@ -8,7 +8,7 @@ class Fbthrift < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fbthrift"
-    sha256 cellar: :any, mojave: "c113f04202f022149c8b3f3ba1634f2719a2f0e83b90976e594624cfc01037b7"
+    sha256 cellar: :any, mojave: "838bcbd310d3723f8b4471404249b9be6dd9d7c03dabef1df597ec88d964b885"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -27,7 +27,7 @@ class Fbthrift < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
+    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
   end
 
   on_linux do
@@ -45,7 +45,6 @@ class Fbthrift < Formula
   fails_with gcc: "11" # https://github.com/facebook/folly#ubuntu-lts-centos-stream-fedora
 
   def install
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
     # The static libraries are a bit annoying to build. If modifying this formula
