@@ -4,7 +4,7 @@ class LcdfTypetools < Formula
   url "https://www.lcdf.org/type/lcdf-typetools-2.108.tar.gz"
   sha256 "fb09bf45d98fa9ab104687e58d6e8a6727c53937e451603662338a490cbbcb26"
   license "GPL-2.0-or-later"
-  head "https://github.com/kohler/lcdf-typetools.git"
+  head "https://github.com/kohler/lcdf-typetools.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -22,6 +22,8 @@ class LcdfTypetools < Formula
     sha256 sierra:         "2bfe28f9e869eec676cada56bcf6efe97024e0e1f93b126a7b26ac2a292db2af"
     sha256 x86_64_linux:   "ba34cee40d5450d1deba4434cc43458d5407ef47b9f0563530b04dfac8fadc7a"
   end
+
+  conflicts_with "texlive", because: "both install a `cfftot1` executable"
 
   def install
     system "./configure", "--disable-dependency-tracking",
