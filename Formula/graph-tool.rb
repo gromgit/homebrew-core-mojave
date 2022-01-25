@@ -14,7 +14,8 @@ class GraphTool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graph-tool"
-    sha256 mojave: "52975a41614d64080af1477091c4594aac664352e317d0817eeb5a68847c67d3"
+    rebuild 1
+    sha256 mojave: "86247ebcc0a78bbf5c590263bba0379aba0e21c50f378c0d80f0ad17121e3c79"
   end
 
   depends_on "autoconf" => :build
