@@ -4,7 +4,7 @@ class Ipsumdump < Formula
   url "https://read.seas.harvard.edu/~kohler/ipsumdump/ipsumdump-1.86.tar.gz"
   sha256 "e114cd01b04238b42cd1d0dc6cfb8086a6b0a50672a866f3d0d1888d565e3b9c"
   license "MIT"
-  head "https://github.com/kohler/ipsumdump.git"
+  head "https://github.com/kohler/ipsumdump.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -22,6 +22,7 @@ class Ipsumdump < Formula
     sha256 sierra:         "96148641aa0430d8b80cb3ebad8994d1911d61cad9557155172490579e210eaf"
     sha256 el_capitan:     "a98b6116340b9b459f53310c030e99b8022f546c78cda7fcb040ea87c6e2a5f6"
     sha256 yosemite:       "83b145e153aa8e0680e9329035fb9ad55ce8875a2a6c8d35879821f51e394c7e"
+    sha256 x86_64_linux:   "27e438253bf0b215381e8f27d3898eab9e905181266347997c5f59cfdc46175a"
   end
 
   def install
@@ -31,6 +32,8 @@ class Ipsumdump < Formula
   end
 
   test do
-    system "#{bin}/ipsumdump", "-c", "-r", test_fixtures("test.pcap").to_s
+    output = shell_output("#{bin}/ipsumdump -c -r #{test_fixtures("test.pcap")}")
+    assert_match "!host #{Socket.gethostname}", output
+    assert_match "!data count\n" + ("1\n" * 12), output
   end
 end
