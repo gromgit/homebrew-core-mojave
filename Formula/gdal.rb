@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https://download.osgeo.org/gdal/3.4.1/gdal-3.4.1.tar.xz"
   sha256 "332f053516ca45101ef0f7fa96309b64242688a8024780a5d93be0230e42173d"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -12,7 +13,7 @@ class Gdal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdal"
-    sha256 mojave: "bd34692d9c898de26b5530f7b2d328e8507472c020aaaa7c8700b01ad99a296a"
+    sha256 mojave: "5be2486eb8456d1323d474ef5df47e0381e15914b8271ffeacf68bd356a3df7a"
   end
 
   head do
@@ -40,7 +41,7 @@ class Gdal < Formula
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "openjpeg"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "poppler-qt5"
   depends_on "proj@7"
   depends_on "python@3.9"
@@ -90,6 +91,7 @@ class Gdal < Formula
       "--with-pg=yes",
       "--with-png=#{Formula["libpng"].opt_prefix}",
       "--with-spatialite=#{Formula["libspatialite"].opt_prefix}",
+      "--with-pcre2=yes",
       "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
       "--with-proj=#{Formula["proj@7"].opt_prefix}",
       "--with-zstd=#{Formula["zstd"].opt_prefix}",
