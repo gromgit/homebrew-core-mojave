@@ -3,8 +3,8 @@ class AstrometryNet < Formula
 
   desc "Automatic identification of astronomical images"
   homepage "https://github.com/dstndstn/astrometry.net"
-  url "https://github.com/dstndstn/astrometry.net/releases/download/0.88/astrometry.net-0.88.tar.gz"
-  sha256 "f57d129547ad176a4ff04dc86fc7523d2e7437a9a7f9b567989b81db813b92d2"
+  url "https://github.com/dstndstn/astrometry.net/releases/download/0.89/astrometry.net-0.89.tar.gz"
+  sha256 "98e955a6f747cde06904e461df8e09cd58fe14b1ecceb193e3619d0f5fc64acb"
   license "BSD-3-Clause"
 
   livecheck do
@@ -14,7 +14,7 @@ class AstrometryNet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/astrometry-net"
-    sha256 cellar: :any, mojave: "e891536d7628bb38460c338dd73b263a1339a402f7904e67c2cf347225ec4795"
+    sha256 cellar: :any, mojave: "d2824f0f855fb8ec7e3cd18125979c4f51627e9377423602c60ac6787dcaa640"
   end
 
   depends_on "pkg-config" => :build
