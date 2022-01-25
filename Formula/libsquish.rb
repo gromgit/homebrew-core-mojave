@@ -6,6 +6,7 @@ class Libsquish < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, monterey:    "904c64da3dfb66597dfcad1afdb70ff5f14984fa69f37d7386592a3bbd49012b"
     sha256 cellar: :any_skip_relocation, big_sur:     "bfc3e9d3b6239828025e5a35707ac35a82722c9a1f66b13116990a3597f33943"
     sha256 cellar: :any_skip_relocation, catalina:    "a3f9fc5e20792dd4ced369a1be063a01c873afc399c8c73bb8800db1777ce6fb"
     sha256 cellar: :any_skip_relocation, mojave:      "d3a42b4342fab6548ec4e2467a571631edf0891d1c4c51a6573b14afda5b0972"
