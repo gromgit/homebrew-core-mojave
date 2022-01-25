@@ -32,8 +32,8 @@ class Libsigrok < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsigrok"
-    rebuild 2
-    sha256 mojave: "bec327fc38dfb969dab73f4714cda3d0226918438a75abfa7d414188322924ee"
+    rebuild 3
+    sha256 mojave: "a6a93f2354a7cfeadfa303984cc49598b605506f701e776565b6f5b03b2a1b27"
   end
 
   head do
