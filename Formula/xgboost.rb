@@ -2,13 +2,13 @@ class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https://xgboost.ai/"
   url "https://github.com/dmlc/xgboost.git",
-      tag:      "v1.5.1",
-      revision: "eb69c6110ae991ffcf05b60940e25ff8eb134a28"
+      tag:      "v1.5.2",
+      revision: "742c19f3ecf2135b4e008a4f4a10b59add8b1045"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xgboost"
-    sha256 cellar: :any, mojave: "7d01d5b79a219fe55a9c9e6dbcca63ef1f7cc9ac02e91a28fee668193bf35be9"
+    sha256 cellar: :any, mojave: "029eabe4deef52dac54c7a8788a20e2b654f1619037f2166df36777057eee511"
   end
 
   depends_on "cmake" => :build
