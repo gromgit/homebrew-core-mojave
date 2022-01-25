@@ -1,10 +1,10 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://github.com/kyma-project/cli/archive/1.24.8.tar.gz"
-  sha256 "eb4d3fe1877f025f240a322693e882b2c52cb6d87c9bf07ae9970536283aff58"
+  url "https://github.com/kyma-project/cli/archive/2.0.2.tar.gz"
+  sha256 "3a43180ab9dee3e50799c2bd5bb728be532e4867d80fa5c2e4a8beab86e5611d"
   license "Apache-2.0"
-  head "https://github.com/kyma-project/cli.git"
+  head "https://github.com/kyma-project/cli.git", branch: "main"
 
   depends_on "go" => :build
   depends_on macos: :catalina
@@ -13,11 +13,9 @@ class KymaCli < Formula
     ldflags = %W[
       -s -w
       -X github.com/kyma-project/cli/cmd/kyma/version.Version=#{version}
-      -X github.com/kyma-project/cli/cmd/kyma/install.DefaultKymaVersion=#{version}
-      -X github.com/kyma-project/cli/cmd/kyma/upgrade.DefaultKymaVersion=#{version}
-    ].join(" ")
+    ]
 
-    system "go", "build", *std_go_args, "-o", bin/"kyma", "-ldflags", ldflags, "./cmd"
+    system "go", "build", *std_go_args(output: bin/"kyma", ldflags: ldflags), "./cmd"
   end
 
   test do
