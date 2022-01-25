@@ -5,12 +5,12 @@ class Gmt < Formula
   mirror "https://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.xz"
   sha256 "69e29b62ee802a3a64260d6a1e023f1350e3bf4070221aa1307bf8a9e56c1ee5"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/GenericMappingTools/gmt.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmt"
-    sha256 mojave: "8a405ba34ec4c024b5b357b8beb79c3abe44482a7020aef9bd70cc2024f4baf1"
+    sha256 mojave: "8138211b7723a2aa94211ea6ec0b03092518513764faec8c8ab374dba58bd1b7"
   end
 
   depends_on "cmake" => :build
@@ -26,9 +26,9 @@ class Gmt < Formula
   end
 
   resource "dcw" do
-    url "https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.1/dcw-gmt-2.0.1.tar.gz"
-    mirror "https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.0.1.tar.gz"
-    sha256 "5c90b2968f4095cf5ea44a354dc9d8f9dd1b8fe5514e0338ff85b48e03547a25"
+    url "https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.1.0/dcw-gmt-2.1.0.tar.gz"
+    mirror "https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.1.0.tar.gz"
+    sha256 "e810567cd474d5af9d84751938acb447a8612391ed66190d60d789974a1f9e29"
   end
 
   def install
