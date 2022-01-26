@@ -7,7 +7,8 @@ class Tbb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tbb"
-    sha256 mojave: "0dead0527b0f9a500405aef0310278194578b00b5477d091de03ac13a4267849"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bd726d6bd01fddc55c139e27cfd3c0f548a0751723be6a546d2d145861ca5471"
   end
 
   depends_on "cmake" => :build
