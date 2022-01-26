@@ -19,7 +19,7 @@ class OpensslAT11 < Formula
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssl@1.1"
     rebuild 1
-    sha256 mojave: "287dd9b3fb4b12b1eed282dc942857f01f6ed3dd7d0f70169ef5ac74d9cef5b5"
+    sha256 mojave: "4a74fb1a701b7683bbf126d2f6ef2d776d2ad124a79801ae307670172c2f8be7"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
