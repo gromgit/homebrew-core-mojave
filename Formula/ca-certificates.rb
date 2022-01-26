@@ -11,7 +11,9 @@ class CaCertificates < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1bbd45c16a0b9912174c553a6d7ae1b67b11abbeb3155eaf03109bb62d8e5381"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ca-certificates"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1bbd45c16a0b9912174c553a6d7ae1b67b11abbeb3155eaf03109bb62d8e5381"
   end
 
   def install
