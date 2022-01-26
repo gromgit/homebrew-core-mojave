@@ -17,7 +17,8 @@ class Cmake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake"
-    sha256 cellar: :any_skip_relocation, mojave: "23a237dec4e82026292213bdf5acd8fbd1c2845e80c26d75684a8e39d13b48fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b837edd2f818521042f0df0f6f1110aa3fe62deb5ce65580204f25274d3a85c8"
   end
 
   uses_from_macos "ncurses"
