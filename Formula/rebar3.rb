@@ -12,7 +12,8 @@ class Rebar3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rebar3"
-    sha256 cellar: :any_skip_relocation, mojave: "c9e3f24229f0b632cd70097c92e6514b299786c923388c40b39ad0be12e888d5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d1de4c7d0b2b66b7b77805fbefd0148e6a98513ebbd05ce5cd97eef2b7cd1efa"
   end
 
   depends_on "erlang"
