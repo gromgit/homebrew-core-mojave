@@ -9,8 +9,8 @@ class Scons < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scons"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "89379cd62e75020f1e38c92b807558c0a53f665db6c09271d59551819dd2086f"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "190eef11a54c52a72cd6d5312bcb7098c31d64a6437b9002335780f8733d4da8"
   end
 
   depends_on "python@3.10"
