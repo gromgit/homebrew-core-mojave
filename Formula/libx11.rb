@@ -7,7 +7,8 @@ class Libx11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libx11"
-    sha256 mojave: "bf95ca7265605313c2d0b03f90104aea9e5feb926142a3b413e7284ae875b423"
+    rebuild 1
+    sha256 mojave: "e909b5ae713b57fba3fd777893a95ec5d59f6ee8e36f89e447f0273e33460f36"
   end
 
   depends_on "pkg-config" => :build
