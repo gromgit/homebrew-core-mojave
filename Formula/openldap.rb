@@ -1,10 +1,10 @@
 class Openldap < Formula
   desc "Open source suite of directory software"
   homepage "https://www.openldap.org/software/"
-  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.0.tgz"
-  mirror "http://fresh-center.net/linux/misc/openldap-2.6.0.tgz"
-  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.0.tgz"
-  sha256 "b71c580eac573e9aba15d95f33dd4dd08f2ed4f0d7fc09e08ad4be7ed1e41a4f"
+  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.1.tgz"
+  mirror "http://fresh-center.net/linux/misc/openldap-2.6.1.tgz"
+  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.1.tgz"
+  sha256 "9d576ea6962d7db8a2e2808574e8c257c15aef55f403a1fb5a0faf35de70e6f3"
   license "OLDAP-2.8"
 
   livecheck do
@@ -14,8 +14,7 @@ class Openldap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openldap"
-    rebuild 2
-    sha256 mojave: "c192a32a6ea017cb552e391925db1065855cd14b8a8ea232f7e7cb325aa679e1"
+    sha256 mojave: "2b57d19c42ed663a3ce7afc55d08b188574986dfc579ff0bd6b88cf8c4498d9b"
   end
 
   keg_only :provided_by_macos
@@ -30,12 +29,6 @@ class Openldap < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
-
-  # Fix https://bugs.openldap.org/show_bug.cgi?id=9733, remove in next release
-  patch do
-    url "https://git.openldap.org/openldap/openldap/-/commit/eb989be4081cf996bd7e7eb6a529bbc1dc483a59.patch"
-    sha256 "d083c2ca7c0ec5c211df53a98ffb02e1ba926abf108bbe4d88550fa6064536a4"
   end
 
   def install
