@@ -11,7 +11,9 @@ class Xorgproto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "97763c1171ba9dc0772b5fa107c8dad9b19c3e73963d84887fb2d8c02a1ab59e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xorgproto"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "97763c1171ba9dc0772b5fa107c8dad9b19c3e73963d84887fb2d8c02a1ab59e"
   end
 
   depends_on "pkg-config" => [:build, :test]
