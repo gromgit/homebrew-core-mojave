@@ -14,7 +14,7 @@ class Openldap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openldap"
-    sha256 mojave: "2b57d19c42ed663a3ce7afc55d08b188574986dfc579ff0bd6b88cf8c4498d9b"
+    sha256 mojave: "808d9df712518491b9079b12612a70797c1434c6d9ad91dc0111edf18ea21896"
   end
 
   keg_only :provided_by_macos
