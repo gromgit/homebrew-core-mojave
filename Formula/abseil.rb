@@ -9,8 +9,8 @@ class Abseil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abseil"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aed2ef8e6dcd7c9b51c8f4579b5992466ab1946951233e69019d87fc036e7fba"
+    rebuild 2
+    sha256 cellar: :any, mojave: "44d4ec7beb97d4059c521dd53a4215dcda029909d69e7a015de4559a6e34ccaa"
   end
 
   depends_on "cmake" => :build
