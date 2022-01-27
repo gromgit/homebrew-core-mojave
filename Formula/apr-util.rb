@@ -10,7 +10,7 @@ class AprUtil < Formula
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apr-util"
     rebuild 1
-    sha256 mojave: "6179fc5d2e4e9bc1f3bd06812e4950665f03f5340cbff1d48e1eb9d1df46143d"
+    sha256 mojave: "402ec3e44d9c71ba692c2238a939687e8dfcea1b3eae05512ab3931884111d23"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides apr (but not apr-util)"
