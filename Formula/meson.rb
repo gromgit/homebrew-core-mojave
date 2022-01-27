@@ -7,7 +7,9 @@ class Meson < Formula
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4e7a608cbefd2c07d3a649adc57dee99bdbef2828a535b96088a7a1bfda5a79e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/meson"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4e7a608cbefd2c07d3a649adc57dee99bdbef2828a535b96088a7a1bfda5a79e"
   end
 
   depends_on "ninja"
