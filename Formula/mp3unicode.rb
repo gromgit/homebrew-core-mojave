@@ -23,7 +23,7 @@ class Mp3unicode < Formula
   end
 
   head do
-    url "https://github.com/alonbl/mp3unicode.git"
+    url "https://github.com/alonbl/mp3unicode.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,7 +33,7 @@ class Mp3unicode < Formula
   depends_on "taglib"
 
   def install
-    ENV.append "ICONV_LIBS", "-liconv"
+    ENV.append "ICONV_LIBS", "-liconv" if OS.mac?
 
     system "autoreconf", "-fvi" if build.head?
     system "./configure", "--prefix=#{prefix}"
