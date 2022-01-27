@@ -16,8 +16,8 @@ class CAres < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/c-ares"
-    rebuild 3
-    sha256 cellar: :any, mojave: "964403a65fee295058cc323109e35d4b2d62582d71e4f62d2e8e6b746ba6fb2c"
+    rebuild 4
+    sha256 cellar: :any, mojave: "7a349f743dad9f08c7748ccd17a98e35743ffb1d9a2d27202d958fcb7319b4af"
   end
 
   depends_on "cmake" => :build
