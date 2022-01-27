@@ -7,7 +7,9 @@ class XcbProto < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "172e8c721816f274068bd9ec31a02ca14f036bb7f55ead5879c67dc42fabec16"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xcb-proto"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "172e8c721816f274068bd9ec31a02ca14f036bb7f55ead5879c67dc42fabec16"
   end
 
   depends_on "pkg-config" => [:build, :test]
