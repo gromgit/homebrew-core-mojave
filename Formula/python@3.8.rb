@@ -13,8 +13,8 @@ class PythonAT38 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.8"
-    rebuild 1
-    sha256 mojave: "8e63115d29ded131e86579f50f696a991bfe1ebe4fb4b04e1712c59f29830802"
+    rebuild 2
+    sha256 mojave: "6d4d3c60c3687f6d6f3b1f101587a3957b64a2c91fbeaf180fe43249e6b547b9"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
