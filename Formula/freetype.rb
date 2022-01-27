@@ -13,7 +13,8 @@ class Freetype < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freetype"
-    sha256 cellar: :any, mojave: "b4c8a73873195a47b31d1bfd38662f6e1380ab8347f0c3c257ef7a15c0f8712c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "54476b8d883fe5bfd1f4ed78d9d6d21d6ab80f9ad09a477a9f65bc40915b5c67"
   end
 
   depends_on "libpng"
