@@ -7,7 +7,8 @@ class Utf8proc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/utf8proc"
-    sha256 cellar: :any, mojave: "826d2381f65371b25ca81c764c3a96ed38b04ef593a71b812e45c3435e244647"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8885da034ef7148b5a1415000d2b5c61acc9abafe885c14151175823ba6b8ce9"
   end
 
   def install
