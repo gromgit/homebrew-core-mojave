@@ -13,8 +13,8 @@ class Openjdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk"
-    rebuild 2
-    sha256 cellar: :any, mojave: "70fa71b26cb87d244475209212248c7a1eea0c0a2832b28f9722229c3edca58a"
+    rebuild 3
+    sha256 cellar: :any, mojave: "c37e362c7f5119bf1bdda3b2bdde80c8d6370d44c47cce5949ff384d82e083d5"
   end
 
   keg_only :shadowed_by_macos
