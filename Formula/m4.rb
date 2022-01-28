@@ -8,7 +8,7 @@ class M4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/m4"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "3b71da60e60afd42b34fd6e01b4f46885df969eb9dd1d501230d3ebfc559e591"
   end
 
