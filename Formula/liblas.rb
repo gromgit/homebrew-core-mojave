@@ -5,7 +5,7 @@ class Liblas < Formula
   sha256 "9adb4a98c63b461ed2bc82e214ae522cbd809cff578f28511122efe6c7ea4e76"
   license "BSD-3-Clause"
   revision 3
-  head "https://github.com/libLAS/libLAS.git"
+  head "https://github.com/libLAS/libLAS.git", branch: "master"
 
   bottle do
     sha256 catalina:    "c63d0d75db5b8e129c13add1de8fe94b2a38d5c15d101b62d6a7f59b796f53a3"
@@ -13,7 +13,8 @@ class Liblas < Formula
     sha256 high_sierra: "b47d0b9c82040703d212e22a436b7e11aff24632f0649db959e2073e0ae48548"
   end
 
-  deprecate! date: "2018-01-01", because: :unsupported
+  # Original deprecation date: 2018-01-01
+  disable! date: "2022-01-22", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "boost"
