@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/e6/c7/2a595b4fb638f9903cc144e00a033475684658397fd37d32a9e9b4bd4b7b/awscli-1.22.30.tar.gz"
-  sha256 "48cacf396ec3cfae82e64844d0bddd156e676679cc41df4934571e87a092de15"
+  url "https://files.pythonhosted.org/packages/4e/ba/a22442878c022ae84ccfbb723d9f3b34906fce4fe444eb54ba7c750b9e6f/awscli-1.22.40.tar.gz"
+  sha256 "e05f3747505fe32f485f97dfb66908396ae0ba9207c48970630ec156f957694e"
   license "Apache-2.0"
 
   livecheck do
@@ -15,7 +15,7 @@ class AwscliAT1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli@1"
-    sha256 cellar: :any, mojave: "9fb826377acb71e2195d97136ec495ad59a8ff9c701697eaf837614969147e45"
+    sha256 cellar: :any, mojave: "c19c9c56bd875f48738ebd0644d83950a319799069a29839f21f132ab9e800d1"
   end
 
   keg_only :versioned_formula
@@ -28,8 +28,8 @@ class AwscliAT1 < Formula
   uses_from_macos "groff"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/af/eb/defb1a74e7d3b0a62b5d4688a661d6ac9f1b1593182fa1470a6916730eb0/botocore-1.23.30.tar.gz"
-    sha256 "c6a60cffe095296b78ff03adae0fdf2875210a74531a0d1f68206091203573fe"
+    url "https://files.pythonhosted.org/packages/12/95/974284900c269501df0372c196d9a2a3bb1845475f85125a1b0e0f632bbc/botocore-1.23.40.tar.gz"
+    sha256 "49baa1fca4483b24769f0743fbf72afe4db391f41f1fc12ea34e06036db642a4"
   end
 
   resource "colorama" do
@@ -78,7 +78,12 @@ class AwscliAT1 < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    # setuptools>=60 prefers its own bundled distutils, which is incompatabile with docutils~=0.15
+    # Force the previous behavior of using distutils from the stdlib
+    # Remove when fixed upstream: https://github.com/aws/aws-cli/pull/6011
+    with_env(SETUPTOOLS_USE_DISTUTILS: "stdlib") do
+      virtualenv_install_with_resources
+    end
     pkgshare.install "awscli/examples"
 
     rm Dir["#{bin}/{aws.cmd,aws_bash_completer,aws_zsh_completer.sh}"]
