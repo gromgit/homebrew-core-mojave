@@ -3,13 +3,13 @@ require "language/node"
 class AwsCdk < Formula
   desc "AWS Cloud Development Kit - framework for defining AWS infra as code"
   homepage "https://github.com/aws/aws-cdk"
-  url "https://registry.npmjs.org/aws-cdk/-/aws-cdk-2.8.0.tgz"
-  sha256 "5c7dcb5cf58612e9b1c1696c55bf031f7ec0bdfd476231d91ae9410532edf098"
+  url "https://registry.npmjs.org/aws-cdk/-/aws-cdk-2.10.0.tgz"
+  sha256 "8c1484aae7e45523a73836ec84740258dc81c9b69fb00f457518c33879c8c410"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-cdk"
-    sha256 cellar: :any_skip_relocation, mojave: "6e4955a3bf265859083cab3df1a0a0d34023dabdcd6a4a181841a3d5812baecd"
+    sha256 cellar: :any_skip_relocation, mojave: "d47f431c05e746f503efd8f4adf4b12ad8b4c0cc6a8782fd2cf0601cbb9a0516"
   end
 
   depends_on "node"
