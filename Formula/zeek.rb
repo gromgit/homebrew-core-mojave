@@ -2,10 +2,9 @@ class Zeek < Formula
   desc "Network security monitor"
   homepage "https://www.zeek.org"
   url "https://github.com/zeek/zeek.git",
-      tag:      "v4.1.1",
-      revision: "70e95dde8817f7d891cf63592b49b88fad21beb9"
+      tag:      "v4.2.0",
+      revision: "ce38609161cfd10a67cad301e60b7d96e3333835"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/zeek/zeek.git", branch: "master"
 
   livecheck do
@@ -14,13 +13,8 @@ class Zeek < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "d02836b583b2b3934e2d8223d07a2717eea4c6938a9733770a6e22e92750b0c3"
-    sha256 arm64_big_sur:  "1f2b6ade33c459c14955fb497c2be5219f54d61cb39ef011d2478cddfb06789d"
-    sha256 monterey:       "e0b68111d16b627983b5a285adae19f7a8fae4d67c1ce9e773b0036fb1ca4aa7"
-    sha256 big_sur:        "28b6d8e00ad14ff0b6536be06bc0a09ed3bae6c91740cca2cee47ab8171aa88d"
-    sha256 catalina:       "45b8d2ac3710d29895d1b7c10a73da2f71bc4415d0aa0e8f960e3f55e5a76736"
-    sha256 mojave:         "ec2c18a5f3a49bb4f0fc1e9c1d9ab7a0c301bfba78369c20a8677a8e79a4f684"
-    sha256 x86_64_linux:   "951f61c803173ca8ddd3b178430ee92640226db8ecbf3aee2e6414ff62d2e019"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zeek"
+    sha256 mojave: "3672ef591662591effc795e4a6296cd4a9b306e564596673b7e2739c3c0d3b9f"
   end
 
   depends_on "bison" => :build
