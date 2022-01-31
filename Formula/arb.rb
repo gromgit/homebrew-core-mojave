@@ -1,14 +1,14 @@
 class Arb < Formula
   desc "C library for arbitrary-precision interval arithmetic"
   homepage "https://arblib.org"
-  url "https://github.com/fredrik-johansson/arb/archive/2.22.0.tar.gz"
-  sha256 "3e40ab8cf61c0cd63d5901064d73eaa2d04727bbdc6eebb1727997958a14f24d"
+  url "https://github.com/fredrik-johansson/arb/archive/2.22.1.tar.gz"
+  sha256 "1ef85518eee04885e8a90196498bc75e4e2410621d4184f2bc01d46b7080a243"
   license "LGPL-2.1-or-later"
   head "https://github.com/fredrik-johansson/arb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arb"
-    sha256 cellar: :any, mojave: "60add409b0a29937b4598e3809895b7564f72d7b892620cae66ad1a9fb911e3a"
+    sha256 cellar: :any, mojave: "5ec974c0e2f6aaac5415d87ab7588c843be754d76ae7422d03e0304cafaf0946"
   end
 
   depends_on "cmake" => :build
