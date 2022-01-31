@@ -6,9 +6,15 @@ class Arkade < Formula
       revision: "fda8a74d6a8ee80f135cdd6474ed2fdcb1ed3bcc"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arkade"
-    sha256 cellar: :any_skip_relocation, mojave: "4e74a3b3152ff57eff5539e74b465c68af52861833df8a9d15fae60b977ef531"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d13a91229dc87cdd5f636e1278624130decc0d31ad0dcddeb4801a95ae248cb5"
   end
 
   depends_on "go" => :build
