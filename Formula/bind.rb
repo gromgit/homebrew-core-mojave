@@ -8,8 +8,8 @@ class Bind < Formula
   # "version_scheme" because someone upgraded to 9.15.0, and required a
   # downgrade.
 
-  url "https://downloads.isc.org/isc/bind9/9.16.25/bind-9.16.25.tar.xz"
-  sha256 "9fa328850f82843ef8b7bf1ff5322cb68b110273a33f375ba41f35270f5e1ff3"
+  url "https://downloads.isc.org/isc/bind9/9.18.0/bind-9.18.0.tar.xz"
+  sha256 "56525bf5caf01fd8fd9d90910880cc0f8a90a27a97d169187d651d4ecf0c411c"
   license "MPL-2.0"
   version_scheme 1
   head "https://gitlab.isc.org/isc-projects/bind9.git", branch: "main"
@@ -23,12 +23,13 @@ class Bind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bind"
-    sha256 mojave: "a5927a8939d4873f70b24c26aec2f39c885cdee79775ba830024f266f676552f"
+    sha256 mojave: "d40733ffbe8f557a75b989e87910a1a2e8820c348fb9b23a1de68b8b24bce2e0"
   end
 
   depends_on "pkg-config" => :build
   depends_on "json-c"
   depends_on "libidn2"
+  depends_on "libnghttp2"
   depends_on "libuv"
   depends_on "openssl@1.1"
   depends_on "python@3.10"
