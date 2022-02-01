@@ -1,8 +1,8 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://github.com/coin-or/Cbc"
-  url "https://github.com/coin-or/Cbc/archive/releases/2.10.6.tar.gz"
-  sha256 "59d0f45c4c6ce399b723e528d637fb8e409dba7449b91ae27edbb5c0617cc65d"
+  url "https://github.com/coin-or/Cbc/archive/releases/2.10.7.tar.gz"
+  sha256 "5aa5490e2bc39c3c03f3636c9bca459cb3f8f365e0280fd0c4759ce3119e5b19"
   # update to EPL-2.0 on next release
   license "EPL-1.0"
 
@@ -13,7 +13,7 @@ class Cbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cbc"
-    sha256 cellar: :any, mojave: "0e0c22fc96e8596b610954e4427bd93bd3ae715d06644c64a62579b7d6d5d15b"
+    sha256 cellar: :any, mojave: "f0cf83d7a938ce2146fd87a545056ac71f56834374093a4fed0fa7133ae2c63a"
   end
 
   depends_on "pkg-config" => :build
