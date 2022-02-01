@@ -1,8 +1,8 @@
 class Botan < Formula
   desc "Cryptographic algorithms and formats library in C++"
   homepage "https://botan.randombit.net/"
-  url "https://botan.randombit.net/releases/Botan-2.18.2.tar.xz"
-  sha256 "541a3b13f1b9d30f977c6c1ae4c7bfdfda763cda6e44de807369dce79f42307e"
+  url "https://botan.randombit.net/releases/Botan-2.19.1.tar.xz"
+  sha256 "e26e00cfefda64082afdd540d3c537924f645d6a674afed2cd171005deff5560"
   license "BSD-2-Clause"
   head "https://github.com/randombit/botan.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Botan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/botan"
-    rebuild 2
-    sha256 mojave: "927c7a617fb805ce0b2f153fe4d273c7cf2e8eda4abf2d81d17754aa526a7aa8"
+    sha256 mojave: "3f3b1c065df65e995f320e647d0c0c5360eb230975d786710d128c23d9fd7b82"
   end
 
   depends_on "pkg-config" => :build
