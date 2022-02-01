@@ -1,14 +1,14 @@
 class BoshCli < Formula
   desc "Cloud Foundry BOSH CLI v2"
   homepage "https://bosh.io/docs/cli-v2/"
-  url "https://github.com/cloudfoundry/bosh-cli/archive/v6.4.11.tar.gz"
-  sha256 "f5d0af6af086c227be0caaf8bc06113355d0bf9bbc258cec33ecbb2c9d29fd10"
+  url "https://github.com/cloudfoundry/bosh-cli/archive/v6.4.12.tar.gz"
+  sha256 "6b39556672e4d23cb55ebfccb490992f6eb564eb7f503e523f1d8ed27bf4c89a"
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bosh-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "7bc2f72bba79f40d96d64caa2f8ce137b404cd1bfb50c747c0b9e026be5c921b"
+    sha256 cellar: :any_skip_relocation, mojave: "7d2afe5070b171d459283d39727d4df35fc09ac554a5bb1dff665588db0cb503"
   end
 
   depends_on "go" => :build
