@@ -1,20 +1,15 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
   homepage "https://www.snort.org/"
-  url "https://github.com/snort3/libdaq/archive/v3.0.5.tar.gz"
-  mirror "https://fossies.org/linux/misc/libdaq-3.0.5.tar.gz"
-  sha256 "4281464c5502037669e69d314b628df863420f590c4999c5b567c8016cd1e658"
+  url "https://github.com/snort3/libdaq/archive/v3.0.6.tar.gz"
+  mirror "https://fossies.org/linux/misc/libdaq-3.0.6.tar.gz"
+  sha256 "08455b2f09dd4b83067810464a98d25e644383375156f8be0c52ca5b5331350e"
   license "GPL-2.0-only"
-  head "https://github.com/snort3/libdaq.git"
+  head "https://github.com/snort3/libdaq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "0d3e31e4c3f477da99af902e3d94041e525161ecb62ebf7035a6f0849df15385"
-    sha256 cellar: :any,                 arm64_big_sur:  "a381d5d506e129d22823f0993521b8f83f1bbba444d0eff6e42898830275959d"
-    sha256 cellar: :any,                 monterey:       "9bfe0e35170d0e414e2b71fca7bdd39620a91d3ffc2f7a108ee3d3f7e853bb45"
-    sha256 cellar: :any,                 big_sur:        "d9ce6e9dbbcdac7b64575ec19ede1197a23451fbb8c3da5aabfce2c96d14820d"
-    sha256 cellar: :any,                 catalina:       "5207b98bd7d7e2954a5600409bbd862c72e1f246363f1e81359fa9a3530fba22"
-    sha256 cellar: :any,                 mojave:         "4f9c630d968eef80ef96102a1f12ea0ed12f5e1c74bb1dfb484687cd8a3a2aa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15d0fd96bdd3973960ee0a6781bb7576db9b452762beb57029f7c001e096944b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/daq"
+    sha256 cellar: :any, mojave: "6d89398089f80abe91b522ea83fb44444cc369c230ee1a9889af402c7e73a48f"
   end
 
   depends_on "autoconf" => :build
