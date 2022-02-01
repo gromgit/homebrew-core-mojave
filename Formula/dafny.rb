@@ -7,13 +7,13 @@ class Dafny < Formula
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dafny"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "859bb9ae6374c600fc8934f58bb19244593cfbdbd6d12feb549c9ad0f58b3917"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "ec86d0e14a6406de7a9931d1873ef488398d47d35c7a1bba668951696a238e72"
   end
 
   depends_on "gradle" => :build
