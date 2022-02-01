@@ -4,8 +4,8 @@ class Copilot < Formula
   desc "CLI tool for Amazon ECS and AWS Fargate"
   homepage "https://aws.github.io/copilot-cli/"
   url "https://github.com/aws/copilot-cli.git",
-      tag:      "v1.13.0",
-      revision: "cdbd8f904790514c056f6745f8212fb9f8a4179f"
+      tag:      "v1.14.0",
+      revision: "060b8d11bb30a67277b184b73188ecd64dc21e1c"
   license "Apache-2.0"
   head "https://github.com/aws/copilot-cli.git", branch: "mainline"
 
@@ -16,8 +16,7 @@ class Copilot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/copilot"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "45f3b550696049e5f63b06c4fd8044a92a08cfec18038d59fc9c6ceb76ed6468"
+    sha256 cellar: :any_skip_relocation, mojave: "5234828893a4f61a144d9ee3af7f30a86dcef1e1d2a65f0ec773c3c0362cecf9"
   end
 
   depends_on "go" => :build
