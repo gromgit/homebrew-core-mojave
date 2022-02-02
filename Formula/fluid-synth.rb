@@ -1,14 +1,14 @@
 class FluidSynth < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
   homepage "https://www.fluidsynth.org"
-  url "https://github.com/FluidSynth/fluidsynth/archive/v2.2.4.tar.gz"
-  sha256 "83cb1dba04c632ede74f0c0717018b062c0e00b639722203b23f77a961afd390"
+  url "https://github.com/FluidSynth/fluidsynth/archive/v2.2.5.tar.gz"
+  sha256 "9037e703617f91c4c36039a5059e0f624164799d856af715bcd8a23c07ba03b8"
   license "LGPL-2.1-or-later"
-  head "https://github.com/FluidSynth/fluidsynth.git"
+  head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluid-synth"
-    sha256 cellar: :any, mojave: "e871fc55df00b1c9e1ad018b7a07166623e41dbbb3742e27e931376c6deb035c"
+    sha256 cellar: :any, mojave: "8f38745c811351c44ceeefb325f915714352157d79183798daf2dcdb811ec84b"
   end
 
   depends_on "cmake" => :build
