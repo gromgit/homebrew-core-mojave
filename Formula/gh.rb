@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https://github.com/cli/cli"
-  url "https://github.com/cli/cli/archive/v2.3.0.tar.gz"
-  sha256 "56bcf353adc17c386377ffcdfc980cbaff36123a1c1132ba09c3c51a7d1c9b82"
+  url "https://github.com/cli/cli/archive/v2.5.0.tar.gz"
+  sha256 "4e9d1cbcdd2346cab5b7fc176cd57c07ed3628a0241fad8a48fe4df6a354b120"
   license "MIT"
 
   head "https://github.com/cli/cli.git", branch: "trunk"
@@ -14,7 +14,7 @@ class Gh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gh"
-    sha256 cellar: :any_skip_relocation, mojave: "39fc05891e2a0438c45fa034d156c7dc095e45923bc4f52885c1a4770fa04714"
+    sha256 cellar: :any_skip_relocation, mojave: "8d0ea72ac64d61a6300b99f5a89cbee331966d75ca309f7f5f44096e65815184"
   end
 
   depends_on "go" => :build
