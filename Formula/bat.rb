@@ -7,8 +7,8 @@ class Bat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e515963b53344f1be276de1669450aafde9c71e021653102f831793136be925d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7abf6e2cf8b04eb45d245300bf97159330d74ab44473621baace5b7973ddcba4"
   end
 
   depends_on "rust" => :build
@@ -21,6 +21,7 @@ class Bat < Formula
 
     assets_dir = Dir["target/release/build/bat-*/out/assets"].first
     man1.install "#{assets_dir}/manual/bat.1"
+    bash_completion.install "#{assets_dir}/completions/bat.bash" => "bat"
     fish_completion.install "#{assets_dir}/completions/bat.fish"
     zsh_completion.install "#{assets_dir}/completions/bat.zsh" => "_bat"
   end
