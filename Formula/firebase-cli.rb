@@ -3,14 +3,14 @@ require "language/node"
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-10.1.1.tgz"
-  sha256 "a306345a4631ff6098d2374352ba0b472b5fdf1f0b012d54c116c39b006c087c"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-10.1.2.tgz"
+  sha256 "d0ecbf310f79d8e1ca0ccc27c2f39ef6fcd3d588399b7982b0d6429bd4956328"
   license "MIT"
   head "https://github.com/firebase/firebase-tools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/firebase-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "0c48ae889f32272198e941967b5bca970ab89cf195fd3c34e8d781ad88890fd0"
+    sha256 cellar: :any_skip_relocation, mojave: "4649fff1b3ade2cee96440fcbe91a0ade2bf961dd5ab013e127a8fa5d104665b"
   end
 
   depends_on "node"
