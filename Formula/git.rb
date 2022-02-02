@@ -1,10 +1,10 @@
 class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.34.1.tar.xz"
-  sha256 "3a0755dd1cfab71a24dd96df3498c29cd0acd13b04f3d08bf933e81286db802c"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.1.tar.xz"
+  sha256 "d768528e6443f65a203036266f1ca50f9d127ba89751e32ead37117ed9191080"
   license "GPL-2.0-only"
-  head "https://github.com/git/git.git"
+  head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
     url "https://www.kernel.org/pub/software/scm/git/"
@@ -13,8 +13,7 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git"
-    rebuild 2
-    sha256 mojave: "7dd38501b3bb836182d2667637da455568e1c451b75b73628ff8daaca78d4057"
+    sha256 mojave: "3bfbdf64a8f0b4269f013b3a0129b426c8cdc49383f928a618bf21f02c354ca8"
   end
 
   depends_on "gettext"
@@ -30,13 +29,13 @@ class Git < Formula
   end
 
   resource "html" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.34.0.tar.xz"
-    sha256 "c95d838dbd4b8c28d9f00beca776c06d94031be05fa39cf33fb08ae5f0aee250"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.35.1.tar.xz"
+    sha256 "ca2f0bd4a9d24d9b6b3a021f11b8eacee863948c67a4cc0ff6d7adef8137ea18"
   end
 
   resource "man" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.34.0.tar.xz"
-    sha256 "47eafa3517ef5fc7a6e914ad2ee6a6e4d830a4bb6830dba13175850860492c72"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.35.1.tar.xz"
+    sha256 "e4e3a751f2c05959222c3ea2f0f09481700eca8f915d1398bb270eb6846c3803"
   end
 
   resource "Net::SMTP::SSL" do
