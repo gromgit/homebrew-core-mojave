@@ -2,8 +2,8 @@ class Flux < Formula
   desc "Lightweight scripting language for querying databases"
   homepage "https://www.influxdata.com/products/flux/"
   url "https://github.com/influxdata/flux.git",
-      tag:      "v0.151.1",
-      revision: "f912371cbda764008b8aff30edd2b56eb2b99314"
+      tag:      "v0.152.0",
+      revision: "7a01fff54085c97bf3099f929846edff63f05ed2"
   license "MIT"
   head "https://github.com/influxdata/flux.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Flux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flux"
-    sha256 cellar: :any, mojave: "383c189bb5b9627f7e410901520af90dd3b7ec66ed6b68e994fccf02bf1c71a1"
+    sha256 cellar: :any, mojave: "97937a2a302b041c0ba88431383531f612012b2c63f2f955b02d18e3dc719db6"
   end
 
   depends_on "go" => :build
