@@ -1,13 +1,13 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
   homepage "https://github.com/extrawurst/gitui"
-  url "https://github.com/extrawurst/gitui/archive/v0.19.0.tar.gz"
-  sha256 "bcbffb592a5ae49658c79ac7b0daefe4bac3d2b988fdbaf0e868b8c308962f0d"
+  url "https://github.com/extrawurst/gitui/archive/v0.20.1.tar.gz"
+  sha256 "eccec120dfd4c5c33a74d331a53f3d0c6cb7200e26b0c4c7873278eb951bc379"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitui"
-    sha256 cellar: :any_skip_relocation, mojave: "19b07af716f558a16d72cfa11d0cae85af565b6bc87d13032702c357d0f8a4ab"
+    sha256 cellar: :any_skip_relocation, mojave: "9fe96b8fd553296dd8350ff041a3a4c7a8830bb4b4cbf033f881e584d87498e5"
   end
 
   depends_on "rust" => :build
