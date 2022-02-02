@@ -4,6 +4,7 @@ class Cwb3 < Formula
   url "https://downloads.sourceforge.net/project/cwb/cwb/cwb-3.5-RC/cwb-3.4.33-src.tar.gz"
   sha256 "856b72785522d42f13f4a0528d2b80c2bf422c10411234a8e4b61df111af77dd"
   license "GPL-2.0-or-later"
+  revision 2
   head "svn://svn.code.sf.net/p/cwb/code/cwb/trunk"
 
   livecheck do
@@ -13,7 +14,7 @@ class Cwb3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cwb3"
-    sha256 cellar: :any, mojave: "a46191b4f8fa2f823466c3a78c9b1834d9b27d8fc01e66481ba75ffe702a4e26"
+    sha256 cellar: :any, mojave: "ea3424fdeeecfd6f082d3576662a7135dd6c7c8040c5c7bd5424f5702f7177c6"
   end
 
   depends_on "pkg-config" => :build
@@ -43,6 +44,12 @@ class Cwb3 < Formula
     system "make", "all", *args
     ENV.deparallelize
     system "make", "install", *args
+
+    # Avoid rebuilds when dependencies are bumped.
+    inreplace bin/"cwb-config" do |s|
+      s.gsub! Formula["glib"].prefix.realpath, Formula["glib"].opt_prefix
+      s.gsub! Formula["pcre"].prefix.realpath, Formula["pcre"].opt_prefix
+    end
   end
 
   def default_registry
