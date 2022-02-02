@@ -24,11 +24,12 @@ class Czmq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/czmq"
-    sha256 cellar: :any, mojave: "61d58ba2f22e6460f764ebc9985297f75c57c725ce2865b9a924cbab55ec6b0d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "edefa720bb02251ba28806d0f3bfdeb7548924133ba5985c3546183f23a5fa59"
   end
 
   head do
-    url "https://github.com/zeromq/czmq.git"
+    url "https://github.com/zeromq/czmq.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -38,7 +39,6 @@ class Czmq < Formula
   depends_on "asciidoc" => :build
   depends_on "pkg-config" => :build
   depends_on "xmlto" => :build
-  depends_on :macos # Due to Python 2
   depends_on "zeromq"
 
   def install
