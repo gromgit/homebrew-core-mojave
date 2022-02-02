@@ -1,15 +1,14 @@
 class Dylibbundler < Formula
   desc "Utility to bundle libraries into executables for macOS"
   homepage "https://github.com/auriamg/macdylibbundler"
-  url "https://github.com/auriamg/macdylibbundler/archive/1.0.2.tar.gz"
-  sha256 "6aed5e11078e597e3609cc5a02dfacb4218c12acc87066f6ae9e2dfb3b7c0b35"
+  url "https://github.com/auriamg/macdylibbundler/archive/1.0.4.tar.gz"
+  sha256 "839c6a30be2c974bba70ab80faf8167713955bb010427662b14d4af7df8d5f19"
   license "MIT"
-  head "https://github.com/auriamg/macdylibbundler.git"
+  head "https://github.com/auriamg/macdylibbundler.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dylibbundler"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "b2fe0206005ab9ff39ec19b255c4a6a22afab20955a0a6ff5aa112bb5b9e95f9"
+    sha256 cellar: :any_skip_relocation, mojave: "aabfd5686086d7e52f177a86a9499405893ac1f43e662f2926534259752439be"
   end
 
   def install
