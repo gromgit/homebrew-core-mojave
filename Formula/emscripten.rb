@@ -3,8 +3,8 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/3.1.1.tar.gz"
-  sha256 "c7484e514bb74117a2039990cf1babb6e4663eea59c52f8bf5756891e706c30c"
+  url "https://github.com/emscripten-core/emscripten/archive/3.1.2.tar.gz"
+  sha256 "250cfca0b7063b6d31330454a20a8e773fde2ebde6aa7122b420610684100f8f"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -19,7 +19,7 @@ class Emscripten < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emscripten"
-    sha256 cellar: :any, mojave: "8e3dca5c3f93e3ebc3c4f3df392a31a93b666eccfdbe6cac891fb7ad36c1fbda"
+    sha256 cellar: :any, mojave: "28c1e8ef8e867f618fde73e947c689f625c100334f86f44fb64c2448839151d8"
   end
 
   depends_on "cmake" => :build
@@ -44,7 +44,7 @@ class Emscripten < Formula
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
     url "https://github.com/WebAssembly/binaryen.git",
-        revision: "1ef8f1f2c3fcecc6906e8fd40184f3e81b2d1838"
+        revision: "c918679ec50d4a404bd06244e79691651bdee95b"
   end
 
   # emscripten needs argument '-fignore-exceptions', which is only available in llvm >= 12
@@ -55,7 +55,7 @@ class Emscripten < Formula
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
     url "https://github.com/llvm/llvm-project.git",
-        revision: "50fb44eebb0397f9b5f45a44239d6b53faf07c3b"
+        revision: "782c0dd1a1c235afb09a34e7da4a1267ead14765"
   end
 
   def install
