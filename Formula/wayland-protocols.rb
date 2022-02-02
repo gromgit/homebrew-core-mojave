@@ -1,8 +1,8 @@
 class WaylandProtocols < Formula
   desc "Additional Wayland protocols"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.23.tar.xz"
-  sha256 "6c0af1915f96f615927a6270d025bd973ff1c58e521e4ca1fc9abfc914633f76"
+  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.25.tar.xz"
+  sha256 "f1ff0f7199d0a0da337217dd8c99979967808dc37731a1e759e822b75b571460"
   license "MIT"
 
   livecheck do
@@ -10,19 +10,22 @@ class WaylandProtocols < Formula
     regex(/href=.*?wayland-protocols[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c7bcb5453798a2f48c986fd5787dd85dc11fb733452c766848ee382ab1cab748"
+  end
+
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "wayland" => :build
   depends_on :linux
 
   def install
-    system "./autogen.sh", "--prefix=#{prefix}",
-                           "--sysconfdir=#{etc}",
-                           "--localstatedir=#{var}",
-                           "--disable-silent-rules"
-    system "make"
-    system "make", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, ".."
+      system "ninja", "-v"
+      system "ninja", "install", "-v"
+    end
   end
 
   test do
