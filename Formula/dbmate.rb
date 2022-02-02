@@ -8,13 +8,14 @@ class Dbmate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbmate"
-    sha256 cellar: :any_skip_relocation, mojave: "3b8cc5a1f3c3a21e0db076bbcdf5deed1e7fc7df1868a4f9b37542c7c1f20de4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6cb49e4ef07e253b7b5903e5e6b48c0d74d71f79cddc659b61b5ee455b105101"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-ldflags", "-s", "-o", bin/"dbmate", "."
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", "sqlite_omit_load_extension,sqlite_json"
   end
 
   test do
