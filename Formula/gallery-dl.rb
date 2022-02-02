@@ -3,14 +3,14 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/05/e8/b0ffa679ee17e142ce2cfbcc405bd129ab1a12484285915ae9cf128c70b1/gallery_dl-1.20.1.tar.gz"
-  sha256 "a1c06625381485f82aa14a038a622d40ab9cc2c8d150dd65c66df96dbf427f62"
+  url "https://files.pythonhosted.org/packages/b8/a9/f79c98fb44f3bd021703c34430617c69ed4fe8b803e5f7a7097fd39cffcf/gallery_dl-1.20.3.tar.gz"
+  sha256 "6d1d97bd08a2a0dcfb0578e759fb83c4902b395405b3e3238673f684973b0556"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gallery-dl"
-    sha256 cellar: :any_skip_relocation, mojave: "92e9444ce82347d30d0d904d34d7e56e4cea328f8555d31052c763fb70aaa38e"
+    sha256 cellar: :any_skip_relocation, mojave: "4e7d08d36f195436951948915ff963eae1fd692ff53bfefd3b57edd0de663db6"
   end
 
   depends_on "python@3.10"
