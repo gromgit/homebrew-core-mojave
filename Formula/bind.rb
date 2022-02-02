@@ -11,6 +11,7 @@ class Bind < Formula
   url "https://downloads.isc.org/isc/bind9/9.18.0/bind-9.18.0.tar.xz"
   sha256 "56525bf5caf01fd8fd9d90910880cc0f8a90a27a97d169187d651d4ecf0c411c"
   license "MPL-2.0"
+  revision 1
   version_scheme 1
   head "https://gitlab.isc.org/isc-projects/bind9.git", branch: "main"
 
@@ -23,7 +24,7 @@ class Bind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bind"
-    sha256 mojave: "d40733ffbe8f557a75b989e87910a1a2e8820c348fb9b23a1de68b8b24bce2e0"
+    sha256 mojave: "7edcb7be82eeda5a3c8ade516b2334ace05e3d3578ac73d72ac084630278bc36"
   end
 
   depends_on "pkg-config" => :build
@@ -32,23 +33,8 @@ class Bind < Formula
   depends_on "libnghttp2"
   depends_on "libuv"
   depends_on "openssl@1.1"
-  depends_on "python@3.10"
-
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
-  end
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
-    vendor_site_packages = libexec/"vendor/lib/python#{xy}/site-packages"
-    ENV.prepend_create_path "PYTHONPATH", vendor_site_packages
-    resources.each do |r|
-      r.stage do
-        system Formula["python@3.10"].opt_bin/"python3", *Language::Python.setup_install_args(libexec/"vendor")
-      end
-    end
-
     # Fix "configure: error: xml2-config returns badness"
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version <= :sierra
 
@@ -58,8 +44,6 @@ class Bind < Formula
       "--with-json-c",
       "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}",
       "--with-libjson=#{Formula["json-c"].opt_prefix}",
-      "--with-python-install-dir=#{vendor_site_packages}",
-      "--with-python=#{Formula["python@3.10"].opt_bin}/python3",
       "--without-lmdb",
       "--with-libidn2=#{Formula["libidn2"].opt_prefix}",
     ]
