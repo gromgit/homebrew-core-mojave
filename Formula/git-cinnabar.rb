@@ -4,16 +4,16 @@ class GitCinnabar < Formula
   url "https://github.com/glandium/git-cinnabar/archive/0.5.8.tar.gz"
   sha256 "7971c2ae17d2b919f915efab35e3aba583b951d53ca2bc6ebf69bbd0c22f1067"
   license "GPL-2.0-only"
-  head "https://github.com/glandium/git-cinnabar.git"
+  revision 1
+  head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cinnabar"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "eb8d9c09c221770c28261cb47cea259f4063c2270d32f67c2edf1c6d78f8e941"
+    sha256 cellar: :any_skip_relocation, mojave: "1570bdcce06547e5120a47481d0b781c6b9fd95bee8ea15fbf3547d0088e50de"
   end
 
-  depends_on :macos # Due to Python 2
   depends_on "mercurial"
+  depends_on "python@3.10"
 
   uses_from_macos "curl"
 
@@ -23,7 +23,8 @@ class GitCinnabar < Formula
     system "make", "helper"
     prefix.install "cinnabar"
     bin.install "git-cinnabar", "git-cinnabar-helper", "git-remote-hg"
-    bin.env_script_all_files(libexec, PYTHONPATH: prefix)
+    bin.env_script_all_files(libexec, PYTHONPATH:          prefix,
+                                      GIT_CINNABAR_PYTHON: Formula["python@3.10"].opt_bin/"python3")
   end
 
   test do
