@@ -2,19 +2,14 @@ class Etcd < Formula
   desc "Key value store for shared configuration and service discovery"
   homepage "https://github.com/etcd-io/etcd"
   url "https://github.com/etcd-io/etcd.git",
-      tag:      "v3.5.1",
-      revision: "d42e8589e1305d893eeec9e7db746f6f4a76c250"
+      tag:      "v3.5.2",
+      revision: "99018a77bea9a9d29962e5169876c64e02739c52"
   license "Apache-2.0"
-  head "https://github.com/etcd-io/etcd.git"
+  head "https://github.com/etcd-io/etcd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "668aac1a566e6927021845c8b5ae1a5c35e7eda18cfb9d034f61562f07e52751"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bca67561991cf240abc578cae54aff1638b5718c9bd119afa1a6b4463a60f6f9"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac2f6ea7f5dda66f52e18fa8ffef7c0e87508a8bac8285d278395a7e5a07f891"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f96ec40aac9729cf5688fa01399a76505920a79f8e5f9db957edc8b0c5b7470d"
-    sha256 cellar: :any_skip_relocation, catalina:       "876686a80092465af3b5b638b7bf573178d8328ef5c6ce92f3e044b32ca3a4ca"
-    sha256 cellar: :any_skip_relocation, mojave:         "4f8247a70bc4f030a205f839873956a3b061589aa9df88263aae279c708925f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c548dc1167dd5161c80f0de58c2ab8f4f9826278d54881d17c6105be39b59593"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd"
+    sha256 cellar: :any_skip_relocation, mojave: "19c5caf45f1804205b07c6209ca0a3ea29e06bbc5daf8c519aea2c5b35639665"
   end
 
   depends_on "go" => :build
