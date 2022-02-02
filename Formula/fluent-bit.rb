@@ -1,10 +1,10 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https://github.com/fluent/fluent-bit"
-  url "https://github.com/fluent/fluent-bit/archive/v1.8.11.tar.gz"
-  sha256 "52273a0281ee1afe0088d88a54462a424ce88181ca76f72daab7c2b96d2994c2"
+  url "https://github.com/fluent/fluent-bit/archive/v1.8.12.tar.gz"
+  sha256 "50f2a4e9eb6c2a2df58b78ef562e23c1ef9871c389c7bd0320f6b381d2b491c8"
   license "Apache-2.0"
-  head "https://github.com/fluent/fluent-bit.git"
+  head "https://github.com/fluent/fluent-bit.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,7 +13,7 @@ class FluentBit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluent-bit"
-    sha256 cellar: :any, mojave: "bf093eea3a4e115f4878ff3302dc79624f98611bd8b117e2ce61b12a1edf8b80"
+    sha256 cellar: :any, mojave: "5c587aa10126f62ed36aca294f1d736817fb944755c511ad5863824dbc40248d"
   end
 
   depends_on "bison" => :build
