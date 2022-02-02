@@ -1,10 +1,10 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.1.1.36550.tar.gz"
-  sha256 "0496edc6273ab0d6e5161cc1dcb4d3554c0e93b42cc2bcebc23a01b58858cf81"
+  url "https://dist.duck.sh/duck-src-8.2.1.36773.tar.gz"
+  sha256 "65140fb6b0b2d1642a777f320d6fbe19c37ba8111ce403c88b798445dcb165cf"
   license "GPL-3.0-only"
-  head "https://github.com/iterate-ch/cyberduck.git"
+  head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
   livecheck do
     url "https://dist.duck.sh/"
@@ -13,7 +13,7 @@ class Duck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duck"
-    sha256 cellar: :any, mojave: "54f7bd3c69b32cde6ddb1af975444d6b4188d5c21c95b90b47609bc8208d7324"
+    sha256 cellar: :any, mojave: "c18b45161dc67231e94fe3fb2f69c88c17259b15eae38a416581bcac0c379b19"
   end
 
   depends_on "ant" => :build
@@ -139,13 +139,18 @@ class Duck < Formula
 
     if OS.mac?
       libexec.install Dir["cli/osx/target/duck.bundle/*"]
+
+      # Remove the `*.tbd` files. They're not needed, and they cause codesigning issues.
+      buildpath.glob("JavaNativeFoundation.framework/**/JavaNativeFoundation.tbd").map(&:unlink)
       rm_rf libdir/"JavaNativeFoundation.framework"
       libdir.install buildpath/"JavaNativeFoundation.framework"
-      # Replace runtime with already installed dependency
-      rm_r "#{libexec}/Contents/PlugIns/Runtime.jre"
-      ln_s Formula["openjdk"].libexec/"openjdk.jdk", "#{libexec}/Contents/PlugIns/Runtime.jre"
+
       rm libdir/shared_library("librococoa")
       libdir.install buildpath/shared_library("librococoa")
+
+      # Replace runtime with already installed dependency
+      rm_r libexec/"Contents/PlugIns/Runtime.jre"
+      ln_s Formula["openjdk"].libexec/"openjdk.jdk", libexec/"Contents/PlugIns/Runtime.jre"
     else
       libexec.install Dir["cli/linux/target/release/duck/*"]
     end
