@@ -1,8 +1,8 @@
 class AescryptPacketizer < Formula
   desc "Encrypt and decrypt using 256-bit AES encryption"
   homepage "https://www.aescrypt.com"
-  url "https://www.aescrypt.com/download/v3/linux/aescrypt-3.15.tgz"
-  sha256 "263c0abd1da22d8cffd181a2d99c6d90410e5c2c6deeb1d6286f01b08a2f6763"
+  url "https://www.aescrypt.com/download/v3/linux/aescrypt-3.16.tgz"
+  sha256 "e2e192d0b45eab9748efe59e97b656cc55f1faeb595a2f77ab84d44b0ec084d2"
 
   livecheck do
     url "https://www.aescrypt.com/download/"
@@ -11,7 +11,7 @@ class AescryptPacketizer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aescrypt-packetizer"
-    sha256 cellar: :any_skip_relocation, mojave: "b71d482a578bf8cda59f6e3579d6ec3def2fed36381ceb605779f8fdbb484b6f"
+    sha256 cellar: :any_skip_relocation, mojave: "9c9a7c9e15fd4128906015d8f0825b30f809efc926e45489382c4ad64e993aee"
   end
 
   head do
