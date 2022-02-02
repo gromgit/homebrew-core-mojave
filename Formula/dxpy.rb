@@ -3,13 +3,13 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/f6/90/e2d6d9cc6e9878b617f6bae2d929bf14ed9c92b21a8fad919c6f5c76dd19/dxpy-0.318.1.tar.gz"
-  sha256 "25a6961bd94c9ff6afa93083dff37861dde2b333e80a48b895ebee30943fe136"
+  url "https://files.pythonhosted.org/packages/5a/27/09f7818fd174dee1ab18f773b58fb1ae78622d9c694586570694e01e6619/dxpy-0.319.2.tar.gz"
+  sha256 "8267ec6fce0fff71d017324281f62fa43b078d60c2a3cde5fbb88ef9731acf14"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dxpy"
-    sha256 cellar: :any, mojave: "b842363d54c169a0dda66a35b6835254cd50fd4b04636e569d3a1a18aca5fb81"
+    sha256 cellar: :any, mojave: "e3db68f79ac870fec5ff5792fe6c16f949b0a0891919c794b1393a3b9f6ed4ee"
   end
 
   depends_on "rust" => :build # for cryptography
