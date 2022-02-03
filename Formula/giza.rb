@@ -1,18 +1,14 @@
 class Giza < Formula
   desc "Scientific plotting library for C/Fortran built on cairo"
   homepage "https://danieljprice.github.io/giza/"
-  url "https://github.com/danieljprice/giza/archive/v1.2.1.tar.gz"
-  sha256 "8bf02828dc3e25a51ca1ac9229df41e86ba2a779af49d06c1a3077ecc4721821"
+  url "https://github.com/danieljprice/giza/archive/v1.3.1.tar.gz"
+  sha256 "b6bae5ba44a8fd921c3430e61b1ce5c6b7febfe7fa835a7c8724d19089bba0b9"
   license "GPL-2.0-or-later"
-  head "https://github.com/danieljprice/giza.git"
+  head "https://github.com/danieljprice/giza.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "6e6c5ef3d58c6fdc7b19d900a6c94ae9f7e961f2e92af33c6b1a082d0f9d18ff"
-    sha256 cellar: :any, arm64_big_sur:  "f90bb6e21ea8fc3919706b4584995623f763b11f1961ea474e10f31b0c3fba72"
-    sha256 cellar: :any, monterey:       "215259692a128badd9e2f5ccecc743bd8f0ae1c727196f35a891cac1837023e1"
-    sha256 cellar: :any, big_sur:        "8ef54fe8593cb6dbae489f634dbe6fddb7fbfa495af95c3cea6f8bc52ac4ae5c"
-    sha256 cellar: :any, catalina:       "81bd1caa8dbc15f4f9865cd9de5956d2371c500febf10289b2fad40a60d333de"
-    sha256 cellar: :any, mojave:         "05008343af562f24851230c306ce451041465726e3d45f20da94fcbd61424e8b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/giza"
+    sha256 cellar: :any, mojave: "d969fe5b16752a358e6c99a67d54fb5706ad984fdce48629ff37fec2fd582488"
   end
 
   depends_on "pkg-config" => :build
@@ -48,7 +44,12 @@ class Giza < Formula
 
     flags = %W[
       -I#{include}
+      -I#{Formula["cairo"].opt_include}/cairo
       -L#{lib}
+      -L#{Formula["libx11"].opt_lib}
+      -L#{Formula["cairo"].opt_lib}
+      -lX11
+      -lcairo
       -lgiza
     ]
 
