@@ -2,8 +2,8 @@ class OryHydra < Formula
   desc "OpenID Certified OAuth 2.0 Server and OpenID Connect Provider"
   homepage "https://www.ory.sh/hydra/"
   url "https://github.com/ory/hydra.git",
-      tag:      "v1.10.7",
-      revision: "0a425352a80867ab7457e89414c3c30efd7d645c"
+      tag:      "v1.11.0",
+      revision: "5355a1abe709c92cf0bdb838395fd1933cd5e9c9"
   license "Apache-2.0"
 
   livecheck do
@@ -13,8 +13,7 @@ class OryHydra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ory-hydra"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "01b4bbcfd4e27bf1a312a7d08b2b55af128eca962b7268f8701966676d5a457f"
+    sha256 cellar: :any_skip_relocation, mojave: "6977f970dd9c30405ad2b23d1be1bbc9632e11b896e832278d33facbce33286e"
   end
 
   depends_on "go" => :build
