@@ -1,14 +1,13 @@
 class Goose < Formula
   desc "Go Language's command-line interface for database migrations"
   homepage "https://github.com/pressly/goose"
-  url "https://github.com/pressly/goose/archive/v3.4.1.tar.gz"
-  sha256 "13cac5b591ab4d4946c739e73b74aa6dfb17a05ad51fc63ae34615a0edf31600"
+  url "https://github.com/pressly/goose/archive/v3.5.1.tar.gz"
+  sha256 "31dafd95b1f568ac35e686b85b36cdcaba5106098c4d57b5bdad7a584d15aaee"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goose"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "172aab449f964753edb001b20ee5484ce4dfdbeecc0d5a184e3047e5919421ef"
+    sha256 cellar: :any_skip_relocation, mojave: "86d1f0c2d613511d6d3c0668ab722418d78aef43ba5e8d925a22e172bef345af"
   end
 
   depends_on "go" => :build
