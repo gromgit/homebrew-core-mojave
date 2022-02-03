@@ -1,14 +1,13 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://github.com/nickg/nvc"
-  url "https://github.com/nickg/nvc/releases/download/r1.5.3/nvc-1.5.3.tar.gz"
-  sha256 "a9232d645321f5f560fc466cae43d2e514db801b9e4a9bcb24f881c473206513"
+  url "https://github.com/nickg/nvc/releases/download/r1.6.0/nvc-1.6.0.tar.gz"
+  sha256 "1e93e461b53261254b123ed0a88ba72316ed61d9985bb4439a473bd08b81da88"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nvc"
-    rebuild 2
-    sha256 mojave: "5c9528c0f7db48a75061829b5be24a834b968970df22ab0524cbf968b2bbcbb6"
+    sha256 mojave: "3f1713d1f5ee1984aca76aeabc6d8679fc1c8632e172141a6fa15de5c36b0805"
   end
 
   head do
@@ -24,6 +23,8 @@ class Nvc < Formula
 
   uses_from_macos "flex" => :build
 
+  fails_with gcc: "5" # LLVM is built with GCC
+
   resource "homebrew-test" do
     url "https://github.com/suoto/vim-hdl-examples.git",
         revision: "fcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9b"
@@ -31,12 +32,16 @@ class Nvc < Formula
 
   def install
     system "./autogen.sh" if build.head?
+    # Avoid hardcoding path to the `ld` shim.
+    inreplace "configure", "\\\"$linker_path\\\"", "\\\"ld\\\"" if OS.linux?
     system "./configure", "--with-llvm=#{Formula["llvm"].opt_bin}/llvm-config",
                           "--prefix=#{prefix}",
-                          "--with-system-cc=/usr/bin/clang",
-                          "--enable-vhpi"
-    system "make"
-    system "make", "install"
+                          "--with-system-cc=#{ENV.cc}",
+                          "--enable-vhpi",
+                          "--disable-silent-rules"
+    ENV.deparallelize
+    system "make", "V=1"
+    system "make", "V=1", "install"
   end
 
   test do
