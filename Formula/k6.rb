@@ -1,14 +1,13 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
   homepage "https://k6.io"
-  url "https://github.com/loadimpact/k6/archive/v0.35.0.tar.gz"
-  sha256 "52d81754f2d4e23f180eb094b0a203c9162dda177a23b8aa3b96bd84981a31a7"
+  url "https://github.com/loadimpact/k6/archive/v0.36.0.tar.gz"
+  sha256 "835e84e52eb40a3ec6297bdea5937fee74ba30a8ab5db8e0600c81e48af24848"
   license "AGPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k6"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "9e7f87b5a5c8136e06e5a2122d845d55ce8a0804339efc6f724a58247629520d"
+    sha256 cellar: :any_skip_relocation, mojave: "3c886029fcc928c9288e0e1101084370680105c3da1d723ab9356ead8cc93d63"
   end
 
   depends_on "go" => :build
