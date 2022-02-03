@@ -2,14 +2,14 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https://goreleaser.com/"
   url "https://github.com/goreleaser/goreleaser.git",
-      tag:      "v1.3.1",
-      revision: "a6a6e11cc9d40a2b9d48fb7331d35ecce1f39a71"
+      tag:      "v1.4.1",
+      revision: "a1447a363579365f489458ad7636fd088a5b66ab"
   license "MIT"
   head "https://github.com/goreleaser/goreleaser.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goreleaser"
-    sha256 cellar: :any_skip_relocation, mojave: "2f697b2d91505bcc8b6fc3429559bc6f8309586e7e69efa622a4dd23afe838b4"
+    sha256 cellar: :any_skip_relocation, mojave: "a65b5212ab6a2ca6c7557e8adf3469309b2ac2e22cf4138c33fab9678405a1c8"
   end
 
   depends_on "go" => :build
