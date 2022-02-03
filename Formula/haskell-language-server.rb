@@ -1,10 +1,10 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://github.com/haskell/haskell-language-server/archive/1.5.1.tar.gz"
-  sha256 "fa2b1d39d413283202ee1f75e4ad9fc44544535741370d6f1e63afd5878d9e40"
+  url "https://github.com/haskell/haskell-language-server/archive/1.6.1.0.tar.gz"
+  sha256 "e5c336ad2de8d021c882cdac5bbc26bf6427df8d2a5bd244c05cf18296a9bfdc"
   license "Apache-2.0"
-  head "https://github.com/haskell/haskell-language-server.git"
+  head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
   # livecheck picks up spurious non-release tags
@@ -15,8 +15,7 @@ class HaskellLanguageServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haskell-language-server"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "415199d1fe22a9c6879f3533cd9c37e277d5cb2ef8e7b55adc0bdac89d7f19b7"
+    sha256 cellar: :any_skip_relocation, mojave: "9c9dcb38a1244e2443b5840368a4f699ae3c38e4016f7ee82900c3ce308067e5"
   end
 
   depends_on "cabal-install" => [:build, :test]
@@ -41,7 +40,10 @@ class HaskellLanguageServer < Formula
     newest_ghc = ghcs.max_by(&:version)
 
     ghcs.each do |ghc|
-      system "cabal", "v2-install", "-w", ghc.bin/"ghc", *std_cabal_v2_args
+      # for --enable-executable-dynamic flag, explained in
+      # https://haskell-language-server.readthedocs.io/en/latest/troubleshooting.html#support-for-template-haskell
+      args = ["-w", ghc.bin/"ghc", "--enable-executable-dynamic"]
+      system "cabal", "v2-install", *args, *std_cabal_v2_args
 
       hls = "haskell-language-server"
       bin.install bin/hls => "#{hls}-#{ghc.version}"
