@@ -1,8 +1,8 @@
 class Monetdb < Formula
   desc "Column-store database"
   homepage "https://www.monetdb.org/"
-  url "https://www.monetdb.org/downloads/sources/Jul2021-SP1/MonetDB-11.41.11.tar.xz"
-  sha256 "2e81a98e06820dfaf56770af027e8da4a8dcc533d3599b9cc2b5a2e1efdc07af"
+  url "https://www.monetdb.org/downloads/sources/Jan2022/MonetDB-11.43.5.tar.xz"
+  sha256 "870ab847298777b0a274ebdda89ac9c53ad99d967d3f9f5cba67e50b633fed1c"
   license "MPL-2.0"
   head "https://dev.monetdb.org/hg/MonetDB", using: :hg
 
@@ -13,8 +13,7 @@ class Monetdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/monetdb"
-    rebuild 1
-    sha256 mojave: "4cdb58a205a34b1f083ce8de61a971eb1d7f055edb9b474340b9eee40362531f"
+    sha256 mojave: "3d819ec8cbdd9c18e49566bc30ed77632de1a2a180f344be247cd9da261bfd1b"
   end
 
   depends_on "bison" => :build # macOS bison is too old
