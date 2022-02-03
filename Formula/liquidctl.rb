@@ -3,14 +3,14 @@ class Liquidctl < Formula
 
   desc "Cross-platform tool and drivers for liquid coolers and other devices"
   homepage "https://github.com/liquidctl/liquidctl"
-  url "https://files.pythonhosted.org/packages/f1/c3/e1ba3d1d2a5fd77186fa2ad6fd218741524a0a4cc98c733e09080f8f5843/liquidctl-1.8.0.tar.gz"
-  sha256 "99b8ec4da617a01830951a8f1a37d616f50eed6d260220fe5c26d1bf90e1e91e"
+  url "https://files.pythonhosted.org/packages/95/94/8c5a48699eaae4519e538f98ddae2d2c0810554c7b9efb2aac53817ef593/liquidctl-1.8.1.tar.gz"
+  sha256 "0859dfe673babe9af10e4f431e0baa974961f0b2c973a37e64eb6c6c2fddbe73"
   license "GPL-3.0-or-later"
   head "https://github.com/liquidctl/liquidctl.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liquidctl"
-    sha256 cellar: :any, mojave: "df1e8789e662ca8aca03bd1914bcb3f77d3ab2bc81f73578c076037dd73c10aa"
+    sha256 cellar: :any, mojave: "8f4cf28ab93cca6241230cf984513ea3a1a6fe0ecbf96bb6b3e6b147f9d6e708"
   end
 
   depends_on "hidapi"
