@@ -2,15 +2,14 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https://github.com/kubernetes-sigs/kubebuilder"
   url "https://github.com/kubernetes-sigs/kubebuilder.git",
-      tag:      "v3.2.0",
-      revision: "b7a730c84495122a14a0faff95e9e9615fffbfc5"
+      tag:      "v3.3.0",
+      revision: "47859bf2ebf96a64db69a2f7074ffdec7f15c1ec"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/kubebuilder.git"
+  head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubebuilder"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "0252ef31f75cdfac658ba4dafbc1cec85a95c7b3a044a9329995c19fdb7c3883"
+    sha256 cellar: :any_skip_relocation, mojave: "c3ac04ea89482b26fae79e51bf370c05ea8f5d8b03fe63766a770806aa4a3023"
   end
 
   depends_on "git-lfs" => :build
@@ -26,7 +25,7 @@ class Kubebuilder < Formula
       -X main.gitCommit=#{Utils.git_head}
       -X main.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" ")), "./cmd"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
 
     output = Utils.safe_popen_read(bin/"kubebuilder", "completion", "bash")
     (bash_completion/"kubebuilder").write output
