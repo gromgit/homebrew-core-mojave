@@ -2,14 +2,14 @@ class Helm < Formula
   desc "Kubernetes package manager"
   homepage "https://helm.sh/"
   url "https://github.com/helm/helm.git",
-      tag:      "v3.7.2",
-      revision: "663a896f4a815053445eec4153677ddc24a0a361"
+      tag:      "v3.8.0",
+      revision: "d14138609b01886f544b2025f5000351c9eb092e"
   license "Apache-2.0"
   head "https://github.com/helm/helm.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helm"
-    sha256 cellar: :any_skip_relocation, mojave: "5c79edb8ff7f3e5598e04ea42883099e051220eb1dccad96ea385a66b4f7b791"
+    sha256 cellar: :any_skip_relocation, mojave: "391932f3eaab1143dfcc88ca1d1f37d438e99829e4a86513b3f4a7855f261728"
   end
 
   depends_on "go" => :build
@@ -43,7 +43,7 @@ class Helm < Formula
     version_output = shell_output(bin/"helm version 2>&1")
     assert_match "GitTreeState:\"clean\"", version_output
     if build.stable?
-      revision = stable.instance_variable_get(:@resource).instance_variable_get(:@specs)[:revision]
+      revision = stable.specs[:revision]
       assert_match "GitCommit:\"#{revision}\"", version_output
       assert_match "Version:\"v#{version}\"", version_output
     end
