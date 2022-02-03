@@ -1,14 +1,14 @@
 class Osm2pgsql < Formula
   desc "OpenStreetMap data to PostgreSQL converter"
   homepage "https://osm2pgsql.org"
-  url "https://github.com/openstreetmap/osm2pgsql/archive/1.5.2.tar.gz"
-  sha256 "4af0b925180ead2710eb68af28f70c91a81fb21dde5f80659d78e9fd14cf52cc"
+  url "https://github.com/openstreetmap/osm2pgsql/archive/1.6.0.tar.gz"
+  sha256 "0ec8b58ab972ac8356185af4161270c1b625a77299f09e5fb7f45e616ef1a9a5"
   license "GPL-2.0-only"
   head "https://github.com/openstreetmap/osm2pgsql.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm2pgsql"
-    sha256 mojave: "9134fee8601ec02ba424cf3402e4d8e2db7966def2dc2448d17828aa2f3c17bc"
+    sha256 mojave: "eca83e544944a31c7adb2d9b3ec05ce4a95688e70114d7f4b0193ed50a169fe9"
   end
 
   depends_on "cmake" => :build
