@@ -42,7 +42,8 @@ class Julia < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/julia"
-    sha256 mojave: "221ecea946ba992bc0ee53844e9f45ec285586e2e1531a66609e7cf541ccac8d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4187bc3471eb421dd8c41630ad98f55c9bda17455fb192b89b889ced20615315"
   end
 
   # Requires the M1 fork of GCC to build
@@ -76,6 +77,8 @@ class Julia < Formula
     # https://github.com/JuliaLang/julia/issues/30154
     depends_on "libunwind"
   end
+
+  conflicts_with "juliaup", because: "both install `julia` binaries"
 
   fails_with gcc: "5"
 
