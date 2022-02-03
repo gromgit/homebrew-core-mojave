@@ -1,8 +1,8 @@
 class Htpdate < Formula
   desc "Synchronize time with remote web servers"
   homepage "https://www.vervest.org/htp/"
-  url "https://www.vervest.org/htp/archive/c/htpdate-1.3.2.tar.gz"
-  sha256 "7b73897d45e1da20e63b65b311513f359bc975d5a29d6bd2aae27b4e13a89e31"
+  url "https://www.vervest.org/htp/archive/c/htpdate-1.3.3.tar.gz"
+  sha256 "74f34b013eba6f99369819fa4b3d48e9ab5e531ad04f6af59cc04e8777c76ed7"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Htpdate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htpdate"
-    sha256 cellar: :any_skip_relocation, mojave: "995f6551d3da2d30ec366b7d1c95052fef1461d6de3c2a492be371e914744957"
+    sha256 cellar: :any_skip_relocation, mojave: "02477a5af7e6b5cb060f8535905cac81dea17203caf9a30f0df03f8d333e1abe"
   end
 
   def install
