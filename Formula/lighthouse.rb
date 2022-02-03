@@ -1,19 +1,23 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://github.com/sigp/lighthouse"
-  url "https://github.com/sigp/lighthouse/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "b1ae766c0b335e963d7ebd6ab2a02386078a6b2ab688ec5da3604191a4d0d3f4"
+  url "https://github.com/sigp/lighthouse/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "f7c58f648b70a39db424963642a8c30d0a2dee65c58c3f2122f2e8fab191e83f"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighthouse"
-    sha256 cellar: :any_skip_relocation, mojave: "cb8da40c20c292331795fd3a5a534ebb4da06c9941a18c318cd9754f0c6d32bf"
+    sha256 cellar: :any_skip_relocation, mojave: "01aff4bdc32963987d0d1417a7cf587a3e1ea72c076abceab5955d9c30abaab5"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "llvm" => :build
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "./lighthouse")
