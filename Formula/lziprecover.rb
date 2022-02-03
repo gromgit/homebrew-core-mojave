@@ -1,8 +1,8 @@
 class Lziprecover < Formula
   desc "Data recovery tool and decompressor for files in the lzip compressed data format"
   homepage "https://www.nongnu.org/lzip/lziprecover.html"
-  url "https://download-mirror.savannah.gnu.org/releases/lzip/lziprecover/lziprecover-1.22.tar.gz"
-  sha256 "fd958a0975f7729c44f3b784e566891f736c3dc68374dbd2149ee692a16d0862"
+  url "https://download-mirror.savannah.gnu.org/releases/lzip/lziprecover/lziprecover-1.23.tar.gz"
+  sha256 "f29804177f06dd51c3fa52615ae198a76002b6ce8d961c3575546c3740f4b572"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,8 @@ class Lziprecover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc1c3df3a5469043489e995ffa7e7bc450df1eff70a52227a0d01de08c858f64"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1619cf04484327e4a674f51a54c18f69212908483f5aeeef3ce553997058dbfb"
-    sha256 cellar: :any_skip_relocation, monterey:       "df55329c9f991f485d01cb0459f31e3d9717f83e8fff5947b94cc45f57aeab87"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fcf5e375245c6fabe48f084846c055c66065af4575027f05a81a5e33ef931a57"
-    sha256 cellar: :any_skip_relocation, catalina:       "f99984733bd12d57d31bda428f03c9603a01f3b33aa1e83cfae464bf5db6fd0e"
-    sha256 cellar: :any_skip_relocation, mojave:         "7cd81f75c35b9ff4e27b60780bdf5503a6e986c94a3772c6493b9cd490dc6a92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d39f36865f6a9f5c8c4e701534ea500d2b900a1d38b7a455ffb0fd977a23ce81"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lziprecover"
+    sha256 cellar: :any_skip_relocation, mojave: "b499d4d047fe950e2e24c9196b799abdf77f7ce27e2cf657dd89afd96f1a5c59"
   end
 
   depends_on "lzip" => :test
