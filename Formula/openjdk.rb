@@ -1,10 +1,9 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://github.com/openjdk/jdk17u/archive/jdk-17.0.1-ga.tar.gz"
-  sha256 "f27e2f3fd2dcfd144f875e610e7d6c2d9d957e1be96e4f865307b6df381cf7a9"
+  url "https://github.com/openjdk/jdk17u/archive/jdk-17.0.2-ga.tar.gz"
+  sha256 "f7b1540b12d72ca4710376292b6084fac13819a90bcaa1e5e81734c1b3b09517"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
-  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +12,7 @@ class Openjdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk"
-    rebuild 3
-    sha256 cellar: :any, mojave: "c37e362c7f5119bf1bdda3b2bdde80c8d6370d44c47cce5949ff384d82e083d5"
+    sha256 cellar: :any, mojave: "86024118a0d909ce51a42cd2170b4a2c8b4ae248b80bf3fdea3a728ed0762e03"
   end
 
   keg_only :shadowed_by_macos
