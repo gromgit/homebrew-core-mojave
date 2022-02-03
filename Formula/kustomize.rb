@@ -2,10 +2,10 @@ class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
   homepage "https://github.com/kubernetes-sigs/kustomize"
   url "https://github.com/kubernetes-sigs/kustomize.git",
-      tag:      "kustomize/v4.4.1",
-      revision: "b2d65ddc98e09187a8e38adc27c30bab078c1dbf"
+      tag:      "kustomize/v4.5.0",
+      revision: "67591762a6460f08c589bac325b22049a70c124d"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/kustomize.git"
+  head "https://github.com/kubernetes-sigs/kustomize.git", branch: "master"
 
   livecheck do
     url :stable
@@ -14,8 +14,7 @@ class Kustomize < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kustomize"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d0b11e4452f4fdccb5724040e7407c834c85ab1106e13dd087ad2e70f2f550ce"
+    sha256 cellar: :any_skip_relocation, mojave: "81a0fef23bd8423caf5f6b2ad71965e6d042e2c5fd114b5204514791131104cd"
   end
 
   depends_on "go" => :build
@@ -29,7 +28,7 @@ class Kustomize < Formula
         -X sigs.k8s.io/kustomize/api/provenance.version=#{name}/v#{version}
         -X sigs.k8s.io/kustomize/api/provenance.gitCommit=#{commit}
         -X sigs.k8s.io/kustomize/api/provenance.buildDate=#{time.iso8601}
-      ].join(" ")
+      ]
 
       system "go", "build", *std_go_args(ldflags: ldflags)
     end
