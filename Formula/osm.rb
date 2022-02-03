@@ -5,18 +5,24 @@ class Osm < Formula
       tag:      "v0.11.1",
       revision: "c01aefae509d59735d7908a32a359327ff3f2322"
   license "Apache-2.0"
+  head "https://github.com/openservicemesh/osm.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "ce7dfad0d33f6226367d7e897bc9dbfcb530d9ce98cf3d9c815f9ba9f7f72c5c"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "a4b8f51403e293411c0b4489567f3d24ac5defcbd73cba15590835de91d290d4"
   end
 
   depends_on "go" => :build
   depends_on "helm" => :build
 
   def install
-    ENV["VERSION"] = "v"+version
+    ENV["VERSION"] = "v"+version unless build.head?
     ENV["BUILD_DATE"] = time.strftime("%Y-%m-%d-%H:%M")
     system "make", "build-osm"
     bin.install "bin/osm"
