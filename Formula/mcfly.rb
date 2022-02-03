@@ -1,14 +1,14 @@
 class Mcfly < Formula
   desc "Fly through your shell history"
   homepage "https://github.com/cantino/mcfly"
-  url "https://github.com/cantino/mcfly/archive/v0.5.11.tar.gz"
-  sha256 "ca22a600b5b1c0ca1acff6fd1ce05680a581795567f759ff99a917401bfd835e"
+  url "https://github.com/cantino/mcfly/archive/v0.5.13.tar.gz"
+  sha256 "b4dc5fab1ef1fe05fc34b620f1dea6617b48d6d0e3aadcf29a4c9e4cb0894983"
   license "MIT"
   head "https://github.com/cantino/mcfly.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mcfly"
-    sha256 cellar: :any_skip_relocation, mojave: "4938436278caedc287b14c3ec3d99fc929c2986d0e10245df002b7f932cc433b"
+    sha256 cellar: :any_skip_relocation, mojave: "84504564465f49a6eabd0da93b35128775196bf6548a125bbb59cc28f6c7a650"
   end
 
   depends_on "rust" => :build
