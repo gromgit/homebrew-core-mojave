@@ -1,10 +1,9 @@
 class Lua < Formula
   desc "Powerful, lightweight programming language"
   homepage "https://www.lua.org/"
-  url "https://www.lua.org/ftp/lua-5.4.3.tar.gz"
-  sha256 "f8612276169e3bfcbcfb8f226195bfc6e466fe13042f1076cbde92b7ec96bbfb"
+  url "https://www.lua.org/ftp/lua-5.4.4.tar.gz"
+  sha256 "164c7849653b80ae67bec4b7473b884bf5cc8d2dca05653475ec2ed27b9ebf61"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://www.lua.org/ftp/"
@@ -13,8 +12,7 @@ class Lua < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lua"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f58a6a0347629cf768a412a073d465203fd4c6e62e2b7a1268bfb69a272f8901"
+    sha256 cellar: :any, mojave: "a251803a512f5f49804288216de8721cd7beaef3dd2b985028d503fc38243cda"
   end
 
   uses_from_macos "unzip" => :build
