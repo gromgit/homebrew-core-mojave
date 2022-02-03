@@ -2,14 +2,14 @@ class Minikube < Formula
   desc "Run a Kubernetes cluster locally"
   homepage "https://minikube.sigs.k8s.io/"
   url "https://github.com/kubernetes/minikube.git",
-      tag:      "v1.25.0",
-      revision: "3edf4801f38f3916c9ff96af4284df905a347c86"
+      tag:      "v1.25.1",
+      revision: "3e64b11ed75e56e4898ea85f96b2e4af0301f43d"
   license "Apache-2.0"
   head "https://github.com/kubernetes/minikube.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minikube"
-    sha256 cellar: :any_skip_relocation, mojave: "248e9e17a2062f2ed196de883b7a152d4d52aa7242bd803b53b862ca9f9ba3b7"
+    sha256 cellar: :any_skip_relocation, mojave: "02fd904f389cc0b24ebd982ebca564e18dcdc55f91233d26e7b9f6601dd6db25"
   end
 
   depends_on "go" => :build
