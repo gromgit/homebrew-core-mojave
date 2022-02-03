@@ -5,12 +5,12 @@ class Heartbeat < Formula
       tag:      "v7.15.2",
       revision: "fd322dad6ceafec40c84df4d2a0694ea357d16cc"
   license "Apache-2.0"
-  head "https://github.com/elastic/beats.git"
+  head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heartbeat"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "0496d1eaf0f1dc03f15a57ddc4dc8979901a8d95ee532898945369fbf7e81c9b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "a912edba70184416e61cf41ea5cbf05035dcc5841778996cc056a3a6a0760829"
   end
 
   depends_on "go" => :build
@@ -54,6 +54,10 @@ class Heartbeat < Formula
   end
 
   test do
+    # FIXME: This keeps stalling CI when tested as a dependent. See, for example,
+    # https://github.com/Homebrew/homebrew-core/pull/91712
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
+
     port = free_port
 
     (testpath/"config/heartbeat.yml").write <<~EOS
