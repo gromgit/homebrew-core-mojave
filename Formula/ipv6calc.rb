@@ -5,14 +5,13 @@ class Ipv6calc < Formula
 
   desc "Small utility for manipulating IPv6 addresses"
   homepage "https://www.deepspace6.net/projects/ipv6calc.html"
-  url "https://github.com/pbiering/ipv6calc/archive/4.0.0.tar.gz"
-  sha256 "4d23c471b472271b48421b5d18309492f615c85c75f2abc17c5c5a4d8e3a4635"
+  url "https://github.com/pbiering/ipv6calc/archive/4.0.1.tar.gz"
+  sha256 "0de7dbe66c0e3602becc18bb8f69a278a02eeaf5d58779cd1c0e0069eb80a7e6"
   license "GPL-2.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipv6calc"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "760f8cab0bc146976900f6af734d2a64f5f6aaa4146513053114c68d9e9a93d0"
+    sha256 cellar: :any_skip_relocation, mojave: "a6e146a5a5025eb68242b3f266afb6741db91798f68a3d3e1ada6256bc8c1605"
   end
 
   uses_from_macos "perl"
