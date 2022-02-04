@@ -1,9 +1,9 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
   homepage "https://github.com/universal-ctags/ctags"
-  url "https://github.com/universal-ctags/ctags/archive/refs/tags/p5.9.20220116.0.tar.gz"
-  version "p5.9.20220116.0"
-  sha256 "22166d076d7972ae1542b8bf8d834b26e47bd5e5c9ad9cb359fe6c8a58118989"
+  url "https://github.com/universal-ctags/ctags/archive/refs/tags/p5.9.20220130.0.tar.gz"
+  version "p5.9.20220130.0"
+  sha256 "b793d4e430af19fd94bcb1cd6a24fb94e5f0a1151ef0e936f4e446384dcf96c8"
   license "GPL-2.0-only"
   head "https://github.com/universal-ctags/ctags.git", branch: "master"
 
@@ -14,7 +14,7 @@ class UniversalCtags < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/universal-ctags"
-    sha256 cellar: :any, mojave: "e6b16b1417b38e2e4e836611a4e6dc5e8432b6b70c6c168a311a52196eb1781c"
+    sha256 cellar: :any, mojave: "c9ac00687f5bc3ea2a8a482499a4e14e51783f33e7e7d0b09eda49bf210e2f4a"
   end
 
   depends_on "autoconf" => :build
