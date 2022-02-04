@@ -1,13 +1,13 @@
 class Procs < Formula
   desc "Modern replacement for ps written by Rust"
   homepage "https://github.com/dalance/procs"
-  url "https://github.com/dalance/procs/archive/v0.12.0.tar.gz"
-  sha256 "04dbb3ddc734a9d1305b26b546a913e3e04d556b5863212a2675d29268aebed3"
+  url "https://github.com/dalance/procs/archive/v0.12.1.tar.gz"
+  sha256 "ce84e98dd85cb8d5afda871ad2ddceb4faec077d9e019469aa668a75821e4fc2"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/procs"
-    sha256 cellar: :any_skip_relocation, mojave: "25ddc62c711b83ab49e75f43fc9832df5538db1a015a3ce6eba3454f4bfddcde"
+    sha256 cellar: :any_skip_relocation, mojave: "e02e2c7d23a73bce091d240b79a125ad6dc0ecdf2a83e55e93125d16de1fc306"
   end
 
   depends_on "rust" => :build
