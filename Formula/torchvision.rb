@@ -1,14 +1,13 @@
 class Torchvision < Formula
   desc "Datasets, transforms, and models for computer vision"
   homepage "https://github.com/pytorch/vision"
-  url "https://github.com/pytorch/vision/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "32a06ccf755e4d75006ce03701f207652747a63dbfdf65f0f20a1b6f93a2e834"
+  url "https://github.com/pytorch/vision/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "b4c51d27589783e6e6941ecaa67b55f6f41633874ec37f80b64a0c92c3196e0c"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/torchvision"
-    rebuild 2
-    sha256 mojave: "70b7e3243a35e5a8747af3b2629240bebc60b1edf896b735c519e19d6536641c"
+    sha256 cellar: :any, mojave: "24f69f60099717878736911cde02f9376c2ed92dd652f1ce079cba7702c5a7f5"
   end
 
   depends_on "cmake" => :build
