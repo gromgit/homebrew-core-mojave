@@ -3,27 +3,21 @@ class ReorderPythonImports < Formula
 
   desc "Rewrites source to reorder python imports"
   homepage "https://github.com/asottile/reorder_python_imports"
-  url "https://files.pythonhosted.org/packages/f8/8c/447338a4a8098f28bed79b264a43fbfae4d5d70ec2cc034fc4bc4cfaa827/reorder_python_imports-2.6.0.tar.gz"
-  sha256 "f4dc03142bdb57625e64299aea80e9055ce0f8b719f8f19c217a487c9fa9379e"
+  url "https://files.pythonhosted.org/packages/0f/0e/af881028b7bcb296d8982425555865a3e76ec4df13d57a0e602864594403/reorder_python_imports-2.7.1.tar.gz"
+  sha256 "1ae34422f13f5a4b4669f340774909d721bfc0a8311973c70b3a50540b595bc5"
   license "MIT"
-  revision 1
   head "https://github.com/asottile/reorder_python_imports.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9200d4865b878afb55a5a76c0ab72524a0d72d5644e9a3c21255e830185af27"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f9200d4865b878afb55a5a76c0ab72524a0d72d5644e9a3c21255e830185af27"
-    sha256 cellar: :any_skip_relocation, monterey:       "52040315f49c7a21aff570a1abfaf3639533a0799fce504f1a3dc6e319261944"
-    sha256 cellar: :any_skip_relocation, big_sur:        "52040315f49c7a21aff570a1abfaf3639533a0799fce504f1a3dc6e319261944"
-    sha256 cellar: :any_skip_relocation, catalina:       "52040315f49c7a21aff570a1abfaf3639533a0799fce504f1a3dc6e319261944"
-    sha256 cellar: :any_skip_relocation, mojave:         "52040315f49c7a21aff570a1abfaf3639533a0799fce504f1a3dc6e319261944"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e81637407b24856b731462f94f13aab0f200bebfa9bba1c4533402042dd18335"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reorder-python-imports"
+    sha256 cellar: :any_skip_relocation, mojave: "a475efcb40b51a5757bae8eb0485fe27c48acb828c4bc4d328476291046a65f9"
   end
 
   depends_on "python@3.10"
 
   resource "aspy.refactor-imports" do
-    url "https://files.pythonhosted.org/packages/a9/e9/cabb3bd114aa24877084f2bb6ecad8bd77f87724d239d360efd08f6fe9db/aspy.refactor_imports-2.2.0.tar.gz"
-    sha256 "78ca24122963fd258ebfc4a8dc708d23a18040ee39dca8767675821e84e9ea0a"
+    url "https://files.pythonhosted.org/packages/63/e3/74f8042eb50fe161cd08cb94bc93f17a05fe76c387aeb22087db03e8173e/aspy.refactor_imports-2.2.1.tar.gz"
+    sha256 "f5b2fcbf9fd68361168588f14eda64d502d029eefe632d15094cd0683ae12984"
   end
 
   resource "cached-property" do
