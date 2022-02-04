@@ -15,7 +15,8 @@ class Podman < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/podman"
-    sha256 cellar: :any_skip_relocation, mojave: "0669cecd7262d0400181accdc755a042fa42c4cbae4ca2ab4795484bf477e458"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e6649eec2c1c3fa781d53cb72014aa036b68fea6ba9376df62035ec5b46cdb90"
   end
 
   head do
@@ -33,6 +34,10 @@ class Podman < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
     os = OS.kernel_name.downcase
+
+    inreplace "vendor/github.com/containers/common/pkg/config/config_#{os}.go",
+              "/usr/local/libexec/podman",
+              libexec
 
     system "make", "podman-remote-#{os}"
     if OS.mac?
