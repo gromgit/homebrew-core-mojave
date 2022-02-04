@@ -1,8 +1,8 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.6.tar.gz"
-  sha256 "65bfe55cce627db9b5a0ac7876a90c087e9fe86e9f5517e809446c4064a2d3fd"
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.6.1.tar.gz"
+  sha256 "20df84c851aaf2f5000510927f6d31b32f269916d351465c366dc0afc9dc150c"
   license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
@@ -13,7 +13,7 @@ class Vice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vice"
-    sha256 mojave: "fb7291e8c672710a0123ff4ae9edff43360a4878f0ad84638dba3dba73d17bd8"
+    sha256 mojave: "fa59670a4bdcc970a4f4a37d19e046f0467911513fe52b14420b393a9ee6f89e"
   end
 
   depends_on "autoconf" => :build
@@ -62,6 +62,6 @@ class Vice < Formula
   end
 
   test do
-    assert_match "cycle limit reached", shell_output("#{bin}/x64sc -console -limitcycles 1000000 -logfile -", 1)
+    assert_match "Initializing.", shell_output("#{bin}/x64sc -console -limitcycles 1000000 -logfile -", 1)
   end
 end
