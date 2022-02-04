@@ -1,8 +1,8 @@
 class Tfsec < Formula
   desc "Static analysis security scanner for your terraform code"
   homepage "https://tfsec.dev/"
-  url "https://github.com/aquasecurity/tfsec/archive/v0.63.1.tar.gz"
-  sha256 "11f4d680b9163e23ce021cd15d2016a220e97401c68a3216820ee101d68aae44"
+  url "https://github.com/aquasecurity/tfsec/archive/v1.0.8.tar.gz"
+  sha256 "88b09b0b914deebf142d1b739ab20491b3e5fc5f2f4cb0cc84578f884b6bc906"
   license "MIT"
   head "https://github.com/aquasecurity/tfsec.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Tfsec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfsec"
-    sha256 cellar: :any_skip_relocation, mojave: "f84c728499e2d9e7db34d6aff3d507ce52c121ce45b098d326a29cf2c770c29a"
+    sha256 cellar: :any_skip_relocation, mojave: "719a126e94a78ef7cead131896547db04bc1befe9a057104bc9c58ee512ab389"
   end
 
   depends_on "go" => :build
@@ -41,6 +41,6 @@ class Tfsec < Formula
     good_output = shell_output("#{bin}/tfsec #{testpath}/good")
     assert_match "No problems detected!", good_output
     bad_output = shell_output("#{bin}/tfsec #{testpath}/bad 2>&1", 1)
-    assert_match "1 potential problems detected.", bad_output
+    assert_match "1 potential problem(s) detected.", bad_output
   end
 end
