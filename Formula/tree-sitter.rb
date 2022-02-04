@@ -3,14 +3,14 @@ require "language/node"
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://github.com/tree-sitter/tree-sitter/archive/v0.20.2.tar.gz"
-  sha256 "2a0445f8172bbf83db005aedb4e893d394e2b7b33251badd3c94c2c5cc37c403"
+  url "https://github.com/tree-sitter/tree-sitter/archive/v0.20.4.tar.gz"
+  sha256 "979ad0b36eb90975baf0c65d155d106276cac08afb1c2fe0ad54d4b7d498ce39"
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tree-sitter"
-    sha256 cellar: :any, mojave: "d2db2fc2f022e5b50f97cda689a3951e8fd38ba516b2fb57ae5f4f7b52682837"
+    sha256 cellar: :any, mojave: "94a08af65c0fb1498e0038ce83b1e30712e42d45fc66dcd08292a227922ba7f9"
   end
 
   depends_on "emscripten" => [:build, :test]
@@ -51,7 +51,7 @@ class TreeSitter < Formula
         }
       });
     EOS
-    system bin/"tree-sitter", "generate"
+    system bin/"tree-sitter", "generate", "--abi=latest"
 
     # test `tree-sitter parse`
     (testpath/"test/corpus/hello.txt").write <<~EOS
