@@ -3,13 +3,13 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/9d/29/820c992cbda9415566b3c9b7e8965d61d6709bb37fc12c4cd3226d3cac7d/sqlfluff-0.9.1.tar.gz"
-  sha256 "e9769c2a952f069b18b5ed190cb158876fa5d7a1aa4e0a0e7e66087019d802fe"
+  url "https://files.pythonhosted.org/packages/1c/6d/9e20a4f588f213062dd2705b1fd04a6f37d4f7c0c070b846ee62cfd449f8/sqlfluff-0.9.3.tar.gz"
+  sha256 "33ac3ba63dc9e4b2ee3ff1ea3051f8d05f88667e30da1c22a80a37c4038aa092"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlfluff"
-    sha256 cellar: :any_skip_relocation, mojave: "73281f848b37684db1bd31239ee7aa9960b000b7c1793946c4b5a0130baef3a4"
+    sha256 cellar: :any_skip_relocation, mojave: "9f44e345a7e81ff10c175a426305acd289dc12b51023f813a759f2e8a98ba5be"
   end
 
   depends_on "python@3.10"
@@ -85,8 +85,8 @@ class Sqlfluff < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/ab/61/1a1613e3dcca483a7aa9d446cb4614e6425eb853b90db131c305bd9674cb/pyparsing-3.0.6.tar.gz"
-    sha256 "d9bdec0013ef1eb5a84ab39a3b3868911598afa494f5faa038647101504e2b81"
+    url "https://files.pythonhosted.org/packages/d6/60/9bed18f43275b34198eb9720d4c1238c68b3755620d20df0afd89424d32b/pyparsing-3.0.7.tar.gz"
+    sha256 "18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea"
   end
 
   resource "pytest" do
@@ -100,8 +100,8 @@ class Sqlfluff < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/97/cd/93ad08b2f97ec95da0bd860380ce0ac7481eaccc760356ee11eda369c048/regex-2021.11.10.tar.gz"
-    sha256 "f341ee2df0999bfdf7a95e448075effe0db212a59387de1a70690e4acb03d4c6"
+    url "https://files.pythonhosted.org/packages/4c/75/b5b60055897d78882da8bc4c94609067cf531a42726df2e44ce69e8ec7a9/regex-2022.1.18.tar.gz"
+    sha256 "97f32dc03a8054a4c4a5ab5d761ed4861e828b2c200febd4e46857069a483916"
   end
 
   resource "tblib" do
