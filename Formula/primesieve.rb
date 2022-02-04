@@ -1,13 +1,13 @@
 class Primesieve < Formula
   desc "Fast C/C++ prime number generator"
   homepage "https://github.com/kimwalisch/primesieve"
-  url "https://github.com/kimwalisch/primesieve/archive/v7.7.tar.gz"
-  sha256 "fcb3f25e68081c54e5d560d6d1f6448d384a7051e9c56d56ee0d65d6d7954db1"
+  url "https://github.com/kimwalisch/primesieve/archive/v7.8.tar.gz"
+  sha256 "0cd0490259e6e919c6e3dd3f3e69ac6d91e6cbe616e22a219abe4006d9293d5d"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/primesieve"
-    sha256 cellar: :any, mojave: "e5c8d63c798f54e5aeee81deca2725d479d344455cb12e8bd9960ab3a220651d"
+    sha256 cellar: :any, mojave: "fb3f1f4d0372c913cdeed1075d5723f188e0a64021f7ed41e30a2d301078c096"
   end
 
   depends_on "cmake" => :build
