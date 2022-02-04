@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://github.com/watchexec/watchexec"
-  url "https://github.com/watchexec/watchexec/archive/cli-v1.17.1.tar.gz"
-  sha256 "3bc82174729628010d29c85f2d2c61cc45cef5cc729f13153b1422c8f647d33f"
+  url "https://github.com/watchexec/watchexec/archive/cli-v1.18.5.tar.gz"
+  sha256 "ae4b2ab209e342c981ab186e3581b95f7c43856aef037196747b6e4c33f8f3e1"
   license "Apache-2.0"
 
   livecheck do
@@ -11,16 +11,13 @@ class Watchexec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11c836187bb6d0fb6569944bd7d2c9a0f815b34fe52bf03195c2b62e4102f913"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d83500db72a7e0dff3fc8fd8e2526e11e6d25a104ab155dc967fcc519a082b50"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3bfa9e01ed620bb792fdad1a6edfd03c6a1ed428ac3fa2a939e7cc081de89bd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dd7198eb2dbb92f608a8a8eeb254d2810182f3d647f303831a5bfeeab5ab51c8"
-    sha256 cellar: :any_skip_relocation, catalina:       "52aa742b6924b99190019d0347660734d5c846a8c0e79b5b1e5658f2c1b24659"
-    sha256 cellar: :any_skip_relocation, mojave:         "9d243c2296dc406c164045adbedee423c4b0a3b74f9a8aaad1676f1a96e16d8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ca6f89236f83d52799189baa14c733c7532e9245834ed31a07d4d367579a45d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/watchexec"
+    sha256 cellar: :any_skip_relocation, mojave: "8b90b719056790d8acf6c07cdd9512be4bd6f5067d6447777c382498d00848a8"
   end
 
   depends_on "rust" => :build
+
+  uses_from_macos "zlib"
 
   def install
     cd "cli" do
