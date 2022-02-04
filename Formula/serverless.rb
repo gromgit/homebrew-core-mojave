@@ -3,14 +3,14 @@ require "language/node"
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https://www.serverless.com/"
-  url "https://github.com/serverless/serverless/archive/v2.72.0.tar.gz"
-  sha256 "f226a562ff22c3f181e58587d373a1aec8177c31f1653e55d0799059bd0a1782"
+  url "https://github.com/serverless/serverless/archive/v3.1.0.tar.gz"
+  sha256 "ef3bc2dde3413d7dab6f763c476620cb6935b622f8ca51ac5c2c59bad7948c5a"
   license "MIT"
   head "https://github.com/serverless/serverless.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serverless"
-    sha256 mojave: "df357bf3321a82c4f0a50a7d77e018a7ad42423a6a078bcbfed3d92589dff703"
+    sha256 cellar: :any_skip_relocation, mojave: "5fb1b784b564f05733c5e815c08d7a5a0ae707f8534cfe2872f3147acd70e8b0"
   end
 
   depends_on "node"
@@ -38,7 +38,7 @@ class Serverless < Formula
     EOS
 
     system("#{bin}/serverless", "config", "credentials", "--provider", "aws", "--key", "aa", "--secret", "xx")
-    output = shell_output("#{bin}/serverless package")
-    assert_match "Serverless: Packaging service...", output
+    output = shell_output("#{bin}/serverless package 2>&1")
+    assert_match "Packaging homebrew-test for stage dev", output
   end
 end
