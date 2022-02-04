@@ -3,18 +3,13 @@ require "language/node"
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
   homepage "https://github.com/grpc/grpc-web"
-  url "https://github.com/grpc/grpc-web/archive/1.3.0.tar.gz"
-  sha256 "6ba86d2833ad0ed5e98308790bea4ad81214e1f4fc8838fe34c2e5ee053b73e6"
+  url "https://github.com/grpc/grpc-web/archive/1.3.1.tar.gz"
+  sha256 "d292df306b269ebf83fb53a349bbec61c07de4d628bd6a02d75ad3bd2f295574"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "cd5787730c11925a5631829a46ea8e691f3b60d8260625f8e5ce4f492fc3a61f"
-    sha256 cellar: :any,                 arm64_big_sur:  "2da48dc258aef815fe598868ff75acf4f123b232aace297eaaf5fda0d1b564f0"
-    sha256 cellar: :any,                 monterey:       "ba88fc45253b9d7a1e126f5f96ce3e016b2ec62f109391bbd43f43ea4914a835"
-    sha256 cellar: :any,                 big_sur:        "d4938bcd3c7efd330b9d13be4e3e7db2525b4bec8571e8d8b843c6c6d3fd40af"
-    sha256 cellar: :any,                 catalina:       "ec20d43ded4c5b202a4d245e239d4cc1d8fc50aad459534f5e882fb9cf184119"
-    sha256 cellar: :any,                 mojave:         "e234dcb68737d09bd4e73271e1efb8284078bd60770fc6711319be342e966672"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a13ee2791266209e25e607fd578303cd5ccc30d7da5156f1f6573ef34c20fa6"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protoc-gen-grpc-web"
+    sha256 cellar: :any, mojave: "b6d9cc6c5d3062ee40158e94bce61e231f18e633bf4e55a671620baca7d02c0d"
   end
 
   depends_on "cmake" => :build
