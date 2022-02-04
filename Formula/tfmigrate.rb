@@ -1,14 +1,14 @@
 class Tfmigrate < Formula
   desc "Terraform state migration tool for GitOps"
   homepage "https://github.com/minamijoyo/tfmigrate"
-  url "https://github.com/minamijoyo/tfmigrate/archive/v0.3.0.tar.gz"
-  sha256 "9baa141c2ba36e1190bbf92a70f7a58db2f9b009db5c645a50f9e23a89d5903c"
+  url "https://github.com/minamijoyo/tfmigrate/archive/v0.3.1.tar.gz"
+  sha256 "0a4915f214729ad91df125df5ce735caab1d4f1b9a43375a0ed9bde7970a69f6"
   license "MIT"
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfmigrate"
-    sha256 cellar: :any_skip_relocation, mojave: "5a3621a799f2d448401ae74858323707827e9f36dd27e9666feee7cb9c82400b"
+    sha256 cellar: :any_skip_relocation, mojave: "f9cae2116d1cd3eefa00a0a9c80a8b1f6ae35b66e45ba7192dc5291651e19c67"
   end
 
   depends_on "go" => :build
