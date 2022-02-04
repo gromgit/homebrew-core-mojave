@@ -1,8 +1,8 @@
 class Remind < Formula
   desc "Sophisticated calendar and alarm"
   homepage "https://dianne.skoll.ca/projects/remind/"
-  url "https://dianne.skoll.ca/projects/remind/download/remind-03.03.11.tar.gz"
-  sha256 "08267b08435e23cccd520b4161eb0659ba9fe77382afd8414cdd626de801e25a"
+  url "https://dianne.skoll.ca/projects/remind/download/remind-03.03.12.tar.gz"
+  sha256 "d4aa4cda5a1b53e2acc631e935e031c00c77982ad4f0867286f7d8270954409e"
   license "GPL-2.0-only"
   head "https://git.skoll.ca/Skollsoft-Public/Remind.git", branch: "master"
 
@@ -13,18 +13,12 @@ class Remind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/remind"
-    sha256 cellar: :any_skip_relocation, mojave: "30072bdc287e83774e5c29c8d5cab43113b2e0dcc647e119953227040cfe60c6"
+    sha256 cellar: :any_skip_relocation, mojave: "6e603efe88c67cb43b048e7ae5bbd3df555c1ca959d28c2493ba5eea7fadad58"
   end
 
   conflicts_with "rem", because: "both install `rem` binaries"
 
   def install
-    # Remove unnecessary sleeps when running on Apple
-    inreplace "configure", "sleep 1", "true"
-    inreplace "src/init.c" do |s|
-      s.gsub! "sleep(5);", ""
-      s.gsub!(/rkrphgvba\(.\);/, "")
-    end
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
