@@ -1,8 +1,8 @@
 class Vgrep < Formula
   desc "User-friendly pager for grep"
   homepage "https://github.com/vrothberg/vgrep"
-  url "https://github.com/vrothberg/vgrep/archive/v2.5.5.tar.gz"
-  sha256 "6272ca460549813231bc046e6fde7e94baec03f66c4b8f88b197af7d70556013"
+  url "https://github.com/vrothberg/vgrep/archive/v2.6.0.tar.gz"
+  sha256 "4cbd912189397b08897fcc1709787ec60ed42275059f900463055211e1f6d689"
   license "GPL-3.0-only"
   version_scheme 1
   head "https://github.com/vrothberg/vgrep.git", branch: "main"
@@ -14,8 +14,7 @@ class Vgrep < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vgrep"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "cd6f7623c468695b8cacd7a0d7de233c215433544cc61b71c2e8c7ee301407bf"
+    sha256 cellar: :any_skip_relocation, mojave: "5aacf51662cf55d3ae3281c2ee50bb1e1321ffe176db82bc54414af0f453ac14"
   end
 
   depends_on "go" => :build
