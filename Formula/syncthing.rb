@@ -1,8 +1,8 @@
 class Syncthing < Formula
   desc "Open source continuous file synchronization application"
   homepage "https://syncthing.net/"
-  url "https://github.com/syncthing/syncthing/archive/v1.18.6.tar.gz"
-  sha256 "b27911d4c804063b13e9474848953c2c6709218603739b5f09a7f88a69eca88f"
+  url "https://github.com/syncthing/syncthing/archive/v1.19.0.tar.gz"
+  sha256 "9d7f020ee151512b5a121c08e2b07f7a2ce5bd4a749ca91e60803d21eb1aca02"
   license "MPL-2.0"
   head "https://github.com/syncthing/syncthing.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Syncthing < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/syncthing"
-    sha256 cellar: :any_skip_relocation, mojave: "264dd061f61f805b9b6a1277a4e749ab7db58dc892e343f6a3f38476bc1192cd"
+    sha256 cellar: :any_skip_relocation, mojave: "e48b9bafbd56cf1cd42b54add20b79273ac9769055ec304e590a64b115602b27"
   end
 
   depends_on "go" => :build
