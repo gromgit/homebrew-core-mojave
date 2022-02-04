@@ -4,21 +4,21 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.66.0.tgz"
-  sha256 "d9706890afb18c6b9fa5c361254f7a9e546ee1f4fc9f49dcb2e7f8afd91785c3"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.68.0.tgz"
+  sha256 "a9ea29dd6e667ec56cae2893c160c8759a0e5f21f8e247bfd61ffd260569532c"
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webpack"
-    sha256 cellar: :any_skip_relocation, mojave: "d2587d8e21321180bacc2708aca4344f992fc5689c0169e1b5468b23f71f2034"
+    sha256 cellar: :any_skip_relocation, mojave: "b6c455a2dd33fab9d9fac1c0f6871584b37bf9dbba0b11924f02589225be8ba2"
   end
 
   depends_on "node"
 
   resource "webpack-cli" do
-    url "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.9.1.tgz"
-    sha256 "0e80f38d28019f7c30f7237ca0b7a250dfe0b561d07d8248b162dde663cd54ff"
+    url "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.9.2.tgz"
+    sha256 "cec2b7fb5b49724b7642edf21ff7645ce5591cc65a24ba37b8fbe12086773189"
   end
 
   def install
