@@ -14,7 +14,8 @@ class Wireshark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wireshark"
-    sha256 mojave: "7fab10e8fd12c0c3a86c0e998a00d7b480a52139da69540b84d8a7617f296b07"
+    rebuild 1
+    sha256 mojave: "66938b36d7adace63cb37060b8edd1c95e84a85c9b55fdad13ff7b7f38b10cd4"
   end
 
   depends_on "cmake" => :build
