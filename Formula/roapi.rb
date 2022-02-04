@@ -1,13 +1,13 @@
 class Roapi < Formula
   desc "Full-fledged APIs for static datasets without writing a single line of code"
   homepage "https://roapi.github.io/docs"
-  url "https://github.com/roapi/roapi/archive/refs/tags/roapi-http-v0.5.2.tar.gz"
-  sha256 "d145f36063548b7d90baf03ab93bbd0b31775663a42a0eb13d4f7f217bf41df6"
+  url "https://github.com/roapi/roapi/archive/refs/tags/roapi-http-v0.5.3.tar.gz"
+  sha256 "96b101d6cb9ed638985fc3989fdaf45c47847085779e0fc51f7baa3375518b89"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/roapi"
-    sha256 cellar: :any_skip_relocation, mojave: "cf63a257fe39bcadf4ef325b3c42968d5514bd845ba8c4ec61b8fc0ef8edaf80"
+    sha256 cellar: :any_skip_relocation, mojave: "479a9f46e105e59bdf85e6459c12a7248f5c07c3330312a930007e1726c09d48"
   end
 
   depends_on "rust" => :build
