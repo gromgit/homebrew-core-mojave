@@ -4,12 +4,12 @@ class Passenger < Formula
   url "https://github.com/phusion/passenger/releases/download/release-6.0.12/passenger-6.0.12.tar.gz"
   sha256 "4d15063dea6bce195e251d2b42e7bb67fab0049b8d6c423188566bc11ce9a8ad"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/passenger"
-    sha256 cellar: :any, mojave: "d1b83ee3224a7a4803fd3c82252b62fadf751913c9ed4c5ecc28a3d07352e4fe"
+    sha256 cellar: :any, mojave: "ab1bad024fb44d487b3fef8f823c48db80626b4577a654d0afbe059f47e51025"
   end
 
   # to build nginx module
