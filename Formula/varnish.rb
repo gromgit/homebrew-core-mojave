@@ -1,11 +1,10 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://varnish-cache.org/_downloads/varnish-7.0.1.tgz"
-  mirror "https://fossies.org/linux/www/varnish-7.0.1.tgz"
-  sha256 "c4e75beff0d461611742361fe8039ee1233ddf755b2b8a1e18a5fcacbe2b4660"
+  url "https://varnish-cache.org/_downloads/varnish-7.0.2.tgz"
+  mirror "https://fossies.org/linux/www/varnish-7.0.2.tgz"
+  sha256 "524a495a6ad2bf5b7e4092b0907ed1d283dd270af426efa82b70714c630c3f61"
   license "BSD-2-Clause"
-  revision 1
 
   livecheck do
     url "https://varnish-cache.org/releases/"
@@ -14,8 +13,7 @@ class Varnish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/varnish"
-    rebuild 3
-    sha256 mojave: "8614868dbdb4c55734885aaac103c507b166e372fb5d458fe48e6e26b62fe5b5"
+    sha256 mojave: "df8a1b2ba245b1bb0faef6bf1ef7bbd2e2cb87485fb29ba95d6bb167b8b66293"
   end
 
   depends_on "docutils" => :build
@@ -27,12 +25,6 @@ class Varnish < Formula
 
   uses_from_macos "libedit"
   uses_from_macos "ncurses"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3"
