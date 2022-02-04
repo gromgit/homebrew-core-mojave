@@ -1,13 +1,13 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/r-darwish/topgrade"
-  url "https://github.com/r-darwish/topgrade/archive/v8.1.1.tar.gz"
-  sha256 "fc52b0f5a6eb2f1e797ca3aa3b7d1b6f23847c31d783ac1a13ab916894c0ff39"
+  url "https://github.com/r-darwish/topgrade/archive/v8.2.0.tar.gz"
+  sha256 "54fe60ef70b21b34c50c0d342ec120aff3a9522ef44a9737f42d5700aed7a1c3"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/topgrade"
-    sha256 cellar: :any_skip_relocation, mojave: "df615b34bf9494ac19cab05e7da54eceb3541aea7de4396056f90e62d16bbc33"
+    sha256 cellar: :any_skip_relocation, mojave: "6398faeb87354c69ceed823bde00450fcb05e2b0a6d8ea787f47cc58c35d79da"
   end
 
   depends_on "rust" => :build
