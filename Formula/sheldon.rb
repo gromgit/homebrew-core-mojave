@@ -1,15 +1,14 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https://sheldon.cli.rs"
-  url "https://github.com/rossmacarthur/sheldon/archive/0.6.5.tar.gz"
-  sha256 "f546eedce0a81aad5972671eded7c743c6abcc812ccf17b610d1b53e9331779e"
+  url "https://github.com/rossmacarthur/sheldon/archive/0.6.6.tar.gz"
+  sha256 "9d6cdc8fe011c4defe65fbe1507e48a51f8efdeebb5d5b0b39fbde2c73566973"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sheldon"
-    rebuild 3
-    sha256 cellar: :any, mojave: "d64d9ab36f7ad591c53f3b831d075346bee499f37da9e66189d546a7344c66e0"
+    sha256 cellar: :any, mojave: "54eb44d6892c0d7929699219a861d4ee7e9ebbed5cac9188628ecafc2091c9d8"
   end
 
   depends_on "rust" => :build
@@ -24,6 +23,9 @@ class Sheldon < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    bash_completion.install "completions/sheldon.bash" => "sheldon"
+    zsh_completion.install "completions/sheldon.zsh" => "_sheldon"
   end
 
   test do
