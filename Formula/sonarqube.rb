@@ -1,8 +1,8 @@
 class Sonarqube < Formula
   desc "Manage code quality"
   homepage "https://www.sonarqube.org/"
-  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.2.4.50792.zip"
-  sha256 "98532c5ce9d478708f99dbfa331fac21f705b3e2ec5f08cec2c5c4168ef11aae"
+  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.3.0.51899.zip"
+  sha256 "74108676ed881e5a10ad53b42bc8b343e868be37b4d36705b447dc80ed9f2c1c"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Sonarqube < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonarqube"
-    sha256 cellar: :any_skip_relocation, mojave: "5e65272cd5d44c81ea71a0e2499ba3a211fb8b6798f1f84d63868e8598711cec"
+    sha256 cellar: :any_skip_relocation, mojave: "966caf6a153b703ee57804325e92da5b50e2ca5f51d3260ba619b88547d158f4"
   end
 
   depends_on "java-service-wrapper"
