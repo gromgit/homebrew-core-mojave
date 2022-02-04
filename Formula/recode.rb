@@ -1,14 +1,13 @@
 class Recode < Formula
   desc "Convert character set (charsets)"
   homepage "https://github.com/rrthomas/recode"
-  url "https://github.com/rrthomas/recode/releases/download/v3.7.9/recode-3.7.9.tar.gz"
-  sha256 "e4320a6b0f5cd837cdb454fb5854018ddfa970911608e1f01cc2c65f633672c4"
+  url "https://github.com/rrthomas/recode/releases/download/v3.7.11/recode-3.7.11.tar.gz"
+  sha256 "97267a0e6ee3d859b7f4d1593282900dbc798151b70a6d1f73718880563b485e"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/recode"
-    rebuild 1
-    sha256 cellar: :any, mojave: "32bf479c118c67382882ca99e3b940f14d72df9df8df827d53f901f2071228c4"
+    sha256 cellar: :any, mojave: "f41def65309616a8ee4a039ec08614f0197a0d01199c924c161d2a5bfbcdf9f5"
   end
 
   depends_on "libtool" => :build
