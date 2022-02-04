@@ -1,21 +1,20 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://github.com/pyenv/pyenv/archive/v2.2.2.tar.gz"
-  sha256 "88396152f6434c0b9db2469de86efc7a3fe99cba9a004ed76feff76279f5698f"
+  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.2.4-1.tar.gz"
+  sha256 "6aa38fb7c7d7aa68e6a3c8b812b273e15e367f629f31dd9d24552403b48df459"
   license "MIT"
   version_scheme 1
   head "https://github.com/pyenv/pyenv.git", branch: "master"
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+(-\d+)?)$/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyenv"
-    rebuild 2
-    sha256 cellar: :any, mojave: "e601a1f232717d9cf2dc0b75de7bd8f016239568a1dcb33bf773607c62ec02cd"
+    sha256 cellar: :any, mojave: "cefab74fe1cdf3bd78c922f1dddd287bc5490c8e3cb130e95228ba5bdec56e99"
   end
 
   depends_on "autoconf"
