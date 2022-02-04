@@ -1,13 +1,13 @@
 class Scs < Formula
   desc "Conic optimization via operator splitting"
   homepage "https://web.stanford.edu/~boyd/papers/scs.html"
-  url "https://github.com/cvxgrp/scs/archive/v3.0.0.tar.gz"
-  sha256 "95ab61495db72b18d6bb690cd2ae2ce88134d078c473da6cb8750857ea17f732"
+  url "https://github.com/cvxgrp/scs/archive/3.1.0.tar.gz"
+  sha256 "90a7e58364ed3ea3375945a7f6f013de81c46100df80664a18f1c9b45a56be9c"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scs"
-    sha256 cellar: :any, mojave: "a5cfa7dc6e70dde6d8d927d1cde66c1f33de7b64462083f675d83a390ab2f32a"
+    sha256 cellar: :any, mojave: "a61153451fa1e4122f35a3d8fce2e8926d429fd58cb0f8716e91a24d53d25dc5"
   end
 
   on_linux do
@@ -30,10 +30,10 @@ class Scs < Formula
         ScsInfo info;
         scs_int result;
 
-        scs_read_data("#{pkgshare}/random_prob", &d, &k, &stgs);
+        _scs_read_data("#{pkgshare}/random_prob", &d, &k, &stgs);
         result = scs(d, k, stgs, sol, &info);
 
-        scs_free_data(d, k, stgs); scs_free_sol(sol);
+        _scs_free_data(d, k, stgs); _scs_free_sol(sol);
         return result - SCS_SOLVED;
       }
     EOS
