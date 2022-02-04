@@ -6,9 +6,15 @@ class Xray < Formula
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
   head "https://github.com/XTLS/Xray-core.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xray"
-    sha256 cellar: :any_skip_relocation, mojave: "e206bb52c558a175aecf0254cea2e4d90209eb70622b07df83631b5cec2245d5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6cb2e5073842978af2f0358e0347837a04101b0a3db5ac76730ee06f482930df"
   end
 
   depends_on "go" => :build
