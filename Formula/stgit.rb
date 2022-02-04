@@ -1,15 +1,14 @@
 class Stgit < Formula
   desc "Manage Git commits as a stack of patches"
   homepage "https://stacked-git.github.io"
-  url "https://github.com/stacked-git/stgit/releases/download/v1.4/stgit-1.4.tar.gz"
-  sha256 "145cacd89127a31e0363e4e6a7997fb0510c193d4669aa7f614dd6a8b5def1af"
+  url "https://github.com/stacked-git/stgit/releases/download/v1.5/stgit-1.5.tar.gz"
+  sha256 "ce6f8a3536c8f09aa6b2f1b7c7546279c02c8beeb2ea1b296f29ae9fe0cf1ff3"
   license "GPL-2.0-only"
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stgit"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "b30ba2817f194cd80332bf3610c256eeb6a7df7029ce169cf25a488e1aed5d93"
+    sha256 cellar: :any_skip_relocation, mojave: "d3b1b43726c6ae9ba5c846e85bd187592199e539f220be0b4ed22d56a59c07c3"
   end
 
   depends_on "asciidoc" => :build
