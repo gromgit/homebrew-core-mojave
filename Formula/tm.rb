@@ -1,14 +1,14 @@
 class Tm < Formula
   desc "TriggerMesh CLI to work with knative objects"
   homepage "https://triggermesh.com"
-  url "https://github.com/triggermesh/tm/archive/v1.13.0.tar.gz"
-  sha256 "f05aff83e3ba52bfc3a8d54e934e0578cefae987391937e843fc4a78e41203eb"
+  url "https://github.com/triggermesh/tm/archive/v1.14.0.tar.gz"
+  sha256 "56b4133b096265f459bc44ab68b4f085a31fd1cbf075230a9de3b886b760406f"
   license "Apache-2.0"
   head "https://github.com/triggermesh/tm.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tm"
-    sha256 cellar: :any_skip_relocation, mojave: "185296d3e48acb8566060ae96b9300069a9f9145688432bce8a4c79bcdb886e2"
+    sha256 cellar: :any_skip_relocation, mojave: "576f937513451ac789f80d8a3cee58fc490001b425dcadb1780210f204ffbe12"
   end
 
   depends_on "go" => :build
