@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/karelzak/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-2.37.2.tar.xz"
-  sha256 "6a0764c1aae7fb607ef8a6dd2c0f6c47d5e5fd27aa08820abaad9ec14e28e9d9"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-2.37.3.tar.xz"
+  sha256 "590c592e58cd6bf38519cb467af05ce6a1ab18040e3e3418f24bcfb2f55f9776"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -12,12 +12,10 @@ class UtilLinux < Formula
     "LGPL-2.1-or-later",
     :public_domain,
   ]
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/util-linux"
-    rebuild 2
-    sha256 mojave: "af5014c56f108c06ebbcc7e70e482df2bd882020469d5a84ab45ffdbe16a13f9"
+    sha256 mojave: "2f0636cd0afce6695dfcf745ed737ad9dff3c64d59827faacd87f7b80fd18c31"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
