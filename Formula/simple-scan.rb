@@ -1,16 +1,13 @@
 class SimpleScan < Formula
   desc "GNOME document scanning application"
   homepage "https://gitlab.gnome.org/GNOME/simple-scan"
-  url "https://download.gnome.org/sources/simple-scan/40/simple-scan-40.5.tar.xz"
-  sha256 "eb5379e4cb6ca605092c942210c18425d036773da76541e43b89d8223f82b9a4"
+  url "https://download.gnome.org/sources/simple-scan/40/simple-scan-40.7.tar.xz"
+  sha256 "7c551852cb5af7d34aa989f8ad5ede3cbe31828cf8dd5aec2b2b6fdcd1ac3d53"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "28589902b7eb3965380a37e8a2566fdda48b4485bcd29b72a4f4a875d1e892b5"
-    sha256 monterey:      "79c8843d4fc8377db0b6e94e381b6fceda9e87aae811f3cf0e4b3d070d7e10ce"
-    sha256 big_sur:       "29db6142111c9acaee04a3f6b17c9113b2d23b7a53188b6a21ae3a31454872ca"
-    sha256 catalina:      "fe60b1d71b27e3b2cbb20edd2bd8b6d9000c4f2653edb283ab65905dbd897291"
-    sha256 mojave:        "4871d0a1a1eff098b418deca15103d2f41bda91904e693e0146f109d92dbbd10"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simple-scan"
+    sha256 mojave: "c6a0625a4d5cdacd2f94a30fedeb39e4de5992c461d5e91e0ad9e8e9739da913"
   end
 
   depends_on "itstool" => :build
@@ -24,6 +21,13 @@ class SimpleScan < Formula
   depends_on "libhandy"
   depends_on "sane-backends"
   depends_on "webp"
+
+  # Fix build with Meson 0.60+. Remove when the following commit is in a tagged release:
+  # https://gitlab.gnome.org/GNOME/simple-scan/-/commit/da6626debe00be1a0660f30cf2bf7629186c01d5
+  patch do
+    url "https://gitlab.gnome.org/GNOME/simple-scan/-/commit/da6626debe00be1a0660f30cf2bf7629186c01d5.diff"
+    sha256 "3a96ea449fe1a7b8bee34efdf21ca48f893f0cadb3ba3d4cb742afea3b8c4c03"
+  end
 
   def install
     ENV["DESTDIR"] = "/"
@@ -40,6 +44,9 @@ class SimpleScan < Formula
   end
 
   test do
+    # Errors with `Cannot open display`
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
+
     system "#{bin}/simple-scan", "-v"
   end
 end
