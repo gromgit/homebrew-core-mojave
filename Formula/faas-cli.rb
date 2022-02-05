@@ -2,8 +2,8 @@ class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
   url "https://github.com/openfaas/faas-cli.git",
-      tag:      "0.14.1",
-      revision: "d94600d2d2be52a66e0a15c219634f3bcac27318"
+      tag:      "0.14.2",
+      revision: "b1c09c0243f69990b6c81a17d7337f0fd23e7542"
   license "MIT"
   head "https://github.com/openfaas/faas-cli.git", branch: "master"
 
@@ -14,7 +14,7 @@ class FaasCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faas-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "6350a5e8f7b1f8030116955f394fbd384064d039cb6b7ebd277c276ea6158f6e"
+    sha256 cellar: :any_skip_relocation, mojave: "3c61f2c5737c82f8f4243987733213698375481e414e9d87899ea53daf352834"
   end
 
   depends_on "go" => :build
@@ -28,11 +28,11 @@ class FaasCli < Formula
       -X #{project}/version.GitCommit=#{Utils.git_head}
       -X #{project}/version.Version=#{version}
     ]
-    system "go", "build", "-ldflags", ldflags.join(" "), "-a", "-installsuffix", "cgo", "-o", bin/"faas-cli"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-a", "-installsuffix", "cgo"
     bin.install_symlink "faas-cli" => "faas"
 
-    (bash_completion/"faas-cli").write Utils.safe_popen_read("#{bin}/faas-cli", "completion", "--shell", "bash")
-    (zsh_completion/"_faas-cli").write Utils.safe_popen_read("#{bin}/faas-cli", "completion", "--shell", "zsh")
+    (bash_completion/"faas-cli").write Utils.safe_popen_read(bin/"faas-cli", "completion", "--shell", "bash")
+    (zsh_completion/"_faas-cli").write Utils.safe_popen_read(bin/"faas-cli", "completion", "--shell", "zsh")
     # make zsh completions also work for `faas` symlink
     inreplace zsh_completion/"_faas-cli", "#compdef faas-cli", "#compdef faas-cli\ncompdef faas=faas-cli"
   end
