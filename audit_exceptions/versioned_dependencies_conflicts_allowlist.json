@@ -1,8 +1,13 @@
 [
   "anjuta",
+  "coin3d",
+  "freedink",
+  "gjs",
   "hive",
   "mpv",
   "predictionio",
+  "pyside",
+  "pyside@2",
   "sqoop",
   "watchman"
 ]
