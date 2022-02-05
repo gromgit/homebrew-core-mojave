@@ -3,14 +3,14 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/ba/ba/72906d8e0cfa04d16428c083b2fd12161c7f6f5dbbf002efb21cb281fe51/conan-1.44.1.tar.gz"
-  sha256 "e2f26b677d900b2812ce257fcf267090db3f82678e3194402822601a79c2be62"
+  url "https://files.pythonhosted.org/packages/db/d3/72ff3147003d570a42f1a55bf4ba92009d26efaa10d8347f8e377044939a/conan-1.45.0.tar.gz"
+  sha256 "c2039f500dccb418cd9763ba62ba1f1801b04cdb77c1c47d0b2ceb54bab79d04"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conan"
-    sha256 cellar: :any_skip_relocation, mojave: "9baa07109b641d4661a5c3dfa7abc4a1d7a34fc328eed482008b1b7d368f2740"
+    sha256 cellar: :any_skip_relocation, mojave: "2414cfbf13f21e2b7f6e4ff643b528d60626c71dae3c5def8d55261857d39bb9"
   end
 
   depends_on "pkg-config" => :build
@@ -31,8 +31,8 @@ class Conan < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/48/44/76b179e0d1afe6e6a91fd5661c284f60238987f3b42b676d141d01cd5b97/charset-normalizer-2.0.10.tar.gz"
-    sha256 "876d180e9d7432c5d1dfd4c5d26b72f099d503e8fcc0feb7532c9289be60fcbd"
+    url "https://files.pythonhosted.org/packages/e8/e8/b6cfd28fb430b2ec9923ad0147025bf8bbdf304b1eb3039b69f1ce44ed6e/charset-normalizer-2.0.11.tar.gz"
+    sha256 "98398a9d69ee80548c762ba991a4728bfc3836768ed226b3945908d1a688371c"
   end
 
   resource "colorama" do
@@ -46,8 +46,8 @@ class Conan < Formula
   end
 
   resource "fasteners" do
-    url "https://files.pythonhosted.org/packages/28/e4/2888d41cdbd405828ccdb9a8536c5919939c2f4c6ab9b2ba63e9bd2570d5/fasteners-0.16.3.tar.gz"
-    sha256 "b1ab4e5adfbc28681ce44b3024421c4f567e705cc3963c732bf1cba3348307de"
+    url "https://files.pythonhosted.org/packages/bd/f4/148f44998c1bdb064a508e7cbcf9e50b34572b3d36fcc378a5d61b7dc8c5/fasteners-0.17.3.tar.gz"
+    sha256 "a9a42a208573d4074c77d041447336cf4e3c1389a256fd3e113ef59cf29b7980"
   end
 
   resource "idna" do
