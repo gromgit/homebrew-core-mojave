@@ -1,15 +1,14 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https://github.com/amacneil/dbmate"
-  url "https://github.com/amacneil/dbmate/archive/v1.13.0.tar.gz"
-  sha256 "acfe2d57fc81bfe7a02f60ba995f10fffbf5e93df62d6f263862eaf2b79c5413"
+  url "https://github.com/amacneil/dbmate/archive/v1.14.0.tar.gz"
+  sha256 "226397b9a0d2a145e9e5898fe923f68e61817e68489791b81bf3ebbc40f1c879"
   license "MIT"
   head "https://github.com/amacneil/dbmate.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbmate"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6cb49e4ef07e253b7b5903e5e6b48c0d74d71f79cddc659b61b5ee455b105101"
+    sha256 cellar: :any_skip_relocation, mojave: "285e35f9faf66b8e8ac16b29cb76b73e63e7fc3237a4775ba291cfec2c80710c"
   end
 
   depends_on "go" => :build
