@@ -6,6 +6,7 @@ class Bcftools < Formula
   # The bcftools source code is MIT/Expat-licensed, but when it is configured
   # with --enable-libgsl the resulting executable is GPL-licensed.
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,8 +15,7 @@ class Bcftools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcftools"
-    rebuild 2
-    sha256 mojave: "c74d302d71c5d4eef50e8e289a33104634147b3f4178c23134f84d81054a9782"
+    sha256 mojave: "22820230b7019d800ff3e318842b4c7a99930c7064342b55dedd02c22f06ecf2"
   end
 
   depends_on "gsl"
