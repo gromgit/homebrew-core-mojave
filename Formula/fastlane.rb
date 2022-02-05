@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://github.com/fastlane/fastlane/archive/2.203.0.tar.gz"
-  sha256 "1ae515378709c349f2a412411723434b43a95df2272a28806f0425dd6111604f"
+  url "https://github.com/fastlane/fastlane/archive/2.204.2.tar.gz"
+  sha256 "2c48f006b69ebe7be8632f08562f6260b0d34735daeb45f93e3c1783ebd3debb"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Fastlane < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastlane"
-    sha256 cellar: :any, mojave: "8875db8a78e269b38f7fc9f8744849c26880ed3dade2877d4307c0ae5e5227ff"
+    sha256 cellar: :any, mojave: "c8264a5d08ac45aad132f3bcf7e95a728adc5daf646c05fe82b888220d393186"
   end
 
   depends_on "ruby"
