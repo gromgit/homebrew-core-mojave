@@ -1,13 +1,13 @@
 class CssCrush < Formula
   desc "Extensible PHP based CSS preprocessor"
   homepage "https://the-echoplex.net/csscrush"
-  url "https://github.com/peteboere/css-crush/archive/v4.0.0.tar.gz"
-  sha256 "cef1c5c6af47abdc484e90c09486e316429143fb6a3ad109cf7d80c016350af1"
+  url "https://github.com/peteboere/css-crush/archive/v4.1.0.tar.gz"
+  sha256 "08f80c38faed90dff38829841d532b36c548739cb90dec1b50b6b1009913f806"
   license "MIT"
   head "https://github.com/peteboere/css-crush.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8423edc4a4b02e4114edd4a824db1563e6f8a3580b8b3cac52d283eaaaef09e2"
+    sha256 cellar: :any_skip_relocation, all: "b0f588a762d2dc621b5dbb577ee9b0cf85020ce85a5ab986a815724735f8027a"
   end
 
   depends_on "php"
