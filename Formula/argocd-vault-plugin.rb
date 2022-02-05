@@ -2,13 +2,13 @@ class ArgocdVaultPlugin < Formula
   desc "Argo CD plugin to retrieve secrets from Secret Management tools"
   homepage "https://argocd-vault-plugin.readthedocs.io"
   url "https://github.com/IBM/argocd-vault-plugin.git",
-      tag:      "v1.7.0",
-      revision: "cfd17486e894c9df5a8aa342967e164e800e16f8"
+      tag:      "v1.8.0",
+      revision: "aa8abb0efba2759fc2b86aadb5f0904eb972348e"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd-vault-plugin"
-    sha256 cellar: :any_skip_relocation, mojave: "04cff6a4fbcc65b6f72f2bd0791a93d986bfe5a497ee8c6ebe2ef83989830ea2"
+    sha256 cellar: :any_skip_relocation, mojave: "3e55c221461bb194cd52e657b1c01efc2e96d10f69f58c765e89b1a01fef29f6"
   end
 
   depends_on "go" => :build
