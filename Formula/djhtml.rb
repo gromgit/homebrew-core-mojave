@@ -3,13 +3,13 @@ class Djhtml < Formula
 
   desc "Django/Jinja template indenter"
   homepage "https://github.com/rtts/djhtml"
-  url "https://files.pythonhosted.org/packages/b6/30/17f6a99d40dfe37196be0872313fac8baa00815d0a8d1e2a2aabe25110ef/djhtml-1.4.10.tar.gz"
-  sha256 "8575a10d17774eb261a5e756aeb847f6a592001aa3e4dcd3c23d88e6874407c7"
+  url "https://files.pythonhosted.org/packages/56/07/ea50799121005ab7f1ad6aa6e434e0ef52a74877e8097faba9eb0a97923e/djhtml-1.4.12.tar.gz"
+  sha256 "e43afa8be7a4a80959c171d50c615ae1ee8ae11e4ac8e8550240759e476d5f76"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djhtml"
-    sha256 cellar: :any_skip_relocation, mojave: "fd9667fd6716c6ff9301e45cba7381298edc65806e0c2ab44010b6e2d7fdc168"
+    sha256 cellar: :any_skip_relocation, mojave: "aaccd4b7b638d6288a417b62fac255382edef5f2237103010624c5d8ac6e17fe"
   end
 
   depends_on "python@3.10"
