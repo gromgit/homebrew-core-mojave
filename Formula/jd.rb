@@ -1,35 +1,32 @@
 class Jd < Formula
   desc "JSON diff and patch"
   homepage "https://github.com/josephburnett/jd"
-  url "https://github.com/josephburnett/jd/archive/v1.4.0.tar.gz"
-  sha256 "9b1547b3c34652c61944a59e1449b8f819f196b86808c006e85ae8816d6c4d06"
+  url "https://github.com/josephburnett/jd/archive/v1.5.1.tar.gz"
+  sha256 "6cc716026d366b4a3b235cf7142a29a0234459a4c845c01c6e94a13e02efc7d3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbe7f59b021be2377184ce2bcc066d0d8100bf2c6c1120dbbb4fddb5d580b6c0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "567d80b08b78a787d813f8b5fc8119c60d082e7bfa2f641b1b807a6f85a69286"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6e9746d8220b7c916d4a3c32ade4deb56b2fac2e358323554070d8a4b792ae7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "043e88ba4881d02947cd922f8be0d26d581afcf1b877d433f8bb2f53e724a245"
-    sha256 cellar: :any_skip_relocation, catalina:       "bf662b680167c6d28e9adf4d28ac35bb13fe6838255b9e6d4cf49be0a05cb920"
-    sha256 cellar: :any_skip_relocation, mojave:         "c9a9b7acbab08f9717cf464bf2b00d970728d014ccb738fcb28af7502e8ef6d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e13f39befda423ade478d2c2ea55b5e408cd45d841d87af81d597e6c93438a4f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jd"
+    sha256 cellar: :any_skip_relocation, mojave: "3ad0f040ec59ec2d710130f053d4040bd275220a64bda603118b31ed5614bd62"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "-ldflags", "-s -w"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
     (testpath/"a.json").write('{"foo":"bar"}')
     (testpath/"b.json").write('{"foo":"baz"}')
+    (testpath/"c.json").write('{"foo":"baz"}')
     expected = <<~EOF
       @ ["foo"]
       - "bar"
       + "baz"
     EOF
-    output = shell_output("#{bin}/jd a.json b.json")
+    output = shell_output("#{bin}/jd a.json b.json", 1)
     assert_equal output, expected
+    assert_empty shell_output("#{bin}/jd b.json c.json")
   end
 end
