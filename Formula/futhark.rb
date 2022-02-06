@@ -8,7 +8,8 @@ class Futhark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/futhark"
-    sha256 cellar: :any_skip_relocation, mojave: "311ab4492fc8e3694e80fa015018d3c6e47fcf21a61513db9f4a7df18c87e7f1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "06f8715096aa8845b839c1f58431a11f606c1c7051e2be2f724691e55bcf2b31"
   end
 
   depends_on "cabal-install" => :build
@@ -28,7 +29,7 @@ class Futhark < Formula
 
   test do
     (testpath/"test.fut").write <<~EOS
-      let main (n: i32) = reduce (*) 1 (1...n)
+      def main (n: i32) = reduce (*) 1 (1...n)
     EOS
     system "#{bin}/futhark", "c", "test.fut"
     assert_equal "3628800i32", pipe_output("./test", "10", 0).chomp
