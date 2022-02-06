@@ -1,10 +1,10 @@
 class Goaccess < Formula
   desc "Log analyzer and interactive viewer for the Apache Webserver"
   homepage "https://goaccess.io/"
-  url "https://tar.goaccess.io/goaccess-1.5.3.tar.gz"
-  sha256 "f6276978af7e5fef6f53def24bbb775acbb0d5357337c6708356d0443f27a16b"
+  url "https://tar.goaccess.io/goaccess-1.5.5.tar.gz"
+  sha256 "f1e4a12db822568aaddfa0c62d53099dbefed05440fc696f46089e1a352669e7"
   license "MIT"
-  head "https://github.com/allinurl/goaccess.git"
+  head "https://github.com/allinurl/goaccess.git", branch: "master"
 
   livecheck do
     url "https://goaccess.io/download"
@@ -13,8 +13,7 @@ class Goaccess < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goaccess"
-    rebuild 2
-    sha256 mojave: "aeda2484e4ddf77e2dc24ebfe6e27934e019451617d29513a082c7d43290ac79"
+    sha256 mojave: "8fbcbae637bc9f1ccc1533717b73ebac4338cafa8a2a7a279fd3a53472d7fd33"
   end
 
   depends_on "autoconf" => :build
