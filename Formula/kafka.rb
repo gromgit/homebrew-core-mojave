@@ -1,9 +1,9 @@
 class Kafka < Formula
   desc "Open-source distributed event streaming platform"
   homepage "https://kafka.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=kafka/3.0.0/kafka_2.13-3.0.0.tgz"
-  mirror "https://archive.apache.org/dist/kafka/3.0.0/kafka_2.13-3.0.0.tgz"
-  sha256 "a82728166bbccf406009747a25e1fe52dbcb4d575e4a7a8616429b5818cd02d1"
+  url "https://www.apache.org/dyn/closer.lua?path=kafka/3.1.0/kafka_2.13-3.1.0.tgz"
+  mirror "https://archive.apache.org/dist/kafka/3.1.0/kafka_2.13-3.1.0.tgz"
+  sha256 "3fd643f16d11ccdb81a7b296f305d7fa0ae6c9e39e1a701bac56929e2e4d6710"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,8 @@ class Kafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e216869f2fa4819ba198d34d9a3ee49ce947482568b445c65522f3b7ebe4e7fe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "188e1850d8be6ca99dbd6b0cef0d9138957a3ff882f80a6cd0c1650cb33201d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "5333488c250dfe056ce86ee0d717d6b0cbbaade9e81f5f5914c27b0fc186b65c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "186f5cb572ee3ab49ad0cbe67b21f14667eb68db025daa6000ee14cd042b6111"
-    sha256 cellar: :any_skip_relocation, catalina:       "186f5cb572ee3ab49ad0cbe67b21f14667eb68db025daa6000ee14cd042b6111"
-    sha256 cellar: :any_skip_relocation, mojave:         "186f5cb572ee3ab49ad0cbe67b21f14667eb68db025daa6000ee14cd042b6111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cb29956bab9e7280c3879a2510d12b9f9ce16ce08b7e1258c102b68efa35fac"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kafka"
+    sha256 cellar: :any_skip_relocation, mojave: "4de5988e89839edd0e6e33ce37e4b5c2926295cdc2f7d05c09d5d535751350fd"
   end
 
   depends_on "openjdk"
