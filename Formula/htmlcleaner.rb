@@ -1,18 +1,13 @@
 class Htmlcleaner < Formula
   desc "HTML parser written in Java"
   homepage "https://htmlcleaner.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.25/htmlcleaner-2.25-src.zip"
-  sha256 "3a2d4992d7fa0b687923e62fc1826df6ef5031e16734dba65cac86fe5dd3e7da"
+  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.26/htmlcleaner-2.26-src.zip"
+  sha256 "617ddb866530f512c2c6f6f89b40a9ac6e46bf515960c49f47d8d037adaf0e2c"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37911419908b9b5f70a5cd396af228ec25212bdd9978b065a018c6fb12390532"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7d7a502fca2bac395b425205c03b2d235e86784f77b8f99ab95c9cfbab176060"
-    sha256 cellar: :any_skip_relocation, monterey:       "fd48d3e3bd93cdc8f54caea62c155b9d7b3ee76b6ae81a1f5c8e0effa8e39353"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a2d9a88a2165d4d91b9f5475d15c980f63a587fbbc95b2f4f95bd8eab3287497"
-    sha256 cellar: :any_skip_relocation, catalina:       "3e58d6bd6a0c32df369f4fc7cbdd26b915ebd9f9625bd364f40573b04b759c87"
-    sha256 cellar: :any_skip_relocation, mojave:         "8f7e5087d125f1d7d55397ce6ba4cea8cddbeb2e18639ca645fe81088d756938"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "295b57eb7ce2215b0346b061a2a412f17c13acc7f9cc65ce4ee2925a30d027ec"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htmlcleaner"
+    sha256 cellar: :any_skip_relocation, mojave: "30573ff47a7b85f50af7626f6839ef962590c1f9429847714bd5503bc159ebb7"
   end
 
   depends_on "maven" => :build
