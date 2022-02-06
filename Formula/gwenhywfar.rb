@@ -1,8 +1,8 @@
 class Gwenhywfar < Formula
   desc "Utility library required by aqbanking and related software"
   homepage "https://www.aquamaniac.de/"
-  url "https://www.aquamaniac.de/rdm/attachments/download/390/gwenhywfar-5.7.3.tar.gz"
-  sha256 "a78bb028665f0d2b927372b0ddf741c0af18cb6f0707c55348ae08e522b28280"
+  url "https://www.aquamaniac.de/rdm/attachments/download/411/gwenhywfar-5.8.2.tar.gz"
+  sha256 "8f60bc576e5a348f4ac10cb7496a65a465e3e224f5b0b41752a2fa8598312ecf"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,8 @@ class Gwenhywfar < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "5a2caaeaa2453e0cbd5505f4a4ae07dadc82f7664e458ca7f08cf02aeec5830b"
-    sha256 arm64_big_sur:  "5fd0ef9a87749cbd66eb40e4cd94e94f9c1db9129622ba6585cc64a1e03af6e2"
-    sha256 big_sur:        "42dbe67f468722dd8f1bcdd3b57de0db6d8d0e47485b929b8801b41097eb6e26"
-    sha256 catalina:       "f9069b905fefe6f0bb31c4ce65ecb71c805ecf84a96dbe20a98d56d3753bec1a"
-    sha256 mojave:         "ae9d95a1ac5bd4e8e0d85685541c43e8b634923d8fc9a94b8141818ff57d08d8"
-    sha256 x86_64_linux:   "e011be0e08310e882ce96c7f9555d9688aa312edeec809e1312f7570ac04ed60"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gwenhywfar"
+    sha256 mojave: "ad4da8e3b627a586c5a5c91358e219d85bb4ba0226ba2c3012bec788069c9007"
   end
 
   depends_on "autoconf" => :build
