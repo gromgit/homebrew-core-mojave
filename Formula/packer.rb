@@ -1,8 +1,8 @@
 class Packer < Formula
   desc "Tool for creating identical machine images for multiple platforms"
   homepage "https://packer.io"
-  url "https://github.com/hashicorp/packer/archive/v1.7.8.tar.gz"
-  sha256 "7f4f3eab48f7e5b153772c079379589d208fd911a155431cf0d7d0f309418af2"
+  url "https://github.com/hashicorp/packer/archive/v1.7.10.tar.gz"
+  sha256 "80ed60c492f6765265223f715f26529c8eeb5ce4cee9c4bd7372fd83a9e10493"
   license "MPL-2.0"
   head "https://github.com/hashicorp/packer.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Packer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packer"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "020278a5fc83fcfd78ef9db5bdaf2f62f4d1cc145d29397c72461642dc451515"
+    sha256 cellar: :any_skip_relocation, mojave: "7498389e33bc10addc82d500df7b5f1ef64afc438ce33c3cbe39eae24ba0ebeb"
   end
 
   depends_on "go" => :build
