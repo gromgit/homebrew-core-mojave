@@ -1,15 +1,14 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/0a/c8/a62767a6b374a0dfb02d2a0456e5f56a372cdd1689dbc6ffb6bf1ddedbc0/numpy-1.22.1.zip"
-  sha256 "e348ccf5bc5235fc405ab19d53bec215bb373300e5523c7b476cc0da8a5e9973"
+  url "https://files.pythonhosted.org/packages/e9/6c/c0a8130fe198f27bab92f1b28631e0cc2572295f6b7a31e87efe7448aa1c/numpy-1.22.2.zip"
+  sha256 "076aee5a3763d41da6bef9565fdf3cb987606f567cd8b104aded2b38b7b47abf"
   license "BSD-3-Clause"
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numpy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c0217645670a9f951ae910cbf5575314cc655d7a05a53691be3a3dcf01aaa616"
+    sha256 cellar: :any, mojave: "79e66e244f37c8e94069db8fa9824a7e0007a23a95acd0ab027fa04b993e7ae0"
   end
 
   depends_on "cython" => :build
@@ -18,13 +17,6 @@ class Numpy < Formula
   depends_on "python@3.9"
 
   fails_with gcc: "5"
-
-  # numpy requires setuptools < 60.0
-  # https://github.com/numpy/numpy/issues/20824
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/ef/75/2bc7bef4d668f9caa9c6ed3f3187989922765403198243040d08d2a52725/setuptools-59.8.0.tar.gz"
-    sha256 "09980778aa734c3037a47997f28d6db5ab18bdf2af0e49f719bfc53967fd2e82"
-  end
 
   def install
     openblas = Formula["openblas"].opt_prefix
