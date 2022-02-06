@@ -9,7 +9,8 @@ class Glib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glib"
-    sha256 mojave: "9bf3eff36d4d8a8026bffb5b49000deb10fa9f10af08d6447f34afd32b9d8d03"
+    rebuild 1
+    sha256 mojave: "57d202b1b3ebb2bca0c8d1e7b7a9a912f75b4b8fe0d5116fe238ee869b400a8b"
   end
 
   depends_on "meson" => :build
@@ -48,7 +49,7 @@ class Glib < Formula
       system "meson", *args, ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
-      bin.find { |f| rewrite_shebang detected_python_shebang, f }
+      rewrite_shebang detected_python_shebang, *bin.children
     end
 
     # ensure giomoduledir contains prefix, as this pkgconfig variable will be
