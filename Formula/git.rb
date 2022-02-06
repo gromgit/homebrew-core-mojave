@@ -13,7 +13,8 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git"
-    sha256 mojave: "3bfbdf64a8f0b4269f013b3a0129b426c8cdc49383f928a618bf21f02c354ca8"
+    rebuild 1
+    sha256 mojave: "f8b49abf164f88e149781f489a1457a15aea67da43e68ec864da3df980c70281"
   end
 
   depends_on "gettext"
@@ -21,7 +22,7 @@ class Git < Formula
 
   uses_from_macos "curl", since: :catalina # macOS < 10.15.6 has broken cert path logic
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+  uses_from_macos "zlib", since: :high_sierra
 
   on_linux do
     depends_on "linux-headers@4.4"
