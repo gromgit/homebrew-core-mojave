@@ -2,10 +2,10 @@ class Languagetool < Formula
   desc "Style and grammar checker"
   homepage "https://www.languagetool.org/"
   url "https://github.com/languagetool-org/languagetool.git",
-      tag:      "v5.5",
-      revision: "5e782cc63ab86c9e6c353157dc22f6ea2477c0d7"
+      tag:      "v5.6",
+      revision: "e1a27564b91dff5d4133b9fa64955da9e36c889b"
   license "LGPL-2.1-or-later"
-  head "https://github.com/languagetool-org/languagetool.git"
+  head "https://github.com/languagetool-org/languagetool.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,10 +13,8 @@ class Languagetool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "b4ce087e229010a40944175a2a26fc6411f48adba76ea6fbba779270dee065f4"
-    sha256 cellar: :any_skip_relocation, catalina:     "ac41ce087286dd11421a77324bbf80a43b3ada72f2e1469087982f3dc3310a75"
-    sha256 cellar: :any_skip_relocation, mojave:       "88fcbe3f245913ab116db15b38409d7c309f1a5f3f49344ae774d441f87e991f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3cb6cc220af4bb9f7d363e3c1c2de30b7e4d3316124f383c94cfc33dac5e4319"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/languagetool"
+    sha256 cellar: :any_skip_relocation, mojave: "ce182a7f98914f314fe00adc2a2efa95bf8e6be2cf17f98b77f37a0ff78ebe42"
   end
 
   depends_on "maven" => :build
@@ -41,6 +39,13 @@ class Languagetool < Formula
       export JAVA_HOME="#{Language::Java.overridable_java_home_env(java_version)[:JAVA_HOME]}"
       exec "${JAVA_HOME}/bin/java" -cp "#{libexec}/languagetool-server.jar" org.languagetool.server.HTTPServer "$@"
     EOS
+  end
+
+  service do
+    run [bin/"languagetool-server", "--port", "8081", "--allow-origin"]
+    keep_alive true
+    log_path var/"log/languagetool/languagetool-server.log"
+    error_log_path var/"log/languagetool/languagetool-server.log"
   end
 
   test do
