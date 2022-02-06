@@ -1,21 +1,20 @@
 class KotlinLanguageServer < Formula
   desc "Intelligent Kotlin support for any editor/IDE using the Language Server Protocol"
   homepage "https://github.com/fwcd/kotlin-language-server"
-  url "https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.1.2.tar.gz"
-  sha256 "82d2a1c15d1384ff9fbafef43c54ffe91a17587310980ffb760c4d1ce608f991"
+  url "https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.2.0.tar.gz"
+  sha256 "2121a678d9c6ae2c80a74f3036ccc18fb778fe1ef25a527b3083d24c7c1bbf75"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "95b7470967f113e4dcbeb374993828f401dcaca737ca3805b4dee6e231e619ed"
-    sha256 cellar: :any_skip_relocation, big_sur:       "8e2d8177c31a122d90111125fb7c97b5f4a4de8caad6176b4eaaf5eb244ee57a"
-    sha256 cellar: :any_skip_relocation, catalina:      "dca2f2d46dfce5ffea6ed3b4bb33e182833035deaeebb7856b98aec0cbe86aaa"
-    sha256 cellar: :any_skip_relocation, mojave:        "9551dce5fc05f035a58f2159d5ac3ad0553497de141b105e7233641f2a133fb8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kotlin-language-server"
+    sha256 cellar: :any_skip_relocation, mojave: "0d4a3e7269dacda87e96c59aa6775441e335eabda769ed533349c194b4ca2475"
   end
 
   depends_on "gradle" => :build
   depends_on "openjdk@11"
 
   def install
+    ENV["JAVA_HOME"] = Language::Java.java_home("11")
     #  Remove Windows files
     rm "gradlew.bat"
 
