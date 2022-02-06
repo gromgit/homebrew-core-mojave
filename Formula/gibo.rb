@@ -1,13 +1,13 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
   homepage "https://github.com/simonwhitaker/gibo"
-  url "https://github.com/simonwhitaker/gibo/archive/2.2.5.tar.gz"
-  sha256 "f0c84cae0cb55d12ff063ee33fb61246f246224999229a082c18376cb62957e4"
+  url "https://github.com/simonwhitaker/gibo/archive/2.2.6.tar.gz"
+  sha256 "0a4b3a9063ac8724a2deda5b47ac8324e01905b794330a0c40ea9e972022f01e"
   license "Unlicense"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gibo"
-    sha256 cellar: :any_skip_relocation, mojave: "570efb1f842893fde40f273ac67f498d99698133db56d8fb0b5c79e92c3a0da8"
+    sha256 cellar: :any_skip_relocation, mojave: "473b0891bf471637cb3d0bd53e44cefd3e32abe1d596579a9cf243ed3f589288"
   end
 
   def install
