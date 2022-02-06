@@ -1,13 +1,13 @@
 class Nco < Formula
   desc "Command-line operators for netCDF and HDF files"
   homepage "https://nco.sourceforge.io/"
-  url "https://github.com/nco/nco/archive/5.0.4.tar.gz"
-  sha256 "91c9d191db8c7132489d86727b195c04577f034adf168f9d341ec63b55ea4353"
+  url "https://github.com/nco/nco/archive/5.0.6.tar.gz"
+  sha256 "d4c74e0268af94bdddcb0c77189830992f61c04147c23669b66470f1a8595d60"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nco"
-    sha256 cellar: :any, mojave: "ba18243ac6a2c34fb16afd65b12b4e9cfabd42c50707ecc5353145e96abd73df"
+    sha256 cellar: :any, mojave: "2baa29d33e70ccc4db45998b50c30c6abdcb2fb19675c04506807163493d020d"
   end
 
   head do
