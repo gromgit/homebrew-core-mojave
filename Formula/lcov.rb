@@ -8,12 +8,12 @@ class Lcov < Formula
   url "https://github.com/linux-test-project/lcov/releases/download/v1.15/lcov-1.15.tar.gz"
   sha256 "c1cda2fa33bec9aa2c2c73c87226cfe97de0831887176b45ee523c5e30f8053a"
   license "GPL-2.0-or-later"
-  head "https://github.com/linux-test-project/lcov.git"
+  head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lcov"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "de3c654b201ca37d5173d369dc24d980e65312ded380df29232daeb62d797426"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "f6018d5e83aff15983755bab8d54b22a9d176bd6b403acbde344bf5a661da8eb"
   end
 
   uses_from_macos "perl"
@@ -54,7 +54,7 @@ class Lcov < Formula
     # Disable dynamic selection of perl which may cause segfault when an
     # incompatible perl is picked up.
     # https://github.com/Homebrew/homebrew-core/issues/4936
-    bin.find { |f| rewrite_shebang detected_perl_shebang, f }
+    rewrite_shebang detected_perl_shebang, *bin.children
 
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
