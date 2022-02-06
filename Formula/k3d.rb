@@ -2,8 +2,8 @@ class K3d < Formula
   desc "Little helper to run Rancher Lab's k3s in Docker"
   homepage "https://k3d.io"
   url "https://github.com/rancher/k3d.git",
-    tag:      "v5.2.2",
-    revision: "0c57cf24ca65fecba4dd24624a27364def22fbca"
+    tag:      "v5.3.0",
+    revision: "bb8a2b0bb57ad69680e4e2a0772a0bf31f35a457"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class K3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
-    sha256 cellar: :any_skip_relocation, mojave: "11b0caf0dc3da29a26b60f9522e4f275a11c796fcede55abef4d327fe1c532c6"
+    sha256 cellar: :any_skip_relocation, mojave: "ae163a2632cd639ba0a3e97b3f9918a2656f157b42c00f95289b5526cafe7c67"
   end
 
   depends_on "go" => :build
