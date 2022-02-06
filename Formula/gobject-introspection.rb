@@ -10,8 +10,8 @@ class GobjectIntrospection < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobject-introspection"
-    rebuild 1
-    sha256 mojave: "ae22e09c69f95e119568769fd86ceab5ffde498fd9b469b1c04852b201452723"
+    rebuild 2
+    sha256 mojave: "6ec9e83ea7da7ef5b4f8660707bed542c7c69b31a062591e5024b69e73807583"
   end
 
   depends_on "bison" => :build
@@ -101,7 +101,7 @@ class GobjectIntrospection < Formula
         ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
-      bin.find { |f| rewrite_shebang detected_python_shebang, f }
+      rewrite_shebang detected_python_shebang, *bin.children
     end
   end
 
