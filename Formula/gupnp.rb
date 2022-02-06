@@ -9,7 +9,8 @@ class Gupnp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp"
-    sha256 cellar: :any, mojave: "ba4972d346560fef65418a87a6e06826ffd53c9d7a1a9615d47d6c31cef9baac"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7df02b620b0b3871b4ce2628f66a0065a03b1819ac58cd9ff4c7de4644def7ad"
   end
 
   depends_on "docbook-xsl" => :build
@@ -36,7 +37,7 @@ class Gupnp < Formula
       system "meson", *std_meson_args, ".."
       system "ninja"
       system "ninja", "install"
-      bin.find { |f| rewrite_shebang detected_python_shebang, f }
+      rewrite_shebang detected_python_shebang, *bin.children
     end
   end
 
