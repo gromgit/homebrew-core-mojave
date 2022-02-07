@@ -3,14 +3,14 @@ class YtDlp < Formula
 
   desc "Fork of youtube-dl with additional features and fixes"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/e3/59/d367213d96c63c98c9f23140da8ec6f610a48cd9cfe2a740d0b17df120e6/yt-dlp-2022.1.21.tar.gz"
-  sha256 "220ec407389b5ea72e25dfc11c30e543489b90075c55311d5255e2045db8a9e2"
+  url "https://files.pythonhosted.org/packages/5c/e0/e5bae3e87ee6da0f7507f3b58c5e9ffc1500de0742886ccc72c1a56740f2/yt-dlp-2022.2.4.tar.gz"
+  sha256 "81b50ed7cf9cfcc042d8f5a1ad2d1cd7b13c48b36c07faf1880696eac0a7ddb5"
   license "Unlicense"
   head "https://github.com/yt-dlp/yt-dlp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yt-dlp"
-    sha256 cellar: :any_skip_relocation, mojave: "7697dce959cb2de420f63a1e16547acc0ece367eac116a4d8672a485d5fb50fd"
+    sha256 cellar: :any_skip_relocation, mojave: "5c5f708d530595817db8d970154ce33b014225320ed12f7c562f748c839c8515"
   end
 
   depends_on "python@3.10"
@@ -21,8 +21,8 @@ class YtDlp < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/f6/06/e2ad9e93210790be86d36c6e2d5524ba54928c3ed27dd0be9b2ced7c57f1/pycryptodomex-3.12.0.zip"
-    sha256 "922e9dac0166e4617e5c7980d2cff6912a6eb5cb5c13e7ece222438650bd7f66"
+    url "https://files.pythonhosted.org/packages/a6/b3/a5e59cd3ad65d4dc470a3a63381d0495885cf1ac7659c83c6bc9e9e79df6/pycryptodomex-3.14.0.tar.gz"
+    sha256 "2d8bda8f949b79b78b293706aa7fc1e5c171c62661252bfdd5d12c70acd03282"
   end
 
   resource "websockets" do
