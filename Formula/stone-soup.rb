@@ -1,8 +1,8 @@
 class StoneSoup < Formula
   desc "Dungeon Crawl Stone Soup: a roguelike game"
   homepage "https://crawl.develz.org/"
-  url "https://github.com/crawl/crawl/archive/0.27.1.tar.gz"
-  sha256 "062f1285852fced23ecb2f272ad132467e12e7e251e02aaa84f37280b55ba63e"
+  url "https://github.com/crawl/crawl/archive/0.28.0.tar.gz"
+  sha256 "287f35476d20bbe8aaa3e663140704462b4e304a4e1ed5c2b5da1d273dd1f383"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class StoneSoup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stone-soup"
-    rebuild 1
-    sha256 mojave: "47f325731bd036b509fec2d935fd871c7175ab8fe9ed583e60cda046373bfeab"
+    sha256 mojave: "cf17866884213c329cd5d98d9066e61d08f87b1c81c753347d9261c0af3018a3"
   end
 
   depends_on "pkg-config" => :build
