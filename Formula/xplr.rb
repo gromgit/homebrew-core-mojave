@@ -1,14 +1,14 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
   homepage "https://github.com/sayanarijit/xplr"
-  url "https://github.com/sayanarijit/xplr/archive/v0.17.1.tar.gz"
-  sha256 "94040d4b45f41b81ed71ff1e124e3db2f9e4e8f3e11c3ec76315df5bab68351f"
+  url "https://github.com/sayanarijit/xplr/archive/v0.17.2.tar.gz"
+  sha256 "92f3688abf192d726a85f92293ef7a92dda4da638f1f462a8d1153ebc27a045b"
   license "MIT"
   head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xplr"
-    sha256 cellar: :any_skip_relocation, mojave: "faa2163f204397ee12f437446de0c6de13e53d7f3e2fcbcfd40cf9863885eceb"
+    sha256 cellar: :any_skip_relocation, mojave: "1b62d0bca85b66224996236a1da46155227a4737834585abea250912bc84a456"
   end
 
   depends_on "rust" => :build
