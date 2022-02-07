@@ -1,8 +1,8 @@
 class S2n < Formula
   desc "Implementation of the TLS/SSL protocols"
   homepage "https://github.com/aws/s2n-tls"
-  url "https://github.com/aws/s2n-tls/archive/v1.3.5.tar.gz"
-  sha256 "cbf05cdb38e600e3020d8e6d6e4f5b24b58080b6e43cebf42b3cfe2bb92e4c2a"
+  url "https://github.com/aws/s2n-tls/archive/v1.3.6.tar.gz"
+  sha256 "014eb4190b4cc9301b99bbbc11cc874c38fbf1c73ba77bca922458a052a58ed3"
   license "Apache-2.0"
   head "https://github.com/aws/s2n-tls.git", branch: "main"
 
@@ -13,7 +13,7 @@ class S2n < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s2n"
-    sha256 cellar: :any, mojave: "6bf6a6c76fd08bc0f105dce340472efebc34f75271f936f4a15e1d63519b8777"
+    sha256 cellar: :any, mojave: "cde89b514baf76c1c8be0b100fa1c43d56ce73b69e5ec01c39ea78031d0536a6"
   end
 
   depends_on "cmake" => :build
