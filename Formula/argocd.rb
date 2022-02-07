@@ -2,13 +2,13 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https://argoproj.github.io/cd"
   url "https://github.com/argoproj/argo-cd.git",
-      tag:      "v2.2.3",
-      revision: "987f6659b88e656a8f6f8feef87f4dd467d53c44"
+      tag:      "v2.2.5",
+      revision: "8f981ccfcf942a9eb00bc466649f8499ba0455f5"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd"
-    sha256 cellar: :any_skip_relocation, mojave: "2a433b6984b05f22ab54adf36ba2a238d96881177cf724c36dc601e4e913eccc"
+    sha256 cellar: :any_skip_relocation, mojave: "67150c7b51e7ffe51b710eb5dff9486272a7582423855c3c781bb9775d8ba20b"
   end
 
   depends_on "go" => :build
