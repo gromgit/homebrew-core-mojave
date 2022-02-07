@@ -1,8 +1,8 @@
 class Simutrans < Formula
   desc "Transport simulator"
   homepage "https://www.simutrans.com/"
-  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "10317"
-  version "123.0"
+  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "10421"
+  version "123.0.1"
   license "Artistic-1.0"
   head "https://github.com/aburch/simutrans.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Simutrans < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simutrans"
-    sha256 cellar: :any, mojave: "102bec72bab08dd83b9bde5e47fe4986984a967c58317c5630cf207a7f083fb6"
+    sha256 cellar: :any, mojave: "c67fbcd25a29974925ba40b7961960ecfa3462e870df1003bc6db146cf0adbee"
   end
 
   depends_on "autoconf" => :build
@@ -28,7 +28,7 @@ class Simutrans < Formula
   uses_from_macos "unzip"
 
   on_linux do
-    depends_on "gcc" => :build
+    depends_on "gcc"
   end
 
   fails_with gcc: "5"
