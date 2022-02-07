@@ -6,6 +6,7 @@ class AstrometryNet < Formula
   url "https://github.com/dstndstn/astrometry.net/releases/download/0.89/astrometry.net-0.89.tar.gz"
   sha256 "98e955a6f747cde06904e461df8e09cd58fe14b1ecceb193e3619d0f5fc64acb"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,7 +15,7 @@ class AstrometryNet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/astrometry-net"
-    sha256 cellar: :any, mojave: "d2824f0f855fb8ec7e3cd18125979c4f51627e9377423602c60ac6787dcaa640"
+    sha256 cellar: :any, mojave: "3301bf7ad6d427f8b8b5e38f0faff2750b47ff40803341ecf03e30f6333907ae"
   end
 
   depends_on "pkg-config" => :build
