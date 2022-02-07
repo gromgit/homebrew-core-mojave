@@ -1,15 +1,15 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://github.com/snort3/snort3/archive/3.1.21.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.21.0.tar.gz"
-  sha256 "0fe88fd838c8d7dfb249c4335daaea997db819deee60eacc6871bb11f8afa8df"
+  url "https://github.com/snort3/snort3/archive/3.1.22.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.1.22.0.tar.gz"
+  sha256 "6b14382c31a24fabb68faa207224f8adfd2358f844706e55ad08c3abe6c5aa10"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snort"
-    sha256 cellar: :any, mojave: "fc80e7b13495a8518bfb4ea5c0dc38f8a64731eeb050a58cb42b7a813f8ae888"
+    sha256 cellar: :any, mojave: "66eb2665410417e20a99f7dd9772add4866dd6dacd11811ef1e0c76bb51c665d"
   end
 
   depends_on "cmake" => :build
