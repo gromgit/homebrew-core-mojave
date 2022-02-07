@@ -1,8 +1,8 @@
 class Radare2 < Formula
   desc "Reverse engineering framework"
   homepage "https://radare.org"
-  url "https://github.com/radareorg/radare2/archive/5.5.2.tar.gz"
-  sha256 "aee036d10a6dc953840795a4ee964c30eda6845c36dac4cd179351ba1af5c86b"
+  url "https://github.com/radareorg/radare2/archive/5.6.0.tar.gz"
+  sha256 "263bd171853b2f668dec20170550c8101215267f72457e68781c2a816e3ccfb1"
   license "LGPL-3.0-only"
   head "https://github.com/radareorg/radare2.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Radare2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/radare2"
-    sha256 mojave: "d2d025aba2aff55cdb77fab84963173b20c835da6327a8efb0745bfc07187813"
+    sha256 mojave: "4d2cf82bcc3285a7f174706627cf75ef7c37d76bc98e7018d826376a07d1d97f"
   end
 
   def install
