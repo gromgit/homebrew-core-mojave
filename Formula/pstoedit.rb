@@ -7,7 +7,8 @@ class Pstoedit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pstoedit"
-    sha256 mojave: "f193dafc01430bba0829089c9af9d1173ec570db00d5b7c3adb4d9e828a93fd0"
+    rebuild 1
+    sha256 mojave: "c6c8dba96419792faeeb78e52f5ada681af4a58ca39283a4429957cf52e02fdf"
   end
 
   depends_on "pkg-config" => :build
