@@ -4,10 +4,11 @@ class Sdl2Ttf < Formula
   url "https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.0.18/SDL2_ttf-2.0.18.tar.gz"
   sha256 "7234eb8883514e019e7747c703e4a774575b18d435c22a4a29d068cb768a2251"
   license "Zlib"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2_ttf"
-    sha256 cellar: :any, mojave: "66b6b2b40fa07cc2c2d18fc8a9d88d06f700be2b61b692ad7ad47e3755918a80"
+    sha256 cellar: :any, mojave: "65af48deb37b01781b40a637b2f18058ff25d39bd45fed0aaa54640424ef2106"
   end
 
   head do
@@ -20,6 +21,7 @@ class Sdl2Ttf < Formula
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
+  depends_on "harfbuzz"
   depends_on "sdl2"
 
   def install
@@ -27,8 +29,12 @@ class Sdl2Ttf < Formula
 
     system "./autogen.sh" if build.head?
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    # `--enable-harfbuzz` is the default, but we pass it
+    # explicitly to generate an error when it isn't found.
+    system "./configure", "--disable-freetype-builtin",
+                          "--disable-harfbuzz-builtin",
+                          "--enable-harfbuzz",
+                          *std_configure_args
     system "make", "install"
   end
 
