@@ -1,8 +1,8 @@
 class Tfsec < Formula
   desc "Static analysis security scanner for your terraform code"
   homepage "https://tfsec.dev/"
-  url "https://github.com/aquasecurity/tfsec/archive/v1.0.8.tar.gz"
-  sha256 "88b09b0b914deebf142d1b739ab20491b3e5fc5f2f4cb0cc84578f884b6bc906"
+  url "https://github.com/aquasecurity/tfsec/archive/v1.0.11.tar.gz"
+  sha256 "9f48bf4e4bee549093e33a88ad73881ededbba163c68eecc973b2ca13f8792af"
   license "MIT"
   head "https://github.com/aquasecurity/tfsec.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Tfsec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfsec"
-    sha256 cellar: :any_skip_relocation, mojave: "719a126e94a78ef7cead131896547db04bc1befe9a057104bc9c58ee512ab389"
+    sha256 cellar: :any_skip_relocation, mojave: "44a21ab37581ea1b3ca941834cc3d7591969d84fd7e993f53758669a21d56dc6"
   end
 
   depends_on "go" => :build
