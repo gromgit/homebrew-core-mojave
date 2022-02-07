@@ -1,20 +1,14 @@
 class Sdns < Formula
   desc "Privacy important, fast, recursive dns resolver server with dnssec support"
   homepage "https://sdns.dev"
-  url "https://github.com/semihalev/sdns/archive/v1.1.8.tar.gz"
-  sha256 "5ffc8a72be67c3f9ce7200fd638ade6435ae177b09eda5eb149daadc66955ba6"
+  url "https://github.com/semihalev/sdns/archive/v1.2.1.tar.gz"
+  sha256 "1a5796b3ee8fc38315684bc5a2c41c960615de4f56e9c687b9afb00fb613d6e2"
   license "MIT"
-  revision 1
   head "https://github.com/semihalev/sdns.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca73ef2945a1eaf50f9d23970296c494956a9b4e8592ff97b5b470e4ac1036d7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ae97f45caa3d41c8061ac0564b7259a61677514313ded603164d969a82d9524"
-    sha256 cellar: :any_skip_relocation, monterey:       "a7cc5db90215794916e2d9f00f98a78a335614b6c67729b61d2711f6b3d73e47"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9661ca9da8b66089c00952c5549cb2bdf79350a48c77f6fd4ea71a54dbb03469"
-    sha256 cellar: :any_skip_relocation, catalina:       "2ae8cb3d2dc990880d4d743bf60054c8f671ee2ac887beb469cf141870a6ebd2"
-    sha256 cellar: :any_skip_relocation, mojave:         "aaf89563a2012060701b1ac14de25f2f656bb38def9379a4c10e766a75866a28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a142ddf399416fc21c87437c77246049a03324f80460fc1831b82aa98cabf9fb"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdns"
+    sha256 cellar: :any_skip_relocation, mojave: "651c6ea0f159dde5a3bc4a7520189551ca2d7cba9914f0fdb8271f305419e21d"
   end
 
   depends_on "go" => :build
