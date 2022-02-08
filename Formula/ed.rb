@@ -1,19 +1,14 @@
 class Ed < Formula
   desc "Classic UNIX line editor"
   homepage "https://www.gnu.org/software/ed/ed.html"
-  url "https://ftp.gnu.org/gnu/ed/ed-1.17.tar.lz"
-  mirror "https://ftpmirror.gnu.org/ed/ed-1.17.tar.lz"
-  sha256 "71de39883c25b6fab44add80635382a10c9bf154515b94729f4a6529ddcc5e54"
+  url "https://ftp.gnu.org/gnu/ed/ed-1.18.tar.lz"
+  mirror "https://ftpmirror.gnu.org/ed/ed-1.18.tar.lz"
+  sha256 "aca8efad9800c587724a20b97aa8fc47e6b5a47df81606feaba831b074462b4f"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37681e29529497522f49d21538e9aa3ac82a36419ca1e54e2ef2a0b87cd2bc3c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c564d371bbcdfbbe568291254d591c12d220b23a502944aa68d3a890d4f73e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c7dc67abe4606ed94fa33680fd662e763e1be53320ffb272b7745c1739a5865"
-    sha256 cellar: :any_skip_relocation, big_sur:        "57c700308a2ae32fb9a161f33665e040432a0bce4eafc746ece9c1a515b4097d"
-    sha256 cellar: :any_skip_relocation, catalina:       "7ed89b34fe7b4120255d4a6bd493a924c07c3ad31f3e8099a81ef526dc60b704"
-    sha256 cellar: :any_skip_relocation, mojave:         "2de3bede199b9f95bb617315e8eb8c8e30276dfcda7f17836c9fcc2dc5253580"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecd2f65aa59dc4a5748db7e74fe2e840df872b271c31859e2b5991e586a9b47a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ed"
+    sha256 cellar: :any_skip_relocation, mojave: "7650a6ffaf0871f392bdc113cd23875d28c07fee275d51bd9493441263598467"
   end
 
   keg_only :provided_by_macos
