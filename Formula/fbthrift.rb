@@ -1,14 +1,14 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/v2022.01.17.00.tar.gz"
-  sha256 "15599efa59d87d63bcb672dea7ea24cf34102da6f68254368a442493843c985b"
+  url "https://github.com/facebook/fbthrift/archive/v2022.01.31.00.tar.gz"
+  sha256 "6194127fd9e6771bd34f502a84b292278bf3a6ee7b87377afd1ae287a5572f48"
   license "Apache-2.0"
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fbthrift"
-    sha256 cellar: :any, mojave: "838bcbd310d3723f8b4471404249b9be6dd9d7c03dabef1df597ec88d964b885"
+    sha256 cellar: :any, mojave: "ec3d76658bbefcdbd40c8b019c14d59c93e46fc825909bb38f39b17c9fc99418"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
