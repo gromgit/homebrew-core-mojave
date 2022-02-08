@@ -13,8 +13,10 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    sha256 cellar: :any, mojave: "4e28e010a2753a276c65d4bc7179099bfb6e5c3b28ffa22630afa22d74bac53d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "138a2454fb97b3ef334f8378b0de6768459536bcb248768f39e5bb8d5d4239a2"
   end
+
 
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
@@ -95,9 +97,9 @@ class Node < Formula
 
     # Enabling LTO errors on Linux with:
     # terminate called after throwing an instance of 'std::out_of_range'
+    # Pre-Catalina macOS also can't build with LTO
     # LTO is unpleasant if you have to build from source.
-    # NOTE: LTO disabled on Mojave because it breaks bottle builds
-    # args << "--enable-lto" if OS.mac? && build.bottle?
+    args << "--enable-lto" if MacOS.version >= :catalina && build.bottle?
 
     system "./configure", *args
     system "make", "install"
