@@ -9,8 +9,8 @@ class Octave < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octave"
-    rebuild 2
-    sha256 mojave: "66c4a7c79460a0853ea2c2f2253d44eef2c88c5d3dbcc138ba713fc340ca1415"
+    rebuild 3
+    sha256 mojave: "7ea98fb6bf8d0585c359a38e10a35af5bec742a2e7c507f80f8a6ed476b8dbc8"
   end
 
   head do
