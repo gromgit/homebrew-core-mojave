@@ -1,10 +1,10 @@
 class Dynare < Formula
   desc "Platform for economic models, particularly DSGE and OLG models"
   homepage "https://www.dynare.org/"
-  url "https://www.dynare.org/release/source/dynare-4.6.4.tar.xz"
-  sha256 "3c2e0069a3e5c23866130d5c73c3da840a38612baa2aa3d90f42e3d984abad80"
+  url "https://www.dynare.org/release/source/dynare-5.0.tar.xz"
+  sha256 "557bc7d8d7bbbf7d4746dd1e015b273eeeb0b53dc66b9d4004d2efef8f4fe16e"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 1
 
   livecheck do
     url "https://www.dynare.org/download/"
@@ -13,8 +13,7 @@ class Dynare < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynare"
-    rebuild 2
-    sha256 cellar: :any, mojave: "c4f1fbb59d1f02ca16bbd44c3581705c58b4f57f91c51adcfac22276e469ffd4"
+    sha256 cellar: :any, mojave: "fe277617b1a6d96616f018c43913d3624a02a11a1b7493d81be034ae09d9bd03"
   end
 
   head do
@@ -39,8 +38,8 @@ class Dynare < Formula
   depends_on "suite-sparse"
 
   resource "io" do
-    url "https://octave.sourceforge.io/download.php?package=io-2.6.3.tar.gz", using: :nounzip
-    sha256 "6bc63c6498d79cada01a6c4446f793536e0bb416ddec2a5201dd8d741d459e10"
+    url "https://octave.sourceforge.io/download.php?package=io-2.6.4.tar.gz", using: :nounzip
+    sha256 "a74a400bbd19227f6c07c585892de879cd7ae52d820da1f69f1a3e3e89452f5a"
   end
 
   resource "slicot" do
@@ -49,8 +48,8 @@ class Dynare < Formula
   end
 
   resource "statistics" do
-    url "https://octave.sourceforge.io/download.php?package=statistics-1.4.2.tar.gz", using: :nounzip
-    sha256 "7976814f837508e70367548bfb0a6d30aa9e447d4e3a66914d069efb07876247"
+    url "https://octave.sourceforge.io/download.php?package=statistics-1.4.3.tar.gz", using: :nounzip
+    sha256 "9801b8b4feb26c58407c136a9379aba1e6a10713829701bb3959d9473a67fa05"
   end
 
   def install
