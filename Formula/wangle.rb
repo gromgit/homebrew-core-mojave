@@ -1,14 +1,14 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://github.com/facebook/wangle/releases/download/v2022.01.31.00/wangle-v2022.01.31.00.tar.gz"
-  sha256 "1002e9c32b6f4837f6a760016e3b3e22f3509880ef3eaad191c80dc92655f23f"
+  url "https://github.com/facebook/wangle/releases/download/v2022.02.07.00/wangle-v2022.02.07.00.tar.gz"
+  sha256 "1afb036daa12dd803be3111ca82c5b5674e85ff1fd776a07ed27940945d607cf"
   license "Apache-2.0"
   head "https://github.com/facebook/wangle.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wangle"
-    sha256 cellar: :any, mojave: "65b85a7998253dd9d3bc056f6c236e72017f10d5355c29bcae8f2908532f2c22"
+    sha256 cellar: :any, mojave: "93980506943d6d3aa27df0b081a3fff838d8829ea498f0826af6654f642dc3f5"
   end
 
   depends_on "cmake" => :build
