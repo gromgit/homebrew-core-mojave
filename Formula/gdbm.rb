@@ -1,15 +1,14 @@
 class Gdbm < Formula
   desc "GNU database manager"
   homepage "https://www.gnu.org/software/gdbm/"
-  url "https://ftp.gnu.org/gnu/gdbm/gdbm-1.22.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gdbm/gdbm-1.22.tar.gz"
-  sha256 "f366c823a6724af313b6bbe975b2809f9a157e5f6a43612a72949138d161d762"
+  url "https://ftp.gnu.org/gnu/gdbm/gdbm-1.23.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gdbm/gdbm-1.23.tar.gz"
+  sha256 "74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdbm"
-    rebuild 4
-    sha256 mojave: "715c7546ab9aaa8c155a0c9deed779e38e74f084a2c18891c49a2120301f53ab"
+    sha256 mojave: "d6fe97a9bf174400dec38aebde9ca90fae0e833295571b7aae68df2e167f9dc9"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
