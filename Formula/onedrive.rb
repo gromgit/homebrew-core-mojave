@@ -1,9 +1,13 @@
 class Onedrive < Formula
   desc "Folder synchronization with OneDrive"
   homepage "https://github.com/abraunegg/onedrive"
-  url "https://github.com/abraunegg/onedrive/archive/v2.4.13.tar.gz"
-  sha256 "6cb903ec14be249caa13c04a4fbba9a431041c224e7d815798a94f7b93861263"
+  url "https://github.com/abraunegg/onedrive/archive/v2.4.15.tar.gz"
+  sha256 "8824f1530ef874d68d221e2684cdab0c730feba7d1a47ed29903cd46d67eaaa2"
   license "GPL-3.0-only"
+
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7eb5a38176aff53462cd36a1cc5d2839d9dc4f7d54d5967eef0700d4bf839c48"
+  end
 
   depends_on "ldc" => :build
   depends_on "pkg-config" => :build
@@ -13,7 +17,7 @@ class Onedrive < Formula
   depends_on "systemd"
 
   def install
-    system "./configure", *std_configure_args
+    system "./configure", *std_configure_args, "--with-systemdsystemunitdir=no"
     system "make", "install"
     bash_completion.install "contrib/completions/complete.bash" => "onedrive"
     zsh_completion.install "contrib/completions/complete.zsh" => "_onedrive"
