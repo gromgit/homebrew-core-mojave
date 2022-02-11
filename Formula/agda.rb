@@ -2,6 +2,7 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
     url "https://hackage.haskell.org/package/Agda-2.6.2.1/Agda-2.6.2.1.tar.gz"
@@ -15,7 +16,7 @@ class Agda < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/agda"
-    sha256 mojave: "f5237b152b7a4aa3eee52c616fccf8b913b756c8c2bc28abc63eaf93c6af6f3d"
+    sha256 mojave: "888cce9515dd218b03d6771badf76a5f590da6b78ffec74c320f8fbb5af8765b"
   end
 
   head do
@@ -33,8 +34,8 @@ class Agda < Formula
   uses_from_macos "zlib"
 
   resource "alex" do
-    url "https://hackage.haskell.org/package/alex-3.2.6/alex-3.2.6.tar.gz"
-    sha256 "91aa08c1d3312125fbf4284815189299bbb0be34421ab963b1f2ae06eccc5410"
+    url "https://hackage.haskell.org/package/alex-3.2.7.1/alex-3.2.7.1.tar.gz"
+    sha256 "9bd2f1a27e8f1b2ffdb5b2fbd3ed82b6f0e85191459a1b24ffcbef4e68a81bec"
   end
 
   resource "cpphs" do
