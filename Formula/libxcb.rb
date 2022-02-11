@@ -1,42 +1,22 @@
-class Python3Requirement < Requirement
-  fatal true
-  satisfy(build_env: false) { which "python3" }
-  def message
-    <<~EOS
-      An existing Python 3 installation is required in order to avoid cyclic
-      dependencies (as Homebrew's Python depends on xcb-proto).
-    EOS
-  end
-end
-
 class Libxcb < Formula
   desc "X.Org: Interface to the X Window System protocol"
   homepage "https://www.x.org/"
   url "https://xcb.freedesktop.org/dist/libxcb-1.14.tar.gz"
   sha256 "2c7fcddd1da34d9b238c9caeda20d3bd7486456fc50b3cc6567185dbd5b0ad02"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcb"
-    rebuild 2
-    sha256 cellar: :any, mojave: "7f6b0be5d99790288633e69bb2b53a710371f3c3c708748d631e08c762884c5e"
+    sha256 cellar: :any, mojave: "2bf299877e25053f7b94750394b5a9b44746e7fe62eddf1a37de079767d846b5"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python@3.10" => :build
   depends_on "xcb-proto" => :build
   depends_on "libpthread-stubs"
   depends_on "libxau"
   depends_on "libxdmcp"
-
-  on_macos do
-    depends_on "python@3.9" => :build
-  end
-  on_linux do
-    # Use an existing Python 3, to avoid a cyclic dependency on Linux:
-    # python3 -> tcl-tk -> libx11 -> libxcb -> python3
-    depends_on Python3Requirement => :build
-  end
 
   def install
     args = %W[
