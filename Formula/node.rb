@@ -13,10 +13,9 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    rebuild 1
-    sha256 cellar: :any, mojave: "138a2454fb97b3ef334f8378b0de6768459536bcb248768f39e5bb8d5d4239a2"
+    rebuild 2
+    sha256 cellar: :any, mojave: "966e9ca775f1c26bad1b88c167c196d20a8d3aa56395066d2c741ee430eab4f2"
   end
-
 
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
