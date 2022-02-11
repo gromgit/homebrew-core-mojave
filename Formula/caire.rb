@@ -1,14 +1,14 @@
 class Caire < Formula
   desc "Content aware image resize tool"
   homepage "https://github.com/esimov/caire"
-  url "https://github.com/esimov/caire/archive/v1.4.1.tar.gz"
-  sha256 "2676d646c4a9b75d3734ac49e4c27d62008bd889aad0297874d34906a526e8cc"
+  url "https://github.com/esimov/caire/archive/v1.4.2.tar.gz"
+  sha256 "73924c22993baa98ed9310f9c4f7a004b3bf565a3a9b031f003f2d50ba662fda"
   license "MIT"
   head "https://github.com/esimov/caire.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caire"
-    sha256 cellar: :any_skip_relocation, mojave: "cb2146930dc1d346cb1571d72f51dce0b4173f289cb52ac5000b7c89ba374ce2"
+    sha256 cellar: :any_skip_relocation, mojave: "c74e746da1cd7e7badc29a72dc8b67242ead6187ccd704011100371f53df56c4"
   end
 
   depends_on "go" => :build
