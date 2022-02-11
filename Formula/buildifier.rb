@@ -1,14 +1,14 @@
 class Buildifier < Formula
   desc "Format bazel BUILD files with a standard convention"
   homepage "https://github.com/bazelbuild/buildtools"
-  url "https://github.com/bazelbuild/buildtools/archive/4.2.5.tar.gz"
-  sha256 "d368c47bbfc055010f118efb2962987475418737e901f7782d2a966d1dc80296"
+  url "https://github.com/bazelbuild/buildtools/archive/5.0.0.tar.gz"
+  sha256 "09a94213ea0d4a844e991374511fb0d44650e9c321799ec5d5dd28b250d82ca3"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildifier"
-    sha256 cellar: :any_skip_relocation, mojave: "78f2568aa630f210e94afeb553071d100128d97fdbc372a6a8755caa34fef62e"
+    sha256 cellar: :any_skip_relocation, mojave: "5037338361f502720564cf384f52805838aa4311f62e355ca501894aac7f13d4"
   end
 
   depends_on "go" => :build
