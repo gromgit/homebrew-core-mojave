@@ -1,10 +1,9 @@
 class Unbound < Formula
   desc "Validating, recursive, caching DNS resolver"
   homepage "https://www.unbound.net"
-  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.13.2.tar.gz"
-  sha256 "0a13b547f3b92a026b5ebd0423f54c991e5718037fd9f72445817f6a040e1a83"
+  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.15.0.tar.gz"
+  sha256 "a480dc6c8937447b98d161fe911ffc76cfaffa2da18788781314e81339f1126f"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/NLnetLabs/unbound.git", branch: "master"
 
   # We check the GitHub repo tags instead of
@@ -16,13 +15,8 @@ class Unbound < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "a4623b4e5433b7d66a50b3d478a29b37ffa9ae2d64ec3d34a73351bc6bd3d6b7"
-    sha256 arm64_big_sur:  "be270411ac84da8f2e6424c50e9a24f2b6b332b98a0f82690c933b4f2aa03569"
-    sha256 monterey:       "ecba34a33d7e30a3b2053fb57b9a6ccb4cf5ea85a6eb9bbe2c5cd365d2c15f57"
-    sha256 big_sur:        "7f411a6ec21a1c46be319d79c7b7e43f4858e0751cd92b8e9fdd41b070265991"
-    sha256 catalina:       "3519fe0e6677d759978c5a6d07f1eb576495e04146df01cdbd367506421d2ac2"
-    sha256 mojave:         "79fc8a9f5c4579ee06a35966fa5e247037c8773519b3f29d67b7ef47e52db7b9"
-    sha256 x86_64_linux:   "b96cfb9beaf9b62043260bc32e9d76dac680132842ee3089d6fd8698810884ce"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unbound"
+    sha256 mojave: "b62d0313b9ee9b90211a6f0f42f427e6dc5b439fd6c9db574ec7834b7ffe1ae2"
   end
 
   depends_on "libevent"
