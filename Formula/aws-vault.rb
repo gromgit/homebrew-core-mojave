@@ -1,13 +1,13 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/99designs/aws-vault"
-  url "https://github.com/99designs/aws-vault/archive/v6.4.0.tar.gz"
-  sha256 "28845a2191e9f777d78151308b883fc7db4475a1c1df80ff24d13ced948a8f96"
+  url "https://github.com/99designs/aws-vault/archive/v6.5.0.tar.gz"
+  sha256 "b2127b20a58fd75d92a2af28e77368dd9ab3c576dc73c3d56c3817e496a45515"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-vault"
-    sha256 cellar: :any_skip_relocation, mojave: "52ae7d57465dd11024cd78e062e4d18146e0d36a6a06801adeb1b2fb522e5c83"
+    sha256 cellar: :any_skip_relocation, mojave: "a71e529d1c66830f575429942b1c115764514905fcb00945b5009b08d62cc959"
   end
 
   depends_on "go" => :build
