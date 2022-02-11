@@ -1,14 +1,14 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://github.com/harfbuzz/harfbuzz/archive/3.3.1.tar.gz"
-  sha256 "45aca6428d718e08872ad37647081c1b85c5b349c8419af84c04da17cf14b570"
+  url "https://github.com/harfbuzz/harfbuzz/archive/3.3.2.tar.gz"
+  sha256 "49df72f1a534ccbd0c99aec198b24185d37541127dccff49300ee65a3c05e637"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
-    sha256 cellar: :any, mojave: "c419a3350040ec4623dff52322d3bb2e548efd84cc0dfda47f8397c355bfd03e"
+    sha256 cellar: :any, mojave: "0e5bbeeaab1f80ca341982944d4616535f75971e8ccc5f12d9d4c15fbf63db63"
   end
 
   depends_on "meson" => :build
