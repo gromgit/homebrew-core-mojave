@@ -1,14 +1,14 @@
 class Buildozer < Formula
   desc "Rewrite bazel BUILD files using standard commands"
   homepage "https://github.com/bazelbuild/buildtools"
-  url "https://github.com/bazelbuild/buildtools/archive/4.2.5.tar.gz"
-  sha256 "d368c47bbfc055010f118efb2962987475418737e901f7782d2a966d1dc80296"
+  url "https://github.com/bazelbuild/buildtools/archive/5.0.0.tar.gz"
+  sha256 "09a94213ea0d4a844e991374511fb0d44650e9c321799ec5d5dd28b250d82ca3"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildozer"
-    sha256 cellar: :any_skip_relocation, mojave: "2ee90102f8fb19f442ce4a145521ddb6ab59d9f7f18f730e56a9867e3de7d9bb"
+    sha256 cellar: :any_skip_relocation, mojave: "a756f1ed4b2b16994beecb07070438eda196dd9218e4e0e59726bfc0e78b56d2"
   end
 
   depends_on "go" => :build
