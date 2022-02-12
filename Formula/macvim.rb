@@ -2,18 +2,15 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https://github.com/macvim-dev/macvim"
-  url "https://github.com/macvim-dev/macvim/archive/snapshot-171.tar.gz"
-  version "8.2-171"
-  sha256 "1ef6766abefc6d67dd717f1a92aa294304817a462a98153f2696e83340ffce25"
+  url "https://github.com/macvim-dev/macvim/archive/snapshot-172.tar.gz"
+  version "8.2-172"
+  sha256 "b5e16d721444d8cb6231df739b1b74dec8f3cb0bde1fe8327dd86e25fc322331"
   license "Vim"
-  revision 1
-  head "https://github.com/macvim-dev/macvim.git"
+  head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
   bottle do
-    sha256 arm64_big_sur: "87e1904216e8f0131e055f5a44b2c863b812ed855c53f377ec1d0afe81c30230"
-    sha256 big_sur:       "607b58cfc70e02d68aa491f8c968f11341386c6f0972d2a113d41c69658c51a7"
-    sha256 catalina:      "eba980cb563fb4766e330e45d0bb7fa3f1f1be020b3490d0421e0816c266ea19"
-    sha256 mojave:        "a13d4c099c2f0769bfb31fdbafcf9c3a6dd53e583b82d0f2076f39310118ac8b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/macvim"
+    sha256 mojave: "9feac176e29a4793c2964661e29b89e52a44b726934cafb92cf55db0c6fc003e"
   end
 
   depends_on xcode: :build
@@ -56,6 +53,8 @@ class Macvim < Formula
     system "make"
 
     prefix.install "src/MacVim/build/Release/MacVim.app"
+    # Remove autoupdating universal binaries
+    (prefix/"MacVim.app/Contents/Frameworks/Sparkle.framework").rmtree
     bin.install_symlink prefix/"MacVim.app/Contents/bin/mvim"
 
     # Create MacVim vimdiff, view, ex equivalents
