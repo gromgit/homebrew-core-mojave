@@ -1,20 +1,21 @@
 class Exiv2 < Formula
   desc "EXIF and IPTC metadata manipulation library and tools"
-  homepage "https://www.exiv2.org/"
-  url "https://www.exiv2.org/builds/exiv2-0.27.5-Source.tar.gz"
+  homepage "https://exiv2.org/"
+  url "https://github.com/Exiv2/exiv2/releases/download/v0.27.5/exiv2-0.27.5-Source.tar.gz"
   sha256 "35a58618ab236a901ca4928b0ad8b31007ebdc0386d904409d825024e45ea6e2"
   license "GPL-2.0-or-later"
   revision 1
   head "https://github.com/Exiv2/exiv2.git", branch: "main"
 
   livecheck do
-    url "https://www.exiv2.org/builds/"
+    url "https://exiv2.org/download.html"
     regex(/href=.*?exiv2[._-]v?(\d+(?:\.\d+)+)-Source\.t/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exiv2"
-    sha256 cellar: :any, mojave: "b34cadf94c6b650db805c9801804bdffc3b7b0d24e8f3a409b9fddb8ac6b7ba7"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ee344f512e9582cb49af0756f87d54a786e58d9ef5158948e9329ff535b24a13"
   end
 
   depends_on "cmake" => :build
