@@ -1,14 +1,14 @@
 class Nuclei < Formula
   desc "HTTP/DNS scanner configurable via YAML templates"
   homepage "https://nuclei.projectdiscovery.io/"
-  url "https://github.com/projectdiscovery/nuclei/archive/v2.5.9.tar.gz"
-  sha256 "b224703e6a5d1f04bdcfccc3ecd488cc847cdab9045dd76c4d4e1d2ab397dd7f"
+  url "https://github.com/projectdiscovery/nuclei/archive/v2.6.0.tar.gz"
+  sha256 "0729b74c5ef772dcb6f8aebe3b4b4513e1d66af9afde80fd3d70876beff5ef92"
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nuclei"
-    sha256 cellar: :any_skip_relocation, mojave: "bdcc3f3549d2398c3017d54b4cf372814c31931f957a53b38b57b5519934c19b"
+    sha256 cellar: :any_skip_relocation, mojave: "e10a16adff61892dde354170aa0206e06e25d6e48e2e7d65628710a60937a988"
   end
 
   depends_on "go" => :build
