@@ -4,13 +4,13 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/93/64/eee3facbe700ef95a839f516e19d8bd3e4e4fcd3baa4398f436eedf0fcea/checkov-2.0.780.tar.gz"
-  sha256 "02a65b3c55070dbb9f68cebc9075d65a7b60e64720dfc76a3448b272d29b19b9"
+  url "https://files.pythonhosted.org/packages/bc/e7/c2067a02588a4f09db0fda05bf16171b0f722d09c5dbad411a3e49517349/checkov-2.0.810.tar.gz"
+  sha256 "3ab5dcd3b4617a4cf28d5d11ac60fe0fdc39bfd03d8e47838e109247c19c8167"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/checkov"
-    sha256 cellar: :any_skip_relocation, mojave: "8991f7a981aebfd97a99305d37f7f1686d484bce4d082f89e8c8a3f18d200eef"
+    sha256 cellar: :any_skip_relocation, mojave: "c145e4b462e41601e5849c99509ce674861d6bb58bb65909c1dec0b13a70ee35"
   end
 
   depends_on "python-tabulate"
@@ -63,13 +63,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f6/b0/e42a79e8dc51ff9d9817c12d911893049cfddefbe3e2c062401306102fb9/boto3-1.20.46.tar.gz"
-    sha256 "d7effba509d7298ef49316ba2da7a2ea115f2a7ff691f875f6354666663cf386"
+    url "https://files.pythonhosted.org/packages/42/e8/2afa5368214edf4d6b90e36c886d25cae5629915a73d17e12f9486f32479/boto3-1.20.51.tar.gz"
+    sha256 "f26f7285780bda16c6ffb8db76c949aeeb45730d3f68626e31b90246ec00fe1a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/97/b9/f55bf7f44377c1093f16f789979b39d9bed51ad1f2069d17d1ca55d2d4c2/botocore-1.23.46.tar.gz"
-    sha256 "38dd4564839f531725b667db360ba7df2125ceb3752b0ba12759c3e918015b95"
+    url "https://files.pythonhosted.org/packages/03/60/b818ed35003bd01c80743fea94d2e04692935f297d3fa3484987b556a4d6/botocore-1.23.51.tar.gz"
+    sha256 "f715fba22d1d2ecf995d3168ddd9adca63979a6cddd35534ccc8550c690f1c88"
   end
 
   resource "cached-property" do
@@ -233,8 +233,8 @@ class Checkov < Formula
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/4b/39/e7665859ad2271aabc489f19df2afff3112e93398bf33fc1d062df41721b/packageurl-python-0.9.6.tar.gz"
-    sha256 "c01fbaf62ad2eb791e97158d1f30349e830bee2dd3e9503a87f6c3ffae8d1cf0"
+    url "https://files.pythonhosted.org/packages/95/27/2cc29674751ce3efba5cf9e89ed77383f037b6fedf00c3330eb041b243d5/packageurl-python-0.9.7.tar.gz"
+    sha256 "d43db6af6a350099e32e9e05e737013d0409287b761fa59c58a03e55dbc3648a"
   end
 
   resource "packaging" do
@@ -248,8 +248,8 @@ class Checkov < Formula
   end
 
   resource "policy-sentry" do
-    url "https://files.pythonhosted.org/packages/12/8c/363de39a82ae1340d27226fa24344fc07dadbe23b5eac9044c3a847a75df/policy_sentry-0.12.1.tar.gz"
-    sha256 "a3304752dd3b5c82a7665fcf586d2aeb87433fbc9b4ae7130b141b24f63312f7"
+    url "https://files.pythonhosted.org/packages/56/e8/f41574e1b00c053555788e0cd2c76217b1d0cbe3d1dc9c12040c56eaf315/policy_sentry-0.12.2.tar.gz"
+    sha256 "c38c16ab224b9860e8d2d18271e3338824147672a04d1827100585271933dc14"
   end
 
   resource "policyuniverse" do
@@ -298,8 +298,8 @@ class Checkov < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/88/ef/4d1b3f52ae20a7e72151fde5c9f254cd83f8a49047351f34006e517e1655/s3transfer-0.5.0.tar.gz"
-    sha256 "50ed823e1dc5868ad40c8dc92072f757aa0e653a192845c94a3b676f4a62da4c"
+    url "https://files.pythonhosted.org/packages/66/e2/cc19f36aade1ef40cba69555fcf713d942ec9e31ecff2415948bd885911d/s3transfer-0.5.1.tar.gz"
+    sha256 "69d264d3e760e569b78aaa0f22c97e955891cd22e32b10c51f784eeda4d9d10a"
   end
 
   resource "schema" do
@@ -308,8 +308,8 @@ class Checkov < Formula
   end
 
   resource "semantic-version" do
-    url "https://files.pythonhosted.org/packages/d4/52/3be868c7ed1f408cb822bc92ce17ffe4e97d11c42caafce0589f05844dd0/semantic_version-2.8.5.tar.gz"
-    sha256 "d2cb2de0558762934679b9a104e82eca7af448c9f4974d1f3eeccff651df8a54"
+    url "https://files.pythonhosted.org/packages/cb/56/4aa487b46d09646eb1863faa7026551d8309ece2281794bf13b20f28ab94/semantic_version-2.9.0.tar.gz"
+    sha256 "abf54873553e5e07a6fd4d5f653b781f5ae41297a493666b59dcf214006a12b2"
   end
 
   resource "smmap" do
@@ -338,8 +338,8 @@ class Checkov < Formula
   end
 
   resource "types-setuptools" do
-    url "https://files.pythonhosted.org/packages/fa/80/d9f62767f364cc51f386034f16035ea33779937fb44bfd82dadc00adf691/types-setuptools-57.4.8.tar.gz"
-    sha256 "d5545f2ab3dad24f5cb1c01ba74c1acb7407ab31b2618d423158fc84085160f1"
+    url "https://files.pythonhosted.org/packages/65/8a/67c6299b90c7b3d97d674fb62af19a363a1f92c5eb64ddd0451e4eb04868/types-setuptools-57.4.9.tar.gz"
+    sha256 "536ef74744f8e1e4be4fc719887f886e74e4cf3c792b4a06984320be4df450b5"
   end
 
   resource "types-toml" do
