@@ -1,8 +1,8 @@
 class Monit < Formula
   desc "Manage and monitor processes, files, directories, and devices"
   homepage "https://mmonit.com/monit/"
-  url "https://mmonit.com/monit/dist/monit-5.30.0.tar.gz"
-  sha256 "e85649dfa8586f4fcdd34a0295c55ddd69b0eda6cfbdac47105a2673d10b1008"
+  url "https://mmonit.com/monit/dist/monit-5.31.0.tar.gz"
+  sha256 "eae71f28941fb663eec74c1a59b69546c659529796550bd9c0c544e9b52ac055"
   license "AGPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Monit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/monit"
-    sha256 cellar: :any, mojave: "8e4bc9c0e47c7b4fb820518e5ecfc026dd0b9865e33a51a45462928178313850"
+    sha256 cellar: :any, mojave: "ce725245d97b40675d56899b6623196d608871b1ad1ec2277bbbcf61e0bdd359"
   end
 
   depends_on "openssl@1.1"
