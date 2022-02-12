@@ -3,14 +3,14 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/a7/11/1fcb957dd6cf61cb5dca23c598c098aa96615de5d1b7f8ef6d398f0ee163/snakemake-6.15.1.tar.gz"
-  sha256 "a219601d57037f565ead9963e6bd8d04d3bdd985d172371e54197dcbdba79865"
+  url "https://files.pythonhosted.org/packages/57/ae/2b4d5b1799823096809bd51f7f50dbdca1c5b65bf874763cb0f1716cd606/snakemake-6.15.5.tar.gz"
+  sha256 "e3297898f96c358b2c1a883aeb0f3540f983943cd564511510b9112a37fcf1f4"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snakemake"
-    sha256 cellar: :any_skip_relocation, mojave: "53b13d2c364f4a1b37a94513bf885a8aa374179e1e32ba86c9a0687df07c24b0"
+    sha256 cellar: :any_skip_relocation, mojave: "87b9348cac44ab33b224214ec9b881d7aaaa54db94ddb31f6fa929f917297ff6"
   end
 
   depends_on "cbc"
