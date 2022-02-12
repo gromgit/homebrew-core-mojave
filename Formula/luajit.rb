@@ -19,21 +19,21 @@ class Luajit < Formula
   end
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 monterey:     "10a01bd4413425300be480b6e0a7c951886f2a43b0c12dc89d6077a2d1cf11f4"
-    sha256 cellar: :any,                 big_sur:      "b3d7fd95cf9b72f89bc95cbc86e19786e9353b353c409e19b721d9ac98c9216b"
-    sha256 cellar: :any,                 catalina:     "0a37eaa5b05ab2e30fcdbfb0355265404b7030655344d79394f9b957df4f317d"
-    sha256 cellar: :any,                 mojave:       "0b6cad395e49805dfa9b3dc70fd775c416d997ea4774ee8453e87deeaf5fdffa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c958527ccb075bdc9e61adacd371a2372ffa731c53ffb191fe71f0889ea24869"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit"
+    rebuild 5
+    sha256 cellar: :any, mojave: "f9eea5defac3084c27f2102229b598221b9c9946331d8ce2ddafb4c222c7846a"
   end
 
   def install
     # 1 - Override the hardcoded gcc.
     # 2 - Remove the "-march=i686" so we can set the march in cflags.
     # Both changes should persist and were discussed upstream.
+    # Also: Set `LUA_ROOT` to `HOMEBREW_PREFIX` so that Luajit can find modules outside its own keg.
+    # This should avoid the need for writing env scripts that specify `LUA_PATH` or `LUA_CPATH`.
     inreplace "src/Makefile" do |f|
       f.change_make_var! "CC", ENV.cc
-      f.change_make_var! "CCOPT_x86", ""
+      f.gsub!(/-march=\w+\s?/, "")
+      f.gsub!(/^(  TARGET_XCFLAGS\+= -DLUA_ROOT=)\\"\$\(PREFIX\)\\"$/, "\\1\\\"#{HOMEBREW_PREFIX}\\\"")
     end
 
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
@@ -75,11 +75,13 @@ class Luajit < Formula
   end
 
   test do
-    system "#{bin}/luajit", "-e", <<~EOS
+    system bin/"luajit", "-e", <<~EOS
       local ffi = require("ffi")
       ffi.cdef("int printf(const char *fmt, ...);")
       ffi.C.printf("Hello %s!\\n", "#{ENV["USER"]}")
     EOS
+    # Check that LuaJIT can find its own `jit.*` modules
+    system bin/"luajit", "-l", "jit.bcsave", "-e", ""
   end
 end
 
