@@ -1,14 +1,13 @@
 class Matterbridge < Formula
   desc "Protocol bridge for multiple chat platforms"
   homepage "https://github.com/42wim/matterbridge"
-  url "https://github.com/42wim/matterbridge/archive/v1.23.2.tar.gz"
-  sha256 "5f00556b89855db7ce171c91552f51de1d053e463b8c858049a872fadd5c22a6"
+  url "https://github.com/42wim/matterbridge/archive/v1.24.0.tar.gz"
+  sha256 "65ee39770b4799ebbe6676206cae3d067b4c7ea29773a1e7fb26c657d4b151a6"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/matterbridge"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "41520d7a7fb4ef0cec3b0bb17b1988e83d01f9d0429100bc1e69991bd8e37ba1"
+    sha256 cellar: :any_skip_relocation, mojave: "da800035d043a45f892aa0998b259699fe38705579622e83956252a57f567130"
   end
 
   depends_on "go" => :build
