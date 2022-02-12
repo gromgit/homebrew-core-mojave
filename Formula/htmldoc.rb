@@ -1,15 +1,14 @@
 class Htmldoc < Formula
   desc "Convert HTML to PDF or PostScript"
   homepage "https://www.msweet.org/htmldoc/"
-  url "https://github.com/michaelrsweet/htmldoc/archive/v1.9.13.tar.gz"
-  sha256 "e020936267afe2c36d9cecd96a054994947207cbe231c94f59c98e08ca24dd37"
+  url "https://github.com/michaelrsweet/htmldoc/archive/v1.9.15.tar.gz"
+  sha256 "9dc88e5a2ce849105933c438bbe54f4383f0d1dadb494f52c6ec941317659431"
   license "GPL-2.0-only"
-  head "https://github.com/michaelrsweet/htmldoc.git"
+  head "https://github.com/michaelrsweet/htmldoc.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htmldoc"
-    rebuild 2
-    sha256 mojave: "d5970bc7226be7d8c446c7df5808a02b77a6b06f7ea7f7684410705cf7f4bb00"
+    sha256 mojave: "79b6fa74bb6a0a4230149ad5064473bc1e1627dd24f96bad0217a7d21dbfc209"
   end
 
   depends_on "pkg-config" => :build
