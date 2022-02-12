@@ -1,13 +1,13 @@
 class Macchina < Formula
   desc "System information fetcher, with an emphasis on performance and minimalism"
   homepage "https://github.com/Macchina-CLI/macchina"
-  url "https://github.com/Macchina-CLI/macchina/archive/v6.0.5.tar.gz"
-  sha256 "88de2c9718e071dcd9486cf1e7d87d46533100e589d99cd7b18ff43c21a8a053"
+  url "https://github.com/Macchina-CLI/macchina/archive/v6.0.6.tar.gz"
+  sha256 "da77e1899b13e4612b5ca6a22e8e266beabc734153e7a59c7c8b82c142510435"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/macchina"
-    sha256 cellar: :any_skip_relocation, mojave: "4ef2a4e83787467cbaf6637b830d2ba1d33a9ca97571730e95f1a25f9356fe3e"
+    sha256 cellar: :any_skip_relocation, mojave: "76ae07bbcbf0726165c7635cc666e4cb7a7703b240094e1bf6246cd8f5237ada"
   end
 
   depends_on "rust" => :build
