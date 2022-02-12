@@ -5,6 +5,7 @@ class Mame < Formula
   version "0.239"
   sha256 "120b4d679283ab2c7102b40fefc5165bfd9b8242fbbd5f9977d381cb65051d87"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/mamedev/mame.git", branch: "master"
 
   # MAME tags (and filenames) are formatted like `mame0226`, so livecheck will
@@ -19,7 +20,7 @@ class Mame < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mame"
-    sha256 cellar: :any, mojave: "d7283cd77bc1d5d28f5bf90190c16b988f568477452da866e3b79a50e82ad17e"
+    sha256 cellar: :any, mojave: "d94943beaf7fd7f9ea28d7f87a230f5783b89a788a6f1740d4482743e2674bbe"
   end
 
   depends_on "glm" => :build
