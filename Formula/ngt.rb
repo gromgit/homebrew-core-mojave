@@ -1,8 +1,8 @@
 class Ngt < Formula
   desc "Neighborhood graph and tree for indexing high-dimensional data"
   homepage "https://github.com/yahoojapan/NGT"
-  url "https://github.com/yahoojapan/NGT/archive/v1.13.7.tar.gz"
-  sha256 "d5fb51849eead3d4d442b1b6d352e2114bcc1bddea5b4578a06a19285fc5f224"
+  url "https://github.com/yahoojapan/NGT/archive/v1.13.8.tar.gz"
+  sha256 "cfb3225e88c414de77291927469659cef307fb6daa739cc8fe6465b578a1c5b8"
   license "Apache-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Ngt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ngt"
-    rebuild 2
-    sha256 cellar: :any, mojave: "9455f1e2928c29f13b0ba70bf7bb5209c9c9c21d41fb58dd19d88d13d3d4d61b"
+    sha256 cellar: :any, mojave: "b807e6cf775843c7a4b90cdb5a3ca38635a91712cd06ca4a2cb7ed16921aad8e"
   end
 
   depends_on "cmake" => :build
