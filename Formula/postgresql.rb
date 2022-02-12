@@ -1,10 +1,9 @@
 class Postgresql < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v14.1/postgresql-14.1.tar.bz2"
-  sha256 "4d3c101ea7ae38982f06bdc73758b53727fb6402ecd9382006fa5ecc7c2ca41f"
+  url "https://ftp.postgresql.org/pub/source/v14.2/postgresql-14.2.tar.bz2"
+  sha256 "2cf78b2e468912f8101d695db5340cf313c2e9f68a612fb71427524e8c9a977a"
   license "PostgreSQL"
-  revision 1
   head "https://github.com/postgres/postgres.git", branch: "master"
 
   livecheck do
@@ -14,8 +13,7 @@ class Postgresql < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql"
-    rebuild 2
-    sha256 mojave: "cd55edc06965a76bf85a2aa2a0dc5088771c29c9643cdcc033b82a726d1abe97"
+    sha256 mojave: "1504c5774c3be29febedbfbd5638d04167bd2e2b4dab3a37b99e0f09409cf389"
   end
 
   depends_on "pkg-config" => :build
