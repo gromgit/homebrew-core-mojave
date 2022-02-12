@@ -4,13 +4,11 @@ class Freerdp < Formula
   url "https://github.com/FreeRDP/FreeRDP/archive/2.4.0.tar.gz"
   sha256 "80eb7e09e2a106345d07f0985608c480341854b19b6f8fc653cb7043a9531e52"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 arm64_big_sur: "13930739489389e5ecad0f8afa3d05bf41698a01b880c561f0ad05e099a9a8f3"
-    sha256 big_sur:       "0350c39447e947f7d860d12d4658eb6481f1afa83316a84249cba336e1b79776"
-    sha256 catalina:      "02424460eacaf34e564f922c26e096c74a145fde68067cfd2f3426c811dc0b11"
-    sha256 mojave:        "8c029ee46cd1ea1662c5969858aadb78f2311f4cfe4397d5119ac94aa039a650"
-    sha256 x86_64_linux:  "a5c914c81394cb1c941d78ebfb2813ba94494af167d5bcb3d4e71cb3bfec10a1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freerdp"
+    sha256 mojave: "b2b0ad71c10991847f71209bc3196648513c03632c8d8df8f3659da35039ad45"
   end
 
   head do
