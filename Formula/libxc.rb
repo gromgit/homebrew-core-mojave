@@ -1,14 +1,13 @@
 class Libxc < Formula
   desc "Library of exchange and correlation functionals for codes"
   homepage "https://tddft.org/programs/libxc/"
-  url "https://gitlab.com/libxc/libxc/-/archive/5.1.7/libxc-5.1.7.tar.bz2"
-  sha256 "a1f8ffa50a6b06f20a1dd49bc54445799193f4e7d297052caad39cff47cea8b4"
+  url "https://gitlab.com/libxc/libxc/-/archive/5.2.2/libxc-5.2.2.tar.bz2"
+  sha256 "484115929674d7b85d9361f4f8a821e3d1c6024e31b8fa41df916c09799891a9"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxc"
-    rebuild 2
-    sha256 cellar: :any, mojave: "ba8c69271b6d7b985d943d4b63f28ad4565366fa7e3d397bb7b0c39eeca5d8ef"
+    sha256 cellar: :any, mojave: "d1904c66d7296ebe630d40c1eec557e6523ed8069ce2e13ecb4dc3eace0774b5"
   end
 
   depends_on "autoconf" => :build
