@@ -13,7 +13,8 @@ class Duck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duck"
-    sha256 cellar: :any, mojave: "704f03dfe12e014e376fe065526a8e4932ba2259f460f6fe68b8d77e3cdfab8a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "86bff0cb7a945d114a6abbf74d5305c238575613d5eafe6ef6f05e54746f8e43"
   end
 
   depends_on "ant" => :build
@@ -39,8 +40,8 @@ class Duck < Formula
   end
 
   resource "jna" do
-    url "https://github.com/java-native-access/jna/archive/refs/tags/5.8.0.tar.gz"
-    sha256 "97680b8ddb5c0f01e50f63d04680d0823a5cb2d9b585287094de38278d2e6625"
+    url "https://github.com/java-native-access/jna/archive/refs/tags/5.10.0.tar.gz"
+    sha256 "6ef63cbf6ff7c8eea7d72331958e79c9fd3635c987ce419c9f296db6c4fd66a4"
   end
 
   resource "rococoa" do
