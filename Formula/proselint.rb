@@ -6,15 +6,15 @@ class Proselint < Formula
   url "https://files.pythonhosted.org/packages/a2/be/2c1bcc43d85b23fe97dae02efd3e39b27cd66cca4a9f9c70921718b74ac2/proselint-0.13.0.tar.gz"
   sha256 "7dd2b63cc2aa390877c4144fcd3c80706817e860b017f04882fbcd2ab0852a58"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/amperser/proselint.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proselint"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c6d85f2b1902333d078a7891c20178d85fe8d2cb519230e58046e3dbf761ed8e"
+    sha256 cellar: :any_skip_relocation, mojave: "ad61985d0c9d1953a3036e785558032a9c3959531e25b61439bb680166c54eb9"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "click" do
