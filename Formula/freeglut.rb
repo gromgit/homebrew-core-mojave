@@ -1,20 +1,13 @@
 class Freeglut < Formula
   desc "Open-source alternative to the OpenGL Utility Toolkit (GLUT) library"
   homepage "https://freeglut.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/freeglut/freeglut/3.2.1/freeglut-3.2.1.tar.gz"
-  sha256 "d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68"
+  url "https://downloads.sourceforge.net/project/freeglut/freeglut/3.2.2/freeglut-3.2.2.tar.gz"
+  sha256 "c5944a082df0bba96b5756dddb1f75d0cd72ce27b5395c6c1dde85c2ff297a50"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "b2ba809784fa9d9aa7364b8a9bfa7604f03db29ee33b8f471327cf676e26a6a9"
-    sha256 cellar: :any,                 arm64_big_sur:  "203bade82803af2a0b0fae9e3049ed61d9a4e1f4f6efd42fc6160c7296a54f2e"
-    sha256 cellar: :any,                 monterey:       "3e7c1021010984328014280c1e734e69fbcd7b41882c9c8e3697d827be972b90"
-    sha256 cellar: :any,                 big_sur:        "078bc333780fea9d4dd745529c91326a3ea4bcd393c18a0d817fd7870d90b7a2"
-    sha256 cellar: :any,                 catalina:       "21e92d3aa8a1615937c6776292dd823912220d272a4a437f66917d1e6dd0b655"
-    sha256 cellar: :any,                 mojave:         "8d71afe59334afe060d513d68e8c76b3fc0927cf05d61b146dd1444c66d5db35"
-    sha256 cellar: :any,                 high_sierra:    "0a30955c90e594481f1ebf4dd218065768386704e2fdcdc0aae45055171dfd2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b6950bd59195ef3256e524f3b78fcc01f0a79c8f43f83346b285154b773d4b9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeglut"
+    sha256 cellar: :any, mojave: "e1ba405f1f88d29769a0fda7f03ffffa28ea2df8007a3ee95d03f4c5121d3b5f"
   end
 
   depends_on "cmake" => :build
