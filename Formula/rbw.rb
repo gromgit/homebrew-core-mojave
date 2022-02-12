@@ -1,14 +1,14 @@
 class Rbw < Formula
   desc "Unoffical Bitwarden CLI client"
   homepage "https://github.com/doy/rbw"
-  url "https://github.com/doy/rbw/archive/refs/tags/1.4.1.tar.gz"
-  sha256 "70c55c1341f4181f8974f99ec24ee1caf918487135cfa578566d9e6c44eb47b0"
+  url "https://github.com/doy/rbw/archive/refs/tags/1.4.3.tar.gz"
+  sha256 "2738aa6e868bf16292fcad9c9a45c60fe310d2303d06aea7875788bacda9b15b"
   license "MIT"
   head "https://github.com/doy/rbw.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbw"
-    sha256 cellar: :any_skip_relocation, mojave: "68c1d6e9e38aa97a8197c7017a06fe63b76aed2ca02851b4596b7c25c1550f4f"
+    sha256 cellar: :any_skip_relocation, mojave: "3cde149eeddfe6744b4ccbdb8314db60a3c75eab63656170d7e4787d2b1654a9"
   end
 
   depends_on "rust" => :build
