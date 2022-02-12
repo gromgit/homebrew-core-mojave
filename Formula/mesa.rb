@@ -3,14 +3,14 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-21.3.5.tar.xz"
-  sha256 "d93b2a9d2464ee856d7637a07dff6b7cd950f295ad58518bb959f76882cf4a4c"
+  url "https://mesa.freedesktop.org/archive/mesa-21.3.6.tar.xz"
+  sha256 "96bb761fd546e9aa41d025fcc025225c5668443839dae21e3731959beb096736"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    sha256 mojave: "51765a5f723aebf0f1e2d205a05a46529e88c0959a6e239909c22dd0b31d196d"
+    sha256 mojave: "182de800a40413d25ce1a0f4c0bf8ec92297d35401f96f4ffad936ee32c3ae61"
   end
 
   depends_on "meson" => :build
