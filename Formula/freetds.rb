@@ -4,8 +4,8 @@ class Freetds < Formula
   license "LGPL-2.0-or-later"
 
   stable do
-    url "https://www.freetds.org/files/stable/freetds-1.3.6.tar.gz", using: :homebrew_curl
-    sha256 "8bde8865b11581b0860459b85d35c529646258a85f93e3f52b0a6f9933d865aa"
+    url "https://www.freetds.org/files/stable/freetds-1.3.9.tar.gz", using: :homebrew_curl
+    sha256 "923dff0c8cf258ef33d661d71bf431ffb55218f14e0026f75d361951c2e92dbb"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -21,7 +21,7 @@ class Freetds < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freetds"
-    sha256 mojave: "c4144b0e0f6a6d13d0e437ac6612dedafc053c47be7f16cfa42f90a478ec3df3"
+    sha256 mojave: "cdcf96436f259c07c567dbfd1708e49935a8fd7683f3f51ba355276967ac137b"
   end
 
   head do
