@@ -4,16 +4,11 @@ class Mailcatcher < Formula
   url "https://github.com/sj26/mailcatcher/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "c40105f63407efc3fb18c2b1e2408896e4b86b0c8ba4e53ea17e087cbb2d7fee"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256                               arm64_monterey: "32c49b506e2771bdf2eb811ab8c2da89ee76a9066dfcf8dda3a1b7a5b4718153"
-    sha256                               arm64_big_sur:  "6e1c1a2648d208d664a3c80533a895e4ad2fddb0f89cd8076a99ed52f7216fbe"
-    sha256                               monterey:       "834f848725bfbb00b0d3f09b3be0627af558e4e134bece311e0ba3e38faa0b2e"
-    sha256                               big_sur:        "f66c059ff505ac51846dd6a749e9b76a3f734b603e620d0612a00ae834bb9ad7"
-    sha256                               catalina:       "30ab2a3c7040c47eaf0463fb98ca112eb78eeadcb5330363e80388ea1c5e0816"
-    sha256                               mojave:         "508b814f8c365c9cb0cf0fcdd94eecdb4cfc4bda6a9e165082c10304b558bec8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99095d3f11a9228cf71d4f9a4e29eebf6f13390c60591321964c1bb5e12af1f3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mailcatcher"
+    sha256 mojave: "57974d85cb85bc43b66b46f10e0fd21e77646fbff0046549d027116fe22b2ffe"
   end
 
   depends_on "pkg-config" => :build
