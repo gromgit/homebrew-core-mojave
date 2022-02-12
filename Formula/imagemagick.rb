@@ -1,8 +1,8 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-22.tar.xz"
-  sha256 "8b02ffda73a0163a8341638b5603d955ff7258798d8d0194577ffa928cbb97a8"
+  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-23.tar.xz"
+  sha256 "7a0d8b4bab482fb52dd585d30060b7a6ab2427fd305b6aa545b5c2f62431ff6b"
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Imagemagick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick"
-    sha256 mojave: "33c44c6a30c3309d438e496d181052889d6d842e75af1fd0fdd6cb8cc27c664b"
+    sha256 mojave: "ccc8b1e5a3be56cd9d3ca6857b0119d9886353826dd63046bdfd64e4ce8b5d51"
   end
 
   depends_on "pkg-config" => :build
