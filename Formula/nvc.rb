@@ -1,13 +1,13 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://github.com/nickg/nvc"
-  url "https://github.com/nickg/nvc/releases/download/r1.6.0/nvc-1.6.0.tar.gz"
-  sha256 "1e93e461b53261254b123ed0a88ba72316ed61d9985bb4439a473bd08b81da88"
+  url "https://github.com/nickg/nvc/releases/download/r1.6.1/nvc-1.6.1.tar.gz"
+  sha256 "d41c501b3bb3be8030ef07ceabc3f95c29ab169495af6a8cf2ba665ad84eb5c5"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nvc"
-    sha256 mojave: "3f1713d1f5ee1984aca76aeabc6d8679fc1c8632e172141a6fa15de5c36b0805"
+    sha256 mojave: "c4ea1a7cb5c61d35b0d8ad17831279fff359d7dea4e4f0b73bdf1a79b02e14dc"
   end
 
   head do
