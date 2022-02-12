@@ -3,13 +3,13 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/18/29/1cca5ec25567ac6edd52d5c486137078f598641a02eb76d608ed4ec99b76/locust-2.7.2.tar.gz"
-  sha256 "6123af7d115e90e364a9b26b186ebbeeb28d4d2bc80a0c35ff05ad5dde5084da"
+  url "https://files.pythonhosted.org/packages/13/65/6c822bd269712df9c47350b5e5eb03976e934aaacac948c8a594ec357491/locust-2.7.3.tar.gz"
+  sha256 "7b3b14dfb28d28bada51cb672f6f19640c8dba3beaa781ee070e34e72ffebf95"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/locust"
-    sha256 cellar: :any_skip_relocation, mojave: "9d200037bf3eb9d95f1d80fcfa279f3a5cc7e6c84730e2fad5b9aeecd3d0eb2a"
+    sha256 cellar: :any_skip_relocation, mojave: "17a6c96de3e437ec7d7db26e628a00158a876368e546d4e1f04b822aef6e7627"
   end
 
   depends_on "python@3.10"
