@@ -4,10 +4,9 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v0.44.0",
-      revision: "ee84bd93b7e0ef802963503a34783772e31eb10e"
+      tag:      "v1.0.8",
+      revision: "a6836be251e216f9967183a7551cc6ccb2a60382"
   license "BSD-3-Clause"
-  revision 3
 
   livecheck do
     url :stable
@@ -16,7 +15,7 @@ class Mavsdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mavsdk"
-    sha256 cellar: :any, mojave: "65b236a4a440b3098c8f70a9b785722701ecb91ca95ceb603e753496bd84c689"
+    sha256 cellar: :any, mojave: "a7440bb9a220eafdf61fb056f44f354486cba4b5771e405706ac4a28c93311dd"
   end
 
   depends_on "cmake" => :build
@@ -56,8 +55,8 @@ class Mavsdk < Formula
   # These resources are needed to install protoc-gen-mavsdk, which we use to regenerate protobuf headers.
   # This is needed when brewed protobuf is newer than upstream's vendored protobuf.
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/39/11/8076571afd97303dfeb6e466f27187ca4970918d4b36d5326725514d3ed3/Jinja2-3.0.1.tar.gz"
-    sha256 "703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4"
+    url "https://files.pythonhosted.org/packages/91/a5/429efc6246119e1e3fbf562c00187d04e83e54619249eb732bb423efa6c6/Jinja2-3.0.3.tar.gz"
+    sha256 "611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"
   end
 
   resource "MarkupSafe" do
@@ -119,7 +118,7 @@ class Mavsdk < Formula
                     "-I#{include}", "-L#{lib}", "-lmavsdk"
     assert_match "v#{version}-#{tap.user}", shell_output("./test").chomp
 
-    assert_equal "Usage: #{bin}/mavsdk_server [-h | --help]",
+    assert_equal "Usage: #{bin}/mavsdk_server [Options] [Connection URL]",
                  shell_output("#{bin}/mavsdk_server --help").split("\n").first
   end
 end
