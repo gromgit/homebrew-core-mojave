@@ -2,8 +2,8 @@ class HasteClient < Formula
   desc "CLI client for haste-server"
   homepage "https://hastebin.com/"
   license "MIT"
-  revision 5
-  head "https://github.com/seejohnrun/haste-client.git"
+  revision 6
+  head "https://github.com/seejohnrun/haste-client.git", branch: "master"
 
   stable do
     url "https://github.com/seejohnrun/haste-client/archive/v0.2.3.tar.gz"
@@ -18,14 +18,8 @@ class HasteClient < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "46460dfe45de7b60b0d9c164f605983e912a42e6bb9278b7e278c1774a041b78"
-    sha256 cellar: :any_skip_relocation, big_sur:       "cc90f925bb8d3c217849d04d57ba540cfd1859a555ae78fb89a3d500c61c5e4a"
-    sha256 cellar: :any_skip_relocation, catalina:      "d7b5efc8934cbfb2534db7db7b8418142472f980b8f4165c317ab51cc4f14824"
-    sha256 cellar: :any_skip_relocation, mojave:        "c38551ce841f7a3cd825e1ae20b774836aba13fe6e129c1539eadde9b9e64a02"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "a97b7aaf38ec730bffa45ffc073ccf4921b4e5714069a21bf63e682a9d21527e"
-    sha256 cellar: :any_skip_relocation, sierra:        "746af59be7c010e6e13b67d1f98766c0237061eabca601e5f0cad935e1c648bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "675af7af84034776b319fa54375925a68641973c22b22792e5cb4136f3500051"
-    sha256 cellar: :any_skip_relocation, all:           "7ec8f638454dcbf5cdfe7b7e5c3cdbeb0fc6b1de76158f53f32751cb30a1c3a6"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haste-client"
+    sha256 cellar: :any_skip_relocation, mojave: "318f705ff8b93f20134d173bce3a92f1cca8dadbf22ebef4bf320de43feb257d"
   end
 
   depends_on "ruby" if MacOS.version <= :sierra
