@@ -6,15 +6,14 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/50/0c/bcc0913772484a46edbf2f6544e2fb651ea8188e268767f21bbd2415ee3b/howdoi-2.0.19.tar.gz"
   sha256 "4baa5270a98e9d001094d873a5a1b6a32eac021009cfc40cd9aeede633cb7556"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/howdoi"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "acb9a78b07fab7a92385d01d1b430c9d7718de88bf39f3f3806681d3ce79d391"
+    sha256 cellar: :any_skip_relocation, mojave: "333b3f41a794977d1db43e0bbff68debd3e6830693ab198f1e15f08b56db5d82"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   uses_from_macos "libxml2"
