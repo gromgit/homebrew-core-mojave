@@ -1,14 +1,14 @@
 class Duf < Formula
   desc "Disk Usage/Free Utility - a better 'df' alternative"
   homepage "https://github.com/muesli/duf"
-  url "https://github.com/muesli/duf/archive/v0.8.0.tar.gz"
-  sha256 "6b483e68ec783821d07f03cb85629832b8c6f302a7d1bca25af142f891381e8b"
+  url "https://github.com/muesli/duf/archive/v0.8.1.tar.gz"
+  sha256 "ebc3880540b25186ace220c09af859f867251f4ecaef435525a141d98d71a27a"
   license "MIT"
   head "https://github.com/muesli/duf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duf"
-    sha256 cellar: :any_skip_relocation, mojave: "eab2485bf3467c0be77983348430656856faad10d6b8b2947162bd6448c15536"
+    sha256 cellar: :any_skip_relocation, mojave: "3c21e47dd0b481fd42a8da9acd9abdd838d4ef03ccd9936904cb63ed357cab47"
   end
 
   depends_on "go" => :build
