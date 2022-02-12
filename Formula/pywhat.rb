@@ -6,14 +6,15 @@ class Pywhat < Formula
   url "https://files.pythonhosted.org/packages/ae/31/57bb23df3d3474c1e0a0ae207f8571e763018fa064823310a76758eaef81/pywhat-5.1.0.tar.gz"
   sha256 "8a6f2b3060f5ce9808802b9ca3eaf91e19c932e4eaa03a4c2e5255d0baad85c4"
   license "MIT"
+  revision 1
   head "https://github.com/bee-san/pyWhat.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pywhat"
-    sha256 cellar: :any_skip_relocation, mojave: "7bbd785ef4a0efaa11c67528a3e41c646e333841dd4eada3435ee9c443bd4198"
+    sha256 cellar: :any_skip_relocation, mojave: "f199642997641f61ed0266a1f431d98bd057e88d1a776bbde37f382e36946b6d"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "click" do
