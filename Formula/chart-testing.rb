@@ -9,12 +9,14 @@ class ChartTesting < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chart-testing"
-    sha256 cellar: :any_skip_relocation, mojave: "c018f6b2e38ba7678781248ccf2db2f35d69e51e676065de6f38105d39bd0284"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c00caf84492dd69e6725b0c489896a56b7d09c4d60f4481cdc219882c32cbe54"
   end
 
   depends_on "go" => :build
   depends_on "helm" => :test
   depends_on "yamllint" => :test
+  depends_on "yamale"
 
   def install
     # Fix default search path for configuration files, needed for ARM
