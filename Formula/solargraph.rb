@@ -6,11 +6,11 @@ class Solargraph < Formula
       tag:      "v0.44.2",
       revision: "e50a6dc4b43e2183e245aded8d23f0003d8c6bf7"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solargraph"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8b8e8cc775772971ab6e989413f3118575168272eb613ba7d9f9bac2df2588a7"
+    sha256 cellar: :any, mojave: "558e9ab54153014d11364590682582cb98cf48304d7f4c0386847c96036ff9fe"
   end
 
   uses_from_macos "ruby", since: :catalina
