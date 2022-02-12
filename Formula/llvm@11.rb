@@ -5,7 +5,7 @@ class LlvmAT11 < Formula
   sha256 "74d2529159fd118c3eac6f90107b5611bccc6f647fdea104024183e8d5e25831"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 3
+  revision 4
 
   # This should be removed when LLVM 13 is released, so we only check the
   # current version (the `llvm` formula) and one major version before it
@@ -16,13 +16,8 @@ class LlvmAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "a0eef7340eed1570d0585eb89935f92cb9c30dc1bbee28c24750267784ddbb9c"
-    sha256 cellar: :any,                 arm64_big_sur:  "0441f32a33dc14393118ff9d047af44d8fa7b87648b09c1e2ffa5c69d3d0c032"
-    sha256 cellar: :any,                 monterey:       "2e2df0f2643ff97e9b3f7d87c610cf76b116d1b82d31e307473e1e8347ecacb6"
-    sha256 cellar: :any,                 big_sur:        "8b9e7e448f801daad56d3180cccf190486bd785c551aeb37300a5296f1d9e81b"
-    sha256 cellar: :any,                 catalina:       "47e26656712ba5efa159d2f42334972bf8c510ffa48f0c6ff35d8e55af1b9d94"
-    sha256 cellar: :any,                 mojave:         "c7cd19b7849a499acd3d68648fadf9c8283ce47bd1706931c2f3223e8c97d8ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fefecb000c832d751022756e68888df5bacce3dcd442515573b080c46859834"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm@11"
+    sha256 cellar: :any, mojave: "2886e22cc371680c08b95cdcbd4032f13cdfecfd1836da79219c7a6acac103f1"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -35,7 +30,7 @@ class LlvmAT11 < Formula
   # See: Homebrew/homebrew-core/issues/35513
   depends_on "cmake" => :build
   depends_on "swig" => :build
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   uses_from_macos "libedit"
   uses_from_macos "libffi", since: :catalina
