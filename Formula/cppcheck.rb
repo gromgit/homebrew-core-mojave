@@ -1,14 +1,14 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https://sourceforge.net/projects/cppcheck/"
-  url "https://github.com/danmar/cppcheck/archive/2.6.3.tar.gz"
-  sha256 "7a49ebb7a54356ade09867f466cb41ee4020ebf3732582762669e5c8903f16c8"
+  url "https://github.com/danmar/cppcheck/archive/2.7.tar.gz"
+  sha256 "5fd20549bb2fabf9a8026f772779d8cc6a5782c8f17500408529f7747afbc526"
   license "GPL-3.0-or-later"
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppcheck"
-    sha256 mojave: "5f86882ffa8d96c50ed7fb64756dd8344963474c548471dec2798eeb020a68c3"
+    sha256 mojave: "433ed68a94d09b26f84558996c1672a1ec95ebc396818a806d98e8e3a147fbd8"
   end
 
   depends_on "cmake" => :build
