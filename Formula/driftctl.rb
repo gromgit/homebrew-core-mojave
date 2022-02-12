@@ -1,13 +1,13 @@
 class Driftctl < Formula
   desc "Detect, track and alert on infrastructure drift"
   homepage "https://driftctl.com"
-  url "https://github.com/snyk/driftctl/archive/v0.19.0.tar.gz"
-  sha256 "7e6b64ca62ebc6ca2780f3bc2e49803961f1ed8b6819a641b214460f1c8ebcb0"
+  url "https://github.com/snyk/driftctl/archive/v0.20.0.tar.gz"
+  sha256 "5b5d849b558c97e41fb7aaab4a7692fb0d6569fd8e9bca7c8b553f24d3f2fb41"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/driftctl"
-    sha256 cellar: :any_skip_relocation, mojave: "4a92b5a8dfdfef66a7386bb8c212cdb7eb8bb79879b59c600459af5f69de0d9b"
+    sha256 cellar: :any_skip_relocation, mojave: "b6251b90a9a10b22d86d08a9ba4d0af643e760f8ee166ecf131026198fe465b1"
   end
 
   depends_on "go" => :build
