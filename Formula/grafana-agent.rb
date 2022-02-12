@@ -1,13 +1,13 @@
 class GrafanaAgent < Formula
   desc "Exporter for Prometheus Metrics, Loki Logs, and Tempo Traces"
   homepage "https://grafana.com/docs/agent/"
-  url "https://github.com/grafana/agent/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "d941335c83308e38afbec46f2d93082ac51cdfa6b975c0faaf2998aa938c3160"
+  url "https://github.com/grafana/agent/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "0de47be2e96fff1ddf55de6f53bff301a55b3a142af40bfb934c8c8b5189e9b3"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana-agent"
-    sha256 cellar: :any_skip_relocation, mojave: "bfc0081b1320bc34bcba3cd0782a88ec3df2f94a9784ed93eb6114c3a7bfce0a"
+    sha256 cellar: :any_skip_relocation, mojave: "6935fdb0b44fa438d77f173f9a06be1bba590d220515ff2fcf1aaa9014f74efb"
   end
 
   depends_on "go" => :build
