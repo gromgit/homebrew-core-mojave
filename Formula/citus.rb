@@ -8,7 +8,8 @@ class Citus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/citus"
-    sha256 cellar: :any, mojave: "f42b7360362432a205c72f6f061b1063c8944608c8e8246b0304179556eee525"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b3246d144bb900c6beefaa755a58d4dae686e965ab5f83aaa6b09b95d5a7fc16"
   end
 
   depends_on "lz4"
@@ -16,12 +17,14 @@ class Citus < Formula
   depends_on "readline"
   depends_on "zstd"
 
+  uses_from_macos "curl"
+
   def install
     ENV["PG_CONFIG"] = Formula["postgresql"].opt_bin/"pg_config"
 
     system "./configure"
 
-    # workaround for https://github.com/Homebrew/homebrew/issues/49948
+    # workaround for https://github.com/Homebrew/legacy-homebrew/issues/49948
     system "make", "libpq=-L#{Formula["postgresql"].opt_lib} -lpq"
 
     # Use stage directory to prevent installing to pg_config-defined dirs,
@@ -29,9 +32,9 @@ class Citus < Formula
     mkdir "stage"
     system "make", "install", "DESTDIR=#{buildpath}/stage"
 
-    bin.install Dir["stage/**/bin/*"]
-    lib.install Dir["stage/**/lib/*"]
-    include.install Dir["stage/**/include/*"]
-    (share/"postgresql/extension").install Dir["stage/**/share/postgresql/extension/*"]
+    path = File.join("stage", HOMEBREW_PREFIX)
+    lib.install (buildpath/path/"lib").children
+    include.install (buildpath/path/"include").children
+    (share/"postgresql/extension").install (buildpath/path/"share/postgresql/extension").children
   end
 end
