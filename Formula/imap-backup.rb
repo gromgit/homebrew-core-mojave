@@ -1,13 +1,13 @@
 class ImapBackup < Formula
   desc "Backup GMail (or other IMAP) accounts to disk"
   homepage "https://github.com/joeyates/imap-backup"
-  url "https://github.com/joeyates/imap-backup/archive/refs/tags/v4.2.2.tar.gz"
-  sha256 "fb52fa67ffa6cae2452777f056c6930b194610b9ffc75d04d0b1db8de5e79d19"
+  url "https://github.com/joeyates/imap-backup/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "28792919b3d734d05ea5af750bf22fe2a5ccebadd20f4a6339b8c498e29a5ca2"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imap-backup"
-    sha256 cellar: :any_skip_relocation, mojave: "27915190ca7ee931bc7d46fb8ae0227eb286790e6d4c8e48f55390c7892699f6"
+    sha256 cellar: :any_skip_relocation, mojave: "53e2ea03880b48de42fd0c11ade5b6e40cae6cf0c84d4c10ab3dbae203671ad7"
   end
 
   uses_from_macos "ruby", since: :catalina
