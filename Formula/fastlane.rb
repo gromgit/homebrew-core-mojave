@@ -4,6 +4,7 @@ class Fastlane < Formula
   url "https://github.com/fastlane/fastlane/archive/2.204.2.tar.gz"
   sha256 "2c48f006b69ebe7be8632f08562f6260b0d34735daeb45f93e3c1783ebd3debb"
   license "MIT"
+  revision 1
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Fastlane < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastlane"
-    sha256 cellar: :any, mojave: "c8264a5d08ac45aad132f3bcf7e95a728adc5daf646c05fe82b888220d393186"
+    sha256 cellar: :any, mojave: "26abe0dee9eb6350b5fe0ec317a8fddbf544bb1583493ef08a52576c4af93cc6"
   end
 
   depends_on "ruby"
