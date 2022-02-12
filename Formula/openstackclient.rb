@@ -6,11 +6,11 @@ class Openstackclient < Formula
   url "https://files.pythonhosted.org/packages/33/fb/1b529a396e56e258bc6bfb49c0d1be3792aea7f6e0570c908bc0641df2ed/python-openstackclient-5.7.0.tar.gz"
   sha256 "c65e3d51018f193cce2daf3d0fd69daa36003bdb2b85df6b07b973e4c39e2f92"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openstackclient"
-    sha256 cellar: :any, mojave: "9c7184b9bc689d2a47172ed7cee366a486b313cbf4a27ece8031d0b019c984b4"
+    sha256 cellar: :any, mojave: "9ecdbec0cae7bb10baf2dc85a152457b7369d91d74fbecf5234a206a488f08b9"
   end
 
   depends_on "rust" => :build
@@ -223,8 +223,8 @@ class Openstackclient < Formula
   end
 
   resource "python-heatclient" do
-    url "https://files.pythonhosted.org/packages/b1/68/3b8e2c058a6484b89eac6930947892789c1e0120f4fe9b8d95f850f59f6f/python-heatclient-2.4.0.tar.gz"
-    sha256 "b53529eb73f08c384181a580efaa42293cc35e0e1ecc4b0bc14a5c7b202019bb"
+    url "https://files.pythonhosted.org/packages/b3/48/a1400b21fe151a4cac4d664cdbf043255e164dbf97600dab79838e6c8815/python-heatclient-2.5.0.tar.gz"
+    sha256 "b610748eb3f18f6bd762e0808accdf872308289a77c3b19ed2d8b9f306393a42"
   end
 
   resource "python-keystoneclient" do
