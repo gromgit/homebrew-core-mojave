@@ -1,14 +1,13 @@
 class Delve < Formula
   desc "Debugger for the Go programming language"
   homepage "https://github.com/go-delve/delve"
-  url "https://github.com/go-delve/delve/archive/v1.7.3.tar.gz"
-  sha256 "961642eb4cd97e11093dda81273971a45e64abb2fe7db39165072c7145f4fcec"
+  url "https://github.com/go-delve/delve/archive/v1.8.1.tar.gz"
+  sha256 "e5b2ec78add2a167e1fdc11e3e189dec1bbed2cd9b6e99b3d79c0630b4b83e37"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/delve"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "e6c02b207adb75710c431ea8410a6e728e082611ee24e87178e25c32dbcc2d29"
+    sha256 cellar: :any_skip_relocation, mojave: "0645b63771d177d2b210936993a3a7b088b58ccd53c411c6397e3ef7210bbaf5"
   end
 
   depends_on "go" => :build
