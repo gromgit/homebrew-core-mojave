@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://github.com/watchexec/watchexec"
-  url "https://github.com/watchexec/watchexec/archive/cli-v1.18.5.tar.gz"
-  sha256 "ae4b2ab209e342c981ab186e3581b95f7c43856aef037196747b6e4c33f8f3e1"
+  url "https://github.com/watchexec/watchexec/archive/cli-v1.18.6.tar.gz"
+  sha256 "d5cfd45ba05ac380e8ff7c3122d38b408a1cdb550c71036739f8c03a51117e84"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Watchexec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/watchexec"
-    sha256 cellar: :any_skip_relocation, mojave: "8b90b719056790d8acf6c07cdd9512be4bd6f5067d6447777c382498d00848a8"
+    sha256 cellar: :any_skip_relocation, mojave: "44d611abcaf38110e73f7d9fa1f186569f99e0d0d647eb0d58e07eff1f3ef211"
   end
 
   depends_on "rust" => :build
