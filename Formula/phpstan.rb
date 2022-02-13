@@ -1,13 +1,13 @@
 class Phpstan < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://github.com/phpstan/phpstan"
-  url "https://github.com/phpstan/phpstan/releases/download/1.4.2/phpstan.phar"
-  sha256 "3aab5cfc056d67db7e3dec6d23504ca8a3713e43b8f106403cbfd306b0dd8f20"
+  url "https://github.com/phpstan/phpstan/releases/download/1.4.6/phpstan.phar"
+  sha256 "875f6b144b3b56b765c464b5a9e6099cee5a41a2b3a4565376c3768771e69b4c"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phpstan"
-    sha256 cellar: :any_skip_relocation, mojave: "f5a3a6d510fa0126b7d933401a016e998532966d5486b601097c16ab186c0611"
+    sha256 cellar: :any_skip_relocation, mojave: "9ef25bd65a32c00dc3ab155fc9ec92a71725b052f406b9e1c3542c696a96087c"
   end
 
   depends_on "php" => :test
