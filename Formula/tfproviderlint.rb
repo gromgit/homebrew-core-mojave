@@ -1,14 +1,14 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Lint Tool"
   homepage "https://github.com/bflad/tfproviderlint"
-  url "https://github.com/bflad/tfproviderlint/archive/v0.28.0.tar.gz"
-  sha256 "ee30f1a621cfaeceea00a83a45dd6704ad186aa10954324cbd88200abd27d9aa"
+  url "https://github.com/bflad/tfproviderlint/archive/v0.28.1.tar.gz"
+  sha256 "df66a164256ffbacbb260e445313c0666bb14ce4b8363f123903259ecc0f4eb5"
   license "MPL-2.0"
   head "https://github.com/bflad/tfproviderlint.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfproviderlint"
-    sha256 cellar: :any_skip_relocation, mojave: "bd2b8f1df1e855f45d14516c9bdd1076ca85dc2c668472f50c16a9ef982ac59f"
+    sha256 cellar: :any_skip_relocation, mojave: "2e0026ad21a957b1c081f57bcb8d288d25e1d87dc4a306a88574907922ffa6b5"
   end
 
   depends_on "go" => [:build, :test]
