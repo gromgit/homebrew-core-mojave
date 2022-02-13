@@ -3,15 +3,14 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https://github.com/Fortran-FOSS-Programmers/ford"
-  url "https://files.pythonhosted.org/packages/e0/1c/5d81ac365a32d2865dfcda360f5d739ce6f7d98255616a77ad55b930ba03/FORD-6.1.6.tar.gz"
-  sha256 "c286206e6ce8c12f2e00f6c73e3b76dae830dce7b5b6f52a54512585fcfae12a"
+  url "https://files.pythonhosted.org/packages/48/b9/bc941c3a50a8c1d876a74587c60b4ff2767e755bae9a65a13036ec000edf/FORD-6.1.8.tar.gz"
+  sha256 "64535c50f57a0630b642e125f046e74f3603d6d7d2813aed8b5ee46fbbe4f33c"
   license "GPL-3.0-or-later"
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ford"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5e93e0bc3950ceacb6cc72a1da85c394b7c4d412470b4819b29f65b46eeddebf"
+    sha256 cellar: :any_skip_relocation, mojave: "71c90b421c979b8755b39a469c354d9c94e97199bd90a4e9db073ce27592690f"
   end
 
   depends_on "graphviz"
@@ -88,7 +87,7 @@ class Ford < Formula
   def install
     virtualenv_install_with_resources
     doc.install "2008standard.pdf", "2003standard.pdf"
-    pkgshare.install "example-project-file.md"
+    pkgshare.install "example/example-project-file.md"
   end
 
   test do
