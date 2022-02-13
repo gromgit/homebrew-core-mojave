@@ -1,8 +1,8 @@
 class GitCredentialLibsecret < Formula
   desc "Git helper for accessing credentials via libsecret"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.34.1.tar.xz"
-  sha256 "3a0755dd1cfab71a24dd96df3498c29cd0acd13b04f3d08bf933e81286db802c"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.1.tar.xz"
+  sha256 "d768528e6443f65a203036266f1ca50f9d127ba89751e32ead37117ed9191080"
   license "GPL-2.0-or-later"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -12,8 +12,7 @@ class GitCredentialLibsecret < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-credential-libsecret"
-    rebuild 3
-    sha256 cellar: :any, mojave: "c42dd871bcdbab981b6a8c79f3432f17bbd70b9b23b31c411c9948596414305b"
+    sha256 cellar: :any, mojave: "1ac78c5a9733881f0ab7eaa81d72cfc934bb710755e6f11638178c0837e73bce"
   end
 
   depends_on "pkg-config" => :build
