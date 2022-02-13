@@ -4,16 +4,17 @@ class Scrcpy < Formula
   url "https://github.com/Genymobile/scrcpy/archive/v1.22.tar.gz"
   sha256 "96af955957f354cca78971be0fb54dfbd86a5b520f98a2563d3f0b0a54f4ec5a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scrcpy"
-    sha256 mojave: "57f3875a483471ad7ab95a9086722bd991c9400ecdb09ad4d3302467e2b9e790"
+    sha256 mojave: "638df7125232be698a32a1663865fcd708a111b65b01ad71231e1ec6c0060ada"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@4"
   depends_on "sdl2"
 
   on_linux do
