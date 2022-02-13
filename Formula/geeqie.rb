@@ -1,8 +1,8 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
   homepage "https://www.geeqie.org/"
-  url "https://github.com/BestImageViewer/geeqie/releases/download/v1.6/geeqie-1.6.tar.xz"
-  sha256 "48f8a4474454d182353100e43878754b76227f3b8f30cfc258afc9d90a4e1920"
+  url "https://github.com/BestImageViewer/geeqie/releases/download/v1.7.2/geeqie-1.7.2.tar.xz"
+  sha256 "186c10fae05dd81783f5218432e777cae2e9579ce884e65afa0884c357192269"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,8 @@ class Geeqie < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "9fc6cb5e50ff817eee866d888233ef1ba570381dffde40232e965add2981bb8a"
-    sha256 arm64_big_sur:  "72e256d7f4fe30fba145294fe3c12853259233e4bdf2582cc8f1e8a1032b952b"
-    sha256 monterey:       "0e47fbb798d89b724a8fa5f40b6d195ed25ac69fe871b7e7e34376cde2c5304d"
-    sha256 big_sur:        "2aa83988145308caaa7bdd49b0fabfff7e2b7805c988f4cb5a782696355d53e7"
-    sha256 catalina:       "6cd0177bb8e510ce20c440f21491e390e0f4339cb0461bc24fa2e0cadda17a99"
-    sha256 mojave:         "de5e6de4c8b6098193cff623e96f0fbbd9204705bff0accfc1c354cfd8cc95e5"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geeqie"
+    sha256 cellar: :any, mojave: "0e7a127b774031061fb20c432c3ccb4468b4c17df6de8de123d0fc4313c9b475"
   end
 
   depends_on "autoconf" => :build
