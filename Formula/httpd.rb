@@ -7,14 +7,11 @@ class Httpd < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_monterey: "a5790e7bef0a4ac7a2663636494e504e84610b28d227645118cfc74b03231982"
-    sha256 arm64_big_sur:  "edb36c0fbb5707b6ef74da3de849148d74fe4c63ec2d3191e4554223a63b9809"
-    sha256 monterey:       "a1f6272efc48b093cd4631cdb7f73a3ffcca73138066e35973191904d62399e1"
-    sha256 big_sur:        "e4a6dcd62151d849dbe78831b38cac096808242e45301767841c209e1c2dd638"
-    sha256 catalina:       "4f2b18c4c0ee14638181679fe6d0565ef8dfc960d23411e4a81904bec206ced5"
-    sha256 mojave:         "709af186a8974ad3fe115d5ec8e2afc6311d709d8b027854e707a1862c0c9ac1"
-    sha256 x86_64_linux:   "4968291a7238be2e2dd5c3de181793b571502a482bcbd660c35f2aaaa572dd44"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/httpd"
+    rebuild 1
+    sha256 mojave: "ad386faade8fe497483f007baa381ccc601c88f40dd0aaaea28d32dbdea714a0"
   end
+
 
   depends_on "apr"
   depends_on "apr-util"
