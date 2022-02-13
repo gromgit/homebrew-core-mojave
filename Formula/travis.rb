@@ -4,20 +4,16 @@ class Travis < Formula
   url "https://github.com/travis-ci/travis.rb/archive/v1.11.0.tar.gz"
   sha256 "76cb0821aeb60e3e302932365dd437a393674de80e02972873bf3e511af564ca"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/travis"
-    sha256 cellar: :any, mojave: "b397f59e2c50ce885e05c9304e272628d0bb643f21d39230bf205fdb3dec13b4"
+    sha256 cellar: :any, mojave: "74e2b3b415fc671cef9b6f2ecee1236d93c640cc08679faff7a8b74252d20332"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "ruby"
-
-  if MacOS.version < :catalina
-    depends_on "libffi"
-  else
-    uses_from_macos "libffi"
-  end
+  depends_on "ruby@3.0"
+  uses_from_macos "libffi", since: :catalina
 
   resource "activesupport" do
     url "https://rubygems.org/gems/activesupport-5.2.4.4.gem"
