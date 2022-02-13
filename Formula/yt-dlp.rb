@@ -6,11 +6,16 @@ class YtDlp < Formula
   url "https://files.pythonhosted.org/packages/5c/e0/e5bae3e87ee6da0f7507f3b58c5e9ffc1500de0742886ccc72c1a56740f2/yt-dlp-2022.2.4.tar.gz"
   sha256 "81b50ed7cf9cfcc042d8f5a1ad2d1cd7b13c48b36c07faf1880696eac0a7ddb5"
   license "Unlicense"
-  head "https://github.com/yt-dlp/yt-dlp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yt-dlp"
-    sha256 cellar: :any_skip_relocation, mojave: "5c5f708d530595817db8d970154ce33b014225320ed12f7c562f748c839c8515"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "932ad792973755712bb140c52055857bafaf8fb6ed8b6d33754a4cf5119071e3"
+  end
+
+  head do
+    url "https://github.com/yt-dlp/yt-dlp.git", branch: "master"
+    depends_on "pandoc" => :build
   end
 
   depends_on "python@3.10"
@@ -31,6 +36,7 @@ class YtDlp < Formula
   end
 
   def install
+    system "make", "pypi-files" if build.head?
     virtualenv_install_with_resources
     man1.install_symlink libexec/"share/man/man1/yt-dlp.1"
     bash_completion.install libexec/"share/bash-completion/completions/yt-dlp"
