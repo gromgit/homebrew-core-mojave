@@ -5,8 +5,8 @@ class Freeswitch < Formula
       tag:      "v1.10.7",
       revision: "883d2cb662bed0316e157bd3beb9853e96c60d02"
   license "MPL-1.1"
-  revision 2
-  head "https://github.com/signalwire/freeswitch.git"
+  revision 3
+  head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   livecheck do
     url :stable
@@ -15,7 +15,7 @@ class Freeswitch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeswitch"
-    sha256 mojave: "afefcae80d88e7dd7c58715a0a9516be70a02defb7db503b4d7aaa3e898117e0"
+    sha256 mojave: "088a138910ec1742d803721c28772d80d5c9cb2c5d95714b28e1bb92353fc07c"
   end
 
   depends_on "autoconf" => :build
@@ -24,7 +24,7 @@ class Freeswitch < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "yasm" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@4"
   depends_on "jpeg"
   depends_on "ldns"
   depends_on "libpq"
@@ -42,6 +42,8 @@ class Freeswitch < Formula
 
   uses_from_macos "libedit"
   uses_from_macos "zlib"
+
+  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   # https://github.com/Homebrew/homebrew/issues/42865
 
