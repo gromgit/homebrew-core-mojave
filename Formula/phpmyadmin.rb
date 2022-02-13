@@ -1,8 +1,8 @@
 class Phpmyadmin < Formula
   desc "Web interface for MySQL and MariaDB"
   homepage "https://www.phpmyadmin.net"
-  url "https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.tar.gz"
-  sha256 "8264b57aeaa1f91c6d859331777c71e80d26088bef7cdcd5f9431119747ed1c1"
+  url "https://files.phpmyadmin.net/phpMyAdmin/5.1.3/phpMyAdmin-5.1.3-all-languages.tar.gz"
+  sha256 "7a85454d82d88cc1a6beb09114a67fa40230c4eff2ae1778b434fa74e80dc6d7"
 
   livecheck do
     url "https://www.phpmyadmin.net/files/"
@@ -10,13 +10,8 @@ class Phpmyadmin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f08308ccb87cc6aee145cccb50e07755b88a020c3b589770d9c28d320d11c73"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f9a046e5d63966741a5dc84e52af4b6cce94cada8bcc445e847bc2d9727623ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "edc6b2459958163c74314a8713841ab5ea2a9464d7d032e7c48e0f44bd31c236"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3cfa3633d65f13cc01ea68e30138f4cba9d11f0f2335db7c92b49e441e80e76f"
-    sha256 cellar: :any_skip_relocation, catalina:       "3cfa3633d65f13cc01ea68e30138f4cba9d11f0f2335db7c92b49e441e80e76f"
-    sha256 cellar: :any_skip_relocation, mojave:         "3cfa3633d65f13cc01ea68e30138f4cba9d11f0f2335db7c92b49e441e80e76f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f08308ccb87cc6aee145cccb50e07755b88a020c3b589770d9c28d320d11c73"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phpmyadmin"
+    sha256 cellar: :any_skip_relocation, mojave: "e7f668722047870a70055b32f1a0ceacf7385d6e81f6835ee521e253dbb44a35"
   end
 
   depends_on "php" => :test
