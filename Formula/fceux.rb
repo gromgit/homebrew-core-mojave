@@ -2,14 +2,14 @@ class Fceux < Formula
   desc "All-in-one NES/Famicom Emulator"
   homepage "https://fceux.com/"
   url "https://github.com/TASEmulators/fceux.git",
-      tag:      "fceux-2.6.1",
-      revision: "7173d283c3a12f634ad5189c5a90ff495e1d266a"
+      tag:      "fceux-2.6.2",
+      revision: "c685033a13127e8442549ff55b2554ed65ff3cfb"
   license "GPL-2.0-only"
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fceux"
-    sha256 cellar: :any, mojave: "4861b2f49a575c07f2571f0f4f6acf530b30f37f788d04f322ccc4052022cf46"
+    sha256 cellar: :any, mojave: "122c3a920b606c37c907ecf2415e17dcc1360c2fdb27220c7b2c0cb6f04da07f"
   end
 
   depends_on "cmake" => :build
@@ -19,6 +19,11 @@ class Fceux < Formula
   depends_on "qt@5"
   depends_on "sdl2"
   depends_on "x264"
+
+  on_linux do
+    depends_on "gcc"
+  end
+  fails_with gcc: "5"
 
   def install
     ENV["CXXFLAGS"] = "-DPUBLIC_RELEASE=1" if build.stable?
