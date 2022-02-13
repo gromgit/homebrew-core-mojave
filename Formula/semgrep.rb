@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v0.81.0",
-      revision: "c7fdcccd3150112fa94f52127a01b0a9b3222a90"
+      tag:      "v0.82.0",
+      revision: "e9de5b2e001572d212ab857411cc13ed64b8e1e4"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -16,7 +16,7 @@ class Semgrep < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/semgrep"
-    sha256 cellar: :any, mojave: "7afe786fc5855eb826d8ae17a648d1d2a90a78e28cbee4b6ba3239ca0a63efbf"
+    sha256 cellar: :any, mojave: "134fefc18538ff0c13b6eaed49fcf4aabe4de292b05c0fb6a110ef88ec619c27"
   end
 
   depends_on "cmake" => :build
