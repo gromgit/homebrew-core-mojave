@@ -1,14 +1,13 @@
 class Tengo < Formula
   desc "Fast script language for Go"
   homepage "https://tengolang.com"
-  url "https://github.com/d5/tengo/archive/v2.10.0.tar.gz"
-  sha256 "487331f79a3742fc05817d6210f6fb751b3ade90826910dde634037c60804f4e"
+  url "https://github.com/d5/tengo/archive/v2.10.1.tar.gz"
+  sha256 "00c892a7cb4e847eefd36f5b8db695e184da5c090c6b509339c3b5d3a746232f"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tengo"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "7c0a1e95d3a7bd57697153bed34faa9b8654a24a9ee1c014e614ee17784e3d41"
+    sha256 cellar: :any_skip_relocation, mojave: "43dea81ca8f99cd2d6545655abbe3904990bf30a2dbbd2293d0059bdb7027e4c"
   end
 
   depends_on "go" => :build
