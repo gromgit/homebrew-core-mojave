@@ -5,6 +5,8 @@ class Xclogparser < Formula
   sha256 "ee0a031bd096766046af7904595685bb154d3d3f777123615fefa4c5927f9a59"
   license "Apache-2.0"
 
+  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xclogparser"
     sha256 cellar: :any_skip_relocation, mojave: "36eccfe179576772ac5f94087f811cb1da786397216ee5852effaafd0b5ee3ab"
