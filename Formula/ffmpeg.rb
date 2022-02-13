@@ -15,7 +15,8 @@ class Ffmpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg"
-    sha256 mojave: "30c8da49aabd419bddce13ef481f7fcaff3ada7b47d403d60662f633891e7c4e"
+    rebuild 1
+    sha256 mojave: "5faa57561c048741bb110080c9742fe31dd7c8eb0913cba4102bd15cced05610"
   end
 
   depends_on "nasm" => :build
@@ -116,12 +117,15 @@ class Ffmpeg < Formula
 
     # Needs corefoundation, coremedia, corevideo
     args << "--enable-videotoolbox" if OS.mac?
+    args << "--enable-neon" if Hardware::CPU.arm?
 
     # Replace hardcoded default VMAF model path
-    %w[doc/filters.texi libavfilter/vf_libvmaf.c].each do |f|
-      inreplace f, "/usr/local/share/model", HOMEBREW_PREFIX/"share/libvmaf/model"
-      # Since libvmaf v2.0.0, `.pkl` model files have been deprecated in favor of `.json` model files.
-      inreplace f, "vmaf_v0.6.1.pkl", "vmaf_v0.6.1.json"
+    unless build.head?
+      %w[doc/filters.texi libavfilter/vf_libvmaf.c].each do |f|
+        inreplace f, "/usr/local/share/model", HOMEBREW_PREFIX/"share/libvmaf/model"
+        # Since libvmaf v2.0.0, `.pkl` model files have been deprecated in favor of `.json` model files.
+        inreplace f, "vmaf_v0.6.1.pkl", "vmaf_v0.6.1.json"
+      end
     end
 
     system "./configure", *args
