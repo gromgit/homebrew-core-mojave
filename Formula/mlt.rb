@@ -1,20 +1,20 @@
 class Mlt < Formula
   desc "Author, manage, and run multitrack audio/video compositions"
   homepage "https://www.mltframework.org/"
-  url "https://github.com/mltframework/mlt/releases/download/v7.2.0/mlt-7.2.0.tar.gz"
-  sha256 "34b737fae61dabddf3ec64477298decb9b2076388ccbda7e50114996b268086d"
+  url "https://github.com/mltframework/mlt/releases/download/v7.4.0/mlt-7.4.0.tar.gz"
+  sha256 "17c19843ffdbca66777aaadf39acb11829fd930eaded92f768cbcb8ae59a5f37"
   license "LGPL-2.1-only"
-  head "https://github.com/mltframework/mlt.git"
+  revision 2
+  head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlt"
-    rebuild 2
-    sha256 mojave: "74e1e2e08caab8fd5dd80004cb73cbad13f3fc3ad461120e83cc33689cdc7790"
+    sha256 cellar: :any, mojave: "9bc79ee06f5d9da52fa100244e3104175aed35abef3ba4920b126d8a450cc44a"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@4"
   depends_on "fftw"
   depends_on "frei0r"
   depends_on "gdk-pixbuf"
