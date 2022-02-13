@@ -1,8 +1,8 @@
 class WpCli < Formula
   desc "Command-line interface for WordPress"
   homepage "https://wp-cli.org/"
-  url "https://github.com/wp-cli/wp-cli/releases/download/v2.5.0/wp-cli-2.5.0.phar"
-  sha256 "be0853e9f443f3848566070871d344e8ad81eb1e15d15dcf9324b4a75e272789"
+  url "https://github.com/wp-cli/wp-cli/releases/download/v2.6.0/wp-cli-2.6.0.phar"
+  sha256 "d166528cab60bc8229c06729e7073838fbba68d6b2b574504cb0278835c87888"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class WpCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wp-cli"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "62611a919422b04ae52e78e860dc4614adf80a476b13e3cea8c4e3e7c6fb727b"
+    sha256 cellar: :any_skip_relocation, mojave: "c02c370321bcf6458c96d5169b0752840b914f2224676aa32ce32cd416dcd280"
   end
 
   depends_on "php"
