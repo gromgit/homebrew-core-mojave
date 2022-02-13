@@ -4,11 +4,11 @@ class OpencvAT3 < Formula
   url "https://github.com/opencv/opencv/archive/3.4.16.tar.gz"
   sha256 "5e37b791b2fe42ed39b52d9955920b951ee42d5da95f79fbc9765a08ef733399"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencv@3"
-    rebuild 2
-    sha256 mojave: "1657e126280f518ed1d7dd7169333503884b707ff2abe1fc600896f06c384fde"
+    sha256 mojave: "fd210df3f73f0e760bebf44d301e15f4ad9d2a46aa479d67f50d95c0d58d87fb"
   end
 
   keg_only :versioned_formula
@@ -17,7 +17,7 @@ class OpencvAT3 < Formula
   depends_on "pkg-config" => :build
   depends_on "ceres-solver"
   depends_on "eigen"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@4"
   depends_on "gflags"
   depends_on "glog"
   depends_on "jpeg"
@@ -27,6 +27,8 @@ class OpencvAT3 < Formula
   depends_on "openexr"
   depends_on "python@3.9"
   depends_on "tbb"
+
+  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "contrib" do
     url "https://github.com/opencv/opencv_contrib/archive/3.4.16.tar.gz"
