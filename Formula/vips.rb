@@ -1,8 +1,8 @@
 class Vips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.12.1/vips-8.12.1.tar.gz"
-  sha256 "474d8439244cd26c504812fd623259f806c32553b38d2a54798c9766135f5a5c"
+  url "https://github.com/libvips/libvips/releases/download/v8.12.2/vips-8.12.2.tar.gz"
+  sha256 "565252992aff2c7cd10c866c7a58cd57bc536e03924bde29ae0f0cb9e074010b"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Vips < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vips"
-    rebuild 1
-    sha256 mojave: "bb7179ee8ef339ce9bfd89604f7aff3173fdbbeae9b141e40d6b16d4aaa066c3"
+    sha256 mojave: "66685af4e1a792d1616d14e7562ab611f20d2708c8479cd43bf263e57969e90c"
   end
 
   depends_on "pkg-config" => :build
