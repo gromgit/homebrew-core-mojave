@@ -1,16 +1,13 @@
 class Gnumeric < Formula
   desc "GNOME Spreadsheet Application"
   homepage "https://projects.gnome.org/gnumeric/"
-  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.50.tar.xz"
-  sha256 "758819ba1bd6983829f9e7c6d71a7fa20cd75a3652a271e5bb003d5d8bcc14b8"
+  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.51.tar.xz"
+  sha256 "a00e6c6e4ecddadabd9b0ae18013d7b05937fdcb8f9aad5a73b95923c7aeb1dd"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
-    sha256 arm64_big_sur: "e35e87954fd36d10ba7d5eb67eb55cda22480501b0244d11d73227efac32eb84"
-    sha256 big_sur:       "308986adac6fc8ee0439f78fc88b3800dec488f3c19059e188d7b89703976517"
-    sha256 catalina:      "c6629015a88979e534383df04b19b371e4f579670538abd057159371d769d9f6"
-    sha256 mojave:        "783045a4b518267f8dad893ba2768701065af8d3f170d37cb2ae1658d96d5474"
-    sha256 x86_64_linux:  "8028a3a6bdad2a160df06aad38c2476a61a448879764cc8311e896d888c7e20f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnumeric"
+    sha256 mojave: "36dc90fff4e6d9f111f38c7e8ad6abaf79cff90bf54a059443559e12611954bc"
   end
 
   depends_on "intltool" => :build
@@ -31,6 +28,12 @@ class Gnumeric < Formula
       url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.44.tar.gz"
       sha256 "1ae9d07ee9c35326b3d9aad56eae71a6730a73a116b9fe9e8a4758b7cc033216"
     end
+  end
+
+  # Fix -flat_namespace being used on Big Sur and later.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
