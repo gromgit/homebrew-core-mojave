@@ -1,18 +1,13 @@
 class TtyShare < Formula
   desc "Terminal sharing over the Internet"
   homepage "https://tty-share.com/"
-  url "https://github.com/elisescu/tty-share/archive/v2.2.0.tar.gz"
-  sha256 "a72cf839c10a00e65292e2de83e69cc1507b95850d949c9bd776566eae1a4f51"
+  url "https://github.com/elisescu/tty-share/archive/v2.2.1.tar.gz"
+  sha256 "c42119dff70eb2ec861463ed7d1d60de44c0c93d83c10a88873c11393decfbc2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "388de900c99e13aad0bf35cc202a2cb23dabfc240417bda1c2dd481240c7ae4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4207e631fd61f1e5ea1a7659d09b606cf10b5012a9b52153a956af15f5a7e160"
-    sha256 cellar: :any_skip_relocation, monterey:       "4261e0442e86cf508ffe28aa34fcfb7ebb2c0f9c92f780bcbae6a39a0850771c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "004c70273ec6b94d912745c657639878149b86cdf1f1296d9d5498460f8b01b4"
-    sha256 cellar: :any_skip_relocation, catalina:       "e02d15913aa63a1cbff110af076743dacc3c4d56cf828a0b22cf94d4e025b6e8"
-    sha256 cellar: :any_skip_relocation, mojave:         "1fe5cd2eb19d7a0b0ee61a9b0dbddc13805055752827de2af6221e53d42f1b9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2ceed45ef206a801e28d80ddb26c0cfd4767aa87cf07252ede2691a3eeef24b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tty-share"
+    sha256 cellar: :any_skip_relocation, mojave: "3f75eac803ebf1736aef3a29456587cfd0f2006f83a8a64ffa36333a432d9cbd"
   end
 
   depends_on "go" => :build
