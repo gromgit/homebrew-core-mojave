@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://github.com/OpenImageIO/oiio/archive/v2.3.11.0.tar.gz"
   sha256 "ac43f89d08cdb9661813f9fb809ccb59c211f3913f75d77db5c78e986980f9a4"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git", branch: "master"
 
   livecheck do
@@ -14,14 +15,14 @@ class Openimageio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openimageio"
-    sha256 mojave: "201ad05436838e8c95dc7ebeb05c7480e09e61ca7baf56478d1599cb54f263aa"
+    sha256 cellar: :any, mojave: "24d49651abc35e2dca9bf8506a519593917645038cfaa30a79a02aa205759960"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@4"
   depends_on "freetype"
   depends_on "giflib"
   depends_on "imath"
@@ -35,6 +36,8 @@ class Openimageio < Formula
   depends_on "pybind11"
   depends_on "python@3.9"
   depends_on "webp"
+
+  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     args = std_cmake_args + %w[
