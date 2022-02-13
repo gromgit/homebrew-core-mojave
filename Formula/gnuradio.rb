@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.9.3.0.tar.gz"
   sha256 "4073ac72524f95fed4bda7dd553cb946f66d2e00bd07c4ae7758f1b787d507e0"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/gnuradio/gnuradio.git", branch: "master"
 
   livecheck do
@@ -16,7 +16,7 @@ class Gnuradio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnuradio"
-    sha256 mojave: "e7f881f1d140590d5756437e07648dcc40d0604e4f3826afc74a34044cf3b381"
+    sha256 cellar: :any, mojave: "f5b01df68eafadc455211e82eba9cef2a782788d05b27de32303d6217f77ba0d"
   end
 
   depends_on "cmake" => :build
