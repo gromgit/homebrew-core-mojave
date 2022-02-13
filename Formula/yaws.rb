@@ -1,8 +1,8 @@
 class Yaws < Formula
   desc "Webserver for dynamic content (written in Erlang)"
   homepage "http://yaws.hyber.org"
-  url "https://github.com/erlyaws/yaws/archive/yaws-2.1.0.tar.gz"
-  sha256 "84260bd95bff5fb4410df5db23b3b3e486476445d13a3c6b819fcbc31f66e0cd"
+  url "https://github.com/erlyaws/yaws/archive/yaws-2.1.1.tar.gz"
+  sha256 "aeb74f0051fe9a2925b1a1b4f13af31ec5404acfbe000ac32cda25ee9779f4bf"
   license "BSD-3-Clause"
   head "https://github.com/erlyaws/yaws.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Yaws < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaws"
-    sha256 cellar: :any_skip_relocation, mojave: "cb6934eca123cf365345ef0992e991ca6ea06bd8f28ea279a7313fcf8135863a"
+    sha256 cellar: :any_skip_relocation, mojave: "0a3d5e3611f4e957b6e72f8fe9d0ac3dc61ad278df6de9b8451d60aeeefa7ca7"
   end
 
   depends_on "autoconf" => :build
