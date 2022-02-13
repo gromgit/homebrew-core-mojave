@@ -1,7 +1,7 @@
 class Moc < Formula
   desc "Terminal-based music player"
   homepage "https://moc.daper.net/"
-  revision 5
+  revision 6
 
   stable do
     url "http://ftp.daper.net/pub/soft/moc/stable/moc-2.5.2.tar.bz2"
@@ -42,11 +42,8 @@ class Moc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_big_sur: "1c1dbfb0ba7a9dc7615aac9f0a16b3e94062333c5db842edecfd9b10849c53ac"
-    sha256 big_sur:       "1d670ee6bdc6441b88295a64d325837e0b9aa845a9457b8b1bb173a6589d4135"
-    sha256 catalina:      "80578cca9b28f6e2afbf628b12cfecdec8560675710e49f73b607a0a7d039c12"
-    sha256 mojave:        "40df76109b9d7cc1f23ad67ab9824029375d083b37c8dc0e417ff5ad5379892c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moc"
+    sha256 mojave: "9df6672d1ba26cc979a9138a1184d1f4b800c753482e66c7e113b6cc93d98d6d"
   end
 
   head do
@@ -61,10 +58,12 @@ class Moc < Formula
   depends_on "gettext" => :build
   depends_on "pkg-config" => :build
   depends_on "berkeley-db"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@4"
   depends_on "jack"
   depends_on "libtool"
   depends_on "ncurses"
+
+  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     # Not needed for > 2.5.2
