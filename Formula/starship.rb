@@ -1,14 +1,14 @@
 class Starship < Formula
   desc "Cross-shell prompt for astronauts"
   homepage "https://starship.rs"
-  url "https://github.com/starship/starship/archive/v1.2.1.tar.gz"
-  sha256 "22ad1622fd30297cc0ba2de67316e7df07c44cabe716bcbda3a5cb0d12375c98"
+  url "https://github.com/starship/starship/archive/v1.3.0.tar.gz"
+  sha256 "3f29cb6e5cb7c673cbc1f8e91ceb4a0d1317d235b147db15e461ffec22be13a5"
   license "ISC"
   head "https://github.com/starship/starship.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/starship"
-    sha256 cellar: :any_skip_relocation, mojave: "d67cb5f30ee24f2a79c74a4dd49f0fdc02481c174164d3c439ccf3f493d81462"
+    sha256 cellar: :any_skip_relocation, mojave: "f4c0fd7c46faea67909d7c71cf542e59b5768461519ad0dfba93535d4171c063"
   end
 
   depends_on "rust" => :build
@@ -22,7 +22,7 @@ class Starship < Formula
   end
 
   def install
-    system "cargo", "install", "--features", "notify-rust", *std_cargo_args
+    system "cargo", "install", *std_cargo_args
 
     bash_output = Utils.safe_popen_read("#{bin}/starship", "completions", "bash")
     (bash_completion/"starship").write bash_output
