@@ -1,13 +1,13 @@
 class Youtubedr < Formula
   desc "Download Youtube Video in Golang"
   homepage "https://github.com/kkdai/youtube"
-  url "https://github.com/kkdai/youtube/archive/v2.7.8.tar.gz"
-  sha256 "25a390123af7beb4d5b6b004cc3c3c26fd2cd6fd7b8fb2dc7449284725399429"
+  url "https://github.com/kkdai/youtube/archive/v2.7.10.tar.gz"
+  sha256 "04a4f0b745094884fb2902945ac3b1c966fbe4fbd67a027cb482d491662900f9"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtubedr"
-    sha256 cellar: :any_skip_relocation, mojave: "8e0c2eb820f7d8bae63156f3109a4d34205f51a158ec4a71348caed3b6c6b6e6"
+    sha256 cellar: :any_skip_relocation, mojave: "9e45685eefb31b15bc999271df40b123f7d13e6a4cf780e577c96c417e632d83"
   end
 
   depends_on "go" => :build
