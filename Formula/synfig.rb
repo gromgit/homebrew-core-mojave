@@ -5,6 +5,7 @@ class Synfig < Formula
   mirror "https://github.com/synfig/synfig/releases/download/v1.4.2/synfig-1.4.2.tar.gz"
   sha256 "e66688b908ab2f05f87cc5a364f958a1351f101ccab3b3ade33a926453002f4e"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://svn.code.sf.net/p/synfig/code/"
 
   livecheck do
@@ -13,10 +14,8 @@ class Synfig < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "c5a90497b2b4eb28f6c5a836fb623cad8f9fddfbddf488f3409f064b2e1df9a4"
-    sha256 big_sur:       "66e628cef26b73ac1dce71debf969be8b20ffec44c9bedd89634375467e7481f"
-    sha256 catalina:      "0ccb996e2cbb9eee74b8026396652ad804ef3c55b4fc1351805f7adaf8d8ef90"
-    sha256 mojave:        "506f2dd363424514817d44b47cf81dda7ac0a80f4df83f39aeca5eb2e2fb2f70"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/synfig"
+    sha256 mojave: "f21a18691d0321272aac32fd6025dfdf852e856284b8db67c72b7e656f88f3ba"
   end
 
   depends_on "intltool" => :build
@@ -34,6 +33,11 @@ class Synfig < Formula
   depends_on "mlt"
   depends_on "openexr"
   depends_on "pango"
+
+  on_linux do
+    depends_on "gcc"
+  end
+  fails_with gcc: "5"
 
   def install
     ENV.cxx11
