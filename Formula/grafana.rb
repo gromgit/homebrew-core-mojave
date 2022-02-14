@@ -1,14 +1,14 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://github.com/grafana/grafana/archive/v8.3.3.tar.gz"
-  sha256 "c79e19f056b9c2fc6d29c622edfaf8aff4985cec28ea6a9e74dce5eac077e735"
+  url "https://github.com/grafana/grafana/archive/v8.3.5.tar.gz"
+  sha256 "e740703b16ada392c1fd7b4d8b0879a0cda75d0ea8c4e98ff45c447c7453d0b0"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana"
-    sha256 cellar: :any_skip_relocation, mojave: "7e3b42d34eecd25349bd1ae44658846584b09088ff99256fa8e3db5942029ffa"
+    sha256 cellar: :any_skip_relocation, mojave: "2b90f87d14d71709e7fbcf951905afdedd2af966b4757d17320c56b7fd89c892"
   end
 
   depends_on "go" => :build
