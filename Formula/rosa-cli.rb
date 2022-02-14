@@ -14,15 +14,18 @@ class RosaCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rosa-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "4dc78140e5d69aa7526d8e2c41222002a683e5daa8578cfc0a2346d45132b314"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dee8d86b92c4b9b648805de4d7ec84dfa0829871b1f99c7c48565aca9c11e299"
   end
 
   depends_on "go" => :build
   depends_on "awscli"
 
   def install
-    system "go", "build", *std_go_args, "-o", bin/"rosa", "./cmd/rosa"
-    (bash_completion/"rosa").write Utils.safe_popen_read("#{bin}/rosa", "completion")
+    system "go", "build", *std_go_args(output: bin/"rosa"), "./cmd/rosa"
+    (bash_completion/"rosa").write Utils.safe_popen_read("#{bin}/rosa", "completion", "bash")
+    (zsh_completion/"_rosa").write Utils.safe_popen_read("#{bin}/rosa", "completion", "zsh")
+    (fish_completion/"rosa.fish").write Utils.safe_popen_read("#{bin}/rosa", "completion", "fish")
   end
 
   test do
