@@ -4,11 +4,11 @@ class Minidlna < Formula
   url "https://downloads.sourceforge.net/project/minidlna/minidlna/1.3.0/minidlna-1.3.0.tar.gz"
   sha256 "47d9b06b4c48801a4c1112ec23d24782728b5495e95ec2195bbe5c81bc2d3c63"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minidlna"
-    sha256 cellar: :any, mojave: "387778644a2d51ba855b03f95ffb926861b75e1fa12e3b3793c5df7ccccc197d"
+    sha256 cellar: :any, mojave: "2506210ac96b6bf1adaa43c57d3d55c12952b7d4b654ddcecff6fa4403e4e745"
   end
 
   head do
@@ -28,6 +28,8 @@ class Minidlna < Formula
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sqlite"
+
+  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     system "./autogen.sh" if build.head?
