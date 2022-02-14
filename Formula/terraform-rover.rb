@@ -2,25 +2,18 @@ require "language/node"
 class TerraformRover < Formula
   desc "Terraform Visualizer"
   homepage "https://github.com/im2nguyen/rover"
-  url "https://github.com/im2nguyen/rover/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "91dc4ff26e0adafde011db1e6111a8a3c545cddbae1a70c8f4c3abc484b0be0b"
+  url "https://github.com/im2nguyen/rover/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "8d880bdd2a4f0c6817c71d5da4e22c5ba5dafa2cec712101950fce530f20ea12"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform-rover"
-    sha256 cellar: :any_skip_relocation, mojave: "42594e978a9ca73ef42aa066588f54a010c600e7635938c58ad0b600082b7453"
+    sha256 cellar: :any_skip_relocation, mojave: "c2e666829434316aefb1842614b6dede8aeb470582b26e65426bea2f21b8cb8a"
   end
 
   depends_on "go" => :build
   depends_on "node"
   depends_on "terraform"
-
-  # Update terraform components, remove in next version
-  patch do
-    url "https://github.com/im2nguyen/rover/commit/a2a1e57ffcbedcc9a8d39c2696d4cee84eec8cd6.patch?full_index=1"
-    sha256 "d085834625def68e9ebaaee89a6d077fba12220df5347529412f82c9cc69d7cd"
-  end
 
   def install
     Language::Node.setup_npm_environment
