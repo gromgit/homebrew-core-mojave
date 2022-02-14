@@ -1,14 +1,14 @@
 class GetIplayer < Formula
   desc "Utility for downloading TV and radio programmes from BBC iPlayer"
   homepage "https://github.com/get-iplayer/get_iplayer"
-  url "https://github.com/get-iplayer/get_iplayer/archive/v3.28.tar.gz"
-  sha256 "8ba1e398001609c5893604ea6aac6058c833b54ed00ef150a14fa1cb094b0df3"
+  url "https://github.com/get-iplayer/get_iplayer/archive/v3.29.tar.gz"
+  sha256 "621ef2e13cfa1d6ba68a5d1b877b585fea85c321916cc50d44301e239cf3d606"
   license "GPL-3.0-or-later"
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/get_iplayer"
-    sha256 cellar: :any_skip_relocation, mojave: "d0e8c995aa4e9871011e2c2411397dbdb01f0d125e39f040f8ddbc2f1aae5c13"
+    sha256 cellar: :any_skip_relocation, mojave: "6555043a12e0bf3b34cd7a7bde90ab3289876335a06de3cf7f9c81fa7e8052c7"
   end
 
   depends_on "atomicparsley"
