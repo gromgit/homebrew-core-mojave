@@ -2,14 +2,14 @@ class Mage < Formula
   desc "Make/rake-like build tool using Go"
   homepage "https://magefile.org"
   url "https://github.com/magefile/mage.git",
-      tag:      "v1.12.0",
+      tag:      "v1.12.1",
       revision: "2f1ec406dfa856a4b8378ef837061abc2a0ce01b"
   license "Apache-2.0"
-  head "https://github.com/magefile/mage.git"
+  head "https://github.com/magefile/mage.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mage"
-    sha256 cellar: :any_skip_relocation, mojave: "3fd75c25b71b64fc8a379a013bec915947b2584a1880060c8396b3d6eb5f5a40"
+    sha256 cellar: :any_skip_relocation, mojave: "d2da91d98adad62480fb9efd3f311f0d56a5406772d3f5c0ac3af7cd5da0fd96"
   end
 
   depends_on "go"
