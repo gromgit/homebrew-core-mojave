@@ -1,13 +1,13 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
   homepage "https://github.com/karelzak/util-linux"
-  url "https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-2.37.3.tar.xz"
-  sha256 "590c592e58cd6bf38519cb467af05ce6a1ab18040e3e3418f24bcfb2f55f9776"
+  url "https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-2.37.4.tar.xz"
+  sha256 "634e6916ad913366c3536b6468e7844769549b99a7b2bf80314de78ab5655b83"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-getopt"
-    sha256 cellar: :any, mojave: "85fadd045a349eb382c45d148f7956cceffa20a7267e5396825bca3ca7529829"
+    sha256 cellar: :any, mojave: "cd87fb602da387f02d005583235a9bcab0b746a21de088359abf17e3bfbf62a3"
   end
 
   keg_only :provided_by_macos
