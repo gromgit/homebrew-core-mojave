@@ -2,8 +2,8 @@ class Cppad < Formula
   desc "Differentiation of C++ Algorithms"
   homepage "https://www.coin-or.org/CppAD"
   # Stable versions have numbers of the form 201x0000.y
-  url "https://github.com/coin-or/CppAD/archive/20220000.1.tar.gz"
-  sha256 "e12a66d8af43b5df1674f1b0cb6f84ed64d3e39198dd6fb0411543f499b13289"
+  url "https://github.com/coin-or/CppAD/archive/20220000.2.tar.gz"
+  sha256 "a363996d6a36c08b37048d3c439119d1cd715ce7caf124ac6f0c2e94240985bd"
   license "EPL-2.0"
   version_scheme 1
   head "https://github.com/coin-or/CppAD.git", branch: "master"
@@ -15,7 +15,7 @@ class Cppad < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppad"
-    sha256 cellar: :any, mojave: "c4b96b300c413052643d7a2070d4fd2e29449c29a94dd0b2ddac21995d8d9b4e"
+    sha256 cellar: :any, mojave: "32ba77e9206ba8e8f63e19163bd1e0132b330f4f1a8d7c6ed182f6cba64f353e"
   end
 
   depends_on "cmake" => :build
