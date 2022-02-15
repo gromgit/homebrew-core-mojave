@@ -1,14 +1,14 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://github.com/facebookincubator/fizz/releases/download/v2022.02.07.00/fizz-v2022.02.07.00.tar.gz"
-  sha256 "59faf6e0c74cabe270f9face13e0a9aa3b1c6b6abb15bdedabc8fd21afcdfbab"
+  url "https://github.com/facebookincubator/fizz/releases/download/v2022.02.14.00/fizz-v2022.02.14.00.tar.gz"
+  sha256 "7b5d4a00d551b5b0b610ac8a69e69283e4d700838cf0ab64f606b35478a08d42"
   license "BSD-2-Clause"
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fizz"
-    sha256 cellar: :any, mojave: "1a1bf4179ef3c7300b2b20c482f94125b813698b585f8ab93156a74365dfdd8e"
+    sha256 cellar: :any, mojave: "ebb60749b24bf13622d8a0373672414fda45bce11eb6500e19a3c8a4fe64d8de"
   end
 
   depends_on "cmake" => :build
