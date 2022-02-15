@@ -2,8 +2,8 @@ class Clusterctl < Formula
   desc "Home for the Cluster Management API work, a subproject of sig-cluster-lifecycle"
   homepage "https://cluster-api.sigs.k8s.io"
   url "https://github.com/kubernetes-sigs/cluster-api.git",
-      tag:      "v1.1.0",
-      revision: "e2aafb60cdf72ea086b56727dfac76f13ac6f9fe"
+      tag:      "v1.1.1",
+      revision: "810c2a67e71ed3344a29ae79862407d6b0631a79"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api.git", branch: "master"
 
@@ -20,7 +20,7 @@ class Clusterctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clusterctl"
-    sha256 cellar: :any_skip_relocation, mojave: "2cf64ec6b002f01106632ce7a776387fb2124d511314b5788823e4efa7969d40"
+    sha256 cellar: :any_skip_relocation, mojave: "116ce5a86d02146ab73fb7dbcb73df23ba3c82487df7392a002c69acc98b86b9"
   end
 
   depends_on "go" => :build
