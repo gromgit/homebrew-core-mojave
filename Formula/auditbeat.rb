@@ -2,14 +2,14 @@ class Auditbeat < Formula
   desc "Lightweight Shipper for Audit Data"
   homepage "https://www.elastic.co/products/beats/auditbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.17.0",
-      revision: "93708bd74e909e57ed5d9bea3cf2065f4cc43af3"
+      tag:      "v8.0.0",
+      revision: "2ab3a7334016f570e0bfc7e9a577a35a22e02df5"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/auditbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "496902a257933881891e3c73b27e9694441e9a2eeecc2ae15eb9008c5c0fb792"
+    sha256 cellar: :any_skip_relocation, mojave: "bd487038ed0edfa182dbbd9d907e45fdb65663fb04c12c8c01539654272f9ae5"
   end
 
   depends_on "go" => :build
@@ -72,10 +72,12 @@ class Auditbeat < Formula
     end
     sleep 5
     touch testpath/"files/touch"
+
     sleep 30
-    s = File.readlines(testpath/"auditbeat/auditbeat").last(1)[0]
-    assert_match(/"action":\["(initial_scan|created)"\]/, s)
-    realdirpath = File.realdirpath(testpath)
-    assert_match "\"path\":\"#{realdirpath}/files/touch\"", s
+
+    assert_predicate testpath/"data/beat.db", :exist?
+
+    output = JSON.parse((testpath/"data/meta.json").read)
+    assert_includes output, "first_start"
   end
 end
