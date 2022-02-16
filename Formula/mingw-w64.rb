@@ -4,7 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v9.0.0.tar.bz2"
   sha256 "1929b94b402f5ff4d7d37a9fe88daa9cc55515a6134805c104d1794ae22a4181"
   license "ZPL-2.1"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,13 +12,8 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "7671527ea0a57310de4c8f367fa0cdfb3ea6f268c243466933df21a8f719e12d"
-    sha256 arm64_big_sur:  "6a226bcd216aa4689fb1426c3459caeaa7ee6a2403276c124956f222e9bdc6c9"
-    sha256 monterey:       "7454839c73ded2b9bdd7914df7d013f93afb760ec2175d299473954dc45e70a3"
-    sha256 big_sur:        "0a48943bac581260148704b796a27aafc21d7650a0dd7b60c9d64dbec148be93"
-    sha256 catalina:       "780144a43e99c22058a07d76668e83107a2bb5e89b651d694c1756174ca65ca3"
-    sha256 mojave:         "55243318eb8179bb7f962c83cb0a35a03fa728e9e444848f4948e82f4e0039c8"
-    sha256 x86_64_linux:   "0976e76105c70de683c1f4f2283248bf70521858d3bd91737e0e6bd01099af17"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mingw-w64"
+    sha256 mojave: "5349a778ca1851c8bd419dc69171c21121c436eb45b0cdb356f4cb421fcb8189"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -30,9 +25,9 @@ class MingwW64 < Formula
   depends_on "mpfr"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.37.tar.xz"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.37.tar.xz"
-    sha256 "820d9724f020a3e69cb337893a0b63c2db161dadcb0e06fc11dc29eb1e84a32c"
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz"
+    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.xz"
+    sha256 "e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024"
   end
 
   resource "gcc" do
