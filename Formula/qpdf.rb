@@ -1,14 +1,13 @@
 class Qpdf < Formula
   desc "Tools for and transforming and inspecting PDF files"
   homepage "https://github.com/qpdf/qpdf"
-  url "https://github.com/qpdf/qpdf/releases/download/release-qpdf-10.4.0/qpdf-10.4.0.tar.gz"
-  sha256 "9ac6e691cc3f35a9fe44632e3fba727e1b6ef21181c0a883287abf5cf97ae222"
+  url "https://github.com/qpdf/qpdf/releases/download/release-qpdf-10.6.1/qpdf-10.6.1.tar.gz"
+  sha256 "4c56328e1eeedea3d87eb79e1fe09374a923fe28756f7a56bcff58523617f05f"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qpdf"
-    rebuild 2
-    sha256 cellar: :any, mojave: "c8e3938e85d4944ad3d0c4042de79d612191531eaba244aaa21dcff8fe349481"
+    sha256 cellar: :any, mojave: "00e01c716b7017da6eb0e3bd79b8d7dc7ec32886f78d02043ec028933e818bcb"
   end
 
   depends_on "jpeg"
