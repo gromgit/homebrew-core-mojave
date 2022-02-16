@@ -2,13 +2,13 @@ class Frps < Formula
   desc "Server app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
   url "https://github.com/fatedier/frp.git",
-      tag:      "v0.39.0",
-      revision: "2dab5d0bca96cadcd3efa627d26ee419f322b64e"
+      tag:      "v0.39.1",
+      revision: "88fcc079e881108c868e64831c97b30a855e5d26"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frps"
-    sha256 cellar: :any_skip_relocation, mojave: "abf94adb4a3bf9f090136903c107372b78049ea12e5f48632e34b0808d3eb105"
+    sha256 cellar: :any_skip_relocation, mojave: "814e263c4a872a3e25606b3eed9050011bbd5edb4d3597799f3312bee2036c1d"
   end
 
   depends_on "go" => :build
