@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://github.com/libplctag/libplctag/archive/v2.4.12.tar.gz"
-  sha256 "81f5c99965a9e5db8835e305f5805954f99cb26fa7cacae2ec5d3079b8a78381"
+  url "https://github.com/libplctag/libplctag/archive/v2.5.0.tar.gz"
+  sha256 "4a29097d7066769b059e0f3881ea23e68d7650ceb2aab2a6b278449823cba631"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -12,7 +12,7 @@ class Libplctag < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libplctag"
-    sha256 cellar: :any, mojave: "414f103ec2893c90a1bcf61cfa3ffa106d5267508eefbbd0ab883dc0b349dcbb"
+    sha256 cellar: :any, mojave: "2d82cf1cb2b20a42850fe055f5e3ca628923b7349db96c88335d72c2dbc51165"
   end
 
   depends_on "cmake" => :build
