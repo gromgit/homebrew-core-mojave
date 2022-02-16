@@ -1,15 +1,13 @@
 class Soci < Formula
   desc "Database access library for C++"
   homepage "https://soci.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/soci/soci/soci-4.0.2/soci-4.0.2.zip"
-  sha256 "3c8a456579320dc828cace5aa20d4d10690b273a50997e9c195d0b270fa668ba"
+  url "https://downloads.sourceforge.net/project/soci/soci/soci-4.0.3/soci-4.0.3.zip"
+  sha256 "598abf573252caf71790af5ff15beca20af548440b610e70468edfd3c12d47b0"
   license "BSL-1.0"
 
   bottle do
-    sha256 arm64_big_sur: "6ab0518edb52f96d06c28fa20fe21eb29551bc933216f36588c87d8f535966fa"
-    sha256 big_sur:       "34a4e4e20bdd5bb3c6d5c8a61badd4d7fc45f99acddb4f8c37ce29eb00dff378"
-    sha256 catalina:      "eaf4f958498990043369a8af4395ff592c58717bc08b38f2905e3d4b4be6e94f"
-    sha256 mojave:        "0cecd3377c20b8bfbd1129d2e10f2aaa8382586881716a7f3b3fb00fc041dc12"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/soci"
+    sha256 mojave: "073da276cbbc0b1602c77333e1741d291b6a36897734b17e09901f9e65403424"
   end
 
   depends_on "cmake" => :build
