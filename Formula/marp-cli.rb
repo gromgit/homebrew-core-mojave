@@ -3,13 +3,13 @@ require "language/node"
 class MarpCli < Formula
   desc "Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images"
   homepage "https://github.com/marp-team/marp-cli"
-  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-1.5.2.tgz"
-  sha256 "c7a47c3731d2801448f7f8f6219b5603194404b26b9660bc031cce2a0f1e72a3"
+  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-1.6.0.tgz"
+  sha256 "c9e4300a18d1f5107ee10bbd3888116f53c8aee0a0df5f48964f963064101beb"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/marp-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "a5a3d3372f99d12559167691436ceb7ad716575c112a26cf7d538bc7403f3f08"
+    sha256 cellar: :any_skip_relocation, mojave: "8649ab615435b136dca6f54bfc739d98b24dea9b40fb808a68fb918fa2e8a101"
   end
 
   depends_on "node"
