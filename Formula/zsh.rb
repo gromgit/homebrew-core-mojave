@@ -1,21 +1,14 @@
 class Zsh < Formula
   desc "UNIX shell (command interpreter)"
   homepage "https://www.zsh.org/"
-  url "https://downloads.sourceforge.net/project/zsh/zsh/5.8/zsh-5.8.tar.xz"
-  mirror "https://www.zsh.org/pub/zsh-5.8.tar.xz"
-  sha256 "dcc4b54cc5565670a65581760261c163d720991f0d06486da61f8d839b52de27"
+  url "https://downloads.sourceforge.net/project/zsh/zsh/5.8.1/zsh-5.8.1.tar.xz"
+  mirror "https://www.zsh.org/pub/zsh-5.8.1.tar.xz"
+  sha256 "b6973520bace600b4779200269b1e5d79e5f505ac4952058c11ad5bbf0dd9919"
   license "MIT-Modern-Variant"
-  revision 1
 
   bottle do
-    sha256 arm64_monterey: "d2a170f7ddb628efabfe7c9909e2d769980fa29d38739d74530dba83ef3b6795"
-    sha256 arm64_big_sur:  "01ae59e3ea21dd7691120aec89552e4f4c10c6489a24b9cc23256129e3cbe7b6"
-    sha256 monterey:       "768904862c98184cdd5e204469c96678652b323ad7d108807dd8afe6cc5c51c0"
-    sha256 big_sur:        "a93717bcbb1a41829ac7549f7dea0e2be4bb11985be734f03801150338d6b8e6"
-    sha256 catalina:       "aaf19f69f79ac2ef80ff31d3b2f0017f400bf40022f8626d5ae046990961a5f5"
-    sha256 mojave:         "a40a54e4b686eb75f04e7dcc57391245a4f6b08a39825f7f6ebc9f76ebcbff46"
-    sha256 high_sierra:    "edfbc09a9571fadf351e0f94e545a88aa33763518a3330c0bae497a6a259d63f"
-    sha256 x86_64_linux:   "f37a99a35ac7b20d78a5e0d83420b4ad74d63cedc426cfd3d964cebe79935183"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zsh"
+    sha256 mojave: "0279c2b6f24b106d75592de4a4fe09fdd9ada677cdc0a251c4344d1bd8a004c8"
   end
 
   head do
@@ -29,9 +22,9 @@ class Zsh < Formula
   uses_from_macos "texinfo"
 
   resource "htmldoc" do
-    url "https://downloads.sourceforge.net/project/zsh/zsh-doc/5.8/zsh-5.8-doc.tar.xz"
-    mirror "https://www.zsh.org/pub/zsh-5.8-doc.tar.xz"
-    sha256 "9b4e939593cb5a76564d2be2e2bfbb6242509c0c56fd9ba52f5dba6cf06fdcc4"
+    url "https://downloads.sourceforge.net/project/zsh/zsh-doc/5.8.1/zsh-5.8.1-doc.tar.xz"
+    mirror "https://www.zsh.org/pub/zsh-5.8.1-doc.tar.xz"
+    sha256 "8b9cb53d6432f13e9767a8680b642e8e8a52c7f1b8decd211756ca20c667f917"
   end
 
   def install
