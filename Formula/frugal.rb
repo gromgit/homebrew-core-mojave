@@ -1,13 +1,13 @@
 class Frugal < Formula
   desc "Cross language code generator for creating scalable microservices"
   homepage "https://github.com/Workiva/frugal"
-  url "https://github.com/Workiva/frugal/archive/v3.14.13.tar.gz"
-  sha256 "b6bfddd3abd158fb956bd84995add3c715f2a5688aa9f9bfb5aef7ee73e4d8ac"
+  url "https://github.com/Workiva/frugal/archive/v3.14.14.tar.gz"
+  sha256 "07787b6f8a26799dee4abf6cc92430e4f31f3e02c63abb3417a6dd7f309f0391"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frugal"
-    sha256 cellar: :any_skip_relocation, mojave: "f7a4adab8c0f86be813998450c0ee096730a70c265cd61a84f7d217203beb82d"
+    sha256 cellar: :any_skip_relocation, mojave: "3b0bffd77b25a21eda9dc1a54af113ddadedf565e211f61411223d7948fa5b47"
   end
 
   depends_on "go" => :build
