@@ -1,13 +1,13 @@
 class Libspng < Formula
   desc "C library for reading and writing PNG format files"
   homepage "https://libspng.org/"
-  url "https://github.com/randy408/libspng/archive/v0.7.1.tar.gz"
-  sha256 "0726a4914ad7155028f3baa94027244d439cd2a2fbe8daf780c2150c4c951d8e"
+  url "https://github.com/randy408/libspng/archive/v0.7.2.tar.gz"
+  sha256 "4acf25571d31f540d0b7ee004f5461d68158e0a13182505376805da99f4ccc4e"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libspng"
-    sha256 cellar: :any, mojave: "b20164949e2bbd0fc3f929d9685d32237b91e31e2141f7657c5858eafc4105bb"
+    sha256 cellar: :any, mojave: "67ff54bb83bfd7e0ee207019915df3840adc4d3b8d0c7046c343a204c88ac340"
   end
 
   depends_on "meson" => :build
