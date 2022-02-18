@@ -5,7 +5,15 @@ class Sourcedocs < Formula
   sha256 "da33b0186d6b1ea07b67cbdf666d2ea91f55a9892557b47b1d6e2f1abec3dd44"
   license "MIT"
 
-  depends_on xcode: ["10.3", :build, :test]
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d3730a6201e7102e8fa8aef6b508c6282a7d60c5b9d943b9f018e6064c226d1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3ca543cee2f31b2b31b8c350d81b6ce9267f61d6a9207c7f88543bbe3aca901e"
+    sha256 cellar: :any_skip_relocation, monterey:       "e1e95658761b582363d03147adaf13fd9d73d046224fcd2147dd495742b3e85b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bdbd1e960a957e717691d8dde89643187b30af510ad6999c7183f0f43b4365a5"
+    sha256 cellar: :any_skip_relocation, catalina:       "71442a1bb13f262c5aad88da184352ae817f15b18f65f17abf2dabc39d85ca40"
+  end
+
+  depends_on xcode: ["12.0", :build, :test]
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
