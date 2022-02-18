@@ -6,11 +6,12 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/53/16/a310988652058973aadef8f511183324d2b387b4c92985ff70ebd687bb8a/ansible-5.2.0.tar.gz"
   sha256 "c6d448f229cb4a77a6026bd61bcd5bcf062f4f666f1ed24432ba043d145499cb"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible"
-    sha256 cellar: :any, mojave: "469fb1d2405b62a75dbf05e682b53ac98e2707340c3db93d8f6c2a590f77a6b8"
+    sha256 cellar: :any, mojave: "e81cd00da619fa4873c336cad9b3a150a0387170c360417a2c2258252119f2e0"
   end
 
   depends_on "pkg-config" => :build
@@ -44,6 +45,7 @@ class Ansible < Formula
   #   openshift (k8s module support)
   #   pexpect (expect module support)
   #   ntc-templates (Parsing semi-structured text)
+  #   proxmoxer (Proxmox VE support)
 
   # Automatically updated resources
   resource "ansible-core" do
@@ -344,6 +346,11 @@ class Ansible < Formula
   resource "prettytable" do
     url "https://files.pythonhosted.org/packages/71/19/d65d4c39aa12a5630a8aa02ead8324cfaae3217146b19dd25d88d763bbdf/prettytable-3.0.0.tar.gz"
     sha256 "69fe75d78ac8651e16dd61265b9e19626df5d630ae294fc31687aa6037b97a58"
+  end
+
+  resource "proxmoxer" do
+    url "https://files.pythonhosted.org/packages/7d/32/6610728dd9ae1d7e02aa04e0b661a2115e3728474776fbc1b6e3a2b4fc5f/proxmoxer-1.2.0.tar.gz"
+    sha256 "d1261c1cefd4d4faa6c654922c8db72cfee51e811e5ede4eb38a48cc62dac80e"
   end
 
   resource "ptyprocess" do
