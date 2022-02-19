@@ -1,10 +1,9 @@
 class Cpl < Formula
   desc "ISO-C libraries for developing astronomical data-reduction tasks"
   homepage "https://www.eso.org/sci/software/cpl/"
-  url "ftp://ftp.eso.org/pub/dfs/pipelines/libraries/cpl/cpl-7.1.4.tar.gz"
-  sha256 "cb43adba7ab15e315fbfcba4e2d8b88fa56d29a5a16036a7f082621b8416bd6c"
+  url "ftp://ftp.eso.org/pub/dfs/pipelines/libraries/cpl/cpl-7.2.tar.gz"
+  sha256 "cfcd5102b395c8b8475ffec165d72093a4859013471b98d4280a16437be7c129"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://ftp.eso.org/pub/dfs/pipelines/libraries/cpl/"
@@ -13,8 +12,7 @@ class Cpl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpl"
-    rebuild 2
-    sha256 cellar: :any, mojave: "2f1c31be597bdb637d11bbf40592d79e8f8dccdee79763b95898727da053ebac"
+    sha256 cellar: :any, mojave: "e2b8817e388c59b56194048e88f91449f634137fc274cf84f030fe6b9467b800"
   end
 
   depends_on "cfitsio"
