@@ -1,13 +1,13 @@
 class GitLfs < Formula
   desc "Git extension for versioning large files"
   homepage "https://github.com/git-lfs/git-lfs"
-  url "https://github.com/git-lfs/git-lfs/releases/download/v3.1.1/git-lfs-v3.1.1.tar.gz"
-  sha256 "668147fabf314d32b86ff1fe921155cd899621b24eed212bf4a3a80e440eb8db"
+  url "https://github.com/git-lfs/git-lfs/releases/download/v3.1.2/git-lfs-v3.1.2.tar.gz"
+  sha256 "5c9bc449068d0104ea124c25f596af16da85e7b5bf256bc544d8ce5f4fe231f2"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-lfs"
-    sha256 cellar: :any_skip_relocation, mojave: "50229f9c3742aacfb01acf30a73c57ee3b95a947677059a69912e3ac21308895"
+    sha256 cellar: :any_skip_relocation, mojave: "88c770acf164dcc4f4df8760f9f82f983b7068b4b9f9544503771bef4641fd20"
   end
 
   depends_on "go" => :build
