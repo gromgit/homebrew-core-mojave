@@ -1,8 +1,8 @@
 class Fnm < Formula
   desc "Fast and simple Node.js version manager"
   homepage "https://github.com/Schniz/fnm"
-  url "https://github.com/Schniz/fnm/archive/v1.30.1.tar.gz"
-  sha256 "5b1ad1e23c10d38b85a27b87affa7275a1116ecab8fa36b7040bfbbbaafbaa4c"
+  url "https://github.com/Schniz/fnm/archive/v1.31.0.tar.gz"
+  sha256 "c501220d8469f0082c0813d172171f1a19e4d2c4999573bf51a23094773e7041"
   license "GPL-3.0-only"
   head "https://github.com/Schniz/fnm.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Fnm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fnm"
-    sha256 cellar: :any_skip_relocation, mojave: "2d7e01e5b334abe0a22e1205223de1e43b8c6b643cd0d451e4f3a0a8da097ecc"
+    sha256 cellar: :any_skip_relocation, mojave: "ccbc82278636d33377acf7cdfbfcfae6bf75e7de4a71d0f389040df4a791e5ba"
   end
 
   depends_on "rust" => :build
