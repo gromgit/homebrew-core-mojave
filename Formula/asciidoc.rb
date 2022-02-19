@@ -3,8 +3,8 @@ class Asciidoc < Formula
 
   desc "Formatter/translator for text files to numerous formats"
   homepage "https://asciidoc-py.github.io/"
-  url "https://files.pythonhosted.org/packages/c3/b6/f874a6e5ecfb7192a0199dd7652a7a8401a52090e3f6bf4a07b7b76a92ae/asciidoc-10.1.0.tar.gz"
-  sha256 "276e289ff780897b3e87f4e6420c8370d5712c442ce68eebad319bf41f2c839c"
+  url "https://files.pythonhosted.org/packages/45/f0/05c069f44f22da7737cec85b067b79e6c2bd29db66e0f13ebb67e8ea51b3/asciidoc-10.1.2.tar.gz"
+  sha256 "9a91329a57e518efab94c8d70be8dd058a5a9db226d2e60718ea58d46162a0d6"
   license "GPL-2.0-only"
   head "https://github.com/asciidoc-py/asciidoc-py.git", branch: "main"
 
@@ -15,7 +15,7 @@ class Asciidoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciidoc"
-    sha256 cellar: :any_skip_relocation, mojave: "95abc20e9ccbedb62af61e5f90002ce7335f48e3b7db5ad69a8fc4e6d8aef209"
+    sha256 cellar: :any_skip_relocation, mojave: "343f9f2d6e59c4cdd618b6edaea7f28cd052dad3ab0a622c64fb78adabbe2a84"
   end
 
   depends_on "docbook"
