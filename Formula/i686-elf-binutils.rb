@@ -1,9 +1,9 @@
 class I686ElfBinutils < Formula
   desc "GNU Binutils for i686-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.37.tar.xz"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.37.tar.xz"
-  sha256 "820d9724f020a3e69cb337893a0b63c2db161dadcb0e06fc11dc29eb1e84a32c"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.xz"
+  sha256 "e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,11 @@ class I686ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "35e3c75705fb0cd0e024b77fb80a95ec7fbec0f0a5e7b7b8fdd6892d60a15b77"
-    sha256 arm64_big_sur:  "04659e65f3d10dc3881947446255bc02f946783669a26daaf79386e99e00039c"
-    sha256 monterey:       "50718679c5eba15d5f981fde99b68ea04a39f96253573275a8b1b3f1a8d17998"
-    sha256 big_sur:        "5fff1dc8e6b6b0859f21ade50d38937bc04c03b7a36e0c48f3e6848efacf8b46"
-    sha256 catalina:       "e67e663a6462dbd85b644a4428c96e7e9ae711b6d70f994383e553b778244541"
-    sha256 mojave:         "e7d88b4c27231de4e75cd4568a37c6ad17261ed3857dafc199f130d0bb92d9c9"
-    sha256 x86_64_linux:   "adc65062f3bb607eab945a84dee5031394abc3bb9c0f8751bf111c27003c4a02"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i686-elf-binutils"
+    sha256 mojave: "3f6aba45ff8450e245dc9436d4a263d828cc3b23b2dc721a706e5c5ff1f8473f"
   end
+
+  uses_from_macos "texinfo"
 
   def install
     target = "i686-elf"
