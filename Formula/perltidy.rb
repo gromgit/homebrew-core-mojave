@@ -1,8 +1,8 @@
 class Perltidy < Formula
   desc "Indents and reformats Perl scripts to make them easier to read"
   homepage "https://perltidy.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/perltidy/20211029/Perl-Tidy-20211029.tar.gz"
-  sha256 "ec03b1e36a57d094569a30082688f722253401c7cc934ac64d2e3eb4de880eda"
+  url "https://downloads.sourceforge.net/project/perltidy/20220217/Perl-Tidy-20220217.tar.gz"
+  sha256 "bd8bc63043c8bc94aa04811b29f93af794d8871c793c8bd36015dcbdd8a51e83"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Perltidy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/perltidy"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "89effab072cf97dabbde332cdc772c7d499644f2e493ab6ef52319001c082de0"
+    sha256 cellar: :any_skip_relocation, mojave: "fff97caea9e984c5facb299c15147db2d184a24f0422e63bf5f39cfb97130206"
   end
 
   uses_from_macos "perl"
