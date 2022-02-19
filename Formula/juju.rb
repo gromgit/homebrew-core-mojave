@@ -2,8 +2,8 @@ class Juju < Formula
   desc "DevOps management tool"
   homepage "https://juju.is/"
   url "https://github.com/juju/juju.git",
-      tag:      "juju-2.9.23",
-      revision: "b9b2dc63924d8c503fa6b6c108168905e9466ca3"
+      tag:      "juju-2.9.25",
+      revision: "695d9bc09df0725a168df52707336bb6a3a92ff7"
   license "AGPL-3.0-only"
   version_scheme 1
   head "https://github.com/juju/juju.git", branch: "develop"
@@ -15,7 +15,7 @@ class Juju < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/juju"
-    sha256 cellar: :any_skip_relocation, mojave: "d2f83f8cfb57087158c394fdf26603fd2ed1a856813cf53b114c25802ca5a9cb"
+    sha256 cellar: :any_skip_relocation, mojave: "952fef879b9a9cd73e2f632f37664a8f99516a3245f3c22fd8020d7a6690a897"
   end
 
   depends_on "go" => :build
