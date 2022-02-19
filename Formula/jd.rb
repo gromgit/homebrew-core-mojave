@@ -2,12 +2,13 @@ class Jd < Formula
   desc "JSON diff and patch"
   homepage "https://github.com/josephburnett/jd"
   url "https://github.com/josephburnett/jd/archive/v1.5.1.tar.gz"
-  sha256 "6cc716026d366b4a3b235cf7142a29a0234459a4c845c01c6e94a13e02efc7d3"
+  sha256 "dd2671e517e5dca4fe9d322dcea7cc16ab83b5d705bce13e0e9c82d43a56fb59"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jd"
-    sha256 cellar: :any_skip_relocation, mojave: "3ad0f040ec59ec2d710130f053d4040bd275220a64bda603118b31ed5614bd62"
+    sha256 cellar: :any_skip_relocation, mojave: "fae8015c755feea0f99d18170fd5bb2d11033dee11f42bd48d918a763a7b8a70"
   end
 
   depends_on "go" => :build
