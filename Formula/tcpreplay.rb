@@ -1,13 +1,13 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
   homepage "https://tcpreplay.appneta.com/"
-  url "https://github.com/appneta/tcpreplay/releases/download/v4.4.0/tcpreplay-4.4.0.tar.gz"
-  sha256 "a3b125c0319bd096d68f821c4a08051b2d3d9278bac6fe18cfe3c9201703a567"
+  url "https://github.com/appneta/tcpreplay/releases/download/v4.4.1/tcpreplay-4.4.1.tar.gz"
+  sha256 "cb67b6491a618867fc4f9848f586019f1bb2ebd149f393afac5544ee55e4544f"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcpreplay"
-    sha256 cellar: :any, mojave: "51a53bbcd8e6f16a48277c84cbbc8014506b1ce8876a6603587084d5559c63a6"
+    sha256 cellar: :any, mojave: "242951c6fc00d62015a8b94374d22c0d89dbfb9a7dab83d3a31bb737f2982b3f"
   end
 
   depends_on "autoconf" => :build
