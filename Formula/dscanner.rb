@@ -2,17 +2,14 @@ class Dscanner < Formula
   desc "Analyses e.g. the style and syntax of D code"
   homepage "https://github.com/dlang-community/D-Scanner"
   url "https://github.com/dlang-community/D-Scanner.git",
-      tag:      "v0.11.1",
-      revision: "7809598da0e06a319d35d3b6edb4277710fa776b"
+      tag:      "v0.12.0",
+      revision: "cdf881c10386bb9cf9115af80daa86a48e93833b"
   license "BSL-1.0"
-  head "https://github.com/dlang-community/D-Scanner.git"
+  head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, monterey:     "9b0dd1d5cfd2489f6d41e39503c6409d623678ecce927065a5ee53a3dc20131c"
-    sha256 cellar: :any_skip_relocation, big_sur:      "8ae2af163a23040c10f272d0444e1d6c77985ea31db552efcfa79276055287bb"
-    sha256 cellar: :any_skip_relocation, catalina:     "fc89a3f0681d1cc292db4e4e2290bcf17293005da44ac79b4de1dcf6c99fca0d"
-    sha256 cellar: :any_skip_relocation, mojave:       "3b169fd293837fea2ddadf82c21513b468019f2e37218e207a16c3cfd6d58289"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0af0fde44ab2a73644a26121077ac48d73372bcbec7cdd903525087a54a65534"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dscanner"
+    sha256 cellar: :any_skip_relocation, mojave: "5d7a5243e00e6f9931c3912c794e3ba78ba59652f396bdb7ab7e8ae7d6100234"
   end
 
   depends_on "dmd" => :build
