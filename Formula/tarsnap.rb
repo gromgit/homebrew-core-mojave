@@ -1,10 +1,9 @@
 class Tarsnap < Formula
   desc "Online backups for the truly paranoid"
   homepage "https://www.tarsnap.com/"
-  url "https://www.tarsnap.com/download/tarsnap-autoconf-1.0.39.tgz"
-  sha256 "5613218b2a1060c730b6c4a14c2b34ce33898dd19b38fb9ea0858c5517e42082"
+  url "https://www.tarsnap.com/download/tarsnap-autoconf-1.0.40.tgz"
+  sha256 "bccae5380c1c1d6be25dccfb7c2eaa8364ba3401aafaee61e3c5574203c27fd5"
   license "0BSD"
-  revision 1
 
   livecheck do
     url "https://www.tarsnap.com/download.html"
@@ -12,15 +11,8 @@ class Tarsnap < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d249e7eb52d4bfc67e8a74fb45c7419181731c4c37c74591a08d97bd2dd064d8"
-    sha256 cellar: :any,                 arm64_big_sur:  "879ca63de6f2c293dd325fe0cf7a7284cf5603bf5efcc6fc5159ddb676d1163d"
-    sha256 cellar: :any,                 monterey:       "72bcf82c424cf4df2a63420b7353ee9085738b4132294d84cd6bdcb695c7ee9d"
-    sha256 cellar: :any,                 big_sur:        "db0fceeaf2b93d4d7588ef1b3c0ac69080595e4fd05311fb3d61ccb95c9f9ae0"
-    sha256 cellar: :any,                 catalina:       "afa6ebfefbc93faf12ac6576f26edb0b68c6a47cc65b893d590ea1efd4301fb4"
-    sha256 cellar: :any,                 mojave:         "c6c97cd8e16ba02f7997d1d269373dca82d4a3d188b89dc3532c8149e277bd02"
-    sha256 cellar: :any,                 high_sierra:    "847aae76230beaedfa23ea0a0f375864a8af6063c8539634637ab218a425540d"
-    sha256 cellar: :any,                 sierra:         "dbf1a477d46c723a3cebb6b1001771bf51956035ea3369b5e2451c091cad5930"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01ae2d2ea9adaba408f88a7e5917aa3891971e135b24052482193c94e8023b66"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarsnap"
+    sha256 cellar: :any, mojave: "5c2d96b08b50c7f1d2e3fd0b975de2a8b000065477f36c4313d3f59812d12719"
   end
 
   head do
