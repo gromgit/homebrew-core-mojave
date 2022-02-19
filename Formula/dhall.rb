@@ -7,8 +7,8 @@ class Dhall < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "6117fe13e6ec850b534357382db16e61bff83f42b4bf9db881d223df5099215b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "cf8a3b86cc5b8344e115f5563e00f6d6bf95c94528141b6c02f1e1e81cb0ed56"
   end
 
   depends_on "cabal-install" => :build
@@ -20,6 +20,7 @@ class Dhall < Formula
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
+    man1.install "man/dhall.1"
   end
 
   test do
