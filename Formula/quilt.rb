@@ -1,10 +1,9 @@
 class Quilt < Formula
   desc "Work with series of patches"
   homepage "https://savannah.nongnu.org/projects/quilt"
-  url "https://download.savannah.gnu.org/releases/quilt/quilt-0.66.tar.gz"
-  sha256 "314b319a6feb13bf9d0f9ffa7ce6683b06919e734a41275087ea457cc9dc6e07"
+  url "https://download.savannah.gnu.org/releases/quilt/quilt-0.67.tar.gz"
+  sha256 "3be3be0987e72a6c364678bb827e3e1fcc10322b56bc5f02b576698f55013cc2"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://git.savannah.gnu.org/git/quilt.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,8 @@ class Quilt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6efc379230b920dd0815e6d659fc50a1c2561ded68a7bf2319fefa858630b057"
-    sha256 cellar: :any_skip_relocation, big_sur:       "6efc379230b920dd0815e6d659fc50a1c2561ded68a7bf2319fefa858630b057"
-    sha256 cellar: :any_skip_relocation, catalina:      "c4d1cf5f32d7e6d7f4ed49a5781ad549cd810ab22d06c1efdda6dc4ab9e3e0d5"
-    sha256 cellar: :any_skip_relocation, mojave:        "c4d1cf5f32d7e6d7f4ed49a5781ad549cd810ab22d06c1efdda6dc4ab9e3e0d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcf04616c7a95a7f00ec6ffe0751770b751ab18c2bf42d241694416863bafbe3"
-    sha256 cellar: :any_skip_relocation, all:           "11742a29f39b83e63339a576e6ac1a4c7015c195af4a137d061254d2adcfa0c0"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quilt"
+    sha256 cellar: :any_skip_relocation, mojave: "924b09dcf9a752144556c5a6613e34fc770e90e21ae88fe24946470b5de32275"
   end
 
   depends_on "coreutils"
