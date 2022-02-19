@@ -1,8 +1,8 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.6.4/source/mariadb-10.6.4.tar.gz"
-  sha256 "75bf9b147a95d38160d01a73b098d50a1960563b46d16a235971fff64d99643c"
+  url "https://downloads.mariadb.com/MariaDB/mariadb-10.6.7/source/mariadb-10.6.7.tar.gz"
+  sha256 "75ee0f1f865a765fc461ab165419417a719e308faba784b2c97ecbe9e4b4b2c5"
   license "GPL-2.0-only"
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
@@ -20,13 +20,8 @@ class Mariadb < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "60dbcef58f2dbde95de4461ff84483fee87522bee4cc914f4bc0dfdc97f0e078"
-    sha256 arm64_big_sur:  "b68638debac644c1818e23c6b92007c10696dc9ded1bfd57707fec1a5f0b69ea"
-    sha256 monterey:       "6c52a2b4146791f42b3e407bf55e22fb60490ce147d1211bdd731b019e446752"
-    sha256 big_sur:        "618039a83fbea4ad919c9062482793ae70103402644fe6466e868209149ce235"
-    sha256 catalina:       "cdfde8963d10dfea9d11402720d4151762e41209940fe39eab908f9926656bb4"
-    sha256 mojave:         "1e360d01735f007d930a6436eb1880fe159bb35d751d733b62449b28c4d1c246"
-    sha256 x86_64_linux:   "ba618ba8e2db07798bb40d9c1233a1a129d420e72223f46f03cbbab35dc52df7"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb"
+    sha256 mojave: "ec7ae7f4cd33a1309e22770d45c667761e750ae478f350a9cf9f9e0bf5a7ab59"
   end
 
   depends_on "bison" => :build
@@ -40,18 +35,10 @@ class Mariadb < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  on_macos do
-    # Need patch to remove MYSQL_SOURCE_DIR from include path because it contains
-    # file called VERSION.
-    # https://github.com/Homebrew/homebrew-core/pull/76887#issuecomment-840851149
-    # Originally reported upstream at https://jira.mariadb.org/browse/MDEV-7209,
-    # but only partially fixed.
-    patch :DATA
-  end
-
   on_linux do
     depends_on "gcc"
     depends_on "linux-pam"
+    depends_on "readline" # uses libedit on macOS
   end
 
   conflicts_with "mysql", "percona-server",
@@ -81,7 +68,6 @@ class Mariadb < Formula
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INFODIR=share/info
       -DINSTALL_MYSQLSHAREDIR=share/mysql
-      -DWITH_READLINE=yes
       -DWITH_SSL=yes
       -DWITH_UNIT_TESTS=OFF
       -DDEFAULT_CHARSET=utf8mb4
@@ -194,19 +180,3 @@ class Mariadb < Formula
     system "#{bin}/mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end
-
-__END__
-diff --git a/storage/mroonga/CMakeLists.txt b/storage/mroonga/CMakeLists.txt
-index 555ab248751..cddb6f2f2a6 100644
---- a/storage/mroonga/CMakeLists.txt
-+++ b/storage/mroonga/CMakeLists.txt
-@@ -215,8 +215,7 @@ set(MYSQL_INCLUDE_DIRS
-   "${MYSQL_REGEX_INCLUDE_DIR}"
-   "${MYSQL_RAPIDJSON_INCLUDE_DIR}"
-   "${MYSQL_LIBBINLOGEVENTS_EXPORT_DIR}"
--  "${MYSQL_LIBBINLOGEVENTS_INCLUDE_DIR}"
--  "${MYSQL_SOURCE_DIR}")
-+  "${MYSQL_LIBBINLOGEVENTS_INCLUDE_DIR}")
-
- if(MRN_BUNDLED)
-   set(MYSQL_PLUGIN_DIR "${INSTALL_PLUGINDIR}")
