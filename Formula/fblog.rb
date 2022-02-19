@@ -1,14 +1,14 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
   homepage "https://github.com/brocode/fblog"
-  url "https://github.com/brocode/fblog/archive/v3.2.0.tar.gz"
-  sha256 "54ef5af8446b267e29d155ae2b93db10078472d58f310fdbf44fb95dc276a2f6"
+  url "https://github.com/brocode/fblog/archive/v4.0.0.tar.gz"
+  sha256 "99435529eec82e65b58dcbccaece6f7e015d110486189c0f4ceaf2bc5f117771"
   license "WTFPL"
   head "https://github.com/brocode/fblog.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fblog"
-    sha256 cellar: :any_skip_relocation, mojave: "f53c9d904c50f91712da8407f6b76b374775d7f5c2577b475c0eaa9183241eff"
+    sha256 cellar: :any_skip_relocation, mojave: "40e5f8418dc56175ba2f9661e4688c7eacd7d6dd1f0449462e4fadabac0c076b"
   end
 
   depends_on "rust" => :build
