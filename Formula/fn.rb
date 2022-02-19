@@ -1,14 +1,14 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https://fnproject.io"
-  url "https://github.com/fnproject/cli/archive/0.6.12.tar.gz"
-  sha256 "7ede2ea39e97b711c44bd203db785fff136f0f1737c924b24dd5a31b2e14c46c"
+  url "https://github.com/fnproject/cli/archive/0.6.14.tar.gz"
+  sha256 "3f9c1cf9b7ae35a3157727b2dd4aeee7a1e67e2ccded824d9646fe92e77ccbd9"
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fn"
-    sha256 cellar: :any_skip_relocation, mojave: "c6c1739ec36bef546dcbbc8e59d30f2209754fbf386840304e8a6d6588f147e7"
+    sha256 cellar: :any_skip_relocation, mojave: "a65b1064261721e121ee12e7a4174b56e5c44498ee57a2261b9645fc0f98019d"
   end
 
   depends_on "go" => :build
