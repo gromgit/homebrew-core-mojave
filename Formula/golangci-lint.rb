@@ -2,14 +2,14 @@ class GolangciLint < Formula
   desc "Fast linters runner for Go"
   homepage "https://golangci-lint.run/"
   url "https://github.com/golangci/golangci-lint.git",
-      tag:      "v1.44.0",
-      revision: "617470fa9e2c54dd91ab91c14e0d20030e183c20"
+      tag:      "v1.44.2",
+      revision: "d58dbde584c801091e74a00940e11ff18c6c68bd"
   license "GPL-3.0-only"
   head "https://github.com/golangci/golangci-lint.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/golangci-lint"
-    sha256 cellar: :any_skip_relocation, mojave: "fc83bf5d2947f7c19ef8c3e035d5416dd6efb058ea7ff95c8df0cf476313d87a"
+    sha256 cellar: :any_skip_relocation, mojave: "a7b14b15c3c91f49535822e252af9030c67acec8aab6038136006920e779ef1b"
   end
 
   depends_on "go"
