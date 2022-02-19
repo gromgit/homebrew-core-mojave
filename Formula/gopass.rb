@@ -8,7 +8,8 @@ class Gopass < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gopass"
-    sha256 cellar: :any_skip_relocation, mojave: "1022437a8e821516fb0d587bc4ff2e169d82ca18fe01ef410c3ac1537608b1ac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fdee48dbef81f2c8e7945920b2d047e191d25f983efb4eec516aa99c907a7948"
   end
 
   depends_on "go" => :build
@@ -20,6 +21,11 @@ class Gopass < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}/"
+
+    bash_completion.install "bash.completion" => "gopass.bash"
+    fish_completion.install "fish.completion" => "gopass.fish"
+    zsh_completion.install "zsh.completion" => "_gopass"
+    man1.install "gopass.1"
   end
 
   test do
