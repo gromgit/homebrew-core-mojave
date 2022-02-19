@@ -3,14 +3,14 @@ class LuaLanguageServer < Formula
   homepage "https://github.com/sumneko/lua-language-server"
   # pull from git tag to get submodules
   url "https://github.com/sumneko/lua-language-server.git",
-      tag:      "2.6.4",
-      revision: "6c4fe2e8360b8bee1a6e01d5578e5cfc8191c1ee"
+      tag:      "2.6.5",
+      revision: "76cc8c1807b5fc4fa583e1fb3217742a8f29559a"
   license "MIT"
   head "https://github.com/sumneko/lua-language-server.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lua-language-server"
-    sha256 cellar: :any_skip_relocation, mojave: "efce336100a09a1c4b9144506893d9516436edd4ffc767489b25f4de70b21db0"
+    sha256 cellar: :any_skip_relocation, mojave: "3b92885295e46d8609d950a23f10c90001d6750b857bbfe371db5752ff7067ac"
   end
 
   depends_on "ninja" => :build
