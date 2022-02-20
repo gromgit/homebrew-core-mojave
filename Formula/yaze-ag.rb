@@ -1,8 +1,8 @@
 class YazeAg < Formula
   desc "Yet Another Z80 Emulator (by AG)"
   homepage "https://www.mathematik.uni-ulm.de/users/ag/yaze-ag/"
-  url "https://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/yaze-ag-2.51.2.tar.gz"
-  sha256 "1d510fdba520a9c9889d8b8fb34149978329263a5cfbd0fa6c5f4f6363a137c3"
+  url "https://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/yaze-ag-2.51.3.tar.gz"
+  sha256 "2b0a90c3bf3a27574b0427cf4579dc2347b371bec3fea5739e1527edf74b2809"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class YazeAg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaze-ag"
-    sha256 mojave: "a187b6749c117d78df95b670f5d69374fe2a192678e1ece821e0174a0a03b37b"
+    sha256 mojave: "7524822fc7e4ad2d2e184c77380b0a040bac9b12b5b50fbf7e560a67de54dde8"
   end
 
   def install
