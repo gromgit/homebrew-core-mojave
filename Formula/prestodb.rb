@@ -1,9 +1,12 @@
 class Prestodb < Formula
+  include Language::Python::Shebang
+
   desc "Distributed SQL query engine for big data"
   homepage "https://prestodb.io"
   url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.269/presto-server-0.269.tar.gz"
   sha256 "1f9a6cb557d4daa30a7f767170717308518b9594972e8f69ab38e7c0c5e59f5e"
   license "Apache-2.0"
+  revision 1
 
   # Upstream has said that we should check Maven for Presto version information
   # and the highest version found there is newest:
@@ -14,11 +17,11 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "26d13e346cfcbb91477d13579b63ed039ac0151aa16764f71a149ca414bf0833"
+    sha256 cellar: :any_skip_relocation, all: "3179627564c0a0e9b938cf84c55e2d0d2288bb8e266a302b9e9722c113b1acf8"
   end
 
-  depends_on :macos # Seems to require Python2
   depends_on "openjdk"
+  depends_on "python@3.10"
 
   resource "presto-cli" do
     url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-cli/0.269/presto-cli-0.269-executable.jar"
@@ -60,6 +63,7 @@ class Prestodb < Formula
 
     (libexec/"etc/catalog/jmx.properties").write "connector.name=jmx"
 
+    rewrite_shebang detected_python_shebang, libexec/"bin/launcher.py"
     (bin/"presto-server").write_env_script libexec/"bin/launcher", Language::Java.overridable_java_home_env
 
     resource("presto-cli").stage do
