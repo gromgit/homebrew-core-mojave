@@ -1,17 +1,17 @@
 class Orientdb < Formula
   desc "Graph database"
   homepage "https://orientdb.org/"
-  url "https://s3.us-east-2.amazonaws.com/orientdb3/releases/3.2.4/orientdb-3.2.4.zip"
-  sha256 "7da015f7e86be37bbeb8fdc02b284ed7589a05afc44114105c0ffe3ea5f37f47"
+  url "https://search.maven.org/remotecontent?filepath=com/orientechnologies/orientdb-community/3.2.5/orientdb-community-3.2.5.zip"
+  sha256 "4391ec4a538a365775549a4ca425de060c2f34777d69e958f1cb5e06c8b389ad"
   license "Apache-2.0"
 
   livecheck do
     url "https://orientdb.org/download"
-    regex(/href=.*?orientdb[._-]v?(\d+(?:\.\d+)+)\.zip/i)
+    regex(/href=.*?orientdb(?:-community)?[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7448fdd230ad487e0b8558f21cfb65475eb34131ec147305ef8f85fb4afd443f"
+    sha256 cellar: :any_skip_relocation, all: "dacc1c5eebf7ec4aea5b9c64775071061e96b6d03d1d46bfbe70ae2726d9d814"
   end
 
   depends_on "maven" => :build
