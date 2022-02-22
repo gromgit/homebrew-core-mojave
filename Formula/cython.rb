@@ -1,13 +1,13 @@
 class Cython < Formula
   desc "Compiler for writing C extensions for the Python language"
   homepage "https://cython.org/"
-  url "https://files.pythonhosted.org/packages/eb/46/80dd9e5ad67ebc766ff3229901bde4a7bc82907efe93cd7007c4df458dd5/Cython-0.29.27.tar.gz"
-  sha256 "c6a442504db906dfc13a480e96850cced994ecdc076bcf492c43515b78f70da2"
+  url "https://files.pythonhosted.org/packages/cb/da/54a5d7a7d9afc90036d21f4b58229058270cc14b4c81a86d9b2c77fd072e/Cython-0.29.28.tar.gz"
+  sha256 "d6fac2342802c30e51426828fe084ff4deb1b3387367cf98976bb2e64b6f8e45"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cython"
-    sha256 cellar: :any_skip_relocation, mojave: "dd3361a64847df4aa588a4a8f7e0af271d0cac18188156deba8e2efc779ddd83"
+    sha256 cellar: :any_skip_relocation, mojave: "e877dda12c61be4d84bd003fff6b9c7749e57aa642b10b6e4fe0b01bee649c21"
   end
 
   keg_only <<~EOS
