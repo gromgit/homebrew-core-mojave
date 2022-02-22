@@ -8,7 +8,8 @@ class Blockhash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blockhash"
-    sha256 cellar: :any, mojave: "6ae0032472323122c3c63ca43b58c505f0e217011b26f59ca5ff4ed9c4860d6f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fad45b44a6a9bd1f219c1baa751fc1ac4f0970aec8acfc00c1aac2e0ff4f653d"
   end
 
   depends_on "pkg-config" => :build
@@ -21,14 +22,12 @@ class Blockhash < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_bin
-
-    system "./waf", "configure", "--prefix=#{prefix}"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
     # pkg-config adds -fopenmp flag during configuring
     # This fails the build on system clang, and OpenMP is not used in blockhash
     inreplace "build/c4che/_cache.py", "-fopenmp", ""
-    system "./waf"
-    system "./waf", "install"
+    system "python3", "./waf"
+    system "python3", "./waf", "install"
   end
 
   test do
