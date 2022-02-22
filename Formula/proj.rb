@@ -4,19 +4,16 @@ class Proj < Formula
   url "https://github.com/OSGeo/PROJ/releases/download/8.2.1/proj-8.2.1.tar.gz"
   sha256 "76ed3d0c3a348a6693dfae535e5658bbfd47f71cb7ff7eb96d9f12f7e068b1cf"
   license "MIT"
+  head "https://github.com/OSGeo/proj.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
-    sha256 mojave: "969ead40e6416821e287caaa828d0ed15aad1bfc93a439cb2798e578287b8e9a"
+    rebuild 1
+    sha256 mojave: "dc2d603a3709920281e164ef961943d1ff9f4bc79891fc6ea39aa237e6f3c004"
   end
 
-  head do
-    url "https://github.com/OSGeo/proj.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "cmake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libtiff"
 
@@ -35,10 +32,9 @@ class Proj < Formula
 
   def install
     (buildpath/"nad").install resource("datumgrid")
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
