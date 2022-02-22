@@ -3,8 +3,8 @@ class LittleCms2 < Formula
   homepage "https://www.littlecms.com/"
   # Ensure release is announced at https://www.littlecms.com/categories/releases/
   # (or https://www.littlecms.com/blog/)
-  url "https://downloads.sourceforge.net/project/lcms/lcms/2.13/lcms2-2.13.tar.gz"
-  sha256 "0c67a5cc144029cfa34647a52809ec399aae488db4258a6a66fba318474a070f"
+  url "https://downloads.sourceforge.net/project/lcms/lcms/2.13/lcms2-2.13.1.tar.gz"
+  sha256 "d473e796e7b27c5af01bd6d1552d42b45b43457e7182ce9903f38bb748203b88"
   license "MIT"
   version_scheme 1
 
@@ -19,7 +19,7 @@ class LittleCms2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/little-cms2"
-    sha256 cellar: :any, mojave: "794b23601c3581962289e8c77455cf446c2414fced699a1576088c04ea109699"
+    sha256 cellar: :any, mojave: "94f65c7249774182efb9d6d7608719dd3c2aa4dc19bcfc89c1f05e44118807b6"
   end
 
   depends_on "jpeg"
