@@ -1,13 +1,13 @@
 class Cgif < Formula
   desc "GIF encoder written in C"
   homepage "https://github.com/dloebl/cgif"
-  url "https://github.com/dloebl/cgif/archive/refs/tags/V0.1.0.tar.gz"
-  sha256 "fc7a79d79c7325cd3ef2093fece064e688bbc0bc309c1a5feae3e62446bbd088"
+  url "https://github.com/dloebl/cgif/archive/refs/tags/V0.2.0.tar.gz"
+  sha256 "d00fd4bf2a7b47bc3b0c3b2c8f2215b1bdfd88f0569388d752909b878db27bfb"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgif"
-    sha256 cellar: :any, mojave: "7d4e5ea90dd6b33b2747d8fb27ef7f5195ab7195318c41e34091f30fb8f9684b"
+    sha256 cellar: :any, mojave: "3c2d07fa44fde0ff1bf8705cf8d88f83817c80792078cbc0ac079ebbe2aca235"
   end
 
   depends_on "meson" => :build
