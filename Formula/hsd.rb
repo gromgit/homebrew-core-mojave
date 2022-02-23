@@ -14,17 +14,17 @@ class Hsd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hsd"
-    rebuild 3
-    sha256 mojave: "7ed7d4614b1ed6f5f89642746e8bf204c35a29fc1cdbfb183b349dda588946b4"
+    rebuild 4
+    sha256 mojave: "36f4ebc30e01e3e534903305db4007af863c1fc130ff2096bdacb622bdc6c220"
   end
 
   depends_on "python@3.10" => :build
-  depends_on "node@10"
+  depends_on "node@14"
   depends_on "unbound"
 
   def install
-    system "#{Formula["node@10"].bin}/npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"hsd").write_env_script libexec/"bin/hsd", PATH: "#{Formula["node@10"].opt_bin}:$PATH"
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    (bin/"hsd").write_env_script libexec/"bin/hsd", PATH: "#{Formula["node@14"].opt_bin}:$PATH"
     bin.install_symlink libexec/"bin/hsd-cli"
     bin.install_symlink libexec/"bin/hsw-cli"
   end
@@ -43,7 +43,7 @@ class Hsd < Formula
         await node.ensure();
       })();
     EOS
-    system "#{Formula["node@10"].opt_bin}/node", testpath/"script.js"
+    system "#{Formula["node@14"].opt_bin}/node", testpath/"script.js"
     assert File.directory?("#{testpath}/.hsd")
   end
 end
