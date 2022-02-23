@@ -3,15 +3,14 @@ class Libmonome < Formula
 
   desc "Library for easy interaction with monome devices"
   homepage "https://monome.org/"
-  url "https://github.com/monome/libmonome/archive/v1.4.4.tar.gz"
-  sha256 "466acc432b023e6c0bfa8dfb46d79abb1fb8c870f16279ffca7cf5286a63a823"
+  url "https://github.com/monome/libmonome/archive/v1.4.5.tar.gz"
+  sha256 "c7109014f47f451f7b86340c40a1a05ea5c48e8c97493b1d4c0102b9ee375cd4"
   license "ISC"
-  revision 1
   head "https://github.com/monome/libmonome.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmonome"
-    sha256 cellar: :any, mojave: "b5974c1e7922f9b4cd59dfbec538a25d543777e455cb8a9652e56bf1bb1da22a"
+    sha256 cellar: :any, mojave: "8488ac9fc22090ebd4f1e289d3f9fc113fec685218e8dd658aaf3274ad95cfb0"
   end
 
   depends_on "python@3.10" => :build
