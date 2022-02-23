@@ -8,7 +8,8 @@ class Qemu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qemu"
-    sha256 mojave: "bad3b24a61720c6e1002cde12b40bfe2ef52aa86f972d5959c5139a577d49187"
+    rebuild 1
+    sha256 mojave: "ca08e123a306feab342df24b0e2b19fc4b899207173d09b808f1c34d08f8103e"
   end
 
   depends_on "libtool" => :build
@@ -32,13 +33,14 @@ class Qemu < Formula
 
   on_linux do
     depends_on "gcc"
+    depends_on "gtk+3"
   end
 
   fails_with gcc: "5"
 
   # 820KB floppy disk image file of FreeDOS 1.2, used to test QEMU
   resource "homebrew-test-image" do
-    url "https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/FD12FLOPPY.zip"
+    url "https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/official/FD12FLOPPY.zip"
     sha256 "81237c7b42dc0ffc8b32a2f5734e3480a3f9a470c50c14a9c4576a2561a35807"
   end
 
@@ -57,7 +59,6 @@ class Qemu < Formula
       --enable-vde
       --extra-cflags=-DNCURSES_WIDECHAR=1
       --disable-sdl
-      --disable-gtk
     ]
     # Sharing Samba directories in QEMU requires the samba.org smbd which is
     # incompatible with the macOS-provided version. This will lead to
@@ -66,7 +67,9 @@ class Qemu < Formula
     # Samba installations from external taps.
     args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
 
+    args << "--disable-gtk" if OS.mac?
     args << "--enable-cocoa" if OS.mac?
+    args << "--enable-gtk" if OS.linux?
 
     system "./configure", *args
     system "make", "V=1", "install"
