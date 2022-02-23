@@ -1,13 +1,13 @@
 class GpgTui < Formula
   desc "Manage your GnuPG keys with ease! 🔐"
   homepage "https://github.com/orhun/gpg-tui"
-  url "https://github.com/orhun/gpg-tui/archive/v0.8.2.tar.gz"
-  sha256 "d49a402e7ba9f308c55d3398b65c9aaf773ca32100aad23c59be1754f8be2108"
+  url "https://github.com/orhun/gpg-tui/archive/v0.8.3.tar.gz"
+  sha256 "64e0159c997b97fc6896ed6fb5e50d65d50e6c08c14817bea7b9be5a70335442"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpg-tui"
-    sha256 cellar: :any, mojave: "13f6171f6bdeb37cb8d5b12fda7761201d3a37646d27c12184933582e8ee1ef5"
+    sha256 cellar: :any, mojave: "8c038b3b46a3c3829b2fe888ba241bbb9e066d649ee0f05547c3bd823680ff11"
   end
 
   depends_on "rust" => :build
