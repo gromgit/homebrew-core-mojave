@@ -1,13 +1,13 @@
 class Findomain < Formula
   desc "Cross-platform subdomain enumerator"
   homepage "https://github.com/Findomain/Findomain"
-  url "https://github.com/Findomain/Findomain/archive/6.1.0.tar.gz"
-  sha256 "5499bf1b07be83bb2d08be43bdeace77b19a461e81fb773e2ec89f5b01b52e85"
+  url "https://github.com/Findomain/Findomain/archive/7.0.0.tar.gz"
+  sha256 "94d2949972aba3a0c4d85f1ba2dd8bf818ea193fd058634aaa3bdc8e911cb838"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/findomain"
-    sha256 cellar: :any_skip_relocation, mojave: "8b579885426a07cd4cb7d594b3d20047f15583dde62fd626a7011aab90d0f5b4"
+    sha256 cellar: :any_skip_relocation, mojave: "fec2f76f699f058ddda9f9bfc3e7c1969a6907b7efddecdd86221ce258949824"
   end
 
   depends_on "rust" => :build
