@@ -2,14 +2,14 @@ class Chezmoi < Formula
   desc "Manage your dotfiles across multiple diverse machines, securely"
   homepage "https://chezmoi.io/"
   url "https://github.com/twpayne/chezmoi.git",
-      tag:      "v2.12.0",
-      revision: "9f01e42aef127fe1524969616555c89815454b1b"
+      tag:      "v2.12.1",
+      revision: "8714b95999fcfc7247a3ee70e4232f438b610c82"
   license "MIT"
   head "https://github.com/twpayne/chezmoi.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chezmoi"
-    sha256 cellar: :any_skip_relocation, mojave: "d9046e5b10578b78b9dbc33ca136e3442f273fa19251995b3105e3e6ae42cf6c"
+    sha256 cellar: :any_skip_relocation, mojave: "567b0859e73eaaaab9a4486f1e545de07a78005dd03f32877e0be5c253368495"
   end
 
   depends_on "go" => :build
