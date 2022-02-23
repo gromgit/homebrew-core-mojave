@@ -1,8 +1,8 @@
 class Duktape < Formula
   desc "Embeddable Javascript engine with compact footprint"
   homepage "https://duktape.org"
-  url "https://github.com/svaarala/duktape/releases/download/v2.6.0/duktape-2.6.0.tar.xz"
-  sha256 "96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7"
+  url "https://github.com/svaarala/duktape/releases/download/v2.7.0/duktape-2.7.0.tar.xz"
+  sha256 "90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,12 @@ class Duktape < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "05e6bd04eadb5a45c3bd2d388ee9bfc573d05b7cd9d05fccb00978cc111302ac"
-    sha256 cellar: :any,                 arm64_big_sur:  "c0557537b880f90bc30637561d9e749c0405c215afb951733da3368db82deb4e"
-    sha256 cellar: :any,                 monterey:       "cce62a7fa64b656597293f0a22ee28ddb37fa62b8ced9bdce55e946874b008ef"
-    sha256 cellar: :any,                 big_sur:        "a433cc772fa217fdfc55adf56a0080eb6da1b8ff9434336318d20b924f36f0a3"
-    sha256 cellar: :any,                 catalina:       "3abfb4891e9d485ed2e20ba42074a82a254f714ca646b1285cb08ce3cc56d23f"
-    sha256 cellar: :any,                 mojave:         "6eb347fe58ee46c3b915e81daae45fb3ebcb5f6a822482b5d4aa2f84df39481b"
-    sha256 cellar: :any,                 high_sierra:    "d2a496ae5d023333d5b904f8b92869e6bfa855b101c5313ed39f1f180eaf8833"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8b9146489dc275a3a0e94286acd45b22ef1cc4355b7e94f46f030a973b4e038"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duktape"
+    sha256 cellar: :any, mojave: "64ca4d1eeb958f7115d3a34157105d20f63a6d6e91ad0bcb1a29afbda85e60c8"
   end
 
   def install
-    inreplace "Makefile.sharedlibrary", /INSTALL_PREFIX\s*=.*$/, "INSTALL_PREFIX = #{prefix}"
+    ENV["INSTALL_PREFIX"] = prefix
     system "make", "-f", "Makefile.sharedlibrary", "install"
     system "make", "-f", "Makefile.cmdline"
     bin.install "duk"
