@@ -1,13 +1,13 @@
 class Dtm < Formula
   desc "Cross-language distributed transaction manager"
   homepage "http://d.dtm.pub"
-  url "https://github.com/dtm-labs/dtm/archive/refs/tags/v1.12.1.tar.gz"
-  sha256 "1ce7260377d2348bca498a9980ff7884b86ea65227688fcc106e4551a31e7328"
+  url "https://github.com/dtm-labs/dtm/archive/refs/tags/v1.12.2.tar.gz"
+  sha256 "b35c83a28f88201d9e13c84496dd467f7caceb9eb7bd71f8dcba23e65d652c00"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dtm"
-    sha256 cellar: :any_skip_relocation, mojave: "7edfc4f47120f5f122a59284ca9a27c76506e800626e752b2a3d61234edf49a3"
+    sha256 cellar: :any_skip_relocation, mojave: "3e95b1e0d1a24de33d3703ac2a6bb6484f0f602fc00eaa268d605b9dbe06fed1"
   end
 
   depends_on "go" => :build
@@ -19,12 +19,25 @@ class Dtm < Formula
 
   test do
     assert_match "dtm version: v#{version}", shell_output("#{bin}/dtm -v")
+
+    http_port = free_port
+    grpc_port = free_port
+
     dtm_pid = fork do
+      ENV["HTTP_PORT"] = http_port.to_s
+      ENV["GRPC_PORT"] = grpc_port.to_s
       exec bin/"dtm"
     end
     # sleep to let dtm get its wits about it
     sleep 5
-    assert_match "succeed", shell_output("#{bin}/dtm-qs 2>&1")
+    metrics_output = shell_output("curl -s localhost:#{http_port}/api/metrics")
+    assert_match "# HELP dtm_server_info The information of this dtm server.", metrics_output
+
+    all_json = JSON.parse(shell_output("curl -s localhost:#{http_port}/api/dtmsvr/all"))
+    assert_equal 0, all_json["next_position"].length
+    assert all_json["next_position"].instance_of? String
+    assert_equal 0, all_json["transactions"].length
+    assert all_json["transactions"].instance_of? Array
   ensure
     # clean up the dtm process before we leave
     Process.kill("HUP", dtm_pid)
