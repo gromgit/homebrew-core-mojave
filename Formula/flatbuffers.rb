@@ -13,11 +13,14 @@ class Flatbuffers < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flatbuffers"
-    sha256 cellar: :any_skip_relocation, mojave: "1d8c5316da1a4a132415907b0c7061fea18719ead44578c327a399704865ea2c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "558ac3872881e00fb7a7e84a25f05bdbae2ba60dbdca3fdc15d2e0c1b781d707"
   end
 
   depends_on "cmake" => :build
   depends_on "python@3.10" => :build
+
+  conflicts_with "osrm-backend", because: "both install flatbuffers headers"
 
   def install
     system "cmake", "-G", "Unix Makefiles", *std_cmake_args
