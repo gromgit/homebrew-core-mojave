@@ -1,14 +1,13 @@
 class JavaServiceWrapper < Formula
   desc "Simplify the deployment, launch and monitoring of Java applications"
   homepage "https://wrapper.tanukisoftware.com/"
-  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.5.48_20211222/wrapper_3.5.48_src.tar.gz"
-  sha256 "c2800d8702ce86f4e7abe06773ccc220364424ebf7b3035f788ff79d0ed8d523"
+  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.5.49_20220209/wrapper_3.5.49_src.tar.gz"
+  sha256 "81c49c1792c8a96541bfc7ab237846e6db790593ced979611400b3d58eb4fafe"
   license "GPL-2.0-only"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/java-service-wrapper"
-    sha256 cellar: :any_skip_relocation, mojave: "38932e55a24644362285989149fec764aef68f4dc0128913ec0281e88f572095"
+    sha256 cellar: :any_skip_relocation, mojave: "abc44da1070f879ec44094b4cff9b0ec501e4cc23ba1dd2b704aa73a561ad8e4"
   end
 
   depends_on "ant" => :build
