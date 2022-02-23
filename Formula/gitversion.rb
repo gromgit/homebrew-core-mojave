@@ -1,31 +1,32 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https://gitversion.net"
-  url "https://github.com/GitTools/GitVersion/archive/5.7.0.tar.gz"
-  sha256 "d2c101d3b6ed5a0ee1e764c749bd869a2ce8f6d5563a5e2938dc3c32ad1375c7"
+  url "https://github.com/GitTools/GitVersion/archive/5.8.2.tar.gz"
+  sha256 "6a257db2f33cd2a14ffa38f22c35f42473d52810ee4c2be3560abe5458f477a7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 big_sur:      "da4483fe73a5085dd3a54034bdac7a17e12710c18ca53e90fe1386a188cb6946"
-    sha256 cellar: :any,                 catalina:     "106a5e3b8ac1e69809bbd4e86733bcab971f2f35fed40a2a7197f9b57d28a039"
-    sha256 cellar: :any,                 mojave:       "b5d5943589f696a3bbcdb61d0827374cd45e5903203a3e574f40bf2c19c16da1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "029c5c10ede90c0f116a12fe47af0d2e9b0da43542b70117c5eae946756f24df"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitversion"
+    sha256 cellar: :any, mojave: "8f18c68cc49ec9c2f8d49bb646351f1b7255d36e18d7b26396fcd27a3cd83649"
   end
 
-  depends_on arch: :x86_64 # dotnet does not support ARM
   depends_on "dotnet"
 
   def install
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 
-    system "dotnet", "publish", "src/GitVersion.App/GitVersion.App.csproj",
-           "--configuration", "Release",
-           "--framework", "net#{Formula["dotnet"].version.major_minor}",
-           "--output", libexec,
-           "--runtime", "#{os}-x64",
-           "--self-contained", "false",
-           "/p:PublishSingleFile=true"
+    args = %W[
+      --configuration Release
+      --framework net#{Formula["dotnet"].version.major_minor}
+      --output #{libexec}
+      --runtime #{os}-#{arch}
+      --no-self-contained
+      -p:PublishSingleFile=true
+    ]
+    args << "-p:OsxArm64=true" if OS.mac? && Hardware::CPU.arm?
 
+    system "dotnet", "publish", "src/GitVersion.App/GitVersion.App.csproj", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{Formula["dotnet"].opt_libexec}}" }
     (bin/"gitversion").write_env_script libexec/"gitversion", env
   end
