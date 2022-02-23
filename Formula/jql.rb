@@ -1,14 +1,14 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https://github.com/yamafaktory/jql"
-  url "https://github.com/yamafaktory/jql/archive/v3.1.0.tar.gz"
-  sha256 "7eeb73c76b39eb47dd8c7ec7af9b225e8c92da1d3dd704c99617d9331438f1a7"
+  url "https://github.com/yamafaktory/jql/archive/v3.1.1.tar.gz"
+  sha256 "0d9bfcb493a39718dbd3e53b3bdf255575620e81590a3ec1da838788e4172888"
   license "MIT"
   head "https://github.com/yamafaktory/jql.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jql"
-    sha256 cellar: :any_skip_relocation, mojave: "24bb150c5aaf8969bf7e86d1c917dcc44e9e3f15780fec08778d66dea8389b84"
+    sha256 cellar: :any_skip_relocation, mojave: "40ede410811d9dbf5587fdebc854a6a60e8bd406b25a846c7fe7ac9066b30e84"
   end
 
   depends_on "rust" => :build
