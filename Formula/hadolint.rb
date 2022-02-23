@@ -7,8 +7,8 @@ class Hadolint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hadolint"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d047cbba562cb8e1ec217c86acccaef874ffe8fc12365cd3636b2efd9c214468"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "5dee2c71d7fb270b2addebd281e8a02b9fe7f6f7075c816918252f9ab8427b6f"
   end
 
   depends_on "ghc" => :build
