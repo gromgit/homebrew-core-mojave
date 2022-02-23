@@ -9,9 +9,11 @@ class Gdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdb"
-    sha256 mojave: "3604cd6a081d79eb74b1a9b7a3b0e47e7cd0b488aba65183ecc770313fe7add3"
+    rebuild 1
+    sha256 mojave: "4c6262b31fcead7815c8b82873725a269743ffd5b8716384d249e6b790e877d1"
   end
 
+  depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "gmp"
   depends_on "python@3.10"
   depends_on "xz" # required for lzma support
