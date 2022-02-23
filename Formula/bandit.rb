@@ -6,11 +6,12 @@ class Bandit < Formula
   url "https://files.pythonhosted.org/packages/67/f3/99409392d1eb5e3d65efacf2d30e94b2d2c4e24e0849fab2e84f35748a3b/bandit-1.7.2.tar.gz"
   sha256 "6d11adea0214a43813887bfe71a377b5a9955e4c826c8ffd341b494e3ab25260"
   license "Apache-2.0"
-  head "https://github.com/PyCQA/bandit.git", branch: "master"
+  head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bandit"
-    sha256 cellar: :any_skip_relocation, mojave: "b303d0b033fcea2de5c8917c7fd23e5f0f1a080f0c30d3c11659086043cd2a74"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dc29757222ad2213bec804dcd621f0ff9024c11b9fd078a80f17a78381067249"
   end
 
   depends_on "python@3.10"
