@@ -4,17 +4,12 @@ class Apngasm < Formula
   url "https://github.com/apngasm/apngasm/archive/3.1.6.tar.gz"
   sha256 "0068e31cd878e07f3dffa4c6afba6242a753dac83b3799470149d2e816c1a2a7"
   license "Zlib"
-  revision 3
+  revision 4
   head "https://github.com/apngasm/apngasm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "7d1619bafdac3d49debab0aab9af730d26cd1136dae3f100465af02a79868d46"
-    sha256 cellar: :any,                 arm64_big_sur:  "e7ae49e492cf07670d473742b64ab25103e0e94780181b78173c10b5f5c4fba7"
-    sha256 cellar: :any,                 monterey:       "a36162ed6dedb8816551c7e766178d35ef02433b08a0ad2d801cc9595b652f39"
-    sha256 cellar: :any,                 big_sur:        "d94b80958f9782e98a7bcd7461b22d5239c376d4b1fb26b49bfb9d5c5c25b6e6"
-    sha256 cellar: :any,                 catalina:       "db0dc40f3fd4e8a8b7435da56211356e669b42ba47b8107d0f840777197202cf"
-    sha256 cellar: :any,                 mojave:         "569b760c848add596a639397ebe63f631e2ad3faabd1fa77ea6609f24f240e2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab95dd3612c31e8ba296774bf173605838a649df0716aa9285ec660483bfbbbe"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apngasm"
+    sha256 cellar: :any, mojave: "bf2c76b6a79551169decb815f9417d46930a14371af47f3599df9c9a29ab8ca4"
   end
 
   depends_on "cmake" => :build
