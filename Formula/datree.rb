@@ -1,8 +1,8 @@
 class Datree < Formula
   desc "CLI tool to run policies against Kubernetes manifests YAML files or Helm charts"
   homepage "https://www.datree.io/"
-  url "https://github.com/datreeio/datree/archive/0.15.16.tar.gz"
-  sha256 "025934c204667f4dcd1e130e62e5e32cb710577173f4a4801fca7c279170efe1"
+  url "https://github.com/datreeio/datree/archive/0.15.19.tar.gz"
+  sha256 "9bced4b788c02cfe70b75ab18506ac4a2373badf95b6f959e5f901fb415493df"
   license "Apache-2.0"
   head "https://github.com/datreeio/datree.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Datree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datree"
-    sha256 cellar: :any_skip_relocation, mojave: "92dd8606d63bca8afd3c949d825d1deeeb74dae091f0e6d3447b2a7be55c3c29"
+    sha256 cellar: :any_skip_relocation, mojave: "c67975fd5bd117f95279859d20f0d7c075eba823c4a9a1880cbe387acdd25442"
   end
 
   depends_on "go" => :build
@@ -38,7 +38,7 @@ class Datree < Formula
     EOS
 
     assert_match "k8s schema validation error: For field (root): Additional property apiversion is not allowed",
-      shell_output("#{bin}/datree test #{testpath}/invalidK8sSchema.yaml 2>&1", 1)
+      shell_output("#{bin}/datree test #{testpath}/invalidK8sSchema.yaml 2>&1", 2)
 
     assert_equal "#{version}\n", shell_output("#{bin}/datree version")
   end
