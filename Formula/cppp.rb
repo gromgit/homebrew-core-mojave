@@ -1,8 +1,8 @@
 class Cppp < Formula
   desc "Partial Preprocessor for C"
   homepage "https://www.muppetlabs.com/~breadbox/software/cppp.html"
-  url "https://www.muppetlabs.com/~breadbox/pub/software/cppp-2.7.tar.gz"
-  sha256 "15b3283f1f98d730840c1973d2109d9edbeba43736d5b9c32c34b559c4d10ac3"
+  url "https://www.muppetlabs.com/~breadbox/pub/software/cppp-2.8.tar.gz"
+  sha256 "a369cec68cbc3b9ad595ee83c130ae7ce7d5f74479387755c22a4a5ff7387ff5"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Cppp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppp"
-    sha256 cellar: :any_skip_relocation, mojave: "1502e0ed57fcf811237a61dddd5e4428da4e10288ecf9aa30edbbe0b0605ceb1"
+    sha256 cellar: :any_skip_relocation, mojave: "0953fde2a184beff964e1ba7a24b48cdeac5fb5b6d184bdb935dbdea0eb5a827"
   end
 
   def install
