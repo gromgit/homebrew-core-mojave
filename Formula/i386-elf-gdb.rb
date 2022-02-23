@@ -2,11 +2,10 @@ class I386ElfGdb < Formula
   desc "GNU debugger for i386-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
   # Please add to synced_versions_formulae.json once version synced with gdb
-  url "https://ftp.gnu.org/gnu/gdb/gdb-10.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-10.2.tar.xz"
-  sha256 "aaa1223d534c9b700a8bec952d9748ee1977513f178727e1bee520ee000b4f29"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-11.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-11.2.tar.xz"
+  sha256 "1497c36a71881b8671a9a84a0ee40faab788ca30d7ba19d8463c3cc787152e32"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   livecheck do
@@ -15,23 +14,16 @@ class I386ElfGdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i386-elf-gdb"
-    sha256 mojave: "63fe666187b6aa74efb1ece7e54949ca4893f15c394e0b2aa19968985bee94ab"
+    sha256 mojave: "c86b9b532df32f1bf886922f150ca8cd1c5dabbfdf4e907920c1793249b932bd"
   end
 
   depends_on "i686-elf-gcc" => :test
+  depends_on "gmp"
   depends_on "python@3.10"
   depends_on "xz" # required for lzma support
 
   uses_from_macos "texinfo" => :build
   uses_from_macos "zlib"
-
-  # Fix for https://sourceware.org/bugzilla/show_bug.cgi?id=26949#c8
-  # Remove when upstream includes this commit
-  # https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=b413232211bf
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/242630de4b54d6c57721e12ce88988a0f4e41202/gdb/gdb-10.2.patch"
-    sha256 "36652e9d97037266650a3b31f9f39539c4b376d31016fa4fc325dc0aa7930acc"
-  end
 
   def install
     target = "i386-elf"
@@ -52,6 +44,7 @@ class I386ElfGdb < Formula
 
     mkdir "build" do
       system "../configure", *args
+      ENV.deparallelize # Error: common/version.c-stamp.tmp: No such file or directory
       system "make"
 
       # Don't install bfd or opcodes, as they are provided by binutils
