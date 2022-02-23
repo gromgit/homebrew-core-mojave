@@ -1,13 +1,13 @@
 class Draco < Formula
   desc "3D geometric mesh and point cloud compression library"
   homepage "https://google.github.io/draco/"
-  url "https://github.com/google/draco/archive/1.5.1.tar.gz"
-  sha256 "1e52f9d78f7f5d8c2d29e706dea751b2719fd795ee6e1e6259f6d5f8ac34666b"
+  url "https://github.com/google/draco/archive/1.5.2.tar.gz"
+  sha256 "a887e311ec04a068ceca0bd6f3865083042334fbff26e65bc809e8978b2ce9cd"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/draco"
-    sha256 cellar: :any_skip_relocation, mojave: "5b1368f44ce26bdaa359449ecefb9f2f82ff57a98bc81ce721046c726008b30c"
+    sha256 cellar: :any_skip_relocation, mojave: "56c84325ffbecad986495f8f4235edfc88cc04fe1b848f06a5bbf0d4ff41d0c7"
   end
 
   depends_on "cmake" => :build
