@@ -5,11 +5,12 @@ class Auditbeat < Formula
       tag:      "v8.0.0",
       revision: "2ab3a7334016f570e0bfc7e9a577a35a22e02df5"
   license "Apache-2.0"
-  head "https://github.com/elastic/beats.git", branch: "master"
+  head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/auditbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "bd487038ed0edfa182dbbd9d907e45fdb65663fb04c12c8c01539654272f9ae5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "efa01245b81b33b48066f9a9052dc7bef6e85eaa9a1590b89f671063b30fc5e0"
   end
 
   depends_on "go" => :build
