@@ -2,8 +2,8 @@ class Colima < Formula
   desc "Container runtimes on MacOS with minimal setup"
   homepage "https://github.com/abiosoft/colima/blob/main/README.md"
   url "https://github.com/abiosoft/colima.git",
-      tag:      "v0.3.2",
-      revision: "272db4732b90390232ed9bdba955877f46a50552"
+      tag:      "v0.3.3",
+      revision: "ac876a5d9e4eda7d1d015896ebfbe1dd16b8c203"
   license "MIT"
   head "https://github.com/abiosoft/colima.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Colima < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/colima"
-    sha256 cellar: :any_skip_relocation, mojave: "f38544d83de922a665362af15d880090c9db807956b4afa06e72a097fb5832a9"
+    sha256 cellar: :any_skip_relocation, mojave: "37f5e30df59af0920281d7cb7c73f76604d977693b58728795ade6c4dd8a3837"
   end
 
   depends_on "go" => :build
