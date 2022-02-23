@@ -1,8 +1,8 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://github.com/dafny-lang/dafny/archive/v3.3.0.tar.gz"
-  sha256 "0cdbffa90d2556e068cb6fb8601c9ecda649dc671734354cd6071d3b8b948b41"
+  url "https://github.com/dafny-lang/dafny/archive/v3.4.1.tar.gz"
+  sha256 "75c86d22ed9b9b7b88b078e2f27cca6b408070dd95e865e3e57f2dc3c3cd0bbe"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,11 @@ class Dafny < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dafny"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "ec86d0e14a6406de7a9931d1873ef488398d47d35c7a1bba668951696a238e72"
+    sha256 cellar: :any_skip_relocation, mojave: "063e6438bf11381923bbc85a9bd088abbba58c4ebf4443fc405b71905fc20881"
   end
 
   depends_on "gradle" => :build
-  depends_on "nuget" => :build
-  depends_on arch: :x86_64 # dotnet does not support ARM
+  depends_on "python@3.10" => :build # for z3
   depends_on "dotnet"
   depends_on "openjdk@11"
 
@@ -38,6 +36,7 @@ class Dafny < Formula
     dst_z3_bin.mkpath
 
     resource("z3").stage do
+      ENV["PYTHON"] = which("python3")
       system "./configure"
       system "make", "-C", "build"
       mv("build/z3", dst_z3_bin/"z3")
