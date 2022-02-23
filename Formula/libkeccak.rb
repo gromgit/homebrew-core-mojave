@@ -1,13 +1,13 @@
 class Libkeccak < Formula
   desc "Keccak-family hashing library"
   homepage "https://github.com/maandree/libkeccak"
-  url "https://github.com/maandree/libkeccak/archive/1.3.1.tar.gz"
-  sha256 "f13331e014d9b0b14c2be7b834c3ca817c171cad16801e58e6f1ec5eb981a2ce"
+  url "https://github.com/maandree/libkeccak/archive/1.3.1.2.tar.gz"
+  sha256 "c17df59e038f9f1b0f09aa79944ba572f5c4efcbfe8bc6bc7aae1b40f035abe9"
   license "ISC"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libkeccak"
-    sha256 cellar: :any, mojave: "77ebb8d72c61ff49698fdc22d9e9aac7f0758cd66b9b83f3d9095669148143d3"
+    sha256 cellar: :any, mojave: "22316ea5b8acdba2023228cff0afff76712811b39dfa4557faa7661f749f3a15"
   end
 
   def install
