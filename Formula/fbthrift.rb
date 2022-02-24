@@ -4,11 +4,12 @@ class Fbthrift < Formula
   url "https://github.com/facebook/fbthrift/archive/v2022.02.14.00.tar.gz"
   sha256 "269f40b973e90d080e98283b4ce5cc7647ba4304945d38926bf3ce47ced5e83d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fbthrift"
-    sha256 cellar: :any, mojave: "f77cd8750e87560b7832f4649662ef352b1c12deed4a004063ab79707edcbdbb"
+    sha256 cellar: :any, mojave: "40a68dc9be953f188fc90003f0f6f82743397b8b140945c589e7a31377176455"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
