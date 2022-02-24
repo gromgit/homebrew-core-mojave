@@ -4,8 +4,8 @@ class Ledger < Formula
   url "https://github.com/ledger/ledger/archive/v3.2.1.tar.gz"
   sha256 "92bf09bc385b171987f456fe3ee9fa998ed5e40b97b3acdd562b663aa364384a"
   license "BSD-3-Clause"
-  revision 7
-  head "https://github.com/ledger/ledger.git"
+  revision 8
+  head "https://github.com/ledger/ledger.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,13 +13,8 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "9d9c6979d1708333ec05d9106ff3b10e9d81e565edc32e3299bab5e8cc9b1d05"
-    sha256 cellar: :any,                 arm64_big_sur:  "f80c6502c9966f8c6c0fdaa04257abe0ec381ac1e71d5c8c7fa040b5f17bf7eb"
-    sha256 cellar: :any,                 monterey:       "dca01afc7d8f81afea1458eca84e69b775a3e43387b7ff296df8857c6d7abded"
-    sha256 cellar: :any,                 big_sur:        "43b45dca311aaac9d9beaa116d7460a9c8ae1018e196e627811f34b0a33b4e33"
-    sha256 cellar: :any,                 catalina:       "339bea75fa51d131603613fb31e95c0b0774cc00e30a7accbcf0560bf8d8f900"
-    sha256 cellar: :any,                 mojave:         "7a030e18924a202197ca72c04fd9f147930e021b428581c7e111dd00acb0dd2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e62b1de7a6c8f43ba22517035871c6c47010d52f007e63292f89116b5d8cdc6"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ledger"
+    sha256 cellar: :any, mojave: "faef0b3328eb4510995f34a5159cdcae004f40f15f326b3627530d3c41c608b6"
   end
 
   depends_on "cmake" => :build
