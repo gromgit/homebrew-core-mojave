@@ -4,11 +4,12 @@ class Folly < Formula
   url "https://github.com/facebook/folly/archive/v2022.02.14.00.tar.gz"
   sha256 "6ec28672a524e1d9d89cdb528d64362b939b4f0afc526767d93aa1ebb2639fc1"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/folly"
-    sha256 cellar: :any, mojave: "c7d263d86f141fcb8212cdcbb0d8a088acbfa010810e3a188e35efeaa50f365f"
+    sha256 cellar: :any, mojave: "2df2dd552b721cb7d8f9aa5b3e820262b2cefe647b469ff9d7c6a4583458eb99"
   end
 
   depends_on "cmake" => :build
