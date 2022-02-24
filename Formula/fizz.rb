@@ -4,11 +4,12 @@ class Fizz < Formula
   url "https://github.com/facebookincubator/fizz/releases/download/v2022.02.14.00/fizz-v2022.02.14.00.tar.gz"
   sha256 "7b5d4a00d551b5b0b610ac8a69e69283e4d700838cf0ab64f606b35478a08d42"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fizz"
-    sha256 cellar: :any, mojave: "ebb60749b24bf13622d8a0373672414fda45bce11eb6500e19a3c8a4fe64d8de"
+    sha256 cellar: :any, mojave: "cd81aebaaa725c6dd9e3fb6598e773b5ec6edbeba31e9aec904ce441845b945f"
   end
 
   depends_on "cmake" => :build
