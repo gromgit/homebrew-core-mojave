@@ -6,6 +6,7 @@ class Uhd < Formula
       tag:      "v4.1.0.5",
       revision: "6bd0be9cda5db97081e4f3ee3127c45eed21239c"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
+  revision 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
   livecheck do
@@ -15,7 +16,7 @@ class Uhd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uhd"
-    sha256 mojave: "95e878333b7e8d8dc3cd31669f80a8c5c2bf28bd11bc444a3e2612256f247ebf"
+    sha256 mojave: "58b1d2e21f121cb2a5c7cba56833e62a79171dfa8076bb78f6c1a8fa673ea15a"
   end
 
   depends_on "cmake" => :build
@@ -24,6 +25,12 @@ class Uhd < Formula
   depends_on "boost"
   depends_on "libusb"
   depends_on "python@3.9"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   resource "Mako" do
     url "https://files.pythonhosted.org/packages/af/b6/42cd322ae555aa770d49e31b8c5c28a243ba1bbb57ad927e1a5f5b064811/Mako-1.1.6.tar.gz"
