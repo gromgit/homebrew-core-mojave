@@ -2,8 +2,8 @@ class BoostMpi < Formula
   desc "C++ library for C++/MPI interoperability"
   homepage "https://www.boost.org/"
   # Please add to synced_versions_formulae.json once version synced with boost
-  url "https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2"
-  sha256 "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
+  url "https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2"
+  sha256 "8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -12,13 +12,8 @@ class BoostMpi < Formula
   end
 
   bottle do
-    sha256                               arm64_monterey: "416ef0b362beb9bd330074bdf9d0dfc65a306360ee0fc2867eea3f73620381cb"
-    sha256                               arm64_big_sur:  "8289fe7bb5a684360ab11462bf4312024a620854714ce02d6553e32274e5bfeb"
-    sha256                               monterey:       "4f8cc86632acebee2041d9e03772d4eff34ee3b195fd83b7b83afce577b8029f"
-    sha256                               big_sur:        "76544350ace536b0af831854f3ce18a5c101155a132001685bcfa3ea411bbb94"
-    sha256                               catalina:       "d3e1dfd88b6d683581efb1c0d732076eaa634d42d6e8d3de05ebec949f512740"
-    sha256                               mojave:         "fc0b30274d5d1eaf5f66b7c733e8c516ddfc864beddc0932eb6ee3ddd2457e6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "925c67fecdd80283070e6483972dfb0b81cdae28f6a404c46e640bb95ee13a54"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost-mpi"
+    sha256 mojave: "eea3c6475904cf9971b70fbc209c5c60bda5813c467163c257d22a30a52699f2"
   end
 
   # Test with cmake to avoid issues like:
