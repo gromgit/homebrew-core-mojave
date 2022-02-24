@@ -4,11 +4,12 @@ class VowpalWabbit < Formula
   url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/9.0.1.tar.gz"
   sha256 "50c0a766c3f0f4a4ba29ac1db8949ee352e0d7e4f2df819fb410f8a34e3ea051"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vowpal-wabbit"
-    sha256 cellar: :any, mojave: "d0d0cd8215fb5585382b44837a9e0dab204895c38574a99d626317586d753b76"
+    sha256 cellar: :any, mojave: "be9ac6f5406deefd339a2f8d73d10d659553bd704494e72f291c1024a924c3f2"
   end
 
   depends_on "cmake" => :build
