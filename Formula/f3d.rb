@@ -4,11 +4,11 @@ class F3d < Formula
   url "https://github.com/f3d-app/f3d/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "0d72cc465af1adefdf71695481ceea95d4a94ee9e00125bc98c9f32b14ac2bf4"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/f3d"
-    sha256 cellar: :any, mojave: "8deb76e23d95f0c9da7a71e8278db2a41faa0284e153e0861ebc330dce7408d1"
+    sha256 cellar: :any, mojave: "f59aa7f1a5fba0adb8b00067e3ec75b383681c2b6d531f40f6129141113929c6"
   end
 
   depends_on "cmake" => :build
