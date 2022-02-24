@@ -1,8 +1,8 @@
 class GnomeAutoar < Formula
   desc "GNOME library for archive handling"
   homepage "https://github.com/GNOME/gnome-autoar"
-  url "https://download.gnome.org/sources/gnome-autoar/0.4/gnome-autoar-0.4.2.tar.xz"
-  sha256 "1d20694079300e12feabdb77304a969d1cc190d1d12a949be845cad01c78a5d3"
+  url "https://download.gnome.org/sources/gnome-autoar/0.4/gnome-autoar-0.4.3.tar.xz"
+  sha256 "7bdf0789553496abddc3c963b0ce7363805c0c02c025feddebcaacc787249e88"
   license "LGPL-2.1-or-later"
 
   # gnome-autoar doesn't seem to follow the typical GNOME version format where
@@ -15,7 +15,7 @@ class GnomeAutoar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnome-autoar"
-    sha256 cellar: :any, mojave: "78ab4418fba84a7fbc392e65db46368960cc36c25afa3dabc5d769eb438f6e8b"
+    sha256 cellar: :any, mojave: "e533d4224ace67dc7f23df7c9d298c1c02b8e3f9e5c20fa3abdd2c52b574a987"
   end
 
   depends_on "meson" => :build
