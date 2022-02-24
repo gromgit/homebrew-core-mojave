@@ -1,9 +1,9 @@
 class Re2 < Formula
   desc "Alternative to backtracking PCRE-style regular expression engines"
   homepage "https://github.com/google/re2"
-  url "https://github.com/google/re2/archive/2021-11-01.tar.gz"
-  version "20211101"
-  sha256 "8c45f7fba029ab41f2a7e6545058d9eec94eef97ce70df58e92d85cfc08b4669"
+  url "https://github.com/google/re2/archive/2022-02-01.tar.gz"
+  version "20220201"
+  sha256 "9c1e6acfd0fed71f40b025a7a1dabaf3ee2ebb74d64ced1f9ee1b0b01d22fd27"
   license "BSD-3-Clause"
   head "https://github.com/google/re2.git", branch: "main"
 
@@ -20,8 +20,7 @@ class Re2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/re2"
-    rebuild 4
-    sha256 cellar: :any, mojave: "a8eab3bb5e0fcd02a915056e6303ba0fcf062e09fa8f4c493e3756a88c63fd4f"
+    sha256 cellar: :any, mojave: "d2ba7d8d917c90b38ea29c8e668628fbf44963f04a26389cc42b5b8a4d1b73d7"
   end
 
   depends_on "cmake" => :build
