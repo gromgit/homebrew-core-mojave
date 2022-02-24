@@ -7,9 +7,18 @@ class Skaffold < Formula
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
+  # This uses the `GithubLatest` strategy to work around an old `v2.2.3` tag
+  # that is always seen as newer than the latest version. If Skaffold ever
+  # reaches version 2.2.3, we can switch back to the `Git` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skaffold"
-    sha256 cellar: :any_skip_relocation, mojave: "53bd2cbbf8424f622db3459eee6a77e0a9748973bc89638a3629618205639d2b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "962c453db3f938c41d5e5adf611b3c1cb3cd20087ce194c7bbf7ede2ade57370"
   end
 
   depends_on "go" => :build
