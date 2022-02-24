@@ -1,14 +1,13 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https://sympy.org"
-  url "https://github.com/symengine/symengine/releases/download/v0.8.1/symengine-0.8.1.tar.gz"
-  sha256 "41eb6ae6901c09e53d7f61f0758f9201e81fc534bfeecd4b2bd4b4e6f6768693"
+  url "https://github.com/symengine/symengine/releases/download/v0.9.0/symengine-0.9.0.tar.gz"
+  sha256 "dcf174ac708ed2acea46691f6e78b9eb946d8a2ba62f75e87cf3bf4f0d651724"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/symengine"
-    rebuild 2
-    sha256 cellar: :any, mojave: "0f1a1fed09efcd8af10d7c1cb91bf6de6a621ca5bf2ca7ec91ce737c0a7aae38"
+    sha256 cellar: :any, mojave: "0666c9abc255e83b9ce326fb044471f548b49d99261abb1b29b8931ffee93fd8"
   end
 
   depends_on "cmake" => :build
