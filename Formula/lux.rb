@@ -1,14 +1,14 @@
 class Lux < Formula
   desc "Fast and simple video downloader"
   homepage "https://github.com/iawia002/lux"
-  url "https://github.com/iawia002/lux/archive/v0.12.0.tar.gz"
-  sha256 "f5bcbe1039219a299908fdd5a540052ef603ff5c8c21c0d64f44c53132c41cdd"
+  url "https://github.com/iawia002/lux/archive/v0.13.0.tar.gz"
+  sha256 "4fe99247a718dc1038cb6b9b1808c8e836bbf6a8464afefddf4bf8a161b08236"
   license "MIT"
   head "https://github.com/iawia002/lux.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lux"
-    sha256 cellar: :any_skip_relocation, mojave: "19d72ecea1af42517121cb51feef9cf49d44d384c21084b36223f5f7cd57d9b0"
+    sha256 cellar: :any_skip_relocation, mojave: "3e6622b2333f6d343fac11430f65e4d73630ce72c4c67351d9ae35c059097e81"
   end
 
   depends_on "go" => :build
