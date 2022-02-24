@@ -2,9 +2,9 @@ class PhpAT80 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.0.15.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.0.15.tar.xz"
-  sha256 "5f33544061d37d805a2a9ce791f081ef08a7155bd7ba2362e69bba2d06b0f8b2"
+  url "https://www.php.net/distributions/php-8.0.16.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.16.tar.xz"
+  sha256 "f27a2f25259e8c51e42dfd74e24a546ee521438ad7d9f6c6e794aa91f38bab0a"
   license "PHP-3.01"
 
   livecheck do
@@ -14,7 +14,7 @@ class PhpAT80 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
-    sha256 mojave: "b4afd5e911ee004043e216aeef0aaab1dd55830908afab421a910b9ee725ed43"
+    sha256 mojave: "05a0ddcabf2a545e9e5f1e7d15422c6538a0c81dcb2051f42cd2a31e107a284c"
   end
 
   keg_only :versioned_formula
