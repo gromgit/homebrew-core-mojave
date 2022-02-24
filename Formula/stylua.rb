@@ -1,13 +1,13 @@
 class Stylua < Formula
   desc "Opinionated Lua code formatter"
   homepage "https://github.com/JohnnyMorganz/StyLua"
-  url "https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "5441c07126e3af38789b397dc2d345138440ad2a4baca3d87e2df1e7feec8f93"
+  url "https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v0.12.3.tar.gz"
+  sha256 "c7c960d501535329e007ff9757067d40b0cf395c2fceac09e169f4c9ea8e67ca"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stylua"
-    sha256 cellar: :any_skip_relocation, mojave: "fe491dba4e52e6c0f436a23c7bb1b470ea4920e2ac5a7e98ebfa349e21e5ea02"
+    sha256 cellar: :any_skip_relocation, mojave: "502aaf8044338db34015a2c6d519342eaaa0ff699d5c479a5ff2c4e70a955f30"
   end
 
   depends_on "rust" => :build
