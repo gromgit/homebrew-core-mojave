@@ -4,7 +4,7 @@ class Mapnik < Formula
   url "https://github.com/mapnik/mapnik/releases/download/v3.1.0/mapnik-v3.1.0.tar.bz2"
   sha256 "43d76182d2a975212b4ad11524c74e577576c11039fdab5286b828397d8e6261"
   license "LGPL-2.1-or-later"
-  revision 5
+  revision 6
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   livecheck do
@@ -14,7 +14,7 @@ class Mapnik < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mapnik"
-    sha256 cellar: :any, mojave: "6728791bb75fbeb01e9bd366b248e8e974fc6246511229750d3b13d64e53b800"
+    sha256 cellar: :any, mojave: "f0b8d84db5950a7d0abc72913da3ef06e87d625b8ac55af6bd34793021bc10d2"
   end
 
   depends_on "pkg-config" => :build
