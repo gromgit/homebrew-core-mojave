@@ -1,10 +1,9 @@
 class Lgogdownloader < Formula
   desc "Unofficial downloader for GOG.com games"
   homepage "https://sites.google.com/site/gogdownloader/"
-  url "https://github.com/Sude-/lgogdownloader/releases/download/v3.8/lgogdownloader-3.8.tar.gz"
-  sha256 "2f4941f07b94f4e96557ca86f33f7d839042bbcac7535f6f9736092256d31eb5"
+  url "https://github.com/Sude-/lgogdownloader/releases/download/v3.9/lgogdownloader-3.9.tar.gz"
+  sha256 "d0b3b6198e687f811294abb887257c5c28396b5af74c7f3843347bf08c68e3d0"
   license "WTFPL"
-  revision 1
   head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class Lgogdownloader < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lgogdownloader"
-    sha256 cellar: :any, mojave: "78c5573749a864b7b90ca85633835a442c01b2616689ca4ade13140ea990de04"
+    sha256 cellar: :any, mojave: "17eae74f3bc2684f4f01848ba1ff03f59daf241462753b66da8adfdfe26e9114"
   end
 
   depends_on "cmake" => :build
