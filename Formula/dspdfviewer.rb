@@ -4,13 +4,12 @@ class Dspdfviewer < Formula
   url "https://github.com/dannyedel/dspdfviewer/archive/v1.15.1.tar.gz"
   sha256 "c5b6f8c93d732e65a27810286d49a4b1c6f777d725e26a207b14f6b792307b03"
   license "GPL-2.0-or-later"
-  revision 11
-  head "https://github.com/dannyedel/dspdfviewer.git"
+  revision 12
+  head "https://github.com/dannyedel/dspdfviewer.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dspdfviewer"
-    rebuild 2
-    sha256 cellar: :any, mojave: "c34a5d265c45cd8acfaf65f51167b6a35712169eb148cc8e04fbb613f096a730"
+    sha256 cellar: :any, mojave: "095bc12d0d281e164de7264e23554ddd042b3e537a59ffd1a0ce5937e61fd012"
   end
 
   depends_on "cmake" => :build
