@@ -4,11 +4,12 @@ class Wangle < Formula
   url "https://github.com/facebook/wangle/releases/download/v2022.02.14.00/wangle-v2022.02.14.00.tar.gz"
   sha256 "edf14f80c859c0e598c842667773ee589249f7082d8a7265ab08ba91970a1f15"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/wangle.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wangle"
-    sha256 cellar: :any, mojave: "3b5570742d194ff41cfcc20d7a346e15c4182993880b00459b9ffacd6653176d"
+    sha256 cellar: :any, mojave: "bb9fc728f64689599124d9fc598a92d5be525efd24dabacbd1b9e61de03d9bb3"
   end
 
   depends_on "cmake" => :build
