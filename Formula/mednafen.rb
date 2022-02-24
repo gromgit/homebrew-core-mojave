@@ -4,7 +4,7 @@ class Mednafen < Formula
   url "https://mednafen.github.io/releases/files/mednafen-1.29.0.tar.xz"
   sha256 "da3fbcf02877f9be0f028bfa5d1cb59e953a4049b90fe7e39388a3386d9f362e"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://mednafen.github.io/releases/"
@@ -13,16 +13,24 @@ class Mednafen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mednafen"
-    sha256 mojave: "1f171795a53bcd580aed672a8d4b1fa414da93d303ff26cc1029ef93c735efda"
+    sha256 mojave: "1863cb8fe77e72af7a8b7e1c877cacb44affd5cb42bae80c3b8c0f6c14c516d1"
   end
 
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "libsndfile"
+  depends_on "lzo"
   depends_on macos: :sierra # needs clock_gettime
   depends_on "sdl2"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    # musepack is not bottled on Linux
+    # https://github.com/Homebrew/homebrew-core/pull/92041
+    depends_on "musepack"
+  end
 
   on_linux do
     depends_on "mesa"
@@ -30,7 +38,13 @@ class Mednafen < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking", "--enable-ss"
+    args = std_configure_args
+    args << "--with-external-mpcdec" if OS.mac? # musepack
+
+    system "./configure", "--with-external-lzo",
+                          "--with-external-libzstd",
+                          "--enable-ss",
+                          *args
     system "make", "install"
   end
 
