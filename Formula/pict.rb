@@ -1,13 +1,13 @@
 class Pict < Formula
   desc "Pairwise Independent Combinatorial Tool"
   homepage "https://github.com/Microsoft/pict/"
-  url "https://github.com/Microsoft/pict/archive/v3.7.2.tar.gz"
-  sha256 "9cb3ae12996046cc67b4fbed0706cf28795549c16b7c59a2fb697560810f5c48"
+  url "https://github.com/Microsoft/pict/archive/v3.7.3.tar.gz"
+  sha256 "43279d0ea93c2c4576c049a67f13a845aa75ad1d70f1ce65535a89ba09daba33"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pict"
-    sha256 cellar: :any_skip_relocation, mojave: "69d16b89c31e7cd864cf0780fc9310f42497b68212be53cc7e414d28c1d60ead"
+    sha256 cellar: :any_skip_relocation, mojave: "25082e7d2b10b6ab58ca6abfe9478975ccd70576f4937f56b63eb3d5b0c17b0f"
   end
 
   fails_with gcc: "5"
@@ -24,8 +24,11 @@ class Pict < Formula
 
   test do
     resource("testfile").stage testpath
-    output = shell_output("#{bin}/pict pict.txt").split("\n")
-    assert_equal output[0], "LANGUAGES\tCURRIENCIES"
-    assert_equal output[4], "en_US\tGBP"
+    output = shell_output("#{bin}/pict pict.txt")
+    assert_equal output.split("\n")[0], "LANGUAGES\tCURRIENCIES"
+    assert_match "en_US\tGBP", output
+    assert_match "en_US\tUSD", output
+    assert_match "en_UK\tGBP", output
+    assert_match "en_UK\tUSD", output
   end
 end
