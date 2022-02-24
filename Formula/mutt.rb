@@ -10,13 +10,13 @@
 class Mutt < Formula
   desc "Mongrel of mail user agents (part elm, pine, mush, mh, etc.)"
   homepage "http://www.mutt.org/"
-  url "https://bitbucket.org/mutt/mutt/downloads/mutt-2.1.5.tar.gz"
-  sha256 "92a309e47e363a97d62425bcb71adceae5ab5c4c413dbcac37fa98ed70c12be0"
+  url "https://bitbucket.org/mutt/mutt/downloads/mutt-2.2.1.tar.gz"
+  sha256 "b76d30d42b6c90aa9abf9f330e41800934eedf7b858a32c120ee3ae63587abb5"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mutt"
-    sha256 mojave: "fd2d185d1992d91f0aa549ff545e8f7d61a60fdb5726c9316655bc780326b58e"
+    sha256 mojave: "0dfaaaee024df8339c30e4f3f4a4100f360a4b02b0e8227b2c56c94b1af73029"
   end
 
   head do
