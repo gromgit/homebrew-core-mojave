@@ -4,6 +4,7 @@ class Netdata < Formula
   url "https://github.com/netdata/netdata/releases/download/v1.33.1/netdata-v1.33.1.tar.gz"
   sha256 "20ba8695d87187787b27128ac3aab9b09aa29ca6b508c48542e0f7d50ec9322b"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Netdata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netdata"
-    sha256 mojave: "dc571b101f36581ba83a2c7b416dd5317f760f0e7ccd01cd1447d24b49d9f8af"
+    sha256 mojave: "496222ef7ac24fd72a5c2206bd4aadfe461fb39fedbdd11bba99e94ab566ae70"
   end
 
   depends_on "autoconf" => :build
@@ -22,6 +23,7 @@ class Netdata < Formula
   depends_on "libuv"
   depends_on "lz4"
   depends_on "openssl@1.1"
+  depends_on "protobuf-c"
 
   uses_from_macos "zlib"
 
