@@ -1,13 +1,13 @@
 class Libadwaita < Formula
   desc "Building blocks for modern adaptive GNOME applications"
   homepage "https://gnome.pages.gitlab.gnome.org/libadwaita/"
-  url "https://download.gnome.org/sources/libadwaita/1.0/libadwaita-1.0.1.tar.xz"
-  sha256 "bb49cf5a09d2e8bc144946c2c3272aecd611667fd027f3808b95d7101ed473d6"
+  url "https://download.gnome.org/sources/libadwaita/1.0/libadwaita-1.0.2.tar.xz"
+  sha256 "79e56011f5532fba6cb02531249d2bcfb8a6c42495c7a7de92f8819661fea091"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libadwaita"
-    sha256 mojave: "db0ee875654e69091268aa691b89e2d1c6684f59e9e2fc43b94da184f22a9d24"
+    sha256 mojave: "e6869fe1f8a8eed8766fca547e7a8cb886cc25e00f009513de9e9d10dc1a2d11"
   end
 
   depends_on "gobject-introspection" => :build
