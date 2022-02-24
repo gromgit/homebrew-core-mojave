@@ -8,8 +8,8 @@ class Purescript < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/purescript"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "8fdf2b2af74eb074fa56737399c9a48dee780f6d364194895b940d1fb4cfeab4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "c319930fa0eff6aa2155c2788be679bedcc6ac3ba49e37d9e9b5314fd47b7737"
   end
 
   depends_on "ghc" => :build
