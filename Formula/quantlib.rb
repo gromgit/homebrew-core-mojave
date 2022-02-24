@@ -4,10 +4,11 @@ class Quantlib < Formula
   url "https://github.com/lballabio/QuantLib/releases/download/QuantLib-v1.25/QuantLib-1.25.tar.gz"
   sha256 "0fbe8f621b837b6712d74102892a97a0f09e24a55a34dfc74f1e743a45d73d1d"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quantlib"
-    sha256 cellar: :any, mojave: "566546a613ddf3bfde42d635583029d51925b98bd78bfbd0153b86184acd8b94"
+    sha256 cellar: :any, mojave: "60c96d7731df60cc43218c137079a93a78806633022d45c6897d6930cc241baa"
   end
 
   head do
