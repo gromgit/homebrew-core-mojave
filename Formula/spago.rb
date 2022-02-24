@@ -8,6 +8,7 @@ class Spago < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spago"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6cafa44575410c427701a93afbe66e48c96eb1548f8e35572ffd1ec10ee01ca2"
   end
 
