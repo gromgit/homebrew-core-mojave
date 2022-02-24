@@ -1,14 +1,14 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://github.com/fabianlindfors/reshape/archive/v0.3.1.tar.gz"
-  sha256 "a8d576597cb225a94bcc3441905c9fc88a3a8a41fbdbb84ead722f6933e2e616"
+  url "https://github.com/fabianlindfors/reshape/archive/v0.5.1.tar.gz"
+  sha256 "7643ceed45e79202edadba70ed8f06f24fd25b3b21898ae0d6bca82f3753df98"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reshape"
-    sha256 cellar: :any_skip_relocation, mojave: "aca7f45b1960a3a84cf35f2ca85636e71ba0d667d549554a6db795c79baee801"
+    sha256 cellar: :any_skip_relocation, mojave: "17f5a05ccaafac3f10ae19dc06256374e82953d71790449004bd70ef7bf0ccd7"
   end
 
   depends_on "rust" => :build
