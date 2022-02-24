@@ -2,14 +2,14 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://github.com/chrislusf/seaweedfs"
   url "https://github.com/chrislusf/seaweedfs.git",
-      tag:      "2.89",
-      revision: "ff666104c45acb38f3e9deb60702885fe3491fe3"
+      tag:      "2.90",
+      revision: "497ebbbd45cb1a095b4d061258871ce63c706e61"
   license "Apache-2.0"
   head "https://github.com/chrislusf/seaweedfs.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/seaweedfs"
-    sha256 cellar: :any_skip_relocation, mojave: "05805199aa68f607bea3d5503116a282eea695d7be5d1f8e19f183daa4a6f743"
+    sha256 cellar: :any_skip_relocation, mojave: "d8baa2502faaa72b43003b388081f51faeb37e0e71673ebd0af4b10b873e114a"
   end
 
   depends_on "go" => :build
