@@ -4,6 +4,7 @@ class Supertux < Formula
   url "https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3-Source.tar.gz"
   sha256 "f7940e6009c40226eb34ebab8ffb0e3a894892d891a07b35d0e5762dd41c79f6"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/SuperTux/supertux.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Supertux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/supertux"
-    sha256 cellar: :any, mojave: "cbccf650cc62be42dd8b26c081387e67b5fc6fc9f1eceeefb96667b4a204b7f0"
+    sha256 cellar: :any, mojave: "f8ce349e18fc7c3a1594f40eb8fbe5f1446dd1c91109876ec958efb930f8e86e"
   end
 
   depends_on "cmake" => :build
