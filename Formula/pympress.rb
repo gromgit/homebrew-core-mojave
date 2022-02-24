@@ -8,6 +8,12 @@ class Pympress < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/Cimbali/pympress.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pympress"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e75c3fa5dca138594f7832ac0c6cfe8f989f32a5915b73b24ba734472e4d0b7b"
+  end
+
   depends_on "gobject-introspection"
   depends_on "gst-plugins-bad"
   depends_on "gst-plugins-base"
