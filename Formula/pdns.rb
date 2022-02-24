@@ -4,6 +4,7 @@ class Pdns < Formula
   url "https://downloads.powerdns.com/releases/pdns-4.6.0.tar.bz2"
   sha256 "b9effb7968a7badbb91eea431c73346482a67592684d84660edd8b7528cc1325"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -12,7 +13,7 @@ class Pdns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdns"
-    sha256 mojave: "b4d1fba574107c9b01f71c77d9b7d967a076a28764cd1847e2ec758fbb72a0ed"
+    sha256 mojave: "0ef4733101dbbbfe7d79578e5c37519a0233fe3b02319d7ca206cf9aca0332ce"
   end
 
   head do
