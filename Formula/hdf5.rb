@@ -1,8 +1,8 @@
 class Hdf5 < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.1/src/hdf5-1.12.1.tar.bz2"
-  sha256 "aaf9f532b3eda83d3d3adc9f8b40a9b763152218fa45349c3bc77502ca1f8f1c"
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.13/hdf5-1.13.0/src/hdf5-1.13.0.tar.bz2"
+  sha256 "1826e198df8dac679f0d3dc703aba02af4c614fd6b7ec936cf4a55e6aa0646ec"
   license "BSD-3-Clause"
 
   # This regex isn't matching filenames within href attributes (as we normally
@@ -14,13 +14,8 @@ class Hdf5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "2be7119997078b72a6fa080e8f0bb3d544b0ddebcc7d699e288b27082c4c9319"
-    sha256 cellar: :any,                 arm64_big_sur:  "d049cea334b8a8c27cc83f58dc69a795f66b59f7b395666d4128ca457ab69e50"
-    sha256 cellar: :any,                 monterey:       "30c3a71a209a033dcad6482ccb61be58641a88a85988f463976721f526dc1848"
-    sha256 cellar: :any,                 big_sur:        "6c31504f6a44ef682977a38ef9327efce7e6ba9264add1965b1a76e8fddc2647"
-    sha256 cellar: :any,                 catalina:       "aa4930768cb12d3a2a82e3670c0d9c5cf4089e487d0cbf4865880a5520b375d0"
-    sha256 cellar: :any,                 mojave:         "d2bc09835f0613bff558588829f2e48d8c2ed32386976ac18ff1c0f8eef3ed36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13147222b63eafbf633e6c71cfc4d68894753a08227d6511dbecaa2a1f911de3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5"
+    sha256 cellar: :any, mojave: "99a35a3a8fd80e1dcc195901e7ec2ac379acdb5590fdc3f9ae6666e0e61aca1c"
   end
 
   depends_on "autoconf" => :build
