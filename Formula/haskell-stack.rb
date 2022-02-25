@@ -2,6 +2,7 @@ class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/commercialhaskell/stack.git", branch: "master"
 
   stable do
@@ -37,13 +38,8 @@ class HaskellStack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f787639247b432194d1adb01b7c012de6e30b141095644c95b516c25af7c69c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1febdf95d90161093914f0b130a2e560e3e536316b414ab4d894195f2ffbec61"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2b504eb4506d7cc0aa84e917018897ff0b00f9f863b8abd6c0f05ecbd5fa9c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5e9185c5fb43ee4aa892bd5e9460fba19874c741df8cb0791af25ec7dab40575"
-    sha256 cellar: :any_skip_relocation, catalina:       "eff4da14356490588c31bbdf4d327605c5209957956d2964eb42e65bb9f687ba"
-    sha256 cellar: :any_skip_relocation, mojave:         "f57fdcf4118acc46b507b6e091f8898f9f1200f5041d20460ac97cc57fe21364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c0e6d39df1e8c28c0ed815df4a2f02a3e302a758fb9dade1aaf3d13212ce5ad"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haskell-stack"
+    sha256 cellar: :any_skip_relocation, mojave: "8e1bac3aaa9b733febb005a15b0f83d634539ab472c997d7a2c3ba9136628785"
   end
 
   depends_on "cabal-install" => :build
