@@ -1,8 +1,8 @@
 class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.0.tar.gz"
-  sha256 "50a0504c6edcb4d61ce6b8cfdbddaa95707195fab0ecd7b5e92654b2a9412854"
+  url "https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.1.tar.gz"
+  sha256 "fe6e4782de97443978ddba8ba4be38d222aa24dc3e3f02a6a8e7701c0eeb619d"
   license "Ruby"
 
   livecheck do
@@ -12,7 +12,7 @@ class Ruby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby"
-    sha256 mojave: "6fb722600db214f735bc6b4e511760c1d59f5cb92b8b0d8e112ebb0e1c9ada2e"
+    sha256 mojave: "d069261f55d16b3e31ac8b7f1b2308054690c8c2e98a6d624b8c8ba94403238c"
   end
 
   head do
@@ -34,8 +34,8 @@ class Ruby < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https://rubygems.org/rubygems/rubygems-3.3.3.tgz"
-    sha256 "92dbe63e8bd2f937d61e9db2d407ed6891f44fdfcb5faf4683a3f88afc7a5363"
+    url "https://rubygems.org/rubygems/rubygems-3.3.7.tgz"
+    sha256 "537475b3a75d4989a9f61c552c7249001a617e84e6cdfb533ff19ecfdeeaf183"
   end
 
   def api_version
