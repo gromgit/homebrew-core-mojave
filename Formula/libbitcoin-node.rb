@@ -4,22 +4,19 @@ class LibbitcoinNode < Formula
   url "https://github.com/libbitcoin/libbitcoin-node/archive/v3.6.0.tar.gz"
   sha256 "9556ee8aab91e893db1cf343883034571153b206ffbbce3e3133c97e6ee4693b"
   license "AGPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 arm64_monterey: "d8105b34dcc8ab66bb6e1f251f03b9edf88b3c795262a15c9a908ee885641f53"
-    sha256 arm64_big_sur:  "618362516d236aa0d42448d44f67ea2243cfb89413b863abc7fd21da9cb09c3d"
-    sha256 monterey:       "8d2bf98d64c003834f484bda25d02adb31be35ccd8a14db7ca12662cb8c69ba5"
-    sha256 big_sur:        "bbc1a8235a1f33d915be794610ed69f06407ea63d85843a5ae71c978688f6935"
-    sha256 catalina:       "c2932309e38888270138f7ced8f07f5dfe4c924664a1c0d2ad4835206b75a323"
-    sha256 mojave:         "3280108b6455d1d70d1af8288ad910198b63f9cfcc6bef5d55a61e3855eacb3d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbitcoin-node"
+    sha256 mojave: "19d35166dced5df18076c68d928cd8cb3a8a8220fc11a102e5c566a8a751ac38"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  depends_on "boost@1.76"
   depends_on "libbitcoin-blockchain"
   depends_on "libbitcoin-network"
 
@@ -30,13 +27,14 @@ class LibbitcoinNode < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+                          "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
 
     bash_completion.install "data/bn"
   end
 
   test do
+    boost = Formula["boost@1.76"]
     (testpath/"test.cpp").write <<~EOS
       #include <bitcoin/node.hpp>
       int main() {
@@ -48,9 +46,10 @@ class LibbitcoinNode < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+                    "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin",
                     "-L#{lib}", "-lbitcoin-node",
-                    "-L#{Formula["boost"].opt_lib}", "-lboost_system"
+                    "-L#{boost.lib}", "-lboost_system"
     system "./test"
   end
 end
