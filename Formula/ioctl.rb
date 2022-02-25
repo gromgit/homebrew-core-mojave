@@ -1,13 +1,13 @@
 class Ioctl < Formula
   desc "Command-line interface for interacting with the IoTeX blockchain"
   homepage "https://docs.iotex.io/"
-  url "https://github.com/iotexproject/iotex-core/archive/v1.6.3.tar.gz"
-  sha256 "783c72fb8901b9cb0f33c25aa98079c4f5e21657d02c4379bb5c9303c38448af"
+  url "https://github.com/iotexproject/iotex-core/archive/v1.6.4.tar.gz"
+  sha256 "1a54d59db80aee21cd5925bd8ef0829b91cd40b45f1259c6127388d35c5b9272"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ioctl"
-    sha256 cellar: :any_skip_relocation, mojave: "9265ed9c14ac66016bb180029e4e77751cdd97d41d858d56830e25682961dabd"
+    sha256 cellar: :any_skip_relocation, mojave: "21989d288614f4e5035db867cb15881b14c4651124629680ff5956ca9c8f80f2"
   end
 
   depends_on "go" => :build
