@@ -1,13 +1,13 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
   homepage "https://github.com/mvdan/gofumpt"
-  url "https://github.com/mvdan/gofumpt/archive/v0.2.1.tar.gz"
-  sha256 "699557d9d9221bd3530cb707ddbbe8dd5c3ffec34fc3cf3cdc56a642bcadc045"
+  url "https://github.com/mvdan/gofumpt/archive/v0.3.0.tar.gz"
+  sha256 "41d88f985ca145d8f3fc3a02bfd92a8fd17aa9d581623f0b5d4b022ca88f2712"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gofumpt"
-    sha256 cellar: :any_skip_relocation, mojave: "ba47b9fc0c0a5de5e109a8c7f5ab5cea74dfe233e892f2d3e585bfad49293d11"
+    sha256 cellar: :any_skip_relocation, mojave: "a0cf68ce6b440d73d0cda78a1bc0736e2f4cdc95d3b9a6508895b495dae2110d"
   end
 
   depends_on "go"
