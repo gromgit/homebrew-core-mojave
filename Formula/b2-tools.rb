@@ -3,14 +3,13 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/4c/8e/9b9f6a0ff5734fa0461e68283bb6e4879ee4bb43a76815843cafa065ac09/b2-3.1.0.tar.gz"
-  sha256 "411232733599a7553bd146e842e84b15530712aead26d71ff68b81fec754d62b"
+  url "https://files.pythonhosted.org/packages/5f/95/a9e540e7e4e525c4d429c86120b04683702a9a47dfaf5142d5e0999f3e60/b2-3.2.1.tar.gz"
+  sha256 "351bf1c26b6147edce4245d09fc0b608b10d3665cf4358bd3ebdb40318b6e562"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/b2-tools"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "baa18df2c04702b31836b328a54a27b5488ffbc82776f3a8d185b8bf1ae87dc1"
+    sha256 cellar: :any_skip_relocation, mojave: "a18e2beb7f3ccbabda32af7feb45c31385ab3e3831fb7e59100ee4c9f1620d0a"
   end
 
   depends_on "python@3.10"
@@ -19,13 +18,13 @@ class B2Tools < Formula
   conflicts_with "boost-build", because: "both install `b2` binaries"
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/ec/74/1cf2d9912921cebdba3fa954949206c8aa159c9cc803b88140fb227f8a0e/arrow-0.17.0.tar.gz"
-    sha256 "ff08d10cda1d36c68657d6ad20d74fbea493d980f8b2d45344e00d6ed2bf6ed4"
+    url "https://files.pythonhosted.org/packages/48/28/30a5748af715b0ab9c2b81cf08bd9e261e47a6261e247553afb7f6421b24/arrow-1.2.2.tar.gz"
+    sha256 "05caf1fd3d9a11a1135b2b6f09887421153b94558e5ef4d090b567b47173ac2b"
   end
 
   resource "b2sdk" do
-    url "https://files.pythonhosted.org/packages/ce/29/f914ad4f11f27c5c11e1fe717f930b9a3567599dbbfe2d5c1e5d0eaccfa6/b2sdk-1.13.0.tar.gz"
-    sha256 "43d07ce5cf9685acc3797b0c4764b4688777db12d8f0102e6118f8403db5c759"
+    url "https://files.pythonhosted.org/packages/b7/bc/f93e2636fd0e262f403da0431c20ffcf80fc43c20ac69f15f6cb895504e8/b2sdk-1.14.1.tar.gz"
+    sha256 "7d839eca12a6f66453eb535c41569714a7910bc012f657c864c3bfb3a88569e8"
   end
 
   resource "certifi" do
@@ -34,8 +33,8 @@ class B2Tools < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/9f/c5/334c019f92c26e59637bb42bd14a190428874b2b2de75a355da394cf16c1/charset-normalizer-2.0.7.tar.gz"
-    sha256 "e019de665e2bcf9c2b64e2e5aa025fa991da8720daa3c1138cadd2fd1856aed0"
+    url "https://files.pythonhosted.org/packages/56/31/7bcaf657fafb3c6db8c787a865434290b726653c912085fbd371e9b92e1c/charset-normalizer-2.0.12.tar.gz"
+    sha256 "2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597"
   end
 
   resource "docutils" do
@@ -64,8 +63,8 @@ class B2Tools < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e7/01/3569e0b535fb2e4a6c384bdbed00c55b9d78b5084e0fb7f4d0bf523d7670/requests-2.26.0.tar.gz"
-    sha256 "b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7"
+    url "https://files.pythonhosted.org/packages/60/f3/26ff3767f099b73e0efa138a9998da67890793bfa475d8278f84a30fec77/requests-2.27.1.tar.gz"
+    sha256 "68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"
   end
 
   resource "rst2ansi" do
@@ -79,8 +78,8 @@ class B2Tools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/80/be/3ee43b6c5757cabea19e75b8f46eaf05a2f5144107d7db48c7cf3a864f73/urllib3-1.26.7.tar.gz"
-    sha256 "4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece"
+    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
+    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
   end
 
   def install
