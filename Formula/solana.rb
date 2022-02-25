@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://solana.com"
-  url "https://github.com/solana-labs/solana/archive/v1.8.10.tar.gz"
-  sha256 "be6a500674fda09f3bf2cd4a97be66f3459b9ea47f7ccf548f99db6a20e872b5"
+  url "https://github.com/solana-labs/solana/archive/v1.9.8.tar.gz"
+  sha256 "a8376061f4b38fe1dbce737f0e774da7caeb3389d682f6b30d05dfcf1e0fecdd"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Solana < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana"
-    sha256 cellar: :any_skip_relocation, mojave: "2479cd7957e85c52310ce4cbd8fc6f02e398136b872ce980d331cdd5e570e8ee"
+    sha256 cellar: :any_skip_relocation, mojave: "cfaa93473cb0821f9ea257d87846eff97910c26526c35b6f05d09268c90720ad"
   end
 
   depends_on "protobuf" => :build
@@ -47,6 +47,8 @@ class Solana < Formula
   end
 
   test do
-    assert_match(/pubkey: \w{44}/, shell_output("#{bin}/solana-keygen new --no-bip39-passphrase --no-outfile"))
+    assert_match "Generating a new keypair",
+      shell_output("#{bin}/solana-keygen new --no-bip39-passphrase --no-outfile")
+    assert_match version.to_s, shell_output("#{bin}/solana-keygen --version")
   end
 end
