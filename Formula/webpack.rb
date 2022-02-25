@@ -4,14 +4,14 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.69.0.tgz"
-  sha256 "66f3c8a0622675d448e08d5c15777726500e7bbd5265079b7d62cc1849f7d9af"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.69.1.tgz"
+  sha256 "885adfe442063b19c93eff6df1579feb5cf1cfceefd35317bb3c391816a33b80"
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webpack"
-    sha256 cellar: :any_skip_relocation, mojave: "8f2d7e26ac1fa407d89fed110fda86055188ea2dc4460622e3c28cf9e21ba146"
+    sha256 cellar: :any_skip_relocation, mojave: "4db071dc1ff1a72e4f858a20c30192d5b303185ebc534a073baed9037a9546c9"
   end
 
   depends_on "node"
