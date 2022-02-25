@@ -1,13 +1,14 @@
 class Jless < Formula
   desc "Command-line pager for JSON data"
-  homepage "https://pauljuliusmartinez.github.io/"
+  homepage "https://jless.io/"
   url "https://github.com/PaulJuliusMartinez/jless/archive/refs/tags/v0.7.2.tar.gz"
   sha256 "5d776cb6488743ccdaeeffb4bfc54d84862028170cee852a8bb5c156526ed263"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jless"
-    sha256 cellar: :any_skip_relocation, mojave: "b68c0c6ade5e7d66b1747317629109a559ac5f4809d34c3585ae33a6c37c6283"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c818e8d965f9c6c0335633103dc7437100fe24e19dee6de4ba7230d26fe7fa59"
   end
 
   depends_on "rust" => :build
