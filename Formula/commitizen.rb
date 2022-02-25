@@ -3,14 +3,14 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/be/62/f6c2487aabe4a256f6e4a419a8db434d0f1d8f962c0ee6ccc18b66d2aaf1/commitizen-2.21.0.tar.gz"
-  sha256 "afdc1aa16160426c5a0b13a8a4f3c222e0c815740711d774d32a896bd86f961c"
+  url "https://files.pythonhosted.org/packages/c0/6e/6d70a43139f506a4d53e6596ca786008cfb7e19e2e7add167d04ef8947ca/commitizen-2.21.2.tar.gz"
+  sha256 "64fda8d9d679d2d3d2422c028cb641602fb672560a5485bee9773259f9c4f07c"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/commitizen"
-    sha256 cellar: :any_skip_relocation, mojave: "81a34baf6533bc2b1357ca70752d529f2b237f702e65cad0c7d427a5d746383a"
+    sha256 cellar: :any_skip_relocation, mojave: "fc63c30d64b4e328aeca7642220392a306f19b554e917b2c129cc5284ddec8cb"
   end
 
   depends_on "python@3.10"
@@ -36,8 +36,8 @@ class Commitizen < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz"
-    sha256 "594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a"
+    url "https://files.pythonhosted.org/packages/62/0f/52c009332fdadd484e898dc8f2acca0663c1031b3517070fd34ad9c1b64e/MarkupSafe-2.1.0.tar.gz"
+    sha256 "80beaf63ddfbc64a0452b841d8036ca0611e049650e20afcb882f5d3c266d65f"
   end
 
   resource "packaging" do
@@ -71,8 +71,8 @@ class Commitizen < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/3c/9b/62c6f4e28152a9473d3ecceef627deaa32bec23f9666a5ed4efa6067380f/tomlkit-0.9.2.tar.gz"
-    sha256 "ebd982d61446af95a1e082b103e250cb9e6d152eae2581d4a07d31a70b34ab0f"
+    url "https://files.pythonhosted.org/packages/c7/f0/cc387a2ff7da8f9450d6af4c108bed1f9b7289695330b6b5f412ebc8d6aa/tomlkit-0.10.0.tar.gz"
+    sha256 "d99946c6aed3387c98b89d91fb9edff8f901bf9255901081266a84fb5604adcd"
   end
 
   resource "typing-extensions" do
