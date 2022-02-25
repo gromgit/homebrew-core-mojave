@@ -5,12 +5,12 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-7.0.0/apache-arrow-7.0.0.tar.gz"
   sha256 "e8f49b149a15ecef4e40fcfab1b87c113c6b1ee186005c169e5cdf95d31a99de"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/apache/arrow.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-arrow"
-    sha256 cellar: :any, mojave: "01da2bafac22da457abb318cd1b356a973a4fb775b92dd351e71d206cfa1195f"
+    sha256 cellar: :any, mojave: "f730cd7df4651f1452bd328da5a15a406d22a93eb3f4974bac762791f7c6abfa"
   end
 
   depends_on "boost" => :build
