@@ -6,10 +6,15 @@ class BuildpulseTestReporter < Formula
   license "MIT"
   head "https://github.com/buildpulse/test-reporter.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildpulse-test-reporter"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "7dcc6e85f01b71a39b3f38ac717504717539c7383a72593c82c5519fd880878f"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "4412482c5b680c131935fe222db94be63c7d21f35d2ee4b5e4c9ef657c994480"
   end
 
   depends_on "go" => :build
