@@ -1,22 +1,37 @@
 class Ejdb < Formula
   desc "Embeddable JSON Database engine C11 library"
   homepage "https://ejdb.org"
-  url "https://github.com/Softmotions/ejdb/archive/v2.62.tar.gz"
-  sha256 "8369b09483bb639c6cbc75a307a7ac5d605740c44c9281bad6df0748eaf7bbd6"
+  url "https://github.com/Softmotions/ejdb.git",
+      tag:      "v2.72",
+      revision: "5f44c3f222b34dc9180259e37cdd1677b84d1a85"
   license "MIT"
-  head "https://github.com/Softmotions/ejdb.git"
+  head "https://github.com/Softmotions/ejdb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejdb"
-    rebuild 2
-    sha256 cellar: :any, mojave: "1a0ba1834e60128b1ede96473502d77ddde6d400209cd853cddf4143a7ec7dfb"
+    sha256 cellar: :any, mojave: "87549ca9a6f274580af559b9192038e2e5988af3f82f38aef1402874ee14fa02"
   end
 
   depends_on "cmake" => :build
 
+  uses_from_macos "curl" => :build
+
+  on_linux do
+    depends_on "gcc" => [:build, :test]
+  end
+
+  fails_with :gcc do
+    version "7"
+    cause <<-EOS
+      build/src/extern_iwnet/src/iwnet.c: error: initializer element is not constant
+      Fixed in GCC 8.1, see https://gcc.gnu.org/bugzilla/show_bug.cgi?id=69960
+    EOS
+  end
+
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
+      ENV.deparallelize # CMake Error: WSLAY Not Found
       system "make", "install"
     end
   end
