@@ -3,13 +3,13 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/26/1c/9462c6fb6fb9cab8fbe5b4ab4914dd6ee50022f9e8b3a69f3e7d1a72cdc7/esphome-2022.2.3.tar.gz"
-  sha256 "4030814385dd9fcacd149b6b7e114175a1cbc7f45be12bbadfb76ae794c6106e"
+  url "https://files.pythonhosted.org/packages/e1/d3/3e193c4a32e5b6e990a635f5968933941601cc91ef911a13108661fc60c0/esphome-2022.2.4.tar.gz"
+  sha256 "277b01c7e8aa391f2b7760bebb204d7acc1968c3ce059c9e837d4b326c8ba726"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esphome"
-    sha256 cellar: :any, mojave: "98052ebf98411e6159bd4a59b65f589f1139c1d92585f12479dc3f6f002d0bb4"
+    sha256 cellar: :any, mojave: "8758b070230e57432cc6a4c62b692e81cbb923dd513c91d8a77d880a845d234c"
   end
 
   depends_on "rust" => :build # for cryptography
