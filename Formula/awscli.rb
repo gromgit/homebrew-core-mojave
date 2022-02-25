@@ -3,17 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.4.19.tar.gz"
-  sha256 "6b5221d00f1167f44028e62b848732569be5843cfa9ab8f52c9fff57c09b5607"
+  url "https://github.com/aws/aws-cli/archive/2.4.21.tar.gz"
+  sha256 "f698ce68c25b493b4062eabd4d718663aa8fc8c7fe736879982a3418b8d73694"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
-    sha256 cellar: :any, mojave: "709e9e283a6e516555c00e708bb815681961cb58ebf8ed1e8d6188f697629b66"
+    sha256 cellar: :any, mojave: "591a7acbdd8f9bdcd58ca7f0442a305c9b04dc8e0a4074df021444111c965878"
   end
 
   depends_on "cmake" => :build
+  depends_on "rust" => :build # for cryptography
   depends_on "python@3.9"
   depends_on "six"
 
@@ -40,8 +41,8 @@ class Awscli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz"
-    sha256 "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
+    url "https://files.pythonhosted.org/packages/f9/4b/1cf8e281f7ae4046a59e5e39dd7471d46db9f61bb564fddbff9084c4334f/cryptography-36.0.1.tar.gz"
+    sha256 "53e5c1dc3d7a953de055d77bef2ff607ceef7a2aac0353b5d630ab67f7423638"
   end
 
   resource "distro" do
@@ -60,8 +61,8 @@ class Awscli < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/0c/37/7ad3bf3c6dbe96facf9927ddf066fdafa0f86766237cff32c3c7355d3b7c/prompt_toolkit-2.0.10.tar.gz"
-    sha256 "f15af68f66e664eaa559d4ac8a928111eebd5feda0c11738b5998045224829db"
+    url "https://files.pythonhosted.org/packages/37/34/c34c376882305c5051ed7f086daf07e68563d284015839bfb74d6e61d402/prompt_toolkit-3.0.28.tar.gz"
+    sha256 "9f1cd16b1e86c2968f2519d7fb31dd9d669916f515612c269d14e9ed52b51650"
   end
 
   resource "pycparser" do
