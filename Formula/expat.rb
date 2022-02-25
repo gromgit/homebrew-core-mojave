@@ -1,8 +1,8 @@
 class Expat < Formula
   desc "XML 1.0 parser"
   homepage "https://libexpat.github.io/"
-  url "https://github.com/libexpat/libexpat/releases/download/R_2_4_5/expat-2.4.5.tar.xz"
-  sha256 "f2af8fc7cdc63a87920da38cd6d12cb113c3c3a3f437495b1b6541e0cff32579"
+  url "https://github.com/libexpat/libexpat/releases/download/R_2_4_6/expat-2.4.6.tar.xz"
+  sha256 "de55794b7a9bc214852fdc075beaaecd854efe1361597e6268ee87946951289b"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class Expat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/expat"
-    sha256 cellar: :any, mojave: "e9bce9064f0b9f88b42e5138524bd3637c7488f9553d615f22a489aec2957bb9"
+    sha256 cellar: :any, mojave: "aa59febc66b54858796cc7c6dcfc671cf0f80166b7a5d94df3693ad84b2f2f12"
   end
 
   head do
