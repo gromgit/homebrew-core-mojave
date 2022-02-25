@@ -1,13 +1,13 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://github.com/cloudposse/atmos"
-  url "https://github.com/cloudposse/atmos/archive/v1.3.27.tar.gz"
-  sha256 "3dc354ca4fc5a25eae2f2738b55edff55e0f7b16286759f0aa1e63d3e48b3c41"
+  url "https://github.com/cloudposse/atmos/archive/v1.3.29.tar.gz"
+  sha256 "2d42adb86b555c34f88bc2c6d09e70c455fcc94a0516d7094f65d4154a9baf1e"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atmos"
-    sha256 cellar: :any_skip_relocation, mojave: "adbe361b4e0f1ec396c594ab0f9b83c18076d9f8796408660fab8f06adb0c5c9"
+    sha256 cellar: :any_skip_relocation, mojave: "756436106c1bb2ff90c839dffd45815a7551c4d3b1822da3ec12426771faf789"
   end
 
   depends_on "go" => :build
@@ -66,6 +66,7 @@ class Atmos < Formula
         tenant: tenant1
         region: us-east-2
         environment: ue2
+        stage: dev
 
       components:
         terraform:
