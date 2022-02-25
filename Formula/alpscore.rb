@@ -4,11 +4,12 @@ class Alpscore < Formula
   url "https://github.com/ALPSCore/ALPSCore/archive/v2.2.0.tar.gz"
   sha256 "f7bc9c8f806fb0ad4d38cb6604a10d56ab159ca63aed6530c1f84ecaf40adc61"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/ALPSCore/ALPSCore.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alpscore"
-    sha256 cellar: :any, mojave: "c5ac6349aad84eb1481d14f9356b975acc0e37c9e877558e996f8be556471e72"
+    sha256 cellar: :any, mojave: "c1d50352abeca99520271858be6817a16aab7c3e675dc3e4f2c0beb8118c609e"
   end
 
   depends_on "cmake" => :build
