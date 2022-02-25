@@ -4,7 +4,7 @@ class Cgns < Formula
   url "https://github.com/CGNS/CGNS/archive/v4.2.0.tar.gz"
   sha256 "090ec6cb0916d90c16790183fc7c2bd2bd7e9a5e3764b36c8196ba37bf1dc817"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/CGNS/CGNS.git", branch: "develop"
 
   livecheck do
@@ -13,12 +13,8 @@ class Cgns < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "3f77ff338091758fdef490782b0fb95b0775d58f505dfb60ac8919f2ecde027f"
-    sha256               arm64_big_sur:  "990a1aa3109f6738e6f35317bbbea723281d1c1ac4ca79ad59eee7c6e86f7ab2"
-    sha256 cellar: :any, monterey:       "97c8085d3cd8040ec1afdc770de90444dfd566e4dfb4845d3f47751b5b8b0942"
-    sha256               big_sur:        "ea9d83f6f0d4385054814f42152993db58582e7acd5dbde4b667aa5c7242207d"
-    sha256               catalina:       "517dfe99a307d2f4d96aa4931707596a6862bcd30b64a798375bcd7ec40cc232"
-    sha256               mojave:         "ee6e9edeb0e1b7d7b630501dd2e76091354a05e0f31c2850ca2288ed159445ce"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgns"
+    sha256 cellar: :any, mojave: "f563cc749501c52b81d1608b5f0ebb8d9a02b88d0ce1f6390afc125869d4f8cb"
   end
 
   depends_on "cmake" => :build
