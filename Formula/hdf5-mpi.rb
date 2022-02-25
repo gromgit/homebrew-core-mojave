@@ -1,8 +1,8 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.1/src/hdf5-1.12.1.tar.bz2"
-  sha256 "aaf9f532b3eda83d3d3adc9f8b40a9b763152218fa45349c3bc77502ca1f8f1c"
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.13/hdf5-1.13.0/src/hdf5-1.13.0.tar.bz2"
+  sha256 "1826e198df8dac679f0d3dc703aba02af4c614fd6b7ec936cf4a55e6aa0646ec"
   license "BSD-3-Clause"
 
   livecheck do
@@ -10,13 +10,8 @@ class Hdf5Mpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d63bf74a6027d6a62602b844f93721a77fcfc0a6f11ea1d8ae013290ec29f88e"
-    sha256 cellar: :any,                 arm64_big_sur:  "72ec20ce7203674eeb2e5b3477eed01c97c948f46a113f979570f53750505b5a"
-    sha256 cellar: :any,                 monterey:       "443448511936e1f62597deb3a59408550d1be9d7158d29ac710a95fc8819ab7b"
-    sha256 cellar: :any,                 big_sur:        "43acfcf1924cfdaede8087ab4e3e6dbbb1d9926da8dfd53d0b00484b843284f1"
-    sha256 cellar: :any,                 catalina:       "712c156c2c7d729763eec361d8b43c6c719ecfc66edddaf6e1f17357acad25de"
-    sha256 cellar: :any,                 mojave:         "0bb94bd58813ee1f3176175cb9278ca28bf70dd13e134cf5b422ff5f17eee992"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a451afc0161ef8f76cf77af609f35da050679701d64ffa9e1aac5c73a4ba5762"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5-mpi"
+    sha256 cellar: :any, mojave: "771a5bb97bfe76bc2e0acde8c61479933724ef8535cc8ff075999494a473d257"
   end
 
   depends_on "autoconf" => :build
