@@ -1,3 +1,7 @@
+**UPDATE 2022-Feb-25**: Apologies, I forgot that Homebrew hardcodes a "master" branch for `homebrew/core`, so I've had to rename the original `main` branch accordingly. Please repeat the above steps to reinstall my tap.
+
+---
+
 # Experimental support for Homebrew Core on Mojave
 
 This repo mirrors the main Homebrew core repo as much as possible, only making concessions to stuff that can no longer be built under Mojave. I'll provide bottles to the best of my ability, as they're expired from the main Homebrew core repo.
