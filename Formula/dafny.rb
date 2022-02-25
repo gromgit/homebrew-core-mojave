@@ -1,8 +1,8 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://github.com/dafny-lang/dafny/archive/v3.4.1.tar.gz"
-  sha256 "75c86d22ed9b9b7b88b078e2f27cca6b408070dd95e865e3e57f2dc3c3cd0bbe"
+  url "https://github.com/dafny-lang/dafny/archive/v3.4.2.tar.gz"
+  sha256 "65fc05e868398ed05cafef80e0da66ea5906d97e5e7ebd4e48873d061d2fac4e"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Dafny < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dafny"
-    sha256 cellar: :any_skip_relocation, mojave: "063e6438bf11381923bbc85a9bd088abbba58c4ebf4443fc405b71905fc20881"
+    sha256 cellar: :any_skip_relocation, mojave: "3e4893f86f24967a85a82dd268cc48f4c622e23baa0e7e541addf5c44d21cdde"
   end
 
   depends_on "gradle" => :build
