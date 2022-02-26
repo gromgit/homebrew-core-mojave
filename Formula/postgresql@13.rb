@@ -1,14 +1,18 @@
 class PostgresqlAT13 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v13.5/postgresql-13.5.tar.bz2"
-  sha256 "9b81067a55edbaabc418aacef457dd8477642827499560b00615a6ea6c13f6b3"
+  url "https://ftp.postgresql.org/pub/source/v13.6/postgresql-13.6.tar.bz2"
+  sha256 "bafc7fa3d9d4da8fe71b84c63ba8bdfe8092935c30c0aa85c24b2c08508f67fc"
   license "PostgreSQL"
-  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
     regex(%r{href=["']?v?(13(?:\.\d+)+)/?["' >]}i)
+  end
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@13"
+    sha256 mojave: "29278e261174b071a96588ec638c365eae87a17a29383681c3da2a54569db352"
   end
 
   keg_only :versioned_formula
@@ -37,6 +41,7 @@ class PostgresqlAT13 < Formula
   end
 
   def install
+    ENV.delete "PKG_CONFIG_LIBDIR" if MacOS.version == :catalina
     ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib}"
     ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include}"
 
