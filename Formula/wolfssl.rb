@@ -2,8 +2,8 @@ class Wolfssl < Formula
   desc "Embedded SSL Library written in C"
   homepage "https://www.wolfssl.com"
   url "https://github.com/wolfSSL/wolfssl.git",
-      tag:      "v5.1.1-stable",
-      revision: "c3513bf2573c30f6d2df815de216120e92142020"
+      tag:      "v5.2.0-stable",
+      revision: "e6c07a296d2996e8d5c3cc615dfc50013bbcc794"
   license "GPL-2.0-or-later"
   head "https://github.com/wolfSSL/wolfssl.git", branch: "master"
 
@@ -15,7 +15,7 @@ class Wolfssl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wolfssl"
-    sha256 cellar: :any, mojave: "494ee16f07fa8da3b7f8c87e54aaf2b6f0f49d8b2accef7abe0dafbc66ef2ec7"
+    sha256 cellar: :any, mojave: "09ec95bb485607d43be0d0e512697696fa1e29a0270b231ac43a6cb0054d267a"
   end
 
   depends_on "autoconf" => :build
