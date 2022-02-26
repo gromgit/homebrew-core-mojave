@@ -1,8 +1,8 @@
 class S2n < Formula
   desc "Implementation of the TLS/SSL protocols"
   homepage "https://github.com/aws/s2n-tls"
-  url "https://github.com/aws/s2n-tls/archive/v1.3.6.tar.gz"
-  sha256 "014eb4190b4cc9301b99bbbc11cc874c38fbf1c73ba77bca922458a052a58ed3"
+  url "https://github.com/aws/s2n-tls/archive/v1.3.7.tar.gz"
+  sha256 "64b141b6f79bf131d29ff6a0fe053f77a6f3dd946f19298b544a6dafacbecfcf"
   license "Apache-2.0"
   head "https://github.com/aws/s2n-tls.git", branch: "main"
 
@@ -13,7 +13,7 @@ class S2n < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s2n"
-    sha256 cellar: :any, mojave: "cde89b514baf76c1c8be0b100fa1c43d56ce73b69e5ec01c39ea78031d0536a6"
+    sha256 cellar: :any, mojave: "01d6d6a8e0a1de90cdf8e4da841ea50c00b8fbde5d72be01225723d3aa13d4a8"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +35,7 @@ class S2n < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{opt_lib}", "-ls2n", "-o", "test"
+    ENV["S2N_DONT_MLOCK"] = "1" if OS.linux?
     system "./test"
   end
 end
