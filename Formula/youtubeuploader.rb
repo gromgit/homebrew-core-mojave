@@ -1,14 +1,14 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
   homepage "https://github.com/porjo/youtubeuploader"
-  url "https://github.com/porjo/youtubeuploader/archive/21.06.tar.gz"
-  sha256 "d15c11ffdab59421348d6ef79b19c7bf0069531ea72726bcb964eeb1940121df"
+  url "https://github.com/porjo/youtubeuploader/archive/21.07.tar.gz"
+  sha256 "ca3f43fc9921370ee70d35c5d0a5bd2d7258dcdb5d41660bde7539d8a6839b26"
   license "Apache-2.0"
   head "https://github.com/porjo/youtubeuploader.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtubeuploader"
-    sha256 cellar: :any_skip_relocation, mojave: "8be91f8ed4396ee78d0d2a8d7f037ce6a904316c2f80f4efe9206e694fe348b0"
+    sha256 cellar: :any_skip_relocation, mojave: "760ab0aa77327baf51aa033b9906e976c15153cd8b13a51987b2bc03baf97ac7"
   end
 
   depends_on "go" => :build
