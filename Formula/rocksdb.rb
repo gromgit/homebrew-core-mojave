@@ -1,15 +1,14 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
   homepage "https://rocksdb.org/"
-  url "https://github.com/facebook/rocksdb/archive/v6.27.3.tar.gz"
-  sha256 "ee29901749b9132692b26f0a6c1d693f47d1a9ed8e3771e60556afe80282bf58"
+  url "https://github.com/facebook/rocksdb/archive/v6.29.3.tar.gz"
+  sha256 "724e4cba2db6668ff6a21ecabcce0782cd0c8e386796e7e9a14a8260e0600abd"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
-  revision 1
   head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rocksdb"
-    sha256 cellar: :any, mojave: "766c32d4373fff683747dfcb155dc6a07b719495f2b0736821ecab33786b8e38"
+    sha256 cellar: :any, mojave: "fd374c00384c5a8599e7124fdd56f05622483e217d8b1aae3e35bb141b6cf963"
   end
 
   depends_on "cmake" => :build
