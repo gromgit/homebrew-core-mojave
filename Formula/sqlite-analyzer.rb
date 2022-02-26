@@ -1,9 +1,9 @@
 class SqliteAnalyzer < Formula
   desc "Analyze how space is allocated inside an SQLite file"
   homepage "https://www.sqlite.org/"
-  url "https://www.sqlite.org/2022/sqlite-src-3370200.zip"
-  version "3.37.2"
-  sha256 "486770b4d5f88b5bb0dba540dd6ee1763067d7539dfee18a7c66fe9bb03d16d9"
+  url "https://sqlite.org/2022/sqlite-src-3380000.zip"
+  version "3.38.0"
+  sha256 "77c53d4812cad7856f5f1a1e07d2a2c2a3444d26a965274279f8dd9faa6ff480"
   license "blessing"
 
   livecheck do
@@ -12,7 +12,7 @@ class SqliteAnalyzer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlite-analyzer"
-    sha256 cellar: :any_skip_relocation, mojave: "1f08aae2c398ec5a9bbecb98759d4006b9c2e8748e248f6ccfce2b802208ddbf"
+    sha256 cellar: :any_skip_relocation, mojave: "94f7690a9bc499b2c6250885a7cd89b76be71fd0d274a6eb72d55ac130885335"
   end
 
   uses_from_macos "sqlite" => :test
