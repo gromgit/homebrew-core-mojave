@@ -4,7 +4,7 @@ class Sysdig < Formula
   url "https://github.com/draios/sysdig/archive/0.28.0.tar.gz"
   sha256 "817e595d501acf3fe11dc659a154aadbba848dd87ae801f5bf34a42e84979f37"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -13,7 +13,7 @@ class Sysdig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysdig"
-    sha256 mojave: "a17ca6d7bed103ca63e6e836337888ecabb494cf0ee3a787e3eff989c1a26628"
+    sha256 mojave: "e5b887fd2f5500c2383b7433c6b60a999470361db3b076d8a4e4acfc3e323871"
   end
 
   depends_on "cmake" => :build
