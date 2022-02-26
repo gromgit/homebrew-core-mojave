@@ -1,12 +1,11 @@
 class Openssh < Formula
   desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https://www.openssh.com/"
-  url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.8p1.tar.gz"
-  mirror "https://mirror.vdms.io/pub/OpenBSD/OpenSSH/portable/openssh-8.8p1.tar.gz"
-  version "8.8p1"
-  sha256 "4590890ea9bb9ace4f71ae331785a3a5823232435161960ed5fc86588f331fe9"
+  url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.9p1.tar.gz"
+  mirror "https://mirror.vdms.io/pub/OpenBSD/OpenSSH/portable/openssh-8.9p1.tar.gz"
+  version "8.9p1"
+  sha256 "fd497654b7ab1686dac672fb83dfb4ba4096e8b5ffcdaccd262380ae58bec5e7"
   license "SSH-OpenSSH"
-  revision 2
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
@@ -15,7 +14,7 @@ class Openssh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssh"
-    sha256 mojave: "97b904945e9ae1551f9b7df36041102ac1305448ac9e053afcbdae846d1326c4"
+    sha256 mojave: "ff3aca7057b143ee0bba1b5a412c5e52d575789ba85ae3e09ea9efe51df87a53"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
