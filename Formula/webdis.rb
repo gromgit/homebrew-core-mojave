@@ -1,14 +1,13 @@
 class Webdis < Formula
   desc "Redis HTTP interface with JSON output"
   homepage "https://webd.is/"
-  url "https://github.com/nicolasff/webdis/archive/0.1.18.tar.gz"
-  sha256 "05b3786ab120b102b37b510aa2e854bf1ccb4c68b730b7bb1456c60f8e27ed2b"
+  url "https://github.com/nicolasff/webdis/archive/0.1.20.tar.gz"
+  sha256 "1f0c8e8e8b68486fb7ccfc68a2c0d28167f7b243004b8a521c2552d0f9bbbe84"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webdis"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8b5feb16233384751d4c42398e3252e5e9ccd569ed1a35ba66b0871d00d6ce6b"
+    sha256 cellar: :any, mojave: "f162c8decc92c0dc3fd383b7ffcd2645c64737225abf3eeff0a233c769d22eca"
   end
 
   depends_on "libevent"
