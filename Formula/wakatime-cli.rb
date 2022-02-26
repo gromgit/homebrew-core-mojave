@@ -2,14 +2,14 @@ class WakatimeCli < Formula
   desc "Command-line interface to the WakaTime api"
   homepage "https://wakatime.com/"
   url "https://github.com/wakatime/wakatime-cli.git",
-    tag:      "v1.37.0",
-    revision: "93c42c1e8a89ed2e95157edc475f2c6051e1e064"
+    tag:      "v1.38.0",
+    revision: "822cdfd214ad59a12706c4ccc804a4977ecdebf1"
   license "BSD-3-Clause"
   version_scheme 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wakatime-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "8901e5176bb9a74dfdd952e9a598be8f6378499b3030699a67221bf7c2adf006"
+    sha256 cellar: :any_skip_relocation, mojave: "9b879d1ead32032241c5271e92d42e47f4247d797387761d4ea95ada395e5b87"
   end
 
   depends_on "go" => :build
