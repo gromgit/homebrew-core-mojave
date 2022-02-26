@@ -1,8 +1,8 @@
 class Moarvm < Formula
   desc "Virtual machine for NQP and Rakudo Perl 6"
   homepage "https://moarvm.org"
-  url "https://github.com/MoarVM/MoarVM/releases/download/2021.10/MoarVM-2021.10.tar.gz"
-  sha256 "7f3487a70e8b77be0e4e2f12b14c49f6a01d0378e0940c86958c9016c495ad75"
+  url "https://github.com/MoarVM/MoarVM/releases/download/2022.02/MoarVM-2022.02.tar.gz"
+  sha256 "4f93cdce6b8a565a32282bb38cc971cefeb71f5d022c850c338ee8145574ee96"
   license "Artistic-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Moarvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moarvm"
-    rebuild 2
-    sha256 mojave: "1e3d6ad0a890b73837a03c68d1c3a0d7281f37b71677267548e2a9ca1d47e147"
+    sha256 mojave: "c6b2d0f1b090ec992a059dec1b54f69fce575a16106fc7c8ff15ca60c5d5398d"
   end
 
   depends_on "libatomic_ops"
@@ -24,8 +23,8 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https://github.com/Raku/nqp/releases/download/2021.10/nqp-2021.10.tar.gz"
-    sha256 "48135bc1b3ce22c1c57ccef46531e7688eec83d6b905b502ffcefd6c23294b49"
+    url "https://github.com/Raku/nqp/releases/download/2022.02/nqp-2022.02.tar.gz"
+    sha256 "25d3c99745cd84f4049a9bd9cf26bb5dc817925abaafe71c9bdb68841cdb18b1"
   end
 
   def install
