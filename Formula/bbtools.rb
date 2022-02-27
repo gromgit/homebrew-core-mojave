@@ -1,13 +1,13 @@
 class Bbtools < Formula
   desc "Brian Bushnell's tools for manipulating reads"
   homepage "https://jgi.doe.gov/data-and-tools/bbtools/"
-  url "https://downloads.sourceforge.net/bbmap/BBMap_38.95.tar.gz"
-  sha256 "586d6416fd785755ef0862c2ccb3e995347b0b0ae18cf9cdab40a883bd92e54d"
+  url "https://downloads.sourceforge.net/bbmap/BBMap_38.96.tar.gz"
+  sha256 "18d9c89b02c0ab044b2795a65f6236b2262a494ed83d27e31750437b350ef080"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bbtools"
-    sha256 cellar: :any, mojave: "f5ad4f77c4e1050b94438343d4017265e9958861bea8efb8b58c025f6ba75be7"
+    sha256 cellar: :any, mojave: "54b8c5a5e80afb1a34c8397494ed9722f499d4bfef66a115bab85b11fb8c0e1d"
   end
 
   depends_on "openjdk"
