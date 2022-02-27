@@ -1,10 +1,9 @@
 class Efl < Formula
   desc "Enlightenment Foundation Libraries"
   homepage "https://www.enlightenment.org"
-  url "https://download.enlightenment.org/rel/libs/efl/efl-1.25.1.tar.xz"
-  sha256 "351ca0211ca000234527a503585f039f985607ec9439e34b49d8b8bbf35a7e6b"
+  url "https://download.enlightenment.org/rel/libs/efl/efl-1.26.2.tar.xz"
+  sha256 "2979cfbc728a1a1f72ad86c2467d861ed91e664d3f17ef03190fb5c5f405301c"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-2-Clause", "FTL", "zlib-acknowledgement"]
-  revision 4
 
   livecheck do
     url "https://download.enlightenment.org/rel/libs/efl/"
@@ -12,9 +11,8 @@ class Efl < Formula
   end
 
   bottle do
-    sha256 big_sur:  "c84642305945077de148989b1b895b0e9d23b73290e01f76d8f2f69409ca4f5e"
-    sha256 catalina: "4fe55a27014a43c4d4bad03433a80798c00982c938c704e9e1149f42697620f7"
-    sha256 mojave:   "211585a168f25d15ffd47d13d200bb3fba75b2e3bbf7dd7b59bff92f647014d1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/efl"
+    sha256 mojave: "efa894ef63c90af4f6ced3f65e438b35c229fb368746db9ca7fb4e689a26291e"
   end
 
   depends_on "meson" => :build
@@ -37,7 +35,7 @@ class Efl < Formula
   depends_on "libsndfile"
   depends_on "libspectre"
   depends_on "libtiff"
-  depends_on "luajit"
+  depends_on "luajit-openresty"
   depends_on "lz4"
   depends_on "openssl@1.1"
   depends_on "poppler"
@@ -46,15 +44,25 @@ class Efl < Formula
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5" # poppler is built with GCC
+
+  # Remove LuaJIT 2.0 linker args -pagezero_size and -image_base
+  # to fix ARM build using LuaJIT 2.1+ via `luajit-openresty`
+  patch :DATA
+
   def install
     args = std_meson_args + %w[
       -Davahi=false
       -Dbuild-examples=false
       -Dbuild-tests=false
-      -Dcocoa=true
       -Dembedded-lz4=false
       -Deeze=false
       -Dglib=true
+      -Dinput=false
       -Dlibmount=false
       -Dopengl=full
       -Dphysics=true
@@ -62,6 +70,7 @@ class Efl < Formula
       -Dv4l2=false
       -Dx11=false
     ]
+    args << "-Dcocoa=true" if OS.mac?
 
     # Install in our Cellar - not dbus's
     inreplace "dbus-services/meson.build", "dep.get_pkgconfig_variable('session_bus_services_dir')",
@@ -83,3 +92,19 @@ class Efl < Formula
     system bin/"eet", "-V"
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index a1c5967b82..b10ca832db 100644
+--- a/meson.build
++++ b/meson.build
+@@ -32,9 +32,6 @@ endif
+
+ #prepare a special linker args flag for binaries on macos
+ bin_linker_args = []
+-if host_machine.system() == 'darwin'
+-  bin_linker_args = ['-pagezero_size', '10000', '-image_base', '100000000']
+-endif
+
+ windows = ['windows', 'cygwin']
+ #bsd for meson 0.46 and 0.47
