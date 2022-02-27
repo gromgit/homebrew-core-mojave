@@ -3,8 +3,8 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.14.0.tar.gz"
-  sha256 "382f8ac7902a0942b1dfa06eec7a38aecb6598a2cb1fa77793e2a98abfb89c68"
+  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.15.0.tar.gz"
+  sha256 "89e19c35b9157c771b63010f26d597f0c14500fa433e44545bd5e333cd0615d3"
   license "Apache-2.0"
 
   livecheck do
@@ -14,8 +14,7 @@ class C7n < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/c7n"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "37caddb44cb2e3327fd100e649a83a0002cb6b8432162916d42efaa22052fb59"
+    sha256 cellar: :any_skip_relocation, mojave: "913ff245cc2da4204adf9f57480b48cd2f1921559a24d4cd86a245bf75673603"
   end
 
   depends_on "python-tabulate"
