@@ -5,12 +5,11 @@ class Octave < Formula
   mirror "https://ftpmirror.gnu.org/octave/octave-6.4.0.tar.xz"
   sha256 "6c1555f5aff0e655b88cad8e8bc2b740ec3a6f3f61898e4997359c2af55e5d20"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octave"
-    rebuild 3
-    sha256 mojave: "7ea98fb6bf8d0585c359a38e10a35af5bec742a2e7c507f80f8a6ed476b8dbc8"
+    sha256 mojave: "706e425ca2d49298792b2f0814d2dd8dd668450df4539016d5800c223b5cc3e7"
   end
 
   head do
