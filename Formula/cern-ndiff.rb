@@ -2,8 +2,8 @@ class CernNdiff < Formula
   desc "Numerical diff tool"
   # NOTE: ndiff is a sub-project of Mad-X at the moment..
   homepage "https://mad.web.cern.ch/mad/"
-  url "https://github.com/MethodicalAcceleratorDesign/MAD-X/archive/5.08.00.tar.gz"
-  sha256 "0b3fe2aca8899289ef7bfb98d745f13b8c4082e239f54f2662c9cad8d1e63a53"
+  url "https://github.com/MethodicalAcceleratorDesign/MAD-X/archive/5.08.01.tar.gz"
+  sha256 "89c943fcb474344a4f7d28de98e8eae0aec40f779bf908daff79043bf3520555"
   head "https://github.com/MethodicalAcceleratorDesign/MAD-X.git", branch: "master"
 
   livecheck do
@@ -13,7 +13,7 @@ class CernNdiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cern-ndiff"
-    sha256 cellar: :any_skip_relocation, mojave: "c645b615606da1eb91bcbca86c9c4cb4c0dcd3bbccf1342b944cb625ab5ab270"
+    sha256 cellar: :any_skip_relocation, mojave: "07306c8310a254c75d4d4ce46c0c5efdb1290723eb9d9a4e6e7d43c8c3597e5b"
   end
 
   depends_on "cmake" => :build
