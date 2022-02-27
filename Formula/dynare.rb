@@ -4,7 +4,7 @@ class Dynare < Formula
   url "https://www.dynare.org/release/source/dynare-5.0.tar.xz"
   sha256 "557bc7d8d7bbbf7d4746dd1e015b273eeeb0b53dc66b9d4004d2efef8f4fe16e"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.dynare.org/download/"
@@ -13,7 +13,7 @@ class Dynare < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynare"
-    sha256 cellar: :any, mojave: "fe277617b1a6d96616f018c43913d3624a02a11a1b7493d81be034ae09d9bd03"
+    sha256 cellar: :any, mojave: "511b3f7d83fb9eef18aca32955f55bbb08b932049968e716a0bfcf20fb0bead1"
   end
 
   head do
