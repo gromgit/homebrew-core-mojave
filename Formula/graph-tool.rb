@@ -6,6 +6,7 @@ class GraphTool < Formula
   url "https://downloads.skewed.de/graph-tool/graph-tool-2.44.tar.bz2"
   sha256 "2dd8c31b65eb9404b78af1413d2c8896e247fa5bf81dfcbe56fcaa27af82df26"
   license "LGPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -14,8 +15,7 @@ class GraphTool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graph-tool"
-    rebuild 1
-    sha256 mojave: "86247ebcc0a78bbf5c590263bba0379aba0e21c50f378c0d80f0ad17121e3c79"
+    sha256 mojave: "5c267cd79aa98c915c7ef6567674ecfade7c38400a6c0f33c5c7a94c020520e0"
   end
 
   depends_on "autoconf" => :build
