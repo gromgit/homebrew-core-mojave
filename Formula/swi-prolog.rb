@@ -1,8 +1,8 @@
 class SwiProlog < Formula
   desc "ISO/Edinburgh-style Prolog interpreter"
   homepage "https://www.swi-prolog.org/"
-  url "https://www.swi-prolog.org/download/stable/src/swipl-8.4.1.tar.gz"
-  sha256 "30bb6542b7767e47b94bd92e8e8a7d7a8a000061044046edf45fc864841b69c4"
+  url "https://www.swi-prolog.org/download/stable/src/swipl-8.4.2.tar.gz"
+  sha256 "be21bd3d6d1c9f3e9b0d8947ca6f3f5fd56922a3819cae03251728f3e1a6f389"
   license "BSD-2-Clause"
   head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
 
@@ -13,8 +13,7 @@ class SwiProlog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swi-prolog"
-    rebuild 2
-    sha256 mojave: "671e5f542c9b96e6e069951619ba48ae08f1dbc3b19a3896f1e713b3fbe53ffc"
+    sha256 mojave: "0b5e1aebd89ca5b733bf1133905feb51211bb2f9c41ba90a723b1846496d0e86"
   end
 
   depends_on "cmake" => :build
