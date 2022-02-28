@@ -4,11 +4,11 @@ class EtcdCppApiv3 < Formula
   url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.2.3.tar.gz"
   sha256 "f74607eebffce8391b5355ed7d12d46f6627f2882687cd0f5574c90b275f77fd"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd-cpp-apiv3"
-    sha256 cellar: :any, mojave: "b9984e50768469be2d1aeeed141bd7a56b518e55e295388bbcde59f9b2be1acd"
+    sha256 cellar: :any, mojave: "1e6386bf9eaeeca03e6a75283fe37ea96b32e448dfaaa41732c69ee12636ad0c"
   end
 
   depends_on "cmake" => :build
