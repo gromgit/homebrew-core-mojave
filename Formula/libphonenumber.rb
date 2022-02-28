@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://github.com/google/libphonenumber/archive/v8.12.43.tar.gz"
-  sha256 "7ee08a09c0949bf827e62bd8e02a540de616639cccd7b28913f200db15a0ef78"
+  url "https://github.com/google/libphonenumber/archive/v8.12.44.tar.gz"
+  sha256 "02337c60e3a055e0a4bc4e0a60e8ae31aa567adce59f266cfd37961fceea74c2"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libphonenumber < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libphonenumber"
-    sha256 cellar: :any, mojave: "1d8a203b0eb44f148a6af4bab9ba2beff7ae8410fddeb995fa0ab20cef78f79e"
+    sha256 cellar: :any, mojave: "a5f87923fb728cfcef9991ef760a5697a28b54b39cfc46af1deb566dc460f10f"
   end
 
   depends_on "cmake" => :build
