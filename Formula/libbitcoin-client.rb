@@ -4,22 +4,19 @@ class LibbitcoinClient < Formula
   url "https://github.com/libbitcoin/libbitcoin-client/archive/v3.6.0.tar.gz"
   sha256 "75969ac0a358458491b101cae784de90452883b5684199d3e3df619707802420"
   license "AGPL-3.0"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "54e596753c425921e98f9237f5f9b0eea6771edf2c785a79650b840fee30d770"
-    sha256 cellar: :any,                 arm64_big_sur:  "1436d1f380bb51199a8b92053c9822e314c0febac9bc8757bf0f4c51fbcc7798"
-    sha256 cellar: :any,                 monterey:       "46e417e5a41ee798bf9834494a9a0b4499b144c7c3104aad32a4c51e6bb07458"
-    sha256 cellar: :any,                 big_sur:        "8c0a09aefcaf36a2b9831884c7ce698d2ad533f3aca8b4d30a4f63611022535a"
-    sha256 cellar: :any,                 catalina:       "d44ec063ad2da0e31a12d9f59c65962b03e60c1fedfbe002b62dbae6cedc727a"
-    sha256 cellar: :any,                 mojave:         "fed0d06847db159818373b9c8845f185dc58dbeaa761f0f8a8bc6267f3b4030a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2f962444775e331d8e13c937a16ea977b1080c32a2c10750bd304de03e4719e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbitcoin-client"
+    sha256 cellar: :any, mojave: "8d1d880f6797db70198262460cb3549e936df698b96339b43c0ec994046d6665"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  depends_on "boost@1.76"
   depends_on "libbitcoin-protocol"
 
   def install
@@ -30,12 +27,12 @@ class LibbitcoinClient < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+                          "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
   end
 
   test do
-    boost = Formula["boost"]
+    boost = Formula["boost@1.76"]
     (testpath/"test.cpp").write <<~EOS
       #include <bitcoin/client.hpp>
       class stream_fixture
@@ -93,9 +90,10 @@ class LibbitcoinClient < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+                    "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin",
                     "-L#{lib}", "-lbitcoin-client",
-                    "-L#{boost.opt_lib}", "-lboost_system"
+                    "-L#{boost.lib}", "-lboost_system"
     system "./test"
   end
 end
