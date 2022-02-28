@@ -5,16 +5,12 @@ class Csound < Formula
       tag:      "6.17.0",
       revision: "f5b4258794a82c99f7d85f1807c6638f2e80ccac"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/csound/csound.git", branch: "develop"
 
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csound"
-    sha256 mojave: "2d3fa79d731fecb11cf227a25b9280792f5cb319b7d17b860641f62f4c03e4fb"
   end
 
   depends_on "asio" => :build
@@ -55,8 +51,8 @@ class Csound < Formula
   end
 
   resource "csound-plugins" do
-    url "https://github.com/csound/plugins/archive/9b9911b92297cc3329274094195a95dde4b9e27c.tar.gz"
-    sha256 "40828b3836653d369c093d8582a29531c2c5ace0e575b625069fb4dad64cc342"
+    url "https://github.com/csound/plugins/archive/refs/tags/1.0.2.tar.gz"
+    sha256 "8c2f0625ad1d38400030f414b92d82cfdec5c04b7dc178852f3e1935abf75d30"
   end
 
   resource "getfem" do
