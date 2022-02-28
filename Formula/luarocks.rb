@@ -13,13 +13,13 @@ class Luarocks < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luarocks"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "42457f81232204992d1a978d899d42f3be2324a0cebb4b3ac1f1b537c621ab75"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, mojave: "2d6fd924bcc177405b3e8eddb05bae578b8ee2b134e03865608727b3a7ff05f4"
   end
 
   depends_on "lua@5.1" => :test
   depends_on "lua@5.3" => :test
-  depends_on "luajit" => :test unless Hardware::CPU.arm?
+  depends_on "luajit-openresty" => :test
   depends_on "lua"
 
   uses_from_macos "unzip"
@@ -73,12 +73,10 @@ class Luarocks < Formula
           "Luafilesystem failed to create the expected directory"
 
         # LuaJIT is compatible with lua5.1, so we can also test it here
-        unless Hardware::CPU.arm?
-          rmdir testpath/"blank_space"
-          system "#{Formula["luajit"].bin}/luajit", "lfs_#{luaversion}test.lua"
-          assert_predicate testpath/"blank_space", :directory?,
-            "Luafilesystem failed to create the expected directory"
-        end
+        rmdir testpath/"blank_space"
+        system "#{Formula["luajit-openresty"].bin}/luajit", "lfs_#{luaversion}test.lua"
+        assert_predicate testpath/"blank_space", :directory?,
+          "Luafilesystem failed to create the expected directory"
       else
         (testpath/"lfs_#{luaversion}test.lua").write <<~EOS
           require("lfs")
