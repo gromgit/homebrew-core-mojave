@@ -5,16 +5,11 @@ class Wownero < Formula
       tag:      "v0.10.1.0",
       revision: "8ab87421d9321d0b61992c924cfa6e3918118ad0"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "7fa636de1095aa610a6b995263ed7ef1d55864bc72f9bbb58093b7cf849dccfd"
-    sha256 cellar: :any,                 arm64_big_sur:  "ef39a53fc330916136257fa2f8e2019063e544770789b09503b53e4505bea918"
-    sha256 cellar: :any,                 monterey:       "33a39bf46590eb74990762f5ad929d0925fecba366a42ef1571e513e164a9eed"
-    sha256 cellar: :any,                 big_sur:        "2a7dc81fcfa03e22dfc74d069ccc505a249823ab116ca2f6eabc3e14d25f28f2"
-    sha256 cellar: :any,                 catalina:       "2713015081577274b00955f18eca366944e1557cd89ec00d852470c40a543ded"
-    sha256 cellar: :any,                 mojave:         "549739d9edb69887b6661b5daa670ac310693c44ff8462ece01629277b6aa263"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b25b0804cff6eb8b88df6ecb0c72e836b22fd2bde9e78c7426c7c2cdba661abf"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wownero"
+    sha256 cellar: :any, mojave: "42710c4f1272b90192d67f6022f5f3e179df2560fec39b65177cf918421d775c"
   end
 
   depends_on "cmake" => :build
