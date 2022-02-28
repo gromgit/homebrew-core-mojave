@@ -1,15 +1,14 @@
 class Timg < Formula
   desc "Terminal image and video viewer"
   homepage "https://timg.sh/"
-  url "https://github.com/hzeller/timg/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "46eac8d5434b281afa6d64ced5f46c732c1c4d0699e16a22175b7df179221e2c"
+  url "https://github.com/hzeller/timg/archive/refs/tags/v1.4.4.tar.gz"
+  sha256 "66d2e00b50068fd6638bb8be1859c50ca4f24caef751f9dc95b303f37fb07b1e"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/hzeller/timg.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/timg"
-    sha256 cellar: :any, mojave: "ea3c1f1ab30c06641845abbeb9fddcb521e313341ef9d15c860ed68f509e52aa"
+    sha256 cellar: :any, mojave: "69ce6d286df10bc79021740d73fa5f35b47abd706f988a8127983ae3550c4bd1"
   end
 
   depends_on "cmake" => :build
