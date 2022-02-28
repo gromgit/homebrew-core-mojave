@@ -1,15 +1,14 @@
 class Texlab < Formula
   desc "Implementation of the Language Server Protocol for LaTeX"
   homepage "https://texlab.netlify.com/"
-  url "https://github.com/latex-lsp/texlab/archive/v3.3.1.tar.gz"
-  sha256 "a39766f497dfb2cf9e370ddc430b7d275cb055b4d8a0751d718a86072747a75c"
+  url "https://github.com/latex-lsp/texlab/archive/v3.3.2.tar.gz"
+  sha256 "380395a37ee2ece590c0db04ac4898f5f430ee37d0ab0fa0801805167fff066a"
   license "GPL-3.0-only"
   head "https://github.com/latex-lsp/texlab.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/texlab"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c9fe92ef96b0d14e9a3c39d8947e2438718d140e598a43c767ed034af41d3e78"
+    sha256 cellar: :any_skip_relocation, mojave: "50b4ee7bd987e78b09d9e7189e04b24bbe8ffdd538bea5d77cd863f985a22814"
   end
 
   depends_on "rust" => :build
