@@ -4,8 +4,8 @@ class Octant < Formula
   desc "Kubernetes introspection tool for developers"
   homepage "https://octant.dev"
   url "https://github.com/vmware-tanzu/octant.git",
-      tag:      "v0.25.0",
-      revision: "223e262201da0eefb320c98756cc84c4bb1a2622"
+      tag:      "v0.25.1",
+      revision: "f16cbb951905f1f8549469dfc116ca16cf679d46"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/octant.git", branch: "master"
 
@@ -16,8 +16,7 @@ class Octant < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octant"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "8f23b337ce1518fb4fa1b7d85d900a92cf4bf735843382bfd826ab999d2828f4"
+    sha256 cellar: :any_skip_relocation, mojave: "f3c2ab144c6e61bab6f0da373a2f268711b23a41b025ec687547f86e422603ca"
   end
 
   depends_on "go" => :build
