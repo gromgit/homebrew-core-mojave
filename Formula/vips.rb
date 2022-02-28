@@ -4,6 +4,7 @@ class Vips < Formula
   url "https://github.com/libvips/libvips/releases/download/v8.12.2/vips-8.12.2.tar.gz"
   sha256 "565252992aff2c7cd10c866c7a58cd57bc536e03924bde29ae0f0cb9e074010b"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Vips < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vips"
-    sha256 mojave: "66685af4e1a792d1616d14e7562ab611f20d2708c8479cd43bf263e57969e90c"
+    sha256 mojave: "8a3922238faad197c8114c00c6392820e427a2272bc32c41329e392834a793a5"
   end
 
   depends_on "pkg-config" => :build
