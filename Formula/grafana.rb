@@ -1,14 +1,14 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://github.com/grafana/grafana/archive/v8.3.6.tar.gz"
-  sha256 "2d5bd2193898d3bd863141578616f9f4e60f89e47164c620d96758f72c3b4224"
+  url "https://github.com/grafana/grafana/archive/v8.4.2.tar.gz"
+  sha256 "51c29c3f44229057c343c2164c941500aa0185a5356969775330fe7e1ac56f7b"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana"
-    sha256 cellar: :any_skip_relocation, mojave: "cbed629ff9c7ca2cabf2d0dbd33721f65c9c52366c4632bd759bfbdceb61c581"
+    sha256 cellar: :any_skip_relocation, mojave: "1f0128aeff8865ef4874df9dcba7a6f09d98d3ba4d6e4542b2eb78a7cdac5fe1"
   end
 
   depends_on "go" => :build
@@ -23,12 +23,11 @@ class Grafana < Formula
   end
 
   def install
-    ENV["NODE_OPTIONS"] = "--max-old-space-size=4096"
+    ENV["NODE_OPTIONS"] = "--max-old-space-size=8000"
     system "make", "gen-go"
     system "go", "run", "build.go", "build"
 
     system "yarn", "install"
-
     system "yarn", "build"
 
     if OS.mac?
