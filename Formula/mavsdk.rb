@@ -7,6 +7,7 @@ class Mavsdk < Formula
       tag:      "v1.0.8",
       revision: "a6836be251e216f9967183a7551cc6ccb2a60382"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -15,7 +16,7 @@ class Mavsdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mavsdk"
-    sha256 cellar: :any, mojave: "a7440bb9a220eafdf61fb056f44f354486cba4b5771e405706ac4a28c93311dd"
+    sha256 cellar: :any, mojave: "d76fe514698eeab8bae7ba523b2a68ab30be4c2fd6cb3eae32d4463d01310046"
   end
 
   depends_on "cmake" => :build
