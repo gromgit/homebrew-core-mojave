@@ -1,10 +1,9 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.org/"
-  url "https://github.com/OpenImageIO/oiio/archive/v2.3.11.0.tar.gz"
-  sha256 "ac43f89d08cdb9661813f9fb809ccb59c211f3913f75d77db5c78e986980f9a4"
+  url "https://github.com/OpenImageIO/oiio/archive/v2.3.12.0.tar.gz"
+  sha256 "6556df7e9c426994ba00290bfbf6e72c04f0eb0b56c06242442603e67205ea59"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/OpenImageIO/oiio.git", branch: "master"
 
   livecheck do
@@ -15,7 +14,7 @@ class Openimageio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openimageio"
-    sha256 cellar: :any, mojave: "24d49651abc35e2dca9bf8506a519593917645038cfaa30a79a02aa205759960"
+    sha256 cellar: :any, mojave: "ea3de1a02a2fc05b70668a78dd587af2ff73b30404d69c8c18115a55bd0c5116"
   end
 
   depends_on "cmake" => :build
