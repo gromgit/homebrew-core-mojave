@@ -3,14 +3,14 @@ require "language/node"
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https://www.serverless.com/"
-  url "https://github.com/serverless/serverless/archive/v3.3.0.tar.gz"
-  sha256 "cdc5b2b5ef47294bc820e30a73e7e43f85c835a75f6ae93b41a24257cd78b583"
+  url "https://github.com/serverless/serverless/archive/v3.4.0.tar.gz"
+  sha256 "76f7318479b5bba280ae524b729ad4d173d7ed74da28beda79ee2dc12fd57212"
   license "MIT"
   head "https://github.com/serverless/serverless.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serverless"
-    sha256 cellar: :any_skip_relocation, mojave: "ee3c13eff6d591d1a2f0fea6ceaf848a25d9337f29cb31312d85a2a5dd72b255"
+    sha256 cellar: :any_skip_relocation, mojave: "74b25abc7945fde07a97cfe2983cfedbe46bdea034f9f1788d8a5c7670da1e37"
   end
 
   depends_on "node"
