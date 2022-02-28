@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://coreos.com/operators/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.17.0",
-      revision: "704b02a9ba86e85f43edb1b20457859e9eedc6e6"
+      tag:      "v1.18.0",
+      revision: "c9c61b6921b29d731e64cd3cc33d268215fb3b25"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
@@ -14,7 +14,7 @@ class OperatorSdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/operator-sdk"
-    sha256 cellar: :any_skip_relocation, mojave: "1f68e7cd88ba14735e6be1c1472cf842ccfac832522bf03a8aaef2f649265f8c"
+    sha256 cellar: :any_skip_relocation, mojave: "6db6a8843c2a1f2e1ce0fa8eb52ce864146ffddd86a945e00253a9d4005b0cc9"
   end
 
   depends_on "go"
