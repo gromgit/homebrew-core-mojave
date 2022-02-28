@@ -1,14 +1,14 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https://imgproxy.net"
-  url "https://github.com/imgproxy/imgproxy/archive/v3.2.2.tar.gz"
-  sha256 "be0beb29fab9e3bd8f36a6ba90a933257d9bf8322a130aef6db17503ccbbf6ac"
+  url "https://github.com/imgproxy/imgproxy/archive/v3.3.0.tar.gz"
+  sha256 "b3bc7abd760cd80c3a0a94f8413e31bad9aec0665a054bc1b072133a3b3a8437"
   license "MIT"
   head "https://github.com/imgproxy/imgproxy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imgproxy"
-    sha256 cellar: :any, mojave: "079191797bb67aaf96342112ec4a208775bccef9bc0da95d0dba01b69db52743"
+    sha256 cellar: :any, mojave: "25d32ad87fd56cf4d80c767cea6f287c1c83a7223445bfe820f5112655ea8f8e"
   end
 
   depends_on "go" => :build
