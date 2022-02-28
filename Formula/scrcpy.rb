@@ -1,32 +1,31 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https://github.com/Genymobile/scrcpy"
-  url "https://github.com/Genymobile/scrcpy/archive/v1.22.tar.gz"
-  sha256 "96af955957f354cca78971be0fb54dfbd86a5b520f98a2563d3f0b0a54f4ec5a"
+  url "https://github.com/Genymobile/scrcpy/archive/v1.23.tar.gz"
+  sha256 "47686af76e2314404deda0eea58761ca1378a6a1567408b4560683461c7ea18b"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scrcpy"
-    sha256 mojave: "638df7125232be698a32a1663865fcd708a111b65b01ad71231e1ec6c0060ada"
+    sha256 mojave: "f3796624583af65b53b3499db6b99c11ef9eb94f201221d6ad31e35d6c191999"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg"
+  depends_on "libusb"
   depends_on "sdl2"
 
   on_linux do
     depends_on "gcc" => :build
-    depends_on "libusb"
   end
 
   fails_with gcc: "5"
 
   resource "prebuilt-server" do
-    url "https://github.com/Genymobile/scrcpy/releases/download/v1.22/scrcpy-server-v1.22"
-    sha256 "c05d273eec7533c0e106282e0254cf04e7f5e8f0c2920ca39448865fab2a419b"
+    url "https://github.com/Genymobile/scrcpy/releases/download/v1.23/scrcpy-server-v1.23"
+    sha256 "2a913fd47478c0b306fca507cb0beb625e49a19ff9fc7ab904e36ef5b9fe7e68"
   end
 
   def install
@@ -55,8 +54,9 @@ class Scrcpy < Formula
   test do
     fakeadb = (testpath/"fakeadb.sh")
 
-    # When running, scrcpy calls adb four times:
-    #  - adb get-serialno
+    # When running, scrcpy calls adb five times:
+    #  - adb start-server
+    #  - adb devices -l
     #  - adb -s SERIAL push ... (to push scrcpy-server.jar)
     #  - adb -s SERIAL reverse ... tcp:PORT ...
     #  - adb -s SERIAL shell ...
@@ -65,10 +65,11 @@ class Scrcpy < Formula
 
     fakeadb.write <<~EOS
       #!/bin/sh
-      echo $@ >> #{testpath/"fakeadb.log"}
+      echo "$@" >> #{testpath/"fakeadb.log"}
 
-      if [ "$1" = "get-serialno" ]; then
-        echo emulator-1337
+      if [ "$1" = "devices" ]; then
+        echo "List of devices attached"
+        echo "emulator-1337          device product:sdk_gphone64_x86_64 model:sdk_gphone64_x86_64 device:emulator64_x86_64_arm64 transport_id:1"
       fi
 
       if [ "$3" = "reverse" ]; then
