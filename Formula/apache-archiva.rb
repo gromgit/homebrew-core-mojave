@@ -1,15 +1,16 @@
 class ApacheArchiva < Formula
   desc "Build Artifact Repository Manager"
   homepage "https://archiva.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=archiva/2.2.6/binaries/apache-archiva-2.2.6-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/archiva/2.2.6/binaries/apache-archiva-2.2.6-bin.tar.gz"
-  sha256 "407490ca925a3b128ddf528bc9574f9284ae4d99d37031215c85a7713c5593c6"
+  url "https://www.apache.org/dyn/closer.lua?path=archiva/2.2.7/binaries/apache-archiva-2.2.7-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/archiva/2.2.7/binaries/apache-archiva-2.2.7-bin.tar.gz"
+  sha256 "ce3dd01c38f5ef238532ac7541d866eb7171297a9275eb10aabc17e15e7907d2"
   license all_of: ["Apache-2.0", "GPL-2.0-only"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-archiva"
-    sha256 cellar: :any_skip_relocation, mojave: "b51e9d54253f5099b5be32f0150abf2fe7fbcb7b16306e0b42732c2230d9c962"
+    sha256 cellar: :any_skip_relocation, mojave: "913c76a504715082fa98026788b5b1b20b7a9f67d6693f21c9bb627fc30a49d3"
   end
+
 
   depends_on "ant" => :build
   depends_on "java-service-wrapper"
