@@ -4,12 +4,14 @@ class DockerComposeCompletion < Formula
   url "https://github.com/docker/compose/archive/1.29.2.tar.gz"
   sha256 "99a9b91d476062d280c889ae4e9993d7dd6a186327bafb2bb39521f9351b96eb"
   license "Apache-2.0"
-  head "https://github.com/docker/compose.git"
+  head "https://github.com/docker/compose.git", branch: "v2"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "daddf263b55ef91e97b0fe1eadb0887bce2c3dda6eabce27a30f775dccedf43b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-compose-completion"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c597fd578d8931e28e1269735ced22f28c92fe2d77be6fcf93ac032f6660104b"
   end
+
 
   # See: https://github.com/docker/compose/issues/8550
   deprecate! date: "2021-10-02", because: "no upstream support for v2"
