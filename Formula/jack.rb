@@ -4,6 +4,7 @@ class Jack < Formula
   url "https://github.com/jackaudio/jack2/archive/v1.9.19.tar.gz"
   sha256 "9030f4dc11773351b6ac96affd9c89803a5587ebc1b091e5ff866f433327e4b0"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,21 +12,16 @@ class Jack < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_monterey: "2741e332d2f3c3bf82d78e724cc33f029c20e60f2f3aef9a22255f7ceb356951"
-    sha256 arm64_big_sur:  "8460ec59472c5dc1d7f1196dcb68578539054cfb597390793f91c99eb0b9596a"
-    sha256 monterey:       "51cb7f7e929c43eaa1f6db9fac1ff1b6acec8ca074eb83b276f1ac70bfdf3f7e"
-    sha256 big_sur:        "939c93be6d821e73abe360c69c57b0786086b03bcf95233a0ef1836e18c472f7"
-    sha256 catalina:       "fbec3032a541f3e9ce3b327994d4bd305f3f849d1cb3831ec460b2bd2e029c08"
-    sha256 mojave:         "b2974079582c370b9056ac2f98308cb321dc767ac3f67229e891e1de6bc86c8f"
-    sha256 x86_64_linux:   "2a209c4eaf03a6bb1ca47b15acb8f18cbe3fe4d395859f83e31df688bec0b891"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jack"
+    sha256 mojave: "6b5cfab3c411d7e426cd00762ca9f07c559a3f7064515bb6a2c2ded3dfd0a3af"
   end
+
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "berkeley-db"
   depends_on "libsamplerate"
   depends_on "libsndfile"
@@ -46,9 +42,9 @@ class Jack < Formula
       ENV.append "LDFLAGS", "-Wl,-compatibility_version,1"
       ENV.append "LDFLAGS", "-Wl,-current_version,#{version}"
     end
-    system Formula["python@3.9"].opt_bin/"python3", "./waf", "configure", "--prefix=#{prefix}"
-    system Formula["python@3.9"].opt_bin/"python3", "./waf", "build"
-    system Formula["python@3.9"].opt_bin/"python3", "./waf", "install"
+    system Formula["python@3.10"].opt_bin/"python3", "./waf", "configure", "--prefix=#{prefix}"
+    system Formula["python@3.10"].opt_bin/"python3", "./waf", "build"
+    system Formula["python@3.10"].opt_bin/"python3", "./waf", "install"
 
     # Remove Python script used to control D-Bus JACK as it isn't enabled in formula
     rm bin/"jack_control"
