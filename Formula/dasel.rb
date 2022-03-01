@@ -4,13 +4,14 @@ class Dasel < Formula
   url "https://github.com/TomWright/dasel/archive/v1.22.1.tar.gz"
   sha256 "2d80f2eaa326aef1aca1e535f89d73da0642c7c5709ee51a30b972d1bdd132d1"
   license "MIT"
-  head "https://github.com/TomWright/dasel.git"
+  head "https://github.com/TomWright/dasel.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dasel"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "9cfa911ec6892b859ef251d4ae5b83d10f8fe80a81ed23630a4c53a6b28ace62"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "151df3249598c7488943330d93e570bd44dd8b9d395d5687dd0c167c51ba9e44"
   end
+
 
   depends_on "go" => :build
 
