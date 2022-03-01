@@ -6,10 +6,12 @@ class Cake < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "07296553a62cd35f5c25ab24cd8a36179db132c965ed5c2afd30853aa2313e51"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cake"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "66131084e0cb86e097764898c2478d4ccc045ed80c5d11963840f2b891432327"
   end
 
-  depends_on arch: :x86_64 # mono is not yet supported on ARM
+
   depends_on "mono"
 
   conflicts_with "coffeescript", because: "both install `cake` binaries"
