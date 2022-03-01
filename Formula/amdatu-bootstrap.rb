@@ -12,11 +12,12 @@ class AmdatuBootstrap < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7efb4581ff91f9931f43d21974df335b66497e8d05488f91cdb9868a4c6ea0ac"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amdatu-bootstrap"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4a5716696f434d40fb8966543185dfca47ad6f6d308aa1707450281717094d71"
   end
 
-  depends_on arch: :x86_64 # openjdk@8 doesn't support ARM
+
   depends_on "openjdk@8"
 
   def install
