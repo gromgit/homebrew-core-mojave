@@ -2,16 +2,16 @@ class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
   homepage "https://cadenceworkflow.io/"
   url "https://github.com/uber/cadence.git",
-      tag:      "v0.23.1",
-      revision: "26189983350a9525153c8428083ac7f7cd271390"
+      tag:      "v0.23.2",
+      revision: "8dd7a0818dfe6a09c25bf8a7afd267834262f625"
   license "MIT"
   head "https://github.com/uber/cadence.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadence-workflow"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "de477bf9886975c2feb47346fbb682690dbf9e2d1b16fdcb251dc31502d4ad70"
+    sha256 cellar: :any_skip_relocation, mojave: "7095ce6b60f54b69114213943d553e74c4bb5ea28c051ecd2711c67ee962a455"
   end
+
 
   depends_on "go" => :build
 
