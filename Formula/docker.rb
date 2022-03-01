@@ -5,7 +5,7 @@ class Docker < Formula
       tag:      "v20.10.12",
       revision: "e91ed5707e038b02af3b5120fa0835c5bedfd42e"
   license "Apache-2.0"
-  head "https://github.com/docker/cli.git"
+  head "https://github.com/docker/cli.git", branch: "master"
 
   livecheck do
     url :stable
@@ -14,8 +14,10 @@ class Docker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker"
-    sha256 cellar: :any_skip_relocation, mojave: "83d92f5e346ce93dc0bb0d2676ad8029fd2a648f5ed74e91d7089bdec7bb9438"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4d2858ba998374beb74f6c534fa37df30e36ad12ab9662b70a6a0050be8a660a"
   end
+
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
