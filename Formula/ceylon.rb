@@ -14,11 +14,12 @@ class Ceylon < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1f342bf2e58a868fc50db9e9a241135c690afa264d853c46c148af971a3c4ec1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ceylon"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9eea80806fd36c9eda75a1c1604fd10ea53cf7495b4c8dad1b884520c40eb8fb"
   end
 
-  depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
+
   depends_on "openjdk@8"
 
   def install
