@@ -4,19 +4,14 @@ class Digitemp < Formula
   url "https://github.com/bcl/digitemp/archive/v3.7.2.tar.gz"
   sha256 "683df4ab5cc53a45fe4f860c698f148d34bcca91b3e0568a342f32d64d12ba24"
   license "GPL-2.0"
-  head "https://github.com/bcl/digitemp.git"
+  head "https://github.com/bcl/digitemp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "8de47e480d9a46e00ca897acad3787f7c6897aefe28e63f3008aa7c736112e17"
-    sha256 cellar: :any,                 arm64_big_sur:  "d63a759441dd683b447bc9db45786b1bce2f662d67a340d81048b8a25daa021f"
-    sha256 cellar: :any,                 monterey:       "b184352eb21cbca65269b7b0ae3da2213791b53530f515c91a0edc44a37d0534"
-    sha256 cellar: :any,                 big_sur:        "dfcce60792d55b3d715c7cadb3179193ce943edb291913423c34456b53a1ac37"
-    sha256 cellar: :any,                 catalina:       "6d79bfded73a02e6c84d90c5437226567389212bf07d0b15b355465db645c6ec"
-    sha256 cellar: :any,                 mojave:         "54fbf374d90a378d49b86174f4c00e0a56a1cee599d040a740469d7ad7b3a991"
-    sha256 cellar: :any,                 high_sierra:    "a91be4056f24f4bef0c19c8a3693d48e0f7d391494e7db1be416ab1eb833daa2"
-    sha256 cellar: :any,                 sierra:         "dab9de93acb1edb05e3607075b36ce233e567dd9a1918aacf3b19f3826aa30ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f307cb2ce339c2b19089b46fc564e4492126b75abea1c79ca31fe6debfa5341"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/digitemp"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8bc0b1dbf1fb2c479e5f1d068e087fa52fdb8ca6dc8bbdef0417daef4d1de4c6"
   end
+
 
   depends_on "libusb-compat"
 
