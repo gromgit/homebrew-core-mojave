@@ -5,7 +5,7 @@ class Eigen < Formula
   sha256 "8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72"
   license "MPL-2.0"
   revision 1
-  head "https://gitlab.com/libeigen/eigen.git"
+  head "https://gitlab.com/libeigen/eigen.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,8 +13,11 @@ class Eigen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "211fd7f1d58b383e3d64335c08a376a7d8433007ce61410ead0320df34b6f4bd"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eigen"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fd84542a41038ad2174d98cd457140201cc53592b43591c44239afb45fe8458a"
   end
+
 
   depends_on "cmake" => :build
 
