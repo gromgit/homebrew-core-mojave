@@ -11,12 +11,13 @@ class Blazegraph < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3f006e1ce3a63d62b14b3274a11417ac02fa7585e5036bcba32fe4264deda8e3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blazegraph"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "facbc13f29b6da63b671d4861769f148cefae5e7ca2dfd3dd8df35d99126bb95"
   end
 
+
   # Dependencies can be lifted in the upcoming release, > 2.1.5
-  depends_on arch: :x86_64 # openjdk@8 doesn't support ARM
   depends_on "openjdk@8"
 
   def install
