@@ -5,17 +5,14 @@ class DockerMachine < Formula
       tag:      "v0.16.2",
       revision: "bd45ab13d88c32a3dd701485983354514abc41fa"
   license "Apache-2.0"
-  head "https://github.com/docker/machine.git"
+  head "https://github.com/docker/machine.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c941d688b50d6eae302320aa5e702d5da26e4e38ceac2f925a24b6efe6c589db"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8ed6a73a1d30c911811e8f6fb0e61e41bc3be4aea62bc2b77f7b6dca50b517a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "9132d28324994e3908e2b3e26a5c7f3070dbb0d2061a9e37f6d8b84a76b2cc57"
-    sha256 cellar: :any_skip_relocation, big_sur:        "720ea8bbbfdc6b9d0701f02014e09f6a46e6785bcbdb36ebe3e95bddd0849dfa"
-    sha256 cellar: :any_skip_relocation, catalina:       "e27501077ccc67fc468ca8e2881366a9fc23260296ed93a3f436b4d12f41ec43"
-    sha256 cellar: :any_skip_relocation, mojave:         "0cfe7d344bd6c2b3bc0d1c1de472c430162a45dd54454b268e82750094b9cf9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f08e7ba29eb793a79b8126631485ee4100cf07b9e1e5654a7c4db8c2d229d5af"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-machine"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "86724ae55a3b966d743faf009866019691b492621e27db6078caa96a85b3a9b5"
   end
+
 
   deprecate! date: "2021-09-30", because: :repo_archived
 
