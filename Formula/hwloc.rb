@@ -1,18 +1,23 @@
 class Hwloc < Formula
   desc "Portable abstraction of the hierarchical topology of modern architectures"
   homepage "https://www.open-mpi.org/projects/hwloc/"
-  url "https://download.open-mpi.org/release/hwloc/v2.6/hwloc-2.6.0.tar.bz2"
-  sha256 "e1f073e44e28c296ff848dead5e9bd6e2426b77f95ead1792358958e859fa83a"
+  url "https://download.open-mpi.org/release/hwloc/v2.7/hwloc-2.7.0.tar.bz2"
+  sha256 "028cee53ebcfe048283a2b3e87f2fa742c83645fc3ae329134bf5bb8b90384e0"
   license "BSD-3-Clause"
+
+  livecheck do
+    url :homepage
+    regex(%r{href=.*?/software/hwloc/v?(\d+(?:\.\d+)+)/?["' >]}i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hwloc"
-    rebuild 2
-    sha256 cellar: :any, mojave: "3937e50fe26a8e5c50893fc0f3f00abcbbc784d27c89e0959916e0d3addc283c"
+    sha256 cellar: :any, mojave: "a3b4090fa69fbe09ccdc9502c7456b8ad88a6415d99a99344fa6095bed9982e6"
   end
 
+
   head do
-    url "https://github.com/open-mpi/hwloc.git"
+    url "https://github.com/open-mpi/hwloc.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
