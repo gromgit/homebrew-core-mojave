@@ -5,12 +5,17 @@ class Csound < Formula
       tag:      "6.17.0",
       revision: "f5b4258794a82c99f7d85f1807c6638f2e80ccac"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
   head "https://github.com/csound/csound.git", branch: "develop"
 
   livecheck do
     url :stable
     strategy :github_latest
+  end
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csound"
+    sha256 mojave: "659db1b3a35d1b0de848482cae9c8796946e3395f1282df283f4d02fcd803562"
   end
 
   depends_on "asio" => :build
