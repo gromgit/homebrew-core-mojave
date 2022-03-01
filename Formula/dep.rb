@@ -5,18 +5,14 @@ class Dep < Formula
       tag:      "v0.5.4",
       revision: "1f7c19e5f52f49ffb9f956f64c010be14683468b"
   license "BSD-3-Clause"
-  head "https://github.com/golang/dep.git"
+  head "https://github.com/golang/dep.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a99c5d8b805b93143f1d00559188d270d96578b8a39d66ba21ba01abd7f2b7b5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd66e578cf33fafc42cecb83d80638b320a9b6a050cb769402532b7ec5d3f8ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "1cb18d2256fceead36d957b8b0b27819b81437d5b69fbfbbaba9fc4a1df21738"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5bd49a3da392e08bef0ae821a534bd699c4c3f6d116d90b53007477fbad6a374"
-    sha256 cellar: :any_skip_relocation, catalina:       "be9871f4e01aa179f9f3b32931838f21c5e64d33840ac36c8b601adeebb5e95b"
-    sha256 cellar: :any_skip_relocation, mojave:         "a86103fd9d7349cde0906850b1adaaa4e9b6c787cb11b0a791127c9af16ede8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7917c664bc0a540e065deb1e14671a5a818823672ec7a5a5caee34eb8feb664"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dep"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2632fa4733896d47567103f5f4d8ca69bfed918860d4e181dd2068f73a50ddd0"
   end
+
 
   deprecate! date: "2020-11-25", because: :repo_archived
 
