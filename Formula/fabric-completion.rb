@@ -1,18 +1,21 @@
 class FabricCompletion < Formula
   desc "Bash completion for Fabric"
-  homepage "https://github.com/kbakulin/fabric-completion"
-  url "https://github.com/kbakulin/fabric-completion.git",
+  homepage "https://github.com/st3ldz/fabric-completion"
+  url "https://github.com/st3ldz/fabric-completion.git",
       revision: "5b5910492046e6335af0e88550176d2583d9a510"
   version "1"
-  head "https://github.com/kbakulin/fabric-completion.git"
+  head "https://github.com/st3ldz/fabric-completion.git", branch: "master"
 
   livecheck do
     skip "No version information available to check"
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3a73318f4d2d5ef0a1b8f14dd72755ee37273b33e9df402bf0c2b9b825a53f6a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fabric-completion"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b0d3423333e8d1e3268f31d9fe8ce4a41c904ba6fb6803dd9585467cb5734d9d"
   end
+
 
   def install
     bash_completion.install "fabric-completion.bash" => "fabric"
