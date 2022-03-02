@@ -7,7 +7,7 @@ class Flawfinder < Formula
   sha256 "fe550981d370abfa0a29671346cc0b038229a9bd90b239eab0f01f12212df618"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/david-a-wheeler/flawfinder.git"
+  head "https://github.com/david-a-wheeler/flawfinder.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -15,14 +15,11 @@ class Flawfinder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1b43fa077ab243f046627e1bf10abeba91b90b58df58fa5e5c1427bf50e0719"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1b43fa077ab243f046627e1bf10abeba91b90b58df58fa5e5c1427bf50e0719"
-    sha256 cellar: :any_skip_relocation, monterey:       "b13d035b39d87e2f9ddfba4c8b03a3d676c8104b40fc882f2faf5473c7e91c78"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b13d035b39d87e2f9ddfba4c8b03a3d676c8104b40fc882f2faf5473c7e91c78"
-    sha256 cellar: :any_skip_relocation, catalina:       "b13d035b39d87e2f9ddfba4c8b03a3d676c8104b40fc882f2faf5473c7e91c78"
-    sha256 cellar: :any_skip_relocation, mojave:         "b13d035b39d87e2f9ddfba4c8b03a3d676c8104b40fc882f2faf5473c7e91c78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1b43fa077ab243f046627e1bf10abeba91b90b58df58fa5e5c1427bf50e0719"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flawfinder"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a116e75c92383e07b961fe90c74275cb34eb83eec5d40ff56891301eba4893aa"
   end
+
 
   depends_on "python@3.10"
 
