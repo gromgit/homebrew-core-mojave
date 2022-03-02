@@ -3,7 +3,7 @@ class EmacsClangCompleteAsync < Formula
   homepage "https://github.com/Golevka/emacs-clang-complete-async"
   license "GPL-3.0"
   revision 6
-  head "https://github.com/Golevka/emacs-clang-complete-async.git"
+  head "https://github.com/Golevka/emacs-clang-complete-async.git", branch: "master"
 
   stable do
     url "https://github.com/Golevka/emacs-clang-complete-async/archive/v0.5.tar.gz"
@@ -15,9 +15,10 @@ class EmacsClangCompleteAsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emacs-clang-complete-async"
-    rebuild 2
-    sha256 mojave: "c8aa272e0a7132546095f79fc802782f7b474cd49270ea7749aacfcaa57a0098"
+    rebuild 3
+    sha256 cellar: :any, mojave: "c560a516449cae44848e84b3af83accaa082d2a56b93d2dac4ac489f4f0d3ff0"
   end
+
 
   depends_on "llvm"
 
