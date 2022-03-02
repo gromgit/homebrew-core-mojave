@@ -4,12 +4,14 @@ class Duckscript < Formula
   url "https://github.com/sagiegurari/duckscript/archive/0.8.10.tar.gz"
   sha256 "20b4cd633e0d7e72bdb3e9e4018f1342acfea6b22fd271c90bc915d2339e8e6b"
   license "Apache-2.0"
-  head "https://github.com/sagiegurari/duckscript.git"
+  head "https://github.com/sagiegurari/duckscript.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckscript"
-    sha256 cellar: :any_skip_relocation, mojave: "ccfd3b5f1bea962efc175511eee57f8ffef56fc1382b9738cb52617369362635"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "af17e6f5f589c9668bc5b904b8dad97e7babbe6366d1e5252e2556fad1ae0ecb"
   end
+
 
   depends_on "rust" => :build
 
