@@ -7,7 +7,8 @@ class Cython < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cython"
-    sha256 cellar: :any_skip_relocation, mojave: "e877dda12c61be4d84bd003fff6b9c7749e57aa642b10b6e4fe0b01bee649c21"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c7ac52286c5fc0d783ab229992bfaef29961e65ccbbcefdb9085511e26eb70f4"
   end
 
   keg_only <<~EOS
