@@ -4,7 +4,7 @@ class Lz4 < Formula
   url "https://github.com/lz4/lz4/archive/v1.9.3.tar.gz"
   sha256 "030644df4611007ff7dc962d981f390361e6c97a34e5cbc393ddfbe019ffe2c1"
   license "BSD-2-Clause"
-  head "https://github.com/lz4/lz4.git"
+  head "https://github.com/lz4/lz4.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -13,9 +13,10 @@ class Lz4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lz4"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5d3a243d07d33bdf110a8e3912f71ba5cef8eda6a502c85b49065ba2e0e60e03"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1f23c66b2d64e86046c8941ae07b6331d8d4d0da0e2a0c4947d943a70adbd5a2"
   end
+
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
