@@ -4,18 +4,14 @@ class Exodriver < Formula
   url "https://github.com/labjack/exodriver/archive/v2.6.0.tar.gz"
   sha256 "d2ccf992bf42b50e7c009ae3d9d3d3191a67bfc8a2027bd54ba4cbd4a80114b2"
   license "MIT"
-  head "https://github.com/labjack/exodriver.git"
+  head "https://github.com/labjack/exodriver.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "5df43dee856d5a6ea4cce237bd351ba39bdf6ed4ef61427de673c03ac87a45e2"
-    sha256 cellar: :any,                 arm64_big_sur:  "fa9283c7c2a58da585d849ea514ac7f63a1bab2fa7205f24b5c6b7f122218e81"
-    sha256 cellar: :any,                 monterey:       "b91938833dbde9f4ead3b37188076c226deba99f916b8811a876b813d96407f2"
-    sha256 cellar: :any,                 big_sur:        "5fbc6d425b55fc83fc05847a766fa74f33d932c495a4ab7c9b3469441552e489"
-    sha256 cellar: :any,                 catalina:       "aa86ed0ef4a6886bf65ba979938202a7bfabf2d844f2ffe14dee2466f3c65e59"
-    sha256 cellar: :any,                 mojave:         "9451412a4469cdf44e56eeac4c457a91b3363410859d4d48975ce3223f8b20d2"
-    sha256 cellar: :any,                 high_sierra:    "db8ef53e652b1296843207ee4d315b7ce5e7adf35ce5cf07f36d1d3f8dfdd28f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13f30f7efeaad3c463ee360d4b0ec24e97905c3b2b031ce55c3f9604b3c57d36"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exodriver"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d85e58b97531e8c172e4e7ffc26e97a1424940d773f4d83af8a367e3cd169ef4"
   end
+
 
   depends_on "libusb"
 
