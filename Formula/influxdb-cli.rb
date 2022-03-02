@@ -12,6 +12,16 @@ class InfluxdbCli < Formula
     regex(/^v?((?!9\.9\.9)\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb-cli-2.2.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "80ed8d47ff1d8d09175be72453ba75809b203a7024172df805286f34cd8251f6"
+  end
+
+  #bottle do
+  #  sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  #end
+
   depends_on "go" => :build
   depends_on "influxdb" => :test
 
@@ -22,10 +32,9 @@ class InfluxdbCli < Formula
       -X main.version=#{version}
       -X main.commit=#{Utils.git_short_head(length: 10)}
       -X main.date=#{time.iso8601}
-    ].join(" ")
+    ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags),
-           "-o", bin/"influx", "./cmd/influx"
+    system "go", "build", *std_go_args(output: bin/"influx", ldflags: ldflags), "./cmd/influx"
 
     bash_complete = buildpath/"bash-completion"
     bash_complete.write Utils.safe_popen_read(bin/"influx", "completion", "bash")
