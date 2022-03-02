@@ -6,17 +6,14 @@ class Flake8 < Formula
   url "https://files.pythonhosted.org/packages/e6/84/d8db922289195c435779b4ca3a3f583f263f87e67954f7b2e83c8da21f48/flake8-4.0.1.tar.gz"
   sha256 "806e034dda44114815e23c16ef92f95c91e4c71100ff52813adf7132a6ad870d"
   license "MIT"
-  head "https://gitlab.com/PyCQA/flake8.git"
+  head "https://gitlab.com/PyCQA/flake8.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0df982d4a3ed80b694876262243dc7356b3f21bec95e016843964588ea268ef2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0df982d4a3ed80b694876262243dc7356b3f21bec95e016843964588ea268ef2"
-    sha256 cellar: :any_skip_relocation, monterey:       "268cb65b355888176c6bbfdfb74547f79ad8faa8b207483bc03766bc33776401"
-    sha256 cellar: :any_skip_relocation, big_sur:        "268cb65b355888176c6bbfdfb74547f79ad8faa8b207483bc03766bc33776401"
-    sha256 cellar: :any_skip_relocation, catalina:       "268cb65b355888176c6bbfdfb74547f79ad8faa8b207483bc03766bc33776401"
-    sha256 cellar: :any_skip_relocation, mojave:         "268cb65b355888176c6bbfdfb74547f79ad8faa8b207483bc03766bc33776401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e1fd8816e95438fa558a91432cdc848760649a020dcc067eb801ee8123e88ff"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flake8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "683c650e0c7855c1ca1a62b7cb56b5971afaf75900d799a4e57933a6b9e5e623"
   end
+
 
   depends_on "python@3.10"
 
