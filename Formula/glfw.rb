@@ -4,12 +4,14 @@ class Glfw < Formula
   url "https://github.com/glfw/glfw/archive/3.3.6.tar.gz"
   sha256 "ed07b90e334dcd39903e6288d90fa1ae0cf2d2119fec516cf743a0a404527c02"
   license "Zlib"
-  head "https://github.com/glfw/glfw.git"
+  head "https://github.com/glfw/glfw.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glfw"
-    sha256 cellar: :any, mojave: "e2215645df5d2ff0159cc89eb0f67a51bcad33cb5cdafa1f09e76b6785093ea9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a05fc02c58693a19327174210f8d2dde1254838d509de8e3a826155db4613513"
   end
+
 
   depends_on "cmake" => :build
 
