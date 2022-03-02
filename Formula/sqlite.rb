@@ -16,6 +16,7 @@ class Sqlite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlite"
+    rebuild 1
     sha256 cellar: :any, mojave: "0cc9bc0d2ab452b1198e00830d9cddb4b55a50a2f6c69dc7515ae4da43e12b84"
   end
 
