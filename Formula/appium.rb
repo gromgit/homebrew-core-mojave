@@ -3,16 +3,16 @@ require "language/node"
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-1.22.1.tgz"
-  sha256 "55363cbb8f575a7b7756453b0b814c9f6de9e0648b852b6a0352be059ca11dea"
+  url "https://registry.npmjs.org/appium/-/appium-1.22.2.tgz"
+  sha256 "3442fe5e10bc37bb4213177e195e054ab884f2493b8ec5f541418272acd96dea"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/appium"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "b10552482e369105bb813afe0b17d3a8257052406cf3aa7f3ebc276983c6f673"
+    sha256 mojave: "a1f43562e7fe04bd4d5c21b11732032f08dc53b1968c40ef2e802b9c44f3b2ce"
   end
+
 
   depends_on "node"
 
@@ -22,6 +22,9 @@ class Appium < Formula
 
     # Delete obsolete module appium-ios-driver, which installs universal binaries
     rm_rf libexec/"lib/node_modules/appium/node_modules/appium-ios-driver"
+
+    # Replace universal binaries with native slices
+    deuniversalize_machos
   end
 
   plist_options manual: "appium"
