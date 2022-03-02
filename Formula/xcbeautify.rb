@@ -2,22 +2,24 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/thii/xcbeautify"
   url "https://github.com/thii/xcbeautify.git",
-      tag:      "0.8.1",
-      revision: "fd7b0b6972809eead52b9016b383cf6d467e00b0"
+      tag:      "0.12.0",
+      revision: "66c5e32dacca5f07c26c0c6cbe01c6796fcc6149"
   license "MIT"
-  head "https://github.com/thii/xcbeautify.git"
+  head "https://github.com/thii/xcbeautify.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xcbeautify"
-    sha256 cellar: :any_skip_relocation, mojave: "31b2846b91d4b74f20e6bb9b9bb52427da6f2a802f9df587455b8ecd126cf79c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bec8cba00b7805df0eeb87cc13688ad0d692e446085695a0fec19be868baf906"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a668f65d7477b100d07339aaa0b215f34f13f216b87d80a03380a5a176cbf50"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d044b8a5dc9d404db984094befacd9da51c407b0b879c1f5334271b5b43fbbb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "61aae5b682dab20e275b2cfb26eddbca6c1d5bfe23f3ae8eda3df2e7a7c6853c"
+    sha256 cellar: :any_skip_relocation, catalina:       "fece980ac56da3f6afe260969921299c8dd7b7ae366fcad2ea96ebfa35b9ed7f"
   end
 
-  deprecate! date: "2021-12-24", because: "can no longer be updated under Mojave"
-
-  depends_on xcode: ["10.0", :build]
+  depends_on xcode: ["11.4", :build]
 
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    system "swift", "build", "--disable-sandbox", "--configuration", "release"
+    bin.install ".build/release/xcbeautify"
   end
 
   test do
