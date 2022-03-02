@@ -2,10 +2,10 @@ class FleetCli < Formula
   desc "Manage large fleets of Kubernetes clusters"
   homepage "https://github.com/rancher/fleet"
   url "https://github.com/rancher/fleet.git",
-      tag:      "v0.3.7",
-      revision: "4aaa778d23dd993f5299e08d144ff0ff81315f7b"
+      tag:      "v0.3.8",
+      revision: "ce9c0d6c0a455d61e87c0f19df79d0ee11a89eeb"
   license "Apache-2.0"
-  head "https://github.com/rancher/fleet.git"
+  head "https://github.com/rancher/fleet.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,14 +13,10 @@ class FleetCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a466212e2bf90ca894173910c5d06fd4c249bddffaeac02ee27acb17ea249e51"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf48d0047985e264fda14593511db0f8fae5fda9664decf4a47b497e4eb5111b"
-    sha256 cellar: :any_skip_relocation, monterey:       "292c2fe50152feaa574db142be7533632f068c3a1a3db7f2d683ca7e6123b0ff"
-    sha256 cellar: :any_skip_relocation, big_sur:        "503a66cb34a145e7c9b36900a00c4d748c344dacfc35745a8ff9d562658b14e1"
-    sha256 cellar: :any_skip_relocation, catalina:       "ee29607891b2e044cba27aa79b5730f54f590c2385973f072c242615acc6e3ab"
-    sha256 cellar: :any_skip_relocation, mojave:         "ac9243285bad817110379996f22e66ecf37df3cc98f88649bf3e32a3c977801a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7d729666f3e185569a384dd3402400d9322a33588d4d62602722e12ab1d28b6"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fleet-cli"
+    sha256 cellar: :any_skip_relocation, mojave: "783eaea0dba6f3edc8c2ec55c9a54d8ca3f6f59398059bc63a9c1e044006aca8"
   end
+
 
   depends_on "go" => :build
 
