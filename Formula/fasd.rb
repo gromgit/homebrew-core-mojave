@@ -4,11 +4,14 @@ class Fasd < Formula
   url "https://github.com/clvv/fasd/archive/1.0.1.tar.gz"
   sha256 "88efdfbbed8df408699a14fa6c567450bf86480f5ff3dde42d0b3e1dee731f65"
   license "MIT"
-  head "https://github.com/clvv/fasd.git"
+  head "https://github.com/clvv/fasd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9241df0f32971ce5a84c977f6908b93114946843813d5375ba7b983a7a783188"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fasd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "832f098483bd5178bd7da50fc4330a70cc3b963d58eb214f42e256a6083994f6"
   end
+
 
   def install
     bin.install "fasd"
