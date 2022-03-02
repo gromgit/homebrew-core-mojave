@@ -1,8 +1,8 @@
 class Abyss < Formula
   desc "Genome sequence assembler for short reads"
   homepage "https://www.bcgsc.ca/resources/software/abyss"
-  url "https://github.com/bcgsc/abyss/releases/download/2.3.3/abyss-2.3.3.tar.gz"
-  sha256 "4b14642989e84f331d8d1a854cca67bdede95e90bd6813836c173a951d71405c"
+  url "https://github.com/bcgsc/abyss/releases/download/2.3.4/abyss-2.3.4.tar.gz"
+  sha256 "7bbe479d2574a4d0241a5f564852d637690ded165c160862977e90597c614fed"
   license all_of: ["GPL-3.0-only", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
 
   livecheck do
@@ -12,8 +12,9 @@ class Abyss < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abyss"
-    sha256 cellar: :any, mojave: "9d9bcac51d265bd7073626a966c958232f831983501ea95b679bc4172e8bc68f"
+    sha256 cellar: :any, mojave: "7e3f2f65d7d7692ba76af36fbbd1d4b97b33a0c5d3905daaa34db3dffba48dd7"
   end
+
 
   head do
     url "https://github.com/bcgsc/abyss.git"
@@ -25,12 +26,10 @@ class Abyss < Formula
 
   depends_on "boost" => :build
   depends_on "google-sparsehash" => :build
+  depends_on "gcc"
   depends_on "open-mpi"
 
-  on_macos do
-    depends_on "gcc"
-  end
-
+  fails_with gcc: "5"
   fails_with :clang # no OpenMP support
 
   resource("testdata") do
