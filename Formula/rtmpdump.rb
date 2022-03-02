@@ -7,7 +7,7 @@ class Rtmpdump < Formula
   sha256 "5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
-  head "https://git.ffmpeg.org/rtmpdump.git"
+  head "https://git.ffmpeg.org/rtmpdump.git", branch: "master"
 
   livecheck do
     url "https://cdn-aws.deb.debian.org/debian/pool/main/r/rtmpdump/"
@@ -16,9 +16,10 @@ class Rtmpdump < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtmpdump"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3ad1ffc4610aa26f9890e154046f3f9f171722be19f6fadc1caff3da8dc61998"
+    rebuild 2
+    sha256 cellar: :any, mojave: "bbbe9274717078299cb27fa22c2b6ef7dbe7abfaf32ecf3b75c4d904d4bc3bb5"
   end
+
 
   depends_on "openssl@1.1"
 
