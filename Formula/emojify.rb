@@ -4,11 +4,14 @@ class Emojify < Formula
   url "https://github.com/mrowa44/emojify/archive/v1.0.2.tar.gz"
   sha256 "a75d49d623f92974d7852526591d5563c27b7655c20ebdd66a07b8a47dae861c"
   license "MIT"
-  head "https://github.com/mrowa44/emojify.git"
+  head "https://github.com/mrowa44/emojify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "525c599c9e16d63627d5b4afca9f43d22e456d21a8e00a05b5e4a4e2acded629"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emojify"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "235cee647d5d302860f024f17c4a2e19f4da6fbebea8c626a96549fc17770357"
   end
+
 
   def install
     bin.install "emojify"
