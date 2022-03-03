@@ -6,9 +6,10 @@ class Activemq < Formula
   sha256 "f8e04d8a810141b386a5c9c3960b5f01e8fe73461f4c99b191e115d493840701"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/activemq"
-    sha256 cellar: :any_skip_relocation, mojave: "40be202f915eb147e6d6f4804032586c210cd2f262c4f7dac132b6c10d2a044c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a645c221d2c4f0bdb50591370b08bb57e6056aaaa19e0dcdc08ab18c1244801b"
   end
 
   depends_on "java-service-wrapper"
