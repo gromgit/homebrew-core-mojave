@@ -8,9 +8,10 @@ class Meson < Formula
   license "Apache-2.0"
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/meson"
-    sha256 cellar: :any_skip_relocation, mojave: "f43f2765a28d7ff7b0d968a8de168f85581b175c39edc6979f804873681aee06"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "553a443581135caebd28dffe3515e79341b76dbff5dd73d669ebaa557524b542"
   end
 
   depends_on "ninja"
