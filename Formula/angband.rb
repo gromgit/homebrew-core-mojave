@@ -11,9 +11,10 @@ class Angband < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/angband"
-    sha256 mojave: "10443a46c217edf856f03ea49d2594be5e9da4506ac12bf5260f96b1fdc99dd6"
+    rebuild 1
+    sha256 mojave: "f1d1f1adf160bff7cc9dfbd8e474983e8a270a6eb2a3f6c995e6b90d65195b40"
   end
 
   def install
