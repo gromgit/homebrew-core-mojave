@@ -7,9 +7,10 @@ class AnsibleLint < Formula
   sha256 "2160a60b4ab034c04006d701a1779340ffb0f6e28f030ff8de958e1062a88962"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible-lint"
-    sha256 cellar: :any, mojave: "0a0948657c3d9fb57ff1482a2de5bea579bd28372a123b291170b0231ef58439"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ea920b6b8a6ce559524cb0eeb2199999fda47ceb6bb81c6e44eddc00c12fd803"
   end
 
   depends_on "pkg-config" => :build
