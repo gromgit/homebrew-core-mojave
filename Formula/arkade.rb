@@ -11,9 +11,10 @@ class Arkade < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arkade"
-    sha256 cellar: :any_skip_relocation, mojave: "6ee8994f1b329eddd99b30a17f089a3dc71e458d1b29e490e1dac441a3a81d1c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "354dba281180b58d7063aaf8a75c599447de26343d1ae7709730dedc51fd2035"
   end
 
   depends_on "go" => :build
