@@ -5,12 +5,12 @@ class Glew < Formula
   sha256 "d4fc82893cfb00109578d0a1a2337fb8ca335b3ceccf97b97e5cc7f08e4353e1"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/nigels-com/glew.git"
+  head "https://github.com/nigels-com/glew.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glew"
-    rebuild 2
-    sha256 cellar: :any, mojave: "40e05c2808f3a921ec41711aec5372dc4a47d19829de0a0b8484b8ecf2d95d45"
+    rebuild 3
+    sha256 cellar: :any, mojave: "1893e0d09af0c8f1971af3a2cf17a158e3035488b1e1c4e97a35156befc22dc3"
   end
 
   depends_on "cmake" => [:build, :test]
