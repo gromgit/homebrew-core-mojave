@@ -6,9 +6,10 @@ class Dotnet < Formula
       revision: "9e8b04bbff820c93c142f99a507a46b976f5c14c"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dotnet"
-    sha256 cellar: :any, mojave: "f6b46ae4ba92575301eceb07edcd648972da309cbdcbb6f4b8e90c1d7e981cbd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4f54d284205cbb52fdf27bfacdf9757c464cd15362cd94af2e6cb0b17562778f"
   end
 
   depends_on "cmake" => :build
