@@ -6,9 +6,10 @@ class Aerc < Formula
   license "MIT"
   head "https://git.sr.ht/~rjarry/aerc", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aerc"
-    sha256 cellar: :any_skip_relocation, mojave: "b77ef037fd1a946d6a9fffb038b244715c24f10c3edb4db866ad0541833f24a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "88d104e1afb4c3f8049959b7fcb331ac2c711585968a5c2155c106ea3ff7c8d9"
   end
 
   depends_on "go" => :build
