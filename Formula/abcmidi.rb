@@ -10,9 +10,10 @@ class Abcmidi < Formula
     regex(/href=.*?abcMIDI[._-]v?(\d{4}(?:\.\d+)+)\.zip/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abcmidi"
-    sha256 cellar: :any_skip_relocation, mojave: "8b01edb54f1415cf005258cbbd340482c5e4c208daf461663e7b524325adf6ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e91c84cc9d819587c59c30cd83170433ccc5da01c900f827349120cfb0904449"
   end
 
   def install
