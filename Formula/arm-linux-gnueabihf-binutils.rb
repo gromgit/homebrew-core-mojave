@@ -10,9 +10,10 @@ class ArmLinuxGnueabihfBinutils < Formula
     formula "binutils"
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arm-linux-gnueabihf-binutils"
-    sha256 mojave: "8fa8b06beb246d2a878421fb31a58c958bbceff1732c7de2e45ebd308d44a99a"
+    rebuild 1
+    sha256 mojave: "2c54acb04b0984f2d6dd3c5ad8527dd05945560a2684dbfafe06b06933aed346"
   end
 
   uses_from_macos "texinfo"
