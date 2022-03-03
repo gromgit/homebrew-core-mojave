@@ -7,9 +7,10 @@ class Alpscore < Formula
   revision 1
   head "https://github.com/ALPSCore/ALPSCore.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alpscore"
-    sha256 cellar: :any, mojave: "c1d50352abeca99520271858be6817a16aab7c3e675dc3e4f2c0beb8118c609e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6a25a1d30589dd41106d684f5004d84ebafe2ffed2573eeb83621c07d865dd73"
   end
 
   depends_on "cmake" => :build
