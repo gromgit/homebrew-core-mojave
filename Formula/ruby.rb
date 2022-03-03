@@ -10,9 +10,10 @@ class Ruby < Formula
     regex(/href=.*?ruby[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby"
-    sha256 mojave: "d069261f55d16b3e31ac8b7f1b2308054690c8c2e98a6d624b8c8ba94403238c"
+    rebuild 1
+    sha256 mojave: "403608266c6f4775c17d6e6649fb0ffda53635da67dde5b01bf9ff04c50027b3"
   end
 
   head do
