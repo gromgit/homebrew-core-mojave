@@ -13,9 +13,10 @@ class Hdf5 < Formula
     regex(/>\s*hdf5[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5"
-    sha256 cellar: :any, mojave: "99a35a3a8fd80e1dcc195901e7ec2ac379acdb5590fdc3f9ae6666e0e61aca1c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "368716b6b47aef2dfa3be5001ee1f3d622511f96ac7e8c54e3281c518fa08649"
   end
 
   depends_on "autoconf" => :build
