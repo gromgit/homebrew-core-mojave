@@ -15,10 +15,10 @@ class Thrift < Formula
     end
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/thrift"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7373db3533145c35f44701a610383e395628fd9ad752d6e391616f2edac7187c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "662bc781e7416bf598c151efb860eeb1d09e83e7fa65681cadd0a5cd3ef1172c"
   end
 
   head do
