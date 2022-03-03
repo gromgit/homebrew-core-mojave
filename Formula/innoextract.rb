@@ -12,9 +12,10 @@ class Innoextract < Formula
     regex(/href=.*?innoextract[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/innoextract"
-    sha256 cellar: :any, mojave: "b37fb7c2e6b23f92af19d50c7542cbe3da414d71259e0f0a837a4186fee13166"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e3b543af83b88031bc10fb19caa894fcc93a765c3b54593eaa32079a7c09853c"
   end
 
   depends_on "cmake" => :build
