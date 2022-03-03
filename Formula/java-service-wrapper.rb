@@ -5,9 +5,10 @@ class JavaServiceWrapper < Formula
   sha256 "81c49c1792c8a96541bfc7ab237846e6db790593ced979611400b3d58eb4fafe"
   license "GPL-2.0-only"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/java-service-wrapper"
-    sha256 cellar: :any_skip_relocation, mojave: "abc44da1070f879ec44094b4cff9b0ec501e4cc23ba1dd2b704aa73a561ad8e4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "225298a219bdaaf4d853c1152c657e84850bf4187d7bd9758a139d33f036bd23"
   end
 
   depends_on "ant" => :build
