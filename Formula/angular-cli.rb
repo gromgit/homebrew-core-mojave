@@ -7,9 +7,10 @@ class AngularCli < Formula
   sha256 "0ed74cee0870f2dc3b893d2e00aa962f7a00b4b0d94bf55b8a310db3e56ed8d2"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/angular-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "dca97b1ec8936abfbdb5013e5efca4c7723e3ca4b38c3d226fa958b44d0ab230"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ec8f9c004da4f9cc976d91335837f4865d9a67fd31a4b028a5ef94660e47d4cd"
   end
 
   depends_on "node"
