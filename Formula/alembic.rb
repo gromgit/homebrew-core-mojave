@@ -7,9 +7,10 @@ class Alembic < Formula
   revision 1
   head "https://github.com/alembic/alembic.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alembic"
-    sha256 cellar: :any, mojave: "5e23354c808c6d76be61764ad7f091dad4520c57627f308c88eec42dd0472f44"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aba5feef135a6437ef5c0b24f6246fd045f0845b289ffa80634f66fee6d9626b"
   end
 
   depends_on "cmake" => :build
