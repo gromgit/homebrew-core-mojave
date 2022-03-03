@@ -12,9 +12,10 @@ class ArchiSteamFarm < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/archi-steam-farm"
-    sha256 cellar: :any_skip_relocation, mojave: "99b6fdd642a760e3e155532e7451dfe4a8d906d9dea04a59e4900c8fddefea60"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "77e1c525b349e370ce90c545d1ba50e7f96b2b0b697ae6a573416f56c38ec408"
   end
 
   depends_on "dotnet"
