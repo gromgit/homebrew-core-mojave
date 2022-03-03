@@ -5,9 +5,10 @@ class Gitversion < Formula
   sha256 "6a257db2f33cd2a14ffa38f22c35f42473d52810ee4c2be3560abe5458f477a7"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitversion"
-    sha256 cellar: :any, mojave: "8f18c68cc49ec9c2f8d49bb646351f1b7255d36e18d7b26396fcd27a3cd83649"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8a715fa517b481ab93906782ba6a55530c3079a83356dc882bea04c7a3a08933"
   end
 
   depends_on "dotnet"
