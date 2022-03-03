@@ -6,10 +6,10 @@ class Gd < Formula
   license :cannot_represent
   revision 1
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6772717ddc6a3fe3563bb83bb871845268aef3a3a853c0715f567d8d1c4ab269"
+    rebuild 2
+    sha256 cellar: :any, mojave: "9bb2cb2beacfd42f07f203e0a91a1968cef7afdda17411fb14d6afbd89c77c60"
   end
 
   head do
