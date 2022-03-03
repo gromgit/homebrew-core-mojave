@@ -7,9 +7,10 @@ class Apngasm < Formula
   revision 4
   head "https://github.com/apngasm/apngasm.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apngasm"
-    sha256 cellar: :any, mojave: "bf2c76b6a79551169decb815f9417d46930a14371af47f3599df9c9a29ab8ca4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "12757f2b4834c1761cbfb4f8c7d39facff84ea5253887bb3acbf29bc1c8e65df"
   end
 
   depends_on "cmake" => :build
