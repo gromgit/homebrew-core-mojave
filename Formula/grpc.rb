@@ -12,9 +12,10 @@ class Grpc < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpc"
-    sha256 cellar: :any, mojave: "40e13254b3e1f7efc75db85494e447beb719fd2d7072a7a9ebf2d2cd982cdf35"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2964cc1a4f77a2d9eae3eece6e489a487feb34085819369c362f56668c24766c"
   end
 
   depends_on "autoconf" => :build
