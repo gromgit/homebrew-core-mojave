@@ -13,9 +13,9 @@ class Influxdb < Formula
   end
 
 bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb-2.1.1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb"
     rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "da8fca42023db0c8e989e3931f462cab676a83455f61b192445c68c4f55160d8"
+    sha256 cellar: :any_skip_relocation, mojave: "f2a656c0bd19f43bba64632f5cb552ed8336cc61d8f4b8510e0d6d1f38974e50"
   end
 
   # The regex below omits a rogue `v9.9.9` tag that breaks version comparison.
