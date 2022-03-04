@@ -10,9 +10,10 @@ class CargoC < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-c"
-    sha256 cellar: :any, mojave: "ee36c5e7c855b64676e06180b13ce7fae031c0ba9f2a3df202e00fd489413f1c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "53e0598cdce98acfa60b19d5e36d01845efc9546021794b7da74867288616cd2"
   end
 
   depends_on "rust" => :build
