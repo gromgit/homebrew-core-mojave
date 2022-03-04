@@ -5,9 +5,10 @@ class Draco < Formula
   sha256 "a887e311ec04a068ceca0bd6f3865083042334fbff26e65bc809e8978b2ce9cd"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/draco"
-    sha256 cellar: :any_skip_relocation, mojave: "56c84325ffbecad986495f8f4235edfc88cc04fe1b848f06a5bbf0d4ff41d0c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "56fc31f880c04ab5d732fa9034c269c72b8aaa9def1a8a7881aa79b3bd39e576"
   end
 
   depends_on "cmake" => :build
