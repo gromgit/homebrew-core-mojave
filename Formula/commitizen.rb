@@ -8,9 +8,10 @@ class Commitizen < Formula
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/commitizen"
-    sha256 cellar: :any_skip_relocation, mojave: "fc63c30d64b4e328aeca7642220392a306f19b554e917b2c129cc5284ddec8cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "36fc1ff78de4b51b926f251613837fedc8854608ec5dfb6ee654bc86b054e743"
   end
 
   depends_on "python@3.10"
