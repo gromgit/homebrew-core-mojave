@@ -13,9 +13,10 @@ class Cppad < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppad"
-    sha256 cellar: :any, mojave: "32ba77e9206ba8e8f63e19163bd1e0132b330f4f1a8d7c6ed182f6cba64f353e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2bc998eb29583df5b0fe97cac7e8e4e536ba98a3688270a86750528f02be7168"
   end
 
   depends_on "cmake" => :build
