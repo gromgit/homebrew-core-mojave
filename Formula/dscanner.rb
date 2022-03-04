@@ -7,9 +7,10 @@ class Dscanner < Formula
   license "BSL-1.0"
   head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dscanner"
-    sha256 cellar: :any_skip_relocation, mojave: "5d7a5243e00e6f9931c3912c794e3ba78ba59652f396bdb7ab7e8ae7d6100234"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b024afce15408b341bbf6fe1c3a176c87980477b7a33fe7101721494aa578e9"
   end
 
   depends_on "dmd" => :build
