@@ -5,9 +5,10 @@ class Bbtools < Formula
   sha256 "18d9c89b02c0ab044b2795a65f6236b2262a494ed83d27e31750437b350ef080"
   license "BSD-3-Clause"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bbtools"
-    sha256 cellar: :any, mojave: "54b8c5a5e80afb1a34c8397494ed9722f499d4bfef66a115bab85b11fb8c0e1d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c7cb5b395134c949d715880b48f723f9a01c92aa39ff5df2f57656bffac5a7f3"
   end
 
   depends_on "openjdk"
