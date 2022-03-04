@@ -11,9 +11,10 @@ class Erlang < Formula
     regex(/^OTP[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang"
-    sha256 cellar: :any, mojave: "5f44ddcae739751aa5d9949bc2a3aae26873d292ec370f32dbe1e2d0ae87075b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d66dc3fb15dd2b730e5b712978172618569ce8bb87006836bff56e7e2153a5c3"
   end
 
   head do
