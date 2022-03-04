@@ -1,13 +1,13 @@
 class Driftctl < Formula
   desc "Detect, track and alert on infrastructure drift"
   homepage "https://driftctl.com"
-  url "https://github.com/snyk/driftctl/archive/v0.20.0.tar.gz"
-  sha256 "5b5d849b558c97e41fb7aaab4a7692fb0d6569fd8e9bca7c8b553f24d3f2fb41"
+  url "https://github.com/snyk/driftctl/archive/v0.22.0.tar.gz"
+  sha256 "6790d29b0ce71da30b1a9b5e247623f5eefd19ce55a634adf988b933a3b7e7b8"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/driftctl"
-    sha256 cellar: :any_skip_relocation, mojave: "b6251b90a9a10b22d86d08a9ba4d0af643e760f8ee166ecf131026198fe465b1"
+    sha256 cellar: :any_skip_relocation, mojave: "2eb6b83ddbafaa5eb2ba05a2a1cbb269f8c6103cbf35e9826d2eeacf39274db8"
   end
 
   depends_on "go" => :build
@@ -36,6 +36,6 @@ class Driftctl < Formula
   test do
     assert_match "v#{version}", shell_output("#{bin}/driftctl version")
     assert_match "Downloading terraform provider: aws",
-      shell_output("#{bin}/driftctl --no-version-check scan 2>&1", 1)
+      shell_output("#{bin}/driftctl --no-version-check scan 2>&1", 2)
   end
 end
