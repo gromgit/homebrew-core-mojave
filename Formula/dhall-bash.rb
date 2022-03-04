@@ -1,17 +1,15 @@
 class DhallBash < Formula
   desc "Compile Dhall to Bash"
   homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash"
-  url "https://hackage.haskell.org/package/dhall-bash-1.0.39/dhall-bash-1.0.39.tar.gz"
-  sha256 "68ce22ada11dcd7d92268b79363bd51c835aecd1f44e8b93ce1e448d5be1c02f"
+  url "https://hackage.haskell.org/package/dhall-bash-1.0.40/dhall-bash-1.0.40.tar.gz"
+  sha256 "a9d1feba3c9ceeecdd24fb4a4d8f6450a50ca31ede30aa4d7a8e9d8489cc7f3a"
   license "BSD-3-Clause"
   head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-bash"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "173853477f069e1dbce6820b25ef6fa92e9071155083a36e5737b0d0a68af009"
+    sha256 cellar: :any_skip_relocation, mojave: "bb4bc852815734892a3822d7a01f66151bce03e8ab97eadfceb4f24a18f48116"
   end
-
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
