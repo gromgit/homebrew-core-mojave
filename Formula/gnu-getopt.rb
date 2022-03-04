@@ -5,9 +5,10 @@ class GnuGetopt < Formula
   sha256 "634e6916ad913366c3536b6468e7844769549b99a7b2bf80314de78ab5655b83"
   license "GPL-2.0-or-later"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-getopt"
-    sha256 cellar: :any, mojave: "cd87fb602da387f02d005583235a9bcab0b746a21de088359abf17e3bfbf62a3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "241a4eaeb075e6c139c35733e645fda0bd0142efafcc1615deccf3ef2da8f102"
   end
 
   keg_only :provided_by_macos
