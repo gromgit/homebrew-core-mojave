@@ -6,9 +6,10 @@ class Elixir < Formula
   license "Apache-2.0"
   head "https://github.com/elixir-lang/elixir.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elixir"
-    sha256 cellar: :any_skip_relocation, mojave: "307404b1ee3216126c19810320c8d785d94fd66270ced502247d22895d5f8e98"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5b85495a3ac4bb5c70b1211d4b96037625b0e0ae7aa998b369a8f57469152198"
   end
 
   depends_on "erlang"
