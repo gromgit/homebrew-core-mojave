@@ -6,9 +6,10 @@ class Help2man < Formula
   sha256 "fd99a664ec4be9a86a0dd89719989f14f367a9c079d75d0e1d71e18a7bb51b03"
   license "GPL-3.0-or-later"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/help2man"
-    sha256 cellar: :any, mojave: "ad256b3da9625df825b26e1f86d2281854de16970cf9946242b646297240d90f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "474349505526afc172122dc97bfc38a999c837065ef470975624583f22dc4679"
   end
 
   depends_on "gettext" if Hardware::CPU.intel?
