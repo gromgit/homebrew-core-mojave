@@ -1,14 +1,14 @@
 class Corral < Formula
   desc "Dependency manager for the Pony language"
   homepage "https://github.com/ponylang/corral"
-  url "https://github.com/ponylang/corral/archive/0.5.6.tar.gz"
-  sha256 "2622486e794024fd06d0b6426b049c2e91e9be72b03494ff740e3ea49d4fe265"
+  url "https://github.com/ponylang/corral/archive/0.5.7.tar.gz"
+  sha256 "5b7cffc54abe5b2292a2fb2c67603a52c0c02d38ab8bbd2af2af0b80ca62e414"
   license "BSD-2-Clause"
   head "https://github.com/ponylang/corral.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/corral"
-    sha256 cellar: :any_skip_relocation, mojave: "eb10af264037c7187f395d822bfb23c547907b5984b1d801186dc516e89037ac"
+    sha256 cellar: :any_skip_relocation, mojave: "9304705afb4e5cb831882a716f44e77383c4824e13448d7e7ff2dda2c906e487"
   end
 
   depends_on "ponyc"
