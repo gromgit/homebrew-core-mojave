@@ -7,9 +7,10 @@ class Eslint < Formula
   sha256 "dadd508c13ac5c54ad0f38d37f338c6f86707101915e6dec84f3e4511c96baa5"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eslint"
-    sha256 cellar: :any_skip_relocation, mojave: "b44436db53022ff30c2925b17dd6f06b61e965b61a32fe5db334df9d74c11bb4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cdc36fdefd1f431690940d6158d53d5072d4f488779fcd335dbc35487dd88d57"
   end
 
   depends_on "node"
