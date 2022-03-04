@@ -17,9 +17,10 @@ class Emscripten < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emscripten"
-    sha256 cellar: :any, mojave: "876c0e88da5d80618904d4eef4a8d434ca175dced77307af2cf9a85ac29c3a45"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a137375c605a5330efb2e4aca4fa93bb98bc50f66f03aa12cd329d9d855b5257"
   end
 
   depends_on "cmake" => :build
