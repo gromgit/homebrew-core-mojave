@@ -7,9 +7,10 @@ class Esphome < Formula
   sha256 "8d27e25d4b649dbbc1c99888cbd0bebef7783ae5214930c546201c0e7ca38886"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esphome"
-    sha256 cellar: :any, mojave: "0d9c2be5ec003756ed6ca3a4c2b2fd002559bf4be242ee85ee96bf8e026b4331"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c4d38e9e48f64c1f545c9fb73fac29a4c66414eb5fe38e8828aff6ab639dc261"
   end
 
   depends_on "rust" => :build # for cryptography
