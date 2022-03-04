@@ -6,9 +6,10 @@ class Harfbuzz < Formula
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
-    sha256 cellar: :any, mojave: "77b6ffa477fc1da3ad23aeca7ad688ece9142284a91a39a7f29accc52ec399fc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "053bdcefc5baac83305ae700cc9dcd3bd43010428c25f26f0db9d557b50e0ccd"
   end
 
   depends_on "meson" => :build
