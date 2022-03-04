@@ -6,9 +6,10 @@ class Datafusion < Formula
   license "Apache-2.0"
   head "https://github.com/apache/arrow-datafusion.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datafusion"
-    sha256 cellar: :any_skip_relocation, mojave: "be60016ef814e3afa71eab233e832c3ec3341188146282573fed5659bb32edaf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "245b837d58c4f54fe5d32096bc3605e810b337360f2fe58e713990b598a03be1"
   end
 
   depends_on "rust" => :build
