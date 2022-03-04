@@ -6,9 +6,10 @@ class BaidupcsGo < Formula
   license "Apache-2.0"
   head "https://github.com/qjfoidnh/BaiduPCS-Go.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/baidupcs-go"
-    sha256 cellar: :any_skip_relocation, mojave: "3800c02b62fa9d220ee75f68d043575674e9918a21f4929e0256ed332fa1d260"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cc93b627f70fd087cc8dd21265d8ae2f0b1b7424392f9e37acc8ab8c45a91507"
   end
 
   depends_on "go" => :build
