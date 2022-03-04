@@ -8,9 +8,10 @@ class Circleci < Formula
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circleci"
-    sha256 cellar: :any_skip_relocation, mojave: "c192d22fbcae3ed7d271c9332709ba072b2d7c335417199e5b77fc5250a2a042"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f1b6b7e1f554b825876cb26431c93e9655498c424c008535f9459ae00281ad54"
   end
 
   depends_on "go" => :build
