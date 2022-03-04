@@ -5,9 +5,10 @@ class Csview < Formula
   sha256 "34df6838dd9407197511887cdc9b2a3ed08b4b508f9c6bb660def326ea953e8c"
   license any_of: ["MIT", "Apache-2.0"]
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csview"
-    sha256 cellar: :any_skip_relocation, mojave: "30f91626031ab915692bde8072d3b3fa412bc31abf17101aabc221c383c9f56a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7b667d3adcdde3cf1a4e7df009236ddd819a33a11200306fab6ab78908c4f33d"
   end
 
   depends_on "rust" => :build
