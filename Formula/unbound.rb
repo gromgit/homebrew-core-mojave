@@ -14,9 +14,10 @@ class Unbound < Formula
     regex(/^(?:release-)?v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unbound"
-    sha256 mojave: "b62d0313b9ee9b90211a6f0f42f427e6dc5b439fd6c9db574ec7834b7ffe1ae2"
+    rebuild 1
+    sha256 mojave: "e3d93e586cf6fe2b08c7110b4783a8bc256ef378db2fc8eba4dd033f2512f711"
   end
 
   depends_on "libevent"
