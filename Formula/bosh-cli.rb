@@ -6,9 +6,10 @@ class BoshCli < Formula
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bosh-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "6a6ba1a7c72ace4dfa3946929ef4bc4412a2cb5cf39e36dfcc4d8a3e7f64f19e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2fd70c3c1225b47bf9cbb9c134972903a1b321250491108149724d7279cb7499"
   end
 
   depends_on "go" => :build
