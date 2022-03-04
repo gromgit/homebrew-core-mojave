@@ -10,9 +10,10 @@ class Flac < Formula
     regex(/href=.*?flac[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flac"
-    sha256 cellar: :any, mojave: "2941ee73894fc8f66e612b8878e2ed123ae2d38c0226644265f78b6d7f5cd2ad"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aac2abcaa393766a81c1e69fe66e0f32288aa9899294ebae256f4ede9983f805"
   end
 
   head do
