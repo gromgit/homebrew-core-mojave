@@ -11,9 +11,10 @@ class Terraform < Formula
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform"
-    sha256 cellar: :any_skip_relocation, mojave: "56ce9bff81d11496aa137c64aaa8812fe7753d7a5967c9de0eddf93a47e2aaad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "94bc12ef00d94ef4ba8ded223c53897d7f0ed7f6eea82e5d9d238b717fecebb7"
   end
 
   depends_on "go" => :build
