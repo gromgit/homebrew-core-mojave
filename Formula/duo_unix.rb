@@ -9,9 +9,10 @@ class DuoUnix < Formula
     url "https://github.com/duosecurity/duo_unix.git"
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duo_unix"
-    sha256 mojave: "42535c17f6cf8178e35ccddfa55742ffef13c3da2cc2b77f089e0c8593f9235e"
+    rebuild 1
+    sha256 mojave: "404ce87e89dcac27d65349f2fbd1a75c6b7204ed6ba6cfefdbe4d1a291957356"
   end
 
   depends_on "autoconf" => :build
