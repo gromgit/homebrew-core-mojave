@@ -6,9 +6,10 @@ class Libxcb < Formula
   license "MIT"
   revision 2
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcb"
-    sha256 cellar: :any, mojave: "2bf299877e25053f7b94750394b5a9b44746e7fe62eddf1a37de079767d846b5"
+    rebuild 1
+    sha256 cellar: :any, mojave: "17e86712e5492378c163b88fbf4f49364e90d70f0a98aa2de6451bddc3353648"
   end
 
   depends_on "pkg-config" => :build
