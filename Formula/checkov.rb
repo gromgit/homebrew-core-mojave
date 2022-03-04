@@ -8,9 +8,10 @@ class Checkov < Formula
   sha256 "e237b6393959ccd26f92354ca15ec51087b73ad3cf9d384f3db99031cbbc02d7"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/checkov"
-    sha256 cellar: :any_skip_relocation, mojave: "52d577ad4b244d6c622e413c8b3a6fd2b30581d6b8c6626d0bb678f5fff8694c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "29f6f3bc05bae8eacbeb0258753f643f3c2e99736cf0c65f93b57d3da52a9893"
   end
 
   depends_on "python-tabulate"
