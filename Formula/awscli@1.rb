@@ -13,9 +13,10 @@ class AwscliAT1 < Formula
     regex(/^v?(1(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli@1"
-    sha256 cellar: :any, mojave: "50fa11280323e287059c15c6e933d2c4efa934b11d6008f4c1fefec65b6d44e4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ac3d7a76f5cbd54ad3b28d976de4fe8f070b835a8a748d53d32768e1b8cd62e1"
   end
 
   keg_only :versioned_formula
