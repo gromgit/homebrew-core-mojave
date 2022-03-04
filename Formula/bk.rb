@@ -6,9 +6,10 @@ class Bk < Formula
   license "MIT"
   head "https://github.com/aeosynth/bk.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bk"
-    sha256 cellar: :any_skip_relocation, mojave: "cd7ca033b9a6e8667ccbe9b3f0ad3e4253d9d5a8ff4f409fbdbe43f5a1d95afe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e3217eeca92340b9e472fba02bffa08ca439d8f18966f02113106531ab9388db"
   end
 
   depends_on "rust" => :build
