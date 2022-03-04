@@ -17,9 +17,10 @@ class LittleCms2 < Formula
     regex(%r{href=.*lcms2[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/little-cms2"
-    sha256 cellar: :any, mojave: "94f65c7249774182efb9d6d7608719dd3c2aa4dc19bcfc89c1f05e44118807b6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "eae886b6789cc3b0d08fda996e191a3c587405c1df9154c24ce55b466bc8640f"
   end
 
   depends_on "jpeg"
