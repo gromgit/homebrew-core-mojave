@@ -8,9 +8,10 @@ class Beancount < Formula
   license "GPL-2.0-only"
   head "https://github.com/beancount/beancount.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/beancount"
-    sha256 cellar: :any_skip_relocation, mojave: "ef1e6eca8c7f0c7343a4d0979931cc69bb465e7edee67b93cc65f88a7eb7d130"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "69cf3dde2816dab8689df44287f2651d6a9454f4eb492b067e30d6c1ad731b16"
   end
 
   depends_on "python@3.10"
