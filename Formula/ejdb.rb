@@ -7,9 +7,10 @@ class Ejdb < Formula
   license "MIT"
   head "https://github.com/Softmotions/ejdb.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejdb"
-    sha256 cellar: :any, mojave: "87549ca9a6f274580af559b9192038e2e5988af3f82f38aef1402874ee14fa02"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3cbe98455db8bd712ed6c157e2b25c324018ae85e5d6b039492b2d8f22d1f19c"
   end
 
   depends_on "cmake" => :build
