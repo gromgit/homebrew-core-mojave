@@ -5,9 +5,10 @@ class B3sum < Formula
   sha256 "112becf0983b5c83efff07f20b458f2dbcdbd768fd46502e7ddd831b83550109"
   license "CC0-1.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/b3sum"
-    sha256 cellar: :any_skip_relocation, mojave: "a4c1ffc9976449252b38594939fda726413362f8770348b01346d78c078458b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9b545bf59bdfb4e4bf887fc651b032ba196db08c7cf43c0665dfdc9a43405787"
   end
 
   depends_on "rust" => :build
