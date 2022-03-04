@@ -4,15 +4,16 @@ class Cdo < Formula
   url "https://code.mpimet.mpg.de/attachments/download/26761/cdo-2.0.4.tar.gz"
   sha256 "73c0c1e5348632e6e8452ea8e617c35499bc55c845ee2c1d42b912a7e00e5533"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://code.mpimet.mpg.de/projects/cdo/files"
     regex(/href=.*?cdo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdo"
-    sha256 cellar: :any, mojave: "43694ee0f29ac39fd2cf46424efd37c288b310fbe2bc248b84fdf06955b9a27d"
+    sha256 cellar: :any, mojave: "bcc2f6e65c5352f7035a327638b2cfc076143c439cd5d381c70c56eaa4a5906d"
   end
 
   depends_on "eccodes"
