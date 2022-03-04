@@ -5,9 +5,10 @@ class Atmos < Formula
   sha256 "2d42adb86b555c34f88bc2c6d09e70c455fcc94a0516d7094f65d4154a9baf1e"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atmos"
-    sha256 cellar: :any_skip_relocation, mojave: "756436106c1bb2ff90c839dffd45815a7551c4d3b1822da3ec12426771faf789"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "821417d28511ca44c315f16d67e496957709eaf1c2123e9b64561aa5762353ef"
   end
 
   depends_on "go" => :build
