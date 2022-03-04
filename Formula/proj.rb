@@ -6,10 +6,10 @@ class Proj < Formula
   license "MIT"
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
-    rebuild 1
-    sha256 mojave: "dc2d603a3709920281e164ef961943d1ff9f4bc79891fc6ea39aa237e6f3c004"
+    rebuild 2
+    sha256 mojave: "520fed7a06977611571a8dc6cfe2d6aa2af86182db43f5c8a111cfc7a8fe8284"
   end
 
   depends_on "cmake" => :build
