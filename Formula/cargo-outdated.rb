@@ -1,15 +1,14 @@
 class CargoOutdated < Formula
   desc "Cargo subcommand for displaying when Rust dependencies are out of date"
   homepage "https://github.com/kbknapp/cargo-outdated"
-  url "https://github.com/kbknapp/cargo-outdated/archive/v0.10.2.tar.gz"
-  sha256 "0f8a4badebeb98d01808bc811c0e840a261df3d0c6306b05a4a9e926b754fc02"
+  url "https://github.com/kbknapp/cargo-outdated/archive/v0.11.0.tar.gz"
+  sha256 "203504d8f7aa6ba633e256b6f9d81162dd1f3ddbf92934ff689060ae80b6b203"
   license "MIT"
   head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-outdated"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8f0f9ebadff7044b282ee802dd2c3c3e4caadc442f13f153259c90a09c2d148c"
+    sha256 cellar: :any, mojave: "7eb0b0b90b2e3cd0ac4636da5516e96cf077fc2f7facb13df071f6d05b5114fb"
   end
 
   depends_on "libgit2"
