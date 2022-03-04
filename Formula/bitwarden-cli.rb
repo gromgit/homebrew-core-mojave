@@ -7,9 +7,10 @@ class BitwardenCli < Formula
   sha256 "5df82a6ec7ecab6ed587ff3675f88b926404ed4e59fb912956722d840a742b8a"
   license "GPL-3.0-only"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bitwarden-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "5affceea59e0c73765175f9de64b9822c35fd8f7c26dcb21cc970776fa955aba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "674f646328a797c705ad72d0e55606bcf9f2b7a624c3256ee3b93827daeaa54b"
   end
 
   depends_on "node"
