@@ -7,9 +7,10 @@ class Djhtml < Formula
   sha256 "eeccc5e5cc6d1371e8434903de5043b24efa1000b6857b9bf342e1868aa995ae"
   license "GPL-3.0-or-later"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djhtml"
-    sha256 cellar: :any_skip_relocation, mojave: "9797ff145ca855f0377fd2e230cdb22f0f178db8f88d99f6787b4880e11e4e63"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0de420bbea6b73e55bcedd3f4765c2f7ba8c56a69ca31bf3b0bb069cf3e311f2"
   end
 
   depends_on "python@3.10"
