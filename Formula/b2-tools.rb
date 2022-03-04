@@ -7,9 +7,10 @@ class B2Tools < Formula
   sha256 "351bf1c26b6147edce4245d09fc0b608b10d3665cf4358bd3ebdb40318b6e562"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/b2-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "a18e2beb7f3ccbabda32af7feb45c31385ab3e3831fb7e59100ee4c9f1620d0a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ad7070c39f7fada2ea7a4689042d402b575506c68565bd7c0fbeb887cb9b7ea3"
   end
 
   depends_on "python@3.10"
