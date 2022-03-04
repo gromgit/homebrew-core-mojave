@@ -7,9 +7,10 @@ class Dxpy < Formula
   sha256 "90f5ebb77213a65295c26d5c6c4ad81b4135f05f7d3e40558d7db52214fcfb0c"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dxpy"
-    sha256 cellar: :any, mojave: "accb38c3df51784c905889e96be0694bb78d869c53d35eb7cf9fa5b22d6bf58a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dfe5c0e5c8efeef6ace5fbc19e3b3418108a325883a286779059a4971ea3fabb"
   end
 
   depends_on "rust" => :build # for cryptography
