@@ -6,9 +6,10 @@ class Dprint < Formula
   license "MIT"
   head "https://github.com/dprint/dprint.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dprint"
-    sha256 cellar: :any_skip_relocation, mojave: "f690333df2d39174b9e969be7edcc848cca9443ddeb8f896c71c62cb273c0b4c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "eda91596a2b8f72264ba87ce6cb008d5c7b847ef12c01b99a877995cd99bfd18"
   end
 
   depends_on "rust" => :build
