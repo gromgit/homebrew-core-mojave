@@ -1,8 +1,8 @@
 class Certigo < Formula
   desc "Utility to examine and validate certificates in a variety of formats"
   homepage "https://github.com/square/certigo"
-  url "https://github.com/square/certigo/archive/v1.14.1.tar.gz"
-  sha256 "3ed30adc63869fcbded9bff51e07eaadb08c243980ee08f18858cb6c2a86d232"
+  url "https://github.com/square/certigo/archive/v1.15.0.tar.gz"
+  sha256 "9081e45f02d3873d65d9b0c8a71d31c2e3787d513cdd622c64546c1d01ef4e3e"
   license "Apache-2.0"
   head "https://github.com/square/certigo.git", branch: "master"
 
@@ -11,9 +11,9 @@ class Certigo < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certigo"
-    sha256 cellar: :any_skip_relocation, mojave: "13a76267395ca79143f702526464bbadec74f3641ea5b8b01ff0ecdb30a9b586"
+    sha256 cellar: :any_skip_relocation, mojave: "25ef08ef8e930a36f2fd86da70a90578a747e51f18ca719bede2b17a2e7819ff"
   end
 
   depends_on "go" => :build
