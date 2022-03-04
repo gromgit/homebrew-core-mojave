@@ -8,9 +8,10 @@ class DetectSecrets < Formula
   license "Apache-2.0"
   head "https://github.com/Yelp/detect-secrets.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/detect-secrets"
-    sha256 cellar: :any, mojave: "25e08cabd48030df3b6529e8c87bd02ddc662ce4f7274400d7cb3e5a4e743fc9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "99ad3a4a68f934860b2db06c6269eca5a9766eb6c93ecaa31923321fc723d5e2"
   end
 
   depends_on "libyaml"
