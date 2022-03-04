@@ -11,9 +11,10 @@ class CernNdiff < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cern-ndiff"
-    sha256 cellar: :any_skip_relocation, mojave: "07306c8310a254c75d4d4ce46c0c5efdb1290723eb9d9a4e6e7d43c8c3597e5b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "12eb56f89ac0c5601c9ed89557bf6577207c84166c9cd88b3e0cf15e0864d286"
   end
 
   depends_on "cmake" => :build
