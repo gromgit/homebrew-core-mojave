@@ -6,9 +6,10 @@ class Awsweeper < Formula
   license "MPL-2.0"
   head "https://github.com/jckuester/awsweeper.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awsweeper"
-    sha256 cellar: :any_skip_relocation, mojave: "34aff17627321b6fcd379fe4bd407dc5f25ebe40749f6a8ace419c749988a83b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "03e6a5607333ab61d9358c3dcf14441a0a12bc0cedca01a7ce5fa6906536ee72"
   end
 
   depends_on "go" => :build
