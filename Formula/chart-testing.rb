@@ -7,10 +7,10 @@ class ChartTesting < Formula
   license "Apache-2.0"
   head "https://github.com/helm/chart-testing.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chart-testing"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c00caf84492dd69e6725b0c489896a56b7d09c4d60f4481cdc219882c32cbe54"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7386aae8a0c6fdf9f17df07d087417e1d671389e32506255f01a0acd03a05625"
   end
 
   depends_on "go" => :build
