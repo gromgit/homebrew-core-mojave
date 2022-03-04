@@ -10,9 +10,10 @@ class Cppp < Formula
     regex(/href=.*?cppp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppp"
-    sha256 cellar: :any_skip_relocation, mojave: "0953fde2a184beff964e1ba7a24b48cdeac5fb5b6d184bdb935dbdea0eb5a827"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3ca48de4bec82b8f4dd3d44e2923c5209bf02d34817a90542fd578f74eeb422e"
   end
 
   def install
