@@ -12,9 +12,10 @@ class Chamber < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chamber"
-    sha256 cellar: :any_skip_relocation, mojave: "89679b7e47f433aaa53ae15c3f9d67c7c392563ab7d104e6a34c8732178e0d3e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a5ab0020b3fef36f5cda7496f4a1a0cb9b0bb375e2b30d8239571bc719342008"
   end
 
   depends_on "go" => :build
