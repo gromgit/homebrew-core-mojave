@@ -12,9 +12,10 @@ class AwsIamAuthenticator < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-iam-authenticator"
-    sha256 cellar: :any_skip_relocation, mojave: "cde0a8b33af94e47a3fd07e80ed34fa6fedadb48d1ceefa0364095e4c94a029a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5ab7955418cb1b6ac5cdf03aeec07494199e778483e460c70bd882d82734ed11"
   end
 
   depends_on "go" => :build
