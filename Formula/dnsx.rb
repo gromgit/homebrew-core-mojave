@@ -6,9 +6,10 @@ class Dnsx < Formula
   license "MIT"
   head "https://github.com/projectdiscovery/dnsx.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsx"
-    sha256 cellar: :any_skip_relocation, mojave: "49b2d13f0da04c3340083346650cb7a9d78e17d124fe9305552e9970e7bff244"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "458c956f618a8d69a8d2e887b346b038dacd362384cb2f20f56efebfcc7865ff"
   end
 
   depends_on "go" => :build
