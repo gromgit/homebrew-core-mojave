@@ -6,9 +6,10 @@ class ColladaDom < Formula
   revision 1
   head "https://github.com/rdiankov/collada-dom.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/collada-dom"
-    sha256 cellar: :any, mojave: "0c87247a3ed006dad7377e188c5491be16b35656d44324872b7491375b84b5a0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b9f83951fb368e5a8ea809aeea419c869bd6091a49cd26a7779f0738f882ee1d"
   end
 
   depends_on "cmake" => :build
