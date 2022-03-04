@@ -12,9 +12,10 @@ class Devspace < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/devspace"
-    sha256 cellar: :any_skip_relocation, mojave: "5ba03dc56b33c9486a02e292d7cf834f26324fdd2f36d4a5095703d949da8603"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c64f2e0efba930622af1605763d9aeff98857f0c4dcee73ee9ff5a2337cd94a6"
   end
 
   depends_on "go" => :build
