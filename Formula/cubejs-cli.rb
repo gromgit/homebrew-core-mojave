@@ -7,9 +7,10 @@ class CubejsCli < Formula
   sha256 "6b05a19a711730d3c689fbd5d7b45d6c88dae1e4133c3cc73b87079a428551a3"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cubejs-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "f2c330cfaccaee464783d629bf5d30a51c3273fd3d11da8c0200f1c3738a5654"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "544b9e21d5b0a17a8ef9af37ee2c75e1e588813fc37694f6cfbbcc9d3a7d9bf3"
   end
 
   depends_on "node"
