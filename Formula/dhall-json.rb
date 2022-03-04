@@ -1,17 +1,15 @@
 class DhallJson < Formula
   desc "Dhall to JSON compiler and a Dhall to YAML compiler"
   homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json"
-  url "https://hackage.haskell.org/package/dhall-json-1.7.9/dhall-json-1.7.9.tar.gz"
-  sha256 "f6b9f4f6046648d2c51c6a7d11b5c08b0935d820cc5dfb67aaec5363b7213487"
+  url "https://hackage.haskell.org/package/dhall-json-1.7.10/dhall-json-1.7.10.tar.gz"
+  sha256 "e15cd486b287ed281cd56da8d0603bb70dbfa33f2b3e107682d82935dad3f785"
   license "BSD-3-Clause"
   head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-json"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "28f6701a77708e91bda20878f5b1231fc2b699a0ca5aad187aa574dc27b734e7"
+    sha256 cellar: :any_skip_relocation, mojave: "9dcc740147c2745c4bde929daf4ca1ad2482cb126ee3ce73809f640ccc480abe"
   end
-
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
