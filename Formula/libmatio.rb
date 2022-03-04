@@ -6,9 +6,10 @@ class Libmatio < Formula
   license "BSD-2-Clause"
   revision 2
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmatio"
-    sha256 cellar: :any, mojave: "a1403f0c14d676b0cfd5fa5663e53af187a8c272c9a55a18f985ce345edda383"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b148d37a1bdfa81b337e778ec76715220a126d053f7f6368e77388cb3bac8607"
   end
 
   depends_on "hdf5"
