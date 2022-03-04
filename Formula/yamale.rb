@@ -8,9 +8,10 @@ class Yamale < Formula
   license "MIT"
   head "https://github.com/23andMe/Yamale.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yamale"
-    sha256 cellar: :any, mojave: "6c73cf33c56c5a683165fa464716d2f25480a560cf88057ea5f558ae8df1b4b2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aaa116c431213c82458a6e4ed0c434b810fca29cddc9437089416d6d13813d4b"
   end
 
   depends_on "libyaml"
