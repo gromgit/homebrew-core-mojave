@@ -5,12 +5,15 @@ class ElasticsearchAT6 < Formula
   sha256 "60e77b5ca3ce11771469bcc2e009c49c8aadb831faebd170e7abcedc16b3e36d"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elasticsearch@6"
-    sha256 cellar: :any_skip_relocation, mojave: "78996e3b74f69ff883b3a2aa3b37a75d840a6b833c6a73d23bf0ad0bca093044"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e5a286ee3018979cf0be1e12c57eed034ce002879ebc656941464108c9d4ad90"
   end
 
   keg_only :versioned_formula
+
+  deprecate! date: "2022-02-10", because: :unsupported
 
   depends_on "openjdk"
 
