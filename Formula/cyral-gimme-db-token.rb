@@ -3,14 +3,13 @@ class CyralGimmeDbToken < Formula
 
   desc "Eases using Cyral for SSO login to databases"
   homepage "https://cyral.com/docs/connect/repo-connect/#cli-token-retriever-for-sso"
-  url "https://files.pythonhosted.org/packages/cf/79/0a26383c600658d42a874297550f14b031bf491db8b74db8e241cf0f9e6d/cyral-gimme-db-token-0.6.1.tar.gz"
-  sha256 "45997cb8f6b425a45d09b9ac2f7859a9e9472e388a3b1ed3b3920f085f7ae433"
+  url "https://files.pythonhosted.org/packages/3d/c8/506ef49b36301dbd335e18f4ba720983bfbb430ebe136f9807f6408e5062/cyral-gimme-db-token-0.8.0.tar.gz"
+  sha256 "6b8e907fcceb92601d26f74d613a2e8176a9a36e150727d4866631744434f2f9"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cyral-gimme-db-token"
-    rebuild 2
-    sha256 cellar: :any, mojave: "894b0a25271395933f98098960ac1be7fbe66cc6512c8c5881fe902584dbb88f"
+    sha256 cellar: :any, mojave: "6be5cbe2fa79165f067964e0cf62c8f3dd702d3cc34d25435f83cf4015c2e09f"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -25,13 +24,13 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "awscli" do
-    url "https://files.pythonhosted.org/packages/24/90/d2daeb4a893e92112ce6b0f9c752a0c617a0e601f3088fac56632b5c5312/awscli-1.21.7.tar.gz"
-    sha256 "6a180b0eca109055bd97a6e85597e340cdb1071bb90eb208ead9d0487d5ad80e"
+    url "https://files.pythonhosted.org/packages/1e/44/372fd82a5dd5800f3dc53d04bcc95e0702fad4039c3b7fa2fa8ee18b902d/awscli-1.22.58.tar.gz"
+    sha256 "567a5861f0101dabb05a5658e7aa1abb6c66e8a5a1a22360b8a7e17d2282cf4c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5d/28/de19b5fc27fc41dce0a315d7558e7d11e7cac73f34038e495a8095af0d36/botocore-1.22.7.tar.gz"
-    sha256 "d7c190ed4e1ddb24f9872a0641b28da4afc04b6b993f0ec3dd5224a847df5519"
+    url "https://files.pythonhosted.org/packages/36/ae/e2a16367140d66a5b45df2f831da20dcb2cb8824e0e334554294647a2ac0/botocore-1.24.3.tar.gz"
+    sha256 "979e5c5e826ff115f4903fe9887b191f3809229f694a747f910e1221fe63efc7"
   end
 
   resource "certifi" do
@@ -45,13 +44,13 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/9f/c5/334c019f92c26e59637bb42bd14a190428874b2b2de75a355da394cf16c1/charset-normalizer-2.0.7.tar.gz"
-    sha256 "e019de665e2bcf9c2b64e2e5aa025fa991da8720daa3c1138cadd2fd1856aed0"
+    url "https://files.pythonhosted.org/packages/56/31/7bcaf657fafb3c6db8c787a865434290b726653c912085fbd371e9b92e1c/charset-normalizer-2.0.12.tar.gz"
+    sha256 "2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"
-    sha256 "d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"
+    url "https://files.pythonhosted.org/packages/dd/cf/706c1ad49ab26abed0b77a2f867984c1341ed7387b8030a6aa914e2942a0/click-8.0.4.tar.gz"
+    sha256 "8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
   end
 
   resource "colorama" do
@@ -60,8 +59,8 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
-    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
+    url "https://files.pythonhosted.org/packages/f9/4b/1cf8e281f7ae4046a59e5e39dd7471d46db9f61bb564fddbff9084c4334f/cryptography-36.0.1.tar.gz"
+    sha256 "53e5c1dc3d7a953de055d77bef2ff607ceef7a2aac0353b5d630ab67f7423638"
   end
 
   resource "docutils" do
@@ -85,8 +84,8 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz"
-    sha256 "2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"
+    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
+    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "python-dateutil" do
@@ -100,8 +99,8 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e7/01/3569e0b535fb2e4a6c384bdbed00c55b9d78b5084e0fb7f4d0bf523d7670/requests-2.26.0.tar.gz"
-    sha256 "b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7"
+    url "https://files.pythonhosted.org/packages/60/f3/26ff3767f099b73e0efa138a9998da67890793bfa475d8278f84a30fec77/requests-2.27.1.tar.gz"
+    sha256 "68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"
   end
 
   resource "rsa" do
@@ -110,20 +109,22 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/88/ef/4d1b3f52ae20a7e72151fde5c9f254cd83f8a49047351f34006e517e1655/s3transfer-0.5.0.tar.gz"
-    sha256 "50ed823e1dc5868ad40c8dc92072f757aa0e653a192845c94a3b676f4a62da4c"
+    url "https://files.pythonhosted.org/packages/66/e2/cc19f36aade1ef40cba69555fcf713d942ec9e31ecff2415948bd885911d/s3transfer-0.5.1.tar.gz"
+    sha256 "69d264d3e760e569b78aaa0f22c97e955891cd22e32b10c51f784eeda4d9d10a"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/80/be/3ee43b6c5757cabea19e75b8f46eaf05a2f5144107d7db48c7cf3a864f73/urllib3-1.26.7.tar.gz"
-    sha256 "4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece"
+    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
+    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
-    venv.pip_install resource("cffi")
-    venv.pip_install resources
-    venv.pip_install_and_link buildpath
+    # setuptools>=60 prefers its own bundled distutils, which is incompatabile with docutils~=0.15
+    # Force the previous behavior of using distutils from the stdlib
+    # Remove when fixed upstream: https://github.com/aws/aws-cli/pull/6011
+    with_env(SETUPTOOLS_USE_DISTUTILS: "stdlib") do
+      virtualenv_install_with_resources
+    end
   end
 
   test do
