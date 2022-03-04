@@ -10,9 +10,10 @@ class Dbhash < Formula
     formula "sqlite"
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbhash"
-    sha256 cellar: :any_skip_relocation, mojave: "db5a70dde4b82f596afd4121b8f32dae707bc9759006b8c625078eff4dfa908c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3e3c96935e2887abae65199c7cf057f24d7e4c2b31220b859cf658e9047f76df"
   end
 
   uses_from_macos "tcl-tk" => :build
