@@ -13,9 +13,10 @@ class Cryptominisat < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cryptominisat"
-    sha256 cellar: :any, mojave: "24c5ee1450c5f42f881a711cbae6452a4782108ebccc1ecf03b0b105db5a01e7"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5682c2446e97356d94b22c18d50220c71b3885966fb37a43002dbe9f50018d2a"
   end
 
   depends_on "cmake" => :build
