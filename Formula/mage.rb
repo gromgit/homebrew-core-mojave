@@ -7,9 +7,10 @@ class Mage < Formula
   license "Apache-2.0"
   head "https://github.com/magefile/mage.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mage"
-    sha256 cellar: :any_skip_relocation, mojave: "d2da91d98adad62480fb9efd3f311f0d56a5406772d3f5c0ac3af7cd5da0fd96"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ec46a0ad1ad334a2065e51e09ea0970e5681fe4fc25e4f25c75bc37b86a41597"
   end
 
   depends_on "go"
