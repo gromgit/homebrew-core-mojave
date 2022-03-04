@@ -7,9 +7,10 @@ class Cpplint < Formula
   sha256 "8af99f95ed1af2d18e60467cdc13ee0441c2a14d693b7d2dbb71ad427074e491"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpplint"
-    sha256 cellar: :any_skip_relocation, mojave: "292ac43454d919bb8cdb7192ca564efcade87bff64ee74ef49838d881f95a4c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bb8441644150affe1cda8581d2088f74e8b80d1d78dd75e22b2a646f3765f90f"
   end
 
   depends_on "python@3.10"
