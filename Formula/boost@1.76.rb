@@ -5,9 +5,10 @@ class BoostAT176 < Formula
   sha256 "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
   license "BSL-1.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost@1.76"
-    sha256 cellar: :any, mojave: "e7419be40a1ef585b23fc404c8ca0a5f7ca9c7b8f585a22f69b1b4d9e4a14221"
+    rebuild 1
+    sha256 cellar: :any, mojave: "31f26f4c586439e771bebe7e661f723b2a04606f805c0a551cae084023273a88"
   end
 
   keg_only :versioned_formula
