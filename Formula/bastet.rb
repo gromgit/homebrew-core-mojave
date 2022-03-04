@@ -6,9 +6,10 @@ class Bastet < Formula
   license "GPL-3.0-or-later"
   revision 1
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bastet"
-    sha256 mojave: "ace2cd919aa295203ffd264b944ba170d0f27da0fd4ec7e0c2b216e528327216"
+    rebuild 1
+    sha256 mojave: "a2238e448db4e46992a6c1c91873beca44eb789587b01c7d739aeb053296ff10"
   end
 
   depends_on "boost"
