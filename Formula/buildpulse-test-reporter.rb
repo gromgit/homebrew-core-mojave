@@ -1,8 +1,8 @@
 class BuildpulseTestReporter < Formula
   desc "Connect your CI to BuildPulse to detect, track, and rank flaky tests"
   homepage "https://buildpulse.io"
-  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "78a20b13b3e4681cd2bed724b287d3f29db8bb93d124a757c6c15edbe3750caf"
+  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "ddf899694f17c072822191a1294c6968ab0992c1ce7bbd1318a148fbad497704"
   license "MIT"
   head "https://github.com/buildpulse/test-reporter.git", branch: "main"
 
@@ -11,9 +11,9 @@ class BuildpulseTestReporter < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildpulse-test-reporter"
-    sha256 cellar: :any_skip_relocation, mojave: "c52e030d36d823bb0d414e4274283e7f6635b48bb3f6299b39db8d0c14df4fbf"
+    sha256 cellar: :any_skip_relocation, mojave: "4cc871f9160f3cdaf001b778ec0a2bf02294dc72b6cf679f7c54fd0065163b49"
   end
 
   depends_on "go" => :build
