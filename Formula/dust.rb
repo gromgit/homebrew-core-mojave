@@ -11,9 +11,10 @@ class Dust < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dust"
-    sha256 cellar: :any_skip_relocation, mojave: "77b897ef115bcbfbdd25d66bbe33bac9d97601b146d883eea52033356eb18f61"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5357c4713bb663ad650fe7c9fe6ff3f204650e5c3b0202463ec7feeb7b29cd6d"
   end
 
   depends_on "rust" => :build
