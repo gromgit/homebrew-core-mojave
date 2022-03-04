@@ -11,9 +11,10 @@ class BoostMpi < Formula
     formula "boost"
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost-mpi"
-    sha256 mojave: "eea3c6475904cf9971b70fbc209c5c60bda5813c467163c257d22a30a52699f2"
+    rebuild 1
+    sha256 mojave: "20654b752e0570714dad0a5b5f93dc01176d1407b31dc6fab9e242161efd3d65"
   end
 
   # Test with cmake to avoid issues like:
