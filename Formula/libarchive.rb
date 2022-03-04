@@ -10,9 +10,10 @@ class Libarchive < Formula
     regex(/href=.*?libarchive[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libarchive"
-    sha256 cellar: :any, mojave: "3fb4e2d20b7948e29e8be8b9d8694749283d44c8a8f8382afa259f5db4b45e23"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5909e9cd788ae3558017864e4957a1aa481013d19ac11cffbd2f6821defbc690"
   end
 
   keg_only :provided_by_macos
