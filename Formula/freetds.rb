@@ -19,9 +19,10 @@ class Freetds < Formula
     regex(/href=.*?freetds[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freetds"
-    sha256 mojave: "cdcf96436f259c07c567dbfd1708e49935a8fd7683f3f51ba355276967ac137b"
+    rebuild 1
+    sha256 mojave: "bcc5d53ff299bd45dc5ebf23b6b87ecace3208876cb3e3b83982b5c5781a63a5"
   end
 
   head do
