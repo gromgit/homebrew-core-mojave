@@ -5,9 +5,10 @@ class Brev < Formula
   sha256 "ff6fd0afa4debad5cac190519a5cef250246df8cddfb84dc2d5bc40c2624d36d"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brev"
-    sha256 cellar: :any_skip_relocation, mojave: "33b68cf244648d614d239e57362fe195ee0d9457a2d3ac888c99a60a7c7e3aa3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4a0842052c5a2cf42e3b943ec888aae7596e477ed237a13bb93a552b28e07e5f"
   end
 
   depends_on "go" => :build
