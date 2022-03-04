@@ -6,9 +6,10 @@ class Guile < Formula
   sha256 "daa7060a56f2804e9b74c8d7e7fe8beed12b43aab2789a38585183fcc17b8a13"
   license "LGPL-3.0-or-later"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/guile"
-    sha256 mojave: "20bd6d366e5bb89a6c6d2d0250de6778ed3bec8287e4d9574d4fb83bdd24d57c"
+    rebuild 1
+    sha256 mojave: "93ecde5a510147352ee3f4dd9d3558c6e33bade2712a7176805ce1cededea051"
   end
 
   head do
