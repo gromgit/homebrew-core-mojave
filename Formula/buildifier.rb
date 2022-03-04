@@ -6,9 +6,10 @@ class Buildifier < Formula
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildifier"
-    sha256 cellar: :any_skip_relocation, mojave: "59b2312bf1a953388c55e9cc8e451b0461b220244c504ab581449258b2dfcfb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0274576ac925ec2fc71b9f6354ea796c31d6036cd5933847a54d761727d3d1ed"
   end
 
   depends_on "go" => :build
