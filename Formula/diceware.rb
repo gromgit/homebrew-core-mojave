@@ -7,9 +7,10 @@ class Diceware < Formula
   sha256 "b2b4cc9b59f568d2ef51bfdf9f7e1af941d25fb8f5c25f170191dbbabce96569"
   license "GPL-3.0-or-later"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diceware"
-    sha256 cellar: :any_skip_relocation, mojave: "33faf48fdcd74c69c466794bd6559bfc5b6b4d6f18a6e56e81a2ee3d1fb302b8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "42cd8c219f04856449c4abe901e66f253578263f4b204f6d6a266e93f9dd98e9"
   end
 
   depends_on "python@3.10"
