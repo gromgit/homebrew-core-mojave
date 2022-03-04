@@ -12,9 +12,10 @@ class C7n < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/c7n"
-    sha256 cellar: :any_skip_relocation, mojave: "913ff245cc2da4204adf9f57480b48cd2f1921559a24d4cd86a245bf75673603"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4294e425d1e4fad1c033a3521a35fd2a67711816243e08f60c1d19ee45724c28"
   end
 
   depends_on "python-tabulate"
