@@ -7,9 +7,10 @@ class Asyncapi < Formula
   sha256 "cbd04cbd5450f06822b3e7b4faece948b24e73f96693cfff4fd49cf5033e46ea"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asyncapi"
-    sha256 cellar: :any_skip_relocation, mojave: "86514127f859ac195aca8acbe79541867a167098c291369191899ca36e092fb6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2a9d79820829d8a3df1dd53a4fad3db68b929ad000670c6d5612861aa28e2782"
   end
 
   depends_on "node"
