@@ -12,9 +12,10 @@ class Cgns < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgns"
-    sha256 cellar: :any, mojave: "f563cc749501c52b81d1608b5f0ebb8d9a02b88d0ce1f6390afc125869d4f8cb"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2052197bdbc10e884bcff0f08bbd1f190869be653786f48cbd203df50ac3ae6e"
   end
 
   depends_on "cmake" => :build
