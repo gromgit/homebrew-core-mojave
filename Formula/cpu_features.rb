@@ -7,9 +7,10 @@ class CpuFeatures < Formula
   revision 1
   head "https://github.com/google/cpu_features.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpu_features"
-    sha256 cellar: :any, mojave: "b43ba819b86698bd66282c6d5613178214fae27858bd2d15ab0f6154c826a73a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b769adc522e4134e71e3d7dcecf932b7a103f7ccc0217b0fd94ffea0e041a02b"
   end
 
   depends_on "cmake" => :build
