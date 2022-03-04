@@ -7,9 +7,10 @@ class AvroCpp < Formula
   license "Apache-2.0"
   revision 1
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avro-cpp"
-    sha256 cellar: :any, mojave: "975a3a3ae6e15dc42904dad113c5dd101f135b6db371a570ed4ad4650c0bba3d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d42a24990906d92688cde14a209d01edaae393c99b7cac6f45bb2af989656e82"
   end
 
   depends_on "cmake" => :build
