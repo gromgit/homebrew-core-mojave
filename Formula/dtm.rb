@@ -5,9 +5,10 @@ class Dtm < Formula
   sha256 "b35c83a28f88201d9e13c84496dd467f7caceb9eb7bd71f8dcba23e65d652c00"
   license "BSD-3-Clause"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dtm"
-    sha256 cellar: :any_skip_relocation, mojave: "3e95b1e0d1a24de33d3703ac2a6bb6484f0f602fc00eaa268d605b9dbe06fed1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "347e335e3ba2da4160af85207a9c1d2f0bacafd473c76ff930b5ff304149ee11"
   end
 
   depends_on "go" => :build
