@@ -5,9 +5,10 @@ class Deno < Formula
   sha256 "12113bcdca092ee751ba44ed0f6ac28ba8963ceacd82aad745c55b8ddc5f8d77"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deno"
-    sha256 cellar: :any_skip_relocation, mojave: "8b1c433d5e024686fac65a75cf5353a6d5e09c55529b84dfa8ffc50fa89bbf10"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "aa6be695d0896c4c13ddb64e8e049d9e6fc559bb2518fcaaab4558e42d9aacbe"
   end
 
   depends_on "llvm" => :build
