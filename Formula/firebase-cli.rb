@@ -8,9 +8,10 @@ class FirebaseCli < Formula
   license "MIT"
   head "https://github.com/firebase/firebase-tools.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/firebase-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "2a8079b03dc7b30dd9d1008482a70314cabeaeba1256c295d10d29b65579e3ab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0cbbd6f147de605371193e68c143ff14dd3595ed1d27a090ee1f9187f42f2fdf"
   end
 
   depends_on "node"
