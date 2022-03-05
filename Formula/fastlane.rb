@@ -11,9 +11,10 @@ class Fastlane < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastlane"
-    sha256 cellar: :any, mojave: "a1bd6dac6c68040f622b21f5553d00a83efa76926f97a4a764180608ba7330d8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "331fe820dea57dea5f666e5b5c980967c10650b68f67ae5ee5108353896650f6"
   end
 
   depends_on "ruby"
