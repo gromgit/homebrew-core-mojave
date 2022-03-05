@@ -7,16 +7,12 @@ class Gcovr < Formula
   sha256 "1d80264cbaadff356b3dda71b8c62b3aa803e5b3eb6d526a24932cd6660a2576"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/gcovr/gcovr.git"
+  head "https://github.com/gcovr/gcovr.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "02cac4be3ce9887e5dd058e755ae3fe9698bb2088a26bf6a89a4e3552c6c9adb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b43ccf52aaf6e863ba53338b2d56858a8e90ad6be7d25c86514a6b3a4017953d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a6db7f46eb7f0cb8f406c57a064fea54a8f005e4876a01795a0a531947f7d64e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f87e83edc1123b001b38e8d019c0490bac8372127db4059dedfd60041c27d3cd"
-    sha256 cellar: :any_skip_relocation, catalina:       "c93ac984925f0d92abe6eb310adff1e15c27f37899a82e8e27fe895047cdf44c"
-    sha256 cellar: :any_skip_relocation, mojave:         "941189cf0994e347c2a36dd844ff56e67c5b43c63cab9425dc7402d032242de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f55932c730770f1fb2d881429ba2055bb99f9d4f8c2372bad129b91207b68d8b"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcovr"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e23858c370b77bf046005ec1295586776b30f179083f97203cd0d48ea1753cc8"
   end
 
   depends_on "python@3.10"
