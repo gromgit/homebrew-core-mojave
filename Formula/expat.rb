@@ -11,9 +11,10 @@ class Expat < Formula
     regex(/href=.*?expat[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/expat"
-    sha256 cellar: :any, mojave: "aa59febc66b54858796cc7c6dcfc671cf0f80166b7a5d94df3693ad84b2f2f12"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c8e09e67f000e89438b0662c9328a26c26c00fbbd0367b87a7dd3555094b88b4"
   end
 
   head do
