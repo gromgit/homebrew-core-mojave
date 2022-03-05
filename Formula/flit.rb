@@ -8,9 +8,10 @@ class Flit < Formula
   license "BSD-3-Clause"
   head "https://github.com/takluyver/flit.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flit"
-    sha256 cellar: :any_skip_relocation, mojave: "c603a1f9bbd9da6dc86b29d137d860c76cdf0b794783a36b997d03e1669066c1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f3eb716e4817c83605d0cf5dc0f7c2fccf39cbf6688582ea618a7c00df9d6899"
   end
 
   depends_on "python@3.10"
