@@ -6,9 +6,10 @@ class FonFlashCli < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/ericpaulbishop/gargoyle.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fon-flash-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "fc4744cce3a594d6dc1d85e176392b48c5551671144427960538409e68cfaf23"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d3ca04c4988dc059d0fab5dd0e3377e6a9a39bb5cbec4bb5e68a487cc5a344ad"
   end
 
   uses_from_macos "libpcap"
