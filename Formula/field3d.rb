@@ -6,9 +6,10 @@ class Field3d < Formula
   license "BSD-3-Clause"
   revision 5
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/field3d"
-    sha256 cellar: :any, mojave: "b1a310eadc2f3d75a0d593914ddce800f53fe92889b658dcd7f35a122798828c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f931701c54dfb31e6a9635ef4320043591f8e0779a6891c8e284a98370f52d5f"
   end
 
   depends_on "cmake" => :build
