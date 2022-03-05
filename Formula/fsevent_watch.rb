@@ -4,15 +4,12 @@ class FseventWatch < Formula
   url "https://github.com/proger/fsevent_watch/archive/v0.2.tar.gz"
   sha256 "1cfd66d551bb5a7ef80b53bcc7952b766cf81ce2059aacdf7380a9870aa0af6c"
   license "MIT"
-  head "https://github.com/proger/fsevent_watch.git"
+  head "https://github.com/proger/fsevent_watch.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a87436ee7bfcf74cf7c0383b32c809161fabedba58405c21d20ba591540a890"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "677477269a68d09467089624e2a0c7047daddbbac0db208c01bed88d08595bc4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2b7b010f7c899dce0ee2554d4d0f9a660761c01ea9dfece15d1c11bef353957"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3450ed18ee786ff504e23bcd1d188511782661d49d9025be30227fefc43a30b8"
-    sha256 cellar: :any_skip_relocation, catalina:       "7947abb87aa8cc18551b2931374c7fc9a91503a8b637762360f67ad7fdcdc5ec"
-    sha256 cellar: :any_skip_relocation, mojave:         "4f9c9f11ee85b971d840b9b3626ed55c7b9160308900de2278a7b159a384f0f0"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fsevent_watch"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "24ca3296f24d34d45152a300acd9fcd303890f4fe08116699ef02adff4dfb285"
   end
 
   depends_on :macos
