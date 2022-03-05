@@ -7,10 +7,10 @@ class Gdb < Formula
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdb"
-    rebuild 1
-    sha256 mojave: "4c6262b31fcead7815c8b82873725a269743ffd5b8716384d249e6b790e877d1"
+    rebuild 2
+    sha256 mojave: "c737a6242882337423783707096d618e1eb89e2e0a0201cf6ad2fa449f3fb722"
   end
 
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
