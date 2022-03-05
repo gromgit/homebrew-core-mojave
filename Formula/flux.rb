@@ -12,9 +12,10 @@ class Flux < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flux"
-    sha256 cellar: :any, mojave: "bf7f559c5b6b30d5f89d3207b489659b810c8c51926ae30a86a0f1de49026562"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4b022aad627e2623df2626d09fabd7fc3fc38a07054743e97db5878e71e87848"
   end
 
   depends_on "go" => :build
