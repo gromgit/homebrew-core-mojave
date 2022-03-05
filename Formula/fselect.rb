@@ -5,9 +5,10 @@ class Fselect < Formula
   sha256 "33dfcbbf7e598bce479b1fb5c17429af1bb309beab2e4bc95642e9f4b5c2ffbd"
   license any_of: ["Apache-2.0", "MIT"]
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fselect"
-    sha256 cellar: :any_skip_relocation, mojave: "ccdfbf4813cfc8dab7d1c70cf616c7ccbc5c19638f9d1f3d4b3f53390456de0b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2406c6c57e4fc488bb213009d29a76f3de24658d927e6f50053717b27eb8eb2e"
   end
 
   depends_on "rust" => :build
