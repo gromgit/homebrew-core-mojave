@@ -10,9 +10,10 @@ class Exempi < Formula
     regex(/href=.*?exempi[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exempi"
-    sha256 cellar: :any, mojave: "124e74b861be89fad9fc5d5d4724732dffaadee495c2b2813fec063e633024af"
+    rebuild 1
+    sha256 cellar: :any, mojave: "008da09788716802f954bde5c6d7f3ce9deeaf5f70ee626b0bd1980ec1cd4326"
   end
 
   depends_on "boost"
