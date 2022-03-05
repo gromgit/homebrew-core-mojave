@@ -5,7 +5,7 @@ class Functionalplus < Formula
   version "0.2.18"
   sha256 "ffc63fc86f89a205accafa85c35790eda307adf5f1d6d51bb7ceb5c5e21e013b"
   license "BSL-1.0"
-  head "https://github.com/Dobiasd/FunctionalPlus.git"
+  head "https://github.com/Dobiasd/FunctionalPlus.git", branch: "master"
 
   livecheck do
     url :stable
@@ -16,8 +16,10 @@ class Functionalplus < Formula
     end
   end
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "75932df0bb790fd5795b12c967931873d950a7e47c551138675ea2a08216bead"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/functionalplus"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "71017173ba2104a5c209423b544ebd640868c56388b821fb6e99c601786cf6d1"
   end
 
   depends_on "cmake" => :build
