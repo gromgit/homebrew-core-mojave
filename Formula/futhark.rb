@@ -6,9 +6,10 @@ class Futhark < Formula
   license "ISC"
   head "https://github.com/diku-dk/futhark.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/futhark"
-    sha256 cellar: :any_skip_relocation, mojave: "7ee923452fc68f4b793d51b3123f0e03ba72340062b61ec56af3f0b732f40248"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "357b073e26b426192d6884616ce619b0d287e7f447edacba8aab96ed18d83c92"
   end
 
   depends_on "cabal-install" => :build
