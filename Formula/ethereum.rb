@@ -11,9 +11,10 @@ class Ethereum < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ethereum"
-    sha256 cellar: :any_skip_relocation, mojave: "6fc7d6a56fefff929e9fb55a70f2e4e6888a2ed73c59ecf71d9d74180fe8261b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0dd313d905793dcb62d8278a77e0a7e9ce3f684c4d04e022801177c42a6a43ea"
   end
 
   depends_on "go" => :build
