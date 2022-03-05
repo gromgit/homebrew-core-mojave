@@ -6,9 +6,10 @@ class Gearman < Formula
   license "BSD-3-Clause"
   revision 1
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gearman"
-    sha256 cellar: :any, mojave: "c09ab7e72a487c1b895d11f3889a44a30b988bcbc5b6289a1b29a22b8503313c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "27bf6e5206c543d126720d9adc9591c0b976af727c797c47f853bd29ce887ac6"
   end
 
   depends_on "pkg-config" => :build
