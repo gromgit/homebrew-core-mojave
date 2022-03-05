@@ -6,9 +6,10 @@ class Flann < Formula
   license "BSD-3-Clause"
   revision 12
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flann"
-    sha256 cellar: :any, mojave: "6877cbe64fc27caa317bff7e09b1a5fa7004cce118b8888c179dac40b12094f0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2e541fd95239510ef0bf20a627d1ca132db1089d037a3c2354bbe107060099b8"
   end
 
   depends_on "cmake" => :build
