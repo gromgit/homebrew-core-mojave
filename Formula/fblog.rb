@@ -6,9 +6,10 @@ class Fblog < Formula
   license "WTFPL"
   head "https://github.com/brocode/fblog.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fblog"
-    sha256 cellar: :any_skip_relocation, mojave: "40e5f8418dc56175ba2f9661e4688c7eacd7d6dd1f0449462e4fadabac0c076b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b7c150caeda2f647618b1dc7f1ec6a02c1b11c9429300e0a04a5add9968bb6e"
   end
 
   depends_on "rust" => :build
