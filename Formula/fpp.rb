@@ -5,15 +5,12 @@ class Fpp < Formula
   sha256 "f2b233b1e18bdafb1cd1728305e926aabe217406e65091f1e58589e6157e1952"
   license "MIT"
   revision 3
-  head "https://github.com/facebook/pathpicker.git"
+  head "https://github.com/facebook/pathpicker.git", branch: "main"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6efaf75a2e334b6c87e51be515d5bd32ba6ad1aedc8cd64253020772a9be63da"
-    sha256 cellar: :any_skip_relocation, big_sur:       "6efaf75a2e334b6c87e51be515d5bd32ba6ad1aedc8cd64253020772a9be63da"
-    sha256 cellar: :any_skip_relocation, catalina:      "6efaf75a2e334b6c87e51be515d5bd32ba6ad1aedc8cd64253020772a9be63da"
-    sha256 cellar: :any_skip_relocation, mojave:        "6efaf75a2e334b6c87e51be515d5bd32ba6ad1aedc8cd64253020772a9be63da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f51509aa7ff591a83d65bf092b43f19ecb446c6dd08d55f33f52725b4618fe52"
-    sha256 cellar: :any_skip_relocation, all:           "6efaf75a2e334b6c87e51be515d5bd32ba6ad1aedc8cd64253020772a9be63da"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fpp"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2440a694d1c0d0bd83cde61061dc1d33481f6c505ee08abbce171a2ca6d960de"
   end
 
   depends_on "python@3.10"
