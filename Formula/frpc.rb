@@ -6,9 +6,10 @@ class Frpc < Formula
       revision: "88fcc079e881108c868e64831c97b30a855e5d26"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frpc"
-    sha256 cellar: :any_skip_relocation, mojave: "445cc83fec8c35ccfee07dbcdd5b69f6d3146e53051bda1bd7f037a2baa81789"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "34fbe2073c6741ee97e29c6e18fa22f4b8c53d9d9fc9a7cd15db608b230bd3bc"
   end
 
   depends_on "go" => :build
