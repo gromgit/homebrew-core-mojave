@@ -11,9 +11,10 @@ class Flatbuffers < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flatbuffers"
-    sha256 cellar: :any_skip_relocation, mojave: "9f521929013676907e0fb84efff3cd18127b6f45177d00b8d57cc3cffe3724ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "70baaea5510e153c7f958adbec88995fb4995fdd239b3cde39791f332ea564fc"
   end
 
   depends_on "cmake" => :build
