@@ -6,9 +6,10 @@ class Geoipupdate < Formula
   license "Apache-2.0"
   head "https://github.com/maxmind/geoipupdate.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geoipupdate"
-    sha256 mojave: "e380faa08ea28bbbf9aca77aabb915c6823acba20b7b7c82803b36f0671bc34d"
+    rebuild 1
+    sha256 mojave: "bc1907a73b8bd9cb25720f4de21975610f273e95e25d55daf6667d87c8da7152"
   end
 
   depends_on "go" => :build
