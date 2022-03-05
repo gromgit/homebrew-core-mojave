@@ -6,9 +6,10 @@ class F2 < Formula
   license "MIT"
   head "https://github.com/ayoisaiah/f2.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/f2"
-    sha256 cellar: :any_skip_relocation, mojave: "5f811b9d0ef38c1434ffe7cfaeff6557f6d3658769ea00d31328f1a509e23c90"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "21b40dd9757fd5faa250ce68a7d4eddf32b09defe7e240c6b668f1e750d2b734"
   end
 
   depends_on "go" => :build
