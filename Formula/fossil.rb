@@ -11,9 +11,10 @@ class Fossil < Formula
     regex(/"title":\s*?"Version (\d+(?:\.\d+)+)\s*?\(/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fossil"
-    sha256 cellar: :any, mojave: "26f50845cda162c309d9bab91603ce4c2fb515a4f790821c4933b27539fd115a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "decfd7122397184c8bcb8da41a67ba88b34264c0448f519f32e98fc42986adc8"
   end
 
   depends_on "openssl@1.1"
