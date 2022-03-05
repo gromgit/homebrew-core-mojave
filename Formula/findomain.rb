@@ -5,9 +5,10 @@ class Findomain < Formula
   sha256 "74615f186690e43ec2f9b352d11b0905d003c617aef8f4bdacc2146b18611079"
   license "GPL-3.0-or-later"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/findomain"
-    sha256 cellar: :any_skip_relocation, mojave: "a920fa5798ce31b47ac579c1153e3504467dfba8b7d6f46f58c265056c893eec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "25dc99bdf9708ea6dc23aaa753f32ae46885fdb704e08fa5ff0ab2c56afbe4d3"
   end
 
   depends_on "rust" => :build
