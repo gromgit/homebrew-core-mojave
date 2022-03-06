@@ -11,9 +11,10 @@ class Armadillo < Formula
     regex(%r{url=.*?/armadillo[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/armadillo"
-    sha256 cellar: :any, mojave: "57ff088c028d72769ed4681f8ba0247efcd752353e7647ea19aa371b9c2988ca"
+    rebuild 1
+    sha256 cellar: :any, mojave: "17a7f8519093a34979453dbfb26d4bc830cc5ba98899758b584b76f602d156b5"
   end
 
   depends_on "cmake" => :build
