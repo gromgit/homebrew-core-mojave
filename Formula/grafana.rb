@@ -6,9 +6,10 @@ class Grafana < Formula
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana"
-    sha256 cellar: :any_skip_relocation, mojave: "1f0128aeff8865ef4874df9dcba7a6f09d98d3ba4d6e4542b2eb78a7cdac5fe1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "efdb7fceee2f61a65fab37dc4a64a0100dc0aff385b02126aa017866cd84ff50"
   end
 
   depends_on "go" => :build
