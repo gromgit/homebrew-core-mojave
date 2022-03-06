@@ -9,9 +9,10 @@ class Libpq < Formula
     formula "postgresql"
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpq"
-    sha256 mojave: "e0ad5a1df66fb1b7addda46b214c76bc9796b2470f1aa3e29e5fc27efaac50fe"
+    rebuild 1
+    sha256 mojave: "d907f609dde44179697b87292e3cca11231902d76b83e6845f21f04ce305af00"
   end
 
   keg_only "conflicts with postgres formula"
