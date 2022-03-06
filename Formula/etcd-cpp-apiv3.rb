@@ -6,9 +6,10 @@ class EtcdCppApiv3 < Formula
   license "BSD-3-Clause"
   revision 3
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd-cpp-apiv3"
-    sha256 cellar: :any, mojave: "1e6386bf9eaeeca03e6a75283fe37ea96b32e448dfaaa41732c69ee12636ad0c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7c98e2dcbc796a5d1a38f9adc1cfdd1da2383bcd230160c3a08befabee727a20"
   end
 
   depends_on "cmake" => :build
