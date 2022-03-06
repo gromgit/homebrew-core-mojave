@@ -5,9 +5,10 @@ class GitXargs < Formula
   sha256 "fc9697645d27f487c8b6a2090c7932214a8935c4cd59575dc8969aba0923ee34"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-xargs"
-    sha256 cellar: :any_skip_relocation, mojave: "f909d82a189d70850bd78261dbc29f8be3095b64eabc6542735cb223b0465277"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "01cbf651bd8f0daf7757f6082d2a309d141c62c1cf6de5d2da96534da88e0524"
   end
 
   depends_on "go" => :build
