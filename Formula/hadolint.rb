@@ -5,10 +5,10 @@ class Hadolint < Formula
   sha256 "b02250cfa6c1581cfa38f425ed9a0b791ce7217b688e575d74fb81dcae9b21ac"
   license "GPL-3.0-only"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hadolint"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "5dee2c71d7fb270b2addebd281e8a02b9fe7f6f7075c816918252f9ab8427b6f"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, mojave: "2a0ffbd336542549204e978169da0b192e410cc086e005c2b427e6a1e24eaee1"
   end
 
   depends_on "ghc" => :build
