@@ -10,9 +10,10 @@ class Pugixml < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pugixml"
-    sha256 cellar: :any_skip_relocation, mojave: "ff5ebe695d161d8aa032395c8e7bff6bb949838e4f9cdf3c586115df24644653"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0451e5005f9ab95bfbb9e5fe4acfab1e19091ee1e012404b6167c7f52d0bc8f5"
   end
 
   depends_on "cmake" => :build
