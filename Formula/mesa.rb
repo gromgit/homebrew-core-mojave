@@ -8,9 +8,10 @@ class Mesa < Formula
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    sha256 mojave: "0c1a162224a8837ff45f8647a54790b1ae8b13364952216d3ab3b2c61a492b21"
+    rebuild 1
+    sha256 mojave: "85f82fcaeadc926cf5438e46fea74bff60689cb6784a8a6200d22a8cf8b9cda7"
   end
 
   depends_on "meson" => :build
