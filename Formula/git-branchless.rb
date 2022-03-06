@@ -6,9 +6,10 @@ class GitBranchless < Formula
   license "GPL-2.0-only"
   head "https://github.com/arxanas/git-branchless.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-branchless"
-    sha256 cellar: :any, mojave: "5ccc517fd8e7a5b6b27be30ab9dae7aeee2848d097ce5251db9c3a7b13c0ebfc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2e68971ebc33c98b15b8c05922fbfae065ca353a6b2f3bbf0e07f4c99325f5f6"
   end
 
   depends_on "rust" => :build
