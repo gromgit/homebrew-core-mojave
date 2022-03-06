@@ -12,9 +12,10 @@ class Bcftools < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcftools"
-    sha256 mojave: "53366fd6866233b9ea363a9d0e03790bdf2a8a863e404ce904f0e8e63a46540c"
+    rebuild 1
+    sha256 mojave: "c82226b399a709ccd6adc46f82fd33a3ba4239735c79ee98aa73b51d54d62b42"
   end
 
   depends_on "gsl"
