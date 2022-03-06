@@ -12,9 +12,10 @@ class Colima < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/colima"
-    sha256 cellar: :any_skip_relocation, mojave: "37f5e30df59af0920281d7cb7c73f76604d977693b58728795ade6c4dd8a3837"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "62ad7ee5d16b77b650c7119f53bc88ed192593e5f0552f333711badc3c38ece0"
   end
 
   depends_on "go" => :build
