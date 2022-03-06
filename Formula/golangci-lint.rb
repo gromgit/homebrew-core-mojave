@@ -7,9 +7,10 @@ class GolangciLint < Formula
   license "GPL-3.0-only"
   head "https://github.com/golangci/golangci-lint.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/golangci-lint"
-    sha256 cellar: :any_skip_relocation, mojave: "a7b14b15c3c91f49535822e252af9030c67acec8aab6038136006920e779ef1b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4047c27981ddd2417163fe12c1f81d8b30deb665d955c74553dcedca1f83813a"
   end
 
   depends_on "go"
