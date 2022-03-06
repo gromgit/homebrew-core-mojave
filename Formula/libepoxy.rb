@@ -13,9 +13,10 @@ class Libepoxy < Formula
     regex(/libepoxy[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libepoxy"
-    sha256 cellar: :any, mojave: "d5cb4b388b638d4003099953a93dce01f4f0a34ddbdab86320a858be1d73504e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5de3be99e112d7a2c0382eb55e206060fad8fdbab8a3be2eb8565417809573e0"
   end
 
   depends_on "meson" => :build
