@@ -4,17 +4,12 @@ class Glide < Formula
   url "https://github.com/Masterminds/glide/archive/v0.13.3.tar.gz"
   sha256 "817dad2f25303d835789c889bf2fac5e141ad2442b9f75da7b164650f0de3fee"
   license "MIT"
-  head "https://github.com/Masterminds/glide.git"
+  head "https://github.com/Masterminds/glide.git", branch: "master"
 
-  bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80dcd1ffaf3206bd1cc26700523f6016c048311d90522c8b0d12fa94a5ee4d03"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "77ff52f69bde39ac4ba11eec08cc4c7ef5fab166ab801f513486d0a62e448ead"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8db9273c71c29a5636492db3e9c5ceb64dcafce21ac56ee201fd71b7055b8ea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "33a39604d9007bf46e92a0a9131a59c15162dce6ace8b498a91110bc7d316f43"
-    sha256 cellar: :any_skip_relocation, catalina:       "014fc42198c07253f844ea7b20b1a9378b08cfb445e548b307c6fb131bd44565"
-    sha256 cellar: :any_skip_relocation, mojave:         "7f4be1018eba40d85aca555364a09f97a18d8e09c71e6bb42e6ca1a2c0866865"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c979cb9d502737595846ea776057be21e197ede804b10431b4cf5dcc0fee802d"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glide"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c8ffda24daab4c5a1cac238803111f0d64504e4eb20a0137bdd65c9d8d33659b"
   end
 
   # See: https://github.com/Masterminds/glide/commit/c64b14592409a83052f7735a01d203ff1bab0983
