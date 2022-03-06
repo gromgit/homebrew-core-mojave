@@ -5,16 +5,17 @@ class Goenv < Formula
   sha256 "1559f2907ee0339328466fe93f3c9637b7674917db81754412c7f842749e3201"
   license "MIT"
   version_scheme 1
-  head "https://github.com/syndbg/goenv.git"
+  head "https://github.com/syndbg/goenv.git", branch: "master"
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "18e8cdaeba562696634782aff8f2affff1201d91fab4334346942b11ece548a5"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goenv"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5e3e502495172940ddbc77d6ab70b7172625d12154544e9bd5ecf2c7a8d4bb0f"
   end
 
   def install
