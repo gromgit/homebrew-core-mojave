@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v14.8.0",
-      revision: "565b6c0b448b3bbc85118ec48d5b62a6370aa6d8"
+      tag:      "v14.8.2",
+      revision: "c6e7e19481b317ef189074f20426664037ab8e5c"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -12,9 +12,9 @@ class GitlabRunner < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
-    sha256 cellar: :any_skip_relocation, mojave: "2c604de5386a8f43a7a8f1361b5cbb5225def347c1adba6e64e9727fcc0d0ba5"
+    sha256 cellar: :any_skip_relocation, mojave: "74e6e0eac122777f8e6c28b868a874f917c0ef7c10bfb7eb2c0ef71c4d922ccb"
   end
 
   depends_on "go" => :build
