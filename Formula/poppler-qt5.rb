@@ -1,8 +1,8 @@
 class PopplerQt5 < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-21.11.0.tar.xz"
-  sha256 "31b76b5cac0a48612fdd154c02d9eca01fd38fb8eaa77c1196840ecdeb53a584"
+  url "https://poppler.freedesktop.org/poppler-22.02.0.tar.xz"
+  sha256 "e390c8b806f6c9f0e35c8462033e0a738bb2460ebd660bdb8b6dca01556193e1"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
@@ -10,10 +10,9 @@ class PopplerQt5 < Formula
     formula "poppler"
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poppler-qt5"
-    rebuild 2
-    sha256 mojave: "62bc29976f5326b263f8ce090bf0a1513e49c704913eb22ec6ed79a8c98b48e2"
+    sha256 mojave: "1f5a91655413ea034fde0213dfbc79ee4ee7a9af87bf7dda1c0e80f4e53ac402"
   end
 
   keg_only "it conflicts with poppler"
