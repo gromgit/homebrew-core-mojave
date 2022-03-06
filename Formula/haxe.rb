@@ -2,6 +2,7 @@ class Haxe < Formula
   desc "Multi-platform programming language"
   homepage "https://haxe.org/"
   license all_of: ["GPL-2.0-or-later", "MIT"]
+  revision 1
   head "https://github.com/HaxeFoundation/haxe.git", branch: "development"
 
   stable do
@@ -21,10 +22,9 @@ class Haxe < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haxe"
-    rebuild 2
-    sha256 cellar: :any, mojave: "70edda17562edf869656a1cc4554ed24e1fec6b831c325432ef66fe61f8b0a53"
+    sha256 cellar: :any, mojave: "847477700e12bc434f13ff056a973d03c9b0ca0c42971a1e922ff118f942932b"
   end
 
   depends_on "cmake" => :build
