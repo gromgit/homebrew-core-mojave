@@ -6,9 +6,10 @@ class Embree < Formula
   license "Apache-2.0"
   head "https://github.com/embree/embree.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/embree"
-    sha256 cellar: :any, mojave: "8cd1046ce4bfb412c1c198fca21a9399b9360f5fe1490f51b8e29d467ad3b3d0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bc2e92692c90fedb0abc57845b0725acf61d6de51c8039fd9da5e5051956aee1"
   end
 
   depends_on "cmake" => :build
