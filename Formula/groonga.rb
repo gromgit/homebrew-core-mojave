@@ -10,9 +10,10 @@ class Groonga < Formula
     regex(%r{>v?(\d+(?:\.\d+)+)</a> is the latest release}i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/groonga"
-    sha256 mojave: "e3a3019809da7abedca4f67a1f2bdfaa19cbbeae1c37ea9b4df39984c16c5981"
+    rebuild 1
+    sha256 mojave: "15a02a540da0b0f9015083b190fd763d7999c4743bd90d495d1ca378c2c5008c"
   end
 
   head do
