@@ -7,16 +7,12 @@ class Grokmirror < Formula
   sha256 "6bc1310dc9a0e97836201e6bb14ecbbee332b0f812b9ff345a8386cb267c908c"
   license "GPL-3.0-or-later"
   revision 1
-  head "https://github.com/mricon/grokmirror.git"
+  head "https://github.com/mricon/grokmirror.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06b15553ec31d5e3a41c51fa728d7eb6b40c2882c21180ea5cdcefaddf2d42d4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "06b15553ec31d5e3a41c51fa728d7eb6b40c2882c21180ea5cdcefaddf2d42d4"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9c6c6fd6aca9319bbe706881667e1294af1b53573ef3e10e20ab7578498462e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b9c6c6fd6aca9319bbe706881667e1294af1b53573ef3e10e20ab7578498462e"
-    sha256 cellar: :any_skip_relocation, catalina:       "b9c6c6fd6aca9319bbe706881667e1294af1b53573ef3e10e20ab7578498462e"
-    sha256 cellar: :any_skip_relocation, mojave:         "b9c6c6fd6aca9319bbe706881667e1294af1b53573ef3e10e20ab7578498462e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a9f85ea67686b0e0b307a727aa964f9ebf62eca5d5fa9cdddbd8232fd7c2861"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grokmirror"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "470759696f3fb835eb9217f3c2e475b295c22ad27d438fddb367063d850005ca"
   end
 
   depends_on "python@3.10"
