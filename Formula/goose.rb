@@ -5,9 +5,10 @@ class Goose < Formula
   sha256 "9a5f9dc2b3b5f0876ad1e4609e1d1812e2b9ff03ea04e00c69ca05e7d9584601"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goose"
-    sha256 cellar: :any_skip_relocation, mojave: "6392a27255b63ff46f07f5c32794b7a3db7fa9766da31638a09a2749a49fed33"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "72543b4738507b921d19ad1cf4dc9303580955eabd9991ca8dbad49dcbef3b80"
   end
 
   depends_on "go" => :build
