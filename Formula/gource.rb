@@ -6,9 +6,10 @@ class Gource < Formula
   license "GPL-3.0-or-later"
   revision 2
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gource"
-    sha256 mojave: "f29a072a14daa1991a54f56f20dcbab0bb1c8664e56c9e465a3c89ec0493f56c"
+    rebuild 1
+    sha256 mojave: "b18f97623d622baba2082e7c76b2dd5427f59d234322aa5b0b13bb2a05036876"
   end
 
   head do
