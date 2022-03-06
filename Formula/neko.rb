@@ -4,17 +4,12 @@ class Neko < Formula
   url "https://github.com/HaxeFoundation/neko/archive/v2-3-0/neko-2.3.0.tar.gz"
   sha256 "850e7e317bdaf24ed652efeff89c1cb21380ca19f20e68a296c84f6bad4ee995"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/HaxeFoundation/neko.git", branch: "master"
 
-  bottle do
-    sha256                               arm64_monterey: "b39a3edb01683b6c22fbd00a87c428d05b3a57be7cefa30e8a4ac7929120e2c9"
-    sha256                               arm64_big_sur:  "db3b62ea32c9b528423997eb79bab7b96463f3074e5452499a1ea87f742129f0"
-    sha256                               monterey:       "2a46e1f22b62c7d0f7f714d22b2d6f11a56925907dd8af05b6be0d4aaf435466"
-    sha256                               big_sur:        "ca0a54255e775f29b6867eda77f2ff115424c77293755847eb8edf4a8d5bb142"
-    sha256                               catalina:       "f1adf8d28ac342d233f018c7263c66072969e97ff4efd7c1e0645b80083332dd"
-    sha256                               mojave:         "49ecf3a704be8b5451af12ce5ccb8bf921141e3243ac525794a61e22c987f18e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "935a76e8f012f4f1522bfaf901cf85bddf875bd22be300e220d59c5bd3ef18c5"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neko"
+    sha256 mojave: "0d0210fe13a6365a7eada2566488d4e596d4b362e5961a2a6fe87d6bb20bdb9c"
   end
 
   depends_on "cmake" => :build
