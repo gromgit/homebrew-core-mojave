@@ -11,9 +11,10 @@ class Imagemagick < Formula
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick"
-    sha256 mojave: "090e11ac5053b7ac0a24ec0b58d25f85a02790055620c155cb264ab82bb1ae96"
+    rebuild 1
+    sha256 mojave: "de56ad4aa1e78ba7fae96dcf7bd186c002be1767087c452e3e1fc48cbe802531"
   end
 
   depends_on "pkg-config" => :build
