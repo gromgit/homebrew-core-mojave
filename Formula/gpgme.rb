@@ -10,9 +10,10 @@ class Gpgme < Formula
     regex(/href=.*?gpgme[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpgme"
-    sha256 cellar: :any, mojave: "0693bd3e15e3d6d0be75c1735d714c7123215c59f49209873915209ce77dbfe1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ea1c1584dd3b6cb92b4b1ecc726c1f2c4341c5dbf70c428c87910dc8f7066305"
   end
 
   depends_on "python@3.9" => [:build, :test]
