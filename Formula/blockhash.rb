@@ -6,10 +6,10 @@ class Blockhash < Formula
   license "MIT"
   head "https://github.com/commonsmachinery/blockhash.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blockhash"
-    rebuild 1
-    sha256 cellar: :any, mojave: "fad45b44a6a9bd1f219c1baa751fc1ac4f0970aec8acfc00c1aac2e0ff4f653d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a391f2a1d7725c27d3546df215e36a23414b5bc56f4740abb6957296c88b70ea"
   end
 
   depends_on "pkg-config" => :build
