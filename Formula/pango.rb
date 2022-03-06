@@ -6,9 +6,10 @@ class Pango < Formula
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pango"
-    sha256 cellar: :any, mojave: "059ef7f08d36c0c264f96c5e52437f6f435b99492e976d45a07aca2bf9138a9f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3dc16fe0df9ab2eaed8587a57c6453f93fe26e0b1664d17ab3144ae2caba1a81"
   end
 
   depends_on "gobject-introspection" => :build
