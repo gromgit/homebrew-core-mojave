@@ -6,9 +6,10 @@ class Broot < Formula
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/broot"
-    sha256 cellar: :any_skip_relocation, mojave: "453dc85d1cd70b83483969a39953295c50823b47a51e330ab322bd564fc248b8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4c9c27b017264dd6d4eec7771484db4eb66aa84e2f9d683d23516a1fea1869f6"
   end
 
   depends_on "rust" => :build
