@@ -6,12 +6,12 @@ class GitReview < Formula
   url "https://files.pythonhosted.org/packages/bb/0f/5eef0fc4a55d0ad2326330f183529ffb874685c9b3a69bd1093da09d2c65/git-review-2.2.0.tar.gz"
   sha256 "fd97a00e5c15173eb097cef8e8b7915df96d878ad11eb62cb44983642b8f3a63"
   license "Apache-2.0"
-  head "https://opendev.org/opendev/git-review.git"
+  head "https://opendev.org/opendev/git-review.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-review"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "432eb0f5ec3012ab9784b87c96ee21005e882f144d20063f8cb453fe69695345"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "c1d7d7b8b9a598503e682acb00d1bf8037fc8060660ebd8afc8a886bf9bb93ce"
   end
 
   depends_on "python@3.10"
