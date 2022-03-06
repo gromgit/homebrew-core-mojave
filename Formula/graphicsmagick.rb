@@ -3,11 +3,13 @@ class Graphicsmagick < Formula
   homepage "http://www.graphicsmagick.org/"
   url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.37/GraphicsMagick-1.3.37.tar.xz"
   sha256 "90dc22f1a7bd240e4c9065a940962bf13da43c99bcc36cb111cc3c1a0d7477d4"
+  license "MIT"
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphicsmagick"
-    sha256 mojave: "00e76a3169be897c11f4d2a0c5f776b9a9d201704b467bc377130da8823e6359"
+    rebuild 1
+    sha256 mojave: "01ddc8f9c8019cb60606db9ff3f01811248a0dd51ad571972272bb582bbdfa76"
   end
 
   depends_on "pkg-config" => :build
