@@ -7,9 +7,10 @@ class Cdktf < Formula
   sha256 "19d04aba527e143aba8449f06c9c7812f01feae70bf7f67a539ebe890831f4f7"
   license "MPL-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdktf"
-    sha256 cellar: :any_skip_relocation, mojave: "55a26014fa4df0635791b46bcb8758d6e405d716db07785ff68e93572406cfde"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a81514454982fb03f818d902ae4b41b83bd4e62250cb412069b073759c7f450a"
   end
 
   depends_on "node"
