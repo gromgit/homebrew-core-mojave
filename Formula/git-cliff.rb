@@ -5,9 +5,10 @@ class GitCliff < Formula
   sha256 "451db5e7ce904f33cf5772cd67400015829e5b7b3d18955bc3e8f88977b63793"
   license "GPL-3.0-only"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cliff"
-    sha256 cellar: :any_skip_relocation, mojave: "45529b259c1092173ba38032a1edfc328dffd2e2bad000c2c9bd311872e18791"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2a0e61898ce7f4a76e13787df68fa093da6bb4c2d9c1d921acc3216e863103e9"
   end
 
   depends_on "rust" => :build
