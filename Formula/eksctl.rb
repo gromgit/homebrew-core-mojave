@@ -7,9 +7,10 @@ class Eksctl < Formula
   license "Apache-2.0"
   head "https://github.com/weaveworks/eksctl.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eksctl"
-    sha256 cellar: :any_skip_relocation, mojave: "c99f0a0a7aef3483606a4d5035b6ebd19a21adc503369eb8b46b288a5bebda21"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9a0fd52b3bbd699c6cd8d27aa5a2b463552df5cc9639cd70027071c7c4412e30"
   end
 
   depends_on "counterfeiter" => :build
