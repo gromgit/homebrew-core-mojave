@@ -7,9 +7,10 @@ class Bear < Formula
   revision 1
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bear"
-    sha256 mojave: "0733c1b10b2c51c772fe731a13e78a54e6a33a6a58879ae85426a6b92d14032a"
+    rebuild 1
+    sha256 mojave: "64ff90a0fe8ea4a1390082cc1b6241f7ab358ed42ea6cf346c514a19ed582756"
   end
 
   depends_on "cmake" => :build
