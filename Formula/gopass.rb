@@ -6,10 +6,10 @@ class Gopass < Formula
   license "MIT"
   head "https://github.com/gopasspw/gopass.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gopass"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fdee48dbef81f2c8e7945920b2d047e191d25f983efb4eec516aa99c907a7948"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7e7bc8790b47715b7839fb6eac604e1e2c826cfd8f7de9575ed8ee9af58ee290"
   end
 
   depends_on "go" => :build
