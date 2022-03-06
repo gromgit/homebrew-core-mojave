@@ -6,10 +6,10 @@ class Qemu < Formula
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qemu"
-    rebuild 1
-    sha256 mojave: "ca08e123a306feab342df24b0e2b19fc4b899207173d09b808f1c34d08f8103e"
+    rebuild 2
+    sha256 mojave: "97941682c7f5d8448681be6d78570f868bff938c2509a3067640a7918ca18bcf"
   end
 
   depends_on "libtool" => :build
