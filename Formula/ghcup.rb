@@ -12,9 +12,10 @@ class Ghcup < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghcup"
-    sha256 cellar: :any_skip_relocation, mojave: "528a51759b97b815f3ed9203edcc197affc93245d8afa81bd94d975dda05cacc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "78848bd836ea331cb4817d7ed012e2ce90ede17cea43f902c640ea32d1504f47"
   end
 
   depends_on "cabal-install" => :build
