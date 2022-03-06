@@ -4,17 +4,12 @@ class Gox < Formula
   url "https://github.com/mitchellh/gox/archive/v1.0.1.tar.gz"
   sha256 "25aab55a4ba75653931be2a2b95e29216b54bd8fecc7931bd416efe49a388229"
   license "MPL-2.0"
-  head "https://github.com/mitchellh/gox.git"
+  head "https://github.com/mitchellh/gox.git", branch: "master"
 
-  bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0ca344c6ffbd3aadec83b8cd9368048f0dc69e8315e48cb153fc7a9854a81fd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "943375b71098b9de0d440507638f5e514cd09ec8a4b99d628f2a7d687786f3a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "44fa2d97c954b779d00438141555cbb7550efac06b9eb805511a040927d6e956"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a1967d492f5b586399d6fa9fa0b9f461e1178563625c1ea23e62fefbf384d36"
-    sha256 cellar: :any_skip_relocation, catalina:       "3cd12726dcdcf4e41a87d00825f7e5a915252e12c13dfe7a88efecba63a2dc6d"
-    sha256 cellar: :any_skip_relocation, mojave:         "79355b0248170797677b7e202fb6a071fc59fa087eef025c3aa4868e65edd6be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cc3c2783e83ca2b0d77c516144d4311df5f4a04ab445b5175e9d2585f8a3e3d"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gox"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "0fb72eb0793a78c86435bd72ed54f56884c7f46d8145fe90c8f48a46780d8a09"
   end
 
   depends_on "go"
