@@ -11,9 +11,10 @@ class Carla < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/carla"
-    sha256 cellar: :any, mojave: "b5eb0d98eaac180f7897399b0b84f77f42fcece87beef5fc82b9a049dc9dc2d8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0c87dca53220f5161b04b6f52304a02fd95089e0784db1099f64a0cafbece85c"
   end
 
   depends_on "pkg-config" => :build
