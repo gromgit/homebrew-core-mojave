@@ -4,16 +4,17 @@ class Gstreamer < Formula
   url "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.5.tar.xz"
   sha256 "55862232a63459bbf56abebde3085ca9aec211b478e891dacea4d6df8cafe80a"
   license "LGPL-2.0-or-later"
-  head "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
+  head "https://gitlab.freedesktop.org/gstreamer/gstreamer.git", branch: "main"
 
   livecheck do
     url "https://gstreamer.freedesktop.org/src/gstreamer/"
     regex(/href=.*?gstreamer[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gstreamer"
-    sha256 mojave: "2ad357f80655bcb5b5028c675acd1c7b2f2acad70c42a7f76371639901d7c637"
+    rebuild 1
+    sha256 mojave: "4d4a5146b69a55670af25f63a59ce0980194bccfe5fe4b1d12e9caad967fc087"
   end
 
   depends_on "bison" => :build
