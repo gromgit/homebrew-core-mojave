@@ -5,9 +5,10 @@ class Librsvg < Formula
   sha256 "a3f939a1e6a3a60408244632d0323f8c3b20eb4b7b000536e2e5bd93b8effaad"
   license "LGPL-2.1-or-later"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librsvg"
-    sha256 mojave: "6a9d6a6f9a3a165c7c1a1d7360a4fd08071d8c8fa6d786ba6452df0d6a7204c9"
+    rebuild 1
+    sha256 mojave: "d5124b37ef1bfa3120a2dbeb0fc049b2d2658e01b0175eff90397bc08d84d90e"
   end
 
   depends_on "gobject-introspection" => :build
