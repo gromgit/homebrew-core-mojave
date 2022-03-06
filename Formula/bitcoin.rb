@@ -12,9 +12,10 @@ class Bitcoin < Formula
     regex(/latest version.*?v?(\d+(?:\.\d+)+)/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bitcoin"
-    sha256 cellar: :any, mojave: "7e440da1a2a242ad5dbd80d7cbd5d73bab2961f864f0f9d934847b3cc5cdc9fe"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6271a8a6be8ceff7f3e90fb3a3a4df3a21de9ec070307a49a9572ed0207ee1d5"
   end
 
   depends_on "autoconf" => :build
