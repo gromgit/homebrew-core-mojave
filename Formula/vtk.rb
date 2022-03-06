@@ -4,12 +4,12 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.1/VTK-9.1.0.tar.gz"
   sha256 "8fed42f4f8f1eb8083107b68eaa9ad71da07110161a3116ad807f43e5ca5ce96"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/Kitware/VTK.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vtk"
-    sha256 mojave: "567ec31ad5a08e1f8574585d7bd6dacb5488097dd9db6f43a559dc486dc08c81"
+    sha256 mojave: "00e09f8bde98bf1dded1edf177c6b6f5fa713a13c7b80fd4465b0b8acdf1a3aa"
   end
 
   depends_on "cmake" => [:build, :test]
