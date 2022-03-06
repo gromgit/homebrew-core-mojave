@@ -4,17 +4,16 @@ class GnuplotAT4 < Formula
   url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/4.6.7/gnuplot-4.6.7.tar.gz"
   sha256 "26d4d17a00e9dcf77a4e64a28a3b2922645b8bbfe114c0afd2b701ac91235980"
   license "gnuplot"
-  revision 3
+  revision 4
 
-  bottle do
-    sha256 big_sur:     "ba4b45a1536cae2fcaadc4ad4655e978d69676c4ce443673d576e29faed43c9f"
-    sha256 catalina:    "aca6da067597cd60e147c1534d0f6cf86f874de847a62888fda313ad66ea5d79"
-    sha256 mojave:      "e1444a4c413bb9e5d6670c3b8216761f097dd1ba6943f075f3014391184bd2d5"
-    sha256 high_sierra: "63368d69e33d92bd7f36e5ebd4f5245263c656171ff2e9d346183d0e3ea45534"
-    sha256 sierra:      "d6439eb67f9da39adfacfbeef4719efa6a88ebeb6a4f8091b5e1dac267479d3b"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnuplot@4"
+    sha256 mojave: "77e9af6f2a286cae89368c3d1f0f0bf5538381a305803363b5a8f6365a35a5ba"
   end
 
   keg_only :versioned_formula
+
+  deprecate! date: "2022-02-28", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "fontconfig"
@@ -23,7 +22,6 @@ class GnuplotAT4 < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "lua@5.1"
-  depends_on "pdflib-lite"
   depends_on "readline"
 
   def install
@@ -32,7 +30,6 @@ class GnuplotAT4 < Formula
     # Do not build with Aquaterm
     inreplace "configure", "-laquaterm", ""
 
-    pdflib = Formula["pdflib-lite"].opt_prefix
     args = %W[
       --disable-dependency-tracking
       --disable-silent-rules
@@ -41,10 +38,10 @@ class GnuplotAT4 < Formula
       --with-aquaterm
       --with-gd=#{Formula["gd"].opt_prefix}
       --with-lispdir=#{elisp}
-      --with-pdf=#{pdflib}
       --with-readline=#{Formula["readline"].opt_prefix}
       --without-cairo
       --without-latex
+      --without-pdf
       --without-tutorial
       --without-x
     ]
