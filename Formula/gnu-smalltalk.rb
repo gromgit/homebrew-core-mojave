@@ -6,13 +6,12 @@ class GnuSmalltalk < Formula
   sha256 "819a15f7ba8a1b55f5f60b9c9a58badd6f6153b3f987b70e7b167e7755d65acc"
   license "GPL-2.0"
   revision 10
-  head "https://github.com/gnu-smalltalk/smalltalk.git"
+  head "https://github.com/gnu-smalltalk/smalltalk.git", branch: "master"
 
-  bottle do
-    sha256 monterey: "f68902246ecd9c5e7a3d0f764143fbf870920179294f29377ad3101c1a266b06"
-    sha256 big_sur:  "3e29abd9a730f20034a70ae42e217674c85ccf0334a9b2bb45a304cbe4d7c15c"
-    sha256 catalina: "730a528feab24da9688e0c8bc1a4176ddab53f92b8d56fc7ff6367bf94710c7c"
-    sha256 mojave:   "e23c93c01254dd0be94bf1149b08a1e6df3ed1502f300c3e093dad340b694dbd"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-smalltalk"
+    rebuild 1
+    sha256 mojave: "2cbfcd3c9c6428af4f3ccf2dcf9a34beb21fe7e6d19fe0390e99fc239c243fde"
   end
 
   depends_on "autoconf" => :build
