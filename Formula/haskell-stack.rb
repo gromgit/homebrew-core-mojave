@@ -37,9 +37,10 @@ class HaskellStack < Formula
     strategy :github_latest
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haskell-stack"
-    sha256 cellar: :any_skip_relocation, mojave: "8e1bac3aaa9b733febb005a15b0f83d634539ab472c997d7a2c3ba9136628785"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ef5549ecff96b0d701b9056b477fff85b66763ec8fbf9d54e48da8dfb6c78f23"
   end
 
   depends_on "cabal-install" => :build
