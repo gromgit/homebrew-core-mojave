@@ -6,9 +6,10 @@ class Ipopt < Formula
   license "EPL-1.0"
   head "https://github.com/coin-or/Ipopt.git", branch: "stable/3.14"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipopt"
-    sha256 cellar: :any, mojave: "812905f363f290c371900ca32c747ef6f95c33167661fcdde67c67b13aaf96f8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c7b2baa2e92ac50d5b84255dbf12b66cc1a612bf1a3392724bd8378d9caf76e2"
   end
 
   depends_on "openjdk" => :build
