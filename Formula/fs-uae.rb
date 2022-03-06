@@ -1,8 +1,8 @@
 class FsUae < Formula
   desc "Amiga emulator"
   homepage "https://fs-uae.net/"
-  url "https://fs-uae.net/files/FS-UAE/Stable/3.1.62/fs-uae-3.1.62.tar.xz"
-  sha256 "57581355fe5cb9a01c2cd2289c1dce50e42694d7105454fd9d75206fdf91c467"
+  url "https://fs-uae.net/files/FS-UAE/Stable/3.1.66/fs-uae-3.1.66.tar.xz"
+  sha256 "606e1868b500413d69bd33bb469f8fd08d6c08988801f17b7dd022f3fbe23832"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -10,9 +10,9 @@ class FsUae < Formula
     regex(/href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fs-uae"
-    sha256 cellar: :any, mojave: "b420a02a5c6ba6f6de2f64f68a5f69fd09c7ef1cf828e92f7357479e24791a80"
+    sha256 cellar: :any, mojave: "3173209a221d0877157a06870b46eda8c747ab40967c2aabd1af86b1324da435"
   end
 
   head do
