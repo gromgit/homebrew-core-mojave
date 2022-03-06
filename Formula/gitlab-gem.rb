@@ -1,17 +1,13 @@
 class GitlabGem < Formula
   desc "Ruby client and CLI for GitLab API"
   homepage "https://github.com/NARKOZ/gitlab"
-  url "https://github.com/NARKOZ/gitlab/archive/v4.17.0.tar.gz"
-  sha256 "53d2658073e1ffdca0b67b971b4280542b4d831bfb9baf06836e8063cfadb801"
+  url "https://github.com/NARKOZ/gitlab/archive/v4.18.0.tar.gz"
+  sha256 "6967bbf68ebff61714d855da950cfac4c8c3825a80d79f9210b40e37f6ba752c"
   license "BSD-2-Clause"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9f1b74846038c11a6b60b05e7d43f24e0c13ad57fca5477959d4353e50f43736"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7c4a0fb41401e668a957c23d934896ead423f78ee65099b451c34a5b5243224f"
-    sha256 cellar: :any_skip_relocation, catalina:      "9fb83bdf349a57916534fd40a2e38db4a893b713207abe572117e21d21e9df7b"
-    sha256 cellar: :any_skip_relocation, mojave:        "2bd6150b2c26c4b746ffc8c2f43c05b311ec33c08f88a82946d08e63f6dea9d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d46229291b4e82400ed94407d29c04390edba62b6b1e007eedbdefe9b7ba1136"
-    sha256 cellar: :any_skip_relocation, all:           "98d7d195f9056f824111633f08ba7c49c19e907087de006174c81a6123c9bf04"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-gem"
+    sha256 cellar: :any_skip_relocation, mojave: "209540fd30cd29ba5cf58010a5c1bf10057ba356afb222a1ce031ac1e2bc3682"
   end
 
   uses_from_macos "ruby", since: :catalina
