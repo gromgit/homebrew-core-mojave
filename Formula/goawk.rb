@@ -5,9 +5,10 @@ class Goawk < Formula
   sha256 "f610e57396cac89aaa1070ab9edfd46f09929775b58dad2ba78ed8a59e01d6a1"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goawk"
-    sha256 cellar: :any_skip_relocation, mojave: "8f9415f2cc65a7f60fe9d0ccb2800d22370b8f01c778cb7505f7684f6fad3971"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "54f3ce84a85c80a7a653fd5c73b741e81b426d7080a3fdfae0e86d67b7bf8d1f"
   end
 
   depends_on "go" => :build
