@@ -5,9 +5,10 @@ class GitLfs < Formula
   sha256 "5c9bc449068d0104ea124c25f596af16da85e7b5bf256bc544d8ce5f4fe231f2"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-lfs"
-    sha256 cellar: :any_skip_relocation, mojave: "88c770acf164dcc4f4df8760f9f82f983b7068b4b9f9544503771bef4641fd20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "73f892f29c3f9071b6489b23535406f7676d6dc9433131bd9a6508609fe8e82e"
   end
 
   depends_on "go" => :build
