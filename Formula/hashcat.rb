@@ -6,17 +6,17 @@ class Hashcat < Formula
   sha256 "6f6899d7ad899659f7b43a4d68098543ab546d2171f8e51d691d08a659378969"
   license "MIT"
   version_scheme 1
-  head "https://github.com/hashcat/hashcat.git"
+  head "https://github.com/hashcat/hashcat.git", branch: "master"
 
   livecheck do
     url :homepage
     regex(/href=.*?hashcat[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hashcat"
-    rebuild 3
-    sha256 mojave: "3c4b6ccd341427ec9360343ae63cb5d3cbac0cc23e1d432c9490b70b50effdb0"
+    rebuild 4
+    sha256 mojave: "3bdf4d2c2bb7d1001eb859ebd7bb81dca487564867a8965658b4744117e43a7e"
   end
 
   depends_on "gnu-sed" => :build
