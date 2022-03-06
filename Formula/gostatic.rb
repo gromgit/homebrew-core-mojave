@@ -4,12 +4,12 @@ class Gostatic < Formula
   url "https://github.com/piranha/gostatic/archive/2.32.tar.gz"
   sha256 "857de1667660e71f890de019a230ce6c0ab5fdb2420511c4cf74d5f73a5a224a"
   license "ISC"
-  head "https://github.com/piranha/gostatic.git"
+  head "https://github.com/piranha/gostatic.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gostatic"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "1742ee0e6861c1d00a3634e4122eca6e9f9e5ad4743cfab9ddd89d96620f742b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "f2af527d2cdf5d8015d4cfc3a04aad8fd01b8b4b37d2e83b7ad5fa74aa0bb890"
   end
 
   depends_on "go" => :build
