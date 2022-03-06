@@ -4,18 +4,16 @@ class Gdcm < Formula
   url "https://github.com/malaterre/GDCM/archive/v3.0.10.tar.gz"
   sha256 "a3fd3579ca0bb4a2a41ee18770e7303b22fd5460c3a2000e51ff0be6799e1d85"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
     strategy :github_latest
   end
 
-  bottle do
-    sha256 arm64_big_sur: "5138339123c826603f3b95494e7311fc7488503bc16ee59cfbf60d90a1a562de"
-    sha256 big_sur:       "7311b7b638ba5453aa9ac44521bd608f62c9d14fe8fb62106930268425fbf420"
-    sha256 catalina:      "61776638059c775c87c91e11f4e6ccd8c9c30d7f56d6b2c8c3544ad88f703202"
-    sha256 mojave:        "667f8feb062beb81b1d6d67404dfa6001aa1c731d39d3ed3627f5971f041647e"
-    sha256 x86_64_linux:  "1ac6acce8386972afb7bfd2ac2c1ad25b44e6599d6d24ce99b4f695dfdd0488c"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdcm"
+    sha256 mojave: "87a0fbdf93a8f768e2a1a4c047aecee69c4c4a466a2fb770bd505d5d04f33aac"
   end
 
   depends_on "cmake" => :build
