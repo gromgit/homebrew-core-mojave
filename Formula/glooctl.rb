@@ -14,9 +14,10 @@ class Glooctl < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glooctl"
-    sha256 cellar: :any_skip_relocation, mojave: "cf6046fa5659ad1ddc5f47bbea60adaabdb191b847201cd8078bd7e10a234693"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "01a389cf747d651d883076ced5125fe97dbe4a03777a14ed6af2f7b11b966e03"
   end
 
   depends_on "go" => :build
