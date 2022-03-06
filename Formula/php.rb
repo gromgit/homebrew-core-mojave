@@ -12,9 +12,10 @@ class Php < Formula
     regex(/href=.*?php[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php"
-    sha256 mojave: "383431afab0571e624f10808fc4954b19778d6b865c7aa144b9d517e64632d87"
+    rebuild 1
+    sha256 mojave: "c2c16bffc2d8f17cd6c631ba58c3d7701e6f086896dac1014a315a7a18a2b6b7"
   end
 
   head do
