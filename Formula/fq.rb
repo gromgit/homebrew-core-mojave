@@ -4,13 +4,12 @@ class Fq < Formula
   url "https://github.com/circonus-labs/fq/archive/v0.13.10.tar.gz"
   sha256 "fe304987145ec7ce0103a3d06a75ead38ad68044c0f609ad0bcc20c06cbfd62e"
   license "MIT"
-  head "https://github.com/circonus-labs/fq.git"
+  head "https://github.com/circonus-labs/fq.git", branch: "master"
 
-  bottle do
-    sha256 monterey: "08bdc96d9e8587b7cfa430fe6eebdc0bdaef042f8b2d0150309977c8fcd46fc0"
-    sha256 big_sur:  "cc5d1afac284b9e5f0c94e46f02d66dae8bc5a6a49dda7b2c95c82b62c82bb9e"
-    sha256 catalina: "67a46b7b2067466a653e64327ed90d2b0d5624b025df8919e1376710471ba7a7"
-    sha256 mojave:   "195ecf7b14066822a6645469e43cf5550f825e6989531dffa43d66d029228743"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fq"
+    rebuild 1
+    sha256 mojave: "0cc8394edd527ba2225f6ab238bd4b90649a9d30ba445fe34003b227097981fe"
   end
 
   depends_on "concurrencykit"
