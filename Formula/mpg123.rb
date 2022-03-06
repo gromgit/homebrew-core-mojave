@@ -11,10 +11,10 @@ class Mpg123 < Formula
     regex(/href=.*?mpg123[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpg123"
-    rebuild 1
-    sha256 mojave: "6707f4d905b244b7087cc21badd7360ac79c0fed478f1c0d1bda687ed8440854"
+    rebuild 2
+    sha256 mojave: "955a56429bdc46a89ff7a7a073f29286453af1bd7afcc6edde4ad4bd5b4014e9"
   end
 
   def install
