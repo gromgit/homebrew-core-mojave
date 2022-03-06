@@ -4,10 +4,12 @@ class Gifcap < Formula
   url "https://github.com/outlook/gifcap/archive/1.0.4.tar.gz"
   sha256 "32747a6cf77f7ea99380752ba35ecd929bb185167e5908cf910d2a92f05029ad"
   license "MIT"
-  head "https://github.com/outlook/gifcap.git"
+  head "https://github.com/outlook/gifcap.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "9500bb5f91761d490a3c522a0fc93b37108e125a74d1ae158947dc79c97b279a"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gifcap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f25f60b65c687a399b360d7a44fd439ec12177a86fcd3b3d77fe8b77dc95ba26"
   end
 
   depends_on "ffmpeg"
