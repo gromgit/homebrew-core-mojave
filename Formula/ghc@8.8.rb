@@ -10,18 +10,15 @@ class GhcAT88 < Formula
   ]
   revision 1
 
-  bottle do
-    rebuild 1
-    sha256                               monterey:     "ab02ef2f511577a67b72983e39a86593bb58270c3c22a7b7879d38818e91571d"
-    sha256                               big_sur:      "b099711b984463a32a073f49ec91e6034519a6140958a6603d3888e565ea2e4e"
-    sha256                               catalina:     "38d4abf9ea7ce0ac4c928623a835f39d2d58e4ce8c66e58ff3e245b31d2948a9"
-    sha256                               mojave:       "bfa78f1df75b3bd13aae44cd1ccc3a739d75cae0b93f0d060606a75fe1fe9a4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "aec20b68e9ab97e0e99a83d651612c4d453446c466a040d7fd320e67b54194de"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@8.8"
+    rebuild 2
+    sha256 mojave: "dcbb0c8c46a1566a73dd0fe6658cdaef5083af3a186708ecba00623e078c0c07"
   end
 
   keg_only :versioned_formula
 
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on arch: :x86_64
 
   uses_from_macos "m4" => :build
