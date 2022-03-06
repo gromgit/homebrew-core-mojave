@@ -1,8 +1,8 @@
 class MbedtlsAT2 < Formula
   desc "Cryptographic & SSL/TLS library"
   homepage "https://tls.mbed.org/"
-  url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.27.0.tar.gz"
-  sha256 "4f6a43f06ded62aa20ef582436a39b65902e1126cbbe2fb17f394e9e9a552767"
+  url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.28.0.tar.gz"
+  sha256 "f644248f23cf04315cf9bb58d88c4c9471c16ca0533ecf33f86fb7749a3e5fa6"
   license "Apache-2.0"
   head "https://github.com/ARMmbed/mbedtls.git", branch: "development_2.x"
 
@@ -11,10 +11,9 @@ class MbedtlsAT2 < Formula
     regex(/^v?(2(?:\.\d+)+)$/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbedtls@2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7b6c3ffea7c0c517e6d47ec36b1ff74ba05bd88d0a4a6051f33e09a0c1812fd7"
+    sha256 cellar: :any, mojave: "a7e12fd135c547eb3082cb9c24c3a335f2d0d780ef21088712ca6ad5de9196e8"
   end
 
   keg_only :versioned_formula
