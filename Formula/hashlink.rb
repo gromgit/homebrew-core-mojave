@@ -4,14 +4,12 @@ class Hashlink < Formula
   url "https://github.com/HaxeFoundation/hashlink/archive/1.11.tar.gz"
   sha256 "b087ded7b93c7077f5b093b999f279a37aa1e31df829d882fa965389b5ad1aea"
   license "MIT"
-  revision 4
-  head "https://github.com/HaxeFoundation/hashlink.git"
+  revision 5
+  head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any, monterey: "efbc13a485bb3240b0fb805077d76acd3b1faac6b8c5a99e8d4ffa6120bce116"
-    sha256 cellar: :any, big_sur:  "df531803e2914cf915d341c0758455b690d4a290908a1984ea79ccad1ee022df"
-    sha256 cellar: :any, catalina: "4d824ce36b6bb5182a547ca6fad038c6cad8d1919531bd38e84124afc08723a4"
-    sha256 cellar: :any, mojave:   "132ee619fb6101826b179de5874e3c302c14d05c3947f4fcc248e7bfd740968b"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hashlink"
+    sha256 cellar: :any, mojave: "99f4dcd1b3d6ae728e4dc106582f80c381a51a2101bae7c547a7c74ad51baabd"
   end
 
   depends_on "haxe" => :test
