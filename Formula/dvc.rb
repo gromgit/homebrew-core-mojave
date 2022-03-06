@@ -7,9 +7,10 @@ class Dvc < Formula
   sha256 "d4bd89c074ddac14f775c8eec95ad22821b863c0aeb51c0defd20a036d36e0ca"
   license "Apache-2.0"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvc"
-    sha256 cellar: :any, mojave: "199c35195c7d88933c3903f1eda15788f287582284b8796178f0ea7a7a0849c9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5d4a75b27f4a236485ad7689d9446f1302159aa0046d1b376504acddc706aab3"
   end
 
   depends_on "pkg-config" => :build
