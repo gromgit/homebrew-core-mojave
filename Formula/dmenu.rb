@@ -11,9 +11,10 @@ class Dmenu < Formula
     regex(/href=.*?dmenu[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dmenu"
-    sha256 cellar: :any, mojave: "4bce08f23d550a5902a9ae18ddec45cc7934ad2ecfef429fee15ab4ff8bb62d3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c74625665bfb540ba226b86293f04fc54f60be2768eb45ecc0e6cc6363d0309b"
   end
 
   depends_on "fontconfig"
