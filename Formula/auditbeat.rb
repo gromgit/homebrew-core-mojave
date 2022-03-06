@@ -7,10 +7,10 @@ class Auditbeat < Formula
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/auditbeat"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "efa01245b81b33b48066f9a9052dc7bef6e85eaa9a1590b89f671063b30fc5e0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "51496b94d43309b71c2dfb484dc4c23a41b73a31073bb7d3ae710c4aadf5e6ad"
   end
 
   depends_on "go" => :build
