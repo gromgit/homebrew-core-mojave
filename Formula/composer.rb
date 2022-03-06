@@ -10,9 +10,10 @@ class Composer < Formula
     regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/composer\.phar}i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/composer"
-    sha256 cellar: :any_skip_relocation, mojave: "34070d0e7467447054ea6014f6a02652656d8893199a932126f13eae2f21c962"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a4974161657b69531b6fb21b6e1a5347f5ef732869adfdff0efdae92b73e790e"
   end
 
   depends_on "php"
