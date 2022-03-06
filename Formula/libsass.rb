@@ -5,21 +5,17 @@ class Libsass < Formula
       tag:      "3.6.5",
       revision: "f6afdbb9288d20d1257122e71d88e53348a53af3"
   license "MIT"
-  head "https://github.com/sass/libsass.git"
+  head "https://github.com/sass/libsass.git", branch: "master"
 
   livecheck do
     url :stable
     strategy :github_latest
   end
 
-  bottle do
-    sha256 cellar: :any,                 arm64_monterey: "2117b0fa30facdc407537232daa889995d87ce5f4988163017f62ed56580b32b"
-    sha256 cellar: :any,                 arm64_big_sur:  "22ecfef684130e0eb31c60574970b5549d4d17eca862304b4603f2ced11e01cb"
-    sha256 cellar: :any,                 monterey:       "072b22e5429cc1e86436667ccd5ea3353c10162f3523ede8534b7ba58e6b5d11"
-    sha256 cellar: :any,                 big_sur:        "6b898ecf23182d8510c20cc39f983ff1d032d05f782a860a8bf4f7268144bc8a"
-    sha256 cellar: :any,                 catalina:       "d3ed514cda1f654bba381f40cefeae9af3dc72b9299a3b55afe08165811eacd6"
-    sha256 cellar: :any,                 mojave:         "3300df2def4e03dc12a86fca52cd7555c8ce42320cfaf2d143d27129cd4e8bd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af3237dcac2845cc667ade463821e1ffed5048419786c99133e10f868b6a33ed"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsass"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0d16ff8ddbeed385bddafa58b6edec96329b337266d0d9e23466bfee8823e774"
   end
 
   depends_on "autoconf" => :build
