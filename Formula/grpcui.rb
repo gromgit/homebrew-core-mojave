@@ -5,9 +5,10 @@ class Grpcui < Formula
   sha256 "56519818d08a47339dece319cb4c8387a65bf24623f49242ef6a1201a1eb8b15"
   license "MIT"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpcui"
-    sha256 cellar: :any_skip_relocation, mojave: "ed89d13442e3ed118ed759a5c6be5acaba8f1078b8e20f2e4c16a7327fa218f4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "25afefdc37b9b445d6abbedd242eff5369e0156fe3900d7f755865733c48e220"
   end
 
   depends_on "go" => :build
