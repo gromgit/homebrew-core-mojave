@@ -10,15 +10,15 @@ class GhcAT9 < Formula
     regex(/href=.*?download[._-]ghc[._-][^"' >]+?\.html[^>]*?>\s*?v?(\d+(?:\.\d+)+)\s*?</i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@9"
-    rebuild 2
-    sha256 mojave: "8adb25d2b3154209cb6918429c7afb55d2b0a62720fb94e5c02ed4203790a2c4"
+    rebuild 3
+    sha256 mojave: "4ec0eed963b80512ed25904c4b64de9256481db2b3f0bad14cd137821b960c59"
   end
 
   keg_only :versioned_formula
 
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "sphinx-doc" => :build
 
   # https://www.haskell.org/ghc/download_ghc_9_0_1.html#macosx_x86_64
