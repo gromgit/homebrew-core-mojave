@@ -6,9 +6,10 @@ class Inxi < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/smxi/inxi.git", branch: "master"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inxi"
-    sha256 cellar: :any_skip_relocation, mojave: "ef47928c9f2cef54251859d947a0378cfad528f8fb01da4f31140ad3733fd848"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f99295cd974adf7be3f42eccc8c22ac2d214365a891a84de6a82a8301af124f2"
   end
 
   def install
