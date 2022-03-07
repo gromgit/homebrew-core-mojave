@@ -10,9 +10,10 @@ class HtmlXmlUtils < Formula
     regex(/href=.*?html-xml-utils[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/html-xml-utils"
-    sha256 cellar: :any, mojave: "0057d6b5f6852baae2659830cafcdfb0b1d2a03ee297313c3013799ad7d4156e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b6acc67ef1f4191d6f243955120075b0d964f9355377f15fdd010417fcf06a5a"
   end
 
   def install
