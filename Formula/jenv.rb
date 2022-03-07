@@ -4,11 +4,12 @@ class Jenv < Formula
   url "https://github.com/jenv/jenv/archive/0.5.4.tar.gz"
   sha256 "15a78dab7310fb487d2c2cad7f69e05d5d797dc13f2d5c9e7d0bbec4ea3f2980"
   license "MIT"
+  head "https://github.com/jenv/jenv.git", branch: "master"
 
-  head "https://github.com/jenv/jenv.git"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "521a1ad6e28b90f1e37893d279950e35957a0580464d639ec74c398f8da6d466"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jenv"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b7863016e9d6998334b63544c713a152149eb60185a0993a9470c4540d6736a9"
   end
 
   def install
