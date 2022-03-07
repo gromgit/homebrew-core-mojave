@@ -10,9 +10,10 @@ class I686ElfBinutils < Formula
     formula "binutils"
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i686-elf-binutils"
-    sha256 mojave: "3f6aba45ff8450e245dc9436d4a263d828cc3b23b2dc721a706e5c5ff1f8473f"
+    rebuild 1
+    sha256 mojave: "c01f5d216c5df48a3a2dc967da6267cf47e1b493c2e40f961b0fe63abc23ed24"
   end
 
   uses_from_macos "texinfo"
