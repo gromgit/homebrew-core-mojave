@@ -4,20 +4,17 @@ class Liblinear < Formula
   url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.43.tar.gz"
   sha256 "02bad43d745e2796f39a08ac9d117770e71939ef06b1ee7afc6ab7909e304807"
   license "BSD-3-Clause"
-  head "https://github.com/cjlin1/liblinear.git"
+  head "https://github.com/cjlin1/liblinear.git", branch: "master"
 
   livecheck do
     url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/"
     regex(/href=.*?liblinear[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
-    sha256 cellar: :any, arm64_monterey: "1331f0607a09c1c2ab02e24b79a3923d4d6b42db87663c2cc02a08b33462ebd2"
-    sha256 cellar: :any, arm64_big_sur:  "aca85fb0c9bedeb95d6f9ebfa7f276ecc730dc62f4c4f57280cc2b8d935d04ea"
-    sha256 cellar: :any, monterey:       "f7397f0a43f8de1cb2add67a3a2b16c2e45997259ed227a5541ea20a7040b0ab"
-    sha256 cellar: :any, big_sur:        "6cb465de42446200b77938139b8249b0feea08442b5cca7b72549f2d97e883dc"
-    sha256 cellar: :any, catalina:       "d1e10b22338d6a746fa8c05b68133f6439c58c1ed3a4728b1c5a4e7e7d3d7d6e"
-    sha256 cellar: :any, mojave:         "60fc530063ad3f9f304cb7cfa739aa6974ed6f89b0f3218dceb6f4fc060d2e77"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblinear"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ece97b8729f54aaf7e63b4ce04872d9e25a6f1f6b3526e15296f352c8b984eb1"
   end
 
   # Fix sonames
