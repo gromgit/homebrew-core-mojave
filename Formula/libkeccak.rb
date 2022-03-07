@@ -5,9 +5,10 @@ class Libkeccak < Formula
   sha256 "c17df59e038f9f1b0f09aa79944ba572f5c4efcbfe8bc6bc7aae1b40f035abe9"
   license "ISC"
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libkeccak"
-    sha256 cellar: :any, mojave: "22316ea5b8acdba2023228cff0afff76712811b39dfa4557faa7661f749f3a15"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4128cc4c40bbd628d3a69749c0808e620de8df5b50ef46c78e6fda00e2dbbfa8"
   end
 
   def install
