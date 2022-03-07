@@ -4,11 +4,12 @@ class Homeshick < Formula
   url "https://github.com/andsens/homeshick/archive/v2.0.0.tar.gz"
   sha256 "14a538bfc2e7cb6bfd35c984cdedbf3d3293413a70cc67f685dbfbd33ce64fdd"
   license "MIT"
-  head "https://github.com/andsens/homeshick.git"
+  head "https://github.com/andsens/homeshick.git", branch: "master"
 
-  bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d29552fb8156450804811f4fb98dc61b13f921cf6fe4227e4d5a8bfd7467da3e"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homeshick"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f408aa61cdc30224d5cb66f9495521ca975f24eae6d22b6e03d39cc7ae7042d5"
   end
 
   def install
