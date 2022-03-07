@@ -4,10 +4,12 @@ class KitchenCompletion < Formula
   url "https://github.com/MarkBorcherding/test-kitchen-bash-completion/archive/v1.0.0.tar.gz"
   sha256 "6a9789359dab220df0afad25385dd3959012cfa6433c8c96e4970010b8cfc483"
   license "MIT"
-  head "https://github.com/MarkBorcherding/test-kitchen-bash-completion.git"
+  head "https://github.com/MarkBorcherding/test-kitchen-bash-completion.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "4477a44357f241518a1ebd61583623cfccee33e67c2046cd85ce6702a2ea54ce"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kitchen-completion"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8c0958a87522fe9fa2159f1074d2a09d44395dfcd0af8559d96cd572620ddeee"
   end
 
   def install
