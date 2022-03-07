@@ -6,10 +6,12 @@ class Hubflow < Formula
       tag:      "1.5.3",
       revision: "ed032438d2100b826d2fd5c8281b5e07d88ab9eb"
   license "BSD-2-Clause"
-  head "https://github.com/datasift/gitflow.git"
+  head "https://github.com/datasift/gitflow.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "5fcc66bfe17f292cb37ee437c016a60c9bc46ff63b8bc5ad5ac13cc649421a94"
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hubflow"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "002f14a0c2dae38ff6cf54173677a13fefda047407a4edd700f313f06073e279"
   end
 
   def install
