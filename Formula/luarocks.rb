@@ -11,10 +11,10 @@ class Luarocks < Formula
     regex(%r{/luarocks[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  bottle do
+bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luarocks"
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, mojave: "2d6fd924bcc177405b3e8eddb05bae578b8ee2b134e03865608727b3a7ff05f4"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, mojave: "6a2eb38881bc29374e759e80bf3e085255780c1b36e34b6e800fbfb9479ed5b8"
   end
 
   depends_on "lua@5.1" => :test
