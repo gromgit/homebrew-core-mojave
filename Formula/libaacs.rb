@@ -1,23 +1,22 @@
 class Libaacs < Formula
   desc "Implements the Advanced Access Content System specification"
   homepage "https://www.videolan.org/developers/libaacs.html"
-  url "https://download.videolan.org/pub/videolan/libaacs/0.11.0/libaacs-0.11.0.tar.bz2"
-  sha256 "6d884381fbb659e2a565eba91e72499778635975e4b3d6fd94ab364a25965387"
+  url "https://download.videolan.org/pub/videolan/libaacs/0.11.1/libaacs-0.11.1.tar.bz2"
+  sha256 "a88aa0ebe4c98a77f7aeffd92ab3ef64ac548c6b822e8248a8b926725bea0a39"
   license "LGPL-2.1-or-later"
 
-  bottle do
-    sha256 cellar: :any,                 arm64_monterey: "628a46b83ed82425221046952f86bd52c06d7fadc93307dfef15164b16ab821e"
-    sha256 cellar: :any,                 arm64_big_sur:  "dcbccde309919c3349987341fda3259e218549d5ec5c34c38c628ff6ada98bce"
-    sha256 cellar: :any,                 monterey:       "ff947ef0c7044a205b75b39f99d40f9a6650a44f3e71e008ba675624b9b80c2e"
-    sha256 cellar: :any,                 big_sur:        "edf22602c987a889624eb8feb1ef3c13b8bbbb2397af0d4334379992c85b492b"
-    sha256 cellar: :any,                 catalina:       "74f17ba980a3b1d763f09869541542716979e8fe8e6ee299a00a9d5fe68bbb5b"
-    sha256 cellar: :any,                 mojave:         "97fbb158456e2b35633e387e239a5ccc5e90041a0bba15a139dbf32ea4de872b"
-    sha256 cellar: :any,                 high_sierra:    "6ac467398d3fb886cee220bd7724f1341631b1ac31220e3ee504d687347a731f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f93ad81a1e4368bfa9b17c913990b81aa4bfa4e3b3a8f80e04e6edfcee12b805"
+  livecheck do
+    url :homepage
+    regex(/href=.*?libaacs[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
+bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libaacs"
+    sha256 cellar: :any, mojave: "c8673953d879eb6c1134b4b5f31484d5ff44b28068e8bfca39cfec3a127448f7"
   end
 
   head do
-    url "https://code.videolan.org/videolan/libaacs.git"
+    url "https://code.videolan.org/videolan/libaacs.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
