@@ -1,13 +1,13 @@
 class OpensslAT11 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-1.1.1m.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1m.tar.gz"
-  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1m.tar.gz"
-  mirror "https://www.openssl.org/source/old/1.1.1/openssl-1.1.1m.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1m.tar.gz"
-  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1m.tar.gz"
-  sha256 "f89199be8b23ca45fc7cb9f1d8d3ee67312318286ad030f5316aca6462db6c96"
+  url "https://www.openssl.org/source/openssl-1.1.1n.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1n.tar.gz"
+  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1n.tar.gz"
+  mirror "https://www.openssl.org/source/old/1.1.1/openssl-1.1.1n.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1n.tar.gz"
+  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1n.tar.gz"
+  sha256 "40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a"
   license "OpenSSL"
   version_scheme 1
 
@@ -18,8 +18,7 @@ class OpensslAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssl@1.1"
-    rebuild 1
-    sha256 mojave: "4a74fb1a701b7683bbf126d2f6ef2d776d2ad124a79801ae307670172c2f8be7"
+    sha256 mojave: "e551eafc9ad70b4b74c0f8aa96e0d6c7aa4979fdd6ad7e7e7643e24fe797cc42"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
