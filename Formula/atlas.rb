@@ -1,14 +1,14 @@
 class Atlas < Formula
   desc "Database toolkit"
   homepage "https://atlasgo.io/"
-  url "https://github.com/ariga/atlas/archive/v0.3.6.tar.gz"
-  sha256 "e9889901165e0379cb4f2447234c44109273e4f2fd4b83d15a0f353e93599dd3"
+  url "https://github.com/ariga/atlas/archive/v0.3.7.tar.gz"
+  sha256 "e958e6e31cf7f04f082939322875165d38685e1a2f59334733dd47c44c19b747"
   license "Apache-2.0"
   head "https://github.com/ariga/atlas.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atlas"
-    sha256 cellar: :any_skip_relocation, mojave: "12ed3cba4c07fb49ec876ba9e3f92cfbdd1e7a9549eecd891660bfdb3de6aef8"
+    sha256 cellar: :any_skip_relocation, mojave: "1c6ba699e2efd5608efc7b4dbe2240a3b8f2b7f2d9719885aa3689c1128e7195"
   end
 
   depends_on "go" => :build
