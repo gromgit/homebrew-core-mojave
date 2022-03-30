@@ -4,7 +4,11 @@ class Gcsfuse < Formula
   url "https://github.com/GoogleCloudPlatform/gcsfuse/archive/v0.35.1.tar.gz"
   sha256 "effcbffa238cf0a97488b4a3b836c0996b1db17a18ad91bf76b5c195a4f5bfed"
   license "Apache-2.0"
-  head "https://github.com/GoogleCloudPlatform/gcsfuse.git"
+  head "https://github.com/GoogleCloudPlatform/gcsfuse.git", branch: "master"
+
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a6e7417b5a11ea8587f09dc31fb9eebb9b5e770ec07aec630bac1c9184d19feb"
+  end
 
   depends_on "go" => :build
 
@@ -41,9 +45,10 @@ class Gcsfuse < Formula
 
   test do
     system "#{bin}/gcsfuse", "--help"
-    separator = "_"
-    on_linux do
-      separator = "."
+    separator = if OS.mac?
+      "_"
+    else
+      "."
     end
     system "#{sbin}/mount#{separator}gcsfuse", "--help"
   end
