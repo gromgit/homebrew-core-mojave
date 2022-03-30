@@ -13,7 +13,8 @@ class Nim < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nim"
-    sha256 cellar: :any_skip_relocation, mojave: "211f36e96c7b524a0b32cdb0e4fb8f379d3cc5a8a16cd710729b69fc560b35c9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a157c863ef485e8df90ca99a584f4e2afb92aefb58abb4aa72288cee317ac97b"
   end
 
   depends_on "help2man" => :build
