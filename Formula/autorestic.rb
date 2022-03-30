@@ -1,15 +1,14 @@
 class Autorestic < Formula
   desc "High level CLI utility for restic"
   homepage "https://autorestic.vercel.app/"
-  url "https://github.com/cupcakearmy/autorestic/archive/v1.5.5.tar.gz"
-  sha256 "6088973a2803799d314e308b736e1612afaedafffc76cf07d89bcacc7128d8da"
+  url "https://github.com/cupcakearmy/autorestic/archive/v1.5.8.tar.gz"
+  sha256 "ca132142d2b682002d59232c390df7f426493c01f377cf33bd8712de0c2e4bf9"
   license "Apache-2.0"
   head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autorestic"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ec439a98e738f42a4c9008ba61fc8ac60568463555fdc23ecd8e0a7e24c702bf"
+    sha256 cellar: :any_skip_relocation, mojave: "4da03c4df37c69e4b40a056d790e3ce3114efcb78c9c3ee9245393f9ae20dbfe"
   end
 
   depends_on "go" => :build
