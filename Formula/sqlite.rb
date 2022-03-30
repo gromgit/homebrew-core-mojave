@@ -1,9 +1,9 @@
 class Sqlite < Formula
   desc "Command-line interface for SQLite"
   homepage "https://sqlite.org/index.html"
-  url "https://sqlite.org/2022/sqlite-autoconf-3380000.tar.gz"
-  version "3.38.0"
-  sha256 "1c76e25dc63d9f3935e0f406aec520a33ee77cf54ea5147dffe1fae8369eff68"
+  url "https://sqlite.org/2022/sqlite-autoconf-3380200.tar.gz"
+  version "3.38.2"
+  sha256 "e7974aa1430bad690a5e9f79a6ee5c8492ada8269dc675875ad0fb747d7cada4"
   license "blessing"
 
   livecheck do
@@ -16,8 +16,7 @@ class Sqlite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlite"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0cc9bc0d2ab452b1198e00830d9cddb4b55a50a2f6c69dc7515ae4da43e12b84"
+    sha256 cellar: :any, mojave: "df6c9da3f4bb22011d033bd8b09d4e486580854a8fb07b52a25e7af88f0f2dc2"
   end
 
   keg_only :provided_by_macos
