@@ -8,15 +8,11 @@ class PhpAT73 < Formula
   license "PHP-3.01"
   revision 1
 
-  livecheck do
-    url "https://www.php.net/downloads"
-    regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
-  end
-
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@7.3"
-    rebuild 1
-    sha256 mojave: "e5281737185041cff54274378b3cd17b5c95a9a63ca4d31bb4b23585d28c6d4b"
+    sha256 monterey:     "93126a75527f2ebb61854eca3d828a2c85be368810d958891e82d01079186fcc"
+    sha256 big_sur:      "e1e2f43e53f5324dd918cb3c53ced792eb39d1a328fdc995df2cc11377c24f4f"
+    sha256 catalina:     "7a1587d14a448ec6c748c93dddde0bded32778dda5c9ee0321f3b9f610a7ffb9"
+    sha256 x86_64_linux: "98174faad5ea86e2bb3c29772d50cd9b62aeb684817bb8aa07fb06f59d66973a"
   end
 
   keg_only :versioned_formula
@@ -334,9 +330,9 @@ class PhpAT73 < Formula
       "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
-    on_macos do
+    if OS.mac?
       assert_includes MachO::Tools.dylibs("#{bin}/php"),
-        "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
+              "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
     end
 
     system "#{sbin}/php-fpm", "-t"
