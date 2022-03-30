@@ -1,13 +1,13 @@
 class Akamai < Formula
   desc "CLI toolkit for working with Akamai's APIs"
   homepage "https://github.com/akamai/cli"
-  url "https://github.com/akamai/cli/archive/refs/tags/1.3.1.tar.gz"
-  sha256 "49ef54c474bd2e07c31516ac94a65d532c95499002a1ce0565d14702bc960a99"
+  url "https://github.com/akamai/cli/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "88b25f7d44cab6c964f2aac03bd266577a0355a51ad69788f7b709c1bd145f0c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/akamai"
-    sha256 cellar: :any_skip_relocation, mojave: "1bc75ab2eca2e2d78821193174aa6d7c84f0bff5679a6aa0b26e312427d51408"
+    sha256 cellar: :any_skip_relocation, mojave: "245b85f7196516637ef9d3fd1d0ff75a83684b764bbc614bfff445aca563aa50"
   end
 
   depends_on "go" => :build
