@@ -1,15 +1,14 @@
 class Activemq < Formula
   desc "Apache ActiveMQ: powerful open source messaging server"
   homepage "https://activemq.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=activemq/5.16.4/apache-activemq-5.16.4-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/activemq/5.16.4/apache-activemq-5.16.4-bin.tar.gz"
-  sha256 "f8e04d8a810141b386a5c9c3960b5f01e8fe73461f4c99b191e115d493840701"
+  url "https://www.apache.org/dyn/closer.lua?path=activemq/5.17.0/apache-activemq-5.17.0-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/activemq/5.17.0/apache-activemq-5.17.0-bin.tar.gz"
+  sha256 "eb06abd7f45efad42f4f56b671fee7dff4ccac387e0765b1d256e19bea66f897"
   license "Apache-2.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/activemq"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a645c221d2c4f0bdb50591370b08bb57e6056aaaa19e0dcdc08ab18c1244801b"
+    sha256 cellar: :any_skip_relocation, mojave: "719ec3204d9afe70a90a874563dc55e8f01c5f6f1ad5051dc8d66e6a7847712f"
   end
 
   depends_on "java-service-wrapper"
@@ -33,7 +32,7 @@ bottle do
   end
 
   service do
-    run [opt_bin/"activemq", "start"]
+    run [opt_bin/"activemq", "console"]
     working_dir opt_libexec
   end
 
