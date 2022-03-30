@@ -18,6 +18,7 @@ class Pidgin < Formula
     sha256 big_sur:        "309a8ac7ee4e09f884ad79985d23895d77ddec13197a71ed764f73f9984d9175"
     sha256 catalina:       "fbea5ba3a0051d76282289dadc36ec61d0c466aa1dda6358ccae7a8f12f48b42"
     sha256 mojave:         "10159d6af23b8603b31160d0eba5dd689693e1cf8a6486e032ee0fc34dbbc703"
+    sha256 x86_64_linux:   "b3de7c6a27275ddd49e8e827b018b62b0663e77eb9bd58db6eb1a6c1ad162b2f"
   end
 
   depends_on "intltool" => :build
@@ -32,6 +33,16 @@ class Pidgin < Formula
   depends_on "libotr"
   depends_on "pango"
 
+  uses_from_macos "cyrus-sasl"
+  uses_from_macos "ncurses"
+  uses_from_macos "perl"
+  uses_from_macos "tcl-tk"
+
+  on_linux do
+    depends_on "libsm"
+    depends_on "libxscrnsaver"
+  end
+
   # Finch has an equal port called purple-otr but it is a NIGHTMARE to compile
   # If you want to fix this and create a PR on Homebrew please do so.
   resource "pidgin-otr" do
@@ -40,6 +51,8 @@ class Pidgin < Formula
   end
 
   def install
+    ENV.prepend "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+
     args = %W[
       --disable-debug
       --disable-dependency-tracking
@@ -54,10 +67,21 @@ class Pidgin < Formula
       --disable-meanwhile
       --disable-vv
       --enable-gnutls=yes
-      --with-tclconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework
-      --with-tkconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework
-      --without-x
     ]
+
+    args += if OS.mac?
+      %W[
+        --with-tclconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework
+        --with-tkconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework
+        --without-x
+      ]
+    else
+      %W[
+        --with-tclconfig=#{Formula["tcl-tk"].opt_lib}
+        --with-tkconfig=#{Formula["tcl-tk"].opt_lib}
+        --with-ncurses-headers=#{Formula["ncurses"].opt_include}
+      ]
+    end
 
     ENV["ac_cv_func_perl_run"] = "yes" if MacOS.version == :high_sierra
 
