@@ -1,14 +1,19 @@
 class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://libuv.org"
-  url "https://github.com/libuv/libuv/archive/v1.43.0.tar.gz"
-  sha256 "9e27825a55279de69a7c43e42d509fd1337c9bece2547c761e91a1592e91cc4d"
+  url "https://github.com/libuv/libuv/archive/v1.44.1.tar.gz"
+  sha256 "e91614e6dc2dd0bfdd140ceace49438882206b7a6fb00b8750914e67a9ed6d6b"
   license "MIT"
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libuv"
-    sha256 cellar: :any, mojave: "7d4945f0b727729f717f3402898c47618da74a6b3703622881aca70448c31a7c"
+    sha256 cellar: :any, mojave: "680f156b9b526a8edef63ab936a96ecd944846564e9ef0e10a0ade36e134ce7e"
   end
 
   depends_on "autoconf" => :build
