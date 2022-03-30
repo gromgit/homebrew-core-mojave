@@ -1,13 +1,17 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/r-darwish/topgrade"
-  url "https://github.com/r-darwish/topgrade/archive/v8.2.0.tar.gz"
-  sha256 "54fe60ef70b21b34c50c0d342ec120aff3a9522ef44a9737f42d5700aed7a1c3"
+  url "https://github.com/r-darwish/topgrade/archive/v8.3.0.tar.gz"
+  sha256 "a818cbdc64aafe77a589299d5717988fd5e5403af0998a9945b9d17a5b6f499b"
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/topgrade"
-    sha256 cellar: :any_skip_relocation, mojave: "6398faeb87354c69ceed823bde00450fcb05e2b0a6d8ea787f47cc58c35d79da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc26d3fc86b470e937565feadad718581658bf6e64fd51c8cc82dd704da3d5a4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "28c59ae0bd0d8cc997d87b55f0343aecd722be0b44c39940c95ffe1967526542"
+    sha256 cellar: :any_skip_relocation, monterey:       "a758d48253e222e78e6a2a8fddcd5076fc0ca85890e8e89759fb3d100e091abc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0f23b782598430c3870fa542ee43e0d655e38542888047a0a8eaf967ebbecfb0"
+    sha256 cellar: :any_skip_relocation, catalina:       "88051de1a733b8e7d89da3692494c496a54f44b183e853516f54d6d49c42eb6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb329e1aa7af290a3261ab2ca3caf50fe2ce18b7a82a7e465ac0da6e0a0bde3f"
   end
 
   depends_on "rust" => :build
