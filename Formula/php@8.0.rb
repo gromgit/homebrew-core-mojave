@@ -2,9 +2,9 @@ class PhpAT80 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.0.16.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.0.16.tar.xz"
-  sha256 "f27a2f25259e8c51e42dfd74e24a546ee521438ad7d9f6c6e794aa91f38bab0a"
+  url "https://www.php.net/distributions/php-8.0.17.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.17.tar.xz"
+  sha256 "4e7d94bb3d144412cb8b2adeb599fb1c6c1d7b357b0d0d0478dc5ef53532ebc5"
   license "PHP-3.01"
 
   livecheck do
@@ -13,8 +13,12 @@ class PhpAT80 < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
-    sha256 mojave: "05a0ddcabf2a545e9e5f1e7d15422c6538a0c81dcb2051f42cd2a31e107a284c"
+    sha256 arm64_monterey: "7c7f7b60176e9142db496ffcc1023235d54e05074dcab2ba9adac5e98ca4ed0e"
+    sha256 arm64_big_sur:  "1a47a2496cff8d56a78fc80ebb0ed5764da203c7c7456136adffaac5eb1ceed4"
+    sha256 monterey:       "1259fa2ebadeb1b5329b6e73f341f858d743e0c60b13dcbf35d0fc210a4e2d6d"
+    sha256 big_sur:        "f3fdbe744f050f2bb50ec5ac3270fb5f5eb8dfd535234d4eb8176b00c46ca857"
+    sha256 catalina:       "0e7dee4e6241744671617eb43ea2044e61864fa894de78cca518a9373de07f42"
+    sha256 x86_64_linux:   "270dbd23feb26f9cf6c3b023ac588d092edb2c2369ae0ef900ea4ef4a3cd8600"
   end
 
   keg_only :versioned_formula
@@ -326,9 +330,9 @@ class PhpAT80 < Formula
       "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
-    on_macos do
+    if OS.mac?
       assert_includes MachO::Tools.dylibs("#{bin}/php"),
-        "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
+              "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
     end
 
     system "#{sbin}/php-fpm", "-t"
