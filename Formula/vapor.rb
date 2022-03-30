@@ -1,20 +1,23 @@
 class Vapor < Formula
   desc "Command-line tool for Vapor (Server-side Swift web framework)"
   homepage "https://vapor.codes"
-  url "https://github.com/vapor/toolbox/archive/18.3.5.tar.gz"
-  sha256 "a138cf744b6a0230e02761f2f953085254561f7161b13aa61c7852ada4306b99"
+  url "https://github.com/vapor/toolbox/archive/18.3.6.tar.gz"
+  sha256 "67efb2d454564be007e520afb582b9d1d3bf2ac93b49e3ecdec5495df724c2cf"
   license "MIT"
   head "https://github.com/vapor/toolbox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ef22d372a68994a9d5899fabaa4896308004c46669fa481a1bbdd6dc77580b7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1fbcfb559f75f91accf311034cd7dd38e8d075aa14cdac11136d81a4b339ece6"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b2f1d59d2b569259b42ea467321e9556c0686f2cfa879887eb117c2b992d28d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9a8f9df4d9bf17701617e66e4bb82b6e7c6c335a70a4c9e9273db80114f00e66"
-    sha256 cellar: :any_skip_relocation, catalina:       "31e4400a963d7bb3380d82c08f0f6f018250217ca0e5e4af36548242a67be401"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e0192858bca261ff3690cf1097896eaa5a9866a5d2d692410fdb7e8971238c7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "617785d6e88b734dafb4e2bd0c4fbca219d28f8dbce88a14befe8a8405579d1b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a6b32eb224796649a9e2024e7a430124bdebaf4253c42ca90a755aa3fe4690b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a2488d72900dbcd7147ef0b1c756baea6c69c3a976a63cdfc4f7537764a244ef"
+    sha256 cellar: :any_skip_relocation, catalina:       "0622f5ae31e2f4be566727425b0fce7cc8b5d79b60d80fb54a7abc9c86d51e1b"
+    sha256                               x86_64_linux:   "56ae58ee4fc87aedec745769bc1a1e19bc9efd01f91a2d203d3e2e3f7ad3eb1c"
   end
 
   depends_on xcode: "11.4"
+
+  uses_from_macos "swift"
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "-Xswiftc", \
