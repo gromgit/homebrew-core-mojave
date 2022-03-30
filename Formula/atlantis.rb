@@ -1,14 +1,14 @@
 class Atlantis < Formula
   desc "Terraform Pull Request Automation tool"
   homepage "https://www.runatlantis.io/"
-  url "https://github.com/runatlantis/atlantis/archive/v0.18.3.tar.gz"
-  sha256 "979f4fbc7d79b7bc937c86aba2cc288e74b082bbac20937382e3a5a2fc843d40"
+  url "https://github.com/runatlantis/atlantis/archive/v0.19.2.tar.gz"
+  sha256 "5c0da4efc288a2cd3f0456619e3048922542a421798ebb834b8800fc4dcf124c"
   license "Apache-2.0"
   head "https://github.com/runatlantis/atlantis.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atlantis"
-    sha256 cellar: :any_skip_relocation, mojave: "01411508739d056b91d584dfece5cf3902e97e1ed584dc6d26a3a2cc5cc6fdc0"
+    sha256 cellar: :any_skip_relocation, mojave: "9b66dbdb6ca57f45b08e7a4b8029885dcda7d2ea4dfda6f2cc66b81162298b43"
   end
 
   depends_on "go" => :build
