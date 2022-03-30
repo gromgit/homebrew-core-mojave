@@ -1,18 +1,18 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://github.com/kyma-project/cli/archive/2.0.4.tar.gz"
-  sha256 "096892c1773f40a8dc23551b2b211873e7a01572ec333bdedf0a3588941ca292"
+  url "https://github.com/kyma-project/cli/archive/2.1.1.tar.gz"
+  sha256 "08250a614a687300960bdd63d84428b182201d6f4c308859711ae34f5b449c2f"
   license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d717d559a6677442c1eaf0fd18b44699f993db5ed6b4639e274bd8885ef58f64"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "579b38753983943fdcf4f8765a2f7d5a0ff417da3039212b225d5bf27d5cd124"
-    sha256 cellar: :any_skip_relocation, monterey:       "714e4b2798acf529bfde1a623aa10538458430ead6d77893a43e8150de641795"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c8f6dca4fe702ba32fb99160be739cada931af146c496c89be0a65e7b36a237c"
-    sha256 cellar: :any_skip_relocation, catalina:       "5c0d06e2f5a30d58caaff7aa41cf460b2c1edc8e2f2d628d9dad2102084870ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3658d38f903035677d5da78289bcfa6db9f0eebe8a6dafcbacb884b79151d355"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21fb409ca35e07a84176c73182f5653aca01e4b39e788be4638c21942138e1bc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ed2977c1c870097f8f499a65a4fa6a0c2c95d786304006e7913fb95375182327"
+    sha256 cellar: :any_skip_relocation, monterey:       "4086f538b4e855f263d8b1db270da08e2fb3980e62d89ae7a8ab965ffa6721d6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9fe515907cf8899812ee3e64728835cae24d698cbcb5d57cf62fce80cf24d2ad"
+    sha256 cellar: :any_skip_relocation, catalina:       "94b50895b2242470f7a9ea48f05d6df67211559168cf7706199bb1f0f3028c17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93900f8e1be2139635972ce8ffa0671757f72a0d3c3a1dcebd2aebe778762b24"
   end
 
   depends_on "go" => :build
