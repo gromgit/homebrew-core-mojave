@@ -3,16 +3,15 @@ require "language/node"
 class Autorest < Formula
   desc "Swagger (OpenAPI) Specification code generator"
   homepage "https://github.com/Azure/autorest"
-  url "https://registry.npmjs.org/autorest/-/autorest-3.5.1.tgz"
-  sha256 "3361f0cf71b7013efb38376f65f973f0dfa83a86a59cfb749380344bcea8bdbe"
+  url "https://registry.npmjs.org/autorest/-/autorest-3.6.1.tgz"
+  sha256 "a517e0e9dee7b3d36e4e03fd78e3f6bd7792de824e2faec2b64e44f2c2034758"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "42c2714757885b2ce0383b48ee0ae82ef1ba0e836bcc44706a9ea822cc0b09c4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autorest"
+    sha256 cellar: :any_skip_relocation, mojave: "ec88baabdae6900f41ea43ead3b79bba2d5cda45e2b73fd996f7778b86f63b62"
   end
 
-  depends_on arch: :x86_64
-  depends_on :macos # test fails on Linux
   depends_on "node"
 
   resource "homebrew-petstore" do
@@ -28,7 +27,7 @@ class Autorest < Formula
   test do
     resource("homebrew-petstore").stage do
       system (bin/"autorest"), "--input-file=petstore.yaml",
-                               "--nodejs",
+                               "--typescript",
                                "--output-folder=petstore"
       assert_includes File.read("petstore/package.json"), "Microsoft Corporation"
     end
