@@ -3,14 +3,14 @@ class Bandit < Formula
 
   desc "Security-oriented static analyser for Python code"
   homepage "https://github.com/PyCQA/bandit"
-  url "https://files.pythonhosted.org/packages/e6/0a/1fe31d6b386e46483ba66d1fc95b2b8f20ceb10ade3a76a36e0b4b128b49/bandit-1.7.3.tar.gz"
-  sha256 "58772ca951bf1129dda8a280d351547de832720bf7b5c29fac3103927980b8a6"
+  url "https://files.pythonhosted.org/packages/39/36/a37a2f6f8d0ed8c3bc616616ed5019e1df2680bd8b7df49ceae80fd457de/bandit-1.7.4.tar.gz"
+  sha256 "2d63a8c573417bae338962d4b9b06fbc6080f74ecd955a092849e1e65c717bd2"
   license "Apache-2.0"
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bandit"
-    sha256 cellar: :any_skip_relocation, mojave: "4e24e74c224f890791053927b691b807eecd5e79020ca5c68e6ccead0248a376"
+    sha256 cellar: :any_skip_relocation, mojave: "2eff419458ee3d12daf810945595810140197d33e9a2a3de8ea15612cbf2da78"
   end
 
   depends_on "python@3.10"
