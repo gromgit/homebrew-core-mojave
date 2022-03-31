@@ -12,7 +12,8 @@ class Protobuf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf"
-    sha256 cellar: :any, mojave: "a0d0f5226ebf49327101b63e466074732d3f414fd74fae2e63c6be5bd47856f0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0dacf2e19b76833cc30c7eb11ceddba28cab4d91ee001d6e30db335dd52ebfec"
   end
 
   head do
@@ -53,7 +54,10 @@ class Protobuf < Formula
 
     cd "python" do
       ["3.9", "3.10"].each do |xy|
-        system "python#{xy}", *Language::Python.setup_install_args(prefix), "--cpp_implementation"
+        site_packages = prefix/Language::Python.site_packages("python#{xy}")
+        system "python#{xy}", *Language::Python.setup_install_args(prefix),
+                              "--install-lib=#{site_packages}",
+                              "--cpp_implementation"
       end
     end
   end
