@@ -1,15 +1,14 @@
 class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "https://pango.gnome.org"
-  url "https://download.gnome.org/sources/pango/1.50/pango-1.50.4.tar.xz"
-  sha256 "f4ad63e87dc2b145300542a4fb004d07a9f91b34152fae0ddbe50ecdd851c162"
+  url "https://download.gnome.org/sources/pango/1.50/pango-1.50.6.tar.xz"
+  sha256 "a998bcf36881c3ac20495d40bceb304f4eaa9175bd2967c85656434cbdafe86a"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pango"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3dc16fe0df9ab2eaed8587a57c6453f93fe26e0b1664d17ab3144ae2caba1a81"
+    sha256 cellar: :any, mojave: "197458259d53f67e88fdb53d0295f189ffda55177b38e2c320c5c46b217dd41f"
   end
 
   depends_on "gobject-introspection" => :build
@@ -82,9 +81,7 @@ bottle do
       -lpango-1.0
       -lpangocairo-1.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
