@@ -4,16 +4,16 @@ class Libarchive < Formula
   url "https://www.libarchive.org/downloads/libarchive-3.6.0.tar.xz"
   sha256 "df283917799cb88659a5b33c0a598f04352d61936abcd8a48fe7b64e74950de7"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
-    url "https://libarchive.org/downloads/"
+    url :homepage
     regex(/href=.*?libarchive[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libarchive"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5909e9cd788ae3558017864e4957a1aa481013d19ac11cffbd2f6821defbc690"
+    sha256 cellar: :any, mojave: "b8330f95cddc9929c922f3ba556a6cb08c1429eac4de014275d10a6adce9c886"
   end
 
   keg_only :provided_by_macos
@@ -27,11 +27,6 @@ bottle do
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
-  on_linux do
-    conflicts_with "cpio", because: "both install `cpio` binaries"
-    conflicts_with "gnu-tar", because: "both install `tar` binaries"
-  end
-
   def install
     system "./configure",
            "--prefix=#{prefix}",
@@ -42,6 +37,8 @@ bottle do
            "--with-expat"       # best xar hashing option
 
     system "make", "install"
+
+    return unless OS.mac?
 
     # Just as apple does it.
     ln_s bin/"bsdtar", bin/"tar"
