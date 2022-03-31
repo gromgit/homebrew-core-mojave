@@ -1,18 +1,13 @@
 class Authoscope < Formula
   desc "Scriptable network authentication cracker"
   homepage "https://github.com/kpcyrd/authoscope"
-  url "https://github.com/kpcyrd/authoscope/archive/v0.8.0.tar.gz"
-  sha256 "977df6f08a2fece7076f362bc9db6686b829de93ed3c29806d7b841a50bd9d1c"
+  url "https://github.com/kpcyrd/authoscope/archive/v0.8.1.tar.gz"
+  sha256 "fd70d3d86421ac791362bf8d1063a1d5cd4f5410b0b8f5871c42cb48c8cc411a"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd0510cf0171782493348650f754c2089b279fa73d0e6dc13bbe2310228cec7a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1d62f93b6ba4ca88798e510ee70fa66c2c4b280ff20eabc5aaacc59166b3a83d"
-    sha256 cellar: :any_skip_relocation, monterey:       "87dc8cec680436c6f0f2b7a8c93e59df2c7f06791d54293d1db14cee1b127b5c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb5667604590e7f7aa5675866b03bba8cdb8649dd32f543a6853d70ca2d9ead5"
-    sha256 cellar: :any_skip_relocation, catalina:       "c5c82345a6556076b1dd30e2b80ac51936ce8a910f4013f685b7207a7d9589fc"
-    sha256 cellar: :any_skip_relocation, mojave:         "f618a86f7523021c5ca54730ea6b42bfc74d73a6d5e6a730e7f4d2b0028c2d6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88bd1d09f07bd61e3c66f4eb6ee4cdfe8c2a46a453d18dfbf0fa8484885ea9af"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/authoscope"
+    sha256 cellar: :any_skip_relocation, mojave: "76cb0a0c8fdb6adf25b714ab47785da1cdc066a4a009ab97cf79cbaf10d78027"
   end
 
   depends_on "rust" => :build
