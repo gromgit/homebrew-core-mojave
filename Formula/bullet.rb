@@ -8,7 +8,8 @@ class Bullet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bullet"
-    sha256 mojave: "7c602d4c683f892b54cd6bed5ab0f1d3212ce8da23858ffe5fe26f24cde2ff06"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f123aa2dc89b1e540874787dbf4adac4a58c6d2e082cab347ca604cdfa72ee36"
   end
 
   depends_on "cmake" => :build
@@ -69,9 +70,10 @@ class Bullet < Formula
       }
     EOS
 
-    cxx_lib = "-lc++"
-    on_linux do
-      cxx_lib = "-lstdc++"
+    cxx_lib = if OS.mac?
+      "-lc++"
+    else
+      "-lstdc++"
     end
 
     # Test single-precision library
