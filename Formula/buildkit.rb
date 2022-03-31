@@ -2,8 +2,8 @@ class Buildkit < Formula
   desc "Сoncurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/buildkit"
   url "https://github.com/moby/buildkit.git",
-      tag:      "v0.9.3",
-      revision: "8d2625494a6a3d413e3d875a2ff7dd9b1ed1b1a9"
+      tag:      "v0.10.0",
+      revision: "068cf686a7e5c3254244d0acc54636f4f393611e"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git", branch: "master"
 
@@ -14,8 +14,7 @@ class Buildkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildkit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0231aa5094a6e459107bd4094a5d213687c7100da39f4d64195a0934ba53ed30"
+    sha256 cellar: :any_skip_relocation, mojave: "c46db67a0c99960142b08d791d59bbc907c156b5e23ccedb276509363a806e9e"
   end
 
   depends_on "go" => :build
