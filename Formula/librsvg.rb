@@ -1,14 +1,13 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://wiki.gnome.org/Projects/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.52/librsvg-2.52.6.tar.xz"
-  sha256 "a3f939a1e6a3a60408244632d0323f8c3b20eb4b7b000536e2e5bd93b8effaad"
+  url "https://download.gnome.org/sources/librsvg/2.52/librsvg-2.52.8.tar.xz"
+  sha256 "bade8eda74f2d7efb414e9bae53004806e1fa7dc05f04cad59b74eb1a5756962"
   license "LGPL-2.1-or-later"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librsvg"
-    rebuild 1
-    sha256 mojave: "d5124b37ef1bfa3120a2dbeb0fc049b2d2658e01b0175eff90397bc08d84d90e"
+    sha256 mojave: "4d99680f39cb2ffeea3f7bab6b7a927103ccbdb0029971164b5440ca4ea0fef3"
   end
 
   depends_on "gobject-introspection" => :build
@@ -91,9 +90,7 @@ bottle do
       -lm
       -lrsvg-2
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
