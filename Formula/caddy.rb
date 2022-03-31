@@ -8,11 +8,12 @@ class Caddy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caddy"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "6da06fdc7bd343817a086338b5078e7e28d64107fbf31aa470c680d2f687d838"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "81c97e64366e6e7b9930f0d52221824057bcd6200d549a31965a4d9625e54fbf"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 with the next release (2.5).
+  depends_on "go@1.17" => :build
 
   resource "xcaddy" do
     url "https://github.com/caddyserver/xcaddy/archive/v0.2.0.tar.gz"
