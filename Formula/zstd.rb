@@ -10,8 +10,8 @@ class Zstd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zstd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cec4792054b00381dd2f064189a9820ed31407bf1f6fdcf907a166ef391081fb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f7c7f1d014353b11c3de157afc7b8386097e12bd37330a45fda9f4945c0f9b07"
   end
 
   depends_on "cmake" => :build
@@ -19,14 +19,16 @@ class Zstd < Formula
   uses_from_macos "zlib"
 
   def install
-    cd "build/cmake" do
-      system "cmake", "-S", ".", "-B", "builddir",
-                      "-DZSTD_BUILD_CONTRIB=ON",
-                      "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                      *std_cmake_args
-      system "cmake", "--build", "builddir"
-      system "cmake", "--install", "builddir"
-    end
+    # Legacy support is the default after
+    # https://github.com/facebook/zstd/commit/db104f6e839cbef94df4df8268b5fecb58471274
+    # Set it to `ON` to be explicit about the configuration.
+    system "cmake", "-S", "build/cmake", "-B", "builddir",
+                    "-DZSTD_BUILD_CONTRIB=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DZSTD_LEGACY_SUPPORT=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "builddir"
+    system "cmake", "--install", "builddir"
   end
 
   test do
