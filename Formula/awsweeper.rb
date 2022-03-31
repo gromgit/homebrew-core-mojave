@@ -6,13 +6,14 @@ class Awsweeper < Formula
   license "MPL-2.0"
   head "https://github.com/jckuester/awsweeper.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awsweeper"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "03e6a5607333ab61d9358c3dcf14441a0a12bc0cedca01a7ce5fa6906536ee72"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2eed06254bc17472737ae077abe284579afe052ad29a2c2ff3c977aab9707d05"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     ldflags = %W[
