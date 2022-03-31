@@ -4,6 +4,7 @@ class Cadical < Formula
   url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-1.5.2.tar.gz"
   sha256 "4a4251bf0191677ca8cda275cb7bf5e0cf074ae0056819642d5a7e5c1a952e6e"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,8 +13,7 @@ class Cadical < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadical"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d799ec7d7e0baa26af7a77b3a7d437828cc14b931c807d2c159f27f8248064b2"
+    sha256 cellar: :any_skip_relocation, mojave: "1661098b4a6afd351fe6c606bcc6ff03c08adb7cbf07dcec0451c10b984bc8f8"
   end
 
   def install
@@ -23,6 +23,8 @@ class Cadical < Formula
       bin.install "cadical"
       lib.install "libcadical.a"
       include.install "../src/cadical.hpp"
+      include.install "../src/ccadical.h"
+      include.install "../src/ipasir.h"
     end
   end
 
