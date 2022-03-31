@@ -14,13 +14,13 @@ class LittleCms2 < Formula
   # that the post URLs, headings, etc. maintain a consistent format.
   livecheck do
     url "https://www.littlecms.com/categories/releases/"
-    regex(%r{href=.*lcms2[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
+    regex(/Little\s*CMS\s+v?(\d+(?:\.\d+)+)\s+released/im)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/little-cms2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "eae886b6789cc3b0d08fda996e191a3c587405c1df9154c24ce55b466bc8640f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7ce41d2db80810f3f8e398d15d9b2229aa9128c60ea913b027dab300f9e0ac6d"
   end
 
   depends_on "jpeg"
