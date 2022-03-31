@@ -4,6 +4,7 @@ class Boost < Formula
   url "https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2"
   sha256 "8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc"
   license "BSL-1.0"
+  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -14,16 +15,22 @@ class Boost < Formula
     end
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost"
-    rebuild 1
-    sha256 cellar: :any, mojave: "866f80045fc6d9dffcbc480c8795a5103e7fb9fc1a98ca4bd055f79b4a34ba63"
+    sha256 cellar: :any, mojave: "70a47f2aa05bb9c3c740979b6f4f7d4a3a65b646ec03bad58ee6fdee0c633d57"
   end
 
   depends_on "icu4c"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
+
+  # Fix some library installations being skipped in some cases.
+  # Remove with the next release.
+  patch do
+    url "https://www.boost.org/patches/1_78_0/0001-b2-fix-install.patch"
+    sha256 "71e5b96e72e534670043e0fa7743fd34671715e21c3ddb41908a3da284a8920a"
+  end
 
   def install
     # Force boost to compile with the desired compiler
