@@ -5,6 +5,7 @@ class Llvm < Formula
   sha256 "326335a830f2e32d06d0a36393b5455d17dc73e0bd1211065227ee014f92cbf8"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -14,7 +15,7 @@ class Llvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm"
-    sha256 cellar: :any, mojave: "3e69f3891f4cc135a1947ee32db1481ecef0545f8dcfbfe5da2716a899c7e52b"
+    sha256 cellar: :any, mojave: "b4d10700919178f9938110a4c4ccaa377f16ed6b3b8be256dad009a4d2f02207"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -129,10 +130,6 @@ class Llvm < Formula
       args << "-DLLVM_ENABLE_LIBCXX=ON"
       args << "-DRUNTIMES_CMAKE_ARGS=-DCMAKE_INSTALL_RPATH=#{rpath}"
       args << "-DDEFAULT_SYSROOT=#{macos_sdk}" if macos_sdk
-
-      # Apple does this for the components of LLVM they ship
-      args << "-DLLVM_INSTALL_BINUTILS_SYMLINKS=ON"
-      args << "-DLLVM_INSTALL_CCTOOLS_SYMLINKS=ON"
 
       # Skip the PGO build on HEAD installs or non-bottle source builds
       build.stable? && build.bottle?
@@ -462,7 +459,7 @@ class Llvm < Formula
     end
     assert_equal "Hello World!", shell_output("./testlibc++").chomp
 
-    on_linux do
+    if OS.linux?
       # Link installed libc++, libc++abi, and libunwind archives both into
       # a position independent executable (PIE), as well as into a fully
       # position independent (PIC) DSO for things like plugins that export
@@ -475,9 +472,9 @@ class Llvm < Formula
       # linking statically.
 
       system "#{bin}/clang++", "-v", "-o", "test_pie_runtimes",
-             "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
-             "-stdlib=libc++", "-rtlib=compiler-rt",
-             "-static-libstdc++", "-lpthread", "-ldl"
+                   "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
+                   "-stdlib=libc++", "-rtlib=compiler-rt",
+                   "-static-libstdc++", "-lpthread", "-ldl"
       assert_equal "Hello World!", shell_output("./test_pie_runtimes").chomp
       (testpath/"test_pie_runtimes").dynamically_linked_libraries.each do |lib|
         refute_match(/lib(std)?c\+\+/, lib)
