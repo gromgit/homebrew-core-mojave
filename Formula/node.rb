@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v17.6.0/node-v17.6.0.tar.xz"
-  sha256 "ea6aaa70aba9c974ee145f19af36e7edd06b07017b4b2c697e337812080d83fd"
+  url "https://nodejs.org/dist/v17.8.0/node-v17.8.0.tar.xz"
+  sha256 "7981144faf674292eff7e075f640a7084ebd927be11d1af78ff76741b6364e4b"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "master"
 
@@ -11,14 +11,13 @@ class Node < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c08b28d9f3a2da01782eb23315b297ec81d74026133d98c4a1f8e5df2e3ddcc5"
+    sha256 cellar: :any, mojave: "17fe9b90d1588e39960fcb602ca56f1a7d04142c084b494d4e72bbde5a7e7744"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "icu4c"
@@ -49,8 +48,8 @@ bottle do
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-8.5.1.tgz"
-    sha256 "56e89227babea8acb15454482986862f93f43b728b2e820453973cc4d7aa9232"
+    url "https://registry.npmjs.org/npm/-/npm-8.5.5.tgz"
+    sha256 "904faa2d36ff2e0db55e9912e33742d43510bac9b40b27c0a2ceb225ffc57566"
   end
 
   def install
@@ -58,7 +57,7 @@ bottle do
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
+    ENV["PYTHON"] = which("python3")
 
     # Never install the bundled "npm", always prefer our
     # installation from tarball for better packaging control.
