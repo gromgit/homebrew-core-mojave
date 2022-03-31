@@ -1,23 +1,19 @@
 class GoAT116 < Formula
   desc "Go programming environment (1.16)"
   homepage "https://golang.org"
-  url "https://golang.org/dl/go1.16.14.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.16.14.src.tar.gz"
-  sha256 "467898cd3a216de54dcb9014f541efe77e9b79a7154dbc1fd2dd778b0c63fb56"
+  url "https://golang.org/dl/go1.16.15.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.16.15.src.tar.gz"
+  sha256 "90a08c689279e35f3865ba510998c33a63255c36089b3ec206c912fc0568c3d3"
   license "BSD-3-Clause"
 
-  livecheck do
-    url "https://golang.org/dl/"
-    regex(/href=.*?go[._-]?v?(1\.16(?:\.\d+)*)[._-]src\.t/i)
-  end
-
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go@1.16"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "538bbcf9c44a97ccba91586000c3e9d4503f86f2bc1d7bcffe5ff739116d9ac5"
+    sha256 cellar: :any_skip_relocation, mojave: "cc3a5cd5b3cf083cb546e250aa7763377ee5b61f4f2530752bd44afcbd390ab3"
   end
 
   keg_only :versioned_formula
+
+  deprecate! date: "2022-03-15", because: :unsupported
 
   depends_on "go" => :build
 
