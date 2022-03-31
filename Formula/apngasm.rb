@@ -4,13 +4,12 @@ class Apngasm < Formula
   url "https://github.com/apngasm/apngasm/archive/3.1.6.tar.gz"
   sha256 "0068e31cd878e07f3dffa4c6afba6242a753dac83b3799470149d2e816c1a2a7"
   license "Zlib"
-  revision 4
+  revision 5
   head "https://github.com/apngasm/apngasm.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apngasm"
-    rebuild 1
-    sha256 cellar: :any, mojave: "12757f2b4834c1761cbfb4f8c7d39facff84ea5253887bb3acbf29bc1c8e65df"
+    sha256 cellar: :any, mojave: "514b44c332e3c20741a1a0aa74ad5c0c6d13dd5df0a9ecae7bc3afb91f75fce8"
   end
 
   depends_on "cmake" => :build
