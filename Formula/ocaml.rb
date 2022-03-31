@@ -25,13 +25,9 @@ class Ocaml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "6e5dbb5e28577bd4b8b41e41b13ec89399daaaf0ae14142245cae9846c6e4667"
-    sha256 cellar: :any,                 arm64_big_sur:  "23d4a0ea99bad00b29387d05eef233fb1ce44a71e9031644f984850820f7b1fc"
-    sha256 cellar: :any,                 monterey:       "51b79fecbba097799de29eb6899ea9dae073e6ee818efb055b72f38552967952"
-    sha256 cellar: :any,                 big_sur:        "98ee5c246e559e6d494ce7e2927a8a4c11ff3c47c26d7a2da19053ba97aa6158"
-    sha256 cellar: :any,                 catalina:       "f1f72000415627bc8ea540dffc7fd29c2d7ebc41c70e76b03a994c7e6e746284"
-    sha256 cellar: :any,                 mojave:         "9badb226c3d92ae196c9a2922c73075eaa45ee90f3c9b06180e29706e95f2f0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dee41488645db27099a5cc8c7b59798f1371ea775ad13e3c326e362c690bf0e9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f65fc647ad9475df8df428b795e29dc345b42526467c98f9d0e93b1767d7fe08"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default
