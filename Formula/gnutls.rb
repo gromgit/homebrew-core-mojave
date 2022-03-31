@@ -1,9 +1,9 @@
 class Gnutls < Formula
   desc "GNU Transport Layer Security (TLS) Library"
   homepage "https://gnutls.org/"
-  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.7/gnutls-3.7.3.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.7/gnutls-3.7.3.tar.xz"
-  sha256 "fc59c43bc31ab20a6977ff083029277a31935b8355ce387b634fa433f8f6c49a"
+  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.7/gnutls-3.7.4.tar.xz"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.7/gnutls-3.7.4.tar.xz"
+  sha256 "e6adbebcfbc95867de01060d93c789938cf89cc1d1f6ef9ef661890f6217451f"
   license all_of: ["LGPL-2.1-or-later", "GPL-3.0-only"]
 
   livecheck do
@@ -13,7 +13,7 @@ class Gnutls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnutls"
-    sha256 mojave: "c8ade8200fbeeeeca97088a62e34e88e1c62ba7673b9849066adbac604f04011"
+    sha256 mojave: "446f4601805cb68aac35cf39cd55882b5bf120836255a71994575e5fefafd57f"
   end
 
   depends_on "autoconf" => :build
