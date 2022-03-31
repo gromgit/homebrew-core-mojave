@@ -14,7 +14,8 @@ class TclTk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcl-tk"
-    sha256 mojave: "8bf319d00369cd411183b484afea4b55daf0c626726ab849379c3289775b34ec"
+    rebuild 1
+    sha256 mojave: "bf6539f15626f39984f90c6b1515694a6a0064cfe0459534859630293cb07749"
   end
 
   keg_only :provided_by_macos
@@ -137,10 +138,8 @@ class TclTk < Formula
   test do
     assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
 
-    on_linux do
-      # Fails with: no display name and no $DISPLAY environment variable
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    # Fails with: no display name and no $DISPLAY environment variable
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     test_itk = <<~EOS
       # Check that Itcl and Itk load, and that we can define, instantiate,
