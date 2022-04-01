@@ -3,14 +3,13 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/8e/05/4356e84f546999d9205bd94489dfc1c02740504a6ea2f9ead10b02f6eafa/diffoscope-206.tar.gz"
-  sha256 "93731939ede57547a3275c3c81875ab4bd222f26364a7519cf6aafe1939cd603"
+  url "https://files.pythonhosted.org/packages/32/9b/9ba7a28fc2bd03cd5b9ae0ede2ffd1b000ea630ed8933ad226087ccb267b/diffoscope-209.tar.gz"
+  sha256 "e845a0b6cd56c116fee670ae8497512489504dc911201bd77b7d65b8550618f6"
   license "GPL-3.0-or-later"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diffoscope"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6c231d096f7f1df30e31546decc602dc9b56e6f50bd7574be3b1edeae4d08d09"
+    sha256 cellar: :any_skip_relocation, mojave: "c1862338204e1cfea3d1f9648898b181e661abff50458a72872eccb8d40cfb7c"
   end
 
   depends_on "libarchive"
