@@ -7,11 +7,12 @@ class Curlie < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curlie"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "26c0fe81114ab2e9412aba48f97bd1315342420ebc252629d41b9799f19fa5b6"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "695cc00f9256182edcc9d6b7a7260529c56a638b8b49593c89adb20548326806"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   uses_from_macos "curl"
 
