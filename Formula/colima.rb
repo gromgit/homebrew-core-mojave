@@ -2,8 +2,8 @@ class Colima < Formula
   desc "Container runtimes on MacOS with minimal setup"
   homepage "https://github.com/abiosoft/colima/blob/main/README.md"
   url "https://github.com/abiosoft/colima.git",
-      tag:      "v0.3.3",
-      revision: "ac876a5d9e4eda7d1d015896ebfbe1dd16b8c203"
+      tag:      "v0.3.4",
+      revision: "5a4a70481ca8d1e794677f22524e3c1b79a9b4ae"
   license "MIT"
   head "https://github.com/abiosoft/colima.git", branch: "main"
 
@@ -12,10 +12,9 @@ class Colima < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/colima"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "62ad7ee5d16b77b650c7119f53bc88ed192593e5f0552f333711badc3c38ece0"
+    sha256 cellar: :any_skip_relocation, mojave: "ce8fce3f97d559be25782468c37c03660a5869fffea9ee49caf17434b1ee1b9a"
   end
 
   depends_on "go" => :build
