@@ -3,15 +3,14 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https://certbot.eff.org/"
-  url "https://files.pythonhosted.org/packages/29/3c/81c9898234b0c9126ac600a980cdce36eff52b24ecba45a917ddcbf722bc/certbot-1.23.0.tar.gz"
-  sha256 "9ab71e7d85e4b3cbce7fa5dc067ee932866e346e9034438d4d5aa34ff98ebff8"
+  url "https://files.pythonhosted.org/packages/a0/7e/a2a131cfab584febde189dcccac03f0ed6c41462bb51d10496ac3bcc2366/certbot-1.25.0.tar.gz"
+  sha256 "9633d21051fe7fd076d64cb41963de61d300d7c30f4b491c8d18cb8306357509"
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certbot"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8e516d18cc192c79340381dcee1aa9c349f96aeb6feac99b057b55fcb693144e"
+    sha256 cellar: :any, mojave: "b0ece6ba6fa5df1d3ba7eb59a31f86c08267c849058120797554fcb1bd4abe13"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -28,18 +27,18 @@ bottle do
   end
 
   resource "acme" do
-    url "https://files.pythonhosted.org/packages/c7/c5/f58fc0ad828f1d266552f7459651034b69c08fa1fb9e782079e4466a028d/acme-1.23.0.tar.gz"
-    sha256 "f34bd792eb8394a972b4b5292fd74693fc8451b071f3cdc6201f1bed4f48ab2f"
+    url "https://files.pythonhosted.org/packages/58/02/8441b42614d77c8cf539b3345376a02ca8d676906bd883e94a2a11859d0b/acme-1.25.0.tar.gz"
+    sha256 "e3fbe36fcfa27ec46f450369498f3486370ab53a0fd7db91557a23d58b3969fa"
   end
 
   resource "certbot-apache" do
-    url "https://files.pythonhosted.org/packages/42/b9/551353f52d77752ff395fa464137bc244b35d957f4d222220d157e9b5ff4/certbot-apache-1.23.0.tar.gz"
-    sha256 "d2c92c9d881b2daec989d0a3a607039b5a7cba02f974b89c12c9f43479c01414"
+    url "https://files.pythonhosted.org/packages/fc/ae/bf2f56c2212b51b87b5c00f005b71733681ec0969784113cd30ec80970ef/certbot-apache-1.25.0.tar.gz"
+    sha256 "91dbd326c5ee4fe7a2ef5f1c3c525863a7f4ed5f228e1c7c10048d18fe18d0a1"
   end
 
   resource "certbot-nginx" do
-    url "https://files.pythonhosted.org/packages/82/92/d3515dd49514a669276000b7e6325cb93c4334c3b131a54abd2442a2f2c5/certbot-nginx-1.23.0.tar.gz"
-    sha256 "64603981c6f6fab1cb3f600510286e62e9ab5bb03b52bee9496503a74e12590f"
+    url "https://files.pythonhosted.org/packages/18/c1/0d61c345ef83271d643a192faccdae8bf3d990843632e90daf6830630486/certbot-nginx-1.25.0.tar.gz"
+    sha256 "433a7237e841c462a67f9195fb7d7711ac6ed6d27bedb981c71238ef5348d62b"
   end
 
   resource "certifi" do
@@ -53,8 +52,8 @@ bottle do
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e8/e8/b6cfd28fb430b2ec9923ad0147025bf8bbdf304b1eb3039b69f1ce44ed6e/charset-normalizer-2.0.11.tar.gz"
-    sha256 "98398a9d69ee80548c762ba991a4728bfc3836768ed226b3945908d1a688371c"
+    url "https://files.pythonhosted.org/packages/56/31/7bcaf657fafb3c6db8c787a865434290b726653c912085fbd371e9b92e1c/charset-normalizer-2.0.12.tar.gz"
+    sha256 "2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597"
   end
 
   resource "ConfigArgParse" do
@@ -68,13 +67,13 @@ bottle do
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f9/4b/1cf8e281f7ae4046a59e5e39dd7471d46db9f61bb564fddbff9084c4334f/cryptography-36.0.1.tar.gz"
-    sha256 "53e5c1dc3d7a953de055d77bef2ff607ceef7a2aac0353b5d630ab67f7423638"
+    url "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz"
+    sha256 "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9"
   end
 
   resource "distro" do
-    url "https://files.pythonhosted.org/packages/a5/26/256fa167fe1bf8b97130b4609464be20331af8a3af190fb636a8a7efd7a2/distro-1.6.0.tar.gz"
-    sha256 "83f5e5a09f9c5f68f60173de572930effbcc0287bb84fdc4426cb4168c088424"
+    url "https://files.pythonhosted.org/packages/b5/7e/ddfbd640ac9a82e60718558a3de7d5988a7d4648385cf00318f60a8b073a/distro-1.7.0.tar.gz"
+    sha256 "151aeccf60c216402932b52e40ee477a939f8d58898927378a02abbe852c1c39"
   end
 
   resource "idna" do
@@ -83,8 +82,8 @@ bottle do
   end
 
   resource "josepy" do
-    url "https://files.pythonhosted.org/packages/e1/e1/e531cc19a0b74b1d09877a67b5935e0be22e2cbbf15cecb36ec97378b644/josepy-1.12.0.tar.gz"
-    sha256 "267004a64f08c016cd54b7aaf7c323fa3ef3679fb62f4b086cd56448d0fecb25"
+    url "https://files.pythonhosted.org/packages/f4/be/5c1d9decbd5e9cf97dccd40d13c5657bef936d87da03c9d7aeb67c1b5126/josepy-1.13.0.tar.gz"
+    sha256 "8931daf38f8a4c85274a0e8b7cb25addfd8d1f28f9fb8fbed053dd51aec75dc9"
   end
 
   resource "parsedatetime" do
@@ -133,8 +132,8 @@ bottle do
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
-    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
+    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
+    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
   end
 
   resource "zope.component" do
