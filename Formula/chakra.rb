@@ -4,12 +4,11 @@ class Chakra < Formula
   url "https://github.com/chakra-core/ChakraCore/archive/v1.11.24.tar.gz"
   sha256 "b99e85f2d0fa24f2b6ccf9a6d2723f3eecfe986a9d2c4d34fa1fd0d015d0595e"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chakra"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1dc5c784841236711dde7d4d8294b44176452d2602f140732b3bfbb8ae66f57a"
+    sha256 cellar: :any, mojave: "8d1e8d26998ccd98558a284242a3b1c48fdda1e494dad628c2ad314fb92cde7b"
   end
 
   depends_on "cmake" => :build
