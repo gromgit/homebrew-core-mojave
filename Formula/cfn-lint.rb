@@ -3,14 +3,13 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-python-lint/"
-  url "https://files.pythonhosted.org/packages/ba/82/70a44ade5615b8b0482b46535d4cbe76366f99c48a94c4fc6c1fccb7bf42/cfn-lint-0.58.2.tar.gz"
-  sha256 "484484e0a849b4f5d621bc55b1af7b46104370a2c1629b49376ab8281787e9eb"
+  url "https://files.pythonhosted.org/packages/c4/d7/285de572a2581211d93e45a5123d6aca52fb53a56de4246f75bcf50cb816/cfn-lint-0.58.4.tar.gz"
+  sha256 "37bcef7275e4f4c5680857ec715e180a155856ba882c463576e8058c2ae1be09"
   license "MIT-0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfn-lint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5e6036fda88a11493fa3b3ee5a8bfc3cd0ac06dc3d170812f6957b5ac3236f6e"
+    sha256 cellar: :any_skip_relocation, mojave: "23791faa98857c7a3aa59637453163cec88fd106c90f5e4fcbc7e4df9bc1fa20"
   end
 
   depends_on "python@3.10"
@@ -22,23 +21,23 @@ bottle do
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/f2/76/2b5c76cc8ae4d3373a793059b2073af1bb5f37189532dacd4788d2d142d3/aws-sam-translator-1.42.0.tar.gz"
-    sha256 "8a7976c0ee2fca004a590e17d3551a49c8d8ba14ed0cb3674ea270d41d0dcd5b"
+    url "https://files.pythonhosted.org/packages/40/85/f0eecd063a65de84f944c6a020ca3599b9d3c08efc9d856991bc76e20326/aws-sam-translator-1.43.0.tar.gz"
+    sha256 "07820609c0de16ec9824aa8b482c48a217bd431f437bcd980a65e7e841626d5d"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/bd/c5/beaf8233d437106d84be4cabaca840d565f213c6053f93a0bf7fab166642/boto3-1.21.8.tar.gz"
-    sha256 "f2ce641957c1782e382548ced4a447189e45851bbe58c1f6752ff2b661527de7"
+    url "https://files.pythonhosted.org/packages/fb/31/97b628ed56a63164bced939fc353a70f83075d225038228b610c141c39a3/boto3-1.21.27.tar.gz"
+    sha256 "ef41b9c7b6311d5152bdc78f7de56912c1ed265debf7da14133e1ad00246ad50"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d5/1a/46a4f7676b15abb03d830724c1567dd0e1d13b7f33903a0a8cbe25d32d97/botocore-1.24.8.tar.gz"
-    sha256 "a5431d806dc75fb1844463d921759fcd8d387674443af8d7fd0867f296b02759"
+    url "https://files.pythonhosted.org/packages/78/14/7ed89fcf90f4e52343106051ec587a903467461c12d8f9921dac99562c12/botocore-1.24.27.tar.gz"
+    sha256 "2c11db4b94b4b9504d2782acb758d29a7e5cbdfaa826601f222ac9ddcf004dde"
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/3c/56/3f325b1eef9791759784aa5046a8f6a1aff8f7c898a2e34506771d3b99d8/jmespath-0.10.0.tar.gz"
-    sha256 "b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"
+    url "https://files.pythonhosted.org/packages/06/7e/44686b986ef9ca6069db224651baaa8300b93af2a085a5b135997bf659b3/jmespath-1.0.0.tar.gz"
+    sha256 "a490e280edd1f57d6de88636992d05b71e97d69a26a19f058ecf7d304474bf5e"
   end
 
   resource "jschema-to-python" do
@@ -73,8 +72,8 @@ bottle do
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/97/ae/7497bc5e1c84af95e585e3f98585c9f06c627fac6340984c4243053e8f44/networkx-2.6.3.tar.gz"
-    sha256 "c0946ed31d71f1b732b5aaa6da5a0388a345019af232ce2f49c766e2d6795c51"
+    url "https://files.pythonhosted.org/packages/9e/9e/3d67df5d543ffd743f4ccb12c9c90929e4f48136e3062e15a6d971d91202/networkx-2.7.1.tar.gz"
+    sha256 "d1194ba753e5eed07cdecd1d23c5cd7a3c772099bd8dbd2fea366788cf4de7ba"
   end
 
   resource "pbr" do
@@ -108,8 +107,8 @@ bottle do
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
-    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
+    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
+    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
   end
 
   def install
