@@ -1,8 +1,8 @@
 class DitaOt < Formula
   desc "DITA Open Toolkit is an implementation of the OASIS DITA specification"
   homepage "https://www.dita-ot.org/"
-  url "https://github.com/dita-ot/dita-ot/releases/download/3.7/dita-ot-3.7.zip"
-  sha256 "dbbc9f8dfea51300e707307b5d65e7945b9357d5fa2d484fbb9264268771abc7"
+  url "https://github.com/dita-ot/dita-ot/releases/download/3.7.1/dita-ot-3.7.1.zip"
+  sha256 "9a9790de79da566c636b805e5f42e94a8d3c0c187919e5159d1b8a64998b5bbd"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class DitaOt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dita-ot"
-    sha256 cellar: :any_skip_relocation, mojave: "2d09359ab97ecc2dafd95b1b429ccd272304f3871d2e257855d8be0076e4393e"
+    sha256 cellar: :any_skip_relocation, mojave: "7dcffe2eadd0dbf60e6672a217e699bdee1f26b8a184ad960d8a6f32dbaa2e45"
   end
 
   depends_on "openjdk"
