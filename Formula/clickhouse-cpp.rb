@@ -1,15 +1,14 @@
 class ClickhouseCpp < Formula
   desc "C++ client library for ClickHouse"
   homepage "https://github.com/ClickHouse/clickhouse-cpp#readme"
-  url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "ea9f068f874d4f678dd23aec1bda414df16c9a869101438fc7ec195d0b5678f0"
+  url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "d724df55f9d4e13b3028355141c6af08fc7f2cd184d8b531e57f0d4f4a376db9"
   license "Apache-2.0"
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-cpp"
-    rebuild 2
-    sha256 cellar: :any, mojave: "49be1e91c9f6efe5f4122343fe57b7d542b1e149a551945084bc0a2caedcc607"
+    sha256 cellar: :any, mojave: "8510ae891fe775c00f2cc917112c787e0bda17c39c71787d211a4912896a5a96"
   end
 
   depends_on "cmake" => [:build, :test]
