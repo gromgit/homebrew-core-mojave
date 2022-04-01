@@ -1,15 +1,14 @@
 class CmarkGfm < Formula
   desc "C implementation of GitHub Flavored Markdown"
   homepage "https://github.com/github/cmark-gfm"
-  url "https://github.com/github/cmark-gfm/archive/0.29.0.gfm.2.tar.gz"
-  version "0.29.0.gfm.2"
-  sha256 "66d92c8bef533744674c5b64d8744227584b12704bcfebbe16dab69f81e62029"
+  url "https://github.com/github/cmark-gfm/archive/0.29.0.gfm.3.tar.gz"
+  version "0.29.0.gfm.3"
+  sha256 "56fba15e63676c756566743dcd43c61c6a77cc1d17ad8be88a56452276ba4d4c"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmark-gfm"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b1966477083c1a57a2ba87e756f766fea47d9bc3254d25de9e7cc657e9e7033c"
+    sha256 cellar: :any, mojave: "b26f110b2ab8210a102b432936b15adc9a29f41385e16569d865f113e8ed1a3d"
   end
 
   depends_on "cmake" => :build
