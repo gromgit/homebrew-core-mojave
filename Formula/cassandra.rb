@@ -9,9 +9,10 @@ class Cassandra < Formula
   sha256 "33623300bef39c75c73c3b51ad45b453e40e27a0816af3a1466537aa79e5f50d"
   license "Apache-2.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra"
-    sha256 cellar: :any_skip_relocation, mojave: "7941f69af46cd058887728b226bb5b022f17e5668ff5b0c3fcc79e07b098f71d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7c939bb25550beb50fa4196561e6472699c819f066cb301eb2efca11eaf16ae2"
   end
 
   depends_on "cython" => :build
