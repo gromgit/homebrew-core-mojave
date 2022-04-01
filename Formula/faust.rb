@@ -7,8 +7,8 @@ class Faust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faust"
-    rebuild 2
-    sha256 cellar: :any, mojave: "72b08aff2de9924afc7c97e58a0502d5acd415680a08f1c46a8c83bb8ec39975"
+    rebuild 3
+    sha256 cellar: :any, mojave: "f62424e97821187bb1bb6361a786e3620c4b157742b132676ccf989a9718c5d5"
   end
 
   depends_on "cmake" => :build
@@ -16,6 +16,12 @@ class Faust < Formula
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
   depends_on "llvm@12"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     system "make", "world"
