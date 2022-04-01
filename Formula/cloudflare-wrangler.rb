@@ -1,14 +1,14 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/wrangler"
-  url "https://github.com/cloudflare/wrangler/archive/v1.19.8.tar.gz"
-  sha256 "2773715502a13cb98e55767e8d7d5793bb1bc4c6cac6c7160db2404ba1c900c2"
+  url "https://github.com/cloudflare/wrangler/archive/v1.19.11.tar.gz"
+  sha256 "55fd07190523d03e9a8bc5509e3aee21852979e2833f9d73c4c7f7d9f82d8724"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cloudflare/wrangler.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudflare-wrangler"
-    sha256 cellar: :any_skip_relocation, mojave: "1cc5072c0cec3b3eaeeb475b70b81291b2015ca6635bc11b4a840ee01b758e0d"
+    sha256 cellar: :any_skip_relocation, mojave: "cbbdee8ac08904e1b3c18371738e050b5ccaf49f88e589e23b23f2e12aa166bb"
   end
 
   depends_on "rust" => :build
