@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.3.3.src.tar.gz"
-  sha256 "ecff695e912265cbb817b936209086d1b5854afeb44ed58e701feeb2e0b1b33e"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.4.0.src.tar.gz"
+  sha256 "3a7cdc0f003f28de2572984db865808039a52a943c587cfb5a87679548864365"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,11 +11,8 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "78ec41c72351ea192f6774b3c9cef32fb840f8abdabae586afd92aabfa6fc936"
-    sha256 cellar: :any,                 big_sur:      "d11e9df24b03c09b1e07eb5aa04a32caad78094e084de9de8b586b3eca722d87"
-    sha256 cellar: :any,                 catalina:     "68bffa7d07f5551de7f675264ac4e4699b96117a39b4a44ad14d7810247f7929"
-    sha256 cellar: :any,                 mojave:       "bd14850fc19217a2be2b9f530ede8caad279783db51106534b88c9321bfe8a95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0c36f98a2fed1e3cb6d02729619b09429dda34a0a67aef6fd347dac5287e5b7d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/biosig"
+    sha256 cellar: :any, mojave: "662c2056c9de8e792a1dd2bdd9ba1bed8e1b1858b2fb9d3bfb701398707f08c6"
   end
 
   depends_on "gawk" => :build
@@ -26,7 +23,7 @@ class Biosig < Formula
   depends_on "suite-sparse"
   depends_on "tinyxml"
 
-  resource "test" do
+  resource "homebrew-test" do
     url "https://pub.ist.ac.at/~schloegl/download/TEST_44x86_e1.GDF"
     sha256 "75df4a79b8d3d785942cbfd125ce45de49c3e7fa2cd19adb70caf8c4e30e13f0"
   end
@@ -45,7 +42,7 @@ class Biosig < Formula
     assert_match "mV\t4274\t0x10b2\t0.001\tV", shell_output("#{bin}/physicalunits mV").strip
     assert_match "biosig_fhir provides fhir binary template for biosignal data",
                  shell_output("#{bin}/biosig_fhir 2>&1").strip
-    testpath.install resource("test")
+    testpath.install resource("homebrew-test")
     assert_match "NumberOfChannels", shell_output("#{bin}/save2gdf -json TEST_44x86_e1.GDF").strip
     assert_match "NumberOfChannels", shell_output("#{bin}/biosig_fhir TEST_44x86_e1.GDF").strip
   end
