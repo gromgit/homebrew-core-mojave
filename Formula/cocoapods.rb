@@ -1,14 +1,13 @@
 class Cocoapods < Formula
   desc "Dependency manager for Cocoa projects"
   homepage "https://cocoapods.org/"
-  url "https://github.com/CocoaPods/CocoaPods/archive/1.11.2.tar.gz"
-  sha256 "c1f7454a93e334484cc15ec8a88ded4080bf5e39df2b0dff729a2e77044dc3df"
+  url "https://github.com/CocoaPods/CocoaPods/archive/1.11.3.tar.gz"
+  sha256 "91d31754611520529b101ee57a059c5caadcd7ddb3c5b3b1065edc0ef5c43372"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cocoapods"
-    sha256 cellar: :any, mojave: "a8f05c04ccd2f811b92a7421c9fe78f2911c83c3406af371956f8ce385e9e1bd"
+    sha256 cellar: :any, mojave: "b251aad37c0053d2ea45c36e175b30b0679825fdb705cbb421148108a05ee69b"
   end
 
   depends_on "pkg-config" => :build
