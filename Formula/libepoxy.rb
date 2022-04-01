@@ -1,10 +1,9 @@
 class Libepoxy < Formula
   desc "Library for handling OpenGL function pointer management"
   homepage "https://github.com/anholt/libepoxy"
-  url "https://download.gnome.org/sources/libepoxy/1.5/libepoxy-1.5.9.tar.xz"
-  sha256 "d168a19a6edfdd9977fef1308ccf516079856a4275cf876de688fb7927e365e4"
+  url "https://download.gnome.org/sources/libepoxy/1.5/libepoxy-1.5.10.tar.xz"
+  sha256 "072cda4b59dd098bba8c2363a6247299db1fa89411dc221c8b81b8ee8192e623"
   license "MIT"
-  revision 1
 
   # We use a common regex because libepoxy doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -13,10 +12,9 @@ class Libepoxy < Formula
     regex(/libepoxy[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libepoxy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5de3be99e112d7a2c0382eb55e206060fad8fdbab8a3be2eb8565417809573e0"
+    sha256 cellar: :any, mojave: "42717ff7582d8fda23961fca735b7ea3a0e98d57b87187b49e38ee4f60879f10"
   end
 
   depends_on "meson" => :build
@@ -66,9 +64,7 @@ bottle do
       }
     EOS
     args = %w[-lepoxy]
-    on_macos do
-      args += %w[-framework OpenGL -DOS_MAC]
-    end
+    args += %w[-framework OpenGL -DOS_MAC] if OS.mac?
     args += %w[-o test]
     system ENV.cc, "test.c", "-L#{lib}", *args
     system "ls", "-lh", "test"
