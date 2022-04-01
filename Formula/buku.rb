@@ -11,9 +11,9 @@ class Buku < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buku"
-    sha256 cellar: :any, mojave: "4774f4f127da959314552b18d58acef256663afca1fc7329b9def2b5481a4130"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2d85239b5f9e5f678c708efab53805ad4622bc57b58885602dc2938eb7566aee"
   end
-
 
   depends_on "rust" => :build
   depends_on "openssl@1.1"
@@ -204,9 +204,10 @@ class Buku < Formula
     ENV["LC_ALL"] = "en_US.UTF-8"
     ENV["XDG_DATA_HOME"] = "#{testpath}/.local/share"
 
-    expect = "/usr/bin/expect"
-    on_linux do
-      expect = Formula["expect"].opt_bin/"expect"
+    expect = if OS.mac?
+      "/usr/bin/expect"
+    else
+      Formula["expect"].opt_bin/"expect"
     end
 
     # Firefox exported bookmarks file
