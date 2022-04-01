@@ -8,13 +8,14 @@ class Circleci < Formula
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circleci"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f1b6b7e1f554b825876cb26431c93e9655498c424c008535f9459ae00281ad54"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0b10074085fc9b91917183a6779482723e1842ba7c49d3f7072ce9fea8596b25"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 when the x/sys dependency is updated upstream.
+  depends_on "go@1.17" => :build
   depends_on "packr" => :build
 
   def install
