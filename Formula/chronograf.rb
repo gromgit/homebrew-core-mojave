@@ -3,14 +3,14 @@ require "language/node"
 class Chronograf < Formula
   desc "Open source monitoring and visualization UI for the TICK stack"
   homepage "https://docs.influxdata.com/chronograf/latest/"
-  url "https://github.com/influxdata/chronograf/archive/1.9.3.tar.gz"
-  sha256 "10db16bb6959356c4fabe6229a500d3183436f401a3c15a5377bc7434fe489d3"
+  url "https://github.com/influxdata/chronograf/archive/1.9.4.tar.gz"
+  sha256 "ff294f25a9de57140024b9953992c1a4d79ec88167ad28435645d888a0096c27"
   license "AGPL-3.0-or-later"
   head "https://github.com/influxdata/chronograf.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chronograf"
-    sha256 cellar: :any_skip_relocation, mojave: "e58843f691f4582fe2663cdb24ec68446c2cea1cb22a471db9a17222a0116292"
+    sha256 cellar: :any_skip_relocation, mojave: "74fad991428665168f1d367f4f0c7b4c7bffcef28199a06caa6b2a781ff9e61a"
   end
 
   depends_on "go" => :build
