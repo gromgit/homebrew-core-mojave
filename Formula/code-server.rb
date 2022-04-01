@@ -1,13 +1,13 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/cdr/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.0.2.tgz"
-  sha256 "d22901d8566ab754af19fe9927c56d882a0f6182b0153000d75f03fc2d079e7c"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.2.0.tgz"
+  sha256 "bc8a450af38e8a937146a5c2e84ca3fb0cb99be2ff8f3a445ec5e9705068b324"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/code-server"
-    sha256 cellar: :any, mojave: "4597a989478c2c8de40ef503e07adc4d56f1066b9c58ce389b3fbe70f046c80d"
+    sha256 cellar: :any_skip_relocation, mojave: "cd757c504c2bc00cdac591154d04408728d3525b8ed34a648d66e42b6ce581fd"
   end
 
   depends_on "bash" => :build
@@ -27,7 +27,7 @@ class CodeServer < Formula
     system "yarn", "--production", "--frozen-lockfile"
     # @parcel/watcher bundles all binaries for other platforms & architectures
     # This deletes the non-matching architecture otherwise brew audit will complain.
-    prebuilds = buildpath/"vendor/modules/code-oss-dev/node_modules/@parcel/watcher/prebuilds"
+    prebuilds = buildpath/"lib/vscode/node_modules/@parcel/watcher/prebuilds"
     (prebuilds/"darwin-x64").rmtree if Hardware::CPU.arm?
     (prebuilds/"darwin-arm64").rmtree if Hardware::CPU.intel?
     libexec.install Dir["*"]
