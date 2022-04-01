@@ -1,14 +1,14 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://dlcdn.apache.org/httpd/httpd-2.4.52.tar.bz2"
-  mirror "https://downloads.apache.org/httpd/httpd-2.4.52.tar.bz2"
-  sha256 "0127f7dc497e9983e9c51474bed75e45607f2f870a7675a86dc90af6d572f5c9"
+  url "https://dlcdn.apache.org/httpd/httpd-2.4.53.tar.bz2"
+  mirror "https://downloads.apache.org/httpd/httpd-2.4.53.tar.bz2"
+  sha256 "d0bbd1121a57b5f2a6ff92d7b96f8050c5a45d3f14db118f64979d525858db63"
   license "Apache-2.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/httpd"
-    sha256 mojave: "5f770e20bc8116148c534a9d315f22f091c130efa1d6d416bf1d524b59c72fd1"
+    sha256 mojave: "782c4ef61a9167ccad1b1e58117907f28cdd98fef505093dc2a2516e47b16528"
   end
 
   depends_on "apr"
