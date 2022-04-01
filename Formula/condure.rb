@@ -1,14 +1,15 @@
 class Condure < Formula
+  include Language::Python::Virtualenv
+
   desc "HTTP/WebSocket connection manager"
   homepage "https://github.com/fanout/condure"
-  url "https://github.com/fanout/condure/archive/1.4.1.tar.gz"
-  sha256 "6a30cf8f5aa51d958099c15433f23dacc1a75780b1aace9a94dce40a5e755d90"
+  url "https://github.com/fanout/condure/archive/1.5.0.tar.gz"
+  sha256 "00dba95f2f60438298ab4f0d937f7d8d04f4b04d9cfcc5cf6cd8b2ef3c915e3c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/condure"
-    rebuild 2
-    sha256 cellar: :any, mojave: "7e6280162c2537d27e1aa432ccf9a58d5c15ce354fb74377556ae45c8325a4ec"
+    sha256 cellar: :any, mojave: "e178c1b537d2a5748d87262d212f69c4aa1d79a37e2a3e0adb6de2825afdc32f"
   end
 
   depends_on "pkg-config" => :build
@@ -35,15 +36,9 @@ class Condure < Formula
     ipcfile = testpath/"client"
     runfile = testpath/"test.py"
 
-    resource("pyzmq").stage do
-      system Formula["python@3.10"].opt_bin/"python3",
-      *Language::Python.setup_install_args(testpath/"vendor")
-    end
-
-    resource("tnetstring3").stage do
-      system Formula["python@3.10"].opt_bin/"python3",
-      *Language::Python.setup_install_args(testpath/"vendor")
-    end
+    venv = virtualenv_create(testpath/"vendor", Formula["python@3.10"].opt_bin/"python3")
+    venv.pip_install resource("pyzmq")
+    venv.pip_install resource("tnetstring3")
 
     runfile.write(<<~EOS,
       import threading
@@ -85,9 +80,7 @@ class Condure < Formula
     end
 
     begin
-      xy = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
-      ENV["PYTHONPATH"] = testpath/"vendor/lib/python#{xy}/site-packages"
-      system Formula["python@3.10"].opt_bin/"python3", runfile
+      system testpath/"vendor/bin/python3", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
