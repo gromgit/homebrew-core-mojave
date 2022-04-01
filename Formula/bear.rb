@@ -1,16 +1,14 @@
 class Bear < Formula
   desc "Generate compilation database for clang tooling"
   homepage "https://github.com/rizsotto/Bear"
-  url "https://github.com/rizsotto/Bear/archive/3.0.18.tar.gz"
-  sha256 "ae94047c79b4f48462b66981f66a67b6a833d75d4c40e7afead491b1865f1142"
+  url "https://github.com/rizsotto/Bear/archive/3.0.19.tar.gz"
+  sha256 "2fcfe2c6e029182cfc54ed26b3505c0ef12b0f43df03fb587f335afdc2ca9431"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bear"
-    rebuild 1
-    sha256 mojave: "64ff90a0fe8ea4a1390082cc1b6241f7ab358ed42ea6cf346c514a19ed582756"
+    sha256 mojave: "3e3234ee3db7ac640f8e38cef7e5c7b608357e97fb2e7832ff7801fbebe0efb5"
   end
 
   depends_on "cmake" => :build
