@@ -5,6 +5,7 @@ class ClickhouseOdbc < Formula
       tag:      "v1.1.10.20210822",
       revision: "c7aaff6860e448acee523f5f7d3ee97862fd07d2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,8 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "7eadbafc340ed5a82784f324c3089c18e9d61b39960a855a75f195ab2ec2d86b"
-    sha256 cellar: :any,                 arm64_big_sur:  "f41c561476fdb934633db980241c84284cd10ee2e1b6a063c8b8bf4d1defe560"
-    sha256 cellar: :any,                 monterey:       "2b563f20b056ba7fd8c15fa6ca7a980946192fbdcf0bcd09146f12a19238c0d7"
-    sha256 cellar: :any,                 big_sur:        "e6d1f023de5da25925976a49e6e67752ca2f21e03b8830ff29f445b76d494229"
-    sha256 cellar: :any,                 catalina:       "321dd3734dac814a4e3d02a407195f700a0217a9edc5c94bc01aa0aec4b161a0"
-    sha256 cellar: :any,                 mojave:         "e2087770d6ff73e2ca07bfa972b7a59b6b38eb02a1262fc8a537282ac78b07b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c4e8d0d6b0e858be6367eb3a10520b9dfa99ebea2c0be44c81e6cc79f105b48"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-odbc"
+    sha256 cellar: :any, mojave: "6795f227b037836240dafcd99204be32cbc0838b085b77727d85bc69769b4c7d"
   end
 
   depends_on "cmake" => :build
