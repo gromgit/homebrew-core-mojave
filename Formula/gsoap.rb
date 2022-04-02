@@ -1,8 +1,8 @@
 class Gsoap < Formula
   desc "SOAP stub and skeleton compiler for C and C++"
   homepage "https://www.genivia.com/products.html"
-  url "https://downloads.sourceforge.net/project/gsoap2/gsoap_2.8.119.zip"
-  sha256 "8997c43b599a2bfe4a788e303a5dd24bbf5992fd06d56f606ca680ca5b0070cf"
+  url "https://downloads.sourceforge.net/project/gsoap2/gsoap_2.8.120.zip"
+  sha256 "a6d6ae3e47713ff679ebd191eac678f0e2d6c409cd4367ec6f6fc6e3e7dd740d"
   license any_of: ["GPL-2.0-or-later", "gSOAP-1.3b"]
 
   livecheck do
@@ -12,7 +12,7 @@ class Gsoap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gsoap"
-    sha256 mojave: "1af1b0e71bb9165c54992397a87effc422838014b73252c0f15799c58959343d"
+    sha256 mojave: "91b171d9afa60a863832f0c979d7fa03549f63ce596c1001e480747c6ae980e7"
   end
 
   depends_on "autoconf" => :build
