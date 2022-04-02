@@ -3,14 +3,13 @@ require "language/node"
 class Esbuild < Formula
   desc "Extremely fast JavaScript bundler and minifier"
   homepage "https://esbuild.github.io/"
-  url "https://registry.npmjs.org/esbuild/-/esbuild-0.14.23.tgz"
-  sha256 "659eb921b8144af7eafb61d1f8c6f73dc4c2646f0a3b0953416b787e3342e5e8"
+  url "https://registry.npmjs.org/esbuild/-/esbuild-0.14.28.tgz"
+  sha256 "ec1e8d5f6e78970fb521fde9ceebf7ab1ef0b92a74722db468e92d5b262b0c73"
   license "MIT"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esbuild"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bb53de18ea0c145687b8e142d8c7915bce4a7cf52eb3097c1c3bf4d13519f806"
+    sha256 cellar: :any_skip_relocation, mojave: "e90022ef6947258fe7e8efec1b8af77c7aea9d65aa9c95da301875cb6b015aaa"
   end
 
   depends_on "node"
