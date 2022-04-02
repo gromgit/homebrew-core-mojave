@@ -8,10 +8,12 @@ class Gotify < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gotify"
-    sha256 cellar: :any_skip_relocation, mojave: "34ecfbfaac033be4b8790a341478627a73faa73b49a234b8865970fe8b7ddd64"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a428a8fd0435451721d6cbd763ca332c104b6c83d00642cde248bf4bacaa5a49"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}
