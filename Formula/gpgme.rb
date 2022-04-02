@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.17.0.tar.bz2"
-  sha256 "4ed3f50ceb7be2fce2c291414256b20c9ebf4c03fddb922c88cda99c119a69f5"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.17.1.tar.bz2"
+  sha256 "711eabf5dd661b9b04be9edc9ace2a7bc031f6bd9d37a768d02d0efdef108f5f"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -10,10 +10,9 @@ class Gpgme < Formula
     regex(/href=.*?gpgme[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpgme"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ea1c1584dd3b6cb92b4b1ecc726c1f2c4341c5dbf70c428c87910dc8f7066305"
+    sha256 cellar: :any, mojave: "41ae794d47d6ddb99663895ad89f6167b328f8e5ed8a4013a552de87370f666c"
   end
 
   depends_on "python@3.9" => [:build, :test]
