@@ -1,41 +1,21 @@
 class Dvm < Formula
   desc "Docker Version Manager"
   homepage "https://github.com/howtowhale/dvm"
-  url "https://github.com/howtowhale/dvm/archive/1.0.2.tar.gz"
-  sha256 "eb98d15c92762b36748a6f5fc94c0f795bf993340a4923be0eb907a8c17c6acc"
+  url "https://github.com/howtowhale/dvm/archive/1.0.3.tar.gz"
+  sha256 "148c2c48a17435ebcfff17476528522ec39c3f7a5be5866e723c245e0eb21098"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, monterey:     "b2406a596b3b067573a98903ccfba88e202cf6967f539b84f1f553ab4bbdc5c3"
-    sha256 cellar: :any_skip_relocation, big_sur:      "5f320e53c2734bed07fe70ac919232642d3a52d104bab787da9c08f251098942"
-    sha256 cellar: :any_skip_relocation, catalina:     "9c7cc18808affb5cc05958f3e501602c8d40889157c776dfb9f5ba9109a717b7"
-    sha256 cellar: :any_skip_relocation, mojave:       "fa56fd369d0ef2dc43d29316d202f7cc3ca670765e07a3295429971929d93d24"
-    sha256 cellar: :any_skip_relocation, high_sierra:  "d98c151704057dc821b67634c0387b15ed3b0e86b07e1eecd9c073f2f27abcd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4c4040e6698f48d190545689fe590e980a5722b1e343c92d01bb2ff856d0a2c6"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvm"
+    sha256 cellar: :any_skip_relocation, mojave: "0e8513ee24cb8883ce12c63547d4bdb0f6fe522c8486f4deaf6549b5fb5f441e"
   end
 
   depends_on "go" => :build
-  # Fails to build on ARM
-  depends_on arch: :x86_64
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "auto"
-
     (buildpath/"src/github.com/howtowhale/dvm").install buildpath.children
 
     cd "src/github.com/howtowhale/dvm" do
-      # Upstream release has a vendored dependency placed in the wrong path,
-      # so adjust its location and relevant import statement.
-      # Upstream acknowledged issue at https://github.com/howtowhale/dvm/issues/193
-      mkdir "vendor/code.cloudfoundry.org"
-      mv "vendor/github.com/pivotal-golang/archiver",
-         "vendor/code.cloudfoundry.org/archiver"
-      inreplace "dvm-helper/internal/downloader/downloader.go",
-                "github.com/pivotal-golang/archiver/extractor",
-                "code.cloudfoundry.org/archiver/extractor"
-
       system "make", "VERSION=#{version}", "UPGRADE_DISABLED=true"
       prefix.install "dvm.sh"
       bash_completion.install "bash_completion" => "dvm"
