@@ -1,19 +1,13 @@
 class Fontforge < Formula
   desc "Command-line outline and bitmap font editor/converter"
   homepage "https://fontforge.github.io"
-  url "https://github.com/fontforge/fontforge/releases/download/20201107/fontforge-20201107.tar.xz"
-  sha256 "68bcba8f602819eddc29cd356ee13fafbad7a80d19b652d354c6791343476c78"
+  url "https://github.com/fontforge/fontforge/releases/download/20220308/fontforge-20220308.tar.xz"
+  sha256 "01e4017f7a0ccecf436c74b8e1f6b374fc04a5283c1d68967996782e15618e59"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_monterey: "96975c5c015c165eb5910588c295ea62434063ff468b477ac3d11e77735609f7"
-    sha256 arm64_big_sur:  "240744fcd44612d9208c1f47e81d8f01b9d94108b50afe54170be14329a95a5a"
-    sha256 monterey:       "3deb4786174659e76b9988079f7ef56b42deb3952ea67b13e5fcbafb553b127d"
-    sha256 big_sur:        "20f92c9d7e6405ca51bdf9f9a2f0216b527bd78e38c2c3bedecbfab3eeb12747"
-    sha256 catalina:       "de48bd3b27ae91d21b8f7d8724cf2b9100683bf02db99794bcd9d9c4ca3483de"
-    sha256 mojave:         "fc6b9c92f02f1e01d8850bfb595dad4f18faf2c3ba079d7bf8084699ec006d53"
-    sha256 x86_64_linux:   "5377794ced753c4220bfa33f5064b3b041819fe264d09b785e8138703a7e0812"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fontforge"
+    sha256 mojave: "fc067bd1009d038e364d62cfffbafac0579e072b21c3bb582acfcc38f83dbe2b"
   end
 
   depends_on "cmake" => :build
