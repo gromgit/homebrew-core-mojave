@@ -8,10 +8,12 @@ class Forcecli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/forcecli"
-    sha256 cellar: :any_skip_relocation, mojave: "d6f86f881c3a16507ad5f92b27fdfadc08dff9bb45a43b34a5e1b17da53d2558"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "de0882f3d737f6fcd0b1320847dc682ce69e4395e52b5ed8f93bac270073f9fa"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", "-trimpath", "-o", bin/"force"
