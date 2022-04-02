@@ -6,16 +6,22 @@ class Field3d < Formula
   license "BSD-3-Clause"
   revision 5
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/field3d"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f931701c54dfb31e6a9635ef4320043591f8e0779a6891c8e284a98370f52d5f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5d197a122436e26c2c1e9164c013a3674688e5310d09b42b7bfbdadafe963954"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "hdf5"
   depends_on "ilmbase"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     ENV.cxx11
