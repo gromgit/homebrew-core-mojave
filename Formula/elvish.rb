@@ -1,14 +1,14 @@
 class Elvish < Formula
   desc "Friendly and expressive shell"
   homepage "https://github.com/elves/elvish"
-  url "https://github.com/elves/elvish/archive/v0.17.0.tar.gz"
-  sha256 "0e255849723129d8c4dc24f67656e651b4e4b7566bc16009109ba76099681fa1"
+  url "https://github.com/elves/elvish/archive/v0.18.0.tar.gz"
+  sha256 "f4635db90af2241bfd37e17ac1a72567b92d18a396598da2099a908b3d88c590"
   license "BSD-2-Clause"
   head "https://github.com/elves/elvish.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elvish"
-    sha256 cellar: :any_skip_relocation, mojave: "51139a8e0b26f459421b507dc8ca79afe96ac8f2dadbb7257efbfadb87206f77"
+    sha256 cellar: :any_skip_relocation, mojave: "11b252e31472bae07c19fedf753f1174fb107d98c35d556736e0979d31c35e20"
   end
 
   depends_on "go" => :build
