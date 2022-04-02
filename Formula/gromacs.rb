@@ -4,15 +4,16 @@ class Gromacs < Formula
   url "https://ftp.gromacs.org/pub/gromacs/gromacs-2022.tar.gz"
   sha256 "fad60d606c02e6164018692c6c9f2c159a9130c2bf32e8c5f4f1b6ba2dda2b68"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://ftp.gromacs.org/pub/gromacs/"
     regex(/href=.*?gromacs[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gromacs"
-    sha256 mojave: "7404b23be8ecea38fbeaa12595cad7f90eac1edff4da8b503fc05c9242dbffc2"
+    sha256 mojave: "8e511c86235d9de3997bbb6b6483d1d086a161c64243a7d2e22fe4bc9b5ec376"
   end
 
   depends_on "cmake" => :build
@@ -46,11 +47,15 @@ bottle do
 
     inreplace "src/gromacs/gromacs-config.cmake.cmakein", "@GROMACS_CXX_COMPILER@", cxx
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DGROMACS_CXX_COMPILER=#{cxx}",
-                                             "-DGMX_VERSION_STRING_OF_FORK=#{tap.user}"
-      system "make", "install"
-    end
+    args = %W[
+      -DGROMACS_CXX_COMPILER=#{cxx}
+      -DGMX_VERSION_STRING_OF_FORK=#{tap.user}
+    ]
+    # Force SSE2/SSE4.1 for compatibility when building Intel bottles
+    args << "-DGMX_SIMD=#{MacOS.version.requires_sse41? ? "SSE4.1" : "SSE2"}" if Hardware::CPU.intel? && build.bottle?
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     bash_completion.install "build/scripts/GMXRC" => "gromacs-completion.bash"
     bash_completion.install bin/"gmx-completion-gmx.bash" => "gmx-completion-gmx.bash"
