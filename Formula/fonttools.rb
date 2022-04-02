@@ -3,14 +3,14 @@ class Fonttools < Formula
 
   desc "Library for manipulating fonts"
   homepage "https://github.com/fonttools/fonttools"
-  url "https://files.pythonhosted.org/packages/2d/4c/49ba863863502bb9fea19d8bd04a527da336b4a2698c8a0c7129e9cc2716/fonttools-4.29.1.zip"
-  sha256 "2b18a172120e32128a80efee04cff487d5d140fe7d817deb648b2eee023a40e4"
+  url "https://files.pythonhosted.org/packages/cb/d9/8f4b6d56afb0c034c65a12902df9d7b41e1ede88bf89baf19d172e9396c3/fonttools-4.31.2.zip"
+  sha256 "236b29aee6b113e8f7bee28779c1230a86ad2aac9a74a31b0aedf57e7dfb62a4"
   license "MIT"
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fonttools"
-    sha256 cellar: :any_skip_relocation, mojave: "cff987a6945ba6ee67e43cb5f23aa0a5da3f15ed84f1c84ebb462eccd60582ce"
+    sha256 cellar: :any_skip_relocation, mojave: "1dc7f791133675b728f8cb395e53880e06011e92f49b009efcce8d6cd938991c"
   end
 
   depends_on "python@3.10"
@@ -20,11 +20,10 @@ class Fonttools < Formula
   end
 
   test do
-    on_macos do
+    if OS.mac?
       cp "/System/Library/Fonts/ZapfDingbats.ttf", testpath
       system bin/"ttx", "ZapfDingbats.ttf"
-    end
-    on_linux do
+    else
       assert_match "usage", shell_output("#{bin}/ttx -h")
     end
   end
