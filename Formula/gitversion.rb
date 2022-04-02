@@ -1,14 +1,13 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https://gitversion.net"
-  url "https://github.com/GitTools/GitVersion/archive/5.8.2.tar.gz"
-  sha256 "6a257db2f33cd2a14ffa38f22c35f42473d52810ee4c2be3560abe5458f477a7"
+  url "https://github.com/GitTools/GitVersion/archive/5.9.0.tar.gz"
+  sha256 "ff67f91ed4ea5a208b9be37f9b52d76e20d3b8f63f5f6c407bf51a8c4f652446"
   license "MIT"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitversion"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8a715fa517b481ab93906782ba6a55530c3079a83356dc882bea04c7a3a08933"
+    sha256 cellar: :any, mojave: "c32fbafa3a8cabc6183131d3bf2fa022f494012cc036c7a59d52e3855f535590"
   end
 
   depends_on "dotnet"
