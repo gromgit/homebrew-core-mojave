@@ -2,8 +2,8 @@ class Ghcup < Formula
   desc "Installer for the general purpose language Haskell"
   homepage "https://www.haskell.org/ghcup/"
   # There is a tarball at Hackage, but that doesn't include the shell completions.
-  url "https://gitlab.haskell.org/haskell/ghcup-hs/-/archive/v0.1.17.5/ghcup-hs-v0.1.17.5.tar.bz2"
-  sha256 "0fd7e17b79cc3ee244a34f5898d0303e9505bed5162ce2b9035f721bea564f1e"
+  url "https://gitlab.haskell.org/haskell/ghcup-hs/-/archive/v0.1.17.6/ghcup-hs-v0.1.17.6.tar.bz2"
+  sha256 "b87e9ec2c4997e35118c952747cb14341d6979719f097a1c40616dce4d522329"
   license "LGPL-3.0-only"
   head "https://gitlab.haskell.org/haskell/ghcup-hs.git", branch: "master"
 
@@ -12,10 +12,9 @@ class Ghcup < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghcup"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "78848bd836ea331cb4817d7ed012e2ce90ede17cea43f902c640ea32d1504f47"
+    sha256 cellar: :any_skip_relocation, mojave: "c5d1dc931a4bdd23c348134a3a3167fb9f9819d83ae89a02d32781e3518a43a2"
   end
 
   depends_on "cabal-install" => :build
