@@ -8,7 +8,8 @@ class Findutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/findutils"
-    sha256 cellar: :any_skip_relocation, mojave: "bba62db50fca69292f00f1547e1383500a371182b9789af83e4d530795a1766a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "53c7b27534e69a3aba4e0fe543a6333c06cfa39621b192c8cba047d6a3fe68c6"
   end
 
   def install
@@ -69,11 +70,10 @@ class Findutils < Formula
 
   test do
     touch "HOMEBREW"
-    on_macos do
+    if OS.mac?
       assert_match "HOMEBREW", shell_output("#{bin}/gfind .")
       assert_match "HOMEBREW", shell_output("#{opt_libexec}/gnubin/find .")
-    end
-    on_linux do
+    else
       assert_match "HOMEBREW", shell_output("#{bin}/find .")
     end
   end
