@@ -5,13 +5,14 @@ class GrafanaAgent < Formula
   sha256 "0de47be2e96fff1ddf55de6f53bff301a55b3a142af40bfb934c8c8b5189e9b3"
   license "Apache-2.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana-agent"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fe44c3711feb252501145307cd5f79f5a7b3ec780eca075e7d608eff21457c80"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6277fb10793a5dbcc8abeba0c45a223164dde00608223d488ad6cdabde822915"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   on_linux do
     depends_on "systemd" => :build
