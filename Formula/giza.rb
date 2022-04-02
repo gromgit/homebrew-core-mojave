@@ -1,14 +1,14 @@
 class Giza < Formula
   desc "Scientific plotting library for C/Fortran built on cairo"
   homepage "https://danieljprice.github.io/giza/"
-  url "https://github.com/danieljprice/giza/archive/v1.3.1.tar.gz"
-  sha256 "b6bae5ba44a8fd921c3430e61b1ce5c6b7febfe7fa835a7c8724d19089bba0b9"
+  url "https://github.com/danieljprice/giza/archive/v1.3.2.tar.gz"
+  sha256 "080b9d20551bc6c6a779b1148830d0e89314c9a78c5a934f9ec8f02e8e541372"
   license "GPL-2.0-or-later"
   head "https://github.com/danieljprice/giza.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/giza"
-    sha256 cellar: :any, mojave: "d969fe5b16752a358e6c99a67d54fb5706ad984fdce48629ff37fec2fd582488"
+    sha256 cellar: :any, mojave: "9845ec90140037eaeaa09bd64f93462f88c94d17fa402b57feeb85cb124a9eeb"
   end
 
   depends_on "pkg-config" => :build
@@ -53,10 +53,14 @@ class Giza < Formula
       -lgiza
     ]
 
-    testfiles = Dir.children("#{testpath}/C")
-
-    testfiles.first(5).each do |file|
-      system ENV.cc, "C/#{file}", *flags
+    %w[
+      test-XOpenDisplay.c
+      test-cairo-xw.c
+      test-giza-xw.c
+      test-rectangle.c
+      test-window.c
+    ].each do |file|
+      system ENV.cc, testpath/"C"/file, *flags
     end
   end
 end
