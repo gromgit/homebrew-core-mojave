@@ -5,10 +5,10 @@ class Gotop < Formula
   sha256 "c0a02276e718b988d1220dc452063759c8634d42e1c01a04c021486c1e61612d"
   license "BSD-3-Clause"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gotop"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fb99aa322b3467eef65a12dd871a079ccdec164db34c5593fe4590885c9f5872"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6ba6e25d461c8d9e0fcf95694b5ac392a09143235cf1d669a8af2957b4e46b92"
   end
 
   depends_on "go" => :build
@@ -25,11 +25,11 @@ bottle do
     assert_match version.to_s, shell_output("#{bin}/gotop --version").chomp
 
     system bin/"gotop", "--write-config"
-    on_macos do
-      assert_predicate testpath/"Library/Application Support/gotop/gotop.conf", :exist?
+    conf_path = if OS.mac?
+      "Library/Application Support/gotop/gotop.conf"
+    else
+      ".config/gotop/gotop.conf"
     end
-    on_linux do
-      assert_predicate testpath/".config/gotop/gotop.conf", :exist?
-    end
+    assert_predicate testpath/conf_path, :exist?
   end
 end
