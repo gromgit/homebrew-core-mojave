@@ -6,12 +6,14 @@ class GoJsonnet < Formula
   license "Apache-2.0"
   head "https://github.com/google/go-jsonnet.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-jsonnet"
-    sha256 cellar: :any_skip_relocation, mojave: "db7a136f032ac873c8c77df2b0c8b6d2321dbce83114802fc5c6332ecaa758e4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "73e8fd2a996f792d38c058515265d6920bcde33a26721b5e6dcf777f1ba69988"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   conflicts_with "jsonnet", because: "both install binaries with the same name"
 
