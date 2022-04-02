@@ -4,6 +4,7 @@ class GoCritic < Formula
   url "https://github.com/go-critic/go-critic/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "75248d8a909e8655040b3af778d92b27beca271dcc210e546607abecc9589d09"
   license "MIT"
+  revision 1
   head "https://github.com/go-critic/go-critic.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class GoCritic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-critic"
-    sha256 cellar: :any_skip_relocation, mojave: "ed310b0b04c87cea4100718e04328f076f58e2a43e907fd74dc2efabce9790e1"
+    sha256 cellar: :any_skip_relocation, mojave: "33cfda58ea2b2555a39d1d4e22ea7cc9aaf646e76181ddfa86d0705b3842aafb"
   end
 
   depends_on "go"
