@@ -1,15 +1,13 @@
 class Libmatio < Formula
   desc "C library for reading and writing MATLAB MAT files"
   homepage "https://matio.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/matio/matio/1.5.21/matio-1.5.21.tar.gz"
-  sha256 "21809177e55839e7c94dada744ee55c1dea7d757ddaab89605776d50122fb065"
+  url "https://downloads.sourceforge.net/project/matio/matio/1.5.22/matio-1.5.22.tar.gz"
+  sha256 "80c3d1e222e115768b57b7de640a37d0ee7cb7a3bd039db3ea941e71fc5204c3"
   license "BSD-2-Clause"
-  revision 2
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmatio"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b148d37a1bdfa81b337e778ec76715220a126d053f7f6368e77388cb3bac8607"
+    sha256 cellar: :any, mojave: "2f6fc6847d6a09ec0e6fb54b8130e02e3017c3854d92b2e6d948a3a33fe5c1da"
   end
 
   depends_on "hdf5"
