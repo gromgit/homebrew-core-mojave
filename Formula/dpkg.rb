@@ -4,9 +4,10 @@ class Dpkg < Formula
   # Please use a mirror as the primary URL as the
   # dpkg site removes tarballs regularly which means we get issues
   # unnecessarily and older versions of the formula are broken.
-  url "https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.1.tar.xz"
-  sha256 "1eb9fd5228b3199284ea5134904bb45b7a5bc12fb044b8e4964d89d2e5bbb563"
+  url "https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.2.tar.xz"
+  sha256 "b8fc67fca696c6bea2f40f737c80574d53384db25202f72effc7e4de4662e1ac"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/d/dpkg/"
@@ -15,7 +16,7 @@ class Dpkg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dpkg"
-    sha256 mojave: "6ae1bc08a905bb43101fe8fa620c204488d721ea8dbd1d81ec9ae977a0c9e5ae"
+    sha256 mojave: "ae5bcf6912623a669679faa02bf4d1ea2dcead37f2c2d4931fc8a2bb1dce4865"
   end
 
   depends_on "pkg-config" => :build
@@ -31,6 +32,14 @@ class Dpkg < Formula
 
   on_linux do
     keg_only "not linked to prevent conflicts with system dpkg"
+  end
+
+  # enables fully-qualified tool paths needed for config below
+  # review for deletion when new version is released
+  # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1007816
+  patch do
+    url "https://bugs.debian.org/cgi-bin/bugreport.cgi?att=1;bug=1007816;filename=dpkg.diff;msg=5"
+    sha256 "66b0cb11813df2b6135345afe40a4570058048bab880229e76d3d22a48d8f818"
   end
 
   patch :DATA
