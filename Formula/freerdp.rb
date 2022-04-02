@@ -8,7 +8,8 @@ class Freerdp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freerdp"
-    sha256 mojave: "b2b0ad71c10991847f71209bc3196648513c03632c8d8df8f3659da35039ad45"
+    rebuild 1
+    sha256 mojave: "d82475b7eabf94a5e9e2a2aa24d0604c85a0bcc0ee5e27e48779c26e7ef25c22"
   end
 
   head do
@@ -51,10 +52,7 @@ class Freerdp < Formula
   end
 
   test do
-    on_linux do
-      # failed to open display
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     success = `#{bin}/xfreerdp --version` # not using system as expected non-zero exit code
     details = $CHILD_STATUS
