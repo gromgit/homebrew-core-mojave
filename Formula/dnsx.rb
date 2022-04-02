@@ -1,15 +1,14 @@
 class Dnsx < Formula
   desc "DNS query and resolution tool"
   homepage "https://github.com/projectdiscovery/dnsx"
-  url "https://github.com/projectdiscovery/dnsx/archive/v1.0.8.tar.gz"
-  sha256 "d5a98396ddc78c94799fcd54b89f6c2600579be8e17349efeb0e691093889a11"
+  url "https://github.com/projectdiscovery/dnsx/archive/v1.1.0.tar.gz"
+  sha256 "5cb53066b689982be0d08322c40a82320888184cf5ee2a7fce118d566261de20"
   license "MIT"
   head "https://github.com/projectdiscovery/dnsx.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsx"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "458c956f618a8d69a8d2e887b346b038dacd362384cb2f20f56efebfcc7865ff"
+    sha256 cellar: :any_skip_relocation, mojave: "b29653836620fe7f78e5cd77baadbac2d261b7304a88c32e461e4986c028ba80"
   end
 
   depends_on "go" => :build
