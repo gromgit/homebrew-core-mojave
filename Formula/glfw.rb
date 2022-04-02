@@ -8,10 +8,9 @@ class Glfw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glfw"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a05fc02c58693a19327174210f8d2dde1254838d509de8e3a826155db4613513"
+    rebuild 2
+    sha256 cellar: :any, mojave: "23ff45535d45769b1f9cd4f9245d043f497bc09cb943aab2398daf72cb071ac4"
   end
-
 
   depends_on "cmake" => :build
 
@@ -49,10 +48,7 @@ class Glfw < Formula
     system ENV.cc, "test.c", "-o", "test",
                    "-I#{include}", "-L#{lib}", "-lglfw"
 
-    on_linux do
-      # glfw does not work in headless mode
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "./test"
   end
