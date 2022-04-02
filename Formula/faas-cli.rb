@@ -14,10 +14,12 @@ class FaasCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faas-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "3c61f2c5737c82f8f4243987733213698375481e414e9d87899ea53daf352834"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5751f6a2d9a2fcb6bc21a72fac36c1e13e4428eb5ecd6f6c6dc31cddb20f342d"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     ENV["XC_OS"] = OS.kernel_name.downcase
