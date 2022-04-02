@@ -1,15 +1,13 @@
 class Enkits < Formula
   desc "C and C++ Task Scheduler for creating parallel programs"
   homepage "https://github.com/dougbinks/enkiTS"
-  url "https://github.com/dougbinks/enkiTS/archive/refs/tags/v1.10.tar.gz"
-  sha256 "578f285fc7c2744bf831548f35b855c6ab06c0d541d08c9cc50b6b72a250811a"
+  url "https://github.com/dougbinks/enkiTS/archive/refs/tags/v1.11.tar.gz"
+  sha256 "b57a782a6a68146169d29d180d3553bfecb9f1a0e87a5159082331920e7d297e"
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "a16d0e8f1b5ad4069eba83f3df23924dd498916b41a6f0f6a81c3dce22d42b7a"
-    sha256 cellar: :any, big_sur:       "52f4e994abed0b9c4d9a7ccc225b98d1cf4f4fe462aea61f2fd1b116f518c904"
-    sha256 cellar: :any, catalina:      "4b263189bb7bf94c1a1f9907fd4c988658c217db6a1897ad4d022354da32be56"
-    sha256 cellar: :any, mojave:        "be477295d82fdc58a9745c310c4a286fbaf77f74211a40ed9042cbed1f58810a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/enkits"
+    sha256 cellar: :any, mojave: "e4c4ce5e7e2c48e19d1e40788e44b7e2376bea6e3d39ef9a72e128edf0ade8de"
   end
 
   depends_on "cmake" => :build
