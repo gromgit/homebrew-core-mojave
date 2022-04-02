@@ -1,18 +1,18 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https://fnproject.io"
-  url "https://github.com/fnproject/cli/archive/0.6.15.tar.gz"
-  sha256 "0ca5816ffe43a19b563c2e495f27a8cb8b9bacda56f834bbc092255697dc0017"
+  url "https://github.com/fnproject/cli/archive/0.6.17.tar.gz"
+  sha256 "7fbad5f089aa083aa3d2ab891cc1754457d3a0ccad2ed1e91af40f1ac5d6a110"
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fn"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a7fe23239071462df22abfc0805539b678248e25aa4cab696f7306d74f8ed021"
+    sha256 cellar: :any_skip_relocation, mojave: "ebdc0164232e31ca78860a9981adad606cb64b34c3addc1bfddb6fde8d1ebea3"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
