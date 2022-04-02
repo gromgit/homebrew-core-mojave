@@ -1,9 +1,9 @@
 class GoBoring < Formula
   desc "Go programming language with BoringCrypto"
   homepage "https://go.googlesource.com/go/+/dev.boringcrypto/README.boringcrypto.md"
-  url "https://go-boringcrypto.storage.googleapis.com/go1.17.7b7.src.tar.gz"
-  version "1.17.7b7"
-  sha256 "eff84edf4f676c691ac21747277e15777789be32dcaa53a0779737b280351453"
+  url "https://go-boringcrypto.storage.googleapis.com/go1.18b7.src.tar.gz"
+  version "1.18b7"
+  sha256 "6028ffee59903934a3182d45ee3e0c1c9f47fb98f05d9bbb2fabb4771db60792"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,10 +11,9 @@ class GoBoring < Formula
     regex(/>go[._-]?(\d+(?:\.\d+)+b\d+)[._-]src\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-boring"
-    rebuild 1
-    sha256 mojave: "35003147d5481bfee9de9d1acecd351e14373c8fdcadbfbffa50661d3927bbe5"
+    sha256 mojave: "6872f8bc831e863d7f78772eddee6eb5a2aa0099f3aa829a8d879b38e763b0f2"
   end
 
   keg_only "it conflicts with the Go formula"
