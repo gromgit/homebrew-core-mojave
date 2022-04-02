@@ -1,15 +1,14 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
   homepage "https://dprint.dev/"
-  url "https://github.com/dprint/dprint/archive/0.22.2.tar.gz"
-  sha256 "417790567927c3e0c3cb21592002a15f22bb34fc2202e89a6af6ace567ff1709"
+  url "https://github.com/dprint/dprint/archive/0.24.1.tar.gz"
+  sha256 "13319b0f925d4eb5134d1a4d22ed15f0b188b254de2a1efdc3e15a5250dbbd43"
   license "MIT"
   head "https://github.com/dprint/dprint.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dprint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "eda91596a2b8f72264ba87ce6cb008d5c7b847ef12c01b99a877995cd99bfd18"
+    sha256 cellar: :any_skip_relocation, mojave: "6b6d34224b332535e771a44929f91a136967e16362630bdef49352e0c30b649a"
   end
 
   depends_on "rust" => :build
