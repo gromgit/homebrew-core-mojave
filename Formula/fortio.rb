@@ -2,8 +2,8 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      tag:      "v1.21.0",
-      revision: "4b1eec7b82bc0a626af9c253a270673fa3721751"
+      tag:      "v1.24.0",
+      revision: "fb00657cd46406b6660f5fc1fa4894d6c426d295"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,16 @@ class Fortio < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fortio"
-    sha256 cellar: :any_skip_relocation, mojave: "53ee4acce78f4cb0b3a6997720196b5d4cbc51566faa6c2e2b370b7344aad6d0"
+    sha256 cellar: :any_skip_relocation, mojave: "9c6214a238394f4db512aa908eb0227fb2ad24d9ebea7a351d73c2262f7f5fd6"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "official-build-clean", "official-build-version", "OFFICIAL_BIN=#{bin}/fortio"
+    system "make", "-j1", "official-build-clean", "official-build-version", "OFFICIAL_BIN=#{bin}/fortio",
+      "BUILD_DIR=./tmp/fortio_build"
   end
 
   test do
