@@ -1,8 +1,8 @@
 class Gping < Formula
   desc "Ping, but with a graph"
   homepage "https://github.com/orf/gping"
-  url "https://github.com/orf/gping/archive/gping-v1.2.7.tar.gz"
-  sha256 "c45ae91f5a88eeb4f4fe0d5c2fbe0e318e3e6329645523a1c7aa0e7c6166cb15"
+  url "https://github.com/orf/gping/archive/gping-v1.3.1.tar.gz"
+  sha256 "ab185e0fa88f9dbc903dbf85b4fda924d9c17341464eda7419e054da70ff846d"
   license "MIT"
   head "https://github.com/orf/gping.git", branch: "master"
 
@@ -17,7 +17,7 @@ class Gping < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gping"
-    sha256 cellar: :any_skip_relocation, mojave: "526194fc9c8dccbf4888e544f7453c283247e8ffe9005241698f42843dada053"
+    sha256 cellar: :any_skip_relocation, mojave: "a69cdfc1c360a8b0cd9addfea1286e1a763e772781c2a7a37981809f5c717ee2"
   end
 
   depends_on "rust" => :build
