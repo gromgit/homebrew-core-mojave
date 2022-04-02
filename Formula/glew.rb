@@ -7,10 +7,10 @@ class Glew < Formula
   revision 1
   head "https://github.com/nigels-com/glew.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glew"
-    rebuild 3
-    sha256 cellar: :any, mojave: "1893e0d09af0c8f1971af3a2cf17a158e3035488b1e1c4e97a35156befc22dc3"
+    rebuild 4
+    sha256 cellar: :any, mojave: "8eb749faff79b85b0626d4473a20794967bc3cdaab482195efce7c065c0c60f6"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -54,9 +54,10 @@ bottle do
     system "cmake", ".", "-Wno-dev"
     system "make"
 
-    glut = "GLUT"
-    on_linux do
-      glut = "GL"
+    glut = if OS.mac?
+      "GLUT"
+    else
+      "GL"
     end
     (testpath/"test.c").write <<~EOS
       #include <GL/glew.h>
@@ -73,17 +74,15 @@ bottle do
       }
     EOS
     flags = %W[-L#{lib} -lGLEW]
-    on_macos do
+    if OS.mac?
       flags << "-framework" << "GLUT"
-    end
-    on_linux do
+    else
       flags << "-lglut"
     end
     system ENV.cc, testpath/"test.c", "-o", "test", *flags
-    on_linux do
-      # Fails in Linux CI with: freeglut (./test): failed to open display ''
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    # Fails in Linux CI with: freeglut (./test): failed to open display ''
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     system "./test"
   end
 end
