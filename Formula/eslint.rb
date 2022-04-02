@@ -3,14 +3,13 @@ require "language/node"
 class Eslint < Formula
   desc "AST-based pattern checker for JavaScript"
   homepage "https://eslint.org"
-  url "https://registry.npmjs.org/eslint/-/eslint-8.10.0.tgz"
-  sha256 "dadd508c13ac5c54ad0f38d37f338c6f86707101915e6dec84f3e4511c96baa5"
+  url "https://registry.npmjs.org/eslint/-/eslint-8.12.0.tgz"
+  sha256 "a58bd4e891303bec25461517864ecd32d80f4852aeae8acf4490b89ad47f8959"
   license "MIT"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eslint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cdc36fdefd1f431690940d6158d53d5072d4f488779fcd335dbc35487dd88d57"
+    sha256 cellar: :any_skip_relocation, mojave: "941754221ae93515b2a5eff80cca0f19215680110c9f05a1b52125dfe0e3067c"
   end
 
   depends_on "node"
