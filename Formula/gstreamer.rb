@@ -1,8 +1,8 @@
 class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.5.tar.xz"
-  sha256 "55862232a63459bbf56abebde3085ca9aec211b478e891dacea4d6df8cafe80a"
+  url "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.20.0.tar.xz"
+  sha256 "edf4bffff85591d4fff7b21bb9ed7f0feabc123ac4a4eff29e73cbce454f9db7"
   license "LGPL-2.0-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gstreamer.git", branch: "main"
 
@@ -11,10 +11,9 @@ class Gstreamer < Formula
     regex(/href=.*?gstreamer[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gstreamer"
-    rebuild 1
-    sha256 mojave: "4d4a5146b69a55670af25f63a59ce0980194bccfe5fe4b1d12e9caad967fc087"
+    sha256 mojave: "4b6a4afcca7113640cf3347b914483e95ef089653e7ff2df2bcff3de714c1bf0"
   end
 
   depends_on "bison" => :build
@@ -48,6 +47,8 @@ bottle do
       system "ninja", "-v"
       system "ninja", "install", "-v"
     end
+
+    bin.env_script_all_files libexec/"bin", GST_PLUGIN_SYSTEM_PATH: HOMEBREW_PREFIX/"lib/gstreamer-1.0"
   end
 
   def caveats
