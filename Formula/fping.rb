@@ -12,7 +12,8 @@ class Fping < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fping"
-    sha256 cellar: :any_skip_relocation, mojave: "a1d40214d9008fe5f57a183da4d61483a8a8897b04486b737900bcdad940709c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8ca348d6ca9101a5ae19fb41033612ccf31a0e063f5b1c6bca934d91b3ad8c1b"
   end
 
   head do
@@ -31,10 +32,9 @@ class Fping < Formula
   test do
     assert_match "Version #{version}", shell_output("#{bin}/fping --version")
     assert_match "Probing options:", shell_output("#{bin}/fping --help")
-    on_macos do
+    if OS.mac?
       assert_equal "::1 is alive", shell_output("#{bin}/fping -A localhost").chomp
-    end
-    on_linux do
+    else
       assert_match "can't create socket", shell_output("#{bin}/fping -A localhost 2>&1", 4)
     end
   end
