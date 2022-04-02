@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v14.8.2",
-      revision: "c6e7e19481b317ef189074f20426664037ab8e5c"
+      tag:      "v14.9.1",
+      revision: "bd40e3da0ba8b9632f8e8d73c2fbff447ab037b3"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -12,12 +12,13 @@ class GitlabRunner < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
-    sha256 cellar: :any_skip_relocation, mojave: "74e6e0eac122777f8e6c28b868a874f917c0ef7c10bfb7eb2c0ef71c4d922ccb"
+    sha256 cellar: :any_skip_relocation, mojave: "09963065c6008ca986a22c7f83aa3b361a19c87083b75b95f092c2326d92457c"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 when x/sys is updated (likely 14.9).
+  depends_on "go@1.17" => :build
 
   def install
     proj = "gitlab.com/gitlab-org/gitlab-runner"
@@ -37,6 +38,7 @@ bottle do
     working_dir ENV["HOME"]
     keep_alive true
     macos_legacy_timers true
+    process_type :interactive
   end
 
   test do
