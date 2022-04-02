@@ -8,7 +8,8 @@ class Ed < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ed"
-    sha256 cellar: :any_skip_relocation, mojave: "7650a6ffaf0871f392bdc113cd23875d28c07fee275d51bd9493441263598467"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "37a7ff393350771b079b4409c264049b4f8ab8dcce16b94d46e549a1b3dd6bc5"
   end
 
   keg_only :provided_by_macos
@@ -48,15 +49,13 @@ class Ed < Formula
     testfile = testpath/"test"
     testfile.write "Hello world\n"
 
-    on_macos do
+    if OS.mac?
       pipe_output("#{bin}/ged -s #{testfile}", ",s/o//\nw\n", 0)
       assert_equal "Hell world\n", testfile.read
 
       pipe_output("#{opt_libexec}/gnubin/ed -s #{testfile}", ",s/l//g\nw\n", 0)
       assert_equal "He word\n", testfile.read
-    end
-
-    on_linux do
+    else
       pipe_output("#{bin}/ed -s #{testfile}", ",s/o//\nw\n", 0)
       assert_equal "Hell world\n", testfile.read
     end
