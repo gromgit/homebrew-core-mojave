@@ -1,13 +1,13 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/roboll/helmfile"
-  url "https://github.com/roboll/helmfile/archive/v0.143.0.tar.gz"
-  sha256 "15e10e0fc6e5ceb233cd9859fce096c6c741fae633894efbd927e20d73daac81"
+  url "https://github.com/roboll/helmfile/archive/v0.143.5.tar.gz"
+  sha256 "893a1a092ca6cd0146c1bb50f880c974732107ec0b6e836b1e1fa95883421371"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmfile"
-    sha256 cellar: :any_skip_relocation, mojave: "283e5f42c4b8d96bef8e75ace1d770bf341245a12511f3715d7eb70847450d27"
+    sha256 cellar: :any_skip_relocation, mojave: "57be79412a7c7e5ff84ce906fb9f3d788ef0c3535bb3ba37726aa1e5df44c25e"
   end
 
   depends_on "go" => :build
