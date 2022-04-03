@@ -7,6 +7,7 @@ class ImapBackup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imap-backup"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "01ccc122dae09432f7c7fe9d491570632a5406f60484aa182ca3e4d140e0d584"
   end
 
