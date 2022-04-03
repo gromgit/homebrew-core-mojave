@@ -7,16 +7,12 @@ class HomeassistantCli < Formula
   sha256 "daf9c2a256cd2e63fc173c7c96b3462211f045a66639778302eb4f9d125b06a2"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git"
+  head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba4c685762ef4327cf4e5bab91710f36cc25fa547725211ffe6258b5f838f67d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1edc756ccdf9aaf1d9b34666f0dcae78c14b23c16636f87e10653632afbbffc7"
-    sha256 cellar: :any_skip_relocation, monterey:       "024f8975037285dda15e76a7b93bd380330fba49cb23f5b3a4d6c9e05fe3e5fe"
-    sha256 cellar: :any_skip_relocation, big_sur:        "56edc0f8459dafbd906894c84578c606f3179a3cf90e3c15477bc1b35afc743e"
-    sha256 cellar: :any_skip_relocation, catalina:       "b1126580f019d6857c8637f5c801eeadbb90a0043133c879da9981963a420fbd"
-    sha256 cellar: :any_skip_relocation, mojave:         "87098e776fb22021a2d07ff47dd7754b0eb8c9c0ed47a70d96f9b87df1f77e99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "080fdde38757f18ac61faf8488a8b27082f0236fa517cb1f2dab9a0c921fd57e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homeassistant-cli"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1e4ada71923e698cd89ef28e21d5a2801e6e85511108210946aeec4e6abf56fa"
   end
 
   depends_on "python-tabulate"
