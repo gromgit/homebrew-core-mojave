@@ -2,14 +2,14 @@ class Heartbeat < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
   homepage "https://www.elastic.co/beats/heartbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.17.0",
-      revision: "93708bd74e909e57ed5d9bea3cf2065f4cc43af3"
+      tag:      "v8.1.1",
+      revision: "7f30bb31a4a532c865161efbbdadd012323b04c5"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heartbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "60fe8bd5886b8535c4fd42674fbd20048732fa3fa6c4650a39cd18ce957548bc"
+    sha256 cellar: :any_skip_relocation, mojave: "12c71aa609550945b05e1c971c916239f191018d0a2b6f6bb20176683037dc83"
   end
 
   depends_on "go" => :build
@@ -78,7 +78,14 @@ class Heartbeat < Formula
     end
     sleep 5
     assert_match "hello", pipe_output("nc -l #{port}", "goodbye\n", 0)
+
     sleep 5
-    assert_match "\"status\":\"up\"", (testpath/"heartbeat/heartbeat").read
+    output = JSON.parse((testpath/"data/meta.json").read)
+    assert_includes output, "first_start"
+
+    (testpath/"data").glob("heartbeat-*.ndjson") do |file|
+      s = JSON.parse(file.read)
+      assert_match "up", s["status"]
+    end
   end
 end
