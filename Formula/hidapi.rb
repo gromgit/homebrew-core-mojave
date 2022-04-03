@@ -8,7 +8,8 @@ class Hidapi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hidapi"
-    sha256 cellar: :any, mojave: "ced8b673abb0036058181d51a78a020bef7cc21576089b27681fab8968c960c1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bb2c96c38331d906a2e5001561804fcbf02894daab3ea2870b653ea982b3f372"
   end
 
   depends_on "cmake" => :build
@@ -39,11 +40,10 @@ class Hidapi < Formula
     EOS
 
     flags = ["-I#{include}/hidapi", "-L#{lib}"]
-    on_macos do
-      flags << "-lhidapi"
-    end
-    on_linux do
-      flags << "-lhidapi-hidraw"
+    flags << if OS.mac?
+      "-lhidapi"
+    else
+      "-lhidapi-hidraw"
     end
     flags += ENV.cflags.to_s.split
     system ENV.cc, "-o", "test", "test.c", *flags
