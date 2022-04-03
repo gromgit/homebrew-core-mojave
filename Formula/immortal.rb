@@ -8,7 +8,8 @@ class Immortal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/immortal"
-    sha256 cellar: :any_skip_relocation, mojave: "510928c17608462fe838d081030bac4d1c0c4df8526970e0459c45cc6ca41e49"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2fb2dad9dd9403f4d569fcb8ea9c2d9f9b0df68b02ddd76be6aa7cf101a53682"
   end
 
   depends_on "go" => :build
