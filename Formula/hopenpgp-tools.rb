@@ -4,12 +4,12 @@ class HopenpgpTools < Formula
   url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.6/hopenpgp-tools-0.23.6.tar.gz"
   sha256 "3df2f26a8e1c2be92c54b1b347474464a23d213a7982dd4afb8c88c6b6325042"
   license "AGPL-3.0-or-later"
-  head "https://salsa.debian.org/clint/hOpenPGP.git"
+  head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hopenpgp-tools"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "f5662cc024e3b2f2fe9bd7c8d250e584eb99a77ee878d9d212c5145e77ebc3ab"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "becdb131b030a227b980232db796f7df77f3258f9517009d5ca987686eb125ae"
   end
 
   depends_on "cabal-install" => :build
