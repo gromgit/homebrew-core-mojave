@@ -1,13 +1,13 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
   homepage "https://github.com/soywod/himalaya"
-  url "https://github.com/soywod/himalaya/archive/v0.5.6.tar.gz"
-  sha256 "00a7e5b9a6acbf49465ebdade68b3f63e04e390b1e2881f99dab63c82064cfcc"
+  url "https://github.com/soywod/himalaya/archive/v0.5.10.tar.gz"
+  sha256 "2922b60caa37de70464a11df44704d8b5589f6d968532350267ffb136da54cbd"
   license "BSD-4-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/himalaya"
-    sha256 cellar: :any_skip_relocation, mojave: "15f602bef2dab0724235271e239ee90c2fe435ec55ac0deb67ed366c3553cb22"
+    sha256 cellar: :any_skip_relocation, mojave: "aa829b7d9233f80c469cafed6c704cabb9040f41577ca8dc8d98c9028145bcbf"
   end
 
   depends_on "rust" => :build
@@ -18,7 +18,7 @@ class Himalaya < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "cli")
   end
 
   test do
