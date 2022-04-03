@@ -14,6 +14,7 @@ class I386ElfGdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i386-elf-gdb"
+    rebuild 1
     sha256 mojave: "c86b9b532df32f1bf886922f150ca8cd1c5dabbfdf4e907920c1793249b932bd"
   end
 
