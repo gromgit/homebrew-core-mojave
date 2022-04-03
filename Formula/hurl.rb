@@ -1,17 +1,16 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
   homepage "https://hurl.dev"
-  url "https://github.com/Orange-OpenSource/hurl/archive/refs/tags/1.5.0.tar.gz"
-  sha256 "469cca44022d9339fad246fd417b22703258164fd1cdbe040476a1c127791184"
+  url "https://github.com/Orange-OpenSource/hurl/archive/refs/tags/1.6.1.tar.gz"
+  sha256 "5b3de8c0375a87094ecbccdd57b89a65b465c25e2ffd8dfdffb1ab08346e4cb1"
   license "Apache-2.0"
   head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hurl"
-    sha256 cellar: :any_skip_relocation, mojave: "67f57b93d002c1b6dc7eed06cb955503286704a5cc5c4c1e54406d6a90fbc92a"
+    sha256 cellar: :any_skip_relocation, mojave: "9a0e8dc6222da9fa03abcafeb8b98dc644564fda743c29428c75f465954b6152"
   end
 
-  depends_on "python@3.10" => :build
   depends_on "rust" => :build
 
   uses_from_macos "curl"
@@ -28,10 +27,8 @@ class Hurl < Formula
     system "cargo", "install", *std_cargo_args(path: "packages/hurl")
     system "cargo", "install", *std_cargo_args(path: "packages/hurlfmt")
 
-    (buildpath/"hurl.1").write Utils.safe_popen_read("python3", "ci/gen_manpage.py", "docs/hurl.md")
-    (buildpath/"hurlfmt.1").write Utils.safe_popen_read("python3", "ci/gen_manpage.py", "docs/hurlfmt.md")
-    man1.install "hurl.1"
-    man1.install "hurlfmt.1"
+    man1.install "docs/man/hurl.1"
+    man1.install "docs/man/hurlfmt.1"
   end
 
   test do
