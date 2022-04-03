@@ -1,13 +1,13 @@
 class Imlib2 < Formula
   desc "Image loading and rendering library"
   homepage "https://sourceforge.net/projects/enlightenment/"
-  url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.8.0/imlib2-1.8.0.tar.xz"
-  sha256 "8925cf2a87f6f4971c1cd2073a7352446fe912d04ff41a05fd6ac20323cc086d"
+  url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.8.1/imlib2-1.8.1.tar.xz"
+  sha256 "522e1e70e65bc0eddfe207617d15c9a395662a7c090661daaa2c294fb7d9fdaa"
   license "Imlib2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imlib2"
-    sha256 mojave: "0f30917df9c4a3de0372354bca64fbc5f839f8c1c0ab300c5e4794a25ea0fc8d"
+    sha256 mojave: "48ee0f43243ed7f584e9a2073606259b679d70c253edf02ec131a1758e5908c1"
   end
 
   depends_on "pkg-config" => :build
