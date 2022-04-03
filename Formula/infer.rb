@@ -30,11 +30,14 @@ class Infer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:      "2c27006c4ccbc05c6bb405c626d188e2dd5ca183a0a2f4441385def480ba4f34"
-    sha256 cellar: :any, catalina:     "7a2816d33cea3053531f51402e0145e4e8ee7537570ba2a580c3ef8aaff379fc"
-    sha256 cellar: :any, mojave:       "2bda6a47ff87c9d79a3f937c9cf24771798107c1bc215823e6156d6ba414f40d"
-    sha256               x86_64_linux: "987d26d95d3e073a96c683710ab0298a1674d2ee6e7a2ee4cb0d8914f2b0139d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/infer"
+    rebuild 1
+    sha256 cellar: :any, mojave: "997666bc5a95c7c2cf2e6212fb54b76f52d7e5b96d1090697c4de2a62e33d417"
   end
+
+  # https://github.com/Homebrew/homebrew-core/pull/87904
+  # https://github.com/facebook/infer/issues/1568
+  deprecate! date: "2021-12-20", because: :does_not_build
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -68,6 +71,10 @@ class Infer < Formula
   end
 
   def install
+    # Fixes: Uncaught Internal Error: ("unknown zone" (zone UTC0))
+    # https://github.com/facebook/infer/issues/1548
+    ENV.delete "TZ"
+
     # needed to build clang
     ENV.permit_arch_flags
 
