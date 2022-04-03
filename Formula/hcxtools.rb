@@ -4,11 +4,12 @@ class Hcxtools < Formula
   url "https://github.com/ZerBea/hcxtools/archive/6.2.5.tar.gz"
   sha256 "7ce5f8263cf9354f01008ba710c6e3cc2dcc861c550bd7a943ca33d29738bec3"
   license "MIT"
-  head "https://github.com/ZerBea/hcxtools.git"
+  head "https://github.com/ZerBea/hcxtools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcxtools"
-    sha256 cellar: :any, mojave: "5bdbea41527cf9c2d183e50c0d1894cc926eaa140a9dfad5ea4dce02027298a3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c7d1c08764c04b76641fa38a37a1b19d6857073286ed71bf214238e52babfa41"
   end
 
   depends_on "pkg-config" => :build
