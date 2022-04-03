@@ -4,7 +4,7 @@ class Ibex < Formula
   url "https://github.com/ibex-team/ibex-lib/archive/ibex-2.8.9.tar.gz"
   sha256 "fee448b3fa3929a50d36231ff2f14e5480a0b82506594861536e3905801a6571"
   license "LGPL-3.0-only"
-  head "https://github.com/ibex-team/ibex-lib.git"
+  head "https://github.com/ibex-team/ibex-lib.git", branch: "master"
 
   livecheck do
     url :stable
@@ -12,10 +12,9 @@ class Ibex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:     "2fe73bcec8be89daf46ad449cced7ea3d5584d1eb8138343359fc0898e3ec826"
-    sha256 cellar: :any_skip_relocation, catalina:    "838265b9b44453641e3cbc39dbbb8903666ba3413ef8c7dc68af69f9759f4351"
-    sha256 cellar: :any_skip_relocation, mojave:      "91e091b03e482a8bae5248a435a8e827c79923aaee9f98f99d33254e176560d2"
-    sha256 cellar: :any_skip_relocation, high_sierra: "bb10a673525d7145196f523190401c2aa42345b5035ed2bcf261081e3653638f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ibex"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6df74c5362e09e0e920b5ce9163f271ff736d37457ad9227a400dd237f80fe64"
   end
 
   depends_on "bison" => :build
