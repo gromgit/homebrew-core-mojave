@@ -4,10 +4,12 @@ class Indicators < Formula
   url "https://github.com/p-ranav/indicators/archive/v2.2.tar.gz"
   sha256 "b768f1b7ca64a413503f72d5460cc617c1458c17fb7a8c0ee503d753e1f20d03"
   license "MIT"
-  head "https://github.com/p-ranav/indicators.git"
+  head "https://github.com/p-ranav/indicators.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "60d4242ee3f9af21462bd6416eb0250a24109ef6a15e55904cedccd9a1dff42e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/indicators"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "645b403cd3b05f4a0eed389275e840e2db973e39e71babfccceb6acfa25202b3"
   end
 
   depends_on "cmake" => :build
