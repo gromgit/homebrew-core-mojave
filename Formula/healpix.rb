@@ -8,7 +8,8 @@ class Healpix < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/healpix"
-    sha256 cellar: :any, mojave: "da29c8b70f4a4279ef3a67cd4df9c35c329f5ceb16e5a61df2263d904d59456c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "faa0bade94cafdf00c8f0320e9d5eb611d3268b4b9855991004b20d3b9790d07"
   end
 
   depends_on "autoconf" => :build
