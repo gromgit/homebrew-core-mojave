@@ -7,10 +7,12 @@ class Icdiff < Formula
   sha256 "ec21632b64159990a1bcedc8b25f96b476e7a6d9e18b75422420c0ae9b694eac"
   license "PSF-2.0"
   revision 1
-  head "https://github.com/jeffkaufman/icdiff.git"
+  head "https://github.com/jeffkaufman/icdiff.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fc5be5fa45223aa9fd58fa6230a7e15c65a1878b94add36c62328f5295438b8e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/icdiff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2fee1aee1e7ac56daa5f1f59dd2473773bd018b16a4609c44540fbae4235ae9d"
   end
 
   depends_on "python@3.10"
