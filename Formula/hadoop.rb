@@ -1,19 +1,14 @@
 class Hadoop < Formula
   desc "Framework for distributed processing of large data sets"
   homepage "https://hadoop.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz"
-  mirror "https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz"
-  sha256 "ad770ae3293c8141cc074df4b623e40d79782d952507f511ef0a6b0fa3097bac"
+  url "https://www.apache.org/dyn/closer.lua?path=hadoop/common/hadoop-3.3.2/hadoop-3.3.2.tar.gz"
+  mirror "https://archive.apache.org/dist/hadoop/common/hadoop-3.3.2/hadoop-3.3.2.tar.gz"
+  sha256 "b341587495b12eec0b244b517f21df88eb46ef634dc7dc3e5969455b80ce2ce5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9137835a8e895a63beeb16e429b52d9578973b20de89c8ea5bf3b327c4070229"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9137835a8e895a63beeb16e429b52d9578973b20de89c8ea5bf3b327c4070229"
-    sha256 cellar: :any_skip_relocation, monterey:       "b7a267d1262025ee2ba27a3f7b3262e742728226834f9224e7cf64f5bef8a2c4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b7a267d1262025ee2ba27a3f7b3262e742728226834f9224e7cf64f5bef8a2c4"
-    sha256 cellar: :any_skip_relocation, catalina:       "b7a267d1262025ee2ba27a3f7b3262e742728226834f9224e7cf64f5bef8a2c4"
-    sha256 cellar: :any_skip_relocation, mojave:         "b7a267d1262025ee2ba27a3f7b3262e742728226834f9224e7cf64f5bef8a2c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ab7ec87e14d03ddfae37c0c2ab5526570dfcd35a27dd253b70d27a1109bf3f8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hadoop"
+    sha256 cellar: :any_skip_relocation, mojave: "ff9fc2728e7cf70c56c4dab0423c5d666e3d08ba32d336a7f8ea911f8c57f24d"
   end
 
   depends_on "openjdk"
