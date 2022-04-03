@@ -13,6 +13,7 @@ class Hypre < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hypre"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "f7ec178f65cd601db7fc4230a4746484e305c6989f83be2721e66aa83513e1c3"
   end
 
