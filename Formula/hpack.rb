@@ -4,11 +4,12 @@ class Hpack < Formula
   url "https://github.com/sol/hpack/archive/0.34.6.tar.gz"
   sha256 "c2a6dc1f3db7bd97ef34d1f40b51d81e6f3775a99082c2d5186abf8f88e48e62"
   license "MIT"
-  head "https://github.com/sol/hpack.git"
+  head "https://github.com/sol/hpack.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hpack"
-    sha256 cellar: :any_skip_relocation, mojave: "36e84dce38da5d01d75e0ca6adbc1446e5e58dcea21a3f9e190309c6b39e1b57"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5fcfecf75f0186f647150c2a8829ce8e232cca295751648bd85c26c4a7f26bd7"
   end
 
   depends_on "cabal-install" => :build
