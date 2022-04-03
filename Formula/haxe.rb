@@ -2,13 +2,12 @@ class Haxe < Formula
   desc "Multi-platform programming language"
   homepage "https://haxe.org/"
   license all_of: ["GPL-2.0-or-later", "MIT"]
-  revision 1
   head "https://github.com/HaxeFoundation/haxe.git", branch: "development"
 
   stable do
     url "https://github.com/HaxeFoundation/haxe.git",
-        tag:      "4.2.4",
-        revision: "ab0c0548ff80fcbbbc140a381a9031af13b5782c"
+        tag:      "4.2.5",
+        revision: "e5eec3122454bfc95412437d938d1d8d3e77ed68"
 
     # Remove when campl5 dependency is bumped to 8.00 in a release
     patch do
@@ -22,9 +21,9 @@ class Haxe < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haxe"
-    sha256 cellar: :any, mojave: "847477700e12bc434f13ff056a973d03c9b0ca0c42971a1e922ff118f942932b"
+    sha256 cellar: :any, mojave: "ecabb083e4405befca8b74c041ddd8364e011c53f9f130f4f6ba3e8a4e8cb42e"
   end
 
   depends_on "cmake" => :build
@@ -110,9 +109,10 @@ bottle do
     EOS
     system "#{bin}/haxe", "-js", "out.js", "-main", "HelloWorld"
 
-    cmd = "osascript -so -lJavaScript out.js 2>&1"
-    on_linux do
-      cmd = "node out.js"
+    cmd = if OS.mac?
+      "osascript -so -lJavaScript out.js 2>&1"
+    else
+      "node out.js"
     end
     assert_equal "Hello world!", shell_output(cmd).strip
   end
