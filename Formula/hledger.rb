@@ -15,6 +15,7 @@ class Hledger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hledger"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "8b9eea35163b8ef355561bd3f8e104da20fac97c2271d01ab93ad0ff96c7a4d7"
   end
 
