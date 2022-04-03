@@ -13,15 +13,14 @@ class Htop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htop"
-    rebuild 2
-    sha256 cellar: :any, mojave: "06db940fe0cca98be628e1687523ec73b63e198f4b9215bf4e93cd9be84359dc"
+    rebuild 3
+    sha256 cellar: :any, mojave: "a6430e867c5cef60485f4016370a7d0e5ee849b2910f2785eb7565a78acb10a3"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
   depends_on "ncurses" # enables mouse scroll
 
   on_linux do
