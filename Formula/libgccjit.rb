@@ -1,19 +1,10 @@
 class Libgccjit < Formula
   desc "JIT library for the GNU compiler collection"
 
-  homepage "https://gcc.gnu.org/"
-  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision 1
-  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
-
-  livecheck do
-    formula "gcc"
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgccjit"
-    rebuild 2
-    sha256 mojave: "367104fa5a7b20bb74c0e68a2ec8ede596e0a664fd078f04c3aa6d721996aa5d"
+    rebuild 3
+    sha256 mojave: "00d278e36e5d950bbec0cd06ef0b8e588bce3212a324f64b0429c225f2e5396e"
   end
   if Hardware::CPU.arm?
     # Branch from the Darwin maintainer of GCC with Apple Silicon support,
@@ -27,11 +18,23 @@ class Libgccjit < Formula
     mirror "https://ftpmirror.gnu.org/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
     sha256 "d08edc536b54c372a1010ff6619dd274c0f1603aa49212ba20f7aa2cda36fa8b"
 
+    bottle do
+      sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    end
+
     # Darwin 21 (Monterey) support
     patch do
       url "https://github.com/iains/gcc-darwin-arm64/commit/20f61faaed3b335d792e38892d826054d2ac9f15.patch?full_index=1"
       sha256 "c0605179a856ca046d093c13cea4d2e024809ec2ad4bf3708543fc3d2e60504b"
     end
+  end
+  homepage "https://gcc.gnu.org/"
+  license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
+  revision 1
+  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
+
+  livecheck do
+    formula "gcc"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
