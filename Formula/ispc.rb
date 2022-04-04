@@ -7,7 +7,8 @@ class Ispc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ispc"
-    sha256 cellar: :any, mojave: "5c438cfbdea13e1d73355d6d587e5c06167dfcbbae48bbc97dafd6e787094837"
+    rebuild 1
+    sha256 cellar: :any, mojave: "30a668bacf86d35afdea2ac33ef96b688f92cb69e696c1f907cfaef6edaba49d"
   end
 
   depends_on "bison" => :build
@@ -16,11 +17,24 @@ class Ispc < Formula
   depends_on "python@3.9" => :build
   depends_on "llvm@12"
 
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
+
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match? "^llvm" }
   end
 
   def install
+    # Force cmake to use our compiler shims instead of bypassing them.
+    inreplace "CMakeLists.txt", "set(CMAKE_C_COMPILER \"clang\")", "set(CMAKE_C_COMPILER \"#{ENV.cc}\")"
+    inreplace "CMakeLists.txt", "set(CMAKE_CXX_COMPILER \"clang++\")", "set(CMAKE_CXX_COMPILER \"#{ENV.cxx}\")"
+
+    # Disable building of i686 target on Linux, which we do not support.
+    inreplace "cmake/GenerateBuiltins.cmake", "set(target_arch \"i686\")", "return()" unless OS.mac?
+
     args = std_cmake_args + %W[
       -DISPC_INCLUDE_EXAMPLES=OFF
       -DISPC_INCLUDE_TESTS=OFF
