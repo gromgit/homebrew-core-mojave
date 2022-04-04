@@ -1,19 +1,15 @@
 class KubeLinter < Formula
   desc "Static analysis tool for Kubernetes YAML files and Helm charts"
   homepage "https://github.com/stackrox/kube-linter"
-  url "https://github.com/stackrox/kube-linter/archive/0.2.5.tar.gz"
-  sha256 "5d2e724e291b00b6a61ebd2bd97f3f3c26298f890be2b555b60f0fb719c5384f"
+  url "https://github.com/stackrox/kube-linter/archive/0.2.6.tar.gz"
+  sha256 "2fa6a286f2a8563b0b80186e06100f9b00c7698f528bb7ef563b0b508c2d8458"
   license "Apache-2.0"
-  head "https://github.com/stackrox/kube-linter.git"
+  revision 1
+  head "https://github.com/stackrox/kube-linter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "edc3e9482784907ac7c598cf0e07c724373d37cfa264b3be14ffe6e4c0142add"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "87711140134751dcea5d007d097ff4b15d607af2da66dd4612c50c1e97b20945"
-    sha256 cellar: :any_skip_relocation, monterey:       "96b5b43d9be1206fff1c16c4fd2e86430e9680f09ae36eff17cad32d38b21e4f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c7153d6da6821e27d636c10474a5af10d15ff39d01d5acbed154829ae4b3c824"
-    sha256 cellar: :any_skip_relocation, catalina:       "c7153d6da6821e27d636c10474a5af10d15ff39d01d5acbed154829ae4b3c824"
-    sha256 cellar: :any_skip_relocation, mojave:         "c7153d6da6821e27d636c10474a5af10d15ff39d01d5acbed154829ae4b3c824"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d1d227be6c5734af7cd11940e0429f5516e71f7574326bdc3722e0d2348bad2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kube-linter"
+    sha256 cellar: :any_skip_relocation, mojave: "f474d229424aeb5dafc9070f31c5990b41cca5c139acfc0e305a65d138935079"
   end
 
   depends_on "go" => :build
@@ -22,6 +18,15 @@ class KubeLinter < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X golang.stackrox.io/kube-linter/internal/version.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/kube-linter"
+
+    bash_output = Utils.safe_popen_read(bin/"kube-linter", "completion", "bash")
+    (bash_completion/"kube-linter").write bash_output
+
+    zsh_output = Utils.safe_popen_read(bin/"kube-linter", "completion", "zsh")
+    (zsh_completion/"_kube-linter").write zsh_output
+
+    fish_output = Utils.safe_popen_read(bin/"kube-linter", "completion", "fish")
+    (fish_completion/"kube-linter.fish").write fish_output
   end
 
   test do
@@ -37,7 +42,7 @@ class KubeLinter < Formula
           fsGroup: 2000
         containers:
         - name: homebrew-test
-          image: busybox
+          image: busybox:stable
           resources:
             limits:
               memory: "128Mi"
