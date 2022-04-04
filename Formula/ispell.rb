@@ -1,9 +1,10 @@
 class Ispell < Formula
   desc "International Ispell"
   homepage "https://www.cs.hmc.edu/~geoff/ispell.html"
-  url "https://www.cs.hmc.edu/~geoff/tars/ispell-3.4.04.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/i/ispell/ispell_3.4.04.orig.tar.gz"
-  sha256 "87bcd6f0521d85a0a3a7834215956d74ebc493144cc7c791f87be6872ccfe13e"
+  url "https://www.cs.hmc.edu/~geoff/tars/ispell-3.4.05.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/i/ispell/ispell_3.4.05.orig.tar.gz"
+  sha256 "cf0c6dede3fd25fada4375d86acafe583cb96d8fe546de746a92ebb6df895602"
+  license :cannot_represent # modified BSD license
 
   livecheck do
     url :homepage
@@ -11,13 +12,8 @@ class Ispell < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "62553e9203c1553d699d0014224a6ff9f934844a3377b90362e2d33ed079f2dd"
-    sha256 arm64_big_sur:  "f48b72490babfc3d3debf6eeeb34fb27516dd7a360322e05217f75f9a060642d"
-    sha256 monterey:       "4cb7e05fb71b9db13a497fd2ef4df875187e5ba1976c79e8776aa9fbe2f6da63"
-    sha256 big_sur:        "ed399105823ef8d4c978b9f29675fe52766cefb3c33e969a36fc0ff0e33dba13"
-    sha256 catalina:       "bd78389107e1457352b3c9eb88a73d434cffae5764455ea461e4c201f5180b85"
-    sha256 mojave:         "85bb0fb8d13a18cffdc0ddd2e9ed1d4d007b884967d0952a7a174135ea5cc416"
-    sha256 x86_64_linux:   "83022ccd0a50207196c2d29a2b3c08003157b1e77bb48ed796baa4e9c3e9092f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ispell"
+    sha256 mojave: "bc087dc48216758f5a98ab8244c66116e35041e2b992527b3dbca4acb0cb7eab"
   end
 
   uses_from_macos "bison" => :build
