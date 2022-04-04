@@ -8,7 +8,8 @@ class Libgosu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgosu"
-    sha256 cellar: :any, mojave: "66694524d888957903de67a71bd2b8cafbc42fd7de4ebde19c8da06f5eef537e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a11cfcda087b3368a0dd1f9b037b4a7f1de0dc694e8248e2b9f2d278334c4ccf"
   end
 
   depends_on "cmake" => :build
@@ -61,10 +62,8 @@ class Libgosu < Formula
 
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-lgosu", "-I#{include}", "-std=c++17"
 
-    on_linux do
-      # Fails in Linux CI with "Could not initialize SDL Video: No available video device"
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    # Fails in Linux CI with "Could not initialize SDL Video: No available video device"
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "./test"
   end
