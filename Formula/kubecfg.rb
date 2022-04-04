@@ -1,13 +1,13 @@
 class Kubecfg < Formula
   desc "Manage complex enterprise Kubernetes environments as code"
   homepage "https://github.com/kubecfg/kubecfg"
-  url "https://github.com/kubecfg/kubecfg/archive/v0.25.0.tar.gz"
-  sha256 "884708337842341d4f777e00321bfa72b16bf73027a583305ebb281000096714"
+  url "https://github.com/kubecfg/kubecfg/archive/v0.26.0.tar.gz"
+  sha256 "322ed2b6d4214bafac63ee3d666aa240b077a0949d68bc97e5b6dfc484345b7e"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubecfg"
-    sha256 cellar: :any_skip_relocation, mojave: "0707873a9d955d7d3b9f2ec4098deb3553da2825d3299ced562c6a0717ba81e2"
+    sha256 cellar: :any_skip_relocation, mojave: "3134ddc8c4dcef579df8900985a34a3636d1fce82f31534f323bb3de521d9bbd"
   end
 
   depends_on "go" => :build
