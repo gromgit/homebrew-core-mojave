@@ -1,8 +1,8 @@
 class Libgphoto2 < Formula
   desc "Gphoto2 digital camera library"
   homepage "http://www.gphoto.org/proj/libgphoto2/"
-  url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.28/libgphoto2-2.5.28.tar.bz2"
-  sha256 "9600596a03208c15ed76f2d30441d75261dec00d93e80779ed0fc56f03725ebd"
+  url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.29/libgphoto2-2.5.29.tar.bz2"
+  sha256 "dbe3cefad8c634fc134d93467a33e242cb1030f0b9829deb9f1703f368ac027e"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libgphoto2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgphoto2"
-    sha256 mojave: "bcbb06912a456c7e6764904e84b6d1c85088cca105ff8eb6f2f9f7ed0c151447"
+    sha256 mojave: "a36f6406af67994d462676f4d82a9e848724ffc88b9d1fa4eb6cf3142074dcdf"
   end
 
   head do
