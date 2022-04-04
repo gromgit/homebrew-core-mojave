@@ -8,6 +8,7 @@ class LibbitcoinDatabase < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbitcoin-database"
+    rebuild 1
     sha256 cellar: :any, mojave: "d9ac642cef50514268ed810027c009e262f0480adef7cf0a427f5f3f9bf89fe6"
   end
 
