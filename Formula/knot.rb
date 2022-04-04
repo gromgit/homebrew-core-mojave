@@ -1,8 +1,8 @@
 class Knot < Formula
   desc "High-performance authoritative-only DNS server"
   homepage "https://www.knot-dns.cz/"
-  url "https://secure.nic.cz/files/knot-dns/knot-3.1.4.tar.xz"
-  sha256 "05ebca053b4ce62205a095b6885ed1a1167c629ccac2b3c8dcc431bd2deedf70"
+  url "https://secure.nic.cz/files/knot-dns/knot-3.1.6.tar.xz"
+  sha256 "e9ba1305d750dc08fb08687aec7ac55737ca073deaa0b867c884e0c0f2fdb753"
   license all_of: ["GPL-3.0-or-later", "0BSD", "BSD-3-Clause", "LGPL-2.0-or-later", "MIT"]
 
   livecheck do
@@ -12,8 +12,7 @@ class Knot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/knot"
-    rebuild 2
-    sha256 mojave: "5bccefae87fd29b2a5337896686eaac9c6be15e7d2eab8dea10145fa154f0a68"
+    sha256 mojave: "77d2652927c72a450acc5f9d0a03e7147cb1e0ab7e15455a090c48ed4d07132a"
   end
 
   head do
