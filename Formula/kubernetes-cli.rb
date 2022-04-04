@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.23.4",
-      revision: "e6c093d87ea4cbb530a7b2ae91e54c0842d8308a"
+      tag:      "v1.23.5",
+      revision: "c285e781331a3785a7f436042c65c5641ce8a9e9"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -12,10 +12,9 @@ class KubernetesCli < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "871f6cc4e85b13168bcb467cabdd163dab414ac9253be9af7751ec6b408dfa68"
+    sha256 cellar: :any_skip_relocation, mojave: "4a0205d9b22bedfb9792e08ff32198153fa4851c0ab550b64bccae138644489c"
   end
 
   depends_on "bash" => :build
