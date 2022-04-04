@@ -14,10 +14,12 @@ class K3sup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3sup"
-    sha256 cellar: :any_skip_relocation, mojave: "b9b2c1e6302712932dd2bebb39afd23f5f29948b3cc49448aa2527727665dfde"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "de7545a349b29bb44e98de290601622c6b12f9e483fc79ee7ab4911bfabdd094"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     ldflags = %W[
