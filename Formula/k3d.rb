@@ -1,9 +1,9 @@
 class K3d < Formula
-  desc "Little helper to run Rancher Lab's k3s in Docker"
+  desc "Little helper to run CNCF's k3s in Docker"
   homepage "https://k3d.io"
-  url "https://github.com/rancher/k3d.git",
-    tag:      "v5.3.0",
-    revision: "bb8a2b0bb57ad69680e4e2a0772a0bf31f35a457"
+  url "https://github.com/k3d-io/k3d.git",
+    tag:      "v5.4.1",
+    revision: "7b8c0f483ff124f217d14852ca4e937701e9003e"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class K3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
-    sha256 cellar: :any_skip_relocation, mojave: "ae163a2632cd639ba0a3e97b3f9918a2656f157b42c00f95289b5526cafe7c67"
+    sha256 cellar: :any_skip_relocation, mojave: "8aa26fdfed53bc0df63ca95444601a908b445e6659e47aa510e3cc4f310bec38"
   end
 
   depends_on "go" => :build
@@ -27,8 +27,8 @@ class K3d < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/rancher/k3d/v#{version.major}/version.Version=v#{version}
-      -X github.com/rancher/k3d/v#{version.major}/version.K3sVersion=#{k3s_version}
+      -X github.com/k3d-io/k3d/v#{version.major}/version.Version=v#{version}
+      -X github.com/k3d-io/k3d/v#{version.major}/version.K3sVersion=#{k3s_version}
     ]
 
     system "go", "build",
