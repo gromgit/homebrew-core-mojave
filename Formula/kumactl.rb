@@ -12,7 +12,8 @@ class Kumactl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kumactl"
-    sha256 cellar: :any_skip_relocation, mojave: "ab66606b80aa44ed4d63465f3015ff01e6a7972227ab2437f22c3c84ac837869"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "eb2ce696253bcfaf496edc6f3b0fca5e2b8c760cc9a2b083cccf605e71e3f9f8"
   end
 
   depends_on "go" => :build
