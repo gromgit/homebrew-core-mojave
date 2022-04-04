@@ -8,7 +8,8 @@ class Kubeconform < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeconform"
-    sha256 cellar: :any_skip_relocation, mojave: "435f81336f8fdbe00ea2632f532637b96de94071985fc0e739958d0f6989ba51"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a666d1f7e8595fc55fabd715024b1637b66713dfbfffb4ec36d999081e2758e6"
   end
 
   depends_on "go" => :build
