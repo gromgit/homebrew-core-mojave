@@ -14,7 +14,8 @@ class Ledger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ledger"
-    sha256 cellar: :any, mojave: "faef0b3328eb4510995f34a5159cdcae004f40f15f326b3627530d3c41c608b6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "07db41447a74ed84ee7fc5cc4559a274530036af40351ab2c7014b645b5fa9fe"
   end
 
   depends_on "cmake" => :build
