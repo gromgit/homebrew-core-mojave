@@ -9,11 +9,12 @@ class Kubeval < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeval"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "4df6c02e38b3973b8cf8bbed96a7256e050b4c470e6bb5d0c43a2d0c98a9ff98"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "3a4a9d17b3c847c37d5e6e1ce2a91de5b98a1be5dfc28f646f6d4f1a50857680"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     ldflags = %W[
@@ -21,7 +22,7 @@ class Kubeval < Formula
       -X main.version=#{version}
       -X main.commit=#{Utils.git_head}
       -X main.date=#{time.iso8601}
-    ].join(" ")
+    ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     pkgshare.install "fixtures"
