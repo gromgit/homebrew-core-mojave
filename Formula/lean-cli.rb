@@ -8,10 +8,12 @@ class LeanCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lean-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "4790c75e8d147f97e4b22cc6c02c22180fea829039f637c230171aa513c543fa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6d8e43a8959096d3989e01d726e1e14132e284bd0b403cf9fcfc3ef99732acef"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     build_from = build.head? ? "homebrew-head" : "homebrew"
