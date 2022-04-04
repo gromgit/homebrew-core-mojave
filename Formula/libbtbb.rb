@@ -8,11 +8,12 @@ class Libbtbb < Formula
   sha256 "9478bb51a38222921b5b1d7accce86acd98ed37dbccb068b38d60efa64c5231f"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/greatscottgadgets/libbtbb.git"
+  head "https://github.com/greatscottgadgets/libbtbb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbtbb"
-    sha256 cellar: :any, mojave: "574b5d65508cef6c1d2f425d5ef0f31a153a7a56a542a3b72c5e871ccacb92a4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fba2b64d15d0328df2243228bcb6af646da4563f184e38bd0e9a525d146c1a6d"
   end
 
   depends_on "cmake" => :build
