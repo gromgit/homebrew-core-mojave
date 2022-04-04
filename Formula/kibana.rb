@@ -6,11 +6,12 @@ class Kibana < Formula
       tag:      "v7.10.2",
       revision: "a0b793698735eb1d0ab1038f8e5d7a951524e929"
   license "Apache-2.0"
-  head "https://github.com/elastic/kibana.git"
+  head "https://github.com/elastic/kibana.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "308f92ff1e8455e9521c07b3d18d6d8f15b0cf107754620971e6346cfbb39b0e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kibana"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bfe36a5db9fc21cfff52961421ff6a3e622441f498f5c1a30aa243a0986e5298"
   end
 
   # elasticsearch will be relicensed before v7.11.
