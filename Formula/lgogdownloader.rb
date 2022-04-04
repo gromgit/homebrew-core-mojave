@@ -13,7 +13,8 @@ class Lgogdownloader < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lgogdownloader"
-    sha256 cellar: :any, mojave: "17eae74f3bc2684f4f01848ba1ff03f59daf241462753b66da8adfdfe26e9114"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a4e175d7442b08eb8a9d8d41af77c0982a06994e658ca863ab8a1c9501c29fcb"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +26,8 @@ class Lgogdownloader < Formula
   depends_on "liboauth"
   depends_on "rhash"
   depends_on "tinyxml2"
+
+  uses_from_macos "curl"
 
   def install
     system "cmake", ".", *std_cmake_args, "-DJSONCPP_INCLUDE_DIR=#{Formula["jsoncpp"].opt_include}"
@@ -42,7 +45,13 @@ class Lgogdownloader < Formula
       secret
     EOS
     writer.close
-    assert_equal "HTTP: Login failed", reader.read.lines.last.chomp
+    lastline = ""
+    begin
+      reader.each_line { |line| lastline = line }
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
+    assert_equal "HTTP: Login failed", lastline.chomp
     reader.close
   end
 end
