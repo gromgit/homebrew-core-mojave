@@ -7,10 +7,12 @@ class Kubergrunt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubergrunt"
-    sha256 cellar: :any_skip_relocation, mojave: "d4c0cebce4fa9f3cb4ffc7dc46544b3627e6e44acf7dbea48aed5a60aab9dcd1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "468e90f9e79da4af7900211012f766c44c0957cb70f1481ff4c3690e87c8941c"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=v#{version}"), "./cmd"
