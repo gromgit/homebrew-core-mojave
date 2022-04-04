@@ -3,21 +3,20 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/55/bf/a3d03a47254592b59c20158005e00896a0b687eec975c7ec592af69eb309/ipython-8.1.0.tar.gz"
-  sha256 "42c23e90b2deaae631266885de1656a517a1673d7e1db57e8eb3a4bb6cd5ce1b"
+  url "https://files.pythonhosted.org/packages/24/65/7f9da61ec569eb4e96081ef802755295a213141908be2958c6771db4b04c/ipython-8.2.0.tar.gz"
+  sha256 "70e5eb132cac594a34b5f799bd252589009905f05104728aea6a403ec2519dc1"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipython"
-    sha256 cellar: :any, mojave: "69b108012b7d69fd1510e9fb51f0744f1e8eef311d002b749fbb664ce7bbdec3"
+    sha256 cellar: :any, mojave: "009f460263c3259cc96d52604faf75c0f375b0a2c79c9cbb4d8a7c4c8ed4154f"
   end
 
   depends_on "python@3.10"
   depends_on "six"
   depends_on "zeromq"
 
-  # use resources from ipykernel (which includes ipython)
   resource "appnope" do
     url "https://files.pythonhosted.org/packages/e9/bc/2d2c567fe5ac1924f35df879dbf529dd7e7cabd94745dc9d89024a934e76/appnope-0.1.2.tar.gz"
     sha256 "dd83cd4b5b460958838f6eb3000c660b1f9caf2a5b1de4264e941512f603258a"
@@ -49,13 +48,13 @@ class Ipython < Formula
   end
 
   resource "executing" do
-    url "https://files.pythonhosted.org/packages/ca/e4/efb182548f9931b36b76fd9ba2236bfc5e6d342c905beff92e868afb5b5c/executing-0.8.2.tar.gz"
-    sha256 "c23bf42e9a7b9b212f185b1b2c3c91feb895963378887bb10e64a2e612ec0023"
+    url "https://files.pythonhosted.org/packages/16/14/5a9b7b7725e85aa66f00a89f1e912ded203217016562747f8b8effcf52bc/executing-0.8.3.tar.gz"
+    sha256 "c6554e21c6b060590a6d3be4b82fb78f8f0194d809de5ea7df1c093763311501"
   end
 
   resource "ipykernel" do
-    url "https://files.pythonhosted.org/packages/e0/22/d6c7267ebf529853bfc786eea6840c24164634d008d4a58ec4ddf0f8a633/ipykernel-6.9.1.tar.gz"
-    sha256 "f95070a2dfd3147f8ab19f18ee46733310813758593745e07ec18fb08b409f1d"
+    url "https://files.pythonhosted.org/packages/e7/b2/0db7e5e7c2de514de42f9a95a09b421d18b7cd6f4a69af19f4cf46c48d13/ipykernel-6.9.2.tar.gz"
+    sha256 "4c3cc8cb359f2ead70c30f5504971c0d285e2c1c699d2ce9af0216fe9c9fb17c"
   end
 
   resource "jedi" do
@@ -101,6 +100,11 @@ class Ipython < Formula
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/37/34/c34c376882305c5051ed7f086daf07e68563d284015839bfb74d6e61d402/prompt_toolkit-3.0.28.tar.gz"
     sha256 "9f1cd16b1e86c2968f2519d7fb31dd9d669916f515612c269d14e9ed52b51650"
+  end
+
+  resource "psutil" do
+    url "https://files.pythonhosted.org/packages/47/b6/ea8a7728f096a597f0032564e8013b705aa992a0990becd773dcc4d7b4a7/psutil-5.9.0.tar.gz"
+    sha256 "869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25"
   end
 
   resource "ptyprocess" do
