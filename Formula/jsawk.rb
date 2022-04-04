@@ -4,10 +4,12 @@ class Jsawk < Formula
   url "https://github.com/micha/jsawk/archive/1.4.tar.gz"
   sha256 "3d38ffb4b9c6ff7f17072a12c5817ffe68bd0ab58d6182de300fc1e587d34530"
   license "BSD-3-Clause"
-  head "https://github.com/micha/jsawk.git"
+  head "https://github.com/micha/jsawk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e99db0c7e694b8d1171c5ea012d12442f708b8a2808ae136cc38b63309f71899"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jsawk"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b06e66e1e913ac5adf2bbff5953330a198b5729566e09d56efd6f2d035579dcf"
   end
 
   depends_on "spidermonkey"
