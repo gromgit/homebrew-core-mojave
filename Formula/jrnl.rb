@@ -9,7 +9,8 @@ class Jrnl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jrnl"
-    sha256 cellar: :any, mojave: "8f2f1fcadf5f9271409276959b2ef1c8ce42c76a2b8bae3efcf4dde4a44c47de"
+    rebuild 1
+    sha256 cellar: :any, mojave: "75bc6f225c1459f9b895b23bf7c5439240c699bff63fffcc5759ea39ba12428d"
   end
 
   depends_on "rust" => :build
