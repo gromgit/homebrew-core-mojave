@@ -8,6 +8,7 @@ class LibbitcoinBlockchain < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbitcoin-blockchain"
+    rebuild 1
     sha256 cellar: :any, mojave: "aa6296906671935612f9327cf973dfe107749d5290b0b474a07c873e6d4d7d8d"
   end
 
