@@ -1,9 +1,9 @@
 class Libbdplus < Formula
   desc "Implements the BD+ System Specifications"
   homepage "https://www.videolan.org/developers/libbdplus.html"
-  url "https://download.videolan.org/pub/videolan/libbdplus/0.1.2/libbdplus-0.1.2.tar.bz2"
-  mirror "https://ftp.osuosl.org/pub/videolan/libbdplus/0.1.2/libbdplus-0.1.2.tar.bz2"
-  sha256 "a631cae3cd34bf054db040b64edbfc8430936e762eb433b1789358ac3d3dc80a"
+  url "https://download.videolan.org/pub/videolan/libbdplus/0.2.0/libbdplus-0.2.0.tar.bz2"
+  mirror "https://ftp.osuosl.org/pub/videolan/libbdplus/0.2.0/libbdplus-0.2.0.tar.bz2"
+  sha256 "b93eea3eaef33d6e9155d2c34b068c505493aa5a4936e63274f4342ab0f40a58"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,10 +11,9 @@ class Libbdplus < Formula
     regex(/href=.*?libbdplus[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbdplus"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a15f957a8a7d27c5ccc368dc824b0f62b9651bf8b52cda1ba581badf3fbe0952"
+    sha256 cellar: :any, mojave: "bb86530ce3e5734a74a57f955660e36e3136c6141129aff8a05ec6a351ca2dc3"
   end
 
   head do
