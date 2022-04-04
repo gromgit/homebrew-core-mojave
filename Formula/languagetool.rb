@@ -2,8 +2,8 @@ class Languagetool < Formula
   desc "Style and grammar checker"
   homepage "https://www.languagetool.org/"
   url "https://github.com/languagetool-org/languagetool.git",
-      tag:      "v5.6",
-      revision: "e1a27564b91dff5d4133b9fa64955da9e36c889b"
+      tag:      "v5.7",
+      revision: "35d0d40e1e795919473563d6102df5b464ba7d29"
   license "LGPL-2.1-or-later"
   head "https://github.com/languagetool-org/languagetool.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Languagetool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/languagetool"
-    sha256 cellar: :any_skip_relocation, mojave: "ce182a7f98914f314fe00adc2a2efa95bf8e6be2cf17f98b77f37a0ff78ebe42"
+    sha256 cellar: :any_skip_relocation, mojave: "2ea8dc1810d5b6a5153baec4a3d6119e559af7c7ab3b5417870328d945b8d239"
   end
 
   depends_on "maven" => :build
