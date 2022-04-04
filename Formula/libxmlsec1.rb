@@ -12,8 +12,8 @@ class Libxmlsec1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxmlsec1"
-    rebuild 2
-    sha256 cellar: :any, mojave: "309b24b577a5e01f1e7fe02002693904d90f55c60044635c3ab69f302b6abfde"
+    rebuild 3
+    sha256 cellar: :any, mojave: "316fabf2b22c3d95f81f632aa4b8adc12d9bea413c8fa52265f6f8212bcebc6e"
   end
 
   depends_on "pkg-config" => :build
@@ -21,6 +21,7 @@ class Libxmlsec1 < Formula
   depends_on "libgcrypt"
   depends_on "libxml2"
   depends_on "openssl@1.1"
+  uses_from_macos "libxslt"
 
   on_macos do
     depends_on xcode: :build
@@ -40,6 +41,10 @@ class Libxmlsec1 < Formula
             "--prefix=#{prefix}",
             "--disable-crypto-dl",
             "--disable-apps-crypto-dl",
+            "--with-nss=no",
+            "--with-nspr=no",
+            "--enable-mscrypto=no",
+            "--enable-mscng=no",
             "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}"]
 
     system "./configure", *args
