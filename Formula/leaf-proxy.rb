@@ -8,7 +8,8 @@ class LeafProxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/leaf-proxy"
-    sha256 cellar: :any_skip_relocation, mojave: "ff952c71958c3330a6ce2b512883ab963972c3931cea10c64bb5239391701124"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "66a956e6d442399462b6bc4e85fca53e627a48f0330cb55add29f9fd9fe2dd4b"
   end
 
   depends_on "rust" => :build
