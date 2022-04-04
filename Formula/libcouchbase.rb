@@ -4,12 +4,12 @@ class Libcouchbase < Formula
   url "https://packages.couchbase.com/clients/c/libcouchbase-3.2.4.tar.gz"
   sha256 "ac5774695906d5482ea5d92cc9e47826eb979c6a784114a259bd748aa4774c3a"
   license "Apache-2.0"
-  head "https://github.com/couchbase/libcouchbase.git"
+  head "https://github.com/couchbase/libcouchbase.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcouchbase"
-    rebuild 2
-    sha256 mojave: "9df2ef2836eb9a06cce3f86e6c17b6b58650296c167a379ecf417e8def29d86f"
+    rebuild 3
+    sha256 mojave: "77e869ebf7c015a38b88c53b7afdf28bb2a2b7b441887f1adf84279f792a21e3"
   end
 
   depends_on "cmake" => :build
