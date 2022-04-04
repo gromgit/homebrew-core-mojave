@@ -4,12 +4,12 @@ class Kubeaudit < Formula
   url "https://github.com/Shopify/kubeaudit/archive/refs/tags/0.16.0.tar.gz"
   sha256 "1f1c21352a5788586e5903dee499668d45318fb388b0cc3860b1a0d09bb489fc"
   license "MIT"
-  head "https://github.com/Shopify/kubeaudit.git"
+  head "https://github.com/Shopify/kubeaudit.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeaudit"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "1ea6498f62eadc1e3aa489eb88ed645fe9fd38609f1719cdb1bd31ff0456c7f0"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "d26d706a15448c612fc5820634ca3932b6831cbd8db1e475b13f872b26a11799"
   end
 
   depends_on "go" => :build
@@ -21,7 +21,7 @@ class Kubeaudit < Formula
       -X github.com/Shopify/kubeaudit/cmd.BuildDate=#{time.strftime("%F")}
     ]
 
-    system "go", "build", "-ldflags", ldflags.join(" "), *std_go_args, "./cmd"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
   end
 
   test do
