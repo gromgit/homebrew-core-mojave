@@ -6,11 +6,13 @@ class Inxi < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/smxi/inxi.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inxi"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f99295cd974adf7be3f42eccc8c22ac2d214365a891a84de6a82a8301af124f2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "228b464e382e1d9dc30c3c81d6644bb50697c74728e30e96f2da64d154f3fb6c"
   end
+
+  uses_from_macos "perl"
 
   def install
     bin.install "inxi"
@@ -24,8 +26,12 @@ bottle do
   test do
     inxi_output = shell_output("#{bin}/inxi")
 
-    uname = shell_output("uname").strip
-    assert_match uname.to_str, inxi_output.to_s
+    # This test does not work on Linux, because on that platform
+    # inxi does not print the OS name, only the kernel version.
+    if OS.mac?
+      uname = shell_output("uname").strip
+      assert_match uname.to_str, inxi_output.to_s
+    end
 
     uname_r = shell_output("uname -r").strip
     assert_match uname_r.to_str, inxi_output.to_s
