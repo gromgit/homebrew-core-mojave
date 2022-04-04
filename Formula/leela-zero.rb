@@ -10,6 +10,7 @@ class LeelaZero < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/leela-zero"
+    rebuild 1
     sha256 cellar: :any, mojave: "ac8b02c62c863577b0abd2774a39b06a40fa0126f6d76334d86aafb61066da03"
   end
 
