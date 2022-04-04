@@ -1,13 +1,13 @@
 class Ko < Formula
   desc "Build and deploy Go applications on Kubernetes"
   homepage "https://github.com/google/ko"
-  url "https://github.com/google/ko/archive/v0.10.0.tar.gz"
-  sha256 "55431dcb5c3c82cbc3e636ead9d04d5798154abe1f601785b99923be35b3d2cf"
+  url "https://github.com/google/ko/archive/v0.11.2.tar.gz"
+  sha256 "000045afa2eaee9a6af475a41fb60541b39e2e7bfb7b985ff7b1040b6bc2c58c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ko"
-    sha256 cellar: :any_skip_relocation, mojave: "85fa03ad27cb07ff58a0af19f9dd1e50046d44584176a15e905fca386c376cd9"
+    sha256 cellar: :any_skip_relocation, mojave: "ee4ee6a6511ba6dfeaa7918412cfeb71457cbd7f13a8bf9d733ba3cd7ef86ee3"
   end
 
   depends_on "go" => :build
