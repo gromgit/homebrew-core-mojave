@@ -5,12 +5,12 @@ class Klee < Formula
   sha256 "1ff2e37ed3128e005b89920fad7bcf98c7792a11a589dd443186658f5eb91362"
   license "NCSA"
   revision 3
-  head "https://github.com/klee/klee.git"
+  head "https://github.com/klee/klee.git", branch: "master"
 
   bottle do
-    sha256 big_sur:  "3534cffd757f8fa4c3be4f05c7534dbe705e54657512bb4a1b9d8b13cbe6b337"
-    sha256 catalina: "508ab6444c02c26e061edf84519c18d888c4d9c1098c89215b5b788224838d37"
-    sha256 mojave:   "b29dd739b4644aafc918f40a1c5abce7c00657c09a8959401c9ac8c77397a560"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/klee"
+    rebuild 1
+    sha256 mojave: "d09543dc2c52ecfaa0b5b4fb235280c6f348ef07ba3a2b6de2ad9ad583ba2d40"
   end
 
   depends_on "cmake" => :build
