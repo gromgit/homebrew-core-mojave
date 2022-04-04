@@ -5,17 +5,12 @@ class Ksync < Formula
       tag:      "0.4.7-hotfix",
       revision: "14ec9e24670b90ee45d4571984e58d3bff02c50e"
   license "Apache-2.0"
-  head "https://github.com/ksync/ksync.git"
+  head "https://github.com/ksync/ksync.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a58b20d7cf681598f94c777200474e1419890fb24e3d6217cc0233a91a266bab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4fe9c12efd8e73fd794edecca04b0270e4dc2229adad3953f25635c3432fc313"
-    sha256 cellar: :any_skip_relocation, monterey:       "2add85f6b9b1daa3aa4cde7791fec5e36873f2440155c6cb20a1ab08a0be92c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0e497912738482d6fa2d1161c6a26b62a781b25ba4280f7ac8e2487b757cda9d"
-    sha256 cellar: :any_skip_relocation, catalina:       "ccee0b1bd4f7d3af674d1c2901965e7140b4408a794a781fc8e7640276936f98"
-    sha256 cellar: :any_skip_relocation, mojave:         "6128a2e80da17e718001cd9a9a240d27b4dcac7a3e893b2e00316b886c04a3d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b5ae17908d10f2c602df06a8a4c03fb92403b11019b9471a3f2d0def2c94376"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ksync"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "94b49f0c08199d7abeb8b1ccb8e68e34bb9dd7491dce1f522b87b8562dfd7a4e"
   end
 
   depends_on "go" => :build
@@ -34,7 +29,7 @@ class Ksync < Formula
       -X #{project}/pkg/ksync.BuildDate=#{time.rfc3339(9)}
       -X #{project}/pkg/ksync.VersionString=#{tap.user}
       -X #{project}/pkg/ksync.GoVersion=go#{Formula["go"].version}
-    ].join(" ")
+    ]
     system "go", "build", *std_go_args(ldflags: ldflags), "#{project}/cmd/ksync"
   end
 
