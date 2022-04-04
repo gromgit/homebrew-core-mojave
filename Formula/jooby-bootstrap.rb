@@ -7,12 +7,13 @@ class JoobyBootstrap < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3ca58a519ffa11530ab152b7a007c4b11e7bf76767b9296b84626e0516598c7b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jooby-bootstrap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bbfdafe4f00d1421416fe579a8be239daaff31dba67a4916d0dee084b114eb7c"
   end
 
   deprecate! date: "2020-11-13", because: :unmaintained
 
-  depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
   depends_on "maven"
   depends_on "openjdk@8"
 
