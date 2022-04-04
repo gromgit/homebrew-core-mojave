@@ -4,14 +4,12 @@ class Libcpuid < Formula
   url "https://github.com/anrieff/libcpuid/archive/v0.5.1.tar.gz"
   sha256 "36d62842ef43c749c0ba82237b10ede05b298d79a0e39ef5fd1115ba1ff8e126"
   license "BSD-2-Clause"
-  head "https://github.com/anrieff/libcpuid.git"
+  head "https://github.com/anrieff/libcpuid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "10ee187d9e292dac42be9924bf2b5ea2f495267335e5e5a56a35779d28ff3036"
-    sha256 cellar: :any,                 big_sur:      "f7252b191ada11eee6bb25649cba4fda28be44c91ebcfd936e3508d3573bf4f1"
-    sha256 cellar: :any,                 catalina:     "e954e21a3bb2ab10c1eb831af1626ccf9cbbe69e123a4da6d69975d59cfca867"
-    sha256 cellar: :any,                 mojave:       "9cb4e35df56ce25adcfc4c0a03f1a377aac54ec7e217bc9bb583df41eebcc8c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "20afc15713aa6f9097f50da5ea44d06beda67451c70c52639d9bb973c0f5d26f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcpuid"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9ce7b71aad1c692c8c2935d8896027e79eb3857a5bf7c6d34e5c4ca4cf1c0525"
   end
 
   depends_on "autoconf" => :build
