@@ -1,8 +1,8 @@
 class Keptn < Formula
   desc "Is the CLI for keptn.sh a message-driven control-plane for application delivery"
   homepage "https://keptn.sh"
-  url "https://github.com/keptn/keptn/archive/0.13.1.tar.gz"
-  sha256 "a95505168e031acc32e6b893648fe6b8d06d232d430d755b2c1baffada9aa9cb"
+  url "https://github.com/keptn/keptn/archive/0.13.4.tar.gz"
+  sha256 "c60aa30a91e5e10cff44d4416b651ceaa1ad4a4587551363b1ab69b896896f7d"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Keptn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/keptn"
-    sha256 cellar: :any_skip_relocation, mojave: "1f584497d8928d51207c82a8b749bace74245ca3f5e43aa78bcf2b9124013ca7"
+    sha256 cellar: :any_skip_relocation, mojave: "65ce30e5ecd85a3625a82b2466d111bace6590cb33982d93ce6800c150daabae"
   end
 
   depends_on "go" => :build
@@ -35,14 +35,11 @@ class Keptn < Formula
 
     assert_match "Keptn CLI version: #{version}", shell_output(bin/"keptn version 2>&1")
 
-    on_macos do
-      assert_match "Error: credentials not found in native keychain",
-        shell_output(bin/"keptn status 2>&1", 1)
-    end
-
-    on_linux do
-      assert_match ".keptn/.keptn____keptn: no such file or directory",
-        shell_output(bin/"keptn status 2>&1", 1)
+    output = shell_output(bin/"keptn status 2>&1", 1)
+    if OS.mac?
+      assert_match "Error: credentials not found in native keychain", output
+    else
+      assert_match ".keptn/.keptn____keptn: no such file or directory", output
     end
   end
 end
