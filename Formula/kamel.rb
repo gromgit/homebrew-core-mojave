@@ -2,8 +2,8 @@ class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
   url "https://github.com/apache/camel-k.git",
-      tag:      "v1.8.0",
-      revision: "eb893c22ad451a45525f487af671d7d945ed722c"
+      tag:      "v1.8.2",
+      revision: "3d22f48f909f99daf2a5d50c9cd518267f984616"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Kamel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kamel"
-    sha256 cellar: :any_skip_relocation, mojave: "1aaa701f1b31e8b8a9e87c798abb3052d443d6de216474543316da1bf6420e0f"
+    sha256 cellar: :any_skip_relocation, mojave: "c1c73d4df2c09cb5a1c65f915077ebace24e4d6a23dd76782e59d40ef5f604a7"
   end
 
   depends_on "go" => :build
