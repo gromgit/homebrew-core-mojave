@@ -2,8 +2,8 @@ class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
   homepage "https://github.com/kubernetes-sigs/kustomize"
   url "https://github.com/kubernetes-sigs/kustomize.git",
-      tag:      "kustomize/v4.5.2",
-      revision: "9091919699baf1c5a5bf71b32ca73a993e98088b"
+      tag:      "kustomize/v4.5.4",
+      revision: "cf3a452ddd6f83945d39d582243b8592ec627ae3"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kustomize.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Kustomize < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kustomize"
-    sha256 cellar: :any_skip_relocation, mojave: "e055ad6018a75ea6f033e6e8849c2882ac9b2b0369c8de463a6b653bc5ef7723"
+    sha256 cellar: :any_skip_relocation, mojave: "e15833ecc10098ba02e2aaceebd91900ec1362ac6e4086f435a185825f6c9634"
   end
 
   depends_on "go" => :build
