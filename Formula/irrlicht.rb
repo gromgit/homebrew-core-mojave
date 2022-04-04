@@ -15,8 +15,8 @@ class Irrlicht < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/irrlicht"
-    rebuild 2
-    sha256 cellar: :any, mojave: "a62f2ded1a60d39e4a96be4b359f71ad75ef2ce39764281da6d65e3262475cfc"
+    rebuild 3
+    sha256 cellar: :any, mojave: "4c606c44c4f4a099f199da40ab617fdd66ea19a72df3098678faee8034cfca71"
   end
 
   depends_on xcode: :build
@@ -95,9 +95,7 @@ class Irrlicht < Formula
   end
 
   test do
-    on_macos do
-      assert_match Hardware::CPU.arch.to_s, shell_output("lipo -info #{lib}/libIrrlicht.a")
-    end
+    assert_match Hardware::CPU.arch.to_s, shell_output("lipo -info #{lib}/libIrrlicht.a") if OS.mac?
     cp_r Dir["#{pkgshare}/examples/01.HelloWorld/*"], testpath
     system ENV.cxx, "main.cpp", "-I#{include}/irrlicht", "-L#{lib}", "-lIrrlicht", "-o", "hello"
   end
