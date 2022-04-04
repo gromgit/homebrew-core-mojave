@@ -1,15 +1,15 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
   homepage "https://proj.org/"
-  url "https://github.com/OSGeo/PROJ/releases/download/8.2.1/proj-8.2.1.tar.gz"
-  sha256 "76ed3d0c3a348a6693dfae535e5658bbfd47f71cb7ff7eb96d9f12f7e068b1cf"
+  url "https://github.com/OSGeo/PROJ/releases/download/9.0.0/proj-9.0.0.tar.gz"
+  sha256 "0620aa01b812de00b54d6c23e7c5cc843ae2cd129b24fabe411800302172b989"
   license "MIT"
+  revision 1
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
-    rebuild 2
-    sha256 mojave: "520fed7a06977611571a8dc6cfe2d6aa2af86182db43f5c8a111cfc7a8fe8284"
+    sha256 mojave: "aeb1ffd2b882f50392dc222d70c13feb16692d5666c8c244c18cdca9d06ce5a5"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +35,9 @@ bottle do
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    system "cmake", "-S", ".", "-B", "static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
+    system "cmake", "--build", "static"
+    lib.install Dir["static/lib/*.a"]
   end
 
   test do
