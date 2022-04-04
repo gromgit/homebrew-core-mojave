@@ -2,9 +2,8 @@ class Libebml < Formula
   desc "Sort of a sbinary version of XML"
   homepage "https://www.matroska.org/"
   license "LGPL-2.1-or-later"
-  head "https://github.com/Matroska-Org/libebml.git"
+  head "https://github.com/Matroska-Org/libebml.git", branch: "master"
 
-  # Remove stable block in next release with merged patch
   stable do
     url "https://dl.matroska.org/downloads/libebml/libebml-1.4.2.tar.xz"
     sha256 "41c7237ce05828fb220f62086018b080af4db4bb142f31bec0022c925889b9f2"
@@ -15,15 +14,18 @@ class Libebml < Formula
     patch :DATA
   end
 
-  bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c7ba4bf364135ac436fc50211c4d72557d0c7921d1f0e9af47a530c503354c9f"
-    sha256 cellar: :any,                 arm64_big_sur:  "fce6d01b12243501223e4e9294528b8eab1818815b18e4ffe777fd14cec0e525"
-    sha256 cellar: :any,                 monterey:       "fc87630f3f45acb204763c92b50c8188b72de87e95b89696079f8d4f56f815c3"
-    sha256 cellar: :any,                 big_sur:        "de4edaae6d3f42a388be996f448b582262e39e923acc9ccef881a20ffa817d38"
-    sha256 cellar: :any,                 catalina:       "20a71bb0c2babdc04f179dc77c7a03c2f2f2031e7d8d87fbf9d3c41ee831addc"
-    sha256 cellar: :any,                 mojave:         "c3c91dc9f86978012a06f299115bc088e5ea0af6aec2e915d0f8338c4c0edd03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9b4e0ff9efebb14dff775d6e567924ed54fe4ba67abfff48844acff583d9a15"
+  livecheck do
+    url "https://dl.matroska.org/downloads/libebml/"
+    regex(/href=.*?libebml[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libebml"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7cba1311be0bfe38d5d412a82396f952e550ab1f0307f94831f3643f71cf76f1"
+  end
+
+  # Remove stable block in next release with merged patch
 
   depends_on "cmake" => :build
 
