@@ -5,16 +5,12 @@ class Lcm < Formula
   sha256 "e249d7be0b8da35df8931899c4a332231aedaeb43238741ae66dc9baf4c3d186"
   license "LGPL-2.1"
   revision 6
-  head "https://github.com/lcm-proj/lcm.git"
+  head "https://github.com/lcm-proj/lcm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "6f663f930c725a6e01f5186aa3b73ad6f8a247673d5dca58921f3c49dc4992ab"
-    sha256 cellar: :any,                 arm64_big_sur:  "a0a53217477597ebd7afe6afcb10f732831af2914ebba6434d90a543ddd09aeb"
-    sha256 cellar: :any,                 monterey:       "b871f2e30a9ee82cd0830f0db5340f006d7603a15da2982f7df806a66fccddfb"
-    sha256 cellar: :any,                 big_sur:        "8ae12270c1b2ba9c0c02b22a32bb96326a4694aee2e0c65e694d71ef7e1a4c05"
-    sha256 cellar: :any,                 catalina:       "13a51b7c5ca3ffa82d366ae898ab98dcafa725af2a6f8319bcbf16225b0dba4f"
-    sha256 cellar: :any,                 mojave:         "437bc1978078c4ad00696efb00cf4add0afa7666c1e8b7a8b6080974bed3eae4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f395b8d2bc8dac7f0c332ef8a4aac62b3d9851a00c84820076addef775c29b9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lcm"
+    rebuild 1
+    sha256 cellar: :any, mojave: "61a6ea6aa1b232e5e0b9d2c28d97bb03eee936e4494705640d0d74f693642758"
   end
 
   depends_on "cmake" => :build
