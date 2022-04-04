@@ -8,10 +8,12 @@ class Lazydocker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lazydocker"
-    sha256 cellar: :any_skip_relocation, mojave: "3745d9cabb13470ee1a5a2ce7305482febc002818f332d30cafac851a9a1c368"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7cac5942d0e2384490cbaf26cdf3f1a93338dd7bdea16c5287d02f6d37ab1a06"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", "-mod=vendor", "-o", bin/"lazydocker",
