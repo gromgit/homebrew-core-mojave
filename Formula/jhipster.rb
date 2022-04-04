@@ -4,13 +4,13 @@ class Jhipster < Formula
   desc "Generate, develop and deploy Spring Boot + Angular/React applications"
   homepage "https://www.jhipster.tech/"
   # Check if this can be switched to the newest `node` at version bump
-  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-7.6.0.tgz"
-  sha256 "616afd423448ae28fe1a2db3c0d7475681cdf3dc00971217e17156f44228cad0"
+  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-7.7.0.tgz"
+  sha256 "561c55ad290f8325093c791e4e2125fbbce49f1c58031246934a988bafde3e94"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jhipster"
-    sha256 cellar: :any_skip_relocation, mojave: "be9d07ebe1d90ac93eb5ff501e56e08929e676cad9ce87d1260769004d580c2e"
+    sha256 cellar: :any_skip_relocation, mojave: "1dccc4cc310a73f1da28b30579fbccb8f4c0a203f5688d04abd15b8b07febc0b"
   end
 
   depends_on "node"
