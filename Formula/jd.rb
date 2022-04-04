@@ -8,7 +8,8 @@ class Jd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jd"
-    sha256 cellar: :any_skip_relocation, mojave: "fae8015c755feea0f99d18170fd5bb2d11033dee11f42bd48d918a763a7b8a70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2077c3c7e889d78c7ea7c64db6a80b0fd0f43e9a3a76a1cc6c39edfd182d005e"
   end
 
   depends_on "go" => :build
