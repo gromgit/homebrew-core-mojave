@@ -1,13 +1,13 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://github.com/sigp/lighthouse"
-  url "https://github.com/sigp/lighthouse/archive/refs/tags/v2.1.3.tar.gz"
-  sha256 "eeb96b6eb23d61b7eba004c4ede8b3238afa4798cb0788af5511d12409bc971a"
+  url "https://github.com/sigp/lighthouse/archive/refs/tags/v2.1.5.tar.gz"
+  sha256 "b8cb866dd321b262b23e00ab1e89fccaece233ca9812c97c46a40356368b3266"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighthouse"
-    sha256 cellar: :any_skip_relocation, mojave: "371f1152e83937ea0a2b3f05487998ef49cb2f8f3fc4d4f3006031780bddcf04"
+    sha256 cellar: :any_skip_relocation, mojave: "eaedcede866dffa61e5746fbc87cc1cdb425be6eecc4a4bbd3958274a26493f4"
   end
 
   depends_on "cmake" => :build
