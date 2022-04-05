@@ -1,8 +1,8 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.6.7/source/mariadb-10.6.7.tar.gz"
-  sha256 "75ee0f1f865a765fc461ab165419417a719e308faba784b2c97ecbe9e4b4b2c5"
+  url "https://downloads.mariadb.com/MariaDB/mariadb-10.7.3/source/mariadb-10.7.3.tar.gz"
+  sha256 "da286919ffc9c913282202349709b6ba4ebcd342815e8dae0aa6b6bd8f515cd4"
   license "GPL-2.0-only"
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
@@ -21,15 +21,17 @@ class Mariadb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb"
-    sha256 mojave: "ec7ae7f4cd33a1309e22770d45c667761e750ae478f350a9cf9f9e0bf5a7ab59"
+    sha256 mojave: "14b140d5805053360cda6bb7cd9f6780dfd6a8614b91ecd06a07e7ecbdc7273f"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
+  depends_on "fmt" => :build
   depends_on "pkg-config" => :build
   depends_on "groonga"
   depends_on "openssl@1.1"
   depends_on "pcre2"
+  depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
@@ -43,12 +45,15 @@ class Mariadb < Formula
 
   conflicts_with "mysql", "percona-server",
     because: "mariadb, mysql, and percona install the same binaries"
+
   conflicts_with "mytop", because: "both install `mytop` binaries"
   conflicts_with "mariadb-connector-c", because: "both install `mariadb_config`"
 
   fails_with gcc: "5"
 
   def install
+    ENV.cxx11
+
     # Set basedir and ldata so that mysql_install_db can find the server
     # without needing an explicit path to be set. This can still
     # be overridden by calling --basedir= when calling.
@@ -68,7 +73,8 @@ class Mariadb < Formula
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INFODIR=share/info
       -DINSTALL_MYSQLSHAREDIR=share/mysql
-      -DWITH_SSL=yes
+      -DWITH_LIBFMT=system
+      -DWITH_SSL=system
       -DWITH_UNIT_TESTS=OFF
       -DDEFAULT_CHARSET=utf8mb4
       -DDEFAULT_COLLATION=utf8mb4_general_ci
