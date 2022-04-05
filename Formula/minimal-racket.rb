@@ -16,7 +16,8 @@ class MinimalRacket < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimal-racket"
-    sha256 mojave: "1da89b1ab8f149ea678bcefcd48c6da4a203c99103bb6b71044e9a494566e000"
+    rebuild 1
+    sha256 mojave: "909b04b8f9869a0e0b0b8120734f99daea0bb5e872475243655bf3f8b1cbda95"
   end
 
   depends_on "openssl@1.1"
@@ -82,11 +83,10 @@ class MinimalRacket < Formula
     EOS
 
     # ensure Homebrew openssl is used
-    on_macos do
+    if OS.mac?
       output = shell_output("DYLD_PRINT_LIBRARIES=1 #{bin}/racket -e '(require openssl)' 2>&1")
       assert_match(%r{.*openssl@1\.1/.*/libssl.*\.dylib}, output)
-    end
-    on_linux do
+    else
       output = shell_output("LD_DEBUG=libs #{bin}/racket -e '(require openssl)' 2>&1")
       assert_match "init: #{Formula["openssl@1.1"].opt_lib}/#{shared_library("libssl")}", output
     end
