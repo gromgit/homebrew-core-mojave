@@ -2,14 +2,14 @@ class Metricbeat < Formula
   desc "Collect metrics from your systems and services"
   homepage "https://www.elastic.co/beats/metricbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.17.0",
-      revision: "93708bd74e909e57ed5d9bea3cf2065f4cc43af3"
+      tag:      "v8.1.1",
+      revision: "7f30bb31a4a532c865161efbbdadd012323b04c5"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/metricbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "285e76d92168ad89508e5e219544e1e1f05af649df6e3ecc346fc0ebd895c867"
+    sha256 cellar: :any_skip_relocation, mojave: "2f58773c7fe5d5215e9044dfdeaae1761abfbffe03ca576eb31e00df484eb6ac"
   end
 
   depends_on "go" => :build
@@ -69,7 +69,14 @@ class Metricbeat < Formula
                              testpath/"data"
     end
 
-    sleep 30
-    assert_predicate testpath/"data/metricbeat", :exist?
+    sleep 15
+
+    output = JSON.parse((testpath/"data/meta.json").read)
+    assert_includes output, "first_start"
+
+    (testpath/"data").glob("metricbeat-*.ndjson") do |file|
+      s = JSON.parse(file.read.lines.first.chomp)
+      assert_match "metricbeat", s["@metadata"]["beat"]
+    end
   end
 end
