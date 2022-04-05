@@ -6,12 +6,12 @@ class Mackup < Formula
   url "https://files.pythonhosted.org/packages/8b/f7/cb156f968c953652abcf71e4b1b2776ab6075c7d54194409ffe962e2b0e4/mackup-0.8.33.tar.gz"
   sha256 "41a45b336f99d7cc2ec4b6a9099efcf03d2cd891ff78f24cb65fe2376e8c8f20"
   license "GPL-3.0-or-later"
-  head "https://github.com/lra/mackup.git"
+  head "https://github.com/lra/mackup.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mackup"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "befc361dd932d24f9fac396202e9d107fda79671224b615e4e11e7cb2049343c"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "f889a2bf46f7df293d0e654a37c8c093575e4a5ef7b5d56cd769eb47c892c72d"
   end
 
   depends_on "python@3.10"
