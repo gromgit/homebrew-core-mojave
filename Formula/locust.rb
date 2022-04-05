@@ -3,13 +3,13 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/78/b3/855152dbef43a348a9e271e0458050d0121c0f808e4703262e6602534e5a/locust-2.8.3.tar.gz"
-  sha256 "9c5110bdaf2d6ab72d68091e6685abf20bd138df711fde8dc88d81b8cb012b78"
+  url "https://files.pythonhosted.org/packages/24/d4/ac199d3a45f622eae5505800a23da233345c7fd2b3a0d553cc2098eecdff/locust-2.8.5.tar.gz"
+  sha256 "6fb3f0dac38fdad6e877f47ad32979c3397d5e0948b831374200484a6f96082b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/locust"
-    sha256 cellar: :any_skip_relocation, mojave: "f5d46effde20c81916c21e62090cd5cd97f98e46053f56352fc0f1c94961d6bd"
+    sha256 cellar: :any_skip_relocation, mojave: "9af0a7fbdda5583f02a58ea7b1738ed144786583abc8b02d36f62abfe935d96b"
   end
 
   depends_on "python@3.10"
@@ -31,8 +31,8 @@ class Locust < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/dd/cf/706c1ad49ab26abed0b77a2f867984c1341ed7387b8030a6aa914e2942a0/click-8.0.4.tar.gz"
-    sha256 "8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
+    url "https://files.pythonhosted.org/packages/45/2b/7ebad1e59a99207d417c0784f7fb67893465eef84b5b47c788324f1b4095/click-8.1.0.tar.gz"
+    sha256 "977c213473c7665d3aa092b41ff12063227751c41d7b17165013e10069cc5cd2"
   end
 
   resource "ConfigArgParse" do
@@ -41,8 +41,8 @@ class Locust < Formula
   end
 
   resource "Flask" do
-    url "https://files.pythonhosted.org/packages/84/9d/66347e6b3e2eb78647392d3969c23bdc2d8b2fdc32bd078c817c15cb81ad/Flask-2.0.3.tar.gz"
-    sha256 "e1120c228ca2f553b470df4a5fa927ab66258467526069981b3eb0a91902687d"
+    url "https://files.pythonhosted.org/packages/c3/80/39a0bcfddac460a7444ca1938cb3f3451bed9d43c976b9c574cf68207b2b/Flask-2.1.0.tar.gz"
+    sha256 "c4dd4a3d8fcae9f892e3f61edfbb1d3cdf9ac03dc72ea1bf8d5c6c964a669674"
   end
 
   resource "Flask-BasicAuth" do
@@ -76,8 +76,8 @@ class Locust < Formula
   end
 
   resource "itsdangerous" do
-    url "https://files.pythonhosted.org/packages/82/00/89037083314067f1605233f6f30b94fdddc89d18e283b30b0c5be9e7f801/itsdangerous-2.1.0.tar.gz"
-    sha256 "d848fcb8bc7d507c4546b448574e8a44fc4ea2ba84ebf8d783290d53e81992f5"
+    url "https://files.pythonhosted.org/packages/7f/a1/d3fb83e7a61fa0c0d3d08ad0a94ddbeff3731c05212617dff3a94e097f08/itsdangerous-2.1.2.tar.gz"
+    sha256 "5dbbc68b317e5e42f327f9021763545dc3fc3bfe22e6deb96aaf1fc38874156a"
   end
 
   resource "Jinja2" do
@@ -86,8 +86,8 @@ class Locust < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/62/0f/52c009332fdadd484e898dc8f2acca0663c1031b3517070fd34ad9c1b64e/MarkupSafe-2.1.0.tar.gz"
-    sha256 "80beaf63ddfbc64a0452b841d8036ca0611e049650e20afcb882f5d3c266d65f"
+    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
+    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
   end
 
   resource "msgpack" do
@@ -121,13 +121,13 @@ class Locust < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
-    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
+    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
+    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
   end
 
   resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/6c/a8/60514fade2318e277453c9588545d0c335ea3ea6440ce5cdabfca7f73117/Werkzeug-2.0.3.tar.gz"
-    sha256 "b863f8ff057c522164b6067c9e28b041161b4be5ba4d0daceeaa50a163822d3c"
+    url "https://files.pythonhosted.org/packages/a1/07/daa2d95151f3debf3b6d1f3c0b9619da8c93759f7e4e794b9a1dbde52bea/Werkzeug-2.1.0.tar.gz"
+    sha256 "9b55466a3e99e13b1f0686a66117d39bda85a992166e0a79aedfcf3586328f7a"
   end
 
   resource "zope.event" do
