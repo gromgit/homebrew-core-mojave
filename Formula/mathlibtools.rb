@@ -9,7 +9,8 @@ class Mathlibtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mathlibtools"
-    sha256 cellar: :any_skip_relocation, mojave: "8fb08c39bc6b815558e060a73004dea222fd58454ca8911760691fe9252f1a88"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b7ccad1cef1b67541ccdeb3e35b00e0d486b5d8965c502752633a084ccb55507"
   end
 
   depends_on "lean" => :test
