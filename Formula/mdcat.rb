@@ -8,7 +8,8 @@ class Mdcat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdcat"
-    sha256 cellar: :any_skip_relocation, mojave: "e0904267808dcf06861c7888ed35850fca556111b916356cb78aebae89845388"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d2a7f3067801054a82baf830eb1e2f527fd79d90e7e9a79457ed4d546b24fd66"
   end
 
   depends_on "cmake" => :build
