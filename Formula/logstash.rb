@@ -1,11 +1,11 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://github.com/elastic/logstash/archive/v7.15.2.tar.gz"
-  sha256 "a3f35a1e0f7f7982eac73059aadece589b7c17fa655aafd0c592a2fead192c30"
+  url "https://github.com/elastic/logstash/archive/v8.0.1.tar.gz"
+  sha256 "61693d62bc98a787b8048c623103654cce8897eea3ffceef02145927d16e1a60"
   license "Apache-2.0"
   version_scheme 1
-  head "https://github.com/elastic/logstash.git"
+  head "https://github.com/elastic/logstash.git", branch: "main"
 
   livecheck do
     url :stable
@@ -14,8 +14,7 @@ class Logstash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logstash"
-    rebuild 2
-    sha256 cellar: :any, mojave: "1c43ff4d3aad7235da1e38e14e5ef8123e1035875df680793d03b435cc047f3c"
+    sha256 cellar: :any, mojave: "ca5b38fd9fecd685592c6b046516b01995efb95f13ffeebf0939742126aecd6a"
   end
 
   depends_on "openjdk@11"
@@ -58,7 +57,7 @@ class Logstash < Formula
     (libexec/"config").rmtree
 
     bin.install libexec/"bin/logstash", libexec/"bin/logstash-plugin"
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("11")
+    bin.env_script_all_files libexec/"bin", LS_JAVA_HOME: "${LS_JAVA_HOME:-#{Language::Java.java_home("11")}}"
   end
 
   def post_install
