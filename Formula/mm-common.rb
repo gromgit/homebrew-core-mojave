@@ -7,6 +7,7 @@ class MmCommon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mm-common"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "47a40fa00a24e5909de05be5c16fd7208801be2de28da77057751f6292536162"
   end
 
