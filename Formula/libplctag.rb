@@ -12,6 +12,7 @@ class Libplctag < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libplctag"
+    rebuild 1
     sha256 cellar: :any, mojave: "2d82cf1cb2b20a42850fe055f5e3ca628923b7349db96c88335d72c2dbc51165"
   end
 
