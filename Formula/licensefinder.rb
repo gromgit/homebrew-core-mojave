@@ -2,14 +2,13 @@ class Licensefinder < Formula
   desc "Find licenses for your project's dependencies"
   homepage "https://github.com/pivotal/LicenseFinder"
   url "https://github.com/pivotal/LicenseFinder.git",
-      tag:      "v6.14.2",
-      revision: "408a49a0bad4685a942571616a0302a4cca252f3"
+      tag:      "v7.0.1",
+      revision: "b938cbfb33e8ec4eb9f2a4abcfb6e3462d226621"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/licensefinder"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "eb2c4bc45c2095813540722de164e80f965326dd5512ead3fa79937c251c22ba"
+    sha256 cellar: :any_skip_relocation, mojave: "f84615e019d752a6ba8aad3baafa010e54d27e7afa77cdcff1311f303e24c4b1"
   end
 
   depends_on "ruby@2.7" if MacOS.version <= :mojave
