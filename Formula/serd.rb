@@ -12,24 +12,22 @@ class Serd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0c77fd1546c6624fe9937fb105025be8884843026dac5c618b62152b93f23b5d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "881c5e219840cb95822ce2b6c052032d5c077da9af6968e0d399cf6f782626fe"
   end
 
   depends_on "pkg-config" => :build
-
-  on_linux do
-    depends_on "python@3.10" => :build
-  end
+  depends_on "python@3.10" => :build
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin" if OS.linux?
-    system "./waf", "configure", "--prefix=#{prefix}"
-    system "./waf"
-    system "./waf", "install"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    system "python3", "./waf"
+    system "python3", "./waf", "install"
   end
 
   test do
-    pipe_output("serdi -", "() a <http://example.org/List> .", 0)
+    rdf_syntax_ns = "http://www.w3.org/1999/02/22-rdf-syntax-ns"
+    re = %r{(<#{Regexp.quote(rdf_syntax_ns)}#.*>\s+)?<http://example.org/List>\s+\.}
+    assert_match re, pipe_output("serdi -", "() a <http://example.org/List> .")
   end
 end
