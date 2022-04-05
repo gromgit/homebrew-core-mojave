@@ -24,7 +24,8 @@ class LibtorrentRasterbar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorrent-rasterbar"
-    sha256 cellar: :any, mojave: "07556f0daa1bce4d637b1d4f15dcfdf98364f2eb68f9637da7542efb26572b0e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8c1e6247fce58dad9d5372b66f23b39a1c4216778f8ecb29de217a48f76cd2f2"
   end
 
   depends_on "cmake" => :build
@@ -64,7 +65,7 @@ class LibtorrentRasterbar < Formula
       "-ltorrent-rasterbar",
     ]
 
-    on_macos do
+    if OS.mac?
       args += [
         "-framework",
         "SystemConfiguration",
