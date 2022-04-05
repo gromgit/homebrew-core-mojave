@@ -20,7 +20,7 @@ class Luajit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit"
-    rebuild 5
+    rebuild 6
     sha256 cellar: :any, mojave: "f9eea5defac3084c27f2102229b598221b9c9946331d8ce2ddafb4c222c7846a"
   end
 
