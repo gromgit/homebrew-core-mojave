@@ -2,8 +2,8 @@ class Mmctl < Formula
   desc "Remote CLI tool for Mattermost server"
   homepage "https://github.com/mattermost/mmctl"
   url "https://github.com/mattermost/mmctl.git",
-      tag:      "v6.3.3",
-      revision: "24b4ba1679005009200ae89a198bf40c4e11d37b"
+      tag:      "v6.4.2",
+      revision: "b16bfe5977aef9c715cd931dc963c8a7b811debe"
   license "Apache-2.0"
   head "https://github.com/mattermost/mmctl.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Mmctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mmctl"
-    sha256 cellar: :any_skip_relocation, mojave: "f9be49179bb552835186715e76789e7cca12273904804bcadc3a147ea702a97e"
+    sha256 cellar: :any_skip_relocation, mojave: "5a78ad907abc4df09acc4b67dd4e4a780c90bc3265980e6703b149357f2c53e4"
   end
 
   depends_on "go" => :build
