@@ -4,10 +4,12 @@ class MavenCompletion < Formula
   url "https://github.com/juven/maven-bash-completion/archive/20200420.tar.gz"
   sha256 "eb4ef412d140e19e7d3ce23adb7f8fcce566f44388cfdc8c1e766a3c4b183d3d"
   license "Apache-2.0"
-  head "https://github.com/juven/maven-bash-completion.git"
+  head "https://github.com/juven/maven-bash-completion.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a5e2dedc38c74f165c2f1168175215381d8836a6aaa0f952e33bab3b5383c8a3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maven-completion"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c911bebd7fd863a706752f963542bd5947416c88a9294c3e2ca361d09ca35690"
   end
 
   def install
