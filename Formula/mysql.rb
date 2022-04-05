@@ -4,6 +4,7 @@ class Mysql < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.28.tar.gz"
   sha256 "6dd0303998e70066d36905bd8fef1c01228ea182dbfbabc6c22ebacdbf8b5941"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -12,7 +13,7 @@ class Mysql < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql"
-    sha256 mojave: "adaa239adfc3f692cab128560814c24ccb4a80b0079b8445c2841f9b2bc5d64e"
+    sha256 mojave: "5191276f206e0a66af5cb53733972197ab83c0dc495a03ef86164c62eb85b916"
   end
 
   depends_on "cmake" => :build
