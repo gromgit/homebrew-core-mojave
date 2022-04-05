@@ -8,7 +8,8 @@ class Libtins < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtins"
-    sha256 cellar: :any, mojave: "a791822b0b5ed3021a8e330cc1bef25fecf673ae93757b27fe044e24dd6cb78e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "585eb3f95e75c455e8f0035e42c79d004cc80306f3730093e6b31c4a41afdee1"
   end
 
   depends_on "cmake" => :build
