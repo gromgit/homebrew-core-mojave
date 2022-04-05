@@ -4,10 +4,11 @@ class Libical < Formula
   url "https://github.com/libical/libical/releases/download/v3.0.14/libical-3.0.14.tar.gz"
   sha256 "4284b780356f1dc6a01f16083e7b836e63d3815e27ed0eaaad684712357ccc8f"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libical"
-    sha256 cellar: :any, mojave: "00a88883a3c1ee57a8520a1b7323f4965920d0d4ea93945c1995da95b8830cdf"
+    sha256 cellar: :any, mojave: "8653e6ce4da1cffabec4df1cfe25530677077368a629220f277b684234c2f292"
   end
 
   depends_on "cmake" => :build
