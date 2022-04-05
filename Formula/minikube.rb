@@ -9,7 +9,8 @@ class Minikube < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minikube"
-    sha256 cellar: :any_skip_relocation, mojave: "33f5c4d3e05a694aa91b21ab5e4fd3752d1d2fbd94c626013b2da03e74aba48c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f4217445df8e9cef944b527fa820dfce1bc55b4100f66c67a02b9d8f6ac81d5c"
   end
 
   depends_on "go" => :build
