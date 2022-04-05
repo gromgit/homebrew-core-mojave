@@ -1,14 +1,13 @@
 class Mailcatcher < Formula
   desc "Catches mail and serves it through a dream"
   homepage "https://mailcatcher.me"
-  url "https://github.com/sj26/mailcatcher/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "c40105f63407efc3fb18c2b1e2408896e4b86b0c8ba4e53ea17e087cbb2d7fee"
+  url "https://github.com/sj26/mailcatcher/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "3bf200ab3b2926d3747a462afd68dce5a28a11fe8d2834ce929c99c90d4192d3"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mailcatcher"
-    sha256 mojave: "57974d85cb85bc43b66b46f10e0fd21e77646fbff0046549d027116fe22b2ffe"
+    sha256 mojave: "14ced0f3b710b6f498dbd2fecc6abfbeef23ba967274c1ac0602e3cb5965e1d4"
   end
 
   depends_on "pkg-config" => :build
