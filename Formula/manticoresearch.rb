@@ -6,14 +6,12 @@ class Manticoresearch < Formula
   sha256 "320a19c837caf827a75e19e11755a9586487435aeb8b8aa80e8bef552fd5e1f5"
   license "GPL-2.0-only"
   version_scheme 1
-  head "https://github.com/manticoresoftware/manticoresearch.git"
+  head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_big_sur: "e285345ff7b6a8a99c0cbac69232301a6ad97cd09abae93bfffce5d3885f6ac2"
-    sha256 big_sur:       "11dfe819517e1b8c379d761ed9391192bb585564588a0ee23f85880a4b7e2f8c"
-    sha256 catalina:      "77c342a7a0d4a7c786b2c777b92522ab8b9eae7806074b0f81112cd7890c4d91"
-    sha256 mojave:        "f20768ffb1961f40fe39b3bebd20491f31cd2d91f9c43c4b5897458a50354a06"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/manticoresearch"
+    rebuild 2
+    sha256 mojave: "cc4cc10e62e5509a2ada6552b6106a1ab91759519d9b3fb9e0df996a645e870c"
   end
 
   depends_on "boost" => :build
