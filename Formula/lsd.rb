@@ -7,13 +7,18 @@ class Lsd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lsd"
-    sha256 cellar: :any_skip_relocation, mojave: "52989ca272c507b07c07eb37ceb114fc219715d0bb385d461ee7610b18b73fbb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a8326f59eb31f51e4d953dc5aa9c2ebbb8202af2bd35dee1d196b12216d20601"
   end
 
   depends_on "rust" => :build
 
   def install
+    ENV["SHELL_COMPLETIONS_DIR"] = buildpath
     system "cargo", "install", *std_cargo_args
+    bash_completion.install "lsd.bash"
+    fish_completion.install "lsd.fish"
+    zsh_completion.install "_lsd"
   end
 
   test do
