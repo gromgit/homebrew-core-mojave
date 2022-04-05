@@ -4,7 +4,7 @@ class Mailhog < Formula
   desc "Web and API based SMTP testing tool"
   homepage "https://github.com/mailhog/MailHog"
   license "MIT"
-  head "https://github.com/mailhog/MailHog.git"
+  head "https://github.com/mailhog/MailHog.git", branch: "master"
 
   stable do
     url "https://github.com/mailhog/MailHog/archive/v1.0.1.tar.gz"
@@ -112,14 +112,9 @@ class Mailhog < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fa7cdfaf00181264a52b41a9214a257c3af8194a34e0df28d11315b47ad4ef6c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bfe1d9cc4caa4037812957872b58eb2c350aae7adfac47d5f59c1b487b5bf709"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd89b132b8410a723d89ccddd96939453a2233716766c57195af4b6445adcc99"
-    sha256 cellar: :any_skip_relocation, big_sur:        "400e7c11562a81beee0edd8d43a6dc034363e7f75f3dfdee2d478a37582143ec"
-    sha256 cellar: :any_skip_relocation, catalina:       "48bb0d6e01d939b592bfe53cc887ddeb0ff97d7d2fd8e2e1b59636e3ca7fb0c4"
-    sha256 cellar: :any_skip_relocation, mojave:         "a08feb4626c1b13559638f75f2a56e955b38293848de51a08bd672974f8105d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b70485ab9327cc9193ec21147192f707c550341fac85774bc1e79808c9a31268"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mailhog"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1d09c6d7b301e77e0b54800303dcb887035fe6f208083c5fbe7891e142487cea"
   end
 
   depends_on "go" => :build
