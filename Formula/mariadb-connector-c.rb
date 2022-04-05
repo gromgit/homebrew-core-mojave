@@ -1,9 +1,9 @@
 class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-c"
-  url "https://downloads.mariadb.com/Connectors/c/connector-c-3.2.5/mariadb-connector-c-3.2.5-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.2.5-src.tar.gz/"
-  sha256 "296b992aec9fdb63fb971163e00ff6d9299b09459fba2802a839e3185b8d0e70"
+  url "https://downloads.mariadb.com/Connectors/c/connector-c-3.2.6/mariadb-connector-c-3.2.6-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.2.6-src.tar.gz/"
+  sha256 "9c22fff9d18db7ebdcb63979882fb6b68d2036cf2eb62f043eac922cd36bdb91"
   license "LGPL-2.1-or-later"
   head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.2"
 
@@ -17,8 +17,7 @@ class MariadbConnectorC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb-connector-c"
-    rebuild 2
-    sha256 mojave: "6bd7b6b1bc25e78a796e66ee53554901bf91874867a703b2a998a0ccefd42fce"
+    sha256 mojave: "57d2175b8bcec46246a0db9d25b346c69e56dcb3c04c9e4a315614245cda2756"
   end
 
   depends_on "cmake" => :build
