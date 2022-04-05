@@ -4,12 +4,12 @@ class Libstrophe < Formula
   url "https://github.com/strophe/libstrophe/archive/0.11.0.tar.gz"
   sha256 "090185bcf5800663e18340313410e3b6e4e742e065daac9e7cfa5dbb83dab8f5"
   license any_of: ["GPL-3.0", "MIT"]
-  head "https://github.com/strophe/libstrophe.git"
+  head "https://github.com/strophe/libstrophe.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libstrophe"
-    rebuild 2
-    sha256 cellar: :any, mojave: "9bf263f23b9528c639e8eaf26f8473a9ccaa545ab4f0aab30cb043224a5258dc"
+    rebuild 3
+    sha256 cellar: :any, mojave: "7168d8994114921d1fcf90e91153683a638bcfdcce14dc11425f50c6f946ef27"
   end
 
   depends_on "autoconf" => :build
