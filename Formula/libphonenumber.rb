@@ -4,6 +4,7 @@ class Libphonenumber < Formula
   url "https://github.com/google/libphonenumber/archive/v8.12.44.tar.gz"
   sha256 "02337c60e3a055e0a4bc4e0a60e8ae31aa567adce59f266cfd37961fceea74c2"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Libphonenumber < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libphonenumber"
-    sha256 cellar: :any, mojave: "a5f87923fb728cfcef9991ef760a5697a28b54b39cfc46af1deb566dc460f10f"
+    sha256 cellar: :any, mojave: "16cb892fbb187e99d469be8268ab650d5d4c4939c024eabfe6feb451b0e62aa7"
   end
 
   depends_on "cmake" => :build
