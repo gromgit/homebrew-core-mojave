@@ -17,7 +17,8 @@ class LlvmAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm@11"
-    sha256 cellar: :any, mojave: "2886e22cc371680c08b95cdcbd4032f13cdfecfd1836da79219c7a6acac103f1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "45d0ccaa761e84c270cc716fd33b66ac2654b98d6431f4fdfc074d278ae42fe1"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -313,7 +314,7 @@ class LlvmAT11 < Formula
     end
     assert_equal "Hello World!", shell_output("./testlibc++").chomp
 
-    on_linux do
+    if OS.linux?
       # Link installed libc++, libc++abi, and libunwind archives both into
       # a position independent executable (PIE), as well as into a fully
       # position independent (PIC) DSO for things like plugins that export
@@ -326,9 +327,9 @@ class LlvmAT11 < Formula
       # linking statically.
 
       system "#{bin}/clang++", "-v", "-o", "test_pie_runtimes",
-             "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
-             "-stdlib=libc++", "-rtlib=compiler-rt",
-             "-static-libstdc++", "-lpthread", "-ldl"
+                   "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
+                   "-stdlib=libc++", "-rtlib=compiler-rt",
+                   "-static-libstdc++", "-lpthread", "-ldl"
       assert_equal "Hello World!", shell_output("./test_pie_runtimes").chomp
       (testpath/"test_pie_runtimes").dynamically_linked_libraries.each do |lib|
         refute_match(/lib(std)?c\+\+/, lib)
