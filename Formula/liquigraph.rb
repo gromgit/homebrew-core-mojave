@@ -8,7 +8,8 @@ class Liquigraph < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liquigraph"
-    sha256 cellar: :any_skip_relocation, mojave: "7cfbe37a5eb1c1616aa3337e33955bad58f07f1ba49bd803162a69e9a384ac62"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ecd9e1d3f50b0baa706518be19d0e85c528efdc12f77d92c5080a0907f298598"
   end
 
   deprecate! date: "2022-02-21", because: :unsupported
