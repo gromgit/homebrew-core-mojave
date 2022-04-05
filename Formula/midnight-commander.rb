@@ -1,9 +1,9 @@
 class MidnightCommander < Formula
   desc "Terminal-based visual file manager"
   homepage "https://www.midnight-commander.org/"
-  url "https://www.midnight-commander.org/downloads/mc-4.8.27.tar.xz"
-  mirror "https://ftp.osuosl.org/pub/midnightcommander/mc-4.8.27.tar.xz"
-  sha256 "31be59225ffa9920816e9a8b3be0ab225a16d19e4faf46890f25bdffa02a4ff4"
+  url "https://www.midnight-commander.org/downloads/mc-4.8.28.tar.xz"
+  mirror "https://ftp.osuosl.org/pub/midnightcommander/mc-4.8.28.tar.xz"
+  sha256 "e994d9be9a7172e9ac4a4ad62107921f6aa312e668b056dfe5b8bcebbaf53803"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,13 +12,8 @@ class MidnightCommander < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "24f29d448f363b0c3cf793dbdf88fbf850b66a3fd550eb6dd01fd64f655f95e2"
-    sha256 arm64_big_sur:  "3f45e1b92e6f263924e4544f0c935b4d18c1e37fdfcf0b7f7d5be369e05910b9"
-    sha256 monterey:       "da16e0137f6702c18965c063cf6194e818dbb1a5e7f4db93ebc2d2606644469d"
-    sha256 big_sur:        "31c1399b014432a36b0dcbb7b3834c50f7c5ac0809a8d1ae7bf8df8afbe838c1"
-    sha256 catalina:       "1b39f54060789701af81163180ae7dab3fffcee18cc07bc6255f3f712504a3a3"
-    sha256 mojave:         "dc2578f9825aa95824489fe52bfde70a130dadcd1c232c4fb07d538f1d9b19d1"
-    sha256 x86_64_linux:   "2c3ec573057f385886b1c20515a8788e3c0b0d9767829dd3a93c74b5973a5cb3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/midnight-commander"
+    sha256 mojave: "1d62ab3b377f73015ad87d09223eff2167e80d5b5d7c31e4523d5af56d2f3796"
   end
 
   head do
