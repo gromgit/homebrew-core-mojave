@@ -1,8 +1,8 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
   homepage "https://linuxcontainers.org"
-  url "https://linuxcontainers.org/downloads/lxd/lxd-4.23.tar.gz"
-  sha256 "6cfcc7f4c462ae09776ffc24918211844bebcafcbfe4cd98f4b2cfa83e082fc5"
+  url "https://linuxcontainers.org/downloads/lxd/lxd-4.24.tar.gz"
+  sha256 "97fae15a1826bc73a45cbf8e9adf775fd9702248863b8a5997de5494eaaeb252"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Lxc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lxc"
-    sha256 cellar: :any_skip_relocation, mojave: "521ce72286993271e39d45f28693ed576acc913329c7e2693ac8783ae8665486"
+    sha256 cellar: :any_skip_relocation, mojave: "e66150b98abefab9c4da31b2fd4f378065833020b73d037514f57014a0e7945f"
   end
 
   depends_on "go" => :build
