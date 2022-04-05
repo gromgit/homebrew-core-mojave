@@ -6,7 +6,7 @@ class Mlton < Formula
   sha256 "ec7a5a54deb39c7c0fa746d17767752154e9cb94dbcf3d15b795083b3f0f154b"
   license "HPND"
   version_scheme 1
-  head "https://github.com/MLton/mlton.git"
+  head "https://github.com/MLton/mlton.git", branch: "master"
 
   livecheck do
     url :stable
@@ -14,10 +14,9 @@ class Mlton < Formula
   end
 
   bottle do
-    sha256 cellar: :any, monterey: "ae1960f379bae7ffc49962c1d30a8eeb1110063f7c8a136605cb06e49549a308"
-    sha256 cellar: :any, big_sur:  "be6a6d599390e1182ab91f99c8e4cbeb20ed10cbd472d7a7fda790cbb9e60b88"
-    sha256 cellar: :any, catalina: "9690c5e07e46081d3f771797ea92f8ddef37fb79e3104263794f8c7473170f18"
-    sha256 cellar: :any, mojave:   "e6fdecbf689992c25e1429e2f33d5cd66c5bdee500ec1fe07759ac8d53593fdf"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlton"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a81cb297b7f1467e4f34d0ac656c5f1708b47a137bcc7a7d323e7b7d762a248b"
   end
 
   depends_on "autoconf" => :build
