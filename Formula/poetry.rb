@@ -9,7 +9,8 @@ class Poetry < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poetry"
-    sha256 cellar: :any_skip_relocation, mojave: "e3bf45720fb29ada919a9ef227bc1b4414f3ac649b013d9fd9d16b4ad668b1a9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "42566a743a3a42e2d8ad603944593e80f4e1ae97b731150109417ea805ddfa53"
   end
 
   depends_on "python@3.10"
