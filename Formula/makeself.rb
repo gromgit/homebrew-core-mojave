@@ -4,11 +4,12 @@ class Makeself < Formula
   url "https://github.com/megastep/makeself/archive/release-2.4.5.tar.gz"
   sha256 "91deafdbfddf130abe67d7546f0c50be6af6711bb1c351b768043bd527bd6e45"
   license "GPL-2.0-or-later"
-  head "https://github.com/megastep/makeself.git"
+  head "https://github.com/megastep/makeself.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "f4662b6da2d3d6494554dabb44e7a21d13273a1283075689bf13d5056517b3c2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/makeself"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6078c9403002d7e697d0532590aed0858c5f6b856da4615b3c01eb9b998c36ae"
   end
 
   def install
