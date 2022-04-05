@@ -3,21 +3,20 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-21.3.7.tar.xz"
-  sha256 "b4fa9db7aa61bf209ef0b40bef83080999d86ad98df8b8b4fada7c128a1efc3d"
+  url "https://mesa.freedesktop.org/archive/mesa-22.0.0.tar.xz"
+  sha256 "e6c41928b5b9917485bd67cec22d15e62cad7a358bf4c711a647979987601250"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    rebuild 1
-    sha256 mojave: "85f82fcaeadc926cf5438e46fea74bff60689cb6784a8a6200d22a8cf8b9cda7"
+    sha256 mojave: "873d8957fc0f2d114d9a9c03bd38cdea8ee3fd4a9956463c0ed6ad85cbf00b56"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "expat"
   depends_on "gettext"
   depends_on "libx11"
@@ -34,6 +33,7 @@ bottle do
   on_linux do
     depends_on "elfutils"
     depends_on "gcc"
+    depends_on "gzip"
     depends_on "libdrm"
     depends_on "libva"
     depends_on "libvdpau"
@@ -66,9 +66,9 @@ bottle do
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin"
 
-    venv_root = libexec/"venv"
+    venv_root = buildpath/"venv"
     venv = virtualenv_create(venv_root, "python3")
     venv.pip_install resource("Mako")
 
@@ -81,14 +81,13 @@ bottle do
         args << "-Dplatforms=x11,wayland"
         args << "-Dglx=auto"
         args << "-Ddri3=true"
-        args << "-Ddri-drivers=auto"
         args << "-Dgallium-drivers=auto"
         args << "-Dgallium-omx=disabled"
         args << "-Degl=true"
         args << "-Dgbm=true"
         args << "-Dopengl=true"
-        args << "-Dgles1=true"
-        args << "-Dgles2=true"
+        args << "-Dgles1=enabled"
+        args << "-Dgles2=enabled"
         args << "-Dgallium-xvmc=disabled"
         args << "-Dvalgrind=false"
         args << "-Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,xvmc,lima"
