@@ -12,8 +12,8 @@ class Gecode < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gecode"
-    rebuild 2
-    sha256 cellar: :any, mojave: "ac87994c2f30560c2f807d3647ba6f9af76484725ac32f53babfdae8471f295f"
+    rebuild 3
+    sha256 cellar: :any, mojave: "3685fd6a3c86e1a205eddceb20d2a1d6df9c3056ef1c6f3c3aa949dccc674af0"
   end
 
   depends_on "qt@5"
