@@ -7,7 +7,8 @@ class Mask < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mask"
-    sha256 cellar: :any_skip_relocation, mojave: "ed385156d3556d50cf1472e03a744b0e91efe64d2e16c7a0643d0be475d91ce3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "54607b3276280b3ef273d96f32372a3307abf1576794470f58106b53e4f61415"
   end
 
   depends_on "rust" => :build
