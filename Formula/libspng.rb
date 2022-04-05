@@ -7,7 +7,8 @@ class Libspng < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libspng"
-    sha256 cellar: :any, mojave: "67ff54bb83bfd7e0ee207019915df3840adc4d3b8d0c7046c343a204c88ac340"
+    rebuild 1
+    sha256 cellar: :any, mojave: "53413fb665914ab97e3ba7f6ee2e653c34f58c69d0eabcd750d9b1b8c4895b07"
   end
 
   depends_on "meson" => :build
