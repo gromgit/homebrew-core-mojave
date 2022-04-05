@@ -8,7 +8,8 @@ class Mapcrafter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mapcrafter"
-    sha256 cellar: :any, mojave: "0c74b07f5db702acea4aa9db8824c95a70569296c08841d03dc493d6afd7c527"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b70d40bb8d7d43fffefdea90808e4708891ba600f39bcfb70f0d5b6774aefa5d"
   end
 
   depends_on "cmake" => :build
