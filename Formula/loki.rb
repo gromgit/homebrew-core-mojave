@@ -8,10 +8,12 @@ class Loki < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/loki"
-    sha256 cellar: :any_skip_relocation, mojave: "595775861ecbd66ef22b2bf161af4930a202d65449fe81072d79bfc79eba7fa4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "531509e4b3a1bdbd4d820701c864bfa4586935b1cfce41648612e98059a6ca4b"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     cd "cmd/loki" do
