@@ -2,6 +2,7 @@ class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
   license "X11"
+  revision 1
 
   stable do
     url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.35.tar.xz"
@@ -23,7 +24,7 @@ class Libxslt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxslt"
-    sha256 cellar: :any, mojave: "8c3087478598693ecaabaa5aea6188982ea11f1174f821ae6efb08930e7dc53c"
+    sha256 cellar: :any, mojave: "1e0b4e4114e76935e0a41db4827369470063f1ab20365bd2a2571778aa825d31"
   end
 
   head do
@@ -44,15 +45,17 @@ class Libxslt < Formula
   end
 
   def install
+    libxml2 = Formula["libxml2"]
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--without-python",
                           "--with-crypto",
-                          "--with-libxml-prefix=#{Formula["libxml2"].opt_prefix}"
+                          "--with-libxml-prefix=#{libxml2.opt_prefix}"
     system "make"
     system "make", "install"
+    inreplace [bin/"xslt-config", lib/"xsltConf.sh"], libxml2.prefix.realpath, libxml2.opt_prefix
   end
 
   def caveats
