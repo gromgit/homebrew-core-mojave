@@ -25,7 +25,8 @@ class Minetest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minetest"
-    sha256 cellar: :any, mojave: "8541d84e3a0bc23788460d9bfcc59b65663f394173d2512681fb8c7ccdee3dd9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a6234c7c98be9ac0b126d670a6999b5f84743ef9a55480263959559fd31722b0"
   end
 
   head do
