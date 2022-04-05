@@ -1,14 +1,14 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=pulsar/pulsar-2.9.0/apache-pulsar-2.9.0-src.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-2.9.0/apache-pulsar-2.9.0-src.tar.gz"
-  sha256 "f667d3d9e9f7a57a3912d14cd778f20e07a27f9320646bbcb705d8b8c94b18f7"
+  url "https://www.apache.org/dyn/closer.lua?path=pulsar/pulsar-2.9.2/apache-pulsar-2.9.2-src.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-2.9.2/apache-pulsar-2.9.2-src.tar.gz"
+  sha256 "66cf22136488aabe443d92284fbb3edb15e1b9d8a64cf498b36236f75af29bbc"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpulsar"
-    sha256 cellar: :any, mojave: "78d8aa956601e0821eaac2126acd604302147e5b304e84541a260aba1ed37bc7"
+    sha256 cellar: :any, mojave: "a5dce6471b696d0d75142900dd37b99f763fff6845d77cf25db0c736065f49e5"
   end
 
   depends_on "cmake" => :build
