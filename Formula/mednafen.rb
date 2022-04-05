@@ -13,7 +13,8 @@ class Mednafen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mednafen"
-    sha256 mojave: "1863cb8fe77e72af7a8b7e1c877cacb44affd5cb42bae80c3b8c0f6c14c516d1"
+    rebuild 1
+    sha256 mojave: "bdb7c0ac5725ef7afc3c5ae0ef3e47aeb65ff6fb21b7081135b6c6bfd3c49c9b"
   end
 
   depends_on "pkg-config" => :build
@@ -50,9 +51,7 @@ class Mednafen < Formula
 
   test do
     # Test fails on headless CI: Could not initialize SDL: No available video device
-    on_linux do
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     cmd = "#{bin}/mednafen | head -n1 | grep -o '[0-9].*'"
     assert_equal version.to_s, shell_output(cmd).chomp
