@@ -4,10 +4,9 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v1.0.8",
-      revision: "a6836be251e216f9967183a7551cc6ccb2a60382"
+      tag:      "v1.1.0",
+      revision: "2e89c9d9e8584b93d2ef3ea80b6ef4a6d4bffd9c"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -16,7 +15,7 @@ class Mavsdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mavsdk"
-    sha256 cellar: :any, mojave: "d76fe514698eeab8bae7ba523b2a68ab30be4c2fd6cb3eae32d4463d01310046"
+    sha256 cellar: :any, mojave: "8ccb6e4ca2d322b21389773a696e91fb4a8fec0f05a672f3e74dd224c5bb746b"
   end
 
   depends_on "cmake" => :build
