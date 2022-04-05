@@ -4,7 +4,7 @@ class Librdkafka < Formula
   url "https://github.com/edenhill/librdkafka/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "6a747d293a7a4613bd2897e28e8791476fbe1ae7361f2530a876e0fd483482a6"
   license "BSD-2-Clause"
-  head "https://github.com/edenhill/librdkafka.git"
+  head "https://github.com/edenhill/librdkafka.git", branch: "master"
 
   livecheck do
     url :stable
@@ -13,8 +13,8 @@ class Librdkafka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librdkafka"
-    rebuild 1
-    sha256 mojave: "5da9586d023fa14a722d86d28f709848915ca2f95cf8ce51ac8a40501e316ec3"
+    rebuild 2
+    sha256 mojave: "ab34fe3f98f493dbaf98d2b49b970b1cee74a92f04cfbcd0542c1ca04e1cbff9"
   end
 
   depends_on "pkg-config" => :build
