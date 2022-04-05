@@ -1,15 +1,14 @@
 class MinizipNg < Formula
   desc "Zip file manipulation library with minizip 1.x compatibility layer"
   homepage "https://github.com/zlib-ng/minizip-ng"
-  url "https://github.com/zlib-ng/minizip-ng/archive/3.0.4.tar.gz"
-  sha256 "2ab219f651901a337a7d3c268128711b80330a99ea36bdc528c76b591a624c3c"
+  url "https://github.com/zlib-ng/minizip-ng/archive/3.0.5.tar.gz"
+  sha256 "1a248c378fdf4ef6c517024bb65577603d5146cffaebe81900bec9c0a5035d4d"
   license "Zlib"
   head "https://github.com/zlib-ng/minizip-ng.git", branch: "dev"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minizip-ng"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8bc9a234d8e7ad9241075c9043a741d8972bb2a7c91257b86e431fe52ddf0411"
+    sha256 cellar: :any, mojave: "067ed492af279db196245ee5beb670f79bba399b80e0904a420a097cc063b698"
   end
 
   depends_on "cmake" => :build
