@@ -12,7 +12,8 @@ class PangommAT246 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pangomm@2.46"
-    sha256 cellar: :any, mojave: "edd587cd491e04eb8b2c677469ffd556a1250314f3fadccd8c4934031a6dd0c4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "93e6d5a2e01adad14964b466b9df1a05945cf2070fbc2f209c15100d0238da82"
   end
 
   depends_on "meson" => :build
@@ -89,9 +90,7 @@ class PangommAT246 < Formula
       -lpangomm-1.4
       -lsigc-2.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end
