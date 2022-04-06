@@ -13,12 +13,9 @@ class PhpAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "7c7f7b60176e9142db496ffcc1023235d54e05074dcab2ba9adac5e98ca4ed0e"
-    sha256 arm64_big_sur:  "1a47a2496cff8d56a78fc80ebb0ed5764da203c7c7456136adffaac5eb1ceed4"
-    sha256 monterey:       "1259fa2ebadeb1b5329b6e73f341f858d743e0c60b13dcbf35d0fc210a4e2d6d"
-    sha256 big_sur:        "f3fdbe744f050f2bb50ec5ac3270fb5f5eb8dfd535234d4eb8176b00c46ca857"
-    sha256 catalina:       "0e7dee4e6241744671617eb43ea2044e61864fa894de78cca518a9373de07f42"
-    sha256 x86_64_linux:   "270dbd23feb26f9cf6c3b023ac588d092edb2c2369ae0ef900ea4ef4a3cd8600"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
+    rebuild 1
+    sha256 mojave: "1e298e8a5994f60739f29db6670dcd22157e974dc6f3e3ee5805c70dd60614a8"
   end
 
   keg_only :versioned_formula
