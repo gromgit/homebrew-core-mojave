@@ -12,10 +12,12 @@ class Ooniprobe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ooniprobe"
-    sha256 cellar: :any_skip_relocation, mojave: "f507a348f4852422c25548da056ed02904f1f7fd0f9a0c031517e260e1020267"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "77dc0d387ea3dd0d40789085004197f726dce79cb22896b54ef45028bf38d408"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
   depends_on "tor"
 
   def install
