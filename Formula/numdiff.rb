@@ -13,6 +13,7 @@ class Numdiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numdiff"
+    rebuild 1
     sha256 cellar: :any, mojave: "56416d58c8def4698db56bed4ad1e0a20ab46c6d36e341b6e4e69a24eb81887e"
   end
 
