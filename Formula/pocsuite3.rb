@@ -3,19 +3,17 @@ class Pocsuite3 < Formula
 
   desc "Open-sourced remote vulnerability testing framework"
   homepage "https://pocsuite.org/"
-  url "https://files.pythonhosted.org/packages/86/c6/7d524ef617b0c9397a4b027837ef2f59cafe8e2ea79dbdd9934f9bc205a4/pocsuite3-1.8.12.tar.gz"
-  sha256 "fa3e3f04f2e16289af2b14130ea9975bb253901048ba9d94285945ce1acf94bf"
+  url "https://files.pythonhosted.org/packages/17/1d/bdaacb23a558c2dea0bd57ea7fd0890f72343e9fa18b83620f50b0dc1646/pocsuite3-1.9.1.tar.gz"
+  sha256 "72123bc05f0c45f73d6f9be2d1a1278fbf96973fa97fead501141d3771a3d91b"
   license "GPL-2.0-only"
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pocsuite3"
-    sha256 cellar: :any_skip_relocation, mojave: "14527e051a9dca1405e33f618b6af30d69001370ff4628e6c2429957a4d23c64"
+    sha256 cellar: :any_skip_relocation, mojave: "45050e3f92be9337fb067c3eab16749efe8fd00b27d3f4be656f24e31b3eb3ce"
   end
 
-  depends_on "rust" => :build # for cryptography
-  depends_on "openssl@1.1"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -50,8 +48,8 @@ class Pocsuite3 < Formula
   end
 
   resource "Faker" do
-    url "https://files.pythonhosted.org/packages/62/09/ce5e1c74c3dcb91d6d5fbf8c239c51e3f7b847fa409fe3332931fa38ee08/Faker-13.0.0.tar.gz"
-    sha256 "f545b2a1ba5f7effc4ed71af0a5204d939445f0190838d41bee6bc160958bfbe"
+    url "https://files.pythonhosted.org/packages/4e/34/86691abe2391c30854becce2e2c4cd63680e94b1d54269473e6ec253da1f/Faker-13.3.2.tar.gz"
+    sha256 "fe969607836ce7100e38b88dcb598aacb733d895e6e9401894dd603e35623000"
   end
 
   resource "idna" do
@@ -60,8 +58,8 @@ class Pocsuite3 < Formula
   end
 
   resource "prettytable" do
-    url "https://files.pythonhosted.org/packages/89/c1/3043e85bf06f252f51817dad51a37368daaf7b1c101b43cd5aa6100f09b1/prettytable-3.1.1.tar.gz"
-    sha256 "43c9e23272ca253d038ae76fe3adde89794e92e7fcab2ddf5b94b38642ef4f21"
+    url "https://files.pythonhosted.org/packages/cb/7d/7e6bc4bd4abc49e9f4f5c4773bb43d1615e4b476d108d1b527318b9c6521/prettytable-3.2.0.tar.gz"
+    sha256 "ae7d96c64100543dc61662b40a28f3b03c0f94a503ed121c6fca2782c5816f81"
   end
 
   resource "pycryptodomex" do
@@ -100,8 +98,8 @@ class Pocsuite3 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
-    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
+    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
+    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
   end
 
   resource "wcwidth" do
@@ -114,6 +112,6 @@ class Pocsuite3 < Formula
   end
 
   test do
-    assert_match "Module (pocs_ecshop_rce) options:", shell_output("#{bin}/pocsuite -r ecshop_rce.py --options")
+    assert_match "Module (pocs_ecshop_rce) options:", shell_output("#{bin}/pocsuite -k ecshop --options")
   end
 end
