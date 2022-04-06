@@ -9,7 +9,8 @@ class Platformio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/platformio"
-    sha256 cellar: :any_skip_relocation, mojave: "6ca40f54d7256f3694f0491f02cf1e5ff6fc716a939c6065cd5a4e8d5d6d67ef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "78c7d7124d3b75c3210b94f15c847e8a600ba89d5a15f010177e6e8a7ef3c1bd"
   end
 
   depends_on "python-tabulate"
