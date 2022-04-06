@@ -14,7 +14,8 @@ class Openssh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssh"
-    sha256 mojave: "ff3aca7057b143ee0bba1b5a412c5e52d575789ba85ae3e09ea9efe51df87a53"
+    rebuild 1
+    sha256 mojave: "0a3cdeab0664049c8209ab66f30bdaa0bc40c090de95ed17458aa2eca4c10fb0"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
