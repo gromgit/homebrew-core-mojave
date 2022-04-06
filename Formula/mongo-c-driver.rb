@@ -1,14 +1,14 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://github.com/mongodb/mongo-c-driver/releases/download/1.21.0/mongo-c-driver-1.21.0.tar.gz"
-  sha256 "840ff79480070f98870743fbb332e2c10dd021b6b9c952d08010efdda4d70ee4"
+  url "https://github.com/mongodb/mongo-c-driver/releases/download/1.21.1/mongo-c-driver-1.21.1.tar.gz"
+  sha256 "2dd10399a31108116236ada68ae6d3f4b1bf78c03b43b1a33933d42aa0e62ed4"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongo-c-driver"
-    sha256 cellar: :any, mojave: "f8b3498b6563f9eb991f41c69e40b64db5adf4f53951cecbc590932bbff363df"
+    sha256 cellar: :any, mojave: "1129893257f23870ce3d4a43c5343552fa80b7b255fd877c8ddac6e2ffe223cb"
   end
 
   depends_on "cmake" => :build
