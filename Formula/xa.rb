@@ -1,8 +1,8 @@
 class Xa < Formula
   desc "6502 cross assembler"
   homepage "https://www.floodgap.com/retrotech/xa/"
-  url "https://www.floodgap.com/retrotech/xa/dists/xa-2.3.12.tar.gz"
-  sha256 "f8fd1536012d676fc6cbfcdd6a91793e564c89b6ef747f8db8f467c178fb0704"
+  url "https://www.floodgap.com/retrotech/xa/dists/xa-2.3.13.tar.gz"
+  sha256 "a9477af150b6c8a91cd3d41e1cf8c9df552d383326495576830271ca4467bd86"
   license "GPL-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Xa < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xa"
-    sha256 cellar: :any_skip_relocation, mojave: "bf31974f77480bc5de42e9d081e95fe8def7841d45cac8b04ae600cf4da3270e"
+    sha256 cellar: :any_skip_relocation, mojave: "3cc635df71dcab94644d9feb5bb34f541443a16dc3c7bde72e9e4828e851014b"
   end
 
   def install
