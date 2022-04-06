@@ -14,6 +14,7 @@ class Povray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/povray"
+    rebuild 1
     sha256 mojave: "f14ef30e2704225c3c999191bd27107610845f74674acb905059f1977a97ba4a"
   end
 
