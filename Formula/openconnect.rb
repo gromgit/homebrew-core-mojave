@@ -13,7 +13,8 @@ class Openconnect < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openconnect"
-    sha256 mojave: "97f53e940b771daff79379ddffdefde11f884b38a5ddbf09f458f5a62675950a"
+    rebuild 1
+    sha256 mojave: "71d8644d179c0082cb2de7aa5631e4ff1d6dfd8edfd9a4e088f13847acfa7631"
   end
 
   head do
