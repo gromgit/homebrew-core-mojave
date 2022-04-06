@@ -7,16 +7,12 @@ class MongoOrchestration < Formula
   sha256 "f297a1fb81d742ab8397257da5b1cf1fd43153afcc2261c66801126b78973982"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/10gen/mongo-orchestration.git"
+  head "https://github.com/10gen/mongo-orchestration.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd965e6c5f77a0d14a7eb917db11b60268677ce338fa303c50f69eda3cd0bab3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3be3d4d3361c13dd72c358ec25226486237b0669b3518dc27094ebb9b5cde0b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "0818aea805f4196c41de20ecc0edbb222cd740229c673e7599e8203d6a0cce92"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d2042e1ea1f997f23c01dc88bc5e8cecb2fa08c58e5c641035d8d58c2d013be5"
-    sha256 cellar: :any_skip_relocation, catalina:       "24d106d1c9511112ce1a7c91664ea001d9d8dd074e303afd71b139fdfca6b14d"
-    sha256 cellar: :any_skip_relocation, mojave:         "80b35759af83e1a7effb496027d247cc856363fdad9d34238bf7c58f49b32ff9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02eb4bd1c6fcd120628f289d72e5caf2e3f7efb20611f44cecb0059eb847b7ef"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongo-orchestration"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "faafe416ed24b4455dba85cb56a86c5b5b8658c1a41bbde0f4d38239fd17f3b0"
   end
 
   depends_on "python@3.10"
