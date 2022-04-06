@@ -7,7 +7,8 @@ class OpenImageDenoise < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-image-denoise"
-    sha256 cellar: :any, mojave: "e750883d63bf6fa593927bad77fe46fa7469e6e71f15e252c3c799cafa1f701b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b42aa684f11d363a9f989c56127f12389ad75533e54db3f44432aa9e796e8216"
   end
 
   depends_on "cmake" => :build
