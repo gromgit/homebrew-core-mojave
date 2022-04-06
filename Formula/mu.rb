@@ -18,7 +18,8 @@ class Mu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mu"
-    sha256 cellar: :any, mojave: "2716a44c09e02be9da30729eb2d3f4f25547ec30a063ce178a7b90dbaa4459b1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "02f3582c61181354ae2e69aceb4e5a644317fde1075b635b7b0cd1161ca137fe"
   end
 
   head do
@@ -43,6 +44,8 @@ class Mu < Formula
   on_linux do
     depends_on "gcc"
   end
+
+  conflicts_with "mu-repo", because: "both install `mu` binaries"
 
   fails_with gcc: "5"
 
