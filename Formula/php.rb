@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.1.3.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.3.tar.xz"
-  sha256 "5d65a11071b47669c17452fb336c290b67c101efb745c1dbe7525b5caf546ec6"
+  url "https://www.php.net/distributions/php-8.1.4.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.1.4.tar.xz"
+  sha256 "05a8c0ac30008154fb38a305560543fc172ba79fb957084a99b8d3b10d5bdb4b"
   license "PHP-3.01"
 
   livecheck do
@@ -12,10 +12,9 @@ class Php < Formula
     regex(/href=.*?php[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php"
-    rebuild 1
-    sha256 mojave: "c2c16bffc2d8f17cd6c631ba58c3d7701e6f086896dac1014a315a7a18a2b6b7"
+    sha256 mojave: "160b74ba75681b3327196618703fd17888f0e880e1efca738d00cd3869470c76"
   end
 
   head do
@@ -330,9 +329,9 @@ bottle do
       "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
-    on_macos do
+    if OS.mac?
       assert_includes MachO::Tools.dylibs("#{bin}/php"),
-        "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
+              "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
     end
 
     system "#{sbin}/php-fpm", "-t"
