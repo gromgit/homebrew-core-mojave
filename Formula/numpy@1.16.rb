@@ -7,14 +7,14 @@ class NumpyAT116 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "e740c127d61b149b3530b91b5b30763843f9245ac930f0bf7b53495371aa2c84"
-    sha256 cellar: :any, arm64_big_sur:  "b2d618920646238a8711dba0c021600ea1153a50490ba3e379107fb3f96d0e77"
-    sha256 cellar: :any, monterey:       "758a9c34c4e5d7b4f752b4ce60d9692c4f9c4219431b0eaeed202e3650e8de09"
-    sha256 cellar: :any, big_sur:        "0b95667bfd54232190975066a1e70a0770b84d37129c3fcda418bbba34926c88"
-    sha256 cellar: :any, catalina:       "fff9f604e35a06cc3197cc818a851d037f6d8f30df04fc7640144966bfb15c91"
-    sha256 cellar: :any, mojave:         "0d6a4439397cf4c684b6e01fb7038ed9b9943582d5ef15f080503755330ca615"
-    sha256 cellar: :any, high_sierra:    "ed8d4fa6634bea85689ae4d5e316e9a3546469e44358aba6a9f73183fdcb4272"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numpy@1.16"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fede6a0d599d5201d002e23c6e1cde6796125d2d45a65217e1037b18239dfc18"
   end
+
+  # was used only by opencv@2 which was deprecated on the same date
+  # also uses Python 2 which is not supported anymore
+  deprecate! date: "2015-02-01", because: :unsupported
 
   depends_on "gcc" => :build # for gfortran
   depends_on :macos # Due to Python 2
