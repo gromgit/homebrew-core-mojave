@@ -10,7 +10,8 @@ class Pgxnclient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgxnclient"
-    sha256 cellar: :any_skip_relocation, mojave: "3d200cf14ff521dce189bf0502054cfab262a57273457520f69c75d9d57e3154"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "284c31b9a96ebc9ee2125a9fe70caceea19088cd8ae61115a9a6d34283126038"
   end
 
   depends_on "python@3.10"
