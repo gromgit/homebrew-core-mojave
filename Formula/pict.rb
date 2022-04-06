@@ -7,6 +7,7 @@ class Pict < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pict"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "25082e7d2b10b6ab58ca6abfe9478975ccd70576f4937f56b63eb3d5b0c17b0f"
   end
 
