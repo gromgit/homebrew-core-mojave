@@ -13,6 +13,7 @@ class Patchelf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/patchelf"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "5e77a1a4f36e8b7595f707250139138e0b966d9bd2c08442ebe671f29a6210eb"
   end
 
