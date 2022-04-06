@@ -13,7 +13,8 @@ class Nomad < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nomad"
-    sha256 cellar: :any_skip_relocation, mojave: "8f5e1dc21a619db07f2ad79713bb28d0c2bc3235c1d8a12b64a36b4cdb272e27"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c63c0071f1088572cb978d83158cdb350c1c96f79ffb0dc6b0aea070c21165ab"
   end
 
   depends_on "go" => :build
