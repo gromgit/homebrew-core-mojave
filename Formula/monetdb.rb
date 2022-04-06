@@ -7,13 +7,14 @@ class Monetdb < Formula
   head "https://dev.monetdb.org/hg/MonetDB", using: :hg
 
   livecheck do
-    url "https://www.monetdb.org/downloads/sources/Latest/"
+    url "https://www.monetdb.org/downloads/sources/archive/"
     regex(/href=.*?MonetDB[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/monetdb"
-    sha256 mojave: "d82e2ee211505c8e91d13f2375ad8d029d298f89752a79266be4b8091336bc7b"
+    rebuild 1
+    sha256 mojave: "2b339a8cf81729a430f07eaafeaab38b62f1527b77a649ad9b794fb3f83d101c"
   end
 
   depends_on "bison" => :build # macOS bison is too old
