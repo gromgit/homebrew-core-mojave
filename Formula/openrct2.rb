@@ -5,12 +5,12 @@ class Openrct2 < Formula
       tag:      "v0.3.5.1",
       revision: "61c67afc667bfee8a6c3b180e98e84e87f442550"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openrct2"
-    sha256 cellar: :any, mojave: "98f89a4a19bc48476379dce2bbca6e1d0b716212e85606f201d6bf786aab3e1e"
+    sha256 cellar: :any, mojave: "095518482affa5a12973602141cc44cfdaa3e96f02415e16f815445b092e8a82"
   end
 
   depends_on "cmake" => :build
