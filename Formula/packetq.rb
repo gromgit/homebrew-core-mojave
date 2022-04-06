@@ -1,8 +1,8 @@
 class Packetq < Formula
   desc "SQL-like frontend to PCAP files"
   homepage "https://www.dns-oarc.net/tools/packetq"
-  url "https://www.dns-oarc.net/files/packetq/packetq-1.5.0.tar.gz"
-  sha256 "2358a878a2cf656d60f715b528911fb9a937149c71e336d7d65bb1af4e388ce2"
+  url "https://www.dns-oarc.net/files/packetq/packetq-1.6.0.tar.gz"
+  sha256 "2319efae884c8007df0e4e00435555a3e93a1f643f4a02dcb8d519203e443e4d"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Packetq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/packetq"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "0f1457f4ad8d524d8982e1ee4658f1b0fdf165eaa6164f70c172b5b5ce8c64f7"
+    sha256 cellar: :any_skip_relocation, mojave: "8e19790609eaf0d1311ba652acd0d74c745e5417135e03f3721b5696e4f99a9a"
   end
 
   uses_from_macos "zlib"
