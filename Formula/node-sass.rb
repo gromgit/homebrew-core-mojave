@@ -9,6 +9,7 @@ class NodeSass < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node-sass"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "a1fe07627ed90c1fa7384734cf8959438949092223958eeee61171d8f4af9fd0"
   end
 
