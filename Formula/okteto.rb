@@ -1,14 +1,14 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
   homepage "https://okteto.com"
-  url "https://github.com/okteto/okteto/archive/1.15.5.tar.gz"
-  sha256 "dfb96c62314b3ea4204e64a4f7a9a1ae81405f0a1f62c841f7e188299d224ce6"
+  url "https://github.com/okteto/okteto/archive/2.0.2.tar.gz"
+  sha256 "122570ea7774d7808ddfd600f2208af6880b0326332dec02f4ed6d36fb626008"
   license "Apache-2.0"
   head "https://github.com/okteto/okteto.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/okteto"
-    sha256 cellar: :any_skip_relocation, mojave: "6de7dd38681a0599f582f071b62e7894af11965d0412af0b7e46f43570c7cd81"
+    sha256 cellar: :any_skip_relocation, mojave: "fc7b36966622d785babe40b9252efb8d2d04d6c47a251f9b236612aca722a010"
   end
 
   depends_on "go" => :build
@@ -17,6 +17,13 @@ class Okteto < Formula
     ldflags = "-s -w -X github.com/okteto/okteto/pkg/config.VersionString=#{version}"
     tags = "osusergo netgo static_build"
     system "go", "build", *std_go_args(ldflags: ldflags), "-tags", tags
+
+    bash_output = Utils.safe_popen_read(bin/"okteto", "completion", "bash")
+    (bash_completion/"okteto").write bash_output
+    zsh_output = Utils.safe_popen_read(bin/"okteto", "completion", "zsh")
+    (zsh_completion/"_okteto").write zsh_output
+    fish_output = Utils.safe_popen_read(bin/"okteto", "completion", "fish")
+    (fish_completion/"okteto.fish").write fish_output
   end
 
   test do
