@@ -4,16 +4,12 @@ class Ola < Formula
   url "https://github.com/OpenLightingProject/ola/releases/download/0.10.8/ola-0.10.8.tar.gz"
   sha256 "102aa3114562a2a71dbf7f77d2a0fb9fc47acc35d6248a70b6e831365ca71b13"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 3
+  revision 4
   head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   bottle do
-    sha256 arm64_monterey: "6e0a27097340bca3f60045a89415a8fe6400c1792c292f174535c69116ad66db"
-    sha256 arm64_big_sur:  "3c50d3e5d76e7d3497f25690053c5218ab2d277fad1d6527bb138f03113bc62a"
-    sha256 monterey:       "91ed5a5cc4a18099e53d7a91a467f1d1dc2a579dd8eef181164ed67b70aeda1a"
-    sha256 big_sur:        "7ffa9cad84a61a1dcdcd38aa70ae0db523a6d1c48db726b3c43627aeb4289191"
-    sha256 catalina:       "90ab760cd58aa7702e04bc58d2286821318d1adf72a64f36c75fb95924038c66"
-    sha256 mojave:         "726e849cbe8f6cbd6ceaceacb0a356e1709b1613fb5efb55faba876852bf55d4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ola"
+    sha256 mojave: "22024edb176eb5eb46c11afd7d00056151c456305de672be189e28cc7a20e93e"
   end
 
   depends_on "autoconf" => :build
