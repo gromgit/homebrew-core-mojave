@@ -3,14 +3,14 @@ require "language/node"
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-9.8.0.tgz"
-  sha256 "40b878b9ec0b2a889308d45bb01b5f49dff41b92bae9d8dacfa1ad6aeda6f85f"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-9.13.5.tgz"
+  sha256 "75320f62b3d945f7a74555af8a84b6710d4b119c043e7a62822545c0694cd472"
   license "MIT"
   head "https://github.com/netlify/cli.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netlify-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "c723ef2d3a88b3dbfff13ca7e7998e3dd430baa17debd0edbb5d662fc1cfefcf"
+    sha256 cellar: :any_skip_relocation, mojave: "cfb825f69fad5a2fe3096e2a6487cb48de831eac1816220fd8ffe69f69166e3d"
   end
 
   depends_on "node"
