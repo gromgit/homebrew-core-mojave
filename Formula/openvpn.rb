@@ -1,9 +1,9 @@
 class Openvpn < Formula
   desc "SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension"
   homepage "https://openvpn.net/community/"
-  url "https://swupdate.openvpn.org/community/releases/openvpn-2.5.5.tar.xz"
-  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.5.5.tar.xz"
-  sha256 "119bd69fa0210838f6cdaa273696dc738efa200f454dbe11eb6dfb75dfb6003b"
+  url "https://swupdate.openvpn.org/community/releases/openvpn-2.5.6.tar.gz"
+  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.5.6.tar.gz"
+  sha256 "333a7ef3d5b317968aca2c77bdc29aa7c6d6bb3316eb3f79743b59c53242ad3d"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -13,7 +13,7 @@ class Openvpn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openvpn"
-    sha256 mojave: "b566f4b62044a84ef5c95fdd0302d3432c15b352952903a2b93a680954291faf"
+    sha256 mojave: "e3b06bba6687f71953301f14e6aa13d128caa1e0018032cc0a9cd41c4f49b146"
   end
 
   depends_on "pkg-config" => :build
