@@ -8,7 +8,8 @@ class Planck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/planck"
-    sha256 cellar: :any, mojave: "852520530d0377750cab3161e86b40a4a316e9753586c416a00c7fc0e0c9ca60"
+    rebuild 1
+    sha256 cellar: :any, mojave: "52ff664686e1e0d6d5c1a86db7bd78b3f0ccf454c471bed063fa09b2b8a879b2"
   end
 
   depends_on "clojure" => :build
