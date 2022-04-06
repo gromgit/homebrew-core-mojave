@@ -13,7 +13,8 @@ class Netdata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netdata"
-    sha256 mojave: "496222ef7ac24fd72a5c2206bd4aadfe461fb39fedbdd11bba99e94ab566ae70"
+    rebuild 1
+    sha256 mojave: "ec20908dcecc54357cd09aeca211a89fa9230bca71c47c8b4d92b9406f004462"
   end
 
   depends_on "autoconf" => :build
