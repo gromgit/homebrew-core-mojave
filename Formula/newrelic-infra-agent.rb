@@ -2,14 +2,14 @@ class NewrelicInfraAgent < Formula
   desc "New Relic infrastructure agent"
   homepage "https://github.com/newrelic/infrastructure-agent"
   url "https://github.com/newrelic/infrastructure-agent.git",
-      tag:      "1.23.1",
-      revision: "c380b5c1c3681117f6ccc295d797678b04f992c2"
+      tag:      "1.24.0",
+      revision: "6b639750a46d781f32444b0a77bc4e965b85a569"
   license "Apache-2.0"
   head "https://github.com/newrelic/infrastructure-agent.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newrelic-infra-agent"
-    sha256 cellar: :any_skip_relocation, mojave: "543c5f8a305f15c3609b5441433477b774888eb781ffc1658afcc2afeafbb74c"
+    sha256 cellar: :any_skip_relocation, mojave: "76a45abc748985cbe80ac6c3814f58e8e244aa6cf002bf3f91993a2ef26a94f9"
   end
 
   # https://github.com/newrelic/infrastructure-agent/issues/723
