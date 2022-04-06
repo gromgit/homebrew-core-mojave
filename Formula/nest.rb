@@ -1,14 +1,13 @@
 class Nest < Formula
   desc "Neural Simulation Tool (NEST) with Python3 bindings (PyNEST)"
   homepage "https://www.nest-simulator.org/"
-  url "https://github.com/nest/nest-simulator/archive/v3.2.tar.gz"
-  sha256 "583d5725882ad5e8fd4fc7ffab425da97cbbb91fadbc327e940c184e8892b958"
+  url "https://github.com/nest/nest-simulator/archive/v3.3.tar.gz"
+  sha256 "179462b966cc61f5785d2fee770bc36f86745598ace9cd97dd620622b62043ed"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nest"
-    sha256 mojave: "f0526b22299023ff8915f5fd75f8f51be62deceeea3064a00ffc3f16a85b0e16"
+    sha256 mojave: "cbcd7c63f1f6a250237b4adcc12ad213b603ca3fa3c25009be6ffbb6dab04cf6"
   end
 
   depends_on "cmake" => :build
