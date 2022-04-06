@@ -1,18 +1,21 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_75_RTM/src/nss-3.75.tar.gz"
-  sha256 "fd571507827284644f4dd522a032acda2286835f6683ed22a1c2d3878cc58582"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_76_RTM/src/nss-3.76.tar.gz"
+  sha256 "1b8e0310add364d2ade40620cde0f1c37f4f00a6999b2d3e7ea8dacda4aa1630"
   license "MPL-2.0"
 
   livecheck do
     url "https://ftp.mozilla.org/pub/security/nss/releases/"
     regex(%r{href=.*?NSS[._-]v?(\d+(?:[._]\d+)+)[._-]RTM/?["' >]}i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match.first.tr("_", ".") }
+    end
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nss"
-    sha256 cellar: :any, mojave: "acc1461abdf7908e7e9427f93e6191931df3e8632a201855d1e22343c863505a"
+    sha256 cellar: :any, mojave: "93d65fb65a60a77c09b6bda60a9b409d8758f08ab09daf5f6ec1c4185bd72bb6"
   end
 
   depends_on "nspr"
