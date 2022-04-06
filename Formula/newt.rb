@@ -4,7 +4,7 @@ class Newt < Formula
   url "https://releases.pagure.org/newt/newt-0.52.21.tar.gz"
   sha256 "265eb46b55d7eaeb887fca7a1d51fe115658882dfe148164b6c49fccac5abb31"
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://releases.pagure.org/newt/"
@@ -13,19 +13,17 @@ class Newt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newt"
-    sha256 cellar: :any, mojave: "6f80354e9fc6aa8f04ff4bbc5c89cdfa14209f02e5787b1ca0886bc8b5ab2d00"
+    sha256 cellar: :any, mojave: "7ddcfffa42b0e67317dae4ac3dc7ac253a47f6d6a563d77160535f28f29ec741"
   end
 
   depends_on "gettext"
   depends_on "popt"
+  depends_on "python@3.10"
   depends_on "s-lang"
 
-  on_linux do
-    depends_on "python@3.10"
-  end
-
   def install
-    args = ["--prefix=#{prefix}", "--without-tcl"]
+    xy = Language::Python.major_minor_version("python3")
+    args = %W[--prefix=#{prefix} --without-tcl --with-python=python#{xy}]
 
     if OS.mac?
       inreplace "Makefile.in" do |s|
@@ -48,6 +46,8 @@ class Newt < Formula
 
   test do
     ENV["TERM"] = "xterm"
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "import snack"
+
     (testpath/"test.c").write <<~EOS
       #import <newt.h>
       int main() {
