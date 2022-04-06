@@ -4,6 +4,7 @@ class Postgresql < Formula
   url "https://ftp.postgresql.org/pub/source/v14.2/postgresql-14.2.tar.bz2"
   sha256 "2cf78b2e468912f8101d695db5340cf313c2e9f68a612fb71427524e8c9a977a"
   license "PostgreSQL"
+  revision 1
   head "https://github.com/postgres/postgres.git", branch: "master"
 
   livecheck do
@@ -11,10 +12,9 @@ class Postgresql < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql"
-    rebuild 1
-    sha256 mojave: "040e91171365dc104da7ae2026321d10138bd28a141b5fe84d495499c0c14b77"
+    sha256 mojave: "3f4fe5b481869af48f2ea638c5ff8e1f5f6777630d0fd8a62af9abae15799678"
   end
 
   depends_on "pkg-config" => :build
