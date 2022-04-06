@@ -1,15 +1,14 @@
 class Oauth2Proxy < Formula
   desc "Reverse proxy for authenticating users via OAuth 2 providers"
   homepage "https://oauth2-proxy.github.io/oauth2-proxy/"
-  url "https://github.com/oauth2-proxy/oauth2_proxy/archive/v7.2.0.tar.gz"
-  sha256 "2e1d15083902137c7939dea235ec72fc2cc818de8af540302a2ca66cdabdf4e6"
+  url "https://github.com/oauth2-proxy/oauth2_proxy/archive/v7.2.1.tar.gz"
+  sha256 "fbbb1581582c1a5655272070599f1739f919add79836027f34b366939c250273"
   license "MIT"
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oauth2_proxy"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "34f4b9abb0082f25d63f4d0efff8d53db8b7176be6af1b4d2e6c2d1dea191873"
+    sha256 cellar: :any_skip_relocation, mojave: "09bc62f972ac323d527092bcd630bd7510e276055b1ae5c556a3cabbf1958bea"
   end
 
   depends_on "go" => :build
