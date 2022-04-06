@@ -6,11 +6,12 @@ class Mujs < Formula
       tag:      "1.2.0",
       revision: "dd0a0972b4428771e6a3887da2210c7c9dd40f9c"
   license "ISC"
-  head "https://github.com/ccxvii/mujs.git"
+  head "https://github.com/ccxvii/mujs.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mujs"
-    sha256 cellar: :any, mojave: "24526625ae6a7140567619902536df2a9d9e207dbf5484410abd549a0bdda754"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2413b18feb1628be04194737f23e01478a7de6128b8137c59feeaf0429447957"
   end
 
   on_linux do
