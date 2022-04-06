@@ -12,7 +12,8 @@ class Pnetcdf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pnetcdf"
-    sha256 mojave: "5a5719a65cfa237edf5128a92eee957d18ce900bde1f27fb018b6facdeeefc48"
+    rebuild 1
+    sha256 mojave: "37fac1079a40a4e3dfeeca3ece146afbc7ea94b08604b7c0c2c3590acd2a4e87"
   end
 
   depends_on "gcc"
