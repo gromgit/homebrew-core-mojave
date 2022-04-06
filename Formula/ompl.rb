@@ -16,7 +16,8 @@ class Ompl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ompl"
-    sha256 cellar: :any, mojave: "0b5440f69f18c190282c874f66ff96c47a1d0bd98a7c02a5dab67cbb3a8343a3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "57165e8d02d524d0ba3ccd8497d654e1ef8ed9d5754c6401b988411fb34406ec"
   end
 
   depends_on "cmake" => :build
