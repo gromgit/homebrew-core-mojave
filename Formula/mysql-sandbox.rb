@@ -5,15 +5,12 @@ class MysqlSandbox < Formula
   sha256 "3af4af111536e4e690042bc80834392f46a7e55c7143332d229ff2eb32321e89"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/datacharmer/mysql-sandbox.git"
+  head "https://github.com/datacharmer/mysql-sandbox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f71cc981e6e405e869a7c2f3b8ad9d2a7b93f288f94a5ad052c8a5b60e4372a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7534bbd546393a62cfd0b6bf5022973094743219dee948d004e790b162152edb"
-    sha256 cellar: :any_skip_relocation, monterey:       "6a6208299f27aefcd7ef319bc6b311fbea2bdaa3de351dbf0976e58c16c0a409"
-    sha256 cellar: :any_skip_relocation, big_sur:        "effaa2803c9302f19a2ed000d7fc6e07a718186102877822338a90c850b0ba69"
-    sha256 cellar: :any_skip_relocation, catalina:       "0b01929ca2d5a53f9ea2c18dfcef7f4468b5d625ba75dcfcafe5f74ab8954bf6"
-    sha256 cellar: :any_skip_relocation, mojave:         "dc52de83d9b8f7d85273c64665a80165a8d13e8e4654a0655017d3453fac97ed"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql-sandbox"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "33b804cd4621de2780e27bf729630989a8cd91e695eed8303a6d17cc2c27dba0"
   end
 
   # Replaced by dbdeployer: https://github.com/datacharmer/dbdeployer
