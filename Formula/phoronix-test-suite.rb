@@ -13,6 +13,7 @@ class PhoronixTestSuite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phoronix-test-suite"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "c2327daae03c6ef3b8e8c69eee1e6121bf748e34db82f54d303399ee5ddc59d1"
   end
 
