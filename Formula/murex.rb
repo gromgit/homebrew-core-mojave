@@ -8,7 +8,8 @@ class Murex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/murex"
-    sha256 cellar: :any_skip_relocation, mojave: "51d31b92cfae9c59002d54314a7ea51a45763eb6e7873e2bb63c3d0400b21dd1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f6c3b88e75fec8ef45711bf0f33cf46c0e5bbc6b7126e864739c3e65b2684fbd"
   end
 
   depends_on "go" => :build
