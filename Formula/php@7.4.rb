@@ -6,6 +6,7 @@ class PhpAT74 < Formula
   mirror "https://fossies.org/linux/www/php-7.4.28.tar.xz"
   sha256 "9cc3b6f6217b60582f78566b3814532c4b71d517876c25013ae51811e65d8fce"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -14,7 +15,7 @@ class PhpAT74 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@7.4"
-    sha256 mojave: "444f75de1fdb7d62e3a8815c7654da7abd0035fc3f9f999d9ea863aae4721962"
+    sha256 mojave: "e619ac74899d61823c5521bbe0d14bac9168d6ac7151098e5e74d73e7e1deb06"
   end
 
   keg_only :versioned_formula
@@ -325,9 +326,9 @@ class PhpAT74 < Formula
       "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
-    on_macos do
+    if OS.mac?
       assert_includes MachO::Tools.dylibs("#{bin}/php"),
-        "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
+              "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
     end
 
     system "#{sbin}/php-fpm", "-t"
