@@ -3,13 +3,13 @@ class Pgcli < Formula
 
   desc "CLI for Postgres with auto-completion and syntax highlighting"
   homepage "https://pgcli.com/"
-  url "https://files.pythonhosted.org/packages/3b/1b/aa6c9b4373a72bf44baec1ccfe37c1383e02f4709708026d14a6bc375709/pgcli-3.4.0.tar.gz"
-  sha256 "d566c6eda99aad1a27680bdfd74657e25bc0586d04eaf0b1626bb58bde75cfb6"
+  url "https://files.pythonhosted.org/packages/f8/2a/f23f103e28b32fe005862441c461c9b0022cb1dd4f7b248dd983440628d5/pgcli-3.4.1.tar.gz"
+  sha256 "f03930187e27d60df658ca8a04fb601ec5d7476c735f2b1542c6adec5cac8fe2"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgcli"
-    sha256 cellar: :any, mojave: "57f6c26d49adee7b648b9288e8be0805cc12e08e4d6ce966f10cb58bb93b37b5"
+    sha256 cellar: :any, mojave: "3cde5a2069737939ece8404266be1251dd35dc5ec54fb5d2f6fa01c47312ac6f"
   end
 
   depends_on "poetry" => :build
@@ -40,8 +40,8 @@ class Pgcli < Formula
   end
 
   resource "pgspecial" do
-    url "https://files.pythonhosted.org/packages/8c/04/1f872b69366cf9ef6cd46b02897b21cd9d03435a6b7ca73c618ec1870bb5/pgspecial-1.13.0.tar.gz"
-    sha256 "3847e205b19469f16ded05bda24b4758056d67ade4075a5ded4ce6628a9bad01"
+    url "https://files.pythonhosted.org/packages/5e/eb/a5fe6dd01ededd9eb9a6400fd9a2bfa1e67a6c3f1f8cdb974d5a933d55c1/pgspecial-1.13.1.tar.gz"
+    sha256 "d5dab96690908275916dc2c622efae217f142e08165fa366949d41cbc5658701"
   end
 
   resource "prompt-toolkit" do
