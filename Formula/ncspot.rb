@@ -1,13 +1,13 @@
 class Ncspot < Formula
   desc "Cross-platform ncurses Spotify client written in Rust"
   homepage "https://github.com/hrkfdn/ncspot"
-  url "https://github.com/hrkfdn/ncspot/archive/v0.9.5.tar.gz"
-  sha256 "aff3fb952834dd657cf4a2dbcf6171c620273d6b8b6372cefcbe257c230f17f5"
+  url "https://github.com/hrkfdn/ncspot/archive/v0.9.7.tar.gz"
+  sha256 "6a7dec42d7ffde7d455b75dbc846f34463ae1e3c9bd84669382e90c4d1b31e3e"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncspot"
-    sha256 cellar: :any, mojave: "0a5e6f5834014d8cce982c5dae28ad186479977620a988bb6ddbee0ffafe011d"
+    sha256 cellar: :any, mojave: "2bbb642fce2512f66157409c01c50989f3f589e2f1e23681ae0874bf07bcef3f"
   end
 
   depends_on "python@3.10" => :build
@@ -36,7 +36,7 @@ class Ncspot < Formula
     assert_match "portaudio", shell_output("#{bin}/ncspot --help")
 
     # Linux CI has an issue running `script`-based testcases
-    on_macos do
+    if OS.mac?
       stdin, stdout, wait_thr = Open3.popen2 "script -q /dev/null"
       stdin.puts "stty rows 80 cols 130"
       stdin.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}/ncspot -b ."
