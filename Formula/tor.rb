@@ -20,7 +20,8 @@ class Tor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tor"
-    sha256 mojave: "3031e951102db200108b530a2bc046977b3ed2492b18dc46553cbe28465d3c7a"
+    rebuild 1
+    sha256 mojave: "65688039bc7e28654983542f5d49783e2c2e98429777049d1081c5445581ac73"
   end
 
   depends_on "pkg-config" => :build
@@ -53,10 +54,9 @@ class Tor < Formula
   end
 
   test do
-    on_macos do
+    if OS.mac?
       pipe_output("script -q /dev/null #{bin}/tor-gencert --create-identity-key", "passwd\npasswd\n")
-    end
-    on_linux do
+    else
       pipe_output("script -q /dev/null -e -c \"#{bin}/tor-gencert --create-identity-key\"", "passwd\npasswd\n")
     end
     assert_predicate testpath/"authority_certificate", :exist?
