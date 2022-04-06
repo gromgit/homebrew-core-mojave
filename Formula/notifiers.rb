@@ -9,7 +9,8 @@ class Notifiers < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notifiers"
-    sha256 cellar: :any_skip_relocation, mojave: "81808ada94630dca13f7beea3caae34b4df459fa76d72e593f0b9106cb4037b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2b49a1d41fd87cee6d8951daf34e4f4814ef936616f5b6b4db999ed57176ec38"
   end
 
   depends_on "python@3.10"
