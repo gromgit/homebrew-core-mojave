@@ -12,6 +12,7 @@ class Nano < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nano"
+    rebuild 1
     sha256 mojave: "482f09cd9eb5b5ababac6f737489fc3e8e1eea60305bfe2ed0d4d2cddd8d3459"
   end
 
