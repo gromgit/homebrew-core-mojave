@@ -3,19 +3,13 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https://github.com/languitar/pass-git-helper"
-  url "https://github.com/languitar/pass-git-helper/archive/v1.1.2.tar.gz"
-  sha256 "4acfb486d0873014376383167792ee2b46926386718eb2331a1b4564576a2076"
+  url "https://github.com/languitar/pass-git-helper/archive/v1.2.0.tar.gz"
+  sha256 "d9ab12d81e283411a65285a0030cbfef2548dc580631d2337628e57f10e463aa"
   license "LGPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a6b1bc4bd28d16ec0b55484f42072fc2458ea043d2354c97cd7272a51160ab2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a6b1bc4bd28d16ec0b55484f42072fc2458ea043d2354c97cd7272a51160ab2"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fd61826747bde532d2b9e8898f75776d72b7eec02994d5ed4e2d0c42850cd93"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3fd61826747bde532d2b9e8898f75776d72b7eec02994d5ed4e2d0c42850cd93"
-    sha256 cellar: :any_skip_relocation, catalina:       "3fd61826747bde532d2b9e8898f75776d72b7eec02994d5ed4e2d0c42850cd93"
-    sha256 cellar: :any_skip_relocation, mojave:         "3fd61826747bde532d2b9e8898f75776d72b7eec02994d5ed4e2d0c42850cd93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba4eb72906bbc973d792d2378045213c85df621bca406ce06eb0cf0fce9d7e64"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pass-git-helper"
+    sha256 cellar: :any_skip_relocation, mojave: "e3b14e770794bc4196af2309299baed5841caaae70ebbdc4478bb4eaf831e85c"
   end
 
   depends_on "gnupg" => :test
