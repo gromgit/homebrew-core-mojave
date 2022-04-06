@@ -3,13 +3,13 @@ require "language/node"
 class Newman < Formula
   desc "Command-line collection runner for Postman"
   homepage "https://www.getpostman.com"
-  url "https://registry.npmjs.org/newman/-/newman-5.3.1.tgz"
-  sha256 "b32c2097b5b959223d63277e7d88ecb4820ff13c11fc466884fe2c29081a5cef"
+  url "https://registry.npmjs.org/newman/-/newman-5.3.2.tgz"
+  sha256 "02f4468076e38b8950281518839cc3869f4c5b7ad7cab34e9e600c1451e2fcd6"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newman"
-    sha256 cellar: :any_skip_relocation, mojave: "d1321f090a33c5803009120f0bb2e2ec0eddc2fe97de63e482c8b025a0034db5"
+    sha256 cellar: :any_skip_relocation, mojave: "c977a6d2928ac6059e5dd58a0523b6fb91031c67cb5e326e89dc069a610d9d8d"
   end
 
   depends_on "node"
