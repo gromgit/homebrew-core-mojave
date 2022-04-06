@@ -6,11 +6,11 @@ class Paket < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e88d0baf7898ba4bdcff08a69f27710b6c1356bb451805a7ad11292bf315d112"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/paket"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "330cd6980e9b373816075815c4f3c677e6c56fbd819476df6e29410b16e9152f"
   end
 
-  depends_on arch: :x86_64 # mono is not yet supported on ARM
-  depends_on :macos # mono not yet supported on linux
   depends_on "mono"
 
   def install
