@@ -1,13 +1,13 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
-  homepage "https://github.com/mongodb/mongocli"
-  url "https://github.com/mongodb/mongocli/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "3bb212eea09836f73daa715f203e3074a88fcac5bf60ccec7579ede8b9dd0a57"
+  homepage "https://github.com/mongodb/mongodb-atlas-cli"
+  url "https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/mongocli/v1.23.1.tar.gz"
+  sha256 "34f4aaef8bae5fa848b7091c760af6c659a2a7e3c5a5d00d0ebda18cd0117ea4"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongocli"
-    sha256 cellar: :any_skip_relocation, mojave: "72d5ec5be0ce5899f7e2d25c44f6d9421aaab0d678a4347d2d8b363b693a0c5a"
+    sha256 cellar: :any_skip_relocation, mojave: "a131f672b9c55089018dc563d74d55086a63c902e9c40d1648419feb4b0b8d61"
   end
 
   depends_on "go" => :build
