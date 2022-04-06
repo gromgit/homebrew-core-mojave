@@ -3,14 +3,14 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://github.com/openSUSE/osc/archive/0.175.0.tar.gz"
-  sha256 "6802efaf1c1b2c89cc0de856c5754a1aecb045d2193a3a42b7a5775ccdbf70fd"
+  url "https://github.com/openSUSE/osc/archive/0.176.0.tar.gz"
+  sha256 "9cef44e1c27e423f33c3b03dbfa74433042cce063ffbbc5ead82c74dac9917b2"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osc"
-    sha256 cellar: :any, mojave: "a6d6b97e09174af039c045ec48e27e56dfc0bece2f1f7bfb39da4d8c644bb8cd"
+    sha256 cellar: :any, mojave: "24689a40b1456a43bb7d0d9edd411d7aa9bc6c9703cd2052211845b9ddc2648b"
   end
 
   depends_on "swig" => :build
