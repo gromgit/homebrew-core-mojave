@@ -12,6 +12,7 @@ class Tree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tree"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "48d3a38005d555b4859e05702f1d1db4b07fb4d02b3a57ec78c050a4b5ac0e18"
   end
 
