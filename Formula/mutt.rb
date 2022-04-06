@@ -16,6 +16,7 @@ class Mutt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mutt"
+    rebuild 1
     sha256 mojave: "0dfaaaee024df8339c30e4f3f4a4100f360a4b02b0e8227b2c56c94b1af73029"
   end
 
