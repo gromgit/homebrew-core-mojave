@@ -14,7 +14,8 @@ class OsrmBackend < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osrm-backend"
-    sha256 cellar: :any, mojave: "96e3602192c1c7957991d0b1efc10d865c7b501b96c6f062bebbd3d72455960e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "efbe0748cbc0ae46606ce4b83b9570c7da59cbbc3e1d554daa035978fa820ad0"
   end
 
   depends_on "cmake" => :build
