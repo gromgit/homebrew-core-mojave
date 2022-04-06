@@ -9,7 +9,8 @@ class Molecule < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/molecule"
-    sha256 cellar: :any, mojave: "2bd11519f94b9674bd2cd28e8b4ad13da4e2961a3f86ccbf694d97f119b5b723"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0d44643cd84d3d5cbac3b79d705ece75f2e2aa3f9ccc8d4832101105c49c4be3"
   end
 
   depends_on "rust" => :build
