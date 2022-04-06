@@ -7,6 +7,7 @@ class OsmiumTool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osmium-tool"
+    rebuild 1
     sha256 cellar: :any, mojave: "b2ecede7fed15b259bd319ea923f03bc0b83fb91963add51d5128c94be6fe645"
   end
 
