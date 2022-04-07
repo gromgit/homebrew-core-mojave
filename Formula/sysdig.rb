@@ -13,7 +13,8 @@ class Sysdig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysdig"
-    sha256 mojave: "e5b887fd2f5500c2383b7433c6b60a999470361db3b076d8a4e4acfc3e323871"
+    rebuild 1
+    sha256 mojave: "d5031d80fd080b7a7d5b23f451f1cc24390b4bb921e03164af122a66dc43f7b5"
   end
 
   depends_on "cmake" => :build
