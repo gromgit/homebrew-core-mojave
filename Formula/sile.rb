@@ -1,13 +1,13 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://github.com/sile-typesetter/sile/releases/download/v0.12.2/sile-0.12.2.tar.xz"
-  sha256 "510367f0f55f3770d530219f8eca602d0b6b9abf82de83492cb0c85c1f599646"
+  url "https://github.com/sile-typesetter/sile/releases/download/v0.12.4/sile-0.12.4.tar.xz"
+  sha256 "228faec0592541e373e7a4e4145bdcba60252df08f7c5f6fb4e573c5fbc186d8"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sile"
-    sha256 cellar: :any, mojave: "81eea1519fa3189374c7b8189a3d0603ee55a42e4cd4877f8664d872ddef00eb"
+    sha256 cellar: :any, mojave: "71fb9f6e94becc4cceb3fb13dc7912843734455f81d7fa2d544741c4db593df5"
   end
 
   head do
