@@ -8,7 +8,8 @@ class Statix < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/statix"
-    sha256 cellar: :any_skip_relocation, mojave: "68a8e7f9e6e158194986aa9255c56ba3624e3d39a480a83895c5c47a0eea9002"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "068ced9cfb680793b70dc8f09e8aa4ab8293574f3a60e632e04dadac45f823ee"
   end
 
   depends_on "rust" => :build
