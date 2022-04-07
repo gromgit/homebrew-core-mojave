@@ -8,7 +8,8 @@ class Teku < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teku"
-    sha256 cellar: :any_skip_relocation, mojave: "c39a3ad8c2897ea502267c6ead59aa9d2fef7248c65c4f78fdf161b439e07fe5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8d3a9d1db8d8309694e7b89d949b031417968d975c69eb0c3c4005fb973289e3"
   end
 
   depends_on "gradle" => :build
