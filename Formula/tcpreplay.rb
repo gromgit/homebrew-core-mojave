@@ -7,7 +7,8 @@ class Tcpreplay < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcpreplay"
-    sha256 cellar: :any, mojave: "242951c6fc00d62015a8b94374d22c0d89dbfb9a7dab83d3a31bb737f2982b3f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4b5bfb8967bfd15e0eaf4a54e2401ac2d481526461ff005ae54d741e32b23750"
   end
 
   depends_on "autoconf" => :build
