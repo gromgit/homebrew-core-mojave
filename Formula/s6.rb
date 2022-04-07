@@ -1,8 +1,8 @@
 class S6 < Formula
   desc "Small & secure supervision software suite"
   homepage "https://skarnet.org/software/s6/"
-  url "https://skarnet.org/software/s6/s6-2.11.0.0.tar.gz"
-  sha256 "c545e4e18cd98e7fdbef84566e212276e44630f25de3e7891a3c58e83a9074a8"
+  url "https://skarnet.org/software/s6/s6-2.11.1.0.tar.gz"
+  sha256 "ae64dc2ba208ff80e4ac4792ce90dd526b42bf19c966dc7d8eb9a6870e4bc23a"
   license "ISC"
 
   livecheck do
@@ -11,23 +11,18 @@ class S6 < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "d193d759ad97033b030e533f55cb9c840758f742808e55572c9473e965a4d1b2"
-    sha256 arm64_big_sur:  "fd63c8dd93429cdc9930b8c3af149b2eb948d93cab5a7e0735971c6bcc3afad2"
-    sha256 monterey:       "8ed4a400a9686baf025c5405aeb3b9fe36fbe257c4bdc26edf2c8beb3524291b"
-    sha256 big_sur:        "4d18fc8a563361bdb4cac4b421256e8fa2badb01c82b0692fcddb7d477ed360a"
-    sha256 catalina:       "6b651eb8e448c4a97f3446ea3116a8ef7933b28f57d698b3f24bc92e558791a2"
-    sha256 mojave:         "cdc4ffac93485352efffc1e169f9d1576d52b06afc65b8ea6bbb7f313f69b860"
-    sha256 x86_64_linux:   "09b1f7acbbbcf942f5126ab84cdff586e869a68b3d9a1496cc2aed1af5e07c7c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s6"
+    sha256 mojave: "20dd6f95d87f33af31462165264a5030bf27738253dbe63e27314cde8c9a0ee6"
   end
 
   resource "skalibs" do
-    url "https://skarnet.org/software/skalibs/skalibs-2.11.0.0.tar.gz"
-    sha256 "98dfc8a02a333f5b12d069d84471c0d51ab5a421c4292963048b3652563d34d9"
+    url "https://skarnet.org/software/skalibs/skalibs-2.11.2.0.tar.gz"
+    sha256 "649cf3236fe3103f45366b6196b1bcd0457c9c17ca86f2b80007696a2baa7b77"
   end
 
   resource "execline" do
-    url "https://skarnet.org/software/execline/execline-2.8.1.0.tar.gz"
-    sha256 "5b55c9f9641e36d4238811ed3ab5586d3a1045cb48e0bda97c9a49fe8bfb5557"
+    url "https://skarnet.org/software/execline/execline-2.8.3.0.tar.gz"
+    sha256 "235dbecd594c82e0523c87c2eacf04c48781b39264158f57049f1a1ff8b4ad80"
   end
 
   def install
