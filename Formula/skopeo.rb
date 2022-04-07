@@ -1,13 +1,13 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://github.com/containers/skopeo/archive/v1.6.1.tar.gz"
-  sha256 "304016ec4eb802bf1e1b350854db50bdc99a93dcbcc71f9d531dbb916dc146f3"
+  url "https://github.com/containers/skopeo/archive/v1.7.0.tar.gz"
+  sha256 "453bdcce16767696ed71046b60ad7b34358b183b50eb5aa708ced0b5ea2927b1"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skopeo"
-    sha256 mojave: "16c0274640a2c89611068d03ba0c543f036b99035d08d3c6211a144d830f5ff5"
+    sha256 mojave: "13cc899a21fc352efe7f17695b8834f0d8bd560c30b7cad6144c1062396d4f75"
   end
 
   depends_on "go" => :build
