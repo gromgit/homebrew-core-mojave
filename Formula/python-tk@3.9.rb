@@ -1,8 +1,8 @@
 class PythonTkAT39 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.9.10/Python-3.9.10.tar.xz"
-  sha256 "0a8fbfb5287ebc3a13e9baf3d54e08fa06778ffeccf6311aef821bb3a6586cc8"
+  url "https://www.python.org/ftp/python/3.9.12/Python-3.9.12.tar.xz"
+  sha256 "2cd94b20670e4159c6d9ab57f91dbf255b97d8c1a1451d1c35f4ec1968adf971"
   license "Python-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class PythonTkAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-tk@3.9"
-    sha256 cellar: :any, mojave: "6164908e5881599dc86cc0dc16b1f3c7ba94e450d1053822528d9506df2c5d1f"
+    sha256 cellar: :any, mojave: "4de4694bdc16f25550862f87ac19e527e9c2cb17813b41a21b50efa1037f85df"
   end
 
   depends_on "python@3.9"
@@ -44,10 +44,7 @@ class PythonTkAT39 < Formula
   test do
     system Formula["python@3.9"].bin/"python3", "-c", "import tkinter"
 
-    on_linux do
-      # tk does not work in headless mode
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system Formula["python@3.9"].bin/"python3", "-c", "import tkinter; root = tkinter.Tk()"
   end
