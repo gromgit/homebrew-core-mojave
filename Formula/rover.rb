@@ -1,14 +1,14 @@
 class Rover < Formula
   desc "CLI for managing and maintaining data graphs with Apollo Studio"
   homepage "https://www.apollographql.com/docs/rover/"
-  url "https://github.com/apollographql/rover/archive/v0.4.3.tar.gz"
-  sha256 "d91ba41397563ddaae02f93bae0602e9adc1686c681d1cef91742dac71b005f4"
+  url "https://github.com/apollographql/rover/archive/v0.4.8.tar.gz"
+  sha256 "e95c5f6f01efe4381334cbd2637bf9f8c849855b0705a87cf4d5c5103bc4ecdb"
   license "MIT"
   head "https://github.com/apollographql/rover.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rover"
-    sha256 cellar: :any_skip_relocation, mojave: "3cea1790841d6f3f0fd06dee0369bc72e96a9aa32b1440515473f17c3255400e"
+    sha256 cellar: :any_skip_relocation, mojave: "2f14654ef8b2f507b93a2982dd120f777c857db858d040ee5b0a242d037b982c"
   end
 
   depends_on "rust" => :build
