@@ -8,14 +8,15 @@ class ScalaAT211 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cdabefb6cb6bbb4d3d5b297fe0148488f3162c62d348647f0a07b8b06b63300d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scala@2.11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ae7ab033da2b229839701a4340d77b06353dd8ed050fadcb81b03c82f342a3df"
   end
 
   keg_only :versioned_formula
 
   deprecate! date: "2017-11-09", because: :unsupported
 
-  depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
   depends_on "openjdk@8"
 
   def install
