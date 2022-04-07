@@ -7,7 +7,8 @@ class Soci < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/soci"
-    sha256 mojave: "073da276cbbc0b1602c77333e1741d291b6a36897734b17e09901f9e65403424"
+    rebuild 1
+    sha256 mojave: "162edc61c3a2f9c79f36a1832a7bdcddcf0d3540e5c8c0559b789a3657bba340"
   end
 
   depends_on "cmake" => :build
