@@ -1,16 +1,14 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https://github.com/apple/swift-protobuf"
-  url "https://github.com/apple/swift-protobuf/archive/1.18.0.tar.gz"
-  sha256 "e7afc0d07e0d8970269ca04948cec36ecac85f4526c29ff2c211fc016bde27d6"
+  url "https://github.com/apple/swift-protobuf/archive/1.19.0.tar.gz"
+  sha256 "f057930b9dbd17abeaaceaa45e9f8b3e87188c05211710563d2311b9edf490aa"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swift-protobuf"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "353c73067c5682d6b58c88ffa0021a9018129fee918344c210e995a12f1656a9"
+    sha256 cellar: :any_skip_relocation, mojave: "bffc36d89bc61247e886762989fb645ebc89158ee7e06bb7796d997e9a4f4452"
   end
 
   depends_on xcode: ["8.3", :build]
