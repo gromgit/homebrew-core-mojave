@@ -1,8 +1,8 @@
 class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
-  url "https://cran.r-project.org/src/base/R-4/R-4.1.2.tar.gz"
-  sha256 "2036225e9f7207d4ce097e54972aecdaa8b40d7d9911cd26491fac5a0fab38af"
+  url "https://cran.r-project.org/src/base/R-4/R-4.1.3.tar.gz"
+  sha256 "15ff5b333c61094060b2a52e9c1d8ec55cc42dd029e39ca22abdaa909526fed6"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class R < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/r"
-    rebuild 2
-    sha256 mojave: "f419d489bf825efd563e862abfd882e020e2cd867f359cf1bf98f2221505a42f"
+    sha256 mojave: "7c05007a592f4859785c22d2583a495f015f4f4fd780f2df2a4c12492bb814b2"
   end
 
   depends_on "pkg-config" => :build
@@ -30,6 +29,7 @@ class R < Formula
   depends_on "xz"
 
   uses_from_macos "curl"
+  uses_from_macos "icu4c"
 
   on_linux do
     depends_on "pango"
@@ -131,8 +131,7 @@ class R < Formula
                      "Failed to install gss package"
 
     winsys = "[1] \"aqua\""
-    on_linux do
-      # Fails in Linux CI with: no DISPLAY variable so Tk is not available
+    if OS.linux?
       return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
       winsys = "[1] \"x11\""
