@@ -1,20 +1,20 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.18.1/step_0.18.1.tar.gz"
-  sha256 "88347013784eae1eed7622b3a35805db2eeef7df52dcd044bb89fc325deee9fe"
+  url "https://github.com/smallstep/cli/releases/download/v0.18.2/step_0.18.2.tar.gz"
+  sha256 "66110d6627653f93efa1ffafd4df8086fe405a6b095cff1813db4e2e217d7cf9"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/step"
-    sha256 cellar: :any_skip_relocation, mojave: "f35311c5fc9de6bddb1b9d743385b06469ed1c9923c606f7271d21461fa69604"
+    sha256 cellar: :any_skip_relocation, mojave: "8148e17880bc30fab08259d5ac0534cec73356b555ccb8438e7aa4b643df1ec9"
   end
 
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https://github.com/smallstep/certificates/releases/download/v0.18.1/step-ca_0.18.1.tar.gz"
-    sha256 "06bc91161cb755e5b74814a3d92e08027182af1ee23f882480b897211359bdbc"
+    url "https://github.com/smallstep/certificates/releases/download/v0.18.2/step-ca_0.18.2.tar.gz"
+    sha256 "2eac6b99aabaa2cbf9033546b814b9ef1e54feb7e8d6c588f447bf4a3bd0f52a"
   end
 
   def install
