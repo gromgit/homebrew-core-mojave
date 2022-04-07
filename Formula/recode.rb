@@ -7,6 +7,7 @@ class Recode < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/recode"
+    rebuild 1
     sha256 cellar: :any, mojave: "1bcca901d96571e340bcadb79b1370ba2ccb6d9d637e3547fae8c95afa68a1d0"
   end
 
