@@ -9,7 +9,8 @@ class Revive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/revive"
-    sha256 cellar: :any_skip_relocation, mojave: "061e8b155d55c20008d5aeb941d5f3cf62545366fa4107bf7a4d320a192386f5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "353d098311f62430114e5afd018546f59cb10d4710833702f3f2bd34dee1d02a"
   end
 
   depends_on "go" => :build
