@@ -11,7 +11,8 @@ class PythonTkAT310 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-tk@3.10"
-    sha256 cellar: :any, mojave: "d783133f59b9d17966195d6acd9b33344e9e2b631d9d4f771346d5502715a4ed"
+    rebuild 1
+    sha256 cellar: :any, mojave: "20286bc1266efbb8c64083cf68fcbb97a29a5a8cd4d1f6b49777c2f62a2c1cab"
   end
 
   keg_only :versioned_formula
@@ -46,10 +47,7 @@ class PythonTkAT310 < Formula
   test do
     system Formula["python@3.10"].bin/"python3", "-c", "import tkinter"
 
-    on_linux do
-      # tk does not work in headless mode
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system Formula["python@3.10"].bin/"python3", "-c", "import tkinter; root = tkinter.Tk()"
   end
