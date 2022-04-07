@@ -13,7 +13,8 @@ class ShairportSync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shairport-sync"
-    sha256 mojave: "f471ff1d36a8cd03a2ee52b5d80380884615d89163b3cc9d4106874f7d4892b1"
+    rebuild 1
+    sha256 mojave: "6af7204e8e8155f5aa2d7357221fe11a2777867334a6f1aa5e871258b7e25e61"
   end
 
   depends_on "autoconf" => :build
@@ -63,10 +64,9 @@ class ShairportSync < Formula
 
   test do
     output = shell_output("#{bin}/shairport-sync -V")
-    on_macos do
+    if OS.mac?
       assert_match "libdaemon-OpenSSL-dns_sd-ao-pa-stdout-pipe-soxr-metadata", output
-    end
-    on_linux do
+    else
       assert_match "OpenSSL-ao-pa-stdout-pipe-soxr-metadata-sysconfdir", output
     end
   end
