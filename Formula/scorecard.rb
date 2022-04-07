@@ -8,7 +8,8 @@ class Scorecard < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scorecard"
-    sha256 cellar: :any_skip_relocation, mojave: "2be70ff7ba9aed90f7b3028a9c7ee20b277af80753a94972c92301c8a7f7f892"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ec6c7a66cde81e87e89da53ae267d6dbfbe15ae0a5c9173e24bdd182036e49d5"
   end
 
   depends_on "go" => :build
