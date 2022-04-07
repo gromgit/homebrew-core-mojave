@@ -14,7 +14,8 @@ class ScummvmTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scummvm-tools"
-    sha256 cellar: :any, mojave: "5d18e637d0f86ea8c5987fbd0dc39954b8c7450ab7ad08710325f690d52aa754"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c1e65e1983c4aa49b82d6bf3e84fddb498500870ab982123a1c5cf73e2515a8a"
   end
 
   depends_on "boost"
