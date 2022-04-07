@@ -13,7 +13,8 @@ class Qbs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qbs"
-    sha256 cellar: :any, mojave: "30abddc0f3bce591ae1e7caf30696acbeed674bde8ee053f36a600c92f36f719"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2a4230cf789ae9cc439da2859683ad783123fc7097d3f8110303e40f77eed0d0"
   end
 
   depends_on "cmake" => :build
