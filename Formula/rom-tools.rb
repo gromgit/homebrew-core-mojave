@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0240.tar.gz"
-  version "0.240"
-  sha256 "f5228ccd7e561e8ee6e42d85f1f1be3432f4869169a4d692e646a6959c5c8f75"
+  url "https://github.com/mamedev/mame/archive/mame0241.tar.gz"
+  version "0.241"
+  sha256 "008b8b9fd0cfbea63bc589ab4e9e5af6d63f865c6edf6e6378352e4dbfcb47ff"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -13,7 +13,7 @@ class RomTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rom-tools"
-    sha256 cellar: :any, mojave: "56678cff5a819c41bd3f4ca1ddc85c4588295bb88d5a2b5b6bb49f2458d7bcee"
+    sha256 cellar: :any, mojave: "998e28e832f35c15abb647fb63a796173059619e28ce03004e517ff3cd86d2c5"
   end
 
   depends_on "pkg-config" => :build
