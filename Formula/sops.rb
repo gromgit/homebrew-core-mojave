@@ -1,19 +1,14 @@
 class Sops < Formula
   desc "Editor of encrypted files"
   homepage "https://github.com/mozilla/sops"
-  url "https://github.com/mozilla/sops/archive/v3.7.1.tar.gz"
-  sha256 "536ee140d888b53b71c1e8edd669f4c11bc573428983fbea644fbbfcd7d7079a"
+  url "https://github.com/mozilla/sops/archive/v3.7.2.tar.gz"
+  sha256 "905d0d85e6f3a36eb0586bae5c1bf501445841303e597136f69a33040f5123b2"
   license "MPL-2.0"
   head "https://github.com/mozilla/sops.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54c0b1d4cef71193bddb3010a8c1fff09fec36a3f6394d3da630d35f01ffe23c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ed7327988bf2db73d4883d5c4e280cd5e576980b15cd584841175714e9a6a17"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa82abb0c1a38367f6c748b6f28eeb857a80a4c6d00f872382ffac11e1d502aa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "786527c0a00ac74579e50623298aef7f5a996d63211c08d14b87999255f41809"
-    sha256 cellar: :any_skip_relocation, catalina:       "f95b128d36ffb171695376d011dbf1fc971117152367c109f6232949b45e710a"
-    sha256 cellar: :any_skip_relocation, mojave:         "edc533e3636e05deb0a854a1c3950dfdbeb01ac38f7ef6d8857426d55991a542"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f81bba58cecb22d7d6f08383e77c7c137bfb93b76860fdf5e5da788ed6b7be2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sops"
+    sha256 cellar: :any_skip_relocation, mojave: "b6cc777b9847cc48a21eb9667e2528e5f55fb7bfe99476c12d8836b8d21d95da"
   end
 
   depends_on "go" => :build
