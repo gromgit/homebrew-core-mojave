@@ -1,15 +1,14 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
   homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://github.com/sqlcipher/sqlcipher/archive/v4.5.0.tar.gz"
-  sha256 "20c46a855c47d5a0a159fdcaa8491ec7bdbaa706a734ee52bc76188b929afb14"
+  url "https://github.com/sqlcipher/sqlcipher/archive/v4.5.1.tar.gz"
+  sha256 "023499516ef2ade14fbcdbe93fb81cc69458ae6cb3544614df8dbef34835b406"
   license "BSD-3-Clause"
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlcipher"
-    rebuild 2
-    sha256 cellar: :any, mojave: "1c10e668129417224a513165d099814608c25cbaac3d4aa5ba5aefa1b069610f"
+    sha256 cellar: :any, mojave: "fae8b16e4480891a43ef4cec2e0988983d8447bfbef0fb58c691bce4ca16f9dc"
   end
 
   depends_on "openssl@1.1"
