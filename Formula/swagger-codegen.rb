@@ -8,7 +8,8 @@ class SwaggerCodegen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swagger-codegen"
-    sha256 cellar: :any_skip_relocation, mojave: "4e166a7aec80f1511b7c435006dc6f4ffb9dc144439047b0d4a93de6a92cb619"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9d3e68c96275535d2df4f17fa1eae6dc69fb40bd65157a096e9e86cabfbb51d4"
   end
 
   depends_on "maven" => :build
