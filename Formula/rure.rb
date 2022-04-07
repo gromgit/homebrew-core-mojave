@@ -9,12 +9,9 @@ class Rure < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "78ce91dfd749f3f6f333155546289662b891b128146cbf8825b4a2f8df52b92d"
-    sha256 cellar: :any,                 arm64_big_sur:  "6ba4ed3e1ed9f7861419485860652042cce35b2d86735fc0f683e3e0bc069f12"
-    sha256 cellar: :any,                 monterey:       "8c25b6e5b82ff41468d769fbc4df112166590982c9570bddf5a48a146be313a1"
-    sha256 cellar: :any,                 big_sur:        "99794c5a4bd2d1d88ffdc8d3895c529c55d7375ece0b32b17686e00e15d7703b"
-    sha256 cellar: :any,                 catalina:       "f04aad7ad7d4749aa4cba973a62fc39eafd70cee664b17b67aa89848ce6ce0c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "986af4f9ae078011f903075e6aaebdbd5fadf09bb178f50009fc8c3d38b1b827"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rure"
+    rebuild 1
+    sha256 cellar: :any, mojave: "199febe05e4710d2edf1967039998369a6005777a7f8296f7173150b2f235fb0"
   end
 
   depends_on "rust" => :build
