@@ -1,14 +1,14 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
   homepage "https://rocksdb.org/"
-  url "https://github.com/facebook/rocksdb/archive/v6.29.3.tar.gz"
-  sha256 "724e4cba2db6668ff6a21ecabcce0782cd0c8e386796e7e9a14a8260e0600abd"
+  url "https://github.com/facebook/rocksdb/archive/v7.0.3.tar.gz"
+  sha256 "85bcdcd4adcd77eed6748804d5672d5725b5d2a469694e2a3dbd21b175cf4fd2"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
   head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rocksdb"
-    sha256 cellar: :any, mojave: "fd374c00384c5a8599e7124fdd56f05622483e217d8b1aae3e35bb141b6cf963"
+    sha256 cellar: :any, mojave: "e28bbe3573bc6d206b386e5d9a1b4180931937746cc73bd3692df5be78eb683c"
   end
 
   depends_on "cmake" => :build
@@ -20,8 +20,16 @@ class Rocksdb < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with :gcc do
+    version "6"
+    cause "Requires C++17 compatible compiler. See https://github.com/facebook/rocksdb/issues/9388"
+  end
+
   def install
-    ENV.cxx11
     base_args = std_cmake_args + %W[
       -DPORTABLE=ON
       -DUSE_RTTI=ON
@@ -81,12 +89,12 @@ class Rocksdb < Formula
     EOS
 
     extra_args = []
-    on_macos do
+    if OS.mac?
       extra_args << "-stdlib=libc++"
       extra_args << "-lstdc++"
     end
     system ENV.cxx, "test.cpp", "-o", "db_test", "-v",
-                                "-std=c++11",
+                                "-std=c++17",
                                 *extra_args,
                                 "-lz", "-lbz2",
                                 "-L#{lib}", "-lrocksdb",
@@ -95,7 +103,7 @@ class Rocksdb < Formula
                                 "-L#{Formula["zstd"].opt_lib}", "-lzstd"
     system "./db_test"
     system ENV.cxx, "test.cpp", "-o", "db_test_lite", "-v",
-                                "-std=c++11",
+                                "-std=c++17",
                                 *extra_args,
                                 "-lz", "-lbz2",
                                 "-L#{lib}", "-lrocksdb_lite",
