@@ -1,8 +1,8 @@
 class Task < Formula
   desc "Feature-rich console based todo list manager"
   homepage "https://taskwarrior.org/"
-  url "https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v2.6.1/task-2.6.1.tar.gz"
-  sha256 "00aa6032b3d8379a5cfa29afb66d2b0703a69e3d1fea733d225d654dbcb0084f"
+  url "https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v2.6.2/task-2.6.2.tar.gz"
+  sha256 "b1d3a7f000cd0fd60640670064e0e001613c9e1cb2242b9b3a9066c78862cfec"
   license "MIT"
   head "https://github.com/GothenburgBitFactory/taskwarrior.git", branch: "develop"
 
@@ -13,8 +13,7 @@ class Task < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/task"
-    rebuild 2
-    sha256 mojave: "8dbce09b252b547a6a0efd15d905e329396cc096fe3a6b3169e5e855994c75a7"
+    sha256 mojave: "9c9436b55f47acc06a34a266d71298f7a569f5fba8fd6274addb8ab1e94d9012"
   end
 
   depends_on "cmake" => :build
