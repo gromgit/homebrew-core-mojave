@@ -13,7 +13,8 @@ class Spack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spack"
-    sha256 cellar: :any_skip_relocation, mojave: "d28050f49cae4ed5136fffe0a04d6b37966aa71d1a7d2a8820f0cbfc2608fe50"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c281d88df0286e544ca111261ecfb44785b480a6ba57491abe6edc0342b934f6"
   end
 
   depends_on "python@3.10"
@@ -29,11 +30,11 @@ class Spack < Formula
   test do
     system bin/"spack", "--version"
     assert_match "zlib", shell_output("#{bin}/spack info zlib")
-    on_macos do
-      assert_match "clang", shell_output("spack compiler list")
+    expected = if OS.mac?
+      "clang"
+    else
+      "gcc"
     end
-    on_linux do
-      assert_match "gcc", shell_output("spack compiler list")
-    end
+    assert_match expected, shell_output("spack compiler list")
   end
 end
