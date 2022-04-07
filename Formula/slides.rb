@@ -8,7 +8,8 @@ class Slides < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/slides"
-    sha256 cellar: :any_skip_relocation, mojave: "7f9821c599867eb6ff0bb66ba6f797f7bdf0264ae96b02af2b13870166fdc801"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1e0ceb0f23488743133714a7a51fc8214aec7a62ca42f214bcb8227a39a40ac1"
   end
 
   depends_on "go" => :build
