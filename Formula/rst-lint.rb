@@ -9,6 +9,7 @@ class RstLint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rst-lint"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "47eabdd2dd739cc65455fda75be0a11e563758e1f2c557b3b6e959a6fef84ac2"
   end
 
