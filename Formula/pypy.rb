@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.6-src.tar.bz2"
-  sha256 "0114473c8c57169cdcab1a69c60ad7fef7089731fdbe6f46af55060b29be41e4"
+  url "https://downloads.python.org/pypy/pypy2.7-v7.3.8-src.tar.bz2"
+  sha256 "0cdad270c62d3ccc53cc87eeb069a6dc46acaf95521b584624bcd6697d94fa1c"
   license "MIT"
   head "https://foss.heptapod.net/pypy/pypy", using: :hg
 
@@ -12,11 +12,8 @@ class Pypy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "cc8db4f26c0f9afa60b1b5ccf992886e1c06e31c5e5ee9352c33bdbc4167432a"
-    sha256 cellar: :any,                 big_sur:      "71dbc6c0872a0628094f8ba0bf9ba8bf1dedce276eb184828f54714936b1f650"
-    sha256 cellar: :any,                 catalina:     "723f69ac0261ddc490dada0358157ee82093490f66e5d5660598a4f3c7f0efb5"
-    sha256 cellar: :any,                 mojave:       "58bc1575beb8fbb8925de48940d3024f937ff28006bb409d28de6c3079731020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "787da02ba121545427d5c76c894d516c46b01b13c7aa7a16f58550489e5af280"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pypy"
+    sha256 cellar: :any, mojave: "f2a67e9ed73814c3fb92aa5f14655ca62083f950a60ea68870bef59462af0ca6"
   end
 
   depends_on "pkg-config" => :build
