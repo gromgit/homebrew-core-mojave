@@ -10,7 +10,8 @@ class Principalmapper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/principalmapper"
-    sha256 cellar: :any_skip_relocation, mojave: "083d137e36350818bf5fe871aa4bb9a8c2f516e04018bcf6d4af1f9497511bc0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "03327e2e5ea22433b5e49c4391e62b9c85a57e7bcb2df1eea6ad8dd1fa1d7b88"
   end
 
   depends_on "python@3.10"
