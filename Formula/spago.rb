@@ -1,21 +1,26 @@
 class Spago < Formula
   desc "PureScript package manager and build tool"
   homepage "https://github.com/purescript/spago"
-  url "https://github.com/purescript/spago/archive/refs/tags/0.20.4.tar.gz"
-  sha256 "e2ef8604115556b39ec71301d85a3502502fd5972e40bac82cd556d6a128baff"
+  url "https://github.com/purescript/spago/archive/refs/tags/0.20.7.tar.gz"
+  sha256 "4bb73918813550d9841a8f50b5653f46253da12295d9d8038a63923044d7cf7c"
   license "BSD-3-Clause"
   head "https://github.com/purescript/spago.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spago"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6cafa44575410c427701a93afbe66e48c96eb1548f8e35572ffd1ec10ee01ca2"
+    sha256 cellar: :any_skip_relocation, mojave: "dc62940ca84bd662cbfae22e57bc032a799585401151b081766e0dd3479653eb"
   end
 
   depends_on "ghc" => :build
   depends_on "haskell-stack" => :build
   depends_on "purescript"
 
+  # Check the `scripts/fetch-templates` file for appropriate resource versions.
   resource "docs-search-app-0.0.10.js" do
     url "https://github.com/purescript/purescript-docs-search/releases/download/v0.0.10/docs-search-app.js"
     sha256 "45dd227a2139e965bedc33417a895ec7cb267ae4a2c314e6071924d19380aa54"
