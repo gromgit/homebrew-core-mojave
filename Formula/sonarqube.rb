@@ -6,13 +6,14 @@ class Sonarqube < Formula
   license "LGPL-3.0-or-later"
 
   livecheck do
-    url "https://binaries.sonarsource.com/Distribution/sonarqube/"
+    url "https://www.sonarqube.org/success-download-community-edition/"
     regex(/href=.*?sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonarqube"
-    sha256 cellar: :any_skip_relocation, mojave: "966caf6a153b703ee57804325e92da5b50e2ca5f51d3260ba619b88547d158f4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "543b9e50d41450fabf9c1657c80c8b30f022458ceb1fd1edb1beeeb9934289c1"
   end
 
   depends_on "java-service-wrapper"
