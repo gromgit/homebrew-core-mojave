@@ -7,7 +7,8 @@ class Smug < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/smug"
-    sha256 cellar: :any_skip_relocation, mojave: "29f2a982c88f6074b23f71153b68e83fa24713d260200337bb343f619a18e8b4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4e7ea137f621c28a09b1023a1a2f090d6ec0aba99d232ac9a9bbbd3ba1d12f45"
   end
 
   depends_on "go" => :build
