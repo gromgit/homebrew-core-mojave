@@ -8,7 +8,8 @@ class Rbw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbw"
-    sha256 cellar: :any_skip_relocation, mojave: "3cde149eeddfe6744b4ccbdb8314db60a3c75eab63656170d7e4787d2b1654a9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "397375fd5446ebff5ebb2ad0bacb3aaf3c43d0d932bb8bfae1cfb5db64d41c49"
   end
 
   depends_on "rust" => :build
