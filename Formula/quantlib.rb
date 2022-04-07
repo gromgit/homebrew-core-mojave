@@ -8,7 +8,8 @@ class Quantlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quantlib"
-    sha256 cellar: :any, mojave: "60c96d7731df60cc43218c137079a93a78806633022d45c6897d6930cc241baa"
+    rebuild 1
+    sha256 cellar: :any, mojave: "458ad777d6ce968bb615b1ee36eebfec97b12773f40eafd72009587e3ac40e25"
   end
 
   head do
