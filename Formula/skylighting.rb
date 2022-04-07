@@ -8,7 +8,8 @@ class Skylighting < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skylighting"
-    sha256 cellar: :any_skip_relocation, mojave: "e6351630f02fea691b0baaa6d6f99089a48fd4b9198b3be427132c7e2ae13233"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "97b76c9ab0203f19a5f8d369c2db83a7192f1f9d8336d97a1d5dc64e357f42b1"
   end
 
   depends_on "cabal-install" => :build
