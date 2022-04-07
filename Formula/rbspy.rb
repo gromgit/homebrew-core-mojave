@@ -1,13 +1,13 @@
 class Rbspy < Formula
   desc "Sampling profiler for Ruby"
   homepage "https://rbspy.github.io/"
-  url "https://github.com/rbspy/rbspy/archive/v0.11.0.tar.gz"
-  sha256 "6c482ad40ff0c882c3b056ae6654a50c92cd110cb8bab1d313a473d64a479dd6"
+  url "https://github.com/rbspy/rbspy/archive/v0.11.1.tar.gz"
+  sha256 "a69503e5385cb6a31a9db7bd2e2d1b93e4b53335062c4043e80ca9bfcf6d883d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbspy"
-    sha256 cellar: :any_skip_relocation, mojave: "3f57d8bb7818ef8ba49b7ff0100f590df5c2fb47d22d135c36f869a5a6229f53"
+    sha256 cellar: :any_skip_relocation, mojave: "f32f5518262b47c374ef46421a6140ca310ea1bf422e9e7ab3df841382952d7c"
   end
 
   depends_on "rust" => :build
