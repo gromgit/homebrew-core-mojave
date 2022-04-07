@@ -4,18 +4,21 @@ class Staticcheck < Formula
   url "https://github.com/dominikh/go-tools/archive/2021.1.2.tar.gz"
   sha256 "c3fcadc203e20bc029abc9fc1d97b789de4e90dd8164e45489ec52f401a2bfd0"
   license "MIT"
+  revision 1
   head "https://github.com/dominikh/go-tools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/staticcheck"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "0b5bfb61573e8401eea651d5288116a50a3191f4d1abc6b4cd10993cf3b7cabe"
+    sha256 cellar: :any_skip_relocation, mojave: "9fa5c0ad3be0f0c800346da0b584b668966e49eb78ec6afecdf6ac72fa1a133b"
   end
 
-  depends_on "go"
+  # Bump to 1.18 on the next release.
+  depends_on "go@1.17"
 
   def install
-    system "go", "build", *std_go_args, "./cmd/staticcheck"
+    output = libexec/"bin/staticcheck"
+    system "go", "build", *std_go_args(output: output), "./cmd/staticcheck"
+    (bin/"staticcheck").write_env_script(output, PATH: "$PATH:#{Formula["go@1.17"].opt_bin}")
   end
 
   test do
