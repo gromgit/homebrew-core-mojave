@@ -12,12 +12,9 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "bfad7de65578c177fe2e82856e9e3a463c60927f0e29ff0ead0083b0e5a2f370"
-    sha256 cellar: :any,                 arm64_big_sur:  "6007fc6279c0a332a9e9f80b2bba55c2386e43ebf23d9b6dc8312ea267ebe815"
-    sha256 cellar: :any,                 monterey:       "be7943dcc128fba64a2fd3140330d956227ff5caa2e143e2e2c95c665792e7ca"
-    sha256 cellar: :any,                 big_sur:        "5cd8ebc6702efcf69f7de9ea96b9288c6fa897dd825b3d27a4fa769ab1866573"
-    sha256 cellar: :any,                 catalina:       "a2373d859a750276ac72414428725128e97d657f47d71ee11cc885c006bdbce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bcd55211453e96d3a0f8dc4a4f1d03ec4087133cbeb44430cb89fb0f3e3330a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s2n"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1ce0b5ff7b23b69e9f2d13ce2c8a7059ec2bcf7c5fe7ec248a61ae1886c43205"
   end
 
   depends_on "cmake" => :build
