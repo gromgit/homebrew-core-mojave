@@ -13,7 +13,8 @@ class Quilt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quilt"
-    sha256 cellar: :any_skip_relocation, mojave: "924b09dcf9a752144556c5a6613e34fc770e90e21ae88fe24946470b5de32275"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "77c5f7bc7503600bdb4ba6e2207140ac6cd3029201d78d3144cfc662d08ea44b"
   end
 
   depends_on "coreutils"
