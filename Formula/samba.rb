@@ -4,8 +4,8 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.15.5.tar.gz"
-  sha256 "69115e33831937ba5151be0247943147765aece658ba743f44741672ad68d17f"
+  url "https://download.samba.org/pub/samba/stable/samba-4.16.0.tar.gz"
+  sha256 "97c47de35915d1637b254f02643c3230c3e73617851700edc7a2a8c958a3310c"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -15,12 +15,13 @@ class Samba < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/samba"
-    sha256 mojave: "fed6b1707990213fe1532510577a5c1bead93f1b2a130253b36ffa6175384abe"
+    sha256 mojave: "30c69f75c6c987c40897fbc0a9110fbdc2e9ff01c34e7c16bb88c61ef539eabb"
   end
 
   # configure requires python3 binary to be present, even when --disable-python is set.
   depends_on "python@3.10" => :build
   depends_on "gnutls"
+  depends_on "krb5"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -61,6 +62,7 @@ class Samba < Formula
            "--without-utmp",
            "--without-winbind",
            "--with-shared-modules=!vfs_snapper",
+           "--with-system-mitkrb5",
            "--prefix=#{prefix}",
            "--sysconfdir=#{etc}",
            "--localstatedir=#{var}"
@@ -86,9 +88,10 @@ class Samba < Formula
   end
 
   test do
-    smbd = "#{sbin}/smbd"
-    on_macos do
-      smbd = "#{sbin}/samba-dot-org-smbd"
+    smbd = if OS.mac?
+      "#{sbin}/smbd"
+    else
+      "#{sbin}/samba-dot-org-smbd"
     end
 
     system smbd, "--build-options", "--configfile=/dev/null"
