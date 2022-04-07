@@ -11,7 +11,8 @@ class Pywhat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pywhat"
-    sha256 cellar: :any_skip_relocation, mojave: "f199642997641f61ed0266a1f431d98bd057e88d1a776bbde37f382e36946b6d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "147da3064cd2829b80fe6982cc36e2766bb357547962f9ea5ba81b601a790fc9"
   end
 
   depends_on "python@3.10"
