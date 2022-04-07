@@ -7,7 +7,8 @@ class So < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/so"
-    sha256 cellar: :any_skip_relocation, mojave: "3c2ec4bd703537bcaa42f0ccfd70407ff1b76f24007df598c78db1d16a15b8a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7d0853800d0a30e00419d79daa563206f75dfbb16dcb15d36d2c9371823aa999"
   end
 
   depends_on "rust" => :build
