@@ -8,7 +8,8 @@ class Reshape < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reshape"
-    sha256 cellar: :any_skip_relocation, mojave: "17f5a05ccaafac3f10ae19dc06256374e82953d71790449004bd70ef7bf0ccd7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f8005b147d04eb0ad6f5bc4a1b29ae5f1e14ffc75b3c406556fca1998f44bc41"
   end
 
   depends_on "rust" => :build
