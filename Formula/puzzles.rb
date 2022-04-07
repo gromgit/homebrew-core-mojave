@@ -19,7 +19,8 @@ class Puzzles < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/puzzles"
-    sha256 cellar: :any_skip_relocation, mojave: "5415de7cc8b13aa666622145be589b80da7c15b2a551b0b2eaf5e8cb0fdd792d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7b7a75f216121b9641e523201ce80a98c55fcf4da68ec301e0f18eea676e9e41"
   end
 
   depends_on "cmake" => :build
@@ -43,12 +44,9 @@ class Puzzles < Formula
   end
 
   test do
-    on_macos do
+    if OS.mac?
       assert_predicate prefix/"Puzzles.app/Contents/MacOS/Puzzles", :executable?
-    end
-
-    on_linux do
-      # Gtk-WARNING **: 14:18:20.744: cannot open display
+    else
       return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
       assert_match "Mines, from Simon Tatham's Portable Puzzle Collection", shell_output(bin/"mines")
