@@ -12,7 +12,8 @@ class Tarsnap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarsnap"
-    sha256 cellar: :any, mojave: "5c2d96b08b50c7f1d2e3fd0b975de2a8b000065477f36c4313d3f59812d12719"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d2faa7f2e46ee37d8a06c509a262a5e5789aebaac475885c65060931246c5e05"
   end
 
   head do
