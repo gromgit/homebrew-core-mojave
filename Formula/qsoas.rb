@@ -13,7 +13,8 @@ class Qsoas < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qsoas"
-    sha256 cellar: :any, mojave: "c1dc074b8b3581f7e05b92a13d6ad643ebfeebecc9a706f25000f34d67f4c065"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e9dd6c22eca2d36cdcbdaeaba642ace723a4b8798b10a36c419ab46ca8a3dc48"
   end
 
   depends_on "bison" => :build
