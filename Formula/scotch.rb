@@ -13,6 +13,7 @@ class Scotch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scotch"
+    rebuild 1
     sha256 cellar: :any, mojave: "1de0dcb9384010da043677f63384e821114c1994d12e1573786f588361273831"
   end
 
