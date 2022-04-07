@@ -8,7 +8,8 @@ class Svgbob < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/svgbob"
-    sha256 cellar: :any_skip_relocation, mojave: "cc4394de66d422d38de8391874d253254d951c441b29b4a6b126556d68caf3ae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "62e2edb8c9a2b3e84e8c4e2b96a21fb5ac6ed508d621cc7a477186000c540693"
   end
 
   depends_on "rust" => :build
