@@ -1,15 +1,14 @@
 class Seqkit < Formula
   desc "Cross-platform and ultrafast toolkit for FASTA/Q file manipulation in Golang"
   homepage "https://bioinf.shenwei.me/seqkit"
-  url "https://github.com/shenwei356/seqkit/archive/v2.1.0.tar.gz"
-  sha256 "99041d8c56e7a5e346e852cc8061cf828ee14b5f550b2f263e6031e99491c536"
+  url "https://github.com/shenwei356/seqkit/archive/v2.2.0.tar.gz"
+  sha256 "6e7e292532d78d54ac7aecb934f992c85d04b2dcb2d7a1141808bada0f5b13ba"
   license "MIT"
   head "https://github.com/shenwei356/seqkit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/seqkit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fd57a18eed8a4d45a814988233b8755814791d2b4c1fb19eb239474e0344a86b"
+    sha256 cellar: :any_skip_relocation, mojave: "b4406682f3bf35093eee92ef280ee091e2e7a0c834cb167cf7784e6c9e6f89ad"
   end
 
   depends_on "go" => :build
