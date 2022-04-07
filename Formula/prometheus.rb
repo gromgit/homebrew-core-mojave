@@ -1,8 +1,8 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
   homepage "https://prometheus.io/"
-  url "https://github.com/prometheus/prometheus/archive/v2.33.4.tar.gz"
-  sha256 "b6742ef53fc6971d436c3635515d81accb669b9bd8090217cef1ca806db3a478"
+  url "https://github.com/prometheus/prometheus/archive/v2.34.0.tar.gz"
+  sha256 "76bb5afff1a9be179b99afe624fae73d5c23a27976f2bcb2dc663d1942e87e22"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Prometheus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prometheus"
-    sha256 cellar: :any_skip_relocation, mojave: "5b50fa2ec7b964d82899f8c4508849cd09fad45aa9205e2222881c27f1adc689"
+    sha256 cellar: :any_skip_relocation, mojave: "c3bc6a8e0d25c538999d7eb715c620c36d77bcd4da5df10bc10d5eee6a022430"
   end
 
   depends_on "go" => :build
