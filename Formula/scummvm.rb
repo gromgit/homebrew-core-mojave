@@ -4,6 +4,7 @@ class Scummvm < Formula
   url "https://downloads.scummvm.org/frs/scummvm/2.5.1/scummvm-2.5.1.tar.xz"
   sha256 "9fd8db38e4456144bf8c34dacdf7f204e75f18e8e448ec01ce08ce826a035f01"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/scummvm/scummvm.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,13 @@ class Scummvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scummvm"
-    sha256 mojave: "e301e30a9ebae5e4aedcb3232c54c7cfdfbb2b65f9debfec4fe727671df15ef9"
+    sha256 mojave: "f59a707b0fc7fe9c58c55adce7500e20fc3f0c6e8be4a0df7a497ea529e86924"
   end
 
   depends_on "a52dec"
   depends_on "faad2"
   depends_on "flac"
-  depends_on "fluid-synth@2.1"
+  depends_on "fluid-synth"
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libmpeg2"
@@ -35,15 +36,13 @@ class Scummvm < Formula
                           "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}"
     system "make"
     system "make", "install"
-    (share+"pixmaps").rmtree
-    (share+"icons").rmtree
+    (share/"pixmaps").rmtree
+    (share/"icons").rmtree
   end
 
   test do
-    on_linux do
-      # Test fails on headless CI: Could not initialize SDL: No available video device
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    # Test fails on headless CI: Could not initialize SDL: No available video device
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "#{bin}/scummvm", "-v"
   end
