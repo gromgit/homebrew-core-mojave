@@ -1,14 +1,14 @@
 class Pushpin < Formula
   desc "Reverse proxy for realtime web services"
   homepage "https://pushpin.org/"
-  url "https://github.com/fanout/pushpin/releases/download/v1.34.0/pushpin-1.34.0.tar.bz2"
-  sha256 "b6142650bccbc766d98782ce6489b62cf0f7d6e30784fa0b02ffa5307184d572"
+  url "https://github.com/fanout/pushpin/releases/download/v1.35.0/pushpin-1.35.0.tar.bz2"
+  sha256 "62fbf32d75818b08fd8bce077035de85da47a06c07753e5ba10201a5dd35ca5e"
   license "AGPL-3.0-or-later"
   head "https://github.com/fanout/pushpin.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pushpin"
-    sha256 mojave: "4fe1a1affd4ce7fefedf77e8e6f3c12a4b8a8ef6b8c8afb53f3fff9a930752cd"
+    sha256 mojave: "b9f9cb90c6aa56e9556b533fedb7dbb01feef711615c9cc02cd95bae70f6a58b"
   end
 
   depends_on "pkg-config" => :build
