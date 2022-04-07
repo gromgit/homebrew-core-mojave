@@ -1,14 +1,13 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://github.com/microsoft/SEAL/archive/v3.7.2.tar.gz"
-  sha256 "12676de5766b8e2d641d6e45e92114ccdf8debd6f6d44b42a2ecc39a59b0bf13"
+  url "https://github.com/microsoft/SEAL/archive/v4.0.0.tar.gz"
+  sha256 "616653498ba8f3e0cd23abef1d451c6e161a63bd88922f43de4b3595348b5c7e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/seal"
-    rebuild 2
-    sha256 mojave: "bd050b08c305c92cb037b62b905fe59047365bb24ba10a3ad679787b91bdc457"
+    sha256 cellar: :any, mojave: "a5df5ae321f02adb918f808b96e4c8ffa46d5de5e1c225a45293f6a2bbc7b9c8"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -77,10 +76,11 @@ class Seal < Formula
               1_bfv_basics.cpp
               2_encoders.cpp
               3_levels.cpp
-              4_ckks_basics.cpp
-              5_rotation.cpp
-              6_serialization.cpp
-              7_performance.cpp
+              4_bgv_basics.cpp
+              5_ckks_basics.cpp
+              6_rotation.cpp
+              7_serialization.cpp
+              8_performance.cpp
       )
 
       # Import Microsoft SEAL
