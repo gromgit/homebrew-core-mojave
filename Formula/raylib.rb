@@ -8,8 +8,8 @@ class Raylib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/raylib"
-    rebuild 2
-    sha256 cellar: :any, mojave: "84a9d5dde97596998b7494512316954ea293ce20909c83479bd795ca65af39a2"
+    rebuild 3
+    sha256 cellar: :any, mojave: "d2a6098bf2b67b2d63a05dade0852af3f82bb46f0faff2ca8e521b81c59931c1"
   end
 
   depends_on "cmake" => :build
@@ -51,16 +51,14 @@ class Raylib < Formula
           return 42 <= num && num <= 1337 ? EXIT_SUCCESS : EXIT_FAILURE;
       }
     EOS
-    flags = []
-    on_macos do
-      flags = %w[
+    flags = if OS.mac?
+      %w[
         -framework Cocoa
         -framework IOKit
         -framework OpenGL
       ]
-    end
-    on_linux do
-      flags = %w[
+    else
+      %w[
         -lm
         -ldl
         -lGL
