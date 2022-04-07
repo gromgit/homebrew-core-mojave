@@ -1,14 +1,14 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "http://www.rqlite.com/"
-  url "https://github.com/rqlite/rqlite/archive/v7.3.1.tar.gz"
-  sha256 "8c87ab16835debab34d355895da598ce193e30d2c4af22d73182e3f4eb04a338"
+  url "https://github.com/rqlite/rqlite/archive/v7.3.2.tar.gz"
+  sha256 "e07aa277cd60adaec45890bc4daff691c3016faa9adf9f3387fa109c229bbabe"
   license "MIT"
   head "https://github.com/rqlite/rqlite.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rqlite"
-    sha256 cellar: :any_skip_relocation, mojave: "e3084e20e907999696729b0d301ba5096590341b4fca4fb23e87ac6a81d4be63"
+    sha256 cellar: :any_skip_relocation, mojave: "94262ec2c9af23ac4e4e9c1097b934e4e3936cb9d7879dcad0c61ec5683b1c21"
   end
 
   depends_on "go" => :build
