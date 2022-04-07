@@ -7,7 +7,8 @@ class SqlxCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlx-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "81d620a9730c4b44fb99c05ef3ed35e656f577526d60b9b50d33fcad29d06320"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "09bd22e3529230bc2a60f3e2aad48ae6d246a6b08e88cff9bab23cf75f6190d2"
   end
 
   depends_on "rust" => :build
