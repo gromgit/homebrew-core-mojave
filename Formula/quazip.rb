@@ -7,7 +7,8 @@ class Quazip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quazip"
-    sha256 cellar: :any, mojave: "b642f526239137cc5baaff5d0bb91c7606bda00714815ed0156f671f856e6245"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d6c03d304f4b5eb918fcaa5e3286630db526d0faf4fdf242e1c924c1cc0d24e3"
   end
 
   depends_on "cmake" => :build
