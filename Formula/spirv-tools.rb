@@ -7,7 +7,8 @@ class SpirvTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spirv-tools"
-    sha256 cellar: :any, mojave: "4e07ee2b8581dc99240eb3ee0fe1ad98b3a4c54f9bc1fd7632478b8253103fe0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "be51ca4f0a68cb57e1b26bbf1e355a6cf2728ac89662ecbeb2378730d29c5dd8"
   end
 
   depends_on "cmake" => :build
@@ -50,10 +51,10 @@ class SpirvTools < Formula
   test do
     cp libexec/"examples"/"main.cpp", "test.cpp"
 
-    args = "-lc++"
-
-    on_linux do
-      args = ["-lstdc++", "-lm"]
+    args = if OS.mac?
+      ["-lc++"]
+    else
+      ["-lstdc++", "-lm"]
     end
 
     system ENV.cc, "-o", "test", "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
