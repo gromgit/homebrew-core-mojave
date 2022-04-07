@@ -7,7 +7,8 @@ class RpgCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rpg-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "2a2b09b93db324bdcdd8d162402604de6996d7ab076f9b9a3fc3c84c6f94c498"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a6259bb236e6a6d235f944d47add3197bb52d1a403e877632065a66efab42eca"
   end
 
   depends_on "rust" => :build
