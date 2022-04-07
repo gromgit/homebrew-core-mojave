@@ -4,12 +4,13 @@ class Tarantool < Formula
   url "https://download.tarantool.org/tarantool/2.8/src/tarantool-2.8.3.0.tar.gz"
   sha256 "953614448f23f37370c49c7832dba05b66c3b507c7047674403e05dbdc96bda8"
   license "BSD-2-Clause"
+  revision 1
   version_scheme 1
   head "https://github.com/tarantool/tarantool.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarantool"
-    sha256 mojave: "94d3db247ba33e401890fc29d541546564c15719903fb0899e16ad95c0c77806"
+    sha256 mojave: "b86ba8a79fbe90101a43618ba0abca6bfebd7fc7411b9c273341819a91e2ffe1"
   end
 
   depends_on "cmake" => :build
