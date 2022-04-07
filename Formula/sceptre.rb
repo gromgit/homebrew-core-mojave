@@ -9,7 +9,8 @@ class Sceptre < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sceptre"
-    sha256 cellar: :any, mojave: "bfefd8576a9ea44ac370079f70a2083d13814635b879f39b3f71b14863bc8500"
+    rebuild 1
+    sha256 cellar: :any, mojave: "30326ff86eeee347f92f3b88264d1463c0536358f82d2af01d5739b364ac4392"
   end
 
   depends_on "libyaml"
