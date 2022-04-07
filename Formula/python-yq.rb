@@ -9,7 +9,8 @@ class PythonYq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-yq"
-    sha256 cellar: :any_skip_relocation, mojave: "735b3cc4aa41bd3bbfd05b89bfaefbd61fe0f4e9f488bd7b85ef6686f6f32621"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8466247ef9a0c12429d8a4e4c545b2d0d5ce15abffe048d235638bb86c434ba2"
   end
 
   depends_on "jq"
