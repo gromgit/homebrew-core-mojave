@@ -7,7 +7,8 @@ class Tagref < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tagref"
-    sha256 cellar: :any_skip_relocation, mojave: "01472777ab9331e9453c9af038a629839f6134c6fcd82ef99b98808b00f13ba2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "13682c674a25a4858295ee2943387af17831b2b624e02763bee1c9145510a67d"
   end
 
   depends_on "rust" => :build
