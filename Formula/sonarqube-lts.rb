@@ -12,7 +12,8 @@ class SonarqubeLts < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonarqube-lts"
-    sha256 cellar: :any_skip_relocation, mojave: "e41a86c12561121a76952c05fd5da5c3f329f2a3f788b863e51241808596ddad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e1c395c08c6bf11fce0125126356a2b38c19b340f24aa4952e08c131158c9ee4"
   end
 
   depends_on "java-service-wrapper"
