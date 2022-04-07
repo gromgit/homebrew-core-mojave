@@ -22,9 +22,15 @@ class Sratoolkit < Formula
     end
   end
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sratoolkit"
-    sha256 cellar: :any, mojave: "e371d3b2b982b814734eab79a9169f2d0025a21d9bbb9ed29019eea92860ffc8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dbe2cd0d183d0733744381fd447ff95c6109d45565e8c6899ae2e170b2766f19"
   end
 
   head do
