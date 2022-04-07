@@ -15,7 +15,8 @@ class Spades < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spades"
-    sha256 cellar: :any_skip_relocation, mojave: "995095460ea143cdc70920c3a6a04acb6b947653bf9368e431f00f3444e3edc0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4e227a3603379193a674a24213e91c6e272482d1463f2186cae8180bc726e0f4"
   end
 
   depends_on "cmake" => :build
