@@ -13,6 +13,7 @@ class Tarlz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarlz"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "eb50037ccebd7a0cabead0d82e6c41058830d027deb36b122bc312a825764643"
   end
 
