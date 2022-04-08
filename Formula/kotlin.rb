@@ -1,8 +1,8 @@
 class Kotlin < Formula
   desc "Statically typed programming language for the JVM"
   homepage "https://kotlinlang.org/"
-  url "https://github.com/JetBrains/kotlin/releases/download/v1.6.10/kotlin-compiler-1.6.10.zip"
-  sha256 "432267996d0d6b4b17ca8de0f878e44d4a099b7e9f1587a98edc4d27e76c215a"
+  url "https://github.com/JetBrains/kotlin/releases/download/v1.6.20/kotlin-compiler-1.6.20.zip"
+  sha256 "daf17db1c194f4205f3af67129367a69b388f819177963dc53a7b4b2c4d8ce22"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Kotlin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6884120c6c0cbd01145f029da712a6ef828eb1462edb3a4c280aa85be3546815"
+    sha256 cellar: :any_skip_relocation, all: "0b15a09c892497dcbba81e53f2c351b32fc723accf2f042d0be97b50d69fb1fd"
   end
 
   depends_on "openjdk"
