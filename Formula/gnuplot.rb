@@ -7,7 +7,8 @@ class Gnuplot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnuplot"
-    sha256 mojave: "fa383555b319ce21dcf0918b49d273f78b66e8750f2bb3c80168b0c60fd6e699"
+    rebuild 1
+    sha256 mojave: "346a52089fa699880de8300c61bee8c96771835672b049a7c7c1c287375485f6"
   end
 
   head do
