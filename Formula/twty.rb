@@ -7,11 +7,12 @@ class Twty < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twty"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "973dbbb3f937045630b44d3e171e44016489f0a28093990e4e4a14f0a0d27b4f"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "9387335a08f8d9f448c54b0bdc34534af9072bc1c383596e13598fbc92d8b5d7"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
