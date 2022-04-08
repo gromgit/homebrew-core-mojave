@@ -8,7 +8,8 @@ class Viddy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/viddy"
-    sha256 cellar: :any_skip_relocation, mojave: "85bdeff7c5d586ded33df2737681808f5bd182c6dc20aa426c96842e3440c1c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b76bdb2fd5d2fec3610e64a70171abbd2deefbbe0306fd8a7dc39e244d1f8c10"
   end
 
   depends_on "go" => :build
@@ -18,10 +19,8 @@ class Viddy < Formula
   end
 
   test do
-    on_linux do
-      # Errno::EIO: Input/output error @ io_fread - /dev/pts/0
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    # Errno::EIO: Input/output error @ io_fread - /dev/pts/0
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     ENV["TERM"] = "xterm"
     require "pty"
