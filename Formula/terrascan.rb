@@ -8,7 +8,8 @@ class Terrascan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terrascan"
-    sha256 cellar: :any_skip_relocation, mojave: "bcbd63875795f6a04104428fddba20a47bf0ece66f1b92b85d1264c75a5a41c5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "00e93e408d02ab1d15e46e7e0b80402e6a2ae79d1083764aab3573f77bdb4fe3"
   end
 
   depends_on "go" => :build
