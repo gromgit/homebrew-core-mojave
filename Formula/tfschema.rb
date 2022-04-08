@@ -8,10 +8,12 @@ class Tfschema < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfschema"
-    sha256 cellar: :any_skip_relocation, mojave: "5e59e382c4e3886fa3b4228df5f0d2633cb5bfbb719eca29dc4cbb44be524fd0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1d3c17e4a36f604154ea7f93607c3621b746aceb9b5af46a3db2bb4243ac4a44"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
   depends_on "terraform" => :test
 
   def install
