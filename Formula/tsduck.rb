@@ -1,14 +1,14 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
   homepage "https://tsduck.io/"
-  url "https://github.com/tsduck/tsduck/archive/v3.29-2651.tar.gz"
-  sha256 "cab8f5838993aa1abd1a6a4c2ef7f2afba801da02a4001904f3f5ba5c5fe85a0"
+  url "https://github.com/tsduck/tsduck/archive/v3.30-2710.tar.gz"
+  sha256 "a6548f42aa99ebf5987407599ed50207d743431a5fb54497717963ddad37c0d2"
   license "BSD-2-Clause"
   head "https://github.com/tsduck/tsduck.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tsduck"
-    sha256 cellar: :any, mojave: "285d604e303e36b464c540b1a1cea547c858dd329e36b0b4643c15d194bb180b"
+    sha256 cellar: :any, mojave: "e01745ee2399f6c9aec9b5e26ab77b47b7dba6a6ce210a35766d1d793237c263"
   end
 
   depends_on "dos2unix" => :build
