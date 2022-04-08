@@ -8,7 +8,8 @@ class Wego < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wego"
-    sha256 cellar: :any_skip_relocation, mojave: "54bea0a8cf173aba56e894274815c603d35035b94cfceb3073770a1c2893da02"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b3c6130cba35f96cb111881dd4ac9f759cc7999262eb949fbdf082ff4628b116"
   end
 
   depends_on "go" => :build
