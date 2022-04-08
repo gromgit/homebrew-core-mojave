@@ -7,11 +7,11 @@ class Drake < Formula
   head "https://github.com/Factual/drake.git", branch: "develop"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/drake"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cfe22cd2892ea6b536d21c1454b42fcbf1e36e843f18be3e39683cdfef456819"
+    sha256 cellar: :any_skip_relocation, monterey: "803cc340193a3624f08665a628b198dc1f9fdadcfb761a66be74070af05bb021"
+    sha256 cellar: :any_skip_relocation, big_sur:  "6496f23e1c0b226eefaff9b6866943f55c6ae07539b0f9f640a5dcb1ee7bfb3f"
+    sha256 cellar: :any_skip_relocation, catalina: "0bba821e663244edaa7e34dbd5fa1d5a2f4bbb7aff22b641babca781543a40a6"
+    sha256 cellar: :any_skip_relocation, mojave:   "631e9bb8583c3d54d4aba7fc0d60e59cd5cf2c815679019be8f0f48872fe7363"
   end
-
 
   depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
   depends_on "openjdk@8"
