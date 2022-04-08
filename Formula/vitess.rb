@@ -7,14 +7,17 @@ class Vitess < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vitess"
-    sha256 cellar: :any_skip_relocation, mojave: "f3da142cc5e227d4b718e50a7378ad9a025717d7a9fc2d83ccd250251d465a0d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fb937195bbeb45ac9162e69e593a7be69a84d6b360ac56072187a7c0f97e88a6"
   end
 
   depends_on "go" => :build
   depends_on "etcd"
 
   def install
-    system "make", "install-local", "PREFIX=#{prefix}", "VTROOT=#{buildpath}"
+    # -buildvcs=false needed for build to succeed on Go 1.18.
+    # It can be removed when this is no longer the case.
+    system "make", "install-local", "PREFIX=#{prefix}", "VTROOT=#{buildpath}", "VT_EXTRA_BUILD_FLAGS=-buildvcs=false"
     pkgshare.install "examples"
   end
 
