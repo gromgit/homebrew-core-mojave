@@ -3,13 +3,13 @@ require "language/node"
 class WebtorrentCli < Formula
   desc "Command-line streaming torrent client"
   homepage "https://webtorrent.io/"
-  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-4.0.3.tgz"
-  sha256 "c21f3a20a0615b1e6c44d7598a7428c0ab2dcbd6fe44821446a3fce75f4198ab"
+  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-4.0.4.tgz"
+  sha256 "1633e620ec476eb35679f7c00cdc592facaf714e0f03afbd4abffe12a4849561"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webtorrent-cli"
-    sha256 mojave: "f8eb501dfa0080daea1fded1fbebe1b3b431b5cde03e7829b0ec99e75df4a75b"
+    sha256 mojave: "de8c78aaf9325cd1de541d5b30c28787ac6e891f64ecefc61639b09525adec83"
   end
 
   depends_on "node"
