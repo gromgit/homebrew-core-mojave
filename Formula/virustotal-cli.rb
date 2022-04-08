@@ -1,16 +1,17 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
   homepage "https://github.com/VirusTotal/vt-cli"
-  url "https://github.com/VirusTotal/vt-cli/archive/0.10.0.tar.gz"
-  sha256 "88ef4d2c7708be1bc27c2290181996b6c18e08d5f56a8765de8a5ec13f68e6ac"
+  url "https://github.com/VirusTotal/vt-cli/archive/0.10.1.tar.gz"
+  sha256 "b9004ebdd7a66eff15d160fe795b7f3c5577af7c316f896e7e05418e89c3792c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/virustotal-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "a397402f7b38aa00c0410329c3e85e83b2d217a1d92e3bdfb39fed0965b69c43"
+    sha256 cellar: :any_skip_relocation, mojave: "179ebfa9f0578b73969937dfd38810bfa7985e4a8a54f6821a621f4c747c7e16"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", "-ldflags",
