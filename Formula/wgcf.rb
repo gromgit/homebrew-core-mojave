@@ -1,15 +1,14 @@
 class Wgcf < Formula
   desc "Generate WireGuard profile from Cloudflare Warp account"
   homepage "https://github.com/ViRb3/wgcf"
-  url "https://github.com/ViRb3/wgcf/archive/v2.2.10.tar.gz"
-  sha256 "2b7d2b2aedc7084e2d7d4efa104e6e0eb2ab3eb991f693ec9f38cdfb9c95e641"
+  url "https://github.com/ViRb3/wgcf/archive/v2.2.12.tar.gz"
+  sha256 "6945b032b9376f10167c6602f0ae3767f301b9b200c1aa6d543a874d91afbbc0"
   license "MIT"
   head "https://github.com/ViRb3/wgcf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wgcf"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "fbc931ac47be6437298d2c60240b57e244e3a6ab8d0848c9e7180c423382705d"
+    sha256 cellar: :any_skip_relocation, mojave: "be0fb8049687dee0af20122fc3863dc2f38cc1924e46a6af34b4629b81ffd579"
   end
 
   depends_on "go" => :build
