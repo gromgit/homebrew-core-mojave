@@ -5,15 +5,10 @@ class Wiggle < Formula
   sha256 "ff92cf0133c1f4dce33563e263cb30e7ddb6f4abdf86d427b1ec1490bec25afa"
   license "GPL-2.0-or-later"
 
-  livecheck do
-    url "https://neil.brown.name/wiggle/"
-    regex(/href=.*?wiggle[._-](\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wiggle"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "74b4ea854de546eddcf91bf808016206be229a89cf1e76c096bd02ba5952b49b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "67bc973e35a7d470a848830bfdc53302f9678e839896bb851ffd1003690f6170"
   end
 
   uses_from_macos "groff" => :build
