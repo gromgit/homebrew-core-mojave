@@ -12,6 +12,7 @@ class Udis86 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/udis86"
+    rebuild 1
     sha256 cellar: :any, mojave: "d6bff5fda1f88dc39a9b0c047a3e684c00495cd15de1d1ec4ffbebd925c88fdd"
   end
 
