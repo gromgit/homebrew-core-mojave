@@ -3,13 +3,13 @@ require "language/node"
 class Prettier < Formula
   desc "Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML"
   homepage "https://prettier.io/"
-  url "https://registry.npmjs.org/prettier/-/prettier-2.6.1.tgz"
-  sha256 "a77b7e8468cb6b30e28c74283c5ea164c06191005771867ed81e22374b32b0c7"
+  url "https://registry.npmjs.org/prettier/-/prettier-2.6.2.tgz"
+  sha256 "d10800fa3dc4e389e1f22187d5019d444b915f6239dddf5e1973186ea784e9df"
   license "MIT"
   head "https://github.com/prettier/prettier.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4e384c5aec47b8dddd24cf130317055931d8d34e8d0a65d347c7f56bbcc96b9b"
+    sha256 cellar: :any_skip_relocation, all: "4274d166597aabf2971028b29c028e30829b85a08f1c8b28e1405b8fccc54b1e"
   end
 
   depends_on "node"
