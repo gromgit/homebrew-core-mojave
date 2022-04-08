@@ -7,7 +7,8 @@ class WebpPixbufLoader < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webp-pixbuf-loader"
-    sha256 cellar: :any, mojave: "d3e92d64a0ad31852ca75dbb7d583c3541ea1a0f17495908ad3771f4b2a725a2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "87e3d260f4204f102ef5f097e34f37d64d4f4fe4ec4b2401acbebc266a030be4"
   end
 
   depends_on "meson" => :build
