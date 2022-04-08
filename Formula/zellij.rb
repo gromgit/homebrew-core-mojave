@@ -1,13 +1,13 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
   homepage "https://zellij.dev"
-  url "https://github.com/zellij-org/zellij/archive/v0.25.0.tar.gz"
-  sha256 "5bd4e6a726cf32e096f9c90d7dc414e63dee0613a56f5b665f4bfc6376dcf20a"
+  url "https://github.com/zellij-org/zellij/archive/v0.26.1.tar.gz"
+  sha256 "3770c57b09ddf448eb3a873e06acd3dea4ba420f35e41ac2d5a5ecb2f3cae15c"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zellij"
-    sha256 cellar: :any_skip_relocation, mojave: "4a865f0736cec6dc15811df7abceaf1272e55b05fcfe99b25c872541885df32a"
+    sha256 cellar: :any_skip_relocation, mojave: "510f5cc0a1f3f987459fb2f6cf0aefbb081bc311a89bc64a0b0bdeefe8b71719"
   end
 
   depends_on "rust" => :build
