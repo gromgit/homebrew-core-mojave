@@ -4,15 +4,12 @@ class Unar < Formula
   url "https://github.com/MacPaw/XADMaster/archive/refs/tags/v1.10.7.tar.gz"
   sha256 "3d766dc1856d04a8fb6de9942a6220d754d0fa7eae635d5287e7b1cf794c4f45"
   license "LGPL-2.1-or-later"
-  head "https://github.com/MacPaw/XADMaster.git"
+  head "https://github.com/MacPaw/XADMaster.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "5cedc1ed00cb1f638f6e7d7f026196c19aaf8e2ce9eacb7d9220b98cae2f0649"
-    sha256 cellar: :any, arm64_big_sur:  "16091256fd3c0d13a774fc1900b7b21584fb9eee669a65de56906e188fbcc665"
-    sha256 cellar: :any, monterey:       "2da5bda2a8ad54072fffd22e81c3b3b85320f8d68b993fdc4282dc6c87cec0e6"
-    sha256 cellar: :any, big_sur:        "a92a0fd33d7598591efa5dc01692221053cdc612bb218f46df422af0bd5082c6"
-    sha256 cellar: :any, catalina:       "6207848baad1fda03e3bdda9a8cd621ef2d226a02fcf4219fec64c9f418b9a0e"
-    sha256 cellar: :any, mojave:         "f09e3c1eb465cec023037048305b493e3ed57696a775eb121076951b8ae63e76"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unar"
+    rebuild 1
+    sha256 cellar: :any, mojave: "64d017ad469f2a903d09c543fbc6d1129c115609d076df1cd29ab3caf8b70716"
   end
 
   depends_on xcode: :build
