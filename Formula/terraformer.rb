@@ -1,15 +1,14 @@
 class Terraformer < Formula
   desc "CLI tool to generate terraform files from existing infrastructure"
   homepage "https://github.com/GoogleCloudPlatform/terraformer"
-  url "https://github.com/GoogleCloudPlatform/terraformer/archive/0.8.18.tar.gz"
-  sha256 "bb4f000fda19917dcb67e00ade048366bafc9f928da45f3d32758fec372b28cf"
+  url "https://github.com/GoogleCloudPlatform/terraformer/archive/0.8.19.tar.gz"
+  sha256 "f25804c1e09897e42a6506fd09deb18ee7e64e5a24e9f4148a7c29f98db519eb"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/terraformer.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraformer"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "ce10864e2f94e9237a056e3d71fb009c7bc69ae38e020f9eb2bcc397ebb136ec"
+    sha256 cellar: :any_skip_relocation, mojave: "56d2133b66f11cdeb64603401555d5579c78ce44c0ac52c1ffe8608bc10b3918"
   end
 
   depends_on "go" => :build
