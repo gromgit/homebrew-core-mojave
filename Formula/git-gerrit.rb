@@ -6,10 +6,14 @@ class GitGerrit < Formula
   license "BSD-3-Clause"
   head "https://github.com/fbzhong/git-gerrit.git", branch: "master"
 
-bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-gerrit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b31bb774c3609639c5b7c599aaea4da976dc12b930c842932cd253fd6f278e4d"
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "865ffd990de756622dd9c3bb37fd0f8e7af04eba58bd38013cda9b6a6c551f95"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "865ffd990de756622dd9c3bb37fd0f8e7af04eba58bd38013cda9b6a6c551f95"
+    sha256 cellar: :any_skip_relocation, monterey:       "911fa65cea72dfe849d36ab108a6a36acd1295ea9c8f395a8f8ded8bdd930fbf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "911fa65cea72dfe849d36ab108a6a36acd1295ea9c8f395a8f8ded8bdd930fbf"
+    sha256 cellar: :any_skip_relocation, catalina:       "911fa65cea72dfe849d36ab108a6a36acd1295ea9c8f395a8f8ded8bdd930fbf"
+    sha256 cellar: :any_skip_relocation, mojave:         "911fa65cea72dfe849d36ab108a6a36acd1295ea9c8f395a8f8ded8bdd930fbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f787bba2e4465a7f5df3bebcdb625c3815331a721abc0024ab09b14b868b3ec5"
   end
 
   def install
