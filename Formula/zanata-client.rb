@@ -12,11 +12,11 @@ class ZanataClient < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "4e9a444168ef8759f044a71501e69d0d5f5d8e22dd29038bc8f784751341aa8d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zanata-client"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9363d14b19ce5df72f5e8ba93f55a0e3ab5f81cbf2edb690169484c13894b0a9"
   end
 
-  depends_on arch: :x86_64
   depends_on "openjdk@8"
 
   def install
