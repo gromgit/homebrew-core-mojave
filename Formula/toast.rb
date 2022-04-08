@@ -8,7 +8,8 @@ class Toast < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/toast"
-    sha256 cellar: :any_skip_relocation, mojave: "cca2f3ee2e0b1144617e20949742dbb0f2d2b90dfd435a5df69a1558bdb3daff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "31afa8acbdf49ee93804544b7153698ede9c665e529bea0c0dd5b20123b01e25"
   end
 
   depends_on "rust" => :build
