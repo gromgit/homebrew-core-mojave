@@ -8,7 +8,8 @@ class Zsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zsh"
-    sha256 mojave: "0279c2b6f24b106d75592de4a4fe09fdd9ada677cdc0a251c4344d1bd8a004c8"
+    rebuild 1
+    sha256 mojave: "1d9fac269b7335f9eef363795e783473c0cdb032a38a072910cb35e5b81df7c1"
   end
 
   head do
