@@ -7,10 +7,12 @@ class TtyShare < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tty-share"
-    sha256 cellar: :any_skip_relocation, mojave: "3f75eac803ebf1736aef3a29456587cfd0f2006f83a8a64ffa36333a432d9cbd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "986ac79d4c109dc0a780d25058e309f5a45a89273dab85ee28316b80482ea269"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
