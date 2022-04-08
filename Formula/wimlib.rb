@@ -1,8 +1,8 @@
 class Wimlib < Formula
   desc "Library to create, extract, and modify Windows Imaging files"
   homepage "https://wimlib.net/"
-  url "https://wimlib.net/downloads/wimlib-1.13.4.tar.gz"
-  sha256 "4b87dd0ad9cc1a58cee5721afebb98011dab549e72f2b55533f315f08b2ede12"
+  url "https://wimlib.net/downloads/wimlib-1.13.5.tar.gz"
+  sha256 "32fcc9e9b144b7cb1db4c86e104ca78283cdc225e13fe82b273660586aefe323"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,8 @@ class Wimlib < Formula
   end
 
   bottle do
-    sha256                               arm64_monterey: "2dffb84fed109312b06893f430b7d5fdf3ad9942ce24602548bed0cfed6de43c"
-    sha256                               arm64_big_sur:  "2acbaa6a363897c9c46fd5e058e11c1b234287367d192e31422103c4b467d323"
-    sha256 cellar: :any,                 monterey:       "4ceacbc5dec620a653815b2fab67da64c9125626f51fc329367e361aa4346016"
-    sha256 cellar: :any,                 big_sur:        "055f311cbc8a3ac7e36978a9ad0c69a6825c6ba78136492765a7c2b3ba3fc84f"
-    sha256 cellar: :any,                 catalina:       "1db7b55e58b89d67b1365788c595bd08d13c04c9f7c218d488ec3edd7bdd67a2"
-    sha256 cellar: :any,                 mojave:         "a78ad3433ec595db6568099566f9b15d4919a70a462260afc3f89560bbbb4d2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a29439ca3356d8f9a6cbd8acf64a9500eb54080c0433e2dd42fea78d6f237817"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wimlib"
+    sha256 cellar: :any, mojave: "1330a442f5b2ca29886c275795e6f506ee749d1e6fd1d29c8aa99085b62e2e7a"
   end
 
   depends_on "pkg-config" => :build
@@ -49,12 +44,10 @@ class Wimlib < Formula
   test do
     # make a directory containing a dummy 1M file
     mkdir("foo")
-    size = nil
-    on_macos do
-      size = "1m"
-    end
-    on_linux do
-      size = "1M"
+    size = if OS.mac?
+      "1m"
+    else
+      "1M"
     end
     system "dd", "if=/dev/random", "of=foo/bar", "bs=#{size}", "count=1"
     # capture an image
