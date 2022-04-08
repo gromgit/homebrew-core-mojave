@@ -7,7 +7,8 @@ class YamlCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaml-cpp"
-    sha256 cellar: :any, mojave: "5be38c54156c197c72bb0770c9ef15ac28346efc5e14e5c5b65146c00f924333"
+    rebuild 1
+    sha256 cellar: :any, mojave: "823aa9806e2606b8a6ed221959040296947484629d98e4a12af5b8e9eafbe8d7"
   end
 
   depends_on "cmake" => :build
