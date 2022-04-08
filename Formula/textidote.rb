@@ -6,9 +6,15 @@ class Textidote < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/sylvainhalle/textidote.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/textidote"
-    sha256 cellar: :any_skip_relocation, mojave: "81dbda13ecb4badd084c21124d4c639a36dd53ee340e6d0e13b6bae4dde50773"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "90b1b652acf758cf60eaa1d09daa84b67dc586e5c3223f0994904cbda3642913"
   end
 
   depends_on "ant" => :build
