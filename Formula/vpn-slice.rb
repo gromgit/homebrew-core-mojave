@@ -3,14 +3,14 @@ class VpnSlice < Formula
 
   desc "Vpnc-script replacement for easy and secure split-tunnel VPN setup"
   homepage "https://github.com/dlenski/vpn-slice"
-  url "https://files.pythonhosted.org/packages/bc/79/49fc8347a51f70f4c5501f93809f4dc757729def77749cf16af6643074de/vpn-slice-0.16.tar.gz"
-  sha256 "6d5c8d972126775181397dcc65332ec60c5b35fe1647b1022ace863589c59a12"
+  url "https://files.pythonhosted.org/packages/74/fd/6c9472e8ed83695abace098d83ba0df4ea48e29e7b2f6c77ced73b9f7dce/vpn-slice-0.16.1.tar.gz"
+  sha256 "28d02dd1b41210b270470350f28967320b3a34321d57cc9736f53d6121e9ceaa"
   license "GPL-3.0-or-later"
   head "https://github.com/dlenski/vpn-slice.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vpn-slice"
-    sha256 cellar: :any_skip_relocation, mojave: "8a70757add36bae76c178f885634ce91180ae2b60ee7848ce794f77259e387ea"
+    sha256 cellar: :any_skip_relocation, mojave: "48b2301bccfb5aa11c34bd229535c71e923028185cf61da3394e814206410c90"
   end
 
   depends_on "rust" => :build # for cryptography, can remove if dnspython has new release
