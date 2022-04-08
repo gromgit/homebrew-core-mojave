@@ -8,8 +8,8 @@ class Terraforming < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraforming"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "861094b4a5392364ac297b89c731af55daa395126da37651d419c825a6286f0f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bc246bd5720f4629f79dfb78ac1dcb7faad11f5b7b49fa80af524d78e34fbb4a"
   end
 
   on_linux do
