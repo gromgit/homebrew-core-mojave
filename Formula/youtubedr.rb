@@ -7,7 +7,8 @@ class Youtubedr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtubedr"
-    sha256 cellar: :any_skip_relocation, mojave: "9e45685eefb31b15bc999271df40b123f7d13e6a4cf780e577c96c417e632d83"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b5d89a8bc4799a84b6235bf1ca9ea8b7be1c128aad1b896b0735fbbccf8f654"
   end
 
   depends_on "go" => :build
