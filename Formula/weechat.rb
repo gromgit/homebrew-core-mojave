@@ -1,15 +1,14 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://www.weechat.org"
-  url "https://weechat.org/files/src/weechat-3.3.tar.xz"
-  sha256 "cafeab8af8be4582ccfd3e74fd40e5086a1efa158231f2c26b8b05c3950fcbdf"
+  url "https://weechat.org/files/src/weechat-3.4.1.tar.xz"
+  sha256 "7e088109ad5dfbcb08a9a6b1dd70ea8236093fed8a13ee9d9c98881d7b1aeae7"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/weechat"
-    sha256 mojave: "67ecf562c41db44baba8f42b6e7f7539c7d41f928dac4e236bb4c5630378376c"
+    sha256 mojave: "c3af62ebcdfcbc6e31313dc736704dedbc44bcb551d34f9f2d9bccd0c5cbb6b2"
   end
 
   depends_on "asciidoctor" => :build
@@ -23,7 +22,7 @@ class Weechat < Formula
   depends_on "ncurses"
   depends_on "perl"
   depends_on "python@3.10"
-  depends_on "ruby"
+  depends_on "ruby@3.0"
 
   uses_from_macos "curl"
   uses_from_macos "tcl-tk"
