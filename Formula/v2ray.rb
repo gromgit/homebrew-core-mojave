@@ -13,10 +13,12 @@ class V2ray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v2ray"
-    sha256 cellar: :any_skip_relocation, mojave: "5497714380f98fa456b2ba0ca06370fecdc6e0ad90bf867715bdfd8584c0c22b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9d6e243700e0816965bc0487a37c7f0ecc57bc9f1faff7321b2c6f8ef97f458d"
   end
 
-  depends_on "go" => :build
+  # Bump to Go 1.18 with when v5 releases.
+  depends_on "go@1.17" => :build
 
   resource "geoip" do
     url "https://github.com/v2fly/geoip/releases/download/202112060252/geoip.dat"
