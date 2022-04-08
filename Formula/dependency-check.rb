@@ -1,8 +1,8 @@
 class DependencyCheck < Formula
   desc "OWASP dependency-check"
   homepage "https://owasp.org/www-project-dependency-check/"
-  url "https://github.com/jeremylong/DependencyCheck/releases/download/v7.0.3/dependency-check-7.0.3-release.zip"
-  sha256 "28a94f5e58d014de0821c74649cb66b6bed2180f318a74b0003eb7991ab48942"
+  url "https://github.com/jeremylong/DependencyCheck/releases/download/v7.0.4/dependency-check-7.0.4-release.zip"
+  sha256 "18a252ce7d379c060e8f37546ac5d0ebcc0e92a2c9007fae45afd1b3438c8183"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class DependencyCheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ba9b87d033820312f9a4b359a7e52b8dcdab897b556ad65d0836592a7ff95c4b"
+    sha256 cellar: :any_skip_relocation, all: "4664276eaeb079bd5bba06dccd32949f2ac31ac8f4dc18a010932a8daaec31ed"
   end
 
   depends_on "openjdk"
