@@ -12,6 +12,7 @@ class Vttest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vttest"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9b1e08a64bf323c4532f6ed294acdcb31c32f2adacdc8d18beaa562b972eb27b"
   end
 
