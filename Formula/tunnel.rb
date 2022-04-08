@@ -7,11 +7,12 @@ class Tunnel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tunnel"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "b8ee1eb6e752b6029b2ecde79e64147403189a570a073c5892354c48fc8ac641"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "48fb4ee67098a2f8743710b755ca2ad6bb44e53796f097c5f48e40432efc640d"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     system "go", "build", "-o", bin/"tunnel", "./cmd/tunnel"
