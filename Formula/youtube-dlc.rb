@@ -15,8 +15,11 @@ class YoutubeDlc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtube-dlc"
-    sha256 cellar: :any_skip_relocation, mojave: "9e4a273a6992ab434163829126c09dda1a19528253848704bfb4f16c1cac4462"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3c6c4cf5d3d1b73cf25df2f3457b56efb50f452fe25e9e9d9fc5c2e5a64d4112"
   end
+
+  deprecate! date: "2022-03-21", because: :unmaintained
 
   depends_on "pandoc" => :build
   depends_on "python@3.10"
