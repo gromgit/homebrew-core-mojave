@@ -1,8 +1,8 @@
 class WireguardGo < Formula
   desc "Userspace Go implementation of WireGuard"
   homepage "https://www.wireguard.com/"
-  url "https://git.zx2c4.com/wireguard-go/snapshot/wireguard-go-0.0.20220117.tar.xz"
-  sha256 "f4496b6db6c2f99ebbb744738dd6c93ebdbda0571b56cfb857916d20a696fe80"
+  url "https://git.zx2c4.com/wireguard-go/snapshot/wireguard-go-0.0.20220316.tar.xz"
+  sha256 "fd6759c116e358d311309e049cc2dcc390bc326710f5fc175e0217b755330c2a"
   license "MIT"
   head "https://git.zx2c4.com/wireguard-go.git", branch: "master"
 
@@ -13,24 +13,21 @@ class WireguardGo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wireguard-go"
-    sha256 cellar: :any_skip_relocation, mojave: "4ab6686c9e8c316ce0476a2533290714cf2384c42b67bb76166d780c4382b3aa"
+    sha256 cellar: :any_skip_relocation, mojave: "6648fe00bc9dfa18807d8b921ee1024be2030611d92d6bd5580d099277db5f87"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = HOMEBREW_CACHE/"go_cache"
-
     system "make", "PREFIX=#{prefix}", "install"
   end
 
   test do
     prog = "#{bin}/wireguard-go -f notrealutun 2>&1"
-    on_macos do
+    if OS.mac?
       assert_match "be utun", pipe_output(prog)
-    end
+    else
 
-    on_linux do
       assert_match "Running wireguard-go is not required because this", pipe_output(prog)
     end
   end
