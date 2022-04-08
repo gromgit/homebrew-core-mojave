@@ -13,6 +13,7 @@ class WlaDx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wla-dx"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "d7157ad8825c94653a8c2c5f08c4bb32f4ba91f90adfabbeb44cfa8740b6268d"
   end
 
