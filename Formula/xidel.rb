@@ -12,6 +12,7 @@ class Xidel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xidel"
+    rebuild 1
     sha256 cellar: :any, mojave: "0d8fae09b3930d762d15390c15668b182cd19f230d1c5a7e26c46bed7abefb2a"
   end
 
