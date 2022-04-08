@@ -15,6 +15,7 @@ class Wolfssl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wolfssl"
+    rebuild 1
     sha256 cellar: :any, mojave: "09ec95bb485607d43be0d0e512697696fa1e29a0270b231ac43a6cb0054d267a"
   end
 
