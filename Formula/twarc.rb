@@ -3,13 +3,13 @@ class Twarc < Formula
 
   desc "Command-line tool and Python library for archiving Twitter JSON"
   homepage "https://github.com/DocNow/twarc"
-  url "https://files.pythonhosted.org/packages/71/9d/5a5e9b09d789720f63cc52d9462d6a834253efc7c6726f852148fa0932a5/twarc-2.9.4.tar.gz"
-  sha256 "af88b2df5b18c5b90b4ad5993cc799862cac5744e6316a5bf4fe300bb9d86fcf"
+  url "https://files.pythonhosted.org/packages/06/a1/4ebf54c1231c2401d8164763be7406e0abb4c6271e79e3a158679e05ea00/twarc-2.10.1.tar.gz"
+  sha256 "da5240db35f59913b2addda935b056ede05215679d5bf1b31480a278b1a6d5e5"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twarc"
-    sha256 cellar: :any_skip_relocation, mojave: "c8097d3ebf64d34361de26ec80837881eec9d952f47474708e96f4845189f714"
+    sha256 cellar: :any_skip_relocation, mojave: "a0f8c9c8b69080c4fea30e6fef245401b79c0b5e62267e585aff8ca2c44a875b"
   end
 
   depends_on "python@3.10"
@@ -76,13 +76,13 @@ class Twarc < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/e3/c1/b3e42d5b659ca598508e2a9ef315d5eef0a970f874ef9d3b38d4578765bd/tqdm-4.62.3.tar.gz"
-    sha256 "d359de7217506c9851b7869f3708d8ee53ed70a1b8edbba4dbcb47442592920d"
+    url "https://files.pythonhosted.org/packages/3c/77/e75fb048907ccc065030bf7d9d2d1441247e4e234dbfceb5466207190962/tqdm-4.63.1.tar.gz"
+    sha256 "4230a49119a416c88cc47d0d2d32d5d90f1a282d5e497d49801950704e49863d"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
-    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
+    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
+    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
   end
 
   def install
