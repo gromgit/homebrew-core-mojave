@@ -9,7 +9,8 @@ class Xxh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xxh"
-    sha256 cellar: :any_skip_relocation, mojave: "fd49430fb8e3b7fe6a6646803b64f44a9ba1b3e04c885fae17997d56662b969c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a233b9b7b826743da8be68602a31c4f87452db6b6c25f1ed041b3a69b4c22233"
   end
 
   depends_on "python@3.10"
