@@ -12,7 +12,8 @@ class X8664ElfBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-elf-binutils"
-    sha256 mojave: "b91de4db2e473be1ecf13f8bcd7e9375d2c85f9fe840ada4064fd0a1e2a88307"
+    rebuild 1
+    sha256 mojave: "20ef398e2bc4b42240b10efddc2603bc359bfe8d1d5317d0c09f9fd6e3c6c83c"
   end
 
   uses_from_macos "texinfo"
