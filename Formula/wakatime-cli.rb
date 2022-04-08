@@ -9,7 +9,8 @@ class WakatimeCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wakatime-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "9b879d1ead32032241c5271e92d42e47f4247d797387761d4ea95ada395e5b87"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2a8c2dbf80c2d35437efa6d3d974052b4e0e073d772fbafb235fc34337682581"
   end
 
   depends_on "go" => :build
