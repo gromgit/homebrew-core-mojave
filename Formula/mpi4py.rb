@@ -7,11 +7,11 @@ class Mpi4py < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpi4py"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bc81d0a4ee4d57b3f6824a45f37eb8856578f83e8ff6bf4ccfacd8fb6e3e4a08"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5d4e2632138c12f613ea30f8ef47e79516477652024698c646968eb8e62568ee"
   end
 
-  depends_on "cython" => :build
+  depends_on "libcython" => :build
   depends_on "open-mpi"
   depends_on "python@3.9"
 
