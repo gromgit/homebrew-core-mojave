@@ -11,6 +11,7 @@ class Bind < Formula
   url "https://downloads.isc.org/isc/bind9/9.18.1/bind-9.18.1.tar.xz"
   sha256 "57c7afd871694d615cb4defb1c1bd6ed023350943d7458414db8d493ef560427"
   license "MPL-2.0"
+  revision 1
   version_scheme 1
   head "https://gitlab.isc.org/isc-projects/bind9.git", branch: "main"
 
@@ -23,7 +24,7 @@ class Bind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bind"
-    sha256 mojave: "c2e44d44e083025c658710f0849db8284535982f4f9d97a627de995262a115bb"
+    sha256 mojave: "f561cdf65b817cf73f1c45996f1dccd1b006b832b059811d521d29ba9cb8067f"
   end
 
   depends_on "pkg-config" => :build
@@ -34,17 +35,14 @@ class Bind < Formula
   depends_on "openssl@1.1"
 
   def install
-    # Fix "configure: error: xml2-config returns badness"
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version <= :sierra
-
     args = [
       "--prefix=#{prefix}",
       "--sysconfdir=#{pkgetc}",
+      "--localstatedir=#{var}",
       "--with-json-c",
-      "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}",
-      "--with-libjson=#{Formula["json-c"].opt_prefix}",
-      "--without-lmdb",
       "--with-libidn2=#{Formula["libidn2"].opt_prefix}",
+      "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}",
+      "--without-lmdb",
     ]
     args << "--disable-linux-caps" if OS.linux?
     system "./configure", *args
