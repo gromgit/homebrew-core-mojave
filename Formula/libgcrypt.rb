@@ -1,8 +1,8 @@
 class Libgcrypt < Formula
   desc "Cryptographic library based on the code from GnuPG"
   homepage "https://gnupg.org/related_software/libgcrypt/"
-  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.0.tar.bz2"
-  sha256 "6a00f5c05caa4c4acc120c46b63857da0d4ff61dc4b4b03933fa8d46013fae81"
+  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2"
+  sha256 "ef14ae546b0084cd84259f61a55e07a38c3b53afc0f546bffcef2f01baffe9de"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libgcrypt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgcrypt"
-    sha256 cellar: :any, mojave: "fe012036f1eea6f2bf0922a696147e2098a5c86ae14224810a28d05552f1fbfb"
+    sha256 cellar: :any, mojave: "8752dd8521c0bbd5bcc90e7201a8b41501e0b779e64a9e542f59fb78d9f2a561"
   end
 
   depends_on "libgpg-error"
