@@ -6,11 +6,11 @@ class AnsibleAT28 < Formula
   url "https://files.pythonhosted.org/packages/e6/a3/d68781949f0b6d261ef8f17a4d1c6ee75df261ff168f4ead585604899e26/ansible-2.8.20.tar.gz"
   sha256 "f0672d138cf79cd39197952df0f8c761aac27c639a8ff7bdbd62cf463a7edaea"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.8"
-    sha256 cellar: :any, mojave: "7f5c1a064650d4453783b5d66948789c86cd6f38b6fa0feb63d2dc7dc969d2aa"
+    sha256 cellar: :any, mojave: "b26a7936e868c468b4ad141c926635d6258d18b245e24aad335c8d5512e6976d"
   end
 
   keg_only :versioned_formula
@@ -279,8 +279,8 @@ class AnsibleAT28 < Formula
   end
 
   resource "kerberos" do
-    url "https://files.pythonhosted.org/packages/34/18/9c86fdfdb27e0f7437b7d5a9e22975dcc382637b2a68baac07843be512fc/kerberos-1.3.0.tar.gz"
-    sha256 "f039b7dd4746df56f6102097b3dc250fe0078be75130b9dc4211a85a3b1ec6a4"
+    url "https://files.pythonhosted.org/packages/39/cd/f98699a6e806b9d974ea1d3376b91f09edcb90415adbf31e3b56ee99ba64/kerberos-1.3.1.tar.gz"
+    sha256 "cdd046142a4e0060f96a00eb13d82a5d9ebc0f2d7934393ed559bac773460a2c"
   end
 
   resource "keystoneauth1" do
@@ -294,8 +294,8 @@ class AnsibleAT28 < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/39/2b/0a66d5436f237aff76b91e68b4d8c041d145ad0a2cdeefe2c42f76ba2857/lxml-4.5.0.tar.gz"
-    sha256 "8620ce80f50d023d414183bf90cc2576c2837b88e00bea3f33ad2630133bbb60"
+    url "https://files.pythonhosted.org/packages/3b/94/e2b1b3bad91d15526c7e38918795883cee18b93f6785ea8ecf13f8ffa01e/lxml-4.8.0.tar.gz"
+    sha256 "f63f62fc60e6228a4ca9abae28228f35e1bd3ce675013d1dfb828688d50c6e23"
   end
 
   resource "monotonic" do
@@ -600,11 +600,6 @@ class AnsibleAT28 < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.7"].opt_libexec/"bin"
-
-    if OS.mac? && (MacOS.version <= :sierra)
-      # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
-      ENV["SDKROOT"] = MacOS.sdk_path
-    end
 
     virtualenv_install_with_resources
 
