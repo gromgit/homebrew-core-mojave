@@ -12,7 +12,8 @@ class Gwenhywfar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gwenhywfar"
-    sha256 mojave: "ad4da8e3b627a586c5a5c91358e219d85bb4ba0226ba2c3012bec788069c9007"
+    rebuild 1
+    sha256 mojave: "0ba9dc28c89593032ddd23c97104b77361afc2e8705f1bb6efee661ee3a9f4f9"
   end
 
   depends_on "autoconf" => :build
