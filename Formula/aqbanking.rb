@@ -12,7 +12,8 @@ class Aqbanking < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aqbanking"
-    sha256 mojave: "0980052bf27ad1c814f85c482f465c6ba60401bc006cf48561edc73981586fa3"
+    rebuild 1
+    sha256 mojave: "d9dfef02ce48bfb391a4af12e6307b114765f7ec2a4704e70e168522cc03e681"
   end
 
   head do
