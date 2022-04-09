@@ -12,8 +12,8 @@ class Protobuf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0dacf2e19b76833cc30c7eb11ceddba28cab4d91ee001d6e30db335dd52ebfec"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ac219625d2f43ee2643818201205fdbd2af983e26ea59c54e7009caacc26a71e"
   end
 
   head do
@@ -27,7 +27,6 @@ class Protobuf < Formula
   depends_on "python@3.10" => [:build, :test]
   # The Python3.9 bindings can be removed when Python3.9 is made keg-only.
   depends_on "python@3.9" => [:build, :test]
-  depends_on "six"
 
   uses_from_macos "zlib"
 
