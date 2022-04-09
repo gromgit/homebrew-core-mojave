@@ -3,13 +3,13 @@ require "language/node"
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-0.17.0.tgz"
-  sha256 "9209066ab7336bd641056126d9658dd410795f9bd29ef5ca5f75a2ff7487b831"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-0.18.0.tgz"
+  sha256 "be3ae36b14047a079521c7636773262a61b73c6b1eedbf20f3780027d187cf4b"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asyncapi"
-    sha256 cellar: :any_skip_relocation, mojave: "6ac93c42b2377d64925c1f56f7e181022405985c6dfd073fe7b6246a3fcb0596"
+    sha256 cellar: :any_skip_relocation, mojave: "a91a0b061aa9f361253e8fc2f6edb4c8bc0861e938693ac7800ad2acd464ff62"
   end
 
   depends_on "node"
