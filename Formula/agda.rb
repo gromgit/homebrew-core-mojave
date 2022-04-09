@@ -2,11 +2,10 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
-  revision 1
 
   stable do
-    url "https://hackage.haskell.org/package/Agda-2.6.2.1/Agda-2.6.2.1.tar.gz"
-    sha256 "3c4146539e1f2561a05896e3c18a7d0262d98a28f5c5adcc8cce8d8c9d3cbc0d"
+    url "https://hackage.haskell.org/package/Agda-2.6.2.2/Agda-2.6.2.2.tar.gz"
+    sha256 "e5be3761717b144f64e760d8589ec6fdc0dda60d40125c49cdd48f54185c527a"
 
     resource "stdlib" do
       url "https://github.com/agda/agda-stdlib/archive/v1.7.1.tar.gz"
@@ -16,14 +15,14 @@ class Agda < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/agda"
-    sha256 mojave: "888cce9515dd218b03d6771badf76a5f590da6b78ffec74c320f8fbb5af8765b"
+    sha256 mojave: "caa82eb3c0cd5f548bbe97c043c6fb90ce625c2bfa22b097c9845a5c934f2b35"
   end
 
   head do
-    url "https://github.com/agda/agda.git"
+    url "https://github.com/agda/agda.git", branch: "master"
 
     resource "stdlib" do
-      url "https://github.com/agda/agda-stdlib.git"
+      url "https://github.com/agda/agda-stdlib.git", branch: "master"
     end
   end
 
