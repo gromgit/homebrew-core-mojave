@@ -13,11 +13,13 @@ class Blast < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blast"
-    sha256 mojave: "ef6e81e1cc412f64ed07220364b8b6beb9a7513bef2c33010f8f81923dfb541e"
+    rebuild 1
+    sha256 mojave: "79e560d4c695a4c86348513ece236fe96a671c0c56695e05c0f7b7d6066716c3"
   end
 
   depends_on "lmdb"
 
+  uses_from_macos "cpio" => :build
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -26,7 +28,6 @@ class Blast < Formula
   end
 
   on_linux do
-    depends_on "libarchive" => :build
     depends_on "gcc"
   end
 
@@ -37,13 +38,17 @@ class Blast < Formula
   def install
     cd "c++" do
       # Boost is only used for unit tests.
-      args = %W[--prefix=#{prefix}
-                --with-bin-release
-                --with-mt
-                --with-strip
-                --with-experimental=Int8GI
-                --without-debug
-                --without-boost]
+      args = %W[
+        --prefix=#{prefix}
+        --with-bin-release
+        --with-mt
+        --with-strip
+        --with-experimental=Int8GI
+        --without-debug
+        --without-boost
+      ]
+      # Allow SSE4.2 on some platforms. The --with-bin-release sets --without-sse42
+      args << "--with-sse42" if Hardware::CPU.intel? && MacOS.version.requires_sse42?
 
       if OS.mac?
         args += ["OPENMP_FLAGS=-Xpreprocessor -fopenmp",
