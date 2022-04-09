@@ -3,7 +3,7 @@ class Coinutils < Formula
   homepage "https://github.com/coin-or/CoinUtils"
   url "https://github.com/coin-or/CoinUtils/archive/releases/2.11.6.tar.gz"
   sha256 "6ea31d5214f7eb27fa3ffb2bdad7ec96499dd2aaaeb4a7d0abd90ef852fc79ca"
-  license "EPL-1.0"
+  license "EPL-2.0"
   head "https://github.com/coin-or/CoinUtils.git", branch: "master"
 
   livecheck do
@@ -13,7 +13,8 @@ class Coinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coinutils"
-    sha256 cellar: :any, mojave: "1ea223bbcb9e5e5ce297bbe66c48a11a96d9d4afa7717ff5e7602af57a1e0168"
+    rebuild 1
+    sha256 cellar: :any, mojave: "58a9dfa240fd9c9ac23d465fa048e51a6f36bc9ccafa61128534d19dc6a83225"
   end
 
   depends_on "pkg-config" => :build
