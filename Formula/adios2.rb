@@ -1,10 +1,9 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https://adios2.readthedocs.io"
-  url "https://github.com/ornladios/ADIOS2/archive/v2.7.1.tar.gz"
-  sha256 "c8e237fd51f49d8a62a0660db12b72ea5067512aa7970f3fcf80b70e3f87ca3e"
+  url "https://github.com/ornladios/ADIOS2/archive/v2.8.0.tar.gz"
+  sha256 "5af3d950e616989133955c2430bd09bcf6bad3a04cf62317b401eaf6e7c2d479"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,8 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "6868483da21fddfcb4c5a76d821c9df6f2276ef86de36141d3666ba01a3f1922"
-    sha256 arm64_big_sur:  "b6b6dbcbe7d3d1ad478d47b4004d9ac932707a2503f810439680672a87b89e2b"
-    sha256 monterey:       "43469ded9b6f8253cef8e12fcc64138f406f70c71705e3d7b59b8f001b357900"
-    sha256 big_sur:        "7d1abe16be0173d2c1e645c51641b59fea8983c140c5caef132016d4e1416568"
-    sha256 catalina:       "6826ba1d0cf70bd775a97a152fa2423b0091dfb196500d5a1eef0884f6e9d2f8"
-    sha256 mojave:         "ec0da5f5869f0473b3c7b906cb4ea86d7673f4ff3bb479d6cf88621beb990507"
-    sha256 x86_64_linux:   "1ff13a5c092bdbecb0ae8e3b5ec7a0b7910550c22ac7376c41ec92708138b67e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/adios2"
+    sha256 mojave: "d8cb917d352cf0f9e73e4785b4219f5e5da4f8b80a42d35908857c5d118922a5"
   end
 
   depends_on "cmake" => :build
