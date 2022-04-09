@@ -1,17 +1,15 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
-  url "https://ftp.gnu.org/gnu/emacs/emacs-27.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/emacs/emacs-27.2.tar.xz"
-  sha256 "b4a7cc4e78e63f378624e0919215b910af5bb2a0afc819fad298272e9f40c1b9"
+  url "https://ftp.gnu.org/gnu/emacs/emacs-28.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/emacs/emacs-28.1.tar.xz"
+  sha256 "28b1b3d099037a088f0a4ca251d7e7262eab5ea1677aabffa6c4426961ad75e1"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emacs"
-    rebuild 1
-    sha256 mojave: "0ae93e8fb403f25ea40003b1c9b78a846d25ce3f07d8cd115d060de8414d08a8"
+    sha256 mojave: "11bfd227d1351a5d9d798f531a3cd200c14f81bcc2aab32f0ef8d76e8df4bada"
   end
-
 
   head do
     url "https://github.com/emacs-mirror/emacs.git", branch: "master"
