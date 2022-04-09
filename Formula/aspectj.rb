@@ -1,8 +1,8 @@
 class Aspectj < Formula
   desc "Aspect-oriented programming for Java"
   homepage "https://www.eclipse.org/aspectj/"
-  url "https://github.com/eclipse/org.aspectj/releases/download/V1_9_8/aspectj-1.9.8.jar"
-  sha256 "aa0606b87987281aabbed6de681b12e721d8f4c1e99c1e861c6fcd98f9b55e5b"
+  url "https://github.com/eclipse/org.aspectj/releases/download/V1_9_9_1/aspectj-1.9.9.1.jar"
+  sha256 "922310b843d7a12a4752222791f62cadf08071273a997e364d12016de210856b"
   license "EPL-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Aspectj < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aspectj"
-    sha256 cellar: :any_skip_relocation, mojave: "a28d0e99205fe32deacaf687dc5683e35075af4049cc15efe923211704e1d83b"
+    sha256 cellar: :any_skip_relocation, mojave: "84663e1bdd543e19c32d104e143809f941f31fdd565cad2df3f2b231c0ffbbac"
   end
 
   depends_on "openjdk"
