@@ -1,9 +1,9 @@
 class Freetype < Formula
   desc "Software library to render fonts"
   homepage "https://www.freetype.org/"
-  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.11.1/freetype-2.11.1.tar.xz"
-  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.11.1.tar.xz"
-  sha256 "3333ae7cfda88429c97a7ae63b7d01ab398076c3b67182e960e5684050f2c5c8"
+  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.12.0/freetype-2.12.0.tar.xz"
+  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.12.0.tar.xz"
+  sha256 "ef5c336aacc1a079ff9262d6308d6c2a066dd4d2a905301c4adda9b354399033"
   license "FTL"
 
   livecheck do
@@ -13,8 +13,7 @@ class Freetype < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freetype"
-    rebuild 1
-    sha256 cellar: :any, mojave: "54476b8d883fe5bfd1f4ed78d9d6d21d6ab80f9ad09a477a9f65bc40915b5c67"
+    sha256 cellar: :any, mojave: "445e9395b9c74c80561b23239a540bd125d483efba5b7919b54f8f72b0d7fb54"
   end
 
   depends_on "libpng"
