@@ -15,7 +15,8 @@ class Doxygen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doxygen"
-    sha256 cellar: :any_skip_relocation, mojave: "25ed31961fab3e8a65464a7016b965890d443acaeb07fe86b1d1f1343eb96b78"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "85833a3e2b1b88754d4e24219b8b70c26b002c8f40085e8263c63f79ee121e68"
   end
 
   depends_on "bison" => :build
@@ -35,9 +36,8 @@ class Doxygen < Formula
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"
+      system "make", "install"
     end
-    bin.install Dir["build/bin/*"]
-    man1.install Dir["doc/*.1"]
   end
 
   test do
