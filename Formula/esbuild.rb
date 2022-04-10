@@ -3,13 +3,13 @@ require "language/node"
 class Esbuild < Formula
   desc "Extremely fast JavaScript bundler and minifier"
   homepage "https://esbuild.github.io/"
-  url "https://registry.npmjs.org/esbuild/-/esbuild-0.14.28.tgz"
-  sha256 "ec1e8d5f6e78970fb521fde9ceebf7ab1ef0b92a74722db468e92d5b262b0c73"
+  url "https://registry.npmjs.org/esbuild/-/esbuild-0.14.32.tgz"
+  sha256 "0a9c7a7ddd9660b7db760ca6194684a4b680781987b1d37905cfc9388d1d58ec"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esbuild"
-    sha256 cellar: :any_skip_relocation, mojave: "e90022ef6947258fe7e8efec1b8af77c7aea9d65aa9c95da301875cb6b015aaa"
+    sha256 cellar: :any_skip_relocation, mojave: "e7dc9bd143ad3c5d0dc14f96b699b090bb31c404b61cf72256c201b12ac60e30"
   end
 
   depends_on "node"
@@ -31,6 +31,6 @@ class Esbuild < Formula
     system Formula["node"].libexec/"bin/npm", "install", "react", "react-dom"
     system bin/"esbuild", "app.jsx", "--bundle", "--outfile=out.js"
 
-    assert_equal "<h1 data-reactroot=\"\">Hello, world!</h1>\n", shell_output("node out.js")
+    assert_equal "<h1>Hello, world!</h1>\n", shell_output("node out.js")
   end
 end
