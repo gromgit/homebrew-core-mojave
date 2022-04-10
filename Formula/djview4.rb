@@ -13,8 +13,8 @@ class Djview4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djview4"
-    rebuild 2
-    sha256 cellar: :any, mojave: "223320b1bfb23d960657ac094ba3aefa3d13de0a3ae7b91b9cebed567998a1b9"
+    rebuild 3
+    sha256 cellar: :any, mojave: "9a7ec1e1db2ee7b3be6ae654fddaa979bb2f14848d5b38424bad2e98f8340e86"
   end
 
   depends_on "autoconf" => :build
@@ -47,11 +47,11 @@ class Djview4 < Formula
   end
 
   test do
-    on_macos do
-      assert_predicate prefix/"djview.app", :exist?
+    name = if OS.mac?
+      "djview.app"
+    else
+      "djview"
     end
-    on_linux do
-      assert_predicate prefix/"djview", :exist?
-    end
+    assert_predicate prefix/name, :exist?
   end
 end
