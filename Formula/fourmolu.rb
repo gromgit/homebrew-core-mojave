@@ -1,14 +1,14 @@
 class Fourmolu < Formula
   desc "Formatter for Haskell source code"
   homepage "https://github.com/fourmolu/fourmolu"
-  url "https://github.com/fourmolu/fourmolu/archive/v0.5.0.tar.gz"
-  sha256 "999d380802b1356eeb3e463029282ecf0c56cb1d511783e6d053863890949806"
+  url "https://github.com/fourmolu/fourmolu/archive/v0.6.0.0.tar.gz"
+  sha256 "3f5dd18b542caea267f7e520b672948e25a33e8675d70234b8372549feef0e47"
   license "BSD-3-Clause"
   head "https://github.com/fourmolu/fourmolu.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fourmolu"
-    sha256 cellar: :any_skip_relocation, mojave: "84168e521d81d3169a44356dc92496034639dc89035d029ba3d27e8115626d6a"
+    sha256 cellar: :any_skip_relocation, mojave: "aaab8d884fbd0d64ccfc66a3ded901f0a266dabff4b6b470959f62f7b5589562"
   end
 
   depends_on "cabal-install" => :build
