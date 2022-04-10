@@ -7,16 +7,23 @@ class Dfmt < Formula
   license "BSL-1.0"
   head "https://github.com/dlang-community/dfmt.git", branch: "v0.x.x"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dfmt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dca3fb7bf2be4e8a4e6ba9279c66b3324107d568ae54b8f542700803e1991cb9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3f9b4cb4016263f8a789ee570b78eb3761070e518272b29deb82933a6ef283ca"
   end
 
-  depends_on "dmd" => :build
+  on_macos do
+    depends_on "ldc" => :build
+  end
+
+  on_linux do
+    depends_on "dmd" => :build
+  end
 
   def install
-    system "make"
+    target = OS.mac? ? "ldc" : "dmd"
+    system "make", target
     bin.install "bin/dfmt"
   end
 
