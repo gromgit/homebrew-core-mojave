@@ -6,13 +6,17 @@ class DhallLspServer < Formula
   license "BSD-3-Clause"
   head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-lsp-server"
-    sha256 cellar: :any_skip_relocation, mojave: "c2650c91d6f4b9eb93345060da8c72e10bf019a0047dcb129bd0f031f003ffc4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2e028a336febb4c35fe7721134c4f75d12e0e347e46de507985fd9be58809c36"
   end
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
+
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   def install
     system "cabal", "v2-update"
