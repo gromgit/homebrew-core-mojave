@@ -1,15 +1,13 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
-  url "https://github.com/FreeRDP/FreeRDP/archive/2.4.0.tar.gz"
-  sha256 "80eb7e09e2a106345d07f0985608c480341854b19b6f8fc653cb7043a9531e52"
+  url "https://github.com/FreeRDP/FreeRDP/archive/2.6.1.tar.gz"
+  sha256 "2ff86a839c1cf678a24d9bf435c83745aafbd5f0d19b637b733e306acede96e3"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freerdp"
-    rebuild 1
-    sha256 mojave: "d82475b7eabf94a5e9e2a2aa24d0604c85a0bcc0ee5e27e48779c26e7ef25c22"
+    sha256 mojave: "258ba0bef416453b0a0bcd0c7d8fea0e2a4cc40ca8c3b76427852fb1d7ccbded"
   end
 
   head do
