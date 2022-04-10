@@ -1,18 +1,18 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.20.3/deno_src.tar.gz"
-  sha256 "c44284b7143907bc3c647e037d700e940ce2d5015d1f26842fc3a09bc9d69daf"
+  url "https://github.com/denoland/deno/releases/download/v1.20.5/deno_src.tar.gz"
+  sha256 "ef5fdfe69c60251163e465274b2399160c07131bb20dcbcb58119a33d3b3f7d7"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deno"
-    sha256 cellar: :any_skip_relocation, mojave: "862640746d7a38683feaf07e47e539b102fb062308dcec40a02e8fa6f22aa5f1"
+    sha256 cellar: :any_skip_relocation, mojave: "9141e8d7ba4479fa8c495112c651edeec3cd2ed69c14f456c27e08c209972b0f"
   end
 
   depends_on "llvm" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "rust" => :build
 
   uses_from_macos "xz"
@@ -46,8 +46,8 @@ class Deno < Formula
     end
 
     # env args for building a release build with our python3, ninja and gn
-    ENV.prepend_path "PATH", Formula["python@3.9"].libexec/"bin"
-    ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
+    ENV.prepend_path "PATH", Formula["python@3.10"].libexec/"bin"
+    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3"
     ENV["GN"] = buildpath/"gn/out/gn"
     ENV["NINJA"] = Formula["ninja"].opt_bin/"ninja"
     # build rusty_v8 from source
