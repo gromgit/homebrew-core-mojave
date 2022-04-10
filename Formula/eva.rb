@@ -1,17 +1,15 @@
 class Eva < Formula
   desc "Calculator REPL, similar to bc(1)"
   homepage "https://github.com/NerdyPepper/eva/"
-  url "https://github.com/NerdyPepper/eva/archive/v0.2.7.tar.gz"
-  sha256 "72b2e47e987102d67c9dcbb60e26c4ff0b20e6f844d0d2b9d91c3f073374aee0"
+  url "https://github.com/NerdyPepper/eva/archive/v0.3.0.tar.gz"
+  sha256 "05e2cdcfd91e6abef91cb01ad3074583b8289f6e74054e070bfbf6a4e684865e"
   license "MIT"
   head "https://github.com/NerdyPepper/eva.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eva"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "69b0058a1381ae49d58e3b8ed547c21f2f89204c4e835d411704dc06c9f8923b"
+    sha256 cellar: :any_skip_relocation, mojave: "2f74dfc0445bc9079af0ef73ff21da3034d3ebb76464ca4ee8042fe25f7ac04f"
   end
-
 
   depends_on "rust" => :build
 
