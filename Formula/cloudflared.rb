@@ -1,14 +1,14 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide"
-  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2022.3.4.tar.gz"
-  sha256 "e810ccc855cc25e8a2f33b42d33570edf97856b227baf4ca0def8e47a4b8d387"
+  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2022.4.0.tar.gz"
+  sha256 "b4b1a5ef2086a78e497fab460e434225f96913d45506ee32b6639e1cd6376d88"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudflared"
-    sha256 cellar: :any_skip_relocation, mojave: "0e49586315d6c1fc9fc44962b7eaef4ed508b89e0726a313ae2eaa8aadfb18af"
+    sha256 cellar: :any_skip_relocation, mojave: "3233031f8fea35c559fc73317d0dd822153b02678f7e35901c873c6bc6621ef5"
   end
 
   depends_on "go" => :build
