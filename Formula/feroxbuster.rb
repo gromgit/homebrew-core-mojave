@@ -1,13 +1,13 @@
 class Feroxbuster < Formula
   desc "Fast, simple, recursive content discovery tool written in Rust"
   homepage "https://epi052.github.io/feroxbuster"
-  url "https://github.com/epi052/feroxbuster/archive/v2.6.1.tar.gz"
-  sha256 "ce14d03a24212ae544ebd7217bc875eaa5fd4396dd11ae06ac707ef4e14c9690"
+  url "https://github.com/epi052/feroxbuster/archive/v2.6.2.tar.gz"
+  sha256 "562095ad5bb7c72aea3e901891bcfa675609833d802cf68b2cbb43e1bd64b853"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/feroxbuster"
-    sha256 cellar: :any_skip_relocation, mojave: "f8e8e875ac00953a182611093d9623f45517a68307a4b5c72c1fe379ef263933"
+    sha256 cellar: :any_skip_relocation, mojave: "ce925d027b1f9197b324f43cd2aac4c5e5bdec678cffe25487d6c254c374358a"
   end
 
   depends_on "rust" => :build
