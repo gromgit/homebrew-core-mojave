@@ -1,15 +1,14 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
-  url "https://github.com/EnzymeAD/Enzyme/archive/v0.0.27.tar.gz", using: :homebrew_curl
-  sha256 "7179eaa0ddcf59213724a1e32c915222d86299f11113c2dab7e2f88bb2812112"
+  url "https://github.com/EnzymeAD/Enzyme/archive/v0.0.29.tar.gz", using: :homebrew_curl
+  sha256 "81c802c26d007d790e602497bb16023a9b5b3f17c71240ddddeb4736e966907d"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/enzyme"
-    rebuild 1
-    sha256 cellar: :any, mojave: "857e8266e8bb7a7b471f5bad3a625ac373a1c0e9397c449dcb95e8283b868317"
+    sha256 cellar: :any, mojave: "02ad95ab20df5525a3645bce395293ce7b276030cac31623645328d48f6bec07"
   end
 
   depends_on "cmake" => :build
