@@ -3,14 +3,13 @@ require "language/node"
 class FaunaShell < Formula
   desc "Interactive shell for FaunaDB"
   homepage "https://fauna.com/"
-  url "https://registry.npmjs.org/fauna-shell/-/fauna-shell-0.14.0.tgz"
-  sha256 "8aff6b0549f9c3713695582c0b8ab36d2e37d441d1d7fd0fd413ea769e8aaa39"
+  url "https://registry.npmjs.org/fauna-shell/-/fauna-shell-0.15.0.tgz"
+  sha256 "ac7339ae28b4815958e19079221c18af0704825243b6cbdd23c5e1120df955c6"
   license "MPL-2.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fauna-shell"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "56a134301295590a3d08393d84dd069974ae39de5232ac4167885e944bb95c16"
+    sha256 cellar: :any_skip_relocation, mojave: "e7c0a86f3e4be2a7909b3905993b510d12147dc0a6376d3756c1d7e8f36794ea"
   end
 
   depends_on "node"
