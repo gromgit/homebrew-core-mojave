@@ -2,21 +2,24 @@ class Dscanner < Formula
   desc "Analyses e.g. the style and syntax of D code"
   homepage "https://github.com/dlang-community/D-Scanner"
   url "https://github.com/dlang-community/D-Scanner.git",
-      tag:      "v0.12.0",
-      revision: "cdf881c10386bb9cf9115af80daa86a48e93833b"
+      tag:      "v0.12.1",
+      revision: "e027965176499b578b297e8bead32a0400d07a6d"
   license "BSL-1.0"
   head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dscanner"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6b024afce15408b341bbf6fe1c3a176c87980477b7a33fe7101721494aa578e9"
+    sha256 cellar: :any_skip_relocation, mojave: "75a412f2ff1173a49df7eec1f536efd6bc236df975cac2f40f230bce2e04cceb"
   end
 
-  depends_on "dmd" => :build
+  if Hardware::CPU.arm?
+    depends_on "ldc" => :build
+  else
+    depends_on "dmd" => :build
+  end
 
   def install
-    system "make", "dmdbuild"
+    system "make", "all", "DC=#{Hardware::CPU.arm? ? "ldc2" : "dmd"}"
     bin.install "bin/dscanner"
   end
 
