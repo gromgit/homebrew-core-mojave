@@ -2,13 +2,13 @@ class Dpp < Formula
   desc "Directly include C headers in D source code"
   homepage "https://github.com/atilaneves/dpp"
   url "https://github.com/atilaneves/dpp.git",
-      tag:      "v0.4.9",
-      revision: "55daf91e2c180962de783752b3e4447850b7a151"
+      tag:      "v0.4.10",
+      revision: "40ab857b7159268800c72d3de6242c4568f5e177"
   license "BSL-1.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dpp"
-    sha256 cellar: :any_skip_relocation, mojave: "a7beccdce9d322a96c1b518a0ea2f4dd12b345ff466055c5838dec4cd72739f4"
+    sha256 cellar: :any, mojave: "05cce4160702f4c1f9df30e4c4a80574f357ccfccfcbf6d08cfac45678b8bbc6"
   end
 
   depends_on "dub" => :build
