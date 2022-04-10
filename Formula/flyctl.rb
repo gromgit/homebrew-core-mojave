@@ -2,14 +2,14 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.0.310",
-      revision: "51d0e489e7abba2ca5ba9579c032045b4278519c"
+      tag:      "v0.0.316",
+      revision: "baa9b3ac194090f1ac04d9deeb82517148988aee"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flyctl"
-    sha256 cellar: :any_skip_relocation, mojave: "2cb7d8614ad18afe2f24f6ef9b969e7aa2dbedc279417bfab1002fe9f7d9b2cc"
+    sha256 cellar: :any_skip_relocation, mojave: "e33c8c1fae8169bfdb5faef218005b5e6464ef438af7a71e3cfaa4d14ac074f8"
   end
 
   depends_on "go" => :build
