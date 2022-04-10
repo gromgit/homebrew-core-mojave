@@ -6,13 +6,17 @@ class DhallBash < Formula
   license "BSD-3-Clause"
   head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-bash"
-    sha256 cellar: :any_skip_relocation, mojave: "bb4bc852815734892a3822d7a01f66151bce03e8ab97eadfceb4f24a18f48116"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5ed5c9e0c774c8c5f592d4842f370c0350ffe345dced4ed7d6e009bce0ce2f25"
   end
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
+
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   def install
     system "cabal", "v2-update"
