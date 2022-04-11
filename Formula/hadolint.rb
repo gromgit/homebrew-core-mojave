@@ -1,14 +1,13 @@
 class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
   homepage "https://github.com/hadolint/hadolint"
-  url "https://github.com/hadolint/hadolint/archive/v2.8.0.tar.gz"
-  sha256 "b02250cfa6c1581cfa38f425ed9a0b791ce7217b688e575d74fb81dcae9b21ac"
+  url "https://github.com/hadolint/hadolint/archive/v2.10.0.tar.gz"
+  sha256 "7a17d6227c9c087076aa890c9678956d0bc570eb662aa432a73d3e7c94f6b158"
   license "GPL-3.0-only"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hadolint"
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, mojave: "2a0ffbd336542549204e978169da0b192e410cc086e005c2b427e6a1e24eaee1"
+    sha256 cellar: :any_skip_relocation, mojave: "7805228e490efc569327a46408fa91566ae31253fa96817c593095a9c4d8e8d5"
   end
 
   depends_on "ghc" => :build
