@@ -6,6 +6,10 @@ class BoostPython < Formula
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   disable! date: "2021-04-08", because: :does_not_build
 
   depends_on "boost"
