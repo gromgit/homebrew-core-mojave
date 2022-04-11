@@ -5,7 +5,11 @@ class Komposition < Formula
   sha256 "cedb41c68866f8d6a87579f566909fcd32697b03f66c0e2a700a94b6a9263b88"
   license "MPL-2.0"
   revision 5
-  head "https://github.com/owickstrom/komposition.git"
+  head "https://github.com/owickstrom/komposition.git", branch: "master"
+
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
 
   disable! date: "2021-04-08", because: :does_not_build
 
