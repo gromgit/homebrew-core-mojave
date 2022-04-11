@@ -17,7 +17,8 @@ class AnsibleAT29 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.9"
-    sha256 cellar: :any, mojave: "69b15e495f99f7d8d9e6aee623dc174501e80b72f2e1d973d88b78096fbad69e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b0fe2863bdf24094d91536bee405d18898457465a6bce11ff3e96ed3c4755670"
   end
 
   keg_only :versioned_formula
@@ -567,11 +568,6 @@ class AnsibleAT29 < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
-
-    if OS.mac? && (MacOS.version <= :sierra)
-      # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
-      ENV["SDKROOT"] = MacOS.sdk_path
-    end
 
     virtualenv_install_with_resources
 
