@@ -13,8 +13,8 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git"
-    rebuild 1
-    sha256 mojave: "f8b49abf164f88e149781f489a1457a15aea67da43e68ec864da3df980c70281"
+    rebuild 2
+    sha256 mojave: "889dd67e62bc18b9eeb15947227fcb59d55eb21434a38ebb55cbb3afaf6175dc"
   end
 
   depends_on "gettext"
@@ -180,7 +180,7 @@ class Git < Formula
     assert_equal "haunted\nhouse", shell_output("#{bin}/git ls-files").strip
 
     # Check Net::SMTP or Net::SMTP::SSL works for git-send-email
-    on_macos do
+    if OS.mac?
       %w[foo bar].each { |f| touch testpath/f }
       system bin/"git", "add", "foo", "bar"
       system bin/"git", "commit", "-a", "-m", "Second Commit"
