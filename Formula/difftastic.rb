@@ -1,13 +1,13 @@
 class Difftastic < Formula
   desc "Diff that understands syntax"
   homepage "https://github.com/Wilfred/difftastic"
-  url "https://github.com/Wilfred/difftastic/archive/refs/tags/0.25.0.tar.gz"
-  sha256 "f63ce86ab0b9a2b036b4c61d9601d7046dd79c91be0a0e5a9b3b2a4a7fa66eee"
+  url "https://github.com/Wilfred/difftastic/archive/refs/tags/0.26.0.tar.gz"
+  sha256 "a224838b3802c876aa8bd8247d882ada98929c9ef41dba238b8d4e6ce3f419c0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/difftastic"
-    sha256 cellar: :any_skip_relocation, mojave: "0a50cd63d2d810c2140aab89eda259250d0b9e3f1e92f36ca47cfebddf505297"
+    sha256 cellar: :any_skip_relocation, mojave: "a1a6fd28f180ec589263ecd7442107909931c53e5e6edd084e929df0e60332b1"
   end
 
   depends_on "rust" => :build
@@ -27,7 +27,7 @@ class Difftastic < Formula
     (testpath/"b.py").write("print(43)\n")
     expected = <<~EOS
       b.py --- Python
-      1 print(42)                             1 print(43)                             \n
+      1 print(42)                             1 print(43)\n
     EOS
     assert_equal expected, shell_output("#{bin}/difft --color never --width 80 a.py b.py")
   end
