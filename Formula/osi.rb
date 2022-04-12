@@ -3,7 +3,7 @@ class Osi < Formula
   homepage "https://github.com/coin-or/Osi"
   url "https://github.com/coin-or/Osi/archive/releases/0.108.7.tar.gz"
   sha256 "f1bc53a498585f508d3f8d74792440a30a83c8bc934d0c8ecf8cd8bc0e486228"
-  license "EPL-1.0"
+  license "EPL-2.0"
 
   livecheck do
     url :stable
@@ -12,7 +12,8 @@ class Osi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osi"
-    sha256 cellar: :any, mojave: "a67dac1f866dbdbe97353ff231bcb84b22af77f176e77f9624cf50d4513e03cd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "077cfad63e28207298cfb25c42e38a96070e2a2268b4212f3f9aa5fd1554de11"
   end
 
   depends_on "pkg-config" => :build
