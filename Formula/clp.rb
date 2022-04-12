@@ -3,7 +3,7 @@ class Clp < Formula
   homepage "https://github.com/coin-or/Clp"
   url "https://github.com/coin-or/Clp/archive/releases/1.17.7.tar.gz"
   sha256 "c4c2c0e014220ce8b6294f3be0f3a595a37bef58a14bf9bac406016e9e73b0f5"
-  license "EPL-1.0"
+  license "EPL-2.0"
 
   livecheck do
     url :stable
@@ -12,7 +12,8 @@ class Clp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clp"
-    sha256 cellar: :any, mojave: "830de43a87480db3bf8d66677a1c8ac22b5db3854116e193d4ae0642a6817ace"
+    rebuild 1
+    sha256 cellar: :any, mojave: "eee577bff37cb5d0fd09f74683d6454d3ed108fec974c98f3d2cb8037195d95d"
   end
 
   depends_on "pkg-config" => [:build, :test]
