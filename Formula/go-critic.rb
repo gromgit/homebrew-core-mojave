@@ -1,10 +1,9 @@
 class GoCritic < Formula
   desc "Opinionated Go source code linter"
   homepage "https://go-critic.com"
-  url "https://github.com/go-critic/go-critic/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "75248d8a909e8655040b3af778d92b27beca271dcc210e546607abecc9589d09"
+  url "https://github.com/go-critic/go-critic/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "74fd0995f401c49206b569f4c11be867da01f627e8979861d67ac8ea60173d7d"
   license "MIT"
-  revision 1
   head "https://github.com/go-critic/go-critic.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class GoCritic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-critic"
-    sha256 cellar: :any_skip_relocation, mojave: "33cfda58ea2b2555a39d1d4e22ea7cc9aaf646e76181ddfa86d0705b3842aafb"
+    sha256 cellar: :any_skip_relocation, mojave: "98b30fa1a3d53be73b92a3edd9c4085c726d2ab3d5cbce91b1b7f8c093c629f7"
   end
 
   depends_on "go"
