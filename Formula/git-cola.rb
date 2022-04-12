@@ -8,7 +8,8 @@ class GitCola < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cola"
-    sha256 cellar: :any_skip_relocation, mojave: "209da4235803549d7c09ed2a0a52cf318691da57646e36c97eec54663f38eab5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b38b0013af175c90394541b9a9104df02b0e973af36325fb7721110d6c870402"
   end
 
   depends_on "sphinx-doc" => :build
