@@ -1,14 +1,13 @@
 class Cnats < Formula
   desc "C client for the NATS messaging system"
   homepage "https://github.com/nats-io/nats.c"
-  url "https://github.com/nats-io/nats.c/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "8ee6a738396f08254ce507771d1644bb08e01b8528a00a5ad0b47d527963a35f"
+  url "https://github.com/nats-io/nats.c/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "16e700d912034faefb235a955bd920cfe4d449a260d0371b9694d722eb617ae1"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cnats"
-    rebuild 2
-    sha256 cellar: :any, mojave: "268e24df26bb5d862dd6270c09b963560c6dc9235159d00a100230fbc7894337"
+    sha256 cellar: :any, mojave: "d9325b7e3ed2d40766794bdc51f1630df804d19ea3aa3d4a7db8465c1c1a790e"
   end
 
   depends_on "cmake" => :build
