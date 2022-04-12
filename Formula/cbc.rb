@@ -3,8 +3,7 @@ class Cbc < Formula
   homepage "https://github.com/coin-or/Cbc"
   url "https://github.com/coin-or/Cbc/archive/releases/2.10.7.tar.gz"
   sha256 "5aa5490e2bc39c3c03f3636c9bca459cb3f8f365e0280fd0c4759ce3119e5b19"
-  # update to EPL-2.0 on next release
-  license "EPL-1.0"
+  license "EPL-2.0"
 
   livecheck do
     url :stable
@@ -13,7 +12,8 @@ class Cbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cbc"
-    sha256 cellar: :any, mojave: "f0cf83d7a938ce2146fd87a545056ac71f56834374093a4fed0fa7133ae2c63a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6640102e8b9b5edc9dff2881d9a49df9dd5e853c30ab10821a0a002ffa7b33d3"
   end
 
   depends_on "pkg-config" => :build
