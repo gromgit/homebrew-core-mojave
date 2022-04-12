@@ -24,8 +24,8 @@ class Gperftools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gperftools"
-    rebuild 2
-    sha256 cellar: :any, mojave: "972c214b0e72f03b73723e26c040584efe32de6e81952f40683c5f922f921ff3"
+    rebuild 3
+    sha256 cellar: :any, mojave: "a29cb3abb5c6be106c2de2365296bcc34692ba2770d3d18348702115071f79e7"
   end
 
   head do
@@ -45,9 +45,6 @@ class Gperftools < Formula
   end
 
   def install
-    # Fix "error: unknown type name 'mach_port_t'"
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
-
     ENV.append_to_cflags "-D_XOPEN_SOURCE" if OS.mac?
 
     system "autoreconf", "-fiv" if build.head?
