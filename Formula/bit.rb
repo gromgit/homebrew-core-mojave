@@ -3,7 +3,7 @@ require "language/node"
 class Bit < Formula
   desc "Distributed Code Component Manager"
   homepage "https://bit.dev"
-  url "https://registry.npmjs.org/bit-bin/-/bit-bin-14.8.8.tgz"
+  url "https://registry.npmjs.org/bit-bin/-/bit-bin-14.8.8.tgz", using: :homebrew_curl
   sha256 "25d899bacd06d77fad41026a9b19cbe94c8fb986f5fe59ead7ccec9f60fd0ef9"
   license "Apache-2.0"
   revision 1
@@ -11,11 +11,10 @@ class Bit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bit"
-    rebuild 2
-    sha256 mojave: "54ecdd37e039afbe18ce4b16593a0fa496879e5c760ca2d54fc33995eaa09cff"
+    rebuild 3
+    sha256 mojave: "e1eb783907ae047d966c3d0ecc85d99cfcf759d17881034c772573b883c47102"
   end
 
-  depends_on arch: :x86_64 # installs an x86_64 `node.napi.node`
   depends_on "node"
 
   on_macos do
@@ -28,8 +27,15 @@ class Bit < Formula
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink libexec.glob("bin/*")
 
+    # Remove incompatible pre-built binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/bit-bin/node_modules"
+    (node_modules/"leveldown/prebuilds/linux-x64/node.napi.musl.node").unlink
+    (node_modules/"leveldown/prebuilds").each_child { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
+
     # Remove vendored pre-built binary `terminal-notifier`
-    node_notifier_vendor_dir = libexec/"lib/node_modules/bit-bin/node_modules/node-notifier/vendor"
+    node_notifier_vendor_dir = node_modules/"node-notifier/vendor"
     node_notifier_vendor_dir.rmtree # remove vendored pre-built binaries
 
     if OS.mac?
