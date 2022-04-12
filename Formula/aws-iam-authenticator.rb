@@ -2,8 +2,8 @@ class AwsIamAuthenticator < Formula
   desc "Use AWS IAM credentials to authenticate to Kubernetes"
   homepage "https://github.com/kubernetes-sigs/aws-iam-authenticator"
   url "https://github.com/kubernetes-sigs/aws-iam-authenticator.git",
-      tag:      "v0.5.5",
-      revision: "85e50980d9d916ae95882176c18f14ae145f916f"
+      tag:      "v0.5.7",
+      revision: "2a9ee95fecab59fab41a0b646a63227d66113434"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/aws-iam-authenticator.git", branch: "master"
 
@@ -12,10 +12,9 @@ class AwsIamAuthenticator < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-iam-authenticator"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5ab7955418cb1b6ac5cdf03aeec07494199e778483e460c70bd882d82734ed11"
+    sha256 cellar: :any_skip_relocation, mojave: "0acdd1be5fad0bfb7e9959262fb19bdd3abc27044ebcb18bff0bcf314b801d51"
   end
 
   depends_on "go" => :build
