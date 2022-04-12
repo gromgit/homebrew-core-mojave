@@ -8,7 +8,7 @@ class DhallLspServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-lsp-server"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "2e028a336febb4c35fe7721134c4f75d12e0e347e46de507985fd9be58809c36"
   end
 
