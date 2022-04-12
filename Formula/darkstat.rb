@@ -8,11 +8,15 @@ class Darkstat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/darkstat"
-    sha256 cellar: :any_skip_relocation, mojave: "8bd8078770193769f3657a41f1ff640619f5b3b7b55b3a5e779e9650ce65cfff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3bafb8b2000cb853d69480a09def84b6cc1dafcdf01fe3cc1e2327c9f2c0b545"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+
+  uses_from_macos "libpcap"
+  uses_from_macos "zlib"
 
   # Patch reported to upstream on 2017-10-08
   # Work around `redefinition of clockid_t` issue on 10.12 SDK or newer
