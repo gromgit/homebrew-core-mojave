@@ -1,14 +1,13 @@
 class Fennel < Formula
   desc "Lua Lisp Language"
   homepage "https://fennel-lang.org"
-  url "https://github.com/bakpakin/Fennel/archive/1.0.0.tar.gz"
-  sha256 "6f619832751af9c37835737cde5cf4475ff90e073ecef4671f9e4f8be2c121a7"
+  url "https://github.com/bakpakin/Fennel/archive/1.1.0.tar.gz"
+  sha256 "14873fb319ace8707a075bc4696d3691f5045686e5738822bdf4cc014d14b4b8"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fennel"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "f3f4c37760c81ef4a2bd8a828eb673df37d1f966a7ca3063364579d634a2f5c6"
+    sha256 cellar: :any_skip_relocation, mojave: "4d5e9076d4a8764a12fb67775f802ca01857f76e6a8ff343286be228d3dfd179"
   end
 
   depends_on "lua"
