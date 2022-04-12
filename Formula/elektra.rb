@@ -1,8 +1,8 @@
 class Elektra < Formula
   desc "Framework to access config settings in a global key database"
   homepage "https://libelektra.org/"
-  url "https://www.libelektra.org/ftp/elektra/releases/elektra-0.9.8.tar.gz"
-  sha256 "b1e8908c138b84e788fdff25eab1c2b07e0b422a5fd1667814539ea02f151c58"
+  url "https://www.libelektra.org/ftp/elektra/releases/elektra-0.9.9.tar.gz"
+  sha256 "834da360170daa632bbb46dd2e819271327dce1c51be1d7bb2ec22311ded54cb"
   license "BSD-3-Clause"
   head "https://github.com/ElektraInitiative/libelektra.git", branch: "master"
 
@@ -13,10 +13,8 @@ class Elektra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elektra"
-    rebuild 1
-    sha256 mojave: "2d4bad3be12772ac79f2226b1aac234ca0e1f785161223d2fc50c72254130124"
+    sha256 mojave: "62d9af0e6178014eeea6ec6b28c4952cb3a6b006ae5b9cfca55a3dcfa98e5041"
   end
-
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
