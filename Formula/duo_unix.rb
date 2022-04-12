@@ -5,14 +5,10 @@ class DuoUnix < Formula
   sha256 "a4479f893e036f38a5809d71ce47f69118f6ef61822cc1c66afccf143c5d71f8"
   license "GPL-2.0-or-later"
 
-  livecheck do
-    url "https://github.com/duosecurity/duo_unix.git"
-  end
-
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duo_unix"
-    rebuild 1
-    sha256 mojave: "404ce87e89dcac27d65349f2fbd1a75c6b7204ed6ba6cfefdbe4d1a291957356"
+    rebuild 2
+    sha256 mojave: "f31ca7e010df81bca02aa01cea701f9109c225742aeea26a41f9f62c17022434"
   end
 
   depends_on "autoconf" => :build
