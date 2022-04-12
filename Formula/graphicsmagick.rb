@@ -1,10 +1,9 @@
 class Graphicsmagick < Formula
   desc "Image processing tools collection"
   homepage "http://www.graphicsmagick.org/"
-  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.37/GraphicsMagick-1.3.37.tar.xz"
-  sha256 "90dc22f1a7bd240e4c9065a940962bf13da43c99bcc36cb111cc3c1a0d7477d4"
+  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.38/GraphicsMagick-1.3.38.tar.xz"
+  sha256 "d60cd9db59351d2b9cb19beb443170acaa28f073d13d258f67b3627635e32675"
   license "MIT"
-  revision 1
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
   livecheck do
@@ -13,7 +12,7 @@ class Graphicsmagick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphicsmagick"
-    sha256 mojave: "c92fbfc525d8e5c4c2020cf7d794b92c06eb3c3fdfa9c1ad0a9aa29aed3a0da1"
+    sha256 mojave: "3ef1726c0040fc82e853233e7bba95dccb8f2cff66f369d376c1879c685b9047"
   end
 
   depends_on "pkg-config" => :build
