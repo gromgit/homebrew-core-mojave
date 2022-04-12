@@ -8,11 +8,15 @@ class Freeipmi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeipmi"
-    sha256 mojave: "8d0c1f5c5a4797c477dc6d5ed95c5f207d878ff1b768a7393d36b256d7803ca3"
+    rebuild 1
+    sha256 mojave: "fea681ce6a41330f3fd54fb6ed399eb8eba6dd3d60ab3d9ee0f5f929e53ae10a"
   end
 
-  depends_on "argp-standalone"
   depends_on "libgcrypt"
+
+  on_macos do
+    depends_on "argp-standalone"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -25,7 +29,7 @@ class Freeipmi < Formula
     # https://github.com/Homebrew/brew/issues/5153
     inreplace "man/Makefile.in",
       "$(CPP_FOR_BUILD) -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre $@",
-      "clang -E -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre > $@"
+      "#{ENV.cxx} -E -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre > $@"
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
