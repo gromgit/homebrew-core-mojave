@@ -7,7 +7,8 @@ class GpgTui < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpg-tui"
-    sha256 cellar: :any, mojave: "8c038b3b46a3c3829b2fe888ba241bbb9e066d649ee0f05547c3bd823680ff11"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5a9a3a96804f09f95552d63a768f6b8115b7a50cc67ce3e00ae265ba5d96f9a9"
   end
 
   depends_on "rust" => :build
