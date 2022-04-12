@@ -12,7 +12,8 @@ class Dnsdist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsdist"
-    sha256 mojave: "5fb7f6c10bef6f58d9509dbc6868de525bcc44362833c0b0f6c8b1b4bce0299d"
+    rebuild 1
+    sha256 mojave: "097328868f1cd598c183e92cc47ed84a5e2c8a7a7196e99ecc63d796402475d6"
   end
 
   depends_on "boost" => :build
@@ -29,9 +30,6 @@ class Dnsdist < Formula
   uses_from_macos "libedit"
 
   def install
-    # error: unknown type name 'mach_port_t'
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
-
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
