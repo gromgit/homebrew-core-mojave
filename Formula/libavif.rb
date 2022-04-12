@@ -1,14 +1,13 @@
 class Libavif < Formula
   desc "Library for encoding and decoding .avif files"
   homepage "https://github.com/AOMediaCodec/libavif"
-  url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "bcd9a1f57f982a9615eb7e2faf87236dc88eb1d0c886f3471c7440ead605060d"
+  url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "d289e5029cb3853630ca85716b25b5fb9cdec51f8bd537b05f43b3325b480ab0"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libavif"
-    rebuild 2
-    sha256 cellar: :any, mojave: "a72822054c71da28efe492cce3ad6d14b201a8982cc2de706baf10ac36292f1a"
+    sha256 cellar: :any, mojave: "2663b558b493a8a7fa531fd26e0ad345be9bd2e88ab49ef2d65b0789e3ffee3c"
   end
 
   depends_on "cmake" => :build
