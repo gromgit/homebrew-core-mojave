@@ -1,19 +1,18 @@
 class ArxLibertatis < Formula
   desc "Cross-platform, open source port of Arx Fatalis"
   homepage "https://arx-libertatis.org/"
-  url "https://arx-libertatis.org/files/arx-libertatis-1.2/arx-libertatis-1.2.tar.xz"
-  sha256 "bacf7768c4e21c9166c7ea57083d4f20db0deb8f0ee7d96b5f2829e73a75ad0c"
+  url "https://arx-libertatis.org/files/arx-libertatis-1.2.1/arx-libertatis-1.2.1.tar.xz"
+  sha256 "aafd8831ee2d187d7647ad671a03aabd2df3b7248b0bac0b3ac36ffeb441aedf"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://arx-libertatis.org/files/"
     regex(%r{href=["']?arx-libertatis[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arx-libertatis"
-    sha256 mojave: "7be6387b0c8a3f1f6845fc6814a4029fb7d41f83c2b655c6c3e4398e5bf4468e"
+    sha256 mojave: "1f703142609831533445d5b2d8c7ac81385088e4eed556912a427229faffb49f"
   end
 
   head do
