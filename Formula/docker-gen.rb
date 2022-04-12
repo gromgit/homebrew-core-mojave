@@ -1,13 +1,13 @@
 class DockerGen < Formula
   desc "Generate files from docker container metadata"
   homepage "https://github.com/jwilder/docker-gen"
-  url "https://github.com/jwilder/docker-gen/archive/0.8.4.tar.gz"
-  sha256 "5aa3f69f365a1f2120e70bd74cb29153a5a148181856d832f06179052e0d8646"
+  url "https://github.com/jwilder/docker-gen/archive/0.9.0.tar.gz"
+  sha256 "9f270363d872e4d302b67b3baa3baec4d1c7b892814fd6a50e5953a2b90d745e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-gen"
-    sha256 cellar: :any_skip_relocation, mojave: "ed23e3f3e6ed00fff393e4950fd28adf5c437bb6edc44a02b2a01e5247d1e4cf"
+    sha256 cellar: :any_skip_relocation, mojave: "94c4f50f7a5fce5f42e3a96cde63260e838780615808c45b3662a7a018753be3"
   end
 
   depends_on "go" => :build
