@@ -8,7 +8,7 @@ class DhallBash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-bash"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "5ed5c9e0c774c8c5f592d4842f370c0350ffe345dced4ed7d6e009bce0ce2f25"
   end
 
