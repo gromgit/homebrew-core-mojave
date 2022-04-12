@@ -1,15 +1,13 @@
 class Gource < Formula
   desc "Version Control Visualization Tool"
   homepage "https://github.com/acaudwell/Gource"
-  url "https://github.com/acaudwell/Gource/releases/download/gource-0.51/gource-0.51.tar.gz"
-  sha256 "19a3f888b1825aa7ed46f52cebce5012e3c62439e3d281102f21814c7a58e79a"
+  url "https://github.com/acaudwell/Gource/releases/download/gource-0.52/gource-0.52.tar.gz"
+  sha256 "92e713291936cc4688b6d3d52868f4cca4263c2efec9b3848086e93cd9935e08"
   license "GPL-3.0-or-later"
-  revision 2
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gource"
-    rebuild 1
-    sha256 mojave: "b18f97623d622baba2082e7c76b2dd5427f59d234322aa5b0b13bb2a05036876"
+    sha256 mojave: "e989e15199228126dfeaad7cc60670926658150bee97427190cb059b03d01e29"
   end
 
   head do
@@ -26,7 +24,7 @@ bottle do
   depends_on "freetype"
   depends_on "glew"
   depends_on "libpng"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "sdl2"
   depends_on "sdl2_image"
 
