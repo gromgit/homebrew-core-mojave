@@ -7,9 +7,15 @@ class Flyctl < Formula
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flyctl"
-    sha256 cellar: :any_skip_relocation, mojave: "e33c8c1fae8169bfdb5faef218005b5e6464ef438af7a71e3cfaa4d14ac074f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e04b2cb61590cd5bcf97aed5a4a73edf93c9f4670a8e4aeef008a265432717c3"
   end
 
   depends_on "go" => :build
