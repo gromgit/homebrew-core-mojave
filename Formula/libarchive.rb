@@ -1,10 +1,9 @@
 class Libarchive < Formula
   desc "Multi-format archive and compression library"
   homepage "https://www.libarchive.org"
-  url "https://www.libarchive.org/downloads/libarchive-3.6.0.tar.xz"
-  sha256 "df283917799cb88659a5b33c0a598f04352d61936abcd8a48fe7b64e74950de7"
+  url "https://www.libarchive.org/downloads/libarchive-3.6.1.tar.xz"
+  sha256 "5a411aceb978f43e626f0c2d1812ddd8807b645ed892453acabd532376c148e6"
   license "BSD-2-Clause"
-  revision 1
 
   livecheck do
     url :homepage
@@ -13,7 +12,7 @@ class Libarchive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libarchive"
-    sha256 cellar: :any, mojave: "b8330f95cddc9929c922f3ba556a6cb08c1429eac4de014275d10a6adce9c886"
+    sha256 cellar: :any, mojave: "47c17a6bece508ddf294b73a1414732859bd478b600123d98c4a5d3947645ce8"
   end
 
   keg_only :provided_by_macos
