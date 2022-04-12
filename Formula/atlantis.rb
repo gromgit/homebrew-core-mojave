@@ -6,9 +6,15 @@ class Atlantis < Formula
   license "Apache-2.0"
   head "https://github.com/runatlantis/atlantis.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atlantis"
-    sha256 cellar: :any_skip_relocation, mojave: "9b66dbdb6ca57f45b08e7a4b8029885dcda7d2ea4dfda6f2cc66b81162298b43"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "737ef96857172d541f1311232c38a8b93ec67342f77cf8ddd39d6de6aaa763c3"
   end
 
   depends_on "go" => :build
