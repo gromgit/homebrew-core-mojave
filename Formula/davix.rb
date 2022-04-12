@@ -1,17 +1,15 @@
 class Davix < Formula
   desc "Library and tools for advanced file I/O with HTTP-based protocols"
   homepage "https://github.com/cern-fts/davix"
-  url "https://github.com/cern-fts/davix/releases/download/R_0_8_0/davix-0.8.0.tar.gz"
-  sha256 "2f108da0408a83fb5b9f0c68150d360ba733e4b3a0fe298d45b0d32d28ab7124"
+  url "https://github.com/cern-fts/davix/releases/download/R_0_8_1/davix-0.8.1.tar.gz"
+  sha256 "3f42f4eadaf560ab80984535ffa096d3e88287d631960b2193e84cf29a5fe3a6"
   license "LGPL-2.1-or-later"
   head "https://github.com/cern-fts/davix.git", branch: "devel"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/davix"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f9413410088fbe7b47301622010aa7596eede8f3ead7ef3faaa718c3020cf5a8"
+    sha256 cellar: :any, mojave: "c86e20238fa585fa4f8f053e6c2c8f3d6cda63895f93ad3d5390d1e6e56b5bae"
   end
-
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
