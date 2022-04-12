@@ -6,16 +6,17 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/2d/cd/69d864c9d306f767751648edb3cebe2c8532913f8c4be74cc2223ffda5bf/bzt-1.16.3.tar.gz"
   sha256 "effb95393b67ae95f26a1bd1d927a76b7e66abf118a4f0c099f489373a8bc004"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/Blazemeter/taurus.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bzt"
-    sha256 cellar: :any_skip_relocation, mojave: "ef6c646640faa6784a4a21e5673d4b591ade55ea0f09c03f5f085aa23cbbe087"
+    sha256 cellar: :any_skip_relocation, mojave: "944c2f4c822b6245226e0d8f73879fc9799a11ab5dbfcefffe74bd26f08007ef"
   end
 
   depends_on "rust" => :build
   depends_on "numpy"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   uses_from_macos "libxml2"
@@ -188,8 +189,6 @@ class Bzt < Formula
   end
 
   def install
-    # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
     virtualenv_install_with_resources
   end
 
