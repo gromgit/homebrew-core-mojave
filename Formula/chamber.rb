@@ -1,8 +1,8 @@
 class Chamber < Formula
   desc "CLI for managing secrets through AWS SSM Parameter Store"
   homepage "https://github.com/segmentio/chamber"
-  url "https://github.com/segmentio/chamber/archive/v2.10.8.tar.gz"
-  sha256 "3d6cd696438994c029e9ff6130baf8ea7fdd32aa17a4c9e88e5c4c05cbb71409"
+  url "https://github.com/segmentio/chamber/archive/v2.10.9.tar.gz"
+  sha256 "4c78a56bd99258335b9ecb1ca70eaa4d7a7b0956463130ecb395ac9301f68f82"
   license "MIT"
   head "https://github.com/segmentio/chamber.git", branch: "master"
 
@@ -14,8 +14,7 @@ class Chamber < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chamber"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "4e546d9ae69b7da091832207b9dab7dc3117278816e729df5d0614222ecd3db4"
+    sha256 cellar: :any_skip_relocation, mojave: "0426ed6713bf93911fcb1639a19c35126fcbb8cc5874eed2c54760378d6fa7fe"
   end
 
   # Bump to 1.18 on the next release, if possible.
