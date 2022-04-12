@@ -12,12 +12,14 @@ class Dar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dar"
-    sha256 mojave: "eb611dc7ea5f56b71b82981cd77d6e6e83ea9bba84475a55e92c2deed588b5fb"
+    rebuild 1
+    sha256 mojave: "664e2f4f379f90b0c9c6cdb3eaf466dd1bc94828d12f0319c962874bc6ea9155"
   end
 
-  depends_on "upx" => :build
+  depends_on "upx" => :build unless Hardware::CPU.arm?
   depends_on "libgcrypt"
   depends_on "lzo"
+
   uses_from_macos "zlib"
 
   def install
