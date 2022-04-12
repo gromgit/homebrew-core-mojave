@@ -8,7 +8,7 @@ class DhallYaml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-yaml"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "b2ac94036d8c43fb41eff766520db0886dd0dafb75f3b72fdae95c95cb47bdc4"
   end
 
