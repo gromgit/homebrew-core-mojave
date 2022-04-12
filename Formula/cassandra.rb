@@ -11,11 +11,11 @@ class Cassandra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7c939bb25550beb50fa4196561e6472699c819f066cb301eb2efca11eaf16ae2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "d066a05b75d839bbf9daf300083d8b4142e401aa5229f828a81eff847c6afffc"
   end
 
-  depends_on "cython" => :build
+  depends_on "libcython" => :build
   depends_on "openjdk@11"
   depends_on "python@3.9"
   depends_on "six"
