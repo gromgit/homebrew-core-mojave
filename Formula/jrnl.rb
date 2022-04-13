@@ -6,15 +6,15 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/11/5c/dfbccbe2d5042b89240c9e3af48aa8c79c462981330e397b656490a9b997/jrnl-2.8.4.tar.gz"
   sha256 "3838f0b55708b9b9b2c2706fb671bd83f444d321635e3ce19cda2304992d4f60"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jrnl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "75bc6f225c1459f9b895b23bf7c5439240c699bff63fffcc5759ea39ba12428d"
+    sha256 cellar: :any, mojave: "e6ac4697b2ada1b98b7532b6004a9c432a2e4593ac55e6dd71db0b3dbccf0336"
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   uses_from_macos "expect" => :test
 
