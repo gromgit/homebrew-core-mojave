@@ -3,13 +3,13 @@ class Ipopt < Formula
   homepage "https://coin-or.github.io/Ipopt/"
   url "https://github.com/coin-or/Ipopt/archive/releases/3.14.5.tar.gz"
   sha256 "9ebbbbf14a64e998e3fba5d2662a8f9bd03f97b1406017e78ae54e5d105ae932"
-  license "EPL-1.0"
+  license "EPL-2.0"
   head "https://github.com/coin-or/Ipopt.git", branch: "stable/3.14"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipopt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c7b2baa2e92ac50d5b84255dbf12b66cc1a612bf1a3392724bd8378d9caf76e2"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ed0ff957d4692ee2f27c5b6c30e5170f69a6914bac52ea5a3a4fb4444acb57c5"
   end
 
   depends_on "openjdk" => :build
