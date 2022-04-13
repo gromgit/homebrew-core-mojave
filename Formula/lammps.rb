@@ -1,12 +1,12 @@
 class Lammps < Formula
   desc "Molecular Dynamics Simulator"
   homepage "https://lammps.sandia.gov/"
-  url "https://github.com/lammps/lammps/archive/stable_29Sep2021_update2.tar.gz"
+  url "https://github.com/lammps/lammps/archive/refs/tags/stable_29Sep2021_update3.tar.gz"
   # lammps releases are named after their release date. We transform it to
   # YYYY-MM-DD (year-month-day) so that we get a sane version numbering.
   # We only track stable releases as announced on the LAMMPS homepage.
-  version "20210929-update2"
-  sha256 "9318ca816cde16a9a4174bf22a1966f5f2155cb32c0ad5a6757633276411fb36"
+  version "20210929-update3"
+  sha256 "e4c274f0dc5fdedc43f2b365156653d1105197a116ff2bafe893523cdb22532e"
   license "GPL-2.0-only"
 
   # The `strategy` block below is used to massage upstream tags into the
@@ -28,7 +28,7 @@ class Lammps < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lammps"
-    sha256 mojave: "9ba39cb27d929cde314f44a985388aa9b2eb4e463ebb6591f7a0c6fbc37d227f"
+    sha256 cellar: :any, mojave: "ec7e94af7c37dbed3c9b6356d27720e89813bf31a522f908a0a3003f7a63df3f"
   end
 
   depends_on "pkg-config" => :build
