@@ -2,14 +2,14 @@ class Heartbeat < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
   homepage "https://www.elastic.co/beats/heartbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v8.1.1",
-      revision: "7f30bb31a4a532c865161efbbdadd012323b04c5"
+      tag:      "v8.1.2",
+      revision: "6118f25235a52a7f0c4937a0a309e380c92d8119"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heartbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "12c71aa609550945b05e1c971c916239f191018d0a2b6f6bb20176683037dc83"
+    sha256 cellar: :any_skip_relocation, mojave: "62377ac805d00ddff6b00f6fc5352217cb138a341fff893fde017eb42d2ef4a5"
   end
 
   depends_on "go" => :build
