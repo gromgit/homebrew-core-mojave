@@ -3,13 +3,13 @@ require "language/node"
 class Nativefier < Formula
   desc "Wrap web apps natively"
   homepage "https://github.com/nativefier/nativefier"
-  url "https://registry.npmjs.org/nativefier/-/nativefier-46.2.0.tgz"
-  sha256 "386f40c1726330af86832fc41e776b0f043bf5dfafaa8f9f01038947c124a9eb"
+  url "https://registry.npmjs.org/nativefier/-/nativefier-47.0.0.tgz"
+  sha256 "dae80b4d83fe3a3dc9a1a9260d121882e1beca14ff9a4f3154836540c759311e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nativefier"
-    sha256 cellar: :any_skip_relocation, mojave: "01bb5154d994fbdcee9749f87d765fce671e9991ec1b4a2a88bf14e674311419"
+    sha256 cellar: :any_skip_relocation, mojave: "94cf2871229bded6e3bebdf3caee0fe8fa8133d0d06aae136d84ce82defb68ee"
   end
 
   depends_on "node"
