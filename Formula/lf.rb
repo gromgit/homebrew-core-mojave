@@ -1,14 +1,13 @@
 class Lf < Formula
   desc "Terminal file manager"
   homepage "https://godoc.org/github.com/gokcehan/lf"
-  url "https://github.com/gokcehan/lf/archive/r26.tar.gz"
-  sha256 "dccd1ad67d2639e47fe0cbc93d74f202d6d6f0c3759fb0237affb7b1a2b1379e"
+  url "https://github.com/gokcehan/lf/archive/r27.tar.gz"
+  sha256 "cdd132e33387423ef9f9448e21d3f1e5c9a5319b34fdfb53cb5f49351ebac005"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lf"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "1e66f3915c35218b68d6ee7b9085f31c4e371637f151e75e3eb31fc3c998e51a"
+    sha256 cellar: :any_skip_relocation, mojave: "bb3061c216a1ee54500ac208e70346819410930b5f944f02e222a6888dd7dd87"
   end
 
   # Bump to 1.18 on the next release.
