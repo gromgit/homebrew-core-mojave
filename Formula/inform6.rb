@@ -1,15 +1,15 @@
 class Inform6 < Formula
   desc "Design system for interactive fiction"
   homepage "https://inform-fiction.org/inform6.html"
-  url "https://ifarchive.org/if-archive/infocom/compilers/inform6/source/inform-6.35-r8.tar.gz"
-  version "6.35-r8"
-  sha256 "a1babb9ac9fc68fc397905ba713f0651e16cade77f828d692f8f91195daa0f57"
+  url "https://ifarchive.org/if-archive/infocom/compilers/inform6/source/inform-6.36-r2.tar.gz"
+  version "6.36-r2"
+  sha256 "aaf1b2b81ef07b2cff1f0936cec3d7b6fda9a163170468e81d2ba2458faa353d"
   license "Artistic-2.0"
   head "https://gitlab.com/DavidGriffith/inform6unix.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inform6"
-    sha256 cellar: :any_skip_relocation, mojave: "a60c75f6df29c41f7be53ae90b3c2d38940b02fd1eecedd4bb64aa99907d9463"
+    sha256 cellar: :any_skip_relocation, mojave: "a23ec4ba96464d26bc2f30ae0133ced34a114d794e6d9cebe783cc283384452f"
   end
 
   resource "homebrew-test_resource" do
