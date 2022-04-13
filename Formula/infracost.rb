@@ -1,14 +1,14 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform"
   homepage "https://www.infracost.io/docs/"
-  url "https://github.com/infracost/infracost/archive/v0.9.20.tar.gz"
-  sha256 "de68924c23a358a3a60f831159b10ed05fd794c9849284d701f826acd4f56e37"
+  url "https://github.com/infracost/infracost/archive/v0.9.21.tar.gz"
+  sha256 "930aa4178b09fc7b63d4331f62776fecd5532d8d588e13c416047531385c826d"
   license "Apache-2.0"
   head "https://github.com/infracost/infracost.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/infracost"
-    sha256 cellar: :any_skip_relocation, mojave: "9d7ce6dbe73af7d26acb50bdb82b6e7c8014eaf928ca72d454558b8fda7ab504"
+    sha256 cellar: :any_skip_relocation, mojave: "70265ced32101bae7bcbcb815237f5e7771695802e185cdc40aa90e8f0f72ba7"
   end
 
   depends_on "go" => :build
