@@ -8,11 +8,13 @@ class KibanaAT6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kibana@6"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "729cf7051b1930ab46734a0823113913bf6bdbe6d394ee4694816fb3a79bcae3"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "c8eda63e854352020cedbfe328928b69a233fae25c7164aa01a8031c8e65543b"
   end
 
   keg_only :versioned_formula
+
+  deprecate! date: "2022-02-10", because: :unsupported
 
   depends_on "yarn" => :build
   depends_on :macos # Due to Python 2
