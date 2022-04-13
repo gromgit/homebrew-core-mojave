@@ -10,11 +10,11 @@ class Kettle < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "0ccda9f659deb86487578d026cf3e82dfd26bd2c3850d6ef486c6fa2d44de07f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kettle"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "755fc9510025c02380a78d9c9e5134c701e35776b52701b2d7a84389444ba327"
   end
 
-  depends_on arch: :x86_64
   depends_on "openjdk@8"
 
   def install
