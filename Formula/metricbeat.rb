@@ -2,14 +2,14 @@ class Metricbeat < Formula
   desc "Collect metrics from your systems and services"
   homepage "https://www.elastic.co/beats/metricbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v8.1.1",
-      revision: "7f30bb31a4a532c865161efbbdadd012323b04c5"
+      tag:      "v8.1.2",
+      revision: "6118f25235a52a7f0c4937a0a309e380c92d8119"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/metricbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "2f58773c7fe5d5215e9044dfdeaae1761abfbffe03ca576eb31e00df484eb6ac"
+    sha256 cellar: :any_skip_relocation, mojave: "603e0b6e76d491fb08ed560b9ed7d9c77abb3cca960baa2ad499ac2081efb7ed"
   end
 
   depends_on "go" => :build
