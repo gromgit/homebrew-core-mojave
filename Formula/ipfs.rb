@@ -2,8 +2,8 @@ class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https://ipfs.io/"
   url "https://github.com/ipfs/go-ipfs.git",
-      tag:      "v0.12.1",
-      revision: "da2b9bd71aa5d02203be5a0b67f8a9116e8535f5"
+      tag:      "v0.12.2",
+      revision: "0e8b121aba103e2053f6bcfebe1a491b43694a30"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -17,7 +17,7 @@ class Ipfs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipfs"
-    sha256 cellar: :any_skip_relocation, mojave: "b26350d74ffc6d13e6add8fa6e4b96a78d346b7ee570e210da55d0f15195b48c"
+    sha256 cellar: :any_skip_relocation, mojave: "7f51d3fe56d1cdbe41354e933cbdf4af0f0ff7c0eaa9effaf37e9d7ee6414d47"
   end
 
   # Bump to 1.18 on the next release, if possible.
