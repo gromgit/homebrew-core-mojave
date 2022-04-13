@@ -4,11 +4,12 @@ class Luvit < Formula
   url "https://github.com/luvit/luvit/archive/2.18.1.tar.gz"
   sha256 "b792781d77028edb7e5761e96618c96162bd68747b8fced9a6fc52f123837c2c"
   license "Apache-2.0"
-  head "https://github.com/luvit/luvit.git"
+  head "https://github.com/luvit/luvit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luvit"
-    sha256 cellar: :any, mojave: "7f3baa114a2449802805927393410ec45215c31a865f500c76a3644882a7084d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "505551b664efa4ded1f1a27011ed720f135a0ae86981c249d59dfffc0f11da5e"
   end
 
   depends_on "cmake" => :build
