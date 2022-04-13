@@ -1,13 +1,13 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
   homepage "https://github.com/mongodb/mongodb-atlas-cli"
-  url "https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/mongocli/v1.23.1.tar.gz"
-  sha256 "34f4aaef8bae5fa848b7091c760af6c659a2a7e3c5a5d00d0ebda18cd0117ea4"
+  url "https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/mongocli/v1.24.1.tar.gz"
+  sha256 "b63aaa77c397f6a6438142559551527d12fc3abf58dee3a903d3eaf4ef928868"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongocli"
-    sha256 cellar: :any_skip_relocation, mojave: "a131f672b9c55089018dc563d74d55086a63c902e9c40d1648419feb4b0b8d61"
+    sha256 cellar: :any_skip_relocation, mojave: "0c46134e01dcfef37fe3ee5d0f5604ea13f3ea4941166f8c06879ef2c1a3619c"
   end
 
   depends_on "go" => :build
@@ -28,7 +28,7 @@ class Mongocli < Formula
 
   test do
     assert_match "mongocli version: #{version}", shell_output("#{bin}/mongocli --version")
-    assert_match "Error: missing credentials", shell_output("#{bin}/mongocli iam projects ls 2>&1", 1)
+    assert_match "Error: this action requires authentication", shell_output("#{bin}/mongocli iam projects ls 2>&1", 1)
     assert_match "PROFILE NAME", shell_output("#{bin}/mongocli config ls")
   end
 end
