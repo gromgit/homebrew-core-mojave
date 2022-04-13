@@ -9,7 +9,8 @@ class Proj < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
-    sha256 mojave: "aeb1ffd2b882f50392dc222d70c13feb16692d5666c8c244c18cdca9d06ce5a5"
+    rebuild 1
+    sha256 mojave: "a06a2d91ffa75cc6671d7880ee971ccd525daf669624148e54fb193617626cb3"
   end
 
   depends_on "cmake" => :build
@@ -25,19 +26,21 @@ class Proj < Formula
   skip_clean :la
 
   # The datum grid files are required to support datum shifting
-  resource "datumgrid" do
-    url "https://download.osgeo.org/proj/proj-datumgrid-1.8.zip"
-    sha256 "b9838ae7e5f27ee732fb0bfed618f85b36e8bb56d7afb287d506338e9f33861e"
+  resource "proj-data" do
+    url "https://download.osgeo.org/proj/proj-data-1.9.zip"
+    sha256 "6880bfe2c4f6bc69fec398e9b356f50a05d559a59ab05bd65401bf45f4a4b6da"
   end
 
   def install
-    (buildpath/"nad").install resource("datumgrid")
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     system "cmake", "-S", ".", "-B", "static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "static"
     lib.install Dir["static/lib/*.a"]
+    resource("proj-data").stage do
+      cp_r Dir["*"], pkgshare
+    end
   end
 
   test do
