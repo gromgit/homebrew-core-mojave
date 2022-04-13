@@ -1,10 +1,9 @@
 class Librist < Formula
   desc "Reliable Internet Stream Transport (RIST)"
   homepage "https://code.videolan.org/rist/"
-  url "https://code.videolan.org/rist/librist/-/archive/v0.2.6/librist-v0.2.6.tar.gz"
-  sha256 "88b35b86af1ef3d306f33674f2d9511a27d3ff4ec76f20d3a3b3273b79a4521d"
+  url "https://code.videolan.org/rist/librist/-/archive/v0.2.7/librist-v0.2.7.tar.gz"
+  sha256 "7e2507fdef7b57c87b461d0f2515771b70699a02c8675b51785a73400b3c53a1"
   license "BSD-2-Clause"
-  revision 1
   head "https://code.videolan.org/rist/librist.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class Librist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librist"
-    sha256 cellar: :any, mojave: "1c20e229dfab004ceb64ed68ab41ff4acb5eb3d1a8d8014d127477f410c6d45d"
+    sha256 cellar: :any, mojave: "2b0f1b13551ee23849c405bd5b27108c45117aef1cd509e4b3f8ece20e7cfdb9"
   end
 
   depends_on "meson" => :build
