@@ -7,14 +7,14 @@ class Ispc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ispc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "30a668bacf86d35afdea2ac33ef96b688f92cb69e696c1f907cfaef6edaba49d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "555cb05d897c57d49eaa2727b0588273d1fefb9d624a9b3ff1e6259185602423"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "llvm@12"
 
   on_linux do
