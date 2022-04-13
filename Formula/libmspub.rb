@@ -4,7 +4,7 @@ class Libmspub < Formula
   url "https://dev-www.libreoffice.org/src/libmspub/libmspub-0.1.4.tar.xz"
   sha256 "ef36c1a1aabb2ba3b0bedaaafe717bf4480be2ba8de6f3894be5fd3702b013ba"
   license "MPL-2.0"
-  revision 10
+  revision 11
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -12,12 +12,8 @@ class Libmspub < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "ce4651e3377381fee9beb8dd9dd16dd89662861b8f95b0ac36127258f94f97b8"
-    sha256 cellar: :any, arm64_big_sur:  "6a5c5caf43755d2fb8acd3cdd99dccccd515d7da9c501e49fddbc5d5e4500190"
-    sha256 cellar: :any, monterey:       "078e46db9a27cf01f94ecbcb2d5fc977418b58a325aadc5f52248e04352a75b3"
-    sha256 cellar: :any, big_sur:        "7a42e31ac599a192f1e58d281b7e075e71d52bee9465c763520f17cc1744b173"
-    sha256 cellar: :any, catalina:       "56aebbd968cdf49b1da3d79233dab4810af0c7c16e03521db8e5e9499e867294"
-    sha256 cellar: :any, mojave:         "f32c702d3d966bc65125394b949999f1789319b2835b45c0638dbb06fbd31b70"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmspub"
+    sha256 cellar: :any, mojave: "e6640ea95037361442c5fc968e2165fa0d16b57e96cbe390f8fea8905fcec07f"
   end
 
   depends_on "boost" => :build
