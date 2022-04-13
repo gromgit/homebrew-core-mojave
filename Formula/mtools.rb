@@ -1,14 +1,14 @@
 class Mtools < Formula
   desc "Tools for manipulating MSDOS files"
   homepage "https://www.gnu.org/software/mtools/"
-  url "https://ftp.gnu.org/gnu/mtools/mtools-4.0.38.tar.gz"
-  mirror "https://ftpmirror.gnu.org/mtools/mtools-4.0.38.tar.gz"
-  sha256 "0f89d7c1c948b94a1bac02734743f1189148fde8c3233833aeb52ef7fad530f2"
+  url "https://ftp.gnu.org/gnu/mtools/mtools-4.0.39.tar.gz"
+  mirror "https://ftpmirror.gnu.org/mtools/mtools-4.0.39.tar.gz"
+  sha256 "afa5eea196cef5a610a9b55d35b32d2887dc455ffc24e376d35b7a95ee3ec63e"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mtools"
-    sha256 cellar: :any_skip_relocation, mojave: "02f3f9acb375aa3ee65b97bb269e061cae0f0db5d59e5c6134987a5cb7d88ca2"
+    sha256 cellar: :any_skip_relocation, mojave: "c00a7e6dff1c95f9e259bff2a5cde8eb473ee15eae6655a49be15ab0894da1c2"
   end
 
   conflicts_with "multimarkdown", because: "both install `mmd` binaries"
