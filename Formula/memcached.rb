@@ -1,8 +1,8 @@
 class Memcached < Formula
   desc "High performance, distributed memory object caching system"
   homepage "https://memcached.org/"
-  url "https://www.memcached.org/files/memcached-1.6.14.tar.gz"
-  sha256 "54d63742c6886dcdc4e0c87f4439a2930a876cd9f2bfa01d699b0c6bad1707b3"
+  url "https://www.memcached.org/files/memcached-1.6.15.tar.gz"
+  sha256 "8d7abe3d649378edbba16f42ef1d66ca3f2ac075f2eb97145ce164388e6ed515"
   license "BSD-3-Clause"
   head "https://github.com/memcached/memcached.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Memcached < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/memcached"
-    rebuild 1
-    sha256 cellar: :any, mojave: "efd00e260b7517ebb75ccba85b6662718ef9a987b8bff21e22f28678fba0b452"
+    sha256 cellar: :any, mojave: "140c2fee3bce9e94534bfff8d7775f01a74435d27f94bedf58524ae4ad168790"
   end
 
   depends_on "libevent"
