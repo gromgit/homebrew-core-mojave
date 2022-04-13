@@ -12,11 +12,12 @@ class Lasso < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lasso"
-    sha256 cellar: :any, mojave: "841f449eb0c5ec5a8722d321ba40f32529a365bf9a129634d768fbc3a389bffd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0c6c6172b6a7be5021742a80c4a07815a3b5e5d463e2535ea0f6ab7b6d3551f5"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "six" => :build
   depends_on "glib"
   depends_on "libxmlsec1"
