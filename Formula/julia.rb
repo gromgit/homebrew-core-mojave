@@ -48,7 +48,8 @@ class Julia < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/julia"
-    sha256 cellar: :any, mojave: "401f72dda6ac6a3d1aa03f349a176ed807dfa56248f83dde43876a379d0c4163"
+    rebuild 1
+    sha256 cellar: :any, mojave: "28711bafff3adb327ce391e4c1735df26d2c7bdcefa4dab6b29619c1fa66dad6"
   end
 
   # Requires the M1 fork of GCC to build
@@ -272,7 +273,7 @@ class Julia < Formula
     system bin/"julia", *args, "--eval", 'Base.runtests("core")'
 
     # Check that installing packages works.
-    # https://github.com/Homebrew/discussions/discussions/2749
+    # https://github.com/orgs/Homebrew/discussions/2749
     system bin/"julia", *args, "--eval", 'using Pkg; Pkg.add("Example")'
 
     # Check that Julia can load stdlibs that load non-Julia code.
