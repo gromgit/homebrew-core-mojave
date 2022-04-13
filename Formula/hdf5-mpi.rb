@@ -1,9 +1,11 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.13/hdf5-1.13.0/src/hdf5-1.13.0.tar.bz2"
-  sha256 "1826e198df8dac679f0d3dc703aba02af4c614fd6b7ec936cf4a55e6aa0646ec"
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.1/src/hdf5-1.12.1.tar.bz2"
+  sha256 "aaf9f532b3eda83d3d3adc9f8b40a9b763152218fa45349c3bc77502ca1f8f1c"
   license "BSD-3-Clause"
+  revision 1
+  version_scheme 1
 
   livecheck do
     formula "hdf5"
@@ -11,16 +13,15 @@ class Hdf5Mpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5-mpi"
-    rebuild 1
-    sha256 cellar: :any, mojave: "170710a0359d21aaacd52acb3280d7895719a0cbde1851e79ce21a985546d923"
+    sha256 cellar: :any, mojave: "2c501477823a5ce1169772d949387b3ef3ae6cb8f4a0032f21609bea08d3fec6"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "gcc" # for gfortran
+  depends_on "libaec"
   depends_on "open-mpi"
-  depends_on "szip"
 
   uses_from_macos "zlib"
 
@@ -28,35 +29,33 @@ class Hdf5Mpi < Formula
 
   def install
     inreplace %w[c++/src/h5c++.in fortran/src/h5fc.in bin/h5cc.in],
-      "${libdir}/libhdf5.settings",
-      "#{pkgshare}/libhdf5.settings"
+              "${libdir}/libhdf5.settings",
+              "#{pkgshare}/libhdf5.settings"
 
     inreplace "src/Makefile.am",
               "settingsdir=$(libdir)",
               "settingsdir=#{pkgshare}"
 
     if OS.mac?
-      system "autoreconf", "-fiv"
+      system "autoreconf", "--force", "--install", "--verbose"
     else
-
       system "./autogen.sh"
     end
 
     args = %W[
       --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
-      --with-szlib=#{Formula["szip"].opt_prefix}
       --enable-build-mode=production
       --enable-fortran
       --enable-parallel
+      --prefix=#{prefix}
+      --with-szlib=#{Formula["libaec"].opt_prefix}
       CC=mpicc
       CXX=mpic++
       FC=mpifort
       F77=mpif77
       F90=mpif90
     ]
-
     args << "--with-zlib=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
     system "./configure", *args
