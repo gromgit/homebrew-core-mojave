@@ -1,15 +1,14 @@
 class LeafProxy < Formula
   desc "Lightweight and fast proxy utility"
   homepage "https://github.com/eycorsican/leaf"
-  url "https://github.com/eycorsican/leaf/archive/v0.4.2.tar.gz"
-  sha256 "7d0e25964f069db14b0d49f83ccb11795d09011162f08050c211cb2320acc325"
+  url "https://github.com/eycorsican/leaf/archive/v0.4.4.tar.gz"
+  sha256 "6ce46ba0eb4b357fccc36b3be5bdab32dd6879b53130a496b7a8790a47b14f26"
   license "Apache-2.0"
   head "https://github.com/eycorsican/leaf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/leaf-proxy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "66a956e6d442399462b6bc4e85fca53e627a48f0330cb55add29f9fd9fe2dd4b"
+    sha256 cellar: :any_skip_relocation, mojave: "545db39eea08c6f934c00ebf3c926d4452297a267488e6fdceb39ac957c2a3b7"
   end
 
   depends_on "rust" => :build
