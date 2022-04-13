@@ -8,7 +8,8 @@ class Micropython < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micropython"
-    sha256 cellar: :any, mojave: "a73394545f2238b60398f42f86b2adbeae1cad7a7be55b6e71ee1a6fc60d1db0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "611183e239eb894efa7380505220fa9a22cd068b8ac809b3d5bd436ea4e9dc00"
   end
 
   depends_on "pkg-config" => :build
@@ -31,11 +32,7 @@ class Micropython < Formula
   end
 
   test do
-    lib_version = nil
-
-    on_linux do
-      lib_version = "6"
-    end
+    lib_version = "6" if OS.linux?
 
     # Test the FFI module
     (testpath/"ffi-hello.py").write <<~EOS
