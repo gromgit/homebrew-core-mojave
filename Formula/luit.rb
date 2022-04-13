@@ -12,8 +12,11 @@ class Luit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luit"
-    sha256 cellar: :any_skip_relocation, mojave: "3317ae2a5b35c7f16ef86f1e413b4747866527696125968d524863bc88e4ca55"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d9160e7aa3c96266e1eee6b70147b62a937c811b8e7a62ef0fd0cf3cf4a6e39e"
   end
+
+  uses_from_macos "zlib"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--without-x"
@@ -25,6 +28,8 @@ class Luit < Formula
     (testpath/"input").write("#end {bye}\n")
     PTY.spawn(bin/"luit", "-encoding", "GBK", "echo", "foobar") do |r, _w, _pid|
       assert_match "foobar", r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
     end
   end
 end
