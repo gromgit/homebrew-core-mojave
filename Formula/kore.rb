@@ -1,8 +1,8 @@
 class Kore < Formula
   desc "Web application framework for writing web APIs in C"
   homepage "https://kore.io/"
-  url "https://kore.io/releases/kore-4.2.0.tar.gz"
-  sha256 "3cc7d1a0d4a3b568bc15886cceebec208ebfd0a94293eaa3b275754d13c5445d"
+  url "https://kore.io/releases/kore-4.2.1.tar.gz"
+  sha256 "f76b108a4eefa27c89123f5d6a36b493b171e429be7a85d3dd1466ac87e7f15a"
   license "ISC"
   head "https://github.com/jorisvink/kore.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Kore < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kore"
-    sha256 mojave: "53fad6232e0bb992a3a991dc31bda8f6513f3f0dce472ed15773f562bdf7a1ee"
+    sha256 mojave: "102eb4b9522ad6f43515b3c7023f930a2905a93248e3b5b8a57ec91cb62d995c"
   end
 
   depends_on "pkg-config" => :build
