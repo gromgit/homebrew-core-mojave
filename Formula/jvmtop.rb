@@ -7,10 +7,11 @@ class Jvmtop < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f8d349142f3bcc5b90e06245a32942918f8664ddf65ca537432bdc81f5b081d9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jvmtop"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a922b97ed7ca4f3beb786f22a40aa22dcb93e5b294e8c62a803abbe4feb5755d"
   end
 
-  depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
   depends_on "openjdk@8"
 
   def install
