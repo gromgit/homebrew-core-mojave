@@ -1,9 +1,9 @@
 class Imapsync < Formula
   desc "Migrate or backup IMAP mail accounts"
   homepage "https://imapsync.lamiral.info/"
-  url "https://imapsync.lamiral.info/dist2/imapsync-2.178.tgz"
+  url "https://imapsync.lamiral.info/dist2/imapsync-2.200.tgz"
   # NOTE: The mirror will return 404 until the version becomes outdated.
-  sha256 "215777a7720f336b1a30632f7f828ab5877e02af9c910ef227145f2fd36e1007"
+  sha256 "115f3e3be2ec5fd5235501240292c5f15bd289d47e39f7581da861b92bca5be5"
   license "NLPL"
   head "https://github.com/imapsync/imapsync.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Imapsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imapsync"
-    sha256 cellar: :any_skip_relocation, mojave: "7a80f059ad582b47390c32f5d56bc3666b2cbb650b971ae5051c522586848860"
+    sha256 cellar: :any_skip_relocation, mojave: "7154317174d8b0b47b6df6c04785be811e057cb74e46b711e738887e84998874"
   end
 
   depends_on "pod2man" => :build
