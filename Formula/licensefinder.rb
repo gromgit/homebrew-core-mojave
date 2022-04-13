@@ -8,7 +8,8 @@ class Licensefinder < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/licensefinder"
-    sha256 cellar: :any_skip_relocation, mojave: "f84615e019d752a6ba8aad3baafa010e54d27e7afa77cdcff1311f303e24c4b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b4ce4d65f8af354b166794661169afa322bfe0170ad857a84c5b2e1a4ce76dc"
   end
 
   depends_on "ruby@2.7" if MacOS.version <= :mojave
@@ -24,7 +25,8 @@ class Licensefinder < Formula
   test do
     gem_home = testpath/"gem_home"
     ENV["GEM_HOME"] = gem_home
-    system "gem", "install", "bundler"
+    gem_command = (MacOS.version <= :mojave) ? Formula["ruby@2.7"].bin/"gem" : "gem"
+    system gem_command, "install", "bundler"
 
     mkdir "test"
     (testpath/"test/Gemfile").write <<~EOS
