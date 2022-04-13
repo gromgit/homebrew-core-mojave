@@ -4,10 +4,12 @@ class KubePs1 < Formula
   url "https://github.com/jonmosco/kube-ps1/archive/v0.7.0.tar.gz"
   sha256 "f5ccaf6537e944db5b9cf40d3f01cf99732dce5adaaaf840780aa38b1b030471"
   license "Apache-2.0"
-  head "https://github.com/jonmosco/kube-ps1.git"
+  head "https://github.com/jonmosco/kube-ps1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "686ec71211705bf86fd229811e89ee26f5714654d4b09de2eca68b36e8b987c3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kube-ps1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ef5a7081e4a6258c623301a7a7f2715f53c850b5da7fbbe1acda0a88fd27e37f"
   end
 
   depends_on "kubernetes-cli"
