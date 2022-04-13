@@ -1,8 +1,8 @@
 class Mercury < Formula
   desc "Logic/functional programming language"
   homepage "https://mercurylang.org/"
-  url "https://dl.mercurylang.org/release/mercury-srcdist-20.06.1.tar.gz"
-  sha256 "ef093ae81424c4f3fe696eff9aefb5fb66899e11bb17ae0326adfb70d09c1c1f"
+  url "https://dl.mercurylang.org/release/mercury-srcdist-22.01.tar.gz"
+  sha256 "14be3143302cfbb76383dac626e6bf64538c84748289595e6966319479775d47"
   license all_of: ["GPL-2.0-only", "LGPL-2.0-only", "MIT"]
 
   livecheck do
@@ -11,11 +11,8 @@ class Mercury < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "529ee1af9b6aaf8a8173af8f2208007599ae96c6ef1275ddb03497181f6bb6d7"
-    sha256 cellar: :any,                 big_sur:      "8b37f68829e59efd2127a32dfbcbf80d617196b6f35c970e1d4727b5076abb39"
-    sha256 cellar: :any,                 catalina:     "2b98c59507d6aa72db55b8864d9818f302fef92b5bbdc6630287276494a3bc62"
-    sha256 cellar: :any,                 mojave:       "e0011e25fa5732a2a271f30c5589c35f1caeb7cbab44ccba2271ab7bd2632243"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1313fc019178406ba574ef1f9ffdf9b724a337e6831fc54b4a7aa68e02d2635"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mercury"
+    sha256 cellar: :any, mojave: "f8cd7a8c8306c17caacfd4b25fd11a175a281acec42c5ef8adf5cfb18a91b77e"
   end
 
   depends_on "openjdk"
