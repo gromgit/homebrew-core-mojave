@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://libvirt.org/"
-  url "https://libvirt.org/sources/libvirt-8.0.0.tar.xz"
-  sha256 "51e6e8ff04bafe96d7e314b213dcd41fb1163d9b4f0f75cdab01e663728f4cf6"
+  url "https://libvirt.org/sources/libvirt-8.2.0.tar.xz"
+  sha256 "0ecd9c7dd52db7a2d124155ffa5e11de2fbd05014eceffbd1972b022d21becba"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Libvirt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvirt"
-    sha256 mojave: "2912aed7737e1692c3285eb9193b692312ac84404e6dd702f7aaf088b4c9e563"
+    sha256 mojave: "cb3853e8ecedb2ff2e919f139f0ad04aaf5f285eb65021c681dd3ead48bdc5bf"
   end
 
   depends_on "docutils" => :build
@@ -21,7 +21,7 @@ class Libvirt < Formula
   depends_on "ninja" => :build
   depends_on "perl" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "gettext"
   depends_on "glib"
   depends_on "gnu-sed"
@@ -40,35 +40,12 @@ class Libvirt < Formula
   end
 
   on_linux do
+    depends_on "gcc"
     depends_on "libtirpc"
     depends_on "linux-headers@5.16"
   end
 
-  # Don't generate accelerator command line on macOS
-  #
-  # This makes it once again possible to use the
-  #
-  #   <qemu:commandline>
-  #     <qemu:arg value='-machine'/>
-  #     <qemu:arg value='q35,accel=hvf'/>
-  #   </qemu:commandline>
-  #
-  # workaround to enable hardware acceleration.
-  #
-  # Drop once proper HVF support is added to libvirt.
-  #
-  # https://gitlab.com/libvirt/libvirt/-/issues/147
-  patch do
-    url "https://gitlab.com/abologna/libvirt/-/commit/da138afc3609a92d473fddcffa54b2020759f986.diff"
-    sha256 "4eb3c9f0ca140a4d8eb5002acde0b6f1234011f82df7d8cc85252be35e8a5cff"
-  end
-
-  # Fix PermissionError: [Errno 1] Operation not permitted: '/usr/local/Cellar/yajl/2.1.0/include/libvirt'
-  # Remove with next release
-  patch do
-    url "https://gitlab.com/libvirt/libvirt/-/commit/9f2d3cb472fd4d86dc4de5d57fcf8acb14e33e00.diff"
-    sha256 "ee14a4922ddc405c6ff6c5f7e9183b83f50cfa448b2ab9e1428f3f1c47e0d34c"
-  end
+  fails_with gcc: "5"
 
   def install
     mkdir "build" do
