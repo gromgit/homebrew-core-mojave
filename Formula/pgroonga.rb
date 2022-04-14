@@ -1,8 +1,8 @@
 class Pgroonga < Formula
   desc "PostgreSQL plugin to use Groonga as index"
   homepage "https://pgroonga.github.io/"
-  url "https://packages.groonga.org/source/pgroonga/pgroonga-2.3.4.tar.gz"
-  sha256 "5c4ebaf4a7c71326394e084c502d06708a9d3d3b1d02cd38a40fedf3893e8b61"
+  url "https://packages.groonga.org/source/pgroonga/pgroonga-2.3.6.tar.gz"
+  sha256 "fc68a66a216e304bb0e2ef627f767fff528f4fbf2bbda27e8cd8db1b7ba090b0"
   license "PostgreSQL"
 
   livecheck do
@@ -12,8 +12,7 @@ class Pgroonga < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgroonga"
-    rebuild 2
-    sha256 cellar: :any, mojave: "461fb51c0a9dd987284b7c10bcdef3a4ea08171619e36ef4d86b3c3f85b4f198"
+    sha256 cellar: :any, mojave: "31290755883a851d9530b751be6c160ec888fa08eac1eedea103e3012fdc8eb4"
   end
 
   depends_on "pkg-config" => :build
