@@ -7,8 +7,8 @@ class Soci < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/soci"
-    rebuild 1
-    sha256 mojave: "162edc61c3a2f9c79f36a1832a7bdcddcf0d3540e5c8c0559b789a3657bba340"
+    rebuild 2
+    sha256 mojave: "84375a50f4f652b26cef516bba38d7b7df4b1798758317f54b30a9faeaf33fb4"
   end
 
   depends_on "cmake" => :build
@@ -16,6 +16,7 @@ class Soci < Formula
 
   def install
     args = std_cmake_args + %w[
+      -DCMAKE_CXX_STANDARD=11
       -DSOCI_TESTS:BOOL=OFF
       -DWITH_SQLITE3:BOOL=ON
       -DWITH_BOOST:BOOL=OFF
