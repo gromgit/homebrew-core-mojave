@@ -1,8 +1,8 @@
 class Openttd < Formula
   desc "Simulation game based upon Transport Tycoon Deluxe"
   homepage "https://www.openttd.org/"
-  url "https://cdn.openttd.org/openttd-releases/12.1/openttd-12.1-source.tar.xz"
-  sha256 "258bf5b9983010890ba10518b506bc4ab80f7c08ccec59497e9ba55a4aa3e7e3"
+  url "https://cdn.openttd.org/openttd-releases/12.2/openttd-12.2-source.tar.xz"
+  sha256 "81508f0de93a0c264b216ef56a05f8381fff7bffa6d010121a21490b4dace95c"
   license "GPL-2.0-only"
   head "https://github.com/OpenTTD/OpenTTD.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Openttd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openttd"
-    rebuild 2
-    sha256 cellar: :any, mojave: "2b3421c57ef6aff301fca92787ab5737bd3d4e5c882a094e4fa3fe3873f914dc"
+    sha256 cellar: :any, mojave: "72fcfe14d2b391f7744c968fe198fb1ec7b9105dbdcc81f50057a4de27519b48"
   end
 
   depends_on "cmake" => :build
