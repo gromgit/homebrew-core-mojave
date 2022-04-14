@@ -8,8 +8,11 @@ class SpidermonkeyAT78 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spidermonkey@78"
-    sha256 cellar: :any, mojave: "f15365498cd04d6f19028534a1f5cc4efa6b099dba7bd72f3e54549370358fae"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1dd652bcabd8543d8695057f46b83b016d565936e7eec01df0e81e27fd28309e"
   end
+
+  deprecate! date: "2022-04-02", because: :unsupported
 
   depends_on "autoconf@2.13" => :build
   depends_on "pkg-config" => :build
