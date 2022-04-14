@@ -3,6 +3,14 @@ class SNail < Formula
   homepage "https://www.sdaoden.eu/code.html"
   url "https://www.sdaoden.eu/downloads/s-nail-14.9.24.tar.xz"
   sha256 "2714d6b8fb2af3b363fc7c79b76d058753716345d1b6ebcd8870ecd0e4f7ef8c"
+  license all_of: [
+    "BSD-2-Clause", # file-dotlock.h
+    "BSD-3-Clause",
+    "BSD-4-Clause",
+    "ISC",
+    "HPND-sell-variant", # GSSAPI code
+    "RSA-MD", # MD5 code
+  ]
 
   livecheck do
     url :homepage
@@ -11,8 +19,8 @@ class SNail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s-nail"
-    rebuild 1
-    sha256 mojave: "91c1e7c30bc80c1213ced2bf2100351a93829d6af3e912cf2d9da8187ac61cf1"
+    rebuild 2
+    sha256 mojave: "cfbf997ca81a95d03c38844b8d338b8fae985e05367ae34e629812a1e9134f4b"
   end
 
   depends_on "awk" => :build
