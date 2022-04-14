@@ -1,8 +1,8 @@
 class Sdcc < Formula
   desc "ANSI C compiler for Intel 8051, Maxim 80DS390, and Zilog Z80"
   homepage "https://sdcc.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/sdcc/sdcc/4.1.0/sdcc-src-4.1.0.tar.bz2"
-  sha256 "81edf776d5a2dc61a4b5c3408929db7b25874d69c46e4a71b116be1322fd533f"
+  url "https://downloads.sourceforge.net/project/sdcc/sdcc/4.2.0/sdcc-src-4.2.0.tar.bz2"
+  sha256 "b49bae1d23bcd6057a82c4ffe5613f9cd0cbcfd1e940e9d84c4bfe9df0a8c053"
   license all_of: ["GPL-2.0-only", "GPL-3.0-only", :public_domain, "Zlib"]
   head "https://svn.code.sf.net/p/sdcc/code/trunk/sdcc"
 
@@ -12,13 +12,8 @@ class Sdcc < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "cdbba6dcec050612f65b0cdaf28d0cb10f26e9090e208ee4e43bd1f95b83b243"
-    sha256 arm64_big_sur:  "204b16ac599b7a7c4f881f5689b47f3af4d09134b63686c716f42751e192c1ff"
-    sha256 monterey:       "62b6882a1689b65133f962bbb33ecafd875a0369206b0ac57d25dc62a8d42663"
-    sha256 big_sur:        "3b9371b349c03c7628b68b103f5f49fb7861c0662d9f092a9013f6441b43b2ed"
-    sha256 catalina:       "546c39fb908ac27107a59f8427848161e0573c36e17199acddd1e4b839f37c9f"
-    sha256 mojave:         "ed31251e97c22718ffd714b06561cba755cce2030d0213324fe986e1bf0b8137"
-    sha256 x86_64_linux:   "249aea9a8895f2081ad2de9b845c81c40c8afaba690f5371f4d2ecfdda552703"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdcc"
+    sha256 mojave: "4ad1a6de5a521cee6036aff3890a211800e61720281c8e539f3bd4e0867b0866"
   end
 
   depends_on "autoconf" => :build
