@@ -1,14 +1,13 @@
 class Onefetch < Formula
   desc "Git repository summary on your terminal"
   homepage "https://github.com/o2sh/onefetch"
-  url "https://github.com/o2sh/onefetch/archive/v2.11.0.tar.gz"
-  sha256 "ffd3cc3bd24e299ede1fada2b2da8bf066d59219da167477e1997c860650c192"
+  url "https://github.com/o2sh/onefetch/archive/v2.12.0.tar.gz"
+  sha256 "f57b16dfa2bb95dd1fb805257a1761baa20d69eb9ce7c311d369609894c53897"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onefetch"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "e9277af2ba33c0162437f34fba5f3e36b18d1d58f8ab1e9cef37eb1fd2a7c5e9"
+    sha256 cellar: :any_skip_relocation, mojave: "0d24843de627b64313c55963becfa12991f19ca6c7d25b3cf0f6d0a5d93c6384"
   end
 
   depends_on "rust" => :build
@@ -27,6 +26,6 @@ class Onefetch < Formula
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "BrewTestBot@test.com"
     system "echo \"puts 'Hello, world'\" > main.rb && git add main.rb && git commit -m \"First commit\""
-    assert_match(/Language:.*Ruby/, shell_output("#{bin}/onefetch").chomp)
+    assert_match("Ruby (100.0 %)", shell_output("#{bin}/onefetch").chomp)
   end
 end
