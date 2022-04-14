@@ -8,7 +8,8 @@ class Sevenzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sevenzip"
-    sha256 cellar: :any_skip_relocation, mojave: "a89bf7108595e49d8dd521909e140e1ad3cd6e41c7dc729b942590379487b586"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ea61adf561d4092599e56e1153470cfc5e4beb63bf06a24989083eb272aa4527"
   end
 
   def install
@@ -20,7 +21,7 @@ class Sevenzip < Formula
         ["gcc", "g"]
       end
 
-      system "make", "-f", "../../cmpl_#{mk_suffix}.mak"
+      system "make", "-f", "../../cmpl_#{mk_suffix}.mak", "DISABLE_RAR_COMPRESS=1"
 
       # Cherry pick the binary manually. This should be changed to something
       # like `make install' if the upstream adds an install target.
