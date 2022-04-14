@@ -5,9 +5,21 @@ class Rke < Formula
   sha256 "4087a7e04a106dac40db3a84a61eed757e87ccac8dc792aeab4c328576099013"
   license "Apache-2.0"
 
+  # It's necessary to check releases instead of tags here (to avoid upstream
+  # tag issues) but we can't use the `GithubLatest` strategy because upstream
+  # creates releases for more than one minor version (i.e., the "latest" release
+  # isn't the newest version at times). We normally avoid checking the releases
+  # page because pagination can cause problems but this is our only choice.
+  livecheck do
+    url "https://github.com/rancher/rke/releases?q=prerelease%3Afalse"
+    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :page_match
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rke"
-    sha256 cellar: :any_skip_relocation, mojave: "0c83d943acc621b243fa90b6490914f1b4e4b9078c294875582f7f49af2031d7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e70e390386d14946b77edce667d36a140c449c489c4af53419f0f13d4c2339a4"
   end
 
   depends_on "go" => :build
