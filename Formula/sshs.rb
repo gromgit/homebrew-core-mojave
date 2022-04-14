@@ -1,13 +1,13 @@
 class Sshs < Formula
   desc "Graphical command-line client for SSH"
   homepage "https://github.com/quantumsheep/sshs"
-  url "https://github.com/quantumsheep/sshs/archive/refs/tags/3.0.0.tar.gz"
-  sha256 "3c142d823fd0c985a0416ba0e96425cb63c8fe7b5d1b29dc0ee4846c697ddfc1"
+  url "https://github.com/quantumsheep/sshs/archive/refs/tags/3.1.0.tar.gz"
+  sha256 "9a656d68b0514227a26f8a9a56537b56a5dddd079de67a892643fc0b9ac238b7"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sshs"
-    sha256 cellar: :any_skip_relocation, mojave: "2224ddb469598fa1a18a6fe4f50b02b31188f1d768ca0326cc0b35de41831c54"
+    sha256 cellar: :any_skip_relocation, mojave: "6a8cacb798a9dbe76d2c1f24ce249c2f258a3676437eb1d4bd8d7356b5ced681"
   end
 
   depends_on "go" => :build
