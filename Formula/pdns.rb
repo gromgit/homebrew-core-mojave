@@ -1,10 +1,9 @@
 class Pdns < Formula
   desc "Authoritative nameserver"
   homepage "https://www.powerdns.com"
-  url "https://downloads.powerdns.com/releases/pdns-4.6.0.tar.bz2"
-  sha256 "b9effb7968a7badbb91eea431c73346482a67592684d84660edd8b7528cc1325"
+  url "https://downloads.powerdns.com/releases/pdns-4.6.1.tar.bz2"
+  sha256 "7912b14887d62845185f7ce4b47db580eaa7b8b897dcb1c9555dfe0fac5efae3"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -13,8 +12,7 @@ class Pdns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdns"
-    rebuild 1
-    sha256 mojave: "191569f192439f2711c1c6ffbd795d2506a6d2dd3d8e4f0a0128227db39a9b80"
+    sha256 mojave: "ed0a80482ee3c820eb9905ab09f5d69275c6213c8453e65d421f201e9d1d7717"
   end
 
   head do
