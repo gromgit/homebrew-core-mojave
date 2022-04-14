@@ -3,13 +3,13 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/1a/c1/c50830f214d247fc1fb349d72ca72773e02021494d4d3a28d631edac1d33/pipenv-2022.3.28.tar.gz"
-  sha256 "4e7aae62dad7679ce81b54cc3451be19fb2c469e269335b36b14132fe5ceecb3"
+  url "https://files.pythonhosted.org/packages/3a/b3/7a105cab5f3006c4f771615c33a729d723bf8bce04b05d53dae0e32a5efe/pipenv-2022.4.8.tar.gz"
+  sha256 "53562bf69d9e5238f99a1e2101c356746b1c0aefa5dceb9b8a84a5a3e201de0d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipenv"
-    sha256 cellar: :any_skip_relocation, mojave: "4bab94dfd9116fb5cf660c62746bf74201f6dce5af96a925c854c1ad589b0454"
+    sha256 cellar: :any_skip_relocation, mojave: "c8ce539812450421a5e783eea7770d6b87436f6166768e0f9fc95946cc1ed7c8"
   end
 
   depends_on "python@3.10"
