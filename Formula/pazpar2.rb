@@ -4,6 +4,7 @@ class Pazpar2 < Formula
   url "https://ftp.indexdata.com/pub/pazpar2/pazpar2-1.14.1.tar.gz"
   sha256 "9baf590adb52cd796eccf01144eeaaf7353db1fd05ae436bdb174fe24362db53"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://ftp.indexdata.com/pub/pazpar2/"
@@ -11,12 +12,8 @@ class Pazpar2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "78416003bce41475a204ac9c6790ddc3d54b447420df819bf435d584a2732643"
-    sha256 cellar: :any, arm64_big_sur:  "97853be3b6575960315829c3d405783d807ce3ef2e02a1be58a99f15940242a7"
-    sha256 cellar: :any, monterey:       "ebf7437098ce671bdea94f57a994fad64dc857480d1230451240120a336fb669"
-    sha256 cellar: :any, big_sur:        "f0f875a02f27f621b8d3853067f2de93e81f14bd5d39410a8a5fd16bd77fed72"
-    sha256 cellar: :any, catalina:       "3dc830947f389049e4960f548f407cf1d867bd13822038e1580d864faebd5cde"
-    sha256 cellar: :any, mojave:         "4ae1cdd71740cfad4d06799ebc4b131dd705fea1411c9fd85aacaf49ff63d66c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pazpar2"
+    sha256 cellar: :any, mojave: "b6066369a7817b5f340bc29159f7b8f29931fa3c303701968989d1de7faa8c37"
   end
 
   head do
