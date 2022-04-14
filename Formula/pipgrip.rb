@@ -3,13 +3,13 @@ class Pipgrip < Formula
 
   desc "Lightweight pip dependency resolver"
   homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/f4/0c/eda6ebf43b91fb02e9652d2ef67e1cbda9265b3476239dc2b2e744949db9/pipgrip-0.7.1.tar.gz"
-  sha256 "894c864788562babb1845c74d9887c93956e5ccaf7410c08c1934bae5e9737af"
+  url "https://files.pythonhosted.org/packages/55/8d/6306404ba7d7ad9cf60cb16ddc9673148794a6d55972bdd5ed226bde703e/pipgrip-0.7.2.tar.gz"
+  sha256 "e7f2ef078b1db1ebb0abf31adc34d77061ed73102257c99acba12ca15f98ecd1"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipgrip"
-    sha256 cellar: :any_skip_relocation, mojave: "fad4168c365835ea2264a074d1236bb3f0f560d7964615737c42978ae3a92352"
+    sha256 cellar: :any_skip_relocation, mojave: "1cf34ff51aaabdddcb00bb795c0d13ead645f2a9bb962501600f5a04c86b8316"
   end
 
   depends_on "python@3.10"
@@ -21,8 +21,8 @@ class Pipgrip < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/dd/cf/706c1ad49ab26abed0b77a2f867984c1341ed7387b8030a6aa914e2942a0/click-8.0.4.tar.gz"
-    sha256 "8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
+    url "https://files.pythonhosted.org/packages/42/e1/4cb2d3a2416bcd871ac93f12b5616f7755a6800bccae05e5a99d3673eb69/click-8.1.2.tar.gz"
+    sha256 "479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"
   end
 
   resource "packaging" do
