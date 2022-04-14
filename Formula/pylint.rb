@@ -3,13 +3,13 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https://github.com/PyCQA/pylint"
-  url "https://files.pythonhosted.org/packages/17/20/4261712608bce9aba2e502631162920fb60b0da5fbfb1b2f0560314c05ab/pylint-2.13.3.tar.gz"
-  sha256 "12ed2520510c40db647e4ec7f747b07e0d669b33ab41479c2a07bb89b92877db"
+  url "https://files.pythonhosted.org/packages/aa/b2/e19502f2419ef2da4ac2785da42e77c5bf598a7f2ab59261917f2419b028/pylint-2.13.5.tar.gz"
+  sha256 "dab221658368c7a05242e673c275c488670144123f4bd262b2777249c1c0de9b"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pylint"
-    sha256 cellar: :any_skip_relocation, mojave: "56365b70cbcf139c750f2b20bfea80e0726ad010541ab33d166b866b50a0b508"
+    sha256 cellar: :any_skip_relocation, mojave: "f6383da59c382c344ea04d53eabd42db6d2d123f2287024961df9fc6016c1218"
   end
 
   depends_on "python@3.10"
