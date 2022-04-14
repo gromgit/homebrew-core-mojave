@@ -2,14 +2,14 @@ class Pulumi < Formula
   desc "Cloud native development platform"
   homepage "https://pulumi.io/"
   url "https://github.com/pulumi/pulumi.git",
-      tag:      "v3.27.0",
-      revision: "13756ec4813959a8da6566e40b7772245e02145c"
+      tag:      "v3.28.0",
+      revision: "9f89feb16dfd437025a853c92e60854d638ef405"
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pulumi"
-    sha256 cellar: :any_skip_relocation, mojave: "983936158f7ea7fad32f0e0e6063f1ef70859d4dae4b5e9d27b9e61fe951a613"
+    sha256 cellar: :any_skip_relocation, mojave: "aa0620853aab96fce44e815283b75404c798eead02edbac19cd779133da110e7"
   end
 
   depends_on "go" => :build
