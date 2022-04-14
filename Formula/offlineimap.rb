@@ -2,18 +2,19 @@ class Offlineimap < Formula
   include Language::Python::Virtualenv
 
   desc "Synchronizes emails between two repositories"
-  homepage "https://www.offlineimap.org/"
+  homepage "https://github.com/OfflineIMAP/offlineimap3"
   url "https://github.com/OfflineIMAP/offlineimap3/archive/v8.0.0.tar.gz"
   sha256 "5d40c163ca2fbf89658116e29f8fa75050d0c34c29619019eee1a84c90fcab32"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/OfflineIMAP/offlineimap3.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/offlineimap"
-    sha256 cellar: :any_skip_relocation, mojave: "a7b0f8e72cb9e3ef7a164eeb4c5658a9fc974fca7503decd4b07e56dd4250dcd"
+    sha256 cellar: :any_skip_relocation, mojave: "0f9528fcb5500b61b612bddd2e51c47df1064d791d5bb46115107e6fa0f075cd"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
