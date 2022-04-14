@@ -6,29 +6,19 @@ class OpenshiftCli < Formula
 
   stable do
     url "https://github.com/openshift/oc.git",
-        tag:      "openshift-clients-4.6.0-202006250705.p0",
-        revision: "51011e4849252c723b520643d27d3fa164d28c61"
-    version "4.6.0"
+        tag:      "openshift-clients-4.11.0-202204020828",
+        revision: "f1f09a392fd18029f681c06c3bd0c44420684efa"
+  end
 
-    # Add Makefile target to build arm64 binary
-    # Upstream PR: https://github.com/openshift/oc/pull/889
-    patch :DATA
+  livecheck do
+    url :stable
+    regex(/^openshift-clients[._-](\d+(?:\.\d+)+(?:[._-]p?\d+)?)$/i)
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1dd03d660dd23ec473ec2277e29f1d373220630544de94dae14eb70f69a350b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2782211e3255bb03ccf0b26f59d7ff859ca0324d45fb76b264cf44a16f3077ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "40e611652049dd41c3146947bd6f16185074b727fd969caa1e5494a0b9440f23"
-    sha256 cellar: :any_skip_relocation, big_sur:        "870e98712efe5ea045356be3f36525c39e7cdef6239f68ec8c5957d750ae7022"
-    sha256 cellar: :any_skip_relocation, catalina:       "f7a8fafdad3e268d2f8579c0c1500e4b1f45d247159986e0d3eed88f14672ea5"
-    sha256 cellar: :any_skip_relocation, mojave:         "59b89010cda9ee308ff728704dccd919be1a12f3a1ea3454cf3f31e9c900d273"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aa2fe20e8fb4212f2ee01ea32ff1cfa255e1c5135f50ce27658b699de97ea49"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openshift-cli"
+    sha256 cellar: :any_skip_relocation, mojave: "0a68d36d24338d05604665c7c9cab0a3d6469aa07f666a1d10ea10e45ba1f713"
   end
-
-  # Ref: https://github.com/Homebrew/homebrew-core/issues/97389
-  # Ref: https://github.com/openshift/oc/issues/954
-  deprecate! date: "2021-10-10", because: "cannot be updated since releases are no longer tagged"
 
   depends_on "coreutils" => :build
   # Bump to 1.18 on the next release.
@@ -60,15 +50,6 @@ class OpenshiftCli < Formula
     zsh_completion.install "contrib/completions/zsh/oc" => "_oc"
   end
 
-  def caveats
-    on_macos do
-      <<~EOS
-        You can install a newer version from Homebrew Cask:
-          brew install --cask openshift-client
-      EOS
-    end
-  end
-
   test do
     (testpath/"kubeconfig").write ""
     system "KUBECONFIG=#{testpath}/kubeconfig #{bin}/oc config set-context foo 2>&1"
@@ -77,20 +58,3 @@ class OpenshiftCli < Formula
     assert_match "foo", context_output
   end
 end
-
-__END__
-diff --git a/Makefile b/Makefile
-index 940a90415..a3584fbc9 100644
---- a/Makefile
-+++ b/Makefile
-@@ -88,6 +88,10 @@ cross-build-darwin-amd64:
- 	+@GOOS=darwin GOARCH=amd64 $(MAKE) --no-print-directory build GO_BUILD_PACKAGES:=./cmd/oc GO_BUILD_FLAGS:="$(GO_BUILD_FLAGS_DARWIN)" GO_BUILD_BINDIR:=$(CROSS_BUILD_BINDIR)/darwin_amd64
- .PHONY: cross-build-darwin-amd64
-
-+cross-build-darwin-arm64:
-+	+@GOOS=darwin GOARCH=arm64 $(MAKE) --no-print-directory build GO_BUILD_PACKAGES:=./cmd/oc GO_BUILD_FLAGS:="$(GO_BUILD_FLAGS_DARWIN)" GO_BUILD_BINDIR:=$(CROSS_BUILD_BINDIR)/darwin_arm64
-+.PHONY: cross-build-darwin-arm64
-+
- cross-build-windows-amd64:
- 	+@GOOS=windows GOARCH=amd64 $(MAKE) --no-print-directory build GO_BUILD_PACKAGES:=./cmd/oc GO_BUILD_FLAGS:="$(GO_BUILD_FLAGS_WINDOWS)" GO_BUILD_BINDIR:=$(CROSS_BUILD_BINDIR)/windows_amd64
- .PHONY: cross-build-windows-amd64
