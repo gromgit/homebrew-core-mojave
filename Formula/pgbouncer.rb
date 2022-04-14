@@ -1,8 +1,9 @@
 class Pgbouncer < Formula
   desc "Lightweight connection pooler for PostgreSQL"
   homepage "https://www.pgbouncer.org/"
-  url "https://www.pgbouncer.org/downloads/files/1.16.1/pgbouncer-1.16.1.tar.gz"
-  sha256 "087477e9e4766d032b04b7b006c0c8d64160a54141a7bfc2c6e5ae7ae11bf7fc"
+  url "https://www.pgbouncer.org/downloads/files/1.17.0/pgbouncer-1.17.0.tar.gz"
+  sha256 "657309b7bc5c7a85cbf70a9a441b535f7824123081eabb7ba86d00349a256e23"
+  license "ISC"
 
   livecheck do
     url "https://github.com/pgbouncer/pgbouncer"
@@ -10,8 +11,7 @@ class Pgbouncer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgbouncer"
-    rebuild 2
-    sha256 cellar: :any, mojave: "546c789e04d7c8520b615501305183025481e3a20e1fcd3a6cebcc3e7bc36cd7"
+    sha256 cellar: :any, mojave: "fef94925bba0d3dc9e6a6a742f6650ea3e1a528f7735caebe945d9b02c2e8473"
   end
 
   depends_on "pkg-config" => :build
