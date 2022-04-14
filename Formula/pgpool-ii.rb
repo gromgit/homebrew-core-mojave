@@ -11,7 +11,8 @@ class PgpoolIi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgpool-ii"
-    sha256 mojave: "71e80b95fd3bdcd57ee47b03b0d83e76504fb08395533209d668b2673248874e"
+    rebuild 1
+    sha256 mojave: "53aaa373f7e70a445952640ed15c15e50dbe406eb698b06b84d1b112ab9d2810"
   end
 
   depends_on "postgresql"
