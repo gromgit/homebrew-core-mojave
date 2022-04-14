@@ -14,7 +14,8 @@ class Supertux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/supertux"
-    sha256 cellar: :any, mojave: "f8ce349e18fc7c3a1594f40eb8fbe5f1446dd1c91109876ec958efb930f8e86e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8fd8ef3012dc66baf6ac09d15cfbba8f412cc0378a5f3fc416b8fccc12c2d830"
   end
 
   depends_on "cmake" => :build
