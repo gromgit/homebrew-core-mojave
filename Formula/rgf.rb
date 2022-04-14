@@ -12,7 +12,8 @@ class Rgf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rgf"
-    sha256 cellar: :any_skip_relocation, mojave: "6bd9c7352cfb93705b36d99edbc2daf3ae2039bd095c2465c9a58aa3cf36f47d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "286d59de48b9cf8216a65ac62660500263361351c9d81f4b62a20af4ad37191c"
   end
 
   depends_on "cmake" => :build
@@ -21,8 +22,7 @@ class Rgf < Formula
     cd "RGF" do
       mkdir "build" do
         system "cmake", *std_cmake_args, ".."
-        system "make"
-        system "make", "install" # installs to bin/rgf
+        system "cmake", "--build", "."
       end
       bin.install "bin/rgf"
       pkgshare.install "examples"
