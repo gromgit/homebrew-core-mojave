@@ -8,12 +8,16 @@ class PySpy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/py-spy"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "5f9baaf6af9a73c9884aa95907dc8eb5bb2ed892c48f7e7cede572928cbd0afc"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "180ec76b7920da80ad2f269cf23bc51804c747a23771e7c6e8965c68a7f5e412"
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.9" => :test
+  depends_on "python@3.10" => :test
+
+  on_linux do
+    depends_on "libunwind"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -27,7 +31,8 @@ class PySpy < Formula
   end
 
   test do
-    output = shell_output("#{bin}/py-spy record python3.9 2>&1", 1)
-    assert_match "This program requires root", output
+    python = Formula["python@3.10"].opt_bin/"python3"
+    output = shell_output("#{bin}/py-spy record #{python} 2>&1", 1)
+    assert_match "Try running again with elevated permissions by going", output
   end
 end
