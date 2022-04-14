@@ -6,19 +6,19 @@ class Streamlink < Formula
   url "https://files.pythonhosted.org/packages/67/97/22af99220a108d24eb635c9f1693ea52e1ffe5b0c93098dae7258c2a6a4d/streamlink-3.2.0.tar.gz"
   sha256 "9770d2d83844c5378a73e14130dcb760abc856566caa0a41fc5b97a0ded5d926"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/streamlink"
-    sha256 cellar: :any_skip_relocation, mojave: "8a1a414cd0546b5d781a7d0d7956372ff6fc7b43cdbb9072e2eb8e27fe27fe17"
+    sha256 cellar: :any, mojave: "bf4d5ac758be1166aa100cf6cde8808d903779c033529e224e3d23e45705b87e"
   end
 
+  depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
   depends_on "python@3.10"
   depends_on "six"
 
   uses_from_macos "libffi"
-  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   on_linux do
@@ -88,5 +88,9 @@ class Streamlink < Formula
   test do
     system "#{bin}/streamlink", "https://vimeo.com/189776460", "360p", "-o", "video.mp4"
     assert_match "video.mp4: ISO Media, MP4 v2", shell_output("file video.mp4")
+    output = shell_output("#{bin}/streamlink -l debug 'https://ok.ru/video/3388934659879'")
+    assert_match "Available streams:", output
+    refute_match "error", output
+    refute_match "Could not find metadata", output
   end
 end
