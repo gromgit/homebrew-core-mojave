@@ -2,17 +2,11 @@ class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   stable do
-    url "https://ftp.indexdata.com/pub/yaz/yaz-5.31.0.tar.gz"
-    sha256 "864d4476d1578ac132782b3d4e2eb96391bd88f7ae3040ddcb1556aba6fe0d15"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
+    url "https://ftp.indexdata.com/pub/yaz/yaz-5.31.1.tar.gz"
+    sha256 "14cc34d19fd1fd27e544619f4c13300f14dc807088a1acc69fcb5c28d29baa15"
   end
 
   livecheck do
@@ -22,14 +16,19 @@ class Yaz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaz"
-    sha256 cellar: :any, mojave: "d47072ae83a5a6d22a43974820cddb8077118f63aab674b3b98d21a26866e471"
+    sha256 cellar: :any, mojave: "20ff8ead9b6c43d9700d48d940534b2145a03f64752f7c82b5e954d3894a9559"
   end
 
   head do
-    url "https://github.com/indexdata/yaz.git"
+    url "https://github.com/indexdata/yaz.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
+    depends_on "docbook-xsl" => :build
     depends_on "libtool" => :build
+
+    uses_from_macos "bison" => :build
+    uses_from_macos "tcl-tk" => :build
   end
 
   depends_on "pkg-config" => :build
@@ -37,13 +36,17 @@ class Yaz < Formula
   depends_on "icu4c"
 
   uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
 
   def install
-    system "./buildconf.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    if build.head?
+      ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+      system "./buildconf.sh"
+    end
+    system "./configure", *std_configure_args,
                           "--with-gnutls",
-                          "--with-xml2"
+                          "--with-xml2",
+                          "--with-xslt"
     system "make", "install"
   end
 
