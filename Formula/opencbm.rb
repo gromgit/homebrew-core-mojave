@@ -13,7 +13,8 @@ class Opencbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencbm"
-    sha256 mojave: "3b8828966b97e17f9a92128c9596110f4cd567def2a59c34421726c6b4e74137"
+    rebuild 1
+    sha256 mojave: "13ebc3db2f0c13c35146dd937318d8eaa857f8146670f94e0196244f7be59de1"
   end
 
   # cc65 is only used to build binary blobs included with the programs; it's
@@ -31,6 +32,9 @@ class Opencbm < Formula
       LIBUSB_CONFIG=#{Formula["libusb-compat"].bin}/libusb-config
       PREFIX=#{prefix}
       MANDIR=#{man1}
+      ETCDIR=#{etc}
+      UDEVRULESDIR=#{lib}/udev/rules.d
+      LDCONFIG=
     ]
 
     system "make", *args
