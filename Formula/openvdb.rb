@@ -9,7 +9,8 @@ class Openvdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openvdb"
-    sha256 cellar: :any, mojave: "008c5c902ead73b69e74984fdbc7338299c2aa87d47a92db65be8575af07a0ae"
+    rebuild 1
+    sha256 cellar: :any, mojave: "db1aede8f11e9b0a97b375c04c6d866cf9ad7c5d9f85ee06313763e0544b193c"
   end
 
   depends_on "cmake" => :build
