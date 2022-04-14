@@ -1,8 +1,8 @@
 class NodeAT12 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v12.22.11/node-v12.22.11.tar.xz"
-  sha256 "5e81da26fd5b1f89714483abaa68e3da304523e4334c78c49bfa7a03ee78d6f1"
+  url "https://nodejs.org/dist/v12.22.12/node-v12.22.12.tar.xz"
+  sha256 "bc42b7f8495b9bfc7f7850dd180bb02a5bdf139cc232b8c6f02a6967e20714f2"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class NodeAT12 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@12"
-    sha256 cellar: :any, mojave: "47eac950b5de096683ff25c354db81c3421938487fc447703ffe75a1c5c8f675"
+    sha256 cellar: :any, mojave: "ba55554ede1ebb7fbd75b5fa374e326dfc51606028f1f66de8acd5f172075515"
   end
 
   keg_only :versioned_formula
