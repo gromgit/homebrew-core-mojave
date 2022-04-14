@@ -1,14 +1,14 @@
 class Pgbadger < Formula
   desc "Log analyzer for PostgreSQL"
   homepage "https://pgbadger.darold.net/"
-  url "https://github.com/darold/pgbadger/archive/v11.7.tar.gz"
-  sha256 "1bd5650440968ab942aa976f4e10aceb2b4c5064ce9549fea5142b66f8ff44d2"
+  url "https://github.com/darold/pgbadger/archive/v11.8.tar.gz"
+  sha256 "ddf4714ac058e0170359af43c22addcc0872ae17ba6f15c4e3c5a71be3b68291"
   license "PostgreSQL"
   head "https://github.com/darold/pgbadger.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgbadger"
-    sha256 cellar: :any_skip_relocation, mojave: "529e3761629b32e3f6a374cd8c54770293cc24a77274567667d9be068aba3e7d"
+    sha256 cellar: :any_skip_relocation, mojave: "aab01dd4e3c296caf060125f0a2a77dded39406073a2b7dc33675634ade6a1e5"
   end
 
   def install
