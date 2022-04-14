@@ -1,9 +1,9 @@
 class Sollya < Formula
   desc "Library for safe floating-point code development"
   homepage "https://www.sollya.org/"
-  url "https://www.sollya.org/releases/sollya-7.0/sollya-7.0.tar.gz"
-  sha256 "30487b8242fb40ba0f4bc2ef23a8ef216477e57b1db277712fde1f53ceebb92a"
-  revision 1
+  url "https://www.sollya.org/releases/sollya-8.0/sollya-8.0.tar.gz"
+  sha256 "58d734f9a2fc8e6733c11f96d2df9ab25bef24d71c401230e29f0a1339a81192"
+  license "CECILL-C"
 
   livecheck do
     url "https://www.sollya.org/download.php"
@@ -11,11 +11,8 @@ class Sollya < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "e85099273aa58bed86a2f3f5cecd630d6ef34733eb82781db493baf17e3beecb"
-    sha256 cellar: :any,                 big_sur:       "c4bfa257d2e396ec055f3032d5ece3753d47f582db360d2f5c639d5d21304bc9"
-    sha256 cellar: :any,                 catalina:      "2a005ddf4e5215f870f20efd84297d27d7683b5acc5ff771545893cf729da2a4"
-    sha256 cellar: :any,                 mojave:        "711853a4670a2951c6160f5681c8c511136f3f731e7a7806dd4a9f39b3eff209"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1127e4744b2256e940f48537cea591c7f2f717619e8a8a3c93d053b8e3cf97ee"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sollya"
+    sha256 cellar: :any, mojave: "e213d18f582fc6df7640f1dda00e7872ab5b34fef1a709bf3523c730296d002f"
   end
 
   depends_on "automake" => :build
