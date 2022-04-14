@@ -9,6 +9,7 @@ class SimpleAmqpClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simple-amqp-client"
+    rebuild 1
     sha256 cellar: :any, mojave: "35fab825cfc55d568af2c1b21c433907be699309d38c2b9cc236fd7f205eb207"
   end
 
