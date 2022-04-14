@@ -13,8 +13,8 @@ class Qsoas < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qsoas"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e9dd6c22eca2d36cdcbdaeaba642ace723a4b8798b10a36c419ab46ca8a3dc48"
+    rebuild 2
+    sha256 cellar: :any, mojave: "307ed10be77c41b2cdccf99b15c45f74036784322e350828fcc751d5e10ee47d"
   end
 
   depends_on "bison" => :build
@@ -22,6 +22,12 @@ class Qsoas < Formula
   depends_on "qt@5"
 
   uses_from_macos "ruby"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   # Needs mruby 2, see https://github.com/fourmond/QSoas/issues/2
   resource "mruby2" do
@@ -48,11 +54,17 @@ class Qsoas < Formula
                     "QMAKE_LFLAGS=-L#{libexec}/lib -L#{gsl}/lib"
     system "make"
 
-    prefix.install "QSoas.app"
-    bin.write_exec_script "#{prefix}/QSoas.app/Contents/MacOS/QSoas"
+    if OS.mac?
+      prefix.install "QSoas.app"
+      bin.write_exec_script "#{prefix}/QSoas.app/Contents/MacOS/QSoas"
+    else
+      bin.install "QSoas"
+    end
   end
 
   test do
+    # Set QT_QPA_PLATFORM to minimal to avoid error "qt.qpa.xcb: could not connect to display"
+    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     assert_match "mfit-linear-kinetic-system",
                  shell_output("#{bin}/QSoas --list-commands")
   end
