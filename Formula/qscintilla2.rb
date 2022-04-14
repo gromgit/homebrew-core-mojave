@@ -1,8 +1,8 @@
 class Qscintilla2 < Formula
   desc "Port to Qt of the Scintilla editing component"
   homepage "https://www.riverbankcomputing.com/software/qscintilla/intro"
-  url "https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.13.1/QScintilla_src-2.13.1.tar.gz"
-  sha256 "800e3d2071a96bcccd7581346af0d2fe28fc30cd68530cb8302685d013afd54a"
+  url "https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.13.2/QScintilla_src-2.13.2.tar.gz"
+  sha256 "b6c7e5f27b51d25f09fe6cf84ae9a7f0876af0d65d8ccb551109e6e7b25885f4"
   license "GPL-3.0-only"
 
   # The downloads page also lists pre-release versions, which use the same file
@@ -16,12 +16,8 @@ class Qscintilla2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c8fe944fd61b3501cfa69b21945e6ba0bee5de83d054aee61189c2160cb88e45"
-    sha256 cellar: :any,                 arm64_big_sur:  "b50669602ec28b423ff37fd752d763154870c88f10a6384ced07e77aeb5d594a"
-    sha256 cellar: :any,                 big_sur:        "39dc87200786163924fbabdabaf1fef976c61fb12d63888047567fabbcfa255b"
-    sha256 cellar: :any,                 catalina:       "4fc7f6b0dea043e74676c249633979f265f2809d4310cef1cdf45b0b5011cb6f"
-    sha256 cellar: :any,                 mojave:         "8401229918ea4b92eca28715baa00174957b6143238b4b2f5dac29a17aaaa5ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b686ed9682a25bce057e4b0d9eb69805ead8b5f929bc72b63e84ae6e6353a6e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qscintilla2"
+    sha256 cellar: :any, mojave: "0b0a303608207457c63167d8ca96009d0bbc361abe9a74e4006afe2c8792615c"
   end
 
   depends_on "pyqt-builder" => :build
