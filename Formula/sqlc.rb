@@ -1,14 +1,14 @@
 class Sqlc < Formula
   desc "Generate type safe Go from SQL"
   homepage "https://sqlc.dev/"
-  url "https://github.com/kyleconroy/sqlc/archive/v1.12.0.tar.gz"
-  sha256 "36f9dc2013663267a0dc1d6bda22d4698eddebd4e72ab842e99bf51e7d60a89f"
+  url "https://github.com/kyleconroy/sqlc/archive/v1.13.0.tar.gz"
+  sha256 "6309c77a235c17e792523efa1e31484511a11b8a159db446c061d28c86afad43"
   license "MIT"
   head "https://github.com/kyleconroy/sqlc.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlc"
-    sha256 cellar: :any_skip_relocation, mojave: "850437cd33d19f04c6d48993f2109a8ce5223a75a521ea624e5cbb693158ee90"
+    sha256 cellar: :any_skip_relocation, mojave: "eed50bc3e0e0c7c330c0f89397a6ad5c284add6adc3a5174a9166d785e345c02"
   end
 
   depends_on "go" => :build
