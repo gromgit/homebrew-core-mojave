@@ -1,14 +1,14 @@
 class Purescript < Formula
   desc "Strongly typed programming language that compiles to JavaScript"
   homepage "https://www.purescript.org/"
-  url "https://hackage.haskell.org/package/purescript-0.14.7/purescript-0.14.7.tar.gz"
-  sha256 "9962aa1af2162c4250ddea2e108dbf3eeb9bad6e0b803ba720cc7433f1501129"
+  url "https://hackage.haskell.org/package/purescript-0.14.9/purescript-0.14.9.tar.gz"
+  sha256 "edfb8343e7b7699cb4a474c5de2b1eeafdf7cd020879546244c6ec1212b48a8d"
   license "BSD-3-Clause"
   head "https://github.com/purescript/purescript.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/purescript"
-    sha256 cellar: :any_skip_relocation, mojave: "565d6c589d55929af807f4348ee5ec00f9b01b50599375a0c4a19eb026f02d12"
+    sha256 cellar: :any_skip_relocation, mojave: "3a6b4374e5f91383f0b241f5f9ec56a05ee79709d3b36561d390beea8b954b77"
   end
 
   depends_on "ghc" => :build
