@@ -3,20 +3,20 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/9a/0a/b1bad74966a949a07b57d0ce0be241a8d8c75afde1be915b7a66008f696c/pip-tools-6.5.1.tar.gz"
-  sha256 "80f562aa699fc76a424539697e0bef41e490a050e57a6a21468531981a9d419e"
+  url "https://files.pythonhosted.org/packages/ee/f9/bf3ba5c13c8461eb5bd5deda7db953d8ed3e79100669cfb0bbda4f40d28a/pip-tools-6.6.0.tar.gz"
+  sha256 "98aa24004440a1c0489d71a567a4e8afdf23c7782bff483d1219881e7302de83"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pip-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "be40a59b5d2918828577a215301f99455d8744c57610c79fcbcf8662c2cda122"
+    sha256 cellar: :any_skip_relocation, mojave: "db29cfbe76483c1ccdaad0c7dc8f5125f5cabcae5141668cc09158a34e33a71f"
   end
 
   depends_on "python@3.10"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/f4/09/ad003f1e3428017d1c3da4ccc9547591703ffea548626f47ec74509c5824/click-8.0.3.tar.gz"
-    sha256 "410e932b050f5eed773c4cda94de75971c89cdb3155a72a0831139a79e5ecb5b"
+    url "https://files.pythonhosted.org/packages/42/e1/4cb2d3a2416bcd871ac93f12b5616f7755a6800bccae05e5a99d3673eb69/click-8.1.2.tar.gz"
+    sha256 "479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"
   end
 
   resource "pep517" do
