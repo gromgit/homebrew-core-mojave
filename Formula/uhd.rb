@@ -16,7 +16,8 @@ class Uhd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uhd"
-    sha256 mojave: "58b1d2e21f121cb2a5c7cba56833e62a79171dfa8076bb78f6c1a8fa673ea15a"
+    rebuild 1
+    sha256 mojave: "ba0154a3874afd803c5f2e9a907fa716c8d3c543b44d250e6a66661fa74a0346"
   end
 
   depends_on "cmake" => :build
