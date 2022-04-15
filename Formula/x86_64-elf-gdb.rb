@@ -14,6 +14,7 @@ class X8664ElfGdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-elf-gdb"
+    rebuild 1
     sha256 mojave: "fc09f695e428205044b7e2775e9329e939558cf8e070a5abacf16bdd166e50b3"
   end
 
