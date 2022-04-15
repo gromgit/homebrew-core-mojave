@@ -12,10 +12,13 @@ class Tin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tin"
-    sha256 mojave: "45665f0274d0cb357dc9d1b94edd830b0ed0b5ebd5a9f6f214752a612629890a"
+    rebuild 1
+    sha256 mojave: "978f49d04ba5349492515b6d09975b0aa645e58849dad704dc28802a8503d39d"
   end
 
   depends_on "gettext"
+
+  uses_from_macos "bison" => :build
 
   conflicts_with "mutt", because: "both install mmdf.5 and mbox.5 man pages"
 
