@@ -1,8 +1,8 @@
 class Uuu < Formula
   desc "Universal Update Utility, mfgtools 3.0. NXP I.MX Chip image deploy tools"
   homepage "https://github.com/NXPmicro/mfgtools"
-  url "https://github.com/NXPmicro/mfgtools/releases/download/uuu_1.4.165/uuu_source-1.4.165.tar.gz"
-  sha256 "3b683f4c73eac4f6c7b918b7ad7a101276866b11b631355153962b4fd54ad19e"
+  url "https://github.com/NXPmicro/mfgtools/releases/download/uuu_1.4.193/uuu_source-1.4.193.tar.gz"
+  sha256 "a9b8b74e32e6718d591c66951b8b52276df7862db80ee943e046947f7313e57f"
   license "BSD-3-Clause"
   head "https://github.com/NXPmicro/mfgtools.git", branch: "master"
 
@@ -14,8 +14,7 @@ class Uuu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uuu"
-    rebuild 3
-    sha256 mojave: "818fbebceb153e9062962442c88191b6097d01c1b2c88adee9c3f75f6b595f71"
+    sha256 mojave: "2f8bd75eede3e51210c3f03c08fcc8f6463193745a27877174f25e0ba73674a6"
   end
 
   depends_on "cmake" => :build
