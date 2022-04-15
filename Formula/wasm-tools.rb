@@ -1,8 +1,8 @@
 class WasmTools < Formula
   desc "Low level tooling for WebAssembly in Rust"
   homepage "https://github.com/bytecodealliance/wasm-tools"
-  url "https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/wasm-tools-1.0.3.tar.gz"
-  sha256 "95684121c3f8ab8de5b46b754a5093a675d56cbfd90fafb23c344f1865964c3d"
+  url "https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/wasm-tools-1.0.4.tar.gz"
+  sha256 "5ca1ebf67de418d7b953dd9d67620fa1b90d1828321953744a1f69abfecac5ec"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasm-tools.git", branch: "main"
 
@@ -13,7 +13,7 @@ class WasmTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wasm-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "c99c47b2c82c743eae29bb059391c20397c1ff339f19c7a556d08936acb4f724"
+    sha256 cellar: :any_skip_relocation, mojave: "1726dc0bf3ba654e2df1d832b1db020317855e2360ecc7236ef02b277aa8bf61"
   end
 
   depends_on "rust" => :build
@@ -33,8 +33,10 @@ class WasmTools < Formula
         (func (;0;) (type 0) (param i32 i32) (result i32)
           local.get 0
           local.get 1
-          i32.add)
-        (export "sum" (func 0)))
+          i32.add
+        )
+        (export "sum" (func 0))
+      )
     EOS
     assert_equal expected, shell_output("#{bin}/wasm-tools print #{testpath}/sum.wasm")
   end
