@@ -1,14 +1,14 @@
 class Yaegi < Formula
   desc "Yet another elegant Go interpreter"
   homepage "https://github.com/containous/yaegi"
-  url "https://github.com/containous/yaegi/archive/v0.11.2.tar.gz"
-  sha256 "7db575cc00cd01fc1e9c3bb7d00bf535ae54654d245bf994acd89eef810c94f6"
+  url "https://github.com/containous/yaegi/archive/v0.11.3.tar.gz"
+  sha256 "46e73955145cd829e41a906677edfcd78846862ca0274770dd4668dda2a949c1"
   license "Apache-2.0"
   head "https://github.com/containous/yaegi.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaegi"
-    sha256 cellar: :any_skip_relocation, mojave: "b73a849666e70f45cbfca6465849c0ed2504d7fd8f3e07b27311c8a020a29c73"
+    sha256 cellar: :any_skip_relocation, mojave: "38b33752fb52a21e61afc444323904912a63921158f3e820945a44684cd4dc12"
   end
 
   depends_on "go" => :build
