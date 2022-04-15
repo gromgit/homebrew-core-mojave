@@ -1,14 +1,13 @@
 class Twty < Formula
   desc "Command-line twitter client written in golang"
   homepage "https://mattn.kaoriya.net/"
-  url "https://github.com/mattn/twty/archive/refs/tags/v0.0.11.tar.gz"
-  sha256 "d1ee544ff31a9a9488ff759da587baf927ab7c31b191b4b5bc010f36ecfb8188"
+  url "https://github.com/mattn/twty/archive/refs/tags/v0.0.13.tar.gz"
+  sha256 "4e76ada5e7c5f2e20881fbf303fb50d3d4a443a8e37f2444371a90102737e49b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twty"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "9387335a08f8d9f448c54b0bdc34534af9072bc1c383596e13598fbc92d8b5d7"
+    sha256 cellar: :any_skip_relocation, mojave: "88a204abdc6b91f39fad5342d860ec3e2faba7455ad898293b2ed502a91ab5fa"
   end
 
   # Bump to 1.18 on the next release, if possible.
