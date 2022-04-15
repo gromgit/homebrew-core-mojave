@@ -1,32 +1,20 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
   homepage "https://uwsgi-docs.readthedocs.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/24/fd/93851e4a076719199868d4c918cc93a52742e68370188c1c570a6e42a54f/uwsgi-2.0.20.tar.gz"
+  sha256 "88ab9867d8973d8ae84719cf233b7dafc54326fcaec89683c3f9f77c002cdff9"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/unbit/uwsgi.git", branch: "master"
-
-  stable do
-    url "https://files.pythonhosted.org/packages/c7/75/45234f7b441c59b1eefd31ba3d1041a7e3c89602af24488e2a22e11e7259/uWSGI-2.0.19.1.tar.gz"
-    sha256 "faa85e053c0b1be4d5585b0858d3a511d2cd10201802e8676060fd0a109e5869"
-
-    # Fix "library not found for -lgcc_s.10.5" with 10.14 SDK
-    # Remove in next release
-    patch do
-      url "https://github.com/unbit/uwsgi/commit/6b1b397f.patch?full_index=1"
-      sha256 "85725f31ea0f914e89e3abceffafc64038ee5e44e979ae85eb8d58c80de53897"
-    end
-  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uwsgi"
-    rebuild 2
-    sha256 mojave: "dadb165c159b1039e3a684bdcef166ee37727b6e25fd153ee6d8f4338fe3e9a0"
+    sha256 mojave: "0a3b2c65095bad449586755a88ddd00f0ecc9fa48cc9c710458b5ee41b8a8aa3"
   end
 
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
   depends_on "pcre"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "yajl"
 
   uses_from_macos "curl"
@@ -39,10 +27,6 @@ class Uwsgi < Formula
   end
 
   def install
-    # Fix file not found errors for /usr/lib/system/libsystem_symptoms.dylib and
-    # /usr/lib/system/libsystem_darwin.dylib on 10.11 and 10.12, respectively
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version <= :sierra
-
     openssl = Formula["openssl@1.1"]
     ENV.prepend "CFLAGS", "-I#{openssl.opt_include}"
     ENV.prepend "LDFLAGS", "-L#{openssl.opt_lib}"
@@ -62,7 +46,7 @@ class Uwsgi < Formula
 
     plugins = %w[airbrake alarm_curl asyncio cache
                  carbon cgi cheaper_backlog2 cheaper_busyness
-                 corerouter curl_cron cplusplus dumbloop dummy
+                 corerouter curl_cron dumbloop dummy
                  echo emperor_amqp fastrouter forkptyrouter gevent
                  http logcrypto logfile ldap logpipe logsocket
                  msgpack notfound pam ping psgi pty rawrouter
@@ -77,6 +61,7 @@ class Uwsgi < Formula
                  transformation_offload transformation_tofile
                  transformation_toupper ugreen webdav zergpool]
     plugins << "alarm_speech" if OS.mac?
+    plugins << "cplusplus" if OS.linux?
 
     (libexec/"uwsgi").mkpath
     plugins.each do |plugin|
