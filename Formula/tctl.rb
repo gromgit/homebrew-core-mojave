@@ -1,21 +1,21 @@
 class Tctl < Formula
   desc "Temporal CLI (tctl)"
   homepage "https://temporal.io/"
-  url "https://github.com/temporalio/temporal/archive/v1.15.2.tar.gz"
-  sha256 "37702b1e22fc37fb83f0e00627c91703bed62fc296ae580298f6b19c5bc4dd9e"
+  url "https://github.com/temporalio/tctl/archive/v1.16.0.tar.gz"
+  sha256 "17a166ffb12256a4131fb4344ff2abdcb7aa2f3473e6fd216fdbe454a0ce2238"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tctl"
-    sha256 cellar: :any_skip_relocation, mojave: "adafc99aa6ed4cb89b50634f99442e80181c7f29db056934d35393d73201f76e"
+    sha256 cellar: :any_skip_relocation, mojave: "620b76cfb09c84f72e3a808ca89c4c3fcb77d6348b0b32bfe65becd937100d42"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tools/cli/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tctl/main.go"
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"tctl-authorization-plugin",
-      "./cmd/tools/cli/plugins/authorization/main.go"
+      "./cmd/plugins/tctl-authorization-plugin/main.go"
   end
 
   test do
