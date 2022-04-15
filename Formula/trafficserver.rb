@@ -1,25 +1,14 @@
 class Trafficserver < Formula
   desc "HTTP/1.1 compliant caching proxy server"
   homepage "https://trafficserver.apache.org/"
+  url "https://downloads.apache.org/trafficserver/trafficserver-9.1.2.tar.bz2"
+  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.1.2.tar.bz2"
+  sha256 "62f27d4e16a515e7ec85393186f909d934a79db41c7905f21d15a9eacb82232f"
   license "Apache-2.0"
-  revision 1
-
-  stable do
-    url "https://downloads.apache.org/trafficserver/trafficserver-9.1.1.tar.bz2"
-    mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.1.1.tar.bz2"
-    sha256 "90cfa975858d50bc1995bee195f13ff45497773c2f90363332516fd3fdafd7e8"
-
-    # Fix macOS ARM build error due to undefined symbols
-    # TODO: remove in the next release
-    patch do
-      url "https://github.com/apache/trafficserver/commit/393e223ab0217645a18c112fe94afee029c90c63.patch?full_index=1"
-      sha256 "f412de78a8fa9cc8d79ebc9994d4530d15cf3993d7d363bdfae64c02114355c5"
-    end
-  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trafficserver"
-    sha256 mojave: "0bef121ecfdb722602e5e9026f797d27511f8cc3f62fb8e35222653ab931fb02"
+    sha256 mojave: "425658456437c75ec6cc87649dbb816653921dc7a18bca59ca32cceeed6ac422"
   end
 
   head do
