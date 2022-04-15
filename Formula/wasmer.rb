@@ -1,24 +1,27 @@
 class Wasmer < Formula
   desc "🚀 The Universal WebAssembly Runtime"
   homepage "https://wasmer.io"
-  url "https://github.com/wasmerio/wasmer/archive/2.1.0.tar.gz"
-  sha256 "10f976eea614a7a958947a695d7f5f05040014688d8dcdc12261af98a4f3452e"
+  url "https://github.com/wasmerio/wasmer/archive/2.2.1.tar.gz"
+  sha256 "e9da2d07c5336266f8a13332628610b3833b9d9d45001b1b0558d3b8b0262e4f"
   license "MIT"
   head "https://github.com/wasmerio/wasmer.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wasmer"
-    sha256 cellar: :any_skip_relocation, mojave: "defb3eca1a82a601ab4139dc8649cd6c244be150ec9c1d269a27d6df195515b0"
+    sha256 cellar: :any_skip_relocation, mojave: "e6d1363c632e786d3d8115c1a9a90076a4c1af0110ec0804722aeb240f60274d"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "wabt" => :build
 
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "libxkbcommon"
+  end
+
   def install
-    chdir "lib/cli" do
-      system "cargo", "install", "--features", "cranelift", *std_cargo_args
-    end
+    system "cargo", "install", "--features", "cranelift", *std_cargo_args(path: "lib/cli")
   end
 
   test do
