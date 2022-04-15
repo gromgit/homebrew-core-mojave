@@ -9,10 +9,12 @@ class TerraformLsp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform-lsp"
-    sha256 cellar: :any_skip_relocation, mojave: "a9a99109dd192a578387882f8cf9e5902d9f4bd8a3d8a7a77cabe0df746a4d31"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "37919732bfaa0271150c576c08d39bf592b757517f626dde27ac45789292e7bb"
   end
 
-  depends_on "go" => :build
+  # Bump to 1.18 on the next release, if possible.
+  depends_on "go@1.17" => :build
 
   def install
     ldflags = %W[
