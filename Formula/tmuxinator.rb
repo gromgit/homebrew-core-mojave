@@ -8,7 +8,8 @@ class Tmuxinator < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tmuxinator"
-    sha256 cellar: :any_skip_relocation, mojave: "d1fb18fe9ce62b99d09dc7853956d881360595d91842584060543bc27690f54c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "379d5d7ac32763bbfabebe2ae7c3c6fc44f61fa3eb5e047ba10184b4bc72f0b6"
   end
 
   depends_on "ruby"
