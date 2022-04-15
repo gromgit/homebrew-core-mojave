@@ -8,6 +8,7 @@ class Wolfmqtt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wolfmqtt"
+    rebuild 1
     sha256 cellar: :any, mojave: "5e47ca766b0b00b39b243d05da822fc98e614a2fb6a0356be126d52db0f99350"
   end
 
