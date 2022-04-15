@@ -1,14 +1,14 @@
 class Whois < Formula
   desc "Lookup tool for domain names and other internet resources"
   homepage "https://packages.debian.org/sid/whois"
-  url "https://deb.debian.org/debian/pool/main/w/whois/whois_5.5.12.tar.xz"
-  sha256 "f1c5bab781b7f2357dab1039e8875d41ff7b5d03a78c27443fa26351952a0822"
+  url "https://deb.debian.org/debian/pool/main/w/whois/whois_5.5.13.tar.xz"
+  sha256 "62e613f116d5635aea6684238db00b030a6602ffc79462e4a0a8e62cb184b5d7"
   license "GPL-2.0-or-later"
   head "https://github.com/rfc1036/whois.git", branch: "next"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/whois"
-    sha256 cellar: :any, mojave: "89179ee60f6ea25c84f34c61d6a048d92f9539b008737dbf3550f2c1f687c3d4"
+    sha256 cellar: :any, mojave: "4be623bd0c59dc3ba25a573c1419793652d3d9ca7f9728f21ca52b4111a827da"
   end
 
   keg_only :provided_by_macos
