@@ -3,13 +3,13 @@ class Twarc < Formula
 
   desc "Command-line tool and Python library for archiving Twitter JSON"
   homepage "https://github.com/DocNow/twarc"
-  url "https://files.pythonhosted.org/packages/06/a1/4ebf54c1231c2401d8164763be7406e0abb4c6271e79e3a158679e05ea00/twarc-2.10.1.tar.gz"
-  sha256 "da5240db35f59913b2addda935b056ede05215679d5bf1b31480a278b1a6d5e5"
+  url "https://files.pythonhosted.org/packages/31/74/0e3b7af9c5f1b2f3b51d0f38b131a1e8cc6ec08c1da01f759b3be6985272/twarc-2.10.2.tar.gz"
+  sha256 "c6ae32a94d5cd51f2f6991f4e540582263d24bb685933181b0f6e846321396f1"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twarc"
-    sha256 cellar: :any_skip_relocation, mojave: "a0f8c9c8b69080c4fea30e6fef245401b79c0b5e62267e585aff8ca2c44a875b"
+    sha256 cellar: :any_skip_relocation, mojave: "e578876fe30373dc15bae7abd4092b86732c2660e366fe2570be30b6b8532e54"
   end
 
   depends_on "python@3.10"
@@ -26,8 +26,8 @@ class Twarc < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/dd/cf/706c1ad49ab26abed0b77a2f867984c1341ed7387b8030a6aa914e2942a0/click-8.0.4.tar.gz"
-    sha256 "8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
+    url "https://files.pythonhosted.org/packages/42/e1/4cb2d3a2416bcd871ac93f12b5616f7755a6800bccae05e5a99d3673eb69/click-8.1.2.tar.gz"
+    sha256 "479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"
   end
 
   resource "click-config-file" do
