@@ -1,14 +1,14 @@
 class Tendermint < Formula
   desc "BFT state machine replication for applications in any programming languages"
   homepage "https://tendermint.com/"
-  url "https://github.com/tendermint/tendermint/archive/v0.35.2.tar.gz"
-  sha256 "2a300b7aa6e4cb09cc77912a923dca490f68fa9c51534bf8c0ec41ea2aa2a5d9"
+  url "https://github.com/tendermint/tendermint/archive/v0.35.3.tar.gz"
+  sha256 "7a41029a32b3e425d0f8343580c873cf23e3f626ba0a2898d1e3b92c38c09974"
   license "Apache-2.0"
   head "https://github.com/tendermint/tendermint.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tendermint"
-    sha256 cellar: :any_skip_relocation, mojave: "240215fe3c64736f771fbd3a295759729da16a452b7614c55d3cf7f732b77edb"
+    sha256 cellar: :any_skip_relocation, mojave: "a9724d7522cdbf6f5037cf63909f3ad8d2b9993f5dfaf53d8240a6419782b906"
   end
 
   depends_on "go" => :build
