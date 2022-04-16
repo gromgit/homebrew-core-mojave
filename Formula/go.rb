@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.18.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.18.src.tar.gz"
-  sha256 "38f423db4cc834883f2b52344282fa7a39fbb93650dc62a11fdf0be6409bdad6"
+  url "https://go.dev/dl/go1.18.1.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.18.1.src.tar.gz"
+  sha256 "efd43e0f1402e083b73a03d444b7b6576bb4c539ac46208b63a916b69aca4088"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Go < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go"
-    sha256 mojave: "e534feb8ba21f07fd3253d78b600c0fdee519217783137313f7bf60670237856"
+    sha256 mojave: "d425b4b6e45608b779f82c1a6aa3a8a9deb4fc8333ac75f6d138fcc4ab08ac9e"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.
