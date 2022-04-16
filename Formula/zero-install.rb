@@ -20,6 +20,7 @@ class ZeroInstall < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "4306ae5d0ca339a7f5ecd9c7ba6a3a192a1d176883d49dda9d31aad78bc390fd"
     sha256 cellar: :any_skip_relocation, mojave:         "73b04cd9560f78c799599fc4f9fba0de2b072c56e2195ef0522bb23e6eeb376b"
     sha256 cellar: :any_skip_relocation, high_sierra:    "4fb5867d432bd3e22525b95682521a12a3279dd4fb7f8b0df3cb6664a6959835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6865140889715cceb51faee115bece7448c6cc3e6f880534e7b7da92f75a1b7"
   end
 
   depends_on "ocaml" => :build
