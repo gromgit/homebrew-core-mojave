@@ -22,6 +22,7 @@ class CenterIm < Formula
     sha256 mojave:         "42a8b8f09b9530139c5d9eaf7c83a435962c61631eea00a13bf70a670044c7a2"
     sha256 high_sierra:    "9b40fc34ba5177765f01bdd821bec40377f44828421509491d90fb7a329ba400"
     sha256 sierra:         "7e9f2db21d3ceec8ad7d3a59e5bf600d5d145aa0a88f676d803c1feea307f687"
+    sha256 x86_64_linux:   "b2b4a48005426f9dcd13b1594c3ed631b2212ee2448ab511af7bde7a076e0bb1"
   end
 
   depends_on "pkg-config" => :build
