@@ -10,7 +10,8 @@ class Meson < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/meson"
-    sha256 cellar: :any_skip_relocation, mojave: "db937f487cd177353ecf3f4847f2b0ac8be47c9e1d0c0a57d0987232a6762a79"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a9bcb60f97d59606adf64b106cb4196061cafb663a441045262b2b09f78f5d6c"
   end
 
   depends_on "ninja"
@@ -18,6 +19,8 @@ class Meson < Formula
 
   def install
     virtualenv_install_with_resources
+    bash_completion.install "data/shell-completions/bash/meson"
+    zsh_completion.install "data/shell-completions/zsh/_meson"
   end
 
   test do
