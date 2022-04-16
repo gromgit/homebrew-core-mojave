@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v17.8.0/node-v17.8.0.tar.xz"
-  sha256 "7981144faf674292eff7e075f640a7084ebd927be11d1af78ff76741b6364e4b"
+  url "https://nodejs.org/dist/v17.9.0/node-v17.9.0.tar.xz"
+  sha256 "5659f6da66dc4c959f59ab63e8b9171892847c3440f4d1cb68394dba67ca39e0"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    sha256 cellar: :any, mojave: "17fe9b90d1588e39960fcb602ca56f1a7d04142c084b494d4e72bbde5a7e7744"
+    sha256 cellar: :any, mojave: "b76dd9d251d70602bec24b1efa96e26cd180ea463d76047d455974d57a3cf9ad"
   end
 
   depends_on "pkg-config" => :build
