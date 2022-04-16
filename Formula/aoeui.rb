@@ -13,7 +13,10 @@ class Aoeui < Formula
     sha256 cellar: :any_skip_relocation, sierra:        "1b04b93c490895121fed315f685d60cb96551b971ca1433a5240425cfa31dfcd"
     sha256 cellar: :any_skip_relocation, el_capitan:    "62a04ac0fd27e76f4f77da95e7d5aaf75488765f98b02574ae7dff0508cd9f13"
     sha256 cellar: :any_skip_relocation, yosemite:      "19f622466c20ad4ddff2fc97ac186e189d5a8bb02dd405ed2a93c5d13a88b1f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b130912a9d91e2462433ad80f02827461c3c6aa8fef646b84cfa0249b9929815"
   end
+
+  uses_from_macos "m4" => :build
 
   def install
     system "make", "INST_DIR=#{prefix}", "install"
