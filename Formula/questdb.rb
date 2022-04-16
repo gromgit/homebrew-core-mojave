@@ -1,13 +1,13 @@
 class Questdb < Formula
   desc "Time Series Database"
   homepage "https://questdb.io"
-  url "https://github.com/questdb/questdb/releases/download/6.2/questdb-6.2-no-jre-bin.tar.gz"
-  sha256 "33eef97f93c80157b0e836795c47f4a3ee5c40a614fbc12f0c0988b5e51644ef"
+  url "https://github.com/questdb/questdb/releases/download/6.2.1/questdb-6.2.1-no-jre-bin.tar.gz"
+  sha256 "4c7411c5585c4a2d39994a28004dd0f2fa3fba2c8c42d01a8ac3777e1bcca02e"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/questdb"
-    sha256 cellar: :any_skip_relocation, mojave: "2a5cc758ff7ab9098d459ea1aab1ee04c1f942613162f1fdb12652ec16530678"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7e21a66db2d33704d6663a423ac96cdf4aa8bb3030f0d09da0561de7cceb9e67"
   end
 
   depends_on "openjdk@11"
@@ -16,6 +16,7 @@ class Questdb < Formula
     rm_rf "questdb.exe"
     libexec.install Dir["*"]
     (bin/"questdb").write_env_script libexec/"questdb.sh", Language::Java.overridable_java_home_env("11")
+    inreplace libexec/"questdb.sh", "/usr/local/var/questdb", var/"questdb"
   end
 
   plist_options manual: "questdb start"
