@@ -1,16 +1,13 @@
 class Bond < Formula
   desc "Cross-platform framework for working with schematized data"
   homepage "https://github.com/microsoft/bond"
-  url "https://github.com/microsoft/bond/archive/9.0.5.tar.gz"
-  sha256 "53ee8a325c34136495a1568ca8f0740d4527b74efa0ff71c7d927971fad0dc82"
+  url "https://github.com/microsoft/bond/archive/10.0.0.tar.gz"
+  sha256 "87858b597a1da74421974d5c3cf3a9ea56339643b19b48274d44b13bc9483f29"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "37815143a583b49b32f7b6133eead8456fbe42fcf54ce40d2bd0f06aaa202066"
-    sha256 cellar: :any,                 big_sur:      "9cc49b023fbd14c296f04cd5ae537bf6098f9b09025812a350a99a72bed00fea"
-    sha256 cellar: :any,                 catalina:     "5d78ce28f6865648b61de0d5fc449c13e6ebc3093209efe781073d560b1b29b7"
-    sha256 cellar: :any,                 mojave:       "54718f979d4ee63570fe76d4d96682f1c169791c3e1b91fc32471aee3bcccd0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6580ebb4d4dad6e1c0d77ea8799b5fb106f315664f27c4bad881fa3c6f667e6d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bond"
+    sha256 cellar: :any, mojave: "b4badb413a365f36c25462aa7663696b9064eba9844e57a973cd4a8a0d35f91a"
   end
 
   depends_on "cmake" => :build
@@ -18,6 +15,8 @@ class Bond < Formula
   depends_on "haskell-stack" => :build
   depends_on "boost"
   depends_on "rapidjson"
+
+  uses_from_macos "xz" => :build
 
   def install
     mkdir "build" do
