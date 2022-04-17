@@ -2,12 +2,11 @@ class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
   license "Apache-2.0"
-  revision 4
 
   stable do
-    url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.1.tar.bz2"
-    mirror "https://archive.apache.org/dist/subversion/subversion-1.14.1.tar.bz2"
-    sha256 "2c5da93c255d2e5569fa91d92457fdb65396b0666fad4fd59b22e154d986e1a9"
+    url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.2.tar.bz2"
+    mirror "https://archive.apache.org/dist/subversion/subversion-1.14.2.tar.bz2"
+    sha256 "c9130e8d0b75728a66f0e7038fc77052e671830d785b5616aad53b4810d3cc28"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -17,13 +16,8 @@ class Subversion < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "79c95c7641d560c278633a9af80a8803b4ccbd49b5eeaa2cf1fdaad0e231c4f1"
-    sha256 arm64_big_sur:  "34f8d1862f1480c068ff3798c8e1cd90f833b43c33d1731aca15f1d875b16834"
-    sha256 monterey:       "2bacf41caf7f5a6e581eac9c2b3ebbb84dd11122e1029c1cb17d234c2735a669"
-    sha256 big_sur:        "cfb18266b350bbe5cf81a02d1a27c33da8df832094e366925a50ef7664aba384"
-    sha256 catalina:       "92ef7547ff26e327ac5bd0a544d850e4ca7872493747eecf2220ecf5be0a13bd"
-    sha256 mojave:         "17b0bd35f345453c1401d1c390393525bacaf9f8a767cce31c1f1cb5241e1b17"
-    sha256 x86_64_linux:   "db779f83d616e1d917f2051368babe55d426d86d8ab6ec8ea0daf2be37c7fcdc"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/subversion"
+    sha256 mojave: "9f48dfc82e7f7d59d84721636f0cd2593d155ed0466b201cac5f2d92854a3ab7"
   end
 
   head do
@@ -34,9 +28,8 @@ class Subversion < Formula
     depends_on "gettext" => :build
   end
 
-  depends_on "openjdk" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "scons" => :build # For Serf
   depends_on "swig" => :build
   depends_on "apr"
@@ -57,12 +50,14 @@ class Subversion < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "openjdk" => :build unless MacOS.version.outdated_release?
     # Prevent "-arch ppc" from being pulled in from Perl's $Config{ccflags}
     patch :DATA
   end
 
   on_linux do
-    depends_on "libtool"
+    depends_on "libtool" => :build
+    depends_on "openjdk" => :build
   end
 
   resource "py3c" do
@@ -98,6 +93,8 @@ class Subversion < Formula
         "b'SERF_MINOR_VERSION ([0-9]+).*'"
         s.gsub! "'SERF_PATCH_VERSION ([0-9]+)'",
         "b'SERF_PATCH_VERSION ([0-9]+)'"
+        s.gsub! "variables=opts,",
+        "variables=opts, RPATHPREFIX = '-Wl,-rpath,',"
       end
 
       # scons ignores our compiler and flags unless explicitly passed
@@ -122,28 +119,28 @@ class Subversion < Formula
     end
 
     # Use existing system zlib and sqlite
-    if OS.linux?
-      # svn can't find libserf-1.so.1 at runtime without this
-      ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib"
-    end
-
-    # Use dep-provided other libraries
-    # Don't mess with Apache modules (since we're not sudo)
     zlib = if OS.mac?
       "#{MacOS.sdk_path_if_needed}/usr"
     else
       Formula["zlib"].opt_prefix
     end
 
-    perl = DevelopmentTools.locate("perl")
-
-    ruby = DevelopmentTools.locate("ruby")
-
     sqlite = if OS.mac?
       "#{MacOS.sdk_path_if_needed}/usr"
     else
       Formula["sqlite"].opt_prefix
     end
+
+    # Use dep-provided other libraries
+    # Don't mess with Apache modules (since we're not sudo)
+    if OS.linux?
+      # svn can't find libserf-1.so.1 at runtime without this
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib"
+    end
+
+    openjdk = deps.map(&:to_formula).find { |f| f.name.match? "^openjdk" }
+    perl = DevelopmentTools.locate("perl")
+    ruby = DevelopmentTools.locate("ruby")
 
     args = %W[
       --prefix=#{prefix}
@@ -154,7 +151,6 @@ class Subversion < Formula
       --with-apr-util=#{Formula["apr-util"].opt_prefix}
       --with-apr=#{Formula["apr"].opt_prefix}
       --with-apxs=no
-      --with-jdk=#{Formula["openjdk"].opt_prefix}
       --with-ruby-sitedir=#{lib}/ruby
       --with-py3c=#{py3c_prefix}
       --with-serf=#{serf_prefix}
@@ -164,12 +160,18 @@ class Subversion < Formula
       --without-apache-libexecdir
       --without-berkeley-db
       --without-gpg-agent
-      --enable-javahl
       --without-jikes
       PERL=#{perl}
-      PYTHON=#{Formula["python@3.9"].opt_bin}/python3
+      PYTHON=#{Formula["python@3.10"].opt_bin}/python3
       RUBY=#{ruby}
     ]
+    if openjdk
+      args.unshift "--with-jdk=#{Formula["openjdk"].opt_prefix}",
+                   "--enable-javahl"
+    end
+
+    # preserve compatibility with macOS 12.0–12.2
+    args.unshift "--enable-sqlite-compatibility-version=3.36.0" if MacOS.version == :monterey
 
     inreplace "Makefile.in",
               "toolsdir = @bindir@/svn-tools",
@@ -187,13 +189,15 @@ class Subversion < Formula
 
     system "make", "swig-py"
     system "make", "install-swig-py"
-    (lib/"python3.9/site-packages").install_symlink Dir["#{lib}/svn-python/*"]
+    (lib/"python3.10/site-packages").install_symlink Dir["#{lib}/svn-python/*"]
 
     # Java and Perl support don't build correctly in parallel:
     # https://github.com/Homebrew/homebrew/issues/20415
-    ENV.deparallelize
-    system "make", "javahl"
-    system "make", "install-javahl"
+    if openjdk
+      ENV.deparallelize
+      system "make", "javahl"
+      system "make", "install-javahl"
+    end
 
     perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
     perl_core = Pathname.new(perl_archlib)/"CORE"
@@ -240,8 +244,9 @@ class Subversion < Formula
   end
 
   test do
-    system "#{bin}/svnadmin", "create", "test"
-    system "#{bin}/svnadmin", "verify", "test"
+    system bin/"svnadmin", "create", "test"
+    system bin/"svnadmin", "verify", "test"
+    system bin/"svn", "checkout", "file://#{testpath}/test", "svn-test"
 
     platform = if OS.mac?
       "darwin-thread-multi-2level"
