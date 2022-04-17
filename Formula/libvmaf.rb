@@ -1,15 +1,13 @@
 class Libvmaf < Formula
   desc "Perceptual video quality assessment based on multi-method fusion"
   homepage "https://github.com/Netflix/vmaf"
-  url "https://github.com/Netflix/vmaf/archive/v2.3.0.tar.gz"
-  sha256 "d8dcc83f8e9686e6855da4c33d8c373f1735d87294edbd86ed662ba2f2f89277"
+  url "https://github.com/Netflix/vmaf/archive/v2.3.1.tar.gz"
+  sha256 "8d60b1ddab043ada25ff11ced821da6e0c37fd7730dd81c24f1fc12be7293ef2"
   license "BSD-2-Clause-Patent"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvmaf"
-    rebuild 2
-    sha256 cellar: :any, mojave: "44b2b43a738e26d5e27d993328b3782b91abbfd7bb38fcee6366b3796941b561"
+    sha256 cellar: :any, mojave: "0f466d084c5e09a33d6022df9b87fc16ce2fa66b19ebc95f234bb70c9da6c06a"
   end
 
   depends_on "meson" => :build
