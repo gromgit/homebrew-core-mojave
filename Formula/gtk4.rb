@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.6/gtk-4.6.1.tar.xz"
-  sha256 "d85508d21cbbcd63d568a7862af5ecd63b978d7d5799cbe404c91d2389d0ec5f"
+  url "https://download.gnome.org/sources/gtk/4.6/gtk-4.6.2.tar.xz"
+  sha256 "ff263af609a50eb76056653592d929459aef4819a444c436f6d52c6f63c1faec"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Gtk4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk4"
-    sha256 mojave: "ed582a993e9dce8cbeb56653cd67d65f96bdfd47248bf7c364c1d9ceb4f55da3"
+    sha256 mojave: "aa74ea0bbaaf006bd4c97e1ec44e7cd63b12f409c870a3574e592ea901f4eb73"
   end
 
   depends_on "docbook" => :build
