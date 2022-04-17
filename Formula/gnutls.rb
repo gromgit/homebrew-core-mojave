@@ -13,11 +13,10 @@ class Gnutls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnutls"
-    sha256 mojave: "446f4601805cb68aac35cf39cd55882b5bf120836255a71994575e5fefafd57f"
+    rebuild 1
+    sha256 mojave: "3701970c0e51cd2cb84887242a156dfed3e5a5e94990b104ce68be43575dea08"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "pkg-config" => :build
   depends_on "ca-certificates"
   depends_on "gmp"
@@ -29,14 +28,10 @@ class Gnutls < Formula
   depends_on "p11-kit"
   depends_on "unbound"
 
-  on_linux do
-    depends_on "autogen"
-  end
-
   def install
-    # Fix build with Xcode 12
-    # https://gitlab.com/gnutls/gnutls/-/issues/1116
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile crash on Apple Silicon.
+    # https://gitlab.com/gnutls/gnutls/-/issues/1347
+    inreplace "lib/accelerated/aarch64/Makefile.in", /^(AM_CCASFLAGS =) -Wa,-march=all$/, "\\1" if OS.mac?
 
     args = %W[
       --disable-dependency-tracking
@@ -53,9 +48,7 @@ class Gnutls < Formula
     ]
 
     system "./configure", *args
-    # Adding LDFLAGS= to allow the build on Catalina 10.15.4
-    # See https://gitlab.com/gnutls/gnutls/-/issues/966
-    system "make", "LDFLAGS=", "install"
+    system "make", "install"
 
     # certtool shadows the macOS certtool utility
     mv bin/"certtool", bin/"gnutls-certtool"
