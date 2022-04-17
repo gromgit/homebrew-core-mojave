@@ -4,12 +4,11 @@ class Gd < Formula
   url "https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.xz"
   sha256 "3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61"
   license :cannot_represent
-  revision 1
+  revision 2
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gd"
-    rebuild 2
-    sha256 cellar: :any, mojave: "9bb2cb2beacfd42f07f203e0a91a1968cef7afdda17411fb14d6afbd89c77c60"
+    sha256 cellar: :any, mojave: "9c1fd1fcaf1c95abfcc75d4fb3c7fb7707e9c5fce029db9ca43ff6d0f60e8461"
   end
 
   head do
