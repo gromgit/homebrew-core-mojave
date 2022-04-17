@@ -2,13 +2,13 @@ class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
   # NOTE: Please keep these values in sync with imath.rb when updating.
-  url "https://github.com/openexr/openexr/archive/v3.1.4.tar.gz"
-  sha256 "cb019c3c69ada47fe340f7fa6c8b863ca0515804dc60bdb25c942c1da886930b"
+  url "https://github.com/openexr/openexr/archive/v3.1.5.tar.gz"
+  sha256 "93925805c1fc4f8162b35f0ae109c4a75344e6decae5a240afdfce25f8a433ec"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openexr"
-    sha256 cellar: :any, mojave: "693e712056c5f8e5437eade2b654a12aa60eeae56f895c2325a74cddd7144bbb"
+    sha256 cellar: :any, mojave: "f882503b9f7263700d52ba3f52c3ab4f4d177c6798406f48ddc654bdb93e8b2e"
   end
 
   depends_on "cmake" => :build
