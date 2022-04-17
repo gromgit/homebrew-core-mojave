@@ -1,13 +1,13 @@
 class Calc < Formula
   desc "Arbitrary precision calculator"
   homepage "http://www.isthe.com/chongo/tech/comp/calc/"
-  url "https://downloads.sourceforge.net/project/calc/calc/2.14.0.14/calc-2.14.0.14.tar.bz2"
-  sha256 "f7727835a103d9712c571958e924e9c254bd148f08eb4348019bc34f8e71c55d"
+  url "https://downloads.sourceforge.net/project/calc/calc/2.14.1.0/calc-2.14.1.0.tar.bz2"
+  sha256 "0b5616652e31ee1b54585dcc8512d02180a12f8addc09c4049d3d08edb54af40"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/calc"
-    sha256 mojave: "9255515bd1cd3595bece05e0968c35edaa86e8f11eb26b4d157bead48d2616c8"
+    sha256 mojave: "267f2dbdfa994de691b9667d13e3ab7a6d21af77c22bd18883f8d3374a4ee929"
   end
 
   depends_on "readline"
