@@ -11,10 +11,10 @@ class Carla < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/carla"
-    rebuild 1
-    sha256 cellar: :any, mojave: "0c87dca53220f5161b04b6f52304a02fd95089e0784db1099f64a0cafbece85c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "4e2644e3fba92c71b42f0e42ebcaf6bd8d1b2c6593b589fa0e294e1ddee0391b"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +23,12 @@ bottle do
   depends_on "libmagic"
   depends_on "pyqt@5"
   depends_on "python@3.9"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     system "make"
