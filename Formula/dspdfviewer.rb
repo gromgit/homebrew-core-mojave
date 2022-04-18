@@ -7,10 +7,10 @@ class Dspdfviewer < Formula
   revision 12
   head "https://github.com/dannyedel/dspdfviewer.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dspdfviewer"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8555ffd0f576eaaf9bc41a085b63b3ce63661eef34ea4e5a753f2f917fc9d362"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2703a73369d46ee5435a01bb2e66b308c0165c52a2a02afff65598c16942025b"
   end
 
   depends_on "cmake" => :build
