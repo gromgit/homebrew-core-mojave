@@ -14,7 +14,8 @@ class Php < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php"
-    sha256 mojave: "160b74ba75681b3327196618703fd17888f0e880e1efca738d00cd3869470c76"
+    rebuild 1
+    sha256 mojave: "49a0f0604d0b909c5f706b9997f92bce640551781735ca565f69ed61fb579c66"
   end
 
   head do
@@ -64,11 +65,6 @@ class Php < Formula
   end
 
   def install
-    if OS.mac? && (MacOS.version == :el_capitan || MacOS.version == :sierra)
-      # Ensure that libxml2 will be detected correctly in older MacOS
-      ENV["SDKROOT"] = MacOS.sdk_path
-    end
-
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
 
