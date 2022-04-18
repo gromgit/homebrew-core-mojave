@@ -7,11 +7,16 @@ class Dict < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dict"
-    sha256 mojave: "29e0beffaec1c43977d66d105315c4494aa106c0d5809d878190b28504b99025"
+    rebuild 1
+    sha256 mojave: "c7519f60acc4485db1b93a3c26f23886b84738746a25645c609c0203b3279039"
   end
 
   depends_on "libtool" => :build
   depends_on "libmaa"
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
+  uses_from_macos "zlib"
 
   def install
     ENV["LIBTOOL"] = "glibtool"
