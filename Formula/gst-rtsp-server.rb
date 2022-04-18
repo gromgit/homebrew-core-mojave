@@ -1,8 +1,8 @@
 class GstRtspServer < Formula
   desc "RTSP server library based on GStreamer"
   homepage "https://gstreamer.freedesktop.org/modules/gst-rtsp-server.html"
-  url "https://gstreamer.freedesktop.org/src/gst-rtsp-server/gst-rtsp-server-1.18.5.tar.xz"
-  sha256 "04d63bf48816c6f41c73f6de0f912a7cef0aab39c44162a7bcece1923dfc9d1f"
+  url "https://gstreamer.freedesktop.org/src/gst-rtsp-server/gst-rtsp-server-1.20.1.tar.xz"
+  sha256 "4745bc528ad7de711a41d576ddce7412266e66d05c4cfcc636c9ba4da5521509"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class GstRtspServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-rtsp-server"
-    sha256 cellar: :any, mojave: "e62d1c9148d767bf44755ae360ab02369ddc2705a9edf93a7f69d58a7d0b8af2"
+    sha256 cellar: :any, mojave: "e2ecbe5456db5090d4d90b5fdb6f7cada85a45a5aea1d6b2a279e66d4190c63d"
   end
 
   depends_on "gobject-introspection" => :build
