@@ -7,7 +7,8 @@ class Gerbv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gerbv"
-    sha256 mojave: "260b7bb26ede434e3ed7f83e097c034a57d0e278992df8ad7f681c30aaca0371"
+    rebuild 1
+    sha256 mojave: "3fb7b46f11a4da5237bdda75e8f957de2ba25b818cef9e92b0382c492cb0b9e2"
   end
 
   depends_on "autoconf" => :build
@@ -86,17 +87,21 @@ class Gerbv < Formula
       -L#{pango.opt_lib}
       -latk-1.0
       -lcairo
-      -lgdk-quartz-2.0
       -lgdk_pixbuf-2.0
       -lgerbv
       -lgio-2.0
       -lglib-2.0
       -lgobject-2.0
-      -lgtk-quartz-2.0
-      -lintl
       -lpango-1.0
       -lpangocairo-1.0
     ]
+    if OS.mac?
+      flags += %w[
+        -lgdk-quartz-2.0
+        -lgtk-quartz-2.0
+        -lintl
+      ]
+    end
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
