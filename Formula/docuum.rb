@@ -1,13 +1,13 @@
 class Docuum < Formula
   desc "Perform least recently used (LRU) eviction of Docker images"
   homepage "https://github.com/stepchowfun/docuum"
-  url "https://github.com/stepchowfun/docuum/archive/v0.21.0.tar.gz"
-  sha256 "d23350f40a3a004120b7a8b96820bf4cc61147c8cc3424514cccbb95d2fc97ed"
+  url "https://github.com/stepchowfun/docuum/archive/v0.21.1.tar.gz"
+  sha256 "6327d5e587460fb6cb10bfc10a7430b77a61926b49c919b2026e46592df2e0ac"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docuum"
-    sha256 cellar: :any_skip_relocation, mojave: "d01fbfc81fac109d1213bf3254809732156e8b7afe56ff87fa4b6a2783ab34a4"
+    sha256 cellar: :any_skip_relocation, mojave: "4c3264cf83cd76c871010b2cb86f507c7decd21f595da4454b46a3157e0663de"
   end
 
   depends_on "rust" => :build
