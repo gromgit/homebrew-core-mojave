@@ -1,19 +1,19 @@
 class Gopls < Formula
   desc "Language server for the Go language"
   homepage "https://github.com/golang/tools/tree/master/gopls"
-  url "https://github.com/golang/tools/archive/gopls/v0.8.2.tar.gz"
-  sha256 "761aa768e82a958e6f803db39215c995fe0f263df825ed1cbb9f6b2989f0cd00"
+  url "https://github.com/golang/tools/archive/gopls/v0.8.3.tar.gz"
+  sha256 "a3128372f8bbd84b254a1e1ff6e417feba0d4b5ae01dfb640556331d7bed025e"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
     strategy :github_latest
-    regex(%r{(?:content|href)=.*?/tag/(?:gopls%2F)?v?(\d+(?:\.\d+)+)["' >]}i)
+    regex(%r{(?:content|href)=.*?/tag/(?:gopls%2F)v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gopls"
-    sha256 cellar: :any_skip_relocation, mojave: "4de75f3b13ba196a1f091850443c16ccc50b73279f554eb5004a3c6004aed411"
+    sha256 cellar: :any_skip_relocation, mojave: "81a04ae608ac1d5996db112627e346e8034d6963c0014f9428eddc09c4e12ca1"
   end
 
   depends_on "go" => :build
