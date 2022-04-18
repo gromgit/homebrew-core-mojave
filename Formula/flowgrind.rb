@@ -12,16 +12,14 @@ class Flowgrind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flowgrind"
-    sha256 cellar: :any, mojave: "37c01fe5d9f3e64eedb3f4698221f1b0b9d698061ae4bff0459d9e012665e1ca"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7d779155773b37f3dbeac32df76c8ac9fb59669dd3ff12d28cf4fb73accefa8a"
   end
 
   depends_on "gsl"
   depends_on "xmlrpc-c"
 
   def install
-    # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
-
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
