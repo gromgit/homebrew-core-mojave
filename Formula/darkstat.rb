@@ -8,7 +8,7 @@ class Darkstat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/darkstat"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "3bafb8b2000cb853d69480a09def84b6cc1dafcdf01fe3cc1e2327c9f2c0b545"
   end
 
