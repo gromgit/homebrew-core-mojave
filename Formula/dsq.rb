@@ -1,14 +1,14 @@
 class Dsq < Formula
   desc "CLI tool for running SQL queries against JSON, CSV, Excel, Parquet, and more"
   homepage "https://github.com/multiprocessio/dsq"
-  url "https://github.com/multiprocessio/dsq/archive/refs/tags/0.12.0.tar.gz"
-  sha256 "a5d4b7e2476f298dff9114ddcb12258e8863a540a1e72a9df22eda8d7d31f5d8"
+  url "https://github.com/multiprocessio/dsq/archive/refs/tags/0.14.0.tar.gz"
+  sha256 "58fb88faee20ba8833a1c60a97eeba1695c9fddec42056ae2fcb9967764f5fea"
   license "Apache-2.0"
   head "https://github.com/multiprocessio/dsq.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dsq"
-    sha256 cellar: :any_skip_relocation, mojave: "12ea59bee7ddb68d9bc73faa119539120f5e4b1d516a948c97cc5c6c98431631"
+    sha256 cellar: :any_skip_relocation, mojave: "0b0efcbb316f2937b497596b24467dc64405b2a61307caa799391aa81c1ab86d"
   end
 
   depends_on "go" => :build
