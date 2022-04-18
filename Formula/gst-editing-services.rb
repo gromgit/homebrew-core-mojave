@@ -1,8 +1,8 @@
 class GstEditingServices < Formula
   desc "GStreamer Editing Services"
   homepage "https://gstreamer.freedesktop.org/modules/gst-editing-services.html"
-  url "https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.18.5.tar.xz"
-  sha256 "8af4a8394d051f3e18280686db49a6efaccc95c0c59a17f0f564e32000590df5"
+  url "https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.20.1.tar.xz"
+  sha256 "6ace1b21b58e0110b7dadd469f79b77e2f47d6207604231492531ae9fd4148df"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class GstEditingServices < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-editing-services"
-    sha256 cellar: :any, mojave: "6c650a967398804747a4075f6be8bfa0ceea8eba97f613f35f7efa92c18c0f21"
+    sha256 cellar: :any, mojave: "49b4be7fcb21214fb044aa6de2d38e25cff77b12a207d850f163fad7105ba9b7"
   end
 
   depends_on "gobject-introspection" => :build
@@ -32,6 +32,7 @@ class GstEditingServices < Formula
     args = std_meson_args + %w[
       -Dintrospection=enabled
       -Dtests=disabled
+      -Dvalidate=disabled
     ]
     # https://gitlab.freedesktop.org/gstreamer/gst-editing-services/-/issues/114
     # https://github.com/Homebrew/homebrew-core/pull/84906
