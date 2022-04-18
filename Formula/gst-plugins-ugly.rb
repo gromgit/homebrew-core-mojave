@@ -1,10 +1,10 @@
 class GstPluginsUgly < Formula
   desc "Library for constructing graphs of media-handling components"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.18.5.tar.xz"
-  sha256 "df32803e98f8a9979373fa2ca7e05e62f977b1097576d3a80619d9f5c69f66d9"
+  url "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.20.1.tar.xz"
+  sha256 "42035145e29983308d2828207bb4ef933ed0407bb587fb3a569738c6a57fdb19"
   license "LGPL-2.0-or-later"
-  head "https://gitlab.freedesktop.org/gstreamer/gst-plugins-ugly.git"
+  head "https://gitlab.freedesktop.org/gstreamer/gst-plugins-ugly.git", branch: "master"
 
   livecheck do
     url "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/"
@@ -13,7 +13,7 @@ class GstPluginsUgly < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-plugins-ugly"
-    sha256 mojave: "88f76fa22262871fc06302bfb4e5f70e85d73446f5f0707137e0a34b592c1b85"
+    sha256 mojave: "967c2137fddab89f33ba8dabff0bdfcdacf6d0ad00563d5a36e5355623954f17"
   end
 
   depends_on "meson" => :build
@@ -23,7 +23,6 @@ class GstPluginsUgly < Formula
   depends_on "gettext"
   depends_on "gst-plugins-base"
   depends_on "jpeg"
-  depends_on "libmms"
   depends_on "libshout"
   depends_on "libvorbis"
   depends_on "pango"
@@ -31,7 +30,9 @@ class GstPluginsUgly < Formula
   depends_on "x264"
 
   def install
+    # Plugins with GPL-licensed dependencies: x264
     args = std_meson_args + %w[
+      -Dgpl=enabled
       -Damrnb=disabled
       -Damrwbdec=disabled
     ]
