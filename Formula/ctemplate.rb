@@ -9,14 +9,20 @@ class Ctemplate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ctemplate"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8317405cab17cc811f743abdaa2a7e4a016b590d91dfc6bc771f8b50722df298"
+    rebuild 2
+    sha256 cellar: :any, mojave: "00cbb3a7c309da275a40702c00c285103bf722d0d1d5714228bec272b944d3f0"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "python@3.10" => :build
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     system "./autogen.sh"
