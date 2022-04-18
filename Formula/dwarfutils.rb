@@ -1,8 +1,8 @@
 class Dwarfutils < Formula
   desc "Dump and produce DWARF debug information in ELF objects"
   homepage "https://www.prevanders.net/dwarf.html"
-  url "https://www.prevanders.net/libdwarf-0.3.4.tar.xz"
-  sha256 "71e1aa48eb5489f0e020826a13aee42c76135212cccbb1c7ba686214d4e47d5f"
+  url "https://www.prevanders.net/libdwarf-0.4.0.tar.xz"
+  sha256 "2cb065faa323b02f836a858ce62d2b9efa11ecd0f6e8b1133fdab5ae9318e198"
   license all_of: ["BSD-2-Clause", "LGPL-2.1-or-later", "GPL-2.0-or-later"]
   version_scheme 1
 
@@ -11,10 +11,9 @@ class Dwarfutils < Formula
     regex(%r{href=(?:["']?|.*?/)libdwarf[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dwarfutils"
-    rebuild 1
-    sha256 mojave: "754622c6f626d28fb0f695c8819c16452ca113e168c21d5d061d7ac6052feb78"
+    sha256 mojave: "4b92020facfc5e2eec6905011b3d0ff90f393eb922ea1ffd10ae52b0ec6ec108"
   end
 
   head do
