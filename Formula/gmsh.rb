@@ -13,7 +13,8 @@ class Gmsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmsh"
-    sha256 cellar: :any, mojave: "92e84ef594c3149b7cee0b32852db8abffbe7e7a613ae91427f32b878594ba06"
+    rebuild 1
+    sha256 cellar: :any, mojave: "11d34cd36b0b152071dc48371673ec3ef32fc7ed0fc2350ade751acd5ae8a981"
   end
 
   depends_on "cmake" => :build
