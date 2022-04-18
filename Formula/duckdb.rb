@@ -2,13 +2,13 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/duckdb/duckdb.git",
-      tag:      "v0.3.2",
-      revision: "5aebf7dac8378ac4fb31badadf24de0499d86381"
+      tag:      "v0.3.3",
+      revision: "fe9ba80039e4a0f20eb8d7fb7d6d9a4984156cbd"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckdb"
-    sha256 cellar: :any, mojave: "e2321705b9963b4bf41a46eee894fabc55733a21133439c0a9955a94b7bd7ac0"
+    sha256 cellar: :any, mojave: "aa5f878a281f0001b5d2eec96b0446547084847ddf8e14daf892d8494ee43f70"
   end
 
   depends_on "cmake" => :build
@@ -39,11 +39,11 @@ class Duckdb < Formula
     EOS
 
     expected_output = <<~EOS
-      ┌───────────┐
-      │ avg(temp) │
-      ├───────────┤
-      │ 45.0      │
-      └───────────┘
+      ┌─────────────┐
+      │ avg("temp") │
+      ├─────────────┤
+      │ 45.0        │
+      └─────────────┘
     EOS
 
     assert_equal expected_output, shell_output("#{bin}/duckdb_cli < #{path}")
