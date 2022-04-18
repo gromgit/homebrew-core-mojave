@@ -3,11 +3,10 @@ class GstDevtools < Formula
 
   desc "GStreamer development and validation tools"
   homepage "https://gstreamer.freedesktop.org/modules/gstreamer.html"
-  url "https://gstreamer.freedesktop.org/src/gst-devtools/gst-devtools-1.18.5.tar.xz"
-  sha256 "fecffc86447daf5c2a06843c757a991d745caa2069446a0d746e99b13f7cb079"
+  url "https://gstreamer.freedesktop.org/src/gst-devtools/gst-devtools-1.20.1.tar.xz"
+  sha256 "81f1c7ef105b8bdb63412638952f6320723b3161c96a80f113b020e2de554b2b"
   license "LGPL-2.1-or-later"
-  revision 1
-  head "https://gitlab.freedesktop.org/gstreamer/gst-devtools.git"
+  head "https://gitlab.freedesktop.org/gstreamer/gst-devtools.git", branch: "master"
 
   livecheck do
     url "https://gstreamer.freedesktop.org/src/gst-devtools/"
@@ -16,7 +15,7 @@ class GstDevtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-devtools"
-    sha256 mojave: "0c168a713e964784aea5d5a87bd7bf8214565ee3ca92d5fc33526087d4e31500"
+    sha256 mojave: "7c7bf817449ffb9d19291d6bdfa784469f95d1acd1c87c5dc079a893679a232f"
   end
 
   depends_on "gobject-introspection" => :build
