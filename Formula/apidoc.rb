@@ -3,13 +3,13 @@ require "language/node"
 class Apidoc < Formula
   desc "RESTful web API Documentation Generator"
   homepage "https://apidocjs.com"
-  url "https://github.com/apidoc/apidoc/archive/0.51.0.tar.gz"
-  sha256 "78a8efeb6914af55b5b9e1aa292607aaad33aa9d28cb7855213966f25117fd9f"
+  url "https://github.com/apidoc/apidoc/archive/0.51.1.tar.gz"
+  sha256 "f2fe6bea7a43bc23936f7b15088fc1f33fa0728a46341bfaebea14096014ed7b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apidoc"
-    sha256 cellar: :any_skip_relocation, mojave: "b66d19f952c36e1caa4d175000192c1fb52b0416e08c6149f79e041937566bb1"
+    sha256 cellar: :any_skip_relocation, mojave: "08ebdec1b365949cfa31a33c2405ce64ea44242e1c64476aff1aed631b387b15"
   end
 
   depends_on "node"
