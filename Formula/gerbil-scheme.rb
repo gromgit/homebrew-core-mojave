@@ -12,7 +12,8 @@ class GerbilScheme < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gerbil-scheme"
-    sha256 mojave: "90f7416bc87519a68a6f5a05ae0887290b055e43f5cb23204d8e14f759e8d69a"
+    rebuild 1
+    sha256 mojave: "2828d6a5b3c122c4aecf9766a0577ef1e948cad31306a8ad5d62a6b0a1bd1f9f"
   end
 
   depends_on "gambit-scheme"
@@ -24,7 +25,6 @@ class GerbilScheme < Formula
   def install
     cd "src" do
       ENV.append_path "PATH", "#{Formula["gambit-scheme"].opt_prefix}/current/bin"
-      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version <= :sierra
       system "./configure", "--prefix=#{prefix}",
                             "--with-gambit=#{Formula["gambit-scheme"].opt_prefix}/current",
                             "--enable-leveldb",
