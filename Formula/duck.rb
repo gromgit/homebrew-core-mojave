@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.3.0.37309.tar.gz"
-  sha256 "8026494f8b387647bf4208732fa5195488b7c0cadb0b5ef974240ff97b75a1c9"
+  url "https://dist.duck.sh/duck-src-8.3.2.37449.tar.gz"
+  sha256 "111a45739d66d0518f5c608b05445afaa5febc0ea2343dd7a1015954c2ef06be"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Duck < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duck"
-    sha256 cellar: :any, mojave: "bc5519716411d291c29fc427768ee8f89f7ee144e64443b517354aec98e0142c"
+    sha256 cellar: :any, mojave: "eceb9e1fa4510376a2cad4c180e820e177e20f7266882bcb375b7635c1b70cad"
   end
 
   depends_on "ant" => :build
