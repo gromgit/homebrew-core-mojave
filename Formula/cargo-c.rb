@@ -4,7 +4,7 @@ class CargoC < Formula
   url "https://github.com/lu-zero/cargo-c/archive/v0.9.8.tar.gz"
   sha256 "7c649061826e0ad3c2c8735718f4a0c4afd12eed9b9fdc5fe59e34582902e1c5"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,7 +13,7 @@ class CargoC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-c"
-    sha256 cellar: :any, mojave: "31057e252a3ddb6fb5ab042a3946e3481b8c9536aa2289043c0c2650c7af496a"
+    sha256 cellar: :any, mojave: "ab60680978965133383f28093cd9f83da81ec032a98f17924f91eedb24f4caee"
   end
 
   depends_on "rust" => :build
