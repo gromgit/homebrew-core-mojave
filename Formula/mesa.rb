@@ -3,14 +3,14 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-22.0.0.tar.xz"
-  sha256 "e6c41928b5b9917485bd67cec22d15e62cad7a358bf4c711a647979987601250"
+  url "https://mesa.freedesktop.org/archive/mesa-22.0.2.tar.xz"
+  sha256 "df4fa560dcce6680133067cd15b0505fc424ca703244ce9ab247c74d2fab6885"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    sha256 mojave: "873d8957fc0f2d114d9a9c03bd38cdea8ee3fd4a9956463c0ed6ad85cbf00b56"
+    sha256 mojave: "8d5ba0fc63b420c405ce9c05961421d21dabe67d6df7d0a94a20e81a94e34173"
   end
 
   depends_on "meson" => :build
@@ -51,17 +51,27 @@ class Mesa < Formula
   fails_with gcc: "5"
 
   resource "Mako" do
-    url "https://files.pythonhosted.org/packages/af/b6/42cd322ae555aa770d49e31b8c5c28a243ba1bbb57ad927e1a5f5b064811/Mako-1.1.6.tar.gz"
-    sha256 "4e9e345a41924a954251b95b4b28e14a301145b544901332e658907a7464b6b2"
+    url "https://files.pythonhosted.org/packages/50/ec/1d687348f0954bda388bfd1330c158ba8d7dea4044fc160e74e080babdb9/Mako-1.2.0.tar.gz"
+    sha256 "9a7c7e922b87db3686210cf49d5d767033a41d4010b284e747682c92bddd8b39"
+  end
+
+  resource "Pygments" do
+    url "https://files.pythonhosted.org/packages/94/9c/cb656d06950268155f46d4f6ce25d7ffc51a0da47eadf1b164bbf23b718b/Pygments-2.11.2.tar.gz"
+    sha256 "4e426f72023d88d03b2fa258de560726ce890ff3b630f88c21cbb8b2503b8c6a"
+  end
+
+  resource "MarkupSafe" do
+    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
+    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
   end
 
   resource "glxgears.c" do
-    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/faaa319d704ac677c3a93caadedeb91a4a74b7a7/src/xdemos/glxgears.c"
+    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/db5ad06a346774a249b22797e660d55bde0d9571/src/xdemos/glxgears.c"
     sha256 "3873db84d708b5d8b3cac39270926ba46d812c2f6362da8e6cd0a1bff6628ae6"
   end
 
   resource "gl_wrap.h" do
-    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/faaa319d704ac677c3a93caadedeb91a4a74b7a7/src/util/gl_wrap.h"
+    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/5435fc7fbd332e171da9a71e33a9b190e9462cf0/src/util/gl_wrap.h"
     sha256 "c727b2341d81c2a1b8a0b31e46d24f9702a1ec55c8be3f455ddc8d72120ada72"
   end
 
@@ -70,7 +80,10 @@ class Mesa < Formula
 
     venv_root = buildpath/"venv"
     venv = virtualenv_create(venv_root, "python3")
-    venv.pip_install resource("Mako")
+
+    %w[Mako Pygments MarkupSafe].each do |res|
+      venv.pip_install resource(res)
+    end
 
     ENV.prepend_path "PATH", "#{venv_root}/bin"
 
