@@ -1,13 +1,13 @@
 class TomeePlume < Formula
   desc "Apache TomEE Plume"
   homepage "https://tomee.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomee/tomee-8.0.10/apache-tomee-8.0.10-plume.tar.gz"
-  mirror "https://archive.apache.org/dist/tomee/tomee-8.0.10/apache-tomee-8.0.10-plume.tar.gz"
-  sha256 "c0ac9b9f28720c1a0d8e412a18c26e62f06e344ba3c713ee26acafc3db873611"
+  url "https://www.apache.org/dyn/closer.lua?path=tomee/tomee-8.0.11/apache-tomee-8.0.11-plume.tar.gz"
+  mirror "https://archive.apache.org/dist/tomee/tomee-8.0.11/apache-tomee-8.0.11-plume.tar.gz"
+  sha256 "1727706dd4010cec6d291bdc6aa9bdd9f274e1895c8367e896d0b51d6e0b2a6c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d417c94d915ac9ebf233e64b59f815319b2f8d8e114b321747762b1112c4bd7f"
+    sha256 cellar: :any_skip_relocation, all: "dad8ba85ad7e1ba9c55b482ffcf1f8a9b8642979f5abf2816be9dfcb97c7015e"
   end
 
   depends_on "openjdk"
