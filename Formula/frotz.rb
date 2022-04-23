@@ -1,15 +1,14 @@
 class Frotz < Formula
   desc "Infocom-style interactive fiction player"
   homepage "https://661.org/proj/if/frotz/"
-  url "https://gitlab.com/DavidGriffith/frotz/-/archive/2.53/frotz-2.53.tar.bz2"
-  sha256 "8da558828dd74d6d6ee30483bb32276ef918b8b72b7f6e89b4f7cb27e7abf58b"
+  url "https://gitlab.com/DavidGriffith/frotz/-/archive/2.54/frotz-2.54.tar.bz2"
+  sha256 "bdf9131e6de49108c9f032200cea3cb4011e5ca0c9fbdbf5b0c05f7c56c81395"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/DavidGriffith/frotz.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frotz"
-    rebuild 1
-    sha256 mojave: "3bf3710cddead50745c2f56347e9b6aacb999ea471e5e29662fd74107fdbf883"
+    sha256 mojave: "4c6f3ac0eea8b44f248c94f821371311f54ff6750dfa33bd5aa004b48a37a54f"
   end
 
   depends_on "pkg-config" => :build
@@ -21,10 +20,10 @@ class Frotz < Formula
   depends_on "libsamplerate"
   depends_on "libsndfile"
   depends_on "libvorbis"
+  depends_on "ncurses"
   depends_on "sdl2"
   depends_on "sdl2_mixer"
 
-  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   resource("testdata") do
