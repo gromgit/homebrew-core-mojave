@@ -8,7 +8,8 @@ class Fuego < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fuego"
-    sha256 mojave: "231fae8099e30dd36289fb7fa2c28846729a5e7186c8f13743b94998bd9d0ec4"
+    rebuild 1
+    sha256 mojave: "7fca175796547ca296a9343c64ecd22ca986dfbe17789038b438fe09d95c521a"
   end
 
   depends_on "autoconf" => :build
