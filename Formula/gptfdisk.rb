@@ -1,18 +1,13 @@
 class Gptfdisk < Formula
   desc "Text-mode partitioning tools"
   homepage "https://www.rodsbooks.com/gdisk/"
-  url "https://downloads.sourceforge.net/project/gptfdisk/gptfdisk/1.0.8/gptfdisk-1.0.8.tar.gz"
-  sha256 "95d19856f004dabc4b8c342b2612e8d0a9eebdd52004297188369f152e9dc6df"
+  url "https://downloads.sourceforge.net/project/gptfdisk/gptfdisk/1.0.9/gptfdisk-1.0.9.tar.gz"
+  sha256 "dafead2693faeb8e8b97832b23407f6ed5b3219bc1784f482dd855774e2d50c2"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "3d9febc1bf30f45aad2e707d98a4f8485e4b8807787e39b92acacf0ba810c623"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ddfc62f39c786868b5bcafb0cc949a89977ece0bf27eac038a70dbcd7772b8f"
-    sha256 cellar: :any,                 monterey:       "de52e1458baca0f7ece2e92f94031dc01197c4c109dc9b701367fd55aa163f0d"
-    sha256 cellar: :any,                 big_sur:        "a16cd2748dcf4ce4a18caf1d09e04e077a456fe323553685ab07dc7b628567a7"
-    sha256 cellar: :any,                 catalina:       "e5c8a8a789a75e2ff5cd3120922c0fa205ef3e9aec23fd77558a04b349283aea"
-    sha256 cellar: :any,                 mojave:         "8ea2978e8d5612e21cef00d747ac24e0c5f44eeb5c9c2edcf926752bd389523a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e93c2383a78abc4ea044c1d750630342118f7257358421c04471efd94c32cbce"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gptfdisk"
+    sha256 cellar: :any, mojave: "ed13c0bcc27692e29cb7412f908a2817e023f7372a46bcea126cc5520f4bf2b6"
   end
 
   depends_on "popt"
@@ -27,7 +22,7 @@ class Gptfdisk < Formula
     if OS.mac?
       inreplace "Makefile.mac" do |s|
         s.gsub! "/usr/local/Cellar/ncurses/6.2/lib/libncurses.dylib", "-L/usr/lib -lncurses"
-        s.gsub! "-L/usr/local/lib -lpopt", "-L#{Formula["popt"].opt_lib} -lpopt"
+        s.gsub! "-L/usr/local/lib $(LDLIBS) -lpopt", "-L#{Formula["popt"].opt_lib} $(LDLIBS) -lpopt"
       end
 
       system "make", "-f", "Makefile.mac"
