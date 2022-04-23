@@ -3,13 +3,13 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.72/glib-2.72.0.tar.xz"
-  sha256 "d7bef0d4c4e7a62e08efb8e5f252a01357007b9588a87ff2b463a3857011f79d"
+  url "https://download.gnome.org/sources/glib/2.72/glib-2.72.1.tar.xz"
+  sha256 "c07e57147b254cef92ce80a0378dc0c02a4358e7de4702e9f403069781095fe2"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glib"
-    sha256 mojave: "30b79f118cd34bc60c015c100a7d920ee260cdc3dcf142a1643ba523fbc412c7"
+    sha256 mojave: "3e35ffe360b2f3e830188a6e4d18d63ae3b846e2d5c6dbd571c78a8a94f4faea"
   end
 
   depends_on "meson" => :build
