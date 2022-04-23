@@ -1,16 +1,16 @@
 class Kdoctor < Formula
   desc "Environment diagnostics for Kotlin Multiplatform Mobile app development"
   homepage "https://github.com/kotlin/kdoctor"
-  url "https://github.com/Kotlin/kdoctor/archive/refs/tags/v0.0.3.tar.gz"
-  sha256 "600ac57517ee5012b7eb23bad881cda1007bf7e8f916da36a86441fc4bff8dab"
+  url "https://github.com/Kotlin/kdoctor/archive/refs/tags/v0.0.4.tar.gz"
+  sha256 "cc972dfee89417c760eb845a0928cd99d3d7e4edf7d16ac5e43b5ea8425e1301"
   license "Apache-2.0"
   head "https://github.com/Kotlin/kdoctor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc24bbbd334193ad52837e46c7e0724a25968d0e481970f5e2e127094aa0344d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6246e75bb09c13406a087261587cdd52fb0c46556ae7f7162cea336a950113a"
-    sha256 cellar: :any_skip_relocation, monterey:       "41f6c721d8a7f721b825aca465ef2c41d6600d1f8a422bb018fb9cfc885a15bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1da6a21f983709d788aa6cd2563669ab788a5cd9edc1b07dc3f4970177cde17d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f5f58367195b2e6615ecf2f5e058383762e1960672deee009f1f4e99152c08b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "563f1aa5a78fca16dac048c7e1a14d54209cc25b80d3df8ebee7e49f0bc3423d"
+    sha256 cellar: :any_skip_relocation, monterey:       "268c40758894f4acdc19a21586c4d1268ce5a407bfb291937fdf4dac3cf2a5ae"
+    sha256 cellar: :any_skip_relocation, big_sur:        "956ff7b276c22eb1828d049685858f0c3df23b287340ea04a052d54477dd74cb"
   end
 
   depends_on "gradle" => :build
