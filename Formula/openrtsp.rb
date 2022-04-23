@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2022.02.07.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2022.02.07.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2022.04.15.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2022.04.15.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "6f0c1f8a71ceb506bcbf969b02b4b0c3697b4e15daeb6dcba9872c8745ce92c6"
+  sha256 "8ada66414fffde6ecb88a380610f4dca27a978288d154b3d25918f2e72f7adbd"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,7 +14,7 @@ class Openrtsp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openrtsp"
-    sha256 cellar: :any, mojave: "f93ff9fa0a19fd311b99572d14f470e7535e58413dfb3528dc1a04b2928f29b7"
+    sha256 cellar: :any, mojave: "310e2224f4fb10b061106f9b05beb77b08bf773c6a90967a43c8237b76ba3b96"
   end
 
   depends_on "openssl@1.1"
