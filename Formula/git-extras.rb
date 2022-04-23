@@ -1,15 +1,13 @@
 class GitExtras < Formula
   desc "Small git utilities"
   homepage "https://github.com/tj/git-extras"
-  url "https://github.com/tj/git-extras/archive/6.3.0.tar.gz"
-  sha256 "8a218a0c8e10036d5ba14f26b70f994b0d11166b02ef3fed71c593cef026ec3d"
+  url "https://github.com/tj/git-extras/archive/6.4.0.tar.gz"
+  sha256 "d8943c0caab43e70c23890816a9775844d33261c40d5be03c1e012c276b1aa63"
   license "MIT"
   head "https://github.com/tj/git-extras.git", branch: "master"
 
-bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-extras"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "525887a0c3df29fdbc020a15ad6c584ec753f8e5b2f4b2e679985a6e9cbfd333"
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "75cbcd4fe8ad39801a46a6abadc8831aaacdb0bbf6f65eccc190c65c8b220985"
   end
 
   on_linux do
