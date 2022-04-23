@@ -10,7 +10,8 @@ class MpsYoutube < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mps-youtube"
-    sha256 cellar: :any_skip_relocation, mojave: "4427c42e4efe37f8c550288610f1404a88d3124815cd19d5749eafbf9a9d6272"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f02db6248f20b43f49a760dcbf1e729d53857f1acac2d2bc431113c237576df4"
   end
 
   depends_on "mplayer"
