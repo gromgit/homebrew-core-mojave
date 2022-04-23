@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.4.tar.bz2"
-  sha256 "f3468ecafb1d7f9ad7b51fd1db7aebf17ceb89d2efa8a05cf2f39b4d405402ae"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.5.tar.bz2"
+  sha256 "20aaeef2a18bc75430042a052598b0ab617e7a07247ad4943bf7cd08f7803ddb"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Gnupg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnupg"
-    sha256 mojave: "d04b5714315fd9762bb97d068e46fc719c5d84aa741a52a4fb0e7bf9a942f120"
+    sha256 mojave: "8bf189df03a8b1b73cb156ce7c01a91a92143be898606bc538a47519bc6026de"
   end
 
   depends_on "pkg-config" => :build
