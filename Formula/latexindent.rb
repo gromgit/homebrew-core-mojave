@@ -1,13 +1,13 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://ctan.org/pkg/latexindent"
-  url "https://github.com/cmhughes/latexindent.pl/archive/V3.17.1.tar.gz"
-  sha256 "a2f7f0c68b6c86bdcde269a4cb43c02d7e6276b29e0e962d5b0b4b8d5efe75e7"
+  url "https://github.com/cmhughes/latexindent.pl/archive/V3.17.2.tar.gz"
+  sha256 "79283728e5bf25e494e26dddbaedde60d23e23957c6adb0c478ba56c8db2f3e0"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latexindent"
-    sha256 cellar: :any_skip_relocation, mojave: "d5d0d6248a0f790a1f799854ba6a845e9c88f055ea4fa91d06c5be59d97ce351"
+    sha256 cellar: :any_skip_relocation, mojave: "c9d0059d6b629972d1a3c0a0e63a094862e20afc594ef8b9c6d5497e5714c0db"
   end
 
   depends_on "perl"
