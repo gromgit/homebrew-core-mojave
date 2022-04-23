@@ -7,9 +7,17 @@ class NewrelicInfraAgent < Formula
   license "Apache-2.0"
   head "https://github.com/newrelic/infrastructure-agent.git", branch: "master"
 
+  # Upstream sometimes creates a tag with a stable version format but marks it
+  # as pre-release on GitHub.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newrelic-infra-agent"
-    sha256 cellar: :any_skip_relocation, mojave: "e023a0eeb105be06224f75feabac1bb6fdfff4a4b43b240290a90054dccd247a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8e5c06e8be081bdf916a94dda788f8792b6b1f55ca2cdd2c457afdae6fb8e1ea"
   end
 
   # https://github.com/newrelic/infrastructure-agent/issues/723
