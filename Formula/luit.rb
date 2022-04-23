@@ -12,7 +12,7 @@ class Luit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luit"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "d9160e7aa3c96266e1eee6b70147b62a937c811b8e7a62ef0fd0cf3cf4a6e39e"
   end
 
