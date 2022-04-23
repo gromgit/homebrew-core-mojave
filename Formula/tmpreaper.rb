@@ -14,6 +14,11 @@ class Tmpreaper < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "3cc58bad3b6929386bb6e21e7d68156fc99fed84a80d56b4de22a92759b81179"
     sha256 cellar: :any_skip_relocation, catalina:       "29ebae2263adcd7765e873802308c380b1419fef6fb1f78064c3245c5b7d5f04"
     sha256 cellar: :any_skip_relocation, mojave:         "2e526cb2d2a7e7e2fa82becbee314478158aec96a6c5a2963072cc8e1092f42c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbb3e26d1d6ef72c484371f2e9e2614e8118d18eccbceba255f10a198a7a0663"
+  end
+
+  on_linux do
+    depends_on "e2fsprogs"
   end
 
   def install
