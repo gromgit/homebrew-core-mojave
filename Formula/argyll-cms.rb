@@ -12,7 +12,8 @@ class ArgyllCms < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argyll-cms"
-    sha256 cellar: :any, mojave: "6c81f50b2c340fdac16526fccae3e1d8cd9b52f84460775258ae929ae3c4dbb3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6bbdb4b00b486ac0bb7addf1fef13f57dae5f8b68a4cb7f962af48eb62505941"
   end
 
   depends_on "jam" => :build
@@ -22,6 +23,11 @@ class ArgyllCms < Formula
 
   on_linux do
     depends_on "libx11"
+    depends_on "libxinerama"
+    depends_on "libxrandr"
+    depends_on "libxscrnsaver"
+    depends_on "libxxf86vm"
+    depends_on "xorgproto"
   end
 
   conflicts_with "num-utils", because: "both install `average` binaries"
@@ -43,6 +49,11 @@ class ArgyllCms < Formula
     # Jamfile, which otherwise fails to locate system libraries
     inreplace "Jamtop", "/usr/include/x86_64-linux-gnu$(subd)", "#{HOMEBREW_PREFIX}/include$(subd)"
     inreplace "Jamtop", "/usr/lib/x86_64-linux-gnu", "#{HOMEBREW_PREFIX}/lib"
+    # These two inreplaces make sure the X11 headers can be found on Linux.
+    unless OS.mac?
+      inreplace "Jamtop", "/usr/X11R6/include", HOMEBREW_PREFIX/"include"
+      inreplace "Jamtop", "/usr/X11R6/lib", HOMEBREW_PREFIX/"lib"
+    end
     system "sh", "makeall.sh"
     system "./makeinstall.sh"
     rm "bin/License.txt"
@@ -55,6 +66,10 @@ class ArgyllCms < Formula
     %w[test.ti1.ps test.ti1.ti1 test.ti1.ti2].each do |f|
       assert_predicate testpath/f, :exist?
     end
+
+    # Skip this part of the test on Linux because it hangs due to lack of a display.
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     assert_match "Calibrate a Display", shell_output("#{bin}/dispcal 2>&1", 1)
   end
 end
