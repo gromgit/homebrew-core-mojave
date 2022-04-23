@@ -2,14 +2,14 @@ class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
   homepage "https://github.com/knative/client"
   url "https://github.com/knative/client.git",
-      tag:      "knative-v1.3.1",
-      revision: "a591c0c0278e906b9677de6df8188991f21265a4"
+      tag:      "knative-v1.4.0",
+      revision: "ff097e9d8db2f098963e254e316163fdbc1962a6"
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kn"
-    sha256 cellar: :any_skip_relocation, mojave: "d2556e24724101904b4d68af3839105c3a3748f318927602b84d80c69d4e1889"
+    sha256 cellar: :any_skip_relocation, mojave: "26475476cd9b45b96950fbe748ec637cf64d6d5e333b3feb0c47d27463c7d383"
   end
 
   depends_on "go" => :build
