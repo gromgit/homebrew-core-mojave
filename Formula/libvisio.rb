@@ -12,7 +12,8 @@ class Libvisio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvisio"
-    sha256 cellar: :any, mojave: "92ac7885a850ce5b2a3d62348a1f0fd0ee5a37912b22b4bc8284bb6eb230e278"
+    rebuild 1
+    sha256 cellar: :any, mojave: "40d30183042b64838dd7565cf69db37e5867740e9e62c7675a27a12f7eec7018"
   end
 
   depends_on "cppunit" => :build
@@ -20,6 +21,9 @@ class Libvisio < Formula
   depends_on "boost"
   depends_on "icu4c"
   depends_on "librevenge"
+
+  uses_from_macos "gperf" => :build
+  uses_from_macos "libxml2"
 
   def install
     # Needed for Boost 1.59.0 compatibility.
