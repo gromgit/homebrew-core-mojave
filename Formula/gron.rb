@@ -1,15 +1,14 @@
 class Gron < Formula
   desc "Make JSON greppable"
   homepage "https://github.com/tomnomnom/gron"
-  url "https://github.com/tomnomnom/gron/archive/v0.6.1.tar.gz"
-  sha256 "eef150a425aa4eaa8b2e36a75ee400d4247525403f79e24ed32ccb346dc653ff"
+  url "https://github.com/tomnomnom/gron/archive/v0.7.1.tar.gz"
+  sha256 "1c98f2ef2ba03558864b1ab5e9c4b47a2e89d3ffaf24cfa0ac75cd38d775feb4"
   license "MIT"
   head "https://github.com/tomnomnom/gron.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gron"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "58961388d1d1ee0ea57af1f94a8016345d71cfbd2873472885a8825d65ec7de5"
+    sha256 cellar: :any_skip_relocation, mojave: "a8eb228f66cf7956bf01746679389ec3ab6d474091cbf49a56f3d8c69d67f790"
   end
 
   depends_on "go" => :build
