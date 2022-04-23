@@ -1,14 +1,14 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
   homepage "https://github.com/armosec/kubescape"
-  url "https://github.com/armosec/kubescape/archive/v2.0.150.tar.gz"
-  sha256 "af6dcda929ab46087c1e1e0c03d05ea0c63189e3e9af97eddc13fe08752541b8"
+  url "https://github.com/armosec/kubescape/archive/v2.0.152.tar.gz"
+  sha256 "6132b81ebabcadca67fe87406f9be43d48af943f72af6217d80a41d14fbbcbe2"
   license "Apache-2.0"
   head "https://github.com/armosec/kubescape.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubescape"
-    sha256 cellar: :any_skip_relocation, mojave: "a40a973859a3f3d4bffe467b4b7ca254beb486df87b8c73aed256d028c98bfb4"
+    sha256 cellar: :any_skip_relocation, mojave: "942b5d15a1c0d2c0f7c2050dc41f715ae68310be3df0f37bebb43740fedd69cf"
   end
 
   depends_on "go" => :build
@@ -16,11 +16,10 @@ class Kubescape < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/armosec/kubescape/core/cautils.BuildNumber=v#{version}
+      -X github.com/armosec/kubescape/v2/core/cautils.BuildNumber=v#{version}
     ]
-    cd "cmd" do
-      system "go", "build", *std_go_args(ldflags: ldflags)
-    end
+
+    system "go", "build", *std_go_args(ldflags: ldflags)
 
     output = Utils.safe_popen_read(bin/"kubescape", "completion", "bash")
     (bash_completion/"kubescape").write output
