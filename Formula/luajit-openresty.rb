@@ -1,8 +1,8 @@
 class LuajitOpenresty < Formula
   desc "OpenResty's Branch of LuaJIT 2"
   homepage "https://github.com/openresty/luajit2"
-  url "https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20220310.tar.gz"
-  sha256 "fc5b4fa374682a0480697d59e5fcc8f38a7f29c57e562e518507e2789d82fc32"
+  url "https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20220411.tar.gz"
+  sha256 "d3f2c870f8f88477b01726b32accab30f6e5d57ae59c5ec87374ff73d0794316"
   license "MIT"
   version_scheme 1
   head "https://github.com/openresty/luajit2.git", branch: "v2.1-agentzh"
@@ -20,7 +20,7 @@ class LuajitOpenresty < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit-openresty"
-    sha256 cellar: :any, mojave: "bf92669592871d034e413506ecaaac0aca55fb0c0f99ce6979402d210f6f3301"
+    sha256 cellar: :any, mojave: "88bdd675d2ce00c5a4acd8f469177008e26cce4c64fb79f156d679fb96a30d1e"
   end
 
   keg_only "it conflicts with the LuaJIT formula"
