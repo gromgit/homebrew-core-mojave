@@ -12,7 +12,8 @@ class Libsndfile < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsndfile"
-    sha256 cellar: :any, mojave: "f95499e0b96fc4a5194c647348f2e67a7c5d4c8f04bc9c7deb3cda3ce71739ec"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7fe7b6484827edef76e7bb77ce6658a89dd206ec975375c26af254ab6002775d"
   end
 
   depends_on "autoconf" => :build
@@ -23,6 +24,14 @@ class Libsndfile < Formula
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "opus"
+
+  # Fix unsubstituted variable @EXTERNAL_MPEG_LIBS@ in sndfile.pc
+  # PR ref: https://github.com/libsndfile/libsndfile/pull/828
+  # Remove in the next release.
+  patch do
+    url "https://github.com/libsndfile/libsndfile/commit/e4fdaeefddd39bae1db27d48ccb7db7733e0c009.patch?full_index=1"
+    sha256 "af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910"
+  end
 
   def install
     system "autoreconf", "-fvi"
