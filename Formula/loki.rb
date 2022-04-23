@@ -1,15 +1,14 @@
 class Loki < Formula
   desc "Horizontally-scalable, highly-available log aggregation system"
   homepage "https://grafana.com/loki"
-  url "https://github.com/grafana/loki/archive/v2.4.2.tar.gz"
-  sha256 "725af867fa3bece6ccd46e0722eb68fe72462b15faa15c8ada609b5b2a476b07"
+  url "https://github.com/grafana/loki/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "f9ca9e52f4d9125cc31f9a593aba6a46ed6464c9cd99b2be4e35192a0ab4a76e"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/loki"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "531509e4b3a1bdbd4d820701c864bfa4586935b1cfce41648612e98059a6ca4b"
+    sha256 cellar: :any_skip_relocation, mojave: "39f4264bcc69c054cb701b95df1bbf73d7715d5fed03743b95d14bc6bf6772d2"
   end
 
   # Bump to 1.18 on the next release, if possible.
