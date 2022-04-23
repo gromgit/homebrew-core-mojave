@@ -1,14 +1,14 @@
 class Mailutils < Formula
   desc "Swiss Army knife of email handling"
   homepage "https://mailutils.org/"
-  url "https://ftp.gnu.org/gnu/mailutils/mailutils-3.14.tar.gz"
-  mirror "https://ftpmirror.gnu.org/mailutils/mailutils-3.14.tar.gz"
-  sha256 "27d8dfab34ace9aa5a0fece51db5acf85d42e10de74b05499866de5e5aecfbfe"
+  url "https://ftp.gnu.org/gnu/mailutils/mailutils-3.15.tar.gz"
+  mirror "https://ftpmirror.gnu.org/mailutils/mailutils-3.15.tar.gz"
+  sha256 "91c221eb989e576ca78df05f69bf900dd029da222efb631cb86c6895a2b5a0dd"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mailutils"
-    sha256 mojave: "3b1af86436916f80264888db38b2324d2f0e9d4fb9727c570c53a06bd09428e8"
+    sha256 mojave: "7e63d61fcd350b1a0cc6d52304fd703d6d4fb2668e7fcdff9b214c3c8dfe02d5"
   end
 
   depends_on "gnutls"
