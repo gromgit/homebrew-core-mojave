@@ -8,6 +8,7 @@ class LibbitcoinNode < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbitcoin-node"
+    rebuild 1
     sha256 mojave: "19d35166dced5df18076c68d928cd8cb3a8a8220fc11a102e5c566a8a751ac38"
   end
 
