@@ -1,8 +1,8 @@
 class Libusb < Formula
   desc "Library for USB device access"
   homepage "https://libusb.info/"
-  url "https://github.com/libusb/libusb/releases/download/v1.0.25/libusb-1.0.25.tar.bz2"
-  sha256 "8a28ef197a797ebac2702f095e81975e2b02b2eeff2774fa909c78a74ef50849"
+  url "https://github.com/libusb/libusb/releases/download/v1.0.26/libusb-1.0.26.tar.bz2"
+  sha256 "12ce7a61fc9854d1d2a1ffe095f7b5fac19ddba095c259e6067a46500381b5a5"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libusb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libusb"
-    sha256 cellar: :any, mojave: "546f276a852762476f52b95e91d7981889d7da0c022ef39bbff4178fa17611fc"
+    sha256 cellar: :any, mojave: "06df5b70504011eff6c98e9e53ec5fd076ff82b67380587ee335f4459b08d378"
   end
 
   head do
