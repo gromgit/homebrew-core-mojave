@@ -2,8 +2,8 @@ class Linkerd < Formula
   desc "Command-line utility to interact with linkerd"
   homepage "https://linkerd.io"
   url "https://github.com/linkerd/linkerd2.git",
-      tag:      "stable-2.11.1",
-      revision: "43fc40f545b47bd86c6800bf3895745f15902e72"
+      tag:      "stable-2.11.2",
+      revision: "d7a3ddf4bf41babc32aef79fdc5c40ef2bfb9283"
   license "Apache-2.0"
 
   livecheck do
@@ -13,8 +13,7 @@ class Linkerd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/linkerd"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "276b6f2f67678101b1de9b1951e8516579a1fc4059be0e3cad9bfaa76b7f0643"
+    sha256 cellar: :any_skip_relocation, mojave: "a3d315b107ddfd3a2b66a30d36cca6c53a03914d02a4aad33fdf980291be99fd"
   end
 
   depends_on "go" => :build
