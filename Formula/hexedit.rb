@@ -1,15 +1,14 @@
 class Hexedit < Formula
   desc "View and edit files in hexadecimal or ASCII"
   homepage "http://rigaux.org/hexedit.html"
-  url "https://github.com/pixel/hexedit/archive/1.5.tar.gz"
-  sha256 "27a2349f659e995d7731ad672450f61a2e950330049a6fb59b77490c5e0015ac"
+  url "https://github.com/pixel/hexedit/archive/1.6.tar.gz"
+  sha256 "598906131934f88003a6a937fab10542686ce5f661134bc336053e978c4baae3"
   license "GPL-2.0-or-later"
   head "https://github.com/pixel/hexedit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hexedit"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "713e354697e5900b8c09d2daa21a5b2264b753a18bf25ed9a5ddeb39cbae3cdb"
+    sha256 cellar: :any_skip_relocation, mojave: "4275a9b07f153af73e084017285d37c64d48a08858910c8de3112484a83cda72"
   end
 
   depends_on "autoconf" => :build
