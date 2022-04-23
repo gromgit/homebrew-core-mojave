@@ -1,9 +1,9 @@
 class Aarch64ElfGcc < Formula
   desc "GNU compiler collection for aarch64-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
-  sha256 "d08edc536b54c372a1010ff6619dd274c0f1603aa49212ba20f7aa2cda36fa8b"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
+  sha256 "b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,7 +12,7 @@ class Aarch64ElfGcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aarch64-elf-gcc"
-    sha256 mojave: "83ff9b517c9f3fc3a3b19a27e181d71725290fa3cc57664ef46bd1b3a1e809e8"
+    sha256 mojave: "37de0d53fc7a03c611c581dda7783b0ecf06dc5c26700c8812fe3834cf7fecf9"
   end
 
   depends_on "aarch64-elf-binutils"
