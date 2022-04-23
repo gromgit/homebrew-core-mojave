@@ -2,13 +2,13 @@ class Kubevela < Formula
   desc "Application Platform based on Kubernetes and Open Application Model"
   homepage "https://kubevela.io"
   url "https://github.com/oam-dev/kubevela.git",
-      tag:      "v1.3.0",
-      revision: "3aa4412a0f7023fda2625a07ffea2747b215c850"
+      tag:      "v1.3.2",
+      revision: "d08aa7d12c8a3d130a2428b25fd75cf30ed23b25"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubevela"
-    sha256 cellar: :any_skip_relocation, mojave: "0b7b7b6226db37100b4c23abf4378a718750c65f9f68745b6dc0d6b1fbc2cef4"
+    sha256 cellar: :any_skip_relocation, mojave: "34564a41ae079f015812b5c50c1b89e8a5905e107339e288bbb73a834fbd0000"
   end
 
   depends_on "go" => :build
@@ -27,7 +27,7 @@ class Kubevela < Formula
   test do
     # Should error out as vela up need kubeconfig
     status_output = shell_output("#{bin}/vela up 2>&1", 1)
-    assert_match "Error: invalid configuration: no configuration", status_output
+    assert_match "error: no configuration has been provided", status_output
 
     (testpath/"kube-config").write <<~EOS
       apiVersion: v1
