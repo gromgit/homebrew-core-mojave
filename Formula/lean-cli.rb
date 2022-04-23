@@ -1,15 +1,14 @@
 class LeanCli < Formula
   desc "Command-line tool to develop and manage LeanCloud apps"
   homepage "https://github.com/leancloud/lean-cli"
-  url "https://github.com/leancloud/lean-cli/archive/v0.29.2.tar.gz"
-  sha256 "b5d39383335ced9f7b9adb5bf9701cd3e4b4df19bae251b8a603c71b896ec32b"
+  url "https://github.com/leancloud/lean-cli/archive/v1.0.0.tar.gz"
+  sha256 "4e8b9d33fd57e68e2f3e94f69572945ae2860e4eaf25a72fd6d72b8580dce8ba"
   license "Apache-2.0"
   head "https://github.com/leancloud/lean-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lean-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6d8e43a8959096d3989e01d726e1e14132e284bd0b403cf9fcfc3ef99732acef"
+    sha256 cellar: :any_skip_relocation, mojave: "ddb95bb23ea500e78b707f5910a62ebdbf044250675d25f619d82806dfc54865"
   end
 
   # Bump to 1.18 on the next release, if possible.
@@ -19,12 +18,14 @@ class LeanCli < Formula
     build_from = build.head? ? "homebrew-head" : "homebrew"
     system "go", "build", *std_go_args(output: bin/"lean", ldflags: "-s -w -X main.pkgType=#{build_from}"), "./lean"
 
+    bin.install_symlink "lean" => "tds"
+
     bash_completion.install "misc/lean-bash-completion" => "lean"
     zsh_completion.install "misc/lean-zsh-completion" => "_lean"
   end
 
   test do
     assert_match "lean version #{version}", shell_output("#{bin}/lean --version")
-    assert_match "Please log in first.", shell_output("#{bin}/lean init 2>&1", 1)
+    assert_match "Invalid access token.", shell_output("#{bin}/lean login --region us-w1 --token foobar 2>&1", 1)
   end
 end
