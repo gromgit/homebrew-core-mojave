@@ -1,14 +1,14 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https://cuelang.org/"
-  url "https://github.com/cue-lang/cue/archive/v0.4.2.tar.gz"
-  sha256 "a45e45552b9b3e104fb65ec85891550d8675656be6dece3837334720be5d8150"
+  url "https://github.com/cue-lang/cue/archive/v0.4.3.tar.gz"
+  sha256 "3d51f780f6d606a0341a5321b66e7d80bd54c294073c0d381e2ed96a3ae07c6e"
   license "Apache-2.0"
   head "https://github.com/cue-lang/cue.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cue"
-    sha256 cellar: :any_skip_relocation, mojave: "09e9ddda75ca26517b7249fd5b83960fd4c8348c9f2f49ce4f38564383bf0a7f"
+    sha256 cellar: :any_skip_relocation, mojave: "850bb10bff13152daa34427e727208bfc3c37f503d0f2577952e27e0368dffd2"
   end
 
   depends_on "go" => :build
