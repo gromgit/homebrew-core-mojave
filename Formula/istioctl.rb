@@ -2,14 +2,14 @@ class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
   url "https://github.com/istio/istio.git",
-      tag:      "1.13.2",
-      revision: "91533d04e894ff86b80acd6d7a4517b144f9e19a"
+      tag:      "1.13.3",
+      revision: "b28579cb30c12c428ea58279b7c06f3302abe924"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/istioctl"
-    sha256 cellar: :any_skip_relocation, mojave: "53201e7d2ae949e5cd9b6b57de1601682a5f1bae27bab0a6654e35990061a23e"
+    sha256 cellar: :any_skip_relocation, mojave: "a1f68aa18ab260b020f172d00f74dd5d0ff426d223999014aa5efe8c047783b0"
   end
 
   depends_on "go" => :build
