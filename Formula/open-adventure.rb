@@ -2,8 +2,8 @@ class OpenAdventure < Formula
   include Language::Python::Virtualenv
   desc "Colossal Cave Adventure, the 1995 430-point version"
   homepage "http://www.catb.org/~esr/open-adventure/"
-  url "http://www.catb.org/~esr/open-adventure/advent-1.10.tar.gz"
-  sha256 "e0fc4c5d1aae0f27ace48af7cc45c9bde582a0eb305bdcb95e31b1310f32daa1"
+  url "http://www.catb.org/~esr/open-adventure/advent-1.11.tar.gz"
+  sha256 "150880fd47a4b8c98dc7748e62bf3e98839f5384b497057aa91c84e5935dd340"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/open-adventure.git", branch: "master"
 
@@ -14,7 +14,7 @@ class OpenAdventure < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-adventure"
-    sha256 cellar: :any_skip_relocation, mojave: "c51cf439d375dc7c2e18331369df74402a7198029926c297ef2ebd1f80249191"
+    sha256 cellar: :any_skip_relocation, mojave: "333d4f0ba437de0d286ffc3c143ded93d258454f158051e7566f37bde707f331"
   end
 
   depends_on "asciidoc" => :build
