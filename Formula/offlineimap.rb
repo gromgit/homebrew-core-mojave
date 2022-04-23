@@ -11,10 +11,13 @@ class Offlineimap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/offlineimap"
-    sha256 cellar: :any_skip_relocation, mojave: "0f9528fcb5500b61b612bddd2e51c47df1064d791d5bb46115107e6fa0f075cd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f7669c7d46a5f9557bbb2d73a8f2003ae9dbf387c838b6d9e3769e714263aadb"
   end
 
   depends_on "python@3.10"
+
+  uses_from_macos "krb5"
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
