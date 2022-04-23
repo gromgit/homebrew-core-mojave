@@ -14,6 +14,7 @@ class Polynote < Formula
     sha256 cellar: :any, big_sur:        "50e6449ee44ad049baaa2015a620e91c759a5d3329cdbd48347233fe3545fc30"
     sha256 cellar: :any, catalina:       "2a9c17df458e4225a381530b01ca8903fa317424604d8156e22877914d00a2de"
     sha256 cellar: :any, mojave:         "1e9021f5c8c3d0071f1775f1c82abf0240060aa2febae948db2ba6993e42f84d"
+    sha256               x86_64_linux:   "22377e6c2c3b592c9410c08da93700b5c5afe6458c793769175873f10aecccce"
   end
 
   depends_on "numpy" # used by `jep` for Java primitive arrays
