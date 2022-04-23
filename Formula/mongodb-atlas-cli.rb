@@ -5,9 +5,15 @@ class MongodbAtlasCli < Formula
   sha256 "11b324e1024793fb0b82b98e67838e4060e137bdc176180ed94fc623a275ac24"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(%r{^atlascli/v?(\d+(?:\.\d+)+)$}i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongodb-atlas-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "4994b79bf762d55361471b69fff83b31053836c399e95346af21ae3d538a863f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "220e00b816d04ef2f4956d457f53e09965eaa3686838bef44b79475f434ce2fe"
   end
 
   depends_on "go" => :build
