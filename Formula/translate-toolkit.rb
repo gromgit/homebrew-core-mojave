@@ -3,14 +3,14 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/70/e7/a1adb755aae35784ccb4323cde1216a71899bd68952e28ce1427b8f20533/translate-toolkit-3.6.0.tar.gz"
-  sha256 "dfdb19383920948e5bc1dafacb994ee07f8d6ecc053cd6e2b4c545ce0430ddff"
+  url "https://files.pythonhosted.org/packages/1b/c0/66d7c2deb7fd9072cbf886b6f35d796cf24a87f23e3033dfdc1f5d71ac7b/translate-toolkit-3.6.1.tar.gz"
+  sha256 "863483edbe51906e9baf9157c2ac22dd42ad07e740d58cc430db20175383da8a"
   license "GPL-2.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/translate-toolkit"
-    sha256 cellar: :any_skip_relocation, mojave: "e74168c0a250ac68adc64771aac1474965849762de3ea2fd67a56807e2472ac3"
+    sha256 cellar: :any_skip_relocation, mojave: "3abaec63d0fdddaddbafff7c5bee6f7bc6565cd6708551e44777369b39b9e747"
   end
 
   depends_on "python@3.10"
