@@ -1,8 +1,8 @@
 class RubyAT30 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.3.tar.xz"
-  sha256 "88cc7f0f021f15c4cd62b1f922e3a401697f7943551fe45b1fdf4f2417a17a9c"
+  url "https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.4.tar.xz"
+  sha256 "8e22fc7304520435522253210ed0aa9a50545f8f13c959fe01a05aea06bef2f0"
   license "Ruby"
 
   livecheck do
@@ -12,7 +12,7 @@ class RubyAT30 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@3.0"
-    sha256 mojave: "4d0ea2b93991b42a7fb15eb251c2c65df550eabed4f9b6fbb8676b7ea368b0b5"
+    sha256 mojave: "d44f174867c096bde7256e8264a7c0ae7c866d47c4084c8ccc9d8248e07104f9"
   end
 
   keg_only :versioned_formula
