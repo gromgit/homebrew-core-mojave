@@ -7,13 +7,20 @@ class Vroom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vroom"
-    sha256 cellar: :any, mojave: "53367bf4597127109345db4059189e0974749e6877d8b61098afda1a31cb61f6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "71ee974f663b5d744d349e89c7f5991fec92940cd78ab7dbf8d919f1513c9c05"
   end
 
   depends_on "pkg-config" => :build
   depends_on "asio"
   depends_on macos: :mojave # std::optional C++17 support
   depends_on "openssl@1.1"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     chdir "src" do
