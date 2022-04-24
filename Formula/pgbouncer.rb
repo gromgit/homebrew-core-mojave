@@ -6,12 +6,14 @@ class Pgbouncer < Formula
   license "ISC"
 
   livecheck do
-    url "https://github.com/pgbouncer/pgbouncer"
+    url "https://www.pgbouncer.org/downloads/"
+    regex(/href=.*?pgbouncer[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgbouncer"
-    sha256 cellar: :any, mojave: "fef94925bba0d3dc9e6a6a742f6650ea3e1a528f7735caebe945d9b02c2e8473"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5901d45b4184cfef94c29602b51e84ce99cb91e7bca965331890c6e8c11e1f1b"
   end
 
   depends_on "pkg-config" => :build
