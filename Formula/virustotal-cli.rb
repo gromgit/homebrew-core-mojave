@@ -1,13 +1,13 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
   homepage "https://github.com/VirusTotal/vt-cli"
-  url "https://github.com/VirusTotal/vt-cli/archive/0.10.1.tar.gz"
-  sha256 "b9004ebdd7a66eff15d160fe795b7f3c5577af7c316f896e7e05418e89c3792c"
+  url "https://github.com/VirusTotal/vt-cli/archive/0.10.2.tar.gz"
+  sha256 "09953ce45c2fbf872f70294d5fb58e856c0167ed6a7e1312f770e45bab18356b"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/virustotal-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "179ebfa9f0578b73969937dfd38810bfa7985e4a8a54f6821a621f4c747c7e16"
+    sha256 cellar: :any_skip_relocation, mojave: "d1d2864c413a4a361d33c855f9fd8465bc693562f6c9bf38059bb8b474ab9ebe"
   end
 
   # Bump to 1.18 on the next release, if possible.
