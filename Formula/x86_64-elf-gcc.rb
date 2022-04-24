@@ -1,9 +1,9 @@
 class X8664ElfGcc < Formula
   desc "GNU compiler collection for x86_64-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
-  sha256 "d08edc536b54c372a1010ff6619dd274c0f1603aa49212ba20f7aa2cda36fa8b"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
+  sha256 "b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -11,13 +11,8 @@ class X8664ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "daa3c262b5f625970ea90224a3ce51d5f31cb4768d6a743c880668cfb90717b7"
-    sha256 arm64_big_sur:  "8e89022ae000f049ac34f4e2f886faf94204e37b70da7e1b15f38c7b3d4a8f24"
-    sha256 monterey:       "4240152e303babaf8e156be70d0b9cfd775ac14b001367f563b055e0aeb6dc2e"
-    sha256 big_sur:        "549b28626170548e9def8448a09f4bb1854900652ef802672a30f691a9b44a3e"
-    sha256 catalina:       "6435d295ad77d012c577005b1758b3be3ae11b51f0f5d257c0f59f79e227575e"
-    sha256 mojave:         "74ed5acd47ee9fa82ba79c276eb996adf6f49dbb17e917dc02bec3e348cf7cd8"
-    sha256 x86_64_linux:   "27f94a03a1c3fda8820f6ce864ea4b3278600073eb0e9e258efc8ced07d5c088"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-elf-gcc"
+    sha256 mojave: "4ddf044619a39d0457d3dad18a0d2e12308b0d9efe8e4bb7e936d5583171533f"
   end
 
   depends_on "gmp"
