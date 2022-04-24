@@ -3,13 +3,13 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/3a/b3/7a105cab5f3006c4f771615c33a729d723bf8bce04b05d53dae0e32a5efe/pipenv-2022.4.8.tar.gz"
-  sha256 "53562bf69d9e5238f99a1e2101c356746b1c0aefa5dceb9b8a84a5a3e201de0d"
+  url "https://files.pythonhosted.org/packages/0b/c5/45624349729103aecbf8c818f1f655d522bcbb9e127ef8e712e78a8b491d/pipenv-2022.4.21.tar.gz"
+  sha256 "3f93229de25a4c3a658249f48407b80f347f076640a9fd50c476a2876212f781"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipenv"
-    sha256 cellar: :any_skip_relocation, mojave: "c8ce539812450421a5e783eea7770d6b87436f6166768e0f9fc95946cc1ed7c8"
+    sha256 cellar: :any_skip_relocation, mojave: "7afe3ac4f8db56be530d1aeedfcc7b8bd6f241c2fd45e609f3ec6b21570e92f4"
   end
 
   depends_on "python@3.10"
@@ -31,13 +31,13 @@ class Pipenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/33/66/61da40aa546141b0d70b37fe6bb4ef1200b4b4cb98849f131b58faa9a5d2/platformdirs-2.5.1.tar.gz"
-    sha256 "7535e70dfa32e84d4b34996ea99c5e432fa29a708d0f4e394bbcb2a8faa4f16d"
+    url "https://files.pythonhosted.org/packages/ff/7b/3613df51e6afbf2306fc2465671c03390229b55e3ef3ab9dd3f846a53be6/platformdirs-2.5.2.tar.gz"
+    sha256 "58c8abb07dcb441e6ee4b11d8df0ac856038f944ab98b7be6b27b2a3c7feef19"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/4a/c3/04f361a90ed4e6b3f3f696d61db5c786eaa741d2a6c125bc905b8a1c0200/virtualenv-20.14.0.tar.gz"
-    sha256 "8e5b402037287126e81ccde9432b95a8be5b19d36584f64957060a3488c11ca8"
+    url "https://files.pythonhosted.org/packages/5f/6c/d44c403a54ceb4ec5179d1a963c69887d30dc5b300529ce67c05b4f16212/virtualenv-20.14.1.tar.gz"
+    sha256 "ef589a79795589aada0c1c5b319486797c03b67ac3984c48c669c0e4f50df3a5"
   end
 
   resource "virtualenv-clone" do
