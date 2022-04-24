@@ -1,13 +1,13 @@
 class Samtools < Formula
   desc "Tools for manipulating next-generation sequencing data"
   homepage "https://www.htslib.org/"
-  url "https://github.com/samtools/samtools/releases/download/1.15/samtools-1.15.tar.bz2"
-  sha256 "35d945a5eee9817a764490870474f24e538400b0397b28f94247a5b91447215d"
+  url "https://github.com/samtools/samtools/releases/download/1.15.1/samtools-1.15.1.tar.bz2"
+  sha256 "708c525ac76b0532b25f14aadea34a4d11df667bc19bf0a74dae617d80526c6e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/samtools"
-    sha256 cellar: :any, mojave: "6d9523f8f478fc2342c5362efc83fdccff03a144ac91a4b83f812b13d662abfb"
+    sha256 cellar: :any, mojave: "1557e3c7c542ca43e6f2437115aed096dddf87394d13770a81bdf353ca937d05"
   end
 
   depends_on "htslib"
