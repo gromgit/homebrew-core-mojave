@@ -1,21 +1,14 @@
 class Recutils < Formula
   desc "Tools to work with human-editable, plain text data files"
   homepage "https://www.gnu.org/software/recutils/"
-  url "https://ftp.gnu.org/gnu/recutils/recutils-1.8.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnu/recutils/recutils-1.8.tar.gz"
-  sha256 "df8eae69593fdba53e264cbf4b2307dfb82120c09b6fab23e2dad51a89a5b193"
+  url "https://ftp.gnu.org/gnu/recutils/recutils-1.9.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnu/recutils/recutils-1.9.tar.gz"
+  sha256 "6301592b0020c14b456757ef5d434d49f6027b8e5f3a499d13362f205c486e0e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "491c102aed948bcbd12e02cf35c7ce1f827db23e5b9ec93f02c5c50da338c5db"
-    sha256 cellar: :any, arm64_big_sur:  "0ce93377375f551690f93d4cd68d2042f72354596dcae615ee632e8794bd7744"
-    sha256 cellar: :any, monterey:       "b5da463206e5c310dbdb2f5480411a365f2e0fdbca8dbbcdd895676566ff3f80"
-    sha256 cellar: :any, big_sur:        "20ea3e2b014d2300a75f02b3c2beaf4c888c37214df878c5dccbad9255f65de4"
-    sha256 cellar: :any, catalina:       "a55cbe91cc2c264fe53e5e6425c1f3bb0c090f097f16098fdce766807a38ea6d"
-    sha256 cellar: :any, mojave:         "1503a69c0ed988355b959c47b2c8a5e5a4f451d41027f5a06cdf5de19f7d171f"
-    sha256 cellar: :any, high_sierra:    "c2ca0221b7e7091c11840a000f02b130325a188aeb03b100947562aa8d9ce3ef"
-    sha256 cellar: :any, sierra:         "694cfda88a56f30c66d71080b8a1a4763a17789e0ea54b37c778ba84107f6430"
-    sha256               x86_64_linux:   "1197a9f01b9ab6305b788213b0dc00511d919d9adb58b49a3dfd29e9ddeceae9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/recutils"
+    sha256 mojave: "ada1f13781b8907524ceb508c9c1e210ed5153c9ed9af83442b7b8c3944ac829"
   end
 
   on_linux do
