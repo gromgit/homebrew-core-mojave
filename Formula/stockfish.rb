@@ -1,8 +1,8 @@
 class Stockfish < Formula
   desc "Strong open-source chess engine"
   homepage "https://stockfishchess.org/"
-  url "https://github.com/official-stockfish/Stockfish/archive/sf_14.1.tar.gz"
-  sha256 "11d71018af47ba047175f846be72d8d9878df698e9b5d708ab158cf530633600"
+  url "https://github.com/official-stockfish/Stockfish/archive/sf_15.tar.gz"
+  sha256 "0553fe53ea57ce6641048049d1a17d4807db67eecd3531a3749401362a27c983"
   license "GPL-3.0-only"
   head "https://github.com/official-stockfish/Stockfish.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Stockfish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stockfish"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "78055daa3e09019a43dda360fac21481c2bcaf2b18ef07a23e22848f07f311ad"
+    sha256 cellar: :any_skip_relocation, mojave: "f050fac04fc09e0726ff2f866a66b94f4d261f0b340bcb62fbc32ead7562199c"
   end
 
   on_linux do
