@@ -12,8 +12,8 @@ class Tin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tin"
-    rebuild 1
-    sha256 mojave: "978f49d04ba5349492515b6d09975b0aa645e58849dad704dc28802a8503d39d"
+    rebuild 2
+    sha256 mojave: "059e30e70f3b74ccb2a3e33a8fce8fb1ad4235ba40fec8259c398b52932549e2"
   end
 
   depends_on "gettext"
