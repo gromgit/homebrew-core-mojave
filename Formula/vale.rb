@@ -1,13 +1,13 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
   homepage "https://docs.errata.ai/"
-  url "https://github.com/errata-ai/vale/archive/v2.15.5.tar.gz"
-  sha256 "157cdab83eba405da4301b3ed3aa1e5cea085dd32dd212494df2cc31245706da"
+  url "https://github.com/errata-ai/vale/archive/v2.16.0.tar.gz"
+  sha256 "f478825c5a44ee6f29bef9dc64b3effefcbecd61607c0aff197ca0c8c4be65cf"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vale"
-    sha256 cellar: :any_skip_relocation, mojave: "15d6b713384a79e162f5cb20d445c4b37882b54175d0d9d024aca8a10d0d979f"
+    sha256 cellar: :any_skip_relocation, mojave: "ebf6b82e3b94f808eba45493f9e18a5cca50d51d1b2f322c53a4383c6170fb9a"
   end
 
   depends_on "go" => :build
