@@ -1,8 +1,8 @@
 class RubyAT26 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.9.tar.xz"
-  sha256 "6a041d82ae6e0f02ccb1465e620d94a7196489d8a13d6018a160da42ebc1eece"
+  url "https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.10.tar.xz"
+  sha256 "5fd8ded51321b88fdc9c1b4b0eb1b951d2eddbc293865da0151612c2e814c1f2"
   license "Ruby"
 
   livecheck do
@@ -12,13 +12,12 @@ class RubyAT26 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@2.6"
-    rebuild 2
-    sha256 mojave: "3cf06340c2e69fb92e9577761974258bb3dcea21d2c7f4ae3a3158bcc64fd3ec"
+    sha256 mojave: "76d59652b9fe9ecfbe015d87d660543553c525ca3f09be402d025fdd47e31abb"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2022-04-05", because: :unsupported
+  deprecate! date: "2022-04-12", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "libyaml"
