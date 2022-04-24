@@ -2,14 +2,14 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
   url "https://github.com/camunda/zeebe.git",
-      tag:      "8.0.0",
-      revision: "74e2dae4e112d0ecd600d1b55cbc588609b792a7"
+      tag:      "8.0.1",
+      revision: "e5f40db49e43e769c1834aa8c98f12710e9cee0c"
   license "Apache-2.0"
   head "https://github.com/camunda/zeebe.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zbctl"
-    sha256 cellar: :any_skip_relocation, mojave: "18849ceca39cecdfb2c46e2d1c4785ef99e06d8472fdc7bbd49389ff557bb0fb"
+    sha256 cellar: :any_skip_relocation, mojave: "0391ce47ece25611ded8af67c85bd9096c643a2645a0b7c29c6224b1980138bb"
   end
 
   depends_on "go" => :build
@@ -17,7 +17,7 @@ class Zbctl < Formula
   def install
     commit = Utils.git_short_head
     chdir "clients/go/cmd/zbctl" do
-      project = "github.com/camunda/zeebe/clients/go/cmd/zbctl/internal/commands"
+      project = "github.com/camunda/zeebe/clients/go/v8/cmd/zbctl/internal/commands"
       ldflags = %W[
         -w
         -X #{project}.Version=#{version}
