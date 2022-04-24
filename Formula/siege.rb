@@ -1,8 +1,8 @@
 class Siege < Formula
   desc "HTTP regression testing and benchmarking utility"
   homepage "https://www.joedog.org/siege-home/"
-  url "http://download.joedog.org/siege/siege-4.1.2.tar.gz"
-  sha256 "e472abe19c5a93f6be5bfd64dff26f668da2c6d210af8213b60c9c0db17eca79"
+  url "http://download.joedog.org/siege/siege-4.1.3.tar.gz"
+  sha256 "2250bca8fca539f1a4e4cbe5ba89afd32c4739b2fbc60c7ca6168d9a782f790a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Siege < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/siege"
-    sha256 mojave: "20e372db77705d0bb9434541ab471dda1230959b381e5fced199567d4ad7ef2b"
+    sha256 mojave: "84fb835e0b17d5a6c2b3bb39b1cfcfbaee968838a4efc1142d7696f93a4bc788"
   end
 
   depends_on "openssl@1.1"
