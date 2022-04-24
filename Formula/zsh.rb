@@ -6,10 +6,14 @@ class Zsh < Formula
   sha256 "b6973520bace600b4779200269b1e5d79e5f505ac4952058c11ad5bbf0dd9919"
   license "MIT-Modern-Variant"
 
+  livecheck do
+    url "https://sourceforge.net/projects/zsh/rss?path=/zsh"
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zsh"
-    rebuild 1
-    sha256 mojave: "1d9fac269b7335f9eef363795e783473c0cdb032a38a072910cb35e5b81df7c1"
+    rebuild 2
+    sha256 mojave: "257b0b4aa7c633453ba984a708d51627c08fe830dab0d518572062212b728b9c"
   end
 
   head do
