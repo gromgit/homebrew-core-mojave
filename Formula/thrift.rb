@@ -15,10 +15,10 @@ class Thrift < Formula
     end
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/thrift"
-    rebuild 2
-    sha256 cellar: :any, mojave: "662bc781e7416bf598c151efb860eeb1d09e83e7fa65681cadd0a5cd3ef1172c"
+    rebuild 3
+    sha256 cellar: :any, mojave: "ad761277f6ab5eed445fe67e2a5b7a795423cacef329f749d45752fca042b26b"
   end
 
   head do
@@ -33,6 +33,7 @@ bottle do
   depends_on "bison" => :build
   depends_on "boost" => [:build, :test]
   depends_on "openssl@1.1"
+  uses_from_macos "zlib"
 
   def install
     system "./bootstrap.sh" unless build.stable?
@@ -43,15 +44,24 @@ bottle do
       --prefix=#{prefix}
       --libdir=#{lib}
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
-      --without-erlang
-      --without-haskell
       --without-java
-      --without-perl
-      --without-php
-      --without-php_extension
+      --without-kotlin
       --without-python
       --without-py3
       --without-ruby
+      --without-haxe
+      --without-netstd
+      --without-perl
+      --without-php
+      --without-php_extension
+      --without-dart
+      --without-erlang
+      --without-go
+      --without-d
+      --without-nodejs
+      --without-nodets
+      --without-lua
+      --without-rs
       --without-swift
     ]
 
