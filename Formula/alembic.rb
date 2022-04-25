@@ -4,19 +4,18 @@ class Alembic < Formula
   url "https://github.com/alembic/alembic/archive/1.8.3.tar.gz"
   sha256 "b0bc74833bff118a869e81e6acb810a58797e77ef63143954b2f8e817c7f65cb"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/alembic/alembic.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alembic"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aba5feef135a6437ef5c0b24f6246fd045f0845b289ffa80634f66fee6d9626b"
+    sha256 cellar: :any, mojave: "f70cd1a85f0864df1a03a2c9487aef9cae6eeb610ba340af87da67c60d70f102"
   end
 
   depends_on "cmake" => :build
   depends_on "hdf5"
   depends_on "imath"
-  depends_on "szip"
+  depends_on "libaec"
 
   uses_from_macos "zlib"
 
