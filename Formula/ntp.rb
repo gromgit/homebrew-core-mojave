@@ -5,9 +5,14 @@ class Ntp < Formula
   version "4.2.8p15"
   sha256 "f65840deab68614d5d7ceb2d0bb9304ff70dcdedd09abb79754a87536b849c19"
 
+  # This approach is a temporary workaround while www.ntp.org is experiencing
+  # SSL certificate issues. Once this issue is resolved, we should reinstate
+  # the previous check.
   livecheck do
-    url "https://www.ntp.org/downloads.html"
-    regex(/href=.*?ntp[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i)
+    # url "https://www.ntp.org/downloads.html"
+    # regex(/href=.*?ntp[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i)
+    url "https://support.ntp.org/rss/releases.xml"
+    regex(%r{/ntp[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t}i)
   end
 
   bottle do
@@ -34,10 +39,14 @@ class Ntp < Formula
     ]
 
     system "./configure", *args
-    system "make", "install", "LDADD_LIBNTP=-lresolv -undefined dynamic_lookup"
+    ldflags = "-lresolv"
+    ldflags = "#{ldflags} -undefined dynamic_lookup" if OS.mac?
+    system "make", "install", "LDADD_LIBNTP=#{ldflags}"
   end
 
   test do
-    assert_match "step time server ", shell_output("#{sbin}/ntpdate -bq pool.ntp.org")
+    # On Linux all binaries are installed in bin, while on macOS they are split between bin and sbin.
+    ntpdate_bin = OS.mac? ? sbin/"ntpdate" : bin/"ntpdate"
+    assert_match "step time server ", shell_output("#{ntpdate_bin} -bq pool.ntp.org")
   end
 end
