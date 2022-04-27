@@ -7,13 +7,17 @@ class GitRemoteHg < Formula
   sha256 "916072d134cde65b7ffa7d1da1acaabb0f29b65c017d0560e907e7a94063d1b1"
   license "GPL-2.0"
   revision 2
-  head "https://github.com/felipec/git-remote-hg.git"
+  head "https://github.com/felipec/git-remote-hg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, catalina:    "efcac93a209213486fcf837f83b364b6325adefba09493551e3e6017e669aa9f"
     sha256 cellar: :any_skip_relocation, mojave:      "3903ddefc5ed6142943aa33ba298ac51d054159f0c401bcde044934494202a19"
     sha256 cellar: :any_skip_relocation, high_sierra: "1380e5053a25462f27d9be329840b6dda55b08e01b70ed6c581f3c625c7b332d"
   end
+
+  # Requires Python2.
+  # https://github.com/Homebrew/homebrew-core/issues/93940
+  deprecate! date: "2022-04-23", because: :unsupported
 
   depends_on "asciidoc" => :build
   depends_on :macos # Due to Python 2
