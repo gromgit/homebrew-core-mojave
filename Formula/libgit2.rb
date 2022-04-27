@@ -1,10 +1,9 @@
 class Libgit2 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
   homepage "https://libgit2.github.com/"
-  url "https://github.com/libgit2/libgit2/archive/v1.4.2.tar.gz"
-  sha256 "901c2b4492976b86477569502a41c31b274b69adc177149c02099ea88404ef19"
+  url "https://github.com/libgit2/libgit2/archive/v1.4.3.tar.gz"
+  sha256 "f48b961e463a9e4e7e7e58b21a0fb5a9b2a1d24d9ba4d15870a0c9b8ad965163"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/libgit2/libgit2.git", branch: "main"
 
   livecheck do
@@ -14,7 +13,7 @@ class Libgit2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgit2"
-    sha256 cellar: :any, mojave: "753834b2549847fc957dc0e5f9305d113fdfd2c84a7c1c0039e21369166a53b2"
+    sha256 cellar: :any, mojave: "9176f60a061e6e421825c330960fb6d42c14d4b9af1d8c6967b65d9c697c3002"
   end
 
   depends_on "cmake" => :build
