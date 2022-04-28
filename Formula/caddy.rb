@@ -1,23 +1,21 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/v2.4.6.tar.gz"
-  sha256 "5a450a4ff0d2dbd165d62f957ecdaebdc4bd0445c66a06a27d0025a82843402d"
+  url "https://github.com/caddyserver/caddy/archive/v2.5.0.tar.gz"
+  sha256 "65b050af067dba4ff28d10dede5973a70474e7a7fc89ad8d7bc353f7c022732f"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caddy"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "81c97e64366e6e7b9930f0d52221824057bcd6200d549a31965a4d9625e54fbf"
+    sha256 cellar: :any_skip_relocation, mojave: "86c4ff58c2d465df387b820602dbb411cb82bf87ec3f4cb723fd4f737ab94393"
   end
 
-  # Bump to 1.18 with the next release (2.5).
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https://github.com/caddyserver/xcaddy/archive/v0.2.0.tar.gz"
-    sha256 "20e4994cc52323f8420741efafa78b8d29b1ad600e59671287436e236c2c3be2"
+    url "https://github.com/caddyserver/xcaddy/archive/v0.3.0.tar.gz"
+    sha256 "1a59ff6f51959072a512002e7ec280ea96775361277ba046a8af5a820a37aacd"
   end
 
   def install
