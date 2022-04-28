@@ -15,12 +15,14 @@ class Ace < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ace"
-    sha256 cellar: :any, mojave: "4068ce01b122b207111642e45775dff00d35e83676116afc2d42ddd3daece968"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8a0c8c6cbdbd31018af799f14cc6d6a738972cd2df3b9c10115b40b6dfd58a04"
   end
 
   def install
-    ln_sf "config-macosx.h", "ace/config.h"
-    ln_sf "platform_macosx.GNU", "include/makeinclude/platform_macros.GNU"
+    os = OS.mac? ? "macosx" : "linux"
+    ln_sf "config-#{os}.h", "ace/config.h"
+    ln_sf "platform_#{os}.GNU", "include/makeinclude/platform_macros.GNU"
 
     # Set up the environment the way ACE expects during build.
     ENV.cxx11
