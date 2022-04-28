@@ -1,8 +1,8 @@
 class Antlr4CppRuntime < Formula
   desc "ANother Tool for Language Recognition C++ Runtime Library"
   homepage "https://www.antlr.org/"
-  url "https://www.antlr.org/download/antlr4-cpp-runtime-4.10-source.zip"
-  sha256 "417b5d5ff2df0c3a642fc7c56b7754344ed28b5aab861e9e8c8982663fa76762"
+  url "https://www.antlr.org/download/antlr4-cpp-runtime-4.10.1-source.zip"
+  sha256 "2a6e602fd593e0a65d8d310c0952bbdfff34ef361362ae87b2a850b62d36f0b6"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Antlr4CppRuntime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/antlr4-cpp-runtime"
-    sha256 cellar: :any, mojave: "0f3192bb8249b54d0ac6225951c4fd84a41b6b4f0fdcb8f779be644a712ae378"
+    sha256 cellar: :any, mojave: "fbd5ee8b6209461261605852e8e19ad1efba0cdb27f1dafc71bfecbc4694a823"
   end
 
   depends_on "cmake" => :build
