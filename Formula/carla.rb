@@ -1,8 +1,8 @@
 class Carla < Formula
   desc "Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more"
   homepage "https://kxstudio.linuxaudio.org/Applications:Carla"
-  url "https://github.com/falkTX/Carla/archive/v2.4.2.tar.gz"
-  sha256 "376884965e685242953cab757818dde262209c651bd563a04eade0678c6b9f39"
+  url "https://github.com/falkTX/Carla/archive/v2.4.3.tar.gz"
+  sha256 "0092926e5167f3a5eb592f0055e5491803354ae42947e706db0dc548d9e786d3"
   license "GPL-2.0-or-later"
   head "https://github.com/falkTX/Carla.git", branch: "main"
 
@@ -13,8 +13,7 @@ class Carla < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/carla"
-    rebuild 2
-    sha256 cellar: :any, mojave: "4e2644e3fba92c71b42f0e42ebcaf6bd8d1b2c6593b589fa0e294e1ddee0391b"
+    sha256 cellar: :any, mojave: "c1be4442eaddb83632ea47e6717efeb4b17c577a0af8cc890a852c6a435e71e6"
   end
 
   depends_on "pkg-config" => :build
