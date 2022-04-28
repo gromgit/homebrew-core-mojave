@@ -1,10 +1,9 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://github.com/lu-zero/cargo-c/archive/v0.9.8.tar.gz"
-  sha256 "7c649061826e0ad3c2c8735718f4a0c4afd12eed9b9fdc5fe59e34582902e1c5"
+  url "https://github.com/lu-zero/cargo-c/archive/v0.9.9.tar.gz"
+  sha256 "d35f91e3e57bb0b5459789c02d1fa8a875bc55ca603a85ed63138d6d8193b53f"
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,7 +12,7 @@ class CargoC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-c"
-    sha256 cellar: :any, mojave: "ab60680978965133383f28093cd9f83da81ec032a98f17924f91eedb24f4caee"
+    sha256 cellar: :any, mojave: "2418ac93347db40267ed7a28f91e6643b9c3b1582bfd73a32c50a2cbf20d2410"
   end
 
   depends_on "rust" => :build
@@ -27,34 +26,7 @@ class CargoC < Formula
     depends_on "pkg-config" => :build
   end
 
-  # Workaround to patch cargo dependency tree for libgit2 issue
-  # Issue ref: https://github.com/rust-lang/cargo/issues/10446
-  # Using .crate as GitHub source tarball results in build failures.
-  # TODO: Remove when cargo-c release uses cargo version with fix
-  resource "cargo" do
-    url "https://static.crates.io/crates/cargo/cargo-0.60.0.crate"
-    sha256 "bc194fab2f0394703f2794faeb9fcca34301af33eee96fa943b856028f279a77"
-  end
-
-  # Fix issue with libgit2 >= 1.4 and git2-rs < 0.14.
-  # Issue ref: https://github.com/rust-lang/git2-rs/issues/813
-  # TODO: Remove when release dependency tree uses git2-rs >= 0.14
-  patch :DATA
-
   def install
-    # TODO: Remove locally patched `cargo` when issue is fixed and in release
-    resource("cargo").stage do
-      system "tar", "--strip-components", "1", "-xzvf", "cargo-0.60.0.crate"
-      # Cannot directly apply upstream commit since the Cargo.toml is different.
-      # Commit ref: https://github.com/rust-lang/cargo/commit/e756c130cf8b6348278db30bcd882a7f310cf58e
-      inreplace "Cargo.toml" do |s|
-        s.gsub!(/(\.git2\]\nversion) .*/, "\\1 = \"0.14.1\"")
-        s.gsub!(/(\.git2-curl\]\nversion) .*/, "\\1 = \"0.15.0\"")
-        s.gsub!(/(\.libgit2-sys\]\nversion) .*/, "\\1 = \"0.13.1\"")
-      end
-      (buildpath/"vendor/cargo").install Dir["*"]
-    end
-
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
 
@@ -67,19 +39,3 @@ class CargoC < Formula
     assert_match cargo_error, shell_output("#{bin}/cargo-cbuild cbuild 2>&1", 1)
   end
 end
-
-__END__
-diff --git a/Cargo.toml b/Cargo.toml
-index c8426f2..d82b2b5 100644
---- a/Cargo.toml
-+++ b/Cargo.toml
-@@ -43,6 +43,9 @@ cc = "1.0"
- glob = "0.3"
- itertools = "0.10"
-
-+[patch.crates-io]
-+cargo = { path = "vendor/cargo" }
-+
- [features]
- default = []
- vendored-openssl = ["cargo/vendored-openssl"]
