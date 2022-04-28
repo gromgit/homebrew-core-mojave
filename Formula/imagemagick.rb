@@ -1,10 +1,9 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-29.tar.xz"
-  sha256 "a89df63da5ec823ae77049d747bf6b370bc867a06659b410f42652e5773fc62c"
+  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-31.tar.xz"
+  sha256 "a0e479c9a1df2a2fdb8fda6e2dbfcbdd1b6a058c89c75b747814c1438646ba3d"
   license "ImageMagick"
-  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -14,7 +13,7 @@ class Imagemagick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick"
-    sha256 mojave: "821d25ce0acefef328bb2b4c8c0cb1ae22ecb51ed1bb1dd8da7fa720a113ec46"
+    sha256 mojave: "405a84b856399f0688a14cd6ed41de37a846d9345492588613ed5718f93affbd"
   end
 
   depends_on "pkg-config" => :build
@@ -95,7 +94,7 @@ class Imagemagick < Formula
 
     # Check support for a few specific image formats, mostly to ensure LibRaw linked correctly.
     formats = shell_output("#{bin}/magick -list format")
-    ["AVIF* HEIC      rw+", "ARW  DNG       r--", "DNG  DNG       r--"].each do |format|
+    ["AVIF  HEIC      rw+", "ARW  DNG       r--", "DNG  DNG       r--"].each do |format|
       assert_match format, formats
     end
     assert_match "Helvetica", shell_output("#{bin}/magick -list font")
