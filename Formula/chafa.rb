@@ -1,8 +1,8 @@
 class Chafa < Formula
   desc "Versatile and fast Unicode/ASCII/ANSI graphics renderer"
   homepage "https://hpjansson.org/chafa/"
-  url "https://hpjansson.org/chafa/releases/chafa-1.10.1.tar.xz"
-  sha256 "5791b726a02a449d7c4d6306ed97b711d7df22c51c891d8c64a60015b8e448ec"
+  url "https://hpjansson.org/chafa/releases/chafa-1.10.2.tar.xz"
+  sha256 "171042f71f4a1da72322c170d81c4715ac5ac2c907aa663912f74b7a4b1b9bbb"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Chafa < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chafa"
-    sha256 cellar: :any, mojave: "84fba53e5491da281f6661d808516f1bb60029eccca4edd0479f1b8208d90af6"
+    sha256 cellar: :any, mojave: "2c99b5f2c53bfea4e5882677e02295d04d75924f4a8619db67b65968b305ac44"
   end
 
   depends_on "pkg-config" => :build
