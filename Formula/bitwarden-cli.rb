@@ -3,13 +3,13 @@ require "language/node"
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https://bitwarden.com/"
-  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-1.22.0.tgz"
-  sha256 "6c05e7d31d6c885d43aee8370bbb50691ea07ae379b818ff2c90ebdcbf9363ac"
+  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-1.22.1.tgz"
+  sha256 "3bddf569de988fbf5a3c1b433f0df69a329be795b42860d84ebf8ba5cbd67c81"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bitwarden-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "5403580806b6f75e9894bc070706c35e67a20ed655052dcc295d4cec8d0e335a"
+    sha256 cellar: :any_skip_relocation, mojave: "a65de15c71c48982570ccdc40eb9080598ec258f543f4546239be7d9ea878a4a"
   end
 
   depends_on "node"
