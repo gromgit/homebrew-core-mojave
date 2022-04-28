@@ -1,9 +1,9 @@
 class JsonC < Formula
   desc "JSON parser for C"
   homepage "https://github.com/json-c/json-c/wiki"
-  url "https://github.com/json-c/json-c/archive/json-c-0.15-20200726.tar.gz"
-  version "0.15"
-  sha256 "4ba9a090a42cf1e12b84c64e4464bb6fb893666841d5843cc5bef90774028882"
+  url "https://github.com/json-c/json-c/archive/refs/tags/json-c-0.16-20220414.tar.gz"
+  version "0.16"
+  sha256 "3ecaeedffd99a60b1262819f9e60d7d983844073abc74e495cb822b251904185"
   license "MIT"
   head "https://github.com/json-c/json-c.git", branch: "master"
 
@@ -14,10 +14,8 @@ class JsonC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/json-c"
-    rebuild 1
-    sha256 cellar: :any, mojave: "521cdd9673569ca89a115c5d37f6c9e4aa72033a367ad153d7cbb96e736b08ba"
+    sha256 cellar: :any, mojave: "f97b7bc4981d46e786fe6414885a8bb680b6df0520fd9cc8564f8c5d5e9f5e2f"
   end
-
 
   depends_on "cmake" => :build
 
