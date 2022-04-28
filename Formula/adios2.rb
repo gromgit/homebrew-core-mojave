@@ -4,6 +4,7 @@ class Adios2 < Formula
   url "https://github.com/ornladios/ADIOS2/archive/v2.8.0.tar.gz"
   sha256 "5af3d950e616989133955c2430bd09bcf6bad3a04cf62317b401eaf6e7c2d479"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Adios2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/adios2"
-    sha256 mojave: "d8cb917d352cf0f9e73e4785b4219f5e5da4f8b80a42d35908857c5d118922a5"
+    sha256 mojave: "034b270505f9f245dd73a6491a9230481b5209c5efbc74ac0397b69e964fe597"
   end
 
   depends_on "cmake" => :build
@@ -24,8 +25,9 @@ class Adios2 < Formula
   depends_on "mpi4py"
   depends_on "numpy"
   depends_on "open-mpi"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "zeromq"
+
   uses_from_macos "bzip2"
 
   def install
@@ -54,16 +56,14 @@ class Adios2 < Formula
       -DCMAKE_DISABLE_FIND_PACKAGE_FLEX=TRUE
       -DCMAKE_DISABLE_FIND_PACKAGE_LibFFI=TRUE
       -DCMAKE_DISABLE_FIND_PACKAGE_NVSTREAM=TRUE
-      -DPython_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3
+      -DPython_EXECUTABLE=#{which("python3")}
       -DCMAKE_INSTALL_PYTHONDIR=#{prefix/Language::Python.site_packages("python3")}
       -DADIOS2_BUILD_TESTING=OFF
       -DADIOS2_BUILD_EXAMPLES=OFF
     ]
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-      rm_rf Dir[prefix/"bin/bp4dbg"] # https://github.com/ornladios/ADIOS2/pull/1846
-    end
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     (pkgshare/"test").install "examples/hello/bpWriter/helloBPWriter.cpp"
     (pkgshare/"test").install "examples/hello/bpWriter/helloBPWriter.py"
@@ -77,8 +77,9 @@ class Adios2 < Formula
     system "./a.out"
     assert_predicate testpath/"myVector_cpp.bp", :exist?
 
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import adios2"
-    system Formula["python@3.9"].opt_bin/"python3", (pkgshare/"test/helloBPWriter.py")
+    python = Formula["python@3.10"].opt_bin/"python3"
+    system python, "-c", "import adios2"
+    system python, (pkgshare/"test/helloBPWriter.py")
     assert_predicate testpath/"npArray.bp", :exist?
   end
 end
