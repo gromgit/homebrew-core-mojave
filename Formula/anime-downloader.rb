@@ -6,16 +6,12 @@ class AnimeDownloader < Formula
   url "https://files.pythonhosted.org/packages/00/8b/2f354c0c2e56f1fe45e805698bd6a81c472473a48b814c44aaed2d41016d/anime-downloader-5.0.9.tar.gz"
   sha256 "40eaded9508a30f35993b2fc0f436c357d9939d58625a10bd595bfc11816ead4"
   license "Unlicense"
+  revision 1
   head "https://github.com/anime-dl/anime-downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c56a2f2880ad0f27d82283fa496ed29920a55e06c24e9e294edafea385e7c872"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51528ac11b71b803cec6866244164cc4b5e837fbc189c38cdb054bf189ef59f7"
-    sha256 cellar: :any_skip_relocation, monterey:       "fde42013e865de24caed2210d8b72a48e78b77f39d9058ae93872dd453479af2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4b7f8ef5058b22b72b3f5bda4ad9110c9d4ab4e7bc9aa5cf9691ca5f0c5ea558"
-    sha256 cellar: :any_skip_relocation, catalina:       "ca0111a1386a2269340b3ce8b7d7a24766975cc680ab60e4c045cadae989e106"
-    sha256 cellar: :any_skip_relocation, mojave:         "b561d3e6d9c25da1d6088154ce894985d5e6d0b08d317566e31ee9a970dc1754"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f571445d312cada1fb7ce349655e378ef21cfd7e227780a8dad74a58671f7d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/anime-downloader"
+    sha256 cellar: :any_skip_relocation, mojave: "cc40b2567b94725a74eadb64cb5484ddca5126c08d3d1cc11a13965a74fcedd5"
   end
 
   depends_on "aria2"
@@ -24,8 +20,8 @@ class AnimeDownloader < Formula
   depends_on "python@3.9"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/6b/c3/d31704ae558dcca862e4ee8e8388f357af6c9d9acb0cad4ba0fbbd350d9a/beautifulsoup4-4.9.3.tar.gz"
-    sha256 "84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25"
+    url "https://files.pythonhosted.org/packages/e8/b0/cd2b968000577ec5ce6c741a54d846dfa402372369b8b6861720aa9ecea7/beautifulsoup4-4.11.1.tar.gz"
+    sha256 "ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"
   end
 
   resource "certifi" do
