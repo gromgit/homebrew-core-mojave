@@ -8,16 +8,16 @@ class Cassandra < Formula
   mirror "https://archive.apache.org/dist/cassandra/4.0.3/apache-cassandra-4.0.3-bin.tar.gz"
   sha256 "33623300bef39c75c73c3b51ad45b453e40e27a0816af3a1466537aa79e5f50d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d066a05b75d839bbf9daf300083d8b4142e401aa5229f828a81eff847c6afffc"
+    sha256 cellar: :any_skip_relocation, mojave: "7b13c4161f79409acbcf18bbcc9903d9e52b161dd8add257b4757b034424a069"
   end
 
   depends_on "libcython" => :build
   depends_on "openjdk@11"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "thrift" do
