@@ -13,7 +13,8 @@ class Lua < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lua"
-    sha256 cellar: :any, mojave: "a23abdf3af532254159759c30d4ad993c863a43302f3769efbed773205984c8f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "70c6fa7b6c9e2e31c5f203c2502451a76486be261cb403fa1f7d69a2b6bef3b3"
   end
 
   uses_from_macos "unzip" => :build
@@ -31,7 +32,7 @@ class Lua < Formula
     depends_on "readline"
 
     # Add shared library for linux. Equivalent to the mac patch above.
-    # Inspired from http://www.linuxfromscratch.org/blfs/view/cvs/general/lua.html
+    # Inspired from https://www.linuxfromscratch.org/blfs/view/cvs/general/lua.html
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/0dcd11880c7d63eb395105a5cdddc1ca05b40f4a/lua/lua-so.patch"
       sha256 "522dc63a0c1d87bf127c992dfdf73a9267890fd01a5a17e2bcf06f7eb2782942"
@@ -46,7 +47,7 @@ class Lua < Formula
     if OS.linux?
       # Fix: /usr/bin/ld: lapi.o: relocation R_X86_64_32 against `luaO_nilobject_' can not be used
       # when making a shared object; recompile with -fPIC
-      # See http://www.linuxfromscratch.org/blfs/view/cvs/general/lua.html
+      # See https://www.linuxfromscratch.org/blfs/view/cvs/general/lua.html
       ENV.append_to_cflags "-fPIC"
     end
 
