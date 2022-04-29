@@ -2,14 +2,14 @@ class Etcd < Formula
   desc "Key value store for shared configuration and service discovery"
   homepage "https://github.com/etcd-io/etcd"
   url "https://github.com/etcd-io/etcd.git",
-      tag:      "v3.5.3",
-      revision: "0452feec719fa8ad88ae343e66e9bb222965d75d"
+      tag:      "v3.5.4",
+      revision: "08407ff7600eb16c4445d5f21c4fafaf19412e24"
   license "Apache-2.0"
   head "https://github.com/etcd-io/etcd.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd"
-    sha256 cellar: :any_skip_relocation, mojave: "0f7df3eb5aabcb5b7049ece99ad86bab2d59bd3b5197b6ed00badcad25fad4d7"
+    sha256 cellar: :any_skip_relocation, mojave: "06cc6307653b8efb55acf722fd2a702c240024ffedd9347146962c98b57daf73"
   end
 
   depends_on "go" => :build
