@@ -7,11 +7,16 @@ class Geogram < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geogram"
-    sha256 cellar: :any, mojave: "cb854d83b43cc6dd37805d85c83e1fafe99b4ecd0a5f0dcde5daab9ea7f3744b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c38541a24a11eef5f1b08aff0fb8930031a4aa0f7dea2e65f8215dc2b48157df"
   end
 
   depends_on "cmake" => :build
   depends_on "glfw"
+
+  on_linux do
+    depends_on "doxygen" => :build
+  end
 
   resource "bunny" do
     url "https://raw.githubusercontent.com/FreeCAD/Examples/be0b4f9/Point_cloud_ExampleFiles/PointCloud-Data_Stanford-Bunny.asc"
@@ -27,7 +32,8 @@ class Geogram < Formula
     EOS
 
     system "./configure.sh"
-    cd "build/Darwin-clang-dynamic-Release" do
+    platform = OS.mac? ? "Darwin-clang" : "Linux64-gcc"
+    cd "build/#{platform}-dynamic-Release" do
       system "make", "install"
     end
 
