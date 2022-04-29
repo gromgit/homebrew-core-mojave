@@ -1,13 +1,13 @@
 class Difftastic < Formula
   desc "Diff that understands syntax"
   homepage "https://github.com/Wilfred/difftastic"
-  url "https://github.com/Wilfred/difftastic/archive/refs/tags/0.26.3.tar.gz"
-  sha256 "9d4e026032738b3ffff35f8f2c775f82d6c4604892f17cbbd0106760a80deb91"
+  url "https://github.com/Wilfred/difftastic/archive/refs/tags/0.27.0.tar.gz"
+  sha256 "0574d0f3f3b1aab7116cc6a41ff6df8022e93daade0460cded6b16988d58e316"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/difftastic"
-    sha256 cellar: :any_skip_relocation, mojave: "2a0cdc4002cb88d63e43eae9f65c1adede3950792a642651b8371b18ddfbe63e"
+    sha256 cellar: :any_skip_relocation, mojave: "24a64778dfb0d9a94236ee11158af7a0936ede2552bd6c8cbc3ecf059e36b2aa"
   end
 
   depends_on "rust" => :build
