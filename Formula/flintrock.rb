@@ -6,15 +6,15 @@ class Flintrock < Formula
   url "https://files.pythonhosted.org/packages/dc/ad/6e3871a510f0d053aa49caee2140a2f64f2d3fa584d3b70408043295fa57/Flintrock-2.0.0.tar.gz"
   sha256 "ccbbc912823772ea733802ca3f9751c98dacda8c67518683a3dc4ec8b1de38dd"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flintrock"
-    sha256 cellar: :any, mojave: "c095f3739272e3574df4c3c6436ab20b52280e51b9afee73cefec4b7ab6cb310"
+    sha256 cellar: :any, mojave: "dafb0665583f44f69dd95d2c7d733464b749b42ea8dbc1e5c91e7bb678e877a5"
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "bcrypt" do
