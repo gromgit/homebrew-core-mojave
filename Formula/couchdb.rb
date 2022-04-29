@@ -1,11 +1,10 @@
 class Couchdb < Formula
   desc "Apache CouchDB database server"
   homepage "https://couchdb.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.2.1/apache-couchdb-3.2.1.tar.gz"
-  mirror "https://archive.apache.org/dist/couchdb/source/3.2.1/apache-couchdb-3.2.1.tar.gz"
-  sha256 "11de2d1c3a5b317017a7459ec3f76230d5c43aba427a1e71ca3437845874acf8"
+  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.2.2/apache-couchdb-3.2.2.tar.gz"
+  mirror "https://archive.apache.org/dist/couchdb/source/3.2.2/apache-couchdb-3.2.2.tar.gz"
+  sha256 "69c9fd6f80133557f68a02e92dda72a4fd646d646f429f45bb8329a30f82f20e"
   license "Apache-2.0"
-  revision 3
 
   livecheck do
     url :homepage
@@ -14,13 +13,13 @@ class Couchdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/couchdb"
-    sha256 cellar: :any, mojave: "daee9816cf0d6260a039d97d63c1ae0ea754ca54d9fbcbcc68fca612d5b055c5"
+    sha256 cellar: :any, mojave: "9a5e9211ff8ea78aae89fef560335d9d34e04f90fe8c6a5913d919d0b18ad8a3"
   end
 
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
-  depends_on "erlang@22" => :build
+  depends_on "erlang" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
@@ -38,13 +37,6 @@ class Couchdb < Formula
   fails_with :gcc do
     version "5"
     cause "mfbt (and Gecko) require at least gcc 6.1 to build."
-  end
-
-  # Add support for SpiderMonkey 91esr. Remove in the next release.
-  # PR ref: https://github.com/apache/couchdb/pull/3842
-  patch do
-    url "https://github.com/apache/couchdb/commit/cb6aff46b65b68fd48293971a11c29633a0e21ff.patch?full_index=1"
-    sha256 "c32bc73937dd598cfc433a44098823e069665e6c85e8ec24f6da2ba56b42b02a"
   end
 
   def install
