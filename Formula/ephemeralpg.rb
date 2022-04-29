@@ -3,6 +3,7 @@ class Ephemeralpg < Formula
   homepage "https://eradman.com/ephemeralpg/"
   url "https://eradman.com/ephemeralpg/code/ephemeralpg-3.2.tar.gz"
   sha256 "c07df30687191dc632460d96997561d0adfc32b198f3b59b14081783f4a1b95d"
+  license "ISC"
 
   livecheck do
     url "https://eradman.com/ephemeralpg/code/"
@@ -11,7 +12,8 @@ class Ephemeralpg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ephemeralpg"
-    sha256 cellar: :any_skip_relocation, mojave: "52682ed55c5b62766213a2df0c7b742870642309784ad0ef1749ec9d63f0db62"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "61b58fb373ec59b7cf8fe37132a309ea97b1c1388ef8d0cdc3dbeb592b6a8f9f"
   end
 
   depends_on "postgresql"
