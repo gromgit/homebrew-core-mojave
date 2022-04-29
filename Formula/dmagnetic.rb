@@ -1,8 +1,8 @@
 class Dmagnetic < Formula
   desc "Magnetic Scrolls Interpreter"
   homepage "https://www.dettus.net/dMagnetic/"
-  url "https://www.dettus.net/dMagnetic/dMagnetic_0.33.tar.bz2"
-  sha256 "4199966f214667c78c7133b8b0c93ff4b8c65c8dfdb2ff9487a0b3b1726af212"
+  url "https://www.dettus.net/dMagnetic/dMagnetic_0.34.tar.bz2"
+  sha256 "570b1beb7111874cfbb54fc71868dccc732bc3235b9e5df586d93a4ff2b8e897"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Dmagnetic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dmagnetic"
-    sha256 mojave: "3a4fc5dbb669c97039561f63c1cd3aa4ab7cb599f9d89c1f421ff87049d5637f"
+    sha256 mojave: "8bcc246efce5f043832b62798380de92e4fcbadaa0a12ac4b34104edeb67010b"
   end
 
   def install
