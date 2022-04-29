@@ -1,28 +1,22 @@
 class Html2text < Formula
   desc "Advanced HTML-to-text converter"
   homepage "http://www.mbayer.de/html2text/"
-  url "https://github.com/grobian/html2text/archive/v2.0.0.tar.gz"
-  sha256 "061125bfac658c6d89fa55e9519d90c5eeb3ba97b2105748ee62f3a3fa2449de"
+  url "https://github.com/grobian/html2text/archive/v2.0.1.tar.gz"
+  sha256 "c52f16a282b69b9dc9f7b5fac7f44b15f90b74e012f0aa2d63fbf5b0fe5e5c49"
   license "GPL-2.0"
   head "https://github.com/grobian/html2text.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/html2text"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fc6087002a9f275a9195e6c93ba2d2331a58a5e15fddf4f77e8d3d8cc20ba7bc"
+    sha256 cellar: :any_skip_relocation, mojave: "0352dd9cadce1e7a3ca9a2959dbfff72c47b20a3e22c64a8a093df9f0839b6c6"
   end
 
   def install
     ENV.cxx11
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-debug",
-                          "--prefix=#{prefix}"
+    system "./configure"
     system "make", "all"
-
-    bin.install "html2text"
-    man1.install "html2text.1"
-    man5.install "html2textrc.5"
+    system "make", "install", "PREFIX=#{prefix}", "MANDIR=#{man}"
   end
 
   test do
