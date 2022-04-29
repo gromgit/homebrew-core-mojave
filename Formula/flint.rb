@@ -1,8 +1,8 @@
 class Flint < Formula
   desc "C library for number theory"
   homepage "https://flintlib.org"
-  url "https://flintlib.org/flint-2.8.4.tar.gz"
-  sha256 "61df92ea8c8e9dc692d46c71d7f50aaa09a33d4ba08d02a1784730a445e5e4be"
+  url "https://flintlib.org/flint-2.8.5.tar.gz"
+  sha256 "5911fedff911100f15781f35e3a4fa934fe60e4aea02a8c10cc8918101c1eed8"
   license "LGPL-2.1-or-later"
   head "https://github.com/wbhart/flint2.git", branch: "trunk"
 
@@ -13,8 +13,7 @@ class Flint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flint"
-    rebuild 2
-    sha256 mojave: "e3912d2dffdf1e775f0b488eb5fa8bf0090426b1d7a57efd7b39d9da0763eee9"
+    sha256 cellar: :any, mojave: "891ee0591282eeac23457dfb8bf36fdcb1ace5689092b2d18264f4e5acdb3331"
   end
 
   depends_on "gmp"
