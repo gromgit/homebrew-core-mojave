@@ -5,6 +5,7 @@ class Erlang < Formula
   url "https://github.com/erlang/otp/releases/download/OTP-24.3.3/otp_src_24.3.3.tar.gz"
   sha256 "cc3177f765c6a2b018e9a80c30bd3eac9a1f1d4c2690bb10557b384a9a63ae8d"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +14,7 @@ class Erlang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang"
-    sha256 cellar: :any, mojave: "f8b54b5f7c797e37c8d189df3a4f82c8d73659d5282a094c8c0c00c9f4788ec5"
+    sha256 cellar: :any, mojave: "f837ba4bbe6c506284b878ec0145c8ad352fea242d95d3fbb7c9bf52d3650709"
   end
 
   head do
@@ -31,6 +32,12 @@ class Erlang < Formula
     url "https://github.com/erlang/otp/releases/download/OTP-24.3.3/otp_doc_html_24.3.3.tar.gz"
     mirror "https://fossies.org/linux/misc/otp_doc_html_24.3.3.tar.gz"
     sha256 "a555923a0360cf1acd9c440216a06be7cc663ce0a067966600142d16f9e99bbb"
+  end
+
+  # Required for build against wxwidgets-3.1.6+
+  patch do
+    url "https://github.com/erlang/otp/commit/c2eb69239622046093c25e986dd606ea339c59a9.patch?full_index=1"
+    sha256 "7817f1407760c22a46c8a708ea44dd86befc611022abd66b2eaccbe8b4abc0da"
   end
 
   def install
@@ -67,7 +74,7 @@ class Erlang < Formula
 
     # Build the doc chunks (manpages are also built by default)
     system "make", "docs", "DOC_TARGETS=chunks"
-    system "make", "install-docs"
+    ENV.deparallelize { system "make", "install-docs" }
 
     doc.install resource("html")
   end
