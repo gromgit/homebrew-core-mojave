@@ -7,7 +7,7 @@ class Dict < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dict"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "c7519f60acc4485db1b93a3c26f23886b84738746a25645c609c0203b3279039"
   end
 
