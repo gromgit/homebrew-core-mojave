@@ -3,13 +3,13 @@ class Condure < Formula
 
   desc "HTTP/WebSocket connection manager"
   homepage "https://github.com/fanout/condure"
-  url "https://github.com/fanout/condure/archive/1.5.0.tar.gz"
-  sha256 "00dba95f2f60438298ab4f0d937f7d8d04f4b04d9cfcc5cf6cd8b2ef3c915e3c"
+  url "https://github.com/fanout/condure/archive/1.6.0.tar.gz"
+  sha256 "74c2fd5a165b9f7b1e255b17f07971ae33537a35b3c7bca9f10f57e840e4b7a5"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/condure"
-    sha256 cellar: :any, mojave: "e178c1b537d2a5748d87262d212f69c4aa1d79a37e2a3e0adb6de2825afdc32f"
+    sha256 cellar: :any, mojave: "57f27bdd02e976b5161d18aa0d01ac0aea8a13433780c5f6c0dbd1ce0b42a6c9"
   end
 
   depends_on "pkg-config" => :build
