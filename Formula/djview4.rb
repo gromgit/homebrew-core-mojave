@@ -13,8 +13,8 @@ class Djview4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djview4"
-    rebuild 3
-    sha256 cellar: :any, mojave: "9a7ec1e1db2ee7b3be6ae654fddaa979bb2f14848d5b38424bad2e98f8340e86"
+    rebuild 4
+    sha256 cellar: :any, mojave: "cc9bffb6736a49881bd4de20aaa941249ca687bdd6bb5b366bf88766d111dad1"
   end
 
   depends_on "autoconf" => :build
@@ -23,6 +23,12 @@ class Djview4 < Formula
   depends_on "pkg-config" => :build
   depends_on "djvulibre"
   depends_on "qt@5"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5" # qt@5 is built with GCC
 
   def install
     system "autoreconf", "-fiv"
