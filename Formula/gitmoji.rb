@@ -3,13 +3,13 @@ require "language/node"
 class Gitmoji < Formula
   desc "Interactive command-line tool for using emoji in commit messages"
   homepage "https://gitmoji.dev"
-  url "https://registry.npmjs.org/gitmoji-cli/-/gitmoji-cli-4.13.1.tgz"
-  sha256 "502b751ac71bfbb8bf5bc4d99eb46222b1d4734621393b6587ec76f1c152aa42"
+  url "https://registry.npmjs.org/gitmoji-cli/-/gitmoji-cli-5.0.0.tgz"
+  sha256 "53359e86afaea0519f8956db1e121b8cee1a3fa2d83bd3b9239a67b478a01fb2"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitmoji"
-    sha256 cellar: :any_skip_relocation, mojave: "ab05974e020bae1c3545a785ed07b178bbfe4c50111669fe9ac38ababb2313cb"
+    sha256 cellar: :any_skip_relocation, mojave: "5c233192b38cd363ade53feb34fd70dace3b63f18623f847358f887535c465fa"
   end
 
   depends_on "node"
