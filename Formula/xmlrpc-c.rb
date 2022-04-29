@@ -1,18 +1,13 @@
 class XmlrpcC < Formula
   desc "Lightweight RPC library (based on XML and HTTP)"
   homepage "https://xmlrpc-c.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.51.08/xmlrpc-1.51.08.tgz"
-  sha256 "a48f6becfdc2897b8a90522ec506000f966a75e4a7c348c3f8b18fce828d49e6"
+  url "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.54.05/xmlrpc-c-1.54.05.tgz"
+  sha256 "ae96bf3ea2e9f532f1658ad9581a89639a8ebec6ee023dd72e2b21dd15ce8583"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "9f7858eb619ac9b470e37ce8fcfdf426c7a849102edc34b533739d721c5a7b7f"
-    sha256 cellar: :any,                 arm64_big_sur:  "263c197c509a240444d4750945f8d7d079054844439dfa533bc0fd6d49632eac"
-    sha256 cellar: :any,                 monterey:       "7aa123e28ad0454e83f89a6b342f42ab23fd53bcbd48b7e49e97afce1bcc48f1"
-    sha256 cellar: :any,                 big_sur:        "98d8880157242c495ca5f3d2c87066b52fe858d5c14dc4078d1e8c1a63b7481c"
-    sha256 cellar: :any,                 catalina:       "ea46c848e7b738b515733b89338f6e4d3a88f2ca35ba4c2188af5e165a671dac"
-    sha256 cellar: :any,                 mojave:         "88ab4b50934d1d53dc0cc44e7985a2326757883a204c531a22c7d2867293d2b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9982d7f0d38a9b87fa13abbfaf64c3b2af31e2dc0361e836a9b41cdd190bf9c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmlrpc-c"
+    sha256 cellar: :any, mojave: "d5258fa3e4fa0a40efad24e2e847efc574a02b685bd4431a3d15d40f1eaac83b"
   end
 
   uses_from_macos "curl"
