@@ -1,13 +1,13 @@
 class Enchant < Formula
   desc "Spellchecker wrapping library"
   homepage "https://abiword.github.io/enchant/"
-  url "https://github.com/AbiWord/enchant/releases/download/v2.3.2/enchant-2.3.2.tar.gz"
-  sha256 "ce9ba47fd4d34031bd69445598a698a6611602b2b0e91d705e91a6f5099ead6e"
+  url "https://github.com/AbiWord/enchant/releases/download/v2.3.3/enchant-2.3.3.tar.gz"
+  sha256 "3da12103f11cf49c3cf2fd2ce3017575c5321a489e5b9bfa81dd91ec413f3891"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/enchant"
-    sha256 mojave: "a4207ea9afaa6d6bf131b2131fe424b548fa55b79b47eb990e38d9c1bf58c543"
+    sha256 mojave: "d41d958d31f40685dd357c381adf9420fb57b1580684f1a1179f9e553331a18d"
   end
 
   depends_on "pkg-config" => :build
