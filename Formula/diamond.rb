@@ -1,14 +1,13 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/diamond/"
-  url "https://github.com/bbuchfink/diamond/archive/v2.0.13.tar.gz"
-  sha256 "9b79c3a01913999dfa2543f4dd7a3494397a8723ea587207c14683b24e57eac1"
+  url "https://github.com/bbuchfink/diamond/archive/v2.0.15.tar.gz"
+  sha256 "cc8e1f3fd357d286cf6585b21321bd25af69aae16ae1a8f605ea603c1886ffa4"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diamond"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "7ead31d3f9e6e5b74cf2bbe66c8b360a6674345609529e6384997d5f538d37b1"
+    sha256 cellar: :any_skip_relocation, mojave: "9ffdca7a52e5e118fb7171c95b8f0b30d24f42860fe0c9aade3f0a4a59b6c0a6"
   end
 
   depends_on "cmake" => :build
