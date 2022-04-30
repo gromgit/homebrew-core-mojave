@@ -2,13 +2,13 @@ class Argo < Formula
   desc "Get stuff done with container-native workflows for Kubernetes"
   homepage "https://argoproj.io"
   url "https://github.com/argoproj/argo-workflows.git",
-      tag:      "v3.3.1",
-      revision: "3d606939dcc78d22ff5fa1401703c619639d019f"
+      tag:      "v3.3.3",
+      revision: "9c08aedc880026161d394207acbac0f64db29a53"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argo"
-    sha256 cellar: :any_skip_relocation, mojave: "7e99a1b499b32497e211e07e7eefe393b68b884591d6535323054a4b148f11a4"
+    sha256 cellar: :any_skip_relocation, mojave: "a48e1523dd9c9229583cf7e7b46ddda54d4b0df95edd334724dbb5fdbf7cc50c"
   end
 
   depends_on "go" => :build
