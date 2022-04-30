@@ -3,14 +3,14 @@ class AwsSdkCpp < Formula
   homepage "https://github.com/aws/aws-sdk-cpp"
   # aws-sdk-cpp should only be updated every 10 releases on multiples of 10
   url "https://github.com/aws/aws-sdk-cpp.git",
-      tag:      "1.9.230",
-      revision: "b39ba17a560e4e677eb5587b29a57f1c6c5d9aa1"
+      tag:      "1.9.240",
+      revision: "716c88324bb292042183d52888bf3bd0bbd471ea"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-sdk-cpp"
-    sha256 cellar: :any, mojave: "dce983fca9fef3b73b6f2934d75755977c04bc4c69da616d9b433f0546e1485e"
+    sha256 cellar: :any, mojave: "12772f4f6f550d94b9e7ea6114e5a828a047c431da46f138439239a989972f79"
   end
 
   depends_on "cmake" => :build
