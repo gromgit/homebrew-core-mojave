@@ -2,13 +2,44 @@ class Dotnet < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   url "https://github.com/dotnet/installer.git",
-      tag:      "v6.0.103-source-build",
-      revision: "2c677ffc1e93aea3b6c92d6121d04fdaeba32d32"
+      tag:      "v6.0.104",
+      revision: "915d644e451858f4f7c6e1416ea202695ddd54fb"
   license "MIT"
+  revision 1
+
+  # https://github.com/dotnet/source-build/#support
+  livecheck do
+    url "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json"
+    regex(/unused/i)
+    strategy :page_match do |page|
+      index = JSON.parse(page)["releases-index"]
+
+      # Find latest release channel still supported.
+      avoid_phases = ["preview", "eol"].freeze
+      valid_channels = index.select do |release|
+        avoid_phases.exclude?(release["support-phase"])
+      end
+      latest_channel = valid_channels.max_by do |release|
+        Version.new(release["channel-version"])
+      end
+
+      # Fetch the releases.json for that channel and find the latest release info.
+      channel_page = Homebrew::Livecheck::Strategy.page_content(latest_channel["releases.json"])
+      channel_json = JSON.parse(channel_page[:content])
+      latest_release = channel_json["releases"].find do |release|
+        release["release-version"] == channel_json["latest-release"]
+      end
+
+      # Get _oldest_ SDK version.
+      latest_release["sdks"].map do |sdk|
+        Version.new(sdk["version"])
+      end.min.to_s
+    end
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dotnet"
-    sha256 cellar: :any, mojave: "fadc3ce26e7b20bf634c51b3e1b8464946232bf5196e0017e383a63f32bf6e12"
+    sha256 cellar: :any, mojave: "555a705d3089a15eb1cf05bdde07cb1d2bbe574444230ff73ed17abcd2b09697"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +68,13 @@ class Dotnet < Formula
   # GCC builds have limited support via community.
   fails_with :gcc
 
+  # Fixes race condition in MSBuild.
+  # Remove with 6.0.3xx or later.
+  resource "homebrew-msbuild-patch" do
+    url "https://github.com/dotnet/msbuild/commit/64edb33a278d1334bd6efc35fecd23bd3af4ed48.patch?full_index=1"
+    sha256 "5870bcdd12164668472094a2f9f1b73a4124e72ac99bbbe43028370be3648ccd"
+  end
+
   # Fix build failure on macOS due to missing ILAsm/ILDAsm
   # Fix build failure on macOS ARM due to `osx-x64` override
   patch :DATA
@@ -48,10 +86,29 @@ class Dotnet < Formula
       ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
     end
 
+    (buildpath/"src/SourceBuild/tarball/patches/msbuild").install resource("homebrew-msbuild-patch")
+
+    # Fix usage of GNU-specific flag.
+    # TODO: Remove this when upstreamed
+    inreplace "src/SourceBuild/tarball/content/repos/Directory.Build.targets",
+              "--block-size=1M", "-m"
+
     Dir.mktmpdir do |sourcedir|
       system "./build.sh", "/p:ArcadeBuildTarball=true", "/p:TarballDir=#{sourcedir}"
 
       cd sourcedir
+
+      # Use our libunwind rather than the bundled one.
+      inreplace Dir["src/runtime.*/eng/SourceBuild.props"],
+                "/p:BuildDebPackage=false",
+                "\\0 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=ON"
+
+      # Fix missing macOS conditional for system unwind searching.
+      # TODO: Remove this when upstreamed
+      inreplace Dir["src/runtime.*/src/native/corehost/apphost/static/CMakeLists.txt"],
+                "if(CLR_CMAKE_USE_SYSTEM_LIBUNWIND)",
+                "if(CLR_CMAKE_USE_SYSTEM_LIBUNWIND AND NOT CLR_CMAKE_TARGET_OSX)"
+
       # Workaround for error MSB4018 while building 'installer in tarball' due
       # to trying to find aspnetcore-runtime-internal v6.0.0 rather than current.
       # TODO: Remove when packaging is fixed
@@ -63,7 +120,7 @@ class Dotnet < Formula
       # TODO: Remove whenever patch is no longer used
       rm Dir["src/nuget-client.*/eng/source-build-patches/0001-Rename-NuGet.Config*.patch"].first if OS.mac?
       system "./prep.sh", "--bootstrap"
-      system "./build.sh"
+      system "./build.sh", "--", "/p:CleanWhileBuilding=true"
 
       libexec.mkpath
       tarball = Dir["artifacts/*/Release/dotnet-sdk-#{version}-*.tar.gz"].first
