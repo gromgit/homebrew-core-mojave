@@ -2,14 +2,14 @@ class Dagger < Formula
   desc "Portable devkit for CI/CD pipelines"
   homepage "https://dagger.io"
   url "https://github.com/dagger/dagger.git",
-      tag:      "v0.2.7",
-      revision: "18c19174a2a892ff3157a4a3a8bb06ab6dcb50fe"
+      tag:      "v0.2.8",
+      revision: "92c8c7a2da9ec90a924d7236e540f83ec1f12419"
   license "Apache-2.0"
   head "https://github.com/dagger/dagger.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dagger"
-    sha256 cellar: :any_skip_relocation, mojave: "a258cfd3619e3ac4c9090896d35d3e085596d8098a3602ca0b5bc825307c3794"
+    sha256 cellar: :any_skip_relocation, mojave: "91c1df1b3a88fb67897736cdcc04df77d50ee14cf631b2142d844df824560f59"
   end
 
   depends_on "go" => :build
