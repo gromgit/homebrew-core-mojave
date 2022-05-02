@@ -8,8 +8,8 @@ class PysideAT2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyside@2"
-    rebuild 1
-    sha256 mojave: "82b689cb66e0f78b8d09ceeb68d4ca52a75367f686c14daae77575cc9f33afed"
+    rebuild 2
+    sha256 cellar: :any, mojave: "b34be0a9ad379469a820bab62adb33356975bfb9f5eb4130f15e00ffad59c467"
   end
 
   keg_only :versioned_formula
