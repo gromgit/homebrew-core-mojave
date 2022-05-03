@@ -12,13 +12,18 @@ class Aubio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aubio"
-    sha256 cellar: :any, mojave: "67e59fb5a3b24230bfc21236587303800075d607386c6dafd4bb4908b4df9711"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5f4fd18fc69a5fc2574d1ff37c7a938ca0f95a0a9e8ce21cc89d22ed685de370"
   end
 
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "numpy"
   depends_on "python@3.10"
+
+  on_linux do
+    depends_on "libsndfile"
+  end
 
   resource "aiff" do
     url "http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/AIFF/Samples/CCRMA/wood24.aiff"
