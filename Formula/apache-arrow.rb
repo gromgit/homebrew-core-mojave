@@ -5,13 +5,12 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-7.0.0/apache-arrow-7.0.0.tar.gz"
   sha256 "e8f49b149a15ecef4e40fcfab1b87c113c6b1ee186005c169e5cdf95d31a99de"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/apache/arrow.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-arrow"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e5c3fffcd6d590f13ac9bdeb69163254a3b6ef53721666f31f073deb0f5b8769"
+    sha256 cellar: :any, mojave: "a69deef971eb4929c1c6c930821198e9511f05a93f9a297928448670e1abe5e2"
   end
 
   depends_on "boost" => :build
@@ -51,6 +50,7 @@ bottle do
     ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
     args = %W[
       -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=TRUE
+      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DARROW_FLIGHT=ON
       -DARROW_GANDIVA=ON
       -DARROW_JEMALLOC=ON
