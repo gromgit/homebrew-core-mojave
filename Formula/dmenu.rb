@@ -11,10 +11,10 @@ class Dmenu < Formula
     regex(/href=.*?dmenu[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dmenu"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c74625665bfb540ba226b86293f04fc54f60be2768eb45ecc0e6cc6363d0309b"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f0e675a0ca4fb5205f3b513ca089893522b60da8ae6d45c86adf8a34b6ec2b88"
   end
 
   depends_on "fontconfig"
@@ -27,6 +27,10 @@ bottle do
   end
 
   test do
+    # Disable test on Linux because it fails with this error:
+    # cannot open display
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     assert_match "warning: no locale support", shell_output("#{bin}/dmenu 2>&1", 1)
   end
 end
