@@ -8,8 +8,8 @@ class AppstreamGlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/appstream-glib"
-    rebuild 2
-    sha256 cellar: :any, mojave: "35fdbc8a000c6cd6eaa02ecf31b8ea4d8da0debb1e24e18ec5256272361dbcd9"
+    rebuild 3
+    sha256 cellar: :any, mojave: "d49684b20ad284bc57653af15f96aa4daa93fa5e6e12161a90118c297a4556e7"
   end
 
   depends_on "docbook" => :build
@@ -68,8 +68,8 @@ class AppstreamGlib < Formula
       -lgio-2.0
       -lglib-2.0
       -lgobject-2.0
-      -lintl
     ]
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
     system "#{bin}/appstream-util", "--help"
