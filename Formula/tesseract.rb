@@ -1,8 +1,8 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https://github.com/tesseract-ocr/"
-  url "https://github.com/tesseract-ocr/tesseract/archive/5.0.1.tar.gz"
-  sha256 "b5b0e561650ed67feb1e9de38d4746121d302ae4c876c95b99b8b6f9f89d5c58"
+  url "https://github.com/tesseract-ocr/tesseract/archive/5.1.0.tar.gz"
+  sha256 "fdec8528d5a0ecc28ab5fff985e0b8ced60726f6ef33f54126f2868e323d4bd2"
   license "Apache-2.0"
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Tesseract < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tesseract"
-    sha256 cellar: :any, mojave: "b193e4d5eb6f705519b3cabfb624f9fe36eac25e5a09456a63ea633167f5c55e"
+    sha256 cellar: :any, mojave: "0289eb7a9b1a68bdc714b230e43782d9efe46e8314870bfea9fbe57902b33409"
   end
 
   depends_on "autoconf" => :build
