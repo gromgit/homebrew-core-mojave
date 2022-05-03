@@ -1,13 +1,13 @@
 class Vala < Formula
   desc "Compiler for the GObject type system"
   homepage "https://wiki.gnome.org/Projects/Vala"
-  url "https://download.gnome.org/sources/vala/0.54/vala-0.54.7.tar.xz"
-  sha256 "62079ca1ff02e5d17ae72aa9a5adc61ae6afdcfebb0d9f06063a36efbeaca0c7"
+  url "https://download.gnome.org/sources/vala/0.56/vala-0.56.1.tar.xz"
+  sha256 "c518b81dfdda82d1cdf586b3f9b2323162cb96bd3cb5a2c03650cea025d91fb9"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vala"
-    sha256 mojave: "87e91d61571bc1dd9e4b4589cd271f739007f6930440ceb8311993e7be631443"
+    sha256 mojave: "159b61b66803a612d967986ac1528522deac0369490775ccf5a46fec62445b0b"
   end
 
   depends_on "gettext"
@@ -19,9 +19,7 @@ class Vala < Formula
   uses_from_macos "flex" => :build
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make" # Fails to compile as a single step
     system "make", "install"
   end
