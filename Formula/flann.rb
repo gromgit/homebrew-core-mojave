@@ -4,12 +4,11 @@ class Flann < Formula
   url "https://github.com/flann-lib/flann/archive/refs/tags/1.9.1.tar.gz"
   sha256 "b23b5f4e71139faa3bcb39e6bbcc76967fbaf308c4ee9d4f5bfbeceaa76cc5d3"
   license "BSD-3-Clause"
-  revision 12
+  revision 13
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flann"
-    rebuild 1
-    sha256 cellar: :any, mojave: "2e541fd95239510ef0bf20a627d1ca132db1089d037a3c2354bbe107060099b8"
+    sha256 cellar: :any, mojave: "1b0a5bf1b64b145a0553c682c038ca8d6aace0ba46026b7518e09564f23da70c"
   end
 
   depends_on "cmake" => :build
