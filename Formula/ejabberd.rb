@@ -12,8 +12,8 @@ class Ejabberd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejabberd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "227c8e0c37b8e4282be7bf3b65abb339515ed0b5d40f78d9291340d89eff9b7a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f1141551b3545de158fcf0ecc59235462f38bde22d7bdffd64ba4fa652cc81ec"
   end
 
   head do
@@ -27,6 +27,10 @@ class Ejabberd < Formula
   depends_on "gd"
   depends_on "libyaml"
   depends_on "openssl@1.1"
+
+  on_linux do
+    depends_on "linux-pam"
+  end
 
   conflicts_with "couchdb", because: "both install `jiffy` lib"
 
@@ -48,7 +52,7 @@ class Ejabberd < Formula
 
     # Set CPP to work around cpp shim issue:
     # https://github.com/Homebrew/brew/issues/5153
-    system "make", "CPP=clang -E"
+    system "make", "CPP=#{ENV.cc} -E"
 
     ENV.deparallelize
     system "make", "install"
