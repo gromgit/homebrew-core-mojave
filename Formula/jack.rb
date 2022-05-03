@@ -1,10 +1,9 @@
 class Jack < Formula
   desc "Audio Connection Kit"
   homepage "https://jackaudio.org/"
-  url "https://github.com/jackaudio/jack2/archive/v1.9.19.tar.gz"
-  sha256 "9030f4dc11773351b6ac96affd9c89803a5587ebc1b091e5ff866f433327e4b0"
+  url "https://github.com/jackaudio/jack2/archive/v1.9.21.tar.gz"
+  sha256 "8b044a40ba5393b47605a920ba30744fdf8bf77d210eca90d39c8637fe6bc65d"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,9 +12,8 @@ class Jack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jack"
-    sha256 mojave: "6b5cfab3c411d7e426cd00762ca9f07c559a3f7064515bb6a2c2ded3dfd0a3af"
+    sha256 mojave: "edb0cba781e856d0b953ad24d92a68f18cc02293d3af3a5c1a80d86fa8a10f8c"
   end
-
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -42,12 +40,9 @@ class Jack < Formula
       ENV.append "LDFLAGS", "-Wl,-compatibility_version,1"
       ENV.append "LDFLAGS", "-Wl,-current_version,#{version}"
     end
-    system Formula["python@3.10"].opt_bin/"python3", "./waf", "configure", "--prefix=#{prefix}"
+    system Formula["python@3.10"].opt_bin/"python3", "./waf", "configure", "--prefix=#{prefix}", "--example-tools"
     system Formula["python@3.10"].opt_bin/"python3", "./waf", "build"
     system Formula["python@3.10"].opt_bin/"python3", "./waf", "install"
-
-    # Remove Python script used to control D-Bus JACK as it isn't enabled in formula
-    rm bin/"jack_control"
   end
 
   service do
