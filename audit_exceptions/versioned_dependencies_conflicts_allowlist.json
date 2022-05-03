@@ -1,9 +1,10 @@
 [
-  "anjuta",
   "coin3d",
+  "emscripten",
   "freedink",
-  "gjs",
   "hive",
+  "libgaiagraphics",
+  "librasterlite",
   "mpv",
   "predictionio",
   "pyside",

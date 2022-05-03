@@ -4,6 +4,7 @@
   "bind",
   "blast",
   "coq",
+  "e2fsprogs",
   "gnuradio",
   "hdf5-mpi",
   "lablgtk",
@@ -15,6 +16,7 @@
   "pypy3",
   "scalapack",
   "soapysdr",
+  "soci",
   "tcl-tk",
   "xmlrpc-c",
   "xvid"

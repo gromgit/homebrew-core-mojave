@@ -5,7 +5,7 @@
   "ansible": {
     "extra_packages": [
       "apache-libcloud", "boto3", "dnspython", "docker", "junos-eznc", "jxmlease", "kerberos", "ntc-templates",
-      "openshift", "passlib", "pexpect", "pysphere3", "python-consul", "python-neutronclient",
+      "openshift", "passlib", "pexpect", "proxmoxer", "pysphere3", "python-consul", "python-neutronclient",
       "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ],
     "exclude_packages": ["six"]
@@ -75,6 +75,7 @@
     "exclude_packages": ["junit-xml", "six"]
   },
   "charm-tools": {
+    "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
   },
   "checkov": {
@@ -92,6 +93,9 @@
     "exclude_packages": ["six"]
   },
   "credstash": {
+    "exclude_packages": ["six"]
+  },
+  "cruft": {
     "exclude_packages": ["six"]
   },
   "csvkit": {
@@ -123,12 +127,8 @@
     "exclude_packages": ["six"]
   },
   "dvc": {
-    "extra_packages": [
-        "gcsfs", "pydrive2", "adlfs", "azure-identity", "knack",
-        "oss2", "pycryptodome", "sshfs", "webdav4",
-        "s3fs", "aiobotocore[boto3]"
-    ],
-    "exclude_packages": ["protobuf", "six", "tabulate"]
+    "package_name": "dvc[all]",
+    "exclude_packages": ["protobuf", "pyarrow", "six", "tabulate"]
   },
   "dxpy": {
     "exclude_packages": ["six"]
@@ -137,6 +137,9 @@
     "exclude_packages": ["protobuf", "six", "tabulate"]
   },
   "esptool": {
+    "exclude_packages": ["six"]
+  },
+  "fabric": {
     "exclude_packages": ["six"]
   },
   "fava": {
@@ -150,7 +153,9 @@
     "exclude_packages": ["six"]
   },
   "gimme-aws-creds": {
-    "exclude_packages": ["six"]
+    "package_name": "gimme-aws-creds",
+    "exclude_packages": ["six"],
+    "extra_packages": ["pyobjc-framework-LocalAuthentication", "SecretStorage", "jeepney"]
   },
   "git-remote-codecommit": {
     "exclude_packages": ["six"]
@@ -187,7 +192,7 @@
     "exclude_packages": ["six"]
   },
   "litecli": {
-    "exclude_packages": ["tabulate"]
+    "exclude_packages": ["six", "tabulate"]
   },
   "localstack": {
     "exclude_packages": ["six", "tabulate"]
@@ -199,6 +204,7 @@
     "exclude_packages": ["six"]
   },
   "magic-wormhole": {
+    "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
   },
   "mkdocs": {
@@ -225,6 +231,7 @@
   "nox": {
     "exclude_packages": ["six"]
   },
+  "nvchecker": "nvchecker[pypi]",
   "oci-cli": {
     "exclude_packages": ["six"]
   },
@@ -285,6 +292,9 @@
   "protobuf": {
     "exclude_packages": ["six"]
   },
+  "pwntools": {
+    "exclude_packages": ["six"]
+  },
   "pydocstyle": "pydocstyle[toml]",
   "pyqt-builder": {
     "exclude_packages": ["packaging", "pyparsing", "sip", "toml"]
@@ -293,6 +303,9 @@
     "exclude_packages": ["numpy", "six"]
   },
   "pywhat": {
+    "exclude_packages": ["six"]
+  },
+  "rbtools": {
     "exclude_packages": ["six"]
   },
   "regipy": {
@@ -466,12 +479,15 @@
   "stormssh": {
     "exclude_packages": ["six"]
   },
+  "streamlink": {
+    "exclude_packages": ["six"]
+  },
   "tarsnapper": {
     "exclude_packages": ["six"]
   },
-  "trezor-agent": {
-    "exclude_packages": ["pillow", "six"],
-    "extra_packages": ["ledger-agent", "keepkey-agent"]
+  "termius": {
+    "package_name": "termius",
+    "exclude_packages": ["six"]
   },
   "theharvester": {
     "exclude_packages": ["six"]
@@ -481,6 +497,14 @@
   },
   "tox": {
     "exclude_packages": ["six"]
+  },
+  "trezor-agent": {
+    "exclude_packages": ["pillow", "six"],
+    "extra_packages": ["ledger-agent", "keepkey-agent"]
+  },
+  "trzsz": {
+    "extra_packages": ["trzsz-iterm2"],
+    "exclude_packages": ["protobuf"]
   },
   "twarc": {
     "exclude_packages": ["six"]
@@ -493,6 +517,9 @@
   },
   "volatility": {
     "extra_packages": ["capstone", "pycryptodome", "yara-python"]
+  },
+  "west": {
+    "exclude_packages": ["six"]
   },
   "woob": {
     "exclude_packages": ["pillow", "six"],
