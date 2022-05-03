@@ -1,14 +1,14 @@
 class Cava < Formula
   desc "Console-based Audio Visualizer for ALSA"
   homepage "https://github.com/karlstav/cava"
-  url "https://github.com/karlstav/cava/archive/0.7.5.tar.gz"
-  sha256 "863578e7d091735fd9c673239058515300faa79ff76304849a93c37ae3bd93cf"
+  url "https://github.com/karlstav/cava/archive/0.8.2.tar.gz"
+  sha256 "99bc302ce77f8093a4ac1cf94be51581e37c075428117f248ffe1fee650f47d8"
   license "MIT"
   head "https://github.com/karlstav/cava.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cava"
-    sha256 cellar: :any, mojave: "5746d1b13525d68fe4c83ae13709d430b10925850dbb02b3c6e633eb0e2bb6a4"
+    sha256 cellar: :any, mojave: "867b4fa25e8c76bec76a3d1a6f24db4675726b684b1e7494d8b24b3498bc551c"
   end
 
   depends_on "autoconf" => :build
@@ -18,6 +18,7 @@ class Cava < Formula
   depends_on "iniparser"
   depends_on "portaudio"
 
+  uses_from_macos "vim" => :build # needed for xxd
   uses_from_macos "ncurses"
 
   def install
