@@ -14,7 +14,8 @@ class DosboxX < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-x"
-    sha256 cellar: :any, mojave: "7340850d1fa34d2cdf085cb74dd5704053c3b7f27cd078c5c7a40772d4bb54d0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "79334df762b00eff0db0eb89d0174299945fe0e4b5ea5c6e0a7d1dcde482f1f1"
   end
 
   depends_on "autoconf" => :build
@@ -22,6 +23,14 @@ class DosboxX < Formula
   depends_on "pkg-config" => :build
   depends_on "fluid-synth"
   depends_on macos: :high_sierra # needs futimens
+
+  on_linux do
+    depends_on "linux-headers@4.15" => :build
+    depends_on "gcc"
+    depends_on "sdl2"
+  end
+
+  fails_with gcc: "5"
 
   def install
     ENV.cxx11
@@ -31,7 +40,8 @@ class DosboxX < Formula
       --disable-dependency-tracking
       --disable-sdltest
     ]
-    system "./build-macosx", *args
+    build_script = OS.mac? ? "./build-macosx" : "./build"
+    system build_script, *args
     system "make", "install"
   end
 
