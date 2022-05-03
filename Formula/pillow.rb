@@ -1,14 +1,14 @@
 class Pillow < Formula
   desc "Friendly PIL fork (Python Imaging Library)"
   homepage "https://python-pillow.org"
-  url "https://files.pythonhosted.org/packages/03/a3/f61a9a7ff7969cdef2a6e0383a346eb327495d20d25a2de5a088dbb543a6/Pillow-9.0.1.tar.gz"
-  sha256 "6c8bc8238a7dfdaf7a75f5ec5a663f4173f8c367e5a39f87e720495e1eed75fa"
+  url "https://files.pythonhosted.org/packages/4b/83/090146d7871d90a2643d469c319c1d014e41b315ab5cf0f8b4b6a764ef31/Pillow-9.1.0.tar.gz"
+  sha256 "f401ed2bbb155e1ade150ccc63db1a4f6c1909d3d378f7d1235a44e90d75fb97"
   license "HPND"
   head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pillow"
-    sha256 cellar: :any, mojave: "e4765eb93c7a9869c21a0ccaa67b4f2d9bc0b34288af7a6526abb7749be7265d"
+    sha256 cellar: :any, mojave: "498f8ebcf53e60781d9669f58cef9ed1903cf6c77d146fd0c4369de5d775ef6c"
   end
 
   depends_on "pkg-config" => :build
@@ -39,7 +39,7 @@ class Pillow < Formula
   end
 
   def install
-    pre_args = %w[
+    build_ext_args = %w[
       --enable-tiff
       --enable-freetype
       --enable-lcms
@@ -47,9 +47,7 @@ class Pillow < Formula
       --enable-xcb
     ]
 
-    post_args = %W[
-      --prefix=#{prefix}
-      --install-scripts=#{bin}
+    install_args = %w[
       --single-version-externally-managed
       --record=installed.txt
     ]
@@ -66,7 +64,9 @@ class Pillow < Formula
     inreplace "setup.py", "DEBUG = False", "DEBUG = True"
 
     pythons.each do |python|
-      system python, "setup.py", "build_ext", *pre_args, "install", *post_args
+      system python, "setup.py",
+                     "build_ext", *build_ext_args,
+                     "install", *install_args, "--install-lib=#{prefix/Language::Python.site_packages(python)}"
     end
   end
 
