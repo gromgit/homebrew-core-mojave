@@ -1,8 +1,8 @@
 class Eccodes < Formula
   desc "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats"
   homepage "https://confluence.ecmwf.int/display/ECC"
-  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.24.2-Source.tar.gz"
-  sha256 "c60ad0fd89e11918ace0d84c01489f21222b11d6cad3ff7495856a0add610403"
+  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.25.0-Source.tar.gz"
+  sha256 "8975131aac54d406e5457706fd4e6ba46a8cc9c7dd817a41f2aa64ce1193c04e"
   license "Apache-2.0"
 
   livecheck do
@@ -12,21 +12,25 @@ class Eccodes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eccodes"
-    sha256 mojave: "0a96216d3f3629420bbc1227c35b0ae89ec1355bbd3552012107791628f6fc3a"
+    sha256 mojave: "69c6fe2b05c659a423b2d0ebdc36522d069bf8f07ea6fb9aa4f08cbbf9df03ba"
   end
 
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
-  depends_on "jasper"
   depends_on "libpng"
   depends_on "netcdf"
+  depends_on "openjpeg"
 
   def install
-    inreplace "CMakeLists.txt", "find_package( OpenJPEG )", ""
-
     mkdir "build" do
-      system "cmake", "..", "-DENABLE_NETCDF=ON", "-DENABLE_PNG=ON",
-                            "-DENABLE_PYTHON=OFF", "-DENABLE_ECCODES_THREADS=ON",
+      system "cmake", "..", "-DENABLE_NETCDF=ON",
+                            "-DENABLE_FORTRAN=ON",
+                            "-DENABLE_PNG=ON",
+                            "-DENABLE_JPG=ON",
+                            "-DENABLE_JPG_LIBOPENJPEG=ON",
+                            "-DENABLE_JPG_LIBJASPER=OFF",
+                            "-DENABLE_PYTHON=OFF",
+                            "-DENABLE_ECCODES_THREADS=ON",
                              *std_cmake_args
       system "make", "install"
     end
