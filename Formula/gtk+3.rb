@@ -1,8 +1,8 @@
 class Gtkx3 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.31.tar.xz"
-  sha256 "423c3e7fdb4c459ee889e35fd4d71fd2623562541c1041b11c07e5ad1ff10bf9"
+  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.33.tar.xz"
+  sha256 "588b06522e25d1579e989b6f9d8a1bdbf2fe13cde01a04e904ff346a225e7801"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Gtkx3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk+3"
-    sha256 mojave: "99f6771116fea72ffdb3f24968d698372420841467fdaa29a7ddc0ed7c5cad2f"
+    sha256 mojave: "d116f0bbdf98e778819fbb90a7cbbffb5cd53a3517f26ccfcf904c552b1aeaa9"
   end
 
   depends_on "docbook" => :build
@@ -39,13 +39,6 @@ class Gtkx3 < Formula
     depends_on "libxkbcommon"
     depends_on "xorgproto"
     depends_on "wayland-protocols"
-  end
-
-  # Patch to fix QuartzCore linking and compiling
-  # Remove in next minor release
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gtk/-/commit/8352dee082db9e5ae989a2ed2c38e1060044bada.diff"
-    sha256 "d1a4acee4382cd8840d138958e46076bf4209f6e9e64ec34c364277bba9ca380"
   end
 
   def install
@@ -140,9 +133,7 @@ class Gtkx3 < Formula
       -lpango-1.0
       -lpangocairo-1.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
     # include a version check for the pkg-config files
