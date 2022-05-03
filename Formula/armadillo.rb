@@ -1,29 +1,27 @@
 class Armadillo < Formula
   desc "C++ linear algebra library"
   homepage "https://arma.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/arma/armadillo-10.8.2.tar.xz"
-  sha256 "89fdd898bf6bff75f6efc3a301817e4ede752b9a80927fb07ee358b13e353922"
+  url "https://downloads.sourceforge.net/project/arma/armadillo-11.0.1.tar.xz"
+  sha256 "e43d4449376c1fc8b562095431bb82cf9c4ff98a791a22a25d0f96e5e7937c22"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
     regex(%r{url=.*?/armadillo[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/armadillo"
-    rebuild 1
-    sha256 cellar: :any, mojave: "17a7f8519093a34979453dbfb26d4bc830cc5ba98899758b584b76f602d156b5"
+    sha256 cellar: :any, mojave: "c4f21ac264b1943a2d4d316e53c34cff996e48cda94882cd3d0559cf9bbaf5b8"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "arpack"
   depends_on "hdf5"
+  depends_on "libaec"
   depends_on "openblas"
   depends_on "superlu"
-  depends_on "szip"
 
   def install
     ENV.prepend "CXXFLAGS", "-DH5_USE_110_API -DH5Ovisit_vers=1"
