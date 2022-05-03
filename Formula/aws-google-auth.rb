@@ -11,7 +11,8 @@ class AwsGoogleAuth < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-google-auth"
-    sha256 cellar: :any_skip_relocation, mojave: "fc889abb09747c06c7237ff5a009ec285cf9e9a9a00c2fc7d525a90dffbd9250"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d3b3255f4131bfc0a9050f9b7ef3ca5ef8760d74cc0a2c5f74420480f7c8bdd2"
   end
 
   depends_on "pillow"
@@ -174,8 +175,6 @@ class AwsGoogleAuth < Formula
   end
 
   def install
-    # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
     virtualenv_install_with_resources
   end
 
