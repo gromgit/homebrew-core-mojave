@@ -1,14 +1,13 @@
 class Chezscheme < Formula
   desc "Implementation of the Chez Scheme language"
   homepage "https://cisco.github.io/ChezScheme/"
-  url "https://github.com/cisco/ChezScheme/archive/v9.5.6.tar.gz"
-  sha256 "e23c556493f9a661852ea046f3317500feac5f223ea6ef3aa3b9234567e14c0e"
+  url "https://github.com/cisco/ChezScheme/archive/v9.5.8.tar.gz"
+  sha256 "a00b1fb1c175dd51ab2efee298c3323f44fe901ab3ec6fbb6d7a3d9ef66bf989"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chezscheme"
-    rebuild 2
-    sha256 mojave: "b544479c43272ac36d2e6f6437aa6d5d07030738a63e141637ac75c30c26b08a"
+    sha256 mojave: "930e313679c80adaedc498d280a49984f25602e10b9bbf41317dc352a47c093f"
   end
 
   depends_on "libx11" => :build
