@@ -21,7 +21,8 @@ class Coin3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coin3d"
-    sha256 mojave: "11c02480c6cab2170ff7686fddb8cf047feeba1ce342d99e9845cdb6154cbd85"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7edd36418ca915fd4f654492352d405e84eaa0472908ce0de5b82417e79324ee"
   end
 
   head do
