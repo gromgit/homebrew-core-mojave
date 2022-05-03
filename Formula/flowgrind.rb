@@ -3,7 +3,7 @@ class Flowgrind < Formula
   homepage "https://launchpad.net/flowgrind"
   url "https://launchpad.net/flowgrind/trunk/flowgrind-0.8.0/+download/flowgrind-0.8.0.tar.bz2"
   sha256 "2e8b58fc919bb1dae8f79535e21931336355b4831d8b5bf75cf43eacd1921d04"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -12,8 +12,7 @@ class Flowgrind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flowgrind"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7d779155773b37f3dbeac32df76c8ac9fb59669dd3ff12d28cf4fb73accefa8a"
+    sha256 cellar: :any, mojave: "538b60637f66a25e9684767ffd59a623840038d6b2e465ff05cff061fa5335cf"
   end
 
   depends_on "gsl"
