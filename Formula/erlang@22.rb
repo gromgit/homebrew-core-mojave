@@ -5,6 +5,7 @@ class ErlangAT22 < Formula
   url "https://github.com/erlang/otp/releases/download/OTP-22.3.4.25/otp_src_22.3.4.25.tar.gz"
   sha256 "f1e94f0b66fae1f48f4fae45480ba5c7d15a3bae0aac8d1b580a41cf0eddfd9a"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +14,7 @@ class ErlangAT22 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang@22"
-    sha256 cellar: :any, mojave: "b5b08f65fdff9ad2f91217ea577363fd2d24301f6d828502248c527b733ed90c"
+    sha256 cellar: :any, mojave: "df10694ef88a6878295a04975284381c7d3c55315a4775e48d81eee64f74e846"
   end
 
   keg_only :versioned_formula
@@ -22,13 +23,13 @@ class ErlangAT22 < Formula
   depends_on "wxwidgets" # for GUI apps like observer
 
   resource "man" do
-    url "https://www.erlang.org/download/otp_doc_man_22.3.tar.gz"
-    sha256 "43b6d62d9595e1dc51946d55c9528c706c5ae753876b9bf29303b7d11a7ccb16"
+    url "https://github.com/erlang/otp/releases/download/OTP-22.3.4.25/otp_doc_man_22.3.4.25.tar.gz"
+    sha256 "b715aada5a3abf0699d1c05ed55bd57f2110fb8fc58a9a67b6519d8ff8195fa8"
   end
 
   resource "html" do
-    url "https://www.erlang.org/download/otp_doc_html_22.3.tar.gz"
-    sha256 "9b01c61f2898235e7f6643c66215d6419f8706c8fdd7c3e0123e68960a388c34"
+    url "https://github.com/erlang/otp/releases/download/OTP-22.3.4.25/otp_doc_html_22.3.4.25.tar.gz"
+    sha256 "90bfd716b2189b858a62cf09503ab02eba211753e44025d39e800490642e0fa7"
   end
 
   def install
@@ -60,7 +61,7 @@ class ErlangAT22 < Formula
     system "make"
     system "make", "install"
 
-    (lib/"erlang").install resource("man").files("man")
+    (lib/"erlang/man").install resource("man")
     doc.install resource("html")
   end
 
