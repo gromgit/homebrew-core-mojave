@@ -1,8 +1,8 @@
 class FfmpegAT4 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-4.4.1.tar.xz"
-  sha256 "eadbad9e9ab30b25f5520fbfde99fae4a92a1ae3c0257a8d68569a4651e30e02"
+  url "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.xz"
+  sha256 "af419a7f88adbc56c758ab19b4c708afbcae15ef09606b82b855291f6a6faa93"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
@@ -14,7 +14,7 @@ class FfmpegAT4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@4"
-    sha256 mojave: "e534889dc3c02cbbf4d3fcb2d88782411e286f8ff54884fc8b430d6b50f06930"
+    sha256 mojave: "dccb707a52460c557e675a3ff5ed5c5dc2e450d684b4bae5463dd3eaf8a42a30"
   end
 
   keg_only :versioned_formula
