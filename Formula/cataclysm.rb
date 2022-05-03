@@ -15,8 +15,8 @@ class Cataclysm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cataclysm"
-    rebuild 2
-    sha256 cellar: :any, mojave: "125578bb0ecc3f3d3e20724ca28de035a7b88d624ce19f462f0874155f378ce1"
+    rebuild 3
+    sha256 cellar: :any, mojave: "1b3d5a0942075ab57809066c028c584b8269e8b293fbb9c54c729841cb8269fb"
   end
 
   depends_on "pkg-config" => :build
@@ -29,10 +29,10 @@ class Cataclysm < Formula
   depends_on "sdl2_ttf"
 
   def install
+    os = OS.mac? ? "osx" : OS.kernel_name.downcase
     args = %W[
-      NATIVE=osx
+      NATIVE=#{os}
       RELEASE=1
-      OSX_MIN=#{MacOS.version}
       USE_HOME_DIR=1
       TILES=1
       SOUND=1
@@ -41,6 +41,7 @@ class Cataclysm < Formula
       LINTJSON=0
     ]
 
+    args << "OSX_MIN=#{MacOS.version}" if OS.mac?
     args << "CLANG=1" if ENV.compiler == :clang
 
     system "make", *args
@@ -55,18 +56,24 @@ class Cataclysm < Formula
   end
 
   test do
+    # Disable test on Linux because it fails with this error:
+    # Error while initializing the interface: SDL_Init failed: No available video device
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     # make user config directory
     user_config_dir = testpath/"Library/Application Support/Cataclysm/"
     user_config_dir.mkpath
 
-    # run cataclysm for 7 seconds
+    # run cataclysm for 30 seconds
     pid = fork do
       exec bin/"cataclysm"
     end
-    sleep 30
-    assert_predicate user_config_dir/"config",
-                     :exist?, "User config directory should exist"
-  ensure
-    Process.kill("TERM", pid)
+    begin
+      sleep 30
+      assert_predicate user_config_dir/"config",
+                       :exist?, "User config directory should exist"
+    ensure
+      Process.kill("TERM", pid)
+    end
   end
 end
