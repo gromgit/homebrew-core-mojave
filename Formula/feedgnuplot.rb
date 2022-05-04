@@ -4,10 +4,11 @@ class Feedgnuplot < Formula
   url "https://github.com/dkogan/feedgnuplot/archive/v1.61.tar.gz"
   sha256 "4239fe61a03232ea47909edd59af767b98481b205f58910b2e30d2d41f9caa80"
   license any_of: ["GPL-1.0-or-later", "Artistic-1.0"]
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/feedgnuplot"
-    sha256 cellar: :any_skip_relocation, mojave: "e86b6ca9cb693edc7f0808efd642834b0495d05035ba52f89dada5afa0ca4e2d"
+    sha256 cellar: :any_skip_relocation, mojave: "c0f0f739edc9cc2daa9b5fa6e14f19274788d84ba36caec803115afda65c429a"
   end
 
   depends_on "gnuplot"
