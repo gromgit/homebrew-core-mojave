@@ -15,8 +15,8 @@ class Ace < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ace"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8a0c8c6cbdbd31018af799f14cc6d6a738972cd2df3b9c10115b40b6dfd58a04"
+    rebuild 2
+    sha256 cellar: :any, mojave: "02afc34d7114a54d16b6249ab0bf1973387e8054358ed132fa464a08d8168da8"
   end
 
   def install
