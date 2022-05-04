@@ -4,10 +4,11 @@ class Gambit < Formula
   url "https://github.com/gambitproject/gambit/archive/v16.0.2.tar.gz"
   sha256 "49837f2ccb9bb65dad2f3bba9c436c7a7df8711887e25f6bf54b074508a682d4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gambit"
-    sha256 cellar: :any, mojave: "d679d331dae7d6e5e5e717a0abf93b3de233e40ebd351b57e597fab21511cb0a"
+    sha256 cellar: :any, mojave: "d7bd9445036ef1bf6fa0a8d4140552756c8908a760c82da7d249048463837d54"
   end
 
   depends_on "autoconf" => :build
