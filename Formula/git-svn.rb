@@ -1,8 +1,8 @@
 class GitSvn < Formula
   desc "Bidirectional operation between a Subversion repository and Git"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.1.tar.xz"
-  sha256 "d768528e6443f65a203036266f1ca50f9d127ba89751e32ead37117ed9191080"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.36.0.tar.xz"
+  sha256 "af5ebfc1658464f5d0d45a2bfd884c935fb607a10cc021d95bc80778861cc1d3"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -12,7 +12,7 @@ class GitSvn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-svn"
-    sha256 cellar: :any_skip_relocation, mojave: "97857a04d47b121734e7bc371c51111eb28bc2434be2e488f91234265d63710f"
+    sha256 cellar: :any_skip_relocation, mojave: "ec8ab1486a32e4b0df9e99f1b10492043b52c0e605bfd3c7a61c7cd64ac76dd7"
   end
 
   depends_on "git"
