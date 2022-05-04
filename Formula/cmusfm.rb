@@ -10,6 +10,7 @@ class Cmusfm < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "fb3118b55ecf198907e43466587b28d328d2f41337f75701c4288ea72759ee7b"
     sha256 cellar: :any_skip_relocation, catalina:      "c5f5828389cb7aad8fbc5ffb15dcd522f3e9f70718de08bbc5425f7c33118d56"
     sha256 cellar: :any_skip_relocation, mojave:        "00e046ccd67253bfc0f9031fc7746ef03e4a66d0e1df2fa5aabc64e537863048"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "363af3cb7ebfdf77f78b34239c4192810dafbf60de75a675296ecd5f797ceb7f"
   end
 
   depends_on "autoconf" => :build
