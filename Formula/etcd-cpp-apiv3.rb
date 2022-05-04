@@ -1,13 +1,13 @@
 class EtcdCppApiv3 < Formula
   desc "C++ implementation for etcd's v3 client API, i.e., ETCDCTL_API=3"
   homepage "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3"
-  url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "df09d575cf633137981f0829d87034daa545f7556980b0000899af38f1fc1bb6"
+  url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "ef2bee616031316bc4cbc416cf9932fd1b2273f5f8fe9c24d2b3602c14277e8a"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd-cpp-apiv3"
-    sha256 cellar: :any, mojave: "a614e7ef63f6b9b3764f14ce8fb34a3c88f41d5ebc4641b79052044f99a6b440"
+    sha256 cellar: :any, mojave: "3a6922614f6cbed910a34c49b77591e0b84bd05c3af8ca88d78ebfd46781feb8"
   end
 
   depends_on "cmake" => :build
