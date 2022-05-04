@@ -4,10 +4,12 @@ class Bat < Formula
   url "https://github.com/sharkdp/bat/archive/v0.20.0.tar.gz"
   sha256 "12eca3add56f21b8056a4c17cfb5bffc45e107f23f75a8e0f5de948d8e997c39"
   license any_of: ["Apache-2.0", "MIT"]
+  head "https://github.com/sharkdp/bat.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bat"
-    sha256 cellar: :any_skip_relocation, mojave: "a3d1302fe0c120e90718810f16f79b43a8e5db94a75752510be5cea4cc8f0614"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2d6d0829658da53e3fd6c9c26b7ee4bcacac8e84b3fd1d8c73357023a1a839ee"
   end
 
   depends_on "rust" => :build
