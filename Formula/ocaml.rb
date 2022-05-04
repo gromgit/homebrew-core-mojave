@@ -20,14 +20,14 @@ class Ocaml < Formula
   head "https://github.com/ocaml/ocaml.git", branch: "trunk"
 
   livecheck do
-    url "https://ocaml.org/releases/"
-    regex(/href=.*?v?(\d+(?:\.\d+)+)\.html/i)
+    url "https://ocaml.org/releases"
+    regex(%r{href=.*?/releases/v?(\d+(?:\.\d+)+)/?["']}i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f65fc647ad9475df8df428b795e29dc345b42526467c98f9d0e93b1767d7fe08"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c94d4df3ab3d3f5a930e55389f1d1698613875d1f03e6d6b156365dfe90e0098"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default
