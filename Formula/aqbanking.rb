@@ -1,8 +1,8 @@
 class Aqbanking < Formula
   desc "Generic online banking interface"
-  homepage "https://www.aquamaniac.de/sites/aqbanking/"
-  url "https://www.aquamaniac.de/rdm/attachments/download/400/aqbanking-6.4.1.tar.gz"
-  sha256 "79adeaf05e99b5aa0d31c3eac3db37a56bb375f537b3f106a9acfcf844dadd77"
+  homepage "https://www.aquamaniac.de/rdm/projects/aqbanking"
+  url "https://www.aquamaniac.de/rdm/attachments/download/435/aqbanking-6.5.0.tar.gz"
+  sha256 "4d2d3bea086e96ada7b6819206d4eb4168ceb7e32dce9a68dc6c6eabcc9eb63e"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,16 +12,7 @@ class Aqbanking < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aqbanking"
-    rebuild 1
-    sha256 mojave: "d9dfef02ce48bfb391a4af12e6307b114765f7ec2a4704e70e168522cc03e681"
-  end
-
-  head do
-    url "https://git.aquamaniac.de/git/aqbanking.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
+    sha256 mojave: "55e021910e9a1d096495c4d7fdf17ccf3d7e79005cb8847cc4d2fb8cc92522e3"
   end
 
   depends_on "gettext"
