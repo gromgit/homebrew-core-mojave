@@ -7,13 +7,14 @@ class Camlp5 < Formula
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
-    url :homepage
-    regex(%r{The current distributed version is <b>v?(\d+(?:\.\d+)+)</b>}i)
+    url :stable
+    regex(/^rel[._-]?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/camlp5"
-    sha256 mojave: "34eaa26a00d94c76a2979bf534fa687ea12bd160eb66bb9fe943fd2de1a8a506"
+    rebuild 1
+    sha256 mojave: "7cf991f621ae0fd7bcd0e469b33db2e07210c62406c65994e70e4960c284d81f"
   end
 
   depends_on "ocaml-findlib" => :build
