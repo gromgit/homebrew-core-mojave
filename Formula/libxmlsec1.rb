@@ -1,8 +1,8 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.2.33.tar.gz"
-  sha256 "26041d35a20a245ed5a2fb9ee075f10825664d274220cb5190340fa87a4d0931"
+  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.2.34.tar.gz"
+  sha256 "52ced4943f35bd7d0818a38298c1528ca4ac8a54440fd71134a07d2d1370a262"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class Libxmlsec1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxmlsec1"
-    rebuild 3
-    sha256 cellar: :any, mojave: "316fabf2b22c3d95f81f632aa4b8adc12d9bea413c8fa52265f6f8212bcebc6e"
+    sha256 cellar: :any, mojave: "c8f93561561ccdf34481a57fc800e9496aa6a77a91f88c43ef721a4401469eed"
   end
 
   depends_on "pkg-config" => :build
