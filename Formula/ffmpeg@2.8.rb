@@ -1,8 +1,8 @@
 class FfmpegAT28 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-2.8.18.tar.xz"
-  sha256 "96ef935af1d0adfd9e1a6823b55307dd0cc671192138660b6d5bde8cd6c1cd4c"
+  url "https://ffmpeg.org/releases/ffmpeg-2.8.19.tar.xz"
+  sha256 "6cedc0c20e3abb3176ac833c7774371dc9ed80a0ff566d46693dd7440e3070f0"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
@@ -14,8 +14,7 @@ class FfmpegAT28 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@2.8"
-    rebuild 2
-    sha256 mojave: "45fd8a112aba804dccd47a60b76631dca732916da7d23a5e0b5fd68b3d4dc743"
+    sha256 mojave: "93805557dc8734ebbac6281778d9d4ddda1b9401c7cb507f0c2b01f5a3f2c6fa"
   end
 
   keg_only :versioned_formula
@@ -74,11 +73,12 @@ class FfmpegAT28 < Formula
       --enable-libopencore-amrwb
       --enable-librtmp
       --enable-libspeex
-      --enable-opencl
       --disable-indev=jack
       --disable-libxcb
       --disable-xlib
     ]
+
+    args << "--enable-opencl" if OS.mac?
 
     # A bug in a dispatch header on 10.10, included via CoreFoundation,
     # prevents GCC from building VDA support. GCC has no problems on
