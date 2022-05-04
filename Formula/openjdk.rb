@@ -1,8 +1,8 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://github.com/openjdk/jdk/archive/jdk-18-ga.tar.gz"
-  sha256 "a57f568bb77a8a737a83f3488c645ab57596e146e6026a0fcca307ff706d90bd"
+  url "https://github.com/openjdk/jdk18u/archive/jdk-18.0.1-ga.tar.gz"
+  sha256 "4728da4676601af35c6ad998f2283e595ca9ce9b8528a75d74fddf7d03932d71"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,13 +11,19 @@ class Openjdk < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk"
-    sha256 cellar: :any, mojave: "2808b90330737d09b9f4711b1295bd8ab13551096d2008df9423dc39ce45963f"
+    sha256 cellar: :any, arm64_monterey: "61e9244f1f8f8c0c2139e1df26b9895f5508e3e7538952459b590f8bff50627f"
+    sha256 cellar: :any, arm64_big_sur:  "99fda507db67f88e289d8275ff7c37e63481c6f837a2c2c084cac1faf6e8fb2b"
+    sha256 cellar: :any, monterey:       "acb7d100bd61aa51fd0014339897dc8b6405f5c62adf8551cbffe28c1ce6aac7"
+    sha256 cellar: :any, big_sur:        "a70f028a2ad1233792eb1fd800ab0ed25d06a4d9f29250dbb1a2527685cd4ce6"
+    sha256 cellar: :any, catalina:       "e91872c557d4697ef33743dd3d161eca51c18f7dfff2c88d042ebc3d4e03e09b"
+    sha256               x86_64_linux:   "1723a239e00f76755947ff254e9ecf7b6416d49eb7690c1c9dc05a68dae09fe9"
   end
 
   keg_only :shadowed_by_macos
 
   depends_on "autoconf" => :build
+  depends_on xcode: :build
+  depends_on macos: :catalina
 
   on_linux do
     depends_on "pkg-config" => :build
