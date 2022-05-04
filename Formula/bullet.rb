@@ -1,15 +1,14 @@
 class Bullet < Formula
   desc "Physics SDK"
   homepage "https://bulletphysics.org/"
-  url "https://github.com/bulletphysics/bullet3/archive/3.21.tar.gz"
-  sha256 "49d1ee47aa8cbb0bc6bb459f0a4cfb9579b40e28f5c7d9a36c313e3031fb3965"
+  url "https://github.com/bulletphysics/bullet3/archive/3.24.tar.gz"
+  sha256 "6b1e987d6f8156fa8a6468652f4eaad17b3e11252c9870359e5bca693e35780b"
   license "Zlib"
   head "https://github.com/bulletphysics/bullet3.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bullet"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f123aa2dc89b1e540874787dbf4adac4a58c6d2e082cab347ca604cdfa72ee36"
+    sha256 cellar: :any, mojave: "7bb0430fe50222bcafa60cae2ab43141a987ceccf61a67c20bfc8959c2677ba4"
   end
 
   depends_on "cmake" => :build
@@ -17,6 +16,10 @@ class Bullet < Formula
   depends_on "python@3.10" => :build
 
   def install
+    # C++11 for nullptr usage in examples. Can remove when fixed upstream.
+    # Issue ref: https://github.com/bulletphysics/bullet3/pull/4243
+    ENV.cxx11 if OS.linux?
+
     common_args = %w[
       -DBT_USE_EGL=ON
       -DBUILD_UNIT_TESTS=OFF
