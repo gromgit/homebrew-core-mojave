@@ -10,9 +10,10 @@ class FsUae < Formula
     regex(/href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fs-uae"
-    sha256 cellar: :any, mojave: "3173209a221d0877157a06870b46eda8c747ab40967c2aabd1af86b1324da435"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d29ab3504952e05b8e05b48b742170407bcab4bffc7f73b1dbffd96fedfb6cd2"
   end
 
   head do
@@ -30,6 +31,12 @@ bottle do
   depends_on "libmpeg2"
   depends_on "libpng"
   depends_on "sdl2"
+
+  uses_from_macos "zip"
+
+  on_linux do
+    depends_on "openal-soft"
+  end
 
   def install
     system "./bootstrap" if build.head?
