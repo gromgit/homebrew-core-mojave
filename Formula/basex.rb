@@ -1,9 +1,9 @@
 class Basex < Formula
   desc "Light-weight XML database and XPath/XQuery processor"
   homepage "https://basex.org"
-  url "https://files.basex.org/releases/9.7/BaseX97.zip"
-  version "9.7"
-  sha256 "f6755611b0c77b140d88cdea1d1d9826fc213e1365fcd2d422d83db957c492c5"
+  url "https://files.basex.org/releases/9.7.1/BaseX971.zip"
+  version "9.7.1"
+  sha256 "cf7d91a344560614d4991b60f2b11deb9087c9e4e3d748e13c143c2d1cc8ce27"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Basex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "499bb9a443e130417a94a8b6a7725f9abbd4794c88114f6b95e51e1673215e89"
+    sha256 cellar: :any_skip_relocation, all: "fa969c276f4c33fc9cab73b5b4de18fa7bb29096ce03b443a29c74593239a879"
   end
 
   depends_on "openjdk"
