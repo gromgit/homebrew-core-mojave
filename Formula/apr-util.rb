@@ -5,12 +5,11 @@ class AprUtil < Formula
   mirror "https://archive.apache.org/dist/apr/apr-util-1.6.1.tar.bz2"
   sha256 "d3e12f7b6ad12687572a3a39475545a072608f4ba03a6ce8a3778f607dd0035b"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apr-util"
-    rebuild 1
-    sha256 mojave: "402ec3e44d9c71ba692c2238a939687e8dfcea1b3eae05512ab3931884111d23"
+    sha256 mojave: "b1918d4bfbdaa96a814530d0219952a45cad1ab1e1f00da8585a099b3f0bcba8"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides apr (but not apr-util)"
@@ -19,6 +18,7 @@ class AprUtil < Formula
   depends_on "openssl@1.1"
 
   uses_from_macos "expat"
+  uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
 
   on_linux do
@@ -37,6 +37,7 @@ class AprUtil < Formula
     system "make", "install"
 
     # Install symlinks so that linkage doesn't break for reverse dependencies.
+    # This should be removed on the next ABI breaking update.
     (libexec/"lib").install_symlink Dir["#{lib}/#{shared_library("*")}"]
 
     rm Dir[lib/"**/*.{la,exp}"]
