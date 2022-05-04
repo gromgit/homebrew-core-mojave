@@ -20,6 +20,7 @@ class Amtterm < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "ed7067b9e98f43c6a13bd5dc43b5467508e33f209399b4e276da21091ae74907"
     sha256 cellar: :any_skip_relocation, mojave:         "aab6ab711f9b407ef0df77a386b005cc8d10f7c0fb3c9c581659fea65e0edd00"
     sha256 cellar: :any_skip_relocation, high_sierra:    "29180333af292e440f077a00a958ceb6f0035bcee9945233bc33177d0b3549f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8508f3178996f322def37aa3bdce2573379e73682c5393fb6e952f18fdfbc22c"
   end
 
   on_linux do
