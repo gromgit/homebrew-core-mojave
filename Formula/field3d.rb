@@ -4,12 +4,11 @@ class Field3d < Formula
   url "https://github.com/imageworks/Field3D/archive/v1.7.3.tar.gz"
   sha256 "b6168bc27abe0f5e9b8d01af7794b3268ae301ac72b753712df93125d51a0fd4"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/field3d"
-    rebuild 2
-    sha256 cellar: :any, mojave: "5d197a122436e26c2c1e9164c013a3674688e5310d09b42b7bfbdadafe963954"
+    sha256 cellar: :any, mojave: "b48063a9e04d05a5b6cd9d8c3a1b7e8823331ffbfdb5b117917f75d0c8489451"
   end
 
   depends_on "cmake" => :build
