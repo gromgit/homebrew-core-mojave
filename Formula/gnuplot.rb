@@ -4,11 +4,11 @@ class Gnuplot < Formula
   url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.3/gnuplot-5.4.3.tar.gz"
   sha256 "51f89bbab90f96d3543f95235368d188eb1e26eda296912256abcd3535bd4d84"
   license "gnuplot"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnuplot"
-    rebuild 1
-    sha256 mojave: "346a52089fa699880de8300c61bee8c96771835672b049a7c7c1c287375485f6"
+    sha256 mojave: "1242a757b1fab26ac1084fc5a46aa7262efc5605dd6dfd0b7e8d9b1f82da7e65"
   end
 
   head do
