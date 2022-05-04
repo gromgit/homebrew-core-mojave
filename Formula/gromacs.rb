@@ -1,10 +1,9 @@
 class Gromacs < Formula
   desc "Versatile package for molecular dynamics calculations"
   homepage "https://www.gromacs.org/"
-  url "https://ftp.gromacs.org/pub/gromacs/gromacs-2022.tar.gz"
-  sha256 "fad60d606c02e6164018692c6c9f2c159a9130c2bf32e8c5f4f1b6ba2dda2b68"
+  url "https://ftp.gromacs.org/pub/gromacs/gromacs-2022.1.tar.gz"
+  sha256 "85ddab5197d79524a702c4959c2c43be875e0fc471df3a35224939dce8512450"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url "https://ftp.gromacs.org/pub/gromacs/"
@@ -13,7 +12,7 @@ class Gromacs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gromacs"
-    sha256 mojave: "8e511c86235d9de3997bbb6b6483d1d086a161c64243a7d2e22fe4bc9b5ec376"
+    sha256 mojave: "cbc395efff0e16c8c9631ca7f999c349648f78cd0f9f75ff0106d150a4b342c4"
   end
 
   depends_on "cmake" => :build
