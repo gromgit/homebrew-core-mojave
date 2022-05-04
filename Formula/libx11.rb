@@ -1,13 +1,13 @@
 class Libx11 < Formula
   desc "X.Org: Core X11 protocol client library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libX11-1.7.5.tar.gz"
-  sha256 "78992abcd2bfdebe657699203ad8914e7ae77025175460e04a1045387192a978"
+  url "https://www.x.org/archive/individual/lib/libX11-1.8.tar.gz"
+  sha256 "68e0a30c4248b9f41492891a4b49672c3b0c59e84c4868144f03eef01ebc5eea"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libx11"
-    sha256 mojave: "0da108910b9415ada644fcf52b1aa4977d53da44029ab5bae33a4f01bf95101c"
+    sha256 mojave: "c01f328b26f5e06cfe88bb4021c6cc8fe5e63747ad0a1da3d53903baa09f75f1"
   end
 
   depends_on "pkg-config" => :build
