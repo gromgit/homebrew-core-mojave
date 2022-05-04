@@ -19,6 +19,7 @@ class NagiosPlugins < Formula
     sha256 cellar: :any, catalina:       "b90c6f268ed5a5310a797855d87730f016c5d5077fa7b131c929aee042a1ee6c"
     sha256 cellar: :any, mojave:         "9dc95d628b0ca0e63df426e933f2be374442fa6ea3c6db0ea24ffb5967d098b1"
     sha256 cellar: :any, high_sierra:    "873811a29453153cd0ace61f92be73ae33b4a5bec1a4ece13baf128b32250e6e"
+    sha256               x86_64_linux:   "26470cb8b168c6179013872783a1d65411e6383c46419114791b23f2844edd5b"
   end
 
   depends_on "autoconf" => :build
