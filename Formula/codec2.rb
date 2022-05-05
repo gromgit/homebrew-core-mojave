@@ -7,11 +7,24 @@ class Codec2 < Formula
   sha256 "d1b156035b806fd89a29371a5ab0eefca3ccecfeff303dac0672c59d5c0c1235"
   license "LGPL-2.1-only"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/codec2"
-    sha256 cellar: :any, mojave: "1b1569a85392a804a435764240da57b9e938cb8b2f44cf5946185c7e977b3ced"
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :git do |tags, regex|
+      malformed_tags = ["v1.03"].freeze
+      tags.map do |tag|
+        next if malformed_tags.include?(tag)
+
+        tag[regex, 1]
+      end
+    end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/codec2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "258692fb4d1ba14ae1638f62d92eba7601d0a0613e8a6349e496ad163fd6b5c3"
+  end
 
   depends_on "cmake" => :build
 
