@@ -1,10 +1,9 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://github.com/ldc-developers/ldc/releases/download/v1.28.1/ldc-1.28.1-src.tar.gz"
-  sha256 "654958bca5378cd97819f2ef61d3f220aa652a9d2b5ff41d6f2109302ae6eb94"
+  url "https://github.com/ldc-developers/ldc/releases/download/v1.29.0/ldc-1.29.0-src.tar.gz"
+  sha256 "d0c066eb965467625d9c5e75c00c583451b9ffa363601f9e37275ca8a8aea140"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class Ldc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldc"
-    sha256 mojave: "06dfd650545ed75a659331c62e3fe88dbb60ae98da4700bc707f842ffcf385e0"
+    sha256 mojave: "16a828709a5fb9e9b835a7738cabe2be3149f6dca65fca1e014598c84b85455e"
   end
 
   depends_on "cmake" => :build
@@ -31,11 +30,11 @@ class Ldc < Formula
   resource "ldc-bootstrap" do
     on_macos do
       if Hardware::CPU.intel?
-        url "https://github.com/ldc-developers/ldc/releases/download/v1.28.0/ldc2-1.28.0-osx-x86_64.tar.xz"
-        sha256 "02472507de988c8b5dd83b189c6df3b474741546589496c2ff3d673f26b8d09a"
+        url "https://github.com/ldc-developers/ldc/releases/download/v1.28.1/ldc2-1.28.1-osx-x86_64.tar.xz"
+        sha256 "9aa43e84d94378f3865f69b08041331c688e031dd2c5f340eb1f3e30bdea626c"
       else
-        url "https://github.com/ldc-developers/ldc/releases/download/v1.28.0/ldc2-1.28.0-osx-arm64.tar.xz"
-        sha256 "f9786b8c28d8af1fdd331d8eb889add80285dbebfb97ea47d5dd9110a7df074b"
+        url "https://github.com/ldc-developers/ldc/releases/download/v1.28.1/ldc2-1.28.1-osx-arm64.tar.xz"
+        sha256 "9bddeb1b2c277019cf116b2572b5ee1819d9f99fe63602c869ebe42ffb813aed"
       end
     end
 
