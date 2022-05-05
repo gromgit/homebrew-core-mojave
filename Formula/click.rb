@@ -1,24 +1,29 @@
 class Click < Formula
   desc "Command-line interactive controller for Kubernetes"
   homepage "https://github.com/databricks/click"
-  url "https://github.com/databricks/click/archive/v0.5.4.tar.gz"
-  sha256 "fa9b2cb3911ae8331217cafb941cdee52b09a27a58a5dccbdb52f408dc22f4f4"
+  url "https://github.com/databricks/click/archive/v0.6.0.tar.gz"
+  sha256 "90773efa2bb91c71d6f8d448cabc2623cb2d4c31908d54b849426560755ef31f"
   license "Apache-2.0"
   head "https://github.com/databricks/click.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "08fffc5fa5f08e292d5ebb07ccbd3d8cfe2b7ec70d06420377c94e849b4bc3c3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e54fef33b234b0c5053040a012ff0ab1c548ff31dfe660e0f577b01cd6727ff3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c96d461641e892fcf31ce73d018abc1910a479c2d715521dda44c5f2867baba0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aa74cec2f0d6854791b46d54adbdb96bff085b67278629695f0ac266eef54717"
-    sha256 cellar: :any_skip_relocation, catalina:       "59c72a4b00a3bf477cd3d65573175d6009112273b715b30d49be7bc694fdcf80"
-    sha256 cellar: :any_skip_relocation, mojave:         "b7f4b485ff0eb502694555d0f85096880e6a0355b7e69adf2bb5075d2396ade1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "553af140b3e4382834691f12fba51f61640eee9aa35ed2db8a20732a6ccd9488"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/click"
+    sha256 cellar: :any_skip_relocation, mojave: "b1f4e210f0805a22599eaf9733d43b211525b33068ce28cf8b5fd5f06b3f262b"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "expect" => :test
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@1.1"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
