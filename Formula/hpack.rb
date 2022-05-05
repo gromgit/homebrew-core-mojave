@@ -1,14 +1,14 @@
 class Hpack < Formula
   desc "Modern format for Haskell packages"
   homepage "https://github.com/sol/hpack"
-  url "https://github.com/sol/hpack/archive/0.34.7.tar.gz"
-  sha256 "640c5a235cda86ac85b8bcb2d08f679c493b8f765a7d8bf36445cb200eb8fab8"
+  url "https://github.com/sol/hpack/archive/0.35.0.tar.gz"
+  sha256 "5f92885b3609b87f499a5e8840c092aa76d8196275ef4abf68fa54e35f80ace1"
   license "MIT"
   head "https://github.com/sol/hpack.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hpack"
-    sha256 cellar: :any_skip_relocation, mojave: "51b18b5450cde235a1c1506b30c7b5b16caae4a23ec7832e1c8a726d7d5ddcf7"
+    sha256 cellar: :any_skip_relocation, mojave: "50ed0e2cbbb40025e980d5c73d7a1940a0149b184756fb233b94a60ef7225717"
   end
 
   depends_on "cabal-install" => :build
