@@ -2,8 +2,8 @@ class InfluxdbCli < Formula
   desc "CLI for managing resources in InfluxDB v2"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influx-cli.git",
-      tag:      "v2.2.1",
-      revision: "31ac78361b8aaae2aba966eb69054ea107028044"
+      tag:      "v2.3.0",
+      revision: "88ba3464cd07599375b4f21589f93bf5a9b1e7e1"
   license "MIT"
   head "https://github.com/influxdata/influx-cli.git", branch: "main"
 
@@ -13,14 +13,9 @@ class InfluxdbCli < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb-cli-2.2.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "80ed8d47ff1d8d09175be72453ba75809b203a7024172df805286f34cd8251f6"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb-cli"
+    sha256 cellar: :any_skip_relocation, mojave: "90233c0fd1f8757741b6f175ff123fc6caa99cc01e7930289364f8d853b9846a"
   end
-
-  #bottle do
-  #  sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
-  #end
 
   depends_on "go" => :build
   depends_on "influxdb" => :test
@@ -36,13 +31,11 @@ class InfluxdbCli < Formula
 
     system "go", "build", *std_go_args(output: bin/"influx", ldflags: ldflags), "./cmd/influx"
 
-    bash_complete = buildpath/"bash-completion"
-    bash_complete.write Utils.safe_popen_read(bin/"influx", "completion", "bash")
-    bash_completion.install bash_complete => "influx"
+    output = Utils.safe_popen_read(bin/"influx", "completion", "bash")
+    (bash_completion/"influx").write output
 
-    zsh_complete = buildpath/"zsh-completion"
-    zsh_complete.write Utils.safe_popen_read(bin/"influx", "completion", "zsh")
-    zsh_completion.install zsh_complete => "_influx"
+    output = Utils.safe_popen_read(bin/"influx", "completion", "zsh")
+    (zsh_completion/"_influx").write output
   end
 
   test do
