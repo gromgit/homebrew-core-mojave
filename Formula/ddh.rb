@@ -5,9 +5,15 @@ class Ddh < Formula
   sha256 "f16dd4da04852670912c1b3fd65ce9b6ebd01ba2d0df97cb8c9bdf91ba453384"
   license "LGPL-3.0-only"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ddh"
-    sha256 cellar: :any_skip_relocation, mojave: "23d2c5c423b12da35cf1d27985136f45f216b639764c183f31466d6700b95e8a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "771c6c56a3bb413376ad9362e2a8a700d2d7551e9bd002c9fdc4f074f3910cde"
   end
 
   depends_on "rust" => :build
