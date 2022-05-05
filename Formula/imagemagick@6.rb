@@ -1,8 +1,8 @@
 class ImagemagickAT6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://legacy.imagemagick.org/"
-  url "https://www.imagemagick.org/download/releases/ImageMagick-6.9.12-41.tar.xz"
-  sha256 "53e7de745bd22dbaea1b22317775fde3f5ceb81dc87689767514135213fc450a"
+  url "https://www.imagemagick.org/download/releases/ImageMagick-6.9.12-47.tar.xz"
+  sha256 "f531f9ddae06713993b69e72de98ab2edeb23d2676a6b82a51ef59f4cb3b816a"
   license "ImageMagick"
   head "https://github.com/imagemagick/imagemagick6.git", branch: "main"
 
@@ -13,7 +13,7 @@ class ImagemagickAT6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick@6"
-    sha256 mojave: "334478c9692b51ce2146bb6c8bff6bad693694832462ab366e3c320fb1ef116f"
+    sha256 mojave: "25de8f43d5daec61c0b41eb9a88b2116daec25d3d9845383cb4233142fe1faa3"
   end
 
   keg_only :versioned_formula
