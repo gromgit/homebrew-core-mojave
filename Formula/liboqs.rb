@@ -12,13 +12,20 @@ class Liboqs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liboqs"
-    sha256 cellar: :any, mojave: "06b60be49ad32ff94bfbf5c4f113f0eed24ba83132cceefd788c43197332a270"
+    rebuild 1
+    sha256 cellar: :any, mojave: "423c94c05a8403192c18c528647dd883e75394ae835392af65aa95e918cc6dc8"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "ninja" => :build
   depends_on "openssl@1.1"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     mkdir "build" do
