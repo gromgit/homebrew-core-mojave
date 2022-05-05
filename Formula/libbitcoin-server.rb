@@ -4,21 +4,19 @@ class LibbitcoinServer < Formula
   url "https://github.com/libbitcoin/libbitcoin-server/archive/v3.6.0.tar.gz"
   sha256 "283fa7572fcde70a488c93e8298e57f7f9a8e8403e209ac232549b2c433674e1"
   license "AGPL-3.0"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 arm64_monterey: "31933d4007329e335a2c0ee577e031a2c92e8ce626bdbf406bc2abfe138bd7e4"
-    sha256 arm64_big_sur:  "7efe8bcecf7a2d191790ed5ef7e7ed2035c5b21647c1cca030a485a20e1efbbe"
-    sha256 monterey:       "3ab1368ac79efae623be1d5163ec7c40c76520b9cf66479a0cbce143fe05ce43"
-    sha256 big_sur:        "14d83e9545bea5d9d4c6c794b0dca5b58d4e36c90773e1b82db2ce346cb8bce4"
-    sha256 catalina:       "03a1363d1b924bc9ce0cbbb4aa080e1c71b66374d6dd8def2b03023bff6595cb"
-    sha256 mojave:         "23a267d222b28729da3e7dfefe559aba8f97b668910e08ce33f4016b067d8dff"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbitcoin-server"
+    sha256 mojave: "06a29b19294c3e72904412a097f1bf25c0efd1e518cd056983685fba4f3d39cf"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  depends_on "boost@1.76"
   depends_on "libbitcoin-node"
   depends_on "libbitcoin-protocol"
 
@@ -30,14 +28,14 @@ class LibbitcoinServer < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+                          "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
 
     bash_completion.install "data/bs"
   end
 
   test do
-    boost = Formula["boost"]
+    boost = Formula["boost@1.76"]
     (testpath/"test.cpp").write <<~EOS
       #include <bitcoin/server.hpp>
       int main() {
@@ -47,9 +45,10 @@ class LibbitcoinServer < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+                    "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin",
                     "-L#{lib}", "-lbitcoin-server",
-                    "-L#{boost.opt_lib}", "-lboost_system"
+                    "-L#{boost.lib}", "-lboost_system"
     system "./test"
   end
 end
