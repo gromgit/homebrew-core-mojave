@@ -2,14 +2,14 @@ class Helmsman < Formula
   desc "Helm Charts as Code tool"
   homepage "https://github.com/Praqma/helmsman"
   url "https://github.com/Praqma/helmsman.git",
-      tag:      "v3.8.1",
-      revision: "4d2b79f91b7918f6494754fad448a733932cf788"
+      tag:      "v3.9.0",
+      revision: "4ff303ac0b0a2abe43cd01a17765b4d86ffec2b5"
   license "MIT"
   head "https://github.com/Praqma/helmsman.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmsman"
-    sha256 cellar: :any_skip_relocation, mojave: "f3bd51dca2189abc251277d872ac93f0e3cdca07c382e55c3c84cc2d7ce81dd6"
+    sha256 cellar: :any_skip_relocation, mojave: "ac225e76a58a0f839ab47362dbc14075ceec0a9c331df58e83eaaa7cef80ef83"
   end
 
   depends_on "go" => :build
@@ -24,7 +24,7 @@ class Helmsman < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/helmsman version")
 
-    output = shell_output("#{bin}/helmsman --apply -f #{pkgshare}/example.yaml 2>&1", 1)
+    output = shell_output("#{bin}/helmsman --apply -f #{pkgshare}/example.yaml 2>&1")
     assert_match "helm diff not found", output
   end
 end
