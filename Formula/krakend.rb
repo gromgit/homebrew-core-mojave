@@ -1,13 +1,13 @@
 class Krakend < Formula
   desc "Ultra-High performance API Gateway built in Go"
   homepage "https://www.krakend.io/"
-  url "https://github.com/devopsfaith/krakend-ce/archive/v2.0.1.tar.gz"
-  sha256 "65177673e535a5bc0ac05801d2a02bd0cae609ae1e8223e9fe33979404670bf6"
+  url "https://github.com/devopsfaith/krakend-ce/archive/v2.0.4.tar.gz"
+  sha256 "d85210b10045aec53cc568aa29ff015848d777fba770335a0f73a629a0f3e9ae"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/krakend"
-    sha256 cellar: :any_skip_relocation, mojave: "06584b58954f7a9e2b7d2b697e7ab0b0fe4c811eb30b5f5a205611869242c2ee"
+    sha256 cellar: :any_skip_relocation, mojave: "605a86b8df05259a9fb6dc5813abe7654b145bc4253e6c17c65b6f9595d04792"
   end
 
   depends_on "go" => :build
