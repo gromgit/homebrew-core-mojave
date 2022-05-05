@@ -1,14 +1,14 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_6_1;sf=tgz"
-  version "7.6.1"
-  sha256 "c111c635fa4cae05821640f5afbbf362efaee8dc51fcbee953866eec7482cd6a"
+  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_6_2;sf=tgz"
+  version "7.6.2"
+  sha256 "443f782f4adfd316e3f81bfad01d5367ae55ceb0d04c1acec1b87baae5c75e1c"
   license "LGPL-2.1-only"
 
   # The first-party download page (https://dev.opencascade.org/release)
   # references version 7.5.0 and hasn't been updated for later maintenance
-  # releases (e.g., 7.6.1, 7.5.2), so we check the Git tags instead. Release
+  # releases (e.g., 7.6.2, 7.5.2), so we check the Git tags instead. Release
   # information is posted at https://dev.opencascade.org/forums/occt-releases
   # but the text varies enough that we can't reliably match versions from it.
   livecheck do
@@ -19,10 +19,9 @@ class Opencascade < Formula
     end
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencascade"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3176c6e731ae0b230b0142e0ed515d90e2a5c42fac80c270292cac1b7c7adc2d"
+    sha256 cellar: :any, mojave: "d0139a8488f3e450186f5e00ab8a5489e84a41a24d0e2b90fcfa701fd81499ef"
   end
 
   depends_on "cmake" => :build
