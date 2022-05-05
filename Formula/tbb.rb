@@ -4,11 +4,11 @@ class Tbb < Formula
   url "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.5.0.tar.gz"
   sha256 "e5b57537c741400cf6134b428fc1689a649d7d38d9bb9c1b6d64f092ea28178a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tbb"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bd726d6bd01fddc55c139e27cfd3c0f548a0751723be6a546d2d145861ca5471"
+    sha256 cellar: :any, mojave: "eac60a916cbe9e35accda53754e1d0fa47c04d3563d22ce081c29dc6cd5e7b4d"
   end
 
   depends_on "cmake" => :build
@@ -26,9 +26,13 @@ class Tbb < Formula
     ]
 
     mkdir "build" do
-      system "cmake", "..", *args
+      system "cmake", "..", *args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "make"
       system "make", "install"
+      system "make", "clean"
+      system "cmake", "..", *args, "-DBUILD_SHARED_LIBS=OFF"
+      system "make"
+      lib.install Dir["**/libtbb*.a"]
     end
 
     cd "python" do
