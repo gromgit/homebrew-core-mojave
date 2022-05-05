@@ -13,7 +13,8 @@ class Datree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datree"
-    sha256 cellar: :any_skip_relocation, mojave: "9451888c29f523da1c97a47038683ac692faabb2f357e6272c63aaee769e71ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8b23ef608f337144c67dc530fc17df5189697f91287e39be8f36c3d199279e07"
   end
 
   depends_on "go" => :build
@@ -38,7 +39,7 @@ class Datree < Formula
     EOS
 
     assert_match "k8s schema validation error: For field (root): Additional property apiversion is not allowed",
-      shell_output("#{bin}/datree test #{testpath}/invalidK8sSchema.yaml 2>&1", 2)
+      shell_output("#{bin}/datree test #{testpath}/invalidK8sSchema.yaml --no-record 2>&1", 2)
 
     assert_equal "#{version}\n", shell_output("#{bin}/datree version")
   end
