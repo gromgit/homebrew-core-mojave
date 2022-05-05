@@ -1,18 +1,13 @@
 class Libpinyin < Formula
   desc "Library to deal with pinyin"
   homepage "https://github.com/libpinyin/libpinyin"
-  url "https://github.com/libpinyin/libpinyin/archive/2.6.1.tar.gz"
-  sha256 "936c756bf57205f064eb7731772289b2e9769ba5b52d6be957a17a9d3b4d5d0f"
+  url "https://github.com/libpinyin/libpinyin/archive/2.6.2.tar.gz"
+  sha256 "73f428a1c76a44a9ff666ae3c71b9ce4d96d07bc5b5af8081a85ef66a0383777"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "0ef181490605aaf65879895f82f5767b541f6ad2c5b82b69be4f769913c3625f"
-    sha256 cellar: :any,                 arm64_big_sur:  "318f5f316d2d49d3c0cafac9a911e7e0b4c281e5112e523cab7c7ee9ece570ae"
-    sha256 cellar: :any,                 monterey:       "a391e633e73d3cf2f10217b08afa4ebba6f6d77afab4d8a2a0bfb6f83d90f971"
-    sha256 cellar: :any,                 big_sur:        "758fc82d1e5f0458f23e00cc3b9f38cf4b30099d7ecdef3d969fc40de334787b"
-    sha256 cellar: :any,                 catalina:       "7f84e4aa3ca24a3c722a06aedc7a18a16cb188884e2c665c949dbe160506b8c6"
-    sha256 cellar: :any,                 mojave:         "f2673713072b32704d2017f4643edc1071b49e8766659831287da96e0c29e783"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abad6e2cc1bd2707aa4cce999da7d924ea075fe3cf6fdc39fa0352ee86288ce2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpinyin"
+    sha256 cellar: :any, mojave: "5ba9c70f0ca8d13d43a54a420b9878f8e8015a60432ee3f92f8a6277e9a1332e"
   end
 
   depends_on "autoconf" => :build
@@ -31,9 +26,6 @@ class Libpinyin < Formula
   end
 
   def install
-    # Fix linker flags used in building/linking libzhuyin: https://github.com/libpinyin/libpinyin/pull/151
-    inreplace "src/Makefile.am", "-exported_symbols_list=$(srcdir)", "-exported_symbols_list,$(srcdir)"
-
     resource("model").stage buildpath/"data"
     system "./autogen.sh", "--enable-libzhuyin=yes",
                            "--prefix=#{prefix}"
