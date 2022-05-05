@@ -7,12 +7,11 @@ class Libxcrypt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcrypt"
-    sha256 cellar: :any, mojave: "6487a3e1d694fbae09042a9b1bd51ac5197620d2276e138328628299393c5b90"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f8a8f0222f1e9f1febd1384d85289580badfce414490adeb1ec2948cdb095f7d"
   end
 
-  on_macos do
-    keg_only "provided by macOS"
-  end
+  keg_only :provided_by_macos
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
