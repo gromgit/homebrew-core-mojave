@@ -2,10 +2,9 @@ class ErlangAT22 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-22.3.4.25/otp_src_22.3.4.25.tar.gz"
-  sha256 "f1e94f0b66fae1f48f4fae45480ba5c7d15a3bae0aac8d1b580a41cf0eddfd9a"
+  url "https://github.com/erlang/otp/releases/download/OTP-22.3.4.26/otp_src_22.3.4.26.tar.gz"
+  sha256 "ee281e4638c8d671dd99459a11381345ee9d70f1f8338f5db31fc082349a370e"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,7 +13,7 @@ class ErlangAT22 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang@22"
-    sha256 cellar: :any, mojave: "df10694ef88a6878295a04975284381c7d3c55315a4775e48d81eee64f74e846"
+    sha256 cellar: :any, mojave: "da7e3308c2a86e373a0daa566a9889fa51e43a99001d4e7f5cb04e1e35674162"
   end
 
   keg_only :versioned_formula
