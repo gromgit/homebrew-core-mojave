@@ -8,12 +8,11 @@ class Uriparser < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uriparser"
-    sha256 cellar: :any, mojave: "cece34be25c64ea6dcbfdcd06e144953e6e8dc410825eff9df28bedb5a90317a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3e95ef3cb76b4328651d3b2a5e234a7aeb90f180f2b585834362138a866e6e94"
   end
 
   depends_on "cmake" => :build
-
-  conflicts_with "libkml", because: "both install `liburiparser.dylib`"
 
   def install
     system "cmake", ".", "-DURIPARSER_BUILD_TESTS=OFF",
