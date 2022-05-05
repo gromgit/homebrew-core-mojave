@@ -3,6 +3,7 @@ class Libvisio < Formula
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libvisio"
   url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.7.tar.xz"
   sha256 "8faf8df870cb27b09a787a1959d6c646faa44d0d8ab151883df408b7166bea4c"
+  license "MPL-2.0"
   revision 5
 
   livecheck do
@@ -12,8 +13,8 @@ class Libvisio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvisio"
-    rebuild 1
-    sha256 cellar: :any, mojave: "40d30183042b64838dd7565cf69db37e5867740e9e62c7675a27a12f7eec7018"
+    rebuild 2
+    sha256 cellar: :any, mojave: "64379d4fd91fe053d07e9dbb86257ad3dd952749fc5bbf4e57d02ec6b6cef28b"
   end
 
   depends_on "cppunit" => :build
