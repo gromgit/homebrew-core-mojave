@@ -17,8 +17,12 @@ class Cproto < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cproto"
-    sha256 cellar: :any_skip_relocation, mojave: "5c80532a5d2dd7294f18f3ed56a46c173e770d140e5d33775ae00f981b698197"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5d325fc4467071667e7bde6d00c67b4a44cc30605ddf3d000a4048e647b73c49"
   end
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   def install
     system "./configure", "--disable-debug",
