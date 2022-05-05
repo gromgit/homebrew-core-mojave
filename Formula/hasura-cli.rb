@@ -3,13 +3,13 @@ require "language/node"
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://github.com/hasura/graphql-engine/archive/v2.4.0.tar.gz"
-  sha256 "dc51c15653c8d36675f9e37d4a3a5e8961dd307ea62f6b76bfa565a5ea7f74e8"
+  url "https://github.com/hasura/graphql-engine/archive/v2.6.1.tar.gz"
+  sha256 "63429ae4d974a90544649ae22c92072315fc079984deb86d5f1628c9e0fc68a9"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hasura-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "c09bbf4d725f9845e5635d35aad3f5bd451b77c0a54c099ff0d72bb94c1b30ea"
+    sha256 cellar: :any_skip_relocation, mojave: "d179324405a17d0e4b6ac49c44ab4e592917a03ead37d0b2f19159a31d7e4996"
   end
 
   depends_on "go" => :build
