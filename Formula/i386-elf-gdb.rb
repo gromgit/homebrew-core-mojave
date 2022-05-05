@@ -1,10 +1,9 @@
 class I386ElfGdb < Formula
   desc "GNU debugger for i386-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  # Please add to synced_versions_formulae.json once version synced with gdb
-  url "https://ftp.gnu.org/gnu/gdb/gdb-11.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-11.2.tar.xz"
-  sha256 "1497c36a71881b8671a9a84a0ee40faab788ca30d7ba19d8463c3cc787152e32"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-12.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-12.1.tar.xz"
+  sha256 "0e1793bf8f2b54d53f46dea84ccfd446f48f81b297b28c4f7fc017b818d69fed"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -14,8 +13,7 @@ class I386ElfGdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i386-elf-gdb"
-    rebuild 1
-    sha256 mojave: "c86b9b532df32f1bf886922f150ca8cd1c5dabbfdf4e907920c1793249b932bd"
+    sha256 mojave: "266f856ac107d2d5e13c295bcecd648b3d4e44083101ddc36b4b807dfa139be9"
   end
 
   depends_on "i686-elf-gcc" => :test
