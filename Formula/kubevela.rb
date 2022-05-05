@@ -2,13 +2,13 @@ class Kubevela < Formula
   desc "Application Platform based on Kubernetes and Open Application Model"
   homepage "https://kubevela.io"
   url "https://github.com/oam-dev/kubevela.git",
-      tag:      "v1.3.2",
-      revision: "d08aa7d12c8a3d130a2428b25fd75cf30ed23b25"
+      tag:      "v1.3.3",
+      revision: "45e1de19dc736b10b3eb2d908d809210f470b24f"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubevela"
-    sha256 cellar: :any_skip_relocation, mojave: "34564a41ae079f015812b5c50c1b89e8a5905e107339e288bbb73a834fbd0000"
+    sha256 cellar: :any_skip_relocation, mojave: "bbcca5ed1c5aeaec3453b9dd39ef8cf95467b3db64671bdb58062d4489869fd8"
   end
 
   depends_on "go" => :build
