@@ -2,36 +2,33 @@ class Influxdb < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v2.1.1",
-      revision: "657e1839de9e8a734abad1207ca28e7d02444207"
+      tag:      "v2.2.0",
+      revision: "a2f85388377fe454257b6da6ad1e723e52b5438b"
   license "MIT"
   head "https://github.com/influxdata/influxdb.git", branch: "master"
 
+  # The regex below omits a rogue `v9.9.9` tag that breaks version comparison.
   livecheck do
     url :stable
     regex(/^v?((?!9\.9\.9)\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f2a656c0bd19f43bba64632f5cb552ed8336cc61d8f4b8510e0d6d1f38974e50"
+    sha256 cellar: :any_skip_relocation, mojave: "3563a4e0328d7e7bfafc4965e602bba4466e4063385ce55ce75a16598705358f"
   end
-
-  # The regex below omits a rogue `v9.9.9` tag that breaks version comparison.
 
   depends_on "breezy" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
-  depends_on "influxdb-cli"
 
   # NOTE: The version here is specified in the go.mod of influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.9.tar.gz"
-    sha256 "25843e58a3e6994bdafffbc0ef0844978a3d1f999915d6770cb73505fcf87e44"
+    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.11.tar.gz"
+    sha256 "52b22c151163dfb051fd44e7d103fc4cde6ae8ff852ffc13adeef19d21c36682"
   end
 
   # NOTE: The version/URL here is specified in scripts/fetch-ui-assets.sh in influxdb.
@@ -51,7 +48,6 @@ bottle do
 
     # Extract pre-build UI resources to the location expected by go-bindata.
     resource("ui-assets").stage(buildpath/"static/data/build")
-
     # Embed UI files into the Go source code.
     system "make", "generate-web-assets"
 
@@ -81,6 +77,13 @@ bottle do
     (var/"log/influxdb2").mkpath
   end
 
+  def caveats
+    <<~EOS
+      This formula does not contain command-line interface; to install it, run:
+        brew install influxdb-cli
+    EOS
+  end
+
   service do
     run bin/"influxd"
     keep_alive true
@@ -102,9 +105,6 @@ bottle do
                              "--log-level=error"
     end
     sleep 30
-
-    # Check that the CLI works and can talk to the server.
-    assert_match "OK", shell_output("influx ping")
 
     # Check that the server has properly bundled UI assets and serves them as HTML.
     curl_output = shell_output("curl --silent --head #{influx_host}")
