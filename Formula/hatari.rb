@@ -14,7 +14,8 @@ class Hatari < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hatari"
-    sha256 cellar: :any, mojave: "1e66851f39b0f9ece627da39eaae58f730568aabc8fe1735c4c43938d4eac289"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f67f9712586f5ae40207c548b059b90a75dc97cb461b22075615955055d6d966"
   end
 
   depends_on "cmake" => :build
@@ -32,12 +33,21 @@ class Hatari < Formula
   def install
     # Set .app bundle destination
     inreplace "src/CMakeLists.txt", "/Applications", prefix
-    system "cmake", *std_cmake_args, "-DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3"
-    system "make"
-    prefix.install "src/Hatari.app"
-    bin.write_exec_script "#{prefix}/Hatari.app/Contents/MacOS/hatari"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+      "-DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3"
+    system "cmake", "--build", "build"
+    if OS.mac?
+      prefix.install "build/src/Hatari.app"
+      bin.write_exec_script "#{prefix}/Hatari.app/Contents/MacOS/hatari"
+    else
+      system "cmake", "--install", "build"
+    end
     resource("emutos").stage do
-      (prefix/"Hatari.app/Contents/Resources").install "etos512k.img" => "tos.img"
+      if OS.mac?
+        (prefix/"Hatari.app/Contents/Resources").install "etos512k.img" => "tos.img"
+      else
+        pkgshare.install "etos512k.img" => "tos.img"
+      end
     end
   end
 
