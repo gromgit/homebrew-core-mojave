@@ -1,8 +1,8 @@
 class SharedMimeInfo < Formula
   desc "Database of common MIME types"
   homepage "https://wiki.freedesktop.org/www/Software/shared-mime-info"
-  url "https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/0ee50652091363ab0d17e335e5e74fbe/shared-mime-info-2.1.tar.xz"
-  sha256 "b2d40cfcdd84e835d0f2c9107b3f3e77e9cf912f858171fe779946da634e8563"
+  url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.2/shared-mime-info-2.2.tar.bz2"
+  sha256 "418c480019d9865f67f922dfb88de00e9f38bf971205d55cdffab50432919e61"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,8 @@ class SharedMimeInfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "49fd4c8b0f7cb6b3d45be48968613f8f26b0bded7f7c55b9e978c11d94efb513"
-    sha256 cellar: :any, arm64_big_sur:  "c2c98a7a02e1b23f5c7f7baafe0e4b04f22a7b1a6df73912a7450ea73c162819"
-    sha256 cellar: :any, monterey:       "eb8c22370434b81375766139e32b3d8f823a1569a8f3bccc3eaf1fe9f39f250a"
-    sha256 cellar: :any, big_sur:        "4857d9f38c0f3cbf23984d60c4ec6280d84b457123d34b9c01e96f3deb8b0bb2"
-    sha256 cellar: :any, catalina:       "8cb87ae2f3014998ecebab2d8c37ac9ff364f1164417420c4d8778a38ca17d29"
-    sha256 cellar: :any, mojave:         "786d1c053d03676c985de3a7c15d764b69626f5d12e7e36e4048055bdc36413c"
-    sha256               x86_64_linux:   "6099cf602b42eb8f23022b02c292b0bbdce2e22f4ff5b5e8f4d8a3c4575b298f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shared-mime-info"
+    sha256 cellar: :any, mojave: "c6ae65648666e666a685222f7b4942d0d400dd01830545cb83bd2fc5a6f52a6a"
   end
 
   head do
