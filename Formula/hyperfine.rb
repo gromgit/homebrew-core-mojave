@@ -4,10 +4,12 @@ class Hyperfine < Formula
   url "https://github.com/sharkdp/hyperfine/archive/v1.13.0.tar.gz"
   sha256 "6e57c8e51962dd24a283ab46dde6fe306da772f4ef9bad86f8c89ac3a499c87e"
   license any_of: ["Apache-2.0", "MIT"]
+  head "https://github.com/sharkdp/hyperfine.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hyperfine"
-    sha256 cellar: :any_skip_relocation, mojave: "4c3257190ccaa3c271bc21dde368c5772207f6cc21965b99677930e05369286a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "35778f63ca0252cb3ec84990640190774e008a93753ad5e35076f3dff7383949"
   end
 
   depends_on "rust" => :build
