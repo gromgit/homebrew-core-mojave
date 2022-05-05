@@ -1,8 +1,8 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
   homepage "https://htop.dev/"
-  url "https://github.com/htop-dev/htop/archive/3.1.2.tar.gz"
-  sha256 "fe9559637c8f21f5fd531a4c072048a404173806acbdad1359c6b82fd87aa001"
+  url "https://github.com/htop-dev/htop/archive/3.2.0.tar.gz"
+  sha256 "1a1dd174cc828521fe5fd0e052cff8c30aa50809cf80d3ce3a481c37d476ac54"
   license "GPL-2.0-or-later"
   head "https://github.com/htop-dev/htop.git", branch: "main"
 
@@ -13,8 +13,7 @@ class Htop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htop"
-    rebuild 3
-    sha256 cellar: :any, mojave: "a6430e867c5cef60485f4016370a7d0e5ee849b2910f2785eb7565a78acb10a3"
+    sha256 cellar: :any, mojave: "e891c3284425b68748cfe11eef7089de4ec970583980c3be63f658b1ee111af5"
   end
 
   depends_on "autoconf" => :build
