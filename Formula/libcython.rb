@@ -5,9 +5,14 @@ class Libcython < Formula
   sha256 "d6fac2342802c30e51426828fe084ff4deb1b3387367cf98976bb2e64b6f8e45"
   license "Apache-2.0"
 
+  livecheck do
+    formula "cython"
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcython"
-    sha256 cellar: :any_skip_relocation, mojave: "92b3dd5b356f662049c72d19743bb4c963bcbe3d0ed922ae8ea278fe99ea4edf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "54b78edd379227834d33aec542b00d67604d0e3961f86657ff643f4733b84b34"
   end
 
   keg_only <<~EOS
