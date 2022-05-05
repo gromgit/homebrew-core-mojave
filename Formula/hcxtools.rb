@@ -1,15 +1,14 @@
 class Hcxtools < Formula
   desc "Utils for conversion of cap/pcap/pcapng WiFi dump files"
   homepage "https://github.com/ZerBea/hcxtools"
-  url "https://github.com/ZerBea/hcxtools/archive/6.2.5.tar.gz"
-  sha256 "7ce5f8263cf9354f01008ba710c6e3cc2dcc861c550bd7a943ca33d29738bec3"
+  url "https://github.com/ZerBea/hcxtools/archive/6.2.7.tar.gz"
+  sha256 "c9d69b5ddcf61c3deff687fad6c17197970cc75c5dbc7706b31c138bf0c784e1"
   license "MIT"
   head "https://github.com/ZerBea/hcxtools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcxtools"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c7d1c08764c04b76641fa38a37a1b19d6857073286ed71bf214238e52babfa41"
+    sha256 cellar: :any, mojave: "291149054ed99c572ca06ad419440f7b720684f80e99af09c7fbea2620bc33d2"
   end
 
   depends_on "pkg-config" => :build
