@@ -1,16 +1,15 @@
 class Gdb < Formula
   desc "GNU debugger"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-11.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-11.2.tar.xz"
-  sha256 "1497c36a71881b8671a9a84a0ee40faab788ca30d7ba19d8463c3cc787152e32"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-12.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-12.1.tar.xz"
+  sha256 "0e1793bf8f2b54d53f46dea84ccfd446f48f81b297b28c4f7fc017b818d69fed"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdb"
-    rebuild 2
-    sha256 mojave: "c737a6242882337423783707096d618e1eb89e2e0a0201cf6ad2fa449f3fb722"
+    sha256 mojave: "dde6d780ffc437e7db6e983571d6475f89378636e0e4a22b3a104132836d939a"
   end
 
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
