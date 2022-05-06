@@ -1,18 +1,22 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://solana.com"
-  url "https://github.com/solana-labs/solana/archive/v1.9.13.tar.gz"
-  sha256 "65f6a162a8443067bcf1c7abc51ebe2ac579b8af090c677c8077a0636cf44354"
+  url "https://github.com/solana-labs/solana/archive/v1.9.19.tar.gz"
+  sha256 "7f816fcaa7647d1e94d318e3f0ce7a98efab2f418561ffb19dc04c5fbe132231"
   license "Apache-2.0"
 
+  # This formula tracks the stable channel but the "latest" release on GitHub
+  # varies between Mainnet and Testnet releases. This identifies versions by
+  # checking the releases page and only matching Mainnet releases.
   livecheck do
-    url :stable
-    strategy :github_latest
+    url "https://github.com/solana-labs/solana/releases?q=prerelease%3Afalse"
+    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >][^>]*?>[^<]*?Mainnet}i)
+    strategy :page_match
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana"
-    sha256 cellar: :any_skip_relocation, mojave: "c63c4dbaa7712ef8ec1533c9053c0438e2974bfaad53f217210ae3384b115762"
+    sha256 cellar: :any_skip_relocation, mojave: "d90639ff4cfb6613616c043336e5b5d77da5ce6a1f452fd5fc67b569cdf37d35"
   end
 
   depends_on "protobuf" => :build
