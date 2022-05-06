@@ -8,7 +8,8 @@ class Portmidi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/portmidi"
-    sha256 cellar: :any, mojave: "58b2a688a4db8ea924e085a83bbb03a0019ec6db9c6c3a4a397f580a30d2f3ca"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b661f57b3a870d8ac9ca17a78843b84b4cd804485b875697a85961e98f9a6b91"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +22,7 @@ class Portmidi < Formula
     # need to create include/lib directories since make won't create them itself
     include.mkpath
     lib.mkpath
+    (lib/"pkgconfig").mkpath
 
     if OS.mac?
       # Fix "fatal error: 'os/availability.h' file not found" on 10.11 and
@@ -33,6 +35,8 @@ class Portmidi < Formula
       system "make", "-f", "pm_mac/Makefile.osx"
       system "make", "-f", "pm_mac/Makefile.osx", "install"
       mv lib/shared_library("libportmidi"), lib/shared_library("libportmidi", version)
+      # awaiting https://github.com/PortMidi/portmidi/issues/24
+      (lib/"pkgconfig").install "Release/packaging/portmidi.pc"
     else
       system "cmake", ".", *std_cmake_args, "-DCMAKE_CACHEFILE_DIR=#{buildpath}/build"
       system "make", "install"
