@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v1.33.1/netdata-v1.33.1.tar.gz"
-  sha256 "20ba8695d87187787b27128ac3aab9b09aa29ca6b508c48542e0f7d50ec9322b"
+  url "https://github.com/netdata/netdata/releases/download/v1.34.1/netdata-v1.34.1.tar.gz"
+  sha256 "8ea0786df0e952209c14efeb02e25339a0769aa3edc029e12816b8ead24a82d7"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +12,7 @@ class Netdata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netdata"
-    rebuild 1
-    sha256 mojave: "ec20908dcecc54357cd09aeca211a89fa9230bca71c47c8b4d92b9406f004462"
+    sha256 mojave: "e857cb9c9d6924c6c19b4f82f90a39617a0fae392777d552463039ab3ee8f3a5"
   end
 
   depends_on "autoconf" => :build
@@ -84,11 +82,6 @@ class Netdata < Formula
   end
 
   def post_install
-    config = etc/"netdata/netdata.conf"
-    inreplace config do |s|
-      s.gsub!(/web files owner = .*/, "web files owner = #{ENV["USER"]}")
-      s.gsub!(/web files group = .*/, "web files group = #{Etc.getgrgid(prefix.stat.gid).name}")
-    end
     (var/"cache/netdata/unittest-dbengine/dbengine").mkpath
     (var/"lib/netdata/registry").mkpath
     (var/"log/netdata").mkpath
