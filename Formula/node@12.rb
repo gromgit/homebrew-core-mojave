@@ -12,10 +12,14 @@ class NodeAT12 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@12"
-    sha256 cellar: :any, mojave: "ba55554ede1ebb7fbd75b5fa374e326dfc51606028f1f66de8acd5f172075515"
+    rebuild 1
+    sha256 cellar: :any, mojave: "62ae448a0be20891cb3d6ea17d76f612486d6dce945534ce2b27ebd033335404"
   end
 
   keg_only :versioned_formula
+
+  # https://nodejs.org/en/about/releases/
+  deprecate! date: "2022-04-30", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
