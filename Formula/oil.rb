@@ -1,8 +1,8 @@
 class Oil < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://www.oilshell.org/"
-  url "https://www.oilshell.org/download/oil-0.9.9.tar.gz"
-  sha256 "e10b6de6da4bda27a012e0b5750a9bee8c7576bd0d75ec13385e1fcf01febafa"
+  url "https://www.oilshell.org/download/oil-0.10.0.tar.gz"
+  sha256 "7a4baeb886f02e9f10770bdabfb92a752b9861e999581d613d0fc3d4e9287911"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Oil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oil"
-    sha256 mojave: "baa63820e7315d04cd1a0f3815978a92f598636b592bdafbee63b9c6d3a999d1"
+    sha256 mojave: "cd7b56a72de1b0c91ad7019489a641690ae779ea413a39d95721192009b8186c"
   end
 
   depends_on "readline"
@@ -30,7 +30,7 @@ class Oil < Formula
     system "#{bin}/osh", "-c", "shopt -q parse_backticks"
     assert_equal testpath.to_s, shell_output("#{bin}/osh -c 'echo `pwd -P`'").strip
 
-    system "#{bin}/oil", "-c", "shopt -q parse_equals"
+    system "#{bin}/oil", "-c", "shopt -u parse_equals"
     assert_equal "bar", shell_output("#{bin}/oil -c 'var foo = \"bar\"; write $foo'").strip
   end
 end
