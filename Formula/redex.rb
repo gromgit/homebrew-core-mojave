@@ -1,8 +1,10 @@
 class Redex < Formula
+  include Language::Python::Shebang
+
   desc "Bytecode optimizer for Android apps"
   homepage "https://fbredex.com"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/facebook/redex.git", branch: "master"
 
   stable do
@@ -23,7 +25,7 @@ class Redex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/redex"
-    sha256 cellar: :any, mojave: "43f70a678f9547905c12d743894224f94ec178cf8b7c06b0454f980e983fff9d"
+    sha256 cellar: :any, mojave: "a678493c574b45430d5ba7831c3be1fd2e2e74eb69f10743d0a1e2ae2135b33e"
   end
 
   depends_on "autoconf" => :build
@@ -32,7 +34,7 @@ class Redex < Formula
   depends_on "libtool" => :build
   depends_on "boost"
   depends_on "jsoncpp"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "test_apk" do
     url "https://raw.githubusercontent.com/facebook/redex/fa32d542d4074dbd485584413d69ea0c9c3cbc98/test/instr/redex-test.apk"
@@ -43,16 +45,28 @@ class Redex < Formula
     # https://github.com/facebook/redex/issues/457
     inreplace "Makefile.am", "/usr/include/jsoncpp", Formula["jsoncpp"].opt_include
 
-    system "autoreconf", "-ivf"
-    system "./configure", "--prefix=#{prefix}"
+    python_scripts = %w[
+      apkutil
+      redex.py
+      tools/python/dex.py
+      tools/python/dict_utils.py
+      tools/python/file_extract.py
+      tools/python/reach_graph.py
+      tools/redex-tool/DexSqlQuery.py
+      tools/redexdump-apk
+    ]
+    rewrite_shebang detected_python_shebang, *python_scripts
+
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args, "--with-boost=#{Formula["boost"].opt_prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    resource("test_apk").stage do
-      system "#{bin}/redex", "redex-test.apk", "-o", "redex-test-out.apk"
-    end
+    testpath.install resource("test_apk")
+    system "#{bin}/redex", "--ignore-zipalign", "redex-test.apk", "-o", "redex-test-out.apk"
+    assert_predicate testpath/"redex-test-out.apk", :exist?
   end
 end
 
