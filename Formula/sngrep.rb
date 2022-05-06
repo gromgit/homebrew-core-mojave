@@ -1,13 +1,13 @@
 class Sngrep < Formula
   desc "Command-line tool for displaying SIP calls message flows"
   homepage "https://github.com/irontec/sngrep"
-  url "https://github.com/irontec/sngrep/archive/v1.4.10.tar.gz"
-  sha256 "cedbe521c9730deda004bff71e88c8c56ae66d3d147ddc6f5f965df2ca67a8df"
+  url "https://github.com/irontec/sngrep/archive/v1.5.0.tar.gz"
+  sha256 "c41620c02982fe87a443ccc795cc8c7fe7cf3d55338b8723f345b685bc153f4e"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sngrep"
-    sha256 mojave: "06db54ca53afc39a5551e1d546d716d64c6ae5a5764b23ad5bf0e4d2a0d43f39"
+    sha256 mojave: "18e0f76749e651415f99cbbfe0ea75d2b514b03dc3aef51d98ba4ed163ec2374"
   end
 
   depends_on "autoconf" => :build
