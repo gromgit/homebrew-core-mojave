@@ -5,9 +5,15 @@ class Qpdf < Formula
   sha256 "e8fc23b2a584ea68c963a897515d3eb3129186741dd19d13c86d31fa33493811"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^release-qpdf[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qpdf"
-    sha256 cellar: :any, mojave: "70d509d8a3f6531b1ddb81e75b8667e2963847f80d9c87602618fc7082a5395e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "86cea0e345625a3c5e88210140af1d10703290fcfa09bb86d276d91545008d89"
   end
 
   depends_on "jpeg"
