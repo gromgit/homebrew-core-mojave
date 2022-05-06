@@ -6,11 +6,12 @@ class Salt < Formula
   url "https://files.pythonhosted.org/packages/2f/31/73c98765b59608fe6742824af31f2037ef1490e46a95873a07a34b596f15/salt-3004.1.tar.gz"
   sha256 "7f344a2432648a4f078daa5accc68dcdffe1095cea13ec21e50413560f04c298"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/saltstack/salt.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/salt"
-    sha256 cellar: :any, mojave: "5783e9a621a6df66b9fd51a5294bee187d8669289a48d6f1eb0da21ecc9ad003"
+    sha256 cellar: :any, mojave: "1fa1148566743fabb76d9f6c585fcc0c68c574eb43d31ab5d59b07edf382aa8a"
   end
 
   depends_on "swig" => :build
