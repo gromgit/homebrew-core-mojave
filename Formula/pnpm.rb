@@ -3,8 +3,8 @@ class Pnpm < Formula
 
   desc "📦🚀 Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://registry.npmjs.org/pnpm/-/pnpm-6.32.6.tgz"
-  sha256 "488d1ec675d7e84b19678f466ee7cfa429a82a432399207825c4a98a16f29ba2"
+  url "https://registry.npmjs.org/pnpm/-/pnpm-7.0.0.tgz"
+  sha256 "4b9266de9037b6ceec204bc55d6454e971738de51e2cfc795a0c064631bf4170"
   license "MIT"
 
   livecheck do
@@ -14,7 +14,7 @@ class Pnpm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pnpm"
-    sha256 cellar: :any_skip_relocation, mojave: "2328f08310d12c90199e0b3957b0b6b45a17c4b6e291edb7e1ea6f8da4b73901"
+    sha256 cellar: :any_skip_relocation, mojave: "b3b6192d05983f3f54faeb111ce50b1e355bbc8fae1477892e35d81e5f53b1b7"
   end
 
   depends_on "node"
@@ -27,7 +27,7 @@ class Pnpm < Formula
   end
 
   test do
-    system "#{bin}/pnpm", "init", "-y"
+    system "#{bin}/pnpm", "init"
     assert_predicate testpath/"package.json", :exist?, "package.json must exist"
   end
 end
