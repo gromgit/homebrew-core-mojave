@@ -6,10 +6,15 @@ class Sevenzip < Formula
   sha256 "213d594407cb8efcba36610b152ca4921eda14163310b43903d13e68313e1e39"
   license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause"]
 
+  livecheck do
+    url "https://7-zip.org/download.html"
+    regex(/>\s*Download\s+7-Zip\s+v?(\d+(?:\.\d+)+)[\s<]/im)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sevenzip"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ea61adf561d4092599e56e1153470cfc5e4beb63bf06a24989083eb272aa4527"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "385e144a023d6a9bb7c41c581dd06be32de0a90ad489c506cb4b25b0b90a0b37"
   end
 
   def install
