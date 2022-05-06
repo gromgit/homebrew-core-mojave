@@ -11,8 +11,8 @@ class Offlineimap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/offlineimap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f7669c7d46a5f9557bbb2d73a8f2003ae9dbf387c838b6d9e3769e714263aadb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "324e859bdcb5728c159bc928a0b90c7bc77cfc824c5dd7069e3c363b9dc9fd02"
   end
 
   depends_on "python@3.10"
