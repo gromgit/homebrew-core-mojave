@@ -1,14 +1,14 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v7.69.0.tar.gz"
-  sha256 "f01b8c7e5b1d20ffdd47a59a0e3d028ae7219b7a601579541a9807bca10bdc84"
+  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v7.77.0.tar.gz"
+  sha256 "aceeafd3730b0460e82e0cffaf238158f07b2b5a95314d100693481637341b69"
   license "MIT"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oh-my-posh"
-    sha256 cellar: :any_skip_relocation, mojave: "92abfb61a217d5a1aef0147cd21bca9f1f81baa7e92e58b18861539388a87ac1"
+    sha256 cellar: :any_skip_relocation, mojave: "dbc30f91718fd6c2904dd9a8e2978c004b405a0071f9f607d714c4eb48e4dee9"
   end
 
   depends_on "go" => :build
