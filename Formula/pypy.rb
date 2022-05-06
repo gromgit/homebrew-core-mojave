@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.8-src.tar.bz2"
-  sha256 "0cdad270c62d3ccc53cc87eeb069a6dc46acaf95521b584624bcd6697d94fa1c"
+  url "https://downloads.python.org/pypy/pypy2.7-v7.3.9-src.tar.bz2"
+  sha256 "39b0972956f6548ce5828019dbae12503c32d6cbe91a2becf88d3e42cc52197b"
   license "MIT"
   head "https://foss.heptapod.net/pypy/pypy", using: :hg
 
@@ -13,7 +13,7 @@ class Pypy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pypy"
-    sha256 cellar: :any, mojave: "f2a67e9ed73814c3fb92aa5f14655ca62083f950a60ea68870bef59462af0ca6"
+    sha256 cellar: :any, mojave: "2a959a460be53ed96ee690d985d3cbdc2b0bed5d9679eaa98bf827f6f54eca33"
   end
 
   depends_on "pkg-config" => :build
