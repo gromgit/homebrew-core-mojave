@@ -1,13 +1,13 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://github.com/TACC/Lmod/archive/8.7.tar.gz"
-  sha256 "f8bf4cea79e743a8ffcde3525520fa28595fe15fc3e8582deec22583e9166d93"
+  url "https://github.com/TACC/Lmod/archive/8.7.1.tar.gz"
+  sha256 "7b271a6e8509174707154fee502ab18a059c3e3c9d4b37cbb3c930bdd5b75e37"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lmod"
-    sha256 cellar: :any_skip_relocation, mojave: "112cd3870070af710f9b835414aee6e6a05650a1348dad45c19ad821d1793dc3"
+    sha256 cellar: :any_skip_relocation, mojave: "b673147e29bae843be4599c11a1ae20e2d12eada9b2ef508dd0c714c7c9e2bd1"
   end
 
   depends_on "luarocks" => :build
