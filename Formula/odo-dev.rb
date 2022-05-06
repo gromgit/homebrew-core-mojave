@@ -2,14 +2,14 @@ class OdoDev < Formula
   desc "Developer-focused CLI for Kubernetes and OpenShift"
   homepage "https://odo.dev"
   url "https://github.com/redhat-developer/odo.git",
-      tag:      "v2.5.0",
-      revision: "724f16e689545dd4a81671da3e116a33df4832d3"
+      tag:      "v2.5.1",
+      revision: "ae0c553090e7644c3eda585639151419a8c3fb6b"
   license "Apache-2.0"
   head "https://github.com/redhat-developer/odo.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/odo-dev"
-    sha256 cellar: :any_skip_relocation, mojave: "6e4fbf385ba5cb07502df87e72f0e187ab0b22e41702a98d4818561215dac0ba"
+    sha256 cellar: :any_skip_relocation, mojave: "1a9c0eb394b8f6874fd0670cc3f95ed81716bc7e2e38fd55c53ee5490a53711f"
   end
 
   depends_on "go" => :build
