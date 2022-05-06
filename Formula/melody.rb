@@ -1,13 +1,13 @@
 class Melody < Formula
   desc "Language that compiles to regular expressions"
   homepage "https://yoav-lavi.github.io/melody/book"
-  url "https://github.com/yoav-lavi/melody/archive/refs/tags/v0.13.10.tar.gz"
-  sha256 "1922d6d668d2107c83f9fa729a1e37701920296640b5fce14a732c62840ffd00"
+  url "https://github.com/yoav-lavi/melody/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "b9c7cacd6389fb32f5b75b5a6d47d171fafdac36fe5f23632ca24e52a052e361"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/melody"
-    sha256 cellar: :any_skip_relocation, mojave: "5727f6afdf47851b0f83548cda1620c17529097480956b57449251f0907888fa"
+    sha256 cellar: :any_skip_relocation, mojave: "9cb0574a43adcf543d81b10f408cb91020cc22de2315a8092b1d4481d6dc0c25"
   end
 
   depends_on "rust" => :build
