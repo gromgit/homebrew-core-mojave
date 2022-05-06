@@ -3,6 +3,7 @@ class Nmh < Formula
   homepage "https://www.nongnu.org/nmh/"
   url "https://download.savannah.gnu.org/releases/nmh/nmh-1.7.1.tar.gz"
   sha256 "f1fb94bbf7d95fcd43277c7cfda55633a047187f57afc6c1bb9321852bd07c11"
+  license "BSD-3-Clause"
   revision 1
 
   livecheck do
@@ -11,11 +12,9 @@ class Nmh < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_big_sur: "8424c60947db61aa2902836e12ac551c49c0783f3ab74746a57beff8f8361026"
-    sha256 big_sur:       "7dcce1935d412880d7484d77230a8446fc917dbc6bd8288df51e92c0a1a8106c"
-    sha256 catalina:      "891c5b5a3353772b1f450968c6a5aa25f22131cf567a32891694161af64e513e"
-    sha256 mojave:        "404bb9d70fbae0d224bc8c4e1e29c1e3f950df5ffac8e4f9a2805bb9d4a9c9f3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nmh"
+    rebuild 2
+    sha256 mojave: "35cf32274d699e9a0a75430f695193644111713f03184239d4078b24068a35df"
   end
 
   head do
@@ -28,6 +27,12 @@ class Nmh < Formula
   depends_on "openssl@1.1"
   depends_on "w3m"
 
+  uses_from_macos "cyrus-sasl"
+
+  on_linux do
+    depends_on "gdbm"
+  end
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
@@ -36,6 +41,9 @@ class Nmh < Formula
                           "--with-cyrus-sasl",
                           "--with-tls"
     system "make", "install"
+
+    # Remove shim references
+    inreplace prefix/"etc/nmh/mhn.defaults", Superenv.shims_path/"curl", "curl"
   end
 
   test do
