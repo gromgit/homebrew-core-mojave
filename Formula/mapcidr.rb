@@ -1,15 +1,14 @@
 class Mapcidr < Formula
   desc "Subnet/CIDR operation utility"
   homepage "https://projectdiscovery.io"
-  url "https://github.com/projectdiscovery/mapcidr/archive/v0.0.8.tar.gz"
-  sha256 "8ff4b6ba994f8346197e5266b3939e469dec541d65701bc71134c9081e01e3ee"
+  url "https://github.com/projectdiscovery/mapcidr/archive/v0.0.9.tar.gz"
+  sha256 "997de8dd52581eeee2a065f7ffe10742ae82d97dcbc3e87d1abe5f696a6d9880"
   license "MIT"
   head "https://github.com/projectdiscovery/mapcidr.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mapcidr"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3ecde1a8106e167e4ed5e56576a568ff0a567cf6715ae523166a81c9ec45babe"
+    sha256 cellar: :any_skip_relocation, mojave: "0a67416d4cb56a88f56b29683c309f2bc1ce78728baba7da2163036d50f7ec3b"
   end
 
   depends_on "go" => :build
