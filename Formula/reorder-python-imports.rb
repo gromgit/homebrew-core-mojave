@@ -3,14 +3,14 @@ class ReorderPythonImports < Formula
 
   desc "Rewrites source to reorder python imports"
   homepage "https://github.com/asottile/reorder_python_imports"
-  url "https://files.pythonhosted.org/packages/5d/16/fac8bebf74e45c7498296f1f7cfcb11fe1b0792ff9ce2c468c94dbe742bc/reorder_python_imports-3.0.1.tar.gz"
-  sha256 "a4e1c28a1bf90a7c8fa4c534058803a7956adc722137d3e54eb91536fe12ffb6"
+  url "https://files.pythonhosted.org/packages/0f/09/03893c8de481420a71476b47ca5e1a09a9aba111802de7ad24957a72d129/reorder_python_imports-3.1.0.tar.gz"
+  sha256 "6b7a810ee77a9be0e646033d034ce02457e32597c5f48e5faec1866ca9eb4957"
   license "MIT"
   head "https://github.com/asottile/reorder_python_imports.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reorder-python-imports"
-    sha256 cellar: :any_skip_relocation, mojave: "b803c194964b602a1c2851f3906696b8686aab4b7c504aef78ea5fb064da1d6a"
+    sha256 cellar: :any_skip_relocation, mojave: "9c52da9bf73a43a6aceae434b8131fc20b928d94fac103e023ff871009e98eff"
   end
 
   depends_on "python@3.10"
