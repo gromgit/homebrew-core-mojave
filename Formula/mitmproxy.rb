@@ -6,17 +6,18 @@ class Mitmproxy < Formula
   url "https://github.com/mitmproxy/mitmproxy/archive/v8.0.0.tar.gz"
   sha256 "9bf403660169327e1b9c8b1701f9f45923e72eba935005cb357f1f4bca1815b5"
   license "MIT"
+  revision 1
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mitmproxy"
-    sha256 cellar: :any, mojave: "9ae269d30c9240694ac625ae905343a8766860208b4c998b8568ac0840b48b59"
+    sha256 cellar: :any, mojave: "954c7756fca91c74fcc778b3e0d80b7c11d9de00edcc0697e39de5639d201355"
   end
 
   depends_on "rust" => :build # for cryptography
   depends_on "openssl@1.1"
   depends_on "protobuf"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   uses_from_macos "libffi"
