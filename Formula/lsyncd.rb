@@ -1,20 +1,20 @@
 class Lsyncd < Formula
   desc "Synchronize local directories with remote targets"
   homepage "https://github.com/lsyncd/lsyncd"
-  url "https://github.com/lsyncd/lsyncd/archive/release-2.2.3.tar.gz"
-  sha256 "7bcd0f4ae126040bb078c482ff856c87e61c22472c23fa3071798dcb1dc388dd"
+  url "https://github.com/lsyncd/lsyncd/archive/release-2.2.4.tar.gz"
+  sha256 "3f51c6456604b5acce191c3539e7693a63bd395045dfd5ba35fa4222ca76ed79"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lsyncd"
-    sha256 cellar: :any, mojave: "3754e1dd0d3e6e65789c5c296bfc01ad5ed28077492d3286627805bc47499a3b"
+    sha256 cellar: :any, mojave: "24bc2c2badaa34e4315f40ed92a319de9963b361d5875a431b15ee71be68aa75"
   end
 
   depends_on "cmake" => :build
   depends_on "lua"
 
   on_macos do
+    # From https://opensource.apple.com/releases/
     xnu_headers = {
       "10.10"   => ["xnu-2782.1.97.tar.gz",       "612a0eb12d2b2fad3b2df33224abd1c65b89f1c95cd1cea6853694840d48d322"],
       "10.10.1" => ["xnu-2782.1.97.tar.gz",       "612a0eb12d2b2fad3b2df33224abd1c65b89f1c95cd1cea6853694840d48d322"],
@@ -86,34 +86,8 @@ class Lsyncd < Formula
     end
   end
 
-  # Fix issues with 10.15+ volume layout.
-  # Remove with the next release.
-  patch do
-    url "https://github.com/lsyncd/lsyncd/commit/7bb8715bfd425621a57068e39fac37bac3456318.patch?full_index=1"
-    sha256 "578278ca7a1f2e23a53da207daeb58bc946e2fe03751b8e2990af008f580c3da"
-  end
-
-  # Fix finding of unversioned Lua.
-  # Remove with the next release.
-  patch do
-    url "https://github.com/lsyncd/lsyncd/commit/0af99d8d5ba35118e8799684a2d4a8ea4b0c6957.patch?full_index=1"
-    sha256 "a4f9eba3246c611febec68a0599935fa5ec0e4ad16a165ae19cd634afea45523"
-  end
-
-  # Fix compile with Lua 5.4.
-  # Remove with the next release.
-  patch do
-    url "https://github.com/lsyncd/lsyncd/commit/a609f34971955450c90db246e992c511cc933d5e.patch?full_index=1"
-    sha256 "69d32ae25704523e11c0774983f43bdadf1d7d22bb693eb18b62523bc716c9c4"
-  end
-
   def install
-    # Fix manpage install location.
-    # https://github.com/lsyncd/lsyncd/commit/a410ddebb88bdc346476e80b3e50f5d2e35b4e41
-    # Remove with the next release.
-    inreplace "CMakeLists.txt", "DESTINATION man", "DESTINATION share/man/man1 COMPONENT man"
-
-    args = []
+    args = ["-DCMAKE_INSTALL_MANDIR=#{man}"]
     if OS.mac?
       resource("xnu").stage buildpath/"xnu"
       args += %W[-DWITH_INOTIFY=OFF -DWITH_FSEVENTS=ON -DXNU_DIR=#{buildpath}/xnu]
