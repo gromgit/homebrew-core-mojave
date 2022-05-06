@@ -7,17 +7,26 @@ class Skaffold < Formula
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
-  # This uses the `GithubLatest` strategy to work around an old `v2.2.3` tag
-  # that is always seen as newer than the latest version. If Skaffold ever
-  # reaches version 2.2.3, we can switch back to the `Git` strategy.
+  # The `strategy` code below can be removed if/when this software exceeds
+  # version 2.2.3. Until then, it's used to omit an older tag that would always
+  # be treated as newest.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :git do |tags, regex|
+      malformed_tags = ["v2.2.3"].freeze
+      tags.map do |tag|
+        next if malformed_tags.include?(tag)
+
+        tag[regex, 1]
+      end
+    end
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skaffold"
-    sha256 cellar: :any_skip_relocation, mojave: "729710159bcd54a121c0be0a516804704c9255d1403847c2b1c5ced1120fe37a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a1ec78c272ce30e8b3be3fc824e4c11a3ead27f4fd06061819e2d874bbafcabf"
   end
 
   # Bump to 1.18 on the next release, if possible.
