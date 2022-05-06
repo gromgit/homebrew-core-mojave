@@ -14,8 +14,8 @@ class PamU2f < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pam-u2f"
-    rebuild 2
-    sha256 cellar: :any, mojave: "bce346471937907335348245e5694bf4b3afe9a038c6fec05872d1cfbc391a31"
+    rebuild 3
+    sha256 cellar: :any, mojave: "275caaf8e315f0303b5dffaaa6c4ab4f478dbd27da26e68efd930421be5b9750"
   end
 
   depends_on "asciidoc" => :build
@@ -24,6 +24,10 @@ class PamU2f < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libfido2"
+
+  on_linux do
+    depends_on "linux-pam"
+  end
 
   def install
     system "autoreconf", "--install"
