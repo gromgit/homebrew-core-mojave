@@ -3,13 +3,13 @@ class NodeSass < Formula
 
   desc "JavaScript implementation of a Sass compiler"
   homepage "https://github.com/sass/dart-sass"
-  url "https://registry.npmjs.org/sass/-/sass-1.50.0.tgz"
-  sha256 "f46e0208aaecfe15dd901437138727ca190ca031ae0ed786256a1d683d9acc37"
+  url "https://registry.npmjs.org/sass/-/sass-1.51.0.tgz"
+  sha256 "9d33f0a3cac3a710eb74621462dd2e2777371b69bb13ab6f48fea2a41a179f7e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node-sass"
-    sha256 cellar: :any_skip_relocation, mojave: "645516e4e6046b127747d16c49f70dd62e76842b128ea3e3a107b3e6c721991e"
+    sha256 cellar: :any_skip_relocation, mojave: "e5ba9d284ae5154187a1660d93f9454f56406c772364aaa32f67482f25f83aa8"
   end
 
   depends_on "node"
