@@ -4,12 +4,11 @@ class Nanomsgxx < Formula
   url "https://github.com/achille-roussel/nanomsgxx/archive/0.2.tar.gz"
   sha256 "116ad531b512d60ea75ef21f55fd9d31c00b172775548958e5e7d4edaeeedbaa"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nanomsgxx"
-    rebuild 4
-    sha256 cellar: :any, mojave: "d4e76451a7ef74352961f6736cc54894e18be0e39eb0a4c66e3efbce8dc926e8"
+    sha256 cellar: :any, mojave: "4d278fb698a57ab2088153ee80ed7aff21b5463c865979726fc6b74fadfa1abe"
   end
 
   depends_on "pkg-config" => :build
