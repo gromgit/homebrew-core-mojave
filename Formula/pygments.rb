@@ -3,14 +3,14 @@ class Pygments < Formula
 
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/94/9c/cb656d06950268155f46d4f6ce25d7ffc51a0da47eadf1b164bbf23b718b/Pygments-2.11.2.tar.gz"
-  sha256 "4e426f72023d88d03b2fa258de560726ce890ff3b630f88c21cbb8b2503b8c6a"
+  url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
+  sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
   license "BSD-2-Clause"
   head "https://github.com/pygments/pygments.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pygments"
-    sha256 cellar: :any_skip_relocation, mojave: "1144025d257641b8df2002a0c7c55953d030050d06f8bd2f0cc739d926d993f2"
+    sha256 cellar: :any_skip_relocation, mojave: "0414aff282a9f5dd964587617b6314b92981868f4c41002c72607bd53f643efc"
   end
 
   depends_on "python@3.10"
