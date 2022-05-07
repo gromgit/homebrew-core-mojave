@@ -1,15 +1,14 @@
 class Statix < Formula
   desc "Lints and suggestions for the nix programming language"
   homepage "https://github.com/nerdypepper/statix"
-  url "https://github.com/nerdypepper/statix/archive/v0.5.4.tar.gz"
-  sha256 "c237dc526ce24fcd10c21c216c22d663b1d71604e8d058a133a172551ffbbd9c"
+  url "https://github.com/nerdypepper/statix/archive/v0.5.5.tar.gz"
+  sha256 "d21dae937808133545bb74009e9cec5ffc3623b66638e427ffcd195e40c7c2c4"
   license "MIT"
   head "https://github.com/nerdypepper/statix.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/statix"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "068ced9cfb680793b70dc8f09e8aa4ab8293574f3a60e632e04dadac45f823ee"
+    sha256 cellar: :any_skip_relocation, mojave: "e343ee61d8166e9dbe442a1ca89d39f84bd0ee9ecdc11c1418051dd71423118e"
   end
 
   depends_on "rust" => :build
