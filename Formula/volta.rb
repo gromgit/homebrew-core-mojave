@@ -2,8 +2,8 @@ class Volta < Formula
   desc "JavaScript toolchain manager for reproducible environments"
   homepage "https://volta.sh"
   url "https://github.com/volta-cli/volta.git",
-      tag:      "v1.0.6",
-      revision: "5be0e1f08982cf7969a68265cf19b77482cf480c"
+      tag:      "v1.0.7",
+      revision: "b7ed23325d2825143471962cf94b722e1305e615"
   license "BSD-2-Clause"
 
   livecheck do
@@ -13,7 +13,7 @@ class Volta < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/volta"
-    sha256 cellar: :any_skip_relocation, mojave: "5604c04ab20a57c94edea133d1c0e3495a845ccbbd270823a62ce5ca0aefae49"
+    sha256 cellar: :any_skip_relocation, mojave: "c58b2e1ce8dbd1dcfa90304814fee71363bb92673e84a6559ec45704d219d7b9"
   end
 
   depends_on "rust" => :build
