@@ -3,13 +3,13 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-24.0.1.tgz"
-  sha256 "956ce191cfaa4b7fe5a62d1e0f8d9900fb4a7d88ff5fab9c9a46f7acefe24b62"
+  url "https://registry.npmjs.org/vercel/-/vercel-24.2.0.tgz"
+  sha256 "dd228d326ce57711680553fcdfbe9701dc47847e59e84fb9d94ce59305edd27f"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vercel-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "f17681dfab0bbbeb50c7e9cbe00582dddb99fa43e8e8c29a7bf0aae07fa5339b"
+    sha256 cellar: :any_skip_relocation, mojave: "c0da541f85dbd5b93e681b6cc211f80500e52f469980cde1ab1ede56da9b5d10"
   end
 
   depends_on "node"
