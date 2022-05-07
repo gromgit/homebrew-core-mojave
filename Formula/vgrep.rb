@@ -7,14 +7,21 @@ class Vgrep < Formula
   version_scheme 1
   head "https://github.com/vrothberg/vgrep.git", branch: "main"
 
+  # The leading `v` in this regex is intentionally non-optional, as we need to
+  # exclude a few older tags that use a different version scheme and would
+  # erroneously appear as newer than the newest version. We can't check the
+  # "latest" release on GitHub because it's sometimes a lower version that was
+  # released after a higher version (i.e., "latest" is the most recent release
+  # but not necessarily the newest version in this context).
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vgrep"
-    sha256 cellar: :any_skip_relocation, mojave: "5aacf51662cf55d3ae3281c2ee50bb1e1321ffe176db82bc54414af0f453ac14"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "42fef65ad0af4a4be9e778349ae281cc5950a786bb3056c3e62d98f740a34861"
   end
 
   depends_on "go" => :build
