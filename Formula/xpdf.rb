@@ -1,10 +1,9 @@
 class Xpdf < Formula
   desc "PDF viewer"
   homepage "https://www.xpdfreader.com/"
-  url "https://dl.xpdfreader.com/xpdf-4.03.tar.gz"
-  sha256 "0fe4274374c330feaadcebb7bd7700cb91203e153b26aa95952f02bf130be846"
+  url "https://dl.xpdfreader.com/xpdf-4.04.tar.gz"
+  sha256 "63ce23fcbf76048f524c40be479ac3840d7a2cbadb6d1e0646ea77926656bade"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
-  revision 1
 
   livecheck do
     url "https://www.xpdfreader.com/download.html"
@@ -12,13 +11,8 @@ class Xpdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c2f34a435bad7b953e62d43cf0de079be73d3e2f8047e8848c7d2243d20a97e1"
-    sha256 cellar: :any,                 arm64_big_sur:  "052d966e5649b652bb61db7ff96386e5ca543fd65fb06818ab002b2f1138086b"
-    sha256 cellar: :any,                 monterey:       "4e8aaaeb1b10561b9fb8fbd7b94f7786360dfd1c2c52c81f0140976424046732"
-    sha256 cellar: :any,                 big_sur:        "2c74e3ae45d2666271efb5a3a913db86a300110d2e89acb97f27b4e6d5c2af7f"
-    sha256 cellar: :any,                 catalina:       "af0d633049cdccbb05a15b92e1dddb2951ea6d2994a2bee343400681bfbf1a2d"
-    sha256 cellar: :any,                 mojave:         "d5a0e1f2c8d6897bda1290648814b351ffebf0aadbbe856b19f7088d2673baf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ed5eaa24b969ef4f48bba4dcb2af106d7826c151228e71a3d7eb79be52841c1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xpdf"
+    sha256 cellar: :any, mojave: "1acb42bf16ab171ea1996d92733304a0525c830665f0964e59d3ea9dec03b6a8"
   end
 
   depends_on "cmake" => :build
