@@ -1,14 +1,14 @@
 class StylishHaskell < Formula
   desc "Haskell code prettifier"
   homepage "https://github.com/haskell/stylish-haskell"
-  url "https://github.com/haskell/stylish-haskell/archive/v0.14.1.0.tar.gz"
-  sha256 "9addb9e139b0fda76324b41e8a623b3c58f88080a09a406d1fa55cceea2a65da"
+  url "https://github.com/haskell/stylish-haskell/archive/v0.14.2.0.tar.gz"
+  sha256 "e70081f863a406f0f048799d9fb2e6d92ad486bf9d5364609902155bfd2c3ea8"
   license "BSD-3-Clause"
   head "https://github.com/haskell/stylish-haskell.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stylish-haskell"
-    sha256 cellar: :any_skip_relocation, mojave: "224e730ad0ec4e0404b107b489506697977e64ca390ac23ca853ebddcd55bbe0"
+    sha256 cellar: :any_skip_relocation, mojave: "653cae18c91b7c447213fb6f7d3a839af5851106dbef096356af0a3de81c5529"
   end
 
   depends_on "cabal-install" => :build
