@@ -7,9 +7,26 @@ class Wownero < Formula
   license "BSD-3-Clause"
   revision 2
 
+  # The `strategy` code below can be removed if/when this software exceeds
+  # version 10.0.0. Until then, it's used to omit a malformed tag that would
+  # always be treated as newest.
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :git do |tags, regex|
+      malformed_tags = ["10.0.0"].freeze
+      tags.map do |tag|
+        next if malformed_tags.include?(tag)
+
+        tag[regex, 1]
+      end
+    end
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wownero"
-    sha256 cellar: :any, mojave: "42710c4f1272b90192d67f6022f5f3e179df2560fec39b65177cf918421d775c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6ef4d36a7d33cbfb4ec42eab6f2ae9ded1b77e22739cdde2bf29dadb3ba56eb0"
   end
 
   depends_on "cmake" => :build
