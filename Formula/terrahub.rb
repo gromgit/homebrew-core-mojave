@@ -3,8 +3,8 @@ require "language/node"
 class Terrahub < Formula
   desc "Terraform automation and orchestration tool"
   homepage "https://docs.terrahub.io"
-  url "https://registry.npmjs.org/terrahub/-/terrahub-0.5.8.tgz"
-  sha256 "a1b98f21b4a95306ef9e74d59c6499fd746fee9dc004aed3b82dd894cec2e93f"
+  url "https://registry.npmjs.org/terrahub/-/terrahub-0.5.9.tgz"
+  sha256 "0288f47ab305550d0f21633a9a487e1de688556229242bf0c86e120d1240e1c4"
   license "MPL-2.0"
 
   livecheck do
@@ -14,7 +14,7 @@ class Terrahub < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terrahub"
-    sha256 cellar: :any_skip_relocation, mojave: "6cf0027c82e668b3eff48779750e643a62069f5f03db780e2c54989c2030ab73"
+    sha256 cellar: :any_skip_relocation, mojave: "bfe5f46208da8000643918d4208a9de54e1473e6d69356ddf4d224321ec0efb5"
   end
 
   depends_on "node"
