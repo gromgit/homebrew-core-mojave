@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://github.com/v2fly/v2ray-core/archive/v4.44.0.tar.gz"
-  sha256 "d9973bafd3020f60a51fa3495b24ab417b08b3c8f9539a3748d00da6c68d0103"
+  url "https://github.com/v2fly/v2ray-core/archive/v4.45.0.tar.gz"
+  sha256 "fb8731295d8bbad9ef9157dbd3bc62655752d36544e0cc4077d4fa8a8a4ea295"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -13,26 +13,25 @@ class V2ray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v2ray"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9d6e243700e0816965bc0487a37c7f0ecc57bc9f1faff7321b2c6f8ef97f458d"
+    sha256 cellar: :any_skip_relocation, mojave: "a38d746fa7dd1bf567dcac30ae27650f31fd4dc6b0b8e6dddba4c0bf9815f9f3"
   end
 
   # Bump to Go 1.18 with when v5 releases.
   depends_on "go@1.17" => :build
 
   resource "geoip" do
-    url "https://github.com/v2fly/geoip/releases/download/202112060252/geoip.dat"
-    sha256 "7cc3d27ae1c59062148d4968f8d98eff9038212111e0bb129f46831198a0750b"
+    url "https://github.com/v2fly/geoip/releases/download/202204280105/geoip.dat"
+    sha256 "38fe72a33f23920cf14e804bf14c26ea0210db3ea2108a2d51fa32c48ac53170"
   end
 
   resource "geoip-only-cn-private" do
-    url "https://github.com/v2fly/geoip/releases/download/202112060252/geoip-only-cn-private.dat"
-    sha256 "d5d9fbfbe489a6acd2cc215eb699b95ff16801e12b4ba6af3e0a64e3f530d9e7"
+    url "https://github.com/v2fly/geoip/releases/download/202204280105/geoip-only-cn-private.dat"
+    sha256 "e8d0d7469b90e718f3b5cba033fec902dd05fab44c28c779a443e4c1f8aa0bf2"
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20211203092402/dlc.dat"
-    sha256 "d39a595800d57b8fcfa5924db69b9ab3f1f798cbdaf449afcac78d377ca1c501"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20220501162639/dlc.dat"
+    sha256 "dff924231ec74dd51d28177e57bc4fd918f212d993a6c1264f335e966ceb5aa9"
   end
 
   def install
