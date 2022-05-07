@@ -5,8 +5,8 @@ class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
   homepage "https://vaultproject.io/"
   url "https://github.com/hashicorp/vault.git",
-      tag:      "v1.10.0",
-      revision: "7738ec5d0d6f5bf94a809ee0f6ff0142cfa525a6"
+      tag:      "v1.10.1",
+      revision: "e452e9b30a9c2c8adfa1611c26eb472090adc767"
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
@@ -17,7 +17,7 @@ class Vault < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vault"
-    sha256 cellar: :any_skip_relocation, mojave: "a643730c3e78a27575b9ec2c210390762ca761480081620bd22af444217d00bf"
+    sha256 cellar: :any_skip_relocation, mojave: "c5674672cd1f9f9a9524aaa7539f00b60e49df7dc744976485dcad39a8eae5ec"
   end
 
   depends_on "go" => :build
