@@ -1,14 +1,14 @@
 class Yara < Formula
   desc "Malware identification and classification tool"
   homepage "https://github.com/VirusTotal/yara/"
-  url "https://github.com/VirusTotal/yara/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "6f567d4e4b79a210cd57a820f59f19ee69b024188ef4645b1fc11488a4660951"
+  url "https://github.com/VirusTotal/yara/archive/refs/tags/v4.2.1.tar.gz"
+  sha256 "f26d9c481e6789181431ac410665f6ba25d551c2948995f84c9e17df7a93731a"
   license "BSD-3-Clause"
   head "https://github.com/VirusTotal/yara.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yara"
-    sha256 cellar: :any, mojave: "df88cd29a56fc5b8a5693d6db43cd014ca23ea74004ef746fb621eae09c28808"
+    sha256 cellar: :any, mojave: "80f9361877dc7ff1e7664755b8a13ef6d82a6029d9b1cdef08bc34f54856f7cc"
   end
 
   depends_on "autoconf" => :build
