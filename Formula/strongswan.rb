@@ -4,8 +4,8 @@ class Strongswan < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://download.strongswan.org/strongswan-5.9.5.tar.bz2"
-    sha256 "983e4ef4a4c6c9d69f5fe6707c7fe0b2b9a9291943bbf4e008faab6bf91c0bdd"
+    url "https://download.strongswan.org/strongswan-5.9.6.tar.bz2"
+    sha256 "91d0978ac448912759b85452d8ff0d578aafd4507aaf4f1c1719f9d0c7318ab7"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -21,7 +21,7 @@ class Strongswan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/strongswan"
-    sha256 mojave: "775ac4b57cf60253ef590bdd5ab7c3ff3ef9176cd703f8db66ee62908d11de3a"
+    sha256 mojave: "6adccbbec7ec89f99f14c1e878aee3132e812b8889feaa6b97d5ce4cc70a50c6"
   end
 
   head do
