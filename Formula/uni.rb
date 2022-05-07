@@ -1,17 +1,16 @@
 class Uni < Formula
   desc "Unicode database query tool for the command-line"
   homepage "https://github.com/arp242/uni"
-  url "https://github.com/arp242/uni/archive/v2.4.0.tar.gz"
-  sha256 "d9caa7753983a42588beb3e7016987928fe8cd1e1d8c3728dc1e441dc27abba7"
+  url "https://github.com/arp242/uni/archive/v2.5.0.tar.gz"
+  sha256 "27833125a4097e15ec6dbce33e2798a1689a4674c0d0509c0dc1039204aa1d80"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uni"
-    sha256 cellar: :any_skip_relocation, mojave: "a40259521498bedb3c5cfdf2384c5c73165ec6043d48c31db9c78fca492c48c9"
+    sha256 cellar: :any_skip_relocation, mojave: "7d179cf83ea1f3b53ff36bacf760c7f43135517fe3181b98b67d3f420e6c2559"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", "-o", bin/"uni"
