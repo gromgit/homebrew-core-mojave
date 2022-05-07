@@ -1,8 +1,8 @@
 class Zenith < Formula
   desc "In terminal graphical metrics for your *nix system"
   homepage "https://github.com/bvaisvil/zenith/"
-  url "https://github.com/bvaisvil/zenith/archive/0.13.0.tar.gz"
-  sha256 "e3f914e5effb842f5931b5b8310e05e90a40f6aff7384b54a9f18a73ba567032"
+  url "https://github.com/bvaisvil/zenith/archive/0.13.1.tar.gz"
+  sha256 "1f2914a1ddd7dd76cca0e0c07ca77bd048addfd80fc6329ea7b83647ea66020a"
   license "MIT"
   version_scheme 1
   head "https://github.com/bvaisvil/zenith.git", branch: "master"
@@ -14,7 +14,7 @@ class Zenith < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zenith"
-    sha256 cellar: :any_skip_relocation, mojave: "4aee178d1cf6e2390f4c28814df95284953c868e296308827e8c8bd841ba4de6"
+    sha256 cellar: :any_skip_relocation, mojave: "f07bad7c92206c11b62456f8313cb1d02e450d9eb4345c88012a8f49dc4e1304"
   end
 
   depends_on "rust" => :build
