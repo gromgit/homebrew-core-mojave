@@ -1,15 +1,14 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
   homepage "https://tboox.org/"
-  url "https://github.com/tboox/tbox/archive/v1.6.7.tar.gz"
-  sha256 "7bedfc46036f0bb99d4d81b5a344fa8c24ada2372029b6cbe0c2c475469b2b70"
+  url "https://github.com/tboox/tbox/archive/v1.6.8.tar.gz"
+  sha256 "f437a31caa769a980e2e38ecc5bf37f1e572325d5d60fd242b9d6d49174b66fd"
   license "Apache-2.0"
   head "https://github.com/tboox/tbox.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tbox"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "642dbc4ed943239ce6293d094370fba66cb323fccd48aa0b80a69793901e843d"
+    sha256 cellar: :any_skip_relocation, mojave: "9ced717fd0a36159e151dd83a62edc908bcdfe1e658804524ff3f52ac839464a"
   end
 
   depends_on "xmake" => :build
