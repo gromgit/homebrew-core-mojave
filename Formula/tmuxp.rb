@@ -3,21 +3,21 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/b2/0d/d53f5ac7eac150b0292ac427813ad5c91a79b4d6fa4812cabc5d6f342c4e/tmuxp-1.10.1.tar.gz"
-  sha256 "7ac9556d3a92cedf703846532e5ae8004f1c37731d686a54b046fa01f38b7c92"
+  url "https://files.pythonhosted.org/packages/95/17/0d9ba4a6c8d11f043f6516f7c804acc211b28c52c7b1fb3e28bf175db052/tmuxp-1.11.1.tar.gz"
+  sha256 "436d1fbf356510c21f7376628fbcfbdedce4e7a63ecc81640e58bd41a63e010d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tmuxp"
-    sha256 cellar: :any_skip_relocation, mojave: "ade84a78f92807dfc983677e14ca25f4b3c08b6a6323e776a3e78850e60d7c8d"
+    sha256 cellar: :any_skip_relocation, mojave: "03d87ffad5b5a594503f0cc3b59ba80e44aeda514523ea9e5f19c18c8fa0f9c4"
   end
 
   depends_on "python@3.10"
   depends_on "tmux"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/42/e1/4cb2d3a2416bcd871ac93f12b5616f7755a6800bccae05e5a99d3673eb69/click-8.1.2.tar.gz"
-    sha256 "479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"
+    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
+    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "colorama" do
