@@ -1,8 +1,8 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
   homepage "https://www.zabbix.com/"
-  url "https://cdn.zabbix.com/zabbix/sources/stable/6.0/zabbix-6.0.2.tar.gz"
-  sha256 "7ca89554bd998abcb9df819264293f7e222b4ef4a225acae3a9362d93c081411"
+  url "https://cdn.zabbix.com/zabbix/sources/stable/6.0/zabbix-6.0.4.tar.gz"
+  sha256 "5743b6cc2e29d9bd242aa88b2835f3ded0be177509000d84db74e1159c5afa75"
   license "GPL-2.0-or-later"
   head "https://github.com/zabbix/zabbix.git", branch: "master"
 
@@ -13,11 +13,11 @@ class Zabbix < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zabbix"
-    sha256 mojave: "8aed4a66604e6ec8241926bc147484ce97885dbf30b8fc0d3275affe58f70aa8"
+    sha256 mojave: "8d5c18ca4f77d1101b5a5290dbacef04783a00ee6fe771131ff28e8da1c916fe"
   end
 
   depends_on "openssl@1.1"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
     args = %W[
@@ -25,7 +25,7 @@ class Zabbix < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}/zabbix
       --enable-agent
-      --with-libpcre=#{Formula["pcre"].opt_prefix}
+      --with-libpcre2
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
     ]
 
