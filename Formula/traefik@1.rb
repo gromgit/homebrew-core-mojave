@@ -12,7 +12,8 @@ class TraefikAT1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/traefik@1"
-    sha256 cellar: :any_skip_relocation, mojave: "547ff4b53cb006800cf6c829d2d4a85e44468a583a3d7f1e9bca2059cb30dd56"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "45ce54bc91e6afce76de7a8ad36100f2b2db2dd666f4ead8afeb7321d4d68700"
   end
 
   keg_only :versioned_formula
@@ -21,7 +22,6 @@ class TraefikAT1 < Formula
   depends_on "go-bindata" => :build
   depends_on "node@14" => :build
   depends_on "yarn" => :build
-  depends_on :macos # Due to Python 2 for node-sass <= 4
 
   def install
     cd "webui" do
