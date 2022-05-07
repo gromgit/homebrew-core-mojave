@@ -1,14 +1,14 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https://traefik.io/"
-  url "https://github.com/traefik/traefik/releases/download/v2.6.3/traefik-v2.6.3.src.tar.gz"
-  sha256 "5cffbcd97dc8138c87fbf8e6c3c692edf09ffea4555b21c8fdd0dd47a3baaf3d"
+  url "https://github.com/traefik/traefik/releases/download/v2.6.6/traefik-v2.6.6.src.tar.gz"
+  sha256 "3ebb59c8286fa1138c2615de404fcc232316409da8a2046e2f7894c3c000766f"
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/traefik"
-    sha256 cellar: :any_skip_relocation, mojave: "0f99bc51f31559d39d5bc120c307c5a2bfaf549f2020e906875d33395e086fcb"
+    sha256 cellar: :any_skip_relocation, mojave: "b5440c377ff730adee4e54681eb21f91df2f6735aba6c859371d214fe925f265"
   end
 
   depends_on "go" => :build
