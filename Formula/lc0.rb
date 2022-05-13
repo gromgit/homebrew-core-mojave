@@ -5,10 +5,11 @@ class Lc0 < Formula
       tag:      "v0.28.2",
       revision: "fa5864bb5838e131d832ad63300517f4684913e7"
   license "GPL-3.0-or-later"
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lc0"
-    sha256 cellar: :any_skip_relocation, mojave: "238aa4d0d4d84a6ce1799df8f14d76ce2bc400b1fe5ec0867d52ee7efa554c8a"
+    sha256 cellar: :any_skip_relocation, mojave: "2f08814323333840ce4b2213de2036fd27a2ff1fe1af20b4e6b70dce2e1b5b97"
   end
 
   depends_on "cmake" => :build
