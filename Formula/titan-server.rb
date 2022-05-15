@@ -18,6 +18,11 @@ class TitanServer < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "6e84706c4de8f9288fe11a9c28d0b6901289ce45ddcd7ff51abc1ecfcc6f3ac3"
     sha256 cellar: :any_skip_relocation, catalina:       "6e84706c4de8f9288fe11a9c28d0b6901289ce45ddcd7ff51abc1ecfcc6f3ac3"
     sha256 cellar: :any_skip_relocation, mojave:         "6e84706c4de8f9288fe11a9c28d0b6901289ce45ddcd7ff51abc1ecfcc6f3ac3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6d98726b834d82fe0adb786919652c5f0e0974ff3cb03969b2c69042cd4998c"
+  end
+
+  on_linux do
+    depends_on "openjdk"
   end
 
   def install
@@ -28,6 +33,6 @@ class TitanServer < Formula
   end
 
   test do
-    system "#{bin}/titan", "stop"
+    assert_match("not found in the java process table", shell_output("#{bin}/titan stop"))
   end
 end
