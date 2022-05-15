@@ -4,6 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.12/Python-3.9.12.tar.xz"
   sha256 "2cd94b20670e4159c6d9ab57f91dbf255b97d8c1a1451d1c35f4ec1968adf971"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,7 +13,7 @@ class PythonAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.9"
-    sha256 mojave: "856ff63c41e9444ff483ebc18002b914cc6461bdcd032063bb24220a659ed811"
+    sha256 mojave: "986b3cb95c7c7f4e9b7546e2ae138dc092ceae1f717ce9abe1ebe25e0019317b"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -30,6 +31,7 @@ class PythonAT39 < Formula
   uses_from_macos "bzip2"
   uses_from_macos "expat"
   uses_from_macos "libffi"
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
   uses_from_macos "zlib"
