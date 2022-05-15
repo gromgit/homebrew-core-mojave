@@ -16,9 +16,14 @@ class Libcapn < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcapn"
-    rebuild 1
-    sha256 mojave: "9617aab9cb4a0ff73ba81b5701b827639f24b3206d9e22b035df12b1f1d85f87"
+    sha256 arm64_monterey: "fdbe12af86921a05628ff8d522ca3723879295fbc252f24c446b04eaa478c06b"
+    sha256 arm64_big_sur:  "b87f88777484a94bcbd142d107b9b29317962ab9ff318857c90c01ade15c6f45"
+    sha256 monterey:       "bbd7f98414ee35c8d19582ab17d2a79fe70d892cf5e1bbcc2f1e51789392b616"
+    sha256 big_sur:        "e355824f9490a5bb90964a7b5bf4b69735ebe72560bf112e2f083111ca31550e"
+    sha256 catalina:       "67b634beae31705b6664702473cb42a686c50d84f4d0ec530bbe4e360c292dba"
+    sha256 mojave:         "3b4b1f331e7e79c6a99826c5ffd385df3f199a7d72c897e9fd31150be26303cb"
+    sha256 high_sierra:    "a3cd6c452f96c9914f41fe22c1c0b5518c282569dffcebe7d6f38783ce2fb4d1"
+    sha256 x86_64_linux:   "dc171d79b0aded9e47c7e838058a6d0a30b38748f15aa499f9452ae343bd6912"
   end
 
   depends_on "cmake" => :build
@@ -39,18 +44,34 @@ class Libcapn < Formula
   def install
     # head gets jansson as a git submodule
     (buildpath/"src/third_party/jansson").install resource("jansson") if build.stable?
-    system "cmake", ".", "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}",
-                         *std_cmake_args
+
+    args = std_cmake_args
+    args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}"
+    unless OS.mac?
+      args += %W[
+        -DCAPN_INSTALL_PATH_SYSCONFIG=#{etc}
+        -DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{lib}/capn
+      ]
+    end
+
+    system "cmake", ".", *args
     system "make", "install"
     pkgshare.install "examples"
   end
 
   test do
+    flags = %W[
+      -I#{Formula["openssl@1.1"].opt_include}
+      -L#{lib}/capn
+      -lcapn
+    ]
+
+    flags << "-Wl,-rpath,#{lib}/capn" unless OS.mac?
+
     system ENV.cc, pkgshare/"examples/send_push_message.c",
-                   "-o", "send_push_message",
-                   "-I#{Formula["openssl@1.1"].opt_include}",
-                   "-L#{lib}/capn", "-lcapn"
+                   "-o", "send_push_message", *flags
     output = shell_output("./send_push_message", 255)
-    assert_match "unable to use specified PKCS12 file (errno: 9012)", output
+    # The returned error will be either 9013 or 9012 depending on the environment.
+    assert_match(/\(errno: 9013\)|\(errno: 9012\)/, output)
   end
 end
