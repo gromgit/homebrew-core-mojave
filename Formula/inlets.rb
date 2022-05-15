@@ -5,7 +5,7 @@ class Inlets < Formula
       tag:      "3.0.2",
       revision: "7b18a394b74390133e511957d954b1ba3b7d01a2"
   license "MIT"
-  head "https://github.com/inlets/inlets.git"
+  head "https://github.com/inlets/inlets.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "55fdb93d26dacaca8cbb42cc68b9387423e3b618220e57f9de67855209132eeb"
@@ -15,7 +15,7 @@ class Inlets < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc3dc0b39ea492fd4d00bef8ff4b5019567eb1e5fda0db6e7d7b276f46de4b4a"
   end
 
-  deprecate! date: "2021-07-11", because: :repo_archived
+  disable! date: "2022-05-08", because: :repo_removed
 
   depends_on "go" => :build
 
