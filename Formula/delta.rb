@@ -17,6 +17,7 @@ class Delta < Formula
     sha256 cellar: :any_skip_relocation, sierra:         "07e775a1054966ad2924512386643bc8cb4ef3ad7e12ce9a140015c82fba3072"
     sha256 cellar: :any_skip_relocation, el_capitan:     "202409012500969cfd034c9d44c441a809445a3b367d514357346438aa850f14"
     sha256 cellar: :any_skip_relocation, yosemite:       "d3374cc3e84c93bb84615b1669503ea8b708ab65baf629ee0be9a728b12b10bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7b9fd96832e66748aaa61cf7a9b735275931a80c9f46a714b347889de5cc332"
   end
 
   deprecate! date: "2022-04-30", because: :unmaintained
