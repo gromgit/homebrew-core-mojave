@@ -4,6 +4,7 @@ class PythonAT37 < Formula
   url "https://www.python.org/ftp/python/3.7.13/Python-3.7.13.tar.xz"
   sha256 "99f106275df8899c3e8cb9d7c01ce686c202ef275953301427194693de5bef84"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,7 +13,7 @@ class PythonAT37 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.7"
-    sha256 mojave: "ea8c2149c2b1b9b8ed5fdffe72ec8f79e725b9542b4acbba62b067ba9907bc2c"
+    sha256 mojave: "2ffaf82307433a15a1e3dd5266121425207831a0dc070fc9911415aa62604f4d"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -32,6 +33,7 @@ class PythonAT37 < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libffi"
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "xz"
   uses_from_macos "zlib"
