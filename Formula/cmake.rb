@@ -6,6 +6,7 @@ class Cmake < Formula
   mirror "http://fresh-center.net/linux/misc/legacy/cmake-3.23.1.tar.gz"
   sha256 "33fd10a8ec687a4d0d5b42473f10459bb92b3ae7def2b745dc10b192760869f3"
   license "BSD-3-Clause"
+  revision 1
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
 
   # The "latest" release on GitHub has been an unstable version before, so we
@@ -17,13 +18,20 @@ class Cmake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake"
-    sha256 cellar: :any_skip_relocation, mojave: "1a516ac6d9a403f7e30a705f3da45c09c8bc98dc284eb103f9edd0d0fb79ac12"
+    sha256 cellar: :any_skip_relocation, mojave: "0bd6f6b1d043d48db7da55ede7b03fd622a125c3848d14ad4c75be6f1109970e"
   end
 
   uses_from_macos "ncurses"
 
   on_linux do
     depends_on "openssl@1.1"
+  end
+
+  # Tentative workaround for bug with gfortran 12 and clang
+  # https://gitlab.kitware.com/cmake/cmake/-/issues/23500
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/533fd564/cmake/gcc-12.diff"
+    sha256 "f9c7e39c10cf4c88e092da65f2859652529103e364828188e0ae4fef10a18936"
   end
 
   # The completions were removed because of problems with system bash
