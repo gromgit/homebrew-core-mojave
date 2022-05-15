@@ -17,6 +17,7 @@ class OpenZwave < Formula
     sha256 big_sur:        "e3c9055c54562fc0fc8879f094359263626bb0cbb0b67a1c48999420f2f223c4"
     sha256 catalina:       "af0ac45b4c07da453526cc464cf777d17cdbb3760c34ddefcfb3435977139d91"
     sha256 mojave:         "9680488853f6ee6db1f0e299ff1f00597e8652c095ecb411e322a99b8b43caad"
+    sha256 x86_64_linux:   "32e72b176dcd28b5876df5dca595f9d9a93c159d475fbbe2affb9e21d6e1c30b"
   end
 
   depends_on "doxygen" => :build
