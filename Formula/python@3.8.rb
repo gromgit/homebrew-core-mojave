@@ -4,6 +4,7 @@ class PythonAT38 < Formula
   url "https://www.python.org/ftp/python/3.8.13/Python-3.8.13.tar.xz"
   sha256 "6f309077012040aa39fe8f0c61db8c0fa1c45136763299d375c9e5756f09cf57"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,7 +13,7 @@ class PythonAT38 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.8"
-    sha256 mojave: "992221fe2242d0eb66b77176a25d432be8165acc8ba4ae56c5e3c55631f1f6be"
+    sha256 mojave: "e3c30fd7de0f4b5d896efc70535eea83d5d85be82d02cb7a9f0bbdce0b1c9714"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -32,6 +33,7 @@ class PythonAT38 < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libffi"
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
   uses_from_macos "xz"
