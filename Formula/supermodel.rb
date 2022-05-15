@@ -21,9 +21,17 @@ class Supermodel < Formula
     sha256 high_sierra:    "83c0dbca7a5c28564eba4e7a73894746004aab5025071b350c3c47271fc42625"
     sha256 sierra:         "1203bb3d289e36e1ca15720dbcd4e63ffcf4fa4d09588cb4fb81092cb72399ec"
     sha256 el_capitan:     "78cf8e9fb973e3cd136a212936bdc8003d9897a1bb8a6a1eba3cc7ff0fba3c88"
+    sha256 x86_64_linux:   "b2df7a275879a52bbd6bd875041b0e7634212eec38ebf224e8ef7ae2b153e942"
   end
 
   depends_on "sdl"
+
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "mesa"
+    depends_on "mesa-glu"
+  end
 
   def install
     makefile_dir = build.head? ? "Makefiles/Makefile.OSX" : "Makefiles/Makefile.SDL.OSX.GCC"
