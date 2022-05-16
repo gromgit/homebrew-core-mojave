@@ -1,9 +1,9 @@
 class Aarch64ElfGcc < Formula
   desc "GNU compiler collection for aarch64-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
-  sha256 "b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz"
+  sha256 "62fd634889f31c02b64af2c468f064b47ad1ca78411c45abe6ac4b5f8dd19c7b"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,22 +12,13 @@ class Aarch64ElfGcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aarch64-elf-gcc"
-    sha256 mojave: "37de0d53fc7a03c611c581dda7783b0ecf06dc5c26700c8812fe3834cf7fecf9"
+    sha256 mojave: "64ea58f9bd0c21406af387a740004e1666b16d35ad8f69483ced9c72a096eb59"
   end
 
   depends_on "aarch64-elf-binutils"
   depends_on "gmp"
   depends_on "libmpc"
   depends_on "mpfr"
-
-  # Remove when upstream has Apple Silicon support
-  if Hardware::CPU.arm?
-    patch do
-      # patch from gcc-11.1.0-arm branch
-      url "https://github.com/fxcoudert/gcc/commit/eea3046c5fa62d4dee47e074c7a758570d9da61c.patch?full_index=1"
-      sha256 "b55ca05a0ed32f69f63bbe708568df5ad62d938da0e34b515d601bb966d32d40"
-    end
-  end
 
   def install
     target = "aarch64-elf"
