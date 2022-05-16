@@ -2,13 +2,14 @@ class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
   # NOTE: Please keep these values in sync with imath.rb when updating.
-  url "https://github.com/openexr/openexr/archive/v3.1.5.tar.gz"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.5.tar.gz"
   sha256 "93925805c1fc4f8162b35f0ae109c4a75344e6decae5a240afdfce25f8a433ec"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openexr"
-    sha256 cellar: :any, mojave: "f882503b9f7263700d52ba3f52c3ab4f4d177c6798406f48ddc654bdb93e8b2e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f709ccca694909ae9795b3a07e0d5a74828939fbea8892b6bffae573d656256d"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +26,7 @@ class Openexr < Formula
   link_overwrite "lib/libIlmThread.so"
 
   resource "exr" do
-    url "https://github.com/openexr/openexr-images/raw/master/TestImages/AllHalfValues.exr"
+    url "https://github.com/AcademySoftwareFoundation/openexr-images/raw/master/TestImages/AllHalfValues.exr"
     sha256 "eede573a0b59b79f21de15ee9d3b7649d58d8f2a8e7787ea34f192db3b3c84a4"
   end
 
