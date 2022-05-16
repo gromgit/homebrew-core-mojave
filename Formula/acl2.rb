@@ -4,15 +4,16 @@ class Acl2 < Formula
   url "https://github.com/acl2/acl2/archive/8.3.tar.gz"
   sha256 "45eedddb36b2eff889f0dba2b96fc7a9b1cf23992fcfdf909bc179f116f2c5ea"
   license "BSD-3-Clause"
-  revision 12
+  revision 13
 
   bottle do
-    sha256 big_sur:      "5df4406ac7d74ece58c60f8bf83e8fde1139fe1b0da8d9a83e77a8b2aad404af"
-    sha256 catalina:     "bfe8d73561e904ba9fd0e3f44c3b7c77decca4346e9428ebebf4f9b3fd553741"
-    sha256 mojave:       "a7934877c55e93a626e48473adf408606c423e427bbcf6c826a69394e8634195"
-    sha256 x86_64_linux: "74f3c4b7970761a3ab6e5c513b0d3d6df83c24e534de3634fb032c3b4810b2fc"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/acl2"
+    sha256 mojave: "a111147e5b38f4d99456d65f273a482e89ea055bc98d7109c404eb3f08bdc34b"
   end
 
+  # Homebrew ARM CI runners hang when trying to build `acl2`.
+  # See https://github.com/Homebrew/homebrew-core/pull/96455
+  depends_on arch: :x86_64
   depends_on "sbcl"
 
   def install
