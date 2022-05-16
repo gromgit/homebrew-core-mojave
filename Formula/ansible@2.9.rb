@@ -17,8 +17,8 @@ class AnsibleAT29 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.9"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b0fe2863bdf24094d91536bee405d18898457465a6bce11ff3e96ed3c4755670"
+    rebuild 2
+    sha256 cellar: :any, mojave: "89d62602300320d73791318a8125d27cd57a7928d0c8462eae22a3c031a74798"
   end
 
   keg_only :versioned_formula
@@ -584,7 +584,11 @@ class AnsibleAT29 < Formula
         - name: ping
           ping:
     EOS
-    (testpath/"hosts.ini").write "localhost ansible_connection=local\n"
+    (testpath/"hosts.ini").write [
+      "localhost ansible_connection=local",
+      " ansible_python_interpreter=#{Formula["python@3.9"].opt_bin}/python3",
+      "\n",
+    ].join
     system bin/"ansible-playbook", testpath/"playbook.yml", "-i", testpath/"hosts.ini"
 
     # Ensure requests[security] is activated
