@@ -3,10 +3,9 @@ class Netpbm < Formula
   homepage "https://netpbm.sourceforge.io/"
   # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
   # for stable versions and matching revisions.
-  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4311"
-  version "10.86.32"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4328"
+  version "10.86.33"
   license "GPL-3.0-or-later"
-  revision 1
   version_scheme 1
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
 
@@ -18,7 +17,7 @@ class Netpbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netpbm"
-    sha256 mojave: "66cab58d66738a3d35fb659844c917f9839a0f39e45e55a5026517d623b45e56"
+    sha256 mojave: "9fd3589af9bf7d7e517f7438b7fb31f5cfa08f200d8c50e9a01ccc7aaad48e2f"
   end
 
   depends_on "jasper"
@@ -76,7 +75,7 @@ class Netpbm < Formula
     fwrite = shell_output("#{bin}/pngtopam #{test_fixtures("test.png")} -alphapam")
     (testpath/"test.pam").write fwrite
     system "#{bin}/pamdice", "test.pam", "-outstem", testpath/"testing"
-    assert_predicate testpath/"testing_0_0.", :exist?
+    assert_predicate testpath/"testing_0_0.pam", :exist?
     (testpath/"test.xpm").write <<~EOS
       /* XPM */
       static char * favicon_xpm[] = {
