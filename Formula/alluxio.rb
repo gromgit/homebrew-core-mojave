@@ -12,7 +12,8 @@ class Alluxio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alluxio"
-    sha256 cellar: :any_skip_relocation, mojave: "2dd762f2c69255078d89e0da9abde5c5a6a39eaed86ce84bcd65eaeea4adecaf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9e269007f1167a134aac755cc0b3a158e9aa65d70c50ca679df6336201349f6a"
   end
 
   # Alluxio requires Java 8 or Java 11
@@ -56,7 +57,8 @@ class Alluxio < Formula
     assert_match "ValidateConf - Validating configuration.", output
 
     output = shell_output("#{bin}/alluxio clearCache 2>&1", 1)
-    assert_match "drop_caches: No such file or directory", output
+    expected_output = OS.mac? ? "drop_caches: No such file or directory" : "drop_caches: Read-only file system"
+    assert_match expected_output, output
 
     assert_match version.to_s, shell_output("#{bin}/alluxio version")
   end
