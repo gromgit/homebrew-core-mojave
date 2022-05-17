@@ -1,13 +1,13 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters fun and easy to set up"
   homepage "https://github.com/tilt-dev/ctlptl"
-  url "https://github.com/tilt-dev/ctlptl/archive/v0.8.0.tar.gz"
-  sha256 "7f85d064e8b99ff5191a6f28e7958119666b6b394d486bf67173e53c3de33a01"
+  url "https://github.com/tilt-dev/ctlptl/archive/v0.8.1.tar.gz"
+  sha256 "d0c9e42161f9579a864f23e7059eef9ab53934c891f2d21d7deff52a816e2362"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ctlptl"
-    sha256 cellar: :any_skip_relocation, mojave: "aa5a5e425790c43e1bd2b3974b366fffe049634394c14fb58b5e53aa2dd7f9ca"
+    sha256 cellar: :any_skip_relocation, mojave: "26ebadd1f575ec0eddbe76b4c20b86bc4c60a06f4dec8e4b922427b5f5c08a02"
   end
 
   depends_on "go" => :build
