@@ -3,13 +3,13 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/fc/5f/e9f217e03a260dff316c90131ba1e5f79cac298c5c41ec92473cd319ee23/b2-3.3.0.tar.gz"
-  sha256 "edf6eae5d2f3e073d1586c8e64271bef1016485c6fd61159521f07b8c6df9c50"
+  url "https://files.pythonhosted.org/packages/8a/f2/d2ab885c30c17344d40bf0f6ad13ba12dc05aec5db358662c68981b9fb27/b2-3.4.0.tar.gz"
+  sha256 "c7602998cf81e760c42481914d48f5ab8a38f3d4576bbb91dfee39576549c9e6"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/b2-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "a182cc4d71569fdf6a28b33ce8967813e4ea24a7985d11ee9dec7fb9333f5f9f"
+    sha256 cellar: :any_skip_relocation, mojave: "5c60cdc282f3c7df29ffd7256fc9a11f4bf1338c04e8f64b05104e043f16b887"
   end
 
   depends_on "python@3.10"
@@ -23,8 +23,8 @@ class B2Tools < Formula
   end
 
   resource "b2sdk" do
-    url "https://files.pythonhosted.org/packages/0f/b3/b11a8d578a2e3f4e278a7803e63a26efca6a8d59e7d790733d8a8a9f9309/b2sdk-1.15.0.tar.gz"
-    sha256 "398e6198cd405bc819639bb79357b0a09ff867f354d366420874fc68471f3a64"
+    url "https://files.pythonhosted.org/packages/3d/be/61b8631fc00c4036136cb0b31359f0aa25da1e35b64676b79e7d0637372b/b2sdk-1.16.0.tar.gz"
+    sha256 "cbffff1163bb8e7cc920c76b29f5e889369d7f5ef1b7b53c89fd5bb79f5ea9c5"
   end
 
   resource "certifi" do
