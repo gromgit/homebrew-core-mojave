@@ -1,14 +1,14 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
   homepage "https://webassembly.org/"
-  url "https://github.com/WebAssembly/binaryen/archive/version_105.tar.gz"
-  sha256 "c5ec27c157d3b33ce4360607cc6afe565fa490094237895db2162b3a7d667da2"
+  url "https://github.com/WebAssembly/binaryen/archive/version_108.tar.gz"
+  sha256 "7fea5013da7f98daeeb6a0a60333e8aa917bcb0b1b418ba8531fe710d09041f2"
   license "Apache-2.0"
   head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/binaryen"
-    sha256 cellar: :any, mojave: "98111eeb3a8244b9c468057b8164048f4976265b024213d4dfd7d7c02ae2df6b"
+    sha256 cellar: :any, mojave: "87622841a143b8ce9e68f87fc3bbb122366e196b52d18ba168e6844037be5003"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +21,7 @@ class Binaryen < Formula
   fails_with gcc: "5"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", *std_cmake_args, "-DBUILD_TESTS=false"
     system "make", "install"
 
     pkgshare.install "test/"
