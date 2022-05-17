@@ -7,7 +7,8 @@ class Arrayfire < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arrayfire"
-    sha256 cellar: :any, mojave: "a252805f303916e41ea61dce8a266463a9091298ce36fe42bd03e7f8c665ef0a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cd4810c0c213a85758533dd80c0ee3e68186df90be2c9b49a47c7da8b1fcdf19"
   end
 
   depends_on "boost" => :build
@@ -16,6 +17,12 @@ class Arrayfire < Formula
   depends_on "fftw"
   depends_on "freeimage"
   depends_on "openblas"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     # Fix for: `ArrayFire couldn't locate any backends.`
