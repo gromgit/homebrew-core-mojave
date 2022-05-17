@@ -1,8 +1,8 @@
 class Clingo < Formula
   desc "ASP system to ground and solve logic programs"
   homepage "https://potassco.org/"
-  url "https://github.com/potassco/clingo/archive/v5.5.1.tar.gz"
-  sha256 "b9cf2ba2001f8241b8b1d369b6f353e628582e2a00f13566e51c03c4dd61f67e"
+  url "https://github.com/potassco/clingo/archive/v5.5.2.tar.gz"
+  sha256 "a2a0a590485e26dce18860ac002576232d70accc5bfcb11c0c22e66beb23baa6"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class Clingo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clingo"
-    rebuild 2
-    sha256 mojave: "ab64325ee28aba13ebe53e48496e5f9232973438ea06402584ca3e87bee27008"
+    sha256 cellar: :any, mojave: "8f669c943ad3904a547daeb6ec52a037d3d530c4de6713517cdf8a504efb6607"
   end
 
   head do
