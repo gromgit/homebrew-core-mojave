@@ -3,8 +3,8 @@ class Clarinet < Formula
   homepage "https://github.com/hirosystems/clarinet"
   # pull from git tag to get submodules
   url "https://github.com/hirosystems/clarinet.git",
-      tag:      "v0.29.1",
-      revision: "c403059af09f4eb0303d488ff048aa39f082fb03"
+      tag:      "v0.30.0",
+      revision: "79f8a4f94e3941193d96c3416b2c6e916a62f1d3"
   license "GPL-3.0-only"
   head "https://github.com/hirosystems/clarinet.git", branch: "main"
 
@@ -15,7 +15,7 @@ class Clarinet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clarinet"
-    sha256 cellar: :any_skip_relocation, mojave: "d3e4cfa57bffc9dbaa507a18e3a1170195093a9389c2a923cee0570fd731564b"
+    sha256 cellar: :any_skip_relocation, mojave: "15b6603e2501942c11d7c219c6e0c4ed4140966907d49aa5d54942e493fb25bc"
   end
 
   depends_on "rust" => :build
