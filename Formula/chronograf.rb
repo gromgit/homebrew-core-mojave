@@ -10,7 +10,8 @@ class Chronograf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chronograf"
-    sha256 cellar: :any_skip_relocation, mojave: "74fad991428665168f1d367f4f0c7b4c7bffcef28199a06caa6b2a781ff9e61a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bc44ba10c9dabe8767f5e10193bc02f6033d8277b8cd9c9860f0bcd19b912920"
   end
 
   depends_on "go" => :build
