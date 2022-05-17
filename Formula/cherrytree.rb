@@ -1,8 +1,8 @@
 class Cherrytree < Formula
   desc "Hierarchical note taking application featuring rich text and syntax highlighting"
   homepage "https://www.giuspen.com/cherrytree/"
-  url "https://www.giuspen.com/software/cherrytree_0.99.46.tar.xz"
-  sha256 "f5141669fb6bf33d79e9ae24ea59f6d1846e60b0d2e18105dcfdc41d5b15913f"
+  url "https://www.giuspen.com/software/cherrytree_0.99.47.tar.xz"
+  sha256 "1b551ee00f788d21ebda3123495a88da293467b8a53bb78fb4fae957c452d024"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Cherrytree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cherrytree"
-    sha256 mojave: "f82f6a0ee93d22f94b6b4aea162a4f53f853065ccda6bdc35448080c2f2573d1"
+    sha256 mojave: "55d6df20710a4a80b6cd330363f4314d3576b679674f205afe0e8891f4a332ba"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +29,12 @@ class Cherrytree < Formula
 
   uses_from_macos "curl"
 
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5" # Needs std::optional
+
   def install
     system "cmake", ".", "-DBUILD_TESTING=''", "-GNinja", *std_cmake_args
     system "ninja"
@@ -36,6 +42,9 @@ class Cherrytree < Formula
   end
 
   test do
+    # (cherrytree:46081): Gtk-WARNING **: 17:33:48.386: cannot open display
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     (testpath/"homebrew.ctd").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
       <cherrytree>
