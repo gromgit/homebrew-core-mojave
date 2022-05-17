@@ -12,8 +12,8 @@ class Aubio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aubio"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5f4fd18fc69a5fc2574d1ff37c7a938ca0f95a0a9e8ce21cc89d22ed685de370"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0e583a4ba2ed872b883c05eb76d0f813440d9e03b77565b3083bc9335eeeb3a9"
   end
 
   depends_on "libtool" => :build
