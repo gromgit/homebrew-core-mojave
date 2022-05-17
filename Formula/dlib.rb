@@ -1,8 +1,8 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
   homepage "http://dlib.net/"
-  url "http://dlib.net/files/dlib-19.23.tar.bz2"
-  sha256 "b1be30672302abdb8e010a21edf50d20a398ef9c38fddc45334dedf058af288a"
+  url "http://dlib.net/files/dlib-19.24.tar.bz2"
+  sha256 "28fdd1490c4d0bb73bd65dad64782dd55c23ea00647f5654d2227b7d30b784c4"
   license "BSL-1.0"
   head "https://github.com/davisking/dlib.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Dlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dlib"
-    sha256 cellar: :any, mojave: "6c4ac11e0926c5df9dffc353e960186b05ad9ca63b18b5646f0854071785a2d4"
+    sha256 cellar: :any, mojave: "52444f6b75e003f070249bbd5402812df47f955a03cbe8c60e7ac6bf7388c867"
   end
 
   depends_on "cmake" => :build
