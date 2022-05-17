@@ -2,14 +2,15 @@ class CfnLint < Formula
   include Language::Python::Virtualenv
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
-  homepage "https://github.com/aws-cloudformation/cfn-python-lint/"
+  homepage "https://github.com/aws-cloudformation/cfn-lint/"
   url "https://files.pythonhosted.org/packages/67/14/1dd121522084de8ae2358c590c6453ed384596b1283351d57bf5ec7268f7/cfn-lint-0.59.1.tar.gz"
   sha256 "3d60a869f55c5e1197a57f324ace6a3f95c5f9ce4d45806957585893fb23a69d"
   license "MIT-0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfn-lint"
-    sha256 cellar: :any_skip_relocation, mojave: "39ac02f697eacbb6c2ffe99774aca6a2af8ab9a3102a06c9c1e6cb36cf1fc2a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "57412c8a9b734f689589b2e5dd78d92b9acd08d12df731c1d605958fa07998ad"
   end
 
   depends_on "python@3.10"
