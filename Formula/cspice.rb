@@ -14,7 +14,12 @@ class Cspice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cspice"
-    sha256 cellar: :any_skip_relocation, mojave: "6a5c516161e8334f6a67a4c20b1a36e863fed74f282d5b8b9796a110090afbbc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4833e5a468a63d25248dea1af0b77a1d7e2a6092627219d53f75faa4a85c4361"
+  end
+
+  on_linux do
+    depends_on "tcsh"
   end
 
   conflicts_with "openhmd", because: "both install `simple` binaries"
@@ -22,6 +27,13 @@ class Cspice < Formula
   conflicts_with "enscript", because: "both install `states` binaries"
 
   def install
+    # Use brewed csh on Linux because it is not installed in CI.
+    unless OS.mac?
+      Dir["src/*/*.csh"].each do |file|
+        inreplace file, "/bin/csh", Formula["tcsh"].opt_bin/"csh"
+      end
+    end
+
     rm_f Dir["lib/*"]
     rm_f Dir["exe/*"]
     system "csh", "makeall.csh"
