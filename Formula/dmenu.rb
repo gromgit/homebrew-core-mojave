@@ -13,7 +13,7 @@ class Dmenu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dmenu"
-    rebuild 2
+    rebuild 3
     sha256 cellar: :any, mojave: "f0e675a0ca4fb5205f3b513ca089893522b60da8ae6d45c86adf8a34b6ec2b88"
   end
 
