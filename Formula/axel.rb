@@ -1,16 +1,16 @@
 class Axel < Formula
   desc "Light UNIX download accelerator"
-  homepage "https://github.com/eribertomota/axel"
+  homepage "https://github.com/axel-download-accelerator/axel"
   url "https://github.com/axel-download-accelerator/axel/releases/download/v2.17.11/axel-2.17.11.tar.xz"
   sha256 "580b2c18692482fd7f1e2b2819159484311ffc50f6d18924dceb80fd41d4ccf9"
   license "GPL-2.0-or-later"
-  head "https://github.com/eribertomota/axel.git", branch: "master"
+  head "https://github.com/axel-download-accelerator/axel.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/axel"
-    sha256 cellar: :any, mojave: "498bdbabbc8abebeceb5c2357b39068e560ff995051aeaea49d12a4766148031"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dbf559eb2024610f2aa69291eebaf2561be556ae25a43e08515c6d81c510492e"
   end
-
 
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
