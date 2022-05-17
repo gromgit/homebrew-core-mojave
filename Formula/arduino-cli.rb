@@ -2,8 +2,8 @@ class ArduinoCli < Formula
   desc "Arduino command-line interface"
   homepage "https://github.com/arduino/arduino-cli"
   url "https://github.com/arduino/arduino-cli.git",
-      tag:      "0.21.1",
-      revision: "9fcbb392b08d2574e8182e920ac1a5779a1adf75"
+      tag:      "0.22.0",
+      revision: "65f662a782780f9e410a3c327b213e55163f4de9"
   license "GPL-3.0-only"
   head "https://github.com/arduino/arduino-cli.git", branch: "master"
 
@@ -12,10 +12,9 @@ class ArduinoCli < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arduino-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9fdaf6a0b664b319d9a48b35dc8e10a9ba2474186b70ed5b31da58f5f96a3e87"
+    sha256 cellar: :any_skip_relocation, mojave: "9479051c482903b8a3927040aa132f2f7a34846e34a1bf14417141ccedb49e0a"
   end
 
   depends_on "go" => :build
