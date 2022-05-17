@@ -1,14 +1,14 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/v2.5.0.tar.gz"
-  sha256 "65b050af067dba4ff28d10dede5973a70474e7a7fc89ad8d7bc353f7c022732f"
+  url "https://github.com/caddyserver/caddy/archive/v2.5.1.tar.gz"
+  sha256 "841f5524e2e107bff278b604c544843564a4a1ef0c3803eeae588e79e4ea5d06"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caddy"
-    sha256 cellar: :any_skip_relocation, mojave: "86c4ff58c2d465df387b820602dbb411cb82bf87ec3f4cb723fd4f737ab94393"
+    sha256 cellar: :any_skip_relocation, mojave: "fcf9d6604b454e7dcb47837087306a72c71c948c04753dea8f173dd4804b431a"
   end
 
   depends_on "go" => :build
