@@ -1,13 +1,13 @@
 class Aravis < Formula
   desc "Vision library for genicam based cameras"
   homepage "https://wiki.gnome.org/Projects/Aravis"
-  url "https://github.com/AravisProject/aravis/releases/download/0.8.20/aravis-0.8.20.tar.xz"
-  sha256 "0c0eb5a76109f29180c09c7e6a23fd403633bf22bbe8468a0ae44995c4449f46"
+  url "https://github.com/AravisProject/aravis/releases/download/0.8.21/aravis-0.8.21.tar.xz"
+  sha256 "3c4f768b22e7333386fc2622ef731722cb42971de1810caa59d29aa23eedff39"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aravis"
-    sha256 mojave: "b0421861ea0448a46e00c585b06c8126b5488b14613288dcd44090057c5ecebf"
+    sha256 mojave: "ab5c80132424b2429fc96ec1e9e005c0a0a663dd2d7e67cb3d712d8c060d5920"
   end
 
   depends_on "gobject-introspection" => :build
@@ -41,7 +41,8 @@ class Aravis < Formula
   end
 
   test do
-    output = shell_output("gst-inspect-1.0 #{lib}/gstreamer-1.0/libgstaravis.#{version.major_minor}.dylib")
+    lib_ext = OS.mac? ? "dylib" : "so"
+    output = shell_output("gst-inspect-1.0 #{lib}/gstreamer-1.0/libgstaravis.#{version.major_minor}.#{lib_ext}")
     assert_match(/Description *Aravis Video Source/, output)
   end
 end
