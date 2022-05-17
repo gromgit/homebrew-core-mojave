@@ -3,19 +3,14 @@ class Asciinema < Formula
 
   desc "Record and share terminal sessions"
   homepage "https://asciinema.org"
-  url "https://files.pythonhosted.org/packages/2c/31/492da48c9d7d23cd26f16c8f459aeb443ff056258bed592b5ba28ed271ea/asciinema-2.1.0.tar.gz"
-  sha256 "7bdb358c1f6d61b07169c5476b2f9607ce66da12e78e4c17b7c898d72402cddc"
+  url "https://files.pythonhosted.org/packages/26/40/20891ed2770311c22543499a011906858bb12450bf46bd6d763f39da0002/asciinema-2.2.0.tar.gz"
+  sha256 "5ec5c4e5d3174bb7c559e45db4680eb8fa6c40c058fa5e5005ee96a1d99737b4"
   license "GPL-3.0"
   head "https://github.com/asciinema/asciinema.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1fea4ae9e201966f38b7b1d5a5edd46f047b8ab80ca382e5a4d218081ae5c8d5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1fea4ae9e201966f38b7b1d5a5edd46f047b8ab80ca382e5a4d218081ae5c8d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fe5b03bd3cb9eec10a3c4627e02421abe10ab1c96e264606d2bf5254914152b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3fe5b03bd3cb9eec10a3c4627e02421abe10ab1c96e264606d2bf5254914152b"
-    sha256 cellar: :any_skip_relocation, catalina:       "3fe5b03bd3cb9eec10a3c4627e02421abe10ab1c96e264606d2bf5254914152b"
-    sha256 cellar: :any_skip_relocation, mojave:         "3fe5b03bd3cb9eec10a3c4627e02421abe10ab1c96e264606d2bf5254914152b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "388d5d894e1150768c822e978ec7c86cd62a1e730d98eb5055823dbbd728d7a8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciinema"
+    sha256 cellar: :any_skip_relocation, mojave: "078f0815ed94fb3829dca824dd3ea0741e7ccdd72448d530da3b43fe3839006c"
   end
 
   depends_on "python@3.10"
@@ -26,7 +21,7 @@ class Asciinema < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    output = shell_output("#{bin}/asciinema auth")
+    output = shell_output("#{bin}/asciinema auth 2>&1")
     assert_match "Open the following URL in a web browser to link your install ID", output
   end
 end
