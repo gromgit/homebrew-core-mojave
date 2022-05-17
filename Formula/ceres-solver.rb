@@ -4,6 +4,7 @@ class CeresSolver < Formula
   url "http://ceres-solver.org/ceres-solver-2.1.0.tar.gz"
   sha256 "f7d74eecde0aed75bfc51ec48c91d01fe16a6bf16bce1987a7073286701e2fc6"
   license "BSD-3-Clause"
+  revision 1
   head "https://ceres-solver.googlesource.com/ceres-solver.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class CeresSolver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ceres-solver"
-    sha256 cellar: :any, mojave: "f5752dc09b763ffd19477a8785d89697da363233713432ce92e94a1033f3d7e2"
+    sha256 cellar: :any, mojave: "d1f40c96dee9c071d2653b3d2412c56d3eb668d4af08efd2976d54d84a626aa1"
   end
 
   depends_on "cmake" => [:build, :test]
