@@ -2,12 +2,11 @@ class Avrdude < Formula
   desc "Atmel AVR MCU programmer"
   homepage "https://savannah.nongnu.org/projects/avrdude/"
   license "GPL-2.0-or-later"
-  revision 1
 
   stable do
-    url "https://download.savannah.gnu.org/releases/avrdude/avrdude-6.4.tar.gz"
-    mirror "https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-6.4.tar.gz"
-    sha256 "a9be7066f70a9dcf4bf0736fcf531db6a3250aed1a24cc643add27641b7110f9"
+    url "https://download.savannah.gnu.org/releases/avrdude/avrdude-7.0.tar.gz"
+    mirror "https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-7.0.tar.gz"
+    sha256 "c0ef65d98d6040ca0b4f2b700d51463c2a1f94665441f39d15d97442dbb79b54"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -23,7 +22,7 @@ class Avrdude < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avrdude"
-    sha256 mojave: "b17bf1487a0c03df2ed77efffd5098dc542bf69569d57c608a21a12fc7a1c4e9"
+    sha256 mojave: "dcc1665f0571b3b5b871e3eb5d00ad742d31244f5526db2712bc82fca5ef1805"
   end
 
   head do
@@ -70,7 +69,7 @@ class Avrdude < Formula
   end
 
   test do
-    assert_equal "avrdude done.  Thank you.",
+    assert_match "avrdude done.  Thank you.",
       shell_output("#{bin}/avrdude -c jtag2 -p x16a4 2>&1", 1).strip
   end
 end
