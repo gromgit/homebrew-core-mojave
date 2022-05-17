@@ -1,8 +1,8 @@
 class Click < Formula
   desc "Command-line interactive controller for Kubernetes"
   homepage "https://github.com/databricks/click"
-  url "https://github.com/databricks/click/archive/v0.6.0.tar.gz"
-  sha256 "90773efa2bb91c71d6f8d448cabc2623cb2d4c31908d54b849426560755ef31f"
+  url "https://github.com/databricks/click/archive/v0.6.1.tar.gz"
+  sha256 "2c424337fe760868ade72a96edf22113ad485cf0552f2c38f8259e80eb05e7ba"
   license "Apache-2.0"
   head "https://github.com/databricks/click.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Click < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/click"
-    sha256 cellar: :any_skip_relocation, mojave: "b1f4e210f0805a22599eaf9733d43b211525b33068ce28cf8b5fd5f06b3f262b"
+    sha256 cellar: :any_skip_relocation, mojave: "0b0d81250b8e89e1f00576701f81a1d7838716e54da202cfac8d29a383d059f4"
   end
 
   depends_on "rust" => :build
