@@ -1,15 +1,13 @@
 class Gspell < Formula
   desc "Flexible API to implement spellchecking in GTK+ applications"
   homepage "https://wiki.gnome.org/Projects/gspell"
-  url "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz"
-  sha256 "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4"
+  url "https://download.gnome.org/sources/gspell/1.10/gspell-1.10.0.tar.xz"
+  sha256 "803bb884c0215d3fd22a85d7f30423aff88d9792f05a5199d8a489a2ffaae1da"
   license "LGPL-2.1-or-later"
-  revision 5
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gspell"
-    rebuild 1
-    sha256 mojave: "1680078a69b7161a4af8fde5da79ea709642bcac95346bff7f33b68eea9da967"
+    sha256 mojave: "c588a56822869367edc376590979a2e9c64e4c809f3388c264a9c5e9e7c163f3"
   end
 
   depends_on "autoconf" => :build
@@ -73,7 +71,7 @@ class Gspell < Formula
       -I#{glib.opt_include}/glib-2.0
       -I#{glib.opt_lib}/glib-2.0/include
     ]
-    on_macos do
+    if OS.mac?
       gtk_mac_integration = Formula["gtk-mac-integration"]
       flags << "-I#{gtk_mac_integration.opt_include}/gtkmacintegration"
     end
@@ -108,9 +106,7 @@ class Gspell < Formula
       -lpango-1.0
       -lpangocairo-1.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     ENV["G_DEBUG"] = "fatal-warnings"
 
