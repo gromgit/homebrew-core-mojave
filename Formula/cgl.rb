@@ -1,8 +1,8 @@
 class Cgl < Formula
   desc "Cut Generation Library"
   homepage "https://github.com/coin-or/Cgl"
-  url "https://github.com/coin-or/Cgl/archive/releases/0.60.5.tar.gz"
-  sha256 "5a2e7ca380425b3d7279d0759c625a367d06ec8293698b59f82fae38ae5df64e"
+  url "https://github.com/coin-or/Cgl/archive/releases/0.60.6.tar.gz"
+  sha256 "9e2c51ffad816ab408763d6b931e2a3060482ee4bf1983148969de96d4b2c9ce"
   license "EPL-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Cgl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "876be49de86c9a9155b28390f847f04de4f02e06bac8b8660dd2505794ef3f5d"
+    sha256 cellar: :any, mojave: "685bec9291c743596f7400e42a9916e6b7fd5b2088fe98b8d41c5243c1ecf7a8"
   end
 
   depends_on "pkg-config" => :build
