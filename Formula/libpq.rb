@@ -1,18 +1,17 @@
 class Libpq < Formula
   desc "Postgres C API library"
   homepage "https://www.postgresql.org/docs/14/libpq.html"
-  url "https://ftp.postgresql.org/pub/source/v14.2/postgresql-14.2.tar.bz2"
-  sha256 "2cf78b2e468912f8101d695db5340cf313c2e9f68a612fb71427524e8c9a977a"
+  url "https://ftp.postgresql.org/pub/source/v14.3/postgresql-14.3.tar.bz2"
+  sha256 "279057368bf59a919c05ada8f95c5e04abb43e74b9a2a69c3d46a20e07a9af38"
   license "PostgreSQL"
 
   livecheck do
     formula "postgresql"
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpq"
-    rebuild 1
-    sha256 mojave: "d907f609dde44179697b87292e3cca11231902d76b83e6845f21f04ce305af00"
+    sha256 mojave: "4cc005ed0d9f37c4ad407d739c86aafc934746b034bf6025946906b904b6f79b"
   end
 
   keg_only "conflicts with postgres formula"
