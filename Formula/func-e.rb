@@ -1,13 +1,13 @@
 class FuncE < Formula
   desc "Easily run Envoy"
   homepage "https://func-e.io"
-  url "https://github.com/tetratelabs/func-e/archive/v1.1.2.tar.gz"
-  sha256 "4a7d5f295adc6715df37b2503b9fb73a08b683ebeab5bf9b120c4cbf6ad1423b"
+  url "https://github.com/tetratelabs/func-e/archive/v1.1.3.tar.gz"
+  sha256 "2dd1598efd743dae38a55f6943eaa62d17f2db9996be249edf5e52495338b5e9"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/func-e"
-    sha256 cellar: :any_skip_relocation, mojave: "6350bae297f32c57ecffab1060f0b1f947b5ceffc2e0e29652ad4d85c3289f25"
+    sha256 cellar: :any_skip_relocation, mojave: "7166b6b9379cf204b62f6704eb9f8298ac33cab6b39f50b7be29af18bca32ff8"
   end
 
   depends_on "go" => :build
