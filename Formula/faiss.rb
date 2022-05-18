@@ -10,14 +10,18 @@ class Faiss < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faiss"
-    sha256 cellar: :any, mojave: "37d8833cef9a1b7d355d7e063c4fe7c43a1709eb6f88a71b9ed6397f6f2a5f7a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3d850325ef4e920a4079dabb961af7d1f2aee615583ff97d9c205cda4a247649"
   end
 
   depends_on "cmake" => :build
-  depends_on "libomp"
   depends_on "openblas"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     args = *std_cmake_args + %w[
@@ -35,7 +39,7 @@ bottle do
 
   test do
     cp pkgshare/"demos/demo_imi_flat.cpp", testpath
-    system ENV.cxx, "-std=c++11", "-L#{lib}", "-lfaiss", "demo_imi_flat.cpp", "-o", "test"
+    system ENV.cxx, "-std=c++11", "demo_imi_flat.cpp", "-L#{lib}", "-lfaiss", "-o", "test"
     assert_match "Query results", shell_output("./test")
   end
 end
