@@ -1,14 +1,14 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
   homepage "https://janet-lang.org"
-  url "https://github.com/janet-lang/janet/archive/v1.21.2.tar.gz"
-  sha256 "52db8d18f93351256d0731810e8bea95516db8142f51eeb31664f7884bf63088"
+  url "https://github.com/janet-lang/janet/archive/v1.22.0.tar.gz"
+  sha256 "7c6969f8e82badc7afa28aa1054555c1c91d2858f9f45c41a82557f5c5ce85bd"
   license "MIT"
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/janet"
-    sha256 cellar: :any, mojave: "a144d78f9207737f5982af3e64174a57c5c5b05045e64e24232248b0f20319eb"
+    sha256 cellar: :any, mojave: "331b9b15bd4df265061efb310b0f815b6afd56a6d0454815d33945deac2ece6b"
   end
 
   depends_on "meson" => :build
