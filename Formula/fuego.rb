@@ -8,8 +8,8 @@ class Fuego < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fuego"
-    rebuild 1
-    sha256 mojave: "7fca175796547ca296a9343c64ecd22ca986dfbe17789038b438fe09d95c521a"
+    rebuild 2
+    sha256 mojave: "a66157f38cce28dfe91a86d0fb7c30273da2d4380567e7b0889306d4cc55276f"
   end
 
   depends_on "autoconf" => :build
@@ -22,7 +22,7 @@ class Fuego < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost=#{Formula["boost"].opt_prefix}"
-    system "make", "install"
+    system "make", "install", "LIBS=-lpthread"
   end
 
   test do
