@@ -1,14 +1,14 @@
 class Gops < Formula
   desc "Tool to list and diagnose Go processes currently running on your system"
   homepage "https://github.com/google/gops"
-  url "https://github.com/google/gops/archive/refs/tags/v0.3.22.tar.gz"
-  sha256 "a8092305465b28b0db83eb7087edca958de6522bc3ebb14656ecb8aef521e07b"
+  url "https://github.com/google/gops/archive/refs/tags/v0.3.23.tar.gz"
+  sha256 "7bea1780f7175d7518fb532a7ff858bc1789b88b918965068210ad8c5b8fd746"
   license "BSD-3-Clause"
   head "https://github.com/google/gops.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gops"
-    sha256 cellar: :any_skip_relocation, mojave: "2438cf4e474fc56f76336f5d70f4c0cb3375a76148786c8557b2d5db3551fd62"
+    sha256 cellar: :any_skip_relocation, mojave: "d009f9b8d52abf35486e028c20f932216e4bb51ae9922634fcb77b7c7d45c4dd"
   end
 
   depends_on "go" => [:build, :test]
