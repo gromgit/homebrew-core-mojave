@@ -9,8 +9,8 @@ class Gupnp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7df02b620b0b3871b4ce2628f66a0065a03b1819ac58cd9ff4c7de4644def7ad"
+    rebuild 2
+    sha256 cellar: :any, mojave: "edef1652efd4d5ca9c31de9b26af3ff56a4bce5fff0ffc95975056320210258f"
   end
 
   depends_on "docbook-xsl" => :build
@@ -66,9 +66,10 @@ class Gupnp < Formula
       }
     EOS
 
-    libxml2 = "-I#{MacOS.sdk_path}/usr/include/libxml2"
-    on_linux do
-      libxml2 = "-I#{Formula["libxml2"].include}/libxml2"
+    libxml2 = if OS.mac?
+      "-I#{MacOS.sdk_path}/usr/include/libxml2"
+    else
+      "-I#{Formula["libxml2"].include}/libxml2"
     end
 
     system ENV.cc, testpath/"test.c", "-I#{include}/gupnp-1.2", "-L#{lib}", "-lgupnp-1.2",
