@@ -7,9 +7,10 @@ class Hashlink < Formula
   revision 5
   head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hashlink"
-    sha256 cellar: :any, mojave: "99f4dcd1b3d6ae728e4dc106582f80c381a51a2101bae7c547a7c74ad51baabd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "65e0244e7602cb292a4260b05bbf061da79f6df8a331d848e3fd5169f0cc9d58"
   end
 
   depends_on "haxe" => :test
@@ -22,8 +23,15 @@ bottle do
   depends_on "openal-soft"
   depends_on "sdl2"
 
+  on_linux do
+    depends_on "mesa"
+    depends_on "mesa-glu"
+  end
+
   def install
     inreplace "Makefile", /\$\{LFLAGS\}/, "${LFLAGS} ${EXTRA_LFLAGS}" unless build.head?
+    # On Linux, also pass EXTRA_FLAGS to LIBFLAGS, so that the linker will also add the RPATH to .hdll files.
+    inreplace "Makefile", "LIBFLAGS =", "LIBFLAGS = ${EXTRA_LFLAGS}"
     system "make", "EXTRA_LFLAGS=-Wl,-rpath,#{libexec}/lib"
     system "make", "install", "PREFIX=#{libexec}"
     bin.install_symlink Dir[libexec/"bin/*"]
@@ -61,13 +69,20 @@ bottle do
     system "#{haxebin}/haxelib", "install", "hashlink"
 
     system "#{haxebin}/haxe", "-hl", "HelloWorld/main.c", "-main", "HelloWorld"
-    system ENV.cc, "-O3", "-std=c11", "-IHelloWorld", "-I#{libexec}/include", "-L#{libexec}/lib", "-lhl",
-                   "HelloWorld/main.c", "-o", "build/HelloWorld"
+
+    flags = %W[
+      -I#{libexec}/include
+      -L#{libexec}/lib
+    ]
+    flags << "-Wl,-rpath,#{libexec}/lib" unless OS.mac?
+
+    system ENV.cc, "HelloWorld/main.c", "-O3", "-std=c11", "-IHelloWorld",
+                   *flags, "-lhl", "-o", "build/HelloWorld"
     assert_equal "Hello world!\n", `./build/HelloWorld`
 
     system "#{haxebin}/haxe", "-hl", "TestHttps/main.c", "-main", "TestHttps"
-    system ENV.cc, "-O3", "-std=c11", "-ITestHttps", "-I#{libexec}/include", "-L#{libexec}/lib", "-lhl",
-                   "TestHttps/main.c", "-o", "build/TestHttps", libexec/"lib/ssl.hdll"
+    system ENV.cc, "TestHttps/main.c", "-O3", "-std=c11", "-ITestHttps",
+                   *flags, "-lhl", "-o", "build/TestHttps", libexec/"lib/ssl.hdll"
     assert_equal "200\n", `./build/TestHttps`
   end
 end
