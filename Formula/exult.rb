@@ -13,7 +13,8 @@ class Exult < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exult"
-    sha256 mojave: "5c0d6a925c26bcda53f4ef8ced275cc3e3413e819fd605187b61b350d9aff524"
+    rebuild 1
+    sha256 mojave: "57616b8acf082105896085712da57314d9d4dfb51031d630d7ee27c175d96b4b"
   end
 
   depends_on "autoconf" => :build
@@ -29,10 +30,14 @@ class Exult < Formula
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "EXULT_DATADIR=#{pkgshare}/data"
-    system "make", "bundle"
-    pkgshare.install "Exult.app/Contents/Resources/data"
-    prefix.install "Exult.app"
-    bin.write_exec_script "#{prefix}/Exult.app/Contents/MacOS/exult"
+    if OS.mac?
+      system "make", "bundle"
+      pkgshare.install "Exult.app/Contents/Resources/data"
+      prefix.install "Exult.app"
+      bin.write_exec_script "#{prefix}/Exult.app/Contents/MacOS/exult"
+    else
+      system "make", "install"
+    end
   end
 
   def caveats
