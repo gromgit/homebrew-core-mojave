@@ -1,8 +1,8 @@
 class Entr < Formula
   desc "Run arbitrary commands when files change"
   homepage "https://eradman.com/entrproject/"
-  url "https://eradman.com/entrproject/code/entr-5.1.tar.gz"
-  sha256 "0f87f577bce87641c525addb9bcc60bbaa579fe981dab759043e3ce1556dbb92"
+  url "https://eradman.com/entrproject/code/entr-5.2.tar.gz"
+  sha256 "237e309d46b075210c0e4cb789bfd0c9c777eddf6cb30341c3fe3dbcc658c380"
   license "ISC"
   head "https://github.com/eradman/entr.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Entr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/entr"
-    sha256 cellar: :any_skip_relocation, mojave: "c49555437fe840869edcfee1a28f5e3493d8004cb28d48bef0a9cfff46bd7bd3"
+    sha256 cellar: :any_skip_relocation, mojave: "87a893916547c504b0c209517231b2e3111f6aeb49ae03e6c5b5e3e45649e901"
   end
 
   def install
