@@ -1,13 +1,13 @@
 class Gnumeric < Formula
   desc "GNOME Spreadsheet Application"
   homepage "https://projects.gnome.org/gnumeric/"
-  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.51.tar.xz"
-  sha256 "a00e6c6e4ecddadabd9b0ae18013d7b05937fdcb8f9aad5a73b95923c7aeb1dd"
+  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.52.tar.xz"
+  sha256 "73cf73049a22a1d828506275b2c9378ec37c5ff37b68bb1f2f494f0d6400823b"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnumeric"
-    sha256 mojave: "36dc90fff4e6d9f111f38c7e8ad6abaf79cff90bf54a059443559e12611954bc"
+    sha256 mojave: "6b9d4d96022c60b954127aff5a2af226e9b8e824cf5809c06d14c1079cb27c3b"
   end
 
   depends_on "intltool" => :build
