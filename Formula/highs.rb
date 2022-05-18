@@ -1,19 +1,21 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https://www.maths.ed.ac.uk/hall/HiGHS/"
-  url "https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "8d0230369762a1835e075fe41fa4f83b403c21355958135c44dd214203a43edd"
+  url "https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "e849276134eb0e7d876be655ff5fe3aa6ecf1030d605edee760620469f9e97cf"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/highs"
-    sha256 cellar: :any, mojave: "6779f2d1a995eb40453d79c57ba468462c5f61e1e52a7dbe62e6a77c97571ce7"
+    sha256 cellar: :any, mojave: "8ec6d6c28cb6752debd340b962ffb245f38856e4981a7891952807775a70846d"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "gcc" # for gfortran
   depends_on "osi"
+
+  uses_from_macos "zlib"
 
   def install
     system "cmake", "-B", "build", *std_cmake_args
