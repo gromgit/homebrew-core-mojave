@@ -14,8 +14,8 @@ class Hatari < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hatari"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f67f9712586f5ae40207c548b059b90a75dc97cb461b22075615955055d6d966"
+    rebuild 2
+    sha256 cellar: :any, mojave: "084d67ea2dbaaa1be545b6f49868007e542304a8b3e4667ec72a80e5f33ebda1"
   end
 
   depends_on "cmake" => :build
