@@ -7,8 +7,8 @@ class GpgTui < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpg-tui"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5a9a3a96804f09f95552d63a768f6b8115b7a50cc67ce3e00ae265ba5d96f9a9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "86256cf679a46782d0f975efd3502c42498996deab824c448260119984b54d1a"
   end
 
   depends_on "rust" => :build
@@ -35,11 +35,15 @@ class GpgTui < Formula
     require "io/console"
 
     (testpath/"gpg-tui").mkdir
-    r, w, pid = PTY.spawn "#{bin}/gpg-tui"
-    r.winsize = [80, 43]
-    sleep 1
-    w.write "q"
-    assert_match(/^.*<.*list.*pub.*>.*$/, r.read)
+    begin
+      r, w, pid = PTY.spawn "#{bin}/gpg-tui"
+      r.winsize = [80, 43]
+      sleep 1
+      w.write "q"
+      assert_match(/^.*<.*list.*pub.*>.*$/, r.read)
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
   ensure
     Process.kill("TERM", pid)
   end
