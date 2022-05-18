@@ -17,10 +17,15 @@ class Gping < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gping"
-    sha256 cellar: :any_skip_relocation, mojave: "a69cdfc1c360a8b0cd9addfea1286e1a763e772781c2a7a37981809f5c717ee2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "94403d356e6e47f1088d70ee36f31cb7ecf8bb870a36f3992888a6e05a711f05"
   end
 
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "iputils"
+  end
 
   def install
     cd "gping" do
@@ -37,15 +42,19 @@ class Gping < Formula
     sleep 1
     w.write "q"
 
-    screenlog = r.read
-    # remove ANSI colors
-    screenlog.encode!("UTF-8", "binary",
-      invalid: :replace,
-      undef:   :replace,
-      replace: "")
-    screenlog.gsub!(/\e\[([;\d]+)?m/, "")
+    begin
+      screenlog = r.read
+      # remove ANSI colors
+      screenlog.encode!("UTF-8", "binary",
+        invalid: :replace,
+        undef:   :replace,
+        replace: "")
+      screenlog.gsub!(/\e\[([;\d]+)?m/, "")
 
-    assert_match "google.com (", screenlog
+      assert_match "google.com (", screenlog
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
   ensure
     Process.kill("TERM", pid)
   end
