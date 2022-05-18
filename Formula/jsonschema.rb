@@ -2,15 +2,15 @@ class Jsonschema < Formula
   include Language::Python::Virtualenv
 
   desc "Implementation of JSON Schema for Python"
-  homepage "https://github.com/Julian/jsonschema"
-  url "https://files.pythonhosted.org/packages/26/67/36cfd516f7b3560bbf7183d7a0f82bb9514d2a5f4e1d682a8a1d55d8031d/jsonschema-4.4.0.tar.gz"
-  sha256 "636694eb41b3535ed608fe04129f26542b59ed99808b4f688aa32dcf55317a83"
+  homepage "https://github.com/python-jsonschema/jsonschema"
+  url "https://files.pythonhosted.org/packages/9e/62/93a54db0e44c4de57868a7d638d7a8abce113c8bc43a20b10b1109b2a517/jsonschema-4.5.1.tar.gz"
+  sha256 "7c6d882619340c3347a1bf7315e147e6d3dae439033ae6383d6acb908c101dfc"
   license "MIT"
-  head "https://github.com/Julian/jsonschema.git", branch: "main"
+  head "https://github.com/python-jsonschema/jsonschema.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jsonschema"
-    sha256 cellar: :any_skip_relocation, mojave: "a8a95f4f7727d968e8db0d57716d98c23691ae643a990d6256c5238002dc7c51"
+    sha256 cellar: :any_skip_relocation, mojave: "2bcff22d6c3ec81fc9e9909086ac4fc9f3c0ed79c5c778f8427318e990331be3"
   end
 
   depends_on "python@3.10"
@@ -22,8 +22,8 @@ class Jsonschema < Formula
   end
 
   resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/f4/d7/0fa558c4fb00f15aabc6d42d365fcca7a15fcc1091cd0f5784a14f390b7f/pyrsistent-0.18.0.tar.gz"
-    sha256 "773c781216f8c2900b42a7b638d5b517bb134ae1acbebe4d1e8f1f41ea60eb4b"
+    url "https://files.pythonhosted.org/packages/42/ac/455fdc7294acc4d4154b904e80d964cc9aae75b087bbf486be04df9f2abd/pyrsistent-0.18.1.tar.gz"
+    sha256 "d4d61f8b993a7255ba714df3aca52700f8125289f84f704cf80916517c46eb96"
   end
 
   def install
