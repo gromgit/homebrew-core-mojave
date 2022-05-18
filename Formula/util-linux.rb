@@ -1,6 +1,6 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
-  homepage "https://github.com/karelzak/util-linux"
+  homepage "https://github.com/util-linux/util-linux"
   url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.tar.xz"
   sha256 "6d111cbe4d55b336db2f1fbeffbc65b89908704c01136371d32aa9bec373eb64"
   license all_of: [
@@ -15,7 +15,8 @@ class UtilLinux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/util-linux"
-    sha256 mojave: "775198d05ea35e869dde97a96f4625cb206182f0d4c313ccf052134eca0ae39b"
+    rebuild 1
+    sha256 mojave: "4e95d19fbefdc6d2ba6b78a65dc1a6cbc36a21eb228a777bab913974909781d6"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
