@@ -1,13 +1,13 @@
 class Glibmm < Formula
   desc "C++ interface to glib"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/glibmm/2.72/glibmm-2.72.0.tar.xz"
-  sha256 "782924bf136496f3878fdc2a0aa9ef40f0c515e2c3e054caffa5d2e52380c71e"
+  url "https://download.gnome.org/sources/glibmm/2.72/glibmm-2.72.1.tar.xz"
+  sha256 "2a7649a28ab5dc53ac4dabb76c9f61599fbc628923ab6a7dd74bf675d9155cd8"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glibmm"
-    sha256 cellar: :any, mojave: "3e59e35ca52ac4518f4f1589dbb0ba10b7805507af2aa03bf98112488c0f0554"
+    sha256 cellar: :any, mojave: "2fda3848a15f7594f503f38f8d4f9ccc46fe03440c7e9bfcca33e4b15bc4d4c3"
   end
 
   depends_on "meson" => :build
