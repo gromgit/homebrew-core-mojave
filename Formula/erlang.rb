@@ -2,10 +2,9 @@ class Erlang < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-24.3.3/otp_src_24.3.3.tar.gz"
-  sha256 "cc3177f765c6a2b018e9a80c30bd3eac9a1f1d4c2690bb10557b384a9a63ae8d"
+  url "https://github.com/erlang/otp/releases/download/OTP-24.3.4/otp_src_24.3.4.tar.gz"
+  sha256 "76fcca5ba6f11eb9caac32bf053badc46b5d66f867150eef077f4f0d7944ecd7"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,7 +13,7 @@ class Erlang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang"
-    sha256 cellar: :any, mojave: "f837ba4bbe6c506284b878ec0145c8ad352fea242d95d3fbb7c9bf52d3650709"
+    sha256 cellar: :any, mojave: "9eed2ded7225113a3105fd267703921e55960d66577429a9fb78f5744b0b9b74"
   end
 
   head do
@@ -29,15 +28,9 @@ class Erlang < Formula
   depends_on "wxwidgets" # for GUI apps like observer
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-24.3.3/otp_doc_html_24.3.3.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_24.3.3.tar.gz"
-    sha256 "a555923a0360cf1acd9c440216a06be7cc663ce0a067966600142d16f9e99bbb"
-  end
-
-  # Required for build against wxwidgets-3.1.6+
-  patch do
-    url "https://github.com/erlang/otp/commit/c2eb69239622046093c25e986dd606ea339c59a9.patch?full_index=1"
-    sha256 "7817f1407760c22a46c8a708ea44dd86befc611022abd66b2eaccbe8b4abc0da"
+    url "https://github.com/erlang/otp/releases/download/OTP-24.3.4/otp_doc_html_24.3.4.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_24.3.4.tar.gz"
+    sha256 "06ccc6e0eed46ea92557eb8fa8ad8edb7cc330a5fba0b520cce37c7275b95d84"
   end
 
   def install
