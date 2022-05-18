@@ -1,8 +1,8 @@
 class MysqlClient < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.28.tar.gz"
-  sha256 "6dd0303998e70066d36905bd8fef1c01228ea182dbfbabc6c22ebacdbf8b5941"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.29.tar.gz"
+  sha256 "fd34a84c65fc7b15609d55b1f5d128c4d5543a6b95fa638569c3277c5c7bb048"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -11,7 +11,7 @@ class MysqlClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql-client"
-    sha256 mojave: "e550862703ebbf0a1d97fc125595a56f909588811ed6aff1a97878b300605d3c"
+    sha256 mojave: "4e75e7721aeb66882626cb0b436e38f62585d4b3534130fbf2fa1b4a73e693fc"
   end
 
   keg_only "it conflicts with mysql (which contains client libraries)"
@@ -56,22 +56,6 @@ class MysqlClient < Formula
       -DWITH_UNIT_TESTS=OFF
       -DWITHOUT_SERVER=ON
     ]
-
-    # Their CMake macros check for `pkg-config` only on Linux and FreeBSD,
-    # so let's set `MY_PKG_CONFIG_EXECUTABLE` and `PKG_CONFIG_*` to make
-    # sure `pkg-config` is found and used.
-    if OS.mac?
-      args += %W[
-        -DMY_PKG_CONFIG_EXECUTABLE=pkg-config
-        -DPKG_CONFIG_FOUND=TRUE
-        -DPKG_CONFIG_VERSION_STRING=#{Formula["pkg-config"].version}
-        -DPKG_CONFIG_EXECUTABLE=#{Formula["pkg-config"].opt_bin}/pkg-config
-      ]
-
-      if ENV["HOMEBREW_SDKROOT"].present?
-        args << "-DPKG_CONFIG_ARGN=--define-variable=homebrew_sdkroot=#{ENV["HOMEBREW_SDKROOT"]}"
-      end
-    end
 
     system "cmake", ".", *std_cmake_args, *args
     system "make", "install"
