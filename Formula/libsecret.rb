@@ -7,7 +7,8 @@ class Libsecret < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsecret"
-    sha256 cellar: :any, mojave: "44f53e56fbb83c46e15f6e0d3bf3ead5cb7235f588392ff7c6560636fe0d14ee"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f941b92f0e6a54d2796d55308fe56c34c34c6a55909876de48787a05069c6881"
   end
 
   depends_on "docbook-xsl" => :build
