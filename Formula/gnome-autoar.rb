@@ -15,7 +15,8 @@ class GnomeAutoar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnome-autoar"
-    sha256 cellar: :any, mojave: "e533d4224ace67dc7f23df7c9d298c1c02b8e3f9e5c20fa3abdd2c52b574a987"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a31b8d35c5d7023c2dc5a95d249f6e88260c45ea5f1e0682aae889daa39b0da1"
   end
 
   depends_on "meson" => :build
@@ -66,8 +67,8 @@ class GnomeAutoar < Formula
       -lglib-2.0
       -lgnome-autoar-0
       -lgobject-2.0
-      -lintl
     ]
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
