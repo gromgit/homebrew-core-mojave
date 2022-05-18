@@ -8,8 +8,8 @@ class GeocodeGlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geocode-glib"
-    rebuild 2
-    sha256 cellar: :any, mojave: "d431d6bff2c6368908d2d4f51db35ad0e52f8545da3b41bf6b837ef65dd9c51a"
+    rebuild 3
+    sha256 cellar: :any, mojave: "5acbb2c3f9ad9a202e2982824c01b179ebe96cde82b3c1651c89ab5b3cba4517"
   end
 
   depends_on "gobject-introspection" => :build
@@ -61,9 +61,7 @@ class GeocodeGlib < Formula
       -lglib-2.0
       -lgobject-2.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
