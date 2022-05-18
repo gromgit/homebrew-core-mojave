@@ -7,7 +7,8 @@ class Gsmartcontrol < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gsmartcontrol"
-    sha256 mojave: "4d64d4f3d9b97106da4de9b78c4c50789b78a35a371b5f3882238e17e3c96dd0"
+    rebuild 1
+    sha256 mojave: "cca8bf5a6ba84cdae4dd07c150826c4a1ae077ddd8d2a886dcb277c3206dcdc3"
   end
 
   depends_on "pkg-config" => :build
