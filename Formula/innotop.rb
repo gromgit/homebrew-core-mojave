@@ -4,14 +4,12 @@ class Innotop < Formula
   url "https://github.com/innotop/innotop/archive/v1.13.0.tar.gz"
   sha256 "6ec91568e32bda3126661523d9917c7fbbd4b9f85db79224c01b2a740727a65c"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 1
+  revision 2
   head "https://github.com/innotop/innotop.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "cf80f3c8db711fe4481d9f9663fb1c9877c5a078542f9756a0f4f5dcb8658962"
-    sha256 cellar: :any, big_sur:       "e064fd105588d19acfcf7c1a52afb674b140bf8ca66bbdbd85e0c4c45a14c784"
-    sha256 cellar: :any, catalina:      "e8becfe3d8da8c8ed971061e0814e46ae19609cd0ea0ab58260713d8ca2595d0"
-    sha256 cellar: :any, mojave:        "d2430929751627ed8242594b4d0cfc59346e5604232a148a97e879d1700fa05e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/innotop"
+    sha256 cellar: :any, mojave: "139a09f36409ed3edf70b71bb0246203940446846912ce8e26ad926d08d63a2c"
   end
 
   depends_on "mysql-client"
@@ -48,7 +46,7 @@ class Innotop < Formula
         # from a relative path -- while in the middle of our build we need to
         # refer to them by their full path.  Workaround adapted from:
         #   https://github.com/fink/fink-distributions/issues/461#issuecomment-563331868
-        inreplace "Makefile", "blib/", "$(shell pwd)/blib/" if r.name == "TermReadKey"
+        inreplace "Makefile", "blib/", "$(shell pwd)/blib/" if OS.mac? && r.name == "TermReadKey"
         system "make", "install"
       end
     end
