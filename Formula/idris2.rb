@@ -4,13 +4,12 @@ class Idris2 < Formula
   url "https://github.com/idris-lang/Idris2/archive/v0.5.1.tar.gz"
   sha256 "da44154f6eba5e22ec5ac64c6ba2c28d2df0a57cf620c5b00c11adb51dbda399"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idris2"
-    rebuild 2
-    sha256 cellar: :any, mojave: "c61a0c5c0b1e1ea639a8e7e653f87b226497c2603466a217c48cc13d2270ed23"
+    sha256 cellar: :any, mojave: "b2e145e976c2fc6c70224f71e8f5de354b60c3ee9fe6d546246ba507e7cf300d"
   end
 
   depends_on "coreutils" => :build
