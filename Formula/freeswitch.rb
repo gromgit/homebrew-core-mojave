@@ -5,7 +5,7 @@ class Freeswitch < Formula
       tag:      "v1.10.7",
       revision: "883d2cb662bed0316e157bd3beb9853e96c60d02"
   license "MPL-1.1"
-  revision 3
+  revision 4
   head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   livecheck do
@@ -15,7 +15,7 @@ class Freeswitch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeswitch"
-    sha256 mojave: "088a138910ec1742d803721c28772d80d5c9cb2c5d95714b28e1bb92353fc07c"
+    sha256 mojave: "12b14ef36aadf8fd83c5e04178fbb36e6e3be61ac233ce94d0f5e49edf23ef0b"
   end
 
   depends_on "autoconf" => :build
@@ -40,8 +40,14 @@ class Freeswitch < Formula
   depends_on "sqlite"
   depends_on "util-linux"
 
+  uses_from_macos "curl"
   uses_from_macos "libedit"
+  uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
@@ -139,6 +145,11 @@ class Freeswitch < Formula
 
       ENV.append_path "PKG_CONFIG_PATH", "#{libexec}/libks/lib/pkgconfig"
       ENV.append "CFLAGS", "-I#{libexec}/libks/include"
+
+      # Add RPATH to libks.pc so libks.so can be found by freeswitch modules.
+      inreplace libexec/"libks/lib/pkgconfig/libks.pc",
+                "-L${libdir}",
+                "-Wl,-rpath,${libdir} -L${libdir}"
     end
 
     resource("signalwire-c").stage do
@@ -146,6 +157,12 @@ class Freeswitch < Formula
       system "make", "install"
 
       ENV.append_path "PKG_CONFIG_PATH", "#{libexec}/signalwire-c/lib/pkgconfig"
+
+      # Add RPATH to signalwire_client.pc so libsignalwire_client.so
+      # can be found by freeswitch modules.
+      inreplace libexec/"signalwire-c/lib/pkgconfig/signalwire_client.pc",
+                "-L${libdir}",
+                "-Wl,-rpath,${libdir} -L${libdir}"
     end
 
     system "./bootstrap.sh", "-j"
