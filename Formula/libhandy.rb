@@ -1,18 +1,13 @@
 class Libhandy < Formula
   desc "Building blocks for modern adaptive GNOME apps"
   homepage "https://gitlab.gnome.org/GNOME/libhandy"
-  url "https://download.gnome.org/sources/libhandy/1.4/libhandy-1.4.0.tar.xz"
-  sha256 "2676d51fa1fa40fdee7497d3e763fefa18b0338bffcd2ee32e7f7e633c885446"
+  url "https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.6.2/libhandy-1.6.2.tar.gz"
+  sha256 "42247aac9f06e1083f5b0ea3f114f36f647e1b35b84089ad1b66d89ba2dc777e"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_monterey: "a1bc08ba132d264744d3f8f5101d6997bae896e4ce3f0d420c9d2ace092aec2d"
-    sha256 arm64_big_sur:  "67c5f4982894646b07942c0f387443c2aac2813167aaa3de9197cd760fc93e5b"
-    sha256 monterey:       "9846518bcebff7818836942e043f03f4e7e8ac07f618646b6d0396407085e1c9"
-    sha256 big_sur:        "337f9be107164821d8436c443c20dcb79d66bc3268fac909ace2878432bcc652"
-    sha256 catalina:       "2e04f3f8004ac544fea47905a65a6597908b8ced6dadd5c330d87b8a310951d9"
-    sha256 mojave:         "a8972dc9efc8c2d6a6fe0f038ebda941a741c3e0d7be57b51b9c634120d1a479"
-    sha256 x86_64_linux:   "17515106b873bbdbc591ca0daca12c043485e6a52b478cff912f9a835620c825"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libhandy"
+    sha256 mojave: "7b72dfca6bd9e567d9b944983799c06e8b3525d3f0ba18af77f9fecb481211ac"
   end
 
   depends_on "gettext" => :build
@@ -91,13 +86,9 @@ class Libhandy < Formula
       -lpango-1.0
       -lpangocairo-1.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     # Don't have X/Wayland in Docker
-    on_macos do
-      system "./test"
-    end
+    system "./test" if OS.mac?
   end
 end
