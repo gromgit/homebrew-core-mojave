@@ -1,8 +1,8 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.90/karchive-5.90.0.tar.xz"
-  sha256 "a6e2f3a7cb1aef7db7b4f7dfb9ffb1d929d0d5b147c25a93fbc0b794dfcd2110"
+  url "https://download.kde.org/stable/frameworks/5.93/karchive-5.93.0.tar.xz"
+  sha256 "61e326a840860270b7f8b9e8966462085b4f309be5c3a84c3b265eb95694c7fb"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
@@ -20,8 +20,7 @@ class Karchive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/karchive"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cc4aef45a141ae71aae30be202bdda35f801454bb22963305d56940242a3f818"
+    sha256 cellar: :any, mojave: "743e24417a81b5595172ff9c34d06622ed96f25c32112e70684a6008b2a4c33f"
   end
 
   depends_on "cmake" => [:build, :test]
