@@ -8,7 +8,8 @@ class Ivtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ivtools"
-    sha256 mojave: "22acd1526aabf05a7f6407537362428e4381f50f9a81f28d8e0929b5a66790ad"
+    rebuild 1
+    sha256 mojave: "69ca2a10ac5944e5f350db11820666b79e8274a9a5e4f776cb6204ed9f5d375b"
   end
 
   depends_on "ace"
@@ -25,6 +26,9 @@ class Ivtools < Formula
 
     # Conflicts with dialog
     mv man3/"Dialog.3", man3/"Dialog_ivtools.3"
+
+    # Delete unneeded symlink to libACE on Linux which conflicts with ace.
+    rm lib/"libACE.so" unless OS.mac?
   end
 
   test do
