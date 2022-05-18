@@ -1,21 +1,21 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://github.com/ispc/ispc/archive/v1.17.0.tar.gz"
-  sha256 "37fb1055d6c6b232e112d8d50145d726824ed4d8da93a7396315dceba6c76e62"
+  url "https://github.com/ispc/ispc/archive/v1.18.0.tar.gz"
+  sha256 "81f2cc23b555c815faf53429e9eee37d1f2f16873ae7074e382ede94721ee042"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ispc"
-    rebuild 2
-    sha256 cellar: :any, mojave: "555cb05d897c57d49eaa2727b0588273d1fefb9d624a9b3ff1e6259185602423"
+    sha256 cellar: :any, mojave: "8a589679a450a83b2120bfd8bf10dceeb0c8c5ae557b5192f2eb3196ee0ae5ee"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
   depends_on "python@3.10" => :build
-  depends_on "llvm@12"
+  depends_on "llvm" # Must be LLVM 13
 
   on_linux do
     depends_on "gcc"
