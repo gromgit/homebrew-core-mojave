@@ -1,13 +1,15 @@
 class EasyTag < Formula
   desc "Application for viewing and editing audio file tags"
-  homepage "https://projects.gnome.org/easytag"
+  homepage "https://wiki.gnome.org/Apps/EasyTAG"
   url "https://download.gnome.org/sources/easytag/2.4/easytag-2.4.3.tar.xz"
   sha256 "fc51ee92a705e3c5979dff1655f7496effb68b98f1ada0547e8cbbc033b67dd5"
+  license "GPL-2.0-or-later"
   revision 6
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easy-tag"
-    sha256 mojave: "f1ae0e14fb55305b1342f01b9aa42d59c95dec49c6a970dcbc2ac466eae18d3b"
+    rebuild 1
+    sha256 mojave: "84b7508b47e252b4cc8efb2944473800ea4709f90e7187378cd396ce26b68e88"
   end
 
   depends_on "intltool" => :build
