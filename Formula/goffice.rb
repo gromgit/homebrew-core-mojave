@@ -4,8 +4,8 @@ class Goffice < Formula
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   stable do
-    url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.51.tar.xz"
-    sha256 "2e8410884d6a51ae00c9420928abfa73f7a552c1aa222371df4f2dc5acc3cd23"
+    url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.52.tar.xz"
+    sha256 "60b9efd94370f0969b394f0aac8c6eb91e15ebc0ce1236b44aa735eb1c98840c"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -16,7 +16,7 @@ class Goffice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goffice"
-    sha256 mojave: "ac187d1daecf43e2cec800ef5ae7c79b6581ee48d340cbdf74bd142d08aac931"
+    sha256 mojave: "2bb7423f3ffa2a27e8f779d99bc2a8103710f118270d71fecf815a52469007cd"
   end
 
   head do
@@ -69,9 +69,10 @@ class Goffice < Formula
           return 0;
       }
     EOS
-    libxml2 = "#{MacOS.sdk_path}/usr/include/libxml2"
-    on_linux do
-      libxml2 = Formula["libxml2"].opt_include/"libxml2"
+    libxml2 = if OS.mac?
+      "#{MacOS.sdk_path}/usr/include/libxml2"
+    else
+      Formula["libxml2"].opt_include/"libxml2"
     end
     system ENV.cc, "-I#{include}/libgoffice-0.10",
            "-I#{Formula["glib"].opt_include}/glib-2.0",
