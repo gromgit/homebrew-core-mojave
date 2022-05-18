@@ -1,14 +1,16 @@
 class DroneCli < Formula
   desc "Command-line client for the Drone continuous integration server"
   homepage "https://drone.io"
-  url "https://github.com/drone/drone-cli.git",
+  url "https://github.com/harness/drone-cli.git",
       tag:      "v1.5.0",
       revision: "92e84c4e2452f82ad093722d87ad054e1821805e"
   license "Apache-2.0"
+  head "https://github.com/harness/drone-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/drone-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "a1a10d06405e26d4ea66b82906d3493d23d517f6c6ac037a8e2e031ba192e57c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7b4f0f90db0a38413a18227d8a57c1dc5d6ad80477095e53b778ab8bebd65f64"
   end
 
   depends_on "go" => :build
