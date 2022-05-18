@@ -1,19 +1,19 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
   homepage "https://fx.wtf"
-  url "https://github.com/antonmedv/fx/archive/refs/tags/23.0.1.tar.gz"
-  sha256 "2a889077829befe39660baf76923652ef37159e7b6ef6a25dd2f4e0a9435f6aa"
+  url "https://github.com/antonmedv/fx/archive/refs/tags/24.0.0.tar.gz"
+  sha256 "43682e6b189a84602930b9fb09a87af400359a9e97a4bb8e1119688c53fad9fd"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fx"
-    sha256 cellar: :any_skip_relocation, mojave: "3ae4120ebb388d8e1baba642ff63bddbf93d49bd1e8f9548f6eadd3f8e1ad65a"
+    sha256 cellar: :any_skip_relocation, mojave: "6a8a13d6bbeec597abc819e6b573969a0accb2cefe859efcc0f4efceb593e52a"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
