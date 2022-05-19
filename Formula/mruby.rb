@@ -1,20 +1,22 @@
 class Mruby < Formula
   desc "Lightweight implementation of the Ruby language"
   homepage "https://mruby.org/"
-  url "https://github.com/mruby/mruby/archive/3.0.0.tar.gz"
-  sha256 "95b798cdd931ef29d388e2b0b267cba4dc469e8722c37d4ef8ee5248bc9075b0"
+  url "https://github.com/mruby/mruby/archive/3.1.0.tar.gz"
+  sha256 "64ce0a967028a1a913d3dfc8d3f33b295332ab73be6f68e96d0f675f18c79ca8"
   license "MIT"
   head "https://github.com/mruby/mruby.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mruby"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8533739450053032ba2ed56d534a46b6d4e311b0a30c1fdc9c50622aa3bf82c6"
+    sha256 cellar: :any_skip_relocation, mojave: "3f8e590035804fb16ec804967756d066f4004fc285cd7e7d56e4de23209baaa9"
   end
 
   depends_on "bison" => :build
+  uses_from_macos "ruby" => :build
 
-  uses_from_macos "ruby"
+  on_linux do
+    depends_on "readline"
+  end
 
   def install
     cp "build_config/default.rb", buildpath/"homebrew.rb"
