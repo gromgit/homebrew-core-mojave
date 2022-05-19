@@ -6,17 +6,12 @@ class Landscaper < Formula
       revision: "1199b098bcabc729c885007d868f38b2cf8d2370"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/Eneco/landscaper.git"
+  head "https://github.com/Eneco/landscaper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "835b3c32293b1725d2065652ecd2a0017ba2387351f586936230ff96030f79cb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d6d705dc7d36d5fd8f0f6abd093bd86398c799929069fa47f117deb25f5bbe0f"
-    sha256 cellar: :any_skip_relocation, monterey:       "13cf71ffacb84e95c4346beec92e389893755f998f6f421b930b9adb5ccfdc5d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bad7cf082826c5d92dd8c09a79b682e1582fcfc3f4e471dde4112393ec7095ce"
-    sha256 cellar: :any_skip_relocation, catalina:       "74decffaf180e0e0dd9bfa2312877da01443a3418afe0f485c1b655c4af1da41"
-    sha256 cellar: :any_skip_relocation, mojave:         "ff82cdb7be6329f9a4a5ce34bcbb04bc9356ab46fa3ecd30b830cf35df268529"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "68302c1748fe4eb063855df24420a8681a54b8ce484f2e030616bd4c4a812d52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a51ba397aeab58e4b2c68b916dcb3612aca5d7d383b6e4715db785e098270f4e"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/landscaper"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bc48828d86e059e6549904291365fb00f5e356f939808710e462f530bf263134"
   end
 
   # also depends on helm@2 (which failed to build)
