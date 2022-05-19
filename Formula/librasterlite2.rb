@@ -4,10 +4,11 @@ class Librasterlite2 < Formula
   url "https://www.gaia-gis.it/gaia-sins/librasterlite2-sources/librasterlite2-1.1.0-beta1.tar.gz"
   sha256 "f7284cdfc07ad343a314e4878df0300874b0145d9d331b063b096b482e7e44f4"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librasterlite2"
-    sha256 cellar: :any, mojave: "02bcf6cdacc5b3202eac3bc3377da1310260ed8fa623915dfc0738b116f29d5f"
+    sha256 cellar: :any, mojave: "1f152b5b8afad19cabc035363e048f95b969ea8ddcde2e42d322b014c6ae7fca"
   end
 
   depends_on "pkg-config" => :build
@@ -27,7 +28,7 @@ class Librasterlite2 < Formula
   depends_on "minizip"
   depends_on "openjpeg"
   depends_on "pixman"
-  depends_on "proj@7"
+  depends_on "proj"
   depends_on "sqlite"
   depends_on "webp"
   depends_on "xz"
