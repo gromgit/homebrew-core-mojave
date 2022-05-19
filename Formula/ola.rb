@@ -9,7 +9,8 @@ class Ola < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ola"
-    sha256 mojave: "587f70b9c5916d1bba5a8e37a587ade1dc9175bb4a54e956c79f01490a117272"
+    rebuild 1
+    sha256 mojave: "b0421f774c7f968afefedafb5b877d39fdd08d4a36f6216716e966cbd7094361"
   end
 
   depends_on "autoconf" => :build
@@ -22,6 +23,9 @@ class Ola < Formula
   depends_on "numpy"
   depends_on "protobuf"
   depends_on "python@3.10"
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   # remove in version 0.10.9
   patch do
