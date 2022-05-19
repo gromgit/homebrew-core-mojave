@@ -8,8 +8,8 @@ class Libchamplain < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libchamplain"
-    rebuild 2
-    sha256 cellar: :any, mojave: "eb542358289443f6537bb6cdb87c60a5cdacf8e9d3f75e17db9a83c41e5e55a8"
+    rebuild 3
+    sha256 cellar: :any, mojave: "53d968af8d930871bc6a41d8379b857687cdb5e95b05a3c11e9f87935eba1133"
   end
 
   depends_on "gnome-common" => :build
@@ -21,6 +21,10 @@ class Libchamplain < Formula
   depends_on "clutter-gtk"
   depends_on "gtk+3"
   depends_on "libsoup@2"
+
+  on_linux do
+    depends_on "vala" => :build
+  end
 
   def install
     mkdir "build" do
@@ -100,11 +104,11 @@ class Libchamplain < Formula
       -lglib-2.0
       -lgmodule-2.0
       -lgobject-2.0
-      -lintl
       -ljson-glib-1.0
       -lpango-1.0
       -lpangocairo-1.0
     ]
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
