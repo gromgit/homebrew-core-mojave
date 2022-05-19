@@ -14,8 +14,8 @@ class OsrmBackend < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osrm-backend"
-    rebuild 1
-    sha256 cellar: :any, mojave: "efbe0748cbc0ae46606ce4b83b9570c7da59cbbc3e1d554daa035978fa820ad0"
+    rebuild 2
+    sha256 cellar: :any, mojave: "28f08f7fdb08e2e5b31b3fec4670c586e32f6743e4151e89c2395d320915f912"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +34,7 @@ class OsrmBackend < Formula
     mkdir "build" do
       system "cmake", "..", "-DENABLE_CCACHE:BOOL=OFF",
                             "-DLUA_INCLUDE_DIR=#{lua.opt_include}/lua#{luaversion}",
-                            "-DLUA_LIBRARY=#{lua.opt_lib}/liblua.#{luaversion}.dylib",
+                            "-DLUA_LIBRARY=#{lua.opt_lib}/#{shared_library("liblua", luaversion)}",
                             *std_cmake_args
       system "make"
       system "make", "install"
