@@ -2,18 +2,16 @@ class Lazydocker < Formula
   desc "Lazier way to manage everything docker"
   homepage "https://github.com/jesseduffield/lazydocker"
   url "https://github.com/jesseduffield/lazydocker.git",
-      tag:      "v0.13",
-      revision: "048c4c9731faac6ab240c7fa8feb9b79dd95343c"
+      tag:      "v0.18.1",
+      revision: "da650f4384219e13e0dad3de266501aa0b06859c"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lazydocker"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7cac5942d0e2384490cbaf26cdf3f1a93338dd7bdea16c5287d02f6d37ab1a06"
+    sha256 cellar: :any_skip_relocation, mojave: "5d9a879a1a1910cc4e21f72db58ce0073edf907bca1bf3034d927e0d350f7845"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", "-mod=vendor", "-o", bin/"lazydocker",
@@ -23,6 +21,6 @@ class Lazydocker < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/lazydocker --version")
 
-    assert_match "reporting: undetermined", shell_output("#{bin}/lazydocker --config")
+    assert_match "language: auto", shell_output("#{bin}/lazydocker --config")
   end
 end
