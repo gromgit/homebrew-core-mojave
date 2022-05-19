@@ -4,10 +4,17 @@ class Mongocli < Formula
   url "https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/mongocli/v1.25.0.tar.gz"
   sha256 "aab93f9702df598461f0de5a7d8949e4c1d45c73c1f01198cff0d60b12ac9fd9"
   license "Apache-2.0"
+  head "https://github.com/mongodb/mongodb-atlas-cli.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(%r{^mongocli/v?(\d+(?:\.\d+)+)$}i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongocli"
-    sha256 cellar: :any_skip_relocation, mojave: "2b34af6d1979006d4bdcad6fb31f9409356c748e39d49a4f8c4511face5ba5d7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1b8f5071b513157b0d611c0c0ff8fa104bbdaa27915c501248b72fbc2f4e5af9"
   end
 
   depends_on "go" => :build
