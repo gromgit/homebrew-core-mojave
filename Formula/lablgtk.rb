@@ -12,7 +12,8 @@ class Lablgtk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lablgtk"
-    sha256 cellar: :any, mojave: "45a0abf56b3c4babd28a5a6cbf127d50daa59c15ec5d3b775b3eb30b5f4e0f42"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8421311a575097ebce89d95648b5367ac65211b213f1e378e5e613c9447ee9b1"
   end
 
   depends_on "pkg-config" => :build
@@ -37,7 +38,7 @@ class Lablgtk < Formula
         GtkMain.Main.init ()
     EOS
     ENV["CAML_LD_LIBRARY_PATH"] = "#{lib}/ocaml/stublibs"
-    system "ocamlc", "-I", "#{opt_lib}/ocaml/lablgtk2", "lablgtk.cma", "gtkInit.cmo", "test.ml", "-o", "test",
+    cclibs = [
       "-cclib", "-latk-1.0",
       "-cclib", "-lcairo",
       "-cclib", "-lgdk-quartz-2.0",
@@ -47,9 +48,13 @@ class Lablgtk < Formula
       "-cclib", "-lgobject-2.0",
       "-cclib", "-lgtk-quartz-2.0",
       "-cclib", "-lgtksourceview-2.0",
-      "-cclib", "-lintl",
       "-cclib", "-lpango-1.0",
       "-cclib", "-lpangocairo-1.0"
-    system "./test"
+    ]
+    cclibs += ["-cclib", "-lintl"] if OS.mac?
+    system "ocamlc", "-I", "#{opt_lib}/ocaml/lablgtk2", "lablgtk.cma", "gtkInit.cmo", "test.ml",
+           "-o", "test", *cclibs
+    # Disable this part of the test because display is not available on Linux.
+    system "./test" if OS.mac?
   end
 end
