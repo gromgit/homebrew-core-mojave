@@ -1,14 +1,13 @@
 class Pcapplusplus < Formula
   desc "C++ network sniffing, packet parsing and crafting framework"
   homepage "https://pcapplusplus.github.io"
-  url "https://github.com/seladb/PcapPlusPlus/archive/v21.11.tar.gz"
-  sha256 "56b8566b14b2586b8afc358e7c98268bc1dd6192197b29a3917b9df2120c51b0"
+  url "https://github.com/seladb/PcapPlusPlus/archive/v22.05.tar.gz"
+  sha256 "5f299c4503bf5d3c29f82b8d876a19be7dea29c2aadcb52f2f3b394846c21da9"
   license "Unlicense"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcapplusplus"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "a0e2c703a569c8a89e7886f9a730843725feb7d22c52c020df77088ec83c3682"
+    sha256 cellar: :any_skip_relocation, mojave: "55cea2b50d689b895f4df701f9cd54d9da1574864b7c92b229c968f5ba423664"
   end
 
   uses_from_macos "libpcap"
