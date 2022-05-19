@@ -3,14 +3,14 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/8c/a9/c9694bf26c75c7d87160dd2e0af6fd857243fbe310bfe6d6a44156f61885/oci-cli-3.8.1.tar.gz"
-  sha256 "761d8920521618b53e9c67480c5558fe0a6f8c0a2073d8ca2472f20b32e5332a"
+  url "https://files.pythonhosted.org/packages/28/26/9545f447fdb6b4a5f9a826926f2e62e7e1ab1ce79158df9f197679f1b25d/oci-cli-3.9.0.tar.gz"
+  sha256 "47eb411512162d7e369681486910d6e1618c6d708a0635b5b82096b46dead7eb"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oci-cli"
-    sha256 cellar: :any, mojave: "7c312253fafb8324d7c145bcde494a4d8a9b02ac6622c4d29565d81dfb3c51fd"
+    sha256 cellar: :any, mojave: "2a7638556f095c600bd68cc03ff7f809e4fe234f3caee3f4905f810f998006b7"
   end
 
   depends_on "rust" => :build
@@ -53,8 +53,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/64/3e/a07372bd2bdf6e1e946cdc321f2c51575c6a43c767b82b9eb52047c7f61e/oci-2.66.0.tar.gz"
-    sha256 "8f25765bc5fbc8920ccf6fbb5e1d27b0fdb512e9b64449b71163dd52ea820f0c"
+    url "https://files.pythonhosted.org/packages/ef/cb/3c9432bf34005a6b58f63c4fb7c759b4aaf61f1a174a7bb4886f3b513c66/oci-2.67.0.tar.gz"
+    sha256 "a488c488d050c81427a5a777e1974dd98600a52b7ebf1e807ba7345dc5e1a61d"
   end
 
   resource "pycparser" do
