@@ -1,14 +1,14 @@
 class NewrelicCli < Formula
   desc "Command-line interface for New Relic"
   homepage "https://github.com/newrelic/newrelic-cli"
-  url "https://github.com/newrelic/newrelic-cli/archive/v0.46.4.tar.gz"
-  sha256 "c79ebde488250425d2aa74bdf846c077f9ae10b725efbbe6a6ffeb278eb1c2d1"
+  url "https://github.com/newrelic/newrelic-cli/archive/v0.48.2.tar.gz"
+  sha256 "ec0bdd284ccf9a611e5b9be40cf4cfc7cea7710caadc400815197e967069bc6d"
   license "Apache-2.0"
   head "https://github.com/newrelic/newrelic-cli.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newrelic-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "3b61e259407330694ea61d4980a3e481a4f9bbc81911041c63169849c32315e0"
+    sha256 cellar: :any_skip_relocation, mojave: "0c4603a85a4d1356361664215b4b9f73daf92049596d9f9cdad33642f8201daa"
   end
 
   depends_on "go" => :build
