@@ -9,11 +9,13 @@ class Networkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/networkit"
-    sha256 mojave: "77ce58ab15b2a213118abbe016fa05527721263aadf667ab9120652453372e30"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f390f1b6dffa8cc012b0d4d150a19e13813454e6a416801bce2f63d7c35c5fc7"
   end
 
   depends_on "cmake" => :build
-  depends_on "cython" => :build
+  depends_on "libcython" => :build
+  depends_on "ninja" => :build
   depends_on "tlx" => :build
 
   depends_on "libnetworkit"
@@ -26,7 +28,7 @@ class Networkit < Formula
     rpath_addons = Formula["libnetworkit"].opt_lib
 
     ENV.prepend_create_path "PYTHONPATH", libexec+"lib/python#{xy}/site-packages/"
-    ENV.append_path "PYTHONPATH", Formula["cython"].opt_libexec/"lib/python#{xy}/site-packages"
+    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexec/"lib/python#{xy}/site-packages"
     system Formula["python@3.9"].opt_bin/"python3", "setup.py", "build_ext",
           "--networkit-external-core",
           "--external-tlx=#{Formula["tlx"].opt_prefix}",
