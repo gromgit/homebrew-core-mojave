@@ -14,8 +14,8 @@ class Nwchem < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nwchem"
-    rebuild 2
-    sha256 cellar: :any, mojave: "4cf0206aa90981875cc5912fc23780cc3b4731458c6d062fbd7ea172899f72c1"
+    rebuild 3
+    sha256 cellar: :any, mojave: "4064fc1f4194f1ebcf1421ef187d21467acfbab62f134408d2a1ed292d8b9ceb"
   end
 
   depends_on "gcc" # for gfortran
@@ -23,6 +23,8 @@ class Nwchem < Formula
   depends_on "openblas"
   depends_on "python@3.10"
   depends_on "scalapack"
+
+  uses_from_macos "libxcrypt"
 
   # patches for compatibility with python@3.10
   # https://github.com/nwchemgit/nwchem/issues/271
@@ -34,6 +36,12 @@ class Nwchem < Formula
   patch do
     url "https://github.com/nwchemgit/nwchem/commit/cd0496c6bdd58cf2f1004e32cb39499a14c4c677.patch?full_index=1"
     sha256 "1ff3fdacdebb0f812f6f14c423053a12f2389b0208b8809f3ab401b066866ffc"
+  end
+
+  # patch for compatibility with ARM
+  patch do
+    url "https://github.com/nwchemgit/nwchem/commit/2a14c04f.patch?full_index=1"
+    sha256 "3a14bb5312861948a468a02a0a079a730e8d9db98d2f2758076f9cd649a6fc04"
   end
 
   def install
@@ -63,10 +71,11 @@ class Nwchem < Formula
       ENV["BLAS_SIZE"] = "4"
       ENV["SCALAPACK"] = "-L#{Formula["scalapack"].opt_prefix}/lib -lscalapack"
       ENV["USE_64TO32"] = "y"
+      os = OS.mac? ? "MACX64" : "LINUX64"
       system "make", "nwchem_config", "NWCHEM_MODULES=all python"
-      system "make", "NWCHEM_TARGET=MACX64", "USE_MPI=Y"
+      system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
 
-      bin.install "../bin/MACX64/nwchem"
+      bin.install "../bin/#{os}/nwchem"
       pkgshare.install "basis/libraries"
       pkgshare.install "nwpw/libraryps"
       pkgshare.install Dir["data/*"]
@@ -77,7 +86,7 @@ class Nwchem < Formula
     cp_r pkgshare/"QA", testpath
     cd "QA" do
       ENV["NWCHEM_TOP"] = pkgshare
-      ENV["NWCHEM_TARGET"] = "MACX64"
+      ENV["NWCHEM_TARGET"] = OS.mac? ? "MACX64" : "LINUX64"
       ENV["NWCHEM_EXECUTABLE"] = "#{bin}/nwchem"
       system "./runtests.mpi.unix", "procs", "0", "dft_he2+", "pyqa3", "prop_mep_gcube", "pspw", "tddft_h2o", "tce_n2"
     end
