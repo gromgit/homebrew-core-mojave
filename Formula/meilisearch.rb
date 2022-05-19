@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https://docs.meilisearch.com/"
-  url "https://github.com/meilisearch/meilisearch/archive/v0.26.1.tar.gz"
-  sha256 "d5df8df24967b8f68b11c03cd8d0efd65d7284733fd54c6df842b9f19516d4a4"
+  url "https://github.com/meilisearch/meilisearch/archive/v0.27.0.tar.gz"
+  sha256 "86c792dcf54e71c5a6608545c8c53ca2f2f6ea3a5d0478648c0ec34f106512ca"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Meilisearch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/meilisearch"
-    sha256 cellar: :any_skip_relocation, mojave: "525b2fcf33e1cc38edfa0699201f483cd136c7323c194ae295932def145da4ea"
+    sha256 cellar: :any_skip_relocation, mojave: "84bf45662f7320888dca383c6ddee37ccc8e2e1aeef3934bbfebbb7bd6e469aa"
   end
 
   depends_on "rust" => :build
