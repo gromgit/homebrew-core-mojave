@@ -2,14 +2,14 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https://github.com/kubernetes-sigs/kubebuilder"
   url "https://github.com/kubernetes-sigs/kubebuilder.git",
-      tag:      "v3.4.0",
-      revision: "75241ab9ff9457de77e902645792cee41ba29fed"
+      tag:      "v3.4.1",
+      revision: "d59d7882ce95ce5de10238e135ddff31d8ede026"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubebuilder"
-    sha256 cellar: :any_skip_relocation, mojave: "4d1489683e40a593aeb4644594f4cbf101fa805710876bdf5ecb827af81d9c83"
+    sha256 cellar: :any_skip_relocation, mojave: "d798cefa8bd35f9dcec5653af8e77d56d4cd9f6ff185e50a8d2c76be2e4f6d7d"
   end
 
   depends_on "git-lfs" => :build
