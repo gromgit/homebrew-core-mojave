@@ -1,8 +1,8 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.26-17/source/tarball/percona-server-8.0.26-17.tar.gz"
-  sha256 "b861ba44c83ed3a233d255fc04c3e3e6c0c3b204a375d3287ef4325834e13764"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.27-18/source/tarball/percona-server-8.0.27-18.tar.gz"
+  sha256 "91a7ad8fc0e3931f2d2bcb616bca8a55b6b7cac45f735aba4188c45edcf85da8"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class PerconaServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/percona-server"
-    sha256 mojave: "837a6d24a8af8d2b08ec9da0fe0eb224911bd3b815dcb4063ab74e001dbe104a"
+    sha256 mojave: "4ad5df052a94d9702498f8ce7e025b25ee03660ec140e75f4b259c99c4d438e1"
   end
 
   depends_on "cmake" => :build
@@ -32,6 +32,7 @@ class PerconaServer < Formula
 
   on_linux do
     depends_on "patchelf" => :build
+    depends_on "gcc"
     depends_on "readline"
 
     # Fix build with OpenLDAP 2.5+, which merged libldap_r into libldap
@@ -48,6 +49,11 @@ class PerconaServer < Formula
     cause "Wrong inlining with Clang 8.0, see MySQL Bug #86711"
   end
 
+  fails_with :gcc do
+    version "6"
+    cause "GCC 7.1 or newer is required"
+  end
+
   # https://github.com/percona/percona-server/blob/Percona-Server-#{version}/cmake/boost.cmake
   resource "boost" do
     url "https://boostorg.jfrog.io/artifactory/main/release/1.73.0/source/boost_1_73_0.tar.bz2"
@@ -61,14 +67,15 @@ class PerconaServer < Formula
     sha256 "6709edb2393000bd89acf2d86ad0876bde3b84f46884d3cba7463cd346234f6f"
   end
 
-  # Fix build on Monterey.
-  # Remove with the next version.
-  patch do
-    url "https://github.com/percona/percona-server/commit/e5b2df737987ce72d285b68fb802cf5b1a15f843.patch?full_index=1"
-    sha256 "6b529dc9e756d137429c36625aafb309298510c46705d0bef71b9265d53e6d80"
-  end
-
   def install
+    # Fix mysqlrouter_passwd RPATH to link to metadata_cache.so
+    inreplace "router/src/http/src/CMakeLists.txt",
+              "ADD_INSTALL_RPATH(mysqlrouter_passwd \"${ROUTER_INSTALL_RPATH}\")",
+              "\\0\nADD_INSTALL_RPATH(mysqlrouter_passwd \"${RPATH_ORIGIN}/../${ROUTER_INSTALL_PLUGINDIR}\")"
+
+    # Disable ABI checking
+    inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
+
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
       -DFORCE_INSOURCE_BUILD=1
