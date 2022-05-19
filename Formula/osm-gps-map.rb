@@ -8,8 +8,8 @@ class OsmGpsMap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm-gps-map"
-    rebuild 2
-    sha256 mojave: "05be0534acd379456b5bfcf2f8966a4eba5ab1e492b7ace2ffbf5bbaa44baca8"
+    rebuild 3
+    sha256 mojave: "ed0e2380edc47616d4f8bfe46b480e462ac29862bbb0999efca8ec7443698250"
   end
 
   head do
@@ -88,10 +88,8 @@ class OsmGpsMap < Formula
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
 
-    on_linux do
-      # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "./test"
   end
