@@ -5,9 +5,15 @@ class Minimap2 < Formula
   sha256 "2e3264300661cf1fce6adabffe6970ec59d46f3e8150dd40fa4501ff4f6c0dbc"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimap2"
-    sha256 cellar: :any_skip_relocation, mojave: "1a1f59a071800844c8aff224e4d5fa15c1725323658e0a7b3c1e06cce7008b3e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "52c98a07e4ed941c44cd99626c35e8fec412b970f01814a3c217afc66648c85f"
   end
 
   uses_from_macos "zlib"
