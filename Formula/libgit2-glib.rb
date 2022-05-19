@@ -4,6 +4,7 @@ class Libgit2Glib < Formula
   url "https://download.gnome.org/sources/libgit2-glib/1.0/libgit2-glib-1.0.0.1.tar.xz"
   sha256 "460a5d6936950ca08d2d8518bfc90c12bb187cf6e674de715f7055fc58102b57"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/GNOME/libgit2-glib.git", branch: "master"
 
   livecheck do
@@ -13,8 +14,7 @@ class Libgit2Glib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgit2-glib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3218c05187c02c557958d36d6d07bb0d6080a07097817f2ee432020a2db2ba4b"
+    sha256 cellar: :any, mojave: "a4f682ac1e34e6c2740d1bc0e4268167c92456991ace68391ad553374a6a9b4a"
   end
 
   depends_on "gobject-introspection" => :build
