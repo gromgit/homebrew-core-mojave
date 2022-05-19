@@ -1,9 +1,19 @@
 class Libgccjit < Formula
   desc "JIT library for the GNU compiler collection"
-
+  if Hardware::CPU.arm?
+    # Branch from the Darwin maintainer of GCC with Apple Silicon support,
+    # located at https://github.com/iains/gcc-darwin-arm64 and
+    # backported with his help to gcc-11 branch. Too big for a patch.
+    url "https://github.com/fxcoudert/gcc/archive/refs/tags/gcc-11.2.0-arm-20211124.tar.gz"
+    sha256 "d7f8af7a0d9159db2ee3c59ffb335025a3d42547784bee321d58f2b4712ca5fd"
+    version "11.3.0"
+  else
+    url "https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
+    sha256 "b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39"
+  end
   homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision 1
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   livecheck do
@@ -12,30 +22,7 @@ class Libgccjit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgccjit"
-    rebuild 4
-    sha256 mojave: "a896178c896d7f314c3f0443e39fb81b18e70ba32ec34e5d03e33000253cc5f3"
-  end
-  if Hardware::CPU.arm?
-    # Branch from the Darwin maintainer of GCC with Apple Silicon support,
-    # located at https://github.com/iains/gcc-darwin-arm64 and
-    # backported with his help to gcc-11 branch. Too big for a patch.
-    url "https://github.com/fxcoudert/gcc/archive/refs/tags/gcc-11.2.0-arm-20211124.tar.gz"
-    sha256 "d7f8af7a0d9159db2ee3c59ffb335025a3d42547784bee321d58f2b4712ca5fd"
-    version "11.2.0"
-  else
-    url "https://ftp.gnu.org/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
-    sha256 "d08edc536b54c372a1010ff6619dd274c0f1603aa49212ba20f7aa2cda36fa8b"
-
-    bottle do
-      sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
-    end
-
-    # Darwin 21 (Monterey) support
-    patch do
-      url "https://github.com/iains/gcc-darwin-arm64/commit/20f61faaed3b335d792e38892d826054d2ac9f15.patch?full_index=1"
-      sha256 "c0605179a856ca046d093c13cea4d2e024809ec2ad4bf3708543fc3d2e60504b"
-    end
+    sha256 mojave: "5a29be10591fa932321112c021d1de48296e61a9672d8057f620dc32c392faa4"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -47,11 +34,21 @@ class Libgccjit < Formula
   depends_on "isl"
   depends_on "libmpc"
   depends_on "mpfr"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
+
+  # Fix for https://gcc.gnu.org/bugzilla/show_bug.cgi?id=102992
+  # Working around a macOS Monterey bug
+  if MacOS.version >= :monterey && Hardware::CPU.arm?
+    patch do
+      url "https://gcc.gnu.org/git/?p=gcc.git;a=patch;h=fabe8cc41e9b01913e2016861237d1d99d7567bf"
+      sha256 "9d3c2c91917cdc37d11385bdeba005cd7fa89efdbdf7ca38f7de3f6fa8a8e51b"
+    end
+  end
 
   def install
     # GCC will suffer build errors if forced to use a particular linker.
@@ -61,7 +58,6 @@ class Libgccjit < Formula
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
 
     args = %W[
-      --build=#{cpu}-apple-darwin#{OS.kernel_version.major}
       --prefix=#{prefix}
       --libdir=#{lib}/gcc/#{version.major}
       --disable-nls
@@ -71,29 +67,39 @@ class Libgccjit < Formula
       --with-mpfr=#{Formula["mpfr"].opt_prefix}
       --with-mpc=#{Formula["libmpc"].opt_prefix}
       --with-isl=#{Formula["isl"].opt_prefix}
-      --with-system-zlib
+      --with-zstd=#{Formula["zstd"].opt_prefix}
       --with-pkgversion=#{pkgversion}
       --with-bugurl=#{tap.issues_url}
     ]
 
-    # Xcode 10 dropped 32-bit support
-    args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
+    if OS.mac?
+      args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
-    # Workaround for Xcode 12.5 bug on Intel
-    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=100340
-    args << "--without-build-config" if Hardware::CPU.intel? && DevelopmentTools.clang_build_version >= 1205
+      # Xcode 10 dropped 32-bit support
+      args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
 
-    # System headers may not be in /usr/include
-    sdk = MacOS.sdk_path_if_needed
-    if sdk
-      args << "--with-native-system-header-dir=/usr/include"
-      args << "--with-sysroot=#{sdk}"
+      # System headers may not be in /usr/include
+      sdk = MacOS.sdk_path_if_needed
+      if sdk
+        args << "--with-native-system-header-dir=/usr/include"
+        args << "--with-sysroot=#{sdk}"
+      end
+
+      # Use -headerpad_max_install_names in the build,
+      # otherwise updated load commands won't fit in the Mach-O header.
+      # This is needed because `gcc` avoids the superenv shim.
+      make_args = ["BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"]
+    else
+      # Fix cc1: error while loading shared libraries: libisl.so.15
+      args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV["LDFLAGS"]}"
+
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      args << "--disable-multilib"
+
+      # Change the default directory name for 64-bit libraries to `lib`
+      # https://stackoverflow.com/a/54038769
+      inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
     end
-
-    # Use -headerpad_max_install_names in the build,
-    # otherwise updated load commands won't fit in the Mach-O header.
-    # This is needed because `gcc` avoids the superenv shim.
-    make_args = ["BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"]
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
     mkdir "build-jit" do
