@@ -7,7 +7,8 @@ class Libgee < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgee"
-    sha256 cellar: :any, mojave: "85a9274c16d842618f3d569f30c153f8bd4541ca0562a07225ed53da9beeb871"
+    rebuild 1
+    sha256 cellar: :any, mojave: "53e186ca8b89fd8a6d693ac90e5eca9142abf9ca681f342b5b0e8b8dfbe5ebf9"
   end
 
   depends_on "gobject-introspection" => :build
@@ -52,9 +53,7 @@ class Libgee < Formula
       -lglib-2.0
       -lgobject-2.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
