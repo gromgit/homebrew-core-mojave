@@ -1,13 +1,13 @@
 class Observerward < Formula
   desc "Cross platform community web fingerprint identification tool"
   homepage "https://0x727.github.io/ObserverWard/"
-  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2022.4.28.tar.gz"
-  sha256 "19a1ce91157603ffd214915943a513c5aed09591157cb4e620f9797b88e8b257"
+  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2022.5.5.tar.gz"
+  sha256 "493da7c3cd0941f306cc5747ca177b238997945286dad7065a372a7baccbe23e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/observerward"
-    sha256 cellar: :any_skip_relocation, mojave: "0f2558b5e782af18e34b14983a23dff33c8bc60640173ac89ccf57e5447f6478"
+    sha256 cellar: :any_skip_relocation, mojave: "07210c962876b86252eba7db4e18ec5caccd06d72fb454dfcae8ffe241dedf07"
   end
 
   depends_on "rust" => :build
