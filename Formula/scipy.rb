@@ -8,10 +8,11 @@ class Scipy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scipy"
-    sha256 cellar: :any, mojave: "f84bd2cd0cffb1c04dec83b07177869672af37ee73e75ecc66e06f3e74eca3aa"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e1b1eedeb165482d157f6d42153714e5e810f1ff282ca6280f672d6285644d77"
   end
 
-  depends_on "cython" => :build
+  depends_on "libcython" => :build
   depends_on "pythran" => :build
   depends_on "swig" => :build
   depends_on "gcc" # for gfortran
@@ -42,7 +43,7 @@ class Scipy < Formula
     Pathname("site.cfg").write config
 
     site_packages = Language::Python.site_packages("python3")
-    ENV.prepend_create_path "PYTHONPATH", Formula["cython"].opt_libexec/site_packages
+    ENV.prepend_create_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
     ENV.prepend_create_path "PYTHONPATH", Formula["pythran"].opt_libexec/site_packages
     ENV.prepend_create_path "PYTHONPATH", Formula["numpy"].opt_prefix/site_packages
     ENV.prepend_create_path "PYTHONPATH", site_packages
