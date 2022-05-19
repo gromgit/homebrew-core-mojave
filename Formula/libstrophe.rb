@@ -1,15 +1,14 @@
 class Libstrophe < Formula
   desc "XMPP library for C"
   homepage "https://strophe.im/libstrophe/"
-  url "https://github.com/strophe/libstrophe/archive/0.11.0.tar.gz"
-  sha256 "090185bcf5800663e18340313410e3b6e4e742e065daac9e7cfa5dbb83dab8f5"
+  url "https://github.com/strophe/libstrophe/archive/0.12.0.tar.gz"
+  sha256 "f645819d8d93711c92454974dd9007c9b9e98ea0b59cb708dc626dd4c6b9d0a8"
   license any_of: ["GPL-3.0", "MIT"]
   head "https://github.com/strophe/libstrophe.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libstrophe"
-    rebuild 3
-    sha256 cellar: :any, mojave: "7168d8994114921d1fcf90e91153683a638bcfdcce14dc11425f50c6f946ef27"
+    sha256 cellar: :any, mojave: "05d002538f1e0966c911a112fcae8807acffe7648fb341b1dd27c2e3246b229a"
   end
 
   depends_on "autoconf" => :build
