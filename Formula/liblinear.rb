@@ -1,8 +1,8 @@
 class Liblinear < Formula
   desc "Library for large linear classification"
   homepage "https://www.csie.ntu.edu.tw/~cjlin/liblinear/"
-  url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.43.tar.gz"
-  sha256 "02bad43d745e2796f39a08ac9d117770e71939ef06b1ee7afc6ab7909e304807"
+  url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.44.tar.gz"
+  sha256 "45572b99d4eeffc3e8ad7b72c27370be867edf3523c396d8b278a2c873bfbb5c"
   license "BSD-3-Clause"
   head "https://github.com/cjlin1/liblinear.git", branch: "master"
 
@@ -11,10 +11,9 @@ class Liblinear < Formula
     regex(/href=.*?liblinear[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblinear"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ece97b8729f54aaf7e63b4ce04872d9e25a6f1f6b3526e15296f352c8b984eb1"
+    sha256 cellar: :any, mojave: "5bc6250a0f1322d79b121c68b8c5d17b43e6d42ed46189ad6da7cfa4f96c8f6c"
   end
 
   # Fix sonames
