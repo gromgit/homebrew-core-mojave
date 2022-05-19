@@ -12,7 +12,7 @@ class Liboqs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liboqs"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "423c94c05a8403192c18c528647dd883e75394ae835392af65aa95e918cc6dc8"
   end
 
