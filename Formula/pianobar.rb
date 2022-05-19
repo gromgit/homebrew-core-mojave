@@ -9,7 +9,8 @@ class Pianobar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pianobar"
-    sha256 cellar: :any, mojave: "d8d12fee8c917dcb347c107455d09b3cfdc20847dbd6128e760f2328ab232df2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5068eba6f82dc4d9ba0c1fd5837eeabe8cb38af30cc13832c6d91bc01381a113"
   end
 
   depends_on "pkg-config" => :build
@@ -36,10 +37,7 @@ class Pianobar < Formula
   end
 
   test do
-    on_linux do
-      # Errno::EIO: Input/output error @ io_fread - /dev/pts/0
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     require "pty"
     PTY.spawn(bin/"pianobar") do |stdout, stdin, _pid|
