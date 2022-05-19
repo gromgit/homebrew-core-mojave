@@ -12,7 +12,8 @@ class Pgroonga < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgroonga"
-    sha256 cellar: :any, mojave: "31290755883a851d9530b751be6c160ec888fa08eac1eedea103e3012fdc8eb4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f5a0f77144ce5e8fd3fd8804f29ce6147a0a8e5d28ce5d6dd7405abab6d15c4a"
   end
 
   depends_on "pkg-config" => :build
@@ -24,7 +25,14 @@ class Pgroonga < Formula
     mkdir "stage"
     system "make", "install", "DESTDIR=#{buildpath}/stage"
 
-    lib.install Dir["stage/**/lib/*"]
-    (share/"postgresql/extension").install Dir["stage/**/share/postgresql/extension/*"]
+    stage_path = File.join("stage", HOMEBREW_PREFIX)
+    lib.install (buildpath/stage_path/"lib").children
+    share.install (buildpath/stage_path/"share").children
+    include.install (buildpath/stage_path/"include").children
+  end
+
+  test do
+    expected = "PGroonga database management module"
+    assert_match expected, (share/"postgresql/extension/pgroonga_database.control").read
   end
 end
