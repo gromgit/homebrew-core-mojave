@@ -13,7 +13,8 @@ class Openttd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openttd"
-    sha256 cellar: :any, mojave: "72fcfe14d2b391f7744c968fe198fb1ec7b9105dbdcc81f50057a4de27519b48"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a5d8953a4516872ae230dc27a9442f8bc0f51a8e0ea7e6eee903042950655dcd"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +22,18 @@ class Openttd < Formula
   depends_on "lzo"
   depends_on macos: :high_sierra # needs C++17
   depends_on "xz"
+
+  on_linux do
+    depends_on "fluid-synth"
+    depends_on "fontconfig"
+    depends_on "freetype"
+    depends_on "gcc"
+    depends_on "mesa"
+    depends_on "mesa-glu"
+    depends_on "sdl2"
+  end
+
+  fails_with gcc: "5"
 
   resource "opengfx" do
     url "https://cdn.openttd.org/opengfx-releases/7.1/opengfx-7.1-all.zip"
@@ -38,18 +51,39 @@ class Openttd < Formula
   end
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      system "cpack || :"
+    # Disable CMake fixup_bundle to prevent copying dylibs
+    inreplace "cmake/PackageBundle.cmake", "fixup_bundle(", "# \\0"
+
+    args = std_cmake_args
+    unless OS.mac?
+      args << "-DCMAKE_INSTALL_BINDIR=bin"
+      args << "-DCMAKE_INSTALL_DATADIR=#{share}"
     end
 
-    app = "build/_CPack_Packages/amd64/Bundle/openttd-#{version}-macos-amd64/OpenTTD.app"
-    resources.each do |r|
-      (buildpath/"#{app}/Contents/Resources/baseset/#{r.name}").install r
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    if OS.mac?
+      cd "build" do
+        system "cpack || :"
+      end
+    else
+      system "cmake", "--install", "build"
     end
-    prefix.install app
-    bin.write_exec_script "#{prefix}/OpenTTD.app/Contents/MacOS/openttd"
+
+    arch = Hardware::CPU.arm? ? "arm64" : "amd64"
+    app = "build/_CPack_Packages/#{arch}/Bundle/openttd-#{version}-macos-#{arch}/OpenTTD.app"
+    resources.each do |r|
+      if OS.mac?
+        (buildpath/"#{app}/Contents/Resources/baseset/#{r.name}").install r
+      else
+        (share/"openttd/baseset"/r.name).install r
+      end
+    end
+
+    if OS.mac?
+      prefix.install app
+      bin.write_exec_script "#{prefix}/OpenTTD.app/Contents/MacOS/openttd"
+    end
   end
 
   test do
