@@ -15,15 +15,15 @@ class Libgusb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgusb"
-    rebuild 1
-    sha256 mojave: "ff6f42ff9518dd842693e25175f391ab5210161517d5202ed73ecbc6e0151f97"
+    rebuild 2
+    sha256 mojave: "1e8da6d42b419f5bd3ad8f5cc1550c11edca0d658615af723aa774eaedd008f8"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "vala" => :build
   depends_on "glib"
   depends_on "libusb"
@@ -70,9 +70,7 @@ class Libgusb < Formula
       -lusb-1.0
       -lgusb
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
