@@ -4,10 +4,11 @@ class LibgrapeLite < Formula
   url "https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "aafc8e5e9b122c4bde4370ee3f2ab8afb043f2a1547cacc062991ad420e3b9a4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgrape-lite"
-    sha256 mojave: "6d741c3607b5576260c5ab1c7fbba5bdfe6376054f67dd0446d44ef6fe00bf06"
+    sha256 cellar: :any, mojave: "12f2c5aee1d1cc8e9dad27b7bc7f2acf19a52f86e7436d408545ddc5f70791d9"
   end
 
   depends_on "cmake" => :build
