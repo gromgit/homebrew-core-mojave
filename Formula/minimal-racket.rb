@@ -16,7 +16,8 @@ class MinimalRacket < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimal-racket"
-    sha256 mojave: "cc948123ca1859d7cbc7b0b8be2faf051c6808f14a0bb33d059f3bcce3bd6f9a"
+    rebuild 1
+    sha256 mojave: "68ca4720e78426211f5a358b7e65639c2966b58baa30fd8e8c56f219939674fb"
   end
 
   depends_on "openssl@1.1"
@@ -50,6 +51,13 @@ class MinimalRacket < Formula
       system "make"
       system "make", "install"
     end
+  end
+
+  def post_install
+    # Run raco setup to make sure core libraries are properly compiled.
+    # Sometimes the mtimes of .rkt and .zo files are messed up after a fresh
+    # install, making Racket take 15s to start up because interpreting is slow.
+    system "#{bin}/raco", "setup"
   end
 
   def caveats
