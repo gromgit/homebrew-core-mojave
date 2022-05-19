@@ -1,14 +1,14 @@
 class NatsStreamingServer < Formula
   desc "Lightweight cloud messaging system"
   homepage "https://nats.io"
-  url "https://github.com/nats-io/nats-streaming-server/archive/v0.24.5.tar.gz"
-  sha256 "f648018ca85e4d2e9e53b2c632ff5435825e18ea1306e80c0fb0f59fadf999ae"
+  url "https://github.com/nats-io/nats-streaming-server/archive/v0.24.6.tar.gz"
+  sha256 "750e091f3473688a1b0c251513bf9beb7a12e3e1359d541b53381bd91e09b9be"
   license "Apache-2.0"
   head "https://github.com/nats-io/nats-streaming-server.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nats-streaming-server"
-    sha256 cellar: :any_skip_relocation, mojave: "dfd32b9a885515664dd3b9ce2b19f70c2049e7981628b7196c039acf69ca1d0d"
+    sha256 cellar: :any_skip_relocation, mojave: "653934adb127287b23d0241aa972fde56665ae74b9167c0926e6dad23b2ca07e"
   end
 
   depends_on "go" => :build
