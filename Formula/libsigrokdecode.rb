@@ -1,25 +1,20 @@
 class Libsigrokdecode < Formula
   desc "Drivers for logic analyzers and other supported devices"
   homepage "https://sigrok.org/"
+  url "https://sigrok.org/download/source/libsigrokdecode/libsigrokdecode-0.5.3.tar.gz"
+  sha256 "c50814aa6743cd8c4e88c84a0cdd8889d883c3be122289be90c63d7d67883fc0"
   license "GPL-3.0-or-later"
-
   head "git://sigrok.org/libsigrokdecode", branch: "master"
 
-  stable do
-    url "git://sigrok.org/libsigrokdecode",
-        tag:      "libsigrokdecode-0.5.3",
-        revision: "97991a3919da6a07c4c87308ae66fb441bd512e3"
-  end
-
   livecheck do
-    url :stable
-    regex(/^libsigrokdecode-(\d+(?:\.\d+)+)$/i)
+    url "https://sigrok.org/wiki/Downloads"
+    regex(/href=.*?libsigrokdecode[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsigrokdecode"
-    rebuild 3
-    sha256 mojave: "c7d1ac2a8216a5f770cd0db83882042b1d56dde1c1763beda24ab0afb76c6a3c"
+    rebuild 4
+    sha256 mojave: "cf534aaa502fb4dc8550b7982457c3530fabce35f4b77cc4cd27ec41cdb0b3e8"
   end
 
   depends_on "autoconf" => :build
@@ -43,7 +38,12 @@ class Libsigrokdecode < Formula
       s.sub!(/^(SR_PKG_CHECK\(\[python3\], \[SRD_PKGLIBS\],)\n.*$/, "\\1 [python-#{py_version}-embed])")
     end
 
-    system "./autogen.sh"
+    if build.head?
+      system "./autogen.sh"
+    else
+      system "autoreconf", "-fiv"
+    end
+
     mkdir "build" do
       system "../configure", *std_configure_args, "PYTHON3=python#{py_version}"
       system "make", "install"
