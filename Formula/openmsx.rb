@@ -14,8 +14,8 @@ class Openmsx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openmsx"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6deed251380c5875e969e3cbf5982d5d00ecd6a2736d9ee35e217d551a1f6ae4"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a73ac010a7b8fe8a53b802d6dbf242b62ac159f85edf9a254ab020a74fe8b53e"
   end
 
   depends_on "python@3.10" => :build
@@ -28,11 +28,15 @@ class Openmsx < Formula
   depends_on "sdl2_ttf"
   depends_on "theora"
 
+  uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "gcc"
   end
+
+  fails_with gcc: "5"
 
   def install
     # Hardcode prefix
@@ -40,7 +44,7 @@ class Openmsx < Formula
     inreplace "build/probe.py", "/usr/local", HOMEBREW_PREFIX
 
     # Help finding Tcl (https://github.com/openMSX/openMSX/issues/1082)
-    ENV["TCL_CONFIG"] = "#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework" if OS.mac?
+    ENV["TCL_CONFIG"] = OS.mac? ? MacOS.sdk_path/"System/Library/Frameworks/Tcl.framework" : Formula["tcl-tk"].lib
 
     system "./configure"
     system "make"
