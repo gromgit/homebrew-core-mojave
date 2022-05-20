@@ -6,11 +6,12 @@ class Platformio < Formula
   url "https://files.pythonhosted.org/packages/9d/e6/d369eada663ba901e5a9d6783b160ca546515b112b06bbb42851792f3353/platformio-5.2.5.tar.gz"
   sha256 "aa0d1ff8a17ac1952eb45d37a84d4aa6e5d1aa65098bd1525db34be83c42c4ae"
   license "Apache-2.0"
+  head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/platformio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "78c7d7124d3b75c3210b94f15c847e8a600ba89d5a15f010177e6e8a7ef3c1bd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "cb18dbfc2c2167420890a5f9544505e7d90ffd5cf1f66bf13c2f5a833770acb5"
   end
 
   depends_on "python-tabulate"
