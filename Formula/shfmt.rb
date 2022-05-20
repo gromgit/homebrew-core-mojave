@@ -1,15 +1,14 @@
 class Shfmt < Formula
   desc "Autoformat shell script source code"
   homepage "https://github.com/mvdan/sh"
-  url "https://github.com/mvdan/sh/archive/v3.4.3.tar.gz"
-  sha256 "8bfb7cc980164bfeeedd2f8866e6af23c31a4720965601a5b777a14783dfe031"
+  url "https://github.com/mvdan/sh/archive/v3.5.0.tar.gz"
+  sha256 "d5a050d19df33b5c40939f49859ef118b4f9c0476f5b1172db2aaa7979c97cee"
   license "BSD-3-Clause"
   head "https://github.com/mvdan/sh.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shfmt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "af7a00a97d9cfb56f35c631f5d2f96db425060037df4cc85e8cb1155435a2cb2"
+    sha256 cellar: :any_skip_relocation, mojave: "c4b6c58d0604eb15936912769b259489145bbbb384780651acbfbe5a8c4c5f0f"
   end
 
   depends_on "go" => :build
