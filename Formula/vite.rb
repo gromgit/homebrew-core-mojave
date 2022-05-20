@@ -3,13 +3,13 @@ require "language/node"
 class Vite < Formula
   desc "Next generation frontend tooling. It's fast!"
   homepage "https://vitejs.dev/"
-  url "https://registry.npmjs.org/vite/-/vite-2.9.7.tgz"
-  sha256 "3117b478be9a66bbb4f7375a27357fef3fdebaad1e341b7bc57a45753fef8c86"
+  url "https://registry.npmjs.org/vite/-/vite-2.9.9.tgz"
+  sha256 "85984e9d583ba45f624973d7b921607b0ac061b6675f80893c51e39699cfafc0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vite"
-    sha256 cellar: :any_skip_relocation, mojave: "bfcd2a89318c323af4e26e911c245d38bf649a799661afa5343c55a91a6e7c49"
+    sha256 cellar: :any_skip_relocation, mojave: "9f105e98ec2a84ee24a28948ae29d244a693553843ab897c06d3f775c1d3b152"
   end
 
   depends_on "node"
