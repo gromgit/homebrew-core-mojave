@@ -1,8 +1,8 @@
 class Unison < Formula
   desc "File synchronization tool for OSX"
   homepage "https://www.cis.upenn.edu/~bcpierce/unison/"
-  url "https://github.com/bcpierce00/unison/archive/v2.52.0.tar.gz"
-  sha256 "a11389971212915328fe69101c92737b17664595c4318ebcb8da367e5ba63540"
+  url "https://github.com/bcpierce00/unison/archive/v2.52.1.tar.gz"
+  sha256 "ff7d920e1b4ec0872df764130b82a515f6f21a361f31a67b39c3e3ea12bfda80"
   license "GPL-3.0-or-later"
   head "https://github.com/bcpierce00/unison.git", branch: "master"
 
@@ -15,7 +15,7 @@ class Unison < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unison"
-    sha256 cellar: :any_skip_relocation, mojave: "f766c5086ddc9eb3fca774ebb8232c17ac92aff526ff7773e73a3ebb4f2687a6"
+    sha256 cellar: :any_skip_relocation, mojave: "64195c69bf995fb8755d2c3ca9c0352c8d2991d55a76e09b5cfeac928f166abb"
   end
 
   depends_on "ocaml" => :build
