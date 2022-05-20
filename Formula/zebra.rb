@@ -4,7 +4,7 @@ class Zebra < Formula
   url "https://ftp.indexdata.com/pub/zebra/idzebra-2.2.3.tar.gz"
   sha256 "85ade449d161d97df47d4a8910a53a5ea3bd5e3598b6189d86fc8986a8effea4"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.indexdata.com/pub/zebra/"
@@ -13,7 +13,7 @@ class Zebra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zebra"
-    sha256 mojave: "c2257885c6e5167463f901e55a433daacba57019b4d6f40bc8d14272da551683"
+    sha256 mojave: "f98218be6867b71fb2d215fbf960b92209819e831571414bd3fbffaf1339b5f1"
   end
 
   depends_on "icu4c"
@@ -21,6 +21,7 @@ class Zebra < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "expat"
+  uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
