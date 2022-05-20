@@ -8,7 +8,8 @@ class Qcli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qcli"
-    sha256 cellar: :any, mojave: "11abe890b53b57dedcecd7947c321365db1d73e13ca113dd453e877d45006f55"
+    rebuild 1
+    sha256 cellar: :any, mojave: "17c33920c8a068d3e4d1f50677f12252f46e0b8842d8e53ed57f26ed6c81670e"
   end
 
   depends_on "pkg-config" => :build
