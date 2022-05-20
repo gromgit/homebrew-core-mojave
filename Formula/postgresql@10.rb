@@ -1,10 +1,9 @@
 class PostgresqlAT10 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v10.20/postgresql-10.20.tar.bz2"
-  sha256 "87de16d59bcfe42fa605c312c59be5e294e8a3e6acb655dd7ad47cbb930a659f"
+  url "https://ftp.postgresql.org/pub/source/v10.21/postgresql-10.21.tar.bz2"
+  sha256 "d32198856d52a9a6f5d50642ef86687ac058bd6efca5c9ed57be7808496f45d1"
   license "PostgreSQL"
-  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -13,7 +12,7 @@ class PostgresqlAT10 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@10"
-    sha256 mojave: "d98c6b4e7be55e87474851d342c15b12315fb4472ae75a3239e66f647735a25c"
+    sha256 mojave: "34c512e3806cd572bb817301d3e85731f59eb1973cd211f58ee44430e00eb244"
   end
 
   keg_only :versioned_formula
