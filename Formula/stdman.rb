@@ -9,7 +9,8 @@ class Stdman < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stdman"
-    sha256 cellar: :any_skip_relocation, mojave: "4aaf0feb8cc42f571b96c6d84b991a993a3007a419c449a4bb1d9d3436ffcb89"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "020351e0f4461d8ce16a8695939016aa506cc4ff3c925d6c3b77b3d2ddbf1b57"
   end
 
   on_linux do
@@ -22,6 +23,7 @@ class Stdman < Formula
   end
 
   test do
-    system "man", "-w", "std::string"
+    man = OS.mac? ? "man" : "gman"
+    system man, "-w", "std::string"
   end
 end
