@@ -1,13 +1,13 @@
 class Xauth < Formula
   desc "X.Org Applications: xauth"
   homepage "https://www.x.org/"
-  url "https://www.x.org/pub/individual/app/xauth-1.1.1.tar.bz2"
-  sha256 "164ea0a29137b284a47b886ef2affcb0a74733bf3aad04f9b106b1a6c82ebd92"
+  url "https://www.x.org/pub/individual/app/xauth-1.1.2.tar.xz"
+  sha256 "78ba6afd19536ced1dddb3276cba6e9555a211b468a06f95f6a97c62ff8ee200"
   license "MIT-open-group"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xauth"
-    sha256 cellar: :any, mojave: "ada651e36c51e44d58bba99a9aaa93c874d8eb4bb2d98cfec748c6cf6662e05c"
+    sha256 cellar: :any, mojave: "e2861fe55048bb984b96f5f628b4729b05f7a05580faf368c1bcaba9d085fe29"
   end
 
   depends_on "pkg-config" => :build
