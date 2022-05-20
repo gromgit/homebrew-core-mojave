@@ -10,10 +10,11 @@ class TrezorAgent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trezor-agent"
-    rebuild 2
-    sha256 cellar: :any, mojave: "ef606a05821cd8603302003e1d11c48b8edd90ef776ea9af1325cf82f9074713"
+    rebuild 3
+    sha256 cellar: :any, mojave: "a653b0fc0c3ec9c1365dd25b1048eed96433dd68e3db6ca5d724c3e1b4e9fdb9"
   end
 
+  depends_on "rust" => :build # python-daemon resource depends on cryptography
   depends_on "libusb"
   depends_on "pillow"
   depends_on "python@3.9"
@@ -207,6 +208,7 @@ class TrezorAgent < Formula
   end
 
   def install
+    ENV.append "CFLAGS", "-I#{Formula["libusb"].include}/libusb-1.0"
     virtualenv_install_with_resources
   end
 
