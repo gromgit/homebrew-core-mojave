@@ -1,9 +1,9 @@
 class Sqldiff < Formula
   desc "Displays the differences between SQLite databases"
   homepage "https://www.sqlite.org/sqldiff.html"
-  url "https://sqlite.org/2022/sqlite-src-3380300.zip"
-  version "3.38.3"
-  sha256 "a104d493e084006bd74ff1ff7ac2eb2b387c7c0a3b63ba6fea2fafb4118313af"
+  url "https://sqlite.org/2022/sqlite-src-3380500.zip"
+  version "3.38.5"
+  sha256 "6503bb59e39ec8663083696940ec818cd5555196e6ca543d4029440cca7b00d9"
   license "blessing"
 
   livecheck do
@@ -12,7 +12,7 @@ class Sqldiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqldiff"
-    sha256 cellar: :any_skip_relocation, mojave: "b4ace33c1f783959fa6eab9ad27a35adce5e5a349c80cd677d01a974d3c759fc"
+    sha256 cellar: :any_skip_relocation, mojave: "73f1bbd19db42c471a94501f8c13f48be7c2859c0d6d1daa5a1552cb173848c3"
   end
 
   uses_from_macos "tcl-tk" => :build
