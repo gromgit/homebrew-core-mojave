@@ -13,7 +13,8 @@ class Vice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vice"
-    sha256 mojave: "fa59670a4bdcc970a4f4a37d19e046f0467911513fe52b14420b393a9ee6f89e"
+    rebuild 1
+    sha256 mojave: "0e17b289a9e1909240829ffedd2e931306d5b391fa0b15aafba9fa6156f3c34c"
   end
 
   depends_on "autoconf" => :build
@@ -25,7 +26,7 @@ class Vice < Formula
   depends_on "yasm" => :build
 
   depends_on "adwaita-icon-theme"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@4"
   depends_on "flac"
   depends_on "giflib"
   depends_on "glew"
@@ -36,6 +37,8 @@ class Vice < Formula
   depends_on "libpng"
   depends_on "librsvg"
   depends_on "libvorbis"
+
+  uses_from_macos "flex" => :build
 
   def install
     configure_flags = %W[
