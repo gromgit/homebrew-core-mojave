@@ -3,14 +3,14 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://files.pythonhosted.org/packages/19/f3/f23a5412cc1dbf3f7190d7674c9e1b30f1cd0ede442c63462ff80ed8484f/xonsh-0.12.2.tar.gz"
-  sha256 "0876164a54f95f0bcf574236850c0880397238274cc4de31d89086f086dbeb09"
+  url "https://files.pythonhosted.org/packages/21/a3/6b13fe53a102edbcde11a8519cc8963afc2156ec1fdefdbc4b0f3a389a7b/xonsh-0.12.4.tar.gz"
+  sha256 "a3d394db471097762ecbdedcd35686efd1aac3b5885f614501403f6d09628a76"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xonsh"
-    sha256 cellar: :any_skip_relocation, mojave: "368397a6bdfc7c782bb06459f6d73388f1ecb66e0a37b738f482914f95032b52"
+    sha256 cellar: :any_skip_relocation, mojave: "87cdb08ef78285aab2b6019e179cef2126ce506051898a1833f68423254a2944"
   end
 
   depends_on "python@3.10"
