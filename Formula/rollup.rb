@@ -3,13 +3,13 @@ require "language/node"
 class Rollup < Formula
   desc "Next-generation ES module bundler"
   homepage "https://rollupjs.org/"
-  url "https://registry.npmjs.org/rollup/-/rollup-2.71.1.tgz"
-  sha256 "84800c02a4822216cff4435c8625d2453a91a09d8f780b3ec26591d7b0d27cfa"
+  url "https://registry.npmjs.org/rollup/-/rollup-2.73.0.tgz"
+  sha256 "00b4a46559ec952e898c65cb1fda06274acf0747e40b05512aeb733262bf2686"
   license all_of: ["ISC", "MIT"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rollup"
-    sha256 cellar: :any_skip_relocation, mojave: "c2b9724962826be09e4060ba1a406db17f98f889318a5c52f1dccc173c184b04"
+    sha256 cellar: :any_skip_relocation, mojave: "08a84ec0abe8212dc615fb00169fd8ae78335c05b901cb311e4a1e79ac98e95c"
   end
 
   depends_on "node"
