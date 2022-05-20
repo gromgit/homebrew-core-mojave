@@ -8,7 +8,8 @@ class Pushpin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pushpin"
-    sha256 mojave: "b9f9cb90c6aa56e9556b533fedb7dbb01feef711615c9cc02cd95bae70f6a58b"
+    rebuild 1
+    sha256 mojave: "36c5ebfddaba4634d696f8c1a0c777d0dade154620e142a6d59337bdc6f48be1"
   end
 
   depends_on "pkg-config" => :build
@@ -19,6 +20,12 @@ class Pushpin < Formula
   depends_on "qt@5"
   depends_on "zeromq"
   depends_on "zurl"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     args = *std_configure_args + ["--configdir=#{etc}",
