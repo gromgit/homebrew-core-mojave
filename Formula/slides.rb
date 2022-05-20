@@ -8,7 +8,8 @@ class Slides < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/slides"
-    sha256 cellar: :any_skip_relocation, mojave: "40ecd09db52c6c6610478504f4debc262d774f68bbe1bd87c46f16cb825f4c97"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "411b2eac51f1352437d4bf2f348a9a6107490cc8c787fb354df69fea9b662801"
   end
 
   depends_on "go" => :build
@@ -36,6 +37,10 @@ class Slides < Formula
     r, _, pid = PTY.spawn "#{bin}/slides test.md"
     sleep 1
     Process.kill("TERM", pid)
-    assert_match(/\e\[/, r.read)
+    begin
+      assert_match(/\e\[/, r.read)
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
   end
 end
