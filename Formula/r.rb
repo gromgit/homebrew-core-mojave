@@ -1,8 +1,8 @@
 class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
-  url "https://cran.r-project.org/src/base/R-4/R-4.1.3.tar.gz"
-  sha256 "15ff5b333c61094060b2a52e9c1d8ec55cc42dd029e39ca22abdaa909526fed6"
+  url "https://cran.r-project.org/src/base/R-4/R-4.2.0.tar.gz"
+  sha256 "38eab7719b7ad095388f06aa090c5a2b202791945de60d3e2bb0eab1f5097488"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class R < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/r"
-    sha256 mojave: "7c05007a592f4859785c22d2583a495f015f4f4fd780f2df2a4c12492bb814b2"
+    sha256 mojave: "bc6ce441b3b6f758687f78edee57b4dc9fa06b9ceabc9cb49d9744dcaada458e"
   end
 
   depends_on "pkg-config" => :build
@@ -56,6 +56,10 @@ class R < Formula
       "--enable-R-shlib",
       "--disable-java",
       "--with-cairo",
+      # This isn't necessary to build R, but it's saved in Makeconf
+      # and helps CRAN packages find gfortran when Homebrew may not be
+      # in PATH (e.g. under RStudio, launched from Finder)
+      "FC=#{Formula["gcc"].opt_bin}/gfortran",
     ]
 
     if OS.mac?
