@@ -2,8 +2,8 @@ class Wabt < Formula
   desc "Web Assembly Binary Toolkit"
   homepage "https://github.com/WebAssembly/wabt"
   url "https://github.com/WebAssembly/wabt.git",
-      tag:      "1.0.27",
-      revision: "3e8207aabe969098d2b4941142a1973008c63033"
+      tag:      "1.0.29",
+      revision: "c32fa597218dbe2c25b43a9837a8475b493ddb71"
   license "Apache-2.0"
 
   livecheck do
@@ -13,8 +13,7 @@ class Wabt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wabt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "928f95b106eb0999aa0c180e5c6a237abce46a594fa19fc77f830f4f37558a0c"
+    sha256 cellar: :any_skip_relocation, mojave: "e07c334eed7f27ea43d16090afdf660afc0158c5916c78557f703d6888a8aa82"
   end
 
   depends_on "cmake" => :build
