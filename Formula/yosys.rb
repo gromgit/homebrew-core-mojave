@@ -1,14 +1,14 @@
 class Yosys < Formula
   desc "Framework for Verilog RTL synthesis"
   homepage "https://yosyshq.net/yosys/"
-  url "https://github.com/YosysHQ/yosys/archive/yosys-0.16.tar.gz"
-  sha256 "c7a161e5f567b853a18be8417b60d31ce77804994dafc93306b897ddc335aa3c"
+  url "https://github.com/YosysHQ/yosys/archive/yosys-0.17.tar.gz"
+  sha256 "37db450d08884a7c411f44ddf639284967ed1a39e11cd6b78d816186113d0173"
   license "ISC"
   head "https://github.com/YosysHQ/yosys.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yosys"
-    sha256 mojave: "1796d4ccc70fe99a66af3b9fa17781b8c697ebc2ab91ca258f820526b8fce76b"
+    sha256 mojave: "868bf4e59e0533180ba286abb7c002f4ec5655826e64f9b9e318a02446759d29"
   end
 
   depends_on "bison" => :build
