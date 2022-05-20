@@ -8,7 +8,8 @@ class Pioneer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pioneer"
-    sha256 mojave: "62ad5e94b7680c3283c4e9931080d9fa571e3c73f74d17959bbec56a99de33e5"
+    rebuild 1
+    sha256 mojave: "798ba97577322801e89705af97a2fd9e459edfe4be819ca9e56ec0abc0542a78"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +22,12 @@ class Pioneer < Formula
   depends_on "libvorbis"
   depends_on "sdl2"
   depends_on "sdl2_image"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     ENV.cxx11
