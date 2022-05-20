@@ -1,8 +1,8 @@
 class X3270 < Formula
   desc "IBM 3270 terminal emulator for the X Window System and Windows"
   homepage "http://x3270.bgp.nu/"
-  url "http://x3270.bgp.nu/download/04.01/suite3270-4.1ga13-src.tgz"
-  sha256 "31b256f018099a613c4abc1836f72d00cd18def9df2486ce0ab01130bf9ca88e"
+  url "http://x3270.bgp.nu/download/04.02/suite3270-4.2ga4-src.tgz"
+  sha256 "6a89ebdc7817bc204f79ebcdc6b5e7fef8c19aedfbc80284fedc647caa086790"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class X3270 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x3270"
-    sha256 mojave: "c2c3f6530eef2cd1f20cc2f96a9b8e0feb4ebda5387fcff97471896d0eb41595"
+    sha256 mojave: "074203a76970b77bf54ad15cf5541d3121c08e61c80a72c283112683d2267083"
   end
 
   depends_on "readline"
