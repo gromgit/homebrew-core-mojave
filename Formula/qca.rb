@@ -14,7 +14,8 @@ class Qca < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qca"
-    sha256 cellar: :any, mojave: "2b5d51c71e1b04745f9b33275656ff884db69ba4f9249ab47716c555525fad4a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f5f8e2578f3be5cd243d5443f5ada05860c5492eec75ec8fb11172e9f723ef5c"
   end
 
   depends_on "cmake" => :build
@@ -26,6 +27,12 @@ class Qca < Formula
   depends_on "openssl@1.1"
   depends_on "pkcs11-helper"
   depends_on "qt@5"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     args = std_cmake_args
