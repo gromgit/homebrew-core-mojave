@@ -4,8 +4,8 @@ class Podman < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/containers/podman/archive/v4.0.3.tar.gz"
-    sha256 "e3b53fc9142d4f2dc085f17a377d92ffb8bfe7756c4f47b8128b38bcc3540cbc"
+    url "https://github.com/containers/podman/archive/v4.1.0.tar.gz"
+    sha256 "f814e12a7311d486c1ccdc4eb021bc6dd24499569de7a572e436342876f70e95"
     resource "gvproxy" do
       url "https://github.com/containers/gvisor-tap-vsock/archive/v0.3.0.tar.gz"
       sha256 "6ca454ae73fce3574fa2b615e6c923ee526064d0dc2bcf8dab3cca57e9678035"
@@ -14,7 +14,7 @@ class Podman < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/podman"
-    sha256 cellar: :any_skip_relocation, mojave: "3b6e6713af450a3a5cbaeba90baaa1aea85d4cd976986c0c8ceab0f32d95f4b2"
+    sha256 cellar: :any_skip_relocation, mojave: "140b197c7e9b2d6c2f1f1f7a8f9c52f9258cdcba549114ec7e9134b7f562622e"
   end
 
   head do
