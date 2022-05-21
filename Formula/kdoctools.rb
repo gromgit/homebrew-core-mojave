@@ -1,8 +1,8 @@
 class Kdoctools < Formula
   desc "Create documentation from DocBook"
   homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.90/kdoctools-5.90.0.tar.xz"
-  sha256 "1a74ff1d5ac8c0639ff8a3430f5226480844119010605f911ed7a2ca684d4ad0"
+  url "https://download.kde.org/stable/frameworks/5.93/kdoctools-5.93.0.tar.xz"
+  sha256 "25e83ff151c53667b94e25a5c41993796164683a43913820a5651f3610b65d5c"
   license all_of: [
     "BSD-3-Clause",
     "GPL-2.0-or-later",
@@ -20,7 +20,7 @@ class Kdoctools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kdoctools"
-    sha256 mojave: "9c61f201bb5019014ac0d38b9f1319e1d140330239c3ed0acd81a3c0a8fd2279"
+    sha256 cellar: :any, mojave: "be6fe39f8d58eff14f9a07f682d8473f1cec82e6c2c129e33870f795872ccc53"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -35,6 +35,12 @@ class Kdoctools < Formula
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "perl"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   resource "URI::Escape" do
     url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz"
