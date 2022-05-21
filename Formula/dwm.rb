@@ -13,6 +13,7 @@ class Dwm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dwm"
+    rebuild 1
     sha256 cellar: :any, mojave: "42888d31314c5feba35ef7e4940b523d64eff1fb8c5f42479fe1b8b10fa689d2"
   end
 
