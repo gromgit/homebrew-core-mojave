@@ -1,8 +1,8 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https://www.inspircd.org/"
-  url "https://github.com/inspircd/inspircd/archive/v3.12.0.tar.gz"
-  sha256 "3503cd7e68764819e9d0e2a7f301bb19899a1a3633d4653d877651dc35278d16"
+  url "https://github.com/inspircd/inspircd/archive/v3.13.0.tar.gz"
+  sha256 "0a4534114f5db1602c53ca4cfbb5ad623b9f990737d8c8f85890d8de47165729"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Inspircd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inspircd"
-    sha256 mojave: "0137193dda0c172691dd9a31a2a6021e64ca3bf0ab083911a7f087ecc60b0848"
+    sha256 mojave: "25882555e10f18f24e9db664dc35fa179b28a74918041789a6d6e9fa7942c42e"
   end
 
   depends_on "pkg-config" => :build
