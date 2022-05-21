@@ -8,8 +8,8 @@ class Libgweather < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgweather"
-    rebuild 1
-    sha256 mojave: "718d894b962567ce38c763c57d7f689a88bfc5c7d49f270841e0294e14bf26a1"
+    rebuild 2
+    sha256 mojave: "7b416505c788cf1e44f011eeb4aa4abb809e970a3890238727d6929054c24e05"
   end
 
   depends_on "gobject-introspection" => :build
@@ -101,9 +101,7 @@ class Libgweather < Formula
       -lpango-1.0
       -lpangocairo-1.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE=1", "test.c", "-o", "test", *flags
     system "./test"
   end
