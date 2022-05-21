@@ -8,8 +8,8 @@ class Gtranslator < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtranslator"
-    rebuild 1
-    sha256 mojave: "f259ea2dc38f92d37a8291770bbb733f054db5e676e6e84fbefbf90f114c58d8"
+    rebuild 2
+    sha256 mojave: "0627ee5e2d72fea046b7182f5bf59783b20612dd4186ec9d60da1679c12dced0"
   end
 
   depends_on "meson" => :build
@@ -27,6 +27,12 @@ class Gtranslator < Formula
   depends_on "libgda"
   depends_on "libhandy"
   depends_on "libsoup@2"
+
+  # Apply upstream commit to fix build with meson. Remove with next release.
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gtranslator/-/commit/7ac572cc8c8c37ca3826ecf0d395edd3c38e8e22.diff"
+    sha256 "cc93ba73ab5e010171fa21d5e345a2b4f69773bc786d07952181f86d1b66f368"
+  end
 
   def install
     # stop meson_post_install.py from doing what needs to be done in the post_install step
