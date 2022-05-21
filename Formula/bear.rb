@@ -4,12 +4,12 @@ class Bear < Formula
   url "https://github.com/rizsotto/Bear/archive/3.0.19.tar.gz"
   sha256 "2fcfe2c6e029182cfc54ed26b3505c0ef12b0f43df03fb587f335afdc2ca9431"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bear"
-    sha256 mojave: "e7af4e37ff288d87c8877095438376ea9fe0803898dc02d86c346893c53ede79"
+    sha256 mojave: "821110f03f3a0950bbd7e634f4c8ad37bbf6d5ef3051825aec7e90bbe5b7787f"
   end
 
   depends_on "cmake" => :build
