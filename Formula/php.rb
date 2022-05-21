@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.1.5.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.5.tar.xz"
-  sha256 "7647734b4dcecd56b7e4bd0bc55e54322fa3518299abcdc68eb557a7464a2e8a"
+  url "https://www.php.net/distributions/php-8.1.6.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.1.6.tar.xz"
+  sha256 "da38d65bb0d5dd56f711cd478204f2b62a74a2c2b0d2d523a78d6eb865b2364c"
   license "PHP-3.01"
 
   livecheck do
@@ -14,7 +14,7 @@ class Php < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php"
-    sha256 mojave: "41734bced766afec04d57626b95c5ea3ad313f16be784041255be9e53313df38"
+    sha256 mojave: "cd1442b20a5760a4cf0c104076ccd6b2ed2df63dc9ea233a0fab0f5117aa3079"
   end
 
   head do
@@ -249,6 +249,7 @@ class Php < Formula
 
     # Custom location for extensions installed via pecl
     pecl_path = HOMEBREW_PREFIX/"lib/php/pecl"
+    pecl_path.mkpath
     ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
     extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
