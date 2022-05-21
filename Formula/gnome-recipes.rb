@@ -8,8 +8,8 @@ class GnomeRecipes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnome-recipes"
-    rebuild 1
-    sha256 mojave: "fe7bce6ce822915bb5cf0d4294d47247e21ada07a06af81cf569a618279a0cc7"
+    rebuild 2
+    sha256 mojave: "a91c04c95b077bc96d708ee120f6ee0c9bd102d4aa6c296b74d759d0a5db95da"
   end
 
   depends_on "itstool" => :build
@@ -48,6 +48,12 @@ class GnomeRecipes < Formula
     end
 
     ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
+
+    # Add RPATH to libexec in goa-1.0.pc on Linux.
+    unless OS.mac?
+      inreplace libexec/"lib/pkgconfig/goa-1.0.pc", "-L${libdir}",
+                "-Wl,-rpath,${libdir} -L${libdir}"
+    end
 
     # BSD tar does not support the required options
     inreplace "src/gr-recipe-store.c", "argv[0] = \"tar\";", "argv[0] = \"gtar\";"
