@@ -1,8 +1,8 @@
 class Gtkmm4 < Formula
   desc "C++ interfaces for GTK+ and GNOME"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/gtkmm/4.6/gtkmm-4.6.0.tar.xz"
-  sha256 "1353a09093cb571ef5ac05d93d200baf132ad604b5f4940777656e1505814c1f"
+  url "https://download.gnome.org/sources/gtkmm/4.6/gtkmm-4.6.1.tar.xz"
+  sha256 "0d5efeca9ec64fdd530bb8226c6310ac99549b3dd9604d6e367639791af3d1e0"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Gtkmm4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtkmm4"
-    sha256 cellar: :any, mojave: "16efdcce80b95a3c16335987a751b753ce750b30721d1c92c85e83e740705a4d"
+    sha256 cellar: :any, mojave: "ffaa39ed2f1d706be270fe0907e1366f94b09b33d7a686f9d1d39d41ba273a38"
   end
 
   depends_on "meson" => :build
@@ -21,6 +21,12 @@ class Gtkmm4 < Formula
   depends_on "cairomm"
   depends_on "gtk4"
   depends_on "pangomm"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     ENV.cxx11
