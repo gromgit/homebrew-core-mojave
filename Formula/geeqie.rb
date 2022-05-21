@@ -1,8 +1,8 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
   homepage "https://www.geeqie.org/"
-  url "https://github.com/BestImageViewer/geeqie/releases/download/v1.7.2/geeqie-1.7.2.tar.xz"
-  sha256 "186c10fae05dd81783f5218432e777cae2e9579ce884e65afa0884c357192269"
+  url "https://github.com/BestImageViewer/geeqie/releases/download/v1.7.3/geeqie-1.7.3.tar.xz"
+  sha256 "25b1f71cf91bd9a96f399d2a9e70507e54bb377a56e64d89521c0f7a9ce5dd38"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Geeqie < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geeqie"
-    sha256 cellar: :any, mojave: "0e7a127b774031061fb20c432c3ccb4468b4c17df6de8de123d0fc4313c9b475"
+    sha256 cellar: :any, mojave: "c5a490315f0e5476e78090e02b181ffead39391747794ade9752160c7fc6161a"
   end
 
   depends_on "autoconf" => :build
@@ -34,7 +34,11 @@ class Geeqie < Formula
   depends_on "little-cms2"
   depends_on "pango"
 
+  uses_from_macos "perl" => :build
+
   def install
+    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+
     ENV["NOCONFIGURE"] = "yes"
     system "./autogen.sh" # Seems to struggle to find GTK headers without this
     system "./configure", "--disable-dependency-tracking",
@@ -46,6 +50,9 @@ class Geeqie < Formula
   end
 
   test do
+    # Disable test on Linux because geeqie cannot run without a display.
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     system "#{bin}/geeqie", "--version"
   end
 end
