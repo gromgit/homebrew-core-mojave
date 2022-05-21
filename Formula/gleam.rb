@@ -7,11 +7,13 @@ class Gleam < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gleam"
-    sha256 cellar: :any_skip_relocation, mojave: "f5a7af0c8897aeb4c706d512d1999b3964e2af45e74141f1a68393e20efe4b4b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "50f280cae4c5e01e8fef2e235cd2dfcf41f03cc526787d406c016edad97cf8e6"
   end
 
   depends_on "rust" => :build
   depends_on "erlang"
+  depends_on "rebar3"
 
   on_linux do
     depends_on "pkg-config" => :build
