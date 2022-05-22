@@ -1,14 +1,13 @@
 class QalculateGtk < Formula
   desc "Multi-purpose desktop calculator"
   homepage "https://qalculate.github.io/"
-  url "https://github.com/Qalculate/qalculate-gtk/releases/download/v3.22.0/qalculate-gtk-3.22.0.tar.gz"
-  sha256 "ba6c0238b5f926ac94e234e15a2dfa84215938da5df6fea136db75c5db488556"
+  url "https://github.com/Qalculate/qalculate-gtk/releases/download/v4.1.1/qalculate-gtk-4.1.1.tar.gz"
+  sha256 "8bf7dee899ba480e4f82c70cb374ed1229da28f7d3b9b475a089630a8eeb32e5"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qalculate-gtk"
-    rebuild 3
-    sha256 mojave: "271488d5b79935853e0e729fde67ee0ec1185e4ffe38712551e762c9f46b73e9"
+    sha256 mojave: "2f059bc6b7f3be381951f640c42a8f3b54267788404b24513ad4ea8ce1a657bf"
   end
 
   depends_on "intltool" => :build
@@ -17,7 +16,11 @@ class QalculateGtk < Formula
   depends_on "gtk+3"
   depends_on "libqalculate"
 
+  uses_from_macos "perl" => :build
+
   def install
+    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
