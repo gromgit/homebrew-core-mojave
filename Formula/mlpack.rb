@@ -4,16 +4,17 @@ class Mlpack < Formula
   url "https://mlpack.org/files/mlpack-3.4.2.tar.gz"
   sha256 "9e5c4af5c276c86a0dcc553289f6fe7b1b340d61c1e59844b53da0debedbb171"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
-  revision 4
-
-  livecheck do
-    url "https://mlpack.org/files/"
-    regex(/href=.*?mlpack[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  revision 5
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlpack"
-    sha256 cellar: :any, mojave: "033a038a7000f77ed740afc07fae8d105dc85cf008b2c56867debef3f9f9760b"
+    sha256 cellar: :any, mojave: "67e01ba960251ca85c6eca7b113328ae66781b32b6ded8acad3117719668e512"
+  end
+
+  head do
+    url "https://github.com/mlpack/mlpack.git", branch: "master"
+
+    depends_on "cereal"
   end
 
   depends_on "cmake" => :build
