@@ -3,14 +3,14 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/78/0b/dceb8ad3152c6ff5d927b4a0e11ae76eee30328505957027f01e0c674b5f/streamlink-4.0.0.tar.gz"
-  sha256 "a5b2f65187a35e3e040284221b317a271e8ca77483c55d4bbd3d92e73aa95389"
+  url "https://files.pythonhosted.org/packages/26/3a/280bad1cc57743d1a0ed0a157fa58ff3231db326e4ba41195fc912a1deef/streamlink-4.0.1.tar.gz"
+  sha256 "f38a4fd5c45b1628e7ebee43ba7f8522be5045565aa7c64009740baf853f20f5"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/streamlink"
-    sha256 cellar: :any, mojave: "85a325f2e47f7e07f1979c3a3401937810017529891f145070a836b1d28817c9"
+    sha256 cellar: :any, mojave: "00d1c4a90d8b83e17f560b876cba636739e4f5124f992236678589a0b1e04989"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
