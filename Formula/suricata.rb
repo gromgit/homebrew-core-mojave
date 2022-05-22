@@ -1,8 +1,8 @@
 class Suricata < Formula
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata.io"
-  url "https://www.openinfosecfoundation.org/download/suricata-6.0.4.tar.gz"
-  sha256 "a8f197e33d1678689ebbf7bc1abe84934c465d22c504c47c2c7e9b74aa042d0d"
+  url "https://www.openinfosecfoundation.org/download/suricata-6.0.5.tar.gz"
+  sha256 "0d4197047c84ba070dfc6b1d9f9ee92f52a71403bfac0e29b2554bb21fe00754"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,8 +12,7 @@ class Suricata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/suricata"
-    rebuild 2
-    sha256 mojave: "0f5e1c513fba5de1becb07df716ceed32eebbd4bf7a04ee2d8c451e996a02f9b"
+    sha256 mojave: "845adc2883a2d7e6b4fe9eb90c1747c14b5c1f584c8febb76e790838f96c6d4a"
   end
 
   depends_on "pkg-config" => :build
@@ -36,8 +35,8 @@ class Suricata < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
+    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
+    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "simplejson" do
@@ -53,12 +52,10 @@ class Suricata < Formula
   end
 
   def install
-    python3 = Formula["python@3.9"].opt_bin/"python3"
-    xy = Language::Python.major_minor_version python3
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages("python3")
     resources.each do |r|
       r.stage do
-        system python3, *Language::Python.setup_install_args(libexec/"vendor")
+        system "python3", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
 
@@ -80,15 +77,22 @@ class Suricata < Formula
       --with-libnet-libraries=#{libnet.opt_lib}
     ]
 
-    args << if OS.mac?
-      "--enable-ipfw"
+    if OS.mac?
+      args << "--enable-ipfw"
+      # Workaround for dyld[98347]: symbol not found in flat namespace '_iconv'
+      ENV.append "LIBS", "-liconv" if MacOS.version >= :monterey
     else
       args << "--with-libpcap-includes=#{Formula["libpcap"].opt_include}"
-      "--with-libpcap-libraries=#{Formula["libpcap"].opt_lib}"
+      args << "--with-libpcap-libraries=#{Formula["libpcap"].opt_lib}"
     end
 
     system "./configure", *args
-    system "make", "install-full"
+    # setuptools>=60 prefers its own bundled distutils, which breaks the installation
+    # pkg_resources.DistributionNotFound: The 'suricata-update==1.2.3' distribution was not found
+    # Remove when deprecated distutils installation is no longer used
+    with_env(SETUPTOOLS_USE_DISTUTILS: "stdlib") do
+      system "make", "install-full"
+    end
 
     bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
 
