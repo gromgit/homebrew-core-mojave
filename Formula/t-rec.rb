@@ -1,13 +1,13 @@
 class TRec < Formula
   desc "Blazingly fast terminal recorder that generates animated gif images for the web"
   homepage "https://github.com/sassman/t-rec-rs"
-  url "https://github.com/sassman/t-rec-rs/archive/v0.7.0.tar.gz"
-  sha256 "f5830896bd8829061619916af5400a3a5fa974ab88d2c6631094116bd11e48a1"
+  url "https://github.com/sassman/t-rec-rs/archive/v0.7.3.tar.gz"
+  sha256 "8da8681b6632a95d05c6461fcbf0e4b9dc93e523957c8b34aeba3fc08aeddbcc"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/t-rec"
-    sha256 cellar: :any_skip_relocation, mojave: "7280432b08a74d1bd1c9dd994c2e72e204c362795d7bfd10c16d4d5b489f2a45"
+    sha256 cellar: :any_skip_relocation, mojave: "c69f1383b4e00507ae8a20976e24f7ee344a04a19d4f22d422f5b51001cce821"
   end
 
   depends_on "rust" => :build
