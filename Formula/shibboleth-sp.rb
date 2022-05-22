@@ -12,14 +12,15 @@ class ShibbolethSp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shibboleth-sp"
-    sha256 mojave: "6b7bd85f2b5b3e21e0e4d746fc8de7aee2b8f724f9757392bbfb87a45941f39e"
+    rebuild 1
+    sha256 mojave: "08082efc4f22423e323a257830cc999a41f1c8e76d67df45c5042696a192a813"
   end
 
   depends_on "apr" => :build
   depends_on "apr-util" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
-  depends_on "httpd" if MacOS.version >= :high_sierra
+  depends_on "httpd"
   depends_on "log4shib"
   depends_on "opensaml"
   depends_on "openssl@1.1"
@@ -40,10 +41,9 @@ class ShibbolethSp < Formula
       --with-xmltooling=#{Formula["xml-tooling-c"].opt_prefix}
       --with-saml=#{Formula["opensaml"].opt_prefix}
       --enable-apache-24
+      --with-apxs24=#{Formula["httpd"].opt_bin}/apxs
       DYLD_LIBRARY_PATH=#{lib}
     ]
-
-    args << "--with-apxs24=#{Formula["httpd"].opt_bin}/apxs" if MacOS.version >= :high_sierra
 
     system "./configure", *args
     system "make", "install"
