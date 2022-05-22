@@ -2,10 +2,11 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
+  revision 1
 
   stable do
-    url "https://github.com/draios/sysdig/archive/0.29.1.tar.gz"
-    sha256 "3721c97f0da43c1a68d2962d30363525d8532ab5f2534dfefc86d175e17e423e"
+    url "https://github.com/draios/sysdig/archive/0.29.3.tar.gz"
+    sha256 "6b96797859002ab69a2bed4fdba1c7fe8064ecf8661621ae7d8fbf8599ffa636"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
@@ -22,7 +23,7 @@ class Sysdig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysdig"
-    sha256 mojave: "d7639e36f5f944d1d835735981062e74f25d10612cfa932e28233b20901c5c4c"
+    sha256 mojave: "4134de0744d6af68875b0bb0e533c608f1298e7dc4f51feea0369aa979ace00c"
   end
 
   head do
@@ -34,6 +35,7 @@ class Sysdig < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "c-ares"
   depends_on "jsoncpp"
   depends_on "luajit-openresty"
