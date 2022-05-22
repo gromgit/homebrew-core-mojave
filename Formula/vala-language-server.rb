@@ -4,11 +4,11 @@ class ValaLanguageServer < Formula
   url "https://github.com/Prince781/vala-language-server/releases/download/0.48.4/vala-language-server-0.48.4.tar.xz"
   sha256 "0fd65b641a4bd6e0385502f0536f803bf542fd8bae6a2adb04e2e299ccca4551"
   license "LGPL-2.1-only"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vala-language-server"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e4af5f3b0c6dd2a29aa6e78eea43674ef22acd3f6b66ff3958842da2a5aa7a79"
+    sha256 cellar: :any, mojave: "cace9011369b4e05de45477433daf058e3f7d65c937059f0864f81bb3d51f28c"
   end
 
   depends_on "meson" => :build
