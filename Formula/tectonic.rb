@@ -1,10 +1,10 @@
 class Tectonic < Formula
   desc "Modernized, complete, self-contained TeX/LaTeX engine"
   homepage "https://tectonic-typesetting.github.io/"
-  url "https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.8.2.tar.gz"
-  sha256 "1f92a5ff25725a9a4c0eefd4ea306da1e63f57c40d4ceb0972c7e5bb73297b4f"
+  url "https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.9.0.tar.gz"
+  sha256 "a239ca85bff1955792b2842fabfa201ba9576d916ece281278781f42c7547b9f"
   license "MIT"
-  revision 1
+  head "https://github.com/tectonic-typesetting/tectonic.git", branch: "master"
 
   # As of writing, only the tags starting with `tectonic@` are release versions.
   # NOTE: The `GithubLatest` strategy cannot be used here because the "latest"
@@ -16,7 +16,7 @@ class Tectonic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tectonic"
-    sha256 cellar: :any, mojave: "5ac0fd9eb94855ebafb637b8f20ca586a299113047ad745bed5ae972f696efb2"
+    sha256 cellar: :any, mojave: "73925564596974ed7545bf3e6983755a3f75ade146d4221fedbac502e5cc2b97"
   end
 
   depends_on "pkg-config" => :build
