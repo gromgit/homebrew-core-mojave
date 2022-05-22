@@ -1,8 +1,8 @@
 class RosaCli < Formula
   desc "RedHat OpenShift Service on AWS (ROSA) command-line interface"
   homepage "https://www.openshift.com/products/amazon-openshift"
-  url "https://github.com/openshift/rosa/archive/refs/tags/v1.1.11.tar.gz"
-  sha256 "71c88a42088ffb091bedfd1396732805a49293c1632921bd05fe8785297a4bd0"
+  url "https://github.com/openshift/rosa/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "913079f2c184b2f244e764be8a35c27d356982b3058bd7f21b6af95f5f11bb99"
   license "Apache-2.0"
   head "https://github.com/openshift/rosa.git", branch: "master"
 
@@ -14,7 +14,7 @@ class RosaCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rosa-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "9129d1b4292a9a6517e2b8823a508b4509bc00671a3a77e18ff82e6a8bec7697"
+    sha256 cellar: :any_skip_relocation, mojave: "594b18bfe61a75a58337c237811cdf52161e8db20dcf4bbc508511a11019159c"
   end
 
   depends_on "go" => :build
