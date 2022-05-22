@@ -1,8 +1,8 @@
 class MysqlConnectorCxx < Formula
   desc "MySQL database connector for C++ applications"
   homepage "https://dev.mysql.com/downloads/connector/cpp/"
-  url "https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-8.0.28-src.tar.gz"
-  sha256 "cb26fe9de05a3b5f1ed22a199429b6791ece18433eb0465e2a73fcf44586420b"
+  url "https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-8.0.29-src.tar.gz"
+  sha256 "9a6236a28bca33ae951d8ccaabb8ff51a188863e8599f9096f4ae0a1da19f87f"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -12,8 +12,7 @@ class MysqlConnectorCxx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql-connector-c++"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e665d32572159ce5c538f66fc28222fa814ff1270a4791b00d9f68b0a30b5019"
+    sha256 cellar: :any, mojave: "2da8e6f16880523351db6a3f171d03f5c4a1ca0e1c5b72326fc1f4e7dce6ebd8"
   end
 
   depends_on "boost" => :build
