@@ -1,8 +1,8 @@
 class NotmuchMutt < Formula
   desc "Notmuch integration for Mutt"
   homepage "https://notmuchmail.org/"
-  url "https://notmuchmail.org/releases/notmuch-0.34.3.tar.xz"
-  sha256 "3fe910483bfd815a5c3b950e226a7bca8156053fd32d7ad1eb1a0a8a3acae888"
+  url "https://notmuchmail.org/releases/notmuch-0.36.tar.xz"
+  sha256 "130231b830fd980efbd2aab12214392b8841f5d2a5a361aa8c79a79a6035ce40"
   license "GPL-3.0-or-later"
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
@@ -12,7 +12,7 @@ class NotmuchMutt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/notmuch-mutt"
-    sha256 cellar: :any, mojave: "ec38ec4c58c468c15ced36507cec365ede604d163496bdbd4d4a3f9d5b475189"
+    sha256 cellar: :any, mojave: "d6d1192c589d4c7aec9fcd8910270ef5115ea9582b48ddb5a469ac27255f3b62"
   end
 
   depends_on "notmuch"
