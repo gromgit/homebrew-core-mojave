@@ -1,8 +1,8 @@
 class Stunnel < Formula
   desc "SSL tunneling program"
   homepage "https://www.stunnel.org/"
-  url "https://www.stunnel.org/downloads/stunnel-5.63.tar.gz"
-  sha256 "c74c4e15144a3ae34b8b890bb31c909207301490bd1e51bfaaa5ffeb0a994617"
+  url "https://www.stunnel.org/downloads/stunnel-5.64.tar.gz"
+  sha256 "eebe53ed116ba43b2e786762b0c2b91511e7b74857ad4765824e7199e6faf883"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Stunnel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stunnel"
-    sha256 cellar: :any, mojave: "9d4dd349827a9c76c5c9e0e4472b5a5c25dddd9f4e7f5036f146c6c9e99ae7df"
+    sha256 cellar: :any, mojave: "e9755b52f4c41192c4d365f309794cfefd69d8a3348e72bfef753fd52bf7de89"
   end
 
   depends_on "openssl@3"
