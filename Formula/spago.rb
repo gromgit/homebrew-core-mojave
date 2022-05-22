@@ -1,8 +1,8 @@
 class Spago < Formula
   desc "PureScript package manager and build tool"
   homepage "https://github.com/purescript/spago"
-  url "https://github.com/purescript/spago/archive/refs/tags/0.20.7.tar.gz"
-  sha256 "4bb73918813550d9841a8f50b5653f46253da12295d9d8038a63923044d7cf7c"
+  url "https://github.com/purescript/spago/archive/refs/tags/0.20.9.tar.gz"
+  sha256 "4e0ac70ce37a9bb7679ef280e62b61b21c9ff66e0ba335d9dae540dcde364c39"
   license "BSD-3-Clause"
   head "https://github.com/purescript/spago.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Spago < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spago"
-    sha256 cellar: :any_skip_relocation, mojave: "dc62940ca84bd662cbfae22e57bc032a799585401151b081766e0dd3479653eb"
+    sha256 cellar: :any_skip_relocation, mojave: "32cda8923018a2853ab28bbb3a0bc9ac6116dc68278cef283061194aec1d240e"
   end
 
   depends_on "ghc" => :build
