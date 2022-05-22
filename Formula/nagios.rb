@@ -12,13 +12,16 @@ class Nagios < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nagios"
-    sha256 mojave: "b4f75304afd0b4cae395a0ef9fa18510d6041a180d8467de4a5b1eab84ba1cf5"
+    rebuild 1
+    sha256 mojave: "ca1f7fc8dd266f0d8e34a9114ae52bd8088648ea83b760eddb93165d9f2dd660"
   end
 
   depends_on "gd"
   depends_on "libpng"
   depends_on "nagios-plugins"
   depends_on "openssl@1.1"
+
+  uses_from_macos "unzip"
 
   def nagios_sbin
     prefix/"cgi-bin"
@@ -45,23 +48,24 @@ class Nagios < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--sbindir=#{nagios_sbin}",
-                          "--sysconfdir=#{nagios_etc}",
-                          "--localstatedir=#{nagios_var}",
-                          "--datadir=#{htdocs}",
-                          "--libexecdir=#{HOMEBREW_PREFIX}/sbin", # Plugin dir
-                          "--with-cgiurl=/nagios/cgi-bin",
-                          "--with-htmurl=/nagios",
-                          "--with-nagios-user=#{user}",
-                          "--with-nagios-group='#{group}'",
-                          "--with-command-user=#{user}",
-                          "--with-command-group=_www",
-                          "--with-httpd-conf=#{share}",
-                          "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}",
-                          "--disable-libtool"
+    args = std_configure_args + [
+      "--sbindir=#{nagios_sbin}",
+      "--sysconfdir=#{nagios_etc}",
+      "--localstatedir=#{nagios_var}",
+      "--datadir=#{htdocs}",
+      "--libexecdir=#{HOMEBREW_PREFIX}/sbin", # Plugin dir
+      "--with-cgiurl=/nagios/cgi-bin",
+      "--with-htmurl=/nagios",
+      "--with-nagios-user=#{user}",
+      "--with-nagios-group='#{group}'",
+      "--with-command-user=#{user}",
+      "--with-httpd-conf=#{share}",
+      "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}",
+      "--disable-libtool",
+    ]
+    args << "--with-command-group=_www" if OS.mac?
+
+    system "./configure", *args
     system "make", "all"
     system "make", "install"
 
