@@ -4,15 +4,11 @@ class Tepl < Formula
   url "https://download.gnome.org/sources/tepl/6.00/tepl-6.00.0.tar.xz"
   sha256 "a86397a895dca9c0de7a5ccb063bda8f7ef691cccb950ce2cfdee367903e7a63"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_monterey: "0e4dbf7150d529840a821f20d2d0eaf2b569c6e3bd1afbbec242fedec7b9aaaf"
-    sha256 arm64_big_sur:  "ffb98f11bf159e2352d8ed7ca0bb4c62c48f4ba5781c7e2757a02ad5458fc1a0"
-    sha256 monterey:       "cec974116423a8d584025acde11cef9b680be26899e18d8dc986cd0d63b04cc5"
-    sha256 big_sur:        "b5c8dfff1540875f6bd03ec4a7e58ba68d5df65597e80eb7e469ce88c6bd4175"
-    sha256 catalina:       "0c2d2161a8f65a3728e479d26ba2dc736e163b7fe902ec59666d138bfc0de47e"
-    sha256 mojave:         "44b4a1c68e07df9275cb2275f6852e6b713e306f764833c620542a2cb741e565"
-    sha256 x86_64_linux:   "427e014f684cb2d7b3ddea724baa0d93123564be224efbd8632283df1f9fbd14"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tepl"
+    sha256 mojave: "77c2eb6a50d0ec40331d11392ffba26170e271aaf73733366a8aceb2fb546c08"
   end
 
   # See: https://gitlab.gnome.org/Archive/tepl
@@ -24,6 +20,7 @@ class Tepl < Formula
   depends_on "pkg-config" => :build
   depends_on "amtk"
   depends_on "gtksourceview4"
+  depends_on "icu4c"
   depends_on "uchardet"
 
   # Submitted upstream at https://gitlab.gnome.org/GNOME/tepl/-/merge_requests/8
@@ -115,9 +112,7 @@ class Tepl < Formula
       -lpango-1.0
       -lpangocairo-1.0
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
