@@ -3,14 +3,14 @@ class Sqlmap < Formula
 
   desc "Penetration testing for SQL injection and database servers"
   homepage "https://sqlmap.org"
-  url "https://github.com/sqlmapproject/sqlmap/archive/1.6.4.tar.gz"
-  sha256 "14585e4fc95006467e52685c4838f024654d7e23cbd84eb12762a55918b8d561"
+  url "https://github.com/sqlmapproject/sqlmap/archive/1.6.5.tar.gz"
+  sha256 "534194953d8a95ff1d28d1a19f9b2c1b6d021fe9bc3ea7368ecab2084ceba714"
   license "GPL-2.0-or-later"
   head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlmap"
-    sha256 cellar: :any_skip_relocation, mojave: "acee8fd18b18cd509e1ae6757284c7b54fd4eb483e7a48e181e04fd16a7aa2c2"
+    sha256 cellar: :any_skip_relocation, mojave: "5acd44a65abdc23c7ff87d2662b6e1dc2a21e27e946dbf0d77b081d1442a895d"
   end
 
   depends_on "python@3.10"
