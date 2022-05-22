@@ -4,7 +4,7 @@ class Tracker < Formula
   url "https://download.gnome.org/sources/tracker/3.1/tracker-3.1.2.tar.xz"
   sha256 "da368962665d587bb2e4f164d75919a81dacb35c7d4cfae6f93a94c60f60ec8f"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
+  revision 2
 
   # Tracker doesn't follow GNOME's "even-numbered minor is stable" version scheme.
   livecheck do
@@ -14,8 +14,7 @@ class Tracker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tracker"
-    rebuild 2
-    sha256 mojave: "d495c2b8cbee13e8df56ed34ad8676c7edd7a11fad90cdb3d8fa83aa61cb56f8"
+    sha256 mojave: "73b906fac635c986966f3eb6afbb477a7b367f491983f79b7306d3c87cb366f7"
   end
 
   depends_on "gobject-introspection" => :build
@@ -24,9 +23,9 @@ class Tracker < Formula
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
   depends_on "dbus"
+  depends_on "icu4c"
   depends_on "json-glib"
   depends_on "libsoup@2"
-  uses_from_macos "icu4c"
 
   def install
     args = std_meson_args + %w[
