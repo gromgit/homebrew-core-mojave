@@ -1,4 +1,6 @@
 class StoneSoup < Formula
+  include Language::Python::Virtualenv
+
   desc "Dungeon Crawl Stone Soup: a roguelike game"
   homepage "https://crawl.develz.org/"
   url "https://github.com/crawl/crawl/archive/0.28.0.tar.gz"
@@ -12,7 +14,8 @@ class StoneSoup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stone-soup"
-    sha256 mojave: "cf17866884213c329cd5d98d9066e61d08f87b1c81c753347d9261c0af3018a3"
+    rebuild 1
+    sha256 mojave: "3ef6de861d5f138f4ee75ac55b5f12d04d1db58546d4ba423eeaa95a8aa299a3"
   end
 
   depends_on "pkg-config" => :build
@@ -21,9 +24,15 @@ class StoneSoup < Formula
   depends_on "pcre"
   depends_on "sqlite"
 
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
+
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
+    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
+    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   def install
@@ -32,9 +41,8 @@ class StoneSoup < Formula
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", buildpath/"vendor/lib/python#{xy}/site-packages"
 
-    resource("PyYAML").stage do
-      system "python3", *Language::Python.setup_install_args(buildpath/"vendor")
-    end
+    venv = virtualenv_create(buildpath/"vendor", "python3")
+    venv.pip_install resource("PyYAML")
 
     cd "crawl-ref/source" do
       File.write("util/release_ver", version.to_s)
@@ -54,6 +62,13 @@ class StoneSoup < Formula
         USE_PCRE=y
       ]
 
+      unless OS.mac?
+        args += %W[
+          CFLAGS=-I#{Formula["pcre"].opt_include}
+          LDFLAGS=-ldl
+        ]
+      end
+
       # FSF GCC doesn't support the -rdynamic flag
       args << "NO_RDYNAMIC=y" unless ENV.compiler == :clang
 
@@ -63,12 +78,18 @@ class StoneSoup < Formula
       #
       # On 10.9, stone-soup will try to use xcrun and fail due to an empty
       # DEVELOPER_DIR
-      devdir = MacOS::Xcode.prefix.to_s
-      devdir += "/" unless MacOS::Xcode.installed?
+      if OS.mac?
+        devdir = MacOS::Xcode.prefix.to_s
+        devdir += "/" unless MacOS::Xcode.installed?
 
-      system "make", "install",
-        "DEVELOPER_DIR=#{devdir}", "SDKROOT=#{MacOS.sdk_path}",
-        "SDK_VER=#{MacOS.version}", *args
+        args += %W[
+          DEVELOPER_DIR=#{devdir}
+          SDKROOT=#{MacOS.sdk_path}
+          SDK_VER=#{MacOS.version}
+        ]
+      end
+
+      system "make", "install", *args
     end
   end
 
