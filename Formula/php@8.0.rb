@@ -2,9 +2,9 @@ class PhpAT80 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.0.17.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.0.17.tar.xz"
-  sha256 "4e7d94bb3d144412cb8b2adeb599fb1c6c1d7b357b0d0d0478dc5ef53532ebc5"
+  url "https://www.php.net/distributions/php-8.0.19.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.19.tar.xz"
+  sha256 "ba62219c4b0486cbb2a04f0796749a46b0ee1f5a142ed454212b4e2460cb0fab"
   license "PHP-3.01"
 
   livecheck do
@@ -14,8 +14,7 @@ class PhpAT80 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
-    rebuild 1
-    sha256 mojave: "1e298e8a5994f60739f29db6670dcd22157e974dc6f3e3ee5805c70dd60614a8"
+    sha256 mojave: "0c4b45a43072d14e7b34af8f59e73f21b5efa658534ca826dcdc6c5beb4779d5"
   end
 
   keg_only :versioned_formula
@@ -62,11 +61,6 @@ class PhpAT80 < Formula
   end
 
   def install
-    if OS.mac? && (MacOS.version == :el_capitan || MacOS.version == :sierra)
-      # Ensure that libxml2 will be detected correctly in older MacOS
-      ENV["SDKROOT"] = MacOS.sdk_path
-    end
-
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
 
@@ -252,6 +246,7 @@ class PhpAT80 < Formula
 
     # Custom location for extensions installed via pecl
     pecl_path = HOMEBREW_PREFIX/"lib/php/pecl"
+    pecl_path.mkpath
     ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
     extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
