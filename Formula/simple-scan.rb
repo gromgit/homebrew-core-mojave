@@ -1,13 +1,13 @@
 class SimpleScan < Formula
   desc "GNOME document scanning application"
   homepage "https://gitlab.gnome.org/GNOME/simple-scan"
-  url "https://download.gnome.org/sources/simple-scan/40/simple-scan-40.7.tar.xz"
-  sha256 "7c551852cb5af7d34aa989f8ad5ede3cbe31828cf8dd5aec2b2b6fdcd1ac3d53"
+  url "https://download.gnome.org/sources/simple-scan/42/simple-scan-42.1.tar.xz"
+  sha256 "859bc0611c1769b5bdaba9639deed359f50474c2eecf58bbbfd7ce21911b2226"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simple-scan"
-    sha256 mojave: "c6a0625a4d5cdacd2f94a30fedeb39e4de5992c461d5e91e0ad9e8e9739da913"
+    sha256 mojave: "187e8aa3308960032806d0f66621df9bcb8888e87d08297db76328a4583d88cf"
   end
 
   depends_on "itstool" => :build
@@ -21,13 +21,6 @@ class SimpleScan < Formula
   depends_on "libhandy"
   depends_on "sane-backends"
   depends_on "webp"
-
-  # Fix build with Meson 0.60+. Remove when the following commit is in a tagged release:
-  # https://gitlab.gnome.org/GNOME/simple-scan/-/commit/da6626debe00be1a0660f30cf2bf7629186c01d5
-  patch do
-    url "https://gitlab.gnome.org/GNOME/simple-scan/-/commit/da6626debe00be1a0660f30cf2bf7629186c01d5.diff"
-    sha256 "3a96ea449fe1a7b8bee34efdf21ca48f893f0cadb3ba3d4cb742afea3b8c4c03"
-  end
 
   def install
     ENV["DESTDIR"] = "/"
