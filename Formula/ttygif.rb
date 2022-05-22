@@ -7,7 +7,8 @@ class Ttygif < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ttygif"
-    sha256 cellar: :any_skip_relocation, mojave: "f628bc2be9e7bd64315f65a692767d76f15140cb66b3a755f31a6e36ad8171d4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bb3d4706fcc52f420947df432423bb105917120ed887f2feabe56c5614fad53e"
   end
 
   depends_on "imagemagick"
@@ -18,6 +19,12 @@ class Ttygif < Formula
   end
 
   test do
+    # Disable test on Linux because it fails with this error:
+    # Error: WINDOWID environment variable was empty.
+    # This is expected as a valid X window ID is required:
+    # https://walialu.com/ttygif-error-windowid-environment-variable-was-empty
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     ENV["TERM_PROGRAM"] = "Something"
     system "#{bin}/ttygif", "--version"
   end
