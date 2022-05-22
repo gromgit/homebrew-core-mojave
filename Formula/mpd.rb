@@ -1,10 +1,9 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https://www.musicpd.org/"
-  url "https://www.musicpd.org/download/mpd/0.23/mpd-0.23.5.tar.xz"
-  sha256 "f22c2c25093a05f4566f9cd7207cfbcd8405af67ed29a989bcf8905f80b7a299"
+  url "https://www.musicpd.org/download/mpd/0.23/mpd-0.23.6.tar.xz"
+  sha256 "cbc5928ee3ee1ef7ff6a58f6ba4afaee16c07e9eb42d0107bcc098010f4f26ed"
   license "GPL-2.0-or-later"
-  revision 3
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class Mpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpd"
-    sha256 cellar: :any, mojave: "4bc143b8ed6222dd31809415916add5e12822d98d3066eb5ed21a3663382c599"
+    sha256 cellar: :any, mojave: "bcc186617f9f425652573432193c99c87c89b1fad525f401e2f663a8cc1a9ed8"
   end
 
   depends_on "boost" => :build
@@ -99,11 +98,9 @@ class Mpd < Formula
   end
 
   test do
-    on_linux do
-      # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
-      # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-    end
+    # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
+    # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     require "expect"
 
