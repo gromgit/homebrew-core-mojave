@@ -11,15 +11,20 @@ class Spiped < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spiped"
-    sha256 cellar: :any, mojave: "96719318ceec728915ef628a28bc69f64da1f5066bb32436699bed94892476c2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6311843c28307ca8e3e02bc2dc051a2f80c72f6b1e031e9bb74888c0bcdb5a37"
   end
 
-  depends_on "bsdmake" => :build
   depends_on "openssl@1.1"
+
+  on_macos do
+    depends_on "bsdmake" => :build
+  end
 
   def install
     man1.mkpath
-    system "bsdmake", "BINDIR_DEFAULT=#{bin}", "MAN1DIR=#{man1}", "install"
+    make = OS.mac? ? "bsdmake" : "make"
+    system make, "BINDIR_DEFAULT=#{bin}", "MAN1DIR=#{man1}", "install"
   end
 
   test do
