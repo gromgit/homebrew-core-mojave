@@ -1,14 +1,14 @@
 class Mbt < Formula
   desc "Multi-Target Application (MTA) build tool for Cloud Applications"
   homepage "https://sap.github.io/cloud-mta-build-tool"
-  url "https://github.com/SAP/cloud-mta-build-tool/archive/v1.2.11.tar.gz"
-  sha256 "df69962dd769e6fc8be4e78d00d7bf75b6fcb49c8bbccf18675eb1066c125716"
+  url "https://github.com/SAP/cloud-mta-build-tool/archive/v1.2.16.tar.gz"
+  sha256 "6fbd2a77f1da05129fce5776202543e9a033729880d8b42f59a9694d3d773d8a"
   license "Apache-2.0"
   head "https://github.com/SAP/cloud-mta-build-tool.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbt"
-    sha256 cellar: :any_skip_relocation, mojave: "45136660c993e25749920df809afa19ab1f924d39eb237cd267939f132d6abe7"
+    sha256 cellar: :any_skip_relocation, mojave: "1c8639d4e77cc1093b438e791d609915244405039aa7768f440d901301036723"
   end
 
   depends_on "go" => :build
