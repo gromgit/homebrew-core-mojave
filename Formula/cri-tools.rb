@@ -1,14 +1,14 @@
 class CriTools < Formula
   desc "CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
   homepage "https://github.com/kubernetes-sigs/cri-tools"
-  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.23.0.tar.gz"
-  sha256 "c6a2e7fdd76d16f1bb5bbdb3c71a335a383e54bc6114058f16bf2789faf808de"
+  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.24.1.tar.gz"
+  sha256 "aed703b1163c43bdb82b17d86451b520f8c605b2d7a26693eb5936afaf0a3e38"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cri-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "ac250a28297fc4bb71aa9efedcd76fd6041b60d464cbe9936e645dfb86615d78"
+    sha256 cellar: :any_skip_relocation, mojave: "c80b3e00ac7099944d6ea60da75d2bc7eedba00590388952ba20141403d43e9c"
   end
 
   depends_on "go" => :build
@@ -36,7 +36,7 @@ class CriTools < Formula
     crictl_output = shell_output(
       "#{bin}/crictl --runtime-endpoint unix:///var/run/nonexistent.sock --timeout 10ms info 2>&1", 1
     )
-    assert_match "context deadline exceeded", crictl_output
+    assert_match "unable to determine runtime API version", crictl_output
 
     critest_output = shell_output("#{bin}/critest --ginkgo.dryRun 2>&1")
     assert_match "PASS", critest_output
