@@ -2,18 +2,18 @@ class StellarCore < Formula
   desc "Backbone of the Stellar (XLM) network"
   homepage "https://www.stellar.org/"
   url "https://github.com/stellar/stellar-core.git",
-      tag:      "v19.0.0",
-      revision: "9d0704eb4ef3d2827ffe0501282e21818d683898"
+      tag:      "v19.0.1",
+      revision: "2b38097cbe980b0b602db023956a37460d5bd29d"
   license "Apache-2.0"
   head "https://github.com/stellar/stellar-core.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "f95f40c979a78eaab3877eb6dd2104c5fd52c7c7048dc44347953b55778a879f"
-    sha256 cellar: :any,                 arm64_big_sur:  "0975e73257c78a479efd8df3867721c162ed0b6ce0105d05fb06dc589dda45b6"
-    sha256 cellar: :any,                 monterey:       "f9979120501b461420ac17411b7c55bd8a0196cc10d3756d83753d9a3162e872"
-    sha256 cellar: :any,                 big_sur:        "1319c9b0c574224b584475157c509a0c79e8d579103795056216c642ae066403"
-    sha256 cellar: :any,                 catalina:       "4dc70a214a207e61a9f00684debd1b0280d5650cc60661339c9f49ddeb49c964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdc4b40e2ab3bb4a88eb035dbeda2955ee0aefcda14b6831b0cced8012da58d7"
+    sha256 cellar: :any,                 arm64_monterey: "9de5d0e688df4ff40412d0608631ef843c314b11decb50919b374bc9f7185ee7"
+    sha256 cellar: :any,                 arm64_big_sur:  "9ee6a195da5e5743b8e8863480beab027e77ce158a7a240b6946ce929546f3d4"
+    sha256 cellar: :any,                 monterey:       "40cf6974be6ec750e39766603661975dda453ac53e10c1749724148783f28d22"
+    sha256 cellar: :any,                 big_sur:        "ea38b51bf05d38c2a960aaf3de67539922626b866bace5c5f15a253b9b107e0b"
+    sha256 cellar: :any,                 catalina:       "3f9af9a4da2b981da6ac202201535f58a2cc6a910c0c53117ad9cdb4883552b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a606e6df4e7f991c0fba56c5b36be1c550a57661dd6c6ac69806e15ad5bff8e"
   end
 
   depends_on "autoconf" => :build
