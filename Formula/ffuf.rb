@@ -1,13 +1,13 @@
 class Ffuf < Formula
   desc "Fast web fuzzer written in Go"
   homepage "https://github.com/ffuf/ffuf"
-  url "https://github.com/ffuf/ffuf/archive/v1.4.1.tar.gz"
-  sha256 "89b4bd4b3bbad7402d9c81d0d9f21b679c80d0a19bb9a190e45e395736058889"
+  url "https://github.com/ffuf/ffuf/archive/v1.5.0.tar.gz"
+  sha256 "70dc411c014c826f9c8a7b021e01d5bc50e2cba17e0dcc4df3e2e2574ad12073"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffuf"
-    sha256 cellar: :any_skip_relocation, mojave: "328f96570c7ce2ef52453ddf581d207f90c1f0eed3351abbc6d205ff68d32ed3"
+    sha256 cellar: :any_skip_relocation, mojave: "24f310422900b99f1d9a83ad9b427d69f1f87968ceeb386928ce6eee09d9f039"
   end
 
   depends_on "go" => :build
