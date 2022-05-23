@@ -16,7 +16,8 @@ class MariadbConnectorOdbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb-connector-odbc"
-    sha256 mojave: "1cf9a6f109c01d98b993d3c6c02f9cbcdb60e8bd145e19de2b73258b0fbd1037"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9859e502c06be0da8fdd0cca35256280d5feb2684928288af1c0a17ee4ddb6ed"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +28,7 @@ class MariadbConnectorOdbc < Formula
   def install
     ENV.append_to_cflags "-I#{Formula["mariadb-connector-c"].opt_include}/mariadb"
     ENV.append "LDFLAGS", "-L#{Formula["mariadb-connector-c"].opt_lib}/mariadb"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["mariadb-connector-c"].opt_lib}/mariadb" if OS.linux?
     system "cmake", ".", "-DMARIADB_LINK_DYNAMIC=1",
                          "-DWITH_SSL=OPENSSL",
                          "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}",
