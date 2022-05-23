@@ -2,7 +2,7 @@ class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
   url "https://curl.se/download/curl-7.83.1.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-7_82_0/curl-7.83.1.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-7_83_1/curl-7.83.1.tar.bz2"
   mirror "http://fresh-center.net/linux/www/curl-7.83.1.tar.bz2"
   mirror "http://fresh-center.net/linux/www/legacy/curl-7.83.1.tar.bz2"
   sha256 "f539a36fb44a8260ec5d977e4e0dbdd2eee29ed90fcedaa9bc3c9f78a113bff0"
@@ -15,7 +15,8 @@ class Curl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curl"
-    sha256 cellar: :any, mojave: "33ed7c28005a7eecbb5a82df39fec18139dfdb7ed43a15d8b89be95a6c17786e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8fbef7231ea7a0b541670862509c718b5ebf2df4273e5b7664f1cbb1e39058e5"
   end
 
   head do
