@@ -3,14 +3,14 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/3a/a2/374532d37a4f7cba449a4f83cdc717ac22bcf3e294fe326139d90087ef76/commitizen-2.25.0.tar.gz"
-  sha256 "2a71a0342fe7ddd062adab82ecb1a54e0ce37f9a715674570ee9643d70037c25"
+  url "https://files.pythonhosted.org/packages/7e/58/76b49161519b0c93be7e1455594bbb791f00257476f86942a42c9e5163b4/commitizen-2.27.1.tar.gz"
+  sha256 "71a3e1fea37ced781bc440bd7d464abd5b797da8e762c1b9b632e007c2019b50"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/commitizen"
-    sha256 cellar: :any_skip_relocation, mojave: "858257ea363d338e1b0f1650b14422efd28c00dbb9fafcdf3435954bee6159a0"
+    sha256 cellar: :any_skip_relocation, mojave: "c930f92a78c8157e55c89564ec773c4e2d98270785277f17cc85a22a5f7a41e0"
   end
 
   depends_on "python@3.10"
@@ -51,8 +51,8 @@ class Commitizen < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz"
-    sha256 "7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "PyYAML" do
