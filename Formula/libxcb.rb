@@ -1,15 +1,13 @@
 class Libxcb < Formula
   desc "X.Org: Interface to the X Window System protocol"
   homepage "https://www.x.org/"
-  url "https://xcb.freedesktop.org/dist/libxcb-1.14.tar.gz"
-  sha256 "2c7fcddd1da34d9b238c9caeda20d3bd7486456fc50b3cc6567185dbd5b0ad02"
+  url "https://xcb.freedesktop.org/dist/libxcb-1.15.tar.gz"
+  sha256 "1cb65df8543a69ec0555ac696123ee386321dfac1964a3da39976c9a05ad724d"
   license "MIT"
-  revision 2
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcb"
-    rebuild 1
-    sha256 cellar: :any, mojave: "17e86712e5492378c163b88fbf4f49364e90d70f0a98aa2de6451bddc3353648"
+    sha256 cellar: :any, mojave: "2bd6df8be66c0fa87229135ff92a12d80e64d3bf181039c24cf34f41a6e45f44"
   end
 
   depends_on "pkg-config" => :build
@@ -33,6 +31,7 @@ bottle do
       --disable-silent-rules
       --enable-devel-docs=no
       --with-doxygen=no
+      PYTHON=python3
     ]
 
     system "./configure", *args
