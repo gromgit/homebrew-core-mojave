@@ -6,7 +6,14 @@ class Needle < Formula
       revision: "6a2d5e25cd3c77ddfa57835e991469db791c4744"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any, arm64_big_sur: "1929735212f6d3ee84ac3019cd82d4b76e352f780e68f22e381a44e687ae59a0"
+    sha256 cellar: :any, big_sur:       "efd84a4bd0890a28c3b9e7d2d9ac9b84a8f4d6bb6a0586380f4d653a6092e52a"
+    sha256 cellar: :any, catalina:      "f45fa77b9e00be408206fc2cf945f41ca3f4661bbb06c8d2aadd015f4d75dfdd"
+  end
+
   depends_on xcode: ["12.2", :build]
+  depends_on :macos
 
   def install
     system "make", "install", "BINARY_FOLDER_PREFIX=#{prefix}"
