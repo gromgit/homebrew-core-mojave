@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://github.com/micronaut-projects/micronaut-starter/archive/v3.4.3.tar.gz"
-  sha256 "b313e41e1cbffb52e79927dcc8993d319d040f8c648643f455aa3403ad6eee89"
+  url "https://github.com/micronaut-projects/micronaut-starter/archive/v3.4.4.tar.gz"
+  sha256 "9ee6b8332b9f6854ca03be4c5bb2d33554fb2dac01c25453ecaccb44900b649b"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Micronaut < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micronaut"
-    sha256 cellar: :any_skip_relocation, mojave: "cfb4c3973c82ef657eda280b80c0e9e3ffb7a7e4c898fbdbaf23646bca32cee8"
+    sha256 cellar: :any_skip_relocation, mojave: "272b6a567f3d8a06b3bedc3da4d5df678dd5bfc70c3917861f8b55861a308272"
   end
 
   # Uses a hardcoded list of supported JDKs. Try switching to `openjdk` on update.
