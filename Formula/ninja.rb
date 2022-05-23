@@ -1,10 +1,9 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
   homepage "https://ninja-build.org/"
-  url "https://github.com/ninja-build/ninja/archive/v1.10.2.tar.gz"
-  sha256 "ce35865411f0490368a8fc383f29071de6690cbadc27704734978221f25e2bed"
+  url "https://github.com/ninja-build/ninja/archive/v1.11.0.tar.gz"
+  sha256 "3c6ba2e66400fe3f1ae83deb4b235faf3137ec20bd5b08c29bfc368db143e4c6"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/ninja-build/ninja.git", branch: "master"
 
   livecheck do
@@ -14,8 +13,7 @@ class Ninja < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ninja"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "bee4b5f4f491a58e73aa70794bdc4c9e3b5c32771d3dd4f261b166e43d1ac5fc"
+    sha256 cellar: :any_skip_relocation, mojave: "d63786ade91a2b81c5d5857fa7846730132dc0e35f8c745de5cf6f2559a62fa2"
   end
 
   # Ninja only needs Python for some non-core functionality.
@@ -34,6 +32,7 @@ class Ninja < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["python@3.10"].opt_bin
     (testpath/"build.ninja").write <<~EOS
       cflags = -Wall
 
