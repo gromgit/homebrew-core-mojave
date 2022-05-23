@@ -7,9 +7,15 @@ class BrigadeCli < Formula
   license "Apache-2.0"
   head "https://github.com/brigadecore/brigade.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brigade-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "35c31aec7a81f9ee8537983eb295acd5ae57995d7bb9cdd562919c620875dc9c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1acafdde7dc1f8f68bf23366f11ee19a21c835e6dc84d1edb00d806981a8db60"
   end
 
   depends_on "go" => :build
