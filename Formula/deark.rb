@@ -1,8 +1,8 @@
 class Deark < Formula
   desc "File conversion utility for older formats"
   homepage "https://entropymine.com/deark/"
-  url "https://entropymine.com/deark/releases/deark-1.6.1.tar.gz"
-  sha256 "6d3e6853fb1342eb3ead53cd9c10496e262c885397cfc073529cc880cd3dcb46"
+  url "https://entropymine.com/deark/releases/deark-1.6.2.tar.gz"
+  sha256 "199f5cd6c65cd23af9323bc464f0d33f53d22686135695b4aa4ddf2ec43534ae"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Deark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deark"
-    sha256 cellar: :any_skip_relocation, mojave: "ad6bf2d7f775c034aa980a5e43e80644eb3c43f32f7ccea92210853db9b1b443"
+    sha256 cellar: :any_skip_relocation, mojave: "61c08e03c7b6aa6664a8519d561a40efe8df2d89bf580d3a5fe75286d4222453"
   end
 
   def install
