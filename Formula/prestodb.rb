@@ -3,8 +3,8 @@ class Prestodb < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https://prestodb.io"
-  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.272.1/presto-server-0.272.1.tar.gz"
-  sha256 "7d760101a594313c3331f6c2c428a125fc00c1c1d806dffd7c1cb61d33b22235"
+  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.273.1/presto-server-0.273.1.tar.gz"
+  sha256 "3615f1e2ad21368a8ff9686d409d22632e1267aed1c28d7f7fb0167da16ce30f"
   license "Apache-2.0"
 
   # Upstream has said that we should check Maven for Presto version information
@@ -16,7 +16,7 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "87b3d28ca4ff2852c09421ed5fc5200d5b5197a19353254f5e23b2aa69177c09"
+    sha256 cellar: :any_skip_relocation, all: "820d07bff1d71856f8324f80b7c72ce1c8aa67500e6e25012fab9e5433bef1b8"
   end
 
   # https://github.com/prestodb/presto/issues/17146
@@ -25,8 +25,8 @@ class Prestodb < Formula
   depends_on "python@3.10"
 
   resource "presto-cli" do
-    url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-cli/0.272.1/presto-cli-0.272.1-executable.jar"
-    sha256 "658c732475418731b18117d90f7dee4aada53a3fdf43985b6060fe87db749267"
+    url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-cli/0.273.1/presto-cli-0.273.1-executable.jar"
+    sha256 "74383b2c69cf6a5f851cf2feac09a35f89bd9f28480c01abd928de8fd9a7348c"
   end
 
   def install
