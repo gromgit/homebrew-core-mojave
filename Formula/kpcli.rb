@@ -5,10 +5,9 @@ class Kpcli < Formula
 
   desc "Command-line interface to KeePass database files"
   homepage "https://kpcli.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.6.pl"
-  sha256 "01f23882d458dfffc176fe5f268ced13c667de22b7fbf60d488eca87f3362deb"
+  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.7.pl"
+  sha256 "8c12566c292650451590ba42aba48f117eb60d786aed4309cca19febd4d2d673"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 2
 
   livecheck do
     url :stable
@@ -16,13 +15,8 @@ class Kpcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "aea59c0eddc9fa427b8626612f82ea57cafd8c9b5a9ab3a0d0545b60f9097f09"
-    sha256 cellar: :any,                 arm64_big_sur:  "793a7e8ce3bf2a0beae2b0a51b14e3915df7f8ba05f20b4bf26c5ed3dba11e98"
-    sha256 cellar: :any,                 monterey:       "c79ae0ade5822f60da1daf6bee7efb2b97e42cb6dedab8c99d2a9fc12781cb1f"
-    sha256 cellar: :any,                 big_sur:        "8431834a984e31a2bb567913b8bd82ec97e616879f058c10e1b0af77fc9528e8"
-    sha256 cellar: :any,                 catalina:       "ef0dcac2509419af4f99407cd40d7072a44d53472cb692afa49bae06bb91fb71"
-    sha256 cellar: :any,                 mojave:         "7635208158e7c7a7dd1e7a4e28d51d2c836d6e2bd9f6c329c265cebdf4b69939"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a340307dd0234be2d5db82bfb5a949a5547fd2a83b239766c535aef2237e195"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kpcli"
+    sha256 cellar: :any, mojave: "79f619168120408b59238414c1c35be356cecb60dd159a60e65236ac94e0be1d"
   end
 
   depends_on "readline"
@@ -31,8 +25,8 @@ class Kpcli < Formula
 
   on_macos do
     resource "Mac::Pasteboard" do
-      url "https://cpan.metacpan.org/authors/id/W/WY/WYANT/Mac-Pasteboard-0.011.tar.gz"
-      sha256 "bd8c4510b1e805c43e4b55155c0beaf002b649fe30b6a7841ff05e7399ba02a9"
+      url "https://cpan.metacpan.org/authors/id/W/WY/WYANT/Mac-Pasteboard-0.103.tar.gz"
+      sha256 "2f5e8dd2db0d6445558484ca6d42d839c5a97ee8aa1b250e694d67d5b7f6634c"
     end
   end
 
@@ -59,8 +53,8 @@ class Kpcli < Formula
   end
 
   resource "Crypt::Rijndael" do
-    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Crypt-Rijndael-1.15.tar.gz"
-    sha256 "a0989b55990d7905d1b5bf524cd8b46aadc0de778414d4ca8d406aa2aa594163"
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Crypt-Rijndael-1.16.tar.gz"
+    sha256 "6540085e3804b82a6f0752c1122cf78cadd221990136dd6fd4c097d056c84d40"
   end
 
   resource "Sort::Naturally" do
@@ -73,9 +67,9 @@ class Kpcli < Formula
     sha256 "3279c01c76227335eeff09032a40f4b02b285151b3576c04cacd15be05942bdb"
   end
 
-  resource "Term::Readline::Gnu" do
-    url "https://cpan.metacpan.org/authors/id/H/HA/HAYASHI/Term-ReadLine-Gnu-1.37.tar.gz"
-    sha256 "3bd31a998a9c14748ee553aed3e6b888ec47ff57c07fc5beafb04a38a72f0078"
+  resource "Term::ReadLine::Gnu" do
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAYASHI/Term-ReadLine-Gnu-1.42.tar.gz"
+    sha256 "3c5f1281da2666777af0f34de0289564e6faa823aea54f3945c74c98e95a5e73"
   end
 
   resource "Data::Password" do
@@ -84,8 +78,8 @@ class Kpcli < Formula
   end
 
   resource "Clipboard" do
-    url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Clipboard-0.26.tar.gz"
-    sha256 "886ae43dc8538f9bfc4e07fdbcf09b7fbd6ee59c31f364618c859de14953c58a"
+    url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Clipboard-0.28.tar.gz"
+    sha256 "9e8d79015194263357c25a0f5d094800fff43bdbf9f8601ec3b0ed5eb0966d26"
   end
 
   resource "Capture::Tiny" do
@@ -111,13 +105,9 @@ class Kpcli < Formula
       system "./Build", "install"
     end
 
-    resource("Term::Readline::Gnu").stage do
+    resource("Term::ReadLine::Gnu").stage do
       # Prevent the Makefile to try and build universal binaries
       ENV.refurbish_args
-
-      # Work around issue with Makefile.PL not detecting -ltermcap
-      # https://rt.cpan.org/Public/Bug/Display.html?id=133846
-      inreplace "Makefile.PL", "my $TERMCAP_LIB =", "my $TERMCAP_LIB = '-lncurses'; 0 &&"
 
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}",
                      "--includedir=#{Formula["readline"].opt_include}",
@@ -129,7 +119,7 @@ class Kpcli < Formula
 
     libexec.install "kpcli-#{version}.pl" => "kpcli"
     chmod 0755, libexec/"kpcli"
-    (bin/"kpcli").write_env_script("#{libexec}/kpcli", PERL5LIB: ENV["PERL5LIB"])
+    (bin/"kpcli").write_env_script(libexec/"kpcli", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
