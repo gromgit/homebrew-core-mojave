@@ -1,14 +1,13 @@
 class Acl2 < Formula
   desc "Logic and programming language in which you can model computer systems"
   homepage "https://www.cs.utexas.edu/users/moore/acl2/index.html"
-  url "https://github.com/acl2/acl2/archive/8.3.tar.gz"
-  sha256 "45eedddb36b2eff889f0dba2b96fc7a9b1cf23992fcfdf909bc179f116f2c5ea"
+  url "https://github.com/acl2/acl2/archive/8.4.tar.gz"
+  sha256 "b440c0048e2988eeb9f477a37a0443c97037a062c076f86a999433a2c762cd8b"
   license "BSD-3-Clause"
-  revision 13
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/acl2"
-    sha256 mojave: "a111147e5b38f4d99456d65f273a482e89ea055bc98d7109c404eb3f08bdc34b"
+    sha256 mojave: "669077b61ecd1c632c5b493af0aba743959fb6520b157dbcc51c6a88e661aed3"
   end
 
   # Homebrew ARM CI runners hang when trying to build `acl2`.
