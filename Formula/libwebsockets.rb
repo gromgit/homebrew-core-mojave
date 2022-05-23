@@ -1,8 +1,8 @@
 class Libwebsockets < Formula
   desc "C websockets server library"
   homepage "https://libwebsockets.org"
-  url "https://github.com/warmcat/libwebsockets/archive/v4.3.1.tar.gz"
-  sha256 "8fdb1454a1b34cd9a6351beaab237a485e6853806101de7e62bd2bc250bb50af"
+  url "https://github.com/warmcat/libwebsockets/archive/v4.3.2.tar.gz"
+  sha256 "6a85a1bccf25acc7e8e5383e4934c9b32a102880d1e4c37c70b27ae2a42406e1"
   license "MIT"
   head "https://github.com/warmcat/libwebsockets.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Libwebsockets < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libwebsockets"
-    sha256 mojave: "ebd00bbe4cfd98a1c9252725004be5c62209319b63fa2cf80c57b49769278765"
+    sha256 mojave: "2c2d15a65f5864f33e365727bf0271efb23771a1c95d8a93404aeb847f0ed384"
   end
 
   depends_on "cmake" => :build
