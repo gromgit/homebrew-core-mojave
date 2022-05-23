@@ -1,8 +1,8 @@
 class Yarn < Formula
   desc "JavaScript package manager"
   homepage "https://yarnpkg.com/"
-  url "https://yarnpkg.com/downloads/1.22.18/yarn-v1.22.18.tar.gz"
-  sha256 "816e5c073b3d35936a398d1fe769ebbcd517298e3510b649e8fc67cd3a62e113"
+  url "https://yarnpkg.com/downloads/1.22.19/yarn-v1.22.19.tar.gz"
+  sha256 "732620bac8b1690d507274f025f3c6cfdc3627a84d9642e38a07452cc00e0f2e"
   license "BSD-2-Clause"
 
   livecheck do
@@ -10,7 +10,7 @@ class Yarn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e4032bfe83faec0cd66a9c52b1bc2a12ff8ecdeb1bd497a08cc077da065d5fac"
+    sha256 cellar: :any_skip_relocation, all: "79b90324a5365189a144b786e9bdb3bf32be3823e9041d5f3250ea7b804dcd0b"
   end
 
   depends_on "node" => :test
