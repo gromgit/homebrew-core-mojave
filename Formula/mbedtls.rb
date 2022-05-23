@@ -1,10 +1,10 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSL/TLS library"
   homepage "https://tls.mbed.org/"
-  url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-3.1.0.tar.gz"
+  url "https://github.com/Mbed-TLS/mbedtls/archive/mbedtls-3.1.0.tar.gz"
   sha256 "64d01a3b22b91cf3a25630257f268f11bc7bfa37981ae6d397802dd4ccec4690"
   license "Apache-2.0"
-  head "https://github.com/ARMmbed/mbedtls.git", branch: "development"
+  head "https://github.com/Mbed-TLS/mbedtls.git", branch: "development"
 
   livecheck do
     url :stable
@@ -14,7 +14,8 @@ class Mbedtls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbedtls"
-    sha256 cellar: :any, mojave: "12e581bf6c86f7a36080c8b0248816c277c545bc322b78cf4bc735925f7cb33e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "048519eff927a0bb720454f2c215560296e39a3dcab999775c7bd72037bca2aa"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +37,7 @@ class Mbedtls < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     # We run CTest because this is a crypto library. Running tests in parallel causes failures.
-    # https://github.com/ARMmbed/mbedtls/issues/4980
+    # https://github.com/Mbed-TLS/mbedtls/issues/4980
     with_env(CC: DevelopmentTools.locate(DevelopmentTools.default_compiler)) do
       system "ctest", "--parallel", "1", "--test-dir", "build", "--rerun-failed", "--output-on-failure"
     end
