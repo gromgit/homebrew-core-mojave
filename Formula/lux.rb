@@ -1,14 +1,14 @@
 class Lux < Formula
   desc "Fast and simple video downloader"
   homepage "https://github.com/iawia002/lux"
-  url "https://github.com/iawia002/lux/archive/v0.14.0.tar.gz"
-  sha256 "3d485c9703851f3fb5cdee9b029b5b6855f84bfd29b44cae310a031a6fa8c00f"
+  url "https://github.com/iawia002/lux/archive/v0.15.0.tar.gz"
+  sha256 "41e45542587caa27bf8180e66c72c6c77e83d00f8dcba2e952c5a9b04d382c6c"
   license "MIT"
   head "https://github.com/iawia002/lux.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lux"
-    sha256 cellar: :any_skip_relocation, mojave: "5b0b2a4d352dd0d380033135455941f54506f28ba8d984f6e202d862d75a6824"
+    sha256 cellar: :any_skip_relocation, mojave: "3edd0de593a0c50b1dbb59bd360f06afb654339677ce7fea9c3ca621a04b0ddb"
   end
 
   depends_on "go" => :build
@@ -18,6 +18,6 @@ class Lux < Formula
   end
 
   test do
-    system bin/"lux", "-i", "https://www.bilibili.com/video/av20203945"
+    system bin/"lux", "-i", "https://github.githubassets.com/images/modules/site/icons/footer/github-logo.svg"
   end
 end
