@@ -11,6 +11,7 @@ class Nuxeo < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "5322ea1c6ff309613ecd84d788bf56b0590c83cd9e1d5f1d8f3ef99c1610baa6"
     sha256 cellar: :any_skip_relocation, catalina:       "5322ea1c6ff309613ecd84d788bf56b0590c83cd9e1d5f1d8f3ef99c1610baa6"
     sha256 cellar: :any_skip_relocation, mojave:         "5322ea1c6ff309613ecd84d788bf56b0590c83cd9e1d5f1d8f3ef99c1610baa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3c4a5916ae6ddbd2f1294d1445429febf7f4ee4b674a72239a39f2183d9703c"
   end
 
   depends_on "exiftool"
