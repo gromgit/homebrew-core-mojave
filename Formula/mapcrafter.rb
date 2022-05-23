@@ -8,8 +8,8 @@ class Mapcrafter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mapcrafter"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b70d40bb8d7d43fffefdea90808e4708891ba600f39bcfb70f0d5b6774aefa5d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2c07a7740970aa52e8fa1bda541fbfaf6772ca9b9a8e92a592631f70e6542f13"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Mapcrafter < Formula
 
     args = std_cmake_args
     args << "-DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}"
-    args << "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib}/libjpeg.dylib"
+    args << "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib/shared_library("libjpeg")}"
 
     system "cmake", ".", *args
     system "make", "install"
