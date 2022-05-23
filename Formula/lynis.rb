@@ -1,13 +1,13 @@
 class Lynis < Formula
   desc "Security and system auditing tool to harden systems"
   homepage "https://cisofy.com/lynis/"
-  url "https://github.com/CISOfy/lynis/archive/3.0.7.tar.gz"
-  sha256 "13cedb14b17f0fff6c0ae7cdcc0550a887975bb3da4db96b47b2caf41c1c143b"
+  url "https://github.com/CISOfy/lynis/archive/3.0.8.tar.gz"
+  sha256 "0315da29e382281daa1db24c8494ca12659c7387d9cd30222adcf1aa01383730"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lynis"
-    sha256 cellar: :any_skip_relocation, mojave: "37a7777dfd2d2a662fcbc04ecf7c5a756d52bb862355d7f7ef0908ee43e52478"
+    sha256 cellar: :any_skip_relocation, mojave: "f43da37593963aba57890c739e944505c5ccc6ef78b2cf19255c8c9748c69894"
   end
 
   def install
