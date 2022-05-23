@@ -2,15 +2,14 @@ class Kubevela < Formula
   desc "Application Platform based on Kubernetes and Open Application Model"
   homepage "https://kubevela.io"
   url "https://github.com/kubevela/kubevela.git",
-      tag:      "v1.3.3",
-      revision: "45e1de19dc736b10b3eb2d908d809210f470b24f"
+      tag:      "v1.3.5",
+      revision: "cbed2b5cb3371b48357dbda3b5fc278a506c4d70"
   license "Apache-2.0"
   head "https://github.com/kubevela/kubevela.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubevela"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2ac0e37c13468344b7b342fb48f1133ca21bba8a8f962276b2ed0ccf34c2c628"
+    sha256 cellar: :any_skip_relocation, mojave: "f815f5849b232dfe0538793172499274667b0cc23dfb5f063759dfc99bd35c27"
   end
 
   depends_on "go" => :build
@@ -19,8 +18,8 @@ class Kubevela < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X github.com/kubevela/kubevela/version.VelaVersion=#{version}
-      -X github.com/kubevela/kubevela/version.GitRevision=#{Utils.git_head}
+      -X github.com/oam-dev/kubevela/version.VelaVersion=#{version}
+      -X github.com/oam-dev/kubevela/version.GitRevision=#{Utils.git_head}
     ]
 
     system "go", "build", *std_go_args(output: bin/"vela", ldflags: ldflags), "./references/cmd/cli"
