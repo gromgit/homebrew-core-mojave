@@ -1,14 +1,14 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997010.tar.gz"
-  sha256 "62af744521a8d450fa2a38a4f5ea6cd7d2f3b68807e0ef66076335d529536f32"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997011.tar.gz"
+  sha256 "632102c6e67de7c9cff51d6faa0d9d03bfefbed35b5cc5d96919f7b9202501c9"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpm"
-    sha256 cellar: :any_skip_relocation, mojave: "b9f3b0b726ede0d42ec0c1c7ebece5ee3f91f96fddb289ec1168b0252c5789ee"
+    sha256 cellar: :any_skip_relocation, mojave: "509ffe2455227c4cb8016ca11f79227401c83bbea4927889ea7ad55a81f48060"
   end
 
   depends_on "perl"
