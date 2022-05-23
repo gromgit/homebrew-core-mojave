@@ -1,8 +1,8 @@
 class NodeAT14 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v14.19.2/node-v14.19.2.tar.xz"
-  sha256 "ef4375a9152ff69f2823d7b20a3b53767a046164bbac7824429cb216d1688cf0"
+  url "https://nodejs.org/dist/v14.19.3/node-v14.19.3.tar.xz"
+  sha256 "5cf45b1f1aca77523acf36240c1d53a999279070a7711eabf23346f88b0cc994"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class NodeAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@14"
-    sha256 cellar: :any, mojave: "d95d04ba76b36da2476d2759f8ea81d22f2eb18eb822e2889931271be5020e98"
+    sha256 cellar: :any, mojave: "54f7760ce1298f0bd652594a4646ef601a8f6ffc4d21247b3667fa2a5ab96ed2"
   end
 
   keg_only :versioned_formula
@@ -26,6 +26,7 @@ class NodeAT14 < Formula
   depends_on "libuv"
   depends_on "openssl@1.1"
 
+  uses_from_macos "python"
   uses_from_macos "zlib"
 
   on_macos do
