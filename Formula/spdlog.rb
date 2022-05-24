@@ -1,19 +1,25 @@
 class Spdlog < Formula
   desc "Super fast C++ logging library"
   homepage "https://github.com/gabime/spdlog"
-  url "https://github.com/gabime/spdlog/archive/v1.9.2.tar.gz"
-  sha256 "6fff9215f5cb81760be4cc16d033526d1080427d236e86d70bb02994f85e3d38"
+  url "https://github.com/gabime/spdlog/archive/v1.10.0.tar.gz"
+  sha256 "697f91700237dbae2326b90469be32b876b2b44888302afbc7aceb68bcfe8224"
   license "MIT"
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spdlog"
-    rebuild 1
-    sha256 cellar: :any, mojave: "75008b9b7e5f69a7712fc3083fc6470fab934535a0fd0f2dbe5eeeb38a1a2800"
+    sha256 cellar: :any, mojave: "5087d490968068aa796aa985b504461c8affff2a2b3ab57bdfc4386885eb27c8"
   end
 
   depends_on "cmake" => :build
   depends_on "fmt"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  # error: specialization of 'template<class T, ...> struct fmt::v8::formatter' in different namespace
+  fails_with gcc: "5"
 
   def install
     ENV.cxx11
