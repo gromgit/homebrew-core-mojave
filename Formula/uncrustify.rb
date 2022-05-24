@@ -1,14 +1,14 @@
 class Uncrustify < Formula
   desc "Source code beautifier"
   homepage "https://uncrustify.sourceforge.io/"
-  url "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.75.0.tar.gz"
-  sha256 "f4d1bdac7805fc165e99b1001e474d8ce233d91319894f9b4fc8e0964e10d8f6"
+  url "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.75.1.tar.gz"
+  sha256 "fd14acc0a31ed88b33137bdc26d32964327488c835f885696473ef07caf2e182"
   license "GPL-2.0-or-later"
   head "https://github.com/uncrustify/uncrustify.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uncrustify"
-    sha256 cellar: :any_skip_relocation, mojave: "d8ea7515be0759d1dd8b36e25656c46e1fa3bb8cbf4ea7bbba7151b2dd6f1a15"
+    sha256 cellar: :any_skip_relocation, mojave: "f1178b7db8d8c435d8b8d8d0f362ca8fa5e289a05a3c022ee2228432427fdffd"
   end
 
   depends_on "cmake" => :build
