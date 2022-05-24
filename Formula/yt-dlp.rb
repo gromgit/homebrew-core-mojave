@@ -3,13 +3,13 @@ class YtDlp < Formula
 
   desc "Fork of youtube-dl with additional features and fixes"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/1b/a9/781ef55dd51d331e3d8ca60723853f13e75be5b8713870c015b3c4283326/yt-dlp-2022.3.8.2.tar.gz"
-  sha256 "68546578c18e6ce87450b53769d5d5b7f5a23e5209784976db6c7ccbf7954b21"
+  url "https://files.pythonhosted.org/packages/06/60/c4146cecfe7f480fc3cb1a8608ba123b7c1e0b74813db77b8f04fd7a7280/yt-dlp-2022.5.18.tar.gz"
+  sha256 "3a7b59d2fb4b39ce8ba8e0b9c5a37fe20e5624f46a2346b4ae66ab1320e35134"
   license "Unlicense"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yt-dlp"
-    sha256 cellar: :any_skip_relocation, mojave: "e3af394dec87043414d8b2898f78b9ee02f314c683a00d400b641ff68c5f8569"
+    sha256 cellar: :any_skip_relocation, mojave: "b6f66615fc0947d0841929ae5a54807e21ff722c4a3767a6092da0c68646b94f"
   end
 
   head do
@@ -24,6 +24,11 @@ class YtDlp < Formula
     sha256 "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
   end
 
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
+    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+  end
+
   resource "mutagen" do
     url "https://files.pythonhosted.org/packages/f3/d9/2232a4cb9a98e2d2501f7e58d193bc49c956ef23756d7423ba1bd87e386d/mutagen-1.45.1.tar.gz"
     sha256 "6397602efb3c2d7baebd2166ed85731ae1c1d475abca22090b7141ff5034b3e1"
@@ -35,8 +40,8 @@ class YtDlp < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/b4/7b/0960d02701f783bb052ec69ea32789d878d2cce05a03950adbd75f164758/websockets-10.2.tar.gz"
-    sha256 "8351c3c86b08156337b0e4ece0e3c5ec3e01fcd14e8950996832a23c99416098"
+    url "https://files.pythonhosted.org/packages/f8/a3/622d9acbfb9a71144b5d7609906bc648c62e3ca5fdbb1c8cca222949d82c/websockets-10.3.tar.gz"
+    sha256 "fc06cc8073c8e87072138ba1e431300e2d408f054b27047d047b549455066ff4"
   end
 
   def install
