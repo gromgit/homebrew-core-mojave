@@ -1,8 +1,8 @@
 class PcscLite < Formula
   desc "Middleware to access a smart card using SCard API"
   homepage "https://pcsclite.apdu.fr/"
-  url "https://pcsclite.apdu.fr/files/pcsc-lite-1.9.5.tar.bz2"
-  sha256 "9ee3f9b333537562177893559ad4f7b8d5c23ebe828eef53056c02db14049d08"
+  url "https://pcsclite.apdu.fr/files/pcsc-lite-1.9.7.tar.bz2"
+  sha256 "92c1ef6e94170ac06c9c48319a455ad6de5bcc60d9d055a823b72a2f4ff3e466"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "ISC"]
 
   livecheck do
@@ -12,10 +12,12 @@ class PcscLite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcsc-lite"
-    sha256 cellar: :any, mojave: "aa55667ae752c01b11c4f08090e72e5aee6ca7fdf4e9e24c1b0d836535dc6f33"
+    sha256 cellar: :any, mojave: "778a5735416b6dc24fd80544b8f0835973148a380d925384c6b231ff1ef064f7"
   end
 
   keg_only :shadowed_by_macos, "macOS provides PCSC.framework"
+
+  uses_from_macos "flex" => :build
 
   on_linux do
     depends_on "pkg-config" => :build
