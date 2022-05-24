@@ -1,14 +1,14 @@
 class Zk < Formula
   desc "Plain text note-taking assistant"
   homepage "https://github.com/mickael-menu/zk"
-  url "https://github.com/mickael-menu/zk/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "57dd9e9bf1f93e9a5e3d2ed94ebb1477dda2f0cd62004964a3c8ea9767ce51fd"
+  url "https://github.com/mickael-menu/zk/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "ce4851be512c446658e0945574bea52531d25e481a4fdea632f31a488445db85"
   license "GPL-3.0-only"
   head "https://github.com/mickael-menu/zk.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zk"
-    sha256 cellar: :any, mojave: "49a1870828c01950f7a0485fe14c983220ad205b05ccc097fd24b83fac8fc746"
+    sha256 cellar: :any, mojave: "a7ab11eb77af6fbd87ace6beceda8ab853e4e3600bee2b0f430291bddb8fbe35"
   end
 
   depends_on "go" => :build
