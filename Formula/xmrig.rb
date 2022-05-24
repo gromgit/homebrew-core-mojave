@@ -4,7 +4,7 @@ class Xmrig < Formula
   url "https://github.com/xmrig/xmrig/archive/v6.17.0.tar.gz"
   sha256 "748a989390202ba2d1ccbd9d9a6b8cbd6551149cbab63b347fd1ed6df0254faa"
   license "GPL-3.0-or-later"
-  head "https://github.com/xmrig/xmrig.git", branch: "master"
+  head "https://github.com/xmrig/xmrig.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -13,7 +13,8 @@ class Xmrig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmrig"
-    sha256 mojave: "a0d00d43ec7cd3ece99e0a102fdf346108147cc53140cc1a6c97c0b725b0b17b"
+    rebuild 1
+    sha256 mojave: "d6ac5bbfacf5e216c4f2027e8f270be8948b8b5a4bd299c1d3141517528f7f38"
   end
 
   depends_on "cmake" => :build
