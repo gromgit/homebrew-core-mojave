@@ -2,15 +2,14 @@ class PrometheusCpp < Formula
   desc "Prometheus Client Library for Modern C++"
   homepage "https://github.com/jupp0r/prometheus-cpp"
   url "https://github.com/jupp0r/prometheus-cpp.git",
-      tag:      "v1.0.0",
-      revision: "4ea303fa66e4c26dc4df67045fa0edf09c2f3077"
+      tag:      "v1.0.1",
+      revision: "76470b3ec024c8214e1f4253fb1f4c0b28d3df94"
   license "MIT"
   head "https://github.com/jupp0r/prometheus-cpp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prometheus-cpp"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c60227e11d31f904d6130b5864f05047334f28026520e2d6395961b395806451"
+    sha256 cellar: :any_skip_relocation, mojave: "963fb326448c0464e848e823ca524d0ce552008fa2c5bc8bd0eaf4de705f7045"
   end
 
   depends_on "cmake" => :build
