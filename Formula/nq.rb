@@ -1,14 +1,15 @@
 class Nq < Formula
   desc "Unix command-line queue utility"
-  homepage "https://github.com/chneukirchen/nq"
-  url "https://github.com/chneukirchen/nq/archive/v0.5.tar.gz"
+  homepage "https://github.com/leahneukirchen/nq"
+  url "https://github.com/leahneukirchen/nq/archive/v0.5.tar.gz"
   sha256 "3f01aaf0b8eee4f5080ed1cd71887cb6485d366257d4cf5470878da2b734b030"
   license "CC0-1.0"
-  head "https://github.com/chneukirchen/nq.git", branch: "master"
+  head "https://github.com/leahneukirchen/nq.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nq"
-    sha256 cellar: :any_skip_relocation, mojave: "725df7a59495fb7ef7e672a93e98ffc4102489eb7d9a27c6a6b62dbdd6d7bb50"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0b34346051fce2d862ae4d9ee8ddf2d007c5ac622e46e8c77b3b8a552d169ca4"
   end
 
   def install
