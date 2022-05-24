@@ -2,9 +2,9 @@ class Minio < Formula
   desc "High Performance, Kubernetes Native Object Storage"
   homepage "https://min.io"
   url "https://github.com/minio/minio.git",
-      tag:      "RELEASE.2022-05-04T07-45-27Z",
-      revision: "44a3b58e52cde6db89fdb99bcc0ea3713c5ad85e"
-  version "20220504074527"
+      tag:      "RELEASE.2022-05-08T23-50-31Z",
+      revision: "62aa42cccf39c8b08f394c0d27fb5e2db33f49b6"
+  version "20220508235031"
   license "AGPL-3.0-or-later"
   head "https://github.com/minio/minio.git", branch: "master"
 
@@ -18,7 +18,7 @@ class Minio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minio"
-    sha256 cellar: :any_skip_relocation, mojave: "69511decccc76a67353a430644c457bbacdd87b8ad64e1aa73f26de8a8351272"
+    sha256 cellar: :any_skip_relocation, mojave: "61e8a3ff021a6eb77e69b69f75090772eecb17386f77de8541e5cfb9cfd6c704"
   end
 
   depends_on "go" => :build
