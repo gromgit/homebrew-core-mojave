@@ -1,9 +1,9 @@
 class Zsh < Formula
   desc "UNIX shell (command interpreter)"
   homepage "https://www.zsh.org/"
-  url "https://downloads.sourceforge.net/project/zsh/zsh/5.8.1/zsh-5.8.1.tar.xz"
-  mirror "https://www.zsh.org/pub/zsh-5.8.1.tar.xz"
-  sha256 "b6973520bace600b4779200269b1e5d79e5f505ac4952058c11ad5bbf0dd9919"
+  url "https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz"
+  mirror "https://www.zsh.org/pub/zsh-5.9.tar.xz"
+  sha256 "9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5"
   license "MIT-Modern-Variant"
 
   livecheck do
@@ -12,8 +12,7 @@ class Zsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zsh"
-    rebuild 2
-    sha256 mojave: "257b0b4aa7c633453ba984a708d51627c08fe830dab0d518572062212b728b9c"
+    sha256 mojave: "3d41511577e1966a31bdf449d2a5fec8ee2db735ef9f618dab589cc18cc27890"
   end
 
   head do
@@ -27,9 +26,9 @@ class Zsh < Formula
   uses_from_macos "texinfo"
 
   resource "htmldoc" do
-    url "https://downloads.sourceforge.net/project/zsh/zsh-doc/5.8.1/zsh-5.8.1-doc.tar.xz"
-    mirror "https://www.zsh.org/pub/zsh-5.8.1-doc.tar.xz"
-    sha256 "8b9cb53d6432f13e9767a8680b642e8e8a52c7f1b8decd211756ca20c667f917"
+    url "https://downloads.sourceforge.net/project/zsh/zsh-doc/5.9/zsh-5.9-doc.tar.xz"
+    mirror "https://www.zsh.org/pub/zsh-5.9-doc.tar.xz"
+    sha256 "6f7c091249575e68c177c5e8d5c3e9705660d0d3ca1647aea365fd00a0bd3e8a"
   end
 
   def install
