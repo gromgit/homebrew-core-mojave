@@ -1,8 +1,8 @@
 class Immudb < Formula
   desc "Lightweight, high-speed immutable database"
   homepage "https://www.codenotary.io"
-  url "https://github.com/codenotary/immudb/archive/v1.2.4.tar.gz"
-  sha256 "dd7f7ef1bae8d34ebaa1bb8d1099a1b0809dd6bac0d36fdc279139087dcedb79"
+  url "https://github.com/codenotary/immudb/archive/v1.3.0.tar.gz"
+  sha256 "e874a119d13244a430e3f2353209d84f93feb6bf1e30f77d7c360d8a6d652bf1"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Immudb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/immudb"
-    sha256 cellar: :any_skip_relocation, mojave: "029299e09ccaf52990ca7d6d6ffdf2093ba27d211f4f484814cffcf7b93eef98"
+    sha256 cellar: :any_skip_relocation, mojave: "bda138c93326c4c332e527646b810e3488cc6ffbe77ff2dced8fc779660110aa"
   end
 
   depends_on "go" => :build
