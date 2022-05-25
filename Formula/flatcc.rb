@@ -1,17 +1,15 @@
 class Flatcc < Formula
   desc "FlatBuffers Compiler and Library in C for C"
   homepage "https://github.com/dvidelabs/flatcc"
-  url "https://github.com/dvidelabs/flatcc/archive/v0.6.0.tar.gz"
-  sha256 "a92da3566d11e19bb807a83554b1a2c644a5bd91c9d9b088514456bb56e1c666"
+  url "https://github.com/dvidelabs/flatcc/archive/v0.6.1.tar.gz"
+  sha256 "2533c2f1061498499f15acc7e0937dcf35bc68e685d237325124ae0d6c600c2b"
   license "Apache-2.0"
   head "https://github.com/dvidelabs/flatcc.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flatcc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f878a5869dd8010e6af04c7015538ad02457342bf8413e3271a900272cf2cc11"
+    sha256 cellar: :any_skip_relocation, mojave: "0519b2f0e641e2315fb0c18465ebac4c99dc22d5c80a3cb0802ceff19d620abf"
   end
-
 
   depends_on "cmake" => :build
 
