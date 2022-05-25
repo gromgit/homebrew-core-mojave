@@ -13,7 +13,8 @@ class Gopls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gopls"
-    sha256 cellar: :any_skip_relocation, mojave: "b6ac516d17de456e80140cedb8cf5f29651267bc32e853419b3fdd8bc95324be"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b1e3212605b87dc45365a726f5622c17ec06177c6f22fcbef9abadcad0ab8c48"
   end
 
   depends_on "go" => :build
