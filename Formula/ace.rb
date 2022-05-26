@@ -1,8 +1,8 @@
 class Ace < Formula
   desc "ADAPTIVE Communication Environment: OO network programming in C++"
   homepage "https://www.dre.vanderbilt.edu/~schmidt/ACE.html"
-  url "https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-7_0_6/ACE+TAO-7.0.6.tar.bz2"
-  sha256 "27990ce2d17f5811efd589fa3de7c77e25e2dc33b3a6bfbe1b9f439eedd2dc3c"
+  url "https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-7_0_7/ACE+TAO-7.0.7.tar.bz2"
+  sha256 "13f010e2de296a9d1f956c7f36795fec08991be500456bdb2cbc93a5503992e0"
   license "DOC"
 
   livecheck do
@@ -15,8 +15,7 @@ class Ace < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ace"
-    rebuild 2
-    sha256 cellar: :any, mojave: "02afc34d7114a54d16b6249ab0bf1973387e8054358ed132fa464a08d8168da8"
+    sha256 cellar: :any, mojave: "371d4e531ac2a9c40bfbdc7a675850c9390edaaeb579b2c0e784af05bdb449df"
   end
 
   def install
@@ -40,6 +39,7 @@ class Ace < Formula
                    "static_libs=0",
                    "install"
 
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}" if OS.mac?
     system "make", "-C", "examples/Log_Msg"
     pkgshare.install "examples"
   end
