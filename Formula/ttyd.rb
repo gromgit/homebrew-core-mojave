@@ -4,12 +4,12 @@ class Ttyd < Formula
   url "https://github.com/tsl0922/ttyd/archive/1.6.3.tar.gz"
   sha256 "1116419527edfe73717b71407fb6e06f46098fc8a8e6b0bb778c4c75dc9f64b9"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ttyd"
-    sha256 mojave: "ac65ac785ec6679a0d5112323e67128099a420e4b2fe690166b738a6abfd49c3"
+    sha256 mojave: "4c7266afdc59ab1aff134c58d7ff0ef2ea57d0fa66b708fc53f29f535375314c"
   end
 
   depends_on "cmake" => :build
