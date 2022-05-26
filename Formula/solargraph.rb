@@ -3,13 +3,13 @@ class Solargraph < Formula
   homepage "https://solargraph.org"
   # Must be git, because solargraph.gemspec uses git ls-files
   url "https://github.com/castwide/solargraph.git",
-      tag:      "v0.44.3",
-      revision: "4ac21c95ef3ccae100f2956a20aa90fd1bedff5e"
+      tag:      "v0.45.0",
+      revision: "4558cbdb249952662a565c4220b7406f3eac7aae"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solargraph"
-    sha256 cellar: :any, mojave: "77897d5ba84ca778ff783f94c0b1fa502db5c477a83e152f70eee676b8b147cf"
+    sha256 cellar: :any, mojave: "5d866903d33e7a6ab09f99d80411073d0a08784284b1fccaee2622c05006c362"
   end
 
   uses_from_macos "ruby", since: :catalina
