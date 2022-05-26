@@ -14,6 +14,7 @@ class Terminator < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "8039dfc9e641c81615932afdb6bec92a512e123079974e4d87acbf6bd904a5fb"
     sha256 cellar: :any_skip_relocation, catalina:       "8c257067fdc58cceaa2f4f68fd569aa408db036faff673fe27f3950224745987"
     sha256 cellar: :any_skip_relocation, mojave:         "cbaae7d439b7f9fb6d2149c3fba76eefefb2120aac26504c60ebaab4d842846b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1dc76a8265f1bdfc5c593661afe56dbd247c3ee8ece4963c22894078b80adc9"
   end
 
   depends_on "pygobject3"
@@ -37,9 +38,14 @@ class Terminator < Formula
 
   test do
     pid = Process.spawn bin/"terminator", "-d", [:out, :err] => "#{testpath}/output"
-    sleep 5
+    sleep 30
     Process.kill "TERM", pid
-    assert_match "Window::create_layout: Making a child of type: Terminal", File.read("#{testpath}/output")
+    output = if OS.mac?
+      "Window::create_layout: Making a child of type: Terminal"
+    else
+      "You need to run terminator in an X environment. Make sure $DISPLAY is properly set"
+    end
+    assert_match output, File.read("#{testpath}/output")
   ensure
     Process.kill "KILL", pid
   end
