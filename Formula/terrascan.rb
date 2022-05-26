@@ -1,14 +1,14 @@
 class Terrascan < Formula
   desc "Detect compliance and security violations across Infrastructure as Code"
-  homepage "https://github.com/accurics/terrascan"
-  url "https://github.com/accurics/terrascan/archive/v1.15.0.tar.gz"
-  sha256 "a7dcd9481903df150bbd9696bb3f91c4d9b645e8c2dc1124a7ce9ffc551eed31"
+  homepage "https://github.com/tenable/terrascan"
+  url "https://github.com/tenable/terrascan/archive/v1.15.1.tar.gz"
+  sha256 "3d0588ea411f3cd2a47803ab1fe3e0f92b75a48e29109f843cb99700c083fc66"
   license "Apache-2.0"
-  head "https://github.com/accurics/terrascan.git", branch: "master"
+  head "https://github.com/tenable/terrascan.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terrascan"
-    sha256 cellar: :any_skip_relocation, mojave: "79277baac74d82f66488d303899b0a93175ed0a2a1fb4f935321939a55871f1a"
+    sha256 cellar: :any_skip_relocation, mojave: "d7f66aeb534e45c26e46f90ecab52a36e86556f31fbda5c350a2fc05253ab014"
   end
 
   depends_on "go" => :build
