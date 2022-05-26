@@ -17,7 +17,8 @@ class Vcpkg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcpkg"
-    sha256 cellar: :any, mojave: "cce332419642cabd4f23d43a01f2fa22286d0c0fc425b0f8b525b4cfbd40c8e2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a40ca0d8fb27967edbd95c776329cda9b4a1adcde357028135d3586276912da4"
   end
 
   depends_on "cmake" => :build
@@ -48,7 +49,7 @@ class Vcpkg < Formula
   # This is specific to the way we install only the `vcpkg` tool.
   def caveats
     <<~EOS
-      This formula provieds only the `vcpkg` executable. To use vcpkg:
+      This formula provides only the `vcpkg` executable. To use vcpkg:
         git clone https://github.com/microsoft/vcpkg "$HOME/vcpkg"
         export VCPKG_ROOT="$HOME/vcpkg"
     EOS
