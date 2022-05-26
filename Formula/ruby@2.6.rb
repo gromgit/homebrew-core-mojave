@@ -5,14 +5,10 @@ class RubyAT26 < Formula
   sha256 "5fd8ded51321b88fdc9c1b4b0eb1b951d2eddbc293865da0151612c2e814c1f2"
   license "Ruby"
 
-  livecheck do
-    url "https://www.ruby-lang.org/en/downloads/"
-    regex(/href=.*?ruby[._-]v?(2\.6(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@2.6"
-    sha256 mojave: "76d59652b9fe9ecfbe015d87d660543553c525ca3f09be402d025fdd47e31abb"
+    rebuild 1
+    sha256 mojave: "0d42d3794cf29f2385adf1173d3fa1edd3312f413ac87e3b03caa62e8c1f7ae2"
   end
 
   keg_only :versioned_formula
