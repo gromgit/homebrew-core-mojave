@@ -4,8 +4,8 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://github.com/minetest/minetest/archive/5.5.0.tar.gz"
-    sha256 "8b9bef6054c8895cc3329ae6d05cb355eef9c7830600d82dc9eaa4664f87c8f9"
+    url "https://github.com/minetest/minetest/archive/5.5.1.tar.gz"
+    sha256 "dc0ae5188ef351db85c38b27f38f8549b133ed82aa46daea6deee148aa3454f4"
 
     resource "irrlichtmt" do
       url "https://github.com/minetest/irrlicht/archive/1.9.0mt4.tar.gz"
@@ -25,8 +25,7 @@ class Minetest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minetest"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a6234c7c98be9ac0b126d670a6999b5f84743ef9a55480263959559fd31722b0"
+    sha256 cellar: :any, mojave: "a16733e6fc72f0bd8dae3d29e97e382482adc06dcc21a4e9c921afd292400002"
   end
 
   head do
