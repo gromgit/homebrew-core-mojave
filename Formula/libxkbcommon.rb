@@ -1,8 +1,8 @@
 class Libxkbcommon < Formula
   desc "Keyboard handling library"
   homepage "https://xkbcommon.org/"
-  url "https://xkbcommon.org/download/libxkbcommon-1.4.0.tar.xz"
-  sha256 "106cec5263f9100a7e79b5f7220f889bc78e7d7ffc55d2b6fdb1efefb8024031"
+  url "https://xkbcommon.org/download/libxkbcommon-1.4.1.tar.xz"
+  sha256 "943c07a1e2198026d8102b17270a1f406e4d3d6bbc4ae105b9e1b82d7d136b39"
   license "MIT"
   head "https://github.com/xkbcommon/libxkbcommon.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Libxkbcommon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxkbcommon"
-    sha256 mojave: "9f36a6a6c2fb143ec14700e3ee26cb57f0691913f92bc6d816b33c9aeea5dcce"
+    sha256 mojave: "00d6abae8aa8a6f153e1feec10a9b646b919f493d6c4070ade596a3a0223cace"
   end
 
   depends_on "bison" => :build
