@@ -6,14 +6,10 @@ class Librasterlite < Formula
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 8
 
-  livecheck do
-    skip "No longer developed"
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librasterlite"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4b2882718d1c67589617048c3c1d9552621eba87d9133523cbdf434467793e13"
+    rebuild 2
+    sha256 cellar: :any, mojave: "be2cb797c822aa0e06aa56a71ffe8b2c7193654e0f7f01f0e3c6773a8f177826"
   end
 
   deprecate! date: "2022-03-05", because: :deprecated_upstream
