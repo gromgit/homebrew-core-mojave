@@ -1,13 +1,13 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https://github.com/zricethezav/gitleaks"
-  url "https://github.com/zricethezav/gitleaks/archive/v8.8.4.tar.gz"
-  sha256 "7692535fb0011d3ad9c6b1effd0f501c1b26baf5c720288384d459a8c8f951eb"
+  url "https://github.com/zricethezav/gitleaks/archive/v8.8.5.tar.gz"
+  sha256 "ab2067b1c820cddfa6915901171a260612306a593dde91179ca6e611ca473977"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitleaks"
-    sha256 cellar: :any_skip_relocation, mojave: "3e113249d1811f964e9a97df148210c6dae5458efd27192e95a0350e3c7c6c9b"
+    sha256 cellar: :any_skip_relocation, mojave: "86f8c9bc8c7a91784ff2f08fd2f102016c8229f278b6f641232f98828a99e648"
   end
 
   depends_on "go" => :build
