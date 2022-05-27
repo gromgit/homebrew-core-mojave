@@ -1,13 +1,13 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.21.3/deno_src.tar.gz"
-  sha256 "97b9c901e1681ac453a6a88c0e4d729348aabc6be34bdb26f0c171e6bdd8404f"
+  url "https://github.com/denoland/deno/releases/download/v1.22.0/deno_src.tar.gz"
+  sha256 "ffa1cd143ba1e53ab5d380c1e630a2fe73910b7be4e483b0d643d14b31b23ed4"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deno"
-    sha256 cellar: :any_skip_relocation, mojave: "ffa5480d851151cba13d3816b848399b922904d68bab4a00cc7b4aad0f105211"
+    sha256 cellar: :any_skip_relocation, mojave: "63b8982cfc87742e73f3b222891d7728db08a266d4e939f5f2cdc943d71d3b49"
   end
 
   depends_on "llvm" => :build
