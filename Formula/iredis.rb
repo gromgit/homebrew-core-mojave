@@ -10,9 +10,11 @@ class Iredis < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iredis"
-    sha256 cellar: :any_skip_relocation, mojave: "f199a248656ea96174f963a1dd8b85c0558f28317bbdbe9fe0d856729d5b121d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "73de56893cd713cd64fee43cef9c99316a1ec4fdd0e5deb5a856ea2043abb844"
   end
 
+  depends_on "poetry" => :build
   depends_on "python@3.10"
   depends_on "six"
 
@@ -82,7 +84,23 @@ class Iredis < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3")
+
+    # Install pytzdata using brewed poetry to avoid build dependency on Rust.
+    resource("pytzdata").stage do
+      system Formula["poetry"].opt_bin/"poetry", "build", "--format", "wheel", "--verbose", "--no-interaction"
+      venv.pip_install_and_link Dir["dist/pytzdata-*.whl"].first
+    end
+
+    resources.each do |r|
+      next if r.name == "pytzdata"
+
+      venv.pip_install r
+    end
+
+    # Install iredis using brewed poetry to avoid build dependency on Rust.
+    system Formula["poetry"].opt_bin/"poetry", "build", "--format", "wheel", "--verbose", "--no-interaction"
+    venv.pip_install_and_link Dir["dist/iredis-*.whl"].first
   end
 
   test do
