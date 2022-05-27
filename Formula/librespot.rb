@@ -1,15 +1,14 @@
 class Librespot < Formula
   desc "Open Source Spotify client library"
   homepage "https://github.com/librespot-org/librespot"
-  url "https://github.com/librespot-org/librespot/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "d360eaf61ad4216ee2c4a4d583d61c8ec7367b5efbe512011d049f73e4f24952"
+  url "https://github.com/librespot-org/librespot/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "ae3ce1f3bd0031cac687eb60e08abb2d327ba51623c583765eda70376d69a71f"
   license "MIT"
   head "https://github.com/librespot-org/librespot.git", branch: "dev"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librespot"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "6c7f4c67767664cfe60a47418aaa2c9518156aa5d3de96f4b797cc5f0112953c"
+    sha256 cellar: :any_skip_relocation, mojave: "34f5439bde91049e406b22bbfd7dc34b0723f67613cd6f8b032861d261a1bc5b"
   end
 
   depends_on "rust" => :build
