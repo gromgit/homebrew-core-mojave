@@ -2,14 +2,14 @@ class Glslviewer < Formula
   desc "Live-coding console tool that renders GLSL Shaders"
   homepage "http://patriciogonzalezvivo.com/2015/glslViewer/"
   url "https://github.com/patriciogonzalezvivo/glslViewer.git",
-      tag:      "2.0.5",
-      revision: "788bb17bfa10759dd88def6979f1d16b31591ff6"
+      tag:      "2.1.2",
+      revision: "c6eaf01456db4baa61f876762fdb2d8bf49727e4"
   license "BSD-3-Clause"
   head "https://github.com/patriciogonzalezvivo/glslViewer.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glslviewer"
-    sha256 cellar: :any, mojave: "719e99c1cd0e5612632bc444e6b91f366d914f3e924f24a3d314e3210e8bfb94"
+    sha256 cellar: :any, mojave: "96a6cfc8cf6885177e8d6d08ada1e2b2402f25cf6a3acb4af903d390412053a1"
   end
 
   depends_on "cmake" => :build
