@@ -2,14 +2,14 @@ class CloudflareQuiche < Formula
   desc "Savoury implementation of the QUIC transport protocol and HTTP/3"
   homepage "https://docs.quic.tech/quiche/"
   url "https://github.com/cloudflare/quiche.git",
-      tag:      "0.12.0",
-      revision: "6437b3c2db0dd3c1d6c76cb71d784c874b185d01"
+      tag:      "0.13.0",
+      revision: "2bb385b26bac0018f37ec0a7c6a556a52842e6a6"
   license "BSD-2-Clause"
   head "https://github.com/cloudflare/quiche.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudflare-quiche"
-    sha256 cellar: :any_skip_relocation, mojave: "bd95e62d8c44748a5601eb51a0bab48df4798e9a16831118557cb8a2d82f973a"
+    sha256 cellar: :any_skip_relocation, mojave: "cb45473d21c408333db2bc5275ff1dbafef967a5e898a709b47b4fa41ea41486"
   end
 
   depends_on "cmake" => :build
