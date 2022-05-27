@@ -10,10 +10,10 @@ class Cruft < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cruft"
-    sha256 cellar: :any_skip_relocation, mojave: "1d854ee0a1800a57ad21b3e4f8f1a95d6823c3cd145ab77ca7e7f0c315f396a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "37d5504afe49067d6e3f5700d1516d2f0febeba1d066cd39c93dda35487e6be1"
   end
 
-  depends_on "poetry" => :build
   depends_on "python@3.10"
   depends_on "six"
 
@@ -123,12 +123,7 @@ class Cruft < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
-    venv.pip_install resources
-
-    poetry = Formula["poetry"].opt_bin/"poetry"
-    system poetry, "build", "--format", "wheel", "--verbose", "--no-interaction"
-    venv.pip_install_and_link Dir["dist/cruft-*.whl"].first
+    virtualenv_install_with_resources
   end
 
   test do
