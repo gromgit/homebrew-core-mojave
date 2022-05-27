@@ -3,13 +3,13 @@ class Duplicity < Formula
 
   desc "Bandwidth-efficient encrypted backup"
   homepage "https://gitlab.com/duplicity/duplicity"
-  url "https://files.pythonhosted.org/packages/67/67/f0db4470267997adb1fcccbb57cac928fbca47a2d423dbcb2ad7f3a88e1a/duplicity-0.8.22.tar.gz"
-  sha256 "c3c89d96cd6d374c22abed939619f77b0252ffb2e400888efc6b86b88bcfe626"
+  url "https://files.pythonhosted.org/packages/fc/cf/4c492053398633154062759b1b8f7a4da77e029145c432ecfe3f76ca730c/duplicity-0.8.23.tar.gz"
+  sha256 "35e0d218bc6569aa99e51795c5b521093af21283af8c4db4f20652e76c20fefd"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duplicity"
-    sha256 cellar: :any, mojave: "f3f64ab5bd5230184147091193789fbe3afb35ac6270a674fbc35e61a7ba80b7"
+    sha256 cellar: :any, mojave: "809daa92f08adecdb0357d456e3e1685eb7c056c5c54e6ef2af77bc6c62e3b46"
   end
 
   depends_on "rust" => :build # for cryptography
