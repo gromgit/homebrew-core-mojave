@@ -5,15 +5,10 @@ class Libgaiagraphics < Formula
   sha256 "ccab293319eef1e77d18c41ba75bc0b6328d0fc3c045bb1d1c4f9d403676ca1c"
   revision 8
 
-  livecheck do
-    url "https://www.gaia-gis.it/gaia-sins/gaiagraphics-sources/"
-    regex(/href=.*?libgaiagraphics[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgaiagraphics"
-    rebuild 1
-    sha256 cellar: :any, mojave: "64b0fba78ce9138ab73b7303dde0c3cc19d6c7a48b7bed3b851c34811162cec9"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6b46ec25fcda5f8864f27735fd65bed12899b7395a4f797b6fbac721b10f263d"
   end
 
   deprecate! date: "2022-03-05", because: :deprecated_upstream
