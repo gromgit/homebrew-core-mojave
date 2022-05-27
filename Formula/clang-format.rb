@@ -7,12 +7,12 @@ class ClangFormat < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.3/llvm-14.0.3.src.tar.xz"
-    sha256 "1e09e8c26e1b67bc94a128b62e9b9c24b70c697a2436a479c9e5eedc4ae29654"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.4/llvm-14.0.4.src.tar.xz"
+    sha256 "eb8e90dfadae4073a7f8fc6384bacc0dda072400d82b9d25dabb5280a737ba22"
 
     resource "clang" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.3/clang-14.0.3.src.tar.xz"
-      sha256 "f85c55f192cb35b9d6af1f998b7d5abe90e369f8b16445503ffab1b02e75a6f0"
+      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.4/clang-14.0.4.src.tar.xz"
+      sha256 "922bdc8341491d4f54548c51bafd77c0e737a3146fe33c762bce31a0fd151591"
     end
   end
 
@@ -24,7 +24,7 @@ class ClangFormat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clang-format"
-    sha256 cellar: :any_skip_relocation, mojave: "5461843311203e4a8fc9ca49c7ed7b2bf3b35e11ec1a875859af6dca05e6dd21"
+    sha256 cellar: :any_skip_relocation, mojave: "92872cf02c89af7ca40483907c4b3b95a441e7da959d5647538f32e97a2dd852"
   end
 
   depends_on "cmake" => :build
