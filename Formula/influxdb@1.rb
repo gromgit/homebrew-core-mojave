@@ -1,8 +1,8 @@
 class InfluxdbAT1 < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
-  url "https://github.com/influxdata/influxdb/archive/v1.9.6.tar.gz"
-  sha256 "2ec001a9194995d6b2655b057ef5bb53345bf363e61627f563ae99ce8f91e142"
+  url "https://github.com/influxdata/influxdb/archive/v1.9.7.tar.gz"
+  sha256 "f2f514ce67378d859a039faa2068871bf933d082e95d731b1e22c7971d5bd01f"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class InfluxdbAT1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb@1"
-    sha256 cellar: :any_skip_relocation, mojave: "36134485c54876f5baefb416373992acbc6d8ef44dd30b4845b3ba263db33903"
+    sha256 cellar: :any_skip_relocation, mojave: "865bc424d959dbb12f5aade2f14433938fed73e2921550d0c112163ac49eb457"
   end
 
   keg_only :versioned_formula
@@ -25,8 +25,8 @@ class InfluxdbAT1 < Formula
   # If you're upgrading to a newer influxdb version, check to see if this needs
   # to be upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.9.tar.gz"
-    sha256 "25843e58a3e6994bdafffbc0ef0844978a3d1f999915d6770cb73505fcf87e44"
+    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.11.tar.gz"
+    sha256 "52b22c151163dfb051fd44e7d103fc4cde6ae8ff852ffc13adeef19d21c36682"
   end
 
   def install
