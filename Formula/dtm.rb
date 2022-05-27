@@ -1,13 +1,13 @@
 class Dtm < Formula
   desc "Cross-language distributed transaction manager"
   homepage "https://en.dtm.pub/"
-  url "https://github.com/dtm-labs/dtm/archive/refs/tags/v1.13.5.tar.gz"
-  sha256 "67a6c145ac548529f93712fd252df8e7df964e01f8c12d97e136eb4b22015d42"
+  url "https://github.com/dtm-labs/dtm/archive/refs/tags/v1.14.1.tar.gz"
+  sha256 "bd21e50e09d816d33501233ee37fd9ee4e1fa33b8ff08f1bfe07bc0f903042ea"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dtm"
-    sha256 cellar: :any_skip_relocation, mojave: "f5f6d3dd1f8e27cba224efa74e25c5f0ff7227ae76a17983db2fe09cc7487751"
+    sha256 cellar: :any_skip_relocation, mojave: "df4ddde34d51e76af2378de5be557ae4a75a73e505972bab7588593d4b3a07e5"
   end
 
   depends_on "go" => :build
