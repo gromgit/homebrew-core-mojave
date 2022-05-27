@@ -4,6 +4,7 @@ class Flashrom < Formula
   url "https://download.flashrom.org/releases/flashrom-v1.2.tar.bz2"
   sha256 "e1f8d95881f5a4365dfe58776ce821dfcee0f138f75d0f44f8a3cd032d9ea42b"
   license "GPL-2.0"
+  revision 1
   head "https://review.coreboot.org/flashrom.git", branch: "master"
 
   livecheck do
@@ -13,14 +14,12 @@ class Flashrom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flashrom"
-    rebuild 2
-    sha256 cellar: :any, mojave: "7192ad39ad514db02104e2352e35a641f80a82b6a14426575e944cc2f1c32e78"
+    sha256 cellar: :any, mojave: "8c7d9af584b1937e12e92bd6cc2237890dcf323f04d04118f407d1dc913512a5"
   end
 
-
   depends_on "pkg-config" => :build
-  depends_on "libftdi0"
-  depends_on "libusb-compat"
+  depends_on "libftdi"
+  depends_on "libusb"
 
   # Add https://github.com/flashrom/flashrom/pull/212, to allow flashrom to build on Apple Silicon
   patch do
