@@ -13,6 +13,7 @@ class Libmspub < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmspub"
+    rebuild 1
     sha256 cellar: :any, mojave: "e6640ea95037361442c5fc968e2165fa0d16b57e96cbe390f8fea8905fcec07f"
   end
 
