@@ -3,14 +3,14 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://github.com/linode/linode-cli/archive/refs/tags/5.19.0.tar.gz"
-  sha256 "d303affab34631c93769aded28c206cedf35b499bb74cc1463b652da9a2dda17"
+  url "https://github.com/linode/linode-cli/archive/refs/tags/5.20.0.tar.gz"
+  sha256 "f8c6cca3249fa0146a6dbf8e48e95b8347c070629ca63b8f08b00b4acd0bd7b3"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/linode-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "1fa0e30cb86db4cdaaada7efd72c1a712cedafb6607781ed68a4b67a7aeb98ac"
+    sha256 cellar: :any_skip_relocation, mojave: "b5ac4bbd0c43e43b812725b216792b65eed6a218ee8d6a25bfdcf2c853e7de8c"
   end
 
   depends_on "poetry" => :build # for terminaltables
@@ -23,8 +23,8 @@ class LinodeCli < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/07/10/75277f313d13a2b74fc56e29239d5c840c2bf09f17bf25c02b35558812c6/certifi-2022.5.18.1.tar.gz"
+    sha256 "9c5705e395cd70084351dd8ad5c41e65655e08ce46f2ec9cf6c2c08390f71eb7"
   end
 
   resource "charset-normalizer" do
