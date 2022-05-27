@@ -7,6 +7,7 @@ class Libtorch < Formula
       tag:      "v1.11.0",
       revision: "bc2c6edaf163b1a1330e37a6e34caf8c553e4755"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -15,11 +16,11 @@ class Libtorch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorch"
-    sha256 cellar: :any, mojave: "27ecea732fc1ed7a6d33abde7d6372ceb64fe2cfdf3280ab37c20f437f09b5d6"
+    sha256 cellar: :any, mojave: "ddce249219a9ce0e3956ee029f2f533c8736703e73efb0f6b2d06daa7e09d946"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "eigen"
   depends_on "libomp"
   depends_on "libyaml"
@@ -37,7 +38,7 @@ class Libtorch < Formula
   end
 
   def install
-    venv = virtualenv_create(buildpath/"venv", Formula["python@3.9"].opt_bin/"python3")
+    venv = virtualenv_create(buildpath/"venv", Formula["python@3.10"].opt_bin/"python3")
     venv.pip_install resources
 
     args = %W[
@@ -48,7 +49,7 @@ class Libtorch < Formula
       -DUSE_METAL=OFF
       -DUSE_MKLDNN=OFF
       -DUSE_NNPACK=OFF
-      -DUSE_OPENMP=OFF
+      -DUSE_OPENMP=ON
       -DUSE_SYSTEM_EIGEN_INSTALL=ON
       -DUSE_SYSTEM_PYBIND11=ON
     ]
