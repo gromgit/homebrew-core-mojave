@@ -3,13 +3,13 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://github.com/espressif/esptool"
-  url "https://files.pythonhosted.org/packages/de/57/08750ca0d19114237ff5e2da6a945deed888e3774c95acb577387ed11bec/esptool-3.3.1.tar.gz"
-  sha256 "f9ade989a7f5f19bfc60e11925c45f470b8155c7ecf1a37bc8c31380d5dd07b8"
+  url "https://files.pythonhosted.org/packages/c9/b1/ec839625ba096b8a1ce4ea3c86da5a72a5be8686147c52ba52f863c65156/esptool-4.0.1.tar.gz"
+  sha256 "feeab030fe781e43cbbd5641f23766e52e7d4665b4e221fbf6155dd3d80f0b55"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esptool"
-    sha256 cellar: :any, mojave: "ea0a51ff7a89b9654bd6337ef7e346c05e00513bc58897939ff7eab920bda16a"
+    sha256 cellar: :any, mojave: "df6fd31a9338776616c31a22f07621fc5b8f147b652c3bf36cb0ea33ae26377b"
   end
 
   depends_on "rust" => :build
@@ -66,7 +66,7 @@ class Esptool < Formula
       6QIAICyAEEAAgBBAMAAAAFDDAAAAgP4/zC4AQMwkAEAh/P8SwfAJMQH8/8AAACH5/wH6/8AAAAb//wAABvj/AACA/j8QAAAASGVsbG8gd29ybGQhCgAAAAAAAAAAAAAD
     EOS
 
-    result = shell_output("#{bin}/esptool.py image_info #{testpath}/helloworld-esp8266.bin")
+    result = shell_output("#{bin}/esptool.py --chip esp8266 image_info #{testpath}/helloworld-esp8266.bin")
     assert_match "4010802c", result
   end
 end
