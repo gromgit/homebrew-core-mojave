@@ -1,14 +1,14 @@
 class YleDl < Formula
   desc "Download Yle videos from the command-line"
   homepage "https://aajanki.github.io/yle-dl/index-en.html"
-  url "https://files.pythonhosted.org/packages/4b/61/60092eb1103605003f18f8dbe7482d13d7e5a5b5901dc5d1243a192e900d/yle-dl-20220425.tar.gz"
-  sha256 "fb6a5d22c8234360b8b993dd758f52d09523fcac0edef2cf54c4fe21fd87b406"
+  url "https://files.pythonhosted.org/packages/94/47/f3b211390a7431cda4d2e1ae0b25e7ed3a3f4ffcaa99c6bbf7f911483a9f/yle-dl-20220518.tar.gz"
+  sha256 "df244e8018166326f4a668118b0cc12e817d3cd5a2b2215d98cc141774aaffab"
   license "GPL-3.0-or-later"
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yle-dl"
-    sha256 cellar: :any_skip_relocation, mojave: "f0acd475cd6f5751d0d4b180e966f0658b9cb71ca52bb08ec4458e1e5929f3bc"
+    sha256 cellar: :any_skip_relocation, mojave: "82fcf24a4a5b72ab83ac065e0d5743a118d54e3411b340c258ce2d370b2fb598"
   end
 
   depends_on "ffmpeg"
