@@ -1,8 +1,8 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https://www.musicpd.org/"
-  url "https://www.musicpd.org/download/mpd/0.23/mpd-0.23.6.tar.xz"
-  sha256 "cbc5928ee3ee1ef7ff6a58f6ba4afaee16c07e9eb42d0107bcc098010f4f26ed"
+  url "https://www.musicpd.org/download/mpd/0.23/mpd-0.23.7.tar.xz"
+  sha256 "960dcbac717c388f5dcc4fd945e3af19a476f2b15f367e9653d4c7a948768211"
   license "GPL-2.0-or-later"
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Mpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpd"
-    sha256 cellar: :any, mojave: "bcc186617f9f425652573432193c99c87c89b1fad525f401e2f663a8cc1a9ed8"
+    sha256 cellar: :any, mojave: "16577727c08ebc44369dfa80ddadfdc3fc86944440405f26ea368a033d67ca8f"
   end
 
   depends_on "boost" => :build
@@ -49,6 +49,13 @@ class Mpd < Formula
   end
 
   fails_with gcc: "5"
+
+  # Fix missing header file (see https://github.com/MusicPlayerDaemon/MPD/issues/1530)
+  # Patch accepted upstream, remove on next release
+  patch do
+    url "https://github.com/MusicPlayerDaemon/MPD/commit/c6f7f5777694c448aa42d17f88ab9cf2e3112dd0.patch?full_index=1"
+    sha256 "17c03ecee2a8b91c1b114b2ab340878f6cec5fc28093ec6386f4d7ba47d8b909"
+  end
 
   def install
     # mpd specifies -std=gnu++0x, but clang appears to try to build
