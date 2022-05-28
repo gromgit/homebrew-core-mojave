@@ -1,15 +1,14 @@
 class Skylighting < Formula
   desc "Flexible syntax highlighter using KDE XML syntax descriptions"
   homepage "https://github.com/jgm/skylighting"
-  url "https://github.com/jgm/skylighting/archive/0.12.3.tar.gz"
-  sha256 "50126e6589a3507f19bc5ec83a933441c6f61b95fb5754a9d7c400194dceae70"
+  url "https://github.com/jgm/skylighting/archive/0.12.3.1.tar.gz"
+  sha256 "a1ae5bd7a91e21f5cc0b590f3aae39a57c31cfc97925b92b80f8d9b566251001"
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/skylighting.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skylighting"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "97b76c9ab0203f19a5f8d369c2db83a7192f1f9d8336d97a1d5dc64e357f42b1"
+    sha256 cellar: :any_skip_relocation, mojave: "0ff74b94705715f960dca8a5da327cfdf30ac007aac4c20891fea62c5bfbb25e"
   end
 
   depends_on "cabal-install" => :build
