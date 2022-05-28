@@ -6,8 +6,8 @@ class Sslyze < Formula
   license "AGPL-3.0-only"
 
   stable do
-    url "https://files.pythonhosted.org/packages/7a/c5/92c28ccdd0641c3b5c59b246861f50d738ac0d4a4e0314f9f2700191c464/sslyze-5.0.4.tar.gz"
-    sha256 "369adefac083c3ef6ad60b84ffd48c5fd66cfa47d3bd6cdbdf9a546c50123d23"
+    url "https://files.pythonhosted.org/packages/3d/cc/ca058d60bac78d5d2110645be0c1a03052b08c145d06c5a8008e83dd4938/sslyze-5.0.5.tar.gz"
+    sha256 "fea82ad88a030cc0978fb55f632849b3e858e03c5b97fd62459976953d3ef5d5"
 
     resource "nassl" do
       url "https://github.com/nabla-c0d3/nassl/archive/4.0.2.tar.gz"
@@ -22,7 +22,7 @@ class Sslyze < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sslyze"
-    sha256 cellar: :any, mojave: "157e99475b88b90a7fbec94f6383f7a1f5ebbc1e5ce8a781554a326362c700f1"
+    sha256 cellar: :any, mojave: "a63df6768ca884034d111faf81e1e9d52aab76227962ec8c007fc371f2df5850"
   end
 
   head do
@@ -45,8 +45,8 @@ class Sslyze < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz"
-    sha256 "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9"
+    url "https://files.pythonhosted.org/packages/51/05/bb2b681f6a77276fc423d04187c39dafdb65b799c8d87b62ca82659f9ead/cryptography-37.0.2.tar.gz"
+    sha256 "f224ad253cc9cea7568f49077007d2263efa57396a2f2f78114066fd54b5c68e"
   end
 
   resource "pycparser" do
