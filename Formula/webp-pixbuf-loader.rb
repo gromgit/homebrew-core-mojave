@@ -1,14 +1,13 @@
 class WebpPixbufLoader < Formula
   desc "WebP Image format GdkPixbuf loader"
   homepage "https://github.com/aruiz/webp-pixbuf-loader"
-  url "https://github.com/aruiz/webp-pixbuf-loader/archive/0.0.4.tar.gz"
-  sha256 "cd6e4ec44755e8df3e298688c0aeb72b9467bbdd03009989c0d94b219b30fb51"
+  url "https://github.com/aruiz/webp-pixbuf-loader/archive/0.0.5.tar.gz"
+  sha256 "8271af4dd3d49792dfd157031d44997187a31e039f7b7b264bc9dded17f24cb9"
   license "LGPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webp-pixbuf-loader"
-    rebuild 1
-    sha256 cellar: :any, mojave: "87e3d260f4204f102ef5f097e34f37d64d4f4fe4ec4b2401acbebc266a030be4"
+    sha256 cellar: :any, mojave: "aeb601392bf191d3abba03f72afafd35058a336b94ac1b5a0fd2249c1bb0683f"
   end
 
   depends_on "meson" => :build
