@@ -1,13 +1,13 @@
 class Psalm < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://psalm.dev"
-  url "https://github.com/vimeo/psalm/releases/download/4.21.0/psalm.phar"
-  sha256 "56c44162d854ca525c05f0cd3555d346ab47568d5c5af33ecf6268e88158fc82"
+  url "https://github.com/vimeo/psalm/releases/download/4.23.0/psalm.phar"
+  sha256 "c38bcc077ca16152862c4cca5767d6661d556dc664acae10801d72783bdff169"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/psalm"
-    sha256 cellar: :any_skip_relocation, mojave: "5ac240b0394c5c37f5882caa9f4410306b1fc44a5b9a9b833bc5146c745c1fd9"
+    sha256 cellar: :any_skip_relocation, mojave: "22afe9d299e325d006f7b67055cb9614a7897f3d240dcb7d253102179b05aaed"
   end
 
   depends_on "composer" => :test
