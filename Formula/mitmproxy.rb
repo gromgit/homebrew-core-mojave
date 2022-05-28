@@ -3,15 +3,14 @@ class Mitmproxy < Formula
 
   desc "Intercept, modify, replay, save HTTP/S traffic"
   homepage "https://mitmproxy.org"
-  url "https://github.com/mitmproxy/mitmproxy/archive/v8.0.0.tar.gz"
-  sha256 "9bf403660169327e1b9c8b1701f9f45923e72eba935005cb357f1f4bca1815b5"
+  url "https://github.com/mitmproxy/mitmproxy/archive/v8.1.0.tar.gz"
+  sha256 "41a06a69afc479e41cbb5dbcbf9f6eb94c10e79ece3406fbcc9582457a6a812a"
   license "MIT"
-  revision 1
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mitmproxy"
-    sha256 cellar: :any, mojave: "954c7756fca91c74fcc778b3e0d80b7c11d9de00edcc0697e39de5639d201355"
+    sha256 cellar: :any, mojave: "93c064427c2b906fa233371c54b85f85a665af138bf68755cf39645f3efc2a1f"
   end
 
   depends_on "rust" => :build # for cryptography
