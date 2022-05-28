@@ -7,16 +7,10 @@ class YoutubeDlc < Formula
   revision 1
   head "https://github.com/blackjack4494/yt-dlc.git", branch: "master"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-    regex(%r{href=.*?/tag/v?(\d+(?:[.-]\d+)+)["' >]}i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/youtube-dlc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3c6c4cf5d3d1b73cf25df2f3457b56efb50f452fe25e9e9d9fc5c2e5a64d4112"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "15f0bdc35a04ee3a76d536f0a274de2264cc02dcd998f917e96d757efbccbe1b"
   end
 
   deprecate! date: "2022-03-21", because: :unmaintained
