@@ -1,8 +1,8 @@
 class PythonTkAT39 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.9.12/Python-3.9.12.tar.xz"
-  sha256 "2cd94b20670e4159c6d9ab57f91dbf255b97d8c1a1451d1c35f4ec1968adf971"
+  url "https://www.python.org/ftp/python/3.9.13/Python-3.9.13.tar.xz"
+  sha256 "125b0c598f1e15d2aa65406e83f792df7d171cdf38c16803b149994316a3080f"
   license "Python-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class PythonTkAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-tk@3.9"
-    sha256 cellar: :any, mojave: "4de4694bdc16f25550862f87ac19e527e9c2cb17813b41a21b50efa1037f85df"
+    sha256 cellar: :any, mojave: "5d6fc5f4cf9e1ce3f1c3d5f3edad4e4c75be266d72a7a9aa02862803c5def42a"
   end
 
   depends_on "python@3.9"
