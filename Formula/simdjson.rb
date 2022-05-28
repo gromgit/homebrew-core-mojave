@@ -1,14 +1,14 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https://simdjson.org"
-  url "https://github.com/simdjson/simdjson/archive/v1.1.0.tar.gz"
-  sha256 "9effcb21fe48e4bcc9b96031e60c3911c58aa656ad8c78212d269c0db9e0133e"
+  url "https://github.com/simdjson/simdjson/archive/v2.0.0.tar.gz"
+  sha256 "1ae950cdb5f1db756468f06f0158a7492778b09d821747de826332b3ca88fec9"
   license "Apache-2.0"
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simdjson"
-    sha256 cellar: :any, mojave: "66972fa30da10b1f684296972b118fb649cb6a6999b9a7d63926a07d60dcd235"
+    sha256 cellar: :any, mojave: "8eb6b646a7cce5555adeecb4513c99a0692570546cb545bf45faa0c1507ac1e5"
   end
 
   depends_on "cmake" => :build
