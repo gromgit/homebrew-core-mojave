@@ -1,8 +1,8 @@
 class Websocat < Formula
   desc "Command-line client for WebSockets"
   homepage "https://github.com/vi/websocat"
-  url "https://github.com/vi/websocat/archive/v1.9.0.tar.gz"
-  sha256 "8ad0d3048662e321af11fc7e9e66d9fa4bebcd9aefad6e56c97df7d7eaab6b44"
+  url "https://github.com/vi/websocat/archive/v1.10.1.tar.gz"
+  sha256 "5256629b0b063b51aad317dbd8f385ad0d56cc4155621d9bb0f6484aa2e7c95c"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class Websocat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/websocat"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "2f99b1b064f1b5f0bd241af192c131c02179986dbcd9d4e0b49c1670e1dc8334"
+    sha256 cellar: :any_skip_relocation, mojave: "e688dd169ff3294ea3afd9a04065beeacab986c0dec252eea0c432ead28cc985"
   end
 
   depends_on "pkg-config" => :build
