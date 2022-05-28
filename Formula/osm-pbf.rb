@@ -1,14 +1,15 @@
 class OsmPbf < Formula
   desc "Tools related to PBF (an alternative to XML format)"
   homepage "https://wiki.openstreetmap.org/wiki/PBF_Format"
-  url "https://github.com/scrosby/OSM-binary/archive/v1.5.0.tar.gz"
+  url "https://github.com/openstreetmap/OSM-binary/archive/v1.5.0.tar.gz"
   sha256 "2abf3126729793732c3380763999cc365e51bffda369a008213879a3cd90476c"
-  license "LGPL-3.0"
+  license "LGPL-3.0-or-later"
   revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm-pbf"
-    sha256 cellar: :any, mojave: "375c0a85e5a2189dda75de523138ac8c97266a6315fd340450838c12a984827d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6c3d02fc9d4400c4240b6e7ebdf6d7bb27203feb8b2256c0cc655eeca6e5e021"
   end
 
   depends_on "cmake" => :build
