@@ -1,15 +1,14 @@
 class Toast < Formula
   desc "Tool for running tasks in containers"
   homepage "https://github.com/stepchowfun/toast"
-  url "https://github.com/stepchowfun/toast/archive/v0.45.3.tar.gz"
-  sha256 "0c6d1e7ecf0de3ed0647fcae040c8dd318a62604f22fb011301c2d3b69c2d439"
+  url "https://github.com/stepchowfun/toast/archive/v0.45.4.tar.gz"
+  sha256 "b9b7198ccde0c2a999272ed8f0023125f03162f53b9bb0991d8b8e83a309c151"
   license "MIT"
   head "https://github.com/stepchowfun/toast.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/toast"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "31afa8acbdf49ee93804544b7153698ede9c665e529bea0c0dd5b20123b01e25"
+    sha256 cellar: :any_skip_relocation, mojave: "5cf9861e6ed6347ce5b4f8741d85d2b2dd18078b749b85b7ad0565af9f1b93bc"
   end
 
   depends_on "rust" => :build
