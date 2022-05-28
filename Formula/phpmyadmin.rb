@@ -1,8 +1,8 @@
 class Phpmyadmin < Formula
   desc "Web interface for MySQL and MariaDB"
   homepage "https://www.phpmyadmin.net"
-  url "https://files.phpmyadmin.net/phpMyAdmin/5.1.3/phpMyAdmin-5.1.3-all-languages.tar.gz"
-  sha256 "7a85454d82d88cc1a6beb09114a67fa40230c4eff2ae1778b434fa74e80dc6d7"
+  url "https://files.phpmyadmin.net/phpMyAdmin/5.2.0/phpMyAdmin-5.2.0-all-languages.tar.gz"
+  sha256 "f794528eebf1b723a29b89d239963e979a251fb484fd6e788919bf8cbca7db39"
 
   livecheck do
     url "https://www.phpmyadmin.net/files/"
@@ -11,7 +11,7 @@ class Phpmyadmin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phpmyadmin"
-    sha256 cellar: :any_skip_relocation, mojave: "e7f668722047870a70055b32f1a0ceacf7385d6e81f6835ee521e253dbb44a35"
+    sha256 cellar: :any_skip_relocation, mojave: "8c80ccb75e050a56bbb7151d5ac673ef07b8e4885babe1350dd10b772aad62db"
   end
 
   depends_on "php" => :test
