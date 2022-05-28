@@ -5,27 +5,10 @@ class MariadbAT102 < Formula
   sha256 "851de7accdbddd2fcf8c31e4ddd4957d3c5d61bcefed1f3efaa6625e8cf200cf"
   license "GPL-2.0-only"
 
-  # This uses a placeholder regex to satisfy the `PageMatch` strategy
-  # requirement. In the future, this will be updated to use a `Json` strategy
-  # and we can remove the unused regex at that time.
-  livecheck do
-    url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
-    regex(/unused/i)
-    strategy :page_match do |page|
-      json = JSON.parse(page)
-      json["releases"]&.map do |release|
-        next unless release["release_number"]&.start_with?(version.major_minor)
-        next unless release["status"]&.include?("stable")
-
-        release["release_number"]
-      end
-    end
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.2"
-    rebuild 4
-    sha256 mojave: "5e2778065dc15169709e8ea3af8d0c86607d5c929ac58378904c75292984710a"
+    rebuild 5
+    sha256 mojave: "710b49fd2e08cf33862b5b951db96fb600dac622b8ab73f73383f6bb8ba92462"
   end
 
   keg_only :versioned_formula
