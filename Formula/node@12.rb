@@ -5,15 +5,10 @@ class NodeAT12 < Formula
   sha256 "bc42b7f8495b9bfc7f7850dd180bb02a5bdf139cc232b8c6f02a6967e20714f2"
   license "MIT"
 
-  livecheck do
-    url "https://nodejs.org/dist/"
-    regex(%r{href=["']?v?(12(?:\.\d+)+)/?["' >]}i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@12"
-    rebuild 1
-    sha256 cellar: :any, mojave: "62ae448a0be20891cb3d6ea17d76f612486d6dce945534ce2b27ebd033335404"
+    rebuild 2
+    sha256 cellar: :any, mojave: "f75b6eb5b8422c43314a80d8739b4019d2b768b8e7a48f214b2d3d2efa6e49f0"
   end
 
   keg_only :versioned_formula
