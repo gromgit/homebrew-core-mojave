@@ -1,13 +1,13 @@
 class Mydumper < Formula
   desc "How MySQL DBA & support engineer would imagine 'mysqldump' ;-)"
   homepage "https://launchpad.net/mydumper"
-  url "https://github.com/mydumper/mydumper/archive/v0.12.3-1.tar.gz"
-  sha256 "bf502e724205b8c7a79385d32c1d7264121116e70b1fbc3934c6660aae43ff54"
+  url "https://github.com/mydumper/mydumper/archive/v0.12.3-3.tar.gz"
+  sha256 "8c7e3b44f5f4840188b1c32d50e82cdba6c8c735076930b02d1e33581e8447d9"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mydumper"
-    sha256 cellar: :any, mojave: "805723e89726eb32be5289a80b791fae38063e15eab4f0c6b6086c3c11a2eb4f"
+    sha256 cellar: :any, mojave: "d92bfde6c95e07040a56f44a8b9809e6082d61c51a8ec68dc1138d8084464dd1"
   end
 
   depends_on "cmake" => :build
