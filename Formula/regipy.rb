@@ -3,14 +3,14 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/b1/7c/7198c96f40a40a70a3c8d0ff269b957fdf7a573e26c6c499d3a3b7a89835/regipy-2.3.0.tar.gz"
-  sha256 "d7d446fcf09c510fe2e896ec0db491c7fd8c842de812fc7383f553e38def7c95"
+  url "https://files.pythonhosted.org/packages/86/f7/9e1f7bf74a52dbbe4691466dc99f7ef89b7e247b2fcea5f081a180ebbbc2/regipy-2.3.3.tar.gz"
+  sha256 "a382399664191f8f5d2dddaa6531e369e52251f166d6f096cc617cdd8652933e"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regipy"
-    sha256 cellar: :any_skip_relocation, mojave: "a2403ad8b3d144ef7ed8202abe676f4e9864f52d66872e72918767f83d29f634"
+    sha256 cellar: :any_skip_relocation, mojave: "4a57a5b7cd200bec1e49a1b1a032afcfc3518ebb801d1960d45c96449a7ae03e"
   end
 
   depends_on "python-tabulate"
@@ -22,8 +22,8 @@ class Regipy < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/45/2b/7ebad1e59a99207d417c0784f7fb67893465eef84b5b47c788324f1b4095/click-8.1.0.tar.gz"
-    sha256 "977c213473c7665d3aa092b41ff12063227751c41d7b17165013e10069cc5cd2"
+    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
+    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "construct" do
