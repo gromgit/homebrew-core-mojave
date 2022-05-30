@@ -2,8 +2,8 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.46.0",
-      revision: "0da56bcc0e42a9e288d7511ed8426b9831ffbfb5"
+      tag:      "v1.46.2",
+      revision: "0172cd96f6de8b321d3a2ef9a3f1abe6e157c7ae"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Grpc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpc"
-    sha256 cellar: :any, mojave: "ba10438313304c50be0f09babbbcdd9182b37af124a783e2348e4bb9449fd752"
+    sha256 cellar: :any, mojave: "000a99980745f329f30ccbe7559d389f40a2f1f96a357ceb5417d12e902b71a7"
   end
 
   depends_on "autoconf" => :build
