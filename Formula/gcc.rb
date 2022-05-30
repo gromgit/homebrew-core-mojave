@@ -15,7 +15,8 @@ class Gcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc"
-    sha256 mojave: "f8121ed21e9d6cfbcb30da2780d41e6b5be04d10c915dbb19a71387c2d0fa639"
+    rebuild 1
+    sha256 mojave: "2e32c45aad19d51a594d631cd1730e9110060fb0a494d3c0a186c685715015d4"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -131,6 +132,10 @@ class Gcc < Formula
     Dir.glob(man7/"*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     info.rmtree
+
+    # Work around GCC install bug
+    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105664
+    rm_rf Dir[bin/"*-gcc-tmp"]
   end
 
   def add_suffix(file, suffix)
