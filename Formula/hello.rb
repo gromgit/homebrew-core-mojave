@@ -1,13 +1,13 @@
 class Hello < Formula
   desc "Program providing model for GNU coding standards and practices"
   homepage "https://www.gnu.org/software/hello/"
-  url "https://ftp.gnu.org/gnu/hello/hello-2.12.tar.gz"
-  sha256 "cf04af86dc085268c5f4470fbae49b18afbc221b78096aab842d934a76bad0ab"
+  url "https://ftp.gnu.org/gnu/hello/hello-2.12.1.tar.gz"
+  sha256 "8d99142afd92576f30b0cd7cb42a8dc6809998bc5d607d88761f512e26c7db20"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hello"
-    sha256 mojave: "4c4c464c456550bf172d462338c063edfc633da220217b5e5f75a909c564725e"
+    sha256 mojave: "ad12298b658801a2d4c8698e66efbd7ebaafdf82ae31de5d05afb3b5c8b915c9"
   end
 
   conflicts_with "perkeep", because: "both install `hello` binaries"
