@@ -12,10 +12,9 @@ class GccAT10 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "a2d5df73c659132ff4e393696a30076def85936855461701956aac62bf1a4c4f"
-    sha256 catalina:     "42679d2d37117fd2c0243b61f1ee36d470fd293737f5f58a7b25ac816f733793"
-    sha256 mojave:       "83af850b34188c1706d690153de1653f5289db2f6be04e1a1349d15ace86e1d9"
-    sha256 x86_64_linux: "d7dc879970a5e5049b9570300fa3ab0fc13efb9f04c418fe9d6975ca1eaf63a5"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc@10"
+    rebuild 1
+    sha256 mojave: "2a0ee271aa28146814c5c3ca55491b0ebe9cb39339fb065f506846b52b129b58"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -123,6 +122,10 @@ class GccAT10 < Formula
     Dir.glob(man7/"*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     info.rmtree
+
+    # Work around GCC install bug
+    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105664
+    rm_rf Dir[bin/"*-gcc-tmp"]
   end
 
   def add_suffix(file, suffix)
