@@ -1,10 +1,9 @@
 class CucumberRuby < Formula
   desc "Cucumber for Ruby"
   homepage "https://cucumber.io"
-  url "https://github.com/cucumber/cucumber-ruby/archive/v7.1.0.tar.gz"
-  sha256 "8eafa529f1c8793de09b550b68067af1f3d1b05e8eca798f5755d05ee0aacf8c"
+  url "https://github.com/cucumber/cucumber-ruby/archive/v8.0.0.tar.gz"
+  sha256 "5e382fc00fd04842813f58c7c7a1b43c2ddf6a8e5c53ae9916daba95462cdb6a"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +12,7 @@ class CucumberRuby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cucumber-ruby"
-    sha256 cellar: :any, mojave: "acfeeb18a9818e03861b9a91b4f8b3a556f56c237e3fa390cf2e4823e2bdb438"
+    sha256 cellar: :any, mojave: "1a9123dcd6ce60b79264e7fa16e33b77ad4e7c70256bc718158e31954ecad199"
   end
 
   depends_on "pkg-config" => :build
