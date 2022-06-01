@@ -9,13 +9,15 @@ class VstsCli < Formula
   revision 5
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vsts-cli"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7a6486cb4bc312dc3e60c70283d2de36a1ed8a8b09ccdc0df580353098d4b46b"
+    sha256 cellar: :any, arm64_monterey: "4dc169e5bbff8bd9eaa9db72b8b2a83d83716e40202854906cd8ac59cdc0bc5c"
+    sha256 cellar: :any, arm64_big_sur:  "752413507a6e22fe0b1a2c1ac153b71707d18cd169ae3449de5f273fd703b990"
+    sha256 cellar: :any, monterey:       "d584b9d130263ae074a4c4c7332ecd46108c527939407dbef22a7d9cbb4b0126"
+    sha256 cellar: :any, big_sur:        "d7efb21997c73cca1c609e1e720f7322ff5329961fb8908c4ad3d40370c167e8"
+    sha256 cellar: :any, catalina:       "f77d99672e32d1b8a5fc5fc01d8dcc6a4959af4a369d67c32a595fc1503fdbaf"
   end
 
   # https://github.com/Azure/azure-devops-cli-extension/pull/219#issuecomment-456404611
-  deprecate! date: "2019-01-22", because: :unsupported
+  disable! date: "2022-05-27", because: :unsupported
 
   depends_on "rust" => :build
   depends_on "python@3.9"
