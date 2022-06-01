@@ -7,10 +7,13 @@ class Gel < Formula
   revision 1
   head "https://github.com/gel-rb/gel.git", branch: "main"
 
-bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gel"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "777bde6421a69513a3e83ec2ba2abaccc12dd71691aa9eb52553bcff559dc235"
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7910ae14c724757ceed042871c75c799e112dc0f96ba7b72ca7ce105c14c2b23"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9fb1011ea19b25229dd71f48f46b6aab94f5e3eb2699ac50486fb04825cc936f"
+    sha256 cellar: :any_skip_relocation, monterey:       "7910ae14c724757ceed042871c75c799e112dc0f96ba7b72ca7ce105c14c2b23"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ceb2f0e2ffb4cc76db737cd86fea205fa20dd25e2c33f367ac1475586137876e"
+    sha256 cellar: :any_skip_relocation, catalina:       "df5ac692c53d0410238d619eaeaf3dc8384fa0ff27d3053b8293a56328407ca2"
+    sha256 cellar: :any_skip_relocation, mojave:         "197ac248e075981a73fea2bbfdf4d11d10282b7d22ff521424b82fe1ca23a845"
   end
 
   def install
