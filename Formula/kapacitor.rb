@@ -13,11 +13,14 @@ class Kapacitor < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kapacitor"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4ec467a67525cda651954568e5d1a45da43364fb09c51cc77492a4efabeb9655"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "637f8bfe6712471e08eab2a2ae7936380e60be053d845494903079dd1db611e9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1818dbfa03b46c14fd6319ddc58181d6bf8219b1e6984af4b1776966b3b5344b"
+    sha256 cellar: :any_skip_relocation, monterey:       "b5f6e6ffbd485b54336caf6b33a4ed8e70f805391347e9ac4a71f579aa44fad1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "03e6ed1a8fb1b808067cf600c40a6c417287769710a3b1052cd155a4bf2aa91f"
+    sha256 cellar: :any_skip_relocation, catalina:       "b19d21c40470c2244484cd7bb1e59b0fa67046d2e8af2bdf02e97880896cdea7"
+    sha256 cellar: :any_skip_relocation, mojave:         "26af1dc72d59fda49a071aa3c61fb8376bb7a13a56ac6a674709ac210dba90ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "507116948e5c775cc1459f15c599419e6d9c65ab5fdecf00d5b4c9f80a0edf6c"
   end
-
 
   depends_on "go" => :build
   depends_on "rust" => :build
@@ -81,38 +84,12 @@ class Kapacitor < Formula
     (var/"kapacitor/tasks").mkpath
   end
 
-  plist_options manual: "kapacitord -config #{HOMEBREW_PREFIX}/etc/kapacitor.conf"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>KeepAlive</key>
-          <dict>
-            <key>SuccessfulExit</key>
-            <false/>
-          </dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>#{opt_bin}/kapacitord</string>
-            <string>-config</string>
-            <string>#{HOMEBREW_PREFIX}/etc/kapacitor.conf</string>
-          </array>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>WorkingDirectory</key>
-          <string>#{var}</string>
-          <key>StandardErrorPath</key>
-          <string>#{var}/log/kapacitor.log</string>
-          <key>StandardOutPath</key>
-          <string>#{var}/log/kapacitor.log</string>
-        </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"kapacitord", "-config", etc/"kapacitor.conf"]
+    keep_alive successful_exit: false
+    error_log_path var/"log/kapacitor.log"
+    log_path var/"log/kapacitor.log"
+    working_dir var
   end
 
   test do
