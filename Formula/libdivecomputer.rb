@@ -12,9 +12,13 @@ class Libdivecomputer < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdivecomputer"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1627f2f875e4b5dd11acaebc65a857b8b5a56364c0b6d8b669ca1f84fa962d40"
+    sha256 cellar: :any,                 arm64_monterey: "2a7bd7af77fe467bda4a336616f3e1e8a054b8481b97bd5f5b9507f265318e83"
+    sha256 cellar: :any,                 arm64_big_sur:  "c5f918bf0cf0716949639440453e31eb929a918d5328fb1d4dd50ad6f6a497a5"
+    sha256 cellar: :any,                 monterey:       "e60b9733a86f7f911241780c4b12619c33850e152c816adbf9893f48e17d82cb"
+    sha256 cellar: :any,                 big_sur:        "80a648490411d90cee0ae9bbafbc91e48e6ee1d4b449bfad5795cd375b5337d0"
+    sha256 cellar: :any,                 catalina:       "b0e1c5af39a3a474f72a89b669acfd82628f91aabe21c719e2eee78dc0099950"
+    sha256 cellar: :any,                 mojave:         "79ea433c1787070be036fa259b1cb7bd673d5c787ac937291361711d967708d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3a241ae2fd6589976993f2ac0fea3114a1131514f6bafcace961a53c28658da"
   end
 
   depends_on "autoconf" => :build
