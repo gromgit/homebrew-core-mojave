@@ -1,8 +1,8 @@
 class Gtkx3 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.33.tar.xz"
-  sha256 "588b06522e25d1579e989b6f9d8a1bdbf2fe13cde01a04e904ff346a225e7801"
+  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.34.tar.xz"
+  sha256 "dbc69f90ddc821b8d1441f00374dc1da4323a2eafa9078e61edbe5eeefa852ec"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Gtkx3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk+3"
-    sha256 mojave: "d116f0bbdf98e778819fbb90a7cbbffb5cd53a3517f26ccfcf904c552b1aeaa9"
+    sha256 mojave: "f1cfd518d26ab3b90921b52cef8ad65baabed915ba4d4c73238776e50d7775fc"
   end
 
   depends_on "docbook" => :build
