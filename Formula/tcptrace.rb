@@ -26,6 +26,7 @@ class Tcptrace < Formula
     sha256 cellar: :any_skip_relocation, sierra:         "7ccc5e6859be970a5a8a064630704111d37b03a7e3cf3a9874e16a60e4abe02b"
     sha256 cellar: :any_skip_relocation, el_capitan:     "e46775d7cc808b5b52a0a36a33142b824a9b2d8bce5b0557bc1041c2e55c5ffb"
     sha256 cellar: :any_skip_relocation, yosemite:       "f9de7ef41a2b9dc8daee1fddef1035ddf6a08cf473b6edafcf4bb069ab5f0052"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7516135879ddee3a7a4271980b8485ac12c3b1826cb99ba23e9f6f849fda4ceb"
   end
 
   uses_from_macos "libpcap"
