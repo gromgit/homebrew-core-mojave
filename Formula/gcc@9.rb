@@ -1,9 +1,9 @@
 class GccAT9 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-9.4.0/gcc-9.4.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-9.4.0/gcc-9.4.0.tar.xz"
-  sha256 "c95da32f440378d7751dd95533186f7fc05ceb4fb65eb5b85234e6299eb9838e"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
+  sha256 "27769f64ef1d4cd5e2be8682c0c93f9887983e6cfd1a927ce5a0a2915a95cf8f"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,10 +12,8 @@ class GccAT9 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "ef05afedb14a945c18e8ab08af9e96293a8ef285af2df365a676b9df0be9c93f"
-    sha256 catalina:     "01e1eb5be5910cd743653c25de299ac7614ca3910de50b0ae3c25f9ba89c108d"
-    sha256 mojave:       "c480dc44d4a5e568077e452c49c7c8e8daa61a924e7137fbeefc8821449d7d10"
-    sha256 x86_64_linux: "4534a693580cebb9f091bb50cd1e99018c8b59af8d1181123b3d02145295cc98"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc@9"
+    sha256 mojave: "f7b4b6bb82b68127eb1d9bb4f97d8749b396e646a66b0e1593c823a229a6f09d"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -124,6 +122,10 @@ class GccAT9 < Formula
     Dir.glob(man7/"*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     info.rmtree
+
+    # Work around GCC install bug
+    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105664
+    rm_rf Dir[bin/"*-gcc-tmp"]
   end
 
   def post_install
