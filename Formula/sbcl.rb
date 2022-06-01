@@ -6,9 +6,14 @@ class Sbcl < Formula
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
+  livecheck do
+    url "https://sourceforge.net/projects/sbcl/rss?path=/sbcl"
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sbcl"
-    sha256 cellar: :any_skip_relocation, mojave: "102336da7c60ed95093fd05f34498da558aa30ec11173b15fd12a43e46311d5d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7df6c8b8e09e8a2c6ea10e6b275cbf3bcc0dd27f5794b12492c39301a5eed1d3"
   end
 
   depends_on "ecl" => :build
