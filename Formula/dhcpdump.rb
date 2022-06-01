@@ -21,10 +21,13 @@ class Dhcpdump < Formula
     sha256 cellar: :any_skip_relocation, sierra:         "10e6565cdd5717666822ce9a0f77747d44969b5cbc7c3ccf1505aaa6ba95af85"
     sha256 cellar: :any_skip_relocation, el_capitan:     "1f30cb4146a741b3523d674336854c665546e939af04f619e38623d9298cd4ef"
     sha256 cellar: :any_skip_relocation, yosemite:       "6df64653cfd4b118db43e2acb2f08a565ac3cba9e1b739a258eeb7655c1a6103"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1fe4468b6228999e79e24c13f4b4e65b32d8124f1928f08960b2b144ed63077"
   end
 
+  uses_from_macos "libpcap"
+
   def install
-    system "make"
+    system "make", "CFLAGS=-DHAVE_STRSEP"
     bin.install "dhcpdump"
     man8.install "dhcpdump.8"
   end
