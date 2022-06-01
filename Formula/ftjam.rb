@@ -14,6 +14,7 @@ class Ftjam < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, monterey:     "2ade860ccc3972b17cab846917f1759e2676db0240b30375f9a289db365dd1e7"
     sha256 cellar: :any_skip_relocation, big_sur:      "84e96d642732ab02748dad0b9129c8094348d030bdb414adcacfb6633cc2d958"
     sha256 cellar: :any_skip_relocation, catalina:     "4440e1baa7919c2a6b7190b31f12067c20d1a532249bd22f842d84a821c3f8a8"
     sha256 cellar: :any_skip_relocation, mojave:       "039a1c54e4163cafd9e44b5efa4a3b9847a3375db5811b51db8557b5e92ba670"
