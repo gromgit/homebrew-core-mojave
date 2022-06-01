@@ -2,8 +2,8 @@ class Fluxctl < Formula
   desc "Command-line tool to access Weave Flux, the Kubernetes GitOps operator"
   homepage "https://github.com/fluxcd/flux"
   url "https://github.com/fluxcd/flux.git",
-      tag:      "1.25.1",
-      revision: "360a7f7b0f7d0dab52c51a2f4fe3a03921ef05a0"
+      tag:      "1.25.2",
+      revision: "710825f0303fa122d9c45bf9b80351d588b8da7c"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class Fluxctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluxctl"
-    sha256 cellar: :any_skip_relocation, mojave: "8a0b09c5603688b79d427e1d6d884aa3628569368fe96121a3090171d4163b1b"
+    sha256 cellar: :any_skip_relocation, mojave: "91ff1a35279a8399e4f6bc28c97086d2f17263e571c6b062fcae40c391085606"
   end
 
   depends_on "go" => :build
