@@ -19,6 +19,9 @@
     ],
     "exclude_packages": ["pycrypto", "six"]
   },
+  "arxiv_latex_cleaner": {
+    "exclude_packages": ["pillow", "six"]
+  },
   "athenacli": {
     "exclude_packages": ["six", "tabulate"]
   },
@@ -60,6 +63,9 @@
     "extra_packages": ["certbot-apache", "certbot-nginx"],
     "exclude_packages": ["six"]
   },
+  "cfn-flip": {
+    "exclude_packages": ["six"]
+  },
   "cfn-lint": {
     "exclude_packages": ["junit-xml", "six"]
   },
@@ -88,6 +94,9 @@
   "conan": {
     "exclude_packages": ["six"],
     "extra_packages": ["distro"]
+  },
+  "cookiecutter": {
+    "exclude_packages": ["six"]
   },
   "cppman": {
     "exclude_packages": ["six"]
@@ -160,6 +169,12 @@
   "git-remote-codecommit": {
     "exclude_packages": ["six"]
   },
+  "gitlint": {
+    "exclude_packages": ["six"]
+  },
+  "hatch": {
+    "exclude_packages": ["six"]
+  },
   "homeassistant-cli": {
     "exclude_packages": ["tabulate"]
   },
@@ -182,13 +197,23 @@
   "jenkins-job-builder": {
     "exclude_packages": ["six"]
   },
+  "jinja2-cli": "jinja2-cli[yaml,toml,xml]",
+  "jrnl": {
+    "exclude_packages": ["six"]
+  },
   "jupyterlab": {
     "exclude_packages": ["six"]
   },
   "keepkey-agent": {
     "exclude_packages": ["six"]
   },
+  "khal": {
+    "exclude_packages": ["six"]
+  },
   "khard": {
+    "exclude_packages": ["six"]
+  },
+  "legit": {
     "exclude_packages": ["six"]
   },
   "litecli": {
@@ -319,7 +344,8 @@
     "exclude_packages": ["six"]
   },
   "robot-framework": {
-    "extra_packages": ["robotframework-archivelibrary", "robotframework-selenium2library", "robotframework-sshlibrary"]
+    "extra_packages": ["robotframework-archivelibrary", "robotframework-selenium2library", "robotframework-sshlibrary"],
+    "exclude_packages": ["six"]
   },
   "s3cmd": {
     "exclude_packages": ["six"]
@@ -517,6 +543,9 @@
   },
   "volatility": {
     "extra_packages": ["capstone", "pycryptodome", "yara-python"]
+  },
+  "watson": {
+    "exclude_packages": ["six"]
   },
   "west": {
     "exclude_packages": ["six"]

@@ -1,9 +1,11 @@
 [
+  ["aarch64-elf-gcc", "i686-elf-gcc", "x86_64-elf-gcc"],
   ["advancemame", "advancemenu"],
   ["apache-arrow", "apache-arrow-glib"],
   ["apache-pulsar", "libpulsar"],
   ["avro-c", "avro-cpp", "avro-tools"],
   ["aws-console", "cfn-format", "rain"],
+  ["boost", "boost-bcp", "boost-mpi", "boost-python3"],
   ["bundler-completion", "gem-completion", "rails-completion", "ruby-completion"],
   ["buildifier", "buildozer"],
   ["cmake", "cmake-docs"],
@@ -15,6 +17,7 @@
   ["fb303", "fbthrift", "fizz", "folly", "wangle", "watchman"],
   ["frpc", "frps"],
   ["gcc", "libgccjit"],
+  ["gdb", "i386-elf-gdb", "x86_64-elf-gdb"],
   ["ghz", "ghz-web"],
   ["git", "git-credential-libsecret", "git-gui", "git-svn"],
   ["hdf5", "hdf5-mpi"],
@@ -29,6 +32,7 @@
   ["logcli", "loki", "promtail"],
   ["mame", "rom-tools"],
   ["mecab-unidic", "mecab-unidic-extended"],
+  ["minuit2", "root"],
   ["moarvm", "nqp", "rakudo"],
   ["moreutils", "sponge"],
   ["mupdf", "mupdf-tools"],
@@ -42,6 +46,7 @@
   ["python-tk@3.10", "python@3.10"],
   ["python-tk@3.9", "python@3.9"],
   ["qt", "qt-libiodbc", "qt-mariadb", "qt-mysql", "qt-percona-server", "qt-postgresql", "qt-unixodbc"],
+  ["qwt", "qwt-qt5"],
   ["telnet", "telnetd"],
   ["tmuxinator", "tmuxinator-completion"]
 ]
