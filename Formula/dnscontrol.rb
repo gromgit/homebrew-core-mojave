@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "It is system for maintaining DNS zones"
   homepage "https://github.com/StackExchange/dnscontrol"
-  url "https://github.com/StackExchange/dnscontrol/archive/v3.16.0.tar.gz"
-  sha256 "21a5bd9cb096ff65d298a6db27892ce5ea5150a83328f089f9c86638b42a1393"
+  url "https://github.com/StackExchange/dnscontrol/archive/v3.16.2.tar.gz"
+  sha256 "c2c923bde3d6bad1790664dcd72fff6ca9f135656b5e19f862d3ad706a4b54ff"
   license "MIT"
   version_scheme 1
 
@@ -13,7 +13,7 @@ class Dnscontrol < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnscontrol"
-    sha256 cellar: :any_skip_relocation, mojave: "adf1f5c6138176d8cee328ee406a7c87815d3942ab6ac2596233acd217691e81"
+    sha256 cellar: :any_skip_relocation, mojave: "928d821463e8879ed02b69ab24d59805a903624230d0e2d1239727e6dcca92d4"
   end
 
   depends_on "go" => :build
