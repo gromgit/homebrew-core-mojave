@@ -7,12 +7,10 @@ class Acl2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/acl2"
-    sha256 mojave: "669077b61ecd1c632c5b493af0aba743959fb6520b157dbcc51c6a88e661aed3"
+    rebuild 1
+    sha256 mojave: "9d069686708e74f701f62be34e56bb93da878184090745fd8ab1431f7539b106"
   end
 
-  # Homebrew ARM CI runners hang when trying to build `acl2`.
-  # See https://github.com/Homebrew/homebrew-core/pull/96455
-  depends_on arch: :x86_64
   depends_on "sbcl"
 
   def install
