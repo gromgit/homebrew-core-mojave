@@ -2,13 +2,13 @@ class Amtk < Formula
   desc "Actions, Menus and Toolbars Kit for GNOME"
   homepage "https://gitlab.gnome.org/swilmet/amtk"
   url "https://gitlab.gnome.org/swilmet/amtk.git",
-      tag:      "5.4.0",
-      revision: "9feb1a70cf06a6fe837c27f4ddcdd492dcb4fe9b"
+      tag:      "5.4.1",
+      revision: "3a0427b88af2680993932eae00de7cfac198bb74"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amtk"
-    sha256 mojave: "dd5e9e548b095a27b342ab37778e080da7ad91c0ab77022601bfc7bd77b0af22"
+    sha256 mojave: "c4f6075fcb3c3683dce12afce22e373bb446357c854c1d3015b548aafa58a857"
   end
 
   depends_on "gobject-introspection" => :build
@@ -16,12 +16,6 @@ class Amtk < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "gtk+3"
-
-  # Fix "ld: unknown option: --version-script", remove in next release
-  patch do
-    url "https://gitlab.gnome.org/swilmet/amtk/-/commit/eed214d83df7fb67e36bf6024fb5ba39bd35e4ce.diff"
-    sha256 "3af869e9d6a462f9713c1a62671c68835ceb0bf8c0ca0c38388b3ec063d311a2"
-  end
 
   def install
     cd "build" do
