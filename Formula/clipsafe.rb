@@ -12,13 +12,17 @@ class Clipsafe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, catalina:     "1a8a00c232a748d9b45271239043f5d155666acfdcb79670efc816e26c740221"
-    sha256 cellar: :any_skip_relocation, mojave:       "c3c42621d02672ee0cabd443b871760320c1b82ba61b48bca61076acab10d097"
-    sha256 cellar: :any_skip_relocation, high_sierra:  "211d670b61c6a68650736df3deb3ae783c320491ba3205e035cc28c014fca705"
-    sha256 cellar: :any_skip_relocation, sierra:       "7c894e55e215fffa121aef718dbf7fa0f2c71531cf7970ae8d27f4b5eb939877"
-    sha256 cellar: :any_skip_relocation, el_capitan:   "ffd255c6ff1bd4c403bc4040f1751eef61b4ae341c33b226bf9a696b2836b02e"
-    sha256 cellar: :any_skip_relocation, yosemite:     "01dbb7b4cf71ae2b174cfec45cdf4a69e211a5154bc6541fb19e1b5aa20f8389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ad9eeaf4799019ba9a0582ae6b88d49738423ce8f30edf7178eb6515796b11d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd7c76df948ba0a00f10bc5dd97f817d1ffde6c300b828135b03c8702f32c889"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b630e790518cf78ce01b8bf95d0bc47ecc36c865e70dfccfb8fc299fa5a9abd8"
+    sha256 cellar: :any_skip_relocation, monterey:       "fe85e497b3e8b625add83acbd4178b1725339ba2e2ad0913eb1c5c44002c7675"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ce6bba6a2e1e865e3f087f51933093e7fe8acb337f5db94fc72a147de09895f6"
+    sha256 cellar: :any_skip_relocation, catalina:       "1a8a00c232a748d9b45271239043f5d155666acfdcb79670efc816e26c740221"
+    sha256 cellar: :any_skip_relocation, mojave:         "c3c42621d02672ee0cabd443b871760320c1b82ba61b48bca61076acab10d097"
+    sha256 cellar: :any_skip_relocation, high_sierra:    "211d670b61c6a68650736df3deb3ae783c320491ba3205e035cc28c014fca705"
+    sha256 cellar: :any_skip_relocation, sierra:         "7c894e55e215fffa121aef718dbf7fa0f2c71531cf7970ae8d27f4b5eb939877"
+    sha256 cellar: :any_skip_relocation, el_capitan:     "ffd255c6ff1bd4c403bc4040f1751eef61b4ae341c33b226bf9a696b2836b02e"
+    sha256 cellar: :any_skip_relocation, yosemite:       "01dbb7b4cf71ae2b174cfec45cdf4a69e211a5154bc6541fb19e1b5aa20f8389"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ad9eeaf4799019ba9a0582ae6b88d49738423ce8f30edf7178eb6515796b11d"
   end
 
   uses_from_macos "perl"
