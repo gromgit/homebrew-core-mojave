@@ -1,15 +1,13 @@
 class Btfs < Formula
   desc "BitTorrent filesystem based on FUSE"
   homepage "https://github.com/johang/btfs"
-  url "https://github.com/johang/btfs/archive/v2.22.tar.gz"
-  sha256 "03ebfffd7cbd91e2113d0c43d8d129ad7851753c287c326416ecf622789c4a8d"
+  url "https://github.com/johang/btfs/archive/v2.24.tar.gz"
+  sha256 "d71ddefe3c572e05362542a0d9fd0240d8d4e1578ace55a8b3245176e7fd8935"
   license "GPL-3.0-only"
   head "https://github.com/johang/btfs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, catalina:    "d5b103b5b9004549a555352be373c2160bcd5b9f6a8e7e8b030cbf113ae76fcd"
-    sha256 cellar: :any, mojave:      "bb550107105c612e2c9b81478b352d053f5b8ac8658377e0d40e4ee1109519fc"
-    sha256 cellar: :any, high_sierra: "934b8849eaecd08113b01e222c9583f9293100889f3f40f8452a476a6491e0d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ffdfc0e854a9f980b9df510458c5baa0910e5d6fd74862f106ff97f2fc0fe2cc"
   end
 
   depends_on "autoconf" => :build
@@ -17,22 +15,21 @@ class Btfs < Formula
   depends_on "pkg-config" => :build
   depends_on "libtorrent-rasterbar"
 
+  uses_from_macos "curl"
+
   on_macos do
     disable! date: "2021-04-08", because: "requires closed-source macFUSE"
   end
 
   on_linux do
-    depends_on "libfuse"
+    depends_on "libfuse@2"
   end
 
   def install
     ENV.cxx11
     inreplace "configure.ac", "fuse >= 2.8.0", "fuse >= 2.7.3"
-    system "autoreconf", "--force", "--install"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
