@@ -1,10 +1,9 @@
 class Lilv < Formula
   desc "C library to use LV2 plugins"
   homepage "https://drobilla.net/software/lilv.html"
-  url "https://download.drobilla.net/lilv-0.24.12.tar.bz2"
-  sha256 "26a37790890c9c1f838203b47f5b2320334fe92c02a4d26ebbe2669dbd769061"
+  url "https://download.drobilla.net/lilv-0.24.14.tar.bz2"
+  sha256 "6399dfcbead61a143acef3a38ad078047ab225b00470ad5d33745637341d6406"
   license "ISC"
-  revision 1
 
   livecheck do
     url "https://download.drobilla.net/"
@@ -13,7 +12,7 @@ class Lilv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lilv"
-    sha256 cellar: :any, mojave: "717fdc00db7676845b0d2ea17abc2a3e72b52d72b2cbaebaca2d9348d7230032"
+    sha256 cellar: :any, mojave: "cfa7eccbb28e50e8d286aee7b505ab4a97f31727f1e88ec6ae16d711f0aa4bc1"
   end
 
   depends_on "pkg-config" => :build
