@@ -1,9 +1,9 @@
 class ApacheArrowGlib < Formula
   desc "GLib bindings for Apache Arrow"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-7.0.0/apache-arrow-7.0.0.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-7.0.0/apache-arrow-7.0.0.tar.gz"
-  sha256 "e8f49b149a15ecef4e40fcfab1b87c113c6b1ee186005c169e5cdf95d31a99de"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-8.0.0/apache-arrow-8.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-8.0.0/apache-arrow-8.0.0.tar.gz"
+  sha256 "ad9a05705117c989c116bae9ac70492fe015050e1b80fb0e38fde4b5d863aaa3"
   license "Apache-2.0"
   head "https://github.com/apache/arrow.git", branch: "master"
 
@@ -13,7 +13,7 @@ class ApacheArrowGlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-arrow-glib"
-    sha256 cellar: :any, mojave: "3d193202dfd448577bd43e21335a4024f1878ac62e2ee95fe0db3f8f1ebb392a"
+    sha256 cellar: :any, mojave: "30ed4cd6e97eac0f4dcad8407a8256d3ae44bcd529c55caade142b86cea7af60"
   end
 
   depends_on "gobject-introspection" => :build
