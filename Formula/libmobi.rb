@@ -1,13 +1,13 @@
 class Libmobi < Formula
   desc "C library for handling Kindle (MOBI) formats of ebook documents"
   homepage "https://github.com/bfabiszewski/libmobi"
-  url "https://github.com/bfabiszewski/libmobi/releases/download/v0.10/libmobi-0.10.tar.gz"
-  sha256 "5d6783259f89d33c0e0d176e33854ab9931088b87b6a00bfe882ba07747d0e68"
+  url "https://github.com/bfabiszewski/libmobi/releases/download/v0.11/libmobi-0.11.tar.gz"
+  sha256 "6a7cbfb2b8f00849f02af3d913a694a0d7c7e7acb6b801625373f32e57db8051"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmobi"
-    sha256 cellar: :any, mojave: "1d27af7187ad30aa8189d51aa10e0e76541cdfc428feb00de8c68dc1c16385c3"
+    sha256 cellar: :any, mojave: "d5561a0802c95707625c9138452250be7d217c05e2a65be4b85e07a1a1dcbf0e"
   end
 
   uses_from_macos "libxml2"
