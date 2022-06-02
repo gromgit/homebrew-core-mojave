@@ -1,8 +1,8 @@
 class Krb5 < Formula
   desc "Network authentication protocol"
   homepage "https://web.mit.edu/kerberos/"
-  url "https://kerberos.org/dist/krb5/1.19/krb5-1.19.3.tar.gz"
-  sha256 "56d04863cfddc9d9eb7af17556e043e3537d41c6e545610778676cf551b9dcd0"
+  url "https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz"
+  sha256 "7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f"
   license :cannot_represent
 
   livecheck do
@@ -12,7 +12,7 @@ class Krb5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/krb5"
-    sha256 mojave: "c39386751de4b69b03f05544887754d6923d625552ce2befed99df39c9a59a08"
+    sha256 mojave: "cb9f99aa69faa056f05b24bcafab3d8064d245fa9d4053b4db5d5b7c38887f75"
   end
 
   keg_only :provided_by_macos
