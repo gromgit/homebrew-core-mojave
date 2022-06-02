@@ -1,16 +1,16 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-7.0.0/apache-arrow-7.0.0.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-7.0.0/apache-arrow-7.0.0.tar.gz"
-  sha256 "e8f49b149a15ecef4e40fcfab1b87c113c6b1ee186005c169e5cdf95d31a99de"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-8.0.0/apache-arrow-8.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-8.0.0/apache-arrow-8.0.0.tar.gz"
+  sha256 "ad9a05705117c989c116bae9ac70492fe015050e1b80fb0e38fde4b5d863aaa3"
   license "Apache-2.0"
-  revision 4
+  revision 1
   head "https://github.com/apache/arrow.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apache-arrow"
-    sha256 cellar: :any, mojave: "a69deef971eb4929c1c6c930821198e9511f05a93f9a297928448670e1abe5e2"
+    sha256 cellar: :any, mojave: "538f3f7d3f3fdb75837cb11c6deee6787c7c9bac3cb5ec03761148ff46e53625"
   end
 
   depends_on "boost" => :build
