@@ -1,13 +1,13 @@
 class Lego < Formula
   desc "Let's Encrypt client and ACME library"
   homepage "https://go-acme.github.io/lego/"
-  url "https://github.com/go-acme/lego/archive/v4.6.0.tar.gz"
-  sha256 "a7101491392309b1549be0394c5e3d368f2dae3fcc351f6f653fe4b33ffd4bee"
+  url "https://github.com/go-acme/lego/archive/v4.7.0.tar.gz"
+  sha256 "c0eea1bf280ae28559f1e10dac777fc0d1e9cd520f9c9ab2368591c16587271e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lego"
-    sha256 cellar: :any_skip_relocation, mojave: "42bdda9eb9c4182d37054a3d5fb873d9332a567b36a5c44684b920cb2439cc7a"
+    sha256 cellar: :any_skip_relocation, mojave: "bbffe51e8adfcff2e495cc0a48e32fab3e27191e22d88c1a8be0062486471b7a"
   end
 
   depends_on "go" => :build
