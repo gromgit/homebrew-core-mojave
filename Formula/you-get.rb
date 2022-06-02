@@ -3,14 +3,14 @@ class YouGet < Formula
 
   desc "Dumb downloader that scrapes the web"
   homepage "https://you-get.org/"
-  url "https://files.pythonhosted.org/packages/6d/f1/4f76c9fcd58cce3619196d67b3f11a996da7610f34d73538b6c8af8f6353/you-get-0.4.1602.tar.gz"
-  sha256 "4706c06cc4b9080ea93b4f13b9a4dbebb60cfe12d191c78e17b0fa895d17708f"
+  url "https://files.pythonhosted.org/packages/c9/87/0ad2082c87762cb7dee763f2982c02f659197b28417577191873054add20/you-get-0.4.1612.tar.gz"
+  sha256 "94a133b70c27d699c02eec03880d4893df97095c8ef943286effa15eed269f9c"
   license "MIT"
   head "https://github.com/soimort/you-get.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/you-get"
-    sha256 cellar: :any_skip_relocation, mojave: "5eab149f5f6790038d34c8549ffaac5a165b745895c37c46f759e05390196566"
+    sha256 cellar: :any_skip_relocation, mojave: "69bd3721351cfd339187988f5c3a8166669036d157e3f8da86667d022fc0b231"
   end
 
   depends_on "python@3.10"
