@@ -1,14 +1,13 @@
 class PayloadDumperGo < Formula
   desc "Android OTA payload dumper written in Go"
   homepage "https://github.com/ssut/payload-dumper-go"
-  url "https://github.com/ssut/payload-dumper-go/archive/refs/tags/1.2.0.tar.gz"
-  sha256 "f0d654cba5d660c3ff8000cb510d73bc0a1eea4e725f2d79a1f16d973aae90c4"
+  url "https://github.com/ssut/payload-dumper-go/archive/refs/tags/1.2.2.tar.gz"
+  sha256 "7f80f6c29ad8b835d71f361ba073988a27a33043acec37eea9d9430c1fb04b57"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/payload-dumper-go"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bb480c5e61072c2f1a9912721fc3d0d47c6d6334d9fd25e54fe8e75fd107dc19"
+    sha256 cellar: :any, mojave: "65c5dbf6b7e78dea725a2e3717318f5e3d4834ab9fd2b723fbcd8682c16da717"
   end
 
   # Bump to 1.18 on the next release, if possible.
