@@ -1,8 +1,8 @@
 class Serd < Formula
   desc "C library for RDF syntax"
   homepage "https://drobilla.net/software/serd.html"
-  url "https://download.drobilla.net/serd-0.30.10.tar.bz2"
-  sha256 "affa80deec78921f86335e6fc3f18b80aefecf424f6a5755e9f2fa0eb0710edf"
+  url "https://download.drobilla.net/serd-0.30.12.tar.bz2"
+  sha256 "9f9dab4125d88256c1f694b6638cbdbf84c15ce31003cd83cb32fb2192d3e866"
   license "ISC"
 
   livecheck do
@@ -12,8 +12,7 @@ class Serd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serd"
-    rebuild 2
-    sha256 cellar: :any, mojave: "881c5e219840cb95822ce2b6c052032d5c077da9af6968e0d399cf6f782626fe"
+    sha256 cellar: :any, mojave: "33904b5f8becb211cb7434da7f652577e2ee7306f3fa06a6d1c808fae40b3fac"
   end
 
   depends_on "pkg-config" => :build
