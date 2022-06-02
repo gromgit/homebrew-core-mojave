@@ -1,13 +1,13 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://github.com/rakudo/star/releases/download/2022.02/rakudo-star-2022.02.tar.gz"
-  sha256 "49a2f9d440ffd443e59bf52b414220e4186b28c27a1984331d207d4c0e9b0968"
+  url "https://github.com/rakudo/star/releases/download/2022.04/rakudo-star-2022.04.tar.gz"
+  sha256 "bb87464d8dcdfc457d4fd60488f22e4a6a7ec821d781b479f725aa3a635137c2"
   license "Artistic-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rakudo-star"
-    sha256 mojave: "5597da75982a6f895193f9c3187b895c8fe25bc629619330e3fa033d81d80b2d"
+    sha256 mojave: "7e5cfa2bcb784a4da5c98febacce58b92118a8158aa3528eb08fc8c534edf156"
   end
 
   depends_on "bash" => :build
