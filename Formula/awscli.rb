@@ -3,14 +3,14 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.7.3.tar.gz"
-  sha256 "1b786a64c2c74b181e239d2751a584ac8a67cd030eb8d1d7668642770d99c2fb"
+  url "https://github.com/aws/aws-cli/archive/2.7.4.tar.gz"
+  sha256 "1e6c5a0c181056d0b501d8772ce280af817b5c2b6ab7f33f0b2aaf4ec297c7bf"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
-    sha256 cellar: :any, mojave: "757f5fcc3cccd123d25943d1577ed226220e5d988836419da97dcaf4b973f41d"
+    sha256 cellar: :any, mojave: "65372b50f058011991c9d1961cf202838bfaa9b040bb164b17ded898c7103c54"
   end
 
   depends_on "cmake" => :build
