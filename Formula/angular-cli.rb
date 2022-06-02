@@ -3,13 +3,13 @@ require "language/node"
 class AngularCli < Formula
   desc "CLI tool for Angular"
   homepage "https://cli.angular.io/"
-  url "https://registry.npmjs.org/@angular/cli/-/cli-13.3.5.tgz"
-  sha256 "35e2d8755329414e6c8fa57e4d2f5af476f2890fe3ec1a76454d3c4d5657d760"
+  url "https://registry.npmjs.org/@angular/cli/-/cli-13.3.7.tgz"
+  sha256 "b8641f8f270861023a0c37cc3f445969d27580687a1fbd8ccf822f55a48b8637"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/angular-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "d4728e51c7696341b4b3c1b2ff0c9386e57eb7b811920301f383ad863f96b68c"
+    sha256 cellar: :any_skip_relocation, mojave: "81bc640d9d1185b1c1e1e361ed51fd4f5c4f73d859502e22be7272cdb8609606"
   end
 
   depends_on "node"
