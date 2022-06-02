@@ -1,15 +1,14 @@
 class K2tf < Formula
   desc "Kubernetes YAML to Terraform HCL converter"
   homepage "https://github.com/sl1pm4t/k2tf"
-  url "https://github.com/sl1pm4t/k2tf/archive/v0.6.3.tar.gz"
-  sha256 "49de6047017d66dcbf7a28d3763fe927b0d3d4d36805ab942cd6b229c261df32"
+  url "https://github.com/sl1pm4t/k2tf/archive/v0.7.0.tar.gz"
+  sha256 "f1422861041d2a6eb03292ecce21002ad70ee24fb8ef6ded0118358a3204ce17"
   license "MPL-2.0"
   head "https://github.com/sl1pm4t/k2tf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k2tf"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "298c98a76b1c2fed1c19b4a2447f2fa1f11e13060acf74a4f1e958fc01fe6cce"
+    sha256 cellar: :any_skip_relocation, mojave: "8d287a913528969ba8fec326a3281ba68b2cf29bb329a516fc16788be0015703"
   end
 
   depends_on "go" => :build
