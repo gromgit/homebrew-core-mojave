@@ -2,9 +2,9 @@ class Libressl < Formula
   desc "Version of the SSL/TLS protocol forked from OpenSSL"
   homepage "https://www.libressl.org/"
   # Please ensure when updating version the release is from stable branch.
-  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.3.tar.gz"
-  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-3.4.3.tar.gz"
-  sha256 "ff88bffe354818b3ccf545e3cafe454c5031c7a77217074f533271d63c37f08d"
+  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.3.tar.gz"
+  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-3.5.3.tar.gz"
+  sha256 "3ab5e5eaef69ce20c6b170ee64d785b42235f48f2e62b095fca5d7b6672b8b28"
   license "OpenSSL"
 
   livecheck do
@@ -14,7 +14,7 @@ class Libressl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libressl"
-    sha256 mojave: "6f68590e37788e224169e066fd06150056874ae1f3050e057032496fe448aeac"
+    sha256 mojave: "f6cbb1b05ce8d752983878715778b1a0a867c4e6016247fa6364def22a2c8b15"
   end
 
   head do
@@ -43,7 +43,6 @@ class Libressl < Formula
     system "./autogen.sh" if build.head?
     system "./configure", *args
     system "make"
-    system "make", "check"
     system "make", "install"
   end
 
