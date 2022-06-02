@@ -1,13 +1,13 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://www.jfrog.com/confluence/display/CLI/JFrog+CLI"
-  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.17.0.tar.gz"
-  sha256 "ccd9457e097e187bfd083716cd7e071bb75c22a24d402839342c330a2e2cd72c"
+  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.18.2.tar.gz"
+  sha256 "f03faf282899cdb7773e7f4ce9921f67040078f592b8e4c275ac6d4917d32eb4"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jfrog-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "44bae3a7a3d142c7b3844cea16f903d27071d15b8d00ba8a5a53209cfc1bb90b"
+    sha256 cellar: :any_skip_relocation, mojave: "554dcf26bad5d00757eae3264382fd31c101db12cd01bb53a932521d5d0dc502"
   end
 
   depends_on "go" => :build
