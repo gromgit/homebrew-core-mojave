@@ -3,14 +3,14 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/26/3a/280bad1cc57743d1a0ed0a157fa58ff3231db326e4ba41195fc912a1deef/streamlink-4.0.1.tar.gz"
-  sha256 "f38a4fd5c45b1628e7ebee43ba7f8522be5045565aa7c64009740baf853f20f5"
+  url "https://files.pythonhosted.org/packages/03/11/2b18419ba3d26bbd77e87bc8ad545a287df78939831a2e39567ff7c7019a/streamlink-4.1.0.tar.gz"
+  sha256 "0b492cf48cf1c8f12adc112e42df504857088363f036f400bc9330f80ff00893"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/streamlink"
-    sha256 cellar: :any, mojave: "00d1c4a90d8b83e17f560b876cba636739e4f5124f992236678589a0b1e04989"
+    sha256 cellar: :any, mojave: "df00f86cce68b1d6705e1d91b16e92bec5c2e2059e454823b815a0edfad4d733"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
@@ -25,8 +25,8 @@ class Streamlink < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/07/10/75277f313d13a2b74fc56e29239d5c840c2bf09f17bf25c02b35558812c6/certifi-2022.5.18.1.tar.gz"
+    sha256 "9c5705e395cd70084351dd8ad5c41e65655e08ce46f2ec9cf6c2c08390f71eb7"
   end
 
   resource "charset-normalizer" do
