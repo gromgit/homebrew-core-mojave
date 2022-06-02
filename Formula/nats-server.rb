@@ -1,14 +1,14 @@
 class NatsServer < Formula
   desc "Lightweight cloud messaging system"
   homepage "https://nats.io"
-  url "https://github.com/nats-io/nats-server/archive/v2.8.3.tar.gz"
-  sha256 "1a93c2bb2120e75b3713b7d6643da03f31a958140b2f09144b89d00bae007d73"
+  url "https://github.com/nats-io/nats-server/archive/v2.8.4.tar.gz"
+  sha256 "172c5d04c3867adcb6b2322d87d7f7029b63e9465fffffcf99d4ca652820635f"
   license "Apache-2.0"
   head "https://github.com/nats-io/nats-server.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nats-server"
-    sha256 cellar: :any_skip_relocation, mojave: "5829975d721b9ba9c08486ac3279e64b29efc22aadb50d347354e4a01535aa88"
+    sha256 cellar: :any_skip_relocation, mojave: "b47515a260e9a770c828c40bb1d2b4aadb168d073e139d80d32f87f2ac9d09d3"
   end
 
   depends_on "go" => :build
