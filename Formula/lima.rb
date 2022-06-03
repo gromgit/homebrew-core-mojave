@@ -1,14 +1,14 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https://github.com/lima-vm/lima"
-  url "https://github.com/lima-vm/lima/archive/v0.9.2.tar.gz"
-  sha256 "df0f84c7693e4f31ef40ccf209aaf034b96b3501ab2da8186c8857d372e5f0ea"
+  url "https://github.com/lima-vm/lima/archive/v0.11.0.tar.gz"
+  sha256 "b4f89cd8be84d2530a9ca86544ee9709b6d90c50ea0a08bac5959813f4bd435d"
   license "Apache-2.0"
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lima"
-    sha256 cellar: :any_skip_relocation, mojave: "f93940fd8a17787879cc979fb8e176fc06318862f1fde1e8f7258f22027ccb6e"
+    sha256 cellar: :any_skip_relocation, mojave: "29340ffb3095de850aaee6d209dd2fa13bda6476ab3935d543da1723a20f8ad1"
   end
 
   depends_on "go" => :build
