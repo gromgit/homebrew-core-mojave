@@ -1,14 +1,14 @@
 class Duckscript < Formula
   desc "Simple, extendable and embeddable scripting language"
   homepage "https://sagiegurari.github.io/duckscript"
-  url "https://github.com/sagiegurari/duckscript/archive/0.8.11.tar.gz"
-  sha256 "5ee95309840140713b82ef1dadad91372734dc2fd2bd9d3a02d85f83c8d790eb"
+  url "https://github.com/sagiegurari/duckscript/archive/0.8.12.tar.gz"
+  sha256 "04b8cc724700e89ea9f8643a5566889de76068e7d60fd28f5b28bd308135234d"
   license "Apache-2.0"
   head "https://github.com/sagiegurari/duckscript.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckscript"
-    sha256 cellar: :any_skip_relocation, mojave: "46b1d03bc95586fd5f6c93d3ed975811246cacbf8bcd1b79e3ea9629cb959d0c"
+    sha256 cellar: :any_skip_relocation, mojave: "6bba261e93229c3fc7b2d60a4818f46ed49f6c77374f43fd77b7646ec977b59c"
   end
 
   depends_on "rust" => :build
