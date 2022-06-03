@@ -3,10 +3,17 @@ class Gitg < Formula
   homepage "https://wiki.gnome.org/Apps/Gitg"
   url "https://download.gnome.org/sources/gitg/41/gitg-41.tar.xz"
   sha256 "7fb61b9fb10fbaa548d23d7065babd72ad63e621de55840c065ce6e3986c4629"
+  license "GPL-2.0-or-later"
+
+  livecheck do
+    url :stable
+    regex(/gitg[._-]v?(\d+(?:\.\d+)*)\.t/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitg"
-    sha256 mojave: "2af43d2bdf2cf65a5bf8abc46e6f514bc5d47b8fd4cdad93be6f4289c4d15566"
+    rebuild 1
+    sha256 mojave: "534c4bca8fa04414df0fdeaacb4a4b00abea80d52d5187538bd2d5dfb3bfb639"
   end
 
   depends_on "intltool" => :build
@@ -29,6 +36,12 @@ class Gitg < Formula
   depends_on "libsecret"
   depends_on "libsoup@2"
 
+  # Apply upstream commit to fix build.  Remove with next release.
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gitg/-/commit/1978973b12848741b08695ec2020bac98584d636.diff"
+    sha256 "1787335100ab78bc044cda29613a40f3f85c3ef287646914e56b2ce578e05fdf"
+  end
+
   def install
     ENV["DESTDIR"] = "/"
 
@@ -46,7 +59,8 @@ class Gitg < Formula
 
   test do
     # test executable
-    assert_match version.to_s, shell_output("#{bin}/gitg --version")
+    # Disable this part of test on Linux because display is not available.
+    assert_match version.to_s, shell_output("#{bin}/gitg --version") if OS.mac?
     # test API
     (testpath/"test.c").write <<~EOS
       #include <libgitg/libgitg.h>
@@ -128,10 +142,10 @@ class Gitg < Formula
       -lgobject-2.0
       -lgthread-2.0
       -lgtk-3
-      -lintl
       -lpango-1.0
       -lpangocairo-1.0
     ]
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
