@@ -3,13 +3,13 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://github.com/espressif/esptool"
-  url "https://files.pythonhosted.org/packages/c9/b1/ec839625ba096b8a1ce4ea3c86da5a72a5be8686147c52ba52f863c65156/esptool-4.0.1.tar.gz"
-  sha256 "feeab030fe781e43cbbd5641f23766e52e7d4665b4e221fbf6155dd3d80f0b55"
+  url "https://files.pythonhosted.org/packages/bb/d5/9d000803520b68fd9f6447cd7c15352a79984196f57f0519839b0f80fb8f/esptool-4.1.tar.gz"
+  sha256 "51a41655187780cb802a5827fab68a3db0d6206330560459c55fcf0e222f277f"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/esptool"
-    sha256 cellar: :any, mojave: "df6fd31a9338776616c31a22f07621fc5b8f147b652c3bf36cb0ea33ae26377b"
+    sha256 cellar: :any, mojave: "c14e92c46a98317442c8d3910320439babaf8627d0a5706812770c6f5697ca21"
   end
 
   depends_on "rust" => :build
