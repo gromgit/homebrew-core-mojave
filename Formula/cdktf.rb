@@ -3,13 +3,13 @@ require "language/node"
 class Cdktf < Formula
   desc "Cloud Development Kit for Terraform"
   homepage "https://github.com/hashicorp/terraform-cdk"
-  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.10.4.tgz"
-  sha256 "4d7f3a117df1fed05016db1dd0f243a4acdc808d0c0cfd3473dc6367be2c1cf7"
+  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.11.0.tgz"
+  sha256 "3f597306e3733fc60cceb5f1beacd3218594be693cc15e9950401696bf6a3c1c"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdktf"
-    sha256 cellar: :any_skip_relocation, mojave: "0eaa9e4037047be7ff719a6d117677a80790b31876314e4639f185035030f47c"
+    sha256 cellar: :any_skip_relocation, mojave: "d4f29da77d2aa6867d59f410fd5dd40ca233f662c0a8042e8c5a47d163517a8b"
   end
 
   depends_on "node"
