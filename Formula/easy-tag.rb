@@ -8,8 +8,8 @@ class EasyTag < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easy-tag"
-    rebuild 1
-    sha256 mojave: "84b7508b47e252b4cc8efb2944473800ea4709f90e7187378cd396ce26b68e88"
+    rebuild 2
+    sha256 mojave: "c348fec7407f2a60e36edc257d0c8450db2ba97fe7aac205f1863025381a63ea"
   end
 
   depends_on "intltool" => :build
@@ -28,12 +28,16 @@ class EasyTag < Formula
   depends_on "taglib"
   depends_on "wavpack"
 
+  uses_from_macos "perl" => :build
+
   # disable gtk-update-icon-cache
   patch :DATA
 
   def install
     xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
     ENV.append_path "PYTHONPATH", "#{Formula["libxml2"].opt_lib}/python#{xy}/site-packages"
+    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.append "LDFLAGS", "-lz"
 
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
@@ -49,6 +53,10 @@ class EasyTag < Formula
   end
 
   test do
+    # Disable test on Linux because it fails with:
+    # Gtk-WARNING **: 18:38:23.471: cannot open display
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     system "#{bin}/easytag", "--version"
   end
 end
