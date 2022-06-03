@@ -1,8 +1,8 @@
 class GstPython < Formula
   desc "Python overrides for gobject-introspection-based pygst bindings"
   homepage "https://gstreamer.freedesktop.org/modules/gst-python.html"
-  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.20.1.tar.xz"
-  sha256 "ba6cd59faa3db3981d8c6982351c239d823c0b8e80b1acf58d2997b050289422"
+  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.20.2.tar.xz"
+  sha256 "853ea35a1088c762fb703e5aea9c30031a19222b59786b6599956e154620fa2f"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class GstPython < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-python"
-    sha256 mojave: "34ab5a6f6631cf32110d87cbcb3504eac8d8274a78616510f18f19fe6ec4eabc"
+    sha256 mojave: "0301ffed97427497171c47a638fdf10ebae5c3f9eb2ead418c387084ad8350e9"
   end
 
   depends_on "meson" => :build
