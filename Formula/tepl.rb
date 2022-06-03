@@ -1,18 +1,15 @@
 class Tepl < Formula
   desc "GNOME Text Editor Product Line"
-  homepage "https://wiki.gnome.org/Projects/Tepl"
-  url "https://download.gnome.org/sources/tepl/6.00/tepl-6.00.0.tar.xz"
-  sha256 "a86397a895dca9c0de7a5ccb063bda8f7ef691cccb950ce2cfdee367903e7a63"
+  homepage "https://gitlab.gnome.org/swilmet/tepl"
+  url "https://gitlab.gnome.org/swilmet/tepl.git",
+      tag:      "6.0.2",
+      revision: "52b2715293a8cb8c2be853686be0bc711cef6759"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tepl"
-    sha256 mojave: "77c2eb6a50d0ec40331d11392ffba26170e271aaf73733366a8aceb2fb546c08"
+    sha256 mojave: "5bf5e3af3f3beaf4e1cd5c08067d145798febe0a17203c6e457978e805dffeed"
   end
-
-  # See: https://gitlab.gnome.org/Archive/tepl
-  deprecate! date: "2021-05-25", because: :repo_archived
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
@@ -23,15 +20,9 @@ class Tepl < Formula
   depends_on "icu4c"
   depends_on "uchardet"
 
-  # Submitted upstream at https://gitlab.gnome.org/GNOME/tepl/-/merge_requests/8
-  patch do
-    url "https://gitlab.gnome.org/GNOME/tepl/-/commit/a8075b0685764d1243762e569fc636fa4673d244.diff"
-    sha256 "b5d646c194955b0c14bbb7604c96e237a82632dc548f66f2d0163595ef18ee88"
-  end
-
   def install
     mkdir "build" do
-      system "meson", *std_meson_args, ".."
+      system "meson", *std_meson_args, "-Dgtk_doc=false", ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
     end
