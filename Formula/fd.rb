@@ -1,14 +1,14 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
   homepage "https://github.com/sharkdp/fd"
-  url "https://github.com/sharkdp/fd/archive/v8.3.2.tar.gz"
-  sha256 "9cc2354c652ee38369a4ce865404f284e94fa9daf043bb31d36297e7a2d7cd45"
+  url "https://github.com/sharkdp/fd/archive/v8.4.0.tar.gz"
+  sha256 "d0c2fc7ddbe74e3fd88bf5bb02e0f69078ee6d2aeea3d8df42f508543c9db05d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fd"
-    sha256 cellar: :any_skip_relocation, mojave: "60a3d9b0caeb4bb24a2061539f5854066eeed3237a6c4f9beb36990f795f98ee"
+    sha256 cellar: :any_skip_relocation, mojave: "49e669f38e66c8348d9adf418d1c2e5785756946ee51fe4cfb82eb987e57a06c"
   end
 
   depends_on "rust" => :build
