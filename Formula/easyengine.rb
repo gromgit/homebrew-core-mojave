@@ -1,13 +1,13 @@
 class Easyengine < Formula
   desc "Command-line control panel to manage WordPress sites"
   homepage "https://easyengine.io/"
-  url "https://github.com/EasyEngine/easyengine/releases/download/v4.5.5/easyengine.phar"
-  sha256 "f5f1eedc33394774dff0403883a8e9906bb2d69063ce896a74b9cafd548ef80f"
+  url "https://github.com/EasyEngine/easyengine/releases/download/v4.5.6/easyengine.phar"
+  sha256 "28cd198a6c66d646756e6bda7f0981d5677d935667e3c1afb9456348f5c128d5"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easyengine"
-    sha256 cellar: :any_skip_relocation, mojave: "2261ec2571f602b39c61f521b2b5cf5929626887abfa184723e66bcf15ef9585"
+    sha256 cellar: :any_skip_relocation, mojave: "7b28790b20f6b331b50017703497ebf185a2e19e2c0d25492dd374cc1646187b"
   end
 
   depends_on "dnsmasq"
