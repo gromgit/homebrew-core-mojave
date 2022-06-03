@@ -1,7 +1,6 @@
 class BoostPython3 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
-  # Please add to synced_versions_formulae.json once version synced with boost
   url "https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2"
   sha256 "8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc"
   license "BSL-1.0"
@@ -11,10 +10,10 @@ class BoostPython3 < Formula
     formula "boost"
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost-python3"
-    rebuild 1
-    sha256 cellar: :any, mojave: "44217710ca5f4c08a6490f06f9c1046e90ac777411b24c49f1ccd00258457db8"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5816ab6fccebc91891ab3aae0636930297291161313265fd4a958ffbea5638ff"
   end
 
   depends_on "numpy" => :build
