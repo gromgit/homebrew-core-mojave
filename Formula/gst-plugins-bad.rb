@@ -1,8 +1,8 @@
 class GstPluginsBad < Formula
   desc "GStreamer plugins less supported, not fully tested"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.20.1.tar.xz"
-  sha256 "09d3c2cf5911f0bc7da6bf557a55251779243d3de216b6a26cc90c445b423848"
+  url "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.20.2.tar.xz"
+  sha256 "4adc4c05f41051f8136b80cda99b0d049a34e777832f9fea7c5a70347658745b"
   license "LGPL-2.0-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git", branch: "master"
 
@@ -13,7 +13,7 @@ class GstPluginsBad < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-plugins-bad"
-    sha256 mojave: "8b8f7de779c7dc1f34b4bb276c91f365d48872d396f1c9187e6f721844c76959"
+    sha256 mojave: "fe2e1ee588f9f5aac954e50ac0bc47f300532dcf99d02d96f5c8feee284ceac7"
   end
 
   depends_on "gobject-introspection" => :build
