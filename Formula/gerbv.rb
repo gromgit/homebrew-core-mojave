@@ -1,13 +1,13 @@
 class Gerbv < Formula
   desc "Gerber (RS-274X) viewer"
   homepage "https://gerbv.github.io/"
-  url "https://github.com/gerbv/gerbv/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "afbe700edc3287a534cc26ff64b63ed295d717c6764bba54f5434f90b5de5ff5"
+  url "https://github.com/gerbv/gerbv/archive/refs/tags/v2.9.1.tar.gz"
+  sha256 "bf0400cbd888fcffc5374d41f57a7c80ed859b603183d488da381c4ef8168e41"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gerbv"
-    sha256 mojave: "61110b0031854152be5abdfcc7a675636fa8d0c0e2b97a3cba1a5806ae9826b3"
+    sha256 mojave: "2b05f41541cf3af42e2bed7e417dee841600e33bc81a314153ec0ec4c5d7d2ea"
   end
 
   depends_on "autoconf" => :build
