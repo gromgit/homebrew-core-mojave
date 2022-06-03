@@ -3,13 +3,13 @@ require "language/node"
 class BashLanguageServer < Formula
   desc "Language Server for Bash"
   homepage "https://github.com/bash-lsp/bash-language-server"
-  url "https://registry.npmjs.org/bash-language-server/-/bash-language-server-3.0.0.tgz"
-  sha256 "23a2a0f8b62a2192f001ab0811051b085c11de6203b8358417ade21c0083be7e"
+  url "https://registry.npmjs.org/bash-language-server/-/bash-language-server-3.0.3.tgz"
+  sha256 "4d6a867f5c4c10fea46c563128eb9d0f0cba4bdd0e004ee6fd1b0101861f5ab2"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bash-language-server"
-    sha256 cellar: :any_skip_relocation, mojave: "e25124c67989815a516b9da4ee78227eb0ab046eaf5c61f3db16f631c1c446a0"
+    sha256 cellar: :any_skip_relocation, mojave: "3967f0faddc319c621651b7349b13d75268f413ad3c5ceb41c6a70d19959c54f"
   end
 
   depends_on "node"
