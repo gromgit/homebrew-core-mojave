@@ -8,14 +8,20 @@ class Khiva < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/khiva"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e1006ea42ed4000c3836b2aeb7cc12b759b11f7da0e5ed7fa968656f0babb51a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "152cf25119ba8bd26c538e78caea3fb1a8bc1ae4e55df4eb22105bf5f945edee"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "arrayfire"
   depends_on "eigen"
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
