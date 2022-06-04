@@ -1,15 +1,14 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https://www.scipy.org"
-  url "https://files.pythonhosted.org/packages/b4/a2/4faa34bf0cdbefd5c706625f1234987795f368eb4e97bde9d6f46860843e/scipy-1.8.0.tar.gz"
-  sha256 "31d4f2d6b724bc9a98e527b5849b8a7e589bf1ea630c33aa563eda912c9ff0bd"
+  url "https://files.pythonhosted.org/packages/26/b5/9330f004b9a3b2b6a31f59f46f1617ce9ca15c0e7fe64288c20385a05c9d/scipy-1.8.1.tar.gz"
+  sha256 "9e3fb1b0e896f14a85aa9a28d5f755daaeeb54c897b746df7a55ccb02b340f33"
   license "BSD-3-Clause"
   head "https://github.com/scipy/scipy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scipy"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e1b1eedeb165482d157f6d42153714e5e810f1ff282ca6280f672d6285644d77"
+    sha256 cellar: :any, mojave: "d4e024bc79d1e041634c52f7b8efca9b04a2757ac60be8e6f51af4aeca8403c0"
   end
 
   depends_on "libcython" => :build
