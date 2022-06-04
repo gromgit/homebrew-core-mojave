@@ -1,8 +1,8 @@
 class Gwyddion < Formula
   desc "Scanning Probe Microscopy visualization and analysis tool"
   homepage "http://gwyddion.net/"
-  url "http://gwyddion.net/download/2.59/gwyddion-2.59.tar.gz"
-  sha256 "b777eaa9a53a971c55a5ae2f7cd6695d1dbde78ffb84b9cf8885361400f051c7"
+  url "http://gwyddion.net/download/2.61/gwyddion-2.61.tar.gz"
+  sha256 "ae9d647b1c8c44d91d4ebec3d22d7536299fdb16bfa0bacccdf64e4704cd355e"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,10 +11,8 @@ class Gwyddion < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "84daa1965a976e10f7fc3c86181060ab41de374e60e40f4c583d1708c62f4e2d"
-    sha256 big_sur:       "0843f910f945f7ccfa32b172e499733f03f5bd1ffb5651cd09dd9e4908bfa098"
-    sha256 catalina:      "ff6670705c707245cc11ae74a4b7c3ae973e6a5fdda03a4edf2cd1a114da0c13"
-    sha256 mojave:        "78eb5e116ce465537772408846a45680195b1184f616fc3663fe60fa3db6a02b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gwyddion"
+    sha256 mojave: "85f73e08454058cb9e8e2f2a596271c8f2708544472d4539c2e012db387d2236"
   end
 
   depends_on "pkg-config" => :build
@@ -26,10 +24,17 @@ class Gwyddion < Formula
   depends_on "minizip"
 
   on_macos do
+    # Regenerate autoconf files to avoid flat namespace in library
+    # (autoreconf runs gtkdocize, provided by gtk-doc)
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gtk-doc" => :build
+    depends_on "libtool" => :build
     depends_on "gtk-mac-integration"
   end
 
   def install
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
     system "./configure", "--disable-dependency-tracking",
                           "--disable-desktop-file-update",
                           "--prefix=#{prefix}",
@@ -100,15 +105,11 @@ class Gwyddion < Formula
       -lfftw3
       -lfontconfig
       -lfreetype
-      -lgdk-quartz-2.0
       -lgdk_pixbuf-2.0
-      -lgdkglext-quartz-1.0
       -lgio-2.0
       -lglib-2.0
       -lgmodule-2.0
       -lgobject-2.0
-      -lgtk-quartz-2.0
-      -lgtkglext-quartz-1.0
       -lgwyapp2
       -lgwyddion2
       -lgwydgets2
@@ -118,10 +119,20 @@ class Gwyddion < Formula
       -lpango-1.0
       -lpangocairo-1.0
       -lpangoft2-1.0
-      -framework AppKit
-      -framework OpenGL
     ]
-    flags << "-lintl" if OS.mac?
+
+    if OS.mac?
+      flags += %w[
+        -lintl
+        -lgdk-quartz-2.0
+        -lgdkglext-quartz-1.0
+        -lgtk-quartz-2.0
+        -lgtkglext-quartz-1.0
+        -framework AppKit
+        -framework OpenGL
+      ]
+    end
+
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
