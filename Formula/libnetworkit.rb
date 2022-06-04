@@ -1,8 +1,8 @@
 class Libnetworkit < Formula
   desc "NetworKit is an OS-toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
-  url "https://github.com/networkit/networkit/archive/9.1.1.tar.gz"
-  sha256 "0376b3b7b8ba1fefb46549c7dd2cf979237a24708293715b1da92b4da272a742"
+  url "https://github.com/networkit/networkit/archive/10.0.tar.gz"
+  sha256 "77187a96dea59e5ba1f60de7ed63d45672671310f0b844a1361557762c2063f3"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libnetworkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libnetworkit"
-    rebuild 1
-    sha256 cellar: :any, mojave: "24f3087f8c960c9fc47225999e8c391cf259564fcf164eae3e34db665633627c"
+    sha256 cellar: :any, mojave: "22dffe0040f04e83e22707c828f4ed930443286b7c87008d4fb665662b76e470"
   end
 
   depends_on "cmake" => :build
   depends_on "tlx"
+  depends_on "ttmath"
 
   on_macos do
     depends_on "libomp"
