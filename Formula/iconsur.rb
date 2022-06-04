@@ -9,9 +9,11 @@ class Iconsur < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iconsur"
-    sha256 cellar: :any_skip_relocation, mojave: "77884a43974a1b6a917d415b12d2b6fe476dee4215e986e7123b9d911b0a95cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c9917be112021d3ba1373186105ea84159f7b0323157ff55ae55d7713497e2b8"
   end
 
+  depends_on :macos
   depends_on "node"
 
   def install
