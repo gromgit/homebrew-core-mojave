@@ -1,13 +1,13 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
   homepage "https://gr-framework.org/"
-  url "https://github.com/sciapp/gr/archive/v0.64.2.tar.gz"
-  sha256 "6562dfa65c57fa626957475b70c2cb659da17f4fdb02bdd25be4c33e84f881c6"
+  url "https://github.com/sciapp/gr/archive/v0.64.3.tar.gz"
+  sha256 "ef91d89187843454c70046bad6a5b8e99350bf6e3f209477aa3ad3c7a893c02f"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgr"
-    sha256 mojave: "65b19ec6c07329b33d93c45ec6a659a983bb86351ec747922daca3225219198a"
+    sha256 mojave: "95c986d1238f150c7ca036709b27a4e790b477482772841a939fa7676d6bde6a"
   end
 
   depends_on "cmake" => :build
