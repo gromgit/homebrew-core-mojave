@@ -3,13 +3,13 @@ require "language/node"
 class Httpyac < Formula
   desc "Quickly and easily send REST, SOAP, GraphQL and gRPC requests"
   homepage "https://httpyac.github.io/"
-  url "https://registry.npmjs.org/httpyac/-/httpyac-5.4.0.tgz"
-  sha256 "c4a8b54c4224f1a1ca6edfb39c20e869293db0abff3c12d92be089e2e26795ee"
+  url "https://registry.npmjs.org/httpyac/-/httpyac-5.4.2.tgz"
+  sha256 "07fa483b4555df3e001ea65839425ed773918f0a8f8a96506ce8b7a4e12d6b0e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/httpyac"
-    sha256 cellar: :any_skip_relocation, mojave: "5838c9c05473e59149d25c9fc92c2e915256381e6d4fcc2e8f7a1318f9fd57fb"
+    sha256 cellar: :any_skip_relocation, mojave: "f5d42fa7e06d5f6dd984f768cf1e165c46e094392e5344437151392de771ed8d"
   end
 
   depends_on "node"
