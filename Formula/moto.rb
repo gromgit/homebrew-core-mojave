@@ -3,13 +3,13 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/93/9c/3ef55eb554efd1dbcafc1acc5b7601e161e34cd6144ec9c307e724b16d35/moto-3.1.10.tar.gz"
-  sha256 "f3b5f77780ed7a852670b4079931d8cd397983f631de7f9b09b81747a4bd56cd"
+  url "https://files.pythonhosted.org/packages/eb/84/186db078f0ae23bec3cf0015ac648473ffddde44fa4002284b99f63b2e3e/moto-3.1.11.tar.gz"
+  sha256 "1b0c472f4b7401775a92e63fbcfa26112a00e087b9f6edda12202a39c62c6181"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moto"
-    sha256 cellar: :any, mojave: "598b5d25d4ea98dbbb5b9cbd0d64cfdc1c696f71741fc55db1c20069e975760a"
+    sha256 cellar: :any, mojave: "c49d7eff0230303494f3e9f0b0d9038ce0ebf7f696f6a584f3cc0ecb3cc49837"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -32,13 +32,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6b/19/e5cad66f42b59befcee37b444e1b1374485b47873fb74e2527cce9fcc18e/boto3-1.23.6.tar.gz"
-    sha256 "725e507211cde015184e2b5921512df89f63852fb079eda6ab6c282af66f45bd"
+    url "https://files.pythonhosted.org/packages/04/dd/c32878e575c1c67c5f732c0f8a36e50a7dcd79b37e964a13e10b68582e63/boto3-1.23.10.tar.gz"
+    sha256 "2a4395e3241c20eef441d7443a5e6eaa0ee3f7114653fb9d9cef41587526f7bd"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/6f/9d/fc4bbf73ace73f316bb55db696b19203adfc8b8cba237759cb952de522d4/botocore-1.26.6.tar.gz"
-    sha256 "ce3fb008ffb041d142cf3949b13529e8dc9a0db5f2ec0e86b159f10f2b56a46e"
+    url "https://files.pythonhosted.org/packages/af/c8/37c491b2a4198943e74d6a1792f1a18a70fd0e0e40a9cb0694cc7751a342/botocore-1.26.10.tar.gz"
+    sha256 "5df2cf7ebe34377470172bd0bbc582cf98c5cbd02da0909a14e9e2885ab3ae9c"
   end
 
   resource "certifi" do
@@ -227,8 +227,8 @@ class Moto < Formula
   end
 
   resource "responses" do
-    url "https://files.pythonhosted.org/packages/fa/e2/d9ca37e4ba43f98b0ec66c4b9d1d20ec9e30a08053dd70458b9257e3130b/responses-0.20.0.tar.gz"
-    sha256 "644905bc4fb8a18fa37e3882b2ac05e610fe8c2f967d327eed669e314d94a541"
+    url "https://files.pythonhosted.org/packages/6d/db/b949a6bf2a75c64caea0a6b39d05e433aa2e51bea78ae9d5dda1110b31a5/responses-0.21.0.tar.gz"
+    sha256 "b82502eb5f09a0289d8e209e7bad71ef3978334f56d09b444253d5ad67bf5253"
   end
 
   resource "rsa" do
