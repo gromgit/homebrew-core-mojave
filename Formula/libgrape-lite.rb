@@ -1,14 +1,13 @@
 class LibgrapeLite < Formula
   desc "C++ library for parallel graph processing"
   homepage "https://github.com/alibaba/libgrape-lite"
-  url "https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "aafc8e5e9b122c4bde4370ee3f2ab8afb043f2a1547cacc062991ad420e3b9a4"
+  url "https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "3dd601484a6ef5635ea520c56bca3a029fba382e8aacf3d8d23d12a813defb1e"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgrape-lite"
-    sha256 cellar: :any, mojave: "12f2c5aee1d1cc8e9dad27b7bc7f2acf19a52f86e7436d408545ddc5f70791d9"
+    sha256 cellar: :any, mojave: "f6babb51f79a4ae7c0b67854bfdb29d0e127ee339ba61fd6c754e565c6852265"
   end
 
   depends_on "cmake" => :build
