@@ -1,13 +1,13 @@
 class GupnpTools < Formula
   desc "Free replacements of Intel's UPnP tools"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gupnp-tools/0.10/gupnp-tools-0.10.2.tar.xz"
-  sha256 "6de49ef4b375b8a164f74b766168b1184e0d28196b6b07a4f5341f08dfd85d6c"
+  url "https://download.gnome.org/sources/gupnp-tools/0.10/gupnp-tools-0.10.3.tar.xz"
+  sha256 "457f4d923935b078415cd2ba88d78db60079b725926b7ee106e4565efe3204de"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gupnp-tools"
-    sha256 mojave: "e4deea7dfd69e7e0f904fe1376ba1a67f1939cd7ab4e0fcee2d5f5393c8e31c8"
+    sha256 mojave: "50335f5c42fdea33b6d02fea8de7ba880ca8988c1e8935d5aed7cb97e9499bf2"
   end
 
   depends_on "meson" => :build
