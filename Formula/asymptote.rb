@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/2.80/asymptote-2.80.src.tgz"
-  sha256 "6266d097dc49581f8308a5d3d60a77da11262daa60513c5f2e5b21fea4de1756"
+  url "https://downloads.sourceforge.net/project/asymptote/2.81/asymptote-2.81.src.tgz"
+  sha256 "768eba48c877373a810d991d482f88480643291aae68fa2abc3aa3d5a7ed0073"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -13,7 +13,7 @@ class Asymptote < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asymptote"
-    sha256 mojave: "d2226154573a08b800dc6d971972381883f79764d37e70ca4ff6e8e48ca01fe9"
+    sha256 mojave: "6e010b3927fee8b13966404b591ef92ed574b27ab510b4cefd067c66c68f38a9"
   end
 
   depends_on "glm" => :build
@@ -29,8 +29,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/2.80/asymptote.pdf"
-    sha256 "8a4d4f4f3d2cfdf83d943b85859af9dc86706f2852301a09c276e9322f5fa556"
+    url "https://downloads.sourceforge.net/project/asymptote/2.81/asymptote.pdf"
+    sha256 "543c3a9a87292c76083953688db28e20eb33d7f2e67e7808454f7e3d136de930"
   end
 
   def install
