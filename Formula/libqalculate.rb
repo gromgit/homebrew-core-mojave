@@ -1,13 +1,13 @@
 class Libqalculate < Formula
   desc "Library for Qalculate! program"
   homepage "https://qalculate.github.io/"
-  url "https://github.com/Qalculate/libqalculate/releases/download/v4.1.1/libqalculate-4.1.1.tar.gz"
-  sha256 "b5611a91293be40fbe8723a81937e25ffb54e6ad6e60f282d044ed92f2d97002"
+  url "https://github.com/Qalculate/libqalculate/releases/download/v4.2.0/libqalculate-4.2.0.tar.gz"
+  sha256 "2b86e656508f0b1c55236b08fd579b676563e1500b3db8304580de69c5693e4b"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libqalculate"
-    sha256 mojave: "81608016d767eddcf55f38c32dff96de89eea0c9ff8220e9a4d4b87fdd23901c"
+    sha256 mojave: "a5a49083af9438135742432378c89c2c8d845254b2c9a9e1d0d26a8a983e8242"
   end
 
   depends_on "intltool" => :build
