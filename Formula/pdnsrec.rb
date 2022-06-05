@@ -1,8 +1,8 @@
 class Pdnsrec < Formula
   desc "Non-authoritative/recursing DNS server"
   homepage "https://www.powerdns.com/recursor.html"
-  url "https://downloads.powerdns.com/releases/pdns-recursor-4.6.2.tar.bz2"
-  sha256 "da649850739fdd7baf2df645acc97752ccd390973b56b8e25171ea7b0d25ad20"
+  url "https://downloads.powerdns.com/releases/pdns-recursor-4.7.0.tar.bz2"
+  sha256 "e4872a1b11a35fc363f354d69ccb4ec88047bfc7d9308087497dc2ad3af3498c"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Pdnsrec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdnsrec"
-    sha256 mojave: "2ecebfc78718a0ae49563bf022ca08e037ffc2c63ea444c8fae64b9fa0ca6c2b"
+    sha256 mojave: "ef594532d39e04a2321d8392825fd4a49caf62e086c780242ab8f7082fc7f3cd"
   end
 
   depends_on "pkg-config" => :build
