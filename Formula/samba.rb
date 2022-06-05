@@ -4,8 +4,8 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.16.0.tar.gz"
-  sha256 "97c47de35915d1637b254f02643c3230c3e73617851700edc7a2a8c958a3310c"
+  url "https://download.samba.org/pub/samba/stable/samba-4.16.1.tar.gz"
+  sha256 "c058b563a36dbb552464b63afde2431b79050471723fd9ee83219f997efb66ce"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -15,17 +15,25 @@ class Samba < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/samba"
-    sha256 mojave: "30c69f75c6c987c40897fbc0a9110fbdc2e9ff01c34e7c16bb88c61ef539eabb"
+    sha256 mojave: "fd5af211dd54cffaffac3df1a430af24779463ffc40af2f628f858a21e1f2034"
   end
 
   # configure requires python3 binary to be present, even when --disable-python is set.
   depends_on "python@3.10" => :build
   depends_on "gnutls"
   depends_on "krb5"
+  depends_on "libtasn1"
+  depends_on "readline"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "perl" => :build
+  uses_from_macos "libxcrypt"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "openssl@1.1"
+  end
 
   resource "Parse::Yapp" do
     url "https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz"
@@ -89,9 +97,9 @@ class Samba < Formula
 
   test do
     smbd = if OS.mac?
-      "#{sbin}/smbd"
-    else
       "#{sbin}/samba-dot-org-smbd"
+    else
+      "#{sbin}/smbd"
     end
 
     system smbd, "--build-options", "--configfile=/dev/null"
