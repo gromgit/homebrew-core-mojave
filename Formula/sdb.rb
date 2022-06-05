@@ -1,14 +1,14 @@
 class Sdb < Formula
   desc "Ondisk/memory hashtable based on CDB"
-  homepage "https://github.com/radare/sdb"
-  url "https://github.com/radareorg/sdb/archive/1.8.6.tar.gz"
-  sha256 "0fbbbb577dec318d79cd110251a6a469460955dc49aa52b6f7796a6a7b478b00"
+  homepage "https://github.com/radareorg/sdb"
+  url "https://github.com/radareorg/sdb/archive/1.9.0.tar.gz"
+  sha256 "29c2dede43ad4eeecb330e0b0c6fbb332d8a72f7b183a9d946ed2603e0ae3720"
   license "MIT"
-  head "https://github.com/radare/sdb.git", branch: "master"
+  head "https://github.com/radareorg/sdb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdb"
-    sha256 cellar: :any, mojave: "4de9001e6fd001021bb4bb22999bf852b171fac0739d6ccf38035ac8c94948fa"
+    sha256 cellar: :any, mojave: "66e8c19f17eba1acf4c8f627beed74173a70f32d9d6cb8ff20cc7478d60e6c17"
   end
 
   depends_on "pkg-config" => :build
