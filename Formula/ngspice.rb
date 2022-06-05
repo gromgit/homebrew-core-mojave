@@ -1,8 +1,8 @@
 class Ngspice < Formula
   desc "Spice circuit simulator"
   homepage "https://ngspice.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/36/ngspice-36.tar.gz"
-  sha256 "4f818287efba245341046635b757ae81f879549b326a4316b5f6e697aa517f8c"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/37/ngspice-37.tar.gz"
+  sha256 "9beea6741a36a36a70f3152a36c82b728ee124c59a495312796376b30c8becbe"
 
   livecheck do
     url :stable
@@ -11,7 +11,7 @@ class Ngspice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ngspice"
-    sha256 mojave: "9b2658df3020c8d021766fcf9549f30f23594f95dbcbec4de38512c2b2177a7f"
+    sha256 mojave: "4df479c7f2bbb660939d9f5cf476bc014fa77aca03699e02640694ada86b03eb"
   end
 
   head do
