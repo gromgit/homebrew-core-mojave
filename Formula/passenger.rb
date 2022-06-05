@@ -8,13 +8,20 @@ class Passenger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/passenger"
-    sha256 cellar: :any, mojave: "7142937955f1ece3163c2e29da061041e94d80fd124c61875b956b532e4df56e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "70711d90e395616afea12a7531d02793376a48a4c8834e223e38026eb7e07ffe"
   end
 
-  # to build nginx module
-  depends_on "nginx" => [:build, :test]
+  depends_on "httpd" => :build # to build the apache2 module
+  depends_on "nginx" => [:build, :test] # to build nginx module
+  depends_on "apr"
+  depends_on "apr-util"
   depends_on "openssl@1.1"
   depends_on "pcre"
+
+  uses_from_macos "xz" => :build
+  uses_from_macos "curl"
+  uses_from_macos "libxcrypt"
   uses_from_macos "ruby", since: :catalina
 
   def install
