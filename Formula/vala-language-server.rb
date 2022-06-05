@@ -1,14 +1,15 @@
 class ValaLanguageServer < Formula
   desc "Code Intelligence for Vala & Genie"
-  homepage "https://github.com/Prince781/vala-language-server"
-  url "https://github.com/Prince781/vala-language-server/releases/download/0.48.4/vala-language-server-0.48.4.tar.xz"
+  homepage "https://github.com/vala-lang/vala-language-server"
+  url "https://github.com/vala-lang/vala-language-server/releases/download/0.48.4/vala-language-server-0.48.4.tar.xz"
   sha256 "0fd65b641a4bd6e0385502f0536f803bf542fd8bae6a2adb04e2e299ccca4551"
   license "LGPL-2.1-only"
   revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vala-language-server"
-    sha256 cellar: :any, mojave: "cace9011369b4e05de45477433daf058e3f7d65c937059f0864f81bb3d51f28c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "856588ed80ca0a458fbdee1359f9faa486b2f6b9fffb1de47a44b4cc00b5bcd0"
   end
 
   depends_on "meson" => :build
