@@ -1,14 +1,14 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://wxmaxima-developers.github.io/wxmaxima/"
-  url "https://github.com/wxMaxima-developers/wxmaxima/archive/Version-22.03.0.tar.gz"
-  sha256 "2192f804588511e9a796ad0b677e6f4721bb2cf2a52766f3d47f4528ad0ce0a4"
+  url "https://github.com/wxMaxima-developers/wxmaxima/archive/Version-22.05.0.tar.gz"
+  sha256 "a0140b9f6171540556bd40c6b5617eb9ea224debe592014cbfabd0c095594b93"
   license "GPL-2.0-or-later"
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wxmaxima"
-    sha256 mojave: "45a1c52f1fa36738afdf6c488a6f52dffdc410e54e0b4311b260ea7192e87ca7"
+    sha256 mojave: "ef59ed1acf0d8c902059ad4e665317c8cba842e8da058e3fd49ae36004d1ba66"
   end
 
   depends_on "cmake" => :build
