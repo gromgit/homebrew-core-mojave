@@ -1,14 +1,14 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https://github.com/uutils/coreutils"
-  url "https://github.com/uutils/coreutils/archive/0.0.13.tar.gz"
-  sha256 "4f5de6369a826837dfb6fe578580589d38f69e6d2aa9ccc103c9c075c466ff32"
+  url "https://github.com/uutils/coreutils/archive/0.0.14.tar.gz"
+  sha256 "527563ff39aeea9e56f91996226a51034ed648732de71d075e3d12683b90b155"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uutils-coreutils"
-    sha256 cellar: :any_skip_relocation, mojave: "cbe597cfd6e12af81e44aed90780bfa1c2703a307b4dd773827b72d7d8673e72"
+    sha256 cellar: :any_skip_relocation, mojave: "86b08206efa7d67a89de72796d4690f343e2e91608199da2bf6318b64f18225e"
   end
 
   depends_on "make" => :build
