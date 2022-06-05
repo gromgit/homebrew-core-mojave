@@ -1,9 +1,9 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://github.com/microsoft/vcpkg-tool/archive/2022-03-09.tar.gz"
-  version "2022.03.09"
-  sha256 "174a9081059efc29f8c617e6d673d342388816872a3c57c7042051d029b77841"
+  url "https://github.com/microsoft/vcpkg-tool/archive/2022-05-05.tar.gz"
+  version "2022.05.05"
+  sha256 "c2d02a979b648d8e640c1704d72766e68ab783f03c6eb89f1ad5a6645fd7f547"
   license "MIT"
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
@@ -17,8 +17,7 @@ class Vcpkg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcpkg"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a40ca0d8fb27967edbd95c776329cda9b4a1adcde357028135d3586276912da4"
+    sha256 cellar: :any, mojave: "65573e8cb134838dd52f5226b62986c375a6aa0420ba4783a5522980868ab2c2"
   end
 
   depends_on "cmake" => :build
