@@ -1,13 +1,13 @@
 class SofiaSip < Formula
   desc "SIP User-Agent library"
   homepage "https://sofia-sip.sourceforge.io/"
-  url "https://github.com/freeswitch/sofia-sip/archive/v1.13.7.tar.gz"
-  sha256 "3bdcbe80a066c9cafa8d947d51512b86ed56bf2cdbb25dbe9b8eef6a8bab6a25"
+  url "https://github.com/freeswitch/sofia-sip/archive/v1.13.8.tar.gz"
+  sha256 "792b99eb35e50d7abeb42e91a5dceaf28afc5be1a85ffb01995855792a747fec"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sofia-sip"
-    sha256 cellar: :any, mojave: "7257ccea7de7dfb997ffb9864c0d90410655d97b104d665538576ff226957b6d"
+    sha256 cellar: :any, mojave: "f13f2811895f119ee4481d24041aaa61dfbb0f5a706e256c3f6372e098d2df9a"
   end
 
   depends_on "autoconf" => :build
