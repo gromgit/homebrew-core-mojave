@@ -1,13 +1,13 @@
 class PandocPlot < Formula
   desc "Render and include figures in Pandoc documents using many plotting toolkits"
   homepage "https://github.com/LaurentRDC/pandoc-plot"
-  url "https://hackage.haskell.org/package/pandoc-plot-1.5.2/pandoc-plot-1.5.2.tar.gz"
-  sha256 "2d16d4d91d83ebb2081ec97aee3729beb7df435236f1288fc5ee96694bb3a1d0"
+  url "https://hackage.haskell.org/package/pandoc-plot-1.5.3/pandoc-plot-1.5.3.tar.gz"
+  sha256 "ec7646e2361ca4a6dc7a01d6f55a2817a8c77d65a0eb43ac0a04d465695ae334"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pandoc-plot"
-    sha256 cellar: :any_skip_relocation, mojave: "c35d5bf2b4bcd7793c99316c220ac0f98825639b3a17df33ba1306592830366c"
+    sha256 cellar: :any_skip_relocation, mojave: "2dfae7785b0146540b75485518ea4fc3caec86e3fd7eeb313e8c908db9f1fe21"
   end
 
   depends_on "cabal-install" => :build
