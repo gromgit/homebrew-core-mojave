@@ -4,12 +4,12 @@ class Pcl < Formula
   url "https://github.com/PointCloudLibrary/pcl/archive/pcl-1.12.1.tar.gz"
   sha256 "dc0ac26f094eafa7b26c3653838494cc0a012bd1bdc1f1b0dc79b16c2de0125a"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcl"
-    sha256 cellar: :any, mojave: "2a9526653225eea78ef550dc57b5485c9430fb65ce2e96c52d6ff2cd3735761d"
+    sha256 cellar: :any, mojave: "7e9a00b73ac5cbe65fae789eff474965106f07b0e4ea747157e664940330d95e"
   end
 
   depends_on "cmake" => [:build, :test]
