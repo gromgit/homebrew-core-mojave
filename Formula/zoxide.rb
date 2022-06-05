@@ -1,13 +1,13 @@
 class Zoxide < Formula
   desc "Shell extension to navigate your filesystem faster"
   homepage "https://github.com/ajeetdsouza/zoxide"
-  url "https://github.com/ajeetdsouza/zoxide/archive/v0.8.0.tar.gz"
-  sha256 "111c5f1cd92b1cb54e2f0a801003098a601c653ec5a378f3d0ea1c9659854477"
+  url "https://github.com/ajeetdsouza/zoxide/archive/v0.8.1.tar.gz"
+  sha256 "55f4bf374421f842f5541d95db14d7a63f5d24e269613fb95f769f00cdb9ffc3"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zoxide"
-    sha256 cellar: :any_skip_relocation, mojave: "c214a84b2d0c6744ef536f9b1ef8156a0c01532ab1aace12d522b5024d93ac97"
+    sha256 cellar: :any_skip_relocation, mojave: "7cb8686bf0e1a10ff91c4c4afe7a20b88cabfed61228ef215273504004ef2196"
   end
 
   depends_on "rust" => :build
