@@ -1,8 +1,8 @@
 class WasmTools < Formula
   desc "Low level tooling for WebAssembly in Rust"
   homepage "https://github.com/bytecodealliance/wasm-tools"
-  url "https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/wasm-tools-1.0.4.tar.gz"
-  sha256 "5ca1ebf67de418d7b953dd9d67620fa1b90d1828321953744a1f69abfecac5ec"
+  url "https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/wasm-tools-1.0.5.tar.gz"
+  sha256 "49a1957a75992b2ec798382cc8be4f21d905b3aebb301aaf05839e56b6a5d478"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasm-tools.git", branch: "main"
 
@@ -13,7 +13,7 @@ class WasmTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wasm-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "1726dc0bf3ba654e2df1d832b1db020317855e2360ecc7236ef02b277aa8bf61"
+    sha256 cellar: :any_skip_relocation, mojave: "a4a25ba21e55b24a73333960a06497fce61d497fe04383cb9a7fe5116cbf7d90"
   end
 
   depends_on "rust" => :build
