@@ -1,13 +1,13 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https://github.com/lierdakil/pandoc-crossref"
-  url "https://hackage.haskell.org/package/pandoc-crossref-0.3.12.2/pandoc-crossref-0.3.12.2.tar.gz"
-  sha256 "94540325c9c98ae4d5199c634bf402ffa41e3c5b020d7207daef90fd9e224fb4"
+  url "https://hackage.haskell.org/package/pandoc-crossref-0.3.13.0/pandoc-crossref-0.3.13.0.tar.gz"
+  sha256 "3d001c7e656fba84b3053ce4531766512505c9db1e8cb6c99939f40075eec53a"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pandoc-crossref"
-    sha256 cellar: :any_skip_relocation, mojave: "ddcb89d6f3fd4ff869daec53d6f42f35efa7b602142658ac37ad9ad7d7ec89ac"
+    sha256 cellar: :any_skip_relocation, mojave: "61024aa7887542633b7d7d365bbbb1feae5745e245dd464e78934869888e9965"
   end
 
   depends_on "cabal-install" => :build
