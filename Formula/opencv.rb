@@ -4,15 +4,16 @@ class Opencv < Formula
   url "https://github.com/opencv/opencv/archive/4.5.5.tar.gz"
   sha256 "a1cfdcf6619387ca9e232687504da996aaa9f7b5689986b8331ec02cb61d28ad"
   license "Apache-2.0"
+  revision 2
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencv"
-    sha256 mojave: "5fc2342cb76320b3bf4a7a488564995b8d39b1cde4c7b0d26067089075549784"
+    sha256 mojave: "e388d3d303e86807819513f594537ac5b4401301953467f7dc005b5eb324a1b4"
   end
 
   depends_on "cmake" => :build
