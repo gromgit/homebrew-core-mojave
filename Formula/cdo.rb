@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/26761/cdo-2.0.4.tar.gz"
-  sha256 "73c0c1e5348632e6e8452ea8e617c35499bc55c845ee2c1d42b912a7e00e5533"
+  url "https://code.mpimet.mpg.de/attachments/download/26823/cdo-2.0.5.tar.gz"
+  sha256 "edeebbf1c3b1a1f0c642dae6bc8c7624e0c54babe461064dc5c7daca4a5b0dce"
   license "GPL-2.0-only"
   revision 1
 
@@ -11,16 +11,16 @@ class Cdo < Formula
     regex(/href=.*?cdo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdo"
-    sha256 cellar: :any, mojave: "bcc2f6e65c5352f7035a327638b2cfc076143c439cd5d381c70c56eaa4a5906d"
+    sha256 cellar: :any, mojave: "f3a258fa7642556c2242fc8d0110628144a85adff448f6d4644efb74f5dc3465"
   end
 
   depends_on "eccodes"
   depends_on "hdf5"
+  depends_on "libaec"
   depends_on "netcdf"
   depends_on "proj"
-  depends_on "szip"
 
   def install
     args = %W[
@@ -29,7 +29,7 @@ bottle do
       --with-eccodes=#{Formula["eccodes"].opt_prefix}
       --with-netcdf=#{Formula["netcdf"].opt_prefix}
       --with-hdf5=#{Formula["hdf5"].opt_prefix}
-      --with-szlib=#{Formula["szip"].opt_prefix}
+      --with-szlib=#{Formula["libaec"].opt_prefix}
     ]
 
     system "./configure", *args
