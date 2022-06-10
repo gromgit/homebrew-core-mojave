@@ -4,7 +4,8 @@ class Itk < Formula
   url "https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.2.1/InsightToolkit-5.2.1.tar.gz"
   sha256 "192d41bcdd258273d88069094f98c61c38693553fd751b54f8cda308439555db"
   license "Apache-2.0"
-  head "https://github.com/InsightSoftwareConsortium/ITK.git"
+  revision 2
+  head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "master"
 
   livecheck do
     url :stable
@@ -12,11 +13,8 @@ class Itk < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "7b59055f5a4d15929975183ff03593a0500f6f9a4ff70d740ab184b29e182b99"
-    sha256 big_sur:       "b7b30cd49b92cfcbd05404a4d0a592f3623f122354a82e458d5ee01ac2f9aa73"
-    sha256 catalina:      "2e87abe07201cd013ac9535b02f3a012e79b049327d5ecc6ff015b1752c0a7f8"
-    sha256 mojave:        "d2020a7710d5b42d0d833ff04ee2d821ff8080f34c8d2d00a86feaa39f6dfa25"
-    sha256 x86_64_linux:  "c848dd47f4c45a3def027fac4d9b640f554ceb3ef97e35e6f2d45b3e44f8a73c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/itk"
+    sha256 mojave: "122073bffdec237e700c7ec84972f3e8555eed5477e4e4cb977510e60b8d94f2"
   end
 
   depends_on "cmake" => :build
