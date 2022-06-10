@@ -3,10 +3,9 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.44.tar.bz2"
-  sha256 "2dd8c31b65eb9404b78af1413d2c8896e247fa5bf81dfcbe56fcaa27af82df26"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.45.tar.bz2"
+  sha256 "f92da7accfda02b29791efe4f0b3ed93329f27232af4d3afc07c92421ec68668"
   license "LGPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -15,7 +14,7 @@ class GraphTool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graph-tool"
-    sha256 mojave: "5c267cd79aa98c915c7ef6567674ecfade7c38400a6c0f33c5c7a94c020520e0"
+    sha256 mojave: "dd6593384082063e3d14f52c3caf384f41a530b9e7a4861caaddb896ad991396"
   end
 
   depends_on "autoconf" => :build
@@ -36,6 +35,14 @@ class GraphTool < Formula
   depends_on "python@3.9"
   depends_on "scipy"
   depends_on "six"
+
+  uses_from_macos "expat" => :build
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   resource "Cycler" do
     url "https://files.pythonhosted.org/packages/c2/4b/137dea450d6e1e3d474e1d873cd1d4f7d3beed7e0dc973b06e8e10d32488/cycler-0.10.0.tar.gz"
@@ -73,6 +80,9 @@ class GraphTool < Formula
   end
 
   def install
+    # Linux build is not thread-safe.
+    ENV.deparallelize unless OS.mac?
+
     system "autoreconf", "-fiv"
     xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
     venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
@@ -86,13 +96,13 @@ class GraphTool < Formula
       "--disable-dependency-tracking",
       "--prefix=#{prefix}",
       "PYTHON=python3",
-      "PYTHON_LIBS=-undefined dynamic_lookup",
       "--with-python-module-path=#{lib}/python#{xy}/site-packages",
       "--with-boost-python=boost_python#{xy.to_s.delete(".")}-mt",
       "--with-boost-libdir=#{HOMEBREW_PREFIX}/opt/boost/lib",
       "--with-boost-coroutine=boost_coroutine-mt",
     ]
     args << "--with-expat=#{MacOS.sdk_path}/usr" if MacOS.sdk_path_if_needed
+    args << "PYTHON_LIBS=-undefined dynamic_lookup" if OS.mac?
 
     system "./configure", *args
     system "make", "install"
