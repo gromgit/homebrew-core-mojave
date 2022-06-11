@@ -5,15 +5,13 @@ class LibtorrentRasterbar < Formula
   revision 1
   head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_0"
 
-  # Remove `stable do` block when patch is no longer needed.
   stable do
-    url "https://github.com/arvidn/libtorrent/releases/download/v2.0.5/libtorrent-rasterbar-2.0.5.tar.gz"
-    sha256 "e965c2e53170c61c0db3a2d898a61769cb7acd541bbf157cbbef97a185930ea5"
+    url "https://github.com/arvidn/libtorrent/releases/download/v2.0.6/libtorrent-rasterbar-2.0.6.tar.gz"
+    sha256 "438e29272ff41ccc68ec7530f1b98d639f6d01ec8bf680766336ae202a065722"
 
-    # Fix build with Boost 1.78. Remove in next release.
     patch do
-      url "https://github.com/arvidn/libtorrent/commit/71d608fceca7e61c9d124f9ea83f71b06eda3b17.patch?full_index=1"
-      sha256 "20b8e93b67f81af22e50bd668fbeee30147dd85d3ffdff9d624531c32f54e567"
+      url "https://github.com/arvidn/libtorrent/commit/a5925cfc862923544d4d2b4dc5264836e2cd1030.patch?full_index=1"
+      sha256 "cbcbb988d5c534f0ee97da7cbbc72bcd7a10592c5619970b5330ab646ffc7c52"
     end
   end
 
@@ -24,8 +22,7 @@ class LibtorrentRasterbar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorrent-rasterbar"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8c1e6247fce58dad9d5372b66f23b39a1c4216778f8ecb29de217a48f76cd2f2"
+    sha256 cellar: :any, mojave: "467319cfaf55d697ff75f7ba1f08c061422d26800b05442e2a505e5a9668447c"
   end
 
   depends_on "cmake" => :build
@@ -37,20 +34,17 @@ class LibtorrentRasterbar < Formula
   conflicts_with "libtorrent-rakshasa", because: "they both use the same libname"
 
   def install
-    args = %w[
+    args = %W[
       -DCMAKE_CXX_STANDARD=14
       -Dencryption=ON
       -Dpython-bindings=ON
       -Dpython-egg-info=ON
+      -DCMAKE_INSTALL_RPATH=#{lib}
     ]
-    args += std_cmake_args
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-    end
-
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     libexec.install "examples"
   end
 
