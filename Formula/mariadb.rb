@@ -1,8 +1,8 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.7.3/source/mariadb-10.7.3.tar.gz"
-  sha256 "da286919ffc9c913282202349709b6ba4ebcd342815e8dae0aa6b6bd8f515cd4"
+  url "https://downloads.mariadb.com/MariaDB/mariadb-10.8.3/source/mariadb-10.8.3.tar.gz"
+  sha256 "887eadc55176ac1ead1fccfc89ade4b5990ef192745ad4dcd879acb41c050892"
   license "GPL-2.0-only"
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
@@ -21,7 +21,7 @@ class Mariadb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb"
-    sha256 mojave: "14b140d5805053360cda6bb7cd9f6780dfd6a8614b91ecd06a07e7ecbdc7273f"
+    sha256 mojave: "d0606ef70b5dc9778a9462d28b399e0e77a7f8a5c54f11cbdde1a3e48221e7a4"
   end
 
   depends_on "bison" => :build
