@@ -1,11 +1,11 @@
 class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-c"
-  url "https://downloads.mariadb.com/Connectors/c/connector-c-3.2.6/mariadb-connector-c-3.2.6-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.2.6-src.tar.gz/"
-  sha256 "9c22fff9d18db7ebdcb63979882fb6b68d2036cf2eb62f043eac922cd36bdb91"
+  url "https://downloads.mariadb.com/Connectors/c/connector-c-3.3.1/mariadb-connector-c-3.3.1-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.3.1-src.tar.gz/"
+  sha256 "29993f4ae4c975662724978792d1a503b9ee760fbb194d321a754253cbe60aad"
   license "LGPL-2.1-or-later"
-  head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.2"
+  head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.3"
 
   # https://mariadb.org/download/ sometimes lists an older version as newest,
   # so we check the JSON data used to populate the mariadb.com downloads page
@@ -17,7 +17,7 @@ class MariadbConnectorC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb-connector-c"
-    sha256 mojave: "57d2175b8bcec46246a0db9d25b346c69e56dcb3c04c9e4a315614245cda2756"
+    sha256 mojave: "4dcdbc1ccfcc4be4cc928349cccf5f68191941892c64bd8faa11d838e84e3e09"
   end
 
   depends_on "cmake" => :build
