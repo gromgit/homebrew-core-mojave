@@ -1,14 +1,14 @@
 class Lychee < Formula
   desc "Fast, async, resource-friendly link checker"
   homepage "https://github.com/lycheeverse/lychee"
-  url "https://github.com/lycheeverse/lychee/archive/v0.9.0.tar.gz"
-  sha256 "2369612c691b814d6b34c0fc8dae5a7474c95368c10a1ebf9266784c27f32fb2"
+  url "https://github.com/lycheeverse/lychee/archive/v0.10.0.tar.gz"
+  sha256 "e7f8ae04c0d4714c4116f5cfccc41fef4b469d22c568a4f509c949378b30cafb"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/lycheeverse/lychee.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lychee"
-    sha256 cellar: :any, mojave: "7a9980572254e18062dfeb305bff446de15e545f68d4a7158a8a887c541a5245"
+    sha256 cellar: :any, mojave: "b6d43909b5b2835565c8861cdb27ca5d7a08148c4b76a536c17a5b047b24cdaa"
   end
 
   depends_on "rust" => :build
@@ -27,6 +27,6 @@ class Lychee < Formula
   test do
     (testpath/"test.md").write "[This](https://example.com) is an example.\n"
     output = shell_output(bin/"lychee #{testpath}/test.md")
-    assert_match "🔍 1 Total ✅ 1 OK 🚫 0 Errors", output
+    assert_match "🔍 1 Total ✅ 0 OK 🚫 0 Errors 💤 1 Excluded", output
   end
 end
