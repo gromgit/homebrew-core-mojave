@@ -13,7 +13,8 @@ class ManDb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/man-db"
-    sha256 mojave: "a2578f0ec163c5711dc6498eeb5fc71eeea9df076e67c860dbdff69ed56fd214"
+    rebuild 1
+    sha256 mojave: "0bdd868c7da490af5912720062bf4084f0013ce14c8c2128e8f0b8587d4ce9ea"
   end
 
   depends_on "pkg-config" => :build
@@ -84,7 +85,7 @@ class ManDb < Formula
     output = shell_output("#{bin}/gman true")
     if OS.mac?
       assert_match "BSD General Commands Manual", output
-      assert_match "The true utility always returns with exit code zero", output
+      assert_match(/The true utility always returns with (an )?exit code (of )?zero/, output)
     else
       assert_match "true - do nothing, successfully", output
       assert_match "GNU coreutils online help: <http://www.gnu.org/software/coreutils/", output
