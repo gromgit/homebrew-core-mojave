@@ -13,10 +13,12 @@ class MongodbAtlasCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongodb-atlas-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "d932fd3eb60b7c1ed5a6e2cf534fd2b0d45d1b60080e8c64bfe250c1ca9a27f0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fecfd5891faebaac6f1ea211e490a7b08872f5441c8869e8aed701eab861bde2"
   end
 
   depends_on "go" => :build
+  depends_on "mongosh"
 
   def install
     with_env(
