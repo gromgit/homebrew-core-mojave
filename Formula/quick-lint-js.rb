@@ -1,15 +1,14 @@
 class QuickLintJs < Formula
   desc "Find bugs in your JavaScript code"
   homepage "https://quick-lint-js.com/"
-  url "https://c.quick-lint-js.com/releases/2.4.2/source/quick-lint-js-2.4.2.tar.gz"
-  sha256 "c52f961669439ae13e9676d471118f995baf46279da70ac0a7c98c4aede925fd"
+  url "https://c.quick-lint-js.com/releases/2.5.0/source/quick-lint-js-2.5.0.tar.gz"
+  sha256 "298ed4287f187de198e428f7d4c239b0a56f8f65f5738a57330c3db9d98b26cd"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://github.com/quick-lint/quick-lint-js.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quick-lint-js"
-    sha256 cellar: :any, mojave: "c13f1f53f8c8fb79deb77bdbda33e247f5bb607f066d1b4f7c7fa8e69bfc5eda"
+    sha256 cellar: :any, mojave: "9c57bf9c32856b19ce348ca780caacc61672e24cafb595cb7799128066b51e3a"
   end
 
   depends_on "cmake" => :build
