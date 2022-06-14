@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0242.tar.gz"
-  version "0.242"
-  sha256 "36d35cf0a1d11e3b8bdabed44222e9910be2fb8954ea3579c2ba02576ed385c1"
+  url "https://github.com/mamedev/mame/archive/mame0243.tar.gz"
+  version "0.243"
+  sha256 "8cddb7d6cee5d736d1ce7ef2022e2d09b5c61bea02b5df7e369010a47a5d2133"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -13,11 +13,11 @@ class RomTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rom-tools"
-    sha256 cellar: :any, mojave: "3c268537ab1ba5c505a0fa1dee6098dd4f3ba2ca3af112d305b0fd1705aac80a"
+    sha256 cellar: :any, mojave: "c640b11fe01d4af46ab7376a756078b99c8cc6cc9867b40414e6909a44aca853"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "flac"
   # Need C++ compiler and standard library support C++17.
   depends_on macos: :high_sierra
@@ -46,7 +46,7 @@ class RomTools < Formula
     # Use bundled asio instead of latest version.
     # See: <https://github.com/mamedev/mame/issues/5721>
     args = %W[
-      PYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3
+      PYTHON_EXECUTABLE=#{which("python3")}
       TOOLS=1
       USE_LIBSDL=1
       USE_SYSTEM_LIB_EXPAT=1
