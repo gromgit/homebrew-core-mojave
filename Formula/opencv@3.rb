@@ -4,11 +4,11 @@ class OpencvAT3 < Formula
   url "https://github.com/opencv/opencv/archive/3.4.16.tar.gz"
   sha256 "5e37b791b2fe42ed39b52d9955920b951ee42d5da95f79fbc9765a08ef733399"
   license "BSD-3-Clause"
-  revision 1
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencv@3"
-    sha256 mojave: "fd210df3f73f0e760bebf44d301e15f4ad9d2a46aa479d67f50d95c0d58d87fb"
+    sha256 mojave: "ed15a641fc2e1a0827bcac0aaafa5ad48369d03bf3d08443b221986b889aef42"
   end
 
   keg_only :versioned_formula
