@@ -8,7 +8,8 @@ class OpencvAT3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencv@3"
-    sha256 mojave: "ed15a641fc2e1a0827bcac0aaafa5ad48369d03bf3d08443b221986b889aef42"
+    rebuild 1
+    sha256 mojave: "6acd48ced09f54eff9f8a21538000c8966a08d8129f7f06b746062dd09b98a5b"
   end
 
   keg_only :versioned_formula
