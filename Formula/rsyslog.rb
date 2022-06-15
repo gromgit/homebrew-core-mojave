@@ -1,8 +1,8 @@
 class Rsyslog < Formula
   desc "Enhanced, multi-threaded syslogd"
   homepage "https://www.rsyslog.com/"
-  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2112.0.tar.gz"
-  sha256 "6a2a973861e9266db37bd2b7b9f672b6b970bfcd743a397b8eee6b0dc4852c41"
+  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2204.1.tar.gz"
+  sha256 "a6d731e46ad3d64f6ad4b19bbf1bf56ca4760a44a24bb96823189dc2e71f7028"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -12,7 +12,7 @@ class Rsyslog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rsyslog"
-    sha256 mojave: "939f5bf97600dafbd47e7d970a30add575942585105c44833fd969d89e650f39"
+    sha256 mojave: "49b0d05ba3896d8ebae539768a55b7eba14642608794e16880d93ce38309624a"
   end
 
   depends_on "pkg-config" => :build
