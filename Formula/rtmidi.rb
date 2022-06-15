@@ -2,7 +2,7 @@ class Rtmidi < Formula
   desc "API for realtime MIDI input/output"
   homepage "https://www.music.mcgill.ca/~gary/rtmidi/"
   url "https://www.music.mcgill.ca/~gary/rtmidi/release/rtmidi-5.0.0.tar.gz"
-  sha256 "c0f57eca5e7ebc8773375d5e9f56405d2b37a255a509fa57d2dc4f7e87d2c564"
+  sha256 "48db0ed58c8c0e207b5d7327a0210b5bcaeb50e26387935d02829239b0f3c2b9"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,8 @@ class Rtmidi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtmidi"
-    rebuild 2
-    sha256 cellar: :any, mojave: "3bde2a5fc583eb82f63a6bf93725f8dbe8ba9c7a157ee267a3d951833345ca4f"
+    rebuild 3
+    sha256 cellar: :any, mojave: "7417c9cd7a82220e7c9a8a00d26789d345407b1c5ee94aaf294f0cd0c2c76605"
   end
 
   head do
