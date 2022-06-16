@@ -4,6 +4,7 @@ class Angband < Formula
   url "https://github.com/angband/angband/releases/download/4.2.4/Angband-4.2.4.tar.gz"
   sha256 "a07c78c1dd05e48ddbe4d8ef5d1880fcdeab55fd05f1336d9cba5dd110b15ff3"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/angband/angband.git", branch: "master"
 
   livecheck do
@@ -11,27 +12,43 @@ class Angband < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/angband"
-    rebuild 1
-    sha256 mojave: "f1d1f1adf160bff7cc9dfbd8e474983e8a270a6eb2a3f6c995e6b90d65195b40"
+    sha256 mojave: "1625c54466f46582faa4685b738247923d2d64c23076146cfff6b3428a5ca4a5"
   end
 
+  uses_from_macos "expect" => :test
+  uses_from_macos "ncurses"
+
   def install
-    ENV["NCURSES_CONFIG"] = "#{MacOS.sdk_path}/usr/bin/ncurses5.4-config"
-    system "./configure", "--prefix=#{prefix}",
-                          "--bindir=#{bin}",
-                          "--libdir=#{libexec}",
-                          "--enable-curses",
-                          "--disable-ncursestest",
-                          "--disable-sdltest",
-                          "--disable-x11",
-                          "--with-ncurses-prefix=#{MacOS.sdk_path}/usr"
+    ENV["NCURSES_CONFIG"] = "#{MacOS.sdk_path}/usr/bin/ncurses5.4-config" if OS.mac?
+    args = %W[
+      --prefix=#{prefix}
+      --bindir=#{bin}
+      --libdir=#{libexec}
+      --enable-curses
+      --disable-ncursestest
+      --disable-sdltest
+      --disable-x11
+    ]
+    args << "--with-ncurses-prefix=#{MacOS.sdk_path}/usr" if OS.mac?
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin/"angband", "--help"
+    script = (testpath/"script.exp")
+    script.write <<~EOS
+      #!/usr/bin/expect -f
+      set timeout 10
+      spawn angband
+      sleep 2
+      send -- "\x18"
+      sleep 2
+      send -- "\x18"
+      expect eof
+    EOS
+    system "expect", "-f", "script.exp"
   end
 end
