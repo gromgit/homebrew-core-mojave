@@ -11,15 +11,17 @@ class Sproxy < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2558b7f1308c8bc08667c8e51d40b1c8df05280fa8c5f003f6dec07561089c2e"
-    sha256 cellar: :any_skip_relocation, big_sur:       "0feb23f8381e7e40ce846974be822ba97d42658a721582320468355193dc4851"
-    sha256 cellar: :any_skip_relocation, catalina:      "ee0bff8062b0d007a9b762d35af1879e8abcf7203dae265d1a70ade53047af90"
-    sha256 cellar: :any_skip_relocation, mojave:        "2d689087925622e4f7e2c2572c2339c62a6c2b891bce7093bcd664f1a15c28d9"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "326b01fa9a1370c54929ae4c11d1b67b2238875eca8188365486b9c2a374264f"
-    sha256 cellar: :any_skip_relocation, sierra:        "8d57317644b76b465adc5caf984f1e3cf57f9486f642705eee66128adbcf3589"
-    sha256 cellar: :any_skip_relocation, el_capitan:    "4ed786b0b05ca3c88d5904e3119d84725a9f9bedf5d952c055f22a81661a825c"
-    sha256 cellar: :any_skip_relocation, yosemite:      "19da9a5b680a860e721ec60763dd48e9a5213505ee643703abcdc66707e8ce51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "713ebc755ddb821e5e0bd17a13dc0a274645c7478f5682cd9407ddadb3e93c31"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73f13338cbd96aee85706f30ab752d6c7ea338b9876eb43444fbaf2c8523a09e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2558b7f1308c8bc08667c8e51d40b1c8df05280fa8c5f003f6dec07561089c2e"
+    sha256 cellar: :any_skip_relocation, monterey:       "f810e4c841a81313b77f81dec82b1cdd1b4952d6625d8590aadb581e388edafb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0feb23f8381e7e40ce846974be822ba97d42658a721582320468355193dc4851"
+    sha256 cellar: :any_skip_relocation, catalina:       "ee0bff8062b0d007a9b762d35af1879e8abcf7203dae265d1a70ade53047af90"
+    sha256 cellar: :any_skip_relocation, mojave:         "2d689087925622e4f7e2c2572c2339c62a6c2b891bce7093bcd664f1a15c28d9"
+    sha256 cellar: :any_skip_relocation, high_sierra:    "326b01fa9a1370c54929ae4c11d1b67b2238875eca8188365486b9c2a374264f"
+    sha256 cellar: :any_skip_relocation, sierra:         "8d57317644b76b465adc5caf984f1e3cf57f9486f642705eee66128adbcf3589"
+    sha256 cellar: :any_skip_relocation, el_capitan:     "4ed786b0b05ca3c88d5904e3119d84725a9f9bedf5d952c055f22a81661a825c"
+    sha256 cellar: :any_skip_relocation, yosemite:       "19da9a5b680a860e721ec60763dd48e9a5213505ee643703abcdc66707e8ce51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "713ebc755ddb821e5e0bd17a13dc0a274645c7478f5682cd9407ddadb3e93c31"
   end
 
   # Only needed due to the change to "Makefile.am"
