@@ -11,6 +11,7 @@ class Tta < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, monterey:     "21fb40ccded96b6a0b51ecf1c078ddeae5b9bb116d4ce88985d4bb5b93644aae"
     sha256 cellar: :any_skip_relocation, big_sur:      "7f2b84e5f849d0903006aa3550ec718c31130b4d50271efef0ffe37c1a29e0d2"
     sha256 cellar: :any_skip_relocation, catalina:     "af41c210ceddaa4957dc8bc4fec9dedb839157914c3d2d9fbb4bed63239cd9f1"
     sha256 cellar: :any_skip_relocation, mojave:       "898e75423e5f2a1f872b7ce2e2258db686f09ea04edf56555b15c113f04e9141"
