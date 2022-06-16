@@ -3,11 +3,28 @@ class Envoy < Formula
   homepage "https://www.envoyproxy.io/index.html"
   # Switch to a tarball when the following issue is resolved:
   # https://github.com/envoyproxy/envoy/issues/2181
-  url "https://github.com/envoyproxy/envoy.git",
-      tag:      "v1.21.2",
-      revision: "dc7f46eb44e54d5646301aa5ab4ba01f662fdf75"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
+
+  stable do
+    url "https://github.com/envoyproxy/envoy.git",
+        tag:      "v1.22.2",
+        revision: "c919bdec19d79e97f4f56e4095706f8e6a383f1c"
+
+    # Fix build on Apple Silicon which fails on undefined symbol:
+    # v8::internal::trap_handler::TryHandleSignal(int, __siginfo*, void*)
+    patch do
+      url "https://github.com/envoyproxy/envoy/commit/823f81ea8a3c0f792a7dbb0d08422c6a3d251152.patch?full_index=1"
+      sha256 "c48ecebc8a63f41f8bf8c4598a6442402470f2f04d20511e1aa3a1f322beccc7"
+    end
+
+    # Fix build with GCC in "opt" mode which fails on strict-aliasing rules:
+    # type_url_, reinterpret_cast<std::vector<DecodedResourcePtr>&>(decoded_resources),
+    patch do
+      url "https://github.com/envoyproxy/envoy/commit/aa06f653ed736b428f3ea69900aa864ce4187305.patch?full_index=1"
+      sha256 "d05b1519e6d0d78619457deb3d0bed6bb69ee2f095d31b9913cc70c9ee851e80"
+    end
+  end
 
   livecheck do
     url :stable
@@ -15,12 +32,12 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89354fae8d255f7c9c96d577201a17146fdf6d3869691fba0f191231504f9f77"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c10c36d88c1be8a6c658da6060364b667b543e35bd9055619d9c98bd93ed0dc8"
-    sha256 cellar: :any_skip_relocation, monterey:       "3674bd7e56db7d7e7ae6125c34ac258e26957015c2ebaa837218df1e169f3b94"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b1aac9989d81199ebeeac66bf38205554019892b52b214b76a34dabe61695b0"
-    sha256 cellar: :any_skip_relocation, catalina:       "410c2fba36a9efc5b0d1c340fb80c95f7ce3cddcc75ac249dd603eb05491efa8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f40044f44e01006b40c979a3954c11c2a075aabd96aaf4fa13b3c69717303bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "122977e8eee980aab6b9d5fa2ba9fc1e58f831e68345e417e7fdc52df554d7a4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78d13f1e2a098f849805bf575c53e52dd452ae45c8fa2134e93941c7bcdb7e89"
+    sha256 cellar: :any_skip_relocation, monterey:       "97dde181e8691fb7594cdf1d788049d9e9e658128fd912128eb2be31ccbe0b9c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "55c03e83374c3637254dc03c3ecf67833861cd6f6ef013d8c9b91d6b5d0a48ab"
+    sha256 cellar: :any_skip_relocation, catalina:       "6ec9fb982745c52765ec8cb02f9ea7bceb53ff821e30100e45d4cbb2b9587c38"
+    sha256                               x86_64_linux:   "7add4d2d423ab7ab170c5ded6e8681a6b7c1b6806ecb4ef18f772f3cc785e121"
   end
 
   depends_on "automake" => :build
@@ -35,21 +52,22 @@ class Envoy < Formula
   depends_on macos: :catalina
 
   on_linux do
-    # GCC added as a test dependency to work around Homebrew issue. Otherwise `brew test` fails.
-    # CompilerSelectionError: envoy cannot be built with any available compilers.
-    depends_on "gcc@9" => [:build, :test]
     depends_on "python@3.10" => :build
+    depends_on "gcc@9"
   end
 
   # https://github.com/envoyproxy/envoy/tree/main/bazel#supported-compiler-versions
-  fails_with gcc: "5"
-  fails_with gcc: "6"
-  # GCC 10 build fails at external/com_google_absl/absl/container/internal/inlined_vector.h:469:5:
+  fails_with :gcc do
+    version "8"
+    cause "C++17 support and tcmalloc requirement"
+  end
+  # GCC 10 build fails at external/com_google_absl/absl/container/internal/inlined_vector.h:448:5:
   # error: '<anonymous>.absl::inlined_vector_internal::Storage<char, 128, std::allocator<char> >::data_'
   # is used uninitialized in this function [-Werror=uninitialized]
   fails_with gcc: "10"
-  # GCC 11 build fails at external/boringssl/src/crypto/curve25519/curve25519.c:503:57:
-  # error: argument 2 of type 'const uint8_t[32]' with mismatched bound [-Werror=array-parameter=]
+  # GCC 11 build fails at external/org_brotli/c/dec/decode.c:2036:41:
+  # error: argument 2 of type 'const uint8_t *' declared as a pointer [-Werror=vla-parameter]
+  # Brotli upstream ref: https://github.com/google/brotli/pull/893
   fails_with gcc: "11"
 
   def install
