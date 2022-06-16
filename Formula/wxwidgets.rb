@@ -1,8 +1,8 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.6/wxWidgets-3.1.6.tar.bz2"
-  sha256 "4980e86c6494adcd527a41fc0a4e436777ba41d1893717d7b7176c59c2061c25"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.7/wxWidgets-3.1.7.tar.bz2"
+  sha256 "3d666e47d86192f085c84089b850c90db7a73a5d26b684b617298d89dce84f19"
   license "wxWindows"
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Wxwidgets < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wxwidgets"
-    sha256 cellar: :any, mojave: "6aafcd3196d17672062a7cbe7d57c75091f1f66eb57162dc57d685f97d8cf420"
+    sha256 cellar: :any, mojave: "2171b14fb6b32bed2ab7f76e41eb3e791ec4d1cd1dddb3f94693e9863fb4e671"
   end
 
   depends_on "jpeg"
