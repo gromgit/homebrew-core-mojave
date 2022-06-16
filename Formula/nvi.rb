@@ -7,17 +7,25 @@ class Nvi < Formula
 
   bottle do
     rebuild 1
-    sha256                               arm64_big_sur: "fb16c60c3a71af91e1bfec9f01bd35a11844f02a50e18e7782a20f5eb2792874"
-    sha256 cellar: :any,                 big_sur:       "91d13cdd8ff35675b7d54a7cc29a2406a9fcc183e03484ee1a0cd781bca160b9"
-    sha256 cellar: :any,                 catalina:      "755290657397d76ae23d23636a6d9469447bcbc3dead65ec2859a8f9b7071f88"
-    sha256 cellar: :any,                 mojave:        "03eb1d6e82bb75219ce378e47956fc3b50ef2096e715eec42e37bcf14cde8cd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a44c36f27b543554fe6f22002ae584fb2b599cc7e27213ef2695de416203688c"
+    sha256                               arm64_monterey: "04c6e757e06a8aa9b886c167d2fd2fafb31a9f51c98bb2999984aa677f2fcecb"
+    sha256                               arm64_big_sur:  "fb16c60c3a71af91e1bfec9f01bd35a11844f02a50e18e7782a20f5eb2792874"
+    sha256 cellar: :any,                 monterey:       "affc8a0a4d2adbeda560b55565c47e6dda352e94c11c4dcb0a544ea7e8ccfe17"
+    sha256 cellar: :any,                 big_sur:        "91d13cdd8ff35675b7d54a7cc29a2406a9fcc183e03484ee1a0cd781bca160b9"
+    sha256 cellar: :any,                 catalina:       "755290657397d76ae23d23636a6d9469447bcbc3dead65ec2859a8f9b7071f88"
+    sha256 cellar: :any,                 mojave:         "03eb1d6e82bb75219ce378e47956fc3b50ef2096e715eec42e37bcf14cde8cd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a44c36f27b543554fe6f22002ae584fb2b599cc7e27213ef2695de416203688c"
   end
 
   depends_on "xz" => :build # Homebrew bug. Shouldn't need declaring explicitly.
   depends_on "berkeley-db"
 
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
 
   # Patches per MacPorts
   # The first corrects usage of BDB flags.
@@ -51,6 +59,14 @@ class Nvi < Formula
 
   def install
     cd "dist" do
+      # Run autoreconf on macOS to rebuild configure script so that it doesn't try
+      # to build with a flat namespace.
+      if OS.mac?
+        # These files must be present for autoreconf to work.
+        %w[AUTHORS ChangeLog NEWS README].each { |f| touch f }
+        system "autoreconf", "--force", "--verbose", "--install"
+      end
+
       # Xcode 12 needs the "-Wno-implicit-function-declaration" to compile successfully
       # The usual trick of setting $CFLAGS in the environment doesn't work for this
       # configure file though, but specifying an explicit CC setting does
