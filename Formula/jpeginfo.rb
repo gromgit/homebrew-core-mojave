@@ -4,7 +4,7 @@ class Jpeginfo < Formula
   url "https://www.kokkonen.net/tjko/src/jpeginfo-1.6.1.tar.gz"
   sha256 "629e31cf1da0fa1efe4a7cc54c67123a68f5024f3d8e864a30457aeaed1d7653"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/tjko/jpeginfo.git", branch: "master"
 
   livecheck do
@@ -14,20 +14,18 @@ class Jpeginfo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeginfo"
-    rebuild 2
-    sha256 cellar: :any, mojave: "5336a89bfc6ff1d55ebb913f91a8ce5deb68bdfebae10abc3949b7aaaec4e75b"
+    sha256 cellar: :any, mojave: "8ee15e80ea9fabc539c4793685dbb46a8b42d971b9f612f3f7101e1937363527"
   end
 
   depends_on "autoconf" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
 
   def install
     ENV.deparallelize
 
     # The ./configure file inside the tarball is too old to work with Xcode 12, regenerate:
     system "autoconf", "--force"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
