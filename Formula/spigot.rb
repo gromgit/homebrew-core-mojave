@@ -1,9 +1,9 @@
 class Spigot < Formula
   desc "Command-line streaming exact real calculator"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/spigot/"
-  url "https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20220509.4b9cde0.tar.gz"
-  version "20220509"
-  sha256 "d32514c9e3a16c5a58bfbc8cfbad076fa50c7744273237e0bba3d15dc6e2102d"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20220606.eb585f8.tar.gz"
+  version "20220606"
+  sha256 "27234d668fc750f5afe6b62d94d629f079740bb8b7cb11322a6fbbef2b0dec0a"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class Spigot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spigot"
-    sha256 cellar: :any, mojave: "009d18fda806a41720a1cbe8eb8404e629510f66bfc264d4522c6546e7b9dfb1"
+    sha256 cellar: :any, mojave: "bc98a9311e230315d7084d1011ece67234c5a350da0f47d2ea5b03b8a5fa37ac"
   end
 
   depends_on "cmake" => :build
