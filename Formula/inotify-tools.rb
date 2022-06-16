@@ -1,12 +1,12 @@
 class InotifyTools < Formula
   desc "C library and command-line programs providing a simple interface to inotify"
   homepage "https://github.com/inotify-tools/inotify-tools"
-  url "https://github.com/inotify-tools/inotify-tools/archive/refs/tags/3.22.1.0.tar.gz"
-  sha256 "da81010756866966e6dfb1521c2be2f0946e7626fa29122e1672dc654fc89ff3"
+  url "https://github.com/inotify-tools/inotify-tools/archive/refs/tags/3.22.6.0.tar.gz"
+  sha256 "c6b7e70f1df09e386217102a1fe041cfc15fa4f3d683d2970140b6814cf2ed12"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "97eb76c31505fcb014fabe62cdd25edf17a15bcea48d594dcd0d6cf232fa1317"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "217cb8bbe5f6fb2a15b73e8f9edb670b2a639a5781ef922d4b85a5e0061d4857"
   end
 
   depends_on "autoconf" => :build
