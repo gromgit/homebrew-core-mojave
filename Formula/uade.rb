@@ -4,8 +4,8 @@ class Uade < Formula
   license "GPL-2.0-only"
 
   stable do
-    url "https://zakalwe.fi/uade/uade3/uade-3.01.tar.bz2"
-    sha256 "a669c215970db2595027c16ee01149613fcfa4b81be67216ce6d7add871ef62a"
+    url "https://zakalwe.fi/uade/uade3/uade-3.02.tar.bz2"
+    sha256 "2aa317525402e479ae8863222e3c341d135670fcb23a2853ac93075ac428f35b"
 
     resource "bencode-tools" do
       url "https://gitlab.com/heikkiorsila/bencodetools.git", revision: "5a1ccf65393ee50af3a029d0632f29567467873c"
@@ -19,7 +19,7 @@ class Uade < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uade"
-    sha256 mojave: "2d7789e3db4baae5501fa2e953aa629609b1ca80ba92dbfff363584093511654"
+    sha256 mojave: "55e48919392b47c81568c647fc2b0dd1fbb5b75471d598807307e849a9c97458"
   end
 
   head do
