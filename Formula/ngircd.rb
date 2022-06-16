@@ -12,6 +12,7 @@ class Ngircd < Formula
   end
 
   bottle do
+    sha256 monterey:     "7939168fb5b5936e1acf6f9a9729ed98d4ea1f8bde061b46ab926eec219a2db1"
     sha256 big_sur:      "9fe092e3ca8de75453b4aa667067e1cd863c041b8055ae7981e51f3506ac19c4"
     sha256 catalina:     "95f504faeffb209318e93a050c632805178e91cd1e9475bbccfa9eb040b8d785"
     sha256 mojave:       "af9fea8f344f76077063b24d68d057bb9ecb93db1fb469d2e0992d0919f87b0c"
