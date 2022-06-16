@@ -21,6 +21,7 @@ class Upscaledb < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 monterey:     "385c3d16f77928b9484a43ee279a94b8a59811646d2ffaf54d4d44d22f296405"
     sha256 cellar: :any,                 big_sur:      "a0fd351d906363c321b21832fe00324df1c1cdd7aa1bb44c64075b1710aca916"
     sha256 cellar: :any,                 catalina:     "b507da019b3c2491594d7ad127e980d098f80f78f044e00b4f07a3f3cdd9b795"
     sha256 cellar: :any,                 mojave:       "85e1468d77fa72b7cfc4e039877018648b79e8eb7006e63263fbdd44978f043a"
