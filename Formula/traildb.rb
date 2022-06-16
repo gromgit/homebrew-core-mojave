@@ -11,13 +11,17 @@ class Traildb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, catalina:     "d838c36b8e7fd566e034374e1fe05e5a2db41940229f7324fec53a2e7387db48"
-    sha256 cellar: :any, mojave:       "61992aff616c9e39b703e8b2c138f3997dd9ba7ec6c85eea711605327e221b1f"
-    sha256 cellar: :any, high_sierra:  "b383a6635462acd29d12473520ff1cf70920c429f0ed9a010cf2860bf7df3180"
-    sha256 cellar: :any, sierra:       "e84323b169f8a2d3ccadadb65d968c99265f37f581d9fe002c259b76b180776e"
-    sha256 cellar: :any, el_capitan:   "901e2214b9ddcd214b857db69569c12f85041e6cd087df00ef1c0d624605effe"
-    sha256 cellar: :any, yosemite:     "381ac2503006105329e6b915501cf8bfdd787121df79c23da4721e04a8b838a9"
-    sha256               x86_64_linux: "8e7e03c9d6643c27eaf9e91dd02d75b8fdfbb484132c87328b9331bb25e73704"
+    sha256               arm64_monterey: "3c521476cc334c1807abab60f30de5bc89f4072db9ea2d19dbc6b2af12fd3fe8"
+    sha256               arm64_big_sur:  "19a39e075d27b18c38f78445471e9703c2ccc051ffad8cad6e6bcc9986954540"
+    sha256               monterey:       "0f449d362ce4d34470fb671ba8ac5f079b79f6306c66937a59be76ba980e6b2f"
+    sha256               big_sur:        "820982878b9a22783810620d6c42e976048d6711e42fc88cfbf315c18fbdc117"
+    sha256 cellar: :any, catalina:       "d838c36b8e7fd566e034374e1fe05e5a2db41940229f7324fec53a2e7387db48"
+    sha256 cellar: :any, mojave:         "61992aff616c9e39b703e8b2c138f3997dd9ba7ec6c85eea711605327e221b1f"
+    sha256 cellar: :any, high_sierra:    "b383a6635462acd29d12473520ff1cf70920c429f0ed9a010cf2860bf7df3180"
+    sha256 cellar: :any, sierra:         "e84323b169f8a2d3ccadadb65d968c99265f37f581d9fe002c259b76b180776e"
+    sha256 cellar: :any, el_capitan:     "901e2214b9ddcd214b857db69569c12f85041e6cd087df00ef1c0d624605effe"
+    sha256 cellar: :any, yosemite:       "381ac2503006105329e6b915501cf8bfdd787121df79c23da4721e04a8b838a9"
+    sha256               x86_64_linux:   "8e7e03c9d6643c27eaf9e91dd02d75b8fdfbb484132c87328b9331bb25e73704"
   end
 
   depends_on "pkg-config" => :build
