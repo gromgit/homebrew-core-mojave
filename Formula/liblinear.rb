@@ -13,20 +13,26 @@ class Liblinear < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblinear"
-    sha256 cellar: :any, mojave: "5bc6250a0f1322d79b121c68b8c5d17b43e6d42ed46189ad6da7cfa4f96c8f6c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "24404a5cd4f5cb9e1df3cbc92c8ce4ae0c97b244a62700d44a72c49d01c2b73f"
   end
 
   # Fix sonames
   patch :p0 do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/b1dbde5b1d7c/liblinear/patch-Makefile.diff"
-    sha256 "b7cd43329264ed0568f27e305841aa24817dccc71e5ff3c384eef9ac6aa6620a"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/7aed87f97f54f98f79495fb9fe071cfa4766403f/liblinear/patch-Makefile.diff"
+    sha256 "a51e794f06d73d544123af07cda8a4b21e7934498d21b7a6ed1a3e997f363155"
   end
 
   def install
+    soversion_regex = /^SHVER = (\d+)$/
+    soversion = (buildpath/"Makefile").read
+                                      .lines
+                                      .grep(soversion_regex)
+                                      .first[soversion_regex, 1]
     system "make", "all"
     bin.install "predict", "train"
-    lib.install "liblinear.dylib"
-    lib.install_symlink "liblinear.dylib" => "liblinear.1.dylib"
+    lib.install shared_library("liblinear", soversion)
+    lib.install_symlink shared_library("liblinear", soversion) => shared_library("liblinear")
     include.install "linear.h"
   end
 
