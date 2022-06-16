@@ -11,6 +11,7 @@ class Seexpr < Formula
   end
 
   bottle do
+    sha256 cellar: :any, monterey:    "45a50904ddbd4940674d0c844878effb7f7175af28c37feabb0f6ee52509e48d"
     sha256 cellar: :any, big_sur:     "8045ec68c468b5db8a118006756e34c54425bbcc3e29306c16a52e86ccefdbb7"
     sha256 cellar: :any, catalina:    "2a55400ad86255b300843f7cde1dbed4130d0ba26ffc4c8725fec83b50e7f9e3"
     sha256 cellar: :any, mojave:      "e5ba2fcca24837fc43d11524fdeff04d9f4429f6c66421dec6c1925b60893f82"
