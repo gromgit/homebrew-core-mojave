@@ -1,17 +1,19 @@
 class Kotlin < Formula
   desc "Statically typed programming language for the JVM"
   homepage "https://kotlinlang.org/"
-  url "https://github.com/JetBrains/kotlin/releases/download/v1.6.21/kotlin-compiler-1.6.21.zip"
-  sha256 "632166fed89f3f430482f5aa07f2e20b923b72ef688c8f5a7df3aa1502c6d8ba"
+  url "https://github.com/JetBrains/kotlin/releases/download/v1.7.0/kotlin-compiler-1.7.0.zip"
+  sha256 "f5216644ad81571e5db62ec2322fe07468927bda40f51147ed626a2884b55f9a"
   license "Apache-2.0"
 
+  # This repository has thousands of development tags, so the `GithubLatest`
+  # strategy is used to minimize data transfer in this extreme case.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4c53c499a664e15a04789fcb915d1d01b7548d64427086fce3f625621977a558"
+    sha256 cellar: :any_skip_relocation, all: "b105dc1c215ff9102b0c30adfd2be7a7af9a8d63fc74d0c38bf4717509f54ff2"
   end
 
   depends_on "openjdk"
