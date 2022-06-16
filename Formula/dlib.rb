@@ -4,6 +4,7 @@ class Dlib < Formula
   url "http://dlib.net/files/dlib-19.24.tar.bz2"
   sha256 "28fdd1490c4d0bb73bd65dad64782dd55c23ea00647f5654d2227b7d30b784c4"
   license "BSL-1.0"
+  revision 1
   head "https://github.com/davisking/dlib.git", branch: "master"
 
   livecheck do
@@ -13,11 +14,11 @@ class Dlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dlib"
-    sha256 cellar: :any, mojave: "52444f6b75e003f070249bbd5402812df47f955a03cbe8c60e7ac6bf7388c867"
+    sha256 cellar: :any, mojave: "2f605efb34bf31df410ba14a8347835e2b02402ffc7f6e38fec750fcb977a333"
   end
 
   depends_on "cmake" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "openblas"
 
@@ -27,8 +28,8 @@ class Dlib < Formula
     args = std_cmake_args + %W[
       -DDLIB_USE_BLAS=ON
       -DDLIB_USE_LAPACK=ON
-      -Dcblas_lib=#{Formula["openblas"].opt_lib}/libopenblas.dylib
-      -Dlapack_lib=#{Formula["openblas"].opt_lib}/libopenblas.dylib
+      -Dcblas_lib=#{Formula["openblas"].opt_lib/shared_library("libopenblas")}
+      -Dlapack_lib=#{Formula["openblas"].opt_lib/shared_library("libopenblas")}
       -DDLIB_NO_GUI_SUPPORT=ON
       -DBUILD_SHARED_LIBS=ON
     ]
@@ -38,10 +39,9 @@ class Dlib < Formula
       args << "-DUSE_SSE4_INSTRUCTIONS=ON" if MacOS.version.requires_sse4?
     end
 
-    mkdir "dlib/build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", "dlib", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
