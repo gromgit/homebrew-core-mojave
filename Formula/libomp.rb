@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.0/openmp-14.0.0.src.tar.xz"
-  sha256 "28a1cbdd3dfdd331e4ed2dda2b4477fc418e455c883bd0d1d6acc331118e4688"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.5/openmp-14.0.5.src.tar.xz"
+  sha256 "1f74ede110ce1e2dc02fc163b04c4ce20dd49351407426e53292adbd4af6fdab"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libomp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libomp"
-    sha256 cellar: :any, mojave: "2cb39a0ade7f2118067f8342f37a0cfe066494615bf48403436261fc854745b7"
+    sha256 cellar: :any, mojave: "ab610e441858cffa989f6230518a2e3aedaf6ec5ae356c0379d457da3a5f0a63"
   end
 
   depends_on "cmake" => :build
