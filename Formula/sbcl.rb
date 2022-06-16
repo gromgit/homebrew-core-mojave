@@ -1,8 +1,8 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "http://www.sbcl.org/"
-  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.2.4/sbcl-2.2.4-source.tar.bz2"
-  sha256 "fcdd251cbc65f7f808ed0ad77246848d1be166aa69a17f7499600184b7a57202"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.2.5/sbcl-2.2.5-source.tar.bz2"
+  sha256 "8584b541370fd6ad6e58d3f97982077dfcab240f30d4e9b18f15da91c2f13ed1"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
@@ -12,8 +12,7 @@ class Sbcl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sbcl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7df6c8b8e09e8a2c6ea10e6b275cbf3bcc0dd27f5794b12492c39301a5eed1d3"
+    sha256 cellar: :any_skip_relocation, mojave: "b5e0337b3bb36556084cc1c27ebcab9ace7a33d354ee505d63a7165c71928def"
   end
 
   depends_on "ecl" => :build
