@@ -4,11 +4,11 @@ class Acl2 < Formula
   url "https://github.com/acl2/acl2/archive/8.4.tar.gz"
   sha256 "b440c0048e2988eeb9f477a37a0443c97037a062c076f86a999433a2c762cd8b"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/acl2"
-    rebuild 1
-    sha256 mojave: "9d069686708e74f701f62be34e56bb93da878184090745fd8ab1431f7539b106"
+    sha256 mojave: "50c29f7920241f362b1b52b723defd98b00c79d71414c70ff2e717ab3d1695ce"
   end
 
   depends_on "sbcl"
