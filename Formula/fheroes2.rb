@@ -1,8 +1,8 @@
 class Fheroes2 < Formula
   desc "Free Heroes of Might and Magic II is a recreation of HoMM2 game engine"
   homepage "https://ihhub.github.io/fheroes2/"
-  url "https://github.com/ihhub/fheroes2/archive/0.9.15.tar.gz"
-  sha256 "5325cbb6fe96ff80a27584d9fd3ea1d572eb6e21f863fbc72d0d245752b5444e"
+  url "https://github.com/ihhub/fheroes2/archive/0.9.16.tar.gz"
+  sha256 "43288a2b5714d5b5704704ca22d7fd32391271316d217d49e235dee202042cc3"
   license "GPL-2.0-or-later"
   head "https://github.com/ihhub/fheroes2.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Fheroes2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fheroes2"
-    sha256 mojave: "84efa647d708c7ec5c4b605ba6fb6327bccb959126b7ccd5c4243f47b4f23a87"
+    sha256 mojave: "3ffd457f6df3355fb3603e9bb401417b1c3105f6268f79b211672bb24a0c9424"
   end
 
   depends_on "cmake" => :build
