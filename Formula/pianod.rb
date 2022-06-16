@@ -4,7 +4,7 @@ class Pianod < Formula
   url "https://deviousfish.com/Downloads/pianod2/pianod2-388.tar.gz"
   sha256 "a677a86f0cbc9ada0cf320873b3f52b466d401a25a3492ead459500f49cdcd99"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://deviousfish.com/Downloads/pianod2/"
@@ -13,13 +13,15 @@ class Pianod < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pianod"
-    sha256 mojave: "6167c46e21702092bdf351c7c01784e3e592a6558f52e7e19ffe536dbaecdd58"
+    sha256 mojave: "80f1c81026807cc1f4ba0258fa4d433a272199e7a833d36181b5372c9a487d10"
   end
 
   depends_on "pkg-config" => :build
   depends_on "json-c"
   depends_on "libao"
   depends_on "libgcrypt"
+
+  uses_from_macos "libxcrypt"
 
   on_macos do
     depends_on "ncurses"
@@ -37,10 +39,7 @@ class Pianod < Formula
 
   def install
     ENV["OBJCXXFLAGS"] = "-std=c++14"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
