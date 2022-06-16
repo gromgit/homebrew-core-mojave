@@ -18,7 +18,8 @@ class OpensslAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssl@1.1"
-    sha256 mojave: "1534a7e0e0697a0c1cb6322b746b668b09fa4488bd60ce78c218836b4b53e32a"
+    rebuild 1
+    sha256 mojave: "367d3a7782bfaf0293138b93b0ae583e4b6dec915ef0038a09d6bd4076ca9f21"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
@@ -43,6 +44,17 @@ class OpensslAT11 < Formula
       mirror "http://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.48.tar.gz"
       sha256 "94e64a630fc37e80c0ca02480dccfa5f2f4ca4b0dd4eeecc1d65acd321c68289"
     end
+  end
+
+  # Fix failing test due to expired certificates.
+  # Remove with the next version (1.1.1p).
+  patch do
+    url "https://github.com/openssl/openssl/commit/73db5d82489b3ec09ccc772dfcee14fef0e8e908.patch?full_index=1"
+    sha256 "4b04ce0b7a3132c640bdc7726c7efaeb28572c5b8cdffcdc80fea700ded964e3"
+  end
+  patch do
+    url "https://github.com/openssl/openssl/commit/b7ce611887cfac633aacc052b2e71a7f195418b8.patch?full_index=1"
+    sha256 "6a81f4b2edb9ca3d56d897b4c85faac59fb488434dae6f0b5c525e9f96c879df"
   end
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
