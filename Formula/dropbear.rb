@@ -4,6 +4,7 @@ class Dropbear < Formula
   url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2022.82.tar.bz2"
   sha256 "3a038d2bbc02bf28bbdd20c012091f741a3ec5cbe460691811d714876aad75d1"
   license "MIT"
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,7 +13,7 @@ class Dropbear < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dropbear"
-    sha256 cellar: :any_skip_relocation, mojave: "a84168ccab36c0e96a513d8da6efeaaa4c18c644462b0bfcb3dc0dbd77d6157c"
+    sha256 cellar: :any_skip_relocation, mojave: "88e3a6bda4b76eb590f1d14c085c8cb6ce76ec28d30bdc3e824ddf56e492f8bf"
   end
 
   head do
@@ -21,6 +22,8 @@ class Dropbear < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
+
+  uses_from_macos "libxcrypt"
 
   on_linux do
     depends_on "linux-pam"
