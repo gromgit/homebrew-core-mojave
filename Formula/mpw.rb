@@ -5,7 +5,7 @@ class Mpw < Formula
   version "2.7-cli-1"
   sha256 "480206dfaad5d5a7d71fba235f1f3d9041e70b02a8c1d3dda8ecba1da39d3e96"
   license "GPL-3.0-or-later"
-  head "https://gitlab.com/MasterPassword/MasterPassword.git"
+  head "https://gitlab.com/MasterPassword/MasterPassword.git", branch: "master"
 
   # The first-party site doesn't seem to list version information, so it's
   # necessary to check the tags from the `head` repository instead.
@@ -23,6 +23,8 @@ class Mpw < Formula
     sha256 cellar: :any,                 mojave:         "8592cadcded1acf97d687135d7f9f88674c05837e6f9646bb514c0b7fc18c954"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0aaf191d28ba5c097800350caa11f37f351f8f0ff336aed7f0e479d884321e86"
   end
+
+  disable! date: "2022-06-13", because: :unmaintained
 
   depends_on "json-c"
   depends_on "libsodium"
