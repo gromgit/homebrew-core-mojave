@@ -1,21 +1,30 @@
 class Quill < Formula
-  desc "C++14 Asynchronous Low Latency Logging Library"
+  desc "C++17 Asynchronous Low Latency Logging Library"
   homepage "https://github.com/odygrd/quill"
-  url "https://github.com/odygrd/quill/archive/v1.7.2.tar.gz"
-  sha256 "e2153c6e25f3a6cee47c2a9edbabdace418f6d64f62cd701dfdae38d5892bb1b"
+  url "https://github.com/odygrd/quill/archive/v2.0.2.tar.gz"
+  sha256 "d2dc9004886b787f8357e97d2f2d0c74a460259f7f95d65ab49d060fe34a9b5c"
   license "MIT"
   head "https://github.com/odygrd/quill.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quill"
-    sha256 cellar: :any_skip_relocation, mojave: "d371c2f447deab6f8ca9e6e3accb4cc4548e5e3d962e5ef8a06ef071117c527b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8b744ecb5a1233b65b32dddabab18eb590d33acf87b48efc35b0e335053877b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8b1c6b8750fc26f6ab08829ac1af9aa086ed9982a261d3cadc7d75a71c0759f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "fdba38f1697440a409bb1212d71ffa2833a028b94203feb43deb04de2cd26905"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1e9da990cc7b87befef6c5def0b7da636eafdd50a950071f6fc94dbaed6a5082"
+    sha256 cellar: :any_skip_relocation, catalina:       "dc2fddb4f4e94d466295f53406c577c717650f9491ccc0120d0f62093af192a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cfccb99dd68006151ad0b9d7617c7da85e3d81714dcdaf070080234de8ec03a"
   end
 
   depends_on "cmake" => :build
+  depends_on macos: :catalina
+
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
-    ENV.cxx11
-
     mkdir "quill-build" do
       args = std_cmake_args
       args << ".."
@@ -36,7 +45,7 @@ class Quill < Formula
       }
     EOS
 
-    system ENV.cxx, "-std=c++14", "test.cpp", "-I#{include}", "-L#{lib}", "-lquill", "-o", "test", "-pthread"
+    system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{lib}", "-lquill", "-o", "test", "-pthread"
     system "./test"
     assert_predicate testpath/"basic-log.txt", :exist?
     assert_match "Test", (testpath/"basic-log.txt").read
