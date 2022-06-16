@@ -8,7 +8,8 @@ class LinuxPam < Formula
   head "https://github.com/linux-pam/linux-pam.git", branch: "master"
 
   bottle do
-    sha256 x86_64_linux: "96727d4bf89b7bc6fdc5e0882e80fbc20a73a595684a749215c5dcd3cf5b0fb4"
+    rebuild 1
+    sha256 x86_64_linux: "b5250b66bb97f73a1d15ca4565680bad39077ca209c219569375ccc913e7a572"
   end
 
   depends_on "pkg-config" => :build
@@ -16,6 +17,8 @@ class LinuxPam < Formula
   depends_on "libtirpc"
   depends_on "libxcrypt"
   depends_on :linux
+
+  uses_from_macos "libxcrypt"
 
   skip_clean :la
 
