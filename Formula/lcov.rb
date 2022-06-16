@@ -5,35 +5,27 @@ class Lcov < Formula
 
   desc "Graphical front-end for GCC's coverage testing tool (gcov)"
   homepage "https://github.com/linux-test-project/lcov"
-  url "https://github.com/linux-test-project/lcov/releases/download/v1.15/lcov-1.15.tar.gz"
-  sha256 "c1cda2fa33bec9aa2c2c73c87226cfe97de0831887176b45ee523c5e30f8053a"
+  url "https://github.com/linux-test-project/lcov/releases/download/v1.16/lcov-1.16.tar.gz"
+  sha256 "987031ad5528c8a746d4b52b380bc1bffe412de1f2b9c2ba5224995668e3240b"
   license "GPL-2.0-or-later"
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lcov"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "f6018d5e83aff15983755bab8d54b22a9d176bd6b403acbde344bf5a661da8eb"
+    sha256 cellar: :any_skip_relocation, mojave: "2e61be928419d9a6bebc8a9a21688df846df5e4f62ff558e2157db8cb87576b3"
   end
 
   uses_from_macos "perl"
   uses_from_macos "zlib"
 
   resource "JSON" do
-    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.02.tar.gz"
-    sha256 "444a88755a89ffa2a5424ab4ed1d11dca61808ebef57e81243424619a9e8627c"
+    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.06.tar.gz"
+    sha256 "1137e98a42208d802f3ad94a10855606c0455ddad167ba018557d751f6f7672e"
   end
 
   resource "PerlIO::gzip" do
     url "https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz"
     sha256 "4848679a3f201e3f3b0c5f6f9526e602af52923ffa471a2a3657db786bd3bdc5"
-  end
-
-  # Temporary patch. Use correct c++filt flag. Upstreamed at
-  # https://github.com/linux-test-project/lcov/pull/125
-  patch do
-    url "https://github.com/linux-test-project/lcov/commit/462f71ddbad726b2c9968fefca31d60a9f0f745f.patch?full_index=1"
-    sha256 "73414e8f29d5c703c6c057d202fdd73efb07df05ae35c7daa5c48a4b2396e55b"
   end
 
   def install
