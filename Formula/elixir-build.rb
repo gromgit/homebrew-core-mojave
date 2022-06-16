@@ -7,11 +7,10 @@ class ElixirBuild < Formula
   head "https://github.com/mururu/elixir-build.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elixir-build"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6d16e3510b6111c6ae643794f7fe5167add0480050f4ea342d4754d697051c05"
+    sha256 cellar: :any_skip_relocation, all: "0f434ba340b50a81c737a8de0b167293c1ce596972fa15a9f57abc81c6f69499"
   end
 
+  deprecate! date: "2022-06-14", because: :repo_archived
 
   conflicts_with "narwhal", because: "both install `json` binaries"
 
