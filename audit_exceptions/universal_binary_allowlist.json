@@ -5,7 +5,6 @@
   "contentful-cli",
   "firebase-cli",
   "infer",
-  "joplin-cli",
   "llvm",
   "llvm@11",
   "llvm@12",
@@ -17,7 +16,6 @@
   "netlify-cli",
   "node-sass",
   "openjdk@11",
-  "serverless",
   "sourcery",
   "swift"
 ]
