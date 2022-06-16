@@ -12,12 +12,14 @@ class OmegaRpg < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "38000e1217562bc9cf2db49e0eb16aa4e7b5648010539fc5c9bb0608f3e1fc20"
-    sha256 cellar: :any_skip_relocation, big_sur:       "cc9ea79ad3baebccf29fa3e16fe023a05564ca2f4c8c9f67bf45c3f0d471993e"
-    sha256 cellar: :any_skip_relocation, catalina:      "4ab6747f5c291b26c9ba5b750d98ee6368f42dc35039bf23b2e401a318fb87f6"
-    sha256 cellar: :any_skip_relocation, mojave:        "8161e569d07cae64b550fa2f2e795171ca82b65b283cf1e45056b61d12fa71f5"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "0b08d090868aa2b1da56645e74ea87d6a15043c473aba35e56f3fbf2e4b4f4d4"
-    sha256                               x86_64_linux:  "b7da84e88747a0e8f6715fa1961aed8004845da0eaeb523a9ee35271db6f9305"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab67527e0eeb05713b51165bad1cfe9fbf8d0bcc1009a4b1b5f73bddc626d169"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38000e1217562bc9cf2db49e0eb16aa4e7b5648010539fc5c9bb0608f3e1fc20"
+    sha256                               monterey:       "76844b55561305089dc6270dad5a00f45fa17428f7702ff100860c70e604379a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cc9ea79ad3baebccf29fa3e16fe023a05564ca2f4c8c9f67bf45c3f0d471993e"
+    sha256 cellar: :any_skip_relocation, catalina:       "4ab6747f5c291b26c9ba5b750d98ee6368f42dc35039bf23b2e401a318fb87f6"
+    sha256 cellar: :any_skip_relocation, mojave:         "8161e569d07cae64b550fa2f2e795171ca82b65b283cf1e45056b61d12fa71f5"
+    sha256 cellar: :any_skip_relocation, high_sierra:    "0b08d090868aa2b1da56645e74ea87d6a15043c473aba35e56f3fbf2e4b4f4d4"
+    sha256                               x86_64_linux:   "b7da84e88747a0e8f6715fa1961aed8004845da0eaeb523a9ee35271db6f9305"
   end
 
   uses_from_macos "ncurses"
