@@ -12,6 +12,7 @@ class Ganglia < Formula
   end
 
   bottle do
+    sha256 monterey:     "b52de8c622a7bc483b5dfbf36f8b1c43050a478837058b41508dcf5346b16adb"
     sha256 big_sur:      "31b343fa942e30bddbbc737be768225774b0e7c182e278f85e16cd1b8b9d626e"
     sha256 catalina:     "3201c7b103ad74ed63d7e4cda74da894a3e71443a8b2e79353dcf22874580c96"
     sha256 mojave:       "ff01d1a7d5457e2572273e61463a7a9c0da1b8a6c12a998b4c4da157163110c8"
@@ -36,6 +37,12 @@ class Ganglia < Formula
   depends_on "rrdtool"
 
   conflicts_with "coreutils", because: "both install `gstat` binaries"
+
+  # Fix -flat_namespace being used on Big Sur and later.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+  end
 
   def install
     if build.head?
@@ -75,7 +82,7 @@ class Ganglia < Formula
     pid = fork do
       exec bin/"gmetad", "--pid-file=#{testpath}/pid"
     end
-    sleep 2
+    sleep 30
     assert_predicate testpath/"pid", :exist?
   ensure
     Process.kill "TERM", pid
