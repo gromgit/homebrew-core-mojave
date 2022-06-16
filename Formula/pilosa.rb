@@ -6,6 +6,8 @@ class Pilosa < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, monterey:     "c24516ce6e3b184a1f85497be64e097f1a467602dcaac317564e4ff1254bd271"
+    sha256 cellar: :any_skip_relocation, big_sur:      "05873e34a40580f73c31890f85b768e28a928383839f1bbd47ef7880273e3db4"
     sha256 cellar: :any_skip_relocation, catalina:     "703ee800aa37986fb22892672ae4f20020561df1aeccf60bc68f4f2c5807ec02"
     sha256 cellar: :any_skip_relocation, mojave:       "486ace10d0957669478591911549112c22d812b26a746b3aca8cf00fee726fc8"
     sha256 cellar: :any_skip_relocation, high_sierra:  "f7cd715d06c813bf358b3151ddfe24c4a7664b464b3d7bd047b222189d603281"
@@ -18,13 +20,17 @@ class Pilosa < Formula
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
+    # Fix compilation with Go 1.18 - see https://github.com/golang/go/issues/51706
+    inreplace "go.mod",
+              "golang.org/x/sys v0.0.0-20190429190828-d89cdac9e872",
+              "golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a"
 
-    (buildpath/"src/github.com/pilosa/pilosa").install buildpath.children
-    cd "src/github.com/pilosa/pilosa" do
-      system "make", "build", "FLAGS=-o #{bin}/pilosa", "VERSION=v#{version}"
-      prefix.install_metafiles
-    end
+    (buildpath/"go.sum").append_lines <<~EOS
+      golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a h1:dGzPydgVsqGcTRVwiLJ1jVbufYwmzD3LfVPLKsKg+0k=
+      golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+    EOS
+
+    system "make", "build", "FLAGS=-o #{bin}/pilosa", "VERSION=v#{version}"
   end
 
   service do
