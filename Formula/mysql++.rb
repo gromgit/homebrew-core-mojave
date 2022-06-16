@@ -12,11 +12,13 @@ class Mysqlxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "e2cc8829c4bab8218a31e738487ac902a6452e44b107790af1ae538c4e6986bc"
-    sha256 cellar: :any,                 big_sur:       "3af8c69e77ca13685b96f10784c09ceed81ada15c6f53d0c2758b10fc0a7d6b1"
-    sha256 cellar: :any,                 catalina:      "f38e5b1a57994f3be9479fd58e03fea72f0ddfe8c142df987cfdeddeb2714c56"
-    sha256 cellar: :any,                 mojave:        "ba00ec69ab593917365180b6161676e71b4f96c3f655dd26ae65dccd02ac0aad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e72e034fad87e1bebdd19df274bac75c0ae9e6f93e5bf0abb076f9b055e46a7"
+    sha256 cellar: :any,                 arm64_monterey: "45b6b0bdbbc6b5cf62ab69ddb7d12d8a22c11f29d7ef9fb7441ae61287c89f67"
+    sha256 cellar: :any,                 arm64_big_sur:  "e2cc8829c4bab8218a31e738487ac902a6452e44b107790af1ae538c4e6986bc"
+    sha256 cellar: :any,                 monterey:       "913e44a23bc2154cc489cc4a1a00872c8748cb89a9a7d3fa31c8636a156f30ab"
+    sha256 cellar: :any,                 big_sur:        "3af8c69e77ca13685b96f10784c09ceed81ada15c6f53d0c2758b10fc0a7d6b1"
+    sha256 cellar: :any,                 catalina:       "f38e5b1a57994f3be9479fd58e03fea72f0ddfe8c142df987cfdeddeb2714c56"
+    sha256 cellar: :any,                 mojave:         "ba00ec69ab593917365180b6161676e71b4f96c3f655dd26ae65dccd02ac0aad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e72e034fad87e1bebdd19df274bac75c0ae9e6f93e5bf0abb076f9b055e46a7"
   end
 
   depends_on "mysql-client"
