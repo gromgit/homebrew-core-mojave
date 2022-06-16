@@ -1,13 +1,13 @@
 class Keydb < Formula
   desc "Multithreaded fork of Redis"
   homepage "https://keydb.dev"
-  url "https://github.com/Snapchat/KeyDB/archive/v6.3.0.tar.gz"
-  sha256 "58793c1ed2f0afc81582a6216844ef9e9b1b4d3ceb8a9bbda5b34ed1b1e17e0c"
+  url "https://github.com/Snapchat/KeyDB/archive/v6.3.1.tar.gz"
+  sha256 "851b91e14dc3e9c973a1870acdc5f2938ad51a12877e64e7716d9e9ae91ce389"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/keydb"
-    sha256 cellar: :any, mojave: "00db732186d6e29a0b0066bca790345c38c91a79c9446b38d393dfa38c3742af"
+    sha256 cellar: :any, mojave: "125742b31787c23da08455194f537192a2a4da5d476821330f9dc3f5da8e0449"
   end
 
   depends_on "openssl@3"
