@@ -1,8 +1,8 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
   homepage "https://root.cern.ch/doc/master/md_math_minuit2_doc_Minuit2.html"
-  url "https://root.cern.ch/download/root_v6.26.02.source.tar.gz"
-  sha256 "7ba96772271a726079506c5bf629c3ceb21bf0682567ed6145be30606d7cd9bb"
+  url "https://root.cern.ch/download/root_v6.26.04.source.tar.gz"
+  sha256 "a271cf82782d6ed2c87ea5eef6681803f2e69e17b3036df9d863636e9358421e"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Minuit2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minuit2"
-    sha256 cellar: :any, mojave: "381e3fc43fc6eddacc6ff9b43b87c9752ab6822f3f1e802fbf048934e874ed07"
+    sha256 cellar: :any, mojave: "eaf3273aedfdbe82e12b96fe35c7dfb8ff0b9547fd906027443014f29ef691b3"
   end
 
   depends_on "cmake" => :build
