@@ -3,10 +3,11 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.30.tar.gz"
-  mirror "https://exiftool.org/Image-ExifTool-12.30.tar.gz"
-  sha256 "3be7cda70b471df589c75a4adbb71bae62e633022b0ba62585f3bcd91b35544f"
+  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.42.tar.gz"
+  mirror "https://exiftool.org/Image-ExifTool-12.42.tar.gz"
+  sha256 "31d805ed59f2114f19c569f8a2aaffb89fa211453733d2c650d843a3e46236df"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
 
   livecheck do
     url "https://exiftool.org/history.html"
@@ -15,8 +16,7 @@ class Exiftool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exiftool"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "81db822c1517868e8ac7adccd0afc07b14d3d012b4960c729050549cefa0ac94"
+    sha256 cellar: :any_skip_relocation, mojave: "5a32f4e2cf0bf03b9e8767653e858f0e2bf741b8e684ddf881090e79dd9d9201"
   end
 
   uses_from_macos "perl"
@@ -27,7 +27,7 @@ class Exiftool < Formula
     inreplace "lib/Image/ExifTool.pm", "LargeFileSupport => undef", "LargeFileSupport => 1"
 
     # replace the hard-coded path to the lib directory
-    inreplace "exiftool", "$1/lib", libexec/"lib"
+    inreplace "exiftool", "unshift @INC, $incDir;", "unshift @INC, \"#{libexec}/lib\";"
 
     system "perl", "Makefile.PL"
     system "make", "all"
