@@ -7,11 +7,10 @@ class Exenv < Formula
   head "https://github.com/mururu/exenv.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exenv"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "884ff3e962b5cc0cedde06e4b836ffc9c457464f10c8d92e70b6341b0240599c"
+    sha256 cellar: :any_skip_relocation, all: "ae3d33c35709202895d8d27bff0ea95075cd1455cc20207b139c43b73ca34322"
   end
 
+  deprecate! date: "2022-06-15", because: :repo_archived
 
   def install
     inreplace "libexec/exenv", "/usr/local", HOMEBREW_PREFIX
