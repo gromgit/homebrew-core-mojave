@@ -12,11 +12,15 @@ class Exa < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exa"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "25e5e9c662748b11082eb5ef7caa0c88923a64a96514410fd149279121eceafe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d0565b8b078c0af60f359c273f8fb2b5bd4832f66f9ba2cce6ac1e6a3a6782c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b9cc70621644245ce1ab1b682e28efae4b8acdbf3bf4da9cf91ddbd786b8787"
+    sha256 cellar: :any_skip_relocation, monterey:       "116ebfabdd5f5a06725dcd563c1bb05f723b3543f5204985a3f7dc7089a5d765"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d0c809ae7a8d3a43e0c907854b46725f5ad6bb14fa40a9857ff4e74f15c0b961"
+    sha256 cellar: :any_skip_relocation, catalina:       "dc183942b94bac912f4e0a6ca5c8859fa755a95de2808bd978dde3911690f0ae"
+    sha256 cellar: :any_skip_relocation, mojave:         "62fac977958ef8a9856e7a28fceac53d4f6e327e11764d1a077fb34ac83aced0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fad8013ab85b04c039c1b1be716bd621370dfcf810e3eb714e53711701b9aa45"
   end
-
 
   depends_on "pandoc" => :build
   depends_on "rust" => :build
@@ -28,6 +32,14 @@ class Exa < Formula
   end
 
   def install
+    # Workaround rust 1.61.0 bug, remove with next rust release
+    # https://github.com/rust-lang/rust/issues/97255
+    # https://github.com/ogham/exa/issues/1068
+    ENV["CARGO_PROFILE_RELEASE_LTO"] = "false"
+    if Formula["rust"].version > "1.61.0" && build.stable?
+      raise "Rust 1.61.1+ detected, remove workaround for broken LTO!"
+    end
+
     system "cargo", "install", *std_cargo_args
 
     if build.head?
