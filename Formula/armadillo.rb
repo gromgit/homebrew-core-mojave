@@ -1,8 +1,8 @@
 class Armadillo < Formula
   desc "C++ linear algebra library"
   homepage "https://arma.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/arma/armadillo-11.1.1.tar.xz"
-  sha256 "bfa6154a5fefd832d28d530a58221fe4a2cff2a3bbdbd82e109bde53fb29dcdb"
+  url "https://downloads.sourceforge.net/project/arma/armadillo-11.2.0.tar.xz"
+  sha256 "df5ca215901c68c63467c0bfee14f08e34d875a47ab0f095082ab32ddff4f243"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Armadillo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/armadillo"
-    sha256 cellar: :any, mojave: "4cbdf7707299848c3a97c31247a3ab434e25af1ba532b0662de48f70e5ccb290"
+    sha256 cellar: :any, mojave: "69881e996c617a017eb81a8ee77ce874bdf1cdb943882b20e8fbd63e924183d5"
   end
 
   depends_on "cmake" => :build
