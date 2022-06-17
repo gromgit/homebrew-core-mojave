@@ -1,13 +1,13 @@
 class Baresip < Formula
   desc "Modular SIP useragent"
   homepage "https://github.com/baresip/baresip"
-  url "https://github.com/baresip/baresip/archive/v2.3.0.tar.gz"
-  sha256 "eeb3189733cd4a727204268c216ca4656a0ac24b761169692d241ea887059a95"
+  url "https://github.com/baresip/baresip/archive/v2.4.0.tar.gz"
+  sha256 "5939cdd5f37f164f2c3ccfdf4ae8f44d5aa40ed73c3517bdd88b080d575784b3"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/baresip"
-    sha256 mojave: "7325efadf370388c73369e7db2000f7b7d8b18ad919ad5e73aea1a2ca5e3272b"
+    sha256 mojave: "c1ae9982d30bd6a96d9f09ccfbcd19c66c7987cbe548344d9a4f89db65293cf4"
   end
 
   depends_on "libre"
