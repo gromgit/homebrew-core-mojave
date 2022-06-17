@@ -1,8 +1,8 @@
 class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
-  url "https://github.com/hashicorp/terraform/archive/v1.2.1.tar.gz"
-  sha256 "d244277c3b8d10afa8d130cfd9db3570995a03a34052952de1ab2368fc25ab1c"
+  url "https://github.com/hashicorp/terraform/archive/v1.2.3.tar.gz"
+  sha256 "0bc726b85e0ef7325f9cc525f6e57cba46ed24e23f7d7d3d0ed3df91811a4ac6"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Terraform < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform"
-    sha256 cellar: :any_skip_relocation, mojave: "24a3340c1edf53664dc731e66067d9a506a981f2a0bdc10c9cc88174578567f4"
+    sha256 cellar: :any_skip_relocation, mojave: "d94f476b62bd44f518d2dbfa88570d2d0d494d0c3c30ce86e5ce1396849e2656"
   end
 
   depends_on "go" => :build
