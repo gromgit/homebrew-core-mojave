@@ -6,7 +6,7 @@ class FfmpegAT4 < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ffmpeg.org/download.html"
@@ -15,7 +15,7 @@ class FfmpegAT4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@4"
-    sha256 mojave: "f0604903fff601adf22e7909f40b8582d34b68d0506aff8d99af18c26fcce1a2"
+    sha256 mojave: "8426cc1ecc94bab5365257acb72754b82fd2ba16d8ce4bfb5f095c75b3a6f784"
   end
 
   keg_only :versioned_formula
