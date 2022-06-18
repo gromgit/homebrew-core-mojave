@@ -1,13 +1,13 @@
 class Astro < Formula
   desc "To build and run Airflow DAGs locally and interact with the Astronomer API"
   homepage "https://www.astronomer.io/"
-  url "https://github.com/astronomer/astro-cli/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "5121b7697f7db7a85b4e35af2410cb4832fa0fb3983217e3168f3cdbc2ef72b1"
+  url "https://github.com/astronomer/astro-cli/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "7d5faf13c69e5699a87c9ada2d39dd25aa2b5693b4f6d06a02d2e6430bea23a1"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/astro"
-    sha256 cellar: :any_skip_relocation, mojave: "30d1ce9a9eb4ade2fc5efd9c707592831b76083ae061d455d3691044383bfb9d"
+    sha256 cellar: :any_skip_relocation, mojave: "0da2d1a5a69eb348f7c6a2d35290c0726e6091d72b32c4b2aeb135a037a30e85"
   end
 
   depends_on "go" => :build
