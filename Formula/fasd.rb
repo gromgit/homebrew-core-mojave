@@ -7,11 +7,10 @@ class Fasd < Formula
   head "https://github.com/clvv/fasd.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fasd"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "832f098483bd5178bd7da50fc4330a70cc3b963d58eb214f42e256a6083994f6"
+    sha256 cellar: :any_skip_relocation, all: "9241df0f32971ce5a84c977f6908b93114946843813d5375ba7b983a7a783188"
   end
 
+  deprecate! date: "2022-06-16", because: :repo_archived
 
   def install
     bin.install "fasd"
