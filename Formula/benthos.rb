@@ -1,14 +1,14 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
   homepage "https://www.benthos.dev"
-  url "https://github.com/benthosdev/benthos/archive/v4.1.0.tar.gz"
-  sha256 "9e90b9ee4cf48e5a8a6dcbc87cf8afe64e3f1a358b3febafb24db3e2059aaf21"
+  url "https://github.com/benthosdev/benthos/archive/v4.2.0.tar.gz"
+  sha256 "5df106650ed8ca64435c11717814dc6ec6fbca3a75e0d809197fa617da90dcf5"
   license "MIT"
   head "https://github.com/benthosdev/benthos.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/benthos"
-    sha256 cellar: :any_skip_relocation, mojave: "4ecb99a6b60e56cdb924036db0be851bedfc13eda36edda78755994cb03efe66"
+    sha256 cellar: :any_skip_relocation, mojave: "c16265523d7132a9f649392d810b5a350e7268a1a62afbe0dd2c1e8da4854c99"
   end
 
   depends_on "go" => :build
