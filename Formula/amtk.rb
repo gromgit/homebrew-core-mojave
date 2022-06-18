@@ -1,14 +1,14 @@
 class Amtk < Formula
   desc "Actions, Menus and Toolbars Kit for GNOME"
-  homepage "https://gitlab.gnome.org/swilmet/amtk"
-  url "https://gitlab.gnome.org/swilmet/amtk.git",
-      tag:      "5.4.1",
-      revision: "3a0427b88af2680993932eae00de7cfac198bb74"
+  homepage "https://gitlab.gnome.org/World/amtk"
+  url "https://gitlab.gnome.org/World/amtk.git",
+      tag:      "5.5.1",
+      revision: "fa2835b2e60d60c924fc722a330524a378446a7d"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amtk"
-    sha256 mojave: "c4f6075fcb3c3683dce12afce22e373bb446357c854c1d3015b548aafa58a857"
+    sha256 mojave: "c7f768097146390b3851de743567899fa71dd29eb9486a2afba9e726ecd79d8d"
   end
 
   depends_on "gobject-introspection" => :build
