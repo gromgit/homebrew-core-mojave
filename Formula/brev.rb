@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://docs.brev.dev"
-  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.62.tar.gz"
-  sha256 "d6d6fd49b9900122486efa432b56b839d7c21aa4cd2e73abc45037a428230b05"
+  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.77.tar.gz"
+  sha256 "95928fbbe9fe8fe25e14207a4cc17444c70d3c430acee9a420f8afc6d3aad502"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Brev < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brev"
-    sha256 cellar: :any_skip_relocation, mojave: "46572beecffe03adbf508b290759f8608d5caac5b3f54dc4e516643e638524ca"
+    sha256 cellar: :any_skip_relocation, mojave: "8ed203f586e3ce3b3ad8043bfcc2ee6bac5ecff6b2191f417e4ff5cbb9fff18f"
   end
 
   depends_on "go" => :build
