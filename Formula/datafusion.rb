@@ -1,14 +1,14 @@
 class Datafusion < Formula
   desc "Apache Arrow DataFusion and Ballista query engines"
   homepage "https://arrow.apache.org/datafusion"
-  url "https://github.com/apache/arrow-datafusion/archive/refs/tags/8.0.0.tar.gz"
-  sha256 "243fcfae73ad86da658c396bc0cc75b44a33487c6e9eece022c2419a71df9157"
+  url "https://github.com/apache/arrow-datafusion/archive/refs/tags/9.0.0.tar.gz"
+  sha256 "dc18b4e30510f2c8fe6befc49d2afae800af46d5807536505e485d21bbff6097"
   license "Apache-2.0"
   head "https://github.com/apache/arrow-datafusion.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datafusion"
-    sha256 cellar: :any_skip_relocation, mojave: "566f5fd2a4e58acb04055fff95855377952b891847ece7ba90c7de0b3ec96a14"
+    sha256 cellar: :any_skip_relocation, mojave: "d621d0fa596cbf8ca69a1dd948e15aec8a267454cb7b4c47946063065281ec7c"
   end
 
   depends_on "rust" => :build
