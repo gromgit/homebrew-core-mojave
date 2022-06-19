@@ -1,8 +1,8 @@
 class NodeAT16 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v16.15.0/node-v16.15.0.tar.xz"
-  sha256 "a0f812efc43f78321eca08957960a48f5e6bf97004d5058c8dd3b03c646ea4f7"
+  url "https://nodejs.org/dist/v16.15.1/node-v16.15.1.tar.xz"
+  sha256 "d4e99d3c1f69711109a67525571058e6009cddbc228e7d723b8fb4a454169b7d"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class NodeAT16 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@16"
-    sha256 cellar: :any, mojave: "ad5b865a2dd1e652768294a9ba968d2dd75fd87618a52dfc9647247589638f56"
+    sha256 cellar: :any, mojave: "8e060858792afc0fb1254df45d11df8f88974343e07736d8ac421369d428798a"
   end
 
   keg_only :versioned_formula
