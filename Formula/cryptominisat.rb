@@ -9,19 +9,25 @@ class Cryptominisat < Formula
   revision 2
 
   livecheck do
-    url "https://github.com/msoos/cryptominisat.git"
+    url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cryptominisat"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5682c2446e97356d94b22c18d50220c71b3885966fb37a43002dbe9f50018d2a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6d8b24088a01d6f18a8c6c7aaf7fd347f1008b55c6c3d0f4b27248f0fa8a6003"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "python@3.9"
+
+  # Fix build error with setuptools 61+
+  patch do
+    url "https://github.com/msoos/cryptominisat/commit/a01179ffd6b0dd47bfdef2d9350d80b575571f24.patch?full_index=1"
+    sha256 "a75998d5060d1de13f2173514b85b2c3ce13ad13085ef624b0d711e062fc6289"
+  end
 
   def install
     # fix audit failure with `lib/libcryptominisat5.5.7.dylib`
@@ -29,6 +35,13 @@ bottle do
 
     # fix building C++ with the value of PY_C_CONFIG
     inreplace "python/setup.py.in", "cconf +", "cconf + ['-std=gnu++11'] +"
+
+    # fix error: could not create '/usr/local/lib/python3.10/site-packages/pycryptosat.cpython-310-darwin.so':
+    # Operation not permitted
+    site_packages = prefix/Language::Python.site_packages("python3")
+    inreplace "python/CMakeLists.txt",
+              "COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install",
+              "COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install --install-lib=#{site_packages}"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DNOM4RI=ON",
