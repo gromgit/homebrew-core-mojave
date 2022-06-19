@@ -7,7 +7,8 @@ class CodeServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/code-server"
-    sha256 cellar: :any_skip_relocation, mojave: "dfae26406aea3c2f440d865b109d636b8be459929e198221f44449923b0526fb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1bea9ff669e74bc4c5aad479c05809284c2533ab0d22a3ecd7186b9ce815ef79"
   end
 
   depends_on "bash" => :build
@@ -46,7 +47,7 @@ class CodeServer < Formula
     keep_alive true
     error_log_path var/"log/code-server.log"
     log_path var/"log/code-server.log"
-    working_dir ENV["HOME"]
+    working_dir Dir.home
   end
 
   test do
