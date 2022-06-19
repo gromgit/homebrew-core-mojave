@@ -1,13 +1,13 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https://cilium.io"
-  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.11.7.tar.gz"
-  sha256 "1cfe549243b97ab781401e34730df6a28ddb31d359b017cc834f8ef1228ffcb0"
+  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.11.9.tar.gz"
+  sha256 "36bf52af9f18a6265de4673ace26815c1d61fcf437590f668cce26a311afa181"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cilium-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "62eb4df2a18a2e4d183a5134a1bada92c731fd58678a36c8f70e74dbe9d0093d"
+    sha256 cellar: :any_skip_relocation, mojave: "92e4f1211dc29db7941e2233ba86d056922e0d0ed0eb99a05a2b12aa147063bf"
   end
 
   depends_on "go" => :build
