@@ -1,8 +1,8 @@
 class Postgresql < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v14.3/postgresql-14.3.tar.bz2"
-  sha256 "279057368bf59a919c05ada8f95c5e04abb43e74b9a2a69c3d46a20e07a9af38"
+  url "https://ftp.postgresql.org/pub/source/v14.4/postgresql-14.4.tar.bz2"
+  sha256 "c23b6237c5231c791511bdc79098617d6852e9e3bdf360efd8b5d15a1a3d8f6a"
   license "PostgreSQL"
   head "https://github.com/postgres/postgres.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Postgresql < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql"
-    sha256 mojave: "d85caa1e2f0ba78d9077080ca750b7af95a72ea00845ede7e1fec5ac13ffc8c4"
+    sha256 mojave: "0ea00c142314eda37806a22fce815ea32e6dd982a39fb02b4793c941ba89ba8e"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +23,7 @@ class Postgresql < Formula
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"
 
+  depends_on "lz4"
   depends_on "openssl@1.1"
   depends_on "readline"
 
@@ -54,6 +55,7 @@ class Postgresql < Formula
       --with-ldap
       --with-libxml
       --with-libxslt
+      --with-lz4
       --with-openssl
       --with-pam
       --with-perl
