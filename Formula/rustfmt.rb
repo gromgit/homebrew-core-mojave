@@ -1,15 +1,14 @@
 class Rustfmt < Formula
   desc "Format Rust code"
   homepage "https://rust-lang.github.io/rustfmt/"
-  url "https://github.com/rust-lang/rustfmt/archive/refs/tags/v1.4.38.tar.gz"
-  sha256 "4856cac540a6d894bc019285b690cebd2076aa8067bd8509ec176645c47a31bf"
+  url "https://github.com/rust-lang/rustfmt/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "e5d96f28e9a6c559eba06f3631fa552bb664cd5509fab2248c6627dd09cd9864"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/rust-lang/rustfmt.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rustfmt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "83231dcf6665bf569d25c27806590ca69fab7b43a45e4786f62f03e2c2dabdb1"
+    sha256 cellar: :any_skip_relocation, mojave: "ad3c52224fffa826e01b4ee833d3d2a53642e148779442bf5b7c6318367666e8"
   end
 
   depends_on "rustup-init" => :build
