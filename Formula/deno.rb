@@ -4,10 +4,12 @@ class Deno < Formula
   url "https://github.com/denoland/deno/releases/download/v1.22.0/deno_src.tar.gz"
   sha256 "ffa1cd143ba1e53ab5d380c1e630a2fe73910b7be4e483b0d643d14b31b23ed4"
   license "MIT"
+  head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deno"
-    sha256 cellar: :any_skip_relocation, mojave: "63b8982cfc87742e73f3b222891d7728db08a266d4e939f5f2cdc943d71d3b49"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0af5010176206f06335ee96b3419a3fa387d4d2d7db8cfce8550de10f79ad573"
   end
 
   depends_on "llvm" => :build
