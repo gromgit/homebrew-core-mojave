@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https://convox.com/"
-  url "https://github.com/convox/convox/archive/3.5.0.tar.gz"
-  sha256 "759d5f965a792f03353ad6dc79301c1fd8ac895606cd9e1f4e29338c140c68dc"
+  url "https://github.com/convox/convox/archive/3.5.1.tar.gz"
+  sha256 "4220ad93e5e5028c080f140dd353dda9fe74975a39e4a6c1218eabfd11156c42"
   license "Apache-2.0"
   version_scheme 1
 
@@ -13,7 +13,7 @@ class Convox < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/convox"
-    sha256 cellar: :any_skip_relocation, mojave: "d3e2b9c0f88051b4745ca937312d79cf51acef4725128f5ae1a55f6ea3c86aff"
+    sha256 cellar: :any_skip_relocation, mojave: "06432b0037043656a7f984c3a906a2641e3159b5231c89778aa306588cf6c6a8"
   end
 
   depends_on "go" => :build
