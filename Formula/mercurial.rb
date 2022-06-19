@@ -3,8 +3,8 @@
 class Mercurial < Formula
   desc "Scalable distributed version control system"
   homepage "https://mercurial-scm.org/"
-  url "https://www.mercurial-scm.org/release/mercurial-6.1.2.tar.gz"
-  sha256 "a52810fc01409828c4974d0bc2cbb5c80e948d5b584cfb1a7699623e924a2f2a"
+  url "https://www.mercurial-scm.org/release/mercurial-6.1.4.tar.gz"
+  sha256 "f361f9802b36e357ac019ceb712ca11de8332b07deadeed8dfa904f05bf7ca78"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -14,7 +14,7 @@ class Mercurial < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mercurial"
-    sha256 mojave: "6e01871f33e4650d2f83017aa1a722bc66798d09aa88a23d2e5dea11c722cdd4"
+    sha256 mojave: "9ee3b7581029dba2114668a9825b61e582df4b45f2482167c5194152338c6a58"
   end
 
   depends_on "python@3.10"
