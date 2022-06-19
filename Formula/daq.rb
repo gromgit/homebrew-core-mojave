@@ -1,15 +1,15 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
   homepage "https://www.snort.org/"
-  url "https://github.com/snort3/libdaq/archive/v3.0.8.tar.gz"
-  mirror "https://fossies.org/linux/misc/libdaq-3.0.8.tar.gz"
-  sha256 "e80cd94f539881388d35a00b8703dffcb6a0f8138b4dc38d0ba951747ca16f3e"
+  url "https://github.com/snort3/libdaq/archive/v3.0.9.tar.gz"
+  mirror "https://fossies.org/linux/misc/libdaq-3.0.9.tar.gz"
+  sha256 "c0e8535533720a6df05ab884b7c8f5fb4222f3aac12bdc11829e08c79716d338"
   license "GPL-2.0-only"
   head "https://github.com/snort3/libdaq.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/daq"
-    sha256 cellar: :any, mojave: "1692ac2dc12b4daabac6318feae7faac8651b1ecb8966945287f4b87c812a0b9"
+    sha256 cellar: :any, mojave: "972071bddfbb75d55ec7ece8299ecd6d245af0beb20f06abc00b455fd5c39b85"
   end
 
   depends_on "autoconf" => :build
