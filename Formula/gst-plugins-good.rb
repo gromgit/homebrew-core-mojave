@@ -1,8 +1,8 @@
 class GstPluginsGood < Formula
   desc "GStreamer plugins (well-supported, under the LGPL)"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.20.2.tar.xz"
-  sha256 "83589007bf002b8f9ef627718f308c16d83351905f0db8e85c3060f304143aae"
+  url "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.20.3.tar.xz"
+  sha256 "f8f3c206bf5cdabc00953920b47b3575af0ef15e9f871c0b6966f6d0aa5868b7"
   license "LGPL-2.0-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git", branch: "master"
 
@@ -13,7 +13,7 @@ class GstPluginsGood < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-plugins-good"
-    sha256 mojave: "c71bca0a415898f7c6f014a7fc9b4022c345578380bea98f0486649cbf817d05"
+    sha256 mojave: "2549c5d1ab6434b71c736d05cd57ae091b010f12ed2f4c78e160cd4484768ac8"
   end
 
   depends_on "meson" => :build
