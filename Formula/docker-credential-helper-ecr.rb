@@ -13,21 +13,15 @@ class DockerCredentialHelperEcr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-credential-helper-ecr"
-    sha256 cellar: :any_skip_relocation, mojave: "6298191a28396f3e67a6bef3b7f2202003318cd27c238edb97565fa629d895fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ac00b33aef30a62f1986d49d1006a1c3877593e136d36bb6bf56533f5aad98a0"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    dir = buildpath/"src/github.com/awslabs/amazon-ecr-credential-helper"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-
-    cd dir do
-      system "make", "build"
-      bin.install "bin/local/docker-credential-ecr-login"
-      prefix.install_metafiles
-    end
+    system "make", "build"
+    bin.install "bin/local/docker-credential-ecr-login"
   end
 
   test do
