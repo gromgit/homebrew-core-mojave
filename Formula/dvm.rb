@@ -7,20 +7,17 @@ class Dvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvm"
-    sha256 cellar: :any_skip_relocation, mojave: "0e8513ee24cb8883ce12c63547d4bdb0f6fe522c8486f4deaf6549b5fb5f441e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c99e8e0762b53b38b9a0e0a0402273b0f5797cc808941d54d057b9e8c6932cba"
   end
 
   depends_on "go" => :build
 
   def install
-    (buildpath/"src/github.com/howtowhale/dvm").install buildpath.children
-
-    cd "src/github.com/howtowhale/dvm" do
-      system "make", "VERSION=#{version}", "UPGRADE_DISABLED=true"
-      prefix.install "dvm.sh"
-      bash_completion.install "bash_completion" => "dvm"
-      (prefix/"dvm-helper").install "dvm-helper/dvm-helper"
-    end
+    system "make", "VERSION=#{version}", "UPGRADE_DISABLED=true"
+    prefix.install "dvm.sh"
+    bash_completion.install "bash_completion" => "dvm"
+    (prefix/"dvm-helper").install "dvm-helper/dvm-helper"
   end
 
   def caveats
