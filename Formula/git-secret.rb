@@ -5,14 +5,13 @@ class GitSecret < Formula
   head "https://github.com/sobolevn/git-secret.git", branch: "master"
 
   stable do
-    url "https://github.com/sobolevn/git-secret/archive/v0.4.0.tar.gz"
-    sha256 "ae17bfda88eb77e8f07c5f16d833792a3a14adc9c5d2bbc840f28538c62f08ba"
+    url "https://github.com/sobolevn/git-secret/archive/v0.5.0.tar.gz"
+    sha256 "1cba04a59c8109389079b479c1bf5719b595e799680e10d35ce9aa091cb752af"
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-secret"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f0f3bbadf46c9fbb213f9e92efec64471be7b02a3587ed73c89d80cc44b59362"
+    sha256 cellar: :any_skip_relocation, mojave: "973f4fddf023508c20a21b6d4cdc303c24d7bdd8d912c7ba90beee9d71aae329"
   end
 
   depends_on "gawk"
