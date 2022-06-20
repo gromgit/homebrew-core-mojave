@@ -3,13 +3,13 @@ class Dynaconf < Formula
 
   desc "Configuration Management for Python"
   homepage "https://www.dynaconf.com/"
-  url "https://files.pythonhosted.org/packages/2c/45/76c978c725b020be65a95b8b427e3550c76478a90e5396a33b0b204cae45/dynaconf-3.1.8.tar.gz"
-  sha256 "d141a6664fca3648d2d8e84440966af9f58c4f4201ca78353a3f595a67c19ab4"
+  url "https://files.pythonhosted.org/packages/f0/0e/3c102db167de3e2bb3a36a680a89c27b9b08d9f856b2164cc1a03db96f1c/dynaconf-3.1.9.tar.gz"
+  sha256 "f435c9e5b0b4b1dddf5e17e60a1e4c91ae0e6275aa51522456e671a7be3380eb"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynaconf"
-    sha256 cellar: :any_skip_relocation, mojave: "a55a36bc394a5bc1833e859f27bf11c0dd3034a41249e63f793d14d8f53fcd7d"
+    sha256 cellar: :any_skip_relocation, mojave: "46a93b62b260d0805e30abe427ba5893af6ee2e40e5a035502f39d880a546d3b"
   end
 
   depends_on "python@3.10"
