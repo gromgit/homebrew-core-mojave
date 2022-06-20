@@ -3,13 +3,13 @@ require "language/node"
 class DbmlCli < Formula
   desc "Convert DBML file to SQL and vice versa"
   homepage "https://www.dbml.org/cli/"
-  url "https://registry.npmjs.org/@dbml/cli/-/cli-2.4.1.tgz"
-  sha256 "3d3cb0aef2e19f6c9ba77421768f70e3d24a8cfc8f905d64a8b84a3a53b419c6"
+  url "https://registry.npmjs.org/@dbml/cli/-/cli-2.4.2.tgz"
+  sha256 "828bbe97dee54623c3f0fe05066fa7b0694bfcc1197b8a849a7108b387fb9b56"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbml-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "b0b1473f5ae9e79656005b5e68c5ae33f8b0c99504e1ef3279e4e39b8583f031"
+    sha256 cellar: :any_skip_relocation, mojave: "4a4874169e959ae66022adeb1a0b1254af7ad8afe746abb6de25997394748c79"
   end
 
   depends_on "node"
