@@ -1,14 +1,14 @@
 class Mockery < Formula
   desc "Mock code autogenerator for Golang"
   homepage "https://github.com/vektra/mockery"
-  url "https://github.com/vektra/mockery/archive/v2.12.3.tar.gz"
-  sha256 "78991251b8b6e1ca1d70c3604040802c007737284580fb2e35612624804028f5"
+  url "https://github.com/vektra/mockery/archive/v2.13.1.tar.gz"
+  sha256 "e52ca8bfa6b6f9bfb90d42e9e065ef01484f8039731cc320f6dfe4b11fae76b9"
   license "BSD-3-Clause"
   head "https://github.com/vektra/mockery.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mockery"
-    sha256 cellar: :any_skip_relocation, mojave: "2b52f88d611d33378c585e07df91b06ad09c3053fc6a234f7070303fd8f43527"
+    sha256 cellar: :any_skip_relocation, mojave: "d10f92ccead070d7f84e0e160b896b3f8c9622c1e019ab85e725122bc980cca5"
   end
 
   depends_on "go" => :build
