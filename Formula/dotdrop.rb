@@ -3,13 +3,13 @@ class Dotdrop < Formula
 
   desc "Save your dotfiles once, deploy them everywhere"
   homepage "https://deadc0de.re/dotdrop"
-  url "https://github.com/deadc0de6/dotdrop/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "5e79deb64322fcd4f745734e8fcfa293e2f659738599012844ccd57b13592f57"
+  url "https://files.pythonhosted.org/packages/14/c6/074ccf77aca060a282d33446b24dc15c4d04b8a1534dc2b7081fa58e278c/dotdrop-1.10.0.tar.gz"
+  sha256 "836874db7f2088763ecc2e8351d068b5cb610a140a48e586717d14cbd7bd3305"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dotdrop"
-    sha256 cellar: :any_skip_relocation, mojave: "087a1c8c8a243b4638d4943cb384e3b6a92a4dfcc96449fcb0a0db14dba015ee"
+    sha256 cellar: :any_skip_relocation, mojave: "1f734ef848b7b9661c66e07894577dbfea630df5ccbbcd0836eadaad3fc514b0"
   end
 
   depends_on "libmagic"
