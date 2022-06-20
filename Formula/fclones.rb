@@ -1,13 +1,13 @@
 class Fclones < Formula
   desc "Efficient Duplicate File Finder"
   homepage "https://github.com/pkolaczk/fclones"
-  url "https://github.com/pkolaczk/fclones/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "06ca992499cbe4683eaf96da832a10a39bf6041e102482ea2a25ff4a53195de9"
+  url "https://github.com/pkolaczk/fclones/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "a548977699a13f2a584d318edbc46cb42f9f7e5badb645cb886389a9669fb734"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fclones"
-    sha256 cellar: :any_skip_relocation, mojave: "5dc73db1210de5a17d10b4d6ecce52cb788527a65de968a45614e10b0bffa984"
+    sha256 cellar: :any_skip_relocation, mojave: "67514a5be63e6942122169d4262c7c231bb8868f08c204be46ff813dd68f301d"
   end
 
   depends_on "rust" => :build
