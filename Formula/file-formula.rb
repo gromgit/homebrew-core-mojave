@@ -2,8 +2,8 @@
 class FileFormula < Formula
   desc "Utility to determine file types"
   homepage "https://darwinsys.com/file/"
-  url "https://astron.com/pub/file/file-5.41.tar.gz"
-  sha256 "13e532c7b364f7d57e23dfeea3147103150cb90593a57af86c10e4f6e411603f"
+  url "https://astron.com/pub/file/file-5.42.tar.gz"
+  sha256 "c076fb4d029c74073f15c43361ef572cfb868407d347190ba834af3b1639b0e4"
   # file-formula has a BSD-2-Clause-like license
   license :cannot_represent
   head "https://github.com/file/file.git", branch: "master"
@@ -15,10 +15,8 @@ class FileFormula < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/file-formula"
-    rebuild 1
-    sha256 cellar: :any, mojave: "029144dd127247b9bb0b1beb9e170831e93153405a98f3854ef11a6a8941f6b0"
+    sha256 cellar: :any, mojave: "5c963bf6e2f04abe2c94095bef6f11ae7cdcb43544dfb707023df768b9825d0e"
   end
-
 
   keg_only :provided_by_macos
 
