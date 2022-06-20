@@ -8,8 +8,8 @@ class DockerMachineDriverVmware < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-machine-driver-vmware"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "8c82816b91e080003ac10e1eb43144fd1e46f5e8cc520cf948f606b9baa6656f"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, mojave: "5806fc1292fd60e8991c95ba51780f5999ac19b1030f36e25ed3d6f21e7cbc55"
   end
 
   # Bump to 1.18 on the next release, if possible.
@@ -17,17 +17,7 @@ class DockerMachineDriverVmware < Formula
   depends_on "docker-machine"
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "auto"
-
-    dir = buildpath/"src/github.com/machine-drivers/docker-machine-driver-vmware"
-    dir.install buildpath.children
-
-    cd dir do
-      system "go", "build", "-o", "#{bin}/docker-machine-driver-vmware",
-            "-ldflags", "-X main.version=#{version}"
-      prefix.install_metafiles
-    end
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end
 
   test do
