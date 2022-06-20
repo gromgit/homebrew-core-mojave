@@ -1,19 +1,13 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
   homepage "https://github.com/tummychow/git-absorb"
-  url "https://github.com/tummychow/git-absorb/archive/0.6.6.tar.gz"
-  sha256 "955069cc70a34816e6f4b6a6bd1892cfc0ae3d83d053232293366eb65599af2f"
+  url "https://github.com/tummychow/git-absorb/archive/0.6.7.tar.gz"
+  sha256 "f562dbcf68c5f687197e8a594cb58cf102cc17a2e9fcf66dbacb83b49e053bd7"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a01139732b157c708bf13151074669105cca050159412fd781ed9be5b9afdb93"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "50ec784cd0089d5840025d2b108ac75b9b87b4ec786e9e4766304fc012cb3507"
-    sha256 cellar: :any_skip_relocation, monterey:       "73201ddb25921212ac430c95be693d7b65ab5c4221a5a18958be63af69eef95b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5c90abd3d3058854758851749660bab97f06a9b60b01e6eb75da29c3c6fa3941"
-    sha256 cellar: :any_skip_relocation, catalina:       "0d9b836c7c18d1284e31fe6d354cbfae95c513fae6855d7d8897dbaab3eacf0e"
-    sha256 cellar: :any_skip_relocation, mojave:         "d5f13b0f733d6c2d1cd8c98008fcf51faccd3bd4312dd7742dc6a2cc695d0a34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96f90dd36ce015d992314e9e6b325f4b2549fd2ef6871356f96d8ade728980c0"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-absorb"
+    sha256 cellar: :any_skip_relocation, mojave: "b2fa05826ea4afc029304c3d467eeadbf5355ac88d5b494042cf6ff0321811de"
   end
 
   depends_on "rust" => :build
