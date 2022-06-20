@@ -1,9 +1,9 @@
 class Epic5 < Formula
   desc "Enhanced, programmable IRC client"
   homepage "http://www.epicsol.org/"
-  url "http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/epic5-2.1.10.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/epic5/epic5-2.1.10.tar.xz"
-  sha256 "f7847e9239c7326bbc81e1d96da5b9ad7b562f6c827c4a112613b075823333ed"
+  url "http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/epic5-2.1.12.tar.xz"
+  mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/epic5/epic5-2.1.12.tar.xz"
+  sha256 "c89ae4fc014ddcf0084b748e22f47b46a85ab1ac9bf0b22560360ba8626b6da6"
   license "BSD-3-Clause"
   head "http://git.epicsol.org/epic5.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Epic5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/epic5"
-    sha256 mojave: "dbdc2970effd9e7ff82d63d6e0ec8823474e40ed2b367e0381629d5f5f4fe17d"
+    sha256 mojave: "17135f6c4c97a8e5535defa8eec4c10ece2804bdd58e72a4d1ab91ac2697d8d4"
   end
 
   depends_on "openssl@1.1"
