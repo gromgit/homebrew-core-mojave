@@ -2,7 +2,7 @@ class Coin3d < Formula
   desc "Open Inventor 2.1 API implementation (Coin) with Python bindings (Pivy)"
   homepage "https://coin3d.github.io/"
   license all_of: ["BSD-3-Clause", "ISC"]
-  revision 2
+  revision 3
 
   stable do
     url "https://github.com/coin3d/coin/archive/Coin-4.0.0.tar.gz"
@@ -11,6 +11,20 @@ class Coin3d < Formula
     resource "pivy" do
       url "https://github.com/coin3d/pivy/archive/0.6.6.tar.gz"
       sha256 "27204574d894cc12aba5df5251770f731f326a3e7de4499e06b5f5809cc5659e"
+
+      # Support Python 3.10.
+      # Remove with the next version.
+      patch do
+        url "https://github.com/coin3d/pivy/commit/2f049c19200ab4a3a1e4740268450496c12359f9.patch?full_index=1"
+        sha256 "4fcbe10b28aff1e20c2fd42ca393df7cc1bde59839f37f62d2b938831157d27b"
+      end
+      patch do
+        url "https://github.com/coin3d/pivy/commit/4b919a3f6b9f477d0e95a2fd2b6a149a55eb9792.patch?full_index=1"
+        sha256 "41107612702d9eec17d225d52f4b8b26a84d95492e418b265dc4c40284d595a3"
+      end
+
+      # Fix segmentation fault on Apple Silicon
+      patch :DATA
     end
   end
 
@@ -21,8 +35,7 @@ class Coin3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coin3d"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7edd36418ca915fd4f654492352d405e84eaa0472908ce0de5b82417e79324ee"
+    sha256 cellar: :any, mojave: "569f20fe089ba75a73a7303592c9a70479d0b8131d08c500890e294dca283f04"
   end
 
   head do
@@ -39,7 +52,7 @@ class Coin3d < Formula
   depends_on "swig" => :build
   depends_on "boost"
   depends_on "pyside@2"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   def install
     # Create an empty directory for cpack to make the build system
@@ -65,8 +78,8 @@ class Coin3d < Formula
     resource("pivy").stage do
       ENV.append_path "CMAKE_PREFIX_PATH", prefix.to_s
       ENV["LDFLAGS"] = "-rpath #{opt_lib}"
-      system Formula["python@3.9"].opt_bin/"python3",
-             *Language::Python.setup_install_args(prefix)
+      system "python3", *Language::Python.setup_install_args(prefix),
+                         "--install-lib=#{prefix/Language::Python.site_packages("python3")}"
     end
   end
 
@@ -83,11 +96,26 @@ class Coin3d < Formula
            "-o", "test"
     system "./test"
 
-    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
     ENV.append_path "PYTHONPATH", "#{Formula["pyside@2"].opt_lib}/python#{xy}/site-packages"
-    system Formula["python@3.9"].opt_bin/"python3", "-c", <<~EOS
+    system Formula["python@3.10"].opt_bin/"python3", "-c", <<~EOS
       from pivy.sogui import SoGui
       assert SoGui.init("test") is not None
     EOS
   end
 end
+
+__END__
+diff --git a/interfaces/pivy_common_typemaps.i b/interfaces/pivy_common_typemaps.i
+index 27e26a6..73162c0 100644
+--- a/interfaces/pivy_common_typemaps.i
++++ b/interfaces/pivy_common_typemaps.i
+@@ -76,7 +76,7 @@ SWIGEXPORT PyObject *
+ cast(PyObject * self, PyObject * args)
+ {
+   char * type_name;
+-  int type_len;
++  Py_ssize_t type_len;
+   PyObject * obj = 0;
+ 
+   if (!PyArg_ParseTuple(args, "Os#:cast", &obj, &type_name, &type_len)) {
