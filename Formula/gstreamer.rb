@@ -1,8 +1,8 @@
 class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.20.2.tar.xz"
-  sha256 "df24e8792691a02dfe003b3833a51f1dbc6c3331ae625d143b17da939ceb5e0a"
+  url "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.20.3.tar.xz"
+  sha256 "607daf64bbbd5fb18af9d17e21c0d22c4d702fffe83b23cb22d1b1af2ca23a2a"
   license "LGPL-2.0-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gstreamer.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Gstreamer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gstreamer"
-    sha256 mojave: "91b95d566c33a8cb6a0d41c076eb625d515e926d80b315f6526cd6379f1ed036"
+    sha256 mojave: "f47a7c1ffc6a2a5ae93d8051e857d9c0e1ace5b73d643c7b8e7c74e8d3ded457"
   end
 
   depends_on "bison" => :build
