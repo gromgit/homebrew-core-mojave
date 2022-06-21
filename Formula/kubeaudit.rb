@@ -1,14 +1,14 @@
 class Kubeaudit < Formula
   desc "Helps audit your Kubernetes clusters against common security controls"
   homepage "https://github.com/Shopify/kubeaudit"
-  url "https://github.com/Shopify/kubeaudit/archive/refs/tags/0.17.0.tar.gz"
-  sha256 "98351b9498ea053887512cc98e63b4178216dd1e4ad73345ec215ec88dea33fc"
+  url "https://github.com/Shopify/kubeaudit/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "e15f603813fd0877d0874ad3122241183ce270a4ed3cb78a3568d5a167446f52"
   license "MIT"
   head "https://github.com/Shopify/kubeaudit.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeaudit"
-    sha256 cellar: :any_skip_relocation, mojave: "d7ea93cd189790635d895993cb86afc3571d65aad2d160c4e0cb22abbfd6acf2"
+    sha256 cellar: :any_skip_relocation, mojave: "9f28bff19f1fc85f80a5cbe9dd28cc084ce4b5974e97ed4770cd2b482a2b6ab2"
   end
 
   depends_on "go" => :build
