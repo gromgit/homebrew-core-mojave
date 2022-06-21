@@ -3,13 +3,13 @@ require "language/node"
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
   homepage "https://github.com/mongodb-js/mongosh#readme"
-  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-1.4.2.tgz"
-  sha256 "6a365afc8a67d865416e0627eeb7e9512cd0b1686fc80072750b7de075c863b6"
+  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-1.5.0.tgz"
+  sha256 "bcabff0b1dc6a400ebe2114783b44fd91d000e31d48c81d760e2b8d0f157d2a2"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongosh"
-    sha256 mojave: "eee75ba41f27a196b85c7fe1fcc944c2df5340c6e875c6ed73fb27bd9ce328b8"
+    sha256 mojave: "bdf52efbcdfa6428831cfa674a33a6f2fe6193f438375cf21fdc62aa884acc28"
   end
 
   depends_on "node@16"
