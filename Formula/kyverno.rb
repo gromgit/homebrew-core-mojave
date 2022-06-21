@@ -2,8 +2,8 @@ class Kyverno < Formula
   desc "Kubernetes Native Policy Management"
   homepage "https://kyverno.io/"
   url "https://github.com/kyverno/kyverno.git",
-      tag:      "v1.6.2",
-      revision: "4b2bf039f6f04cc02cf89dae7e15f8bc17b2ad78"
+      tag:      "v1.7.1",
+      revision: "060b12d2a281720a29c0de99ea860a6db1c95c6a"
   license "Apache-2.0"
   head "https://github.com/kyverno/kyverno.git", branch: "main"
 
@@ -16,7 +16,7 @@ class Kyverno < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kyverno"
-    sha256 cellar: :any_skip_relocation, mojave: "c7649c3ede74dc2ac1aa094112a8ee16d779ea26efffe2bb8e74c41dbe8318e1"
+    sha256 cellar: :any_skip_relocation, mojave: "e8439a015daffe4a3c6671d54d3a2582d74902c5d567ec17b26c6d5ebec5dc3a"
   end
 
   depends_on "go" => :build
@@ -37,8 +37,7 @@ class Kyverno < Formula
   end
 
   test do
-    manifest = "https://raw.githubusercontent.com/kyverno/kyverno/1af9e48b0dffe405c8a52938c78c710cf9ed6721/test/cli/test/variables/image-example.yaml"
-    assert_match "Policy images is valid.", shell_output("#{bin}/kyverno validate #{manifest}")
+    assert_match "Test Summary: 0 tests passed and 0 tests failed", shell_output("#{bin}/kyverno test .")
 
     assert_match version.to_s, "#{bin}/kyverno version"
   end
