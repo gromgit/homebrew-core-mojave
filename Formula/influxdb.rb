@@ -2,8 +2,8 @@ class Influxdb < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v2.2.0",
-      revision: "a2f85388377fe454257b6da6ad1e723e52b5438b"
+      tag:      "v2.3.0",
+      revision: "090f681737896feb99870ee534c9ccc4203b9a6d"
   license "MIT"
   head "https://github.com/influxdata/influxdb.git", branch: "master"
 
@@ -15,7 +15,7 @@ class Influxdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb"
-    sha256 cellar: :any_skip_relocation, mojave: "3563a4e0328d7e7bfafc4965e602bba4466e4063385ce55ce75a16598705358f"
+    sha256 cellar: :any_skip_relocation, mojave: "a2dc704844f2408b4682dbd6674f0737c58a2a822a1be3df6761184147b81866"
   end
 
   depends_on "breezy" => :build
