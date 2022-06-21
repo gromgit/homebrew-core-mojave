@@ -2,8 +2,8 @@ class KubernetesCliAT122 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.22.10",
-      revision: "eae22ba6238096f5dec1ceb62766e97783f0ba2f"
+      tag:      "v1.22.11",
+      revision: "5824e3251d294d324320db85bf63a53eb0767af2"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class KubernetesCliAT122 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli@1.22"
-    sha256 cellar: :any_skip_relocation, mojave: "b25a657be18d63513d3d92f82fc93eef02bbac28c6aa49d9b4388189bcdbd95e"
+    sha256 cellar: :any_skip_relocation, mojave: "d206d8ab3ba2bfdc902467ddd3fb49597518dc616383a8760fb3c344a506dab0"
   end
 
   keg_only :versioned_formula
