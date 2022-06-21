@@ -1,8 +1,8 @@
 class Links < Formula
   desc "Lynx-like WWW browser that supports tables, menus, etc."
   homepage "http://links.twibright.com/"
-  url "http://links.twibright.com/download/links-2.27.tar.gz"
-  sha256 "b3e7f302e748f6394806aaac28ea878dbfa2af38745d96507adf68a0a541ba8b"
+  url "http://links.twibright.com/download/links-2.27.tar.bz2"
+  sha256 "d8ddcbfcede7cdde80abeb0a236358f57fa6beb2bcf92e109624e9b896f9ebb4"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,8 @@ class Links < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/links"
-    sha256 cellar: :any, mojave: "76b09bc9657b8d21ca29d89aa21bc31e95dd98c2e7a8e90e6caf210fb9219bc9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "27f9a4b7f2ef11d4cc7adeba35f5b0e33144abbea3b3568e15439b70e6e8aeb4"
   end
 
   depends_on "pkg-config" => :build
