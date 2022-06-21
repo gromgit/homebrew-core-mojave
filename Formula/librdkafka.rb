@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/edenhill/librdkafka"
-  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "6a747d293a7a4613bd2897e28e8791476fbe1ae7361f2530a876e0fd483482a6"
+  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "59b6088b69ca6cf278c3f9de5cd6b7f3fd604212cd1c59870bc531c54147e889"
   license "BSD-2-Clause"
   head "https://github.com/edenhill/librdkafka.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Librdkafka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librdkafka"
-    rebuild 2
-    sha256 mojave: "ab34fe3f98f493dbaf98d2b49b970b1cee74a92f04cfbcd0542c1ca04e1cbff9"
+    sha256 mojave: "5a62a5dd678209ad7fb09b9ee9177ac574bc2bc8352737e6288bb8bdf1cb0192"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +22,10 @@ class Librdkafka < Formula
   depends_on "lzlib"
   depends_on "openssl@1.1"
   depends_on "zstd"
+
+  uses_from_macos "curl"
+  uses_from_macos "cyrus-sasl"
+  uses_from_macos "zlib"
 
   def install
     system "./configure", "--prefix=#{prefix}"
