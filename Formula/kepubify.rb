@@ -8,22 +8,19 @@ class Kepubify < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kepubify"
-    sha256 cellar: :any_skip_relocation, mojave: "306b30a777aa9cb3f21627d0c14d98367a8c96ab53de6e7ae3209b961abd13a3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7aa0efb8c160ed1985bc871889a29d1fbec620eeec4858affac429630bdfe53b"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = HOMEBREW_CACHE/"go_cache"
-
     %w[
       kepubify
       covergen
       seriesmeta
     ].each do |p|
-      system "go", "build", "-o", bin/p,
-                   "-ldflags", "-s -w -X main.version=#{version}",
-                   "./cmd/#{p}"
+      system "go", "build", *std_go_args(output: bin/p, ldflags: "-s -w -X main.version=#{version}"), "./cmd/#{p}"
     end
   end
 
