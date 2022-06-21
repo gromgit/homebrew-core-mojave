@@ -3,13 +3,13 @@ require "language/node"
 class Monika < Formula
   desc "Synthetic monitoring made easy"
   homepage "https://monika.hyperjump.tech"
-  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.7.3.tgz"
-  sha256 "a08812f5e7bde8ff59608a8b1453bd3e90c10c622f3ec5833f70ac4c88a46e67"
+  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.8.0.tgz"
+  sha256 "07caa733153f765a5ce570a9a6234a67ef09edf0fcb65427cb0706d08a0ed63d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/monika"
-    sha256 cellar: :any_skip_relocation, mojave: "29946071512c903e1a2888564f15b4902481b8ade4bdd48efabe1cb0049bee03"
+    sha256 cellar: :any_skip_relocation, mojave: "7a74da6240e985533c51b4e7ca72ee697b741de5692c75378b882b5ee9b75749"
   end
 
   depends_on "node"
