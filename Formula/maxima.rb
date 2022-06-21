@@ -4,7 +4,7 @@ class Maxima < Formula
   url "https://downloads.sourceforge.net/project/maxima/Maxima-source/5.46.0-source/maxima-5.46.0.tar.gz"
   sha256 "7390f06b48da65c9033e8b2f629b978b90056454a54022db7de70e2225aa8b07"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,7 +13,7 @@ class Maxima < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maxima"
-    sha256 cellar: :any_skip_relocation, mojave: "aefe9d6822ebe99b22cb35e0c294a4e90d360bc5f49c3687a77ad75c68f7dd1d"
+    sha256 cellar: :any_skip_relocation, mojave: "86d9d075fd1de848eccb0aae35948f93cc5b894d32d35593d2e58936816f85be"
   end
 
   depends_on "gawk" => :build
