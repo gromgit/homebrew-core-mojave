@@ -1,17 +1,17 @@
 class Liblouis < Formula
   desc "Open-source braille translator and back-translator"
   homepage "http://liblouis.org"
-  url "https://github.com/liblouis/liblouis/releases/download/v3.21.0/liblouis-3.21.0.tar.gz"
-  sha256 "6d7f4ed09d4dd0fafbc22b256632a232575cfa764d4bfd86b73fe0529a81d449"
+  url "https://github.com/liblouis/liblouis/releases/download/v3.22.0/liblouis-3.22.0.tar.gz"
+  sha256 "79bc508425822e4df2ea50ac4a648e80ef0878afcd979b655bfcac5c1766763f"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblouis"
-    sha256 mojave: "e8995a8f4f77a749640e47913c2bd27c7293bcfa0ff0d158709e8a12a61df831"
+    sha256 mojave: "3a190a790d7f8afbcd9302df154409806e07e027e56bbbb28f12d332f6f5c2ec"
   end
 
   head do
-    url "https://github.com/liblouis/liblouis.git"
+    url "https://github.com/liblouis/liblouis.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
