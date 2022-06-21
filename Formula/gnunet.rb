@@ -1,14 +1,14 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.16.3.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.16.3.tar.gz"
-  sha256 "3239052f13537a9aabaaa66ec42875dbee2f6838c5f18b3aef854e6b531ec38a"
+  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.17.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.17.1.tar.gz"
+  sha256 "75de0a715e3e969286483ec6ae4b25a87365664d42cdfb606df8e746a15f1265"
   license "AGPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnunet"
-    sha256 cellar: :any, mojave: "9d643315e21faf0c5d9ecad81107b521f7ea7298597a39a5e882c5cafd99be9c"
+    sha256 cellar: :any, mojave: "3061f88d222eec869915440e62081fe6c24ebbfaecab9d7eec196ddfddf972a6"
   end
 
   depends_on "pkg-config" => :build
@@ -27,7 +27,7 @@ class Gnunet < Formula
 
   def install
     ENV.deparallelize if OS.linux?
-    system "./configure", "--prefix=#{prefix}", "--with-microhttpd"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
