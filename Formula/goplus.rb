@@ -1,28 +1,24 @@
 class Goplus < Formula
   desc "Programming language for engineering, STEM education, and data science"
   homepage "https://goplus.org"
-  url "https://github.com/goplus/gop/archive/v1.0.39.tar.gz"
-  sha256 "abc5ed80ccd5d233c0b90e82b6fa5aaa874c4fe50cc6fe0f30372f96f7e75677"
+  url "https://github.com/goplus/gop/archive/v1.1.0.tar.gz"
+  sha256 "523f2974cc3e4ec5ed10b98ca9204b5fb620ab128ae5e8e1dba6e067d9c846b8"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/goplus/gop.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goplus"
-    sha256 mojave: "5e329b7391705dfd69fd5995b72e51ac511d79033a2b396eadc72627f9b7910a"
+    sha256 mojave: "40e44090d450914efa908b579a1b814b778d1ead6daf910a52efe4c16bf80a6c"
   end
 
-  # Bump to 1.18 on the next release (1.1.0).
-  depends_on "go@1.17"
+  depends_on "go"
 
   def install
     ENV["GOPROOT_FINAL"] = libexec
     system "go", "run", "cmd/make.go", "--install"
 
     libexec.install Dir["*"] - Dir[".*"]
-    libexec.glob("bin/*").each do |file|
-      (bin/file.basename).write_env_script(file, PATH: "$PATH:#{Formula["go@1.17"].opt_bin}")
-    end
+    bin.install_symlink (libexec/"bin").children
   end
 
   test do
@@ -41,7 +37,7 @@ class Goplus < Formula
       module hello
     EOS
 
-    system Formula["go@1.17"].opt_bin/"go", "get", "github.com/goplus/gop/builtin"
+    system "go", "get", "github.com/goplus/gop/builtin"
     system bin/"gop", "build", "-o", "hello"
     assert_equal "Hello World\n", shell_output("./hello")
   end
