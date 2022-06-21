@@ -12,18 +12,18 @@ class Lxc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lxc"
-    sha256 cellar: :any_skip_relocation, mojave: "424d316d595caf0eac4b5d4bb775ed3b75efddc38da29f0760f3abc0d6bd3066"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ee6be1b24d770d3aefee8bd54d427443ec03dd19c7e4ba168ee5938af6b3d99a"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOBIN"] = bin
-
     system "go", "build", *std_go_args, "./lxc"
   end
 
   test do
-    system "#{bin}/lxc", "--version"
+    output = JSON.parse(shell_output("#{bin}/lxc remote list --format json"))
+    assert_equal "https://images.linuxcontainers.org", output["images"]["Addr"]
   end
 end
