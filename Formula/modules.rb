@@ -1,8 +1,8 @@
 class Modules < Formula
   desc "Dynamic modification of a user's environment via modulefiles"
   homepage "https://modules.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.1.0/modules-5.1.0.tar.bz2"
-  sha256 "0fe84ee80f7470b5e6bd339bc04c464f06e2db4b5859b4ebd2847a84e9217e1c"
+  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.1.1/modules-5.1.1.tar.bz2"
+  sha256 "28354dd1ab2ff25e9fb9ce759c77eeefec21f22a112d579fbf3cc802174ec944"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Modules < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/modules"
-    sha256 cellar: :any, mojave: "179322df424e52f05578f4abf7b9f3e54e02c4691c35c6a9532851e9f478f5cc"
+    sha256 cellar: :any, mojave: "fd72726ba555fed156e1cb51025ce9818b3fa71f2849a045b0830655dec18d85"
   end
 
   depends_on "tcl-tk"
