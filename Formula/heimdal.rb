@@ -4,7 +4,7 @@ class Heimdal < Formula
   url "https://github.com/heimdal/heimdal/releases/download/heimdal-7.7.0/heimdal-7.7.0.tar.gz"
   sha256 "f02d3314d634cc55eb9cf04a1eae0d96b293e45a1f837de9d894e800161b7d1b"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -14,8 +14,7 @@ class Heimdal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heimdal"
-    rebuild 2
-    sha256 mojave: "434d623d3436c435633f4fecaf3e505c4fb0c8f0d616bc7b2a36d63c85386cad"
+    sha256 mojave: "75f153e0fb1fe7c2ed46923f8acec6faca26779be77a013b3c9b9fad3c282d91"
   end
 
   keg_only "conflicts with Kerberos"
@@ -27,6 +26,7 @@ class Heimdal < Formula
   depends_on "openldap"
   depends_on "openssl@1.1"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "perl"
 
   resource "JSON" do
