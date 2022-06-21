@@ -1,8 +1,8 @@
 class KnotResolver < Formula
   desc "Minimalistic, caching, DNSSEC-validating DNS resolver"
   homepage "https://www.knot-resolver.cz"
-  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-5.5.0.tar.xz"
-  sha256 "4e6f48c74d955f143d603f6072670cb41ab9acdd95d4455d6e74b6908562c55a"
+  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-5.5.1.tar.xz"
+  sha256 "9bad1edfd6631446da2d2331bd869887d7fe502f6eeaf62b2e43e2c113f02b6d"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
@@ -13,7 +13,7 @@ class KnotResolver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/knot-resolver"
-    sha256 mojave: "dae0fe9a25760ddcbe444704e92aa8ac3234faac0f18fc54e1e4a68cf16e9896"
+    sha256 mojave: "e2bfa464db47bb707e5f1814d430d2c858cba7f74b62859711a9288b496b3160"
   end
 
   depends_on "meson" => :build
