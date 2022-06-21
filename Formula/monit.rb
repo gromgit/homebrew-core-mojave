@@ -4,6 +4,7 @@ class Monit < Formula
   url "https://mmonit.com/monit/dist/monit-5.32.0.tar.gz"
   sha256 "1077052d4c4e848ac47d14f9b37754d46419aecbe8c9a07e1f869c914faf3216"
   license "AGPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://mmonit.com/monit/dist/"
@@ -12,10 +13,12 @@ class Monit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/monit"
-    sha256 cellar: :any, mojave: "e31a18ab076acec34455a6c77a604cbfa3554e1c66ba589545179c0cc7595dcf"
+    sha256 cellar: :any, mojave: "303b290f2c48d180b7f79299440b96090422f4d000a873bcee438c1a9d021b63"
   end
 
   depends_on "openssl@1.1"
+
+  uses_from_macos "libxcrypt"
 
   on_linux do
     depends_on "linux-pam"
