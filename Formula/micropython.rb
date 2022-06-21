@@ -2,14 +2,13 @@ class Micropython < Formula
   desc "Python implementation for microcontrollers and constrained systems"
   homepage "https://www.micropython.org/"
   url "https://github.com/micropython/micropython.git",
-      tag:      "v1.18",
-      revision: "da4b38e7562dfa451917f9d7f344a7f26de8c7bd"
+      tag:      "v1.19.1",
+      revision: "9b486340da22931cde82872f79e1c34db959548b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micropython"
-    rebuild 1
-    sha256 cellar: :any, mojave: "611183e239eb894efa7380505220fa9a22cd068b8ac809b3d5bd436ea4e9dc00"
+    sha256 cellar: :any, mojave: "d886751a41a2da364108cd01b472b955787413ba1705c2f0465b3ff43bd4e1c8"
   end
 
   depends_on "pkg-config" => :build
