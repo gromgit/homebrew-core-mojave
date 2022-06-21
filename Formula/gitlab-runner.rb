@@ -14,7 +14,8 @@ class GitlabRunner < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
-    sha256 cellar: :any_skip_relocation, mojave: "f8fb23fe0fcbf6f9ef564f7a29222416721b7b93f899b7ae5f918763bb3f9ab3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c0b3dbf89a26d03bc3e41c824dae4a9126d2fd84afa5a3274afe360c7b7fea68"
   end
 
   # Bump to 1.18 when x/sys is updated (likely 14.9).
@@ -35,7 +36,7 @@ class GitlabRunner < Formula
   service do
     run [opt_bin/"gitlab-runner", "run", "--syslog"]
     environment_variables PATH: std_service_path_env
-    working_dir ENV["HOME"]
+    working_dir Dir.home
     keep_alive true
     macos_legacy_timers true
     process_type :interactive
