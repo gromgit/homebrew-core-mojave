@@ -2,14 +2,14 @@ class Helmify < Formula
   desc "Create Helm chart from Kubernetes yaml"
   homepage "https://github.com/arttor/helmify"
   url "https://github.com/arttor/helmify.git",
-      tag:      "v0.3.12",
-      revision: "3634ef55f022db202f123e43e55ebb15161e1892"
+      tag:      "v0.3.13",
+      revision: "f96b7aede441a03b6da20d1c09efe6055046b51d"
   license "MIT"
   head "https://github.com/arttor/helmify.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmify"
-    sha256 cellar: :any_skip_relocation, mojave: "9ec7652bcb0ac97fdf14aea361bee8d1ec80467ea79db8eeeb78da7e7bc2bb23"
+    sha256 cellar: :any_skip_relocation, mojave: "ca0df14381775575dbcaa3c265e51c48816b94f288b5704b9525251794179d43"
   end
 
   depends_on "go" => :build
