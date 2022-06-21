@@ -1,8 +1,8 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
   homepage "https://hledger.org/"
-  url "https://hackage.haskell.org/package/hledger-1.25/hledger-1.25.tar.gz"
-  sha256 "b3188c5c22bdd20b58f9a3cb90dac637441120239bb00d17cf683ef4e6aebf36"
+  url "https://hackage.haskell.org/package/hledger-1.26/hledger-1.26.tar.gz"
+  sha256 "e2dd5b92d9484de385498c5463db8651fb44474e52a7d85096c1faa4ab2df495"
   license "GPL-3.0-or-later"
 
   # A new version is sometimes present on Hackage before it's officially
@@ -15,7 +15,7 @@ class Hledger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hledger"
-    sha256 cellar: :any_skip_relocation, mojave: "05a460b68e2800ec7961f92ddee4370a59389dc2b2cbd597d5db11a39faa7a1f"
+    sha256 cellar: :any_skip_relocation, mojave: "96179252a95abfffca322abaedf08ed4c187379e587f5942c5a5b74f73f2f1d2"
   end
 
   depends_on "ghc" => :build
@@ -25,18 +25,18 @@ class Hledger < Formula
   uses_from_macos "zlib"
 
   resource "hledger-lib" do
-    url "https://hackage.haskell.org/package/hledger-lib-1.25/hledger-lib-1.25.tar.gz"
-    sha256 "36c0dfe0f7647da17e74d3b52d91017aacd370198600b69e24212f3eefb46919"
+    url "https://hackage.haskell.org/package/hledger-lib-1.26/hledger-lib-1.26.tar.gz"
+    sha256 "fe0e33fcd7be2f24aeebd11145e1c7afe212572b24a4b5299ca991d0f00b3a95"
   end
 
   resource "hledger-ui" do
-    url "https://hackage.haskell.org/package/hledger-ui-1.25/hledger-ui-1.25.tar.gz"
-    sha256 "3d0c8024d5bca858860c41b8beb827a771d924a43f139d8059496fab52a84fe9"
+    url "https://hackage.haskell.org/package/hledger-ui-1.26/hledger-ui-1.26.tar.gz"
+    sha256 "2891a6ace8279a3da4a07b76bbd9eb95261633f011f9a5d016d718c1b62fa427"
   end
 
   resource "hledger-web" do
-    url "https://hackage.haskell.org/package/hledger-web-1.25/hledger-web-1.25.tar.gz"
-    sha256 "0f390a73643de25396e5836c58786e209a025faeeb030dd5706591462117fe2d"
+    url "https://hackage.haskell.org/package/hledger-web-1.26/hledger-web-1.26.tar.gz"
+    sha256 "6aa2c4096aa73c8b55fa870845138aec76e08ebadc41dfc8faaf10b3274a90c0"
   end
 
   def install
