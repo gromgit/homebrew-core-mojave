@@ -1,16 +1,14 @@
 class Openvdb < Formula
   desc "Sparse volumetric data processing toolkit"
   homepage "https://www.openvdb.org/"
-  url "https://github.com/AcademySoftwareFoundation/openvdb/archive/v9.0.0.tar.gz"
-  sha256 "ad3816e8f1931d1d6fdbddcec5a1acd30695d049dd10aa965096b2fb9972b468"
+  url "https://github.com/AcademySoftwareFoundation/openvdb/archive/v9.1.0.tar.gz"
+  sha256 "914ee417b4607c75c95b53bc73a0599de4157c7d6a32e849e80f24e40fb64181"
   license "MPL-2.0"
-  revision 1
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openvdb"
-    rebuild 1
-    sha256 cellar: :any, mojave: "db1aede8f11e9b0a97b375c04c6d866cf9ad7c5d9f85ee06313763e0544b193c"
+    sha256 cellar: :any, mojave: "698b284f0b8366a98f663bd1fc27c894820969b3ad18c47778f1dac226286a8e"
   end
 
   depends_on "cmake" => :build
