@@ -1,10 +1,9 @@
 class Pianod < Formula
   desc "Pandora client with multiple control interfaces"
   homepage "https://deviousfish.com/pianod/"
-  url "https://deviousfish.com/Downloads/pianod2/pianod2-388.tar.gz"
-  sha256 "a677a86f0cbc9ada0cf320873b3f52b466d401a25a3492ead459500f49cdcd99"
+  url "https://deviousfish.com/Downloads/pianod2/pianod2-392.tar.gz"
+  sha256 "d3e24ec34677bb17307e61e79f42ae2b22441228db7a31cf056d452a92447cec"
   license "MIT"
-  revision 2
 
   livecheck do
     url "https://deviousfish.com/Downloads/pianod2/"
@@ -13,7 +12,7 @@ class Pianod < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pianod"
-    sha256 mojave: "80f1c81026807cc1f4ba0258fa4d433a272199e7a833d36181b5372c9a487d10"
+    sha256 mojave: "6c1bac30eee017dbc3644b90995922fbd1756307765718c7c753ce77ada54ce6"
   end
 
   depends_on "pkg-config" => :build
