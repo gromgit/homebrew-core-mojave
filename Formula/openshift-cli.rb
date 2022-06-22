@@ -17,13 +17,13 @@ class OpenshiftCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openshift-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "0a68d36d24338d05604665c7c9cab0a3d6469aa07f666a1d10ea10e45ba1f713"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "40c788060bffcc6e42974aebc8b807d0c1e4b1897cca861062067ed5ff35dd0d"
   end
 
   depends_on "coreutils" => :build
   # Bump to 1.18 on the next release.
   depends_on "go@1.17" => :build
-  depends_on "heimdal" => :build
   depends_on "socat"
 
   uses_from_macos "krb5"
