@@ -1,13 +1,13 @@
 class Sonobuoy < Formula
   desc "Kubernetes component that generates reports on cluster conformance"
   homepage "https://github.com/vmware-tanzu/sonobuoy"
-  url "https://github.com/vmware-tanzu/sonobuoy/archive/v0.56.6.tar.gz"
-  sha256 "d2faffe1d68bcc554d201af8d763a2a820c0ed2df8a73732f5996475b94c05a7"
+  url "https://github.com/vmware-tanzu/sonobuoy/archive/v0.56.7.tar.gz"
+  sha256 "664746d50fec283e16185c3463acdec04a987d65ccee75d4a0a5d3c08c50e708"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonobuoy"
-    sha256 cellar: :any_skip_relocation, mojave: "254bb5ec8d5b96d5b389833be0c7cf11066d271b84f4931953fd1bb5e2c37fd0"
+    sha256 cellar: :any_skip_relocation, mojave: "eed05e4b5de7cbfb4a59facb372f50e122965e2990198d180d6bf103c7181cd3"
   end
 
   # Segfaults on Go 1.18 - try test it again when updating this formula.
