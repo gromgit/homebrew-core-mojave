@@ -1,8 +1,8 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://github.com/storj/storj/archive/refs/tags/v1.50.4.tar.gz"
-  sha256 "8f507ffa4bf70eeeb3cf9dc5c4e7794c9913354495d497bdd1d1cdb2b8453fe5"
+  url "https://github.com/storj/storj/archive/refs/tags/v1.57.2.tar.gz"
+  sha256 "ba0cd9d2433eaff571082ef52bbc26ea74ef3b90760919cb48176dac3936f326"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class StorjUplink < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/storj-uplink"
-    sha256 cellar: :any_skip_relocation, mojave: "5b06024bd500d5dffbf52729452dae86a35decaab3047b418b5a87b89345f9ea"
+    sha256 cellar: :any_skip_relocation, mojave: "0346d08401d6ae0c9d35265d8c6da6bc3b352d1d48da61e9173a2f70ce158677"
   end
 
   depends_on "go" => :build
