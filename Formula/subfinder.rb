@@ -1,14 +1,14 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
   homepage "https://github.com/projectdiscovery/subfinder"
-  url "https://github.com/projectdiscovery/subfinder/archive/v2.5.1.tar.gz"
-  sha256 "c93daf616ad3c0f60e91a2626a97c7cfcc3662735db5e6e0b1e2bd0706638fb2"
+  url "https://github.com/projectdiscovery/subfinder/archive/v2.5.2.tar.gz"
+  sha256 "3f99323effbbc0d8f1d5181ac4cc1c5bd31b50a1eb792866269ec44acf308f1d"
   license "MIT"
   head "https://github.com/projectdiscovery/subfinder.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/subfinder"
-    sha256 cellar: :any_skip_relocation, mojave: "47513b23360ff802a56e40414f14338ed17e28f050c85061fda778bd794cc7a3"
+    sha256 cellar: :any_skip_relocation, mojave: "b591408e29cd1d8a5443e24418c80de61feb62927d72a959df882dd9626751cc"
   end
 
   depends_on "go" => :build
