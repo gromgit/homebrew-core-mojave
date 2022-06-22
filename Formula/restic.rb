@@ -4,11 +4,12 @@ class Restic < Formula
   url "https://github.com/restic/restic/archive/v0.13.1.tar.gz"
   sha256 "8430f80dc17b98fd78aca6f7d635bf12a486687677e15989a891ff4f6d8490a9"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/restic/restic.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restic"
-    sha256 cellar: :any_skip_relocation, mojave: "fe187c82575e9c7877976974dd13a47b9d43b9ddffd16e07ab0dbbad8d95509a"
+    sha256 cellar: :any_skip_relocation, mojave: "b20f4e3f5683a908b592cb38a212410e74d77b8898adfaa4609106af734f4234"
   end
 
   depends_on "go" => :build
@@ -19,6 +20,7 @@ class Restic < Formula
     mkdir "completions"
     system "./restic", "generate", "--bash-completion", "completions/restic"
     system "./restic", "generate", "--zsh-completion", "completions/_restic"
+    system "./restic", "generate", "--fish-completion", "completions/restic.fish"
 
     mkdir "man"
     system "./restic", "generate", "--man", "man"
@@ -26,6 +28,7 @@ class Restic < Formula
     bin.install "restic"
     bash_completion.install "completions/restic"
     zsh_completion.install "completions/_restic"
+    fish_completion.install "completions/restic.fish"
     man1.install Dir["man/*.1"]
   end
 
