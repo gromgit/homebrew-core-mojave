@@ -1,10 +1,10 @@
 class Pike < Formula
   desc "Dynamic programming language"
   homepage "https://pike.lysator.liu.se/"
-  url "https://pike.lysator.liu.se/pub/pike/latest-stable/Pike-v8.0.1116.tar.gz"
-  mirror "http://deb.debian.org/debian/pool/main/p/pike8.0/pike8.0_8.0.1116.orig.tar.gz"
+  url "https://pike.lysator.liu.se/pub/pike/latest-stable/Pike-v8.0.1738.tar.gz"
+  mirror "http://deb.debian.org/debian/pool/main/p/pike8.0/pike8.0_8.0.1738.orig.tar.gz"
   # Homepage has an expired SSL cert as of 16/12/2020, so we add a Debian mirror
-  sha256 "5020063c755bb182177750221013b199198a7f1eb8ff26c1fb879d375c755891"
+  sha256 "1033bc90621896ef6145df448b48fdfa342dbdf01b48fd9ae8acf64f6a31b92a"
   license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "MPL-1.1"]
 
   livecheck do
@@ -13,17 +13,20 @@ class Pike < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "66bef9efce57896b13bfaac552d145d35534e44ab8fe4e3367b8334c10509b34"
-    sha256 big_sur:       "15805f34b5fa27d32c8a86cb69459d03300b11b2ec491597264823899f77568f"
-    sha256 catalina:      "b34252e2bd9dfea5ffc5e56e10523658ff44ecc5686eabda34ce2c19a22faabc"
-    sha256 mojave:        "1eacafb5514b416f75a39a50bdfc697123f66be10a892be1906fa674580f9298"
-    sha256 x86_64_linux:  "ff33dee60c50a36bbf9e5882a691e8062c4e338058b20f27d5edb0fc4989eb37"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pike"
+    sha256 mojave: "f7d52e2131fb60fe944c1e42e3598c75011ceaab28182800050889bed49d26c5"
   end
 
   depends_on "gmp"
   depends_on "libtiff"
   depends_on "nettle"
   depends_on "pcre"
+
+  uses_from_macos "libxcrypt"
+
+  on_macos do
+    depends_on "gnu-sed" => :build
+  end
 
   on_linux do
     depends_on "jpeg"
@@ -35,6 +38,11 @@ class Pike < Formula
 
     # Workaround for https://git.lysator.liu.se/pikelang/pike/-/issues/10058
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # Use GNU sed on macOS to avoid this build failure:
+    # sed: RE error: illegal byte sequence
+    # Reported upstream here: https://git.lysator.liu.se/pikelang/pike/-/issues/10082.
+    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
 
     system "make", "CONFIGUREARGS='--prefix=#{prefix} --without-bundles --with-abi=64'"
 
