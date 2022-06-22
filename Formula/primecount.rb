@@ -7,12 +7,16 @@ class Primecount < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/primecount"
-    sha256 cellar: :any, mojave: "14a2ed82cf7b076787ca8a13da257725d1c131c7e91916d3f94588c7d8de1ec0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4c13bbdd51a9d48010b49e87e2ed9c2275693f0f022f4f6e20422cf8548c173a"
   end
 
   depends_on "cmake" => :build
-  depends_on "libomp"
   depends_on "primesieve"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON",
