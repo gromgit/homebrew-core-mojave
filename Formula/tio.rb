@@ -1,13 +1,13 @@
 class Tio < Formula
   desc "Simple TTY terminal I/O application"
   homepage "https://tio.github.io"
-  url "https://github.com/tio/tio/releases/download/v1.37/tio-1.37.tar.xz"
-  sha256 "a54cd09baeaabd306fdea486b8161eea6ea75bb970b27cae0e8e407fb2dd7181"
+  url "https://github.com/tio/tio/releases/download/v1.40/tio-1.40.tar.xz"
+  sha256 "beafc4763552ff7cf3a368e8af36258018ef85fac32133c4635051d7615ab527"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tio"
-    sha256 cellar: :any, mojave: "9cfbb439d79648ff85802275291c503fbc1f502da31092c91de3599efe9ad804"
+    sha256 cellar: :any, mojave: "7b234db2eb9117dd2374e431f3d4edc53feeea59963d1f93339b02b6aedbe727"
   end
 
   depends_on "meson" => :build
