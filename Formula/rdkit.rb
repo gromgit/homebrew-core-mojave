@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
-  url "https://github.com/rdkit/rdkit/archive/Release_2022_03_2.tar.gz"
-  sha256 "e06ac1ea39a3200d27aef4d77745bba27fadfcac22bb115ffa204707487e9ae1"
+  url "https://github.com/rdkit/rdkit/archive/Release_2022_03_3.tar.gz"
+  sha256 "e2832077e258bfe906c9c0dc1664d2ba4fc0acf98bfe073c6383cb1d051b6ef0"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -16,10 +16,9 @@ class Rdkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rdkit"
-    sha256 cellar: :any, mojave: "5aadfb00093b7418ec083407cf5f66d804a47bf9a08d9073554be87b5bb4737f"
+    sha256 cellar: :any, mojave: "da902a7d712953c674a6650f51e359d91985d2a0dfe789324dd7f7fe7b87f235"
   end
 
-  depends_on "catch2" => :build
   depends_on "cmake" => :build
   depends_on "swig" => :build
   depends_on "boost"
@@ -68,7 +67,6 @@ class Rdkit < Formula
       -DPYTHON_INCLUDE_DIR=#{py3include}
       -DPYTHON_EXECUTABLE=#{python_executable}
       -DPYTHON_NUMPY_INCLUDE_PATH=#{numpy_include}
-      -DCATCH_DIR=#{Formula["catch2"].opt_include}/catch2
     ]
 
     system "cmake", ".", *args
