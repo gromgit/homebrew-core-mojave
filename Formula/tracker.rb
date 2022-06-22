@@ -1,8 +1,8 @@
 class Tracker < Formula
   desc "Library and daemon that is an efficient search engine and triplestore"
   homepage "https://gnome.pages.gitlab.gnome.org/tracker/"
-  url "https://download.gnome.org/sources/tracker/3.3/tracker-3.3.0.tar.xz"
-  sha256 "0706f96fe7f95df42acec812c1de7b4593a0d648321ca83506a9d71e22417bda"
+  url "https://download.gnome.org/sources/tracker/3.3/tracker-3.3.1.tar.xz"
+  sha256 "5ad6f5bc97781ebf55ecd6947cd4ae7ff4192516580d10bd8380f1dd47196ed2"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   # Tracker doesn't follow GNOME's "even-numbered minor is stable" version scheme.
@@ -13,7 +13,7 @@ class Tracker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tracker"
-    sha256 mojave: "80c3e0556ce7f1b9a276e5d8d236de8f2e186d73a28ef648af71756ee344397d"
+    sha256 mojave: "69e97d028a6a703331bc1b7f7485ba4d6c6b9ba5f3ffe217a353d8867da95455"
   end
 
   depends_on "gobject-introspection" => :build
@@ -30,18 +30,6 @@ class Tracker < Formula
   depends_on "sqlite"
 
   uses_from_macos "libxml2"
-
-  # Fix build error: tracker_init_remote: code should not be reached
-  patch do
-    url "https://gitlab.gnome.org/GNOME/tracker/-/commit/95291bf791ead1db062dfe0f0b4626393cb58338.diff"
-    sha256 "c3485e0323fca437a95f1f0c6ce002da86781d01c27a429ed0a4f7e408a22f2f"
-  end
-
-  # Fix build error: Invalid GType function: 'tracker_endpoint_http_get_type'
-  patch do
-    url "https://gitlab.gnome.org/GNOME/tracker/-/commit/471f7fd87da2fea4aeebdddb3579e95a14208647.diff"
-    sha256 "8a90b9c197a63f55a4d126afd2e9ccad230856ba5b9bdd5c2a6a861419e57ac5"
-  end
 
   def install
     args = std_meson_args + %w[
