@@ -1,14 +1,14 @@
 class Selene < Formula
   desc "Blazing-fast modern Lua linter"
   homepage "https://kampfkarren.github.io/selene"
-  url "https://github.com/Kampfkarren/selene/archive/0.17.0.tar.gz"
-  sha256 "c9dd792345c2802ed4bc41fa94a21945e5d67bd51d3c13fff61bbe2a08c0a287"
+  url "https://github.com/Kampfkarren/selene/archive/0.18.2.tar.gz"
+  sha256 "16401ee92f0df8d6384160110c5f30e5935b4cd687a6d24de4e744278223ce30"
   license "MPL-2.0"
   head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/selene"
-    sha256 cellar: :any_skip_relocation, mojave: "e8dc3fc658b1e568562550cc4e9a83a7c4eaae8db32957779f7069f55c863dde"
+    sha256 cellar: :any_skip_relocation, mojave: "83ff60843ff1e5fef7220c5f5234df00cfc2fbdca7812451a545ce683c43a22a"
   end
 
   depends_on "rust" => :build
