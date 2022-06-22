@@ -2,9 +2,9 @@ class PhpAT74 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-7.4.29.tar.xz"
-  mirror "https://fossies.org/linux/www/php-7.4.29.tar.xz"
-  sha256 "7d0f07869f33311ff3fe1138dc0d6c0d673c37fcb737eaed2c6c10a949f1aed6"
+  url "https://www.php.net/distributions/php-7.4.30.tar.xz"
+  mirror "https://fossies.org/linux/www/php-7.4.30.tar.xz"
+  sha256 "ea72a34f32c67e79ac2da7dfe96177f3c451c3eefae5810ba13312ed398ba70d"
   license "PHP-3.01"
 
   livecheck do
@@ -14,7 +14,7 @@ class PhpAT74 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@7.4"
-    sha256 mojave: "2bd74e3b6c3570587d15767e858df85a864f03b1de4cd2390ce3aaf5355859c1"
+    sha256 mojave: "65f293d3d46bea17737e8d2124c98b1817af8b14746e3f5b6e50bee637533aa7"
   end
 
   keg_only :versioned_formula
