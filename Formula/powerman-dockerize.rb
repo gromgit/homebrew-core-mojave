@@ -7,21 +7,15 @@ class PowermanDockerize < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/powerman-dockerize"
-    sha256 cellar: :any_skip_relocation, mojave: "64dbba5462483e388f577ce2bcbe634bbd2890dec9d3968cd20860a7f7dc64e3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8c20cd070564dbd41c5133f68120a25ed20d10aba6b9004aad125cfcb8643649"
   end
 
   depends_on "go" => :build
   conflicts_with "dockerize", because: "powerman-dockerize and dockerize install conflicting executables"
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "auto"
-    (buildpath/"src/github.com/powerman/dockerize").install buildpath.children
-    ENV.append_path "PATH", buildpath/"bin"
-
-    cd "src/github.com/powerman/dockerize" do
-      system "go", "build", *std_go_args(output: bin/"dockerize", ldflags: "-s -w -X main.ver=#{version}")
-    end
+    system "go", "build", *std_go_args(output: bin/"dockerize", ldflags: "-s -w -X main.ver=#{version}")
   end
 
   test do
