@@ -2,13 +2,13 @@ class Tepl < Formula
   desc "GNOME Text Editor Product Line"
   homepage "https://gitlab.gnome.org/swilmet/tepl"
   url "https://gitlab.gnome.org/swilmet/tepl.git",
-      tag:      "6.0.2",
-      revision: "52b2715293a8cb8c2be853686be0bc711cef6759"
+      tag:      "6.1.1",
+      revision: "a3538fdee2f3518541bfc4041286143e6c8e16de"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tepl"
-    sha256 mojave: "5bf5e3af3f3beaf4e1cd5c08067d145798febe0a17203c6e457978e805dffeed"
+    sha256 mojave: "53938437f5302aeedbac04bd16ad6bbfcf1077962e54346d17b404d5c685be61"
   end
 
   depends_on "gobject-introspection" => :build
