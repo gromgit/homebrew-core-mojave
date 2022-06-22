@@ -1,10 +1,9 @@
 class Suil < Formula
   desc "Lightweight C library for loading and wrapping LV2 plugin UIs"
   homepage "https://drobilla.net/software/suil.html"
-  url "https://download.drobilla.net/suil-0.10.10.tar.bz2"
-  sha256 "750f08e6b7dc941a5e694c484aab02f69af5aa90edcc9fb2ffb4fb45f1574bfb"
+  url "https://download.drobilla.net/suil-0.10.12.tar.bz2"
+  sha256 "daa763b231b22a1f532530d3e04c1fae48d1e1e03785e23c9ac138f207b87ecd"
   license "ISC"
-  revision 1
   head "https://gitlab.com/lv2/suil.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,8 @@ class Suil < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "4b952357f77ca23c77da7b02bd5b95da858d74e33378272a7bf7c63e759fb0af"
-    sha256 arm64_big_sur:  "11af96a8cd470b08da0bd49cb3b620ae81d89e9589c5ed44a533e2cb93d5133f"
-    sha256 monterey:       "ce9decde67d416caaae2d8e0be74eb1a2f0497d856f6a4e40d13a84c71ebd3b2"
-    sha256 big_sur:        "02a8eed42b15c099954dce4741c71b0e5f9ae652fce48921e4920a3efc779e01"
-    sha256 catalina:       "4a74f4c1cbf9b1e67c7fbda45e5ca67b5163757b70ee62c33a7e66b136a2d4c1"
-    sha256 mojave:         "2bc87e39cf2cb0a66c983c01834d39c2f1cccdddbe4db28331e0dcb6cf64c3fb"
-    sha256 x86_64_linux:   "b652f25be19c7044ef7f11818488054459a23719afe5cca1118be8a9dfac1547"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/suil"
+    sha256 mojave: "6da1adcce12f95cc035508da4ede5d8ce56cf70afb7801a28274c730f64d186e"
   end
 
   depends_on "pkg-config" => :build
@@ -29,12 +23,9 @@ class Suil < Formula
   depends_on "lv2"
   depends_on "qt@5"
 
-  # Disable qt5_in_gtk3 because it depends upon X11
-  # Can be removed if https://gitlab.com/lv2/suil/-/merge_requests/1 is merged
-  patch do
-    url "https://gitlab.com/lv2/suil/-/commit/33ea47e18ddc1eb384e75622c0e75164d351f2c0.diff"
-    sha256 "2f335107e26c503460965953f94410e458c5e8dd86a89ce039f65c4e3ae16ba7"
-  end
+  # Fix build issue, remove in next release
+  # upstream commit ref, https://github.com/lv2/suil/commit/7183178b8e35b9a05f2a90e1d091b34c5f846ef5
+  patch :DATA
 
   def install
     ENV.cxx11
@@ -69,3 +60,40 @@ class Suil < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/src/gtk2_in_qt5.cpp b/src/gtk2_in_qt5.cpp
+index a5c98f1..47c8271 100644
+--- a/src/gtk2_in_qt5.cpp
++++ b/src/gtk2_in_qt5.cpp
+@@ -41,6 +41,7 @@ SUIL_DISABLE_GTK_WARNINGS
+ #include <gtk/gtk.h>
+ SUIL_RESTORE_WARNINGS
+
++#include <cstdint>
+ #include <cstdlib>
+
+ extern "C" {
+@@ -95,8 +96,7 @@ wrapper_wrap(SuilWrapper* wrapper, SuilInstance* instance)
+   gtk_container_add(GTK_CONTAINER(plug), widget);
+   gtk_widget_show_all(plug);
+
+-  const WId wid =
+-    static_cast<WId>(gtk_plug_get_id(reinterpret_cast<GtkPlug*>(plug)));
++  const WId wid = (WId)gtk_plug_get_id(GTK_PLUG(plug));
+
+   QWindow* window = QWindow::fromWinId(wid);
+   QWidget* container =
+diff --git a/src/qt5_in_gtk.cpp b/src/qt5_in_gtk.cpp
+index 6277daa..1c614c7 100644
+--- a/src/qt5_in_gtk.cpp
++++ b/src/qt5_in_gtk.cpp
+@@ -125,7 +125,7 @@ suil_qt_wrapper_realize(GtkWidget* w, gpointer)
+ {
+   SuilQtWrapper* const wrap = SUIL_QT_WRAPPER(w);
+   GtkSocket* const     s    = GTK_SOCKET(w);
+-  const WId            id   = static_cast<WId>(gtk_socket_get_id(s));
++  const WId            id   = (WId)gtk_socket_get_id(s);
+
+   wrap->qembed->winId();
+   wrap->qembed->windowHandle()->setParent(QWindow::fromWinId(id));
