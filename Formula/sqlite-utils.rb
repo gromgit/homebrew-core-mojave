@@ -2,13 +2,13 @@ class SqliteUtils < Formula
   include Language::Python::Virtualenv
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/0f/1d/552a8c712e9c1bf30fbd2a16889202b65c44726176975e6cef6664308912/sqlite-utils-3.26.1.tar.gz"
-  sha256 "18aff4dface28ce4a2f4859948589f5eb7b163c772a3a71fc16c9a174eb1f367"
+  url "https://files.pythonhosted.org/packages/92/b6/0a91a81b21b7be2dfdb2e964941000d299168dea582bfb899dfae5425abf/sqlite-utils-3.27.tar.gz"
+  sha256 "49eadc3cad92bebabbac450b825be3ab5277155d31d1a1c72acef61e65e44c6a"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlite-utils"
-    sha256 cellar: :any_skip_relocation, mojave: "d8a8967b59ec01251f2d60480cf5773f99b4fea23b06c3fca35b574b65e9d1ce"
+    sha256 cellar: :any_skip_relocation, mojave: "8c7131aade07060e6b983e8932af806df32f357780c015cfa89208bd99f5a892"
   end
 
   depends_on "python-tabulate"
