@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-0.2.95.tar.xz"
-  sha256 "94bffa3c7e7c1633a95a914c2d5b6fcf8d133e944f8e3455b5742d70e37b0231"
+  url "https://stian.cubic.org/ocp/ocp-0.2.99.tar.xz"
+  sha256 "d00165e206403b876b18edfc264abc8b6ce3d772be7e784fe4d358e37e57affd"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Ocp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocp"
-    sha256 mojave: "0ec6f1cde5fdece01cbe95f82466d1ee6ed1f5c433afb1d9735ccec44037f51e"
+    sha256 mojave: "e2cf0de94a7e7a5757733b77354c6360f5bb0a4ab127578893a6cecdc312a34d"
   end
 
   depends_on "pkg-config" => :build
