@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://coreos.com/operators/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.21.0",
-      revision: "89d21a133750aee994476736fa9523656c793588"
+      tag:      "v1.22.0",
+      revision: "9e95050a94577d1f4ecbaeb6c2755a9d2c231289"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
@@ -14,12 +14,10 @@ class OperatorSdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/operator-sdk"
-    sha256 cellar: :any_skip_relocation, mojave: "3172f0f931fdf0dfb973dab2d88a5f2fe1b2fd36d3c4e36e1863231b7ebdde62"
+    sha256 cellar: :any_skip_relocation, mojave: "e9554b4233c1d9a5eacc21c0c9951fc16fd5605ecf05096692b8cddd004bd54c"
   end
 
-  # Resolves upstream issue: https://github.com/operator-framework/operator-sdk/issues/5689
-  # Should be updated to "go" when the following upstream issue is resolved: https://github.com/operator-framework/operator-sdk/issues/5740
-  depends_on "go@1.17"
+  depends_on "go"
 
   def install
     ENV["GOBIN"] = libexec/"bin"
