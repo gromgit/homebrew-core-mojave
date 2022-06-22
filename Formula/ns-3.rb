@@ -4,16 +4,17 @@ class Ns3 < Formula
   url "https://gitlab.com/nsnam/ns-3-dev/-/archive/ns-3.35/ns-3-dev-ns-3.35.tar.bz2"
   sha256 "946abd1be8eeeb2b0f72a67f9d5fa3b9839bb6973297d4601c017a6c3a50fc10"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ns-3"
-    sha256 cellar: :any, mojave: "1b563f3af10710a4318d172aa2d11b392710f6c3caefd2d2cf89ce7eedc70d53"
+    sha256 cellar: :any, mojave: "42b68c118cfa1954f4acddf43f36338a6f725da0d3d93d634d194ed1e2764299"
   end
 
   depends_on "boost" => :build
   depends_on "python@3.10" => [:build, :test]
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "sqlite"
 
