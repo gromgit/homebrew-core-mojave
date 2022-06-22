@@ -1,13 +1,13 @@
 class Tgui < Formula
   desc "GUI library for use with sfml"
   homepage "https://tgui.eu"
-  url "https://github.com/texus/TGUI/archive/v0.9.3.tar.gz"
-  sha256 "187acfa850e24e3676e656a7dbe53736c98ca2577d756e9c96c9dad6374ffa0e"
+  url "https://github.com/texus/TGUI/archive/v0.9.4.tar.gz"
+  sha256 "08ce4893a5ab25a151be317c87395ac3567654547c9854b16c3142e750389cf6"
   license "Zlib"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tgui"
-    sha256 cellar: :any, mojave: "7c9721aff964935035f23d4be4417ea8fad4ce58f04fda76b44210a811096300"
+    sha256 cellar: :any, mojave: "05693dfa03fef6f49d5e61f621f55abf72c0f957823ee77bf5ff64ccbc006440"
   end
 
   depends_on "cmake" => :build
