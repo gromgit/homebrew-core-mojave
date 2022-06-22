@@ -1,8 +1,8 @@
 class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
   homepage "https://github.com/PostgREST/postgrest"
-  url "https://github.com/PostgREST/postgrest/archive/v9.0.0.tar.gz"
-  sha256 "14ce20a0e4eb12f7cacb73360c3d40c837a4007d94b7a82f5a586f34587bf233"
+  url "https://github.com/PostgREST/postgrest/archive/v9.0.1.tar.gz"
+  sha256 "45ea15e617c209fffbbff90d90f55237cd15d62a4600d1bf86c87693fb973702"
   license "MIT"
   head "https://github.com/PostgREST/postgrest.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Postgrest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgrest"
-    sha256 cellar: :any, mojave: "8c4b3ffe272ed91c846b448b2118d8e1ae9f5ecd940d910722a23db95b1fa68b"
+    sha256 cellar: :any, mojave: "63ec6748e7c7c3277d0cb9087f44d7630d1061e9e1617fda88625bd32ed07184"
   end
 
   depends_on "cabal-install" => :build
