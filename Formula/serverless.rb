@@ -3,14 +3,14 @@ require "language/node"
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https://www.serverless.com/"
-  url "https://github.com/serverless/serverless/archive/v3.18.2.tar.gz"
-  sha256 "2b2d0722eb738cbcfda16c7cc2a15db2f0f12f905da92979633b813b2dbdfc3c"
+  url "https://github.com/serverless/serverless/archive/v3.19.0.tar.gz"
+  sha256 "3cb4402135903864b93a7dea105873f7523febfb8b622352fa4bbcdd6fc67678"
   license "MIT"
   head "https://github.com/serverless/serverless.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serverless"
-    sha256 cellar: :any_skip_relocation, mojave: "8c8545d5bf67e70da3a609e439784246dd186165104f4dcdf21911161fbbddef"
+    sha256 cellar: :any_skip_relocation, mojave: "dff70ac85eb7dcb5b928312b2cb02e865808690ae3f8e7f9814c423c0acd2912"
   end
 
   depends_on "node"
@@ -25,6 +25,9 @@ class Serverless < Formula
       .glob("sdk-py/serverless_sdk/vendor/wrapt/_wrappers.cpython-*-linux-gnu.so")
       .map(&:unlink)
       .empty? && raise("Unable to find wrapt shared library to delete.")
+
+    # Replace universal binaries with their native slices
+    deuniversalize_machos libexec/"lib/node_modules/serverless/node_modules/fsevents/fsevents.node"
   end
 
   test do
