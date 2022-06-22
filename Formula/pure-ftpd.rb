@@ -1,8 +1,8 @@
 class PureFtpd < Formula
   desc "Secure and efficient FTP server"
   homepage "https://www.pureftpd.org/"
-  url "https://download.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-1.0.50.tar.gz"
-  sha256 "abe2f94eb40b330d4dc22b159991f44e5e515212f8e887049dccdef266d0ea23"
+  url "https://download.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-1.0.51.tar.gz"
+  sha256 "4160f66b76615eea2397eac4ea3f0a146b7928207b79bc4cc2f99ad7b7bd9513"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "ISC"]
 
   livecheck do
@@ -12,12 +12,13 @@ class PureFtpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pure-ftpd"
-    rebuild 2
-    sha256 cellar: :any, mojave: "e9376e020ebb1520c4656cf55941cb8fc51b8d4252e299369a9f87c088cd01d1"
+    sha256 cellar: :any, mojave: "e133cb099acea4e7dde445f77748970721749792534ff5986c272aa59e8f1237"
   end
 
   depends_on "libsodium"
   depends_on "openssl@1.1"
+
+  uses_from_macos "libxcrypt"
 
   on_linux do
     depends_on "linux-pam"
