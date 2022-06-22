@@ -3,14 +3,13 @@ class Networkit < Formula
 
   desc "Performance toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
-  url "https://github.com/networkit/networkit/archive/9.1.1.tar.gz"
-  sha256 "0376b3b7b8ba1fefb46549c7dd2cf979237a24708293715b1da92b4da272a742"
+  url "https://github.com/networkit/networkit/archive/10.0.tar.gz"
+  sha256 "77187a96dea59e5ba1f60de7ed63d45672671310f0b844a1361557762c2063f3"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/networkit"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f390f1b6dffa8cc012b0d4d150a19e13813454e6a416801bce2f63d7c35c5fc7"
+    sha256 cellar: :any, mojave: "1cda82b5eca5f61c5387ba56333f592b4b4982506c1e77e82e38a9978a236745"
   end
 
   depends_on "cmake" => :build
