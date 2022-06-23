@@ -3,13 +3,13 @@ require "language/node"
 class YamlLanguageServer < Formula
   desc "Language Server for Yaml Files"
   homepage "https://github.com/redhat-developer/yaml-language-server"
-  url "https://registry.npmjs.org/yaml-language-server/-/yaml-language-server-1.7.0.tgz"
-  sha256 "6bd4fc5abc57e0f68d2ddf87b19194292345d262f2cc6dd12eef683380467e49"
+  url "https://registry.npmjs.org/yaml-language-server/-/yaml-language-server-1.8.0.tgz"
+  sha256 "5d97dd6af0d88ce85ebe72a235e8268d5b47854bcadaccdc82d594c7b6680ebd"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaml-language-server"
-    sha256 cellar: :any_skip_relocation, mojave: "4646abe4a982ea751cafe45e1397279edec0bf2ab26de3a082844d5f908d368b"
+    sha256 cellar: :any_skip_relocation, mojave: "10549479b7c1fc9d629e3e615d2cda90efc2edf6299556d9315764bf81c22e44"
   end
 
   depends_on "node"
