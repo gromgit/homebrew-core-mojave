@@ -1,8 +1,8 @@
 class Vapoursynth < Formula
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
-  url "https://github.com/vapoursynth/vapoursynth/archive/R58.tar.gz"
-  sha256 "19c1169eba61d7044354da3247a3a7c02a058220054ef2a8f501bfac5fed3bfc"
+  url "https://github.com/vapoursynth/vapoursynth/archive/R59.tar.gz"
+  sha256 "d713f767195cb3a9a7ccb97b1e61e0cf5a9332eed86c6362badfff6857792a86"
   license "LGPL-2.1-or-later"
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Vapoursynth < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vapoursynth"
-    sha256 cellar: :any, mojave: "ab023bbe1be932fe4f4793a9b6a4efa3de374f02c2d2bcc8160d5ab22a3ecc8b"
+    sha256 cellar: :any, mojave: "0011f7410cb5df94a91be17bc9da1925a3863edd3ee50509c1310364f5410a38"
   end
 
   depends_on "autoconf" => :build
