@@ -6,11 +6,13 @@ class Glade < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "2a55e22c571d0d158c1b66bf18c35c44aeaed0694d139f13c48f5a6642b4785b"
-    sha256 big_sur:       "0fb77b21e6176c6690410a76d843f4582c1ef833e54ce5efa620bfce514e7af7"
-    sha256 catalina:      "e5c239c3d05350ff8a8710ce6beecf7fd22461336e77d55febb338b6a1456a61"
-    sha256 mojave:        "0b641d56f385a798fafe8fe424191de83207dea5b0edcf9d06c8b8b03ad0c68f"
-    sha256 x86_64_linux:  "1ab1f368edebbb88fd763659089ffa8f987f2416583f3f59fb732300088b4f8e"
+    sha256 arm64_monterey: "2fa733feec86b8379ad38126164c4f4e14500cd72c8564afe505110f503c66f3"
+    sha256 arm64_big_sur:  "2a55e22c571d0d158c1b66bf18c35c44aeaed0694d139f13c48f5a6642b4785b"
+    sha256 monterey:       "a232d76fa175b219228c15125b8e1b7ba47a5e6788787dd55fdd4773186bae1e"
+    sha256 big_sur:        "0fb77b21e6176c6690410a76d843f4582c1ef833e54ce5efa620bfce514e7af7"
+    sha256 catalina:       "e5c239c3d05350ff8a8710ce6beecf7fd22461336e77d55febb338b6a1456a61"
+    sha256 mojave:         "0b641d56f385a798fafe8fe424191de83207dea5b0edcf9d06c8b8b03ad0c68f"
+    sha256 x86_64_linux:   "1ab1f368edebbb88fd763659089ffa8f987f2416583f3f59fb732300088b4f8e"
   end
 
   depends_on "docbook-xsl" => :build
@@ -29,6 +31,17 @@ class Glade < Formula
 
   on_macos do
     depends_on "gtk-mac-integration"
+  end
+
+  # Apply 2 upstream commits to fix build with newer meson.  Remove with next release.
+  patch do
+    url "https://gitlab.gnome.org/GNOME/glade/-/commit/6da47128e8da04edccccdfcbc9101940fc15fe3a.diff"
+    sha256 "81eaacf4c9dd1c1a907f99582a81db248447935b4048e5084098041c78f9b3fb"
+  end
+
+  patch do
+    url "https://gitlab.gnome.org/GNOME/glade/-/commit/efdd5338b034a11c5d617684d92d11edc600965e.diff"
+    sha256 "37badb7b5af87d51c3eea7677547b93deb5bda51c2fc710c64de1b7cf843bf4b"
   end
 
   def install
