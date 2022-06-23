@@ -1,9 +1,9 @@
 class Wireshark < Formula
   desc "Graphical network analyzer and capture tool"
   homepage "https://www.wireshark.org"
-  url "https://www.wireshark.org/download/src/all-versions/wireshark-3.6.5.tar.xz"
-  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-3.6.5.tar.xz"
-  sha256 "a2d741d60ff3516137d4b9f38cdc07eee54a56ec36046f4c3afee6bfb4f6eaa1"
+  url "https://www.wireshark.org/download/src/all-versions/wireshark-3.6.6.tar.xz"
+  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-3.6.6.tar.xz"
+  sha256 "beba27aeb4d3bb78df6202e88dda69e1dba9b0561044957bcac47e68b6ac28ba"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Wireshark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wireshark"
-    sha256 mojave: "eea8f1c64d3217a4b8c97544095ed303e399285fb489ee032c050217fae7bdf1"
+    sha256 mojave: "7688cfed8189319ce6eb334284eb471f8ecb7977610f3639a85deb89f7c0ebf3"
   end
 
   depends_on "cmake" => :build
