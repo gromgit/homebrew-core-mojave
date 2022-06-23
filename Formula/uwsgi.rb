@@ -4,11 +4,12 @@ class Uwsgi < Formula
   url "https://files.pythonhosted.org/packages/24/fd/93851e4a076719199868d4c918cc93a52742e68370188c1c570a6e42a54f/uwsgi-2.0.20.tar.gz"
   sha256 "88ab9867d8973d8ae84719cf233b7dafc54326fcaec89683c3f9f77c002cdff9"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uwsgi"
-    sha256 mojave: "0a3b2c65095bad449586755a88ddd00f0ecc9fa48cc9c710458b5ee41b8a8aa3"
+    sha256 mojave: "651008a54596b09ad484db8c8afd9bb953022949e8a7f2d66e6bec941319f19f"
   end
 
   depends_on "pkg-config" => :build
@@ -18,6 +19,7 @@ class Uwsgi < Formula
   depends_on "yajl"
 
   uses_from_macos "curl"
+  uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "openldap"
   uses_from_macos "perl"
