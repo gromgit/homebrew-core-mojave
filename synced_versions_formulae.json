@@ -4,6 +4,7 @@
   ["apache-pulsar", "libpulsar"],
   ["avro-c", "avro-cpp", "avro-tools"],
   ["aws-console", "cfn-format", "rain"],
+  ["binutils", "gold"],
   ["boost", "boost-bcp", "boost-mpi", "boost-python3"],
   ["bundler-completion", "gem-completion", "rails-completion", "ruby-completion"],
   ["buildifier", "buildozer"],
