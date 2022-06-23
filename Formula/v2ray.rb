@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://github.com/v2fly/v2ray-core/archive/v4.45.0.tar.gz"
-  sha256 "fb8731295d8bbad9ef9157dbd3bc62655752d36544e0cc4077d4fa8a8a4ea295"
+  url "https://github.com/v2fly/v2ray-core/archive/v4.45.2.tar.gz"
+  sha256 "7a126bac7df32f627f34331778cb39ac99db18d7edcd45628db06e123fa0694b"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -13,7 +13,7 @@ class V2ray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v2ray"
-    sha256 cellar: :any_skip_relocation, mojave: "a38d746fa7dd1bf567dcac30ae27650f31fd4dc6b0b8e6dddba4c0bf9815f9f3"
+    sha256 cellar: :any_skip_relocation, mojave: "91162940b478f1d96438578788547cabb380ae9fbb51aeb76d38cb52e66efcf6"
   end
 
   # Bump to Go 1.18 with when v5 releases.
