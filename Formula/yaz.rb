@@ -2,6 +2,7 @@ class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
     url "https://ftp.indexdata.com/pub/yaz/yaz-5.32.0.tar.gz"
@@ -15,7 +16,7 @@ class Yaz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaz"
-    sha256 cellar: :any, mojave: "6596427fd0bd87538820747047fed840c47e5baab1d79649316bfecb94ce0cba"
+    sha256 cellar: :any, mojave: "8ff3361a6f6b10677fa894deab210ee69e1534bbaad86b4701f0f37591bf494a"
   end
 
   head do
