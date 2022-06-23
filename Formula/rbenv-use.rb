@@ -5,6 +5,10 @@ class RbenvUse < Formula
   sha256 "f831dc9b8a43e30499e62928d13f5d354bf4c505b3f6b7fc1a1a9956ed9e538c"
   revision 1
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   # https://github.com/rkh/rbenv-use/issues/9
   disable! date: "2021-06-19", because: :no_license
 
