@@ -14,10 +14,15 @@ class Zlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zlib"
-    sha256 cellar: :any, mojave: "6974883b5e4c59d54d9a66d2eb5f099241e3b061f6c540db49bbc968ef2c44a6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4531c939eebd197b452d7dd78f018679a54e77508e8348514f5c96cf4981d500"
   end
 
   keg_only :provided_by_macos
+
+  on_linux do
+    depends_on "glibc@2.13" => :build
+  end
 
   # https://zlib.net/zlib_how.html
   resource "test_artifact" do
