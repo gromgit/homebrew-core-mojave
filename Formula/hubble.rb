@@ -1,13 +1,13 @@
 class Hubble < Formula
   desc "Network, Service & Security Observability for Kubernetes using eBPF"
   homepage "https://github.com/cilium/hubble"
-  url "https://github.com/cilium/hubble/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "4de209eb1cb54eb764efd4569b2fa59a4a92ef5c86055eff90805dad7a0dde6f"
+  url "https://github.com/cilium/hubble/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "4b113cd0b89b57d6e59d3596ede6c04a731c00b3fbff8c2641808bcb31b5faa9"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hubble"
-    sha256 cellar: :any_skip_relocation, mojave: "995788074fc309a57715de7a21718840f01d54da58ba39bc2a049a0399f62b47"
+    sha256 cellar: :any_skip_relocation, mojave: "13b2bfa9551f0f3e1dfaaecc75684fe6c9656fd7335ccedc8b0d70a6c406f6d1"
   end
 
   depends_on "go" => :build
