@@ -2,14 +2,14 @@ class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
   url "https://github.com/yorkie-team/yorkie.git",
-    tag:      "v0.2.7",
-    revision: "d5a7dea64f9353510f95a396ae7cfab5d64a376a"
+    tag:      "v0.2.8",
+    revision: "aea03043b2d62691bf8c9c26dc3dcb804b87381a"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yorkie"
-    sha256 cellar: :any_skip_relocation, mojave: "eaf86b4a914b69bfa2ec295ff2bd06445576e9eec40cf3d83948818a4b491cfa"
+    sha256 cellar: :any_skip_relocation, mojave: "75c0f8f18181f1c98ced3eb2ee520a1e9406bc23a97cb43fe5ac6f9fa0975276"
   end
 
   depends_on "go" => :build
