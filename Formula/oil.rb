@@ -1,8 +1,8 @@
 class Oil < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://www.oilshell.org/"
-  url "https://www.oilshell.org/download/oil-0.10.1.tar.gz"
-  sha256 "c55c34a52f13eb93d4888612d95dcb451a19e474d6acd75197be055fe020593c"
+  url "https://www.oilshell.org/download/oil-0.11.0.tar.gz"
+  sha256 "209ad011736585f85723672ab8f8ecac73f325015eef04eb66ec3b9989dd4ef4"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Oil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oil"
-    sha256 mojave: "722f1913ccc7bbd1ed1d4b808d0ebc02a56a234d3fd48e37ff770843545e3706"
+    sha256 mojave: "b3968c5db72b59fc9cc73423f2a3e35b1da181e29ead64a808a86f0e4e4e7bf4"
   end
 
   depends_on "readline"
