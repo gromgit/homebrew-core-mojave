@@ -2,8 +2,8 @@ class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
   homepage "https://tanka.dev"
   url "https://github.com/grafana/tanka.git",
-      tag:      "v0.21.0",
-      revision: "68d625e128b2678996ff442c385f5361c7987491"
+      tag:      "v0.22.1",
+      revision: "ed87b3829074f6b26f62cea7ee190a43b910c4ec"
   license "Apache-2.0"
   head "https://github.com/grafana/tanka.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Tanka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tanka"
-    sha256 cellar: :any_skip_relocation, mojave: "4ff0b70340a6c5d8b4239bfc6cd7f6b81712252cd047694a548c6450d19ab357"
+    sha256 cellar: :any_skip_relocation, mojave: "358838c34d877aa59c32f69e8517149dfb750d7950abbdbafd38c748018ba6e3"
   end
 
   depends_on "go" => :build
