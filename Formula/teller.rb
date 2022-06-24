@@ -2,14 +2,14 @@ class Teller < Formula
   desc "Secrets management tool for developers built in Go"
   homepage "https://tlr.dev/"
   url "https://github.com/SpectralOps/teller.git",
-      tag:      "v1.5.1",
-      revision: "6c67edf1419066fb7e75d487b06b4e43f1646060"
+      tag:      "v1.5.2",
+      revision: "8c37a9df22f2f64ba10f71247cc8bcdf95f4ff51"
   license "Apache-2.0"
   head "https://github.com/SpectralOps/teller.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teller"
-    sha256 cellar: :any_skip_relocation, mojave: "0fb5312a975dff74c15cff5a1062b155fbdc8fba08cc9b72af89760b8546d6f9"
+    sha256 cellar: :any_skip_relocation, mojave: "a1b8d09486a38bec66ff0702f8bc52c85f5953c35fc7b26ad7de639dc8ead913"
   end
 
   depends_on "go" => :build
