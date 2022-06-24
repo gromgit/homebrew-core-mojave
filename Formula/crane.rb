@@ -1,13 +1,13 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
   homepage "https://github.com/google/go-containerregistry"
-  url "https://github.com/google/go-containerregistry/archive/v0.9.0.tar.gz"
-  sha256 "9cd3de5d5675ca79ff7251491c481f6afa54aa6a68bbbbf92613d66bfb39aa08"
+  url "https://github.com/google/go-containerregistry/archive/v0.10.0.tar.gz"
+  sha256 "15d3368c12678cfb56ff2e9121d8f590b6ecfb6759ef29d33a8fb042b3979b4a"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crane"
-    sha256 cellar: :any_skip_relocation, mojave: "58368026c8f0658f647af86c5fa7567354da9e4c44128ca7ba728facfd844bc9"
+    sha256 cellar: :any_skip_relocation, mojave: "88a4e912830619d183f65e13b69a6a1f3506b4a186b301eac0d368c3cf4dba9e"
   end
 
   depends_on "go" => :build
