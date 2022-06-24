@@ -1,27 +1,23 @@
 class Swiftformat < Formula
   desc "Formatting tool for reformatting Swift code"
   homepage "https://github.com/nicklockwood/SwiftFormat"
-  url "https://github.com/nicklockwood/SwiftFormat/archive/0.49.9.tar.gz"
-  sha256 "0d015ea7d9e37f5410bfd0f788c719ab566eba9160f3a977388318b5c500c75c"
+  url "https://github.com/nicklockwood/SwiftFormat/archive/0.49.11.tar.gz"
+  sha256 "418b0b44a85005787b1bf6ce89a0660cdc2bed22768e948f13ac268beaa910df"
   license "MIT"
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swiftformat"
-    sha256 cellar: :any_skip_relocation, mojave: "6f3139d674e6de81cc0f879825b17c6301df2e01a64bc9f9ef3cfcf52c55434d"
+    sha256 cellar: :any_skip_relocation, mojave: "b51b60fe0ced0412df13e4f0b099a980b34eb205a668f2d0fb513d7f59d6d685"
   end
 
   depends_on xcode: ["10.1", :build]
-  depends_on :macos
+
+  uses_from_macos "swift"
 
   def install
-    xcodebuild "-arch", Hardware::CPU.arch,
-        "-project", "SwiftFormat.xcodeproj",
-        "-scheme", "SwiftFormat (Command Line Tool)",
-        "-configuration", "Release",
-        "CODE_SIGN_IDENTITY=",
-        "SYMROOT=build", "OBJROOT=build"
-    bin.install "build/Release/swiftformat"
+    system "swift", "build", "--disable-sandbox", "--configuration", "release"
+    bin.install ".build/release/swiftformat"
   end
 
   test do
