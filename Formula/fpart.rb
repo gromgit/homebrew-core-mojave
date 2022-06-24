@@ -1,13 +1,13 @@
 class Fpart < Formula
   desc "Sorts file trees and packs them into bags"
   homepage "https://github.com/martymac/fpart/"
-  url "https://github.com/martymac/fpart/archive/fpart-1.5.0.tar.gz"
-  sha256 "64aa6dcb519a9ce60e174ece9e390839d90ea3ad4d7b43d30e1b6de681918b6c"
+  url "https://github.com/martymac/fpart/archive/fpart-1.5.1.tar.gz"
+  sha256 "c353a28f48e4c08f597304cb4ebb88b382f66b7fabfc8d0328ccbb0ceae9220c"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fpart"
-    sha256 cellar: :any_skip_relocation, mojave: "833e6f4d2e24888f006eebaaf7f01bc3d63113eb79a5ed377f963c2bc39621fb"
+    sha256 cellar: :any_skip_relocation, mojave: "3e631967333489821b28c162616df8bdfed894cb2b56d9667ca2e97f53bc1576"
   end
 
   depends_on "autoconf" => :build
