@@ -2,13 +2,13 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.26.0",
-      revision: "9fc6551b4e4ea7bb83f70222bbc844dae7d184d3"
+      tag:      "v1.26.1",
+      revision: "5b81baa7d367d353707e87e0f9a8062cccc27c1b"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tailscale"
-    sha256 cellar: :any_skip_relocation, mojave: "93acca7611938a475b927b10d10fd870eb6f95df164136c38b3f3be2eb68c135"
+    sha256 cellar: :any_skip_relocation, mojave: "d9e4bf4f21a54feb1576b28b6661a6dfa58619f5089cdfc5e5a2b781209e7ea8"
   end
 
   depends_on "go" => :build
