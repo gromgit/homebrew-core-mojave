@@ -2,14 +2,14 @@ class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https://www.vcluster.com"
   url "https://github.com/loft-sh/vcluster.git",
-      tag:      "v0.8.1",
-      revision: "a95fb14799145efa165b8acdd9ca436dfd6da15d"
+      tag:      "v0.10.1",
+      revision: "0a11d6cfbf4ee87b65ebc3237331bc8666bb63f8"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcluster"
-    sha256 mojave: "b5ac70c11c79b6a843525e799811ab160c6f0e790917d5041e599d606a388e62"
+    sha256 mojave: "e7eece18579530e8d89bb3bb063103605749f49c72df4644b06ab92a8b18db55"
   end
 
   depends_on "go" => :build
