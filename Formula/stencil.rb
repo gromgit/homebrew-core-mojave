@@ -1,14 +1,14 @@
 class Stencil < Formula
   desc "Smart templating engine for service development"
   homepage "https://engineering.outreach.io/stencil/"
-  url "https://github.com/getoutreach/stencil/archive/refs/tags/v1.19.3.tar.gz"
-  sha256 "bfd6e5a45f2f15bf4ae96d62305b6da646d257b13eeb060731cfca66c1554256"
+  url "https://github.com/getoutreach/stencil/archive/refs/tags/v1.19.4.tar.gz"
+  sha256 "1c9229b5d2f2130404029e69fef1938841710ed2c9d176804ab4ec0fdd157e11"
   license "Apache-2.0"
   head "https://github.com/getoutreach/stencil.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stencil"
-    sha256 cellar: :any_skip_relocation, mojave: "7e829df6c98f8edb19ead4049e29a294aeac1d6b54e80bbbee52cdeb1e631be6"
+    sha256 cellar: :any_skip_relocation, mojave: "334f7cf4bc50329abd84dd561b91e8075714beacebca14b746877239b21e2d00"
   end
 
   depends_on "go" => :build
