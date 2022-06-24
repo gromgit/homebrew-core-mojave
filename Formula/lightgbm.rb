@@ -8,18 +8,20 @@ class Lightgbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lightgbm"
-    sha256 cellar: :any, mojave: "bc05d633b376671bd77abd54bf0866736224358beb77721bfff2ffa3a6f255a5"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9a6a1e970f5e7d08c2c8bf3c3a740e148db2cddf2dab47555aaa5b3c8728705f"
   end
 
   depends_on "cmake" => :build
-  depends_on "libomp"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
-    mkdir "build" do
-      system "cmake", *std_cmake_args, "-DAPPLE_OUTPUT_DYLIB=ON", ".."
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DAPPLE_OUTPUT_DYLIB=ON"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "examples"
   end
 
