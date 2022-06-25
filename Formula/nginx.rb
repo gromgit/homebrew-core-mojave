@@ -3,10 +3,9 @@ class Nginx < Formula
   homepage "https://nginx.org/"
   # Use "mainline" releases only (odd minor version number), not "stable"
   # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.21.6.tar.gz"
-  sha256 "66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae"
+  url "https://nginx.org/download/nginx-1.23.0.tar.gz"
+  sha256 "820acaa35b9272be9e9e72f6defa4a5f2921824709f8aa4772c78ab31ed94cd1"
   license "BSD-2-Clause"
-  revision 1
   head "https://hg.nginx.org/nginx/", using: :hg
 
   livecheck do
@@ -16,7 +15,7 @@ class Nginx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nginx"
-    sha256 mojave: "989be466f1d7bf4b42c66cdb2f596bb9e1f9f225322ac0b944c2157155660817"
+    sha256 mojave: "87addeace2ee70e3d5abb244f4456b4121206a8dac53395c25c21392a48c66bd"
   end
 
   depends_on "openssl@1.1"
