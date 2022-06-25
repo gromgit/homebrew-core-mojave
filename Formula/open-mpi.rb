@@ -12,11 +12,12 @@ class OpenMpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-mpi"
-    sha256 mojave: "59f0bbc6e713247bebe2801c4f4c8452aa0dd13878f12a16ce65ad364f0f5ff9"
+    rebuild 1
+    sha256 mojave: "a1e13260e4b9c6024ec4a1440f52009254276a7d43fb8cf40af551de1eca5317"
   end
 
   head do
-    url "https://github.com/open-mpi/ompi.git"
+    url "https://github.com/open-mpi/ompi.git", branch: "main"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -33,21 +34,17 @@ class OpenMpi < Formula
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
     # Avoid references to the Homebrew shims directory
-    %w[
+    inreplace_files = %w[
       ompi/tools/ompi_info/param.c
-      orte/tools/orte-info/param.c
       oshmem/tools/oshmem_info/param.c
-      opal/mca/pmix/pmix3x/pmix/src/tools/pmix_info/support.c
-    ].each do |fname|
-      inreplace fname, /(OPAL|PMIX)_CC_ABSOLUTE/, "\"#{ENV.cc}\""
-    end
+    ]
 
-    %w[
-      ompi/tools/ompi_info/param.c
-      oshmem/tools/oshmem_info/param.c
-    ].each do |fname|
-      inreplace fname, "OMPI_CXX_ABSOLUTE", "\"#{ENV.cxx}\""
-    end
+    inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{ENV.cxx}\""
+
+    inreplace_files << "orte/tools/orte-info/param.c" unless build.head?
+    inreplace_files << "opal/mca/pmix/pmix3x/pmix/src/tools/pmix_info/support.c" unless build.head?
+
+    inreplace inreplace_files, /(OPAL|PMIX)_CC_ABSOLUTE/, "\"#{ENV.cc}\""
 
     ENV.cxx11
     ENV.runtime_cpu_detection
