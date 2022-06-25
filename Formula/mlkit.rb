@@ -13,7 +13,8 @@ class Mlkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlkit"
-    sha256 mojave: "c8b86db4eff558267a2ccfbcbef18a2c525a23342520db15ad249076d89dd853"
+    rebuild 1
+    sha256 mojave: "301715dd798495743f324b26e253cd0ef227c671acb5b9c96cc3b35482d47b45"
   end
 
   depends_on "autoconf" => :build
