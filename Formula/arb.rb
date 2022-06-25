@@ -4,11 +4,12 @@ class Arb < Formula
   url "https://github.com/fredrik-johansson/arb/archive/2.22.1.tar.gz"
   sha256 "1ef85518eee04885e8a90196498bc75e4e2410621d4184f2bc01d46b7080a243"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/fredrik-johansson/arb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arb"
-    sha256 cellar: :any, mojave: "5ec974c0e2f6aaac5415d87ab7588c843be754d76ae7422d03e0304cafaf0946"
+    sha256 cellar: :any, mojave: "d64bc2ea9ecbbf02c80ffe403db95048a2d612255a21b2d62ea104c3d538c650"
   end
 
   depends_on "cmake" => :build
