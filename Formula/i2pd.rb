@@ -7,7 +7,8 @@ class I2pd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i2pd"
-    sha256 cellar: :any, mojave: "30668f8ce4972aa6557168c51c4ec7b5055df477ad8c433dfcd7420ab4587ee5"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bcae96ceab807cf1f52c2907f9b931f3138363fe3b80fb463abdc071d04cd053"
   end
 
   depends_on "boost"
@@ -24,6 +25,8 @@ class I2pd < Formula
 
     args << "USE_AESNI=no" if Hardware::CPU.arm?
 
+    # Homebrew-specific fix to make sure documentation is installed in `share`.
+    inreplace "Makefile.linux", "${PREFIX}/usr/share", "${PREFIX}/share"
     system "make", "install", *args
 
     # preinstall to prevent overwriting changed by user configs
