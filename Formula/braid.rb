@@ -2,13 +2,13 @@ class Braid < Formula
   desc "Simple tool to help track vendor branches in a Git repository"
   homepage "https://cristibalan.github.io/braid/"
   url "https://github.com/cristibalan/braid.git",
-      tag:      "v1.1.7",
-      revision: "15290b6f2876ce2fc5a881d4371f6f62e0b0dd46"
+      tag:      "v1.1.8",
+      revision: "d7391f2585fc86a8057d88de248ddc082eb8fa1b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/braid"
-    sha256 cellar: :any_skip_relocation, mojave: "5bc2d4e38644067edf1b962ef7cf07bb1ec8004754d364d25270a57fff36cb2b"
+    sha256 cellar: :any_skip_relocation, mojave: "c169cb79234b7e72ea5e3823d0cd187e3969e0b1102269e4f15c7892a8713e21"
   end
 
   uses_from_macos "ruby", since: :high_sierra
