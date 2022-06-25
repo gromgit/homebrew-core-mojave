@@ -4,6 +4,7 @@ class MariadbAT104 < Formula
   url "https://downloads.mariadb.com/MariaDB/mariadb-10.4.22/source/mariadb-10.4.22.tar.gz"
   sha256 "44bdc36eeb02888296e961718bae808f3faab268ed49160a785248db60500c00"
   license "GPL-2.0-only"
+  revision 1
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
   # requirement. In the future, this will be updated to use a `Json` strategy
@@ -24,8 +25,7 @@ class MariadbAT104 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.4"
-    rebuild 4
-    sha256 mojave: "1676dbdd9b8c51f4da7bb4b5f1fb166f625cfa900506734a9b8062bdc2dd39f1"
+    sha256 mojave: "70c9da71d19093d64488a019e2b746af42ea9705448b9713302af53dc05c088b"
   end
 
   keg_only :versioned_formula
@@ -41,6 +41,7 @@ class MariadbAT104 < Formula
   depends_on "pcre2"
 
   uses_from_macos "bzip2"
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
