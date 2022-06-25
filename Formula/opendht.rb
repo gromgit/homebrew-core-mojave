@@ -1,13 +1,13 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
   homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/2.4.5.tar.gz"
-  sha256 "4442bd20309f90f26579cff1b23eef1162851834b1d264995a44df0079ad57cb"
+  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/2.4.6.tar.gz"
+  sha256 "0109622ac806306ecbdd816a2a516464432c0ed24c39c0f4af3d5683cb04294e"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opendht"
-    sha256 cellar: :any, mojave: "4b970430e59c7f35298d7ca637f23fced698c256b9d0b2ac3e248d8513113061"
+    sha256 cellar: :any, mojave: "7c4f4a20547ed3cc7d3ed3692e70e3131e5584fc71d31dcd3e928e13dd5cdfc3"
   end
 
   depends_on "cmake" => :build
