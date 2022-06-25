@@ -1,8 +1,8 @@
 class Lighttpd < Formula
   desc "Small memory footprint, flexible web-server"
   homepage "https://www.lighttpd.net/"
-  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.64.tar.xz"
-  sha256 "e1489d9fa7496fbf2e071c338b593b2300d38c23f1e5967e52c9ef482e1b0e26"
+  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.65.tar.xz"
+  sha256 "bf0fa68a629fbc404023a912b377e70049331d6797bcbb4b3e8df4c3b42328be"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Lighttpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lighttpd"
-    sha256 mojave: "1b4cd980c2b2ae48384c75f69bc8bdb0292fb8e88a8ffc666aa9e1563dad6c64"
+    sha256 mojave: "2514e6900a0b7795378c7ca48abd93ab65ec7f223527418c36c0abce70d80090"
   end
 
   depends_on "autoconf" => :build
@@ -22,6 +22,8 @@ class Lighttpd < Formula
   depends_on "openldap"
   depends_on "openssl@1.1"
   depends_on "pcre2"
+
+  uses_from_macos "libxcrypt"
 
   # default max. file descriptors; this option will be ignored if the server is not started as root
   MAX_FDS = 512
