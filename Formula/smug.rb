@@ -1,13 +1,13 @@
 class Smug < Formula
   desc "Automate your tmux workflow"
   homepage "https://github.com/ivaaaan/smug"
-  url "https://github.com/ivaaaan/smug/archive/refs/tags/v0.2.9.tar.gz"
-  sha256 "23b402d49923451fd5f7268eec59f3b9b36841be8bc0ee33e9b93fdf50f7af8c"
+  url "https://github.com/ivaaaan/smug/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "2659e312fe49b3129c30db6a72191ad986c900c1f8845b7bab1d09da45be8a4e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/smug"
-    sha256 cellar: :any_skip_relocation, mojave: "01dc22b8b8f353f4725cf09aa85cd30679234dda686a43dbfb7c9b48434f168e"
+    sha256 cellar: :any_skip_relocation, mojave: "3fb0d1108135742a15b92d749759386b4ef14d9b7e7293c53abf31d34d9cfb01"
   end
 
   depends_on "go" => :build
