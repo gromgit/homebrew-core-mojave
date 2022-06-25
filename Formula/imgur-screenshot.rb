@@ -7,10 +7,10 @@ class ImgurScreenshot < Formula
   head "https://github.com/jomo/imgur-screenshot.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imgur-screenshot"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9824e2339c27c1dba9a36971b844adca76a9f0145c2c610996c22ae0f200fd62"
+    sha256 cellar: :any_skip_relocation, all: "938fd215acee5d33c41263cd86d05eec350574c671df2eb16adf724f522e30c4"
   end
+
+  deprecate! date: "2022-06-23", because: :repo_archived
 
   depends_on "bash"
   depends_on "jq"
