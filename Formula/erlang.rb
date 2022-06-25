@@ -2,10 +2,9 @@ class Erlang < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-25.0/otp_src_25.0.tar.gz"
-  sha256 "2d7678c9bc6fcf3a1242c4d1c3864855d85e73ade792cd80adb8a9f379996711"
+  url "https://github.com/erlang/otp/releases/download/OTP-25.0.2/otp_src_25.0.2.tar.gz"
+  sha256 "6a5cbc8d0f18e7a7fd2fb3d1567e2b70737ee4124cb22980ad4ed663c61e010e"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,7 +13,7 @@ class Erlang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang"
-    sha256 cellar: :any, mojave: "514ab694d730b6fc79c9294b6a305bf80665a4885efdab3566884df8474b7d10"
+    sha256 cellar: :any, mojave: "cb63e5bc915dff941b958511ce4f00366ef23de1c4c1edeef48e2cc853d45012"
   end
 
   head do
@@ -29,9 +28,9 @@ class Erlang < Formula
   depends_on "wxwidgets" # for GUI apps like observer
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-25.0/otp_doc_html_25.0.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_25.0.tar.gz"
-    sha256 "2c5a7a3916ea619ec385985cd6df51a3e307aabfa09dda8283510ae013a0ca9e"
+    url "https://github.com/erlang/otp/releases/download/OTP-25.0.2/otp_doc_html_25.0.2.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_25.0.2.tar.gz"
+    sha256 "1927c0536df13c03ecf30c223f56ae1f594f369ec5f8b88f6baa2c047bed151a"
   end
 
   def install
