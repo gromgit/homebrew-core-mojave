@@ -9,7 +9,8 @@ class Ccache < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ccache"
-    sha256 cellar: :any, mojave: "04fd66841b50432c256d9ca7251987c39faedfdea4f04b7788ab5fb069b73e84"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ba5844498507f1f21ad478f658c1950ddd5a66cea9c421769e254684e0beb7ae"
   end
 
   depends_on "asciidoctor" => :build
@@ -55,6 +56,8 @@ class Ccache < Formula
       g++ g++2 g++3 g++-3.3 g++-4.0
       g++-4.2 g++-4.3 g++-4.4 g++-4.5 g++-4.6 g++-4.7 g++-4.8 g++-4.9
       g++-5 g++-6 g++-7 g++-8 g++-9 g++-10 g++-11 g++-12
+      i686-w64-mingw32-gcc i686-w64-mingw32-g++
+      x86_64-w64-mingw32-gcc x86_64-w64-mingw32-g++
     ].each do |prog|
       libexec.install_symlink bin/"ccache" => prog
     end
