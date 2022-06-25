@@ -13,7 +13,8 @@ class Tmux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tmux"
-    sha256 cellar: :any, mojave: "55f91bbb537041756ddd503d411c752f68edca1d7aa201c13a8c8229b4fcd4c4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5d515f060b7b5b3af03aa1bda7721947e2dbbda7b3877fd01a2e87e10f2ed724"
   end
 
   head do
@@ -48,6 +49,11 @@ class Tmux < Formula
       --sysconfdir=#{etc}
     ]
 
+    # tmux finds the `tmux-256color` terminfo provided by our ncurses
+    # and uses that as the default `TERM`, but this causes issues for
+    # tools that link with the very old ncurses provided by macOS.
+    # https://github.com/Homebrew/homebrew-core/issues/102748
+    args << "--with-TERM=screen-256color" if OS.mac?
     args << "--enable-utf8proc" if MacOS.version >= :high_sierra
 
     ENV.append "LDFLAGS", "-lresolv"
