@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://github.com/ooni/probe-cli/archive/v3.14.2.tar.gz"
-  sha256 "a0b71089444c899ba99c7f63f9e05819cdbe964cfa17bb95ca5672343e6aec22"
+  url "https://github.com/ooni/probe-cli/archive/v3.15.1.tar.gz"
+  sha256 "8cc06915204227f4c2b83c04d008c2ec732705ecb01aa82d13ef16ae7d51f3f8"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Ooniprobe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ooniprobe"
-    sha256 cellar: :any_skip_relocation, mojave: "2fcb4733c33bdbdbce28e2a79c4996c95577d944e8f77510c72218bfcde32bf6"
+    sha256 cellar: :any_skip_relocation, mojave: "40c19c3bfefe8f34ce4b44623c0afa8dc71e548b2a042375ba3e212680c6f0ba"
   end
 
   # Bump to 1.18 on the next release, if possible.
