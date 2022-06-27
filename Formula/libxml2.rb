@@ -2,10 +2,11 @@ class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
   license "MIT"
+  revision 2
 
   stable do
-    url "https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.13.tar.xz"
-    sha256 "276130602d12fe484ecc03447ee5e759d0465558fbc9d6bd144e3745306ebf0e"
+    url "https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.14.tar.xz"
+    sha256 "60d74a257d1ccec0475e749cba2f21559e48139efba6ff28224357c7c798dfee"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -23,7 +24,7 @@ class Libxml2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxml2"
-    sha256 cellar: :any, mojave: "18ec53450588c519b20b7714d3fca564b0db28e523fa6a094806c1afe1bd5f41"
+    sha256 cellar: :any, mojave: "5ba490cd4e09a689d3d391e9084966f6d294e060646008c269341180157f6889"
   end
 
   head do
@@ -38,6 +39,8 @@ class Libxml2 < Formula
   keg_only :provided_by_macos
 
   depends_on "python@3.9" => [:build, :test]
+  depends_on "pkg-config" => :test
+  depends_on "icu4c"
   depends_on "readline"
 
   uses_from_macos "zlib"
@@ -51,26 +54,25 @@ class Libxml2 < Formula
     sha256 "37eb81a8ec6929eed1514e891bff2dd05b450bcf0c712153880c485b7366c17c"
   end
 
-  def sdk_include
-    on_macos do
-      return MacOS.sdk_path/"usr/include"
-    end
-    on_linux do
-      return HOMEBREW_PREFIX/"include"
-    end
-  end
-
   def install
     system "autoreconf", "-fiv" if build.head?
 
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-history",
+                          "--with-icu",
                           "--without-python",
                           "--without-lzma"
     system "make", "install"
 
+    # Homebrew-specific workaround to add include path for `icu4c` because
+    # it is in a different directory than `libxml2`.
+    inreplace [bin/"xml2-config", lib/"pkgconfig/libxml-2.0.pc"],
+              "-I${includedir}/libxml2 ",
+              "-I${includedir}/libxml2 -I#{Formula["icu4c"].opt_include}"
+
     cd "python" do
+      sdk_include = OS.mac? ? MacOS.sdk_path_if_needed/"usr/include" : HOMEBREW_PREFIX/"include"
       # We need to insert our include dir first
       inreplace "setup.py", "includes_dir = [",
                             "includes_dir = ['#{include}', '#{sdk_include}',"
@@ -91,8 +93,17 @@ class Libxml2 < Formula
         return 0;
       }
     EOS
+
+    # Test build with xml2-config
     args = %w[test.c -o test]
     args += shell_output("#{bin}/xml2-config --cflags --libs").split
+    system ENV.cc, *args
+    system "./test"
+
+    # Test build with pkg-config
+    ENV.append "PKG_CONFIG_PATH", lib/"pkgconfig"
+    args = %w[test.c -o test]
+    args += shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libxml-2.0").split
     system ENV.cc, *args
     system "./test"
 
