@@ -6,14 +6,15 @@ class Athenacli < Formula
   url "https://files.pythonhosted.org/packages/38/1a/d9cd6c68a4a1cd2ce779b163f8cec390ae82c684caa920d0360094886b1f/athenacli-1.6.8.tar.gz"
   sha256 "c7733433f2795d250e3c23b134136fea571ea9868c15f424875cd194eaeb7246"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/athenacli"
-    sha256 cellar: :any_skip_relocation, mojave: "e28bea2ccb198a1543e22ac615f0e545645ece501c9883eeda245f15a76147c3"
+    sha256 cellar: :any_skip_relocation, mojave: "7d048ada9eb398fff0284ae904d9f41979ff4ee1575b4cd9827d2b315c87ef12"
   end
 
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "libpython-tabulate"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "boto3" do
