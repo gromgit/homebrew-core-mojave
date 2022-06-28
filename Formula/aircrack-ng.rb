@@ -12,7 +12,8 @@ class AircrackNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aircrack-ng"
-    sha256 mojave: "e6ab308ef05e96b2aa16b1e28abeba989c5e75d540282acf02cfc29dbcada0ea"
+    rebuild 1
+    sha256 mojave: "788f1d6a44b04eba0862cd7729432bb285b3999fd4c6b79e24a0005c7906ce04"
   end
 
   depends_on "autoconf" => :build
@@ -33,8 +34,14 @@ class AircrackNg < Formula
     system "./autogen.sh", "--disable-silent-rules",
                            "--disable-dependency-tracking",
                            "--prefix=#{prefix}",
+                           "--sysconfdir=#{etc}",
                            "--with-experimental"
     system "make", "install"
+    inreplace sbin/"airodump-ng-oui-update", "/usr/local", HOMEBREW_PREFIX
+  end
+
+  def post_install
+    pkgetc.mkpath
   end
 
   def caveats
