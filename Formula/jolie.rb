@@ -1,12 +1,12 @@
 class Jolie < Formula
   desc "Service-oriented programming language"
   homepage "https://www.jolie-lang.org/"
-  url "https://github.com/jolie/jolie/releases/download/v1.10.5/jolie-1.10.5.jar"
-  sha256 "1088c357838c58f132c1d17598d5841e63e5dccb0ea518a2cd9aa281def7d92d"
+  url "https://github.com/jolie/jolie/releases/download/v1.10.7/jolie-1.10.7.jar"
+  sha256 "22e30ba88ddea7197843e868a2115edbfce6a871d7dc58ec35a34c709579fa0a"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "50dcf57021a1915c8403e3596b6189dc435f3e8f286dd66d9efb3a5e2799cbe9"
+    sha256 cellar: :any_skip_relocation, all: "56f8f9b008a733c98119fd49c7e966510cc3c502496000d91d0a6d1aa9f10585"
   end
 
   depends_on "openjdk"
