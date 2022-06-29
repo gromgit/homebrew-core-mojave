@@ -12,13 +12,13 @@ class NodeAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@14"
-    sha256 cellar: :any, mojave: "54f7760ce1298f0bd652594a4646ef601a8f6ffc4d21247b3667fa2a5ab96ed2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fcd3e7b9473290928bded8d5c377abfed69d405888ade45509a0ad1dfe0d90e9"
   end
 
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "icu4c"
@@ -30,6 +30,7 @@ class NodeAT14 < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "python@3.10" => [:build, :test]
     depends_on "macos-term-size"
   end
 
@@ -88,8 +89,9 @@ class NodeAT14 < Formula
     output = shell_output("#{bin}/node -e 'console.log(new Intl.NumberFormat(\"de-DE\").format(1234.56))'").strip
     assert_equal "1.234,56", output
 
-    # make sure npm can find node
+    # make sure npm can find node and python
     ENV.prepend_path "PATH", opt_bin
+    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin" if OS.mac?
     ENV.delete "NVM_NODEJS_ORG_MIRROR"
     assert_equal which("node"), opt_bin/"node"
     assert_predicate bin/"npm", :exist?, "npm must exist"
