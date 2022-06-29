@@ -1,14 +1,14 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://www.linphone.org/technical-corner/ortp"
-  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.1.32/ortp-5.1.32.tar.bz2"
-  sha256 "f0c427741105af81d34dac50d7d958971cc3a11a099949548206538686c07655"
+  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.1.45/ortp-5.1.45.tar.bz2"
+  sha256 "2f6bd8735e94e532567e53db02488c430a0184596d9dd9e0b063d2e7d841a35e"
   license "GPL-3.0-or-later"
   head "https://gitlab.linphone.org/BC/public/ortp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ortp"
-    sha256 cellar: :any, mojave: "1dc1aaa6d133a488b88c34aa806fc6c4c387e817f71fa231731fc14fc2d70485"
+    sha256 cellar: :any, mojave: "2d1f8310260f185964dccf10491bc61bc3119b3908924c4dbf4f294df065c70f"
   end
 
   depends_on "cmake" => :build
@@ -18,8 +18,8 @@ class Ortp < Formula
   # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
   # https://github.com/BelledonneCommunications/bctoolbox
   resource "bctoolbox" do
-    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.1.32/bctoolbox-5.1.32.tar.bz2"
-    sha256 "d21481c579072bffbcca497b501584539fc436a0753c9226e66f52b935662e4b"
+    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.1.32/bctoolbox-5.1.45.tar.bz2"
+    sha256 "d8a1374c36cedc0dfc09fe6a67075b55c13006386c466413a6af29941e9e7e65"
   end
 
   def install
