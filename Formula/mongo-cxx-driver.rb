@@ -6,9 +6,15 @@ class MongoCxxDriver < Formula
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-cxx-driver.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^[rv]?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongo-cxx-driver"
-    sha256 cellar: :any, mojave: "2b6f2a58fa9642fc36ee715e551d9b18aa0975e4d51ecf58b13d2b9ade0bef2d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2d06b29d768d3e311a0aa2c79806d7308345ac0af320c3a3e15d494ffb1dd3d3"
   end
 
   depends_on "cmake" => :build
