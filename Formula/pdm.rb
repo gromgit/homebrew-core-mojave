@@ -3,14 +3,14 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/96/68/f2b75326f4698281a7b42b968a9b1fdecffce8b63352a56427939377eaca/pdm-1.15.0.tar.gz"
-  sha256 "55de45b71de72ffcbad6d076d46324079cb356a13d93ab8da57ec991bcf54401"
+  url "https://files.pythonhosted.org/packages/27/0d/6bf1c68786973eabeb1ebf746e240f6ed55231809b23a6b44af6b908329c/pdm-1.15.4.tar.gz"
+  sha256 "e68ec492c9c849c59468972576cef5ce88e72c49b9f575ea35314b2da50b9629"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdm"
-    sha256 cellar: :any_skip_relocation, mojave: "77f40491eeae1317dd886daeabc55d48232cf08ab2be7a2176840f8bd487855c"
+    sha256 cellar: :any_skip_relocation, mojave: "75d7743808e7cd43e6f1221c325bd33d73bc192da230119637061382a13c8313"
   end
 
   depends_on "python@3.10"
@@ -42,8 +42,8 @@ class Pdm < Formula
   end
 
   resource "pdm-pep517" do
-    url "https://files.pythonhosted.org/packages/b9/7d/99f2f844ae1a3bfd6f4bfac3a523fad805163dcddebf6bf232cb93cca972/pdm-pep517-0.12.5.tar.gz"
-    sha256 "cfd15e5498579186bdc0a1a7b6eea9f983e7c3a7dd1a2a7b0ad22d05d6dc5099"
+    url "https://files.pythonhosted.org/packages/af/4b/739fe47ab7e1e3602de4616ac9c85aee48adf5f27d348a248e87c5702ab9/pdm-pep517-0.12.7.tar.gz"
+    sha256 "6a4ed513edbcfd518e3b07e9118575d3fb35cc04551dd8acf3531e2463ef7fe3"
   end
 
   resource "pep517" do
@@ -82,8 +82,8 @@ class Pdm < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/8b/95/c8826c61bd59c0d991fb1ca3d187d7fa803af13c1704be932e1071e041da/tomlkit-0.10.2.tar.gz"
-    sha256 "30d54c0b914e595f3d10a87888599eab5321a2a69abc773bbefff51599b72db6"
+    url "https://files.pythonhosted.org/packages/24/24/e50be8344fc6e9c9ae55bfcb136b33ad562776d822736da3d1ec0278b18b/tomlkit-0.11.0.tar.gz"
+    sha256 "71ceb10c0eefd8b8f11fe34e8a51ad07812cb1dc3de23247425fbc9ddc47b9dd"
   end
 
   resource "wheel" do
