@@ -1,8 +1,8 @@
 class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
-  url "https://cran.r-project.org/src/base/R-4/R-4.2.0.tar.gz"
-  sha256 "38eab7719b7ad095388f06aa090c5a2b202791945de60d3e2bb0eab1f5097488"
+  url "https://cran.r-project.org/src/base/R-4/R-4.2.1.tar.gz"
+  sha256 "4d52db486d27848e54613d4ee977ad952ec08ce17807e1b525b10cd4436c643f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class R < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/r"
-    sha256 mojave: "bc6ce441b3b6f758687f78edee57b4dc9fa06b9ceabc9cb49d9744dcaada458e"
+    sha256 mojave: "7236df69ee5d27e013e839c89b999ef200e2a589ebde44b48910516604afe5b3"
   end
 
   depends_on "pkg-config" => :build
