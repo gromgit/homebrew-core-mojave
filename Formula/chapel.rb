@@ -4,11 +4,11 @@ class Chapel < Formula
   url "https://github.com/chapel-lang/chapel/releases/download/1.26.0/chapel-1.26.0.tar.gz"
   sha256 "ba396b581f0a17f8da3f365a3f8b079b8d2e229a393fbd1756966b0019931ece"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chapel"
-    sha256 mojave: "f8020687337361d21995ffb06b1a17e7838d569c8cd5792542006b16e44df660"
+    sha256 mojave: "a5bdc32beca63e6791acb2235bdbe0feb668baabcceb0da2404ee6a309c26673"
   end
 
   depends_on "gmp"
@@ -19,13 +19,14 @@ class Chapel < Formula
   depends_on "python@3.9"
 
   on_macos do
-    depends_on "llvm" if MacOS.version > :catalina
+    depends_on "llvm@13" if MacOS.version > :catalina
     # fatal error: cannot open file './sys_basic.h': No such file or directory
     # Issue ref: https://github.com/Homebrew/homebrew-core/issues/96915
     depends_on "llvm@11" if MacOS.version <= :catalina
   end
+
   on_linux do
-    depends_on "llvm"
+    depends_on "llvm@13"
   end
 
   # LLVM is built with gcc11 and we will fail on linux with gcc version 5.xx
