@@ -6,11 +6,12 @@ class Mesa < Formula
   url "https://mesa.freedesktop.org/archive/mesa-22.0.5.tar.xz"
   sha256 "5ee2dc06eff19e19b2867f12eb0db0905c9691c07974f6253f2f1443df4c7a35"
   license "MIT"
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    sha256 mojave: "bc95b944a63ed2fb3cf7c5c947eae13271bbf4310a946a4caba405b07a2dcc5a"
+    sha256 mojave: "88ca2df83e228162dd00cf356a051c2c8fd2f0752eb52cc63528afda39af7cde"
   end
 
   depends_on "bison" => :build # can't use form macOS, needs '> 2.3'
