@@ -6,14 +6,15 @@ class Sip < Formula
   url "https://files.pythonhosted.org/packages/5b/cb/c27c925ae07bd03a2597fa1db17bfc2a4ac57da61aeb90f8ec98ffbb975b/sip-6.6.2.tar.gz"
   sha256 "0e3efac1c5dfd8e525ae57140927df26993e13f58b89d1577c314f4105bfd90d"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
+  revision 1
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sip"
-    sha256 cellar: :any_skip_relocation, mojave: "6e1c54c43318dbe240d4b61bc40ca7c286ebb6cb7c29f67f882e2c315611669c"
+    sha256 cellar: :any_skip_relocation, mojave: "720af652ec434f81ecaab8e531a4065d06964fa058450d64836759c32a225504"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
@@ -36,13 +37,14 @@ class Sip < Formula
   end
 
   def install
-    python = Formula["python@3.9"]
+    python = Formula["python@3.10"]
     venv = virtualenv_create(libexec, python.bin/"python3")
     resources.each do |r|
       venv.pip_install r
     end
 
-    system python.bin/"python3", *Language::Python.setup_install_args(prefix)
+    system python.bin/"python3", *Language::Python.setup_install_args(prefix),
+                                 "--install-lib=#{prefix/Language::Python.site_packages("python3")}"
 
     site_packages = Language::Python.site_packages(python)
     pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
