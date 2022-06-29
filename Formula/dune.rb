@@ -1,14 +1,14 @@
 class Dune < Formula
   desc "Composable build system for OCaml"
   homepage "https://dune.build/"
-  url "https://github.com/ocaml/dune/releases/download/3.2.0/chrome-trace-3.2.0.tbz"
-  sha256 "bd1fbce6ae79ed1eb26fa89bb2e2e23978afceb3f53f5578cf1bdab08a1ad5bc"
+  url "https://github.com/ocaml/dune/releases/download/3.3.1/dune-3.3.1.tbz"
+  sha256 "840c80491bfe12bab5f2b99d49e163f3e4c4d2fc4b4a3e6fb16c24dccd5502e1"
   license "MIT"
   head "https://github.com/ocaml/dune.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dune"
-    sha256 cellar: :any_skip_relocation, mojave: "4b4506c7e8e071a8506a72956f7b1a5616c7f333340dab7996ea6ff42285dc47"
+    sha256 cellar: :any_skip_relocation, mojave: "b2c9e2cacdc4a331038878bb884ea7f38d05615e67516b913d642850f273d5de"
   end
 
   depends_on "ocaml" => [:build, :test]
