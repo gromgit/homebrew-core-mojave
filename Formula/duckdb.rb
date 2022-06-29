@@ -2,13 +2,13 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/duckdb/duckdb.git",
-      tag:      "v0.3.4",
-      revision: "662041e2b43283bfcfeed984af7c3eaa85fb4996"
+      tag:      "v0.4.0",
+      revision: "da9ee490df829a96bfbcfcd737f95f8dbc707d0a"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckdb"
-    sha256 cellar: :any, mojave: "3013fc6c58e3b1547b16c40d07e5f941680045625f3962e82beb9d25c986c635"
+    sha256 cellar: :any, mojave: "1da987aa2a89c38d845a7a15607b60fe4ab5147fec5abee56870d39a56421e7f"
   end
 
   depends_on "cmake" => :build
