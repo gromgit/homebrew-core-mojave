@@ -1,8 +1,8 @@
 class Pidgin < Formula
   desc "Multi-protocol chat client"
   homepage "https://pidgin.im/"
-  url "https://downloads.sourceforge.net/project/pidgin/Pidgin/2.14.9/pidgin-2.14.9.tar.bz2"
-  sha256 "1872d1629a26e9b775d9ec0bdd3d3fd348f721376f320b29bcd5ff3f0443222b"
+  url "https://downloads.sourceforge.net/project/pidgin/Pidgin/2.14.10/pidgin-2.14.10.tar.bz2"
+  sha256 "454b1b928bc6bcbb183353af30fbfde5595f2245a3423a1a46e6c97a2df22810"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -13,7 +13,7 @@ class Pidgin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pidgin"
-    sha256 mojave: "1827dddebbae19a76b4c85737299dfc0b221152e9e99cfd0ae6398fc42249a45"
+    sha256 mojave: "251e7237d5d216fd039c59bddaa89ef952c3eb5e1e277b4f4f48b47744c66762"
   end
 
   depends_on "intltool" => :build
