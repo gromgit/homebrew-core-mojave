@@ -4,72 +4,70 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    url "https://github.com/dlang/dmd/archive/v2.099.0.tar.gz"
-    sha256 "8c8575b2b68b7dfe236fec13bbdf26d063365b4ed08563320f429b202c5b8a2e"
+    url "https://github.com/dlang/dmd/archive/v2.100.0.tar.gz"
+    sha256 "77d8623f614ab2a41c17ee86e84880021836051553dd7f09f3f6eee8e024c55d"
 
     resource "druntime" do
-      url "https://github.com/dlang/druntime/archive/v2.099.0.tar.gz"
-      sha256 "de1f9ae7c15806bcd1459d56c7ac7216479ff88f5a3b0ea883d50d639f7dfc42"
+      url "https://github.com/dlang/druntime/archive/v2.100.0.tar.gz"
+      sha256 "b9622c94468326487380393d183790830f38d224bb5d15067b6e4f5ec9cfced4"
     end
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/v2.099.0.tar.gz"
-      sha256 "10075c768d5a5fb3e03f044eabee56ebf7889be8dbcbc2196300c3e23aafa2f7"
+      url "https://github.com/dlang/phobos/archive/v2.100.0.tar.gz"
+      sha256 "cebf9fecdaf395bdb745cbed990879e561d055cc367ba44ba69fb40ab9c45008"
     end
 
     resource "tools" do
-      url "https://github.com/dlang/tools/archive/v2.099.0.tar.gz"
-      sha256 "8a0c6b3aa98647342bd2e22832e7268a343c5d86f6ae39729f2637421dd7a607"
+      url "https://github.com/dlang/tools/archive/v2.100.0.tar.gz"
+      sha256 "7b53e32606b22acc391dd2a4e7c8527fabc18045ade3f99b3d38e8fa471066c8"
     end
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dmd"
-    sha256 mojave: "54515d39bdddc72c71d5aaf7931ce078b860612d7546b6c7ba73b2ee82af9533"
+    sha256 mojave: "59d1707747d130ceb982d4cbe69b789635f2b384ce522f2933a99ae86c4a93e9"
   end
 
   head do
-    url "https://github.com/dlang/dmd.git"
+    url "https://github.com/dlang/dmd.git", branch: "master"
 
     resource "druntime" do
-      url "https://github.com/dlang/druntime.git"
+      url "https://github.com/dlang/druntime.git", branch: "master"
     end
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos.git"
+      url "https://github.com/dlang/phobos.git", branch: "master"
     end
 
     resource "tools" do
-      url "https://github.com/dlang/tools.git"
+      url "https://github.com/dlang/tools.git", branch: "master"
     end
   end
 
+  depends_on "ldc" => :build
   depends_on arch: :x86_64
 
-  uses_from_macos "unzip" => :build
-  uses_from_macos "xz" => :build
-
   def install
-    # DMD defaults to v2.088.0 to bootstrap as of DMD 2.090.0
-    # On MacOS Catalina, a version < 2.087.1 would not work due to TLS related symbols missing
+    dmd_make_args = %W[
+      INSTALL_DIR=#{prefix}
+      SYSCONFDIR=#{etc}
+      HOST_DMD=#{Formula["ldc"].opt_bin/"ldmd2"}
+      ENABLE_RELEASE=1
+      VERBOSE=1
+    ]
+
+    system "ldc2", "src/build.d", "-of=src/build"
+    system "src/build", *dmd_make_args
 
     make_args = %W[
       INSTALL_DIR=#{prefix}
       MODEL=64
       BUILD=release
+      DMD_DIR=#{buildpath}
+      DRUNTIME_PATH=#{buildpath}/druntime
+      PHOBOS_PATH=#{buildpath}/phobos
       -f posix.mak
     ]
-
-    dmd_make_args = %W[
-      SYSCONFDIR=#{etc}
-      TARGET_CPU=X86
-      AUTO_BOOTSTRAP=1
-      ENABLE_RELEASE=1
-    ]
-
-    system "make", *dmd_make_args, *make_args
-
-    make_args.unshift "DMD_DIR=#{buildpath}", "DRUNTIME_PATH=#{buildpath}/druntime", "PHOBOS_PATH=#{buildpath}/phobos"
 
     (buildpath/"druntime").install resource("druntime")
     system "make", "-C", "druntime", *make_args
