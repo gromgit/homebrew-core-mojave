@@ -6,17 +6,18 @@ class Pgcli < Formula
   url "https://files.pythonhosted.org/packages/f8/2a/f23f103e28b32fe005862441c461c9b0022cb1dd4f7b248dd983440628d5/pgcli-3.4.1.tar.gz"
   sha256 "f03930187e27d60df658ca8a04fb601ec5d7476c735f2b1542c6adec5cac8fe2"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgcli"
-    sha256 cellar: :any, mojave: "3cde5a2069737939ece8404266be1251dd35dc5ec54fb5d2f6fa01c47312ac6f"
+    sha256 cellar: :any, mojave: "15f6cab84713a941bedda58d75e082c37437e37e57aa9123e4a80f2a4182fa27"
   end
 
   depends_on "poetry" => :build
   depends_on "libpq"
+  depends_on "libpython-tabulate"
   depends_on "openssl@1.1"
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "cli-helpers" do
