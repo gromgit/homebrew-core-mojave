@@ -4,12 +4,12 @@ class Passenger < Formula
   url "https://github.com/phusion/passenger/releases/download/release-6.0.14/passenger-6.0.14.tar.gz"
   sha256 "41cd40acfadca1e8adffca3b23d63a1d6d37f976d8c29e4eff0de6250f4113a2"
   license "MIT"
+  revision 1
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/passenger"
-    rebuild 1
-    sha256 cellar: :any, mojave: "70711d90e395616afea12a7531d02793376a48a4c8834e223e38026eb7e07ffe"
+    sha256 cellar: :any, mojave: "3e0a4d381ca84857ab7eb6cd3cab201c245458cf9b6702068c9bb3e0395824d6"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
