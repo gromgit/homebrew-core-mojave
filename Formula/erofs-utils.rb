@@ -1,14 +1,14 @@
 class ErofsUtils < Formula
   desc "Utilities for Enhanced Read-Only File System"
   homepage "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git"
-  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.4.tar.gz"
-  sha256 "67702b1fc5da05719d95ddb7c107e334b04365f5161a9717479d2831fca85a98"
+  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.5.tar.gz"
+  sha256 "2310fa4377b566bf943e8eef992db3990f759528d5973e700efe3e4cb115ec23"
   license "GPL-2.0-or-later"
   head "git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erofs-utils"
-    sha256 cellar: :any, mojave: "5d7a6c509a19f097eace52294ac849bc11e991cb213b4d2f578af00e807d4be1"
+    sha256 cellar: :any, mojave: "4cdcd4b4c47e8d8caa05a67b5d00aff30318fc13e5dbff773298183febd845eb"
   end
 
   depends_on "autoconf" => :build
