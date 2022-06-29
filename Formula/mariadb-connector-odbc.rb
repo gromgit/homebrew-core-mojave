@@ -1,9 +1,9 @@
 class MariadbConnectorOdbc < Formula
   desc "Database driver using the industry standard ODBC API"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-odbc"
-  url "https://downloads.mariadb.com/Connectors/odbc/connector-odbc-3.1.15/mariadb-connector-odbc-3.1.15-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.1.15-src.tar.gz/"
-  sha256 "cf35944e1bd0d3d6bd883bdda8a65abaea2375e8a8d5803840b6e2ce819a2577"
+  url "https://downloads.mariadb.com/Connectors/odbc/connector-odbc-3.1.16/mariadb-connector-odbc-3.1.16-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.1.16-src.tar.gz/"
+  sha256 "4fd0de9d0e9da883ac9801cbf97953be9cc9010830417c44e8b339deca48463d"
   license "LGPL-2.1-or-later"
 
   # https://mariadb.org/download/ sometimes lists an older version as newest,
@@ -16,8 +16,7 @@ class MariadbConnectorOdbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb-connector-odbc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9859e502c06be0da8fdd0cca35256280d5feb2684928288af1c0a17ee4ddb6ed"
+    sha256 cellar: :any, mojave: "5d65e258fd26a9c62664e14aa2356bdd261996c8377574116f646788d6049053"
   end
 
   depends_on "cmake" => :build
