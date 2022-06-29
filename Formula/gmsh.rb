@@ -1,8 +1,8 @@
 class Gmsh < Formula
   desc "3D finite element grid generator with CAD engine"
   homepage "https://gmsh.info/"
-  url "https://gmsh.info/src/gmsh-4.10.3-source.tgz"
-  sha256 "a87d59ccea596d493d375b0d6bc380079a5e5a4baebf0d3383018b0cd6bd8e33"
+  url "https://gmsh.info/src/gmsh-4.10.4-source.tgz"
+  sha256 "f47e927f24f354f38d44e26c21a2495c4cdbdc3d5eb9b883d5a7e3a2273fbd13"
   license "GPL-2.0-or-later"
   head "https://gitlab.onelab.info/gmsh/gmsh.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Gmsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmsh"
-    sha256 cellar: :any, mojave: "ca20190622e8a224cd1e52d16f62471029eac7baad527de606d1da2bcefebd98"
+    sha256 cellar: :any, mojave: "efd474781484eeb307a1b6a0acdb7361dfa5e3f93400ea39ce824a45de7ff2d3"
   end
 
   depends_on "cmake" => :build
