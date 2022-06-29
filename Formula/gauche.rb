@@ -1,8 +1,8 @@
 class Gauche < Formula
   desc "R7RS Scheme implementation, developed to be a handy script interpreter"
   homepage "https://practical-scheme.net/gauche/"
-  url "https://github.com/shirok/Gauche/releases/download/release0_9_11_p1/Gauche-0.9.11-p1.tgz"
-  sha256 "9069c347e12e7fd14072680100e63dedec92de8fd7f48a200224b4d478733795"
+  url "https://github.com/shirok/Gauche/releases/download/release0_9_12/Gauche-0.9.12.tgz"
+  sha256 "b4ae64921b07a96661695ebd5aac0dec813d1a68e546a61609113d7843f5b617"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,11 +13,12 @@ class Gauche < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gauche"
-    sha256 mojave: "5f008247a1ca6a09cf5669b3f8788b8d2885153bfff9bac6317e8199f7389e7e"
+    sha256 mojave: "c3b9693249528c9d87bad885ecf8b8dc8da1e8432b194a1b132b2d7f37f1c448"
   end
 
   depends_on "mbedtls"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
   def install
