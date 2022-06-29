@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.4.1.src.tar.xz"
-  sha256 "f7426d3fd238df1c54071ca59a14c3f4f92839fe1a54cdcfed9f32598ec98080"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.4.2.src.tar.xz"
+  sha256 "eedffd9b9c19ff0be23315b690d66754fdd73c43aacb708a56e803d558271fdb"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Biosig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/biosig"
-    sha256 cellar: :any, mojave: "530d1bbe1742c57fb963a805a61634fde4cb1d4f1aa4f72d5172eb691a8481d6"
+    sha256 cellar: :any, mojave: "03afcdec998fcdac658748e164c8a380596d7b56432c6b923cbb13131b84f1b6"
   end
 
   depends_on "gawk" => :build
