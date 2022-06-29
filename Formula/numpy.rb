@@ -1,14 +1,14 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/f6/d8/ab692a75f584d13c6542c3994f75def5bce52ded9399f52e230fe402819d/numpy-1.22.4.zip"
-  sha256 "425b390e4619f58d8526b3dcf656dde069133ae5c240229821f01b5f44ea07af"
+  url "https://files.pythonhosted.org/packages/03/c6/14a17e10813b8db20d1e800ff9a3a898e65d25f2b0e9d6a94616f1e3362c/numpy-1.23.0.tar.gz"
+  sha256 "bd3fa4fe2e38533d5336e1272fc4e765cabbbde144309ccee8675509d5cd7b05"
   license "BSD-3-Clause"
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numpy"
-    sha256 cellar: :any, mojave: "dc04097e8ae8ef82cbf169120199b1a081c3ab1a8cf61899b30dc497c0d630fe"
+    sha256 cellar: :any, mojave: "6d2247052b6bee75af9d0547555bd78e07682501a5dfdc4a4b449b1af87df4c3"
   end
 
   depends_on "gcc" => :build # for gfortran
