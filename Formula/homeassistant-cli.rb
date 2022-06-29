@@ -6,16 +6,16 @@ class HomeassistantCli < Formula
   url "https://files.pythonhosted.org/packages/f0/f5/a90000b810751a6094761ed5fed3a6cb746c3c8be3bd1c5ed525e77be69a/homeassistant-cli-0.9.3.tar.gz"
   sha256 "daf9c2a256cd2e63fc173c7c96b3462211f045a66639778302eb4f9d125b06a2"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homeassistant-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "36fe29fc84700b48d5689459bf49feff0109fb53e50b5ad0b0903bdd246b8120"
+    sha256 cellar: :any_skip_relocation, mojave: "b6f9712bb16b1b6aa4a60fd03f47b7c048bc2befbe190f9139c020b0a97037cd"
   end
 
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "libpython-tabulate"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "aiohttp" do
