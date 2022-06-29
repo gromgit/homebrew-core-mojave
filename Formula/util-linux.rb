@@ -12,11 +12,11 @@ class UtilLinux < Formula
     "LGPL-2.1-or-later",
     :public_domain,
   ]
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/util-linux"
-    rebuild 1
-    sha256 mojave: "4e95d19fbefdc6d2ba6b78a65dc1a6cbc36a21eb228a777bab913974909781d6"
+    sha256 mojave: "db67a9aa30ce27d67efc04e486621c2c89777a8198801fee4c664aa116d38642"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
@@ -24,6 +24,7 @@ class UtilLinux < Formula
   depends_on "asciidoctor" => :build
   depends_on "gettext"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
