@@ -6,14 +6,15 @@ class Litecli < Formula
   url "https://files.pythonhosted.org/packages/c1/92/b2eb5f098446a05b9a92e548bd83442f2169f87f3e1b37ffed7a5315c264/litecli-1.9.0.tar.gz"
   sha256 "21af2cfa083dd4df1e3ccaa2a2117129b5f17212756f596ea090e296776c27a1"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/litecli"
-    sha256 cellar: :any_skip_relocation, mojave: "9bfd5cf40c433b43f5bd6a095a1411f2aa3351379454dc7d3d2f55a3a31e1ede"
+    sha256 cellar: :any_skip_relocation, mojave: "6adfc55b370d4b89137aed118921a0c08951d98d2ff90548cd2709d48e1a0635"
   end
 
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "libpython-tabulate"
+  depends_on "python@3.10"
   depends_on "six"
 
   uses_from_macos "sqlite"
