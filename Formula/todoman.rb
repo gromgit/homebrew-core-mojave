@@ -6,15 +6,16 @@ class Todoman < Formula
   url "https://files.pythonhosted.org/packages/2d/b0/ffe9e812fa710579d07369763262e418cadb2a99fc5d0ec0d685c7f33a69/todoman-4.1.0.tar.gz"
   sha256 "ce3caa481d923e91da9b492b46509810a754e2d3ef857f5d20bc5a8e362b50c8"
   license "ISC"
+  revision 1
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/todoman"
-    sha256 cellar: :any_skip_relocation, mojave: "bece61db1c4b417985b9764fa75f4321fa8766bb8efec5c788332006b636c1f2"
+    sha256 cellar: :any_skip_relocation, mojave: "124fe63492171251dc46a108a3f950d8dff193353fb8392c66a346f59d957ce7"
   end
 
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "libpython-tabulate"
+  depends_on "python@3.10"
   depends_on "six"
 
   conflicts_with "devtodo", because: "both install a `todo` binary"
