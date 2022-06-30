@@ -1,15 +1,14 @@
 class Tmuxinator < Formula
   desc "Manage complex tmux sessions easily"
   homepage "https://github.com/tmuxinator/tmuxinator"
-  url "https://github.com/tmuxinator/tmuxinator/archive/v3.0.2.tar.gz"
-  sha256 "3992e4a13113ebc6d1d7571c2fae05a056655ee7bfd2eba1455242e30a6dcdd8"
+  url "https://github.com/tmuxinator/tmuxinator/archive/v3.0.5.tar.gz"
+  sha256 "f67296a0b600fb5d8e51bf8fc9f8376a887754fd74cd59b6a8d9c962ad8f80a4"
   license "MIT"
   head "https://github.com/tmuxinator/tmuxinator.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tmuxinator"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "379d5d7ac32763bbfabebe2ae7c3c6fc44f61fa3eb5e047ba10184b4bc72f0b6"
+    sha256 cellar: :any_skip_relocation, mojave: "3ae191a144fc61ed8f835f09f5d6792fbbfa2180d50568ad8bd625d26a527509"
   end
 
   depends_on "ruby"
