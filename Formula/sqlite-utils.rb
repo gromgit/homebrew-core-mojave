@@ -5,14 +5,15 @@ class SqliteUtils < Formula
   url "https://files.pythonhosted.org/packages/92/b6/0a91a81b21b7be2dfdb2e964941000d299168dea582bfb899dfae5425abf/sqlite-utils-3.27.tar.gz"
   sha256 "49eadc3cad92bebabbac450b825be3ab5277155d31d1a1c72acef61e65e44c6a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlite-utils"
-    sha256 cellar: :any_skip_relocation, mojave: "8c7131aade07060e6b983e8932af806df32f357780c015cfa89208bd99f5a892"
+    sha256 cellar: :any_skip_relocation, mojave: "f990fc0e9474e5002f13e142264755c5f0ffc5bfac00d1059e4d51fca45284fa"
   end
 
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "libpython-tabulate"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "click" do
