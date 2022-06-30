@@ -1,4 +1,6 @@
 class Ydiff < Formula
+  include Language::Python::Virtualenv
+
   desc "View colored diff with side by side and auto pager support"
   homepage "https://github.com/ymattw/ydiff"
   url "https://github.com/ymattw/ydiff/archive/1.2.tar.gz"
@@ -7,18 +9,15 @@ class Ydiff < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6496ac2da3fe8681060dc732141f174db77cca1f3a8fe7aeffa8201ba2638c1b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ydiff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a9df2793de62039203f675e3bd4b560a89188ad4f3bc2df676eec1c96121ee8a"
   end
 
   depends_on "python@3.10"
 
   def install
-    xy = Language::Python.major_minor_version "python3"
-    ENV["PYTHONPATH"] = libexec/"lib/python#{xy}/site-packages"
-
-    system "python3", *Language::Python.setup_install_args(libexec)
-    bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
+    virtualenv_install_with_resources
   end
 
   test do
