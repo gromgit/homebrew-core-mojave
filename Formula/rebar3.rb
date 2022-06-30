@@ -1,8 +1,8 @@
 class Rebar3 < Formula
   desc "Erlang build tool"
   homepage "https://github.com/erlang/rebar3"
-  url "https://github.com/erlang/rebar3/archive/3.18.0.tar.gz"
-  sha256 "cce1925d33240d81d0e4d2de2eef3616d4c17b0532ed004274f875e6607d25d2"
+  url "https://github.com/erlang/rebar3/archive/3.19.0.tar.gz"
+  sha256 "ff9ef42c737480477ebdf0dd9d95ece534a14c96f05edafbf32e9af973280bc3"
   license "Apache-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Rebar3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rebar3"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d1de4c7d0b2b66b7b77805fbefd0148e6a98513ebbd05ce5cd97eef2b7cd1efa"
+    sha256 cellar: :any_skip_relocation, mojave: "23a1d13c672b3f4d031de60fe6b8a8b492dc0ef595955ac5c65cc3fd07f52b3a"
   end
 
   depends_on "erlang"
