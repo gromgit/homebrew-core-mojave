@@ -1,17 +1,13 @@
 class Singular < Formula
   desc "Computer algebra system for polynomial computations"
   homepage "https://www.singular.uni-kl.de/"
-  url "https://service.mathematik.uni-kl.de/ftp/pub/Math/Singular/src/4-2-1/singular-4.2.1.tar.gz"
-  sha256 "28a56df84f85b116e0068ffecf92fbe08fc27bd4c5ba902997f1a367db0bfe8d"
+  url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/4-3-0/singular-4.3.0.tar.gz"
+  sha256 "74f38288203720e3f280256f2f8deb94030dd032b4237d844652aff0faab36e7"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_big_sur: "abff098b3e9ee836f54f320103eb4a34b418d54dc4776ddfa391c9a698728fbb"
-    sha256 big_sur:       "6ee7ee8c292b8916c7bfdb32f8218fe629d11eeaf0fb2fdede9959c219b60726"
-    sha256 catalina:      "e28a1b276a609142eeb0d1c61b5530498f740bb840f991c18134e1c6daaeb76e"
-    sha256 mojave:        "c7e348e7558c41f959fca63f960143379b6f2c9535d3c769cfe3131f4086394a"
-    sha256 x86_64_linux:  "0b05cf52f0373c446904b561bed84b31019915bb101ad11c350736ae710ae0a5"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/singular"
+    sha256 mojave: "104a52104adb01270598b154d4a394afd406b7bf515a26e58715cb524ecd907e"
   end
 
   head do
@@ -27,8 +23,15 @@ class Singular < Formula
   depends_on "ntl"
   depends_on "python@3.10"
 
+  on_macos do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   def install
-    system "./autogen.sh" if build.head?
+    # Run autogen on macOS so that -flat_namespace flag is not used.
+    system "./autogen.sh" if build.head? || OS.mac?
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
