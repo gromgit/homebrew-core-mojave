@@ -6,15 +6,16 @@ class Regipy < Formula
   url "https://files.pythonhosted.org/packages/73/4a/7a5c7ccdfa0858c636ebe267c235d32a6d75e83e26477c98c4e550396ef0/regipy-2.5.3.tar.gz"
   sha256 "4d69dd28dfe0796829fa4ac032208df686242b94df90bb8ff96c286176dcd153"
   license "MIT"
+  revision 1
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regipy"
-    sha256 cellar: :any_skip_relocation, mojave: "11cfcaebae9bf718dd95dddf0271802110ddb191bb19ac0694f97f84c6be847f"
+    sha256 cellar: :any_skip_relocation, mojave: "d975a62d406ef94230c21c972824030fe810e3a1ed9ec207cdaf86669699bc6c"
   end
 
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "libpython-tabulate"
+  depends_on "python@3.10"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"
@@ -52,14 +53,8 @@ class Regipy < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.9")
-    res = resources.map(&:name).to_set
-    res -= %w[test_hive]
-
-    res.each do |r|
-      venv.pip_install resource(r)
-    end
-
+    venv = virtualenv_create(libexec, "python3")
+    venv.pip_install resources.reject { |r| r.name == "test_hive" }
     venv.pip_install_and_link buildpath
   end
 
