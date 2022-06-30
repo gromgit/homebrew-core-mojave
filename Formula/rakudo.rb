@@ -1,16 +1,18 @@
 class Rakudo < Formula
   desc "Perl 6 compiler targeting MoarVM"
   homepage "https://rakudo.org"
-  url "https://github.com/rakudo/rakudo/releases/download/2022.02/rakudo-2022.02.tar.gz"
-  sha256 "6a6e9dbcc6d9a1610a34c6ec67e2d3f694d7b33e9e0a0f224543089fa7f71332"
+  url "https://github.com/rakudo/rakudo/releases/download/2022.04/rakudo-2022.04.tar.gz"
+  sha256 "7e13a8cc927efbe86b8ff7b19155a60a6f6e2b6e2952bd690dcacef2d02a1c74"
   license "Artistic-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rakudo"
-    sha256 mojave: "b3716c92d8e50a456736bca2d0a26088e7365ab124e52b2aca1d7181cdb51719"
+    sha256 mojave: "ef002d628d1975ebbbc1a0fdda07f80b644a84d9cd2fa428c4f2085b3a53644b"
   end
 
   depends_on "nqp"
+
+  uses_from_macos "perl" => :build
 
   conflicts_with "rakudo-star"
 
