@@ -1,8 +1,8 @@
 class Xmrig < Formula
   desc "Monero (XMR) CPU miner"
   homepage "https://github.com/xmrig/xmrig"
-  url "https://github.com/xmrig/xmrig/archive/v6.17.0.tar.gz"
-  sha256 "748a989390202ba2d1ccbd9d9a6b8cbd6551149cbab63b347fd1ed6df0254faa"
+  url "https://github.com/xmrig/xmrig/archive/v6.18.0.tar.gz"
+  sha256 "4531a31c0c095fcae18fdef0157f1e2a6694408abbcff6789c8f3cd6ab2c3ca0"
   license "GPL-3.0-or-later"
   head "https://github.com/xmrig/xmrig.git", branch: "dev"
 
@@ -13,8 +13,7 @@ class Xmrig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmrig"
-    rebuild 1
-    sha256 mojave: "d6ac5bbfacf5e216c4f2027e8f270be8948b8b5a4bd299c1d3141517528f7f38"
+    sha256 mojave: "43d18e1159886bce9e1b0f664c7742bff6d022ba53557b3131fd2778acf20a15"
   end
 
   depends_on "cmake" => :build
