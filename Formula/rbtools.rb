@@ -3,14 +3,14 @@ class Rbtools < Formula
 
   desc "CLI and API for working with code and document reviews on Review Board"
   homepage "https://www.reviewboard.org/downloads/rbtools/"
-  url "https://files.pythonhosted.org/packages/68/19/48f2e95bccac4299cdd75932e812cff9f0a0bd802afeb67027563b162ee4/RBTools-3.1.tar.gz"
-  sha256 "a185dd9c4b42eeda6b611135b3a814cc01c9b870519a3b6d6d7e7401592692f9"
+  url "https://files.pythonhosted.org/packages/f3/12/69737ab2c89eae4e7c7952792148e6d065150a8c5067e3dfa184583bfcf8/RBTools-3.1.1.tar.gz"
+  sha256 "1c57725cb2c9a23b8aa947a607b6e71a5075c511379652406ca010f917e70b3e"
   license "MIT"
   head "https://github.com/reviewboard/rbtools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbtools"
-    sha256 cellar: :any_skip_relocation, mojave: "8a55be64528bf989e2e102fa360741cc45b1675de475b7c77fe91964a2bb58fc"
+    sha256 cellar: :any_skip_relocation, mojave: "7854839575b7c4c8cfacac0651526b73a007e914ffdfa65c0c9bb824f1d84816"
   end
 
   depends_on "python@3.10"
