@@ -3,13 +3,13 @@ class YtDlp < Formula
 
   desc "Fork of youtube-dl with additional features and fixes"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/06/60/c4146cecfe7f480fc3cb1a8608ba123b7c1e0b74813db77b8f04fd7a7280/yt-dlp-2022.5.18.tar.gz"
-  sha256 "3a7b59d2fb4b39ce8ba8e0b9c5a37fe20e5624f46a2346b4ae66ab1320e35134"
+  url "https://files.pythonhosted.org/packages/4d/63/c2280d3cc56c6545e348cbfb589a698e211d967c666b4682adfd880318dc/yt-dlp-2022.6.22.1.tar.gz"
+  sha256 "ee401a9dcc7e9285b14f13229c3dcefdf387e597f4f4f773dab326aafe3b830c"
   license "Unlicense"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yt-dlp"
-    sha256 cellar: :any_skip_relocation, mojave: "b6f66615fc0947d0841929ae5a54807e21ff722c4a3767a6092da0c68646b94f"
+    sha256 cellar: :any_skip_relocation, mojave: "d2f158f1244b28dfe745db029110b2f4f349c61cf14d7dee4283fea3eca6b2ad"
   end
 
   head do
@@ -25,8 +25,8 @@ class YtDlp < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/cc/85/319a8a684e8ac6d87a1193090e06b6bbb302717496380e225ee10487c888/certifi-2022.6.15.tar.gz"
+    sha256 "84c85a9078b11105f04f3036a9482ae10e4621616db313fe045dd24743a0820d"
   end
 
   resource "mutagen" do
