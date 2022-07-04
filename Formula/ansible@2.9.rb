@@ -8,19 +8,17 @@ class AnsibleAT29 < Formula
   license "GPL-3.0-or-later"
   revision 3
 
-  # The newest PyPI release won't be a 2.9.x version, so we match versions from
-  # the links in the "Release History" section.
-  livecheck do
-    url :stable
-    regex(%r{href=.*?/project/ansible/v?(2\.9(?:\.\d+)*)/?["' >]}i)
-  end
-
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.9"
-    sha256 cellar: :any, mojave: "8feb2b7d440fbc191e1fbc2d8e9d6535e8873ffc5bca9218ab1c708016e5cbf9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.9-2.9.27"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d7d0ebe6e9dbc411a404cae8c28721417597d27aabf875a840951370aea1d2b7"
   end
 
   keg_only :versioned_formula
+
+  # Ansible 2.9 was documented as unmaintained/EOL upstream on 2022-05-11.
+  # Ref: https://github.com/ansible/ansible/commit/6230244537b57fddf1bf822c74ffd0061eb240cc
+  disable! date: "2023-05-11", because: :unmaintained
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
