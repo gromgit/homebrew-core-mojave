@@ -19,7 +19,6 @@ class Sha1dc < Formula
     sha256 cellar: :any,                 high_sierra:    "a489f11b91a88486274717eace83368f6b072b134ddc62001157b1fae9873dab"
     sha256 cellar: :any,                 sierra:         "9eba4b19247672b715376e2086689e7418235d850a158636d2ba3deb46851933"
     sha256 cellar: :any,                 el_capitan:     "32d59c039a26d232b35f3c1877ca8c78ba0a303866adefee002c017359b03267"
-    sha256 cellar: :any,                 yosemite:       "939388a0fe029d8cba8080a778269322489c55f787301947c82fb30cf8433b08"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "981db3d0b2fcf5e914e1506a746dfb2bd14d83a191f268d8cdf5cb57401c0475"
   end
 
