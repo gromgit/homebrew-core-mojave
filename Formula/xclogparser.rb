@@ -1,17 +1,17 @@
 class Xclogparser < Formula
   desc "Tool to parse the SLF serialization format used by Xcode"
   homepage "https://github.com/MobileNativeFoundation/XCLogParser"
-  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/v0.2.33.tar.gz"
-  sha256 "bd74c19532f5725203f3b53c0f4119bf6fe41e53496bcb244c05978c83fc4f82"
+  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/v0.2.34.tar.gz"
+  sha256 "25e1275229064e314ce6f1107541891a5a6438c76a10ecc6d2b592f5a441713b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "495b8aeb21c06d9186fb5e4810bd1ef36ba2377769357a476aed7d70c7fa242a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e8432ebb3b4cc15464483e056c96cb404fb882e88fbbcfd37c0c8b945f79584"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b794bbec84c4dd4a4a867665928226b817791d0b95ee09fbee8759c1c5cc196"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e5ebb1b3504239807973329a8e6c4eae4a5cd1bf6839c7456aea36b9901ead0a"
-    sha256 cellar: :any_skip_relocation, catalina:       "02a0e5a688b94de7bc21fc773a194a99f30b92f442563360593708e4ccbb6c82"
-    sha256                               x86_64_linux:   "420309e800cea377e95d196f305f3350c68427c0413899c445281c0f6bfd0e1e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "994fa1ec0e1e3f31bf142c624b757eeb919b6768ad26537cac04b7210ceb9fd3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4213857270f8c4a2183b1db5e4d19b362d773fae69e0325e312a13357af18904"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c4a457594ceefe0bd397520db0d20ff2284f18c27eb5e73bd21227b2f0bfd9e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cc3ef11105330e603348299884e3b639220d2c0fecde7c3f4a67bc15aadeac40"
+    sha256 cellar: :any_skip_relocation, catalina:       "8b1cf6b196da874f6bf466356579df3d7a644cbdc66c8c141e374c4736a74b4b"
+    sha256                               x86_64_linux:   "1022ff8d803b5607c74040b869f94169b917689d62f09e8244e87eb21ab4b4f1"
   end
 
   depends_on xcode: "12.0"
