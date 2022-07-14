@@ -21,7 +21,6 @@ class Bsdiff < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "3624be48c026da2a0ade8316548296ec4b2b100a0b9914acb77124374c9be0d2"
     sha256 cellar: :any_skip_relocation, sierra:         "c21cd31202c096b99788346b22a3aeaddd72b397b2ae6cbd971926ba93d9f541"
     sha256 cellar: :any_skip_relocation, el_capitan:     "4b4e2e68dc5ffa9a5fc02b6c59c4d8201d8d6df8d5e6aef5bd70854ecbe917b7"
-    sha256 cellar: :any_skip_relocation, yosemite:       "79d0ef36a33a214595c66a70d8197a1eb148bcd3c1d1c782d28fc20f6a057d43"
   end
 
   depends_on "bsdmake" => :build
