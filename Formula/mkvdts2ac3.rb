@@ -3,7 +3,7 @@ class Mkvdts2ac3 < Formula
   homepage "https://github.com/JakeWharton/mkvdts2ac3"
   license "Apache-2.0"
   revision 3
-  head "https://github.com/JakeWharton/mkvdts2ac3.git"
+  head "https://github.com/JakeWharton/mkvdts2ac3.git", branch: "master"
 
   stable do
     url "https://github.com/JakeWharton/mkvdts2ac3/archive/1.6.0.tar.gz"
@@ -25,7 +25,6 @@ class Mkvdts2ac3 < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:   "54e70bb92dfdfe615346d6ba815648b1714da8b08a2f361fa95d104f14cee367"
     sha256 cellar: :any_skip_relocation, sierra:        "9a501348303556d867917f03c9c456216d1de39a19e5978472e2ef57f7d6731f"
     sha256 cellar: :any_skip_relocation, el_capitan:    "d3eaf28d8c9718a73c2309eb8d9fc7c0a8db2ea6517324a80092ca02ac7842d4"
-    sha256 cellar: :any_skip_relocation, yosemite:      "4b4c9bf979e7ecd9efa254a9e5fdfe13a5549a209958f86e1233b8cc87a38e4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "471db2824e25cbbdc46fb1e42b2d8fc1c24ba4e92df73cd509b8036f1f559746"
     sha256 cellar: :any_skip_relocation, all:           "471db2824e25cbbdc46fb1e42b2d8fc1c24ba4e92df73cd509b8036f1f559746"
   end
