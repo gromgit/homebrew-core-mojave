@@ -18,7 +18,6 @@ class Autocode < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "a11f1fbbbf04052b9885a00abc88e7539a6c1992e35a62c6776df7ea32daf890"
     sha256 cellar: :any_skip_relocation, sierra:         "f369819b2f33327071a68455a14f66855286c7614977f06704f21c38e2df5f89"
     sha256 cellar: :any_skip_relocation, el_capitan:     "c321c73e1662332392c5949467c544e18db30849019555086ad14eeb097656d2"
-    sha256 cellar: :any_skip_relocation, yosemite:       "a0b7c969db9e2870e818587c7d832bbe0bb187cbc01346b85bb81a6097a9e015"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "186b5262fed77462a1b2407dbd2106ebf80f9e1c48fd56bf57549f6716156f96"
   end
 
