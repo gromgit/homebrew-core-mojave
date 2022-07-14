@@ -16,9 +16,10 @@ class Luabind < Formula
     sha256 cellar: :any,                 high_sierra:    "736bb4cb6a49338eecab9a179f3104e8328d7133366b921b2fece14b6fd2aa26"
     sha256 cellar: :any,                 sierra:         "39e74593d47fd648230e177e9a8a90e1b3a888c84d6c7d38f358265d5b93ce94"
     sha256 cellar: :any,                 el_capitan:     "914a79679264790d9ffb0726a1f303954d816da3dd23db3b8816873cf467677f"
-    sha256 cellar: :any,                 yosemite:       "171123f48a6cf2431d6b143b84bf31dbb955f103195aa30597a61b7a61943982"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8b418ed0d609a995f30fd64ad72c5a99317068f07b4c9950ed3818af6878bae"
   end
+
+  deprecate! date: "2022-07-04", because: :unmaintained
 
   depends_on "boost-build" => :build
   depends_on "boost"
