@@ -17,7 +17,6 @@ class Epeg < Formula
     sha256 cellar: :any,                 high_sierra:    "8ca494e4c2131e0b9c9e02199a26998f7f14e47cf00da9fbe7a5e75891d5fb94"
     sha256 cellar: :any,                 sierra:         "a7d1777cff7684385a5a7d9c524a26e6f6509c80a638fadc99b6db84b96b1636"
     sha256 cellar: :any,                 el_capitan:     "423a279278962dbc33e3e7ec0d7e9e81d497c7c69d7b4f24860630ae9c55b7a1"
-    sha256 cellar: :any,                 yosemite:       "82b3b35c9aae9cbcfe6502489d04ec44a478d058261e8456cba79f791da70a92"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "674c3b2f45bedb504b062b8f4f17af5085908d4f956932c6bc19c334d98a8991"
   end
 
