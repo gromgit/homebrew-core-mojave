@@ -20,7 +20,6 @@ class Libwandevent < Formula
     sha256 cellar: :any,                 high_sierra:    "7593e96a9e76e4b67fa3851a3491c8d7cbd458ad53ff65b3a34b64e2f697e75b"
     sha256 cellar: :any,                 sierra:         "e4b00ade9387b8fdccf72bbe9edd0e334c69f23597f85dd1e6da02088703c286"
     sha256 cellar: :any,                 el_capitan:     "f1459d39284b520c17443c6bef5ccb641dfe1e20266a4f34071f6a87cd9669e4"
-    sha256 cellar: :any,                 yosemite:       "b8c90b8dca1d0ded39036d7f23b4e33857c7914e178ba8ac8870ab702f96fa04"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa30ff4a09850d6c0611845c6a36c981a8648d1fb47afe428d09f28fa7dfa36f"
   end
 
