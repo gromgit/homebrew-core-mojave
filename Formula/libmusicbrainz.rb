@@ -15,7 +15,6 @@ class Libmusicbrainz < Formula
     sha256 cellar: :any,                 high_sierra:    "99b598b941ac0ce3747d8821943a1e730f3673b721421d9c0428b70259e789c0"
     sha256 cellar: :any,                 sierra:         "8fe055e1f987e23a569f915082031e172a5c3d0aef6f86de78ce9c8258f53cd2"
     sha256 cellar: :any,                 el_capitan:     "6a63410ca9eae84b263d7165d05701801f4e05de26a9e95a7396f95a602cedd7"
-    sha256 cellar: :any,                 yosemite:       "0851c7889df9dc2971b60fe9fd8ad891afd8d5dae08877393e2f69e3cc33f589"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9a39724adbf24eb1dd5b25478d8b571be9f8fdc42d6249696e0934e07a1e4c9"
   end
 
