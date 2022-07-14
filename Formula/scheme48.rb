@@ -21,7 +21,6 @@ class Scheme48 < Formula
     sha256 high_sierra:    "590f06c7c31910eed48da06080959628982226e7b09e2aedd352fa6e4a6c2007"
     sha256 sierra:         "e9751df2e3cfd1a007d74d541ca494a439645e3006ad354ddf65b0abfb370864"
     sha256 el_capitan:     "af2ced8a13fdad5478f745c698b09071e71d84daca01c6e3e3c35961b06cbea4"
-    sha256 yosemite:       "475d12c64562fc2498fcd8d9a8bab76d4f290444e43fcf04c40c745a7f6c6923"
     sha256 x86_64_linux:   "522dcf810f30c5e1f91fae01d951764ece1b12edaf42a497c31a87539831168d"
   end
 
