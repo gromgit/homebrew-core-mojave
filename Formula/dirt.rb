@@ -17,7 +17,6 @@ class Dirt < Formula
     sha256 cellar: :any,                 high_sierra:    "b889891f8186b244161241e9c81d20afad20c31bd592fbf6860658334f314d39"
     sha256 cellar: :any,                 sierra:         "63847bffb4de9fa0cf57a1aea8a6bc1d713b8b0a1243ada27e6dd9d4aa21ccc1"
     sha256 cellar: :any,                 el_capitan:     "96b6e1e120bb8be5a051cdca4534d569afe5cae61abdcaf808cdef7af94042af"
-    sha256 cellar: :any,                 yosemite:       "ae94ee15ddb686a63120bea12e2991a5357711fcfcf0ed5c09f7aa6e2d6c3a4f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae8da7d6294c241c81702c67c387d3f8cd53f60a9cb352f185cffbd12d4eded3"
   end
 
