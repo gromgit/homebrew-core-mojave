@@ -19,7 +19,6 @@ class Raptor < Formula
     sha256 cellar: :any,                 high_sierra:    "194f9a66e1aeccb23185abd6f1f1408422594dfd54cad5460c5a5ac3f5e0c48c"
     sha256 cellar: :any,                 sierra:         "dba42ee8efa54c0b5722f0e12a7a585c2a9fe07a22aea6aec9124aaf09860f1d"
     sha256 cellar: :any,                 el_capitan:     "cc2feb9cd1d6f9eb0f511853f19c43bc96d143de6a73edfd3cdb854647d1d14a"
-    sha256 cellar: :any,                 yosemite:       "c23392012fb5edffbe800771eaee6ae81d288e62c477c27332474f2ed342d1b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e12ca0982ee8eebad9a39d5f77ef329dd9e56fdbfa9e3d083648bfecba8d6d7"
   end
 
