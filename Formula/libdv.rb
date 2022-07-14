@@ -15,7 +15,6 @@ class Libdv < Formula
     sha256 cellar: :any,                 high_sierra:    "0f7c7db1baa95682ad66b9d628d51978f162558f6d8296715a38150f83a7c72f"
     sha256 cellar: :any,                 sierra:         "9ea1a006d7aa954c5a1d61497f9f7f43e0b1bd5bce911b6d334a693d8af58671"
     sha256 cellar: :any,                 el_capitan:     "0624e82748111d0a8a050a802ec4251c443127c39c93b3b2469a00816a602040"
-    sha256 cellar: :any,                 yosemite:       "49262f766082fa4c9a509236bdaf5eec8746a8c4b9724fc83521bfc5725660c7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4e579189286f35409557243fe450e7509536f831777f37ae2f7519913bddcf8"
   end
 
