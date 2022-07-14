@@ -20,7 +20,6 @@ class Dsh < Formula
     sha256 high_sierra:     "5d553941319eae8d839a53063057fff05b359eb13e53da2d7313c3d41fae88b0"
     sha256 sierra:          "9d694a476e5d74d7c3edbf284628e3f68c96c5a30c91b7fd3c624630805636ea"
     sha256 el_capitan:      "0b6a147235228473634c424e5e12671b6e9a4609ce6b732dd5ca9f56f335add5"
-    sha256 x86_64_yosemite: "fba83e836f8fa0ddca0a9c35f5f8781aabb0a3c7dfadc8eb6cd69ca1e2930cd0"
     sha256 x86_64_linux:    "b0489652a4291212811da8fdc746690777acbfaafd90f0dfd050fb4699e57734"
   end
 
