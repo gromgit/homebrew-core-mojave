@@ -20,7 +20,6 @@ class Syck < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "a5a983847ae0e83a5f1d83adac736c602f7cce9ae00b9700d81ed766b4fe54bb"
     sha256 cellar: :any_skip_relocation, sierra:         "5a5f8c0f9a9def7ab59a052d85fbb128bc9a1c9c9b7ea2f9639109147eeba252"
     sha256 cellar: :any_skip_relocation, el_capitan:     "a2270f693ce6e8f0542f7d57dc6c8fcb731a268aee3c75a314523446c68602d6"
-    sha256 cellar: :any_skip_relocation, yosemite:       "cacc98eb6fab2440d3f69708688cb80b54bd14e5c472b7097ab9e235d5a670d6"
   end
 
   def install
