@@ -15,7 +15,6 @@ class Namebench < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "4c2312daef0aae052b7e65bdb4b20cdcf1bfa601e5f8a484a7f846be1096bcb1"
     sha256 cellar: :any_skip_relocation, sierra:         "ae766151284842185ceecf1622a82cf55c949994729536015a42eea38f62309c"
     sha256 cellar: :any_skip_relocation, el_capitan:     "3333ef2615f6fbf294cede389d8545487474779a52c18108feb83a4697530cdc"
-    sha256 cellar: :any_skip_relocation, yosemite:       "8d400aed171038f248e9d91718fb42625fc1f278df538b34259f26918b245f66"
   end
 
   deprecate! date: "2021-07-05", because: :unmaintained
