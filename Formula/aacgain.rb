@@ -24,7 +24,6 @@ class Aacgain < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "eda9c36cf9517c9f342031632b9fb38f77d8150cc2a7cf88b57e46f77395c96e"
     sha256 cellar: :any_skip_relocation, sierra:         "2d7ea587b06feb7ccb4f6dfaee3a6d7b329e041cc80af969afb8b5d1631997e8"
     sha256 cellar: :any_skip_relocation, el_capitan:     "b97aaaf19fee69734b4a29e22c498becaa94b3025a192a7ef8f1ecfb0a2ce87c"
-    sha256 cellar: :any_skip_relocation, yosemite:       "5c01278c495e8a67b7af02f6355ac6a79ce6b4caa5148503346eb33e7d26b70a"
   end
 
   def install
