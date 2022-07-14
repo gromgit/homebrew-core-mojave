@@ -1,8 +1,8 @@
 class Hwloc < Formula
   desc "Portable abstraction of the hierarchical topology of modern architectures"
   homepage "https://www.open-mpi.org/projects/hwloc/"
-  url "https://download.open-mpi.org/release/hwloc/v2.7/hwloc-2.7.1.tar.bz2"
-  sha256 "0d4e1d36c3a72c5d61901bfd477337f5a4c7e0a975da57165237d00e35ef528d"
+  url "https://download.open-mpi.org/release/hwloc/v2.8/hwloc-2.8.0.tar.bz2"
+  sha256 "348a72fcd48c32a823ee1da149ae992203e7ad033549e64aed6ea6eeb01f42c1"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Hwloc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hwloc"
-    sha256 cellar: :any, mojave: "d291295dee43e78ec02a6bcc67e5bbd55d551399076188dc17357690cfa7f7c2"
+    sha256 cellar: :any, mojave: "8dd0e702fecb6581bb875ee848c5b964bdb98090f5d544f57cd854efc994054e"
   end
 
   head do
