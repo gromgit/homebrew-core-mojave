@@ -18,7 +18,6 @@ class Dirac < Formula
     sha256 cellar: :any,                 high_sierra:    "9413ec8e068d4c8e30d679a62af9779a09de385e2287acebacf9e5c56e80a50a"
     sha256 cellar: :any,                 sierra:         "09b846fe4069e971ec6d10668d97ac599cb555e5799f3ba3076d0d088e1f78cf"
     sha256 cellar: :any,                 el_capitan:     "8f4414614755f863d3ba0f43d6415684fbc00976ae24c7e45c88fe736be918d2"
-    sha256 cellar: :any,                 yosemite:       "1d3049d9dcdbd0116c65c54582601b20cdd17c8b89cf80e74efc79f71b641ca4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "96695c27a2cd1fbabc1281d052e798b4da85d75ba1a92c6b072808d0a59c62bb"
   end
 
