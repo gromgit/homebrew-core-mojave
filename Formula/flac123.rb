@@ -14,7 +14,6 @@ class Flac123 < Formula
     sha256 cellar: :any,                 high_sierra:    "ac4ee518533f4b043fd380d0ed6e2077ec410c16acdf952b733df533a4750889"
     sha256 cellar: :any,                 sierra:         "f62d8e1f08e8cd5d952f02a35ebcdc921a1295035a2b66e843d80aacb8d9843e"
     sha256 cellar: :any,                 el_capitan:     "669b5ff8922496fe8abe8b020ef92118847539095a0d281f73b85e965be1f708"
-    sha256 cellar: :any,                 yosemite:       "3bc22230d8e4ed12c794a0784173e576d17cfae249bb87d4540680d3f0483957"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "702b567f7ccf2066b130b9356b5e84f0642b000e4c5622b87300eaa6c28b2b99"
   end
 
