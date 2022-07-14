@@ -20,7 +20,6 @@ class Anttweakbar < Formula
     sha256 cellar: :any,                 high_sierra:    "393b87de789337afebed9196404af46fa660fea3b476d874d77b48bb35c8079b"
     sha256 cellar: :any,                 sierra:         "af510970b310b01ee52528e816cdd53e2d4a4e2cfc76e426b1710f758bc99d20"
     sha256 cellar: :any,                 el_capitan:     "417278abe012967efcf22b0276527187f6472dd5fd4d271b1ea32604816d46c9"
-    sha256 cellar: :any,                 yosemite:       "a2e29104a5ef51621faaebd72ccc39bd5fe7bd6e977af74a358c5cc83c65c2c2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "646f7d2db9a50961dadb816aee29190bcac35bfea8b8e9a968bec7274c34e3ac"
   end
 
