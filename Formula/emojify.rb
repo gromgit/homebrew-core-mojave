@@ -7,18 +7,15 @@ class Emojify < Formula
   head "https://github.com/mrowa44/emojify.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emojify"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "235cee647d5d302860f024f17c4a2e19f4da6fbebea8c626a96549fc17770357"
+    sha256 cellar: :any_skip_relocation, all: "525c599c9e16d63627d5b4afca9f43d22e456d21a8e00a05b5e4a4e2acded629"
   end
-
 
   def install
     bin.install "emojify"
   end
 
   test do
-    input = "Hey, I just :raising_hand: you, and this is :scream: , but here's my :calling: , "\
+    input = "Hey, I just :raising_hand: you, and this is :scream: , but here's my :calling: , " \
             "so :telephone_receiver: me, maybe?"
     assert_equal "Hey, I just 🙋 you, and this is 😱 , but here's my 📲 , so 📞 me, maybe?",
       shell_output("#{bin}/emojify \"#{input}\"").strip
