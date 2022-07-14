@@ -5,6 +5,10 @@ class Kobalt < Formula
   sha256 "0b4db9992f18f3b04503aa09dbb690bb12761552b392e24d49b04cc77b8bff68"
   license "Apache-2.0"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   # https://github.com/cbeust/kobalt/issues/510
   disable! date: "2021-06-28", because: :unmaintained
 
