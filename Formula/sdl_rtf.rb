@@ -14,7 +14,6 @@ class SdlRtf < Formula
     sha256 cellar: :any,                 high_sierra:    "319fe65012c94d20675b0b3dc3c9e4df59838ccca7496b81a425bded94e3c9fc"
     sha256 cellar: :any,                 sierra:         "c34abb198f384916d7b2a09a88c69cb84f29674031329bb7a1733e8a5ed39255"
     sha256 cellar: :any,                 el_capitan:     "6c7e9f7459ff062fbb48ee1a383a4fd4acc2c29f5ee9b57dea93710c94ccda11"
-    sha256 cellar: :any,                 yosemite:       "8dd89df32c9ea02bcab36932c2f22bcb6de58d6002bd6fb9e95f9bbfe5ccf41e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "97d2c766e23be9693f5263f8018faac71206cabb5f00d878d879534dfe68b8c3"
   end
 
