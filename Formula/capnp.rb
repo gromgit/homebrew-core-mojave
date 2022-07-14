@@ -1,8 +1,8 @@
 class Capnp < Formula
   desc "Data interchange format and capability-based RPC system"
   homepage "https://capnproto.org/"
-  url "https://capnproto.org/capnproto-c++-0.10.1.tar.gz"
-  sha256 "91413335e2f078017c22e0b1be91c28af9dd7dd8127b88914d21c2bcea55df51"
+  url "https://capnproto.org/capnproto-c++-0.10.2.tar.gz"
+  sha256 "7cd91a244cb330cda5b41f4904f94b61f39ba112835b31fa8c3764cedbed819f"
   license "MIT"
   head "https://github.com/capnproto/capnproto.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Capnp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/capnp"
-    sha256 mojave: "3b8ea8d695130a916f29f6e5bf8d0938bdc602918dbb5474cdaaa8e850b072fa"
+    sha256 mojave: "2da6e4ee95f72feafb280fad786fc763df05815a555144d3906bb2b96c911e4c"
   end
 
   depends_on "cmake" => :build
