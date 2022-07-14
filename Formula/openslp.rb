@@ -12,7 +12,6 @@ class Openslp < Formula
     sha256 high_sierra:  "3a933a2c697a2b7a00d9b1f9cc3a58664c43c18f7b4ff3d99afa7bc11d721da5"
     sha256 sierra:       "fdd847dba24e5a96c30ccef98f0d035f39abc88617d779df627c132be5b648ae"
     sha256 el_capitan:   "1c19d8355ddda63b9259101a0b7b56ea0fd9fb8f343e2df19f7248542fbf38e5"
-    sha256 yosemite:     "95e41f7f42e80ab3234b460d90196389a0d275877195fe188ffc6249c0b762ce"
     sha256 x86_64_linux: "31a9bf8bd539a71378e4f5f6a438cdef166659e3641a9899213dd166dcaeee6c"
   end
 
