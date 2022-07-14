@@ -15,7 +15,6 @@ class Daemonlogger < Formula
     sha256 cellar: :any,                 high_sierra:    "04242956845e71d839b050dd765829a217268486eb625a481a3fae85bd577f0d"
     sha256 cellar: :any,                 sierra:         "c3ac14ab04174e06129fc0a51d31ad992f3d11f362ecb1cf3803092b6c68b146"
     sha256 cellar: :any,                 el_capitan:     "582aa8e07f269bdfa00b1f66157c06339b62285d94f6b8ffa6a472eac063e5e5"
-    sha256 cellar: :any,                 yosemite:       "3497b590f03a70d322452abd71a1121d9a952d05a82af875c1dc11e5ae0324d6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "462b6ecbf94169210be2591de29de97b69a701cc810485fb956bf7892e1b57fa"
   end
 
