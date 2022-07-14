@@ -20,7 +20,6 @@ class Ripmime < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "915cd6326fe857e0608d25c9b6e2f4fab06734df23d0ad938184c1b791981345"
     sha256 cellar: :any_skip_relocation, sierra:         "09a2b60d927bbc236998e29ea50969ce95ab4470d74cd7a40a54f9f4ec24252b"
     sha256 cellar: :any_skip_relocation, el_capitan:     "1151fa0bb8a10779979cec95c7039832eb81b7126f808ba9c89ccb73cf658814"
-    sha256 cellar: :any_skip_relocation, yosemite:       "6ef2fdabe468bc42be725020ef23cc924d1572c7446648e38dbd6de3f1399a38"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a34870dfc003b3d39cfaf0c27f85409fcc3579a5a53e2700f13bddc61be2a6e"
   end
 
