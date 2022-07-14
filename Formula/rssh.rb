@@ -14,7 +14,6 @@ class Rssh < Formula
     sha256 high_sierra:    "05dd4375824810caf77f7b40d2b1ff0a229e6743f46c755427c428d5ca31f173"
     sha256 sierra:         "aebe589ee047200b1fd0486d3a1fb08c4a601366391e80bcd1e7dcb87ca456e0"
     sha256 el_capitan:     "23891b0317ef29a36b0b8ee9f140193d17ae616983c13f2179d5b317b33e1eee"
-    sha256 yosemite:       "a63ead463b79c5375e0b919976173db13a236fcea06c4fa038a719375a550ca9"
   end
 
   deprecate! date: "2021-01-22", because: :unmaintained
