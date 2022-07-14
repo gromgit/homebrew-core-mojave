@@ -16,7 +16,6 @@ class Teapot < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "f918044ee7953b5cc9be50487cc86bf57b4e217990551cc67c6f0c9c41f0ac0a"
     sha256 cellar: :any_skip_relocation, sierra:         "f0dc057cdfa1aa5168898a22791ee72fd3e525fd750838e94147f8b3811c1b07"
     sha256 cellar: :any_skip_relocation, el_capitan:     "84673e8886e1f24250116d8c423383d0babbc53e1cb669ba46b45a37a2344399"
-    sha256 cellar: :any_skip_relocation, yosemite:       "0ffd7fa1ac31cc91c9c71d225d26970e23da5719d7505d4a1dcaf40617c44afb"
   end
 
   deprecate! date: "2022-05-14", because: "Upstream website has disappeared"
