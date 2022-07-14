@@ -65,9 +65,10 @@ class GlibcAT213 < Formula
   url "https://ftp.gnu.org/gnu/glibc/glibc-2.13.tar.gz"
   sha256 "bd90d6119bcc2898befd6e1bbb2cb1ed3bb1c2997d5eaa6fdbca4ee16191a906"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
 
   bottle do
-    sha256 x86_64_linux: "57a6ca64716049ea84a5a85f520b4df984a1c24cdbc5faae22243555dd901f31"
+    sha256 x86_64_linux: "fcfd8511ae57b126f377789db1294e74bd48c2be941badd8e33a378dbdef9e16"
   end
 
   keg_only :versioned_formula
@@ -78,6 +79,13 @@ class GlibcAT213 < Formula
   depends_on SedRequirement => :build
   depends_on :linux
   depends_on LinuxKernelRequirement
+
+  # Fix getconf files having random bytes at the end of their names.
+  # Backport of patch included in 2.16.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/d87dbbdadb5aa4899fd293be70f8087a412d6a59/glibc/2.13-getconf.diff"
+    sha256 "e945c11c76655cba6f3e1c13d847e57d6e591a5af3fd7d3eb2c200475bfcdaed"
+  end
 
   def install
     # Fix checking version of gcc-5 5.4.0, bad
@@ -123,14 +131,7 @@ class GlibcAT213 < Formula
     end
 
     # Fix quoting of filenames that contain @
-    rm_f lib/"libc.so"
-    (lib/"libc.so").write <<~EOF
-      /* GNU ld script
-      Use the shared library, but some functions are only in
-      the static library, so try that secondarily.  */
-      OUTPUT_FORMAT(elf64-x86-64)
-      GROUP ( "#{lib}/libc.so.6" "#{lib}/libc_nonshared.a" AS_NEEDED ( "#{lib}/ld-linux-x86-64.so.2" ) )
-    EOF
+    inreplace [lib/"libc.so", lib/"libpthread.so"], %r{(#{Regexp.escape(prefix)}/\S*) }, '"\1" '
   end
 
   def post_install
