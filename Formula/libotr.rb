@@ -20,7 +20,6 @@ class Libotr < Formula
     sha256 cellar: :any,                 high_sierra:    "0b340441feba4b325c3ff5c26a9e79b16294461f6f681ae42a2a5d45966e7391"
     sha256 cellar: :any,                 sierra:         "9f0b214278e4cdf81a1a0c083f1aa45ba64430b449121c4d0596357952dcc93d"
     sha256 cellar: :any,                 el_capitan:     "43d7a166cd12b611e7bf15dfa3865d18e573a81a218e2aeb0061d51203ecde39"
-    sha256 cellar: :any,                 yosemite:       "b3f215fd3952f7a97af36500365c3c017f23de107162f4c76b0e48355bd2a358"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6aa94cf47042090f80a21474fe5e29203fa5cda8e10900b1dc1d4065f93e716f"
   end
 
