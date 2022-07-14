@@ -20,7 +20,6 @@ class Lzop < Formula
     sha256 cellar: :any,                 high_sierra:    "d42fafd3f1f39d9ab512f755bd216edd24002caf8a4da82f80818fe2c29f0556"
     sha256 cellar: :any,                 sierra:         "73c2ce334be9317ca79509aec3acef2fa1eff0ffb69fdc10b3850b7f51101f72"
     sha256 cellar: :any,                 el_capitan:     "26e49bf0d06fb60d7cd5c431634966f28993edc250c4d06b0db26b28aae3cd0d"
-    sha256 cellar: :any,                 yosemite:       "d9e12c4bb51c43dd306d5283fde5c3350e3e1f7f1d48c05c831a57b058db1354"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "15ba7328bdcb1e9789b03851966efb4cd6ccc3feb35cfbc37a364be6fc4c77e7"
   end
 
