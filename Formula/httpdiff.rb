@@ -7,9 +7,16 @@ class Httpdiff < Formula
   head "https://github.com/jgrahamc/httpdiff.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/httpdiff"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c2671a62b3b9b4e916452939b2018c7a3ff119ac01fc5a9ea1b806460af7b80c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8e0883f20c870f02e78385ba604f33cca56c29e41037c1b42c98b9e231a1845"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "290b6c6f1c990249cc760ee510f0669dd9e317ac169be71cd5fb945a8625413e"
+    sha256 cellar: :any_skip_relocation, monterey:       "868da1b5aed20834315043ee38f653e34166b799fdf4ee90aa5967de099d8c45"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bd0aa59b471dc747b3af50d5c1f4611ed2c4993eebe64ffb4d343d1d7bef0fbb"
+    sha256 cellar: :any_skip_relocation, catalina:       "5731d30f22cf63bd619c18f0f91c4547c52f2ae1b38a2cfeb0316958e93995c1"
+    sha256 cellar: :any_skip_relocation, mojave:         "6113414a69c11632f0088e478d6db0acc6b826db7937c3570e661152c58bd334"
+    sha256 cellar: :any_skip_relocation, high_sierra:    "1432608ef9e3ffaac9fc3c6207e63d888dd2246e1c806bc6a57cab312f944aea"
+    sha256 cellar: :any_skip_relocation, sierra:         "39a0d685904aba4c3e55ff22b4d231b8890c022a1eb0366dc264bbabc410a117"
+    sha256 cellar: :any_skip_relocation, el_capitan:     "59b46605118f8789c10facd53e9d4ce4c9f54c8de85611d423984c4316a169eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b75213c432ca3754d283de01029ae208a75955949c8b5b9e04613c9da943f8c"
   end
 
   depends_on "go" => :build
