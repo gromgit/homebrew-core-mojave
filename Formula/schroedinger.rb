@@ -16,7 +16,6 @@ class Schroedinger < Formula
     sha256 cellar: :any,                 high_sierra:    "1e9953cbef67e87a7ca9ebecfcc4af5f0eb2261d17f3a1195386b7512b9312be"
     sha256 cellar: :any,                 sierra:         "7d2d6d343f571e21f27ce5c13645ebe7039e4d45d2b96dba550f6383185c18f6"
     sha256 cellar: :any,                 el_capitan:     "1b990c49b7d72f3030bcee52bf70094a6cf16111867565cdb7541f670636cf05"
-    sha256 cellar: :any,                 yosemite:       "5b1355803b730a9727c959261f0e2afc217f77502eac88120f77941c5cf373db"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32c7db0617f2a2d01b89d446860529fc3520f377e601a460fadc5e3ce2bc0baa"
   end
 
