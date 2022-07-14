@@ -20,7 +20,6 @@ class Autobench < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "02e3a2a6aa7c3e2d6d0a4500445c7b08bd0804dac28d863944dfd48d41f025d9"
     sha256 cellar: :any_skip_relocation, sierra:         "daecaaf9c3a733c7667c5414371ba948896b0c0eb47dfd1b1ce876921c829390"
     sha256 cellar: :any_skip_relocation, el_capitan:     "37bb6f40825953f9ba176522bc64d74a6375304d7963331aee937417e339964f"
-    sha256 cellar: :any_skip_relocation, yosemite:       "9884556bd5f7ab7c29a0aa199328cbe609e04437b1ddce4703214ba65f15d40a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f33306a0edae89cab46f98344c30feeab7a3d9d03e1d6c21e578720c8cac794f"
   end
 
