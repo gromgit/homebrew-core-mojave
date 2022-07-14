@@ -17,7 +17,6 @@ class Cmockery < Formula
     sha256 cellar: :any,                 high_sierra:    "8ee7bb6453fae2cdfc129f6aad3ac9a8766a396ec7df9d38444f6b688697c3ea"
     sha256 cellar: :any,                 sierra:         "f3b1c3d5c96ea9e30dc008e557239e972a18e65b3dd1ee8a593a0eb6e11d7858"
     sha256 cellar: :any,                 el_capitan:     "6cc440503b2fce7def7d584aacf8e9142ad430de799b466f609f57fd9beb4ede"
-    sha256 cellar: :any,                 yosemite:       "a6ac86af8d5b7f5964a480cc91bfbdaf260c59eae2c4b79663ebab2dfdb7d062"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "533f1415fd60a5f31757ede621f69316eb6a944b1702a0c9a846cadd9390d2d6"
   end
 
