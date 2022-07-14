@@ -15,7 +15,6 @@ class Mosml < Formula
     sha256                               high_sierra:    "7a888abd233069f837cf9aba4021baa71387a4b720bc53323d40a963433b566a"
     sha256                               sierra:         "297c05c55f2784f3b934a2fdb3ec2f91d8b11a06453c8649c1f6562cefdc089e"
     sha256                               el_capitan:     "5dae62ca2034ba70844d684111cec58561895eac39db3177d439747512206002"
-    sha256                               yosemite:       "3a0289ba1b1a56cf3c2a598ccbee9b1739c7c35628a173dd00bd2f20fead6703"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "42bf79793655431b313d4c547e7c9b6867b2f1695035005a15b8da6c0b25c416"
   end
 
