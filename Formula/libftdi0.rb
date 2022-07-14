@@ -15,7 +15,6 @@ class Libftdi0 < Formula
     sha256 cellar: :any,                 high_sierra:    "ef988a7e074542fb5df2c8e803b19e9d20b8602e3899833b10d6cdf862b4c5be"
     sha256 cellar: :any,                 sierra:         "f89e79f5eb94d55e130dcc55deca87f1241b386bf45070dda52c2c22707ead15"
     sha256 cellar: :any,                 el_capitan:     "8fbc5ef456600b919430d86dd4e7090ae1f1064e4a51d631ab9bd7b39887ead2"
-    sha256 cellar: :any,                 yosemite:       "92ecdb3a110e1abcba05561f0def8e573d1f8174d4e04247375dd5cd47d3bc24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b534233dfc308f70dba8650d30fdd2d82a4991a5f9afd0f892ec2adb0af63395"
   end
 
