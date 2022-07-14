@@ -1,14 +1,14 @@
 class Libidn < Formula
   desc "International domain name library"
   homepage "https://www.gnu.org/software/libidn/"
-  url "https://ftp.gnu.org/gnu/libidn/libidn-1.40.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libidn/libidn-1.40.tar.gz"
-  sha256 "527f673b8043d7189c056dd478b07af82492ecf118aa3e0ef0dc98c11af79991"
+  url "https://ftp.gnu.org/gnu/libidn/libidn-1.41.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libidn/libidn-1.41.tar.gz"
+  sha256 "884d706364b81abdd17bee9686d8ff2ae7431c5a14651047c68adf8b31fd8945"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libidn"
-    sha256 mojave: "c491a0bd23118077decc021b34c5925c295c187fb8ea969c0bb5b0c1bbf8e014"
+    sha256 mojave: "635b9e2916342d4f4f0af3d1ed031fd2e1d010f19f36919c66dd500f24c56254"
   end
 
   depends_on "pkg-config" => :build
