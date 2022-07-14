@@ -20,7 +20,6 @@ class Aamath < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "41223cb51bc006abfba33b6af77b665c28de4155d19e5f43d0561b885b73368f"
     sha256 cellar: :any_skip_relocation, sierra:         "d537cb11d2dcbac9b5d5356c471775699312e83450635ba7676083f381a531cd"
     sha256 cellar: :any_skip_relocation, el_capitan:     "8b805e37fd5f4536b4fbf7f3ae6251b645b4b132027d56ccd015a6036c304744"
-    sha256 cellar: :any_skip_relocation, yosemite:       "1e22022e621e7d2337edf4a80ae2c1618a89089132656d85cc141774565e34d7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f803d33b088e251eba9820706307616a771dea7d2994818a8fc36aca85af0541"
   end
 
