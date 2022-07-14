@@ -20,7 +20,6 @@ class LibusbCompat < Formula
     sha256 cellar: :any,                 high_sierra:    "fccc08c6c3ff2bf93d2aa8e7cc18f30c1fb95fbca044ecaa42d45f7c73a8facf"
     sha256 cellar: :any,                 sierra:         "e24ad80ee860f6f6c7e6c8dbb100aaa2de3294e2ecf7f591f2f51c52e11f09ea"
     sha256 cellar: :any,                 el_capitan:     "7b62449f8a9c02834b74adeb0827ca2ae32b47cb82923de0a8e88f16c36ca8b8"
-    sha256 cellar: :any,                 yosemite:       "0e4f131b8fd8210db3ff353a92c35ed12643a717b8780618680e3b4a16d7f347"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f696d9eaabea3d1a6facc6b259157df62f5c0dae3b523d93c5010bfbe4ba7d81"
   end
 
