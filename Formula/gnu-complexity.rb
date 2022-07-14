@@ -16,7 +16,6 @@ class GnuComplexity < Formula
     sha256 cellar: :any,                 high_sierra:    "94558c250d55d6d1c83e682d38481b0d75b12850d46e00dacdf81744be288229"
     sha256 cellar: :any,                 sierra:         "3ea1d968a1eaa2ce6655fa8e33b721af3cd631075f960c6595ca68aecd0972c7"
     sha256 cellar: :any,                 el_capitan:     "89b7043d1f51fc6ff7a1e96f8ed23bbac73bbb7196a04851a2cf29475b0803f7"
-    sha256 cellar: :any,                 yosemite:       "35a8ac468a12565af95b82c75d6b45c9c55c27fa769244f0bd87ec69b10742b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bc40505bf964f2ac7ef30d2f65c8180832e709c49cf6872b8651caf6a84b1a1"
   end
 
