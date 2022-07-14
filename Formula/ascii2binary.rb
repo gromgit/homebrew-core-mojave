@@ -5,9 +5,15 @@ class Ascii2binary < Formula
   sha256 "addc332b2bdc503de573bfc1876290cf976811aae28498a5c9b902a3c06835a9"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?ascii2binary[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ascii2binary"
-    sha256 cellar: :any, mojave: "67df361d2aeb6bd4fe6f48d19e6e78783087e38fd944d70a5c3343e738f01224"
+    rebuild 1
+    sha256 cellar: :any, mojave: "02e8dd0519bc9f5cd9e93c1add075ef462f5248d563c0582e8e7abf8060de2b3"
   end
 
   depends_on "gettext"
