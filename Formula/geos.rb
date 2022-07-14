@@ -1,8 +1,8 @@
 class Geos < Formula
   desc "Geometry Engine"
   homepage "https://trac.osgeo.org/geos"
-  url "https://download.osgeo.org/geos/geos-3.10.3.tar.bz2"
-  sha256 "3c141b07d61958a758345d5f54e3c735834b2f4303edb9f67fb26914f0d44770"
+  url "https://download.osgeo.org/geos/geos-3.11.0.tar.bz2"
+  sha256 "79ab8cabf4aa8604d161557b52e3e4d84575acdc0d08cb09ab3f7aaefa4d858a"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Geos < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geos"
-    sha256 cellar: :any, mojave: "09034ce1435b4721587e2b81c17ff0a0403d204ce3111ed5d4295dd292d4a567"
+    sha256 cellar: :any, mojave: "71b03678ede6b03a7360937f3ee5a830a25afe1be868220f448ef88e937c1d4f"
   end
 
   depends_on "cmake" => :build
