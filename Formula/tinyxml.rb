@@ -14,7 +14,6 @@ class Tinyxml < Formula
     sha256 cellar: :any,                 high_sierra:    "ec0f83018a9ff93c11b6a8c92483056b2771359a14aedfb6dc46e1ab078ce9ac"
     sha256 cellar: :any,                 sierra:         "ef8c7bbbae6148e161b6f3369ede8bd3533a32847dc716000b46d26e6fb1c26c"
     sha256 cellar: :any,                 el_capitan:     "16e6052892b43e68c45f5122b6802e9bc32001dc9478dfcd89511a24544660e5"
-    sha256 cellar: :any,                 yosemite:       "4b1df9cb229b04f9968621a52737d96e86fcd6c2ad8904ae8a5c324347845f50"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ade5525899de7063ade79d1b0dec70ceef3d0acc08e1dc1b55e937cb539ad38d"
   end
 
