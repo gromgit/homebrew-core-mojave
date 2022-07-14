@@ -14,7 +14,6 @@ class Mdxmini < Formula
     sha256 cellar: :any, high_sierra:   "5bf36e82084146ab4604b4746bcf6634cfe4268f2044712e4d13519b21ab5165"
     sha256 cellar: :any, sierra:        "8e0daf3d508dad59074c567b8c8e60bd88c8026b7dfe1305e4e9c50ec5d8fbbd"
     sha256 cellar: :any, el_capitan:    "d20b94107c25833096401be6336544f283e6956758d4238e207e6a4e34fa5fdf"
-    sha256 cellar: :any, yosemite:      "55cf6b84d9a0e649e25db7626db954a47bf1061afd20a959972470b6e5cc9fa2"
   end
 
   depends_on "sdl"
