@@ -1,8 +1,8 @@
 class Luarocks < Formula
   desc "Package manager for the Lua programming language"
   homepage "https://luarocks.org/"
-  url "https://luarocks.org/releases/luarocks-3.9.0.tar.gz"
-  sha256 "5e840f0224891de96be4139e9475d3b1de7af3a32b95c1bdf05394563c60175f"
+  url "https://luarocks.org/releases/luarocks-3.9.1.tar.gz"
+  sha256 "ffafd83b1c42aa38042166a59ac3b618c838ce4e63f4ace9d961a5679ef58253"
   license "MIT"
   head "https://github.com/luarocks/luarocks.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Luarocks < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luarocks"
-    sha256 cellar: :any_skip_relocation, mojave: "a2f409e0295435638bede2cad77867f6abe3daef68342a674b82cbf42291db3d"
+    sha256 cellar: :any_skip_relocation, mojave: "96ef4365fc55fd685ed5d10d711779531a0250cc36a4b45c216a9493133c0849"
   end
 
   depends_on "lua@5.1" => :test
