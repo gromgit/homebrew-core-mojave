@@ -19,7 +19,6 @@ class Icbirc < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "e258e2ca2bf835d76b7d509eac5417629451068c85fe729cbab7fc64e89df9c0"
     sha256 cellar: :any_skip_relocation, sierra:         "cbec4e472c640a63081f12723fc9d144f00aa00c9229ce5bfc2edd99199aee74"
     sha256 cellar: :any_skip_relocation, el_capitan:     "2f943e4af7a9c1e2524d9583b0ef5539988f68f56a8f8c483b2c2d1990fff21d"
-    sha256 cellar: :any_skip_relocation, yosemite:       "c4fdfe55febee01d5fc84bdc7bb49ad6bb2366f6f5a54dfbb851ee891a67c5a3"
   end
 
   depends_on "bsdmake" => :build
