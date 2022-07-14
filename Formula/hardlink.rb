@@ -15,7 +15,6 @@ class Hardlink < Formula
     sha256 cellar: :any,                 high_sierra:    "4738a658357798d756d8a96f96d3700f387ae89d1db769b81675634e85018c19"
     sha256 cellar: :any,                 sierra:         "56ac75c51db6d7e19efe41eef24aa6646cdc126a113f5aacadd5f80043efc0d5"
     sha256 cellar: :any,                 el_capitan:     "d8b6e2d26d8f49a207c5082a97f1e5c31b35041bcfbc17a217a1c2ad4ff68551"
-    sha256 cellar: :any,                 yosemite:       "36c30ed90a3d2b9d2d4d07cb182c2838dfba276a05c22d022a42e16043e86f02"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b849b6cdc2d96380221c9dddc48a4c6485db0f4257ea7c48ade59b50e29f7bfd"
   end
 
