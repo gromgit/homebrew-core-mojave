@@ -24,7 +24,6 @@ class CrushTools < Formula
     sha256 cellar: :any,                 high_sierra:    "729196f80c05c5e395c145752a7a54cc1488a6cf1767b43ed9f639c2f3f3c463"
     sha256 cellar: :any,                 sierra:         "28286e04a7baf7790f446f2f474a74387e6c0282df70d89ade39c84187394ce4"
     sha256 cellar: :any,                 el_capitan:     "0c7c58b9f2ec87237934eda55932b200c6d7b7f6dbb07a35e0a49ed389e984d3"
-    sha256 cellar: :any,                 yosemite:       "90c901bd6daf8178407232c6b3be7f3c5056e9cf2ab88750d09b151e0973d4ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f998134ebcc5e99fe863e63924fcdc15f731bd1c0315c0a9a5f9ac0045fc4f1"
   end
 
