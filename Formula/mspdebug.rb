@@ -16,7 +16,6 @@ class Mspdebug < Formula
     sha256                               high_sierra:    "4124d4fbd9e191d941153962bb74aed50cc200c473b5ad5850610a1bc85f87b4"
     sha256                               sierra:         "e16447e04c99d74b8cdc49a063c230c64d09e34402d0221542594f3aacac5940"
     sha256                               el_capitan:     "22fc92bc5a594451eb0d0b943bce812619302c795fdad0ca4305c059ccf10a88"
-    sha256                               yosemite:       "8b23c23287fc9ab143921257a1859f8ac0dbb9e093261dfe931ec7d6a3548d97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "591e9d4d6bf5cedceda3db088a416b6c597acdcd65d40856c8f5fd69c49b8c7c"
   end
 
