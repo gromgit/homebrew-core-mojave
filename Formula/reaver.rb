@@ -15,7 +15,6 @@ class Reaver < Formula
     sha256 high_sierra:    "c2c6d45abc45f5639b74da0bdb294a5ee83548f548642f6b61d764d05801352e"
     sha256 sierra:         "e7fc0f43b7a306d5fe2baaf4b41e9ce445db12e2e74d41904b3de5d2c372741d"
     sha256 el_capitan:     "d9adddf27928b284492cc87b565d2748490c1017b0b463bc15223c935f63bb6c"
-    sha256 yosemite:       "4fbf7b0225730d7a37bfb71bec7b99f78f0b0946df7bcb3e5f274795692e1b3f"
     sha256 x86_64_linux:   "1a1e6c2edefa97af1a4295d859695c6dbc055a47676f9ec845916362bcc884f6"
   end
 
