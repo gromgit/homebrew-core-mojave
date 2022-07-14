@@ -16,7 +16,6 @@ class Flactag < Formula
     sha256 cellar: :any,                 high_sierra:    "d066a517308ad0f3cbc6603fd7eeb53dba73dc796298163b6c1ec8c0379f72f6"
     sha256 cellar: :any,                 sierra:         "c23293dce964c701fbaa822bda3a5f87602b28216b3862afced4da53c12728f3"
     sha256 cellar: :any,                 el_capitan:     "d3e7a517f69ba267c5ff36c065837a4c2925a31d2b0cfe6f5cb32d8d0582fd8a"
-    sha256 cellar: :any,                 yosemite:       "f5f0123f156ccf4c40e810fc5f0acc83638e35da13ed900b2f7165fbea28e080"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1c0e0338dfba95d544567150993403813011ed31406ebeae071777cff0573e2"
   end
 
