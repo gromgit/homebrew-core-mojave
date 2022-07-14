@@ -15,7 +15,6 @@ class Mergelog < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "87f4253bd8e0d556dadfabcb376d4f138d6d07a5884c331074692b21cff16397"
     sha256 cellar: :any_skip_relocation, sierra:         "8f74bd002165acfb3009054be72f89794c11427194bb4bda229ea1c55fe0f4fb"
     sha256 cellar: :any_skip_relocation, el_capitan:     "70f188fb9d576b86d968a82bc5b19daabeb17660a2fa155b31b1006d27767deb"
-    sha256 cellar: :any_skip_relocation, yosemite:       "0c8abf1099d637be9dc4398c6fdde6cfa8a09c71fdb89546b546913a1a9d3868"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f3e79e1bdb70b4094c813fda9442f858828cbff21f19ba6a239628a0a53605f"
   end
 
