@@ -15,7 +15,6 @@ class Cityhash < Formula
     sha256 cellar: :any,                 high_sierra:    "37e8244399c42c6f3bdb2fad91562607e96bc3380378d318ceecbc16ec8d52be"
     sha256 cellar: :any,                 sierra:         "62d8d1409dfe744d4de7a1727824b06c5a80b248433c2d8bd8a4efcd444346cb"
     sha256 cellar: :any,                 el_capitan:     "b09962ca43b3bb3321e1e57bf74a0936142ec5c94e198113ac3aa14e669e4d28"
-    sha256 cellar: :any,                 yosemite:       "2b155183e2422811593d91b415ac2e90a00b7d6972f284e54b3214940250935e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f381c56f8063574fc86fa4eace73e99bf9be10155f90c1881362e70aea75826a"
   end
 
