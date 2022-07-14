@@ -20,7 +20,6 @@ class Spandsp < Formula
     sha256 cellar: :any,                 high_sierra:    "0b4bb6795c931452181252754da3db80189e6557c344e743296de823cb711efa"
     sha256 cellar: :any,                 sierra:         "c0b8349525680304f99e464d328df804279be85398969974f2b708e5167c89fe"
     sha256 cellar: :any,                 el_capitan:     "428120be3841ca77961f2d19fe8f98f1615972db4f568e3cfa2c0a44cae44e77"
-    sha256 cellar: :any,                 yosemite:       "65fd095ea758180f18ca9c39864dbd3432115610b0db2439dbc923d3c0002f7b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40a9fe616eb15d9ce66c1144c1f56ebabbbae50783ad188f9674b387b5725324"
   end
 
