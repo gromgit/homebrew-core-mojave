@@ -16,7 +16,6 @@ class Rapidjson < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "4f40efdbe80e8060d03cfcffdcb2e51d3e4d3924272c96825c6966e00a1ee2e2"
     sha256 cellar: :any_skip_relocation, sierra:         "9fbe96e76e21457931a5e2fff343833b84941e2387ab02212946ad71665c3f6f"
     sha256 cellar: :any_skip_relocation, el_capitan:     "d0b949a9bd043535e2ff3e032b45b26de0083d319bc094db7ccc1edfea6cbdb3"
-    sha256 cellar: :any_skip_relocation, yosemite:       "252ec61e7d5cba129a888bb566d4f2b61bd1bd2886de637f48afa638e6764007"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a48429c06deb753e76e4354d25bb1f57c40719b0d1df3b907b1e996fd27d0e8b"
   end
 
