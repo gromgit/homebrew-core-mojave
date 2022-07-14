@@ -21,7 +21,6 @@ class Sic < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "f7e19c7d87f5f13e736edcf7f8cb821b4b644f78208c87f2f6655e5b7541abcc"
     sha256 cellar: :any_skip_relocation, sierra:         "8ec385f1fa892a80c51dca477f469dfe69864d0d5538b652c45ac17914aa5f89"
     sha256 cellar: :any_skip_relocation, el_capitan:     "efeb0f7a31a6d4f0ac4c065a4646b5a523788b5edbddd9f99ffa04f00aa41f97"
-    sha256 cellar: :any_skip_relocation, yosemite:       "99c98bba7ce3793f8f5431cdaee24a0bead3a1a2335bce10dc9cf6d53213c249"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8458c5597ac799e1e6c85d65287c37d6e165f35aec131cbf3cdacf95e07f0b6"
   end
 
