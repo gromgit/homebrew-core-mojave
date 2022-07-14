@@ -15,7 +15,6 @@ class NeopopSdl < Formula
     sha256 cellar: :any,                 high_sierra:    "9bdf06235151ae52d85e630021ce810d49ce12ba74e18b27f7584d9584377eb4"
     sha256 cellar: :any,                 sierra:         "3510d31984f2f46a59390617e2af3941638a4eb20a42131fc804e5d307cb5059"
     sha256 cellar: :any,                 el_capitan:     "e115fe849a0b8e1921a6c36c3d34fcc00b911f0504a0e32543656e76513384ad"
-    sha256 cellar: :any,                 yosemite:       "a8de30162f9e5146ee7c39480e83588f8036c0b965215e7ce1894c79855c8687"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "53a84ba836a1c4f2ce579d149554a865e69a736ec69e6c49de369dd5f0364673"
   end
 
