@@ -15,7 +15,6 @@ class LincityNg < Formula
     sha256 high_sierra:  "bdfe153ca219084bf621c031612c8b86b02911e64d6fa154422812aee7de8d76"
     sha256 sierra:       "cae5f270842c10affb29d6f9c592a96913d9ca630c49d22afa03cba6d3a6121c"
     sha256 el_capitan:   "b9f326c678a9317f141ad13749cb4075ab42144855254d344de15bc22c4020e5"
-    sha256 yosemite:     "6eae33edda53f256caa2fde01d334bc19b2c9810c8cf8e039ad1094c71619691"
     sha256 x86_64_linux: "c38ed4983afb56af649f67265a0babf455b447a4f8adb583b616db36cc6e760f"
   end
 
