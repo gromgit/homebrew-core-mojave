@@ -14,7 +14,6 @@ class Somagic < Formula
     sha256 cellar: :any,                 high_sierra:    "b6c11695d2c25a49a4a2c5795764a83615a214630bc25914e65fc691662617fc"
     sha256 cellar: :any,                 sierra:         "377ecbdc01ebaab2acf1101aa00bbf5554e7d56b1b630baa28ef70d9deb10811"
     sha256 cellar: :any,                 el_capitan:     "ed8a82423daaabaca0a7ab203edc68b3c0a1a1d617eb24d46486dfa974e9eb4f"
-    sha256 cellar: :any,                 yosemite:       "9c87f9d7a694509b446ce726cedcb731c0185b589a1cdfa96c0346f883a75e5d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d574fbe24e39eaf6e35a4d8317c689ae890983a801e8abf8e5dc0a2941a1104b"
   end
 
