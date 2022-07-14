@@ -20,10 +20,15 @@ class Djbdns < Formula
     sha256 high_sierra:    "f6555710c361d47fabfeeb6d8148b84c3a7e973ba4407def4f0a37e327ac3a5b"
     sha256 sierra:         "ce72334aa541af3a486f90e32b2162ba8b5c86825f0a52f1b6de9cb33640eeff"
     sha256 el_capitan:     "9bbf4356e0bb4e25827fdf02d4efa0fc3763600456ad76e63f662dae6e1fb4ce"
+    sha256 x86_64_linux:   "02f2234288612b979b6e5947072123ee049558864042839f5c929300d0fbb96f"
   end
 
   depends_on "daemontools"
   depends_on "ucspi-tcp"
+
+  on_linux do
+    depends_on "fakeroot" => :build
+  end
 
   def install
     inreplace "hier.c", 'c("/"', "c(auto_home"
@@ -42,7 +47,14 @@ class Djbdns < Formula
 
     bin.mkpath
     (prefix/"etc").mkpath # Otherwise "file does not exist"
-    system "make", "setup", "check"
+
+    # Use fakeroot on Linux because djbdns checks for setgroups permissions
+    # that are limited in CI.
+    if OS.mac?
+      system "make", "setup", "check"
+    else
+      system "fakeroot", "make", "setup", "check"
+    end
   end
 
   test do
