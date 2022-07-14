@@ -16,7 +16,6 @@ class Cubeb < Formula
     sha256 cellar: :any, high_sierra:    "618debffabe494dcde3e0d7e2231078df124ead8ee342886ab38ad7373f73e37"
     sha256 cellar: :any, sierra:         "f89e89027370ea9da99f72f0af0529f9b63fbe31c434d3ccafdc7230664a41c2"
     sha256 cellar: :any, el_capitan:     "f7e738b374bb07e1c420e56dfeb72caa814495b446c71d8158ef98c9b33d3a60"
-    sha256 cellar: :any, yosemite:       "b3cff6ba7008cc764f94281f7759f5d6d2a09a3bdb92f5f6e93be7d6f3ec2405"
   end
 
   depends_on "autoconf" => :build
