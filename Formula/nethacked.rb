@@ -40,7 +40,6 @@ class Nethacked < Formula
     sha256 high_sierra:    "4fe2af842c20dc95f4ae5bebcffed0b85da6a94a548b0d5f8115d1829c80e3cc"
     sha256 sierra:         "d2c880eb02b32bc6a976b16502f400a94b395375b5cd59e731fb209580e3ceee"
     sha256 el_capitan:     "dcbe9a404fb0215e35dc9d08e73595ba8dadad55e6ca898078a66ce04c9dc11b"
-    sha256 yosemite:       "08b24568c94b14271e5d1b2880a0a78e6eea5cbbabfb9519347b5be1d2cc0893"
     sha256 x86_64_linux:   "8575daddbf850b21652bef36c24a920f9c1ea9c72e7d92b9e6fdfa461c2f0c6e"
   end
 
