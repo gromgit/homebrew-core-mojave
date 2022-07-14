@@ -18,7 +18,6 @@ class Cvsutils < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:   "102456ac28b63271b03a5722e8421d6273005c54203f4f818678be065479463b"
     sha256 cellar: :any_skip_relocation, sierra:        "d1f2e13e0df6dbb767a04f7e206114c119f9e6435f227e07e14b4d200e6aba8f"
     sha256 cellar: :any_skip_relocation, el_capitan:    "f8e35c8b0ed2db868e7dd12f653c20d7d2709059fb5a773fd49084a2655f4ca0"
-    sha256 cellar: :any_skip_relocation, yosemite:      "ccefce4b4a1053e9a32e4f43318c7bf73c7154f0bee1be1cf1777e8fd3e8eabf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "adc4162b5c2691b48d6a65ad467eb32c3139787c1de0d42439063b1f3cd6f57f"
     sha256 cellar: :any_skip_relocation, all:           "aeccad5743770ecfbb4c92fcbc9899927714b1214fa89dcdba6d4fa6ae630f2a"
   end
