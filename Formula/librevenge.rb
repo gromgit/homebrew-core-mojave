@@ -20,7 +20,6 @@ class Librevenge < Formula
     sha256 cellar: :any,                 high_sierra:    "807378d354736300cb44c4e5105b0fc0bff09a4fe14fcb3a0cae40c7bf167fee"
     sha256 cellar: :any,                 sierra:         "2f8a2a371c35b578d181d1ce8d45084a2f699bbed95cabd10f5cd75977249542"
     sha256 cellar: :any,                 el_capitan:     "827a37488cc92f16ba8f4d7343e7944c7faed4b8cf9d930f49d93e4104784c94"
-    sha256 cellar: :any,                 yosemite:       "a95c4fc2b7832e226d21a209811a2f149b8fde4962d07d354e3a6cb80b7f0a01"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "465e18ffccb273c5d2b3ab0922f2b6bfae6122c915e1ad8c0c85cb59289c0634"
   end
 
