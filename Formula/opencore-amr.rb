@@ -20,7 +20,6 @@ class OpencoreAmr < Formula
     sha256 cellar: :any,                 high_sierra:    "5f5f7853d97b957abb8671af372bd3a4a13191ccd135799cbad44aa3c66034ec"
     sha256 cellar: :any,                 sierra:         "2b6378d4427dc88bac7e01d2614dd100535f1d78b1e6b81560e3a074e1d5a770"
     sha256 cellar: :any,                 el_capitan:     "4b628ad01f725342698a8556c4176f5d57e3647cc0f52669092a0523b76cc5d0"
-    sha256 cellar: :any,                 yosemite:       "0e8940ad28407b353c69b7fa0cdcd7d90777345f5ea86dcc9974552f99c1030c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d6f7282d11c48774b6d25e1f25c6c768e3254e4f651eee42f04cec9977d199f"
   end
 
