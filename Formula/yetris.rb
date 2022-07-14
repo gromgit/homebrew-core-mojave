@@ -15,7 +15,6 @@ class Yetris < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "21537f5957c5ce90281195e6d962363920bda756a6c965ca107c329ec712f126"
     sha256 cellar: :any_skip_relocation, sierra:         "cf350d8daaf62f863b7466477aebea02145abf1f14e50ee56ad324c99dcee018"
     sha256 cellar: :any_skip_relocation, el_capitan:     "fd08bc62fc0c4687ed7e76fe604c345a647fb52a348c55cf446fcbf52c7af8dd"
-    sha256 cellar: :any_skip_relocation, yosemite:       "a14c5327ab931d7394b3f617422916eafbc76a936ac77e81a959b38aa223dd5e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0d2652ce4673ff9e663dba05e742ff8d0eff4366216c49a051d94df041498a2"
   end
 
