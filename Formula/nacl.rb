@@ -22,7 +22,6 @@ class Nacl < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:  "43fffe959f6a95aacff4d5d4b7bfbb34f835a2487e8bff0645473d8ec1de83b6"
     sha256 cellar: :any_skip_relocation, sierra:       "86e5ef1c0a14b029d1ed3f63df48fde9c302adbbc3e1dcacd1bb7617bf547615"
     sha256 cellar: :any_skip_relocation, el_capitan:   "e08c93b814989405fa3b7db9e3a9c4f149e36aaab32aba44e9a2f1659d2d3efd"
-    sha256 cellar: :any_skip_relocation, yosemite:     "1a1a7fffc6d41f2f7bcc393375f2907f63b5a13f9414fe0827daef96246301e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "03cbc3623ab6388289a613b8499f4e120d19cda47b661bd494e0d0cdfc355288"
   end
 
