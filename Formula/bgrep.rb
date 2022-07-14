@@ -16,7 +16,6 @@ class Bgrep < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "c2357ea00756425fec65d8367e7b8653a4d6845b6aa044106b8952d8b8ead0ca"
     sha256 cellar: :any_skip_relocation, sierra:         "eaed7c05fd07c77cd5aeb6f1232abcf5c9678b86fdaf7e7daf5049476acc690c"
     sha256 cellar: :any_skip_relocation, el_capitan:     "29f0b2d7ab307eae228a03d4f42f677d9ff0884edc5c96771da36182cb592cd2"
-    sha256 cellar: :any_skip_relocation, yosemite:       "af4dab94130c48930d064074da8492c5531842a348747b0dd39420db738f6ae9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5a19c037fcdd2ef3d50b419dd0d80208febfe24fb6bf785f40f47b7b2f87f45"
   end
 
