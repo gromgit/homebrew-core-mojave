@@ -1,13 +1,13 @@
 class Comby < Formula
   desc "Tool for changing code across many languages"
   homepage "https://comby.dev"
-  url "https://github.com/comby-tools/comby/archive/1.7.1.tar.gz"
-  sha256 "47df841b470643dafd9ced7938dfdfb8623dea91bb7b4ec34a1d80fe6e3af1f9"
+  url "https://github.com/comby-tools/comby/archive/1.8.1.tar.gz"
+  sha256 "04d51cf742bbbf5e5fda064a710be44537fac49bff598d0e9762a3a799d666e2"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/comby"
-    sha256 cellar: :any, mojave: "6b8a896478ceab9338d67dc0b41fe9302942fda60e6fa1a609617046e312f962"
+    sha256 cellar: :any, mojave: "44c509e1902f528b3bb46b91d0581c7984f98e63815756b454316bd5e8e32518"
   end
 
   depends_on "autoconf" => :build
