@@ -20,7 +20,6 @@ class Sproxy < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "326b01fa9a1370c54929ae4c11d1b67b2238875eca8188365486b9c2a374264f"
     sha256 cellar: :any_skip_relocation, sierra:         "8d57317644b76b465adc5caf984f1e3cf57f9486f642705eee66128adbcf3589"
     sha256 cellar: :any_skip_relocation, el_capitan:     "4ed786b0b05ca3c88d5904e3119d84725a9f9bedf5d952c055f22a81661a825c"
-    sha256 cellar: :any_skip_relocation, yosemite:       "19da9a5b680a860e721ec60763dd48e9a5213505ee643703abcdc66707e8ce51"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "713ebc755ddb821e5e0bd17a13dc0a274645c7478f5682cd9407ddadb3e93c31"
   end
 
