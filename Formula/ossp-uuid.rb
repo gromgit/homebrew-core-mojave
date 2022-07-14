@@ -20,7 +20,6 @@ class OsspUuid < Formula
     sha256 cellar: :any,                 high_sierra:    "a04214b22c58bd5167778925cb9e55b98f28330bcc6c6a37929e6085ea3a0162"
     sha256 cellar: :any,                 sierra:         "3c15cd0e25e3039e0d05b94d14b714745cec3033863d5dc7a6d9ddd7cacc1c71"
     sha256 cellar: :any,                 el_capitan:     "ac4456fc1c29db7e0d565ebdd392cf827be315b52c9eb3abcd113c4c7b981f25"
-    sha256 cellar: :any,                 yosemite:       "c6cfa39816d19fa8d4586d6a364cd17e3a089ea018242875dc371731578a4ac7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec70863fae3001fc9281f76cef9ac231bd6dbb957c6382457a5848312ee1f1b0"
   end
 
