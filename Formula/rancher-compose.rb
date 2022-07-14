@@ -15,7 +15,6 @@ class RancherCompose < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "63f6da5eb59cb86c8f84975b3d3ee41f0bfc1456b239d1a6cc06a648d57e1967"
     sha256 cellar: :any_skip_relocation, sierra:         "08f3fad4e6c1df545dd908b61afe47ed489e682ad2cadab384066237498a2a04"
     sha256 cellar: :any_skip_relocation, el_capitan:     "8503ea7d7ca208ca7fe8d0c0b81f9ab9b69d926c58f856ac9de4f9f3600cde17"
-    sha256 cellar: :any_skip_relocation, yosemite:       "23291133a0a775210ae1244ae594931ce04fab8e7c0a37ba90431d61d869317b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "824f7aa831c055b0bb1db401881bf4bcdff30e72cb9932ff97e57ba47ff19ecd"
   end
 
