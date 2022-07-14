@@ -14,7 +14,6 @@ class Star < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "9f4a24f592647071a2ead26c2dba4d86cb664f71cdf4d280037a94748c92ec0c"
     sha256 cellar: :any_skip_relocation, sierra:         "ec7a276b68c0dc946d3320e3cd9cf923d0affdbfa72587ecccb2efa3dc7276cc"
     sha256 cellar: :any_skip_relocation, el_capitan:     "64288e33524b1d1afcc5ae7e6ff5dc1488f1793eba9452e54279054d55e93db3"
-    sha256 cellar: :any_skip_relocation, yosemite:       "e3b77b33bc2c8ec917ddf41a29d937de1492253c7d039f5747e44e2361cfadd4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8afd0b94b5b4cf2580d5bb920ab19b351ab0ef870eb15b9f69f425ab68fff076"
   end
 
