@@ -3,6 +3,7 @@ class Aggregate < Formula
   homepage "https://web.archive.org/web/20160716192438/freecode.com/projects/aggregate/"
   url "https://ftp.isc.org/isc/aggregate/aggregate-1.6.tar.gz"
   sha256 "166503005cd8722c730e530cc90652ddfa198a25624914c65dffc3eb87ba5482"
+  license "ISC"
 
   bottle do
     rebuild 1
@@ -15,7 +16,6 @@ class Aggregate < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "6dc7626282f519003e1d559ac42a983f4a571494ac04e5b61858fdf16d1ca924"
     sha256 cellar: :any_skip_relocation, sierra:         "ebe7aa16c7cf36684463292995c60fdde12cdac889de551d8f85b89e6b77416c"
     sha256 cellar: :any_skip_relocation, el_capitan:     "87507a739f2bd5ba57ccd23b34f2b7c41d68a897c128231dbbc32ba23b869ed5"
-    sha256 cellar: :any_skip_relocation, yosemite:       "813ccd28b00f94e1574079f7f6816858e32c5d8f9a964b783307d25c7e449d2b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed89de5c64cf464e1002d2b16aaa6749a68b113199dd702077a36db84a1a7ae1"
   end
 
