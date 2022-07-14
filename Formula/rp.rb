@@ -15,7 +15,6 @@ class Rp < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:  "40042ba7ad3506a62f79ed836480bf2d33a3ea171a19905a51db60c3a037cb0b"
     sha256 cellar: :any_skip_relocation, sierra:       "93aea19e1b6c6511e309f87003f173485a36e2b870734b6162e0bc43ae5f2a70"
     sha256 cellar: :any_skip_relocation, el_capitan:   "1ed1c49f3495c6da683908c34d17f345c5f3bde2a5112674bbd41f6a92da1ab2"
-    sha256 cellar: :any_skip_relocation, yosemite:     "e85fa182a3b46f8a3cd5a6d3a27359d4981fb1cab0ca5c2d3a1a9c471af1a77c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ff4254026a73200222f6c631c92d97ffc1c9ac36027089139f085fdf9163f812"
   end
 
