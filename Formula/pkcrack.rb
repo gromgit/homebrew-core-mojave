@@ -16,7 +16,6 @@ class Pkcrack < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "13c80200a6a1b96c74c590c595c1860447b04a6bb44d10210d82e0fa53e8f61b"
     sha256 cellar: :any_skip_relocation, sierra:         "264358646b08985192cd06c9bc032c16296eb00198dd9852521e0cfdfe1703ef"
     sha256 cellar: :any_skip_relocation, el_capitan:     "9b46e1c0097cc4024d4f5b182ac8fdbc27e3caec52874b19d570aba6f946fc10"
-    sha256 cellar: :any_skip_relocation, yosemite:       "47f2ffa2e27f0dc5e6df45de7335e316a8ea83288153b274ae5d8e11c7157055"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7166064fd3c5a549df696d4d889b4de6c5d2596f70c598de71a3d975a42a8f3c"
   end
 
