@@ -1,8 +1,8 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "http://www.sbcl.org/"
-  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.2.5/sbcl-2.2.5-source.tar.bz2"
-  sha256 "8584b541370fd6ad6e58d3f97982077dfcab240f30d4e9b18f15da91c2f13ed1"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.2.6/sbcl-2.2.6-source.tar.bz2"
+  sha256 "3e23048c8fa826fb913220beb2ac3697dbc5c0cdf2e89fed8db39ed1712304a0"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Sbcl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sbcl"
-    sha256 cellar: :any_skip_relocation, mojave: "b5e0337b3bb36556084cc1c27ebcab9ace7a33d354ee505d63a7165c71928def"
+    sha256 cellar: :any, mojave: "31f21db1243f2170bc692377c26f2d69399b52bb8c32888cd586ea8b74c68c4f"
   end
 
   depends_on "ecl" => :build
-
-  uses_from_macos "zlib"
+  depends_on "zstd"
 
   def install
     # Remove non-ASCII values from environment as they cause build failures
