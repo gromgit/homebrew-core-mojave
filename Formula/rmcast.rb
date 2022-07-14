@@ -19,7 +19,6 @@ class Rmcast < Formula
     sha256 cellar: :any,                 high_sierra:     "d30e495d583d02a5ea74cd7ec82d1bd67b62981248d853ce7138a7997f6b6ed2"
     sha256 cellar: :any,                 sierra:          "9ef73c5d52886029cd89d829cdceccca0d03bce0dc72647d8cce6704d492f080"
     sha256 cellar: :any,                 el_capitan:      "4fe0a1745659bb99748972c2fa0640e6b864e92739ba192a89ed12c0614b1372"
-    sha256 cellar: :any,                 x86_64_yosemite: "502e09994a9b455d9040f8e346419a2a3ef0156a73b0249bc161446448729292"
     sha256 cellar: :any_skip_relocation, x86_64_linux:    "ecbaa8a68d7cb766021fb1f1bff97c911a5e16720508cf71648c6e96a2b93c4f"
   end
 
