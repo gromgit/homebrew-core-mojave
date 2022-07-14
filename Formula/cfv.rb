@@ -16,7 +16,6 @@ class Cfv < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "7452ead7901f4f4ab2683cd391af82f856eba1a57c11d07c038ca18507535dac"
     sha256 cellar: :any_skip_relocation, sierra:         "449f4b10a0371005f04bffa6271364824a83fbb68cb15208168c19457b987b6e"
     sha256 cellar: :any_skip_relocation, el_capitan:     "49b83783b5737a364504fdd9fd09672134e0103c7bb8152741d67fca455fde04"
-    sha256 cellar: :any_skip_relocation, yosemite:       "df85f8ee2901bb0b3033a3158d04848bb2fbc455f8af12d7d6eb6869c1471ed9"
   end
 
   def install
