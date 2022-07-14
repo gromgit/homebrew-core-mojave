@@ -19,7 +19,6 @@ class Metis < Formula
     sha256 cellar: :any,                 high_sierra:    "88b6965d941a87044150238387971c4bb94ed2ffca327affccaf311d666a2b4b"
     sha256 cellar: :any,                 sierra:         "9c8deed80ece8c24e7ebccbce8410557b27afe711d3f59fccb7d781254d0cc34"
     sha256 cellar: :any,                 el_capitan:     "54f75262475744bc6ad3ba66ac801e03c18bbac00a9bcf0ca9d05853f2022498"
-    sha256 cellar: :any,                 yosemite:       "b33c2fc2c8a1cdb9f48faf41201bdc6384090b8dbd6ed3eecd05264eb6431c0b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8daac6acbeaad9583ff26d72a8ad440ac41efb8656973213902bdfe66cd61e6"
   end
 
