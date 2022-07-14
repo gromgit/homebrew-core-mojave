@@ -19,7 +19,6 @@ class Wv2 < Formula
     sha256 cellar: :any,                 high_sierra:    "35120de253c5dcfd6da711f7529bd8e4a0ffd45eed540057ef57d1a9d2ab0091"
     sha256 cellar: :any,                 sierra:         "cd0856f53f0a143f5b0ea7dd61a0d23613db6de84538fa222e2819217a3ed3af"
     sha256 cellar: :any,                 el_capitan:     "b3a07e873f69b90ed83d47ccedb6bc5fefcb5dc5c9ffd1ecfd38c03dd094afea"
-    sha256 cellar: :any,                 yosemite:       "51ea82d6630ceee1739d0f252462ef8c4394ffaf0fb81b0a5141990f865f1427"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bd22b4bd66ddf417a1ee0882ca0dfc3b4bcb218d50e890a28a1752d5e4c546b"
   end
 
