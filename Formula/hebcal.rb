@@ -1,13 +1,13 @@
 class Hebcal < Formula
   desc "Perpetual Jewish calendar for the command-line"
   homepage "https://github.com/hebcal/hebcal"
-  url "https://github.com/hebcal/hebcal/archive/v4.29.tar.gz"
-  sha256 "f93e071d4924ab9fd10d5d7a61da802561ecacb42f5daf8079d8b52daa298882"
+  url "https://github.com/hebcal/hebcal/archive/v4.30.tar.gz"
+  sha256 "c9acc93483369ea82cad18ceeec5b7505462ad468f4ae72ba8ce0f7d446d2a0d"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hebcal"
-    sha256 cellar: :any_skip_relocation, mojave: "7f39c92f7f5f8e050915a5c732f66a29013c1704eb98f3d6711df3a744c224e8"
+    sha256 cellar: :any_skip_relocation, mojave: "ee785aab0b9b54c4f68a552dbbc7bb1111cd8d9ebd0acabc13aa1b47e4d79108"
   end
 
   depends_on "autoconf" => :build
