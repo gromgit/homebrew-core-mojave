@@ -18,7 +18,6 @@ class Classads < Formula
     sha256 cellar: :any,                 high_sierra:     "febef9dc12fdea8d1dbd1687f835ac8a58d8a7534ce2a0735d6102872058ec59"
     sha256 cellar: :any,                 sierra:          "d51471a725a552974a309b8add05ca731264f7a0fbaedee1c85b97475c204cb7"
     sha256 cellar: :any,                 el_capitan:      "52bd3bb21e7a2491ad96f01988b802ab183c5e93d3123e9cc57b75e1a0076171"
-    sha256 cellar: :any,                 x86_64_yosemite: "2ec01b2285391e8c1a696c783db281dc69c05e0f2c483792129799b8ad304d7e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:    "d6f5ea31c00944afcd4c2e3d78457d9f630ae17a4a58a161321c7c4c6b4046a3"
   end
 
