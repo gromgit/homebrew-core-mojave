@@ -20,7 +20,6 @@ class Argus < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "faf6ef808e9ff867eed42586ae6c27f84b66933559e9960fb48853b67325fb20"
     sha256 cellar: :any_skip_relocation, sierra:         "42487c51fa731752e10da402b5fac0f973ee090eaad19f8f4fd52fc5317c9cfb"
     sha256 cellar: :any_skip_relocation, el_capitan:     "ea46f2010610e46c120e2df100d61e01c21ee58627e105273c0e0a76437150e1"
-    sha256 cellar: :any_skip_relocation, yosemite:       "b4d359943e8404d7c6a340c36bbc4d42e14a56cd80e17a997114fdc6f76552d8"
   end
 
   def install
