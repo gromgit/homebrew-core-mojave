@@ -15,7 +15,6 @@ class Cconv < Formula
     sha256 cellar: :any,                 high_sierra:    "c4d197f979340a89d5a87e05eae6a39db38863f89b6ddda42f924472d87a5b0d"
     sha256 cellar: :any,                 sierra:         "2e885b9571a8814f2b23b088f3f0d45f47b1fe762f040c3e66b1a81f84673646"
     sha256 cellar: :any,                 el_capitan:     "bda78602260276dd3e5187a5a9d6bbcfb95ff40aa513840569e490d5dc96aab2"
-    sha256 cellar: :any,                 yosemite:       "a77d6efc52430482ff2c64db8ba20444b50faf79491c95f8f6bd9f3f29050c53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7176512194c3bed0f8db76bf768136559dd09bfaaa3562908acaa748ccbd288"
   end
 
