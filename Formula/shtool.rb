@@ -16,7 +16,6 @@ class Shtool < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "fc22505f6424dece01dcdee55907eebcb490a299763f2f217511fa14c5927711"
     sha256 cellar: :any_skip_relocation, sierra:         "172a4e2c133efcc6235aa3901bbc89ea11c48cfa70833fe67801240236d1757d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "17dcf1289dd178b75b670d8061d54e4b2004feeb7de0d9e1ea43ffb46220e4fd"
-    sha256 cellar: :any_skip_relocation, yosemite:       "de69e23a1e88799c78891298045bd8f79ef67ee48b7609fa065c7acdc1ddbde4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "08f697c85512b71c0e002ce1db265280f5ddf766de012e80f82701e1e0272879"
   end
 
