@@ -26,7 +26,6 @@ class Libagg < Formula
     sha256 cellar: :any,                 high_sierra:    "de1daeb1b324b1797f46ff6e6799498019de9256b4e09a128cf686e2572f6f60"
     sha256 cellar: :any,                 sierra:         "872f49f0fd96ee65dca4bedba3e82c4fcf0e0b0c45de15afc82a9e70e0f0623c"
     sha256 cellar: :any,                 el_capitan:     "5b9ab7a9ef2f4075bd55561f0fda99c7203a70020288747ebf90cfc1b2ee626b"
-    sha256 cellar: :any,                 yosemite:       "9d3da78ab9824db755cbfeb9e6596527db1ace71525cb079465b1a9fb1c00417"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b62898903589309b33bb8b6431fceda94c90e713a742327734fc27ba5068970"
   end
 
