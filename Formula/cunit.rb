@@ -14,7 +14,6 @@ class Cunit < Formula
     sha256 cellar: :any,                 high_sierra:    "23fdc88eeb1c4cf8d58e281e046f2e45a56860c0091e5c76f757f01679d143d2"
     sha256 cellar: :any,                 sierra:         "dc987998ebcfc175c9c9e70c6b83db4197bd5b79d383235b85ee8a30835785df"
     sha256 cellar: :any,                 el_capitan:     "0b92535641c86f38bf7a3a1b08a07aa6523e4c0135792dd92829e00579a5e3a9"
-    sha256 cellar: :any,                 yosemite:       "63c1d2905cf9214281b8dad71a7d86fcf57d46ccbeb026a43dc73dddac569840"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0cf6507f41f3b367c36329688073277d4db50e61b048e39360f1e58cf2482e6"
   end
 
