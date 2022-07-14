@@ -20,7 +20,6 @@ class Xml2 < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "548421fe00487faa136c700e4d18f48b6bc349956044e2aa0f65667c3856883d"
     sha256 cellar: :any_skip_relocation, sierra:         "d8d4bb9ceb9d97b648d3fd3cffb1e2fad2e4d82aa6aa3397c22f53fe5468ac56"
     sha256 cellar: :any_skip_relocation, el_capitan:     "85e939873edbb3dd1b072437992a0c404534a5084cccd6f9f76d99b09ddda695"
-    sha256 cellar: :any_skip_relocation, yosemite:       "3883d5997021b3a5bd57d8830906cb9b370da0f6e1927b6c7e9dcd6740e05c5c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51048810fc19ddd5955049fb8d358b0f4862e9333b056efd6d28a0e6c42c6e4e"
   end
 
