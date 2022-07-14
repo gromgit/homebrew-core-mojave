@@ -15,7 +15,6 @@ class Clblas < Formula
     sha256 cellar: :any, high_sierra:    "47e08f87365e11a57d2ffc2fb81a3cfcd8bd784c438c1e08e1fe4116fc774553"
     sha256 cellar: :any, sierra:         "22a6cc8252ed5d431ccea7d51631f57bcee3876be7f65a0ac0fbaabfe09a9484"
     sha256 cellar: :any, el_capitan:     "e18aa93ecbd78f5f70607653a1e1c48f73952aeef1a568e2205362368c40ba4c"
-    sha256 cellar: :any, yosemite:       "ac0d50729480e60afd56862a49f92408cb0ed61967ba91fcdc9e024e06f39917"
   end
 
   depends_on "boost" => :build
