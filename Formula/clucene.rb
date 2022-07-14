@@ -19,7 +19,6 @@ class Clucene < Formula
     sha256 cellar: :any,                 high_sierra:  "3986feb447660b2732e2983f54d22086b10da442cb2d7b6ceac45a91ad58f09b"
     sha256 cellar: :any,                 sierra:       "5d25768dc355533553e6c1605a1dc89985ddd26b4d17d10078c39d6b085c03fb"
     sha256 cellar: :any,                 el_capitan:   "5ee0c98072c18c75dd8c25fd309ccb49f033300d474367a8e325ec601c427f66"
-    sha256 cellar: :any,                 yosemite:     "182db4f73e058e9d28b77cbbd642c40ecc403fbf1d9dc8357387b2c54dba8d1e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4c61f6b320d11670d29ae7294ede5bcd3c1d5684c41cc01ed689de688dbab6e7"
   end
 
