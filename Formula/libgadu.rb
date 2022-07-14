@@ -15,7 +15,6 @@ class Libgadu < Formula
     sha256 cellar: :any,                 high_sierra:    "65f828f98715efbb7bb351d47e11df0fd0279b8c060233138721c119abf0879f"
     sha256 cellar: :any,                 sierra:         "4cf4bb4fa157bff6ce4e1fa58a79c372df6b0a00c5e5fd621f6396b3d55451e6"
     sha256 cellar: :any,                 el_capitan:     "1feb9c3c574632f9324fdfc8bc5ed49f2817e7a58ae280e44b0ae8735e89caca"
-    sha256 cellar: :any,                 yosemite:       "845c258af465001dcdfad1f09e7659e86d6d006b9381c6e3cfaf0461e432ab46"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "879c676edffa46a33d49bb980f2759b9a4db1d8e505473593c1d0873266ea0dd"
   end
 
