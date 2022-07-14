@@ -19,7 +19,6 @@ class Rasqal < Formula
     sha256 cellar: :any,                 high_sierra:    "c9a39d850c71f2ffcc6d0368cb9f575df1a0bd727992dfb553baccc8ecec97ce"
     sha256 cellar: :any,                 sierra:         "8d57d6803a7323f9e13c45d56b3cea41f71f7dc7cab493ddf9b34d0a2a6b68f5"
     sha256 cellar: :any,                 el_capitan:     "fa7368eb30256eb80ead76f7b551bc5980ed15ae8aa655d332a200edb073c2a3"
-    sha256 cellar: :any,                 yosemite:       "c84ec1a4c837b4a30fe597c9cc728f5075764b87978c5977757e2836db3eca0b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2267d3f39fc7d088095d64bb6cf86f5fcad6c2a72fdd72dde8237cc910b123d1"
   end
 
