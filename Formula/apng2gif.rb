@@ -15,7 +15,6 @@ class Apng2gif < Formula
     sha256 cellar: :any,                 high_sierra:    "810005bcbc32c60c7084b248eef3d007e756180842051f64385fb90cfac66c63"
     sha256 cellar: :any,                 sierra:         "fa18274f18fb0d3a2b3f5c360c24587b805db3f4734972c350643c35b8677174"
     sha256 cellar: :any,                 el_capitan:     "42d033ae0a661d75b588af8d7c0cdb67a81bfc481aa88665973d95d3e4fb64ec"
-    sha256 cellar: :any,                 yosemite:       "5456ec2b90086c84f2094972fa0dacc11de0abdde5346e3445a6b7d64b49201c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f98dfacc9457ddd5742ff27448fdd3b51dbd1445a586447327404bcb0028b72a"
   end
 
