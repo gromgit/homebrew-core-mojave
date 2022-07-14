@@ -1,10 +1,10 @@
 class Libidn2 < Formula
   desc "International domain name library (IDNA2008, Punycode and TR46)"
   homepage "https://www.gnu.org/software/libidn/#libidn2"
-  url "https://ftp.gnu.org/gnu/libidn/libidn2-2.3.2.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libidn/libidn2-2.3.2.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/libidn/libidn2-2.3.2.tar.gz"
-  sha256 "76940cd4e778e8093579a9d195b25fff5e936e9dc6242068528b437a76764f91"
+  url "https://ftp.gnu.org/gnu/libidn/libidn2-2.3.3.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libidn/libidn2-2.3.3.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/libidn/libidn2-2.3.3.tar.gz"
+  sha256 "f3ac987522c00d33d44b323cae424e2cffcb4c63c6aa6cd1376edacbf1c36eb0"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -14,8 +14,7 @@ class Libidn2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libidn2"
-    rebuild 1
-    sha256 mojave: "d9bb3e0a75195b6d03961525883a7512b37f758819eb9c77d2c49304f08a0ef0"
+    sha256 mojave: "f5681c9f556edc06417894c9b295569b646adbed276d6b17da6fe41a55e4be8d"
   end
 
   head do
