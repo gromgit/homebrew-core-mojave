@@ -17,7 +17,6 @@ class Mkcue < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "284cfe9fe5a81a75f59610d93710627167dbc48c1d72b89311562c87cea8f8ff"
     sha256 cellar: :any_skip_relocation, sierra:         "b1bec8cabaddb6a78a3c2e0a13f73eb426922b64e6d9ef3c0103e92e203f6af4"
     sha256 cellar: :any_skip_relocation, el_capitan:     "7677f358f99d733a6f43d02cbf5365f3c59b4f93c6a59ee05bd48045a12cbb52"
-    sha256 cellar: :any_skip_relocation, yosemite:       "ddd5ad0b0a05a4fe74e0bfa18390370f547e3d21c00fa2499e50021ea3482ee4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ffe89a918fbd678d1dd78349a5cc46d6496f2150215f698560b9e4453f13143"
   end
 
