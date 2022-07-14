@@ -15,7 +15,6 @@ class GumboParser < Formula
     sha256 cellar: :any,                 high_sierra:    "ed0957fe59981b55c1baf149022a5b0f3a163f1a6eb6e03e402da2f018406b9f"
     sha256 cellar: :any,                 sierra:         "7c911b3f74827405abdf92cb6f6265cf7185043af4101d851eb68c5e69ea71e6"
     sha256 cellar: :any,                 el_capitan:     "56f5446eb431b628655748659a8a7479466e00addf7d90070464364a3f3cafa9"
-    sha256 cellar: :any,                 yosemite:       "02169cdaafcf9343bacf98e0e34b1f7383eb0b1b89385965d81796e110f8c38f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ae8a4b287fcbedb1cd48eeb3c26a257b2829401e23c0026dafb04461dcf07ae"
   end
 
