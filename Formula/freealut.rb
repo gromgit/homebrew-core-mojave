@@ -15,7 +15,6 @@ class Freealut < Formula
     sha256 cellar: :any,                 high_sierra:    "90bb9d9a0c0eb6ded2dd5f5c6fb566a2fd3835c32cab71d3c53efcfd82b7059e"
     sha256 cellar: :any,                 sierra:         "5b592930278516c32e0ecdbf5e244abc4f18b2f766242af145ea0def25df3c99"
     sha256 cellar: :any,                 el_capitan:     "301e3825367cee8b41747fae0b3495e94b09668d93980032f5fdb92d1c597b62"
-    sha256 cellar: :any,                 yosemite:       "491e2736570843c5d42576563f7797f2f5c13fb3bb97ece3c9396e1fdb7e054a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "05ed720d9817268e8941fba68a2d52e685562119fe2d79eba3f6ec107864d191"
   end
 
