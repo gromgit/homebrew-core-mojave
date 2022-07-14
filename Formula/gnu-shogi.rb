@@ -16,7 +16,6 @@ class GnuShogi < Formula
     sha256 high_sierra:    "20895a9d3fe87357df4dad1aaae16fee4d7a0c70e95119756c8ab2928817c161"
     sha256 sierra:         "677531c9eb7bdd01f22862c24d5ab144f7b78bd672223854fc169d103a9924e2"
     sha256 el_capitan:     "49ff431036e172362b24dc7eca426a638ec2953ea014c67e4cae239e9175bf27"
-    sha256 yosemite:       "1fbc9bf567ea4c50c5bb12fda953e18ce8617298d474ed8a56ca2b9dd24b2726"
     sha256 x86_64_linux:   "7700579666c89c383d66c691c0deb1531fe3af8b886b1b74ed875803862c5223"
   end
 
