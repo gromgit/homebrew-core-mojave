@@ -15,7 +15,6 @@ class Pacman4console < Formula
     sha256                               high_sierra:    "8b75a7198742924ea2e7545c4ed98dac3d28dcdc9469ff097666b0249a8ff2f7"
     sha256                               sierra:         "496938f00189695a57af2ef862b97c237d8bcf4c422b8e1d24c309cb8e83d0cd"
     sha256                               el_capitan:     "713a6a48016edcd709c27f84c5e743a0f95f95a3d01da7303a2562b2f3dee68d"
-    sha256                               yosemite:       "0177bce0045d06947a44cd810e3af8abdf2853981fe8564782a83474fc45f727"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a75b6bd17159e6e36dff479cb8b4f72cd20b4b84b0e76a619a1e07a1649c7a23"
   end
 
