@@ -19,7 +19,6 @@ class Quasi88 < Formula
     sha256 cellar: :any,                 high_sierra:    "8199a69a8ecad4247752091f3eeaf5181eaa1dd0e4b2670059e21df807c646c6"
     sha256 cellar: :any,                 sierra:         "d9ff4c5657c4179371d60317e0455cbadd59d45d81d0cc71d62d14d681619e95"
     sha256 cellar: :any,                 el_capitan:     "4bef6f92d4fcdf3547e0e7b9d699f392de0ff4764bbed0d8b23ea37e22e33f78"
-    sha256 cellar: :any,                 yosemite:       "f9b4ef36396de67507df8148ad22ecca3940505c40468656df03ac685930b2d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "96d4f4f49723f1a6309bfa403c2cee367425301794c7da4cc7ffb51f3d802927"
   end
 
