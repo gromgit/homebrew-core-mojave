@@ -21,7 +21,6 @@ class Svg2pdf < Formula
     sha256 cellar: :any,                 high_sierra:    "7a1c4ac8748a9c9013d6d6e50bd04b024e092dd718c878a0b7bcde3d9ca51a97"
     sha256 cellar: :any,                 sierra:         "bba8555de1a81fb92de544d77dc62fbe03e005b1b371d16127472890b7697503"
     sha256 cellar: :any,                 el_capitan:     "28e18b196650002c5c40c8cd6e38ecf26d16a5525f7d9ff9e2e3fe6dbfb9e17a"
-    sha256 cellar: :any,                 yosemite:       "c8479dbc6d2eaea9a8fd6e5273d571e517cf260bd04468930aa24b185802bd8a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b96ed00f483970629081f0d297f7884327f10f58cde0fbac5d7f871ac06f95b"
   end
 
