@@ -20,9 +20,10 @@ class Quvi < Formula
     sha256 cellar: :any,                 high_sierra:    "10fe26a54bcdf8e33e9798b399a3a72e8b571c9668e4398a3f8d1a7952f9c652"
     sha256 cellar: :any,                 sierra:         "9e3b86dff84297edec9c63ff1593136c2ce62e8a9f8d523e9d9137943da939bb"
     sha256 cellar: :any,                 el_capitan:     "c5a8c9b53432e15b4ec31a9c1374bde130d56f73f8ee43e392917a52f34ab945"
-    sha256 cellar: :any,                 yosemite:       "944922426376a9962bb90f032e02ef2404d3155ed3bba81a0b4d349ba1f1aec8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bde81ca6c65e967a5f18c0552cbe4823bc393e5e943c24d809f55dbefc6ea59d"
   end
+
+  deprecate! date: "2022-07-04", because: :unmaintained
 
   depends_on "pkg-config" => :build
   depends_on "libquvi"
