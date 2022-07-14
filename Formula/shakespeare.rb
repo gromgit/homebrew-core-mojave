@@ -21,7 +21,6 @@ class Shakespeare < Formula
     sha256 cellar: :any,                 high_sierra:    "7320be8a139934d9a80543a8017de6500f02971374a36038592ad122d76f85cf"
     sha256 cellar: :any,                 sierra:         "6a8e746959adcbd5629bd6ec74fcc3854fa7355d098c14a640a6df23358ce335"
     sha256 cellar: :any,                 el_capitan:     "86547f1b0967f8399f00b7120a251a126e66dfe9c52a4fb9b3d17331e2381895"
-    sha256 cellar: :any,                 yosemite:       "1e35a35e7ca7eef401a76360320389fe23e2cea6db8bf9f2d266732c742ad8d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c707f7d358ecf5a97415d8be7fd4d2d46bb04e7e3ce5926a6ad659dc28d7102"
   end
 
