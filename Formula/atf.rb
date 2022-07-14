@@ -15,7 +15,6 @@ class Atf < Formula
     sha256 high_sierra:    "034a9f29ce63bd5cd019b957bc544a3129df7ec3872453f57f24914dce1f2da8"
     sha256 sierra:         "a58333135e72fa1817c0411f3801615780c4346347d73d25ddec6eca6b213c41"
     sha256 el_capitan:     "74493d4b4868628a7a84338eb28ecfce8afdd896962f3ba632b1e785def48737"
-    sha256 yosemite:       "e4caa0498d0caf2e99e0eea9ae9269240e4f4a49a41f712cf6a730fab8d72672"
     sha256 x86_64_linux:   "c9a94b838e115887902fd1e12ef77cce606f475772668278908382fb161d1ca6"
   end
 
