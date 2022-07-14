@@ -19,7 +19,6 @@ class Ftgl < Formula
     sha256 cellar: :any,                 high_sierra:    "f6da52f5e9f06f984aad457058876e88b5b7053288f40c87a17d7d5749936cd6"
     sha256 cellar: :any,                 sierra:         "946a9530f7eae5c8f2bc71dfc91b3a8138ae2228cd441fd7cf39f047b957ce47"
     sha256 cellar: :any,                 el_capitan:     "6462eb0b97ab120639f1a191f6e3a39419bbb813abd71f5c741303dbf0aed7fb"
-    sha256 cellar: :any,                 yosemite:       "26db05485600adfb7ead23d04fae9b1ee1d1a4b7ac304e1453ad83b4b2c39f64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a53d8292298b4c6974e04fd8ab744860aec65b58149a704d9e2dad61aba0c4f6"
   end
 
