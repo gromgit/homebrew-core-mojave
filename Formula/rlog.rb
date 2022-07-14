@@ -15,7 +15,6 @@ class Rlog < Formula
     sha256 cellar: :any,                 high_sierra:     "5d85e13db4c6dd2892d136a96af4ac46d72254a39b842559ac9a4f9f3841af3e"
     sha256 cellar: :any,                 sierra:          "51f6586bcfa2235a19b311189ca63431c596c689c7b014850e4a0cef2275074e"
     sha256 cellar: :any,                 el_capitan:      "c95d8998639fd75131f923191eaa857bc3ff8f33ee64ca3b5d459ac1979e6fa2"
-    sha256 cellar: :any,                 x86_64_yosemite: "44f3b8ee89802fb13674e3b60e873045a459bf13513b84f3f7b94c8a4444b2eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:    "a272cb9d709fffe4c798d278a49455a5a05a0e4c408e158609b168718b9c5e1b"
   end
 
