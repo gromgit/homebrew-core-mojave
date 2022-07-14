@@ -16,7 +16,6 @@ class Cppi < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "bc8253f982b219088603021d510a6e7ee6d692ff5f693da19b32d0431bc9c9b4"
     sha256 cellar: :any_skip_relocation, sierra:         "d4c044247ba8a12f1462089bfa22602547894f0a9081fce21c4800e192a526ae"
     sha256 cellar: :any_skip_relocation, el_capitan:     "970e44d2a7a340fe29577f92c4b6dfcbac17f3aef35e6085197b668c4cd9013f"
-    sha256 cellar: :any_skip_relocation, yosemite:       "f8198f4b6e76d9310d66d20cb0a5b2b6adc70bee83f0bbeaca8b45b6529ccc60"
     sha256                               x86_64_linux:   "4c51c1d89a082e419ba33ab1c257fae2b1882125070d2e89ab2e49258164a7e5"
   end
 
