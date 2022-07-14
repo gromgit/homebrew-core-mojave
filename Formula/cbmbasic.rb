@@ -16,7 +16,6 @@ class Cbmbasic < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "99490e603e86319b7c4307657bf58511dacb801dddb30ed7c4269feaa19eb6bc"
     sha256 cellar: :any_skip_relocation, sierra:         "018c1d1fa3050bdbd88c092f19c1ca787098ea1183e1227671507af3fca07b52"
     sha256 cellar: :any_skip_relocation, el_capitan:     "92762d9b7f5f21190b98d23e7fedf787cccc14e1c82699b60036948beaf1e7d1"
-    sha256 cellar: :any_skip_relocation, yosemite:       "d7285a8376e20ac008e51814a97f155f8ac80ce94a809c953ee63932a1d2c1d7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e08527ac4b01d5d2c747776b5d8be5ae6e402862a87bafe7331c3c3b49d6170"
   end
 
