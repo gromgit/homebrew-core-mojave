@@ -16,7 +16,6 @@ class LittleCms < Formula
     sha256 cellar: :any,                 high_sierra:    "cead96af013b65c05e98c89890e66de1cdf864d1b6ed7da811f6618f2e551275"
     sha256 cellar: :any,                 sierra:         "227c16cbe117abeac7398265543c20b905396b214785e1a9dc48041f0f3ce128"
     sha256 cellar: :any,                 el_capitan:     "c1125a0074a82747ffc33ab79c617ea448b605ace47d6c5cf788f2d3a49d7c5d"
-    sha256 cellar: :any,                 yosemite:       "bc02c8267bf616ef0dcfc27db97a849b0f79e8211164ea4a955482b964255a7e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c687f10094faebcec6573681241dc7f45e3f19ffcaab3ef2a56c987d13ba18a3"
   end
 
