@@ -15,7 +15,6 @@ class Clfft < Formula
     sha256 cellar: :any, high_sierra:    "1e3aca16a694b761c0267c0dfdd9933d43cddd3ed0ea9d20fd4016222a7748f9"
     sha256 cellar: :any, sierra:         "009c0a8a81d783393abc8ca6307631c50e50ba72dc09e3f2cda5f2e2d8aa617c"
     sha256 cellar: :any, el_capitan:     "369c0df6b06b7ea116120e177a44a54760cc4d7132a1fb59a83ef52a99a6b5f4"
-    sha256 cellar: :any, yosemite:       "3c91564548f9b7844de09de3d54b77b43e7855c17def6d3efac5866e357635f0"
   end
 
   depends_on "boost" => :build
