@@ -15,7 +15,6 @@ class Rem < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "0a3365c8653023f2b4de8c5b6243aec2de7c180d1be982adcdbe58afc159800e"
     sha256 cellar: :any_skip_relocation, sierra:         "326f7a21f696b7614a55a5edeb57e08482ff7b4c72506bcecff5deaa0552828e"
     sha256 cellar: :any_skip_relocation, el_capitan:     "c9892df4f6aa5d58097e4cc4d62388ccbb1e0c02604b1139cfe829d47d992442"
-    sha256 cellar: :any_skip_relocation, yosemite:       "d9a6303ff3935923ba53d093e95387caaf24460a4cd7fb7d330fa5c3988b551c"
   end
 
   depends_on xcode: :build
