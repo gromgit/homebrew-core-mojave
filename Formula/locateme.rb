@@ -20,7 +20,6 @@ class Locateme < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "e5be4f7b94d001483320c2445739e26deb3007f8fb54185eac4c1cdf941114a3"
     sha256 cellar: :any_skip_relocation, sierra:         "cb5fe0b740f04c036726e546481f0eed603873ce57b063e0621ae8f73f66645d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "5f8e1febc1886565bfa9691cb3ffc0486999f8b682a52276c1d9ea6e0f1f4470"
-    sha256 cellar: :any_skip_relocation, yosemite:       "a7876905a4c06452431e506523c5fdf142e2de364427600122fbb9b4928bc6d1"
   end
 
   depends_on :macos
