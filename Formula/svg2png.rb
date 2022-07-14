@@ -21,7 +21,6 @@ class Svg2png < Formula
     sha256 cellar: :any,                 high_sierra:    "c0495d355b1ca05b777814eb2bed14fbae20075a9aa1dd72bfdcdd2efd117587"
     sha256 cellar: :any,                 sierra:         "d3d9556295a1bed19da91bbe741d3980638bade739e37bbb19d01f517a5e442c"
     sha256 cellar: :any,                 el_capitan:     "327bbf146aedf651d8af446ae94a736fb89652cd8a4a7d8d0b00b1f6ca3f7693"
-    sha256 cellar: :any,                 yosemite:       "8d6abbad01e2b307369b7feadf2b79232b9b1f248bf5f789aa8a3231caffedff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca1dd0f0455a18134fa0231e2fa2a9e3193ee27b983a1d3bb1984440184f408e"
   end
 
