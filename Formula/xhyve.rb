@@ -12,7 +12,6 @@ class Xhyve < Formula
     sha256 cellar: :any, high_sierra: "9643b72b869ec57653668f1ed2db0c3a2c7fad77d8000931933824622032d476"
     sha256 cellar: :any, sierra:      "edc2e17147d4ae9333033e7317590a48b752b418df689a6dae45bd29a12eaca8"
     sha256 cellar: :any, el_capitan:  "b0a94f72b09c71aa3bfbbf55669cd9e64ea309d6be8c838f6bc98aeaf8a6895c"
-    sha256 cellar: :any, yosemite:    "e61ee4b3d2d3b5bba47f4288af54980f5de7991cadf6aa83dc058cb36854c789"
   end
 
   depends_on :macos
