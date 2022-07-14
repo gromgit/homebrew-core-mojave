@@ -21,7 +21,6 @@ class Oggz < Formula
     sha256 cellar: :any,                 high_sierra:    "f444304f94866179ffcbe6322d6f25193b4fcd2dc49ad71f9c9527b0d85934de"
     sha256 cellar: :any,                 sierra:         "a0fad22ba18930be45c7226f2db0fe8b39c988c84c392807ddc75e2d40b3a9ad"
     sha256 cellar: :any,                 el_capitan:     "4c1819dbc134981faf5e2e03dc69d210deb8dabd59b71969c1f479fa32322635"
-    sha256 cellar: :any,                 yosemite:       "c6076111f111c5d77dc608bcb4892f10dffb84e5b4f5ebdfba311ec332fa6623"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d32cc66ca90d54de30392f5c92d7858fd3cb86068a7363ed869aece87f0f9bb1"
   end
 
