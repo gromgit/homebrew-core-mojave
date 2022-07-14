@@ -12,7 +12,6 @@ class Dgen < Formula
     sha256 cellar: :any,                 high_sierra:  "bac08b08f7cfb9c108ccf0bfe2d4623324e5038f01e508c1fb5da6b3c4d58dff"
     sha256 cellar: :any,                 sierra:       "50383807ec76387aa156cf6157ea537465bf20ad35e4e9eddda7d34685ded635"
     sha256 cellar: :any,                 el_capitan:   "ebcab68ba8d0aa9c6aacae94d43a67ce016dcdd219c5770c3b7d6d9c3590ef9f"
-    sha256 cellar: :any,                 yosemite:     "53f1fc72dbaab000eae45e143ca46a054a6ff655f91190d6aa30e71e8e505494"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d6e7a76934be220bc54372894c23fd17a56eafad2e7baf6c8c551a789c6eb47b"
   end
 
