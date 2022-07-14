@@ -16,7 +16,6 @@ class Vecx < Formula
     sha256 cellar: :any,                 high_sierra:    "2a2b5d63a8be0bcf51a9b4eee05b0751fd3757b5576e515931a55ad6f729a465"
     sha256 cellar: :any,                 sierra:         "9417cc9e5938dc117b4ab7ab41518a2b28e366cae15cdf1192af15e6237a35e6"
     sha256 cellar: :any,                 el_capitan:     "48d404ad79ecd0ac870ca0b3390a6465e7ed2755d58eaf130ec93a4e874e5f34"
-    sha256 cellar: :any,                 yosemite:       "65e4cd91159f3772ec9e688d93bb1c1dd823e9c397b5163a62b1499909a2b74b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1214cbb429b4a346a039b95f8e383b5c887d109e70fabaf7f741db447414d744"
   end
 
