@@ -11,7 +11,6 @@ class Winexe < Formula
     sha256 cellar: :any_skip_relocation, high_sierra: "765ad670de08f86b8c9b11ec43493148d1368e6c3ffa5e65d1bca898480996c2"
     sha256 cellar: :any_skip_relocation, sierra:      "e9594f927f9ef58608951175c0bd118b82cf7b25d5b829453195b66f45c2cbc1"
     sha256 cellar: :any_skip_relocation, el_capitan:  "58080b3729c9b261a65c7db2072ec867176bfd6a802c23f9b343feb44592789a"
-    sha256 cellar: :any_skip_relocation, yosemite:    "fa7654ed5641e517a658fe8852a9ee5459acca047518c433d989f1aef69a7a6d"
   end
 
   depends_on "autoconf" => :build
