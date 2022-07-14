@@ -12,7 +12,8 @@ class Antlr4CppRuntime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/antlr4-cpp-runtime"
-    sha256 cellar: :any, mojave: "fbd5ee8b6209461261605852e8e19ad1efba0cdb27f1dafc71bfecbc4694a823"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fc5e755a7206462efa9f66f7950e0f15cefb9fb3dc6bde39037f99d3f62f5f40"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,7 @@ class Antlr4CppRuntime < Formula
   fails_with gcc: "5"
 
   def install
-    system "cmake", ".", "-DANTLR4_INSTALL=ON", *std_cmake_args
+    system "cmake", ".", "-DANTLR4_INSTALL=ON", "-DANTLR_BUILD_CPP_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", ".", "--target", "install"
   end
 
