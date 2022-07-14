@@ -14,7 +14,6 @@ class Libgfshare < Formula
     sha256 cellar: :any,                 high_sierra:    "0079ff7fef137a59579eb12e9f15087573ad2c19c8d7a4d53e2a7d8d378e6af1"
     sha256 cellar: :any,                 sierra:         "ed8e772e5d4b6c8471aa4d711bd2178b873cce23028bcd3831a51aca67c3485e"
     sha256 cellar: :any,                 el_capitan:     "c50ebaadca206eef93bc6d835f5814e0d640223c2c7e39cd12feff47720c054d"
-    sha256 cellar: :any,                 yosemite:       "6929a937f6f8ee624f02891622375d23aa65114475cf53ce82342976b4705454"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4439a61e14f81e80009ad0e85a4e2a8183c106161d29e232176faa061ba380ba"
   end
 
