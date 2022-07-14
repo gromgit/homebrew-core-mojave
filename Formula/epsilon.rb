@@ -23,7 +23,6 @@ class Epsilon < Formula
     sha256 cellar: :any,                 high_sierra:    "87935305d8659e6cdcde272d469768c48dd870f227ab894aa71a6b206be5fa1f"
     sha256 cellar: :any,                 sierra:         "a8aee2fb802a82cdbf701003195285f20f1b067ceec72d6e3170e3a69032a0e8"
     sha256 cellar: :any,                 el_capitan:     "10da057d558d4d9df8c503135b53f7c23778258f7c66d3b39229bf70d9a887f1"
-    sha256 cellar: :any,                 yosemite:       "2811209670e68ab4316e6d177bc1376cb28462cad9b696b4a782deff4074a9ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d74732822ae5b53c57fc5bc613e70de84daca229438e47739c875f6dc50b21b1"
   end
 
