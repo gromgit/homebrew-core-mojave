@@ -1,33 +1,24 @@
 class Sdl2Mixer < Formula
   desc "Sample multi-channel audio mixer library"
-  homepage "https://www.libsdl.org/projects/SDL_mixer/"
+  homepage "https://github.com/libsdl-org/SDL_mixer"
+  url "https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.0/SDL2_mixer-2.6.0.tar.gz"
+  sha256 "f94a4d3e878cb191c386a714be561838240012250fe17d496f4ff4341d59a391"
   license "Zlib"
-  revision 3
 
-  stable do
-    url "https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.4.tar.gz"
-    sha256 "b4cf5a382c061cd75081cf246c2aa2f9df8db04bdda8dcdc6b6cca55bede2419"
-
-    # Fix fluidsynth use-after-free bug until the release after 2.0.4, upstream patch
-    # https://github.com/libsdl-org/SDL_mixer/commit/6160668079f91d57a5d7bf0b40ffdd843be70daf
-    patch :p3 do
-      url "https://github.com/libsdl-org/SDL_mixer/commit/6160668079f91d57a5d7bf0b40ffdd843be70daf.patch?full_index=1"
-      sha256 "73e5ebf9136818b7a65f1e8fcbeb99c350654d7d9e53629adc26887e9e169d8d"
-    end
-  end
-
+  # This formula uses a file from a GitHub release, so we check the latest
+  # release version instead of Git tags.
   livecheck do
-    url :homepage
-    regex(/href=.*?SDL2_mixer[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2_mixer"
-    sha256 cellar: :any, mojave: "473c3f8bc0c3e9b0fa3f9ae36dc2ad0f91447d72f66a7e1a007d64cbcad677b8"
+    sha256 cellar: :any, mojave: "01a29809ef8d2efd568dec72cbe612589cce759419188150dd4d8cf70230929d"
   end
 
   head do
-    url "https://github.com/libsdl-org/SDL_mixer.git"
+    url "https://github.com/libsdl-org/SDL_mixer.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
