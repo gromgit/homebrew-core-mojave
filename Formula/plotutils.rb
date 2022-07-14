@@ -18,7 +18,6 @@ class Plotutils < Formula
     sha256 cellar: :any,                 high_sierra:    "00796c7f6aa36203eb0fd919ef4f096c6016d3c5973b2032328c95c87b354d92"
     sha256 cellar: :any,                 sierra:         "b63f4f051452f8fd9b5ddb50f9d574122c2277c9778e1a56c3f2d59e55c3da73"
     sha256 cellar: :any,                 el_capitan:     "b734cdcbc7ce11c4a716bc96ee7671f3883a5d41dadceac28d994ad2c20292f9"
-    sha256 cellar: :any,                 yosemite:       "fae89f252628820ac83a0896fa022b1c08cacca6e6234b2fb23c10554f424fd3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "74b0edefd4bc7eb703cf1579159b7d746502c77538f58b981405c1cf9ba6d042"
   end
 
