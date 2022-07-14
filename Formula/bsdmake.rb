@@ -21,7 +21,6 @@ class Bsdmake < Formula
     sha256 high_sierra:    "fa009c31c9fa5fc71f774cfe146f1338ca856158a606b796c3a1e7dbd64f3895"
     sha256 sierra:         "3d5b8c21cf86cd6bb9eb28d1e8cbec434b370aa15e19540e366d045ea807c8c8"
     sha256 el_capitan:     "b4052277ac6cf79ed579107fb73da96954c350d7bf29a124c55d87a0df8940b0"
-    sha256 yosemite:       "18d7cb56f14eb2e404cf3abb163a354f57c5e45b72991efdd6566a15fcffe90f"
   end
 
   # MacPorts patches to make bsdmake play nice with our prefix system
