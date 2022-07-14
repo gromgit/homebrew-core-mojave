@@ -22,7 +22,6 @@ class Libfishsound < Formula
     sha256 cellar: :any,                 high_sierra:    "726c79b6e3ce5d71e9cf1d6b556a6daed33b5e8bd7269e2219b1474549dac17d"
     sha256 cellar: :any,                 sierra:         "50187bc6adea9322f20e1706d66859c941d6d2e8d1d8bfab091f088b20061760"
     sha256 cellar: :any,                 el_capitan:     "9cf94c3c6963895940e8720aef21c29b001257c918fce6b65685c33f8430f0e4"
-    sha256 cellar: :any,                 yosemite:       "4fcfc4270d73ac2b0e8d8a4d1fe6b94a1093502b802ed327febb5286ad5140b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5db56944c47f7f4084a4645ef252841be006ad54ee48fb55530eda206e6732c3"
   end
 
