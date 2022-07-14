@@ -16,7 +16,6 @@ class Libtar < Formula
     sha256 cellar: :any,                 high_sierra:    "a263cfaa1499f0c82902009964df0a310e7841ddff29409c67ede0a79157c31e"
     sha256 cellar: :any,                 sierra:         "68bdebde24477a815ea03289878ad57e8a1f719b417bef430bf477c2d760cad7"
     sha256 cellar: :any,                 el_capitan:     "018f1c9897f52b783878db67db39a5933a4863a3f9dedc2af9b6bf13f2161957"
-    sha256 cellar: :any,                 yosemite:       "d8d138fb4c1cf8c33aaaf8633cd748e9a423e84f1df886ae1842d4816b1f34a0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5703c44aa7e1572385af551d05f17bafccf9a247eef56639a58dafd5aa8bdd46"
   end
 
