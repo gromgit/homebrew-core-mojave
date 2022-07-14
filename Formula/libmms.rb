@@ -16,7 +16,6 @@ class Libmms < Formula
     sha256 cellar: :any,                 high_sierra:    "adc24aaa1656c02f41b20b4453f6a2deda8f3597c919eed1ae8befb732fc920f"
     sha256 cellar: :any,                 sierra:         "5319927f799dd20effbfc9f8bb90ebc844b39852c433bf434ab6b36c11c36417"
     sha256 cellar: :any,                 el_capitan:     "61c4dd24598198386342dd9c700e218b6b83c82627efc781daa89acfaca96066"
-    sha256 cellar: :any,                 yosemite:       "f915d916dd81ad9f767b6905e166dae07df72e70dc0c844c8011abed9f144252"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bf0654cdf09b4ca5c749e75d8920ff2eddee195e31a468c64bee07f74571b29"
   end
 
