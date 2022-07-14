@@ -19,7 +19,6 @@ class Cdlabelgen < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "ece93bae3d8b9e6e5c37b347849836dc970183efcea603d7d3b6f8f0dbaebd4a"
     sha256 cellar: :any_skip_relocation, sierra:         "a874e660972a4ac722e56e13749a17f3c76c5fa61691f44d70afb13c88e4e65f"
     sha256 cellar: :any_skip_relocation, el_capitan:     "34758541efaf3e124ff531d09cdf3f511651be8602f179de1e5ecd606b0aa60b"
-    sha256 cellar: :any_skip_relocation, yosemite:       "caeda225b0c542c388723e7ac464844d8924705e14313a1665526564d3bb12bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ba8549a259b725eb231f8ae136a290a24156dc267050796bbff796f6135c9f8"
   end
 
