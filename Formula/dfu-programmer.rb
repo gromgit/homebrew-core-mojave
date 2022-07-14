@@ -20,7 +20,6 @@ class DfuProgrammer < Formula
     sha256 cellar: :any,                 high_sierra:    "2ff7d2fae3995303e8b73625f5de14beaf74d3150fb1024c7bc75ca24e3a56a9"
     sha256 cellar: :any,                 sierra:         "56775882f52597c48d0078da0488c1852fca842188f6a266cb787c9f76f3f56e"
     sha256 cellar: :any,                 el_capitan:     "e9657f69d69597d89bd94bb1b1fc806f61a476c409a2da5a57abb062742bed04"
-    sha256 cellar: :any,                 yosemite:       "4dea1ba0456ff657f6bc332db3040d1f9955a1845fcf8d34585187d67637c39e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e92b3de2d143401517c149f42de3acd6f2d64bc779ed515f7f89ac5fadb1fe9c"
   end
 
