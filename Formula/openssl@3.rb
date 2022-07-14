@@ -1,9 +1,9 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-3.0.4.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.0.4.tar.gz"
-  sha256 "2831843e9a668a0ab478e7020ad63d2d65e51f72977472dc73efcefbafc0c00f"
+  url "https://www.openssl.org/source/openssl-3.0.5.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.0.5.tar.gz"
+  sha256 "aa7d8d9bef71ad6525c55ba11e5f4397889ce49c2c9349dcea6d3e4f0b024a7a"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class OpensslAT3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssl@3"
-    sha256 mojave: "7f3256cde9ff07219180cbd39469f60d32c871958b8281fe7a6fd3ed849579e7"
+    sha256 mojave: "5f4f5a9e797353c3618f45fc15260795ff282b4e6b6ddd1468088f29fc5bc297"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
