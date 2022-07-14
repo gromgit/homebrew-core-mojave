@@ -16,7 +16,6 @@ class Sz81 < Formula
     sha256 high_sierra:    "c23507f4f58b7144b2b4c0dd42ed6ae22a6d65661d15ea024ab8b65fd2a774ba"
     sha256 sierra:         "853475dfc7991beea12b01669e81fc35ce10e6a9b067716eb026e0ff693d5c4c"
     sha256 el_capitan:     "7a9b6ffa108486dea9514df6fbdd820a0e7b829c893ecb1b76a1b69ca8f39a21"
-    sha256 yosemite:       "a7f7cc5af1a1a42449da3169e18587df907369c94debf6bb15edba62acf0e199"
     sha256 x86_64_linux:   "a9d7763f36159bd7cbba2ca56357e61de0dc72fe906c2f6e2feb53d9f14a941c"
   end
 
