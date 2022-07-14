@@ -16,7 +16,6 @@ class MrubyCli < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "267baff54cace7684edd4184625afd6fb788cdb072035e88b9c10e4d274454fe"
     sha256 cellar: :any_skip_relocation, sierra:         "d436b8d717f89db9807338345f4b0f385abcfc45f56e9b0b7decc333d4d05ad6"
     sha256 cellar: :any_skip_relocation, el_capitan:     "2f56375783e9365bafc0868d505b54eea315f6dad9a0095decbbd61abeb345ac"
-    sha256 cellar: :any_skip_relocation, yosemite:       "a06806ca6a22d3b015e073a984e832013f2efe729870e2aa6d0b17e91a4b9855"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "826d12cb63bd84483619ef0c51ebbd4cd90a7becb3e3110ed661ba20a4be2f61"
   end
 
