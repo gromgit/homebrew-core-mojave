@@ -20,7 +20,6 @@ class Sdl2Net < Formula
     sha256 cellar: :any,                 high_sierra:    "f193c7c2ae1b7f2c82cbbc9b83a16fc72d845c6396ecd33644eea19695a850ee"
     sha256 cellar: :any,                 sierra:         "dc2b96762f77dd4d42fea1da4d4c2373692dd0a531f686f00de0dd4a6eed8df9"
     sha256 cellar: :any,                 el_capitan:     "46d189ebe1f240381a9e8d99a2cb249e577cec98e6399e741e47275735a3471c"
-    sha256 cellar: :any,                 yosemite:       "2e2bcc1e1aac84b37ebb44398e463d9004764aa369489926cd07bb97cb9f60c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "861e38494187fb28cdbd10b7c796d45db51c08c38d62ca539b55b48befa0ae9a"
   end
 
