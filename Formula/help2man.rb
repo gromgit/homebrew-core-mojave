@@ -8,12 +8,13 @@ class Help2man < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/help2man"
-    sha256 cellar: :any, mojave: "0bb12b187a59c55a72f38eae4886f4d7a3a5fa2ccfee2f429e8cd068589a0852"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b85da4af969514e8ffb286b58c2de02943139d85924536550ddcfdc6a5bf9873"
   end
 
   depends_on "gettext" if Hardware::CPU.intel?
 
-  uses_from_macos "perl"
+  uses_from_macos "perl", since: :mojave
 
   resource "Locale::gettext" do
     url "https://cpan.metacpan.org/authors/id/P/PV/PVANDRY/gettext-1.07.tar.gz"
