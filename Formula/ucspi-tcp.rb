@@ -19,7 +19,6 @@ class UcspiTcp < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "b3f2714c61a157eb31ef53915901c29c24ad3dc5cf7d7c3403dcd501399e26b4"
     sha256 cellar: :any_skip_relocation, sierra:         "46d324e867e5a35cbb17e8a215ff33f693651d11645eed116e4e4a6c02085b34"
     sha256 cellar: :any_skip_relocation, el_capitan:     "a57368e57812063bc4e1450c0bef5cad8392c44e54abf3c8ca950ea51abe7ae9"
-    sha256 cellar: :any_skip_relocation, yosemite:       "727e93394b415da772b43ce5028ad54dcb569f695e6c8c4cdf05dc462b2febbe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1403c13191ec33d523a407bcac88d15d712598e39629a265890805527bb2a566"
   end
 
