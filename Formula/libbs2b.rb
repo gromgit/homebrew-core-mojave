@@ -16,7 +16,6 @@ class Libbs2b < Formula
     sha256 cellar: :any,                 high_sierra:    "0d2faffb7452ddd66d306746065dc7264d66c3e8f60a3525ee4eb911cd546bcd"
     sha256 cellar: :any,                 sierra:         "0431cb3f7cac90d18d854abe956ad296ba399832b733293e55ea58f0f11ba1b1"
     sha256 cellar: :any,                 el_capitan:     "7949aa7768466a789d992d079a63d5933d19e76ebfb330b38d3b4822929a71ac"
-    sha256 cellar: :any,                 yosemite:       "62a45fde4ae7db34b1c14212d2c0ec5c603fdc403dc1df2b629972789dc7489e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d6af3a009939d61fdec9ddd863c4c6e8b51d4f3bd5bc73f55dfc76ac2f48231"
   end
 
