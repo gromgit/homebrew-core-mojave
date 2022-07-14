@@ -21,7 +21,6 @@ class Ftjam < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:  "a91c9e777574a9e50d2bd7f53b5f357c6bda8a9e0de522bbddcd59af4a52c5d8"
     sha256 cellar: :any_skip_relocation, sierra:       "31e7d5357421066e2b58cab199a690691a8897e442e1472acdb3d0d829657670"
     sha256 cellar: :any_skip_relocation, el_capitan:   "f94287203827dea6ac5031e695c217a48b1b69e939dcd68a489c8477b4100447"
-    sha256 cellar: :any_skip_relocation, yosemite:     "95490ead99e537713d8c26d1c1bea72b31ea06153a405867ffe83c044593caa0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "03bc2f284df267e0e2f669480b142ae11c5bf15066eebc0dc7de69c42e116d41"
   end
 
