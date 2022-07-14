@@ -13,7 +13,6 @@ class Pkgdiff < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:   "28ed130d50f00ec5617be39a8bc627591d310d47e8023844b54f27fbf0daede8"
     sha256 cellar: :any_skip_relocation, sierra:        "fc92f55909e0499c1d0054100183567465603ac85fa9f8b20d5ab1d84e36ceae"
     sha256 cellar: :any_skip_relocation, el_capitan:    "18895054433b4b050c3a863306c62a910be7fa4e36b0020a742c5c7541c0df65"
-    sha256 cellar: :any_skip_relocation, yosemite:      "c566b1a44ed89a1b7b3547adf0a0e0fa784174e1acc4a1dd46a240ea6d09bbff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b6dfddc360e2756ff78483c44796a5b55e84c8ec6b5666615baf29e9f1db891"
     sha256 cellar: :any_skip_relocation, all:           "1b6dfddc360e2756ff78483c44796a5b55e84c8ec6b5666615baf29e9f1db891"
   end
