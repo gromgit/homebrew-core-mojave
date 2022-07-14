@@ -18,7 +18,6 @@ class Libkate < Formula
     sha256 cellar: :any,                 high_sierra:    "65f687ae05918aa2f2fb4e27f384d6645a0f64231e8dc9343c8435347895d792"
     sha256 cellar: :any,                 sierra:         "e7b6c1288455b12044889d768b4593a7a08beac5c4c2534f24565adb58f4a9b5"
     sha256 cellar: :any,                 el_capitan:     "244a27eb03227b1455bea4ffd9f8a73ccd660389c44e9719d62bba1a4247bdf6"
-    sha256 cellar: :any,                 yosemite:       "473e0de088ba513006bb5212fd9ca21390d848c9cd5e33a7951ee3cba24220ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "159b8a3fb3e5ed3f1fe68bd29dbe791f5a4e967fe7b94af24a4148d09f7c6e03"
   end
 
