@@ -16,7 +16,6 @@ class TtyClock < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "b3d2a19cdb38e0e156be552d6f9ca8926097300f17bbe6628b7443934d3e1cb1"
     sha256 cellar: :any_skip_relocation, sierra:         "9b0e056ec6d86d9ba9cbd2abc02236607a6ad5601e7a656d10cad20182564315"
     sha256 cellar: :any_skip_relocation, el_capitan:     "c0d981769811bf1c265e11702ea0d26bcf87102ac92896c04c14a91fbed1cc8c"
-    sha256 cellar: :any_skip_relocation, yosemite:       "9341fb07070b665dc5f9593c1b4811ec734f7221afbde2547cee55fc9102aa1e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b676f9ca583791e909a241667741a84289d4f75c5673fdd31176c48450ab701"
   end
 
