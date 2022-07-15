@@ -1,8 +1,8 @@
 class Libzip < Formula
   desc "C library for reading, creating, and modifying zip archives"
   homepage "https://libzip.org/"
-  url "https://libzip.org/download/libzip-1.9.0.tar.xz", using: :homebrew_curl
-  sha256 "a17240ee88f0705a9067bb0087fde1cee73948b3cf6c3978a21a58fdb73b76a2"
+  url "https://libzip.org/download/libzip-1.9.2.tar.xz", using: :homebrew_curl
+  sha256 "c93e9852b7b2dc931197831438fee5295976ee0ba24f8524a8907be5c2ba5937"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libzip"
-    sha256 cellar: :any, mojave: "709f23662804f31f72e966b2a00dfe69a67a14deebf6eb2c3f8b5d7cd69b0817"
+    sha256 cellar: :any, mojave: "f175c8eda8a330707c0a01955f6d6b503d40ad1623164c2837e565d2c059f58e"
   end
 
   depends_on "cmake" => :build
