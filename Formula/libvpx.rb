@@ -1,17 +1,15 @@
 class Libvpx < Formula
   desc "VP8/VP9 video codec"
   homepage "https://www.webmproject.org/code/"
-  url "https://github.com/webmproject/libvpx/archive/v1.11.0.tar.gz"
-  sha256 "965e51c91ad9851e2337aebcc0f517440c637c506f3a03948062e3d5ea129a83"
+  url "https://github.com/webmproject/libvpx/archive/v1.12.0.tar.gz"
+  sha256 "f1acc15d0fd0cb431f4bf6eac32d5e932e40ea1186fe78e074254d6d003957bb"
   license "BSD-3-Clause"
   head "https://chromium.googlesource.com/webm/libvpx.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvpx"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8647454f38aacae236ce35b9639fe65802fa00b354c885ee8f376384af3759f9"
+    sha256 cellar: :any, mojave: "f6dd901dad1654538e9ff2c0b10b67dbe574f518ecc2b61c1872de5f2ff0fa22"
   end
-
 
   depends_on "yasm" => :build
 
