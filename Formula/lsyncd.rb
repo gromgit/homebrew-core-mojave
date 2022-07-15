@@ -7,7 +7,8 @@ class Lsyncd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lsyncd"
-    sha256 cellar: :any, mojave: "7d7a67f254806c466a1aafe206e1f03d9e00bfabf62f31e4cb56413ed383dc35"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c6289e872a804349ec53b95763af08c6e4fc153c3b0b311404f7aac51a2deb87"
   end
 
   depends_on "cmake" => :build
@@ -16,12 +17,6 @@ class Lsyncd < Formula
   on_macos do
     # From https://opensource.apple.com/releases/
     xnu_headers = {
-      "10.10"   => ["xnu-2782.1.97.tar.gz",       "612a0eb12d2b2fad3b2df33224abd1c65b89f1c95cd1cea6853694840d48d322"],
-      "10.10.1" => ["xnu-2782.1.97.tar.gz",       "612a0eb12d2b2fad3b2df33224abd1c65b89f1c95cd1cea6853694840d48d322"],
-      "10.10.2" => ["xnu-2782.10.72.tar.gz",      "2fc7d3a1bc03c3ce2f2c845d652338b02cf088fe7815926d5e0c1a57b0c2e5c9"],
-      "10.10.3" => ["xnu-2782.20.48.tar.gz",      "8b502e0c6bcec462e9b7a6d51323ee71215b6efc423e50303c8238218fc6ccc0"],
-      "10.10.4" => ["xnu-2782.30.5.tar.gz",       "66d57f67d2b0118c4e6d69a1fed2911f959c7834a1bae0d89dce23f6f732b110"],
-      "10.10.5" => ["xnu-2782.40.9.tar.gz",       "059ac030b49e27447a207693665d017ad389a077f6465520a68381472e050b48"],
       "10.11"   => ["xnu-3247.1.106.tar.gz",      "09543a29dc06ef9a97176a6e2dbdad868bc0113d3b57f2b28b5d08af897c577d"],
       "10.11.1" => ["xnu-3247.10.11.tar.gz",      "76f215372d0b4fb8397599c5b7a5a97c777aca553a4aea5f0f9f6cbcb50147f1"],
       "10.11.2" => ["xnu-3248.20.55.tar.gz",      "cdeb243540d5d13c9bee6234d43cd6eafced16e4cdc458fb0bf98921e5dd54a9"],
