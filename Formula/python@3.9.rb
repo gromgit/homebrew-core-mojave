@@ -13,7 +13,8 @@ class PythonAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.9"
-    sha256 mojave: "16761ab9caa0fc095b7bca09dae78175f688be3629ed6d8729d11c1b2db774be"
+    rebuild 1
+    sha256 mojave: "c278c20d614c3a4f8e24aa8003183fed737067fa69ed4a652a664e61df80a6b4"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -30,7 +31,7 @@ class PythonAT39 < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "expat"
-  uses_from_macos "libffi"
+  uses_from_macos "libffi", since: :catalina
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
