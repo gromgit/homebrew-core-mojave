@@ -1,13 +1,13 @@
 class Libtpms < Formula
   desc "Library for software emulation of a Trusted Platform Module"
   homepage "https://github.com/stefanberger/libtpms"
-  url "https://github.com/stefanberger/libtpms/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "61d6f947a60686ec98e7cc5861f0999bd6cdaa1fc2b8901b8dc68d1a715b35cf"
+  url "https://github.com/stefanberger/libtpms/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "9522c69001e46a3b0e1ccd646d36db611b2366c395099d29037f2b067bf1bc60"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtpms"
-    sha256 cellar: :any, mojave: "12acdc65da7afa7e4ee2d9df31279ef3db1107f79a3d584da54b1561a667f014"
+    sha256 cellar: :any, mojave: "0139df86fd6798c4f965b2ca5254b8a6646e8772c913aedd56a982def511cdf2"
   end
 
   depends_on "autoconf" => :build
