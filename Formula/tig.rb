@@ -1,13 +1,13 @@
 class Tig < Formula
   desc "Text interface for Git repositories"
   homepage "https://jonas.github.io/tig/"
-  url "https://github.com/jonas/tig/releases/download/tig-2.5.5/tig-2.5.5.tar.gz"
-  sha256 "24ba2c8beae889e6002ea7ced0e29851dee57c27fde8480fb9c64d5eb8765313"
+  url "https://github.com/jonas/tig/releases/download/tig-2.5.6/tig-2.5.6.tar.gz"
+  sha256 "50bb5f33369b50b77748115c730c52b13e79b2de49cba7167bb634eb683d965f"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tig"
-    sha256 cellar: :any, mojave: "c9409c48bee68b8fe87c4bddcf1928c220b57bf6a791d4594837640af121609c"
+    sha256 cellar: :any, mojave: "d64e35b4672f88f78ee86adf3a57fe0806a577908d3a06cc7dbcdb778a21a265"
   end
 
   head do
@@ -19,6 +19,8 @@ class Tig < Formula
     depends_on "xmlto" => :build
   end
 
+  # https://github.com/jonas/tig/issues/1210
+  depends_on "ncurses"
   depends_on "readline"
 
   def install
