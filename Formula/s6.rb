@@ -1,8 +1,8 @@
 class S6 < Formula
   desc "Small & secure supervision software suite"
   homepage "https://skarnet.org/software/s6/"
-  url "https://skarnet.org/software/s6/s6-2.11.1.1.tar.gz"
-  sha256 "1cef7f7b3a7e01181fbb6fe8300e6ba422d9689007221c78af1f99528acb6c38"
+  url "https://skarnet.org/software/s6/s6-2.11.1.2.tar.gz"
+  sha256 "6c1474be3e889dac392cee307abe015cd4be0c85c725c84ea7f184f0e34503a2"
   license "ISC"
 
   livecheck do
@@ -12,17 +12,17 @@ class S6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s6"
-    sha256 mojave: "af097f1de8824a4e525c1b69ca6c9122f2e6cf38d28d39c0290b85cff194d5cd"
+    sha256 mojave: "11166a736bf0feab87a86bb0e48f07a554c74e8db17e24f78725e796d961c0ba"
   end
 
   resource "skalibs" do
-    url "https://skarnet.org/software/skalibs/skalibs-2.12.0.0.tar.gz"
-    sha256 "e6d724b4c628f093df75c98f1274d8bd6c0ecdb09cc6816d3268bacb58647f30"
+    url "https://skarnet.org/software/skalibs/skalibs-2.12.0.1.tar.gz"
+    sha256 "3e228f72f18d88c17f6c4e0a66881d6d3779427b7e7e889f3142b6f26da30285"
   end
 
   resource "execline" do
-    url "https://skarnet.org/software/execline/execline-2.9.0.0.tar.gz"
-    sha256 "d4906aad8c3671265cfdad1aef265228bda07e09abd7208b4f093ac76f615041"
+    url "https://skarnet.org/software/execline/execline-2.9.0.1.tar.gz"
+    sha256 "01260fcaf80ffbca2a94aa55ea474dfb9e39b3033b55c8af88126791879531f6"
   end
 
   def install
