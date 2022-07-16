@@ -1,10 +1,10 @@
 class Openldap < Formula
   desc "Open source suite of directory software"
   homepage "https://www.openldap.org/software/"
-  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.2.tgz"
-  mirror "http://fresh-center.net/linux/misc/openldap-2.6.2.tgz"
-  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.2.tgz"
-  sha256 "81d09345232eb62486ecf5acacd2c56c0c45b4a6c8c066612e7f421a23a1cf87"
+  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.3.tgz"
+  mirror "http://fresh-center.net/linux/misc/openldap-2.6.3.tgz"
+  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.3.tgz"
+  sha256 "d2a2a1d71df3d77396b1c16ad7502e674df446e06072b0e5a4e941c3d06c0d46"
   license "OLDAP-2.8"
 
   livecheck do
@@ -14,7 +14,7 @@ class Openldap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openldap"
-    sha256 mojave: "bba62fdb531f593efde70fde38ade15e00c7ab6fef7b2d04fac907a9469a2d18"
+    sha256 mojave: "ca05ced951d3565532da86ed29b8947c978c26ff5418433fd680a5c3923ad42b"
   end
 
   keg_only :provided_by_macos
