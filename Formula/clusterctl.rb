@@ -2,10 +2,10 @@ class Clusterctl < Formula
   desc "Home for the Cluster Management API work, a subproject of sig-cluster-lifecycle"
   homepage "https://cluster-api.sigs.k8s.io"
   url "https://github.com/kubernetes-sigs/cluster-api.git",
-      tag:      "v1.1.4",
-      revision: "1c3a1526f101d4b07d2eec757fe75e8701cf6212"
+      tag:      "v1.1.5",
+      revision: "d488bdb875d302eba85221fa35c9f13c00df4ae7"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/cluster-api.git", branch: "master"
+  head "https://github.com/kubernetes-sigs/cluster-api.git", branch: "main"
 
   # Upstream creates releases on GitHub for the two most recent major/minor
   # versions (e.g., 0.3.x, 0.4.x), so the "latest" release can be incorrect. We
@@ -20,7 +20,7 @@ class Clusterctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clusterctl"
-    sha256 cellar: :any_skip_relocation, mojave: "d9da936e18524273b4cea14f8d7a00a084ca6c8a5b602329a6332c3fa99d0c70"
+    sha256 cellar: :any_skip_relocation, mojave: "8a70a2fb04fda8dfd65d063e8fa9d7bb9aa25865569c99207c171519b1b6bf57"
   end
 
   depends_on "go" => :build
