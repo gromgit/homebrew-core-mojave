@@ -1,7 +1,8 @@
 class Alpine < Formula
   desc "News and email agent"
-  homepage "https://alpine.x10host.com/alpine/release/"
-  url "https://alpine.x10host.com/alpine/release/src/alpine-2.25.tar.xz"
+  homepage "https://alpineapp.email"
+  url "https://alpineapp.email/alpine/release/src/alpine-2.25.tar.xz"
+  mirror "https://alpineapp.email/alpine/release/src/Old/alpine-2.25.tar.xz"
   sha256 "658a150982f6740bb4128e6dd81188eaa1212ca0bf689b83c2093bb518ecf776"
   license "Apache-2.0"
   revision 1
@@ -14,8 +15,8 @@ class Alpine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alpine"
-    rebuild 2
-    sha256 mojave: "031758f7d77e915f960f200d460cda1cd96e11d6728565103a650fcaa3de1ea4"
+    rebuild 3
+    sha256 mojave: "2b2b461a4be7574df60bff6105ecf1b5bb499c98a6b0b31850f48c2a95ce5b6e"
   end
 
   depends_on "openssl@1.1"
