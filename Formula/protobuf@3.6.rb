@@ -7,13 +7,16 @@ class ProtobufAT36 < Formula
   revision 4
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf@3.6"
-    sha256 cellar: :any, mojave: "d1abd239b37ca46842b824f880b6956504c73403463f9dbb8cf63d4590203c9b"
+    sha256 cellar: :any, arm64_monterey: "d11ab752acbd8e1159b2f108ad40d16561823f437e6abe959120500be5513c58"
+    sha256 cellar: :any, arm64_big_sur:  "1d9c4d6468e946de5f244b4abe034366e0764f3281d7624db491434e5390a19c"
+    sha256 cellar: :any, monterey:       "ee5925f1f3a9dad2c0255e48ac51da352d57145188902c4f285221418bf7a648"
+    sha256 cellar: :any, big_sur:        "589ae9de9ebaa86aa06361f03d69389ca86a98d04426b839b5269fa2849861b5"
+    sha256 cellar: :any, catalina:       "f05eb7347a6f3912890524a093284a023d0a97a5c283940e8f39e03e5bb60dc5"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2021-02-19", because: :versioned_formula
+  disable! date: "2022-07-14", because: :versioned_formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
