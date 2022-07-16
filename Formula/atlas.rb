@@ -1,14 +1,14 @@
 class Atlas < Formula
   desc "Database toolkit"
   homepage "https://atlasgo.io/"
-  url "https://github.com/ariga/atlas/archive/v0.4.2.tar.gz"
-  sha256 "d950e9f665cfb8b556c4f921e9d642e9628c1c8c788fa2b5ef9ddcb32d8751e6"
+  url "https://github.com/ariga/atlas/archive/v0.5.0.tar.gz"
+  sha256 "927f6dd85842ad1fe7d4f0cb891c98ce51a1adde65391877caa8e760ff482dab"
   license "Apache-2.0"
   head "https://github.com/ariga/atlas.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atlas"
-    sha256 cellar: :any_skip_relocation, mojave: "de01747529d77cd7f39ac91242828e62af936bc5327f82985e6ddd0529d04d1e"
+    sha256 cellar: :any_skip_relocation, mojave: "33be798e678ab45d648442434e332ce784567870fa76df8f886f69640687ea56"
   end
 
   depends_on "go" => :build
@@ -16,9 +16,11 @@ class Atlas < Formula
   def install
     ldflags = %W[
       -s -w
-      -X ariga.io/atlas/cmd/atlascmd.version=v#{version}
+      -X ariga.io/atlas/cmd/atlas/internal/cmdapi.version=v#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/atlas"
+    cd "./cmd/atlas" do
+      system "go", "build", *std_go_args(ldflags: ldflags)
+    end
 
     bash_output = Utils.safe_popen_read(bin/"atlas", "completion", "bash")
     (bash_completion/"atlas").write bash_output
