@@ -4,17 +4,11 @@ class H2o < Formula
   url "https://github.com/h2o/h2o/archive/v2.2.6.tar.gz"
   sha256 "f8cbc1b530d85ff098f6efc2c3fdbc5e29baffb30614caac59d5c710f7bda201"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 arm64_monterey: "961401a86df0e09866bb9f424393642bd1df3dd60340fbbc71f3475f98a5f06f"
-    sha256 arm64_big_sur:  "235585aa8d60bdf07e3589282ae5704a7b417312e701a8774a12fbf407642aa1"
-    sha256 monterey:       "a33e81de4de46a46f3846280b32ec258e23bcec22d8c75518d1b258c993fbde5"
-    sha256 big_sur:        "44af35463fd8c70fa3cd4014dd8ec92c93e33b96a3dde07aa5e8c532f4ba15d3"
-    sha256 catalina:       "c3a59a760f51a19c8a6e946a49d7f689b81bef8f80d9157c9be5af628b6b2a1a"
-    sha256 mojave:         "7aa27f5811da60d7c51e4124ed8f54f102496c5e29585007fb2fe9cfee646bbe"
-    sha256 x86_64_linux:   "b33805c89af5cff42fd08df6fcd263a63721cbc04daf115e879fb0dc680aaa4f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/h2o"
+    sha256 mojave: "c661807327827f74f0123f4d3e7308f3f02c13f3041476487e603166c55cf3c8"
   end
 
   depends_on "cmake" => :build
@@ -28,10 +22,20 @@ class H2o < Formula
     # https://github.com/Homebrew/brew/pull/251
     ENV.delete("SDKROOT")
 
-    system "cmake", *std_cmake_args,
-                    "-DWITH_BUNDLED_SSL=OFF",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}"
-    system "make", "install"
+    args = std_cmake_args + %W[
+      -DWITH_BUNDLED_SSL=OFF
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}
+    ]
+
+    # Build shared library.
+    system "cmake", "-S", ".", "-B", "build_shared", *args, "-DBUILD_SHARED_LIBS=ON"
+    system "cmake", "--build", "build_shared"
+    system "cmake", "--install", "build_shared"
+
+    # Build static library.
+    system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF"
+    system "cmake", "--build", "build_static"
+    lib.install "build_static/libh2o-evloop.a"
 
     (etc/"h2o").mkpath
     (var/"h2o").install "examples/doc_root/index.html"
