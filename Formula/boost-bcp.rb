@@ -1,8 +1,8 @@
 class BoostBcp < Formula
   desc "Utility for extracting subsets of the Boost library"
   homepage "https://www.boost.org/doc/tools/bcp/"
-  url "https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2"
-  sha256 "8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc"
+  url "https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2"
+  sha256 "475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -12,8 +12,7 @@ class BoostBcp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost-bcp"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "be967f3d6279cb5e7b86dcf439e7ab2a190656c3bda1191a27f78482ff2cbd9e"
+    sha256 cellar: :any_skip_relocation, mojave: "87bfd61f060ccef28416b97ea9d24ddc15e41efe730664a220f20d569fe39efb"
   end
 
   depends_on "boost-build" => :build
