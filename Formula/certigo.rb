@@ -1,8 +1,8 @@
 class Certigo < Formula
   desc "Utility to examine and validate certificates in a variety of formats"
   homepage "https://github.com/square/certigo"
-  url "https://github.com/square/certigo/archive/v1.15.1.tar.gz"
-  sha256 "1c6b336a33fd944dfa1b05d3b592261d7538333a605078bdbb9889bbab088f0a"
+  url "https://github.com/square/certigo/archive/v1.16.0.tar.gz"
+  sha256 "a6ce89964ca2fbe7d45d2e2019b06a21984f133c4f1f110eee12a67dd60c4145"
   license "Apache-2.0"
   head "https://github.com/square/certigo.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Certigo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certigo"
-    sha256 cellar: :any_skip_relocation, mojave: "0572a1fe9e1a66402a5c551d979d6b770d28256ab140d42639296d78e39102b1"
+    sha256 cellar: :any_skip_relocation, mojave: "6d29fe58c48dab66b4b1e6fb458849432cd8f186d69da2eac11b165e2f832c28"
   end
 
   depends_on "go" => :build
