@@ -4,8 +4,8 @@ class Dpkg < Formula
   # Please use a mirror as the primary URL as the
   # dpkg site removes tarballs regularly which means we get issues
   # unnecessarily and older versions of the formula are broken.
-  url "https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.8.tar.xz"
-  sha256 "0ffc63c475ff2ba9c2820e48fa3bccb60955561ae22c2aed542f1412a7ca3e22"
+  url "https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.9.tar.xz"
+  sha256 "a0aba375625459260cbc89933a12b3188a713c840e3aaefc14bf2d9adee19642"
   license "GPL-2.0-only"
 
   livecheck do
@@ -15,7 +15,7 @@ class Dpkg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dpkg"
-    sha256 mojave: "ac054981adee044cbe874791b158e704208f434a179afae7143ec3d6bcd413b2"
+    sha256 mojave: "e600e22096994d22c135eac6c5cb17c99cb2fc4dfc7e2c9f6fed2f0847347f36"
   end
 
   depends_on "pkg-config" => :build
