@@ -1,8 +1,8 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https://adios2.readthedocs.io"
-  url "https://github.com/ornladios/ADIOS2/archive/v2.8.1.tar.gz"
-  sha256 "3f515b442bbd52e3189866b121613fe3b59edb8845692ea86fad83d1eba35d93"
+  url "https://github.com/ornladios/ADIOS2/archive/v2.8.2.tar.gz"
+  sha256 "9909f6409dc44b2c28c1fda0042dab4b711f25ec3277ef0cb6ffc40f5483910d"
   license "Apache-2.0"
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Adios2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/adios2"
-    sha256 mojave: "c5d9f2419afd93d467ee09c4d7c8016b98efc379a4b71023dc29fb3e831f39d0"
+    sha256 mojave: "4485abe09c4d0991e8565e1b70212b32316d9e3923109f7793f081eeb8cdf26f"
   end
 
   depends_on "cmake" => :build
