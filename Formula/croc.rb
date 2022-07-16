@@ -1,14 +1,14 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://github.com/schollz/croc/archive/v9.5.6.tar.gz"
-  sha256 "c03c7b9daf2ba841d373d9c43abb68dc27ab1d7e01bbadead771918d499dea9e"
+  url "https://github.com/schollz/croc/archive/v9.6.0.tar.gz"
+  sha256 "15fccb905872ae160c626ef7e47a92a8d78915b738d097865f177dfec925480b"
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/croc"
-    sha256 cellar: :any_skip_relocation, mojave: "7211a2ae40b4b304b1a6ee6ea1c09bebcbb9d682f4c99127d6167d0e3027909b"
+    sha256 cellar: :any_skip_relocation, mojave: "a5b1638393f61f28901a10082744ff4de433bb26c76a29896dfc6402d56bca43"
   end
 
   depends_on "go" => :build
