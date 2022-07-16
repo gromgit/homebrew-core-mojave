@@ -1,9 +1,9 @@
 class Dbhash < Formula
   desc "Computes the SHA1 hash of schema and content of a SQLite database"
   homepage "https://www.sqlite.org/dbhash.html"
-  url "https://sqlite.org/2022/sqlite-src-3390000.zip"
-  version "3.39.0"
-  sha256 "b3585f37dd106dbb3d46c8c17a2d275f9a4b87df8c4509bd2d6a5b40032426e6"
+  url "https://sqlite.org/2022/sqlite-src-3390100.zip"
+  version "3.39.1"
+  sha256 "366c7abbee5dbe8882cd7578a61a6ed3f5d08c5f6de3535a0003125b4646cc57"
   license "blessing"
 
   livecheck do
@@ -12,7 +12,7 @@ class Dbhash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbhash"
-    sha256 cellar: :any_skip_relocation, mojave: "4eea60e612fc13e74681788e7e19c7f2e8900dbb850efac9bfbbf9d86988947d"
+    sha256 cellar: :any_skip_relocation, mojave: "d635be06f4323067592d29e567b052c76bcc746724873fe802ac33bcd4c53229"
   end
 
   uses_from_macos "tcl-tk" => :build
