@@ -1,8 +1,8 @@
 class Libgit2 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
   homepage "https://libgit2.github.com/"
-  url "https://github.com/libgit2/libgit2/archive/v1.4.3.tar.gz"
-  sha256 "f48b961e463a9e4e7e7e58b21a0fb5a9b2a1d24d9ba4d15870a0c9b8ad965163"
+  url "https://github.com/libgit2/libgit2/archive/v1.4.4.tar.gz"
+  sha256 "e9923e9916a32f54c661d55d79c28fa304cb23617639e68bff9f94d3e18f2d4b"
   license "GPL-2.0-only"
   head "https://github.com/libgit2/libgit2.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Libgit2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgit2"
-    sha256 cellar: :any, mojave: "9176f60a061e6e421825c330960fb6d42c14d4b9af1d8c6967b65d9c697c3002"
+    sha256 cellar: :any, mojave: "96eb4afebb6702ac8b43dde7d3c0a63c7d4178d00453ec76aa5619c533df7e14"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +23,7 @@ class Libgit2 < Formula
   def install
     args = std_cmake_args
     args << "-DBUILD_EXAMPLES=YES"
-    args << "-DBUILD_CLAR=NO" # Don't build tests.
+    args << "-DBUILD_TESTS=OFF" # Don't build tests.
     args << "-DUSE_SSH=YES"
 
     mkdir "build" do
