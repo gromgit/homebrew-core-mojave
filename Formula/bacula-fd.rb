@@ -1,12 +1,12 @@
 class BaculaFd < Formula
   desc "Network backup solution"
   homepage "https://www.bacula.org/"
-  url "https://downloads.sourceforge.net/project/bacula/bacula/11.0.6/bacula-11.0.6.tar.gz"
-  sha256 "0195a08bcd4f578ae4a9ce0d91f7f86731c634d56b810534722d721b2a9eecb7"
+  url "https://downloads.sourceforge.net/project/bacula/bacula/13.0.0/bacula-13.0.0.tar.gz"
+  sha256 "4119d48bbfe1518b3224a88e7365c2fa5f7d1679c815e7d15f26631883a8a0c6"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bacula-fd"
-    sha256 mojave: "1e46580fb2cafb7f2881f0c91a1b2eb62d02725231147c7b8d7457c64ddba38f"
+    sha256 mojave: "2fa552eee0e28e40ddf8d1243dcb676315939f4f080ea0406825280d0647a8a5"
   end
 
   depends_on "openssl@1.1"
