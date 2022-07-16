@@ -1,9 +1,9 @@
 class GoAT117 < Formula
   desc "Go programming environment (1.17)"
   homepage "https://golang.org"
-  url "https://go.dev/dl/go1.17.11.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.17.11.src.tar.gz"
-  sha256 "ac2649a65944c6a5abe55054000eee3d77196880da36a3555f62e06540e8eb54"
+  url "https://go.dev/dl/go1.17.12.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.17.12.src.tar.gz"
+  sha256 "0d51b5b3f280c0f01f534598c0219db5878f337da6137a9ee698777413607209"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,7 +13,7 @@ class GoAT117 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go@1.17"
-    sha256 cellar: :any_skip_relocation, mojave: "16fb3485d3000846226b88872b6628f447e1292d058c752ad969aa5e5208f775"
+    sha256 cellar: :any_skip_relocation, mojave: "9170eb056cc58ab578fb9faac6e946eaa35019c11ec0954eb9108c2bb4848b53"
   end
 
   keg_only :versioned_formula
