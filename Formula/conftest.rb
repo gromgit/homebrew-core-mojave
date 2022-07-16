@@ -1,14 +1,14 @@
 class Conftest < Formula
   desc "Test your configuration files using Open Policy Agent"
   homepage "https://www.conftest.dev/"
-  url "https://github.com/open-policy-agent/conftest/archive/v0.32.1.tar.gz"
-  sha256 "94e3227229c4b3ef86da85d64a877214fd627e3140bb1e28275620aa94013f7a"
+  url "https://github.com/open-policy-agent/conftest/archive/v0.33.1.tar.gz"
+  sha256 "1afa5a95fe37209ac8b5447b0c7001e996371f2965769aec88096aea0075ae6f"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/conftest.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conftest"
-    sha256 cellar: :any_skip_relocation, mojave: "c9d6edd5d7ec87999d971eae433612c8bd31bb5bddb00f2c72f9596b795ac52d"
+    sha256 cellar: :any_skip_relocation, mojave: "4f2d2c336a27df5b5b42af742b225eb3029477418d853a7333b77c4995c65658"
   end
 
   depends_on "go" => :build
