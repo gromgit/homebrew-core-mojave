@@ -5,12 +5,11 @@ class AvroCpp < Formula
   mirror "https://archive.apache.org/dist/avro/avro-1.11.0/cpp/avro-cpp-1.11.0.tar.gz"
   sha256 "ef70ca8a1cfeed7017dcb2c0ed591374deab161b86be6ca4b312bc24cada9c56"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avro-cpp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d42a24990906d92688cde14a209d01edaae393c99b7cac6f45bb2af989656e82"
+    sha256 cellar: :any, mojave: "bf435aaa06887fc97227873f2d2daa815809c46271908236d2484f623d520f87"
   end
 
   depends_on "cmake" => :build
