@@ -1,31 +1,29 @@
 class Earthly < Formula
   desc "Build automation tool for the container era"
   homepage "https://earthly.dev/"
-  url "https://github.com/earthly/earthly/archive/v0.6.16.tar.gz"
-  sha256 "be379e19d16275fa67fe553dd39b63d7f0a69ba345e7d1dc6870c673832fd370"
+  url "https://github.com/earthly/earthly.git",
+      tag:      "v0.6.19",
+      revision: "d3edff34e19a6e026bbb97d01f6bc44babfa2726"
   license "MPL-2.0"
   head "https://github.com/earthly/earthly.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/earthly"
-    sha256 cellar: :any_skip_relocation, mojave: "6c7109024c67a37f1f7080773032a36095b020fb5fbccfa3f30027fdb49a4b47"
+    sha256 cellar: :any_skip_relocation, mojave: "6f9d49372667418022c94d04b6e70fd5b2322d964debf878d5a626fc13963402"
   end
 
   depends_on "go" => :build
 
   def install
-    # the earthly_gitsha variable is required by the earthly release script, moving this value it into
-    # the ldflags string will break the upstream release process.
-    earthly_gitsha = "05fc449487ad0c8a1721b4fbfc527eb9870dfcfd"
-
-    ldflags = "-X main.DefaultBuildkitdImage=earthly/buildkitd:v#{version} -X main.Version=v#{version} " \
-              "-X main.GitSha=#{earthly_gitsha}"
+    ldflags = %W[
+      -s -w
+      -X main.DefaultBuildkitdImage=earthly/buildkitd:v#{version}
+      -X main.Version=v#{version}
+      -X main.GitSha=#{Utils.git_head}
+      -X main.BuiltBy=homebrew
+    ]
     tags = "dfrunmount dfrunsecurity dfsecrets dfssh dfrunnetwork"
-    system "go", "build",
-        "-tags", tags,
-        "-ldflags", ldflags,
-        *std_go_args,
-        "./cmd/earthly/main.go"
+    system "go", "build", "-tags", tags, *std_go_args(ldflags: ldflags), "./cmd/earthly"
 
     bash_output = Utils.safe_popen_read("#{bin}/earthly", "bootstrap", "--source", "bash")
     (bash_completion/"earthly").write bash_output
