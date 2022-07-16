@@ -5,6 +5,7 @@ class ErlangAT24 < Formula
   url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.2/otp_src_24.3.4.2.tar.gz"
   sha256 "0376d50f867a29426d47600056e8cc49c95b51ef172b6b9030628e35aecd46af"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +14,7 @@ class ErlangAT24 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang@24"
-    sha256 cellar: :any, mojave: "3a79a3e7534877141379ed69387f93ce0d1937718d4abacd0830f87c7aefa426"
+    sha256 cellar: :any, mojave: "f16bac8d30834e69ab56f8acc9fbe1fd2074eb0bd7734e98f064f35a8529ce20"
   end
 
   keg_only :versioned_formula
