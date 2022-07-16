@@ -2,14 +2,14 @@ class Easeprobe < Formula
   desc "Simple, standalone, and lightWeight tool that can do health/status checking"
   homepage "https://github.com/megaease/easeprobe"
   url "https://github.com/megaease/easeprobe.git",
-      tag:      "v1.5.0",
-      revision: "0a8646bbd05fdcd062e31fe8979abc488e13dec2"
+      tag:      "v1.6.0",
+      revision: "2f049eef2d4719f4c155a6cc14b6f49ba801cf47"
   license "Apache-2.0"
   head "https://github.com/megaease/easeprobe.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easeprobe"
-    sha256 cellar: :any_skip_relocation, mojave: "b275406565dfc5e456938c3522933a4a90c976f70256557285d43646366d2a80"
+    sha256 cellar: :any_skip_relocation, mojave: "963d74653d9afea38d6f08f60264ae9002968754bcd5a8d9919552d620f4d055"
   end
 
   depends_on "go" => :build
@@ -29,6 +29,10 @@ class Easeprobe < Formula
       http:
         - name: "brew.sh"
           url: "https://brew.sh"
+      notify:
+        log:
+          - name: "logfile"
+            file: #{testpath}/easeprobe.log
     EOS
 
     easeprobe_stdout = (testpath/"easeprobe.log")
