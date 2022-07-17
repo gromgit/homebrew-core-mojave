@@ -4,11 +4,11 @@ class Freeling < Formula
   url "https://github.com/TALP-UPC/FreeLing/releases/download/4.2/FreeLing-src-4.2.tar.gz"
   sha256 "f96afbdb000d7375426644fb2f25baff9a63136dddce6551ea0fd20059bfce3b"
   license "AGPL-3.0-only"
-  revision 6
+  revision 7
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeling"
-    sha256 cellar: :any, mojave: "b4cf9c80d2dfee37c9038ed9641d400afb159ce8668de011d8b06f196be202af"
+    sha256 cellar: :any, mojave: "dc38b68449f7cbc42db713e6ea5edd07ec97da1334e8266a5775a1fdeb1f486c"
   end
 
   depends_on "cmake" => :build
