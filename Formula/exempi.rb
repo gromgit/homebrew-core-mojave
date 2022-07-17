@@ -1,8 +1,8 @@
 class Exempi < Formula
   desc "Library to parse XMP metadata"
   homepage "https://wiki.freedesktop.org/libopenraw/Exempi/"
-  url "https://libopenraw.freedesktop.org/download/exempi-2.6.1.tar.bz2"
-  sha256 "072451ac1e0dc97ed69a2e5bfc235fd94fe093d837f65584d0e3581af5db18cd"
+  url "https://libopenraw.freedesktop.org/download/exempi-2.6.2.tar.bz2"
+  sha256 "4d17d4c93df2a95da3e3172c45b7a5bf317dd31dafd1c7a340169728c7089d1d"
   license "BSD-3-Clause"
 
   livecheck do
@@ -10,10 +10,9 @@ class Exempi < Formula
     regex(/href=.*?exempi[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exempi"
-    rebuild 1
-    sha256 cellar: :any, mojave: "008da09788716802f954bde5c6d7f3ce9deeaf5f70ee626b0bd1980ec1cd4326"
+    sha256 cellar: :any, mojave: "aad9384ae22f1ef3eb8785f415764e07313f63ec8c6b2fe6c5d9cf54b0901187"
   end
 
   depends_on "boost"
