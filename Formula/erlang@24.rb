@@ -14,7 +14,8 @@ class ErlangAT24 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang@24"
-    sha256 cellar: :any, mojave: "f16bac8d30834e69ab56f8acc9fbe1fd2074eb0bd7734e98f064f35a8529ce20"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c646593f051a6d0af45a8b359c042b8d4a43cdb1345a987682665d5baef4be52"
   end
 
   keg_only :versioned_formula
