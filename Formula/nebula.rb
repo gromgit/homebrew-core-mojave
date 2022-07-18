@@ -1,14 +1,13 @@
 class Nebula < Formula
   desc "Scalable overlay networking tool for connecting computers anywhere"
   homepage "https://github.com/slackhq/nebula"
-  url "https://github.com/slackhq/nebula/archive/v1.5.2.tar.gz"
-  sha256 "391ac38161561690a65c0fa5ad65a2efb2d187323cc8ee84caa95fa24cb6c36a"
+  url "https://github.com/slackhq/nebula/archive/v1.6.0.tar.gz"
+  sha256 "b16638b99d80a4ae6373f7757a0064dc0defd3f9e165617e7b5c3be9e64d3605"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nebula"
-    sha256 cellar: :any_skip_relocation, mojave: "3062dbc1b1bb998fe479edab971aa765acb115d67722fadef68287700b69ea60"
+    sha256 cellar: :any_skip_relocation, mojave: "bff9cf849ea776caf9859150ddfb74919b1d9f4969fce497815b316f3edc641c"
   end
 
   depends_on "go" => :build
