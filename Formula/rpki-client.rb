@@ -1,14 +1,13 @@
 class RpkiClient < Formula
   desc "OpenBSD portable rpki-client"
   homepage "https://www.rpki-client.org/index.html"
-  url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/rpki-client-7.8.tar.gz"
-  sha256 "7a87a6fe7b1bd36a1ce277cf50e125ece7b2ed0236e252a66e2b34ca8f88b7f5"
+  url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/rpki-client-7.9.tar.gz"
+  sha256 "accf531c885a9d95a37a6627399a59b360fa29a11810aba15b27d7526ce43e75"
   license "ISC"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rpki-client"
-    sha256 mojave: "96c2f51762bf39ca7d90ae6166281b9a542b1a3fd968d7d9921f81c46d74f325"
+    sha256 mojave: "4ae8baa6889792514e3f588f44ecd98e563ac475a91858c14893d345da7064a9"
   end
 
   depends_on "pkg-config" => :build
@@ -32,6 +31,6 @@ class RpkiClient < Formula
   end
 
   test do
-    assert_match "parse file ta/", shell_output("#{sbin}/rpki-client -n -d . -R . 2>&1").lines.last
+    assert_match "VRP Entries: 0 (0 unique)", shell_output("#{sbin}/rpki-client -n -d . -R . 2>&1").lines.last
   end
 end
