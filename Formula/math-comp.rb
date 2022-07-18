@@ -1,14 +1,14 @@
 class MathComp < Formula
   desc "Mathematical Components for the Coq proof assistant"
   homepage "https://math-comp.github.io/math-comp/"
-  url "https://github.com/math-comp/math-comp/archive/mathcomp-1.14.0.tar.gz"
-  sha256 "d259cc95a2f8f74c6aa5f3883858c9b79c6e87f769bde9a415115fa4876ebb31"
+  url "https://github.com/math-comp/math-comp/archive/mathcomp-1.15.0.tar.gz"
+  sha256 "33105615c937ae1661e12e9bc00e0dbad143c317a6ab78b1a15e1d28339d2d95"
   license "CECILL-B"
   head "https://github.com/math-comp/math-comp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/math-comp"
-    sha256 cellar: :any_skip_relocation, mojave: "67233243e305a0990b91703c44b1862bb147d5db5b93989dfe1e6d83c0d801eb"
+    sha256 cellar: :any_skip_relocation, mojave: "aa71faaac146a13e6bc9681d7c2979a747f542ea2fddc5374c79535f45f1c25f"
   end
 
   depends_on "ocaml" => :build
