@@ -2,8 +2,8 @@ class K3sup < Formula
   desc "Utility to create k3s clusters on any local or remote VM"
   homepage "https://k3sup.dev"
   url "https://github.com/alexellis/k3sup.git",
-      tag:      "0.11.3",
-      revision: "e2bb18116d3686bf53cf40fe0998af7b6c9cf8a6"
+      tag:      "0.12.0",
+      revision: "c59d67b63ec76d5d5e399808cf4b11a1e02ddbc8"
   license "MIT"
   head "https://github.com/alexellis/k3sup.git", branch: "master"
 
@@ -14,12 +14,10 @@ class K3sup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3sup"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "de7545a349b29bb44e98de290601622c6b12f9e483fc79ee7ab4911bfabdd094"
+    sha256 cellar: :any_skip_relocation, mojave: "ecb7123443da2cffac8ba6a6dba38705b4bdd513dec683d734cd81aed881515d"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     ldflags = %W[
@@ -28,6 +26,10 @@ class K3sup < Formula
       -X github.com/alexellis/k3sup/cmd.GitCommit=#{Utils.git_short_head}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
+
+    (bash_completion/"k3sup").write Utils.safe_popen_read(bin/"k3sup", "completion", "bash")
+    (zsh_completion/"_k3sup").write Utils.safe_popen_read(bin/"k3sup", "completion", "zsh")
+    (fish_completion/"k3sup.fish").write Utils.safe_popen_read(bin/"k3sup", "completion", "fish")
   end
 
   test do
