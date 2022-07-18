@@ -4,11 +4,11 @@ class I2pd < Formula
   url "https://github.com/PurpleI2P/i2pd/archive/2.42.1.tar.gz"
   sha256 "d52b55cf144a6eedbb3433214c035161c07f776090074daba0e5e83c01d09139"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i2pd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bcae96ceab807cf1f52c2907f9b931f3138363fe3b80fb463abdc071d04cd053"
+    sha256 cellar: :any, mojave: "123970c4d5cf81a1d2a315b023b8c789cefebb221c9b272e085713a475e5927f"
   end
 
   depends_on "boost"
