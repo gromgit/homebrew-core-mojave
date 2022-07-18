@@ -1,30 +1,49 @@
+# NOTE: We have a policy of building only from tagged commits, but make a
+#       singular exception for luajit. This exception will not be extended
+#       to other formulae. See:
+#       https://github.com/Homebrew/homebrew-core/pull/99580
 class Luajit < Formula
   desc "Just-In-Time Compiler (JIT) for the Lua programming language"
   homepage "https://luajit.org/luajit.html"
+  # Update this to the tip of the `v2.1` branch at the start of every month.
+  url "https://github.com/LuaJIT/LuaJIT/archive/50936d784474747b4569d988767f1b5bab8bb6d0.tar.gz"
+  # Use the version scheme `2.1.0-beta3-yyyymmdd.x` where `yyyymmdd` is the date of the
+  # latest commit at the time of updating, and `x` is the number of commits on that date.
+  version "2.1.0-beta3-20220712.6"
+  sha256 "4d44e4709130b031c1c2c81cf5c102dfce877bf454409dabba03249e18870e66"
   license "MIT"
   head "https://luajit.org/git/luajit-2.0.git", branch: "v2.1"
 
-  stable do
-    url "https://luajit.org/download/LuaJIT-2.0.5.tar.gz"
-    sha256 "874b1f8297c697821f561f9b73b57ffd419ed8f4278c82e05b48806d30c1e979"
-
-    # Fix for macOS 10.15 Catalina SDK
-    # https://github.com/LuaJIT/LuaJIT/issues/521
-    patch :DATA
-  end
-
   livecheck do
-    url "https://luajit.org/download.html"
-    regex(/href=.*?LuaJIT[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://github.com/LuaJIT/LuaJIT/commits/v2.1"
+    regex(/<relative-time[^>]+?datetime=["']?(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)["' >]/im)
+    strategy :page_match do |page, regex|
+      newest_date = nil
+      commit_count = 0
+      page.scan(regex).map do |match|
+        date = Date.parse(match[0])
+        newest_date ||= date
+        break if date != newest_date
+
+        commit_count += 1
+      end
+      next if newest_date.blank? || commit_count.zero?
+
+      # The main LuaJIT version is rarely updated, so we recycle it from the
+      # `version` to avoid having to fetch another page.
+      version.to_s.sub(/\d+\.\d+$/, "#{newest_date.strftime("%Y%m%d")}.#{commit_count}")
+    end
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit"
-    rebuild 6
-    sha256 cellar: :any, mojave: "f9eea5defac3084c27f2102229b598221b9c9946331d8ce2ddafb4c222c7846a"
+    sha256 cellar: :any, mojave: "2091893f3eccaf5ca630f16f8c465ef34dd8ce2ac0d5936e3fb684fbb9a30640"
   end
 
   def install
+    # https://github.com/LuaJIT/LuaJIT/issues/648#issuecomment-752023149
+    ENV.runtime_cpu_detection
+
     # 1 - Override the hardcoded gcc.
     # 2 - Remove the "-march=i686" so we can set the march in cflags.
     # Both changes should persist and were discussed upstream.
@@ -40,21 +59,19 @@ class Luajit < Formula
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
-    args = %W[PREFIX=#{prefix}]
+    # Pass `Q=` to build verbosely.
+    system "make", "amalg", "PREFIX=#{prefix}", "Q="
+    system "make", "install", "PREFIX=#{prefix}", "Q="
 
-    # Build with 64-bit support
-    args << "XCFLAGS=-DLUAJIT_ENABLE_GC64" if build.head?
-
-    system "make", "amalg", *args
-    system "make", "install", *args
-
-    # Unstable branch doesn't install symlink for luajit.
-    # This breaks tools like `luarock` who requires the `luajit` bin to be present.
-    bin.install_symlink Dir[bin/"luajit-*"].first => "luajit" if build.head?
+    # We need `stable.version` here to avoid breaking symlink generation for HEAD.
+    upstream_version = stable.version.to_s.sub(/-\d+\.\d+$/, "")
+    # v2.1 branch doesn't install symlink for luajit.
+    # This breaks tools like `luarocks` that require the `luajit` bin to be present.
+    bin.install_symlink "luajit-#{upstream_version}" => "luajit"
 
     # LuaJIT doesn't automatically symlink unversioned libraries:
     # https://github.com/Homebrew/homebrew/issues/45854.
-    lib.install_symlink lib/"libluajit-5.1.dylib" => "libluajit.dylib"
+    lib.install_symlink lib/shared_library("libluajit-5.1") => shared_library("libluajit")
     lib.install_symlink lib/"libluajit-5.1.a" => "libluajit.a"
 
     # Fix path in pkg-config so modules are installed
@@ -64,14 +81,7 @@ class Luajit < Formula
               "INSTALL_LMOD=#{HOMEBREW_PREFIX}/share/lua/${abiver}"
       s.gsub! "INSTALL_CMOD=${prefix}/${multilib}/lua/${abiver}",
               "INSTALL_CMOD=#{HOMEBREW_PREFIX}/${multilib}/lua/${abiver}"
-      unless build.head?
-        s.gsub! "Libs:",
-                "Libs: -pagezero_size 10000 -image_base 100000000"
-      end
     end
-
-    # Having an empty Lua dir in lib/share can mess with other Homebrew Luas.
-    %W[#{lib}/lua #{share}/lua].each { |d| rm_rf d }
   end
 
   test do
@@ -80,420 +90,10 @@ class Luajit < Formula
       ffi.cdef("int printf(const char *fmt, ...);")
       ffi.C.printf("Hello %s!\\n", "#{ENV["USER"]}")
     EOS
+
     # Check that LuaJIT can find its own `jit.*` modules
-    system bin/"luajit", "-l", "jit.bcsave", "-e", ""
+    touch "empty.lua"
+    system bin/"luajit", "-b", "empty.lua", "empty.o"
+    assert_predicate testpath/"empty.o", :exist?
   end
 end
-
-__END__
---- a/src/lj_alloc.c
-+++ b/src/lj_alloc.c
-@@ -72,13 +72,56 @@
- 
- #define IS_DIRECT_BIT		(SIZE_T_ONE)
- 
-+
-+/* Determine system-specific block allocation method. */
- #if LJ_TARGET_WINDOWS
- 
- #define WIN32_LEAN_AND_MEAN
- #include <windows.h>
- 
-+#define LJ_ALLOC_VIRTUALALLOC	1
-+
-+#if LJ_64 && !LJ_GC64
-+#define LJ_ALLOC_NTAVM		1
-+#endif
-+
-+#else
-+
-+#include <errno.h>
-+/* If this include fails, then rebuild with: -DLUAJIT_USE_SYSMALLOC */
-+#include <sys/mman.h>
-+
-+#define LJ_ALLOC_MMAP		1
-+
- #if LJ_64
- 
-+#define LJ_ALLOC_MMAP_PROBE	1
-+
-+#if LJ_GC64
-+#define LJ_ALLOC_MBITS		47	/* 128 TB in LJ_GC64 mode. */
-+#elif LJ_TARGET_X64 && LJ_HASJIT
-+/* Due to limitations in the x64 compiler backend. */
-+#define LJ_ALLOC_MBITS		31	/* 2 GB on x64 with !LJ_GC64. */
-+#else
-+#define LJ_ALLOC_MBITS		32	/* 4 GB on other archs with !LJ_GC64. */
-+#endif
-+
-+#endif
-+
-+#if LJ_64 && !LJ_GC64 && defined(MAP_32BIT)
-+#define LJ_ALLOC_MMAP32		1
-+#endif
-+
-+#if LJ_TARGET_LINUX
-+#define LJ_ALLOC_MREMAP		1
-+#endif
-+
-+#endif
-+
-+
-+#if LJ_ALLOC_VIRTUALALLOC
-+
-+#if LJ_ALLOC_NTAVM
- /* Undocumented, but hey, that's what we all love so much about Windows. */
- typedef long (*PNTAVM)(HANDLE handle, void **addr, ULONG zbits,
- 		       size_t *size, ULONG alloctype, ULONG prot);
-@@ -89,14 +132,15 @@
- */
- #define NTAVM_ZEROBITS		1
- 
--static void INIT_MMAP(void)
-+static void init_mmap(void)
- {
-   ntavm = (PNTAVM)GetProcAddress(GetModuleHandleA("ntdll.dll"),
- 				 "NtAllocateVirtualMemory");
- }
-+#define INIT_MMAP()	init_mmap()
- 
- /* Win64 32 bit MMAP via NtAllocateVirtualMemory. */
--static LJ_AINLINE void *CALL_MMAP(size_t size)
-+static void *CALL_MMAP(size_t size)
- {
-   DWORD olderr = GetLastError();
-   void *ptr = NULL;
-@@ -107,7 +151,7 @@
- }
- 
- /* For direct MMAP, use MEM_TOP_DOWN to minimize interference */
--static LJ_AINLINE void *DIRECT_MMAP(size_t size)
-+static void *DIRECT_MMAP(size_t size)
- {
-   DWORD olderr = GetLastError();
-   void *ptr = NULL;
-@@ -119,23 +163,21 @@
- 
- #else
- 
--#define INIT_MMAP()		((void)0)
--
- /* Win32 MMAP via VirtualAlloc */
--static LJ_AINLINE void *CALL_MMAP(size_t size)
-+static void *CALL_MMAP(size_t size)
- {
-   DWORD olderr = GetLastError();
--  void *ptr = VirtualAlloc(0, size, MEM_RESERVE|MEM_COMMIT, PAGE_READWRITE);
-+  void *ptr = LJ_WIN_VALLOC(0, size, MEM_RESERVE|MEM_COMMIT, PAGE_READWRITE);
-   SetLastError(olderr);
-   return ptr ? ptr : MFAIL;
- }
- 
- /* For direct MMAP, use MEM_TOP_DOWN to minimize interference */
--static LJ_AINLINE void *DIRECT_MMAP(size_t size)
-+static void *DIRECT_MMAP(size_t size)
- {
-   DWORD olderr = GetLastError();
--  void *ptr = VirtualAlloc(0, size, MEM_RESERVE|MEM_COMMIT|MEM_TOP_DOWN,
--			   PAGE_READWRITE);
-+  void *ptr = LJ_WIN_VALLOC(0, size, MEM_RESERVE|MEM_COMMIT|MEM_TOP_DOWN,
-+			    PAGE_READWRITE);
-   SetLastError(olderr);
-   return ptr ? ptr : MFAIL;
- }
-@@ -143,7 +185,7 @@
- #endif
- 
- /* This function supports releasing coalesed segments */
--static LJ_AINLINE int CALL_MUNMAP(void *ptr, size_t size)
-+static int CALL_MUNMAP(void *ptr, size_t size)
- {
-   DWORD olderr = GetLastError();
-   MEMORY_BASIC_INFORMATION minfo;
-@@ -163,10 +205,7 @@
-   return 0;
- }
- 
--#else
--
--#include <errno.h>
--#include <sys/mman.h>
-+#elif LJ_ALLOC_MMAP
- 
- #define MMAP_PROT		(PROT_READ|PROT_WRITE)
- #if !defined(MAP_ANONYMOUS) && defined(MAP_ANON)
-@@ -174,105 +213,152 @@
- #endif
- #define MMAP_FLAGS		(MAP_PRIVATE|MAP_ANONYMOUS)
- 
--#if LJ_64
--/* 64 bit mode needs special support for allocating memory in the lower 2GB. */
--
--#if defined(MAP_32BIT)
--
--#if defined(__sun__)
--#define MMAP_REGION_START	((uintptr_t)0x1000)
-+#if LJ_ALLOC_MMAP_PROBE
-+
-+#ifdef MAP_TRYFIXED
-+#define MMAP_FLAGS_PROBE	(MMAP_FLAGS|MAP_TRYFIXED)
- #else
--/* Actually this only gives us max. 1GB in current Linux kernels. */
--#define MMAP_REGION_START	((uintptr_t)0)
--#endif
--
--static LJ_AINLINE void *CALL_MMAP(size_t size)
--{
-+#define MMAP_FLAGS_PROBE	MMAP_FLAGS
-+#endif
-+
-+#define LJ_ALLOC_MMAP_PROBE_MAX		30
-+#define LJ_ALLOC_MMAP_PROBE_LINEAR	5
-+
-+#define LJ_ALLOC_MMAP_PROBE_LOWER	((uintptr_t)0x4000)
-+
-+/* No point in a giant ifdef mess. Just try to open /dev/urandom.
-+** It doesn't really matter if this fails, since we get some ASLR bits from
-+** every unsuitable allocation, too. And we prefer linear allocation, anyway.
-+*/
-+#include <fcntl.h>
-+#include <unistd.h>
-+
-+static uintptr_t mmap_probe_seed(void)
-+{
-+  uintptr_t val;
-+  int fd = open("/dev/urandom", O_RDONLY);
-+  if (fd != -1) {
-+    int ok = ((size_t)read(fd, &val, sizeof(val)) == sizeof(val));
-+    (void)close(fd);
-+    if (ok) return val;
-+  }
-+  return 1;  /* Punt. */
-+}
-+
-+static void *mmap_probe(size_t size)
-+{
-+  /* Hint for next allocation. Doesn't need to be thread-safe. */
-+  static uintptr_t hint_addr = 0;
-+  static uintptr_t hint_prng = 0;
-   int olderr = errno;
--  void *ptr = mmap((void *)MMAP_REGION_START, size, MMAP_PROT, MAP_32BIT|MMAP_FLAGS, -1, 0);
--  errno = olderr;
--  return ptr;
--}
--
--#elif LJ_TARGET_OSX || LJ_TARGET_PS4 || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__) || defined(__sun__) || LJ_TARGET_CYGWIN
--
--/* OSX and FreeBSD mmap() use a naive first-fit linear search.
--** That's perfect for us. Except that -pagezero_size must be set for OSX,
--** otherwise the lower 4GB are blocked. And the 32GB RLIMIT_DATA needs
--** to be reduced to 250MB on FreeBSD.
--*/
--#if LJ_TARGET_OSX || defined(__DragonFly__)
--#define MMAP_REGION_START	((uintptr_t)0x10000)
--#elif LJ_TARGET_PS4
--#define MMAP_REGION_START	((uintptr_t)0x4000)
--#else
--#define MMAP_REGION_START	((uintptr_t)0x10000000)
--#endif
--#define MMAP_REGION_END		((uintptr_t)0x80000000)
--
--#if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__)) && !LJ_TARGET_PS4
--#include <sys/resource.h>
--#endif
--
--static LJ_AINLINE void *CALL_MMAP(size_t size)
--{
--  int olderr = errno;
--  /* Hint for next allocation. Doesn't need to be thread-safe. */
--  static uintptr_t alloc_hint = MMAP_REGION_START;
--  int retry = 0;
--#if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__)) && !LJ_TARGET_PS4
--  static int rlimit_modified = 0;
--  if (LJ_UNLIKELY(rlimit_modified == 0)) {
--    struct rlimit rlim;
--    rlim.rlim_cur = rlim.rlim_max = MMAP_REGION_START;
--    setrlimit(RLIMIT_DATA, &rlim);  /* Ignore result. May fail below. */
--    rlimit_modified = 1;
--  }
--#endif
--  for (;;) {
--    void *p = mmap((void *)alloc_hint, size, MMAP_PROT, MMAP_FLAGS, -1, 0);
--    if ((uintptr_t)p >= MMAP_REGION_START &&
--	(uintptr_t)p + size < MMAP_REGION_END) {
--      alloc_hint = (uintptr_t)p + size;
-+  int retry;
-+  for (retry = 0; retry < LJ_ALLOC_MMAP_PROBE_MAX; retry++) {
-+    void *p = mmap((void *)hint_addr, size, MMAP_PROT, MMAP_FLAGS_PROBE, -1, 0);
-+    uintptr_t addr = (uintptr_t)p;
-+    if ((addr >> LJ_ALLOC_MBITS) == 0 && addr >= LJ_ALLOC_MMAP_PROBE_LOWER &&
-+	((addr + size) >> LJ_ALLOC_MBITS) == 0) {
-+      /* We got a suitable address. Bump the hint address. */
-+      hint_addr = addr + size;
-       errno = olderr;
-       return p;
-     }
--    if (p != CMFAIL) munmap(p, size);
--#if defined(__sun__) || defined(__DragonFly__)
--    alloc_hint += 0x1000000;  /* Need near-exhaustive linear scan. */
--    if (alloc_hint + size < MMAP_REGION_END) continue;
--#endif
--    if (retry) break;
--    retry = 1;
--    alloc_hint = MMAP_REGION_START;
-+    if (p != MFAIL) {
-+      munmap(p, size);
-+    } else if (errno == ENOMEM) {
-+      return MFAIL;
-+    }
-+    if (hint_addr) {
-+      /* First, try linear probing. */
-+      if (retry < LJ_ALLOC_MMAP_PROBE_LINEAR) {
-+	hint_addr += 0x1000000;
-+	if (((hint_addr + size) >> LJ_ALLOC_MBITS) != 0)
-+	  hint_addr = 0;
-+	continue;
-+      } else if (retry == LJ_ALLOC_MMAP_PROBE_LINEAR) {
-+	/* Next, try a no-hint probe to get back an ASLR address. */
-+	hint_addr = 0;
-+	continue;
-+      }
-+    }
-+    /* Finally, try pseudo-random probing. */
-+    if (LJ_UNLIKELY(hint_prng == 0)) {
-+      hint_prng = mmap_probe_seed();
-+    }
-+    /* The unsuitable address we got has some ASLR PRNG bits. */
-+    hint_addr ^= addr & ~((uintptr_t)(LJ_PAGESIZE-1));
-+    do {  /* The PRNG itself is very weak, but see above. */
-+      hint_prng = hint_prng * 1103515245 + 12345;
-+      hint_addr ^= hint_prng * (uintptr_t)LJ_PAGESIZE;
-+      hint_addr &= (((uintptr_t)1 << LJ_ALLOC_MBITS)-1);
-+    } while (hint_addr < LJ_ALLOC_MMAP_PROBE_LOWER);
-   }
-   errno = olderr;
--  return CMFAIL;
--}
--
-+  return MFAIL;
-+}
-+
-+#endif
-+
-+#if LJ_ALLOC_MMAP32
-+
-+#if defined(__sun__)
-+#define LJ_ALLOC_MMAP32_START	((uintptr_t)0x1000)
- #else
--
--#error "NYI: need an equivalent of MAP_32BIT for this 64 bit OS"
--
--#endif
--
-+#define LJ_ALLOC_MMAP32_START	((uintptr_t)0)
-+#endif
-+
-+static void *mmap_map32(size_t size)
-+{
-+#if LJ_ALLOC_MMAP_PROBE
-+  static int fallback = 0;
-+  if (fallback)
-+    return mmap_probe(size);
-+#endif
-+  {
-+    int olderr = errno;
-+    void *ptr = mmap((void *)LJ_ALLOC_MMAP32_START, size, MMAP_PROT, MAP_32BIT|MMAP_FLAGS, -1, 0);
-+    errno = olderr;
-+    /* This only allows 1GB on Linux. So fallback to probing to get 2GB. */
-+#if LJ_ALLOC_MMAP_PROBE
-+    if (ptr == MFAIL) {
-+      fallback = 1;
-+      return mmap_probe(size);
-+    }
-+#endif
-+    return ptr;
-+  }
-+}
-+
-+#endif
-+
-+#if LJ_ALLOC_MMAP32
-+#define CALL_MMAP(size)		mmap_map32(size)
-+#elif LJ_ALLOC_MMAP_PROBE
-+#define CALL_MMAP(size)		mmap_probe(size)
- #else
--
--/* 32 bit mode is easy. */
--static LJ_AINLINE void *CALL_MMAP(size_t size)
-+static void *CALL_MMAP(size_t size)
- {
-   int olderr = errno;
-   void *ptr = mmap(NULL, size, MMAP_PROT, MMAP_FLAGS, -1, 0);
-   errno = olderr;
-   return ptr;
- }
--
--#endif
--
--#define INIT_MMAP()		((void)0)
--#define DIRECT_MMAP(s)		CALL_MMAP(s)
--
--static LJ_AINLINE int CALL_MUNMAP(void *ptr, size_t size)
-+#endif
-+
-+#if LJ_64 && !LJ_GC64 && ((defined(__FreeBSD__) && __FreeBSD__ < 10) || defined(__FreeBSD_kernel__)) && !LJ_TARGET_PS4
-+
-+#include <sys/resource.h>
-+
-+static void init_mmap(void)
-+{
-+  struct rlimit rlim;
-+  rlim.rlim_cur = rlim.rlim_max = 0x10000;
-+  setrlimit(RLIMIT_DATA, &rlim);  /* Ignore result. May fail later. */
-+}
-+#define INIT_MMAP()	init_mmap()
-+
-+#endif
-+
-+static int CALL_MUNMAP(void *ptr, size_t size)
- {
-   int olderr = errno;
-   int ret = munmap(ptr, size);
-@@ -280,10 +366,9 @@
-   return ret;
- }
- 
--#if LJ_TARGET_LINUX
-+#if LJ_ALLOC_MREMAP
- /* Need to define _GNU_SOURCE to get the mremap prototype. */
--static LJ_AINLINE void *CALL_MREMAP_(void *ptr, size_t osz, size_t nsz,
--				     int flags)
-+static void *CALL_MREMAP_(void *ptr, size_t osz, size_t nsz, int flags)
- {
-   int olderr = errno;
-   ptr = mremap(ptr, osz, nsz, flags);
-@@ -294,13 +379,22 @@
- #define CALL_MREMAP(addr, osz, nsz, mv) CALL_MREMAP_((addr), (osz), (nsz), (mv))
- #define CALL_MREMAP_NOMOVE	0
- #define CALL_MREMAP_MAYMOVE	1
--#if LJ_64
-+#if LJ_64 && !LJ_GC64
- #define CALL_MREMAP_MV		CALL_MREMAP_NOMOVE
- #else
- #define CALL_MREMAP_MV		CALL_MREMAP_MAYMOVE
- #endif
- #endif
- 
-+#endif
-+
-+
-+#ifndef INIT_MMAP
-+#define INIT_MMAP()		((void)0)
-+#endif
-+
-+#ifndef DIRECT_MMAP
-+#define DIRECT_MMAP(s)		CALL_MMAP(s)
- #endif
- 
- #ifndef CALL_MREMAP
-
