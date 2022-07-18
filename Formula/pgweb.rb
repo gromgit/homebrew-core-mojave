@@ -1,13 +1,13 @@
 class Pgweb < Formula
   desc "Web-based PostgreSQL database browser"
   homepage "https://sosedoff.github.io/pgweb/"
-  url "https://github.com/sosedoff/pgweb/archive/v0.11.11.tar.gz"
-  sha256 "4d8c64db7ec463a9366d404cbaf12215db855a5bdbf09253494d79dedd92db98"
+  url "https://github.com/sosedoff/pgweb/archive/v0.11.12.tar.gz"
+  sha256 "f35d1bdef96c82b417e321856b08168e3aebc39d132548926251599d7ac79226"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgweb"
-    sha256 cellar: :any_skip_relocation, mojave: "8c01721efe7d36ca9ed8146b1591f2de69f5b2f93ea51351174746ba70d361d5"
+    sha256 cellar: :any_skip_relocation, mojave: "97995206251af266235f47f0514576cb0c6e50b18d02d5f4f2d007f96afe95c9"
   end
 
   depends_on "go" => :build
