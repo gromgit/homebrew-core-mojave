@@ -4,12 +4,12 @@ class Osm2pgsql < Formula
   url "https://github.com/openstreetmap/osm2pgsql/archive/1.6.0.tar.gz"
   sha256 "0ec8b58ab972ac8356185af4161270c1b625a77299f09e5fb7f45e616ef1a9a5"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https://github.com/openstreetmap/osm2pgsql.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm2pgsql"
-    sha256 mojave: "e02a4a7517f3687ef34d89bf6c1268df08e06866c1d5e457c5e4d97ee6853dc5"
+    sha256 mojave: "f63e05231469a1c551d336007806f2733c7e14402953428c9b5655666bc4ba80"
   end
 
   depends_on "cmake" => :build
