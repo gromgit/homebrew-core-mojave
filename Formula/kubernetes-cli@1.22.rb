@@ -13,7 +13,8 @@ class KubernetesCliAT122 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli@1.22"
-    sha256 cellar: :any_skip_relocation, mojave: "78dafa60db869e5aaced0e9344ec2c63379b3b1221bfbdb951dc0e019e37bf82"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9a1db08dc13efa4d3bc2ad040c1d3098a44468ffd79bcaa5aa2e2ef1e1d16c7c"
   end
 
   keg_only :versioned_formula
