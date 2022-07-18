@@ -4,7 +4,7 @@ class S2geometry < Formula
   url "https://github.com/google/s2geometry/archive/v0.10.0.tar.gz"
   sha256 "1c17b04f1ea20ed09a67a83151ddd5d8529716f509dde49a8190618d70532a3d"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :homepage
@@ -13,7 +13,7 @@ class S2geometry < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s2geometry"
-    sha256 cellar: :any, mojave: "e01374c2711b9f8a80df726e0f7c7b224390a0c89ff42256cafe5f17152f208a"
+    sha256 cellar: :any, mojave: "e1d5cb5d92fa14e20be4757934ae8fd52342ab54a2467d40fc994873c5d1593f"
   end
 
   depends_on "cmake" => :build
