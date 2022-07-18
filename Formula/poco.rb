@@ -1,8 +1,8 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.11.3/poco-1.11.3-all.tar.gz"
-  sha256 "a7aabd1323963b8b7078b5baa08a6dd100bc336287cae02fae14b02b18ec0aa3"
+  url "https://pocoproject.org/releases/poco-1.12.0/poco-1.12.0-all.tar.gz"
+  sha256 "45596b4316be7be7ccc6ef7e08cbcddc1b3832d60912d5dec51eec9ab290071d"
   license "BSL-1.0"
   head "https://github.com/pocoproject/poco.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Poco < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poco"
-    sha256 cellar: :any, mojave: "09fed26ea772726c2f578fe7fdde7915967f2221c36ecc569b8950bae446681f"
+    sha256 cellar: :any, mojave: "15af113c187015f753d8a400bf79d9a62342681d37fa44709aecd39364b2a34f"
   end
 
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   uses_from_macos "expat"
   uses_from_macos "sqlite"
