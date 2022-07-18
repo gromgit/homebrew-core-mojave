@@ -6,6 +6,7 @@ class Rsync < Formula
   mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-3.2.4.tar.gz"
   sha256 "6f761838d08052b0b6579cf7f6737d93e47f01f4da04c5d24d3447b7f2a5fad1"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://rsync.samba.org/ftp/rsync/?C=M&O=D"
@@ -14,7 +15,7 @@ class Rsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rsync"
-    sha256 cellar: :any, mojave: "7ada9947e077951913397bbf71bf285c8ef0a6cdae7af3a3d210436e2bf944c4"
+    sha256 cellar: :any, mojave: "8c3352a83b23c1a031e141abb918165adfce162a9e52db8772fed57fe8d5e3d2"
   end
 
   depends_on "lz4"
@@ -47,6 +48,10 @@ class Rsync < Formula
     # SIMD code throws ICE or is outright unsupported due to lack of support for
     # function multiversioning on older versions of macOS
     args << "--disable-simd" if MacOS.version < :catalina
+
+    # Fixes https://github.com/WayneD/rsync/issues/317
+    # remove with the next release
+    args << "rsync_cv_SIGNED_CHAR_OK=yes" if Hardware::CPU.arm?
 
     system "./configure", *args
     system "make"
