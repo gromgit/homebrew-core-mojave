@@ -4,7 +4,7 @@ class Povray < Formula
   url "https://github.com/POV-Ray/povray/archive/v3.7.0.10.tar.gz"
   sha256 "7bee83d9296b98b7956eb94210cf30aa5c1bbeada8ef6b93bb52228bbc83abff"
   license "AGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/POV-Ray/povray.git", branch: "master"
 
   livecheck do
@@ -14,8 +14,7 @@ class Povray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/povray"
-    rebuild 1
-    sha256 mojave: "f14ef30e2704225c3c999191bd27107610845f74674acb905059f1977a97ba4a"
+    sha256 mojave: "8967bc1650457a1a1fd52e5d05b650287fc6a90664696d0b8ba66c623cfe6865"
   end
 
   depends_on "autoconf" => :build
