@@ -2,13 +2,13 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.26.1",
-      revision: "5b81baa7d367d353707e87e0f9a8062cccc27c1b"
+      tag:      "v1.26.2",
+      revision: "5a60f1ffe3741c55eb9637ddd2f20157d164f511"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tailscale"
-    sha256 cellar: :any_skip_relocation, mojave: "d9e4bf4f21a54feb1576b28b6661a6dfa58619f5089cdfc5e5a2b781209e7ea8"
+    sha256 cellar: :any_skip_relocation, mojave: "799aabb55b0916d0d561f4f580170afdbe8927e863fdab11cfe6846c8c978443"
   end
 
   depends_on "go" => :build
@@ -23,6 +23,13 @@ class Tailscale < Formula
     ].join(" ")
     system "go", "build", *std_go_args(ldflags: ldflags), "tailscale.com/cmd/tailscale"
     system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"tailscaled", "tailscale.com/cmd/tailscaled"
+  end
+
+  service do
+    run opt_bin/"tailscaled"
+    keep_alive true
+    log_path var/"log/tailscaled.log"
+    error_log_path var/"log/tailscaled.log"
   end
 
   test do
