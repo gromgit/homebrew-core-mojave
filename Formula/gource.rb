@@ -4,10 +4,11 @@ class Gource < Formula
   url "https://github.com/acaudwell/Gource/releases/download/gource-0.53/gource-0.53.tar.gz"
   sha256 "3d5f64c1c6812f644c320cbc9a9858df97bc6036fc1e5f603ca46b15b8dd7237"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gource"
-    sha256 mojave: "7858b331ed3ef43471ea840be6a914d9e8398f80891defd1043e0da55e4d3332"
+    sha256 mojave: "0131da510be90a5c80de4c5c1af4bf8a7d786e4580d3cf2641c6ea55341d35ad"
   end
 
   head do
