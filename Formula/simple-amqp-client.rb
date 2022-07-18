@@ -4,13 +4,12 @@ class SimpleAmqpClient < Formula
   url "https://github.com/alanxz/SimpleAmqpClient/archive/v2.5.1.tar.gz"
   sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/alanxz/SimpleAmqpClient.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simple-amqp-client"
-    rebuild 1
-    sha256 cellar: :any, mojave: "35fab825cfc55d568af2c1b21c433907be699309d38c2b9cc236fd7f205eb207"
+    sha256 cellar: :any, mojave: "7115fdafb563c5abaa1b7531e418bfd98c677336f8f8d310088f225e546596f8"
   end
 
   depends_on "cmake" => :build
