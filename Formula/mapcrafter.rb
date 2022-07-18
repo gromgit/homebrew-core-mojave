@@ -4,12 +4,11 @@ class Mapcrafter < Formula
   url "https://github.com/mapcrafter/mapcrafter/archive/v.2.4.tar.gz"
   sha256 "f3b698d34c02c2da0c4d2b7f4e251bcba058d0d1e4479c0418eeba264d1c8dae"
   license "GPL-3.0"
-  revision 4
+  revision 5
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mapcrafter"
-    rebuild 2
-    sha256 cellar: :any, mojave: "2c07a7740970aa52e8fa1bda541fbfaf6772ca9b9a8e92a592631f70e6542f13"
+    sha256 cellar: :any, mojave: "68b5a90a1683cb5a3aa360fc7478b7160526b1b4521e073993967713d196ffec"
   end
 
   depends_on "cmake" => :build
