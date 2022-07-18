@@ -13,8 +13,8 @@ class Libexosip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libexosip"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d36113afd98bb7b3e5a82db0de3522501242536c01839ea895957a9d56f0cad3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1a3b324a3963cc7d45b15cac9b6fbb5f858cbd673882036a13c8a6c5088cb36a"
   end
 
   depends_on "pkg-config" => :build
@@ -27,7 +27,7 @@ class Libexosip < Formula
     # https://growingshoot.blogspot.com/2013/02/manually-install-osip-and-exosip-as.html
     # Upstream bug ticket: https://savannah.nongnu.org/bugs/index.php?45079
     if OS.mac?
-      ENV.append "LDFLAGS", "-framework CoreFoundation -framework CoreServices "\
+      ENV.append "LDFLAGS", "-framework CoreFoundation -framework CoreServices " \
                             "-framework Security"
     end
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
