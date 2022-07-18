@@ -1,14 +1,14 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
   homepage "https://github.com/johnkerl/miller"
-  url "https://github.com/johnkerl/miller/releases/download/v6.2.0/miller-6.2.0.tar.gz"
-  sha256 "da26531fe9bca1c1917ea41dd1f1d7338c61f50275ad3ea41d3bc4685da34687"
+  url "https://github.com/johnkerl/miller/releases/download/v6.3.0/miller-6.3.0.tar.gz"
+  sha256 "6af8d2b8387c416090a9bf02129667920b86903e67561ccc4a5c9a3b33ea76cb"
   license "BSD-2-Clause"
   head "https://github.com/johnkerl/miller.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miller"
-    sha256 cellar: :any_skip_relocation, mojave: "3d3327d14f75cd96498191f9a114c916a7edcf0245e709bead320239d484aac3"
+    sha256 cellar: :any_skip_relocation, mojave: "d82427942ed2050deefff0c3ea763ab4f36c18c5b27525279561885364bc860a"
   end
 
   depends_on "go" => :build
