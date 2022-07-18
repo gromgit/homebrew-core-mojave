@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://github.com/ooni/probe-cli/archive/v3.15.1.tar.gz"
-  sha256 "8cc06915204227f4c2b83c04d008c2ec732705ecb01aa82d13ef16ae7d51f3f8"
+  url "https://github.com/ooni/probe-cli/archive/v3.15.3.tar.gz"
+  sha256 "40ca23d3a08e91ff72c95e835eb59d8922bf7424464782b16d2704e8d630eecb"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,11 +12,10 @@ class Ooniprobe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ooniprobe"
-    sha256 cellar: :any_skip_relocation, mojave: "40c19c3bfefe8f34ce4b44623c0afa8dc71e548b2a042375ba3e212680c6f0ba"
+    sha256 cellar: :any_skip_relocation, mojave: "4739ca721e4f6b6851c1b209fa772da20b8b8b94cb6652a5fd14d0eaeea35629"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
   depends_on "tor"
 
   def install
@@ -25,6 +24,10 @@ class Ooniprobe < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/ooniprobe version")
+    # failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB).
+    return if OS.linux?
+
     (testpath/"config.json").write <<~EOS
       {
         "_version": 3,
