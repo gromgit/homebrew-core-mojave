@@ -2,14 +2,14 @@ class K9s < Formula
   desc "Kubernetes CLI To Manage Your Clusters In Style!"
   homepage "https://k9scli.io/"
   url "https://github.com/derailed/k9s.git",
-      tag:      "v0.25.18",
-      revision: "6085039f83cd5e8528c898cc1538f5b3287ce117"
+      tag:      "v0.25.21",
+      revision: "14862f3709dc8dda10f749b6415fce0178111a6d"
   license "Apache-2.0"
   head "https://github.com/derailed/k9s.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k9s"
-    sha256 cellar: :any_skip_relocation, mojave: "df229fc2be59d06ee8a084a14857a8ed6cb1afac671f1f905a85083268692349"
+    sha256 cellar: :any_skip_relocation, mojave: "8f1c885571f805a60d1ac258ce64ca62f7393dfcffaddf6afdf1091b9719eda9"
   end
 
   depends_on "go" => :build
