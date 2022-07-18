@@ -2,8 +2,8 @@ class K3d < Formula
   desc "Little helper to run CNCF's k3s in Docker"
   homepage "https://k3d.io"
   url "https://github.com/k3d-io/k3d.git",
-    tag:      "v5.4.3",
-    revision: "7e4b1124c891e2b4944f26238ed4938c5404e137"
+    tag:      "v5.4.4",
+    revision: "85841a1b1640cf3548372d2e4730c564365f6bac"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class K3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
-    sha256 cellar: :any_skip_relocation, mojave: "8edf1598ce0fc0a64713aef3a5daebc0178485cdb74fa41eff062d7c1bf01ca5"
+    sha256 cellar: :any_skip_relocation, mojave: "01ff0a546e15ee4039db86ae73b6e0a098b80f8aec569250159ac4c1c8274da0"
   end
 
   depends_on "go" => :build
