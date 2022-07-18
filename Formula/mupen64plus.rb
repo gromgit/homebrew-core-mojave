@@ -4,7 +4,7 @@ class Mupen64plus < Formula
   url "https://github.com/mupen64plus/mupen64plus-core/releases/download/2.5/mupen64plus-bundle-src-2.5.tar.gz"
   sha256 "9c75b9d826f2d24666175f723a97369b3a6ee159b307f7cc876bbb4facdbba66"
   license "GPL-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,8 +13,7 @@ class Mupen64plus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mupen64plus"
-    rebuild 2
-    sha256 cellar: :any, mojave: "5c053374583a38d348aadc71e43a6ac3ebcbc8fdabe2b7c6edb56135682d0e43"
+    sha256 cellar: :any, mojave: "526b87c37138047bfca72b3d174408c497cd65724c3aa97fb2e84b5f56132aa5"
   end
 
   depends_on "pkg-config" => :build
