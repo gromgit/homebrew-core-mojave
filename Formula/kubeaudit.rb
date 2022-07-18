@@ -1,14 +1,14 @@
 class Kubeaudit < Formula
   desc "Helps audit your Kubernetes clusters against common security controls"
   homepage "https://github.com/Shopify/kubeaudit"
-  url "https://github.com/Shopify/kubeaudit/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "e15f603813fd0877d0874ad3122241183ce270a4ed3cb78a3568d5a167446f52"
+  url "https://github.com/Shopify/kubeaudit/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "846ad5000e43e37c6089332f964d421a72fdded710066b58de8dcae655627749"
   license "MIT"
   head "https://github.com/Shopify/kubeaudit.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeaudit"
-    sha256 cellar: :any_skip_relocation, mojave: "9f28bff19f1fc85f80a5cbe9dd28cc084ce4b5974e97ed4770cd2b482a2b6ab2"
+    sha256 cellar: :any_skip_relocation, mojave: "5689daf0b0d306d8795c4eb7d20a0a64f519b8f95c4dfbd63af2a333297ba8cb"
   end
 
   depends_on "go" => :build
@@ -24,7 +24,7 @@ class Kubeaudit < Formula
   end
 
   test do
-    output = shell_output(bin/"kubeaudit -c /some-file-that-does-not-exist all 2>&1", 1).chomp
+    output = shell_output(bin/"kubeaudit --kubeconfig /some-file-that-does-not-exist all 2>&1", 1).chomp
     assert_match "failed to open kubeconfig file /some-file-that-does-not-exist", output
   end
 end
