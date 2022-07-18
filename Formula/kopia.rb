@@ -2,13 +2,13 @@ class Kopia < Formula
   desc "Fast and secure open-source backup"
   homepage "https://kopia.io"
   url "https://github.com/kopia/kopia.git",
-      tag:      "v0.10.7",
-      revision: "5d87d817335f6d547e094ab80062113dc3a1fdf4"
+      tag:      "v0.11.3",
+      revision: "317cc36892707ab9bdc5f6e4dea567d1e638a070"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kopia"
-    sha256 cellar: :any_skip_relocation, mojave: "f48af9445d7a2b558c23df3bfda9cbb442acf0497fa3de6a31c00f5df1dbddb1"
+    sha256 cellar: :any_skip_relocation, mojave: "781decf8dd1b45ae92e5143c93b6704227d11df184e8961e4989221aca88f84f"
   end
 
   depends_on "go" => :build
