@@ -12,14 +12,15 @@ class GitCrypt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-crypt"
-    sha256 cellar: :any, mojave: "7ac691dcfe7a66314abb23127e963e27311b3c24fccca12ad41fbcda7904959d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bf50a75df4c568372f317a884157bdb9ba2d0d51f0d28a607119ad907c163894"
   end
 
   depends_on "openssl@1.1"
+  uses_from_macos "libxslt" => :build
 
   def install
-    system "make"
-    bin.install "git-crypt"
+    system "make", "ENABLE_MAN=yes", "PREFIX=#{prefix}", "install"
   end
 
   test do
