@@ -4,7 +4,7 @@ class ScummvmTools < Formula
   url "https://downloads.scummvm.org/frs/scummvm-tools/2.5.0/scummvm-tools-2.5.0.tar.xz"
   sha256 "5cdc8173e1ee3fb74d62834e79995be0c5b1d999f72a0a125fab611222f927da"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/scummvm/scummvm-tools.git", branch: "master"
 
   livecheck do
@@ -14,8 +14,7 @@ class ScummvmTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scummvm-tools"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c1e65e1983c4aa49b82d6bf3e84fddb498500870ab982123a1c5cf73e2515a8a"
+    sha256 cellar: :any, mojave: "3196755565fd576a4db71a0cc41bf6fdf8a81a9e79c45d771705f5eb5bdc99e6"
   end
 
   depends_on "boost"
