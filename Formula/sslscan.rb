@@ -1,14 +1,14 @@
 class Sslscan < Formula
   desc "Test SSL/TLS enabled services to discover supported cipher suites"
   homepage "https://github.com/rbsec/sslscan"
-  url "https://github.com/rbsec/sslscan/archive/2.0.14.tar.gz"
-  sha256 "0dd9f7d0f08c777dfebb1fd10ba369d3a2fd9b978f262384d30e1f45845a67ba"
+  url "https://github.com/rbsec/sslscan/archive/2.0.15.tar.gz"
+  sha256 "0986ac647098b877f24c863c261bfb7cf545a41fd1120047337dfc44812c69a0"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/rbsec/sslscan.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sslscan"
-    sha256 cellar: :any, mojave: "c4d4b738a8fd34a26ff600b105cd316e39524907425c7e3f3699f45f9ab0ceab"
+    sha256 cellar: :any, mojave: "d893afc71c448f40f5f21102ae4dee01851673e168c58920713984273d2222f0"
   end
 
   depends_on "openssl@1.1"
