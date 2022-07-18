@@ -1,8 +1,8 @@
 class Nsd < Formula
   desc "Name server daemon"
   homepage "https://www.nlnetlabs.nl/projects/nsd/"
-  url "https://www.nlnetlabs.nl/downloads/nsd/nsd-4.5.0.tar.gz"
-  sha256 "5ae7a704ab92c8a49f3c8f3a29565ce194c51a721c29c75ea7d43c13372d79c5"
+  url "https://www.nlnetlabs.nl/downloads/nsd/nsd-4.6.0.tar.gz"
+  sha256 "09062d9b83dfcdde4e4e53ec3615496d68c2821d8381d0d464ebea31a5975c81"
   license "BSD-3-Clause"
 
   # We check the GitHub repo tags instead of
@@ -15,7 +15,7 @@ class Nsd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nsd"
-    sha256 mojave: "98a728b62a6eb400b358582b26b606c9efd78a6c0d638af7dd948650ac3595bf"
+    sha256 mojave: "e907a12b822d90241822045238325c477ae1f720bb26f43faed202c1fd3343c8"
   end
 
   depends_on "libevent"
