@@ -1,20 +1,20 @@
 class GitlabGem < Formula
   desc "Ruby client and CLI for GitLab API"
   homepage "https://github.com/NARKOZ/gitlab"
-  url "https://github.com/NARKOZ/gitlab/archive/v4.18.0.tar.gz"
-  sha256 "6967bbf68ebff61714d855da950cfac4c8c3825a80d79f9210b40e37f6ba752c"
+  url "https://github.com/NARKOZ/gitlab/archive/v4.19.0.tar.gz"
+  sha256 "f747fa76db258d4df54d564eb7f7c164d15a9f4937583e885d79aab3f04023fe"
   license "BSD-2-Clause"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-gem"
-    sha256 cellar: :any_skip_relocation, mojave: "209540fd30cd29ba5cf58010a5c1bf10057ba356afb222a1ce031ac1e2bc3682"
+    sha256 cellar: :any_skip_relocation, mojave: "95066291140c4f67a5b74667427a3ead59f5d7e5b6dbd7611a5f5fbe2cdae83f"
   end
 
   uses_from_macos "ruby", since: :catalina
 
   resource "httparty" do
-    url "https://rubygems.org/gems/httparty-0.18.1.gem"
-    sha256 "878fe8038e344b219dbba9e20c442914a2be251d2f4a20bcdeb31f25dcb2f79d"
+    url "https://rubygems.org/gems/httparty-0.20.0.gem"
+    sha256 "490d2a028a5accc611f1685d479d80ef80b129140d24a93c53c119f578614867"
   end
 
   resource "mime-types" do
