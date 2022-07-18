@@ -1,14 +1,14 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
   homepage "https://github.com/armosec/kubescape"
-  url "https://github.com/armosec/kubescape/archive/v2.0.158.tar.gz"
-  sha256 "616c047f3ac233e1555ee1ef97dd9a579fd9f700508f0cf17d123c4bfd146729"
+  url "https://github.com/armosec/kubescape/archive/v2.0.161.tar.gz"
+  sha256 "165222d24db46b70a664fd70e8918f478c39c05ef30bbcbfb57c05307d88ce6a"
   license "Apache-2.0"
   head "https://github.com/armosec/kubescape.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubescape"
-    sha256 cellar: :any_skip_relocation, mojave: "1387fb9f516ef45e592758921621b847e436654b2cb95be48a10fb7bfcceb9eb"
+    sha256 cellar: :any_skip_relocation, mojave: "abb463b3c91a65522b0c7da1d9374131bba8fa077e2b35577fbb48fd0378b976"
   end
 
   depends_on "go" => :build
@@ -30,7 +30,7 @@ class Kubescape < Formula
   end
 
   test do
-    manifest = "https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/b8fe8900ca1da10c85c9a203d9832b2ee33cc85f/release/kubernetes-manifests.yaml"
+    manifest = "https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/main/release/kubernetes-manifests.yaml"
     assert_match "FAILED RESOURCES", shell_output("#{bin}/kubescape scan framework nsa #{manifest}")
 
     assert_match version.to_s, shell_output("#{bin}/kubescape version")
