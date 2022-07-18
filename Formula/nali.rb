@@ -1,14 +1,14 @@
 class Nali < Formula
   desc "Tool for querying IP geographic information and CDN provider"
   homepage "https://github.com/zu1k/nali"
-  url "https://github.com/zu1k/nali/archive/v0.4.2.tar.gz"
-  sha256 "25842823d61b1c05d8e261c28a2f24232838a1397cbe3b227a2c6288ec451fd6"
+  url "https://github.com/zu1k/nali/archive/v0.4.8.tar.gz"
+  sha256 "ce6a0be171839640634047f90fb40eafda17dd4439329df0caf110ce186bfc91"
   license "MIT"
   head "https://github.com/zu1k/nali.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nali"
-    sha256 cellar: :any_skip_relocation, mojave: "9dbbbc3b218923b0c539176dcc034d71b17d9ab0d0dce16d89c775386a0eea29"
+    sha256 cellar: :any_skip_relocation, mojave: "81ff2ec4b0946969b4928b3f305a4cb89e1b96825e340a91ed83de39be6ee780"
   end
 
   depends_on "go" => :build
