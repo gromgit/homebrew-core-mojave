@@ -9,7 +9,8 @@ class GnuTar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-tar"
-    sha256 mojave: "43eff6bebd5a5c31f75f4dfa28b211ab6caf90e8ab2034574d839d6ebb18a662"
+    rebuild 1
+    sha256 mojave: "90432716d50eddaec87062ef29ba71a1cb499b056b38034e1c8cd2546cf8c019"
   end
 
   head do
@@ -25,14 +26,6 @@ class GnuTar < Formula
   end
 
   def install
-    # Work around unremovable, nested dirs bug that affects lots of
-    # GNU projects. See:
-    # https://github.com/Homebrew/homebrew/issues/45273
-    # https://github.com/Homebrew/homebrew/issues/44993
-    # This is thought to be an el_capitan bug:
-    # https://lists.gnu.org/archive/html/bug-tar/2015-10/msg00017.html
-    ENV["gl_cv_func_getcwd_abort_bug"] = "no" if MacOS.version == :el_capitan
-
     args = %W[
       --prefix=#{prefix}
       --mandir=#{man}
