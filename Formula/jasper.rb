@@ -4,6 +4,7 @@ class Jasper < Formula
   url "https://github.com/jasper-software/jasper/releases/download/version-3.0.6/jasper-3.0.6.tar.gz"
   sha256 "169be004d91f6940c649a4f854ada2755d4f35f62b0555ce9e1219c778cffc09"
   license "JasPer-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,15 +13,11 @@ class Jasper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jasper"
-    sha256 cellar: :any, mojave: "5f15adeb9eeabab9fbdf059e5d9086b6bbb9280ba370ce6d55058c040a66b812"
+    sha256 cellar: :any, mojave: "1cfac1d0d04b65f3fd1cbc4cce68d1ca9c1d5712d9104e920a973d552cf9ff91"
   end
 
   depends_on "cmake" => :build
   depends_on "jpeg"
-
-  on_linux do
-    depends_on "freeglut"
-  end
 
   def install
     mkdir "tmp_cmake" do
@@ -32,6 +29,8 @@ class Jasper < Formula
         # Reported to CMake upstream 4 Apr 2016 https://gitlab.kitware.com/cmake/cmake/issues/16045
         glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
         args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
+      else
+        args << "-DJAS_ENABLE_OPENGL=OFF"
       end
 
       system "cmake", "..",
