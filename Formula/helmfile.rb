@@ -1,21 +1,21 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
-  homepage "https://github.com/roboll/helmfile"
-  url "https://github.com/roboll/helmfile/archive/v0.144.0.tar.gz"
-  sha256 "fc767d10ec21ca464caaefd309f410d96685a985090c237907a22bd983112c62"
+  homepage "https://github.com/helmfile/helmfile"
+  url "https://github.com/helmfile/helmfile/archive/v0.145.2.tar.gz"
+  sha256 "8e472b1c65cd50b214d445dc37fa6b1ef97d4b374066b036a245a07fdf04473d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmfile"
-    sha256 cellar: :any_skip_relocation, mojave: "49881e8fd166252a37d345a5f53be21e9bc42926ef4e335408da5637546a1b75"
+    sha256 cellar: :any_skip_relocation, mojave: "655cd9efdd545085af60674df0b0b839223121e7ad0a391be484daa424eae832"
   end
 
   depends_on "go" => :build
   depends_on "helm"
 
   def install
-    system "go", "build", "-ldflags", "-X github.com/roboll/helmfile/pkg/app/version.Version=v#{version}",
-             "-o", bin/"helmfile", "-v", "github.com/roboll/helmfile"
+    system "go", "build", "-ldflags", "-X github.com/helmfile/helmfile/pkg/app/version.Version=v#{version}",
+             "-o", bin/"helmfile", "-v", "github.com/helmfile/helmfile"
   end
 
   test do
