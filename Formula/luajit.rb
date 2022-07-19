@@ -2,13 +2,17 @@
 #       singular exception for luajit. This exception will not be extended
 #       to other formulae. See:
 #       https://github.com/Homebrew/homebrew-core/pull/99580
+# TODO: Add an audit in `brew` for this. https://github.com/Homebrew/homebrew-core/pull/104765
 class Luajit < Formula
   desc "Just-In-Time Compiler (JIT) for the Lua programming language"
   homepage "https://luajit.org/luajit.html"
   # Update this to the tip of the `v2.1` branch at the start of every month.
+  # Get the latest commit with:
+  #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
   url "https://github.com/LuaJIT/LuaJIT/archive/50936d784474747b4569d988767f1b5bab8bb6d0.tar.gz"
   # Use the version scheme `2.1.0-beta3-yyyymmdd.x` where `yyyymmdd` is the date of the
   # latest commit at the time of updating, and `x` is the number of commits on that date.
+  # `brew livecheck luajit` will generate the correct version for you automatically.
   version "2.1.0-beta3-20220712.6"
   sha256 "4d44e4709130b031c1c2c81cf5c102dfce877bf454409dabba03249e18870e66"
   license "MIT"
@@ -37,7 +41,8 @@ class Luajit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit"
-    sha256 cellar: :any, mojave: "2091893f3eccaf5ca630f16f8c465ef34dd8ce2ac0d5936e3fb684fbb9a30640"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8d8a177a10db1d1394286873b186a1da8cca38bd418168acbcd3cf0b4387390f"
   end
 
   def install
