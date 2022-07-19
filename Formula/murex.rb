@@ -1,14 +1,14 @@
 class Murex < Formula
   desc "Bash-like shell designed for greater command-line productivity and safer scripts"
   homepage "https://murex.rocks"
-  url "https://github.com/lmorg/murex/archive/v2.8.2100.tar.gz"
-  sha256 "ba3fd505aaa8e8289f1baf0375d319b4f7fa9cda2ba4e6299d63705154f70406"
+  url "https://github.com/lmorg/murex/archive/v2.9.5000.tar.gz"
+  sha256 "5607923416219951ba6b848b57138b5d10f4ce95090d167f9330231de4862e2d"
   license "GPL-2.0-only"
   head "https://github.com/lmorg/murex.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/murex"
-    sha256 cellar: :any_skip_relocation, mojave: "9332309159982b68c51ccaf1040b967641829af99648c042794713a387973a1c"
+    sha256 cellar: :any_skip_relocation, mojave: "202431ccd961bed334526e34fd811add274019158843bb73727885742de74cb5"
   end
 
   depends_on "go" => :build
