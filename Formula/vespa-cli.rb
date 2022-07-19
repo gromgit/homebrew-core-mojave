@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://github.com/vespa-engine/vespa/archive/v8.4.15.tar.gz"
-  sha256 "ceb79aacafc1ac22769064ee99ab451a1b37eafe3c6105b8c1e880636dc2ca07"
+  url "https://github.com/vespa-engine/vespa/archive/v8.12.48.tar.gz"
+  sha256 "38a509bbafe78729c0eac0c90f4363fddde267067e9b297f3e4151cc9ff2c1ae"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class VespaCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vespa-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "73747f4a9aa358da4453aca9332313f7bb49d77020fea83c94794cc84e934d3f"
+    sha256 cellar: :any_skip_relocation, mojave: "0555c15253d445930e8719572c44035bc65782eb9568e29fdcf9e2b34a2b9069"
   end
 
   depends_on "go" => :build
