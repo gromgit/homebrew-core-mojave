@@ -12,7 +12,8 @@ class ArgyllCms < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argyll-cms"
-    sha256 cellar: :any, mojave: "ec1c72f9daad55bd1d37d637f6ca18ec8630b7e0cc3e920bd446cac8512cc6a3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c8f95ac95dd0e918db36b6df059395a8b9a78e58babc40e73b5b0b69291b7a40"
   end
 
   depends_on "jam" => :build
@@ -38,12 +39,6 @@ class ArgyllCms < Formula
   end
 
   def install
-    # dyld: lazy symbol binding failed: Symbol not found: _clock_gettime
-    # Reported 20 Aug 2017 to graeme AT argyllcms DOT com
-    if MacOS.version == :el_capitan && MacOS::Xcode.version >= "8.0"
-      inreplace "numlib/numsup.c", "CLOCK_MONOTONIC", "UNDEFINED_GIBBERISH"
-    end
-
     # These two inreplaces make sure /opt/homebrew can be found by the
     # Jamfile, which otherwise fails to locate system libraries
     inreplace "Jamtop", "/usr/include/x86_64-linux-gnu$(subd)", "#{HOMEBREW_PREFIX}/include$(subd)"
