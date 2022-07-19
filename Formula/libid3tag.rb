@@ -1,13 +1,13 @@
 class Libid3tag < Formula
   desc "ID3 tag manipulation library"
   homepage "https://www.underbit.com/products/mad/"
-  url "https://github.com/tenacityteam/libid3tag/archive/refs/tags/0.16.1.tar.gz"
-  sha256 "185a6cec84644cf1aade8397dcf76753bcb3bd85ec2111a9e1079214ed85bef0"
+  url "https://github.com/tenacityteam/libid3tag/archive/refs/tags/0.16.2.tar.gz"
+  sha256 "96198b7c8803bcda44e299615e1929a85bd5a5da02e67ebc442735bc50018190"
   license "GPL-2.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libid3tag"
-    sha256 cellar: :any, mojave: "729ea9b47dc8efeae7ef797a862614a2dd75359d86c496523795d5708f8a13e5"
+    sha256 cellar: :any, mojave: "71eb1f63ec59386dc8020c3c9a5bf2b6c321f9b1b2b3e60b995d428e6146b21c"
   end
 
   depends_on "cmake" => :build
