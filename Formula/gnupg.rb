@@ -1,9 +1,10 @@
 class Gnupg < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.6.tar.bz2"
-  sha256 "21f7fe2fc5c2f214184ab050977ec7a8e304e58bfae2ab098fec69f8fabda9c1"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.7.tar.bz2"
+  sha256 "ee163a5fb9ec99ffc1b18e65faef8d086800c5713d15a672ab57d3799da83669"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gnupg/"
@@ -12,7 +13,7 @@ class Gnupg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnupg"
-    sha256 mojave: "be84f6dfdccfc6cbe8872ea85f6c64cb502252217a38bc62b0f6c4704d02d874"
+    sha256 mojave: "4ae069fe3d414169ec2435c1051fb5659bb92210d52291a70834acd652d9d054"
   end
 
   depends_on "pkg-config" => :build
@@ -30,6 +31,14 @@ class Gnupg < Formula
 
   on_linux do
     depends_on "libidn"
+  end
+
+  # Fixes a regression using Yubikey devices as smart cards.
+  # Committed upstream, will be in the next release.
+  # https://dev.gnupg.org/T6070
+  patch do
+    url "https://dev.gnupg.org/rGf34b9147eb3070bce80d53febaa564164cd6c977?diff=1"
+    sha256 "0a54359e00ea5e5f0e53220571a4502b28a05cf687cb73b360fb4c777e2f421b"
   end
 
   def install
