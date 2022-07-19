@@ -12,11 +12,18 @@ class Xz < Formula
     "GPL-2.0-or-later",
     "GPL-3.0-or-later",
   ]
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xz"
-    rebuild 1
-    sha256 mojave: "8d537c21c077c455be5644c27ca25fe2751a519f0cac8c23a049d1d74e4782f4"
+    sha256 mojave: "cdeeab35db3c2f7faa801109289965d2b9f1531795ee7c552beb470acdd4ae24"
+  end
+
+  # Fix arbitrary-file-write vulnerability in `xzgrep`.
+  # https://seclists.org/oss-sec/2022/q2/18
+  patch do
+    url "https://tukaani.org/xz/xzgrep-ZDI-CAN-16587.patch"
+    sha256 "98c6cb1042284fe704ec30083f3fc87364ce9ed2ea51f62bbb0ee9d3448717ec"
   end
 
   def install
