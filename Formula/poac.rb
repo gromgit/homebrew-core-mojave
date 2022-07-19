@@ -1,17 +1,17 @@
 class Poac < Formula
   desc "Package manager for C++"
   homepage "https://github.com/poacpm/poac"
-  url "https://github.com/poacpm/poac/archive/refs/tags/0.3.7.tar.gz"
-  sha256 "2ad6c082252d15cc8e9db8d129e7dd9cb27275f0d72de33c73ada5c09667a87f"
+  url "https://github.com/poacpm/poac/archive/refs/tags/0.3.8.tar.gz"
+  sha256 "3d0beb776137a0ed89d84f1c229df877772e0a4fd782edd0317ac65ac944abe5"
   license "Apache-2.0"
   head "https://github.com/poacpm/poac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ba0a4ef79bfd3b0949c3f00811d55203484351642b1593a547a325963294fdf4"
-    sha256 cellar: :any,                 arm64_big_sur:  "57a61b9ea9e166d06312941056f912f29fe616a50a3da18b71bf771155bed8cf"
-    sha256 cellar: :any,                 monterey:       "8e61e3a2e92f2a685b0361f10400b17e10283cfd70fab3c2751c6ff85df56715"
-    sha256 cellar: :any,                 big_sur:        "970c0f8398c48fe1d340037f10037d299c758594cadf20a239ce3afbe3e19cd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38a2ab431efbbac134a4e90c5aa394d84f96771c8dd6bf11701b55c41f2f1a6c"
+    sha256 cellar: :any,                 arm64_monterey: "57c7b5b1f9eb1308a8c797827717a9902a380946b9cb33c5cf94a8dd3d3ef7b8"
+    sha256 cellar: :any,                 arm64_big_sur:  "9ca9780556ec7d273c78b427cb62e90fab4dd770e1adc46de8238c56e8dc7f7f"
+    sha256 cellar: :any,                 monterey:       "a71b2fde9ebdf4f80bcbdcd1e69e8a453279e99a6246acfc8cc261e784bee350"
+    sha256 cellar: :any,                 big_sur:        "3ab5cf475e0441416710421ba5eebf8d5acc016c469fe02bd88ef94e66462e66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6cbc629edbb3d47c1979e5e8dbe06d2e222ff65b5995681049ba8af2154aae3"
   end
 
   depends_on "cmake" => :build
