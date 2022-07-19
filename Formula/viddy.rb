@@ -1,15 +1,14 @@
 class Viddy < Formula
   desc "Modern watch command"
   homepage "https://github.com/sachaos/viddy"
-  url "https://github.com/sachaos/viddy/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "9a66db51e729713df102def0c2c02b786bb09c2b024204c515f9c0dd721382aa"
+  url "https://github.com/sachaos/viddy/archive/refs/tags/v0.3.6.tar.gz"
+  sha256 "ce000cf3fbea3f4d6ade7bf464a91d4f3fa2f3b3a7abc8a09de1e83ac400b9af"
   license "MIT"
   head "https://github.com/sachaos/viddy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/viddy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b76bdb2fd5d2fec3610e64a70171abbd2deefbbe0306fd8a7dc39e244d1f8c10"
+    sha256 cellar: :any_skip_relocation, mojave: "39e008d3fec42c182edb175359be9024e6bca2831ab0a655e664e9ebcec7cecc"
   end
 
   depends_on "go" => :build
