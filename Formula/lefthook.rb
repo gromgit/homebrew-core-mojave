@@ -1,14 +1,14 @@
 class Lefthook < Formula
   desc "Fast and powerful Git hooks manager for any type of projects"
   homepage "https://github.com/evilmartians/lefthook"
-  url "https://github.com/evilmartians/lefthook/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "06680a58cd7c7277f745ae89624b8c43de37fb2cfe5ba32e3c6882306cff0f6c"
+  url "https://github.com/evilmartians/lefthook/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "a824e1e3a2426fffb50c6ad49b3761262df8dabdc371e8ca414af1b2b115bba7"
   license "MIT"
   head "https://github.com/evilmartians/lefthook.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lefthook"
-    sha256 cellar: :any_skip_relocation, mojave: "41509319791ef2af7a59a2a43ccc26bdac24aa45a6f160c4f71497929ccb1c1a"
+    sha256 cellar: :any_skip_relocation, mojave: "3ee53c200d0cb039e5a11582c35787bfb785e35a0b870e4c2f8a47499850e3dc"
   end
 
   # Bump to 1.18 on the next release, if possible.
