@@ -1,8 +1,8 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
   homepage "https://kics.io/"
-  url "https://github.com/Checkmarx/kics/archive/refs/tags/v1.5.11.tar.gz"
-  sha256 "2b3eca85e53046728b730aa731954bd3cddf932efd136753a1046ef5db3e46c5"
+  url "https://github.com/Checkmarx/kics/archive/refs/tags/v1.5.12.tar.gz"
+  sha256 "46505525675cd8ca31dae1bde767e1de66c2e7a6364ad01ab45aac4ae5c6ca1d"
   license "Apache-2.0"
   head "https://github.com/Checkmarx/kics.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Kics < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kics"
-    sha256 cellar: :any_skip_relocation, mojave: "19cd7989366667820b80e942c76092c9356b617c38584ff0d553dab81c161e6e"
+    sha256 cellar: :any_skip_relocation, mojave: "9656ff55578a690d30f51bffb8b11d89b65d15136729f3ce502821a325c734ff"
   end
 
   depends_on "go" => :build
