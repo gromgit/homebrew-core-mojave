@@ -8,7 +8,8 @@ class Cava < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cava"
-    sha256 cellar: :any, mojave: "867b4fa25e8c76bec76a3d1a6f24db4675726b684b1e7494d8b24b3498bc551c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "992a20d81489dbf95a5dfb962b2c988d7ac0be9334e9675b1c73f83bc14dd743"
   end
 
   depends_on "autoconf" => :build
@@ -37,7 +38,7 @@ class Cava < Formula
     cava_config = (testpath/"cava.conf")
     cava_stdout = (testpath/"cava_stdout.log")
 
-    (cava_config).write <<~EOS
+    cava_config.write <<~EOS
       [general]
       bars = 2
       sleep_timer = 1
