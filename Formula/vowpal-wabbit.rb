@@ -1,21 +1,21 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/9.1.0.tar.gz"
-  sha256 "7bc826681872e5f38677b94f54159c3c7e4014d5f098a020c7068a0cb37c5c68"
+  url "https://github.com/VowpalWabbit/vowpal_wabbit/archive/9.2.0.tar.gz"
+  sha256 "d2d8fec8750abf0b379a52c92113fdd6719d827a26ed101c2f7b863ae95db1d1"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vowpal-wabbit"
-    sha256 cellar: :any, mojave: "2f06059732b622c471164aab952151ecc3dc8b20bef083018998426043c39e70"
+    sha256 cellar: :any, mojave: "cbe8f4040c3a57715146fb30bcbe420d5e4099289479c2dbacee833ceabc60b6"
   end
 
   depends_on "cmake" => :build
-  depends_on "flatbuffers" => :build
   depends_on "rapidjson" => :build
   depends_on "spdlog" => :build
   depends_on "boost"
+  depends_on "eigen"
   depends_on "fmt"
   depends_on "zlib"
 
@@ -31,14 +31,13 @@ class VowpalWabbit < Formula
                             "-DFMT_SYS_DEP=ON",
                             "-DSPDLOG_SYS_DEP=ON",
                             "-DVW_BOOST_MATH_SYS_DEP=On",
-                            "-DBUILD_FLATBUFFERS=ON",
                             "-DVW_INSTALL=On"
       system "make", "install"
     end
     bin.install Dir["utl/*"]
     rm bin/"active_interactor.py"
     rm bin/"vw-validate.html"
-    rm bin/"clang-format"
+    rm bin/"clang-format.sh"
     rm bin/"release_blog_post_template.md"
     rm_r bin/"flatbuffer"
     rm_r bin/"dump_options"
