@@ -9,7 +9,8 @@ class Vcluster < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcluster"
-    sha256 mojave: "00ebdb18cce25f3374197267638350ba579f386a691b8eb8d0efd30290f3fb5c"
+    rebuild 1
+    sha256 mojave: "20ea439c348b0f22f79515ccd5f73970a3f36c35bc3ad880656007435bcce5c9"
   end
 
   depends_on "go" => :build
@@ -32,10 +33,10 @@ class Vcluster < Formula
     help_output = "vcluster root command"
     assert_match help_output, shell_output("#{bin}/vcluster --help")
 
-    create_output = "there is an error loading your current kube config "\
-                    "(invalid configuration: no configuration has been provided, "\
-                    "try setting KUBERNETES_MASTER environment variable), "\
-                    "please make sure you have access to a kubernetes cluster and the command "\
+    create_output = "there is an error loading your current kube config " \
+                    "(invalid configuration: no configuration has been provided, " \
+                    "try setting KUBERNETES_MASTER environment variable), " \
+                    "please make sure you have access to a kubernetes cluster and the command " \
                     "`kubectl get namespaces` is working"
     assert_match create_output, shell_output("#{bin}/vcluster create vcluster -n vcluster --create-namespace", 1)
   end
