@@ -5,14 +5,14 @@ class Po4a < Formula
 
   desc "Documentation translation maintenance tool"
   homepage "https://po4a.org"
-  url "https://github.com/mquinson/po4a/releases/download/v0.66/po4a-0.66.tar.gz"
-  sha256 "854a75b91b2b39f4c2a4ed244dba22c9b01be675e2bd1448dce68c8e90d2f2ff"
+  url "https://github.com/mquinson/po4a/releases/download/v0.67/po4a-0.67.tar.gz"
+  sha256 "4a4166a480d9b5bcc80b688604501b5545f1c9f67067e8f5494846de167a18a7"
   license "GPL-2.0-or-later"
   head "https://github.com/mquinson/po4a.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/po4a"
-    sha256 cellar: :any, mojave: "3db464623e83937e19d17f1df009f139470683323c15008f7554dd15777a9ceb"
+    sha256 cellar: :any, mojave: "4e8332fb29470715b2ee175e25e8226ce7bac1ccb109009ceb6844326c29696a"
   end
 
   depends_on "docbook-xsl" => :build
@@ -32,8 +32,8 @@ class Po4a < Formula
   end
 
   resource "Pod::Parser" do
-    url "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-1.63.tar.gz"
-    sha256 "dbe0b56129975b2f83a02841e8e0ed47be80f060686c66ea37e529d97aa70ccd"
+    url "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-1.65.tar.gz"
+    sha256 "3ba7bdec659416a51fe2a7e59f0883e9c6a3b21bc9d001042c1d6a32d401b28a"
   end
 
   resource "SGMLS" do
