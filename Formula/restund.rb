@@ -3,7 +3,7 @@ class Restund < Formula
   homepage "https://web.archive.org/web/20200427184619/www.creytiv.com/restund.html"
   url "https://sources.openwrt.org/restund-0.4.12.tar.gz"
   sha256 "3170441dc882352ab0275556b6fc889b38b14203d936071b5fa12f39a5c86d47"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://sources.openwrt.org/"
@@ -12,7 +12,7 @@ class Restund < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restund"
-    sha256 mojave: "27126fa8fee74ae8d00b0c2a1e500000f217c079dd2b218e4f97e2427d8843aa"
+    sha256 mojave: "0f52db89b03758c05db5b6c547bb975661a0e34824c2af33efe3446872b0f27d"
   end
 
   depends_on "libre"
