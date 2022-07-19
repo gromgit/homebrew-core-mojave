@@ -1,15 +1,14 @@
 class Tfschema < Formula
   desc "Schema inspector for Terraform providers"
   homepage "https://github.com/minamijoyo/tfschema"
-  url "https://github.com/minamijoyo/tfschema/archive/v0.7.2.tar.gz"
-  sha256 "6954fbb10dbc0d730d2ee1fba4ff59f74d0961bc6ff9f1de2e04e81eb24dc493"
+  url "https://github.com/minamijoyo/tfschema/archive/v0.7.4.tar.gz"
+  sha256 "cfbe9b9ddf84c4a923af4a4fb56e4c4445fbeec244e808b9a365b369cce644d1"
   license "MIT"
   head "https://github.com/minamijoyo/tfschema.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfschema"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1d3c17e4a36f604154ea7f93607c3621b746aceb9b5af46a3db2bb4243ac4a44"
+    sha256 cellar: :any_skip_relocation, mojave: "eee21b36edb7a974e16873e149756f5235c62db6de106f49c54456282a6303ad"
   end
 
   # Bump to 1.18 on the next release, if possible.
