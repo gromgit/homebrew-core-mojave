@@ -8,7 +8,8 @@ class Libvpx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvpx"
-    sha256 cellar: :any, mojave: "f6dd901dad1654538e9ff2c0b10b67dbe574f518ecc2b61c1872de5f2ff0fa22"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6f1e2c3fea7a2eef1abd940bc88c9375dd171cfe0fe318407f472c6124ad59bc"
   end
 
   depends_on "yasm" => :build
@@ -32,9 +33,6 @@ class Libvpx < Formula
       ENV.runtime_cpu_detection
       args << "--enable-runtime-cpu-detect"
     end
-
-    # https://bugs.chromium.org/p/webm/issues/detail?id=1475
-    args << "--disable-avx512" if MacOS.version <= :el_capitan
 
     mkdir "macbuild" do
       system "../configure", *args
