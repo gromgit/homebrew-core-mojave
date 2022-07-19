@@ -1,13 +1,13 @@
 class TrzszGo < Formula
   desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
   homepage "https://trzsz.github.io"
-  url "https://github.com/trzsz/trzsz-go/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "a28f57ddab8e1a7b721584eb52116662bc3099562ac261d8f3191c2789eeec48"
+  url "https://github.com/trzsz/trzsz-go/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "f39c930360a36788f13f26da6792fcce09674e45beb539f0b4b4a747d17576ab"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trzsz-go"
-    sha256 cellar: :any_skip_relocation, mojave: "9f619af424aee779152a7ed1c577b1b3c46481b38ffb8ba0613346035e5a232c"
+    sha256 cellar: :any_skip_relocation, mojave: "fbfe8389767f82296819bf4c19823a2ddc431726785d80811bd093a47186675a"
   end
 
   depends_on "go" => :build
