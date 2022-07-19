@@ -12,8 +12,8 @@ class Tarsnap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarsnap"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d2faa7f2e46ee37d8a06c509a262a5e5789aebaac475885c65060931246c5e05"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c35864cd4c45e3571b3eebf0e1d6cc306d6e3e79b3cd9a6869674ad4e8058423"
   end
 
   head do
@@ -32,13 +32,6 @@ class Tarsnap < Formula
   end
 
   def install
-    # dyld: lazy symbol binding failed: Symbol not found: _clock_gettime
-    # Reported 20 Aug 2017 https://github.com/Tarsnap/tarsnap/issues/286
-    if MacOS.version == :el_capitan && MacOS::Xcode.version >= "8.0"
-      inreplace "libcperciva/util/monoclock.c", "CLOCK_MONOTONIC",
-                                                "UNDEFINED_GIBBERISH"
-    end
-
     system "autoreconf", "-iv" if build.head?
 
     args = %W[
