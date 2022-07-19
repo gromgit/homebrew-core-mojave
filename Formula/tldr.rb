@@ -1,14 +1,14 @@
 class Tldr < Formula
   desc "Simplified and community-driven man pages"
   homepage "https://tldr.sh/"
-  url "https://github.com/tldr-pages/tldr-c-client/archive/v1.4.3.tar.gz"
-  sha256 "273d920191c7a4f9fdd9f2798feacc65eb5b17f95690a90b6901e8c596900d9d"
+  url "https://github.com/tldr-pages/tldr-c-client/archive/v1.5.0.tar.gz"
+  sha256 "8e3f0c3f471896f8cfadbf9000aa8f2eff61fc3d76e25203ddc7640331c2a2af"
   license "MIT"
   head "https://github.com/tldr-pages/tldr-c-client.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tldr"
-    sha256 cellar: :any, mojave: "3b3a0cd0d44b38f9adacff6403eab5ec839d1c8b30d5f069c5a73f4f1c4dc862"
+    sha256 cellar: :any, mojave: "6a81bb8f5179a8e9a9b79ead06acc55cfece611e84468aaaef0b3561ab5b5b76"
   end
 
   depends_on "pkg-config" => :build
