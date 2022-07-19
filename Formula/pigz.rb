@@ -12,18 +12,13 @@ class Pigz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pigz"
-    sha256 cellar: :any_skip_relocation, mojave: "caff530c18cb771c35e83ba43f6dfe8fafac5072345aae61b853b1270c770862"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3e01011912de6e47a405da0b80f6b481d0a65aa46d8502dc37d7527619e01be4"
   end
 
   uses_from_macos "zlib"
 
   def install
-    # Fix dyld: lazy symbol binding failed: Symbol not found: _deflatePending
-    # Reported 8 Dec 2016 to madler at alumni.caltech.edu
-    if MacOS.version == :el_capitan && MacOS::Xcode.version >= "8.0"
-      inreplace "pigz.c", "ZLIB_VERNUM >= 0x1260", "ZLIB_VERNUM >= 0x9999"
-    end
-
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"
     bin.install "pigz", "unpigz"
     man1.install "pigz.1"
