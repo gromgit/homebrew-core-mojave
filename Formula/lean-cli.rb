@@ -1,14 +1,14 @@
 class LeanCli < Formula
   desc "Command-line tool to develop and manage LeanCloud apps"
   homepage "https://github.com/leancloud/lean-cli"
-  url "https://github.com/leancloud/lean-cli/archive/v1.0.0.tar.gz"
-  sha256 "4e8b9d33fd57e68e2f3e94f69572945ae2860e4eaf25a72fd6d72b8580dce8ba"
+  url "https://github.com/leancloud/lean-cli/archive/v1.0.1.tar.gz"
+  sha256 "d1cd31c4942a1d321ce6c608973f32f513df892b1441930169bc825149f77e98"
   license "Apache-2.0"
   head "https://github.com/leancloud/lean-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lean-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "ddb95bb23ea500e78b707f5910a62ebdbf044250675d25f619d82806dfc54865"
+    sha256 cellar: :any_skip_relocation, mojave: "8f9702584eeb6c8b4eee5570834c5ad518c49736d44edd4b2f5ac3c713a3866b"
   end
 
   # Bump to 1.18 on the next release, if possible.
