@@ -6,9 +6,11 @@ class Irssi < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  # This formula uses a file from a GitHub release, so we check the latest
+  # release version instead of Git tags.
   livecheck do
-    url "https://irssi.org/download/"
-    regex(%r{<p>Latest release version: <strong>v?(\d+(?:\.\d+)+)</strong>}i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
