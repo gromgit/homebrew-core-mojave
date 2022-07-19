@@ -2,8 +2,8 @@ class ErlangAT23 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-23.3.4.15/otp_src_23.3.4.15.tar.gz"
-  sha256 "16a82292e14de16943825936e17d9b71e2875a89717596f4023e5a03bf20e6ec"
+  url "https://github.com/erlang/otp/releases/download/OTP-23.3.4.16/otp_src_23.3.4.16.tar.gz"
+  sha256 "e3ecb3ac2cc549ab90cd9f8921eaebc8613f4d5c89972a3987e5a762d5a2df08"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class ErlangAT23 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang@23"
-    sha256 cellar: :any, mojave: "53621ed0214093268763ce2521ea2e5b44bf471295dbd5e791977d1b95ed2b20"
+    sha256 cellar: :any, mojave: "6ab489474168332eaa19459068a0def05269bf2e1202b9b089c69cda1751f055"
   end
 
   keg_only :versioned_formula
@@ -22,8 +22,8 @@ class ErlangAT23 < Formula
   depends_on "wxwidgets" # for GUI apps like observer
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-23.3.4.15/otp_doc_html_23.3.4.15.tar.gz"
-    sha256 "df4cab04b2cac0362de4fa7e7f0ac69d38c75579fb0f034bd4bf99567b72d5b3"
+    url "https://github.com/erlang/otp/releases/download/OTP-23.3.4.16/otp_doc_html_23.3.4.16.tar.gz"
+    sha256 "68af4e188200bd6c998ef6b34cbd05bcaa91e322bd8f4dbecb2fbd220b6542c5"
   end
 
   def install
