@@ -2,14 +2,14 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
   url "https://github.com/camunda/zeebe.git",
-      tag:      "8.0.3",
-      revision: "58aac394e8994116c15e7ce10774567665ce0912"
+      tag:      "8.0.4",
+      revision: "d9de58a0cee5a84df87cba1ebc0d4fee64836e7d"
   license "Apache-2.0"
   head "https://github.com/camunda/zeebe.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zbctl"
-    sha256 cellar: :any_skip_relocation, mojave: "9f0abe7e83c03ff9572c1be6d2ac2576b6ccc81f8a76fee581aa6efef2f4c61c"
+    sha256 cellar: :any_skip_relocation, mojave: "50c0c0586c3a3196c519779248eabb8dbb2b760bc5c46f5f43703e79a7c6ab41"
   end
 
   depends_on "go" => :build
@@ -30,9 +30,9 @@ class Zbctl < Formula
   test do
     # Check status for a nonexistent cluster
     status_error_message =
-      "Error: rpc error: code =" \
-      " Unavailable desc = connection error:" \
-      " desc = \"transport: Error while dialing dial tcp 127.0.0.1:26500: connect: connection refused\""
+      "Error: rpc error: code = " \
+      "Unavailable desc = connection error: " \
+      "desc = \"transport: Error while dialing dial tcp 127.0.0.1:26500: connect: connection refused\""
     output = shell_output("#{bin}/zbctl status 2>&1", 1)
     assert_match status_error_message, output
     # Check version
