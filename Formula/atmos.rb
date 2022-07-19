@@ -1,13 +1,13 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://github.com/cloudposse/atmos"
-  url "https://github.com/cloudposse/atmos/archive/v1.4.24.tar.gz"
-  sha256 "e1ac784ff4a37ecf87ea1e54456b51bfe535c5900da2965832d172a205f703d8"
+  url "https://github.com/cloudposse/atmos/archive/v1.4.25.tar.gz"
+  sha256 "7ad239c3bbdf61ffbefb57ffdb1141da55ec6a8d65b6a48da4ca73479ad6e163"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atmos"
-    sha256 cellar: :any_skip_relocation, mojave: "133b292ccadf188afffb928543ada0fbe31c310d4d9c6e17366d9f420ce0a004"
+    sha256 cellar: :any_skip_relocation, mojave: "ecd3c0834ebab4dfc1113d2d51db7d73ef57259cb69efb7acdc8e64f1ece0ae6"
   end
 
   depends_on "go" => :build
