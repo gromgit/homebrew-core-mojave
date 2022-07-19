@@ -14,7 +14,8 @@ class Netcdf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netcdf"
-    sha256 cellar: :any, mojave: "92480c83ff1bff5d7897e1ce41682901f17404f8b948db05e22bab1f71e97816"
+    rebuild 1
+    sha256 cellar: :any, mojave: "df543ae1f18ade8ac66751ec5c90f98b0002d4b4dc657b3eac382c0918d6de69"
   end
 
   depends_on "cmake" => :build
@@ -43,7 +44,6 @@ class Netcdf < Formula
 
     mkdir "build" do
       args = common_args.dup
-      args << "-DNC_EXTRA_DEPS=-lmpi" if Tab.for_name("hdf5").with? "mpi"
       args << "-DENABLE_TESTS=OFF" << "-DENABLE_NETCDF_4=ON" << "-DENABLE_DOXYGEN=OFF"
 
       # Extra CMake flags for compatibility with hdf5 1.12
@@ -101,15 +101,7 @@ class Netcdf < Formula
       lib/"libnetcdf.settings", lib/"libnetcdf-cxx.settings"
     ], Superenv.shims_path/ENV.cc, ENV.cc
 
-    if OS.linux?
-      inreplace bin/"ncxx4-config", Superenv.shims_path/ENV.cxx, ENV.cxx
-    else
-      # SIP causes system Python not to play nicely with @rpath
-      libnetcdf = (lib/"libnetcdf.dylib").readlink
-      macho = MachO.open("#{lib}/libnetcdf-cxx4.dylib")
-      macho.change_dylib("@rpath/#{libnetcdf}", "#{lib}/#{libnetcdf}")
-      macho.write!
-    end
+    inreplace bin/"ncxx4-config", Superenv.shims_path/ENV.cxx, ENV.cxx if OS.linux?
   end
 
   test do
