@@ -1,8 +1,8 @@
 class IrcdHybrid < Formula
   desc "High-performance secure IRC server"
   homepage "https://www.ircd-hybrid.org/"
-  url "https://downloads.sourceforge.net/project/ircd-hybrid/ircd-hybrid/ircd-hybrid-8.2.40/ircd-hybrid-8.2.40.tgz"
-  sha256 "3c3d2373487a60f76552a69d5249530ce3f57bf67338d52a9a341e14884e89a1"
+  url "https://downloads.sourceforge.net/project/ircd-hybrid/ircd-hybrid/ircd-hybrid-8.2.41/ircd-hybrid-8.2.41.tgz"
+  sha256 "ce0ea69654601047bd86423ddc0023c0795570249990011eaa6c41d6372b0454"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class IrcdHybrid < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ircd-hybrid"
-    sha256 mojave: "2d39f46efb4e51d60ea0e086bce4b98a943fd03394747fcb949cc89344079b0c"
+    sha256 mojave: "66e1925286e29facd5505ef665e366fb2d0c6845275cfd88f8707019a549842a"
   end
 
   depends_on "openssl@1.1"
