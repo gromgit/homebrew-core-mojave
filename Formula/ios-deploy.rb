@@ -1,15 +1,23 @@
 class IosDeploy < Formula
   desc "Install and debug iPhone apps from the command-line"
   homepage "https://github.com/ios-control/ios-deploy"
-  url "https://github.com/ios-control/ios-deploy/archive/1.11.4.tar.gz"
-  sha256 "52aa0a5985fb5638c9b35351f7380b416651d172a460ca991fc02d1ae84611f6"
   license all_of: ["GPL-3.0-or-later", "BSD-3-Clause"]
   head "https://github.com/ios-control/ios-deploy.git", branch: "master"
 
-bottle do
+  stable do
+    url "https://github.com/ios-control/ios-deploy/archive/refs/tags/1.12.0.tar.gz"
+    sha256 "49f4835e365f6c5c986af3f4bd5c1858c1a1d110aa7f9cf45649c3617911c508"
+
+    # fix build failure, remove in next release
+    patch do
+      url "https://github.com/ios-control/ios-deploy/commit/24c9efbd43f2acd25c0f3e85137e29ec3c1654cf.patch?full_index=1"
+      sha256 "efc223ca219fb64c06155b1675a8a81d57ee42c18ff210c070d8d6f37c893b07"
+    end
+  end
+
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ios-deploy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "279643866e957e7d8b240219f61548fe41778fcdd47a3526657f77a3b6ea1d8b"
+    sha256 cellar: :any_skip_relocation, mojave: "678835037233cdf4c92077a1e9759914b55a9ea332e8ccb80790e24720c91718"
   end
 
   depends_on xcode: :build
