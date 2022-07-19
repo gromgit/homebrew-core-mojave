@@ -2,9 +2,9 @@ class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
   homepage "https://github.com/minio/mc"
   url "https://github.com/minio/mc.git",
-      tag:      "RELEASE.2022-07-06T14-54-36Z",
-      revision: "81c4a5ad6ee47ff2fc264b9811d884984ae05f6e"
-  version "20220706145436"
+      tag:      "RELEASE.2022-07-11T16-16-12Z",
+      revision: "add7b7b8814c7e7aeeedcc829724cae31d34ee7a"
+  version "20220711161612"
   license "AGPL-3.0-or-later"
   head "https://github.com/minio/mc.git", branch: "master"
 
@@ -18,7 +18,7 @@ class MinioMc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minio-mc"
-    sha256 cellar: :any_skip_relocation, mojave: "68242854320c6fceff09227c5361f5df9cf3eabe38dbe9716294c154251b45f8"
+    sha256 cellar: :any_skip_relocation, mojave: "90a332ab6dc351f935b25c99099288af122ec72936f858115860a9ac86f2b4ba"
   end
 
   depends_on "go" => :build
