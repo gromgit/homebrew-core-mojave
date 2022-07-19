@@ -1,8 +1,8 @@
 class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.36.1.tar.xz"
-  sha256 "405d4a0ff6e818d1f12b3e92e1ac060f612adcb454f6299f70583058cb508370"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.1.tar.xz"
+  sha256 "c8162c6b8b8f1c5db706ab01b4ee29e31061182135dc27c4860224aaec1b3500"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git"
-    sha256 mojave: "31ad303b19042a81dfa860b4e252ba8a6f9669b331cc661ef781f47701357b36"
+    sha256 mojave: "2e11b489601ccf1d421f72195bd75539ebf2657bb13b4cff60361d43d5d1ee30"
   end
 
   depends_on "gettext"
@@ -29,13 +29,13 @@ class Git < Formula
   end
 
   resource "html" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.36.1.tar.xz"
-    sha256 "f2a44ee1acfc1b8e2ce9a90ae767226c862d5a6596bed0404de70fdef8e67c8d"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.37.1.tar.xz"
+    sha256 "57c81d42d66880d3b3859e22d0f95c054389a97610f7d08d1e9e39e35771ad10"
   end
 
   resource "man" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.36.1.tar.xz"
-    sha256 "b1e6e651333283bfe2abbdf10baa858f61c5ec9d3caacb30f44888d78d964e6f"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.37.1.tar.xz"
+    sha256 "4dcece78fcb9c585f362d2607b05189afb6c8b4e47a21dfdccb5fefd27fa1e25"
   end
 
   resource "Net::SMTP::SSL" do
@@ -128,7 +128,6 @@ class Git < Formula
     zsh_completion.install "contrib/completion/git-completion.zsh" => "_git"
     cp "#{bash_completion}/git-completion.bash", zsh_completion
 
-    elisp.install Dir["contrib/emacs/*.el"]
     (share/"git-core").install "contrib"
 
     # We could build the manpages ourselves, but the build process depends
