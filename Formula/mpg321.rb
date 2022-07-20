@@ -4,11 +4,11 @@ class Mpg321 < Formula
   url "https://downloads.sourceforge.net/project/mpg321/mpg321/0.3.2/mpg321_0.3.2.orig.tar.gz"
   sha256 "056fcc03e3f5c5021ec74bb5053d32c4a3b89b4086478dcf81adae650eac284e"
   license "GPL-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpg321"
-    sha256 mojave: "5e21c97e6761cde1bb4b51077833a3719c3f41f5510df2a6e30054e87be50b30"
+    sha256 mojave: "633b5587e05f6c51bfb8088aa897aa2caf9993e9e0007c0b9a8334c979a54886"
   end
 
   depends_on "libao"
