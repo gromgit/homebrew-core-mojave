@@ -1,14 +1,14 @@
 class CloudNuke < Formula
   desc "CLI tool to nuke (delete) cloud resources"
   homepage "https://gruntwork.io/"
-  url "https://github.com/gruntwork-io/cloud-nuke/archive/v0.12.3.tar.gz"
-  sha256 "feb6d8b094c01e5584966910bd066d5e6feba4f7fc1bea97deebaac011afb3be"
+  url "https://github.com/gruntwork-io/cloud-nuke/archive/v0.15.0.tar.gz"
+  sha256 "ef3ed68df5f92b4d5287ae835504da53dd8ac13a63156a21234c2a7535887549"
   license "MIT"
   head "https://github.com/gruntwork-io/cloud-nuke.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloud-nuke"
-    sha256 cellar: :any_skip_relocation, mojave: "9578f9f5f0fdb0438aac140138427619d20dc0735ef6e67ff333ecdc39a09c76"
+    sha256 cellar: :any_skip_relocation, mojave: "ba16fc1e8e720a3b51ad66cd437ed0732b6bec612097eb394dcd46076b6d90ee"
   end
 
   depends_on "go" => :build
