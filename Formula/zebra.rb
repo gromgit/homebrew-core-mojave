@@ -1,8 +1,8 @@
 class Zebra < Formula
   desc "Information management system"
   homepage "https://www.indexdata.com/resources/software/zebra/"
-  url "https://ftp.indexdata.com/pub/zebra/idzebra-2.2.4.tar.gz"
-  sha256 "04a00d7af3a43debecd764f8ba3a1b0b460cc0a1eb5a86e46e30c98c718f69bc"
+  url "https://ftp.indexdata.com/pub/zebra/idzebra-2.2.5.tar.gz"
+  sha256 "747714b33b653cbe5697193703b9955489fa2f51597433f9b072ab2bf9cf92bb"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Zebra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zebra"
-    sha256 mojave: "c27acbc6ae60561f494e57a273331cb1463f33d71be662fc3666225dc21ed272"
+    sha256 mojave: "67301ae76bf2f459267cb4d357222c5b95c8521be359ed6601f6bae6b6d0176b"
   end
 
   depends_on "icu4c"
