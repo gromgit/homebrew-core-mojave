@@ -3,6 +3,8 @@ class Zlib < Formula
   homepage "https://zlib.net/"
   url "https://zlib.net/zlib-1.2.12.tar.gz"
   mirror "https://downloads.sourceforge.net/project/libpng/zlib/1.2.12/zlib-1.2.12.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/zlib-1.2.12.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/zlib-1.2.12.tar.gz"
   sha256 "91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9"
   license "Zlib"
   head "https://github.com/madler/zlib.git", branch: "develop"
@@ -14,8 +16,8 @@ class Zlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zlib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4531c939eebd197b452d7dd78f018679a54e77508e8348514f5c96cf4981d500"
+    rebuild 2
+    sha256 cellar: :any, mojave: "01e0c95cec5c6d58c3274da9f947e68fdddc80a0e9f0b41717d31426858eb416"
   end
 
   keg_only :provided_by_macos
