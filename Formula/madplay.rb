@@ -3,7 +3,7 @@ class Madplay < Formula
   homepage "https://www.underbit.com/products/mad/"
   url "https://downloads.sourceforge.net/project/mad/madplay/0.15.2b/madplay-0.15.2b.tar.gz"
   sha256 "5a79c7516ff7560dffc6a14399a389432bc619c905b13d3b73da22fa65acede0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,7 +12,7 @@ class Madplay < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/madplay"
-    sha256 mojave: "35eceb4935decbbb21041bac2645aea92f8158cba911021baefef0a8a8636f67"
+    sha256 mojave: "c2582af8952d3924e8905d8eb197a950800d8722eb566cf846243478fda3d8c3"
   end
 
   depends_on "libid3tag"
