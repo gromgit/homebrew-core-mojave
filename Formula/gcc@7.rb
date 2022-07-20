@@ -16,6 +16,7 @@ class GccAT7 < Formula
   end
 
   bottle do
+    sha256 monterey:     "cb64309d97bab8b685d1e2cfc7b0e38165f852b489ed7b959974f9af40c6acdf"
     sha256 big_sur:      "f53816251cabd7c7cc5818af052ad0cccab189156fd63243be2b1bee21d8a0b7"
     sha256 catalina:     "359aee8f81fae1591bb685a6c38dbcace62d32d1ba7a69b01c15061ce29e61bb"
     sha256 mojave:       "95659aa77c264356df8c2eb9d24800aba62f0d308b86d601e0d259885700aebf"
