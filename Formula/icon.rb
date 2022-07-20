@@ -13,13 +13,14 @@ class Icon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/icon"
-    sha256 cellar: :any_skip_relocation, mojave: "6fa0b1bf8af2c7a03df6d68fc363f5cfed9e61afeacc6e1286cdd0ac3d876bf2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "351970eaccb8ef6d1ef8c6860193fc44181701e9682d196b0006e4f0221e8ad7"
   end
 
   def install
     ENV.deparallelize
     target = if OS.mac?
-      "posix"
+      "macintosh"
     else
       "linux"
     end
