@@ -7,7 +7,8 @@ class GrafanaAgent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana-agent"
-    sha256 cellar: :any_skip_relocation, mojave: "ed18d1943d2b98dfa4f0e72b7196d1c240ae0c044b395fbca5c8dffd6eacaeaa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7e6cc2d3645b9d100a8fab72364e6ff8db8510df000565a21dc962ecac8a3bfd"
   end
 
   # Bump to 1.18 on the next release, if possible.
@@ -57,15 +58,14 @@ class GrafanaAgent < Formula
     (testpath/"grafana-agent.yaml").write <<~EOS
       server:
         log_level: info
-        http_listen_port: #{port}
-        grpc_listen_port: #{free_port}
     EOS
 
     system "#{bin}/grafana-agentctl", "config-check", "#{testpath}/grafana-agent.yaml"
 
     fork do
       exec bin/"grafana-agent", "-config.file=#{testpath}/grafana-agent.yaml",
-        "-metrics.wal-directory=#{testpath}/wal"
+        "-metrics.wal-directory=#{testpath}/wal", "-server.http.address=127.0.0.1:#{port}",
+        "-server.grpc.address=127.0.0.1:#{free_port}"
     end
     sleep 10
 
