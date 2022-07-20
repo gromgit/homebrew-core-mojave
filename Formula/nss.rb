@@ -15,7 +15,8 @@ class Nss < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nss"
-    sha256 cellar: :any, mojave: "b4c237a75697d5ff83e27b22f3535773946dda640fb3f0464c42ee3f13f8e4ec"
+    rebuild 1
+    sha256 cellar: :any, mojave: "176dfa6d68890fc525501c81904089819c91cc3c45042374e9ced528d873470c"
   end
 
   depends_on "nspr"
@@ -23,6 +24,7 @@ class Nss < Formula
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
+  conflicts_with "arabica", because: "both install `mangle` binaries"
   conflicts_with "resty", because: "both install `pp` binaries"
 
   def install
