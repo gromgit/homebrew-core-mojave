@@ -2,14 +2,13 @@ class Envconsul < Formula
   desc "Launch process with environment variables from Consul and Vault"
   homepage "https://github.com/hashicorp/envconsul"
   url "https://github.com/hashicorp/envconsul.git",
-      tag:      "v0.12.1",
-      revision: "265f933f17eb918e38b24fd1a7b1eab1fc723df5"
+      tag:      "v0.13.0",
+      revision: "c9c55c9bffa749227e3c3bcd44f93f1f5b0eafb9"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/envconsul"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "3d2164bee53be2ac6551d8ef93816aa61a6b373774dcd430d392835cddb6db98"
+    sha256 cellar: :any_skip_relocation, mojave: "452dfeff75d11bddc1196afd842eb1b69cbd746f008fe3ed82ca7aadbe2577e9"
   end
 
   depends_on "go" => :build
