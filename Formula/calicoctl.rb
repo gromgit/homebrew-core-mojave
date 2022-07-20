@@ -2,8 +2,8 @@ class Calicoctl < Formula
   desc "Calico CLI tool"
   homepage "https://www.projectcalico.org"
   url "https://github.com/projectcalico/calico.git",
-      tag:      "v3.23.2",
-      revision: "a52cb86dbaad269c80cbb7d7f17ec9c829e34a8d"
+      tag:      "v3.23.3",
+      revision: "3a3559be17f44bd5b52134c7052788ae61aedfa7"
   license "Apache-2.0"
   head "https://github.com/projectcalico/calico.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Calicoctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/calicoctl"
-    sha256 cellar: :any_skip_relocation, mojave: "6c487fd39096ac82d88e664a89ee5cf461a0ebe483e8e471892e1e0b9b6dcf90"
+    sha256 cellar: :any_skip_relocation, mojave: "4dd031e2c3f1a8f4aa0d9b4f33fa30c8b9fdcb1a3170da57a2f5b52e2d667cf2"
   end
 
   depends_on "go" => :build
