@@ -1,16 +1,26 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://github.com/harfbuzz/harfbuzz/archive/4.3.0.tar.gz"
-  sha256 "32184860ddc0b264ff95010e1c64e596bd746fe4c2e34014a1185340cdddeba6"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
-    sha256 cellar: :any, mojave: "bbfe124acaaa99e0e8ea767c25ac969454da47ef4cb5fd8df38ad0a66ab54eb3"
+  stable do
+    url "https://github.com/harfbuzz/harfbuzz/archive/4.4.1.tar.gz"
+    sha256 "1a95b091a40546a211b6f38a65ccd0950fa5be38d95c77b5c4fa245130b418e1"
+
+    # Fix build on GCC <7, remove on next release.
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/ae5613e951257f508f4b17e9e24a3ea2ccb43a3f/harfbuzz/fix-pregcc7-build.patch"
+      sha256 "17abbae47e09a0daa3f5afa5f6ba37353db00c2f0fe025a014856d8b023672b6"
+    end
   end
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
+    sha256 cellar: :any, mojave: "15890697e5e0bdf27bca594b60fbfa3dc547ad21a7da491815f6e233839108d1"
+  end
+
+  depends_on "glib-utils" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "cairo"
