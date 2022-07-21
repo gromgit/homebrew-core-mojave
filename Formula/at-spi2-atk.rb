@@ -5,10 +5,14 @@ class AtSpi2Atk < Formula
   sha256 "cfa008a5af822b36ae6287f18182c40c91dd699c55faa38605881ed175ca464f"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    sha256 x86_64_linux: "f68be9dbb59804bc1f6de1615def3c73bf3b7d994e94844e521806cd5331686d"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "at-spi2-core"
   depends_on "atk"
   depends_on "libxml2"
