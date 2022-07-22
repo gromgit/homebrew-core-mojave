@@ -9,7 +9,8 @@ class ChartTesting < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chart-testing"
-    sha256 cellar: :any_skip_relocation, mojave: "458d66afbb9edd4c8b756503b48e25e4b5ff39183902f5e8f8eaa710a6596c23"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e19bfa935bdc96b32934f7214985b7b35c48453808cdb2d439538eeb6835de6d"
   end
 
   depends_on "go" => :build
@@ -35,8 +36,8 @@ class ChartTesting < Formula
 
     # Lint an empty Helm chart that we create with `helm create`
     system "helm", "create", "testchart"
-    output = shell_output("#{bin}/ct lint --charts ./testchart --validate-chart-schema=false" \
-                          " --validate-maintainers=false").lines.last.chomp
+    output = shell_output("#{bin}/ct lint --charts ./testchart --validate-chart-schema=false " \
+                          "--validate-maintainers=false").lines.last.chomp
     assert_match "All charts linted successfully", output
   end
 end
