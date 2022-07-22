@@ -8,13 +8,14 @@ class Circumflex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circumflex"
-    sha256 cellar: :any_skip_relocation, mojave: "4b5d1b28a8bb8c9e1480597130e0bae458b4a2f0a8f79fb4bd7d39bda9c373e0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ab044225900579cc9c99b6319d7ee651e5f6a767108dc5f4955aadebc02da657"
   end
 
   depends_on "go" => :build
 
   # Requires less 576 or later for --use-color
-  depends_on "less" if MacOS.version <= :big_sur
+  uses_from_macos "less", since: :monterey
 
   def install
     system "go", "build", *std_go_args(output: bin/"clx", ldflags: "-s -w")
