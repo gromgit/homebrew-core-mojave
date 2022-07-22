@@ -4,14 +4,14 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.0.4/apache-cassandra-4.0.4-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/4.0.4/apache-cassandra-4.0.4-bin.tar.gz"
-  sha256 "d0d22ac83c16591b6449d5610f252507648c83a427b9dea53497676d6614a54f"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.0.5/apache-cassandra-4.0.5-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/4.0.5/apache-cassandra-4.0.5-bin.tar.gz"
+  sha256 "5a6517ceb20e5b7193e933c25b4cf402eac6637cb7b32b007c574c4366912575"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra"
-    sha256 cellar: :any_skip_relocation, mojave: "d2fed0b2940269f25d68104734dc2283d6032510a3c554840e79bca1259358f9"
+    sha256 cellar: :any_skip_relocation, mojave: "704f852938573b4d298ca10e57080de9a584e8da196d35c47b5e62e8d0dd0c63"
   end
 
   depends_on "libcython" => :build
