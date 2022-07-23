@@ -9,15 +9,14 @@ class GitAnnex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-annex"
-    sha256 cellar: :any, mojave: "abaf00fe1ade2b7cdeb2fd0fddaca51e7aab3b6301ebb639143777a930e6a8d6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9afa9fa03aac0d74fb1fc913fcd22b763c4844b8058b96ec7e32847a5a6c8db5"
   end
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "pkg-config" => :build
-  depends_on "gsasl"
   depends_on "libmagic"
-  depends_on "quvi"
 
   def install
     system "cabal", "v2-update"
