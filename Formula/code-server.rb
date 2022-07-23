@@ -1,14 +1,13 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.4.0.tgz"
-  sha256 "fc65ce860b2a7c6386788b4f36ba9954e1a606c14f2667e805a003dc81c98e28"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.5.1.tgz"
+  sha256 "12234f4d0ed85d5d5c19dc1b4eca77aec5c2517335324de3a5073e99c8b3c056"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/code-server"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1bea9ff669e74bc4c5aad479c05809284c2533ab0d22a3ecd7186b9ce815ef79"
+    sha256 cellar: :any_skip_relocation, mojave: "9620484779ed7365b190d326c9d2111e52e2d6443f1d3d86078b6d637cb57846"
   end
 
   depends_on "bash" => :build
