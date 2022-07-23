@@ -1,8 +1,8 @@
 class Elektra < Formula
   desc "Framework to access config settings in a global key database"
-  homepage "https://libelektra.org/"
-  url "https://www.libelektra.org/ftp/elektra/releases/elektra-0.9.9.tar.gz"
-  sha256 "834da360170daa632bbb46dd2e819271327dce1c51be1d7bb2ec22311ded54cb"
+  homepage "https://www.libelektra.org/home"
+  url "https://www.libelektra.org/ftp/elektra/releases/elektra-0.9.10.tar.gz"
+  sha256 "ee50fb5e9814b45a8e99f39435b1461d4b7a7daa27eee240bdbfed98f2c4c0f5"
   license "BSD-3-Clause"
   head "https://github.com/ElektraInitiative/libelektra.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Elektra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elektra"
-    sha256 mojave: "62d9af0e6178014eeea6ec6b28c4952cb3a6b006ae5b9cfca55a3dcfa98e5041"
+    sha256 mojave: "d3c05700c468b39735731bee7920f9405509872e1e6c56feaf912d9627d408f3"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Elektra < Formula
   def install
     mkdir "build" do
       system "cmake", "..", "-DBINDINGS=cpp", "-DTOOLS=kdb;",
-                            "-DPLUGINS=NODEP", *std_cmake_args
+                            "-DPLUGINS=NODEP;-tracer", *std_cmake_args
       system "make", "install"
     end
 
