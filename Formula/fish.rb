@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://github.com/fish-shell/fish-shell/releases/download/3.5.0/fish-3.5.0.tar.xz"
-  sha256 "291e4ec7c6c3fea54dc1aed057ce3d42b356fa6f70865627b2c7dfcecaefd210"
+  url "https://github.com/fish-shell/fish-shell/releases/download/3.5.1/fish-3.5.1.tar.xz"
+  sha256 "a6d45b3dc5a45dd31772e7f8dfdfecabc063986e8f67d60bd7ca60cc81db6928"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Fish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fish"
-    sha256 mojave: "2d5c66afc3a40965d630243be2e145cd5351d7037915d60035c96392dddf02bd"
+    sha256 mojave: "8617df7745bccf5d73d77665ba726e8aebfa2ddf054cc38a9706e5b0319e3099"
   end
 
   head do
