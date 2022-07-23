@@ -12,7 +12,8 @@ class Dnsdist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsdist"
-    sha256 mojave: "19d771050c8e1bfcb46bcd24225225c8ebe7e9a7ed78f397f1f520fdf694a570"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fd72772d9cd90e1936209e82d21d3cef9eb67e8d3a8c5b35fb8a9914c8399a41"
   end
 
   depends_on "boost" => :build
@@ -27,6 +28,13 @@ class Dnsdist < Formula
   depends_on "re2"
 
   uses_from_macos "libedit"
+
+  on_linux do
+    depends_on "linux-headers@5.16" => :build
+    depends_on "gcc"
+  end
+
+  fails_with gcc: "5"
 
   def install
     system "./configure", "--disable-dependency-tracking",
