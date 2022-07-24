@@ -1,8 +1,8 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
   homepage "https://hledger.org/"
-  url "https://hackage.haskell.org/package/hledger-1.26/hledger-1.26.tar.gz"
-  sha256 "e2dd5b92d9484de385498c5463db8651fb44474e52a7d85096c1faa4ab2df495"
+  url "https://hackage.haskell.org/package/hledger-1.26.1/hledger-1.26.1.tar.gz"
+  sha256 "245af2ec616a754fb488a7ad8ffa360732b733d96c7d6b1e49d4b0fbd435e247"
   license "GPL-3.0-or-later"
 
   # A new version is sometimes present on Hackage before it's officially
@@ -15,7 +15,7 @@ class Hledger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hledger"
-    sha256 cellar: :any_skip_relocation, mojave: "96179252a95abfffca322abaedf08ed4c187379e587f5942c5a5b74f73f2f1d2"
+    sha256 cellar: :any_skip_relocation, mojave: "f709d15d20c8173178cf3e5fd4d653c529900f8faac008a4d46bd969061802e5"
   end
 
   depends_on "ghc" => :build
@@ -25,18 +25,18 @@ class Hledger < Formula
   uses_from_macos "zlib"
 
   resource "hledger-lib" do
-    url "https://hackage.haskell.org/package/hledger-lib-1.26/hledger-lib-1.26.tar.gz"
-    sha256 "fe0e33fcd7be2f24aeebd11145e1c7afe212572b24a4b5299ca991d0f00b3a95"
+    url "https://hackage.haskell.org/package/hledger-lib-1.26.1/hledger-lib-1.26.1.tar.gz"
+    sha256 "2c9ef04c2cda669e2b83b8d2d8512f5a298cd95e5f9e825e697204ba96c85da5"
   end
 
   resource "hledger-ui" do
-    url "https://hackage.haskell.org/package/hledger-ui-1.26/hledger-ui-1.26.tar.gz"
-    sha256 "2891a6ace8279a3da4a07b76bbd9eb95261633f011f9a5d016d718c1b62fa427"
+    url "https://hackage.haskell.org/package/hledger-ui-1.26.1/hledger-ui-1.26.1.tar.gz"
+    sha256 "8bdeea8383201328e85d49be823787fe7ea1daf811189a41d3d4ce8d98d47e3d"
   end
 
   resource "hledger-web" do
-    url "https://hackage.haskell.org/package/hledger-web-1.26/hledger-web-1.26.tar.gz"
-    sha256 "6aa2c4096aa73c8b55fa870845138aec76e08ebadc41dfc8faaf10b3274a90c0"
+    url "https://hackage.haskell.org/package/hledger-web-1.26.1/hledger-web-1.26.1.tar.gz"
+    sha256 "e2b0d21c6657a234d4f991439dfbbf511490c8eae09bf832c824c272c7d0e6c7"
   end
 
   def install
