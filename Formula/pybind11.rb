@@ -1,8 +1,8 @@
 class Pybind11 < Formula
   desc "Seamless operability between C++11 and Python"
   homepage "https://github.com/pybind/pybind11"
-  url "https://github.com/pybind/pybind11/archive/v2.9.2.tar.gz"
-  sha256 "6bd528c4dbe2276635dc787b6b1f2e5316cf6b49ee3e150264e455a0d68d19c1"
+  url "https://github.com/pybind/pybind11/archive/v2.10.0.tar.gz"
+  sha256 "eacf582fa8f696227988d08cfc46121770823839fe9e301a20fbce67e7cd70ec"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Pybind11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pybind11"
-    sha256 cellar: :any_skip_relocation, mojave: "0f1c96bc5d6e856c4483de12dc92541eca0326b8c6f56716f955e9db199893eb"
+    sha256 cellar: :any_skip_relocation, mojave: "1e749aa524598146c9854cec785ee91d28b5bdd9ffeb01502005738c6391e6d2"
   end
 
   depends_on "cmake" => :build
