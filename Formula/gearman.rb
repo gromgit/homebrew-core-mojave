@@ -4,12 +4,11 @@ class Gearman < Formula
   url "https://github.com/gearman/gearmand/releases/download/1.1.19.1/gearmand-1.1.19.1.tar.gz"
   sha256 "8ea6e0d16a0c924e6a65caea8a7cd49d3840b9256d440d991de4266447166bfb"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gearman"
-    rebuild 1
-    sha256 cellar: :any, mojave: "27bf6e5206c543d126720d9adc9591c0b976af727c797c47f853bd29ce887ac6"
+    sha256 cellar: :any, mojave: "015ee43ffa4b412bb08fcc867f9c1ae955e0d463dc89f428c949427d08d3c17b"
   end
 
   depends_on "pkg-config" => :build
