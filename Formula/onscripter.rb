@@ -12,7 +12,7 @@ class Onscripter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onscripter"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "bc2ace860bde8625182dc3964deb9e8cd23797577b6e6ffd994ece51dc5bb815"
   end
 
