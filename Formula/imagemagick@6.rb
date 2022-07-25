@@ -13,7 +13,8 @@ class ImagemagickAT6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick@6"
-    sha256 mojave: "5b4dd309783745d164cd5308389a6ae067e794e4c15b891936aebe97980f9971"
+    rebuild 1
+    sha256 mojave: "05ff26c009232e1674fb0e2b404589add2359774f97ffdbf95d20d1efcc24059"
   end
 
   keg_only :versioned_formula
