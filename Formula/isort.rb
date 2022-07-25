@@ -6,6 +6,7 @@ class Isort < Formula
   url "https://files.pythonhosted.org/packages/ab/e9/964cb0b2eedd80c92f5172f1f8ae0443781a9d461c1372a3ce5762489593/isort-5.10.1.tar.gz"
   sha256 "e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"
   license "MIT"
+  head "https://github.com/PyCQA/isort.git", branch: "main"
 
   livecheck do
     url :stable
@@ -14,8 +15,8 @@ class Isort < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isort"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "40c0cbbb6642217d626942cfb3a3b4956d86df0e95bdb2ae6f7b01b544e471aa"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "098493d82909877f24ce4e08d8ecb97cf574888b6bb210e87e274568232cb72d"
   end
 
   depends_on "python@3.10"
