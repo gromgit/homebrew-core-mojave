@@ -4,15 +4,16 @@ class OsmiumTool < Formula
   url "https://github.com/osmcode/osmium-tool/archive/v1.14.0.tar.gz"
   sha256 "67765fe6b612e791aab276af601dd12410b70486946e983753f6b0442f915233"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osmium-tool"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b2ecede7fed15b259bd319ea923f03bc0b83fb91963add51d5128c94be6fe645"
+    sha256 cellar: :any, mojave: "a2cfb3a181ec3cf2cc73c77b4d56ce9a5aa93062d7b3e696d04dcae7c504d8e6"
   end
 
   depends_on "cmake" => :build
   depends_on "libosmium" => :build
+  depends_on "pandoc" => :build
   depends_on "boost"
   depends_on "lz4"
 
