@@ -4,7 +4,7 @@ class OsrmBackend < Formula
   url "https://github.com/Project-OSRM/osrm-backend/archive/v5.26.0.tar.gz"
   sha256 "45e986db540324bd0fc881b746e96477b054186698e8d14610ff7c095e906dcd"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
   livecheck do
@@ -14,8 +14,7 @@ class OsrmBackend < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osrm-backend"
-    rebuild 2
-    sha256 cellar: :any, mojave: "28f08f7fdb08e2e5b31b3fec4670c586e32f6743e4151e89c2395d320915f912"
+    sha256 cellar: :any, mojave: "8a42685f779aced0b83d3a42984eaf71ff44fce22026677500b691061ca6aafb"
   end
 
   depends_on "cmake" => :build
