@@ -2,8 +2,8 @@ class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https://www.getmonero.org/"
   url "https://github.com/monero-project/monero.git",
-      tag:      "v0.17.3.2",
-      revision: "424e4de16b98506170db7b0d7d87a79ccf541744"
+      tag:      "v0.18.0.0",
+      revision: "b6a029f222abada36c7bc6c65899a4ac969d7dee"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,7 +13,7 @@ class Monero < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/monero"
-    sha256 cellar: :any, mojave: "c9982f09041d4dacd17b42b6c067bc8c0eaaeec0ec02e232c066cb2b2a869182"
+    sha256 cellar: :any, mojave: "76a29f30263a477850cf908cf3ff92827701ce20775faf0ad1a21e30d4bdafb9"
   end
 
   depends_on "cmake" => :build
