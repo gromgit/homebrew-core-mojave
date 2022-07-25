@@ -1,13 +1,13 @@
 class Inih < Formula
   desc "Simple .INI file parser in C"
   homepage "https://github.com/benhoyt/inih"
-  url "https://github.com/benhoyt/inih/archive/refs/tags/r55.tar.gz"
-  sha256 "ba55f8ae2a8caf0653f30f48567241e14ea916acfc13481f502d8a9c8f507f68"
+  url "https://github.com/benhoyt/inih/archive/refs/tags/r56.tar.gz"
+  sha256 "4f2ba6bd122d30281a8c7a4d5723b7af90b56aa828c0e88256d7fceda03a491a"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inih"
-    sha256 cellar: :any, mojave: "824e30be028231faad839b8566fc7d0b98dd154744652ed44623d33757cd3ff6"
+    sha256 cellar: :any, mojave: "080583404da265bf09e81c7b12a1ef482369970501ed7f7a826d7015b5eca8da"
   end
 
   depends_on "meson" => :build
