@@ -12,14 +12,13 @@ class Modules < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/modules"
-    sha256 cellar: :any, mojave: "fd72726ba555fed156e1cb51025ce9818b3fa71f2849a045b0830655dec18d85"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c3adfe03a24175570115af1d69f251ecb022390c1c2a9fcaf7b0c5998612700a"
   end
 
   depends_on "tcl-tk"
 
-  on_linux do
-    depends_on "less"
-  end
+  uses_from_macos "less"
 
   def install
     args = %W[
