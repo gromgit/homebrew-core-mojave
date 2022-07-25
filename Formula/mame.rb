@@ -1,9 +1,9 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0243.tar.gz"
-  version "0.243"
-  sha256 "8cddb7d6cee5d736d1ce7ef2022e2d09b5c61bea02b5df7e369010a47a5d2133"
+  url "https://github.com/mamedev/mame/archive/mame0245.tar.gz"
+  version "0.245"
+  sha256 "3b6ea528c9b6d6a5bfec289c4c5ee0282eea00836f4c261336923597b89b95bc"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -19,7 +19,7 @@ class Mame < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mame"
-    sha256 cellar: :any, mojave: "1a5a7de944dc57ad877c7ab3f6d5c844c34563f20ca3ecdfb06071dfcba9cf6e"
+    sha256 cellar: :any, mojave: "97c29ef9d7ccfb5b56fc7112deeea1d777005b533ad9f5e670c1d9c9a8f8833b"
   end
 
   depends_on "glm" => :build
@@ -28,7 +28,7 @@ class Mame < Formula
   depends_on "rapidjson" => :build
   depends_on "sphinx-doc" => :build
   depends_on "flac"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   # Need C++ compiler and standard library support C++17.
   depends_on macos: :high_sierra
   depends_on "portaudio"
