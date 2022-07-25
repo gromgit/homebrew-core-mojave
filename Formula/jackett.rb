@@ -1,14 +1,14 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://github.com/Jackett/Jackett/archive/refs/tags/v0.20.1202.tar.gz"
-  sha256 "04bec7cb939e3bbeccb90ce1f30dc2d044a96b83ad4221420d2b45bbf57cc276"
+  url "https://github.com/Jackett/Jackett/archive/refs/tags/v0.20.1307.tar.gz"
+  sha256 "0d44e485c9ca9142af435a62e22e8610323df92996125cb5678e27e38387e7bd"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jackett"
-    sha256 cellar: :any, mojave: "566746b399097704d48eb45c918fd6e98ea9e541b7168927e536269165243ec2"
+    sha256 cellar: :any, mojave: "fb6c00422d428984c3bb03b388845d7e87b78c3f30f77842d02a0aa024c52c7c"
   end
 
   depends_on "dotnet"
