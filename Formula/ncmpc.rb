@@ -1,10 +1,9 @@
 class Ncmpc < Formula
   desc "Curses Music Player Daemon (MPD) client"
   homepage "https://www.musicpd.org/clients/ncmpc/"
-  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.46.tar.xz"
-  sha256 "177f77cf09dd4ab914e8438be399cdd5d83c9aa992abc8d9abac006bb092934e"
+  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.47.tar.xz"
+  sha256 "61da23b1bc6c7a593fdc28611932cd7a30fcf6803830e01764c29b8abed2249c"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www.musicpd.org/download/ncmpc/0/"
@@ -13,7 +12,7 @@ class Ncmpc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncmpc"
-    sha256 cellar: :any, mojave: "d07676b2ffa1a33cf77aad9a8ca76fb016672cc4ec193fae435246e68495786c"
+    sha256 cellar: :any, mojave: "16db1d476b1517a92c6386e416dd737b22e1ab2c02588c7048127c32f2358f9e"
   end
 
   depends_on "boost" => :build
