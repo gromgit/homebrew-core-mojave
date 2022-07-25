@@ -1,10 +1,9 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.19.1-source.tar.xz"
-  sha256 "b5eac663fe74f33c430eda342f655cf41fa73d71610f0884768a856a82e3803e"
+  url "https://mupdf.com/downloads/archive/mupdf-1.20.0-source.tar.lz"
+  sha256 "68dbb1cf5e31603380ce3f1c7f6c431ad442fa735d048700f50ab4de4c3b0f82"
   license "AGPL-3.0-or-later"
-  revision 1
   head "https://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class Mupdf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mupdf"
-    sha256 cellar: :any, mojave: "0e7fb66bfc09255fd0a59ab8198b5f981fde8dadb056b57af3b94751bbb601d1"
+    sha256 cellar: :any, mojave: "f276a8a879f17088b2006083628e7fc6eca295c728ea2a0351733934285b72c0"
   end
 
   depends_on "pkg-config" => :build
