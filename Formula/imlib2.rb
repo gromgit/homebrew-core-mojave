@@ -1,13 +1,13 @@
 class Imlib2 < Formula
   desc "Image loading and rendering library"
   homepage "https://sourceforge.net/projects/enlightenment/"
-  url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.9.0/imlib2-1.9.0.tar.xz"
-  sha256 "5ac9e8ca7c6700919fe72749ad7243c42de4b22823c81769a1bf8e480e14c650"
+  url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.9.1/imlib2-1.9.1.tar.gz"
+  sha256 "c319292f5bcab33b91bffaa6f7b0842f9e2d1b90df6c9a2a39db4f24d538b35b"
   license "Imlib2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imlib2"
-    sha256 mojave: "b73b48807a6f36b83be241099c16b187036b76fff91dcd140626ca52a8cdf13f"
+    sha256 mojave: "e722f7b9ec62a5babde4ce3dd100956695a406b1db259d06f4fd1710ac1b4600"
   end
 
   depends_on "pkg-config" => :build
@@ -19,12 +19,6 @@ class Imlib2 < Formula
   depends_on "libx11"
   depends_on "libxcb"
   depends_on "libxext"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     args = %W[
