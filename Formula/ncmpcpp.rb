@@ -4,7 +4,7 @@ class Ncmpcpp < Formula
   url "https://rybczak.net/ncmpcpp/stable/ncmpcpp-0.9.2.tar.bz2"
   sha256 "faabf6157c8cb1b24a059af276e162fa9f9a3b9cd3810c43b9128860c9383a1b"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://rybczak.net/ncmpcpp/installation/"
@@ -13,7 +13,7 @@ class Ncmpcpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncmpcpp"
-    sha256 cellar: :any, mojave: "7cc2e5814a77c171248585e2287ce7f38b6f319989b591079ba9b1c0dcee9bf1"
+    sha256 cellar: :any, mojave: "e67ab96ce902a010b3bea4c363e3ce893d5291e3db2d28c964e6f2980d20dfde"
   end
 
   head do
