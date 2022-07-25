@@ -4,9 +4,10 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://github.com/djcb/mu/releases/download/1.6.11/mu-1.6.11.tar.xz"
-  sha256 "60eab240dc108f2a419f47d6a75c16841078dcd193f2c0bb02dcdb9ff484ec8d"
+  url "https://github.com/djcb/mu/releases/download/v1.8.6/mu-1.8.6.tar.xz"
+  sha256 "ad68072865536c314e7c251fbb65c7bf0c7908ffcc2aa024720eb2af752944f1"
   license "GPL-3.0-or-later"
+  head "https://github.com/djcb/mu.git", branch: "master"
 
   # We restrict matching to versions with an even-numbered minor version number,
   # as an odd-numbered minor version number indicates a development version:
@@ -18,20 +19,14 @@ class Mu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mu"
-    sha256 cellar: :any, mojave: "9a6b659467beeaa4b044f583e24f2bb8df7c7a3c2c2912cd7ffd093371754441"
-  end
-
-  head do
-    url "https://github.com/djcb/mu.git"
-
-    depends_on "autoconf" => :build
-    depends_on "autoconf-archive" => :build
-    depends_on "automake" => :build
+    sha256 mojave: "05de06cb4eb44e2a57cc6a9b70ca69dfddcb86b61a81a35abb6db87d3df766b6"
   end
 
   depends_on "emacs" => :build
   depends_on "libgpg-error" => :build
   depends_on "libtool" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "glib"
@@ -49,13 +44,11 @@ class Mu < Formula
   fails_with gcc: "5"
 
   def install
-    system "autoreconf", "-ivf" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-guile",
-                          "--prefix=#{prefix}",
-                          "--with-lispdir=#{elisp}"
-    system "make"
-    system "make", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, "-Dlispdir=#{elisp}", ".."
+      system "ninja", "-v"
+      system "ninja", "install", "-v"
+    end
   end
 
   # Regression test for:
