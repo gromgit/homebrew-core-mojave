@@ -10,8 +10,8 @@ class Parliament < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/parliament"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "4e9135d60de03fbcdbcbb79a14b36a59acbc9ee7157f4d344104680adfaec3bc"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "7662772461c8eb1237ef6afbe3a5576664a97bb6881f7669efb94f7a6f879f38"
   end
 
   depends_on "python@3.10"
@@ -67,9 +67,9 @@ class Parliament < Formula
   end
 
   test do
-    assert_equal "MEDIUM - No resources match for the given action -  - [{'action': 's3:GetObject',"\
-                 " 'required_format': 'arn:*:s3:::*/*'}] - {'line': 1, 'column': 40, 'filepath': None}", \
-    pipe_output("#{bin}/parliament --string \'{\"Version\": \"2012-10-17\", \"Statement\": {\"Effect\": \"Allow\","\
-                " \"Action\": \"s3:GetObject\", \"Resource\": \"arn:aws:s3:::secretbucket\"}}\'").strip
+    assert_equal "MEDIUM - No resources match for the given action -  - [{'action': 's3:GetObject', " \
+                 "'required_format': 'arn:*:s3:::*/*'}] - {'line': 1, 'column': 40, 'filepath': None}", \
+    pipe_output("#{bin}/parliament --string \'{\"Version\": \"2012-10-17\", \"Statement\": {\"Effect\": \"Allow\", " \
+                "\"Action\": \"s3:GetObject\", \"Resource\": \"arn:aws:s3:::secretbucket\"}}\'").strip
   end
 end
