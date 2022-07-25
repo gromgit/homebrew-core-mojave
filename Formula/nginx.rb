@@ -3,8 +3,8 @@ class Nginx < Formula
   homepage "https://nginx.org/"
   # Use "mainline" releases only (odd minor version number), not "stable"
   # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.23.0.tar.gz"
-  sha256 "820acaa35b9272be9e9e72f6defa4a5f2921824709f8aa4772c78ab31ed94cd1"
+  url "https://nginx.org/download/nginx-1.23.1.tar.gz"
+  sha256 "5eee1bd1c23e3b9477a45532f1f36ae6178b43d571a9607e6953cef26d5df1e2"
   license "BSD-2-Clause"
   head "https://hg.nginx.org/nginx/", using: :hg
 
@@ -15,13 +15,14 @@ class Nginx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nginx"
-    sha256 mojave: "87addeace2ee70e3d5abb244f4456b4121206a8dac53395c25c21392a48c66bd"
+    sha256 mojave: "f8f30db8301c6670bacbb31de7a6c6a86ab5b89f3cca457b0a864b5ca5d7bc05"
   end
 
   depends_on "openssl@1.1"
   depends_on "pcre2"
 
   uses_from_macos "xz" => :build
+  uses_from_macos "libxcrypt"
 
   def install
     # keep clean copy of source for compiling dynamic modules e.g. passenger
