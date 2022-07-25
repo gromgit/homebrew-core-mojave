@@ -14,7 +14,8 @@ class PhpAT74 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@7.4"
-    sha256 mojave: "65f293d3d46bea17737e8d2124c98b1817af8b14746e3f5b6e50bee637533aa7"
+    rebuild 1
+    sha256 mojave: "bb2544f307a7854d20bf95329f6fb561d2299c0244a76d26fa76ff2ae9838ea2"
   end
 
   keg_only :versioned_formula
@@ -84,8 +85,8 @@ class PhpAT74 < Formula
     # possible to recompile as suggested in the original message
     inreplace "sapi/apache2handler/sapi_apache2.c",
               "You need to recompile PHP.",
-              "Homebrew PHP does not support a thread-safe php binary. "\
-              "To use the PHP apache sapi please change "\
+              "Homebrew PHP does not support a thread-safe php binary. " \
+              "To use the PHP apache sapi please change " \
               "your httpd config to use the prefork MPM"
 
     inreplace "sapi/fpm/php-fpm.conf.in", ";daemonize = yes", "daemonize = no"
