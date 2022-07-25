@@ -41,8 +41,8 @@ class Luajit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8d8a177a10db1d1394286873b186a1da8cca38bd418168acbcd3cf0b4387390f"
+    rebuild 2
+    sha256 cellar: :any, mojave: "4361c56332904bea979e05e9911ddf193b7b9d566b812af773f157a82c281740"
   end
 
   def install
@@ -98,7 +98,18 @@ class Luajit < Formula
 
     # Check that LuaJIT can find its own `jit.*` modules
     touch "empty.lua"
-    system bin/"luajit", "-b", "empty.lua", "empty.o"
+    system bin/"luajit", "-b", "-o", "osx", "-a", "arm64", "empty.lua", "empty.o"
     assert_predicate testpath/"empty.o", :exist?
+
+    # Check that we're not affected by https://github.com/LuaJIT/LuaJIT/issues/865.
+    require "macho"
+    machobj = MachO.open("empty.o")
+    assert_kind_of MachO::FatFile, machobj
+    assert_predicate machobj, :object?
+
+    cputypes = machobj.machos.map(&:cputype)
+    assert_includes cputypes, :arm64
+    assert_includes cputypes, :x86_64
+    assert_equal 2, cputypes.length
   end
 end
