@@ -3,14 +3,14 @@ class Jsonschema < Formula
 
   desc "Implementation of JSON Schema for Python"
   homepage "https://github.com/python-jsonschema/jsonschema"
-  url "https://files.pythonhosted.org/packages/b5/a0/dd13abb5f371f980037d271fd09461df18c85188216008a1e3a9c3f8bd0c/jsonschema-4.6.0.tar.gz"
-  sha256 "9d6397ba4a6c0bf0300736057f649e3e12ecbc07d3e81a0dacb72de4e9801957"
+  url "https://files.pythonhosted.org/packages/19/0f/89db7764dfb59fc1c2b18c2d63f11375b4827aa3e93ae037166a780d2bed/jsonschema-4.7.2.tar.gz"
+  sha256 "73764f461d61eb97a057c929368610a134d1d1fffd858acfe88864ee94f1f1d3"
   license "MIT"
   head "https://github.com/python-jsonschema/jsonschema.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jsonschema"
-    sha256 cellar: :any_skip_relocation, mojave: "59879fa1e245e176672c77992f0e8a03e5c155759e156f955ae051047937a028"
+    sha256 cellar: :any_skip_relocation, mojave: "2ea690aef4ca8324d26396405946e1583d9fb51f310cbd3a7a790c074e658cf8"
   end
 
   depends_on "python@3.10"
