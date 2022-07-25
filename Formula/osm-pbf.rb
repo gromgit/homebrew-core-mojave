@@ -4,12 +4,11 @@ class OsmPbf < Formula
   url "https://github.com/openstreetmap/OSM-binary/archive/v1.5.0.tar.gz"
   sha256 "2abf3126729793732c3380763999cc365e51bffda369a008213879a3cd90476c"
   license "LGPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm-pbf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6c3d02fc9d4400c4240b6e7ebdf6d7bb27203feb8b2256c0cc655eeca6e5e021"
+    sha256 cellar: :any, mojave: "35f1e532ae1f29199287ac9c3ff5728d05f35cffbe271163e484c83d27e694f5"
   end
 
   depends_on "cmake" => :build
