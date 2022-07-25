@@ -1,8 +1,8 @@
 class Latex2html < Formula
   desc "LaTeX-to-HTML translator"
   homepage "https://www.latex2html.org"
-  url "https://github.com/latex2html/latex2html/archive/v2022.tar.gz"
-  sha256 "9b3ba484226a2e39fb20695729370372b355f71bd65eeb4dd14f2c78699ed59a"
+  url "https://github.com/latex2html/latex2html/archive/v2022.2.tar.gz"
+  sha256 "b1d5bba7bab7d0369d1241f2d8294137a52b7cb7df11239bfa15ec0a2546c093"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Latex2html < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latex2html"
-    sha256 cellar: :any_skip_relocation, mojave: "1677932ecbcb0a2663df8cfac933aee87e75cb75c7b0a5419a8f1eee74b56bc8"
+    sha256 cellar: :any_skip_relocation, mojave: "2a19ab2808dc02fcc1dcae4181a62f2e93af9ec2354d3ce1de95881a7a4008cd"
   end
 
   depends_on "ghostscript"
