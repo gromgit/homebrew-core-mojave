@@ -4,7 +4,7 @@ class Ledger < Formula
   url "https://github.com/ledger/ledger/archive/v3.2.1.tar.gz"
   sha256 "92bf09bc385b171987f456fe3ee9fa998ed5e40b97b3acdd562b663aa364384a"
   license "BSD-3-Clause"
-  revision 8
+  revision 9
   head "https://github.com/ledger/ledger.git", branch: "master"
 
   livecheck do
@@ -14,8 +14,7 @@ class Ledger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ledger"
-    rebuild 1
-    sha256 cellar: :any, mojave: "07db41447a74ed84ee7fc5cc4559a274530036af40351ab2c7014b645b5fa9fe"
+    sha256 cellar: :any, mojave: "82374713e445e9c5a249132ae14a5e7b8ab5af175c943bc53b814179da0abd0b"
   end
 
   depends_on "cmake" => :build
