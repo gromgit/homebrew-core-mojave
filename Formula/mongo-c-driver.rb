@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://github.com/mongodb/mongo-c-driver/releases/download/1.21.2/mongo-c-driver-1.21.2.tar.gz"
-  sha256 "f9ba821fc646be893e9b9d4adfe7bded80f348b3c95b1361718caa7d965fe6f9"
+  url "https://github.com/mongodb/mongo-c-driver/releases/download/1.22.0/mongo-c-driver-1.22.0.tar.gz"
+  sha256 "272067f75e7e57c98f90a6f0c42500ef818b4b085539343676b6ce6831655eaf"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
@@ -13,7 +13,7 @@ class MongoCDriver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongo-c-driver"
-    sha256 cellar: :any, mojave: "2bc84a67d62020b2c855f45886e5b5aeb5c74e425138ab96ee3e2e8cd04677b6"
+    sha256 cellar: :any, mojave: "2a2438cd974d95e971f40d1a992cc2ef0e1dc18af5c18220ed46ef58ed734bd2"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +27,7 @@ class MongoCDriver < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_VERSION=1.18.0-pre" if build.head?
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DMONGOC_TEST_USE_CRYPT_SHARED=FALSE"
     inreplace "src/libmongoc/src/mongoc/mongoc-config.h.in", "@MONGOC_CC@", ENV.cc
     system "cmake", ".", *cmake_args
     system "make", "install"
