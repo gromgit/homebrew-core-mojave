@@ -10,12 +10,18 @@ class LeelaZero < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/leela-zero"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ac8b02c62c863577b0abd2774a39b06a40fa0126f6d76334d86aafb61066da03"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8354d0ea2278f3ff2faab66a9667e97a0cefdda021910fb9fa8b367f85494ad1"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
+
+  on_linux do
+    depends_on "opencl-headers" => :build
+    depends_on "ocl-icd"
+    depends_on "pocl"
+  end
 
   resource "network" do
     url "https://zero.sjeng.org/networks/00ff08ebcdc92a2554aaae815fbf5d91e8d76b9edfe82c9999427806e30eae77.gz", using: :nounzip
