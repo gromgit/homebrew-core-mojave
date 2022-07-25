@@ -4,6 +4,7 @@ class Metaproxy < Formula
   url "https://ftp.indexdata.com/pub/metaproxy/metaproxy-1.20.0.tar.gz"
   sha256 "2bd0cb514e6cdfe76ed17130865d066582b3fa4190aa5b0ea2b42db0cd6f9d8c"
   license "GPL-2.0-or-later"
+  revision 1
 
   # The homepage doesn't link to the latest source file, so we have to check
   # the directory listing page directly.
@@ -13,11 +14,8 @@ class Metaproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "a443529903a38577237d577f72b441de2853ab5e4dfebc1f9402a2bc7d25413f"
-    sha256 cellar: :any,                 big_sur:       "88bde89594c64dbbe9a79e5c3301506611b490be7bdb0e573bdcd6e07ab75fe9"
-    sha256 cellar: :any,                 catalina:      "4319580fd77eef8cf4da3a1e392669151471f397e71a9f6bdc1080f65678e17f"
-    sha256 cellar: :any,                 mojave:        "3f853cf457181ab372cd1eccafad913223a52a328cfcde07b96390c17b8ce349"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ef01d6ddb998fdd39edb19f18d4e2ce6e508499fca658221b4f51b0605b87a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/metaproxy"
+    sha256 cellar: :any, mojave: "46629ef0cc2f66ea206000ea06a243e4033c9e378bacdd387a431dd73d254e67"
   end
 
   depends_on "pkg-config" => :build
