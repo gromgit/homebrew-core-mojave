@@ -3,6 +3,7 @@ class PerconaXtrabackup < Formula
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
   url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.28-21/source/tarball/percona-xtrabackup-8.0.28-21.tar.gz"
   sha256 "66d7f15f8e61d0231cbc814dff73fc6181ed9aa91d55b14a34a5b32b63e8ca02"
+  revision 1
 
   livecheck do
     url "https://www.percona.com/downloads/Percona-XtraBackup-LATEST/"
@@ -11,7 +12,7 @@ class PerconaXtrabackup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/percona-xtrabackup"
-    sha256 mojave: "36605f434277fda5724b9f9619c063fd3dcee9025f348f3d23609d91b16389a4"
+    sha256 mojave: "35d97f2312c60ccb05864a5da27cc137e96d2df1d3cfc9cbb306345f19284fbc"
   end
 
   depends_on "cmake" => :build
@@ -40,6 +41,8 @@ class PerconaXtrabackup < Formula
     depends_on "gcc" # Requires GCC 7.1 or later
     depends_on "libaio"
   end
+
+  conflicts_with "percona-server", because: "both install a `kmip.h`"
 
   fails_with :gcc do
     version "6"
