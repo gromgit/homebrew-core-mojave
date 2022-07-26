@@ -8,7 +8,8 @@ class VowpalWabbit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vowpal-wabbit"
-    sha256 cellar: :any, mojave: "cbe8f4040c3a57715146fb30bcbe420d5e4099289479c2dbacee833ceabc60b6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2550d5a5c055dd68c35f112e0326866e2c2dce003b688f0e9d31000bbf01dd13"
   end
 
   depends_on "cmake" => :build
@@ -17,7 +18,7 @@ class VowpalWabbit < Formula
   depends_on "boost"
   depends_on "eigen"
   depends_on "fmt"
-  depends_on "zlib"
+  uses_from_macos "zlib"
 
   def install
     ENV.cxx11
