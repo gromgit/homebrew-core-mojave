@@ -3,13 +3,13 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/2c/81/a7f43161f6585b27ad9fd403cc48a02199629e835175dc3b40ed26665f81/pip-tools-6.7.0.tar.gz"
-  sha256 "0aeedc28c0316a30c561893a1f41c3611b46ac536bc271082ffdbdbd1d26924c"
+  url "https://files.pythonhosted.org/packages/1f/79/1a4eee18c8ab0afc3b8f39460684951769053a0eda7d4d319af965e5701a/pip-tools-6.8.0.tar.gz"
+  sha256 "39e8aee465446e02278d80dbebd4325d1dd8633248f43213c73a25f58e7d8a55"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pip-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "befac546d7d2757ee2a64478325c70cd466ee3e4b2dfc04f4834d94e3e542574"
+    sha256 cellar: :any_skip_relocation, mojave: "00b02b9d012118ae29cc532d5a4971fb43887f4c9ac8bc35a47b06e163c8402e"
   end
 
   depends_on "python@3.10"
