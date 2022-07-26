@@ -3,14 +3,13 @@ class PythonYq < Formula
 
   desc "Command-line YAML and XML processor that wraps jq"
   homepage "https://kislyuk.github.io/yq/"
-  url "https://files.pythonhosted.org/packages/e4/df/9c2efc3c99c07a4bd09dfd763fc87d1e50db0ee3c67ad2ffe418f523ae4e/yq-2.14.0.tar.gz"
-  sha256 "f4bf2b299d1e5c7ebd74cfb25d1f5d9b6401063bac07a2d09a156144c1d644e1"
+  url "https://files.pythonhosted.org/packages/fc/0b/93a830fe6f75acaf2c052966b2c5f98aa3a18c08ca99b1621b60dd74e453/yq-3.0.2.tar.gz"
+  sha256 "e47ff2479a3746f90bdbb77f84e3ebdb789ce46a092b1c261ae5b1f5f914f8e8"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-yq"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8466247ef9a0c12429d8a4e4c545b2d0d5ce15abffe048d235638bb86c434ba2"
+    sha256 cellar: :any_skip_relocation, mojave: "032b10b20dca2a1e63b8d4ce9e3624044f4aee650c32e1cecb60dc6c39d2ae07"
   end
 
   depends_on "jq"
@@ -34,8 +33,8 @@ class PythonYq < Formula
   end
 
   resource "xmltodict" do
-    url "https://files.pythonhosted.org/packages/58/40/0d783e14112e064127063fbf5d1fe1351723e5dfe9d6daad346a305f6c49/xmltodict-0.12.0.tar.gz"
-    sha256 "50d8c638ed7ecb88d90561beedbf720c9b4e851a9fa6c47ebd64e99d166d8a21"
+    url "https://files.pythonhosted.org/packages/39/0d/40df5be1e684bbaecdb9d1e0e40d5d482465de6b00cbb92b84ee5d243c7f/xmltodict-0.13.0.tar.gz"
+    sha256 "341595a488e3e01a85a9d8911d8912fd922ede5fecc4dce437eb4b6c8d037e56"
   end
 
   def install
