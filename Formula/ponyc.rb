@@ -2,13 +2,13 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.org/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.51.0",
-      revision: "33746cc3deb5a27c52b1ebddae59378818505fc0"
+      tag:      "0.51.1",
+      revision: "9a058ed04dcef213b2208285f64aa9cea832fab0"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ponyc"
-    sha256 cellar: :any_skip_relocation, mojave: "a0542f6301c0df0c0bf016f449f465e3bf78413e5cdb4975628c5271f94f61fc"
+    sha256 cellar: :any_skip_relocation, mojave: "b85f2f7b8b8168a9122b380e9e3f45f7b7b25518e6f8593ba5e2bf337f4bbe53"
   end
 
   depends_on "cmake" => :build
