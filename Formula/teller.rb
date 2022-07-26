@@ -2,14 +2,14 @@ class Teller < Formula
   desc "Secrets management tool for developers built in Go"
   homepage "https://tlr.dev/"
   url "https://github.com/SpectralOps/teller.git",
-      tag:      "v1.5.2",
-      revision: "8c37a9df22f2f64ba10f71247cc8bcdf95f4ff51"
+      tag:      "v1.5.3",
+      revision: "f7f686544190265db41a2af7bd3313f94d67c880"
   license "Apache-2.0"
   head "https://github.com/SpectralOps/teller.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teller"
-    sha256 cellar: :any_skip_relocation, mojave: "a1b8d09486a38bec66ff0702f8bc52c85f5953c35fc7b26ad7de639dc8ead913"
+    sha256 cellar: :any_skip_relocation, mojave: "5e7e4de69aebee04ae50282ba1c6a7a18ae22182e92625798e07f49a223334ed"
   end
 
   depends_on "go" => :build
@@ -31,7 +31,6 @@ class Teller < Formula
 
     (testpath/".teller.yml").write <<~EOS
       project: brewtest
-
       providers:
         # this will fuse vars with the below .env file
         # use if you'd like to grab secrets from outside of the project tree
@@ -40,7 +39,7 @@ class Teller < Formula
             path: #{testpath}/test.env
     EOS
 
-    output = shell_output("#{bin}/teller -c #{testpath}/.teller.yml show")
+    output = shell_output("#{bin}/teller -c #{testpath}/.teller.yml show  2>&1")
     assert_match "teller: loaded variables for brewtest using #{testpath}/.teller.yml", output
     assert_match "foo", output
 
