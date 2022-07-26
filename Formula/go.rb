@@ -14,7 +14,8 @@ class Go < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go"
-    sha256 mojave: "fe57e3ed06e66ad10bc0da47327231beafb388350297339ffba79972c40d95d2"
+    rebuild 1
+    sha256 mojave: "761eac8226663cc583f75cd71a3f23321ad43b7ba51fffdfddbc0715ec2fd8da"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.
@@ -26,13 +27,22 @@ class Go < Formula
       "linux-amd64"  => "013a489ebb3e24ef3d915abe5b94c3286c070dfe0818d5bca8108f1d6e8440d2",
     }
 
-    arch = Hardware::CPU.intel? ? :amd64 : Hardware::CPU.arch
-    platform = "#{OS.kernel_name.downcase}-#{arch}"
+    arch = "arm64"
+    platform = "darwin"
+
+    on_intel do
+      arch = "amd64"
+    end
+
+    on_linux do
+      platform = "linux"
+    end
+
     boot_version = "1.16"
 
-    url "https://storage.googleapis.com/golang/go#{boot_version}.#{platform}.tar.gz"
+    url "https://storage.googleapis.com/golang/go#{boot_version}.#{platform}-#{arch}.tar.gz"
     version boot_version
-    sha256 checksums[platform]
+    sha256 checksums["#{platform}-#{arch}"]
   end
 
   def install
