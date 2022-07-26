@@ -2,10 +2,9 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/v8.2.5150.tar.gz"
-  sha256 "3c92f902eeed21880f38191694e87032ae9efedb479afe25eb37f1b743f45383"
+  url "https://github.com/vim/vim/archive/v9.0.0050.tar.gz"
+  sha256 "c93759a46699151e153826a9c87a09265567c6f4a1f71cc5753b24f57dc7a6c9"
   license "Vim"
-  revision 1
   head "https://github.com/vim/vim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
@@ -19,7 +18,7 @@ class Vim < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vim"
-    sha256 mojave: "bf03ffb7e227afdc15f3da0b7908bd3b77e2c6e9b86bb9d3e75ca255714fc8a8"
+    sha256 mojave: "148e6f72291f9b7008fbf90f83c66cb749fa1d5dcc1967a3e775665e183171ae"
   end
 
   depends_on "gettext"
