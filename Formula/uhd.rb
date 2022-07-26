@@ -6,6 +6,7 @@ class Uhd < Formula
       tag:      "v4.2.0.0",
       revision: "46a70d853267c40205a8cfea472056bd1aa7c04e"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
+  revision 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
   livecheck do
@@ -15,7 +16,7 @@ class Uhd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uhd"
-    sha256 mojave: "91bfeafd4b74f90715610a6d6aec696712af2a2c29a5cf7085a2cbdfa68231cb"
+    sha256 mojave: "c50b2d001f2837cc10651ba61f72dcea643f11753a344d6b336e86db3b508c55"
   end
 
   depends_on "cmake" => :build
