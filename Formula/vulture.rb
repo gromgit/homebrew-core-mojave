@@ -3,14 +3,14 @@ class Vulture < Formula
 
   desc "Find dead Python code"
   homepage "https://github.com/jendrikseipp/vulture"
-  url "https://files.pythonhosted.org/packages/21/1e/843bc79daf4f46c13c56692c488722e3465a509331f3bb84bb314f9a6136/vulture-2.4.tar.gz"
-  sha256 "819439294a76b4e0b8e08c70d75565a8ce3dc1f6e03558ed123a5f2bb737c0ea"
+  url "https://files.pythonhosted.org/packages/f2/7b/5f3249c9b3076bceb2839cf7ea9847e504d180e90dfac32300403a9e7139/vulture-2.5.tar.gz"
+  sha256 "2831694055eb2e36a09c3b7680934837102b9b6c0969206e3902d513612177c3"
   license "MIT"
   head "https://github.com/jendrikseipp/vulture.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vulture"
-    sha256 cellar: :any_skip_relocation, mojave: "a0ad6b66bc0fd53ebb81b76e0e35d952ccff565e349d915e358282ccaa73b3c8"
+    sha256 cellar: :any_skip_relocation, mojave: "802b1c9c5c5c3c0789377090a42a5e51375db7e590baf23be222789dad2ff5fe"
   end
 
   depends_on "python@3.10"
