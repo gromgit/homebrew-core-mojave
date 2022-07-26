@@ -1,14 +1,14 @@
 class Alp < Formula
   desc "Access Log Profiler"
   homepage "https://github.com/tkuchiki/alp"
-  url "https://github.com/tkuchiki/alp/archive/v1.0.10.tar.gz"
-  sha256 "d2db749edb6e86de53f241e227f99c24775e325b1263ea4daabe155c20c68d6b"
+  url "https://github.com/tkuchiki/alp/archive/v1.0.11.tar.gz"
+  sha256 "08a86c1be71adef24773c417faa236a25783cfe89446585d050d7eb2d2843ac7"
   license "MIT"
   head "https://github.com/tkuchiki/alp.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alp"
-    sha256 cellar: :any_skip_relocation, mojave: "9acef0cbd6522e04f2f3a3454bb9eee42865306f1a605545b084082916d109df"
+    sha256 cellar: :any_skip_relocation, mojave: "69f8b8d71300b9e830c91632c5f1608cabd8def2aba3362d988957dea0ae9a72"
   end
 
   depends_on "go" => :build
