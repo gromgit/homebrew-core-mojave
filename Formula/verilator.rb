@@ -1,13 +1,13 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https://www.veripool.org/wiki/verilator"
-  url "https://github.com/verilator/verilator/archive/refs/tags/v4.222.tar.gz"
-  sha256 "15c60175807c0f3536c3c5b435f131c2b1e8725aefd30645efd946bf401b4c84"
+  url "https://github.com/verilator/verilator/archive/refs/tags/v4.224.tar.gz"
+  sha256 "010ff2b5c76d4dbc2ed4a3278a5599ba35c8ed4c05690e57296d6b281591367b"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/verilator"
-    sha256 mojave: "1489278e68e56928a05ba3f3646dbe6bdee15993c028841ab8359064be3039ac"
+    sha256 mojave: "89d49a531313fb1f6bb94cbd8e83ac76643897fdc738fe078ee096848a3decf3"
   end
 
   head do
