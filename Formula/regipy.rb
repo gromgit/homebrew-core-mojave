@@ -3,15 +3,14 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/73/4a/7a5c7ccdfa0858c636ebe267c235d32a6d75e83e26477c98c4e550396ef0/regipy-2.5.3.tar.gz"
-  sha256 "4d69dd28dfe0796829fa4ac032208df686242b94df90bb8ff96c286176dcd153"
+  url "https://files.pythonhosted.org/packages/93/a5/55a27f2ed7c9c9fe807e1113ea434494744a9182b887a6a92f0934f5a624/regipy-2.6.1.tar.gz"
+  sha256 "0c76d886b50041b99c059ed2a5117b47eb0b647b4c0b8892a7cfba878aeee197"
   license "MIT"
-  revision 1
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regipy"
-    sha256 cellar: :any_skip_relocation, mojave: "d975a62d406ef94230c21c972824030fe810e3a1ed9ec207cdaf86669699bc6c"
+    sha256 cellar: :any_skip_relocation, mojave: "66863d23820fa6f2aecf3e93eccf334b2c96409f25300630c9a84e4c21ee27e3"
   end
 
   depends_on "libpython-tabulate"
