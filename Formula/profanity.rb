@@ -4,10 +4,11 @@ class Profanity < Formula
   url "https://profanity-im.github.io/tarballs/profanity-0.12.1.tar.gz"
   sha256 "e344481e7bf3b16baf58a169d321b809c4700becffb70db6f1c39adc3fad306e"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/profanity"
-    sha256 mojave: "265e5889c9e56b95789558965fc7300d1e5dc9b1109eb56629e1eb60e7992da0"
+    sha256 mojave: "1b44b004eb704c533b51046ea0c7d1562699b0ace0e33cc8583623c47ffac295"
   end
 
   head do
@@ -20,7 +21,6 @@ class Profanity < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
   depends_on "curl"
   depends_on "glib"
   depends_on "gnutls"
@@ -29,6 +29,7 @@ class Profanity < Formula
   depends_on "libsignal-protocol-c"
   depends_on "libstrophe"
   depends_on "openssl@1.1"
+  depends_on "python@3.9"
   depends_on "readline"
 
   on_macos do
