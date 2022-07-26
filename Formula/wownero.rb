@@ -5,7 +5,7 @@ class Wownero < Formula
       tag:      "v0.10.1.0",
       revision: "8ab87421d9321d0b61992c924cfa6e3918118ad0"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 10.0.0. Until then, it's used to omit a malformed tag that would
@@ -25,8 +25,7 @@ class Wownero < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wownero"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6ef4d36a7d33cbfb4ec42eab6f2ae9ded1b77e22739cdde2bf29dadb3ba56eb0"
+    sha256 cellar: :any, mojave: "bf53d6b634d025047350040a18157606a06038a26315455548515338784fd2db"
   end
 
   depends_on "cmake" => :build
