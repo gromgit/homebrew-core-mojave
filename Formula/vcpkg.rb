@@ -1,9 +1,9 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://github.com/microsoft/vcpkg-tool/archive/2022-05-05.tar.gz"
-  version "2022.05.05"
-  sha256 "c2d02a979b648d8e640c1704d72766e68ab783f03c6eb89f1ad5a6645fd7f547"
+  url "https://github.com/microsoft/vcpkg-tool/archive/2022-07-14.tar.gz"
+  version "2022.07.14"
+  sha256 "e7f4783d0c30c074029a08cf83443838dd3cee1610458ce2fc0fa9a8f7f4411d"
   license "MIT"
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
@@ -17,7 +17,7 @@ class Vcpkg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcpkg"
-    sha256 cellar: :any, mojave: "65573e8cb134838dd52f5226b62986c375a6aa0420ba4783a5522980868ab2c2"
+    sha256 cellar: :any, mojave: "f817f37d4e36f61f089cc75b38f99c632f0768a0cfb1595f3d76b6f39c7694f1"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +32,7 @@ class Vcpkg < Formula
 
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.
-    inreplace ["src/vcpkg/vcpkgpaths.cpp", "locales/messages.json"],
+    inreplace ["include/vcpkg/base/messages.h", "locales/messages.json", "locales/messages.en.json"],
               "If you are trying to use a copy of vcpkg that you've built, y", "Y"
 
     system "cmake", "-S", ".", "-B", "build",
@@ -55,7 +55,8 @@ class Vcpkg < Formula
   end
 
   test do
-    message = "Error: Could not detect vcpkg-root. You must define the VCPKG_ROOT environment variable"
+    # DO NOT CHANGE. If the test breaks then the `inreplace` needs fixing.
+    message = "error: Could not detect vcpkg-root. You must define the VCPKG_ROOT environment variable"
     assert_match message, shell_output("#{bin}/vcpkg search sqlite", 1)
   end
 end
