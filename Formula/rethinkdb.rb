@@ -4,6 +4,7 @@ class Rethinkdb < Formula
   url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.2.tgz"
   sha256 "35e6a76a527d473a7d962515a0414dea6e09300fff368ae713964ce2494d9c0d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/rethinkdb/rethinkdb.git", branch: "next"
 
   livecheck do
@@ -13,7 +14,7 @@ class Rethinkdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rethinkdb"
-    sha256 cellar: :any, mojave: "0e95d01be647e53f9b241b232996ae8b39c1e92ed5b093b80129740d396af11f"
+    sha256 cellar: :any, mojave: "be237164e25010d6bf02a83799d8c1a91e4018c3e847641435641b910860fcca"
   end
 
   depends_on "boost" => :build
