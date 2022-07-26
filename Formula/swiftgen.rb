@@ -4,11 +4,19 @@ class Swiftgen < Formula
   url "https://github.com/SwiftGen/SwiftGen/archive/6.5.1.tar.gz"
   sha256 "bcd52ddc581eea94070eaaab7b94218971f7424b7800696f6be0a1accfc7a0a9"
   license "MIT"
-  head "https://github.com/SwiftGen/SwiftGen/archive/develop.tar.gz"
+  head "https://github.com/SwiftGen/SwiftGen.git", branch: "stable"
 
-  depends_on "ruby" => :build if MacOS.version <= :sierra
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf3abab4eac9a3886d79d6eb625b1d010c4490cd04391d02a78d44ea67ffbc5f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea599c0ad955644eb3f946360603090f0b05b859c892ccb94d85795eb68612d6"
+    sha256 cellar: :any_skip_relocation, monterey:       "ea47c833c24c992ecba7fff825d94efd15ed4be586c6c39188fdad1c11605f2f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d23540aaccbe68f26fc50260a29904afa1e84f97c678e76d4c842927215e91e9"
+  end
+
   depends_on xcode: ["13.0", :build]
   depends_on :macos
+
+  uses_from_macos "ruby" => :build, since: :high_sierra
 
   resource("testdata") do
     url "https://github.com/SwiftGen/SwiftGen/archive/6.5.1.tar.gz"
