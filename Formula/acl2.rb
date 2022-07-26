@@ -1,19 +1,21 @@
 class Acl2 < Formula
   desc "Logic and programming language in which you can model computer systems"
   homepage "https://www.cs.utexas.edu/users/moore/acl2/index.html"
-  url "https://github.com/acl2/acl2/archive/8.4.tar.gz"
-  sha256 "b440c0048e2988eeb9f477a37a0443c97037a062c076f86a999433a2c762cd8b"
+  url "https://github.com/acl2/acl2/archive/8.5.tar.gz"
+  sha256 "dcc18ab0220027b90f30cd9e5a67d8f603ff0e5b26528f3aab75dc8d3d4ebc0f"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/acl2"
-    sha256 mojave: "550e2cc1196729dff81f8dd671d43a729ccef0d7773f88cb5933f4702c20a14c"
+    sha256 mojave: "a5a4934b96e187501f9819d7310eca138a106a96acec16160038f6b3ac5e0cdd"
   end
 
   depends_on "sbcl"
 
   def install
+    # Remove prebuilt-binary.
+    (buildpath/"books/kestrel/axe/x86/examples/popcount/popcount-macho-64.executable").unlink
+
     system "make",
            "LISP=#{HOMEBREW_PREFIX}/bin/sbcl",
            "ACL2=#{buildpath}/saved_acl2",
