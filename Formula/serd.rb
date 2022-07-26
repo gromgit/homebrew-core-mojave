@@ -1,8 +1,8 @@
 class Serd < Formula
   desc "C library for RDF syntax"
   homepage "https://drobilla.net/software/serd.html"
-  url "https://download.drobilla.net/serd-0.30.12.tar.bz2"
-  sha256 "9f9dab4125d88256c1f694b6638cbdbf84c15ce31003cd83cb32fb2192d3e866"
+  url "https://download.drobilla.net/serd-0.30.14.tar.xz"
+  sha256 "a14137d47b11d6ad431e78da341ca9737998d9eaccf6a49263d4c8d79fd856e3"
   license "ISC"
 
   livecheck do
@@ -12,16 +12,18 @@ class Serd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serd"
-    sha256 cellar: :any, mojave: "33904b5f8becb211cb7434da7f652577e2ee7306f3fa06a6d1c808fae40b3fac"
+    sha256 cellar: :any, mojave: "048027d1c68681e1fc1c765ccfde6e8057b6ddedfec2493a6b2f742f39704bb0"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
 
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    system "python3", "./waf"
-    system "python3", "./waf", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, ".."
+      system "ninja", "-v"
+      system "ninja", "install", "-v"
+    end
   end
 
   test do
