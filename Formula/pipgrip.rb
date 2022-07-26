@@ -3,13 +3,13 @@ class Pipgrip < Formula
 
   desc "Lightweight pip dependency resolver"
   homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/6b/0e/fb6db73fa6fe581f2f2e66fc747c88754f7bf36ae87f092c75c3b7b24d6d/pipgrip-0.8.2.tar.gz"
-  sha256 "e8ae2009fca122dc4410b28b31505eb447dffc600b74347e75d911543eb65e88"
+  url "https://files.pythonhosted.org/packages/37/40/e241ad03b7f6ac6adce4943af37252ff92227bd6c90ea2580bf625371595/pipgrip-0.8.4.tar.gz"
+  sha256 "1c6ee78705f60a01934cb03fdd0146c899209c2f08e03e4e75afb31cd5c309e7"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipgrip"
-    sha256 cellar: :any_skip_relocation, mojave: "c52cfdc98c8e37a2cb6c944fd8fadfd0c76a5a27bd6f12f5f32d4dd232641eb6"
+    sha256 cellar: :any_skip_relocation, mojave: "354234a24a8a00d62555548b75499c86ab7313d6df14cb47219109837e0f5310"
   end
 
   depends_on "python@3.10"
