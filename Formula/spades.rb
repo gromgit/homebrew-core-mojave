@@ -3,9 +3,9 @@ class Spades < Formula
 
   desc "De novo genome sequence assembly"
   homepage "https://cab.spbu.ru/software/spades/"
-  url "https://cab.spbu.ru/files/release3.15.4/SPAdes-3.15.4.tar.gz"
-  mirror "https://github.com/ablab/spades/releases/download/v3.15.4/SPAdes-3.15.4.tar.gz"
-  sha256 "3b241c528a42a8bdfdf23e5bf8f0084834790590d08491decea9f0f009d8589f"
+  url "https://cab.spbu.ru/files/release3.15.5/SPAdes-3.15.5.tar.gz"
+  mirror "https://github.com/ablab/spades/releases/download/v3.15.5/SPAdes-3.15.5.tar.gz"
+  sha256 "155c3640d571f2e7b19a05031d1fd0d19bd82df785d38870fb93bd241b12bbfa"
   license "GPL-2.0-only"
 
   livecheck do
@@ -15,8 +15,7 @@ class Spades < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spades"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4e227a3603379193a674a24213e91c6e272482d1463f2186cae8180bc726e0f4"
+    sha256 cellar: :any_skip_relocation, mojave: "68c6368467d012c551efcf40bc2752625b1655b30064a44dd4e8a0e5085dc0ca"
   end
 
   depends_on "cmake" => :build
