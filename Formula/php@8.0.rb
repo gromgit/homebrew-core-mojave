@@ -2,9 +2,9 @@ class PhpAT80 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.0.20.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.0.20.tar.xz"
-  sha256 "973fec765336ee01f47536a5db1c2eee98df9d34a41522b7b6c760159bf0a77b"
+  url "https://www.php.net/distributions/php-8.0.21.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.21.tar.xz"
+  sha256 "e87a598f157e0cf0606e64382bb91c8b30c47d4a0fc96b2c17ad547a27869b3b"
   license "PHP-3.01"
 
   livecheck do
@@ -14,7 +14,7 @@ class PhpAT80 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@8.0"
-    sha256 mojave: "d0a596154cc44904162a9ab17555ad62fe2a8c885fed86a477381051188d3161"
+    sha256 mojave: "1ade5b785fb55183641305df76abc99c235d640686bdc6e89d540cd2b19dfe55"
   end
 
   keg_only :versioned_formula
@@ -84,8 +84,8 @@ class PhpAT80 < Formula
     # possible to recompile as suggested in the original message
     inreplace "sapi/apache2handler/sapi_apache2.c",
               "You need to recompile PHP.",
-              "Homebrew PHP does not support a thread-safe php binary. "\
-              "To use the PHP apache sapi please change "\
+              "Homebrew PHP does not support a thread-safe php binary. " \
+              "To use the PHP apache sapi please change " \
               "your httpd config to use the prefork MPM"
 
     inreplace "sapi/fpm/php-fpm.conf.in", ";daemonize = yes", "daemonize = no"
