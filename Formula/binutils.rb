@@ -9,7 +9,8 @@ class Binutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/binutils"
-    sha256 mojave: "4c9da12ee43eec2cce5142ad9beef6265a7a8972e61a8b4d865275a22345a26a"
+    rebuild 1
+    sha256 mojave: "bab93d1762c0a6b6833b4ee793ef82e53c7b7296baa423fdb2be54f2dcb28662"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"
@@ -18,12 +19,10 @@ class Binutils < Formula
 
   on_linux do
     depends_on "glibc@2.13" => :build
+    depends_on "linux-headers@4.4" => :build
   end
 
   def install
-    # Fix error: 'LONG_MIN' undeclared
-    ENV.append "CFLAGS", "-DHAVE_LIMITS_H -DHAVE_FCNTL_H" unless OS.mac?
-
     args = [
       "--disable-debug",
       "--disable-dependency-tracking",
