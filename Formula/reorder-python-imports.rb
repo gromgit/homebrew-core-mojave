@@ -3,21 +3,21 @@ class ReorderPythonImports < Formula
 
   desc "Rewrites source to reorder python imports"
   homepage "https://github.com/asottile/reorder_python_imports"
-  url "https://files.pythonhosted.org/packages/0f/09/03893c8de481420a71476b47ca5e1a09a9aba111802de7ad24957a72d129/reorder_python_imports-3.1.0.tar.gz"
-  sha256 "6b7a810ee77a9be0e646033d034ce02457e32597c5f48e5faec1866ca9eb4957"
+  url "https://files.pythonhosted.org/packages/10/09/eb417872de4d890fdbe16bf9252e8457a722478f63d3ece5f12f00826950/reorder_python_imports-3.8.2.tar.gz"
+  sha256 "bc5bd5e01548423fdcf62da767b28d5df6e613b03f9f795438f72b08b75dfba8"
   license "MIT"
   head "https://github.com/asottile/reorder_python_imports.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reorder-python-imports"
-    sha256 cellar: :any_skip_relocation, mojave: "9c52da9bf73a43a6aceae434b8131fc20b928d94fac103e023ff871009e98eff"
+    sha256 cellar: :any_skip_relocation, mojave: "3687696735f22b0e5838fa0e4db525f3962142711d3f6304f74491d3c9ec6673"
   end
 
   depends_on "python@3.10"
 
-  resource "aspy.refactor-imports" do
-    url "https://files.pythonhosted.org/packages/8a/f1/2cc8c8b9e4de77ee1b3ba889eeafb68ab0b38b28d856b48b821b9d361f41/aspy.refactor_imports-3.0.1.tar.gz"
-    sha256 "df497c3726ee2931b03d403e58a4590f7f4e60059b115cf5df0e07e70c7c73be"
+  resource "classify-imports" do
+    url "https://files.pythonhosted.org/packages/5e/b1/5c8792dee3437a13d66e0518bcd6add8ec6f54a02c89ef3f14986a05016d/classify_imports-4.1.0.tar.gz"
+    sha256 "69ddc4320690c26aa8baa66bf7e0fa0eecfda49d99cf71a59dee0b57dac82616"
   end
 
   def install
