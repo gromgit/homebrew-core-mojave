@@ -3,14 +3,14 @@ class PythonMarkdown < Formula
 
   desc "Python implementation of Markdown"
   homepage "https://python-markdown.github.io"
-  url "https://files.pythonhosted.org/packages/d6/58/79df20de6e67a83f0d0bbfe6c19bb82adf68cdf362885257eb01099f930a/Markdown-3.3.7.tar.gz"
-  sha256 "cbb516f16218e643d8e0a95b309f77eb118cb138d39a4f27851e6a63581db874"
+  url "https://files.pythonhosted.org/packages/85/7e/133e943e97a943d2f1d8bae0c5060f8ac50e6691754eb9dbe036b047a9bb/Markdown-3.4.1.tar.gz"
+  sha256 "3b809086bb6efad416156e00a0da66fe47618a5d6918dd688f53f40c8e4cfeff"
   license "BSD-3-Clause"
   head "https://github.com/Python-Markdown/markdown.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-markdown"
-    sha256 cellar: :any_skip_relocation, mojave: "fad9948cfeb3ca0d40b0610c5d424b27b1fdeb8ddc09029784d33c50bb4a5620"
+    sha256 cellar: :any_skip_relocation, mojave: "2f89e3097b2622adb1e6c82f261372074b33b84a4d1a238b150b3bfb5a47ddd5"
   end
 
   depends_on "python@3.10"
