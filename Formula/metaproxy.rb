@@ -15,7 +15,8 @@ class Metaproxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/metaproxy"
-    sha256 cellar: :any, mojave: "46629ef0cc2f66ea206000ea06a243e4033c9e378bacdd387a431dd73d254e67"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9c19230d786b07e523b185f569e6db0325ffc107be6e24a44f6b78f27797252c"
   end
 
   depends_on "pkg-config" => :build
@@ -29,8 +30,11 @@ class Metaproxy < Formula
   fails_with gcc: "5"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    # Match C++ standard in boost to avoid undefined symbols at runtime
+    # Ref: https://github.com/boostorg/regex/issues/150
+    ENV.append "CXXFLAGS", "-std=c++14"
+
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
