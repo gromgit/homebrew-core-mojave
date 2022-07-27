@@ -7,7 +7,8 @@ class Nghttp2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nghttp2"
-    sha256 mojave: "4ab4972a6e64c238d50f21385d37fcae6eb7420698cfb4bbe562784645018e61"
+    rebuild 1
+    sha256 mojave: "4435dfde6b394e56e3c269a1ce4fc393f3ddf9d776cbda77a55cf89c08f57a77"
   end
 
   head do
@@ -28,11 +29,11 @@ class Nghttp2 < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
-  on_linux do
-    # Fix: shrpx_api_downstream_connection.cc:57:3: error:
-    # array must be initialized with a brace-enclosed initializer
-    # https://github.com/nghttp2/nghttp2/pull/1269
-    patch do
+  # Fix: shrpx_api_downstream_connection.cc:57:3: error:
+  # array must be initialized with a brace-enclosed initializer
+  # https://github.com/nghttp2/nghttp2/pull/1269
+  patch do
+    on_linux do
       url "https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1"
       sha256 "c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e"
     end
