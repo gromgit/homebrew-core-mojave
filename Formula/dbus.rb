@@ -12,9 +12,10 @@ class Dbus < Formula
     regex(/href=.*?dbus[._-]v?(\d+\.\d*?[02468](?:\.\d+)*)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbus"
-    sha256 mojave: "1ec791e6875ca50b4a25e5a389a9dbcf61b2cf5cdc97cae95afe5d23a1dfeb86"
+    rebuild 1
+    sha256 mojave: "9e88c9c676d757517c4a20e544387a3199add1ee4b8757faeed4fcd71334d66f"
   end
 
   head do
@@ -31,10 +32,10 @@ bottle do
 
   uses_from_macos "expat"
 
-  on_macos do
-    # Patch applies the config templating fixed in https://bugs.freedesktop.org/show_bug.cgi?id=94494
-    # Homebrew pr/issue: 50219
-    patch do
+  # Patch applies the config templating fixed in https://bugs.freedesktop.org/show_bug.cgi?id=94494
+  # Homebrew pr/issue: 50219
+  patch do
+    on_macos do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/0a8a55872e/d-bus/org.freedesktop.dbus-session.plist.osx.diff"
       sha256 "a8aa6fe3f2d8f873ad3f683013491f5362d551bf5d4c3b469f1efbc5459a20dc"
     end
