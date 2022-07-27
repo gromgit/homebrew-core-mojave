@@ -7,13 +7,14 @@ class Latexindent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latexindent"
-    sha256 cellar: :any_skip_relocation, mojave: "47b531df4b7b9b05dc4328ef9ac810dd9d80add6a651a78b2128f91bbd671115"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ec7bad70dbcc11e34eacaaba8606629dc23bd6dbb0056fc45efaf35cceceb0c3"
   end
 
   depends_on "perl"
 
-  on_macos do
-    resource "Mac::SystemDirectory" do
+  resource "Mac::SystemDirectory" do
+    on_macos do
       url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Mac-SystemDirectory-0.14.tar.gz"
       sha256 "b3c336fe20850042d30e1db1e8d191d3c056cc1072a472eb4e5bd7229056dee1"
     end
