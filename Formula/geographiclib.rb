@@ -1,13 +1,13 @@
 class Geographiclib < Formula
   desc "C++ geography library"
   homepage "https://geographiclib.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/geographiclib/distrib-C++/GeographicLib-2.1.tar.gz"
-  sha256 "7a4bdbcfe76c7848960f177b597187e16abd30140da067ff5221cee900cfc029"
+  url "https://downloads.sourceforge.net/project/geographiclib/distrib-C++/GeographicLib-2.1.1.tar.gz"
+  sha256 "28080fc48e1c76560eb2f8c306404de80c13d35687f676ff47a51695506e4a0a"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geographiclib"
-    sha256 cellar: :any, mojave: "36565c6f4151cee466c0fa64293c63b3eb0181e40daadc4f4171712eb3cd1d5c"
+    sha256 cellar: :any, mojave: "f8a80d98a973902e54cb00bd8766458fedd17cce0a7acd48231c02873d9e68f2"
   end
 
   depends_on "cmake" => :build
