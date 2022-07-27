@@ -8,11 +8,13 @@ class Licensefinder < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/licensefinder"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6b4ce4d65f8af354b166794661169afa322bfe0170ad857a84c5b2e1a4ce76dc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2e9c286ecae91089cbecf7ad5350325e57dd2e1e06dc5edd7a654238804c3461"
   end
 
-  depends_on "ruby@2.7" if MacOS.version <= :mojave
+  on_system :linux, macos: :mojave_or_older do
+    depends_on "ruby@2.7"
+  end
 
   def install
     ENV["GEM_HOME"] = libexec
