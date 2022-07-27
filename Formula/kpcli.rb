@@ -5,8 +5,8 @@ class Kpcli < Formula
 
   desc "Command-line interface to KeePass database files"
   homepage "https://kpcli.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.7.pl"
-  sha256 "8c12566c292650451590ba42aba48f117eb60d786aed4309cca19febd4d2d673"
+  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.8.1.pl"
+  sha256 "6c84f8639245799bf9b2d5ce297c41b5d4ec0789f7f5fa9e8767556816ea472c"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
@@ -16,27 +16,29 @@ class Kpcli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kpcli"
-    sha256 cellar: :any, mojave: "79f619168120408b59238414c1c35be356cecb60dd159a60e65236ac94e0be1d"
+    sha256 cellar: :any, mojave: "32ee48ba1463d47eb2d3f8615fa2f7da4ea79e316675098abf5707d61567cad0"
   end
 
   depends_on "readline"
 
   uses_from_macos "perl"
 
-  on_macos do
-    resource "Mac::Pasteboard" do
+  resource "Mac::Pasteboard" do
+    on_macos do
       url "https://cpan.metacpan.org/authors/id/W/WY/WYANT/Mac-Pasteboard-0.103.tar.gz"
       sha256 "2f5e8dd2db0d6445558484ca6d42d839c5a97ee8aa1b250e694d67d5b7f6634c"
     end
   end
 
-  on_linux do
-    resource "Clone" do
+  resource "Clone" do
+    on_linux do
       url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.45.tar.gz"
       sha256 "cbb6ee348afa95432e4878893b46752549e70dc68fe6d9e430d1d2e99079a9e6"
     end
+  end
 
-    resource "TermReadKey" do
+  resource "TermReadKey" do
+    on_linux do
       url "https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz"
       sha256 "5a645878dc570ac33661581fbb090ff24ebce17d43ea53fd22e105a856a47290"
     end
