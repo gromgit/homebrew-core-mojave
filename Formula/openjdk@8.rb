@@ -8,15 +8,19 @@ class OpenjdkAT8 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk@8"
-    sha256 cellar: :any, mojave: "012cfb015982635adfaa198f1164109ad22cd5a78dd043a0aebf29b2f10fd738"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cd62d73dca78a93d7f9f26bb807856310507c5c5db6efbe9d080cda07900e49f"
   end
 
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
-  depends_on "gawk" => :build if MacOS.version > :big_sur
   depends_on "pkg-config" => :build
   depends_on "freetype"
+
+  on_monterey :or_newer do
+    depends_on "gawk" => :build
+  end
 
   on_linux do
     depends_on "alsa-lib"
