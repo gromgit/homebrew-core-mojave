@@ -7,14 +7,17 @@ class Cocoapods < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cocoapods"
-    sha256 cellar: :any, mojave: "b251aad37c0053d2ea45c36e175b30b0679825fdb705cbb421148108a05ee69b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "416ab91eeecff981b9fb64a57db7c077c0efc154fea3be0d800a9ee7cb56e5d5"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "ruby" if Hardware::CPU.arm?
-
   uses_from_macos "libffi", since: :catalina
   uses_from_macos "ruby", since: :catalina
+
+  on_arm do
+    depends_on "ruby"
+  end
 
   def install
     if MacOS.version >= :mojave && MacOS::CLT.installed?
