@@ -8,7 +8,8 @@ class Inetutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inetutils"
-    sha256 mojave: "1e9b10f39a2de806ee72f88095cb7a7bf5dda918dae995ededea50b1276650e6"
+    rebuild 1
+    sha256 mojave: "f4f69685365c7280c3be89fa8c6705d14e911cba403924a3aedd15295d3c3800"
   end
 
   depends_on "libidn2"
@@ -26,7 +27,9 @@ class Inetutils < Formula
   def noshadow
     # List of binaries that do not shadow macOS utils
     list = %w[dnsdomainname rcp rexec rlogin rsh]
-    list += %w[ftp telnet] if MacOS.version >= :high_sierra
+    on_high_sierra :or_newer do
+      list += %w[ftp telnet]
+    end
     list
   end
 
