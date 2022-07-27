@@ -13,7 +13,8 @@ class Mytop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mytop"
-    sha256 cellar: :any, mojave: "2e55d6e1085324ddce93b318ba118fbeeccdd51acab0754186eb7f3bda4122bf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5c49d9fde955798d53564a8cf7ad93d828c400750b3aa7cc18bb9bf5445d8539"
   end
 
   depends_on "mysql-client"
@@ -21,14 +22,14 @@ class Mytop < Formula
 
   uses_from_macos "perl"
 
-  on_linux do
-    resource "Term::ReadKey" do
+  conflicts_with "mariadb", because: "both install `mytop` binaries"
+
+  resource "Term::ReadKey" do
+    on_linux do
       url "https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz"
       sha256 "5a645878dc570ac33661581fbb090ff24ebce17d43ea53fd22e105a856a47290"
     end
   end
-
-  conflicts_with "mariadb", because: "both install `mytop` binaries"
 
   resource "List::Util" do
     url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.46.tar.gz"
