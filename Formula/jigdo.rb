@@ -16,7 +16,8 @@ class Jigdo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jigdo"
-    sha256 mojave: "1c5c4f636fe41af834da150ff46bdd5170baa240c0e2bca501adcdb68f44415e"
+    rebuild 1
+    sha256 mojave: "969b3eeb08541ba5cb5ea5443c1d70cff4fe2d8b5f0e090bee38e7d1c67908be"
   end
 
   depends_on "pkg-config" => :build
@@ -26,17 +27,17 @@ class Jigdo < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  on_macos do
-    # Use MacPorts patch for compilation on 10.9. Remove when updating to 0.8+.
-    patch :p0 do
+  # Use MacPorts patch for compilation on 10.9. Remove when updating to 0.8+.
+  patch :p0 do
+    on_macos do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/e101570/jigdo/patch-src-compat.hh.diff"
       sha256 "a21aa8bcc5a03a6daf47e0ab4e04f16e611e787a7ada7a6a87c8def738585646"
     end
   end
 
-  on_linux do
-    # Use Fedora patch for compilation with GCC. Remove when updating to 0.8+.
-    patch do
+  # Use Fedora patch for compilation with GCC. Remove when updating to 0.8+.
+  patch do
+    on_linux do
       url "https://src.fedoraproject.org/rpms/jigdo/raw/27c01e27168b62157e98c7ffad1aa0b4aad405e9/f/jigdo-0.7.3-gcc43.patch"
       sha256 "57e13ca6c283cb086d1c5ceb5ed3562fab548fa19e1d14ecc045c3a23fa7d44a"
     end
