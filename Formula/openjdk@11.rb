@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.15-ga.tar.gz"
-  sha256 "6ed94f08aa8aed0f466cb107c5366c20124d64248f788ec75bcc24823ad93a40"
+  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.16-ga.tar.gz"
+  sha256 "c21de35f0e17156855e6b9998d1a62c291c5df7496c053764dc261a5647349f2"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,8 +12,7 @@ class OpenjdkAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk@11"
-    rebuild 1
-    sha256 cellar: :any, mojave: "dd3b408eabe7c853424ea1fdc75ccc276774876c183e5765046045c417127bdb"
+    sha256 cellar: :any, mojave: "385b6ccbd7b1a6bc599fd7b98709b77fb5b93b5d528f4c45b3c435c46c70efc2"
   end
 
   keg_only :versioned_formula
@@ -39,10 +38,11 @@ class OpenjdkAT11 < Formula
 
   resource "boot-jdk" do
     on_macos do
-      if Hardware::CPU.arm?
+      on_arm do
         url "https://cdn.azul.com/zulu/bin/zulu11.54.25-ca-jdk11.0.14.1-macosx_aarch64.tar.gz"
         sha256 "2076f8ce51c0e9ad7354e94b79513513b1697aa222f9503121d800c368b620a3"
-      else
+      end
+      on_intel do
         url "https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_osx-x64_bin.tar.gz"
         sha256 "77ea7675ee29b85aa7df138014790f91047bfdafbc997cb41a1030a0417356d7"
       end
