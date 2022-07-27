@@ -13,7 +13,8 @@ class Ocp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocp"
-    sha256 mojave: "e2cf0de94a7e7a5757733b77354c6360f5bb0a4ab127578893a6cecdc312a34d"
+    rebuild 1
+    sha256 mojave: "24e986b7884065ccbd3fe38f74e75a2ee00a4d0a83508a9cd92fbc8bfafb53d3"
   end
 
   depends_on "pkg-config" => :build
@@ -27,14 +28,16 @@ class Ocp < Formula
   depends_on "libvorbis"
   depends_on "mad"
 
-  if MacOS.version < :catalina
-    depends_on "sdl"
-  else
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
+
+  on_catalina :or_newer do
     depends_on "sdl2"
   end
 
-  uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+  on_system :linux, macos: :mojave_or_older do
+    depends_on "sdl"
+  end
 
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
