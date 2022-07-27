@@ -1,9 +1,9 @@
 class Icon < Formula
   desc "General-purpose programming language"
   homepage "https://www.cs.arizona.edu/icon/"
-  url "https://github.com/gtownsend/icon/archive/v9.5.22c.tar.gz"
-  version "9.5.22c"
-  sha256 "d3f9fd75994cfc7419c6ed1d872d0cc334dab3e20f6494776abd48b7cda43022"
+  url "https://github.com/gtownsend/icon/archive/v9.5.22e.tar.gz"
+  version "9.5.22e"
+  sha256 "e09ab5a7d4f10196be0e7ca12624c011cd749fc93e50ad4ed87bd132d927c983"
   license :public_domain
 
   livecheck do
@@ -13,8 +13,7 @@ class Icon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/icon"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "351970eaccb8ef6d1ef8c6860193fc44181701e9682d196b0006e4f0221e8ad7"
+    sha256 cellar: :any_skip_relocation, mojave: "d737e18b2aefdb178fdf8776dfdd765915f557fd5cce9c9d15276945d7b85964"
   end
 
   def install
