@@ -16,11 +16,9 @@ class GccAT6 < Formula
   end
 
   bottle do
-    sha256 monterey:     "50d1babd8e4922043b807dd3ad9e5eff1e97bd565b4550905bb92bef4c5f03b4"
-    sha256 big_sur:      "9fae646d3b49a384c6c524620f128ee5d7ee06811d5b2c9e67a06baa6e45201b"
-    sha256 catalina:     "8b18ff45d42f712a6b384a75e0850b6c6a9a369cc186e8ec31e766742a86d4eb"
-    sha256 mojave:       "9bec2c923e6cdcefc18b4c716b1b2bd93ce18ea30e8327aff93c0aaa3465c8b5"
-    sha256 x86_64_linux: "61e54a4996eff5e7cde22c4f74c731a01adc699622cae5a239b307dc1ef33065"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc@6"
+    rebuild 1
+    sha256 mojave: "67d33d1268fb5382e57b040e62bfa70b5b344aaf1fa73f3c66fb5921daac182a"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
