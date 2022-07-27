@@ -13,18 +13,19 @@ class NetSnmp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/net-snmp"
-    sha256 mojave: "0ae8cff8a6739432d4c92ba036d9f0cd7de060b9e10410d615d4c0b79c4122de"
+    rebuild 1
+    sha256 mojave: "94a7227a511bb42afbea8065c43a6a0d69f2b766c07b5da1e3ac25aae877f860"
   end
 
   keg_only :provided_by_macos
 
-  if Hardware::CPU.arm?
+  depends_on "openssl@1.1"
+
+  on_arm do
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
-
-  depends_on "openssl@1.1"
 
   # Fix -flat_namespace being used on x86_64 Big Sur and later.
   patch do
