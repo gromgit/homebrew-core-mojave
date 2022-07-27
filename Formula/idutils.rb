@@ -9,14 +9,14 @@ class Idutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idutils"
-    rebuild 2
-    sha256 mojave: "6f1d87ae36826dc131f99fc7892f6ba4637587aafc181b60306c806965a85429"
+    rebuild 3
+    sha256 mojave: "6de7ee3174b593ebe39c5da439a25140cc8c73f9a9bac216d549a92300eaf31e"
   end
 
   conflicts_with "coreutils", because: "both install `gid` and `gid.1`"
 
-  if MacOS.version >= :high_sierra
-    patch :p0 do
+  patch :p0 do
+    on_high_sierra :or_newer do
       url "https://raw.githubusercontent.com/macports/macports-ports/b76d1e48dac/editors/nano/files/secure_snprintf.patch"
       sha256 "57f972940a10d448efbd3d5ba46e65979ae4eea93681a85e1d998060b356e0d2"
     end
