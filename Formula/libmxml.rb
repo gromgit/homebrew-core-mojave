@@ -1,15 +1,14 @@
 class Libmxml < Formula
   desc "Mini-XML library"
   homepage "https://michaelrsweet.github.io/mxml/"
-  url "https://github.com/michaelrsweet/mxml/releases/download/v3.3/mxml-3.3.tar.gz"
-  sha256 "7cf976366f9e8e4f8cff7d35a59bcf6201c769fce9e58015d64f4b6de1fe3dd8"
+  url "https://github.com/michaelrsweet/mxml/releases/download/v3.3.1/mxml-3.3.1.tar.gz"
+  sha256 "0c663ed1fe393b5619f80101798202eea43534abd7c8aff389022fd8c1dacc32"
   license "Apache-2.0"
   head "https://github.com/michaelrsweet/mxml.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmxml"
-    rebuild 3
-    sha256 cellar: :any, mojave: "bc8be4e99b9a23d47617a48534f24cd2ade5668df0042f6528ff2116389c942e"
+    sha256 cellar: :any, mojave: "8dfa074ace55c7814915c898a1459e8a66ed17e2f72aae174985b70a280ed8fc"
   end
 
   depends_on xcode: :build # for docsetutil
