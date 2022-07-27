@@ -14,7 +14,8 @@ class Imapsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imapsync"
-    sha256 cellar: :any_skip_relocation, mojave: "7154317174d8b0b47b6df6c04785be811e057cb74e46b711e738887e84998874"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6b45474528443f2bc899efa0ea96292794d382b5bc4501b7c93e174ee4f65c40"
   end
 
   depends_on "pod2man" => :build
@@ -118,8 +119,8 @@ class Imapsync < Formula
     sha256 "2b7f80da87f5a6fe0360d9ee521051053017442c3a26e85db68dfac9f8307623"
   end
 
-  if MacOS.version <= :catalina
-    resource "Module::Build" do
+  resource "Module::Build" do
+    on_system :linux, macos: :catalina_or_older do
       url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz"
       sha256 "7e0f4c692c1740c1ac84ea14d7ea3d8bc798b2fb26c09877229e04f430b2b717"
     end
