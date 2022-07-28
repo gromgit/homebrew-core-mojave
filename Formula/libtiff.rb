@@ -5,6 +5,7 @@ class Libtiff < Formula
   mirror "https://fossies.org/linux/misc/tiff-4.4.0.tar.gz"
   sha256 "917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed"
   license "libtiff"
+  revision 1
 
   livecheck do
     url "https://download.osgeo.org/libtiff/"
@@ -13,10 +14,10 @@ class Libtiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtiff"
-    sha256 cellar: :any, mojave: "629d9070f3342921a877af18553335ed9b10f17a9a2b9067574e49391a39daeb"
+    sha256 cellar: :any, mojave: "da40c7907efe283b0b40717ba4eb0fa5d3789816dd0c96ebac9caa7689edfade"
   end
 
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
 
   uses_from_macos "zlib"
 
@@ -27,8 +28,8 @@ class Libtiff < Formula
       --disable-lzma
       --disable-webp
       --disable-zstd
-      --with-jpeg-include-dir=#{Formula["jpeg"].opt_include}
-      --with-jpeg-lib-dir=#{Formula["jpeg"].opt_lib}
+      --with-jpeg-include-dir=#{Formula["jpeg-turbo"].opt_include}
+      --with-jpeg-lib-dir=#{Formula["jpeg-turbo"].opt_lib}
       --without-x
     ]
     system "./configure", *args
