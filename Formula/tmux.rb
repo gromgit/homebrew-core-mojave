@@ -13,8 +13,8 @@ class Tmux < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tmux"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5d515f060b7b5b3af03aa1bda7721947e2dbbda7b3877fd01a2e87e10f2ed724"
+    rebuild 2
+    sha256 cellar: :any, mojave: "3ac0ac44f49378031afc27e164ebd0c5fa7a42623b9025be39557d98bcb38cd9"
   end
 
   head do
@@ -33,7 +33,9 @@ class Tmux < Formula
 
   # Old versions of macOS libc disagree with utf8proc character widths.
   # https://github.com/tmux/tmux/issues/2223
-  depends_on "utf8proc" if MacOS.version >= :high_sierra
+  on_high_sierra :or_newer do
+    depends_on "utf8proc"
+  end
 
   resource "completion" do
     url "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/f5d53239f7658f8e8fbaf02535cc369009c436d6/completions/tmux"
