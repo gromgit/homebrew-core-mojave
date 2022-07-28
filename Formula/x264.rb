@@ -1,15 +1,12 @@
 class X264 < Formula
   desc "H.264/AVC encoder"
   homepage "https://www.videolan.org/developers/x264.html"
+  # the latest commit on the stable branch
+  url "https://code.videolan.org/videolan/x264.git",
+      revision: "baee400fa9ced6f5481a728138fed6e867b0ff7f"
+  version "r3095"
   license "GPL-2.0-only"
   head "https://code.videolan.org/videolan/x264.git", branch: "master"
-
-  stable do
-    # the latest commit on the stable branch
-    url "https://code.videolan.org/videolan/x264.git",
-        revision: "baee400fa9ced6f5481a728138fed6e867b0ff7f"
-    version "r3095"
-  end
 
   # Cross-check the abbreviated commit hashes from the release filenames with
   # the latest commits in the `stable` Git branch:
@@ -43,16 +40,20 @@ class X264 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x264"
-    sha256 cellar: :any, mojave: "7d1811139b5bb23db319b61accad330284717642a6fcc2bc54ccf29ffd4b5520"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7f06ff02a4bc1b4febb6a788a3c7655cffbadfa9a5deb49e66d6369561d72376"
   end
 
   depends_on "nasm" => :build
 
-  if MacOS.version <= :high_sierra
-    # Stack realignment requires newer Clang
-    # https://code.videolan.org/videolan/x264/-/commit/b5bc5d69c580429ff716bafcd43655e855c31b02
-    depends_on "gcc"
-    fails_with :clang
+  on_macos do
+    depends_on "gcc" if DevelopmentTools.clang_build_version <= 902
+  end
+
+  # https://code.videolan.org/videolan/x264/-/commit/b5bc5d69c580429ff716bafcd43655e855c31b02
+  fails_with :clang do
+    build 902
+    cause "Stack realignment requires newer Clang"
   end
 
   def install
