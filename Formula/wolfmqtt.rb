@@ -1,15 +1,14 @@
 class Wolfmqtt < Formula
   desc "Small, fast, portable MQTT client C implementation"
   homepage "https://github.com/wolfSSL/wolfMQTT"
-  url "https://github.com/wolfSSL/wolfMQTT/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "fdf6727da994eaea491b44d2db3e7f40cd968cb14db29191bf1f240e1e1ef81a"
+  url "https://github.com/wolfSSL/wolfMQTT/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "23a073bfac172e08331ccdd01d9fb19e029fdcab5a8b4aad0e8dd4719ea97c31"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/wolfSSL/wolfMQTT.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wolfmqtt"
-    sha256 cellar: :any, mojave: "a6d3469b5cd0aee472d8093c13d3c4745ee62152a087553d7b880f879fa4575c"
+    sha256 cellar: :any, mojave: "ee9d7ba80f39879403f5f8c5115e4c5373701861899af2e61d670286c017bc9e"
   end
 
   depends_on "autoconf" => :build
