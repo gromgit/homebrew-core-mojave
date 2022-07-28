@@ -1,14 +1,14 @@
 class Nettle < Formula
   desc "Low-level cryptographic library"
   homepage "https://www.lysator.liu.se/~nisse/nettle/"
-  url "https://ftp.gnu.org/gnu/nettle/nettle-3.8.tar.gz"
-  mirror "https://ftpmirror.gnu.org/nettle/nettle-3.8.tar.gz"
-  sha256 "7576c68481c198f644b08c160d1a4850ba9449e308069455b5213319f234e8e6"
+  url "https://ftp.gnu.org/gnu/nettle/nettle-3.8.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/nettle/nettle-3.8.1.tar.gz"
+  sha256 "364f3e2b77cd7dcde83fd7c45219c834e54b0c75e428b6f894a23d12dd41cbfe"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nettle"
-    sha256 cellar: :any, mojave: "989d648f1efbdfd83fa469ce01505d8aaa218de0d621136dac69c66956e4a5db"
+    sha256 cellar: :any, mojave: "c8fa97bcd17fbd28bd37e83351273d51e91aadc7afcd2ac235d996836385c404"
   end
 
   depends_on "gmp"
