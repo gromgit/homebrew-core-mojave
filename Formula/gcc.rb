@@ -15,8 +15,8 @@ class Gcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc"
-    rebuild 1
-    sha256 mojave: "13eee1b063144e6aee5ce9699e763177d8052edfb46004c937d1ad4c6f9676cf"
+    rebuild 2
+    sha256 mojave: "6701d5c95e00052620d603caf105d875e56988b21937072059c2bd6934395edc"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -40,8 +40,8 @@ class Gcc < Formula
 
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-11-branch
-  if Hardware::CPU.arm?
-    patch do
+  patch do
+    on_arm do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/07e71538/gcc/gcc-11.3.0-arm.diff"
       sha256 "857390a7f32dbfc4c7e6163a3b3b9d5e1d392e5d9c74c3ebb98701c1d0629565"
     end
