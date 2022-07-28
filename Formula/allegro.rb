@@ -4,6 +4,7 @@ class Allegro < Formula
   url "https://github.com/liballeg/allegro5/releases/download/5.2.8.0/allegro-5.2.8.0.tar.gz"
   sha256 "089fcbfab0543caa282cd61bd364793d0929876e3d2bf629380ae77b014e4aa4"
   license "Zlib"
+  revision 1
   head "https://github.com/liballeg/allegro5.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Allegro < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/allegro"
-    sha256 cellar: :any, mojave: "91ad4392d619a6e514fe50cc048a7f3e1aac193f933192aa5ce78b105bebfe18"
+    sha256 cellar: :any, mojave: "0fd0243828d447de872f5eec3e0636083a3fb36a1b24b1afd067c509f7176000"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +30,8 @@ class Allegro < Formula
 
   on_linux do
     depends_on "gcc"
+    depends_on "jpeg-turbo"
+    depends_on "libpng"
     depends_on "libx11"
     depends_on "libxcursor"
     depends_on "mesa"
