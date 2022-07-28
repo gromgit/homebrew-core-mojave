@@ -5,14 +5,19 @@ class Restund < Formula
   sha256 "3170441dc882352ab0275556b6fc889b38b14203d936071b5fa12f39a5c86d47"
   revision 3
 
+  # The sources.openwrt.org directory listing page is 2+ MB in size and
+  # growing. This alternative check is less ideal but only a few KB. Versions
+  # on the package page can use a format like 1.2.3-4, so we omit any trailing
+  # suffix to match the tarball version.
   livecheck do
-    url "https://sources.openwrt.org/"
-    regex(/href=.*?restund[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://openwrt.org/packages/pkgdata/restund"
+    regex(/<dd [^>]*?class="version"[^>]*?>\s*?v?(\d+(?:\.\d+)+)/im)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restund"
-    sha256 mojave: "0f52db89b03758c05db5b6c547bb975661a0e34824c2af33efe3446872b0f27d"
+    rebuild 1
+    sha256 mojave: "6b40178f55592c53b026514b69a51803f6fa96234b7925f6f269c21daf5c5a4e"
   end
 
   depends_on "libre"
