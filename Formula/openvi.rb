@@ -1,13 +1,13 @@
 class Openvi < Formula
   desc "Portable OpenBSD vi for UNIX systems"
   homepage "https://github.com/johnsonjh/OpenVi#readme"
-  url "https://github.com/johnsonjh/OpenVi/archive/refs/tags/7.1.17.tar.gz"
-  sha256 "02974603f1cd3ba5727fd40f69f97925510d8f30c1ff3041adbc3e54e11f6d5f"
+  url "https://github.com/johnsonjh/OpenVi/archive/refs/tags/7.1.18.tar.gz"
+  sha256 "39c4ac933f52c65021be06fcece8bfd308fc1ac08e8ff4604b2fdd1994192d08"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openvi"
-    sha256 cellar: :any_skip_relocation, mojave: "defd03d6f4fca84c875ebbf15a4d375217213ae03c804d3a2435d9166663da78"
+    sha256 cellar: :any_skip_relocation, mojave: "fbeaa316452c1e8a4ccd8f236f8260fa85d85a9392a95c6c74a78ae9300ba889"
   end
 
   uses_from_macos "ncurses"
