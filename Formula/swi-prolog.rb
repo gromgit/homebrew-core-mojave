@@ -4,6 +4,7 @@ class SwiProlog < Formula
   url "https://www.swi-prolog.org/download/stable/src/swipl-8.4.3.tar.gz"
   sha256 "946119a0b5f5c8f410ea21fbf6281e917e61ef35ac0aabbdd24e787470d06faa"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
 
   livecheck do
@@ -13,12 +14,12 @@ class SwiProlog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swi-prolog"
-    sha256 mojave: "201de5a8f2281c21019b1cbe598765eb0b6158a5ff2454f9378a846e5aaceb26"
+    sha256 mojave: "0af28b8ec6bbdb1ad2709791084952c6551914eebfd945e17e71dd630ba0b849"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "berkeley-db"
+  depends_on "berkeley-db@4"
   depends_on "gmp"
   depends_on "libarchive"
   depends_on "libyaml"
