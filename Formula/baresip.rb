@@ -1,25 +1,19 @@
 class Baresip < Formula
   desc "Modular SIP useragent"
   homepage "https://github.com/baresip/baresip"
-  url "https://github.com/baresip/baresip/archive/v2.4.0.tar.gz"
-  sha256 "5939cdd5f37f164f2c3ccfdf4ae8f44d5aa40ed73c3517bdd88b080d575784b3"
+  url "https://github.com/baresip/baresip/archive/v2.5.1.tar.gz"
+  sha256 "5ff4a3d85ce8fcdbac5391404d682ba843cbbc65b8827c6cd11727bcc209217a"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/baresip"
-    sha256 mojave: "c1ae9982d30bd6a96d9f09ccfbcd19c66c7987cbe548344d9a4f89db65293cf4"
+    sha256 mojave: "73ba09c5b6a48962a5c5d9f5f0dd294d15b66d649518f369bddfce7c132e13d1"
   end
 
   depends_on "libre"
   depends_on "librem"
 
   def install
-    # baresip doesn't like the 10.11 SDK when on Yosemite
-    if MacOS::Xcode.version.to_i >= 7
-      ENV.delete("SDKROOT")
-      ENV.delete("HOMEBREW_SDKROOT") if MacOS::Xcode.without_clt?
-    end
-
     libre = Formula["libre"]
     librem = Formula["librem"]
     # NOTE: `LIBRE_SO` is a directory but `LIBREM_SO` is a shared library.
