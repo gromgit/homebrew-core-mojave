@@ -4,6 +4,7 @@ class Gauche < Formula
   url "https://github.com/shirok/Gauche/releases/download/release0_9_12/Gauche-0.9.12.tgz"
   sha256 "b4ae64921b07a96661695ebd5aac0dec813d1a68e546a61609113d7843f5b617"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +14,7 @@ class Gauche < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gauche"
-    sha256 mojave: "c3b9693249528c9d87bad885ecf8b8dc8da1e8432b194a1b132b2d7f37f1c448"
+    sha256 mojave: "606b0b078c059b05a0ab1980b7d185c704504328a1eec579824498734f72aed9"
   end
 
   depends_on "mbedtls"
