@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v15.1.0",
-      revision: "76984217c7ef0bf669da0eb0d6337a54ba1ff14a"
+      tag:      "v15.2.1",
+      revision: "32fc1585e5334b1a4c4fd4962a7679fcebaf8f49"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -14,7 +14,7 @@ class GitlabRunner < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
-    sha256 cellar: :any_skip_relocation, mojave: "9944013ca26ed8b126837b232ce3935cb769bdf2158ff7ef8597b41563001c90"
+    sha256 cellar: :any_skip_relocation, mojave: "230e124d24b03930570ff92e54669d717e0578c716deffaf3b78bb67be237b97"
   end
 
   # Bump to 1.18 when x/sys is updated (likely 14.9).
