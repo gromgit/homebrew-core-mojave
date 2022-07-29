@@ -10,10 +10,10 @@ class GhcAT88 < Formula
   ]
   revision 1
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@8.8"
-    rebuild 2
-    sha256 mojave: "dcbb0c8c46a1566a73dd0fe6658cdaef5083af3a186708ecba00623e078c0c07"
+    rebuild 3
+    sha256 mojave: "cf38693bc4130dbb05e5433352744a4c4236db2146defa1297354558a24188a8"
   end
 
   keg_only :versioned_formula
@@ -24,17 +24,17 @@ bottle do
   uses_from_macos "m4" => :build
   uses_from_macos "ncurses"
 
-  on_macos do
-    resource "gmp" do
+  on_linux do
+    depends_on "gmp" => :build
+  end
+
+  resource "gmp" do
+    on_macos do
       url "https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz"
       mirror "https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz"
       mirror "https://ftpmirror.gnu.org/gmp/gmp-6.1.2.tar.xz"
       sha256 "87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912"
     end
-  end
-
-  on_linux do
-    depends_on "gmp" => :build
   end
 
   # https://www.haskell.org/ghc/download_ghc_8_8_3.html#macosx_x86_64
