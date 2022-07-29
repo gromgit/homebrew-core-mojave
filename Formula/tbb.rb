@@ -4,16 +4,16 @@ class Tbb < Formula
   url "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.5.0.tar.gz"
   sha256 "e5b57537c741400cf6134b428fc1689a649d7d38d9bb9c1b6d64f092ea28178a"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tbb"
-    sha256 cellar: :any, mojave: "eac60a916cbe9e35accda53754e1d0fa47c04d3563d22ce081c29dc6cd5e7b4d"
+    sha256 cellar: :any, mojave: "3b283519daa4a941e40cb89e5cfd7c0c9ae0b2499e7d9580f2ea83c36df5346d"
   end
 
   depends_on "cmake" => :build
+  depends_on "python@3.10" => [:build, :test]
   depends_on "swig" => :build
-  depends_on "python@3.9"
 
   # Fix installation of Python components
   # See https://github.com/oneapi-src/oneTBB/issues/343
@@ -38,13 +38,15 @@ class Tbb < Formula
     cd "python" do
       ENV.append_path "CMAKE_PREFIX_PATH", prefix.to_s
       ENV["LDFLAGS"] = "-rpath #{opt_lib}" if OS.mac?
+      python = Formula["python@3.10"].opt_bin/"python3"
 
       ENV["TBBROOT"] = prefix
-      system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
+      system python, *Language::Python.setup_install_args(prefix),
+                     "--install-lib=#{prefix/Language::Python.site_packages(python)}"
     end
 
-    inreplace_files = Dir[prefix/"rml/CMakeFiles/irml.dir/{flags.make,build.make,link.txt}"]
-    inreplace inreplace_files, Superenv.shims_path/ENV.cxx, "/usr/bin/c++" if OS.linux?
+    inreplace_files = prefix.glob("rml/CMakeFiles/irml.dir/{flags.make,build.make,link.txt}")
+    inreplace inreplace_files, Superenv.shims_path/ENV.cxx, ENV.cxx if OS.linux?
   end
 
   test do
@@ -76,7 +78,7 @@ class Tbb < Formula
     system ENV.cxx, "sum1-100.cpp", "--std=c++14", "-L#{lib}", "-ltbb", "-o", "sum1-100"
     assert_equal "5050", shell_output("./sum1-100").chomp
 
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import tbb"
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "import tbb"
   end
 end
 
