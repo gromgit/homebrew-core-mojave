@@ -13,18 +13,20 @@ class Librealsense < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librealsense"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3ca23bbf58dd8f984ce760023bd9a5f6fa9a5bcf658ba7eb52b4a28315bf3ef7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "04a13a8cc50a6ff81dd776531708cc3b20ee8a181324b8bc82750631e8d00f47"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  # Build on Apple Silicon fails when generating Unix Makefiles.
-  # Ref: https://github.com/IntelRealSense/librealsense/issues/8090
-  depends_on xcode: :build if Hardware::CPU.arm?
   depends_on "glfw"
   depends_on "libusb"
   depends_on "openssl@1.1"
+  # Build on Apple Silicon fails when generating Unix Makefiles.
+  # Ref: https://github.com/IntelRealSense/librealsense/issues/8090
+  on_arm do
+    depends_on xcode: :build
+  end
 
   def install
     ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@1.1"].prefix
