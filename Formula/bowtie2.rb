@@ -4,14 +4,18 @@ class Bowtie2 < Formula
   url "https://github.com/BenLangmead/bowtie2/archive/v2.4.5.tar.gz"
   sha256 "db101391b54a5e0eeed7469b05aee55ee6299558b38607f592f6b35a7d41dcb6"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bowtie2"
-    sha256 cellar: :any_skip_relocation, mojave: "bb5b965c77761b0851cadb708bd6ca1576d261d6a09c63eef6954982b5db0e5b"
+    sha256 cellar: :any_skip_relocation, mojave: "52c467411d45f1b891e593d7481e46480894174c46aaa9fc7fd117167fb4095e"
   end
 
   depends_on "simde"
   depends_on "tbb"
+
+  uses_from_macos "python"
+  uses_from_macos "zlib"
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
