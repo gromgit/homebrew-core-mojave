@@ -1,13 +1,13 @@
 class GitXargs < Formula
   desc "CLI for making updates across multiple Github repositories with a single command"
   homepage "https://github.com/gruntwork-io/git-xargs"
-  url "https://github.com/gruntwork-io/git-xargs/archive/v0.0.16.tar.gz"
-  sha256 "2e2d719df83beaaa59d62ee5b7be140d3e6a683ed570b5b640d4e813d1f4c531"
+  url "https://github.com/gruntwork-io/git-xargs/archive/v0.1.0.tar.gz"
+  sha256 "449ddfe8f76a3dfd79b415a11f8c531dcc1913be7173d57f269dcaf8f36b65b5"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-xargs"
-    sha256 cellar: :any_skip_relocation, mojave: "54f8141d2431d2edd6d30821482648ced1a66dd274e1f038f38395e841f2bdbb"
+    sha256 cellar: :any_skip_relocation, mojave: "997ba05afe58bb87b72954ebcfcbf3a917c7b06afd09bae5fa90cfd47c2de162"
   end
 
   depends_on "go" => :build
