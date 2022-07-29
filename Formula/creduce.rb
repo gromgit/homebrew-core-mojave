@@ -9,6 +9,13 @@ class Creduce < Formula
     url "https://embed.cs.utah.edu/creduce/creduce-2.10.0.tar.gz"
     sha256 "db1c0f123967f24d620b040cebd53001bf3dcf03e400f78556a2ff2e11fea063"
     depends_on "llvm@9"
+
+    # Use shared libraries.
+    # Remove with the next release.
+    patch do
+      url "https://github.com/csmith-project/creduce/commit/e9bb8686c5ef83a961f63744671c5e70066cba4e.patch?full_index=1"
+      sha256 "d5878a2c8fb6ebc5a43ad25943a513ff5226e42b842bb84f466cdd07d7bd626a"
+    end
   end
 
   livecheck do
@@ -18,8 +25,8 @@ class Creduce < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/creduce"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5ae5312e9050af38679ebcf8d65026aaef0e4794bdbd5f9915339eb1e76faf49"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6b896cc04122d1d9c837bb356a520306c01fc008013906ec7c7348834c29d650"
   end
 
   head do
@@ -59,18 +66,13 @@ class Creduce < Formula
     end
   end
 
-  # Use shared libraries.
-  # Remove with the next release.
-  patch do
-    url "https://github.com/csmith-project/creduce/commit/e9bb8686c5ef83a961f63744671c5e70066cba4e.patch?full_index=1"
-    sha256 "d5878a2c8fb6ebc5a43ad25943a513ff5226e42b842bb84f466cdd07d7bd626a"
-  end
-
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
+    llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
+               .to_formula
     # Avoid ending up with llvm's Cellar path hard coded.
-    ENV["CLANG_FORMAT"] = Formula["llvm@9"].opt_bin/"clang-format"
+    ENV["CLANG_FORMAT"] = llvm.opt_bin/"clang-format"
 
     resources.each do |r|
       r.stage do
@@ -80,8 +82,6 @@ class Creduce < Formula
       end
     end
 
-    llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
-               .to_formula
     # Work around build failure seen on Apple Clang 13.1.6 by using LLVM Clang
     # Undefined symbols for architecture x86_64:
     #   "std::__1::basic_stringbuf<char, std::__1::char_traits<char>, ...
