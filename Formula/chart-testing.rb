@@ -2,15 +2,14 @@ class ChartTesting < Formula
   desc "Testing and linting Helm charts"
   homepage "https://github.com/helm/chart-testing"
   url "https://github.com/helm/chart-testing.git",
-      tag:      "v3.6.0",
-      revision: "49167c48fd3180c183290f5be178f7aa28ff1c49"
+      tag:      "v3.7.0",
+      revision: "1d3feac8e5ca55ccf11521ff297ccee7f09aa749"
   license "Apache-2.0"
   head "https://github.com/helm/chart-testing.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chart-testing"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e19bfa935bdc96b32934f7214985b7b35c48453808cdb2d439538eeb6835de6d"
+    sha256 cellar: :any_skip_relocation, mojave: "10f23fa549f45f8bc96837dde6ed86bc1ba04b2e10ebb96852b1b31f36bdf9a1"
   end
 
   depends_on "go" => :build
