@@ -12,8 +12,8 @@ class GhcAT86 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@8.6"
-    rebuild 1
-    sha256 mojave: "bda12694a10259cabb20ca861f80fd6eecdc19ebf23de00dc8bd6b33933ab506"
+    rebuild 2
+    sha256 mojave: "8763e6d3c7594654cc6b18306d63eb64c8e9c62c21415a6c0e5ed52692e99266"
   end
 
   keg_only :versioned_formula
@@ -24,17 +24,17 @@ class GhcAT86 < Formula
   uses_from_macos "m4" => :build
   uses_from_macos "ncurses"
 
-  on_macos do
-    resource "gmp" do
+  on_linux do
+    depends_on "gmp" => :build
+  end
+
+  resource "gmp" do
+    on_macos do
       url "https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz"
       mirror "https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz"
       mirror "https://ftpmirror.gnu.org/gmp/gmp-6.1.2.tar.xz"
       sha256 "87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912"
     end
-  end
-
-  on_linux do
-    depends_on "gmp" => :build
   end
 
   # https://www.haskell.org/ghc/download_ghc_8_6_5#macosx_x86_64
