@@ -14,7 +14,8 @@ class Ledger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ledger"
-    sha256 cellar: :any, mojave: "82374713e445e9c5a249132ae14a5e7b8ab5af175c943bc53b814179da0abd0b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2fa6d8c768fc091de10449c638134888b176608042dbb1eec438407c3100b6e7"
   end
 
   depends_on "cmake" => :build
@@ -24,6 +25,7 @@ class Ledger < Formula
   depends_on "python@3.10"
 
   uses_from_macos "groff"
+  uses_from_macos "libedit"
 
   # Compatibility with Boost 1.76
   # https://github.com/ledger/ledger/issues/2030
