@@ -9,7 +9,8 @@ class Etcd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd"
-    sha256 cellar: :any_skip_relocation, mojave: "06cc6307653b8efb55acf722fd2a702c240024ffedd9347146962c98b57daf73"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "873c183e692f57591bcddce30e0e2fd682c05bbb4f41de07fb994d8e4708eb52"
   end
 
   depends_on "go" => :build
@@ -32,13 +33,11 @@ class Etcd < Formula
   test do
     test_string = "Hello from brew test!"
     etcd_pid = fork do
-      on_macos do
-        if Hardware::CPU.arm?
-          # etcd isn't officially supported on arm64
-          # https://github.com/etcd-io/etcd/issues/10318
-          # https://github.com/etcd-io/etcd/issues/10677
-          ENV["ETCD_UNSUPPORTED_ARCH"]="arm64"
-        end
+      if OS.mac? && Hardware::CPU.arm?
+        # etcd isn't officially supported on arm64
+        # https://github.com/etcd-io/etcd/issues/10318
+        # https://github.com/etcd-io/etcd/issues/10677
+        ENV["ETCD_UNSUPPORTED_ARCH"]="arm64"
       end
 
       exec bin/"etcd",
