@@ -1,8 +1,8 @@
 class BoostMpi < Formula
   desc "C++ library for C++/MPI interoperability"
   homepage "https://www.boost.org/"
-  url "https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2"
-  sha256 "8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc"
+  url "https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2"
+  sha256 "475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -12,8 +12,7 @@ class BoostMpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost-mpi"
-    rebuild 3
-    sha256 mojave: "0e301ba6746cd722c848d97eacddcca0ceeefd23a3d6ccc1f8cef28c8cd2bd65"
+    sha256 mojave: "db567e6d80173a76736c671c1b68e3b4657090fa7d34b6db8dac7e2e20a1f241"
   end
 
   # Test with cmake to avoid issues like:
