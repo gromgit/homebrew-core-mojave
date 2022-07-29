@@ -31,7 +31,8 @@ class Libxml2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxml2"
-    sha256 cellar: :any, mojave: "bc7b6c531361907688dbfdcdbe1eb52fb51a800fffc2b02b76cee18d28def265"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e9fd959b0b19618941e72701e66ccd910406f8def37efefe1fac44b75ed68fad"
   end
 
   head do
@@ -89,11 +90,9 @@ class Libxml2 < Formula
       inreplace "setup.py", "includes_dir = [",
                             "includes_dir = [#{includes}"
 
-      system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
-
-      site_packages_310 = Language::Python.site_packages(Formula["python@3.10"].opt_bin/"python3")
-      system Formula["python@3.10"].opt_bin/"python3", *Language::Python.setup_install_args(prefix),
-                                                       "--install-lib=#{prefix/site_packages_310}"
+      ["3.9", "3.10"].each do |xy|
+        system "python#{xy}", *Language::Python.setup_install_args(prefix, "python#{xy}")
+      end
     end
   end
 
