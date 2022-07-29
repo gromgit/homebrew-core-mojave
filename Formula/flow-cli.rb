@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://github.com/onflow/flow-cli/archive/v0.37.6.tar.gz"
-  sha256 "bb289d43358eab03896fee95517e324a6cda103fec7b49256d99d6f733d6fe4a"
+  url "https://github.com/onflow/flow-cli/archive/v0.38.0.tar.gz"
+  sha256 "1c4b4e56e8730f940a8655e6ba2e184e9c88a49d410d3a3abda8dd64fb34b312"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -13,7 +13,7 @@ class FlowCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flow-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "94de56d082671db073861bec19c9fefffac8f6d826e1e6d83f4ca7aba24e375b"
+    sha256 cellar: :any_skip_relocation, mojave: "41b627c7d26d37cc0eff339998d3770af38a15a01e6d9c92efbf9bf97a59cb61"
   end
 
   depends_on "go" => :build
