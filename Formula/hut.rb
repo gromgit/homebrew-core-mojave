@@ -1,24 +1,22 @@
 class Hut < Formula
   desc "CLI tool for sr.ht"
   homepage "https://sr.ht/~emersion/hut"
-  url "https://git.sr.ht/~emersion/hut/archive/v0.1.0.tar.gz"
-  sha256 "5af8f1111f9ec1da9a818978eb1f013dfd50ad4311c79d95b0e62ad428ac1c59"
+  url "https://git.sr.ht/~emersion/hut/archive/v0.2.0.tar.gz"
+  sha256 "2a4e49458a2cb129055f1db3b835e111a89583f47d4d917110205113863492b9"
   license "AGPL-3.0-or-later"
   head "https://git.sr.ht/~emersion/hut", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hut"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7e798cd20d8d2c3c6d61fd857aec37d8761dc23bdc6db9fce6b48752f9127f7a"
+    sha256 cellar: :any_skip_relocation, mojave: "f10476783fa6ef66fc4816902cacb4ae67003ad1e31ffcc07ee3d396f6264db3"
   end
 
-  depends_on "coreutils" => :build # Needed for GNU install in 0.1.0, remove in next release
   depends_on "go" => :build
   depends_on "scdoc" => :build
 
   def install
     system "make"
-    system "make", "install", "PREFIX=#{prefix}", "INSTALL=ginstall"
+    system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
