@@ -3,14 +3,14 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://github.com/linode/linode-cli/archive/refs/tags/5.20.0.tar.gz"
-  sha256 "f8c6cca3249fa0146a6dbf8e48e95b8347c070629ca63b8f08b00b4acd0bd7b3"
+  url "https://github.com/linode/linode-cli/archive/refs/tags/5.22.0.tar.gz"
+  sha256 "81ae9a4d650f2a8b88a5d7a6be1b529f4ff11d2a2d1ea0f95906f63e4c2f5ae8"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/linode-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "b5ac4bbd0c43e43b812725b216792b65eed6a218ee8d6a25bfdcf2c853e7de8c"
+    sha256 cellar: :any_skip_relocation, mojave: "2df87a86c3fbc82873ea3d007f1b5fa432055ba46196c0850b09801abea78b67"
   end
 
   depends_on "poetry" => :build # for terminaltables
