@@ -3,6 +3,7 @@ class Elinks < Formula
   homepage "http://elinks.or.cz/"
   url "http://elinks.or.cz/download/elinks-0.11.7.tar.bz2"
   sha256 "456db6f704c591b1298b0cd80105f459ff8a1fc07a0ec1156a36c4da6f898979"
+  license "GPL-2.0-only"
   revision 3
 
   livecheck do
@@ -12,8 +13,8 @@ class Elinks < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elinks"
-    rebuild 2
-    sha256 mojave: "c7bc4bb40f11bed06dd0c4069c729c95f023a3857a599481835436edd60483ac"
+    rebuild 3
+    sha256 mojave: "9de42e89b4935b967d202c2d422755471221bb375c259f6d21979a834a722ac6"
   end
 
   head do
@@ -23,6 +24,9 @@ class Elinks < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
+
+  # Warning: No elinks releases in the last 10 years, recommend using the actively maintained felinks instead
+  deprecate! date: "2022-07-25", because: "No releases since 2012; consider using the maintained felinks instead"
 
   depends_on "openssl@1.1"
 
