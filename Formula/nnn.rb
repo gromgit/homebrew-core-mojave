@@ -1,14 +1,14 @@
 class Nnn < Formula
   desc "Tiny, lightning fast, feature-packed file manager"
   homepage "https://github.com/jarun/nnn"
-  url "https://github.com/jarun/nnn/archive/v4.5.tar.gz"
-  sha256 "fadc15bd6d4400c06e5ccc47845b42e60774f368570e475bd882767ee18749aa"
+  url "https://github.com/jarun/nnn/archive/v4.6.tar.gz"
+  sha256 "15acaf9a88cfb5a2a640d3ef55a48af644fba92b46aac0768efe94c4addf7e3f"
   license "BSD-2-Clause"
   head "https://github.com/jarun/nnn.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nnn"
-    sha256 cellar: :any, mojave: "43f202d46407030e13afbe17a56ea438bec80d8a2b1788557eaf786a275e2c18"
+    sha256 cellar: :any, mojave: "27bf25279919244b4d00f0c92a378ff8a61e01d377cd7e8102ab564fbe9c5922"
   end
 
   depends_on "gnu-sed"
