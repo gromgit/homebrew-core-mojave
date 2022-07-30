@@ -1,8 +1,8 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https://github.com/tektoncd/cli"
-  url "https://github.com/tektoncd/cli/archive/v0.24.0.tar.gz"
-  sha256 "6382bd5be03a6c1ae51f09b9450934b71f84e96b6b14be92a3407b70ceb18fa4"
+  url "https://github.com/tektoncd/cli/archive/v0.25.0.tar.gz"
+  sha256 "24bbda9bc5839f951f94a97bbc572e7fb8b4defed0a69b2b588c7cbced2dbccc"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class TektoncdCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tektoncd-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "9e305953a89548101b2b6bd83a618c7d124c719e98ae0d2b643ddb6b82266b42"
+    sha256 cellar: :any_skip_relocation, mojave: "9c3a08c43ed7b79eeb3d5e7e60f3dc2de7a0a72b270a4795c69036dc592f2c50"
   end
 
   depends_on "go" => :build
