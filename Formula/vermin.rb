@@ -3,14 +3,14 @@ class Vermin < Formula
 
   desc "Concurrently detect the minimum Python versions needed to run code"
   homepage "https://github.com/netromdk/vermin"
-  url "https://github.com/netromdk/vermin/archive/v1.4.0.tar.gz"
-  sha256 "984773ed6af60329e700b39c58b7584032acbc908a00b5a76d1ce5468c825c70"
+  url "https://github.com/netromdk/vermin/archive/v1.4.1.tar.gz"
+  sha256 "ee69d5e84f0d446e0d6574ec60c428798de6e6c8d055589f65ac02f074a7da25"
   license "MIT"
   head "https://github.com/netromdk/vermin.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vermin"
-    sha256 cellar: :any_skip_relocation, mojave: "b161ec94326e573a7b96c5cc887ea932d17a1b4b3a501ba9f0522873ac997903"
+    sha256 cellar: :any_skip_relocation, mojave: "e6342067906c2748f93a63baf1ecfbdd7f65a4140875f333ba456dcb03d19fad"
   end
 
   depends_on "python@3.10"
