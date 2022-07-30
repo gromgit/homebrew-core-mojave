@@ -1,22 +1,21 @@
 class Loki < Formula
   desc "Horizontally-scalable, highly-available log aggregation system"
   homepage "https://grafana.com/loki"
-  url "https://github.com/grafana/loki/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "f9ca9e52f4d9125cc31f9a593aba6a46ed6464c9cd99b2be4e35192a0ab4a76e"
+  url "https://github.com/grafana/loki/archive/v2.6.1.tar.gz"
+  sha256 "4b41175e552dd198bb9cae213df3c0d9ca8cacd0b673f79d26419cea7cfb2df7"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/loki"
-    sha256 cellar: :any_skip_relocation, mojave: "39f4264bcc69c054cb701b95df1bbf73d7715d5fed03743b95d14bc6bf6772d2"
+    sha256 cellar: :any_skip_relocation, mojave: "fee2304505056a52257ce9cc07b787c5f0bd1c0021038c56b9134c57b66661b5"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     cd "cmd/loki" do
-      system "go", "build", *std_go_args
+      system "go", "build", *std_go_args(ldflags: "-s -w")
       inreplace "loki-local-config.yaml", "/tmp", var
       etc.install "loki-local-config.yaml"
     end
