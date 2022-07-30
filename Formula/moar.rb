@@ -1,13 +1,13 @@
 class Moar < Formula
   desc "Nice to use pager for humans"
   homepage "https://github.com/walles/moar"
-  url "https://github.com/walles/moar/archive/refs/tags/v1.9.5.tar.gz"
-  sha256 "e412a768c6f5774713486c1d663a4ec60b72a3ba09b03d47525cbc563267bf3a"
+  url "https://github.com/walles/moar/archive/refs/tags/v1.9.6.tar.gz"
+  sha256 "6345b1afd6c32adb296956c10553b93f23aab0571bd149345d415dbaaa53ea28"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moar"
-    sha256 cellar: :any_skip_relocation, mojave: "5e95898dd62912c6c796b6197b5784ff8144e92618dacd3c8de8c680f926e77f"
+    sha256 cellar: :any_skip_relocation, mojave: "71af06fc112fc03fbad119a49ca9fd86183012690105a3dc7821f236b0933c1e"
   end
 
   depends_on "go" => :build
@@ -15,6 +15,7 @@ class Moar < Formula
   def install
     ldflags = "-s -w -X main.versionString=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
+    man1.install "moar.1"
   end
 
   test do
