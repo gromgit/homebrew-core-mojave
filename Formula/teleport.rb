@@ -17,10 +17,12 @@ class Teleport < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teleport"
-    sha256 cellar: :any_skip_relocation, mojave: "9d50bafb57da98a32e3dc328d89fee2ac38d1bcbd8cfbc5d427c69d5e19ac7b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0598d9d447d5a2fc3dd2c645cf2d51937623937d9bfa14e9aee04ea62c740f58"
   end
 
   depends_on "go" => :build
+  depends_on "libfido2"
 
   uses_from_macos "curl" => :test
   uses_from_macos "netcat" => :test
@@ -36,7 +38,7 @@ class Teleport < Formula
 
   def install
     (buildpath/"webassets").install resource("webassets")
-    ENV.deparallelize { system "make", "full" }
+    ENV.deparallelize { system "make", "full", "FIDO2=dynamic" }
     bin.install Dir["build/*"]
   end
 
