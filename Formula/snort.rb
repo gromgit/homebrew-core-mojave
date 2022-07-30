@@ -9,7 +9,8 @@ class Snort < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snort"
-    sha256 cellar: :any, mojave: "09e33cf7e748d9681d6ff158a1568bf0406e5c41fdb0fc9af2aef89a359ad415"
+    rebuild 1
+    sha256 cellar: :any, mojave: "26febb1d51954c107e430c63e85691de768a86f893a2651514db8b5897068833"
   end
 
   depends_on "cmake" => :build
@@ -18,8 +19,6 @@ class Snort < Formula
   depends_on "daq"
   depends_on "gperftools" # for tcmalloc
   depends_on "hwloc"
-  # Hyperscan improves IPS performance, but is only available for x86_64 arch.
-  depends_on "hyperscan" if Hardware::CPU.intel?
   depends_on "libdnet"
   depends_on "libpcap" # macOS version segfaults
   depends_on "luajit-openresty"
@@ -32,6 +31,11 @@ class Snort < Formula
   on_linux do
     depends_on "libunwind"
     depends_on "gcc"
+  end
+
+  # Hyperscan improves IPS performance, but is only available for x86_64 arch.
+  on_intel do
+    depends_on "hyperscan"
   end
 
   fails_with gcc: "5"
