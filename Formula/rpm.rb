@@ -15,8 +15,8 @@ class Rpm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rpm"
-    rebuild 1
-    sha256 mojave: "a40c2875be9908ca85b79e5ad3ca9b7db37d48e3d72272bad369d07edd848d15"
+    rebuild 2
+    sha256 mojave: "2b46ab921a94eed351161c41bdc8b6599965ab7a046eec19d0e2238cb008e961"
   end
 
   # We need autotools for the Lua patch below. Remove when the patch is no longer needed.
@@ -44,8 +44,8 @@ class Rpm < Formula
   # Fix `fstat64` detection for Apple Silicon.
   # https://github.com/rpm-software-management/rpm/pull/1775
   # https://github.com/rpm-software-management/rpm/pull/1897
-  if Hardware::CPU.arm?
-    patch do
+  patch do
+    on_arm do
       url "https://github.com/rpm-software-management/rpm/commit/ad87ced3990c7e14b6b593fa411505e99412e248.patch?full_index=1"
       sha256 "a129345c6ba026b337fe647763874bedfcaf853e1994cf65b1b761bc2c7531ad"
     end
