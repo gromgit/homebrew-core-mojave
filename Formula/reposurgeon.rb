@@ -8,15 +8,19 @@ class Reposurgeon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/reposurgeon"
-    sha256 cellar: :any_skip_relocation, mojave: "cfbece26b7c0221d2b6f797eabcbf903eaaf4f7e11a328c8087d51464a617b6b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a933e954bc47f3029f82934b9ffeb0ff0262be3a7e74b6026a1cf74e66083382"
   end
 
   depends_on "asciidoctor" => :build
-  depends_on "gawk" => :build if MacOS.version <= :catalina
   depends_on "go" => :build
   depends_on "git" # requires >= 2.19.2
 
   uses_from_macos "ruby"
+
+  on_system :linux, macos: :catalina_or_older do
+    depends_on "gawk" => :build
+  end
 
   def install
     ENV.append_path "GEM_PATH", Formula["asciidoctor"].opt_libexec
