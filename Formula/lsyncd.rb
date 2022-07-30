@@ -7,8 +7,8 @@ class Lsyncd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lsyncd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c6289e872a804349ec53b95763af08c6e4fc153c3b0b311404f7aac51a2deb87"
+    rebuild 2
+    sha256 cellar: :any, mojave: "316fdca0d4a0910d32a5257cc08ad990e20e2c2d868f6972b76a5d55db1f49bd"
   end
 
   depends_on "cmake" => :build
@@ -66,10 +66,10 @@ class Lsyncd < Formula
       "12.3"    => ["xnu-8020.101.4.tar.gz",      "df715e7b2bd5db0ba212b5b0613fbbc85c3cbc4e61f6ee355a8b6cf9a87d3374"],
     }
 
-    macos_version = if MacOS.version >= :big_sur
-      MacOS.full_version.major_minor # Ignore bugfix/security updates
-    else
-      MacOS.full_version
+    macos_version = MacOS.full_version.major_minor # Ignore bugfix/security updates
+
+    on_catalina :or_older do
+      macos_version = MacOS.full_version
     end
     tarball, checksum = if xnu_headers.key? macos_version
       xnu_headers.fetch(macos_version)
