@@ -1,13 +1,13 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https://phrase.com/cli"
-  url "https://github.com/phrase/phrase-cli/archive/refs/tags/2.4.12.tar.gz"
-  sha256 "7fd1a9ef48fe919d1626566517d3a8d4ae1521bd504adac8c9ee35851f90b92d"
+  url "https://github.com/phrase/phrase-cli/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "0705b479b4e546515c3c7ccd45aeb629f3a43f8dc18038c3c33ed792aa06614f"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/phrase-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "518c9cabb8ca35ac8e46f430f5b0e987c745916e3fae894cf9c47634036d4f36"
+    sha256 cellar: :any_skip_relocation, mojave: "eb4274992cdde696f6f5d57f4e1ddf833ace55d839df67ddeb3c2f4b8f848bc0"
   end
 
   depends_on "go" => :build
