@@ -2,16 +2,15 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https://github.com/macvim-dev/macvim"
-  url "https://github.com/macvim-dev/macvim/archive/snapshot-172.tar.gz"
-  version "8.2-172"
-  sha256 "b5e16d721444d8cb6231df739b1b74dec8f3cb0bde1fe8327dd86e25fc322331"
+  url "https://github.com/macvim-dev/macvim/archive/snapshot-173.tar.gz"
+  version "9.0.0065"
+  sha256 "2b9208fa7d201aa1a5b1ac8f7ebba6d75f37cbfbaaae3b55b81d27c80eb50785"
   license "Vim"
-  revision 1
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/macvim"
-    sha256 mojave: "20599d74fa713a64aac69a16a10ba6f5225da7d0d46533719da98e020644dfcb"
+    sha256 mojave: "7bf5e348f68c21e3b0b6386cf733c1e490ec019e14a7cc846ce1e8aa1074592a"
   end
 
   depends_on xcode: :build
