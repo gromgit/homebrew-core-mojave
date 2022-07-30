@@ -1,13 +1,13 @@
 class Plow < Formula
   desc "High-performance and real-time metrics displaying HTTP benchmarking tool"
   homepage "https://github.com/six-ddc/plow"
-  url "https://github.com/six-ddc/plow/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "bd57418d6842ae79a675ede027cd986d1e719edb163febfaec812d1a7cde4304"
+  url "https://github.com/six-ddc/plow/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "0ae69218fc61d4bc036a62f3cc8a4e5f29fad0edefe9e991f0446f71d9e6d9ba"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/plow"
-    sha256 cellar: :any_skip_relocation, mojave: "af07b6bd0d20f7cce797f6b30df72591d081432ea17d3c85ed3cc8e5f8bc6f48"
+    sha256 cellar: :any_skip_relocation, mojave: "1f8ae848ebca2e399e5069e35a71883e74ecc769fb05802a9a4cdc39cde075bd"
   end
 
   depends_on "go" => :build
