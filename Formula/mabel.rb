@@ -2,14 +2,14 @@ class Mabel < Formula
   desc "Fancy BitTorrent client for the terminal"
   homepage "https://github.com/smmr-software/mabel"
   url "https://github.com/smmr-software/mabel.git",
-      tag:      "v0.1.3",
-      revision: "fab9619f85a47e17959a7d00316466c1714747c6"
+      tag:      "v0.1.4",
+      revision: "9232e54a58602b9b128a6070b84295c29aa24b27"
   license "GPL-3.0-or-later"
   head "https://github.com/smmr-software/mabel.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mabel"
-    sha256 cellar: :any_skip_relocation, mojave: "90205a0040dc1b92513826b863f02b31e810afef6de2be28e0f1c03b86ca0ec3"
+    sha256 cellar: :any_skip_relocation, mojave: "63eb9650a135200681124dbd86a30d6a40c6d95e8507c7653fc2320d82a4c51a"
   end
 
   depends_on "go" => :build
