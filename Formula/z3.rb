@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://github.com/Z3Prover/z3/archive/z3-4.9.1.tar.gz"
-  sha256 "ca08ba933481242507b2f8b303c3ebdf5d16b0005d397fb45018321dc639a0d7"
+  url "https://github.com/Z3Prover/z3/archive/z3-4.10.1.tar.gz"
+  sha256 "a86071a03983b3512c44c2bf130adbc3320770dc0198805f6f51c43b0946e11a"
   license "MIT"
   head "https://github.com/Z3Prover/z3.git", branch: "develop"
 
@@ -14,7 +14,7 @@ class Z3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/z3"
-    sha256 cellar: :any, mojave: "3babca3315bbd688bb551b672c516dc5848c1b2b42508c92273cac370f05e4b1"
+    sha256 cellar: :any, mojave: "bd136b8c98275a3cd05ba5d47de75b25bcd6fdc304369d898a4df73701d59748"
   end
 
   # Has Python bindings but are supplementary to the main library
