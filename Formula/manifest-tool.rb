@@ -1,13 +1,13 @@
 class ManifestTool < Formula
   desc "Command-line tool to create and query container image manifest list/indexes"
   homepage "https://github.com/estesp/manifest-tool/"
-  url "https://github.com/estesp/manifest-tool/archive/refs/tags/v2.0.4.tar.gz"
-  sha256 "3adff8238c21a81ac51dda1f5d83ce8ed6da0d151bf4f3371a1d0e8833e351f3"
+  url "https://github.com/estesp/manifest-tool/archive/refs/tags/v2.0.5.tar.gz"
+  sha256 "e7af6f7206e58dfaf4336169298a481de71c2e2b1dea457c17a241632ce2d9b6"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/manifest-tool"
-    sha256 cellar: :any_skip_relocation, mojave: "41a7a7d8b5eca45f4950b92f5a9408d8073a8ef18433ecb98cfd7aac2c1cb616"
+    sha256 cellar: :any_skip_relocation, mojave: "516efacc5594d3a3b5a6d6c07f57e00b87fea9b7b682da45ff5a0f554c936db3"
   end
 
   depends_on "go" => :build
