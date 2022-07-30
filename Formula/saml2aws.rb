@@ -2,13 +2,13 @@ class Saml2aws < Formula
   desc "Login and retrieve AWS temporary credentials using a SAML IDP"
   homepage "https://github.com/Versent/saml2aws"
   url "https://github.com/Versent/saml2aws.git",
-  tag:      "v2.35.0",
-  revision: "df3f6cf6757279e92c1dfe7e0155f0a60ec68d6b"
+  tag:      "v2.36.0",
+  revision: "6957a7412352d3ce930a99417d0640f38525811f"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/saml2aws"
-    sha256 cellar: :any_skip_relocation, mojave: "26d62a01954cb27e9fa9a89e62337cd4e44c7f08ea5379bccdd19347e9bff4cb"
+    sha256 cellar: :any_skip_relocation, mojave: "86acb32d579de8425bd3304f95dc722658ffd6e51719f63a67f0d4ae164462fc"
   end
 
   depends_on "go" => :build
