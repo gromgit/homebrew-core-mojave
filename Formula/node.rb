@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v18.4.0/node-v18.4.0.tar.xz"
-  sha256 "94d6f19a970361f8c8ad17450604095389f51ca6a00dcde59c21f373e95abbb5"
+  url "https://nodejs.org/dist/v18.7.0/node-v18.7.0.tar.xz"
+  sha256 "8834a33c92dfe6ba8903e6715caeaa25dff4657e703c54cd06ec113493e2c3c2"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,8 +12,8 @@ class Node < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    sha256 cellar: :any, mojave: "16355dcb2205ede57255cd23d67536e7c6c0924a3b440e470d1cdee8fe923ae3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node-18.7.0"
+    sha256 cellar: :any, mojave: "cb188a081dabf9058839e68fac6aec7f73a0e2364fbdd5cb9e788bde3a71f5d8"
   end
 
   depends_on "pkg-config" => :build
@@ -48,8 +48,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-8.12.1.tgz"
-    sha256 "0046af28aaad61275927c3a66bace3e06e32b3d1d8a4be4cc2187e93571f4a37"
+    url "https://registry.npmjs.org/npm/-/npm-8.15.0.tgz"
+    sha256 "6bdf219336595f7bffde7cb3996fffc96fcc2bdac3f1952491937d6a9d89db92"
   end
 
   def install
