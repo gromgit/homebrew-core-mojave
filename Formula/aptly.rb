@@ -8,22 +8,20 @@ class Aptly < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aptly"
-    sha256 cellar: :any_skip_relocation, mojave: "c8a82022326063c579dea9b86ecc76d46fd0db3e13af84f404f64f3cc0462a89"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "27ba3ade5b0cdef7ded4de39b1dc27055c079d211cf4e738eb3a031f595bf24c"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "auto"
-    ENV["GOBIN"] = bin
-    (buildpath/"src/github.com/aptly-dev/aptly").install buildpath.children
-    cd "src/github.com/aptly-dev/aptly" do
-      system "make", "VERSION=#{version}", "install"
-      prefix.install_metafiles
-      bash_completion.install "completion.d/aptly"
-      zsh_completion.install "completion.d/_aptly"
-    end
+    system "go", "generate" if build.head?
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
+
+    bash_completion.install "completion.d/aptly"
+    zsh_completion.install "completion.d/_aptly"
+
+    man1.install "man/aptly.1"
   end
 
   test do
