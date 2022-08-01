@@ -2,14 +2,14 @@ class Auditbeat < Formula
   desc "Lightweight Shipper for Audit Data"
   homepage "https://www.elastic.co/products/beats/auditbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v8.3.2",
-      revision: "45f722f492dcf1d13698c6cf618b339b1d4907be"
+      tag:      "v8.3.3",
+      revision: "1755b5dd3127bf755ee39deb25a802438bdac620"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/auditbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "26fe2d024f4bdea355b806dcc9202fcc77c2aff902f0b1744c99ec0008ddb1a6"
+    sha256 cellar: :any_skip_relocation, mojave: "ebd8984680f5cad532e248a774a34a8ae8c220241cc8d666ae1d083a4626d890"
   end
 
   depends_on "go" => :build
