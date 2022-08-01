@@ -6,17 +6,19 @@ class Nodeenv < Formula
   url "https://github.com/ekalinin/nodeenv/archive/1.7.0.tar.gz"
   sha256 "a9e9e36e1be6439e877c53e7f27ce068f75b82cc08201f2c68471687199cfd7b"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nodeenv"
-    sha256 cellar: :any_skip_relocation, mojave: "b62820fdf34eb99d433736cc707c41a506f404ff2043418b62a4ab47a46fe99d"
+    sha256 cellar: :any_skip_relocation, all: "dfbd40ce1e67ad9d87f4f4fbcee25019bf49957456d5fa6b41e2e9493a6c43a0"
   end
 
   uses_from_macos "python"
 
   def install
-    rw_info = OS.mac? ? python_shebang_rewrite_info("/usr/bin/env python3") : detected_python_shebang
-    rewrite_shebang rw_info, "nodeenv.py"
+    if OS.linux? || MacOS.version >= :catalina
+      rw_info = python_shebang_rewrite_info("/usr/bin/env python3")
+      rewrite_shebang rw_info, "nodeenv.py"
+    end
     bin.install "nodeenv.py" => "nodeenv"
   end
 
