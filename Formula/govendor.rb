@@ -7,13 +7,18 @@ class Govendor < Formula
   head "https://github.com/kardianos/govendor.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/govendor"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "9d2979020a78715012fea942a3b03f1063c9da1e73614368c4fd6921f0e977ea"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "037aa26c2ac7ad0d1fef83fbf0001e9c6812adb0cc35b26a7ee2ca4c18c3cbcc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6dfce4585d00e1429cbc2f2f6f25d8e5623f5b5689220918b3dca99ca5e0bccd"
+    sha256 cellar: :any_skip_relocation, monterey:       "b281b7fe76751ad3a79605a3fc17457710e7693145f151dab3e999152758158a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "479d963acb5e5d0446e223291e301581b55390c80b0e5263ad2a216b0a3acffa"
+    sha256 cellar: :any_skip_relocation, catalina:       "85a344d1c8a2488bd4303b2b2bb4deb4d902bb88e2004160588b4c863d664fd0"
+    sha256 cellar: :any_skip_relocation, mojave:         "28492791ec9b8c58e472a7276c9b86450112ef642e2aa10d025eb623e0921f40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24497503629e520a1fe718029ab520b05c012677df065c9fd104afe4d898b8b8"
   end
 
-
-  deprecate! date: "2020-03-02", because: :repo_archived
+  # Commented out while this formula still has dependents.
+  # deprecate! date: "2020-03-02", because: :repo_archived
 
   depends_on "go"
 
