@@ -4,6 +4,7 @@ class Ski < Formula
   desc "Evade the deadly Yeti on your jet-powered skis"
   homepage "http://catb.org/~esr/ski/"
   license "BSD-2-Clause"
+  revision 1
 
   stable do
     url "http://www.catb.org/~esr/ski/ski-6.13.tar.gz"
@@ -15,9 +16,7 @@ class Ski < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ski"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b21af4ff7a6f21c25847e42dcabfc3695b79e36bb729872d4dfeafd18ab00665"
+    sha256 cellar: :any_skip_relocation, all: "cbda47eb2a97213dee88f63680f6301826874ffc66c6ad2b666125e1505f8585"
   end
 
   head do
@@ -32,8 +31,8 @@ class Ski < Formula
       ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
       system "make"
     end
-    if MacOS.version <= :mojave
-      rw_info = OS.mac? ? python_shebang_rewrite_info("/usr/bin/env python") : detected_python_shebang
+    if OS.mac? && MacOS.version <= :mojave
+      rw_info = python_shebang_rewrite_info("/usr/bin/env python")
       rewrite_shebang rw_info, "ski"
     end
     bin.install "ski"
