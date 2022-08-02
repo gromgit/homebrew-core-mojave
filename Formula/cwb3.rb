@@ -1,10 +1,9 @@
 class Cwb3 < Formula
   desc "Tools for managing and querying large text corpora with linguistic annotations"
   homepage "https://cwb.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/cwb/cwb/cwb-3.5-RC/cwb-3.4.33-src.tar.gz"
-  sha256 "856b72785522d42f13f4a0528d2b80c2bf422c10411234a8e4b61df111af77dd"
+  url "https://downloads.sourceforge.net/project/cwb/cwb/cwb-3.5/source/cwb-3.5.0-src.tar.gz"
+  sha256 "20bbd00b7c830389ce384fe70124bc0f55ea7f3d70afc3a159e6530d51b24059"
   license "GPL-2.0-or-later"
-  revision 2
   head "svn://svn.code.sf.net/p/cwb/code/cwb/trunk"
 
   livecheck do
@@ -14,7 +13,7 @@ class Cwb3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cwb3"
-    sha256 cellar: :any, mojave: "ea3424fdeeecfd6f082d3576662a7135dd6c7c8040c5c7bd5424f5702f7177c6"
+    sha256 cellar: :any, mojave: "e4e9de187430ca0abbf72ff8bc132fdf3d5d45e69e3a6b11477ec35cf9ac572e"
   end
 
   depends_on "pkg-config" => :build
