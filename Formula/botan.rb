@@ -11,9 +11,11 @@ class Botan < Formula
     regex(/href=.*?Botan[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/botan"
-    sha256 mojave: "1dd08769588462588c84ab5a79c997be17397ffded6e8f1b5bacf874eb0c63d1"
+    rebuild 1
+    sha256 mojave: "a8c744824fae32d17e25332d6caea389fffc2f7c877a6cfcee12928b981e8b43"
   end
 
   depends_on "pkg-config" => :build
@@ -22,10 +24,6 @@ class Botan < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
