@@ -1,8 +1,8 @@
 class Fetchmail < Formula
   desc "Client for fetching mail from POP, IMAP, ETRN or ODMR-capable servers"
   homepage "https://www.fetchmail.info/"
-  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.4/fetchmail-6.4.31.tar.xz"
-  sha256 "904bf9247054df8e91b47b1a9fe15a31dda8478c25b5291da0424653744a28f7"
+  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.4/fetchmail-6.4.32.tar.xz"
+  sha256 "3ee7444665606ad06fb5f7b15f91e3173b845bc98b646b1a4514a46aa48b7228"
   license all_of: [
     "LGPL-2.1-or-later",
     "ISC",
@@ -18,7 +18,7 @@ class Fetchmail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fetchmail"
-    sha256 mojave: "9bd4b357daf706befca3c50887b47ce53919193a4362e1c5e3a0fb2f5b6f17ea"
+    sha256 mojave: "eda89f6a21afa90f2139859f3a46b5e10f272c18f0eab63355d58a35283d4652"
   end
 
   depends_on "openssl@3"
