@@ -4,6 +4,7 @@ class Ldns < Formula
   url "https://nlnetlabs.nl/downloads/ldns/ldns-1.8.1.tar.gz"
   sha256 "958229abce4d3aaa19a75c0d127666564b17216902186e952ca4aef47c6d7fa3"
   license "BSD-3-Clause"
+  revision 1
 
   # https://nlnetlabs.nl/downloads/ldns/ since the first-party site has a
   # tendency to lead to an `execution expired` error.
@@ -14,12 +15,12 @@ class Ldns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldns"
-    sha256 cellar: :any, mojave: "2ea9442da57f9182220dc90c2eeb15bf0479aa7a14278617f753e8cf9c00aa50"
+    sha256 cellar: :any, mojave: "bb78321cc2ff43d250933ec40b048553a2b0fed2ac864e1e32dd6f3c036daf92"
   end
 
   depends_on "swig" => :build
   depends_on "openssl@1.1"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   conflicts_with "drill", because: "both install a `drill` binary"
 
@@ -30,7 +31,7 @@ class Ldns < Formula
       --with-examples
       --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
       --with-pyldns
-      PYTHON_SITE_PKG=#{lib}/python3.9/site-packages
+      PYTHON_SITE_PKG=#{prefix/Language::Python.site_packages("python3")}
       --disable-dane-verify
       --without-xcode-sdk
     ]
@@ -38,7 +39,7 @@ class Ldns < Formula
     # Fixes: ./contrib/python/ldns_wrapper.c:2746:10: fatal error: 'ldns.h' file not found
     inreplace "contrib/python/ldns.i", "#include \"ldns.h\"", "#include <ldns/ldns.h>"
 
-    ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
+    ENV["PYTHON"] = which("python3")
     system "./configure", *args
 
     if OS.mac?
