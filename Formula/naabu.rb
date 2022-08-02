@@ -1,14 +1,14 @@
 class Naabu < Formula
   desc "Fast port scanner"
   homepage "https://github.com/projectdiscovery/naabu"
-  url "https://github.com/projectdiscovery/naabu/archive/v2.0.9.tar.gz"
-  sha256 "cdfc2dcc4dfc52370882b9e244d6dcbb8650dc9c4af3f3c6f7ff7a2b805cff0c"
+  url "https://github.com/projectdiscovery/naabu/archive/v2.1.0.tar.gz"
+  sha256 "fdd90231ca0e502ccc09a57a2753ce79721703b9be12683be578b1947970a95b"
   license "MIT"
   head "https://github.com/projectdiscovery/naabu.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/naabu"
-    sha256 cellar: :any_skip_relocation, mojave: "caed1a6349077a8f04bd7b88093691651025e0508709f968ce2adb1677261ca3"
+    sha256 cellar: :any_skip_relocation, mojave: "156bc0478ec45ee417993a198bf7667a15d13be5e6218593a068808718698c74"
   end
 
   depends_on "go" => :build
