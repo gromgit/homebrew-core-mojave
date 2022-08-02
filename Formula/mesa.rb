@@ -9,9 +9,11 @@ class Mesa < Formula
   revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
+  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    sha256 mojave: "88ca2df83e228162dd00cf356a051c2c8fd2f0752eb52cc63528afda39af7cde"
+    rebuild 1
+    sha256 mojave: "6c1d837ef956905192648bb864df72310787452e90ae0ea8a785d67c729fa6cc"
   end
 
   depends_on "bison" => :build # can't use form macOS, needs '> 2.3'
@@ -33,7 +35,6 @@ class Mesa < Formula
 
   on_linux do
     depends_on "elfutils"
-    depends_on "gcc"
     depends_on "gzip"
     depends_on "libdrm"
     depends_on "libva"
