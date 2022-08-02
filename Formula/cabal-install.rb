@@ -8,8 +8,8 @@ class CabalInstall < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cabal-install"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "838defd1fba736e7b86164a5eb16de33a0ee31d9e40821f8b6586812311cea26"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "b261267b1989accf54e6ef11b946a4d6496ecb078e054a51d79bd973e895d1fb"
   end
 
   depends_on "ghc"
@@ -17,10 +17,11 @@ class CabalInstall < Formula
 
   resource "bootstrap" do
     on_macos do
-      if Hardware::CPU.intel?
+      on_intel do
         url "https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-apple-darwin17.7.0.tar.xz"
         sha256 "9197c17d2ece0f934f5b33e323cfcaf486e4681952687bc3d249488ce3cbe0e9"
-      else
+      end
+      on_arm do
         # https://github.com/haskell/cabal/issues/7433#issuecomment-858590474
         url "https://downloads.haskell.org/~ghcup/unofficial-bindists/cabal/3.6.0.0/cabal-install-3.6.0.0-aarch64-darwin-big-sur.tar.xz"
         sha256 "7acf740946d996ede835edf68887e6b2f1e16d1b95e94054d266463f38d136d9"
