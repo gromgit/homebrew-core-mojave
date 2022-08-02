@@ -1,20 +1,20 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.docker.com/machine"
-  url "https://github.com/docker/machine.git",
-      tag:      "v0.16.2",
-      revision: "bd45ab13d88c32a3dd701485983354514abc41fa"
+  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git",
+      tag:      "v0.16.2-gitlab.18",
+      revision: "cd8285a7e2310276c7d20575f15bba40a0678ed9"
+  version "0.16.2-gitlab.18"
   license "Apache-2.0"
-  head "https://github.com/docker/machine.git", branch: "master"
+  head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-machine"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "86724ae55a3b966d743faf009866019691b492621e27db6078caa96a85b3a9b5"
+    sha256 cellar: :any_skip_relocation, mojave: "72071fdc08b7407421883033910204324e4ba516034899bfefd36c07470805f7"
   end
 
-
-  deprecate! date: "2021-09-30", because: :repo_archived
+  # Commented out while this formula still has dependents.
+  # deprecate! date: "2021-09-30", because: :repo_archived
 
   depends_on "automake" => :build
   depends_on "go" => :build
