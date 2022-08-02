@@ -3,14 +3,13 @@ class Scons < Formula
 
   desc "Substitute for classic 'make' tool with autoconf/automake functionality"
   homepage "https://www.scons.org/"
-  url "https://files.pythonhosted.org/packages/64/a1/9dc5c5e43b3d1b1832da34c8ae7b239a8f2847c33509fa0eb011fd8bc1ad/SCons-4.3.0.tar.gz"
-  sha256 "d47081587e3675cc168f1f54f0d74a69b328a2fc90ec4feb85f728677419b879"
+  url "https://files.pythonhosted.org/packages/c6/63/3a87df61a5d8e1b2ba116f4889f3dbc2717ebe2e34c77b2d34e4e6b9deef/SCons-4.4.0.tar.gz"
+  sha256 "7703c4e9d2200b4854a31800c1dbd4587e1fa86e75f58795c740bcfa7eca7eaa"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scons"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "190eef11a54c52a72cd6d5312bcb7098c31d64a6437b9002335780f8733d4da8"
+    sha256 cellar: :any_skip_relocation, mojave: "f4b2dc4152373424f8df6f9d8fff6e23e231443bd8897128445318468f23753d"
   end
 
   depends_on "python@3.10"
