@@ -3,13 +3,13 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/62/ae/e78752833a1a198bd62bc5ad633b2f5762ba1240e55c45605a9920c5d6e4/Glances-3.2.6.4.tar.gz"
-  sha256 "43f4abd140e3e83bbcd514e8b88af99c3b11803141197f4e5de486dd7174186b"
+  url "https://files.pythonhosted.org/packages/d9/0e/f1ede21301911f5f4a66b418b28d81ac8942b40dff49f3037b941ac68849/Glances-3.2.7.tar.gz"
+  sha256 "56ec34293aba3e09d801c890e1ccd799c2b9e8614c9435d74ffdf14cdfeb9492"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glances"
-    sha256 cellar: :any_skip_relocation, mojave: "b704b8fd3855a3ed110071de5c35e1f209bff40fd7e98d87d097bd3bfff215ba"
+    sha256 cellar: :any_skip_relocation, mojave: "2966a7d0de9dfdcfa172b959b490923bcaa433994383ac091c40870a8c05422f"
   end
 
   depends_on "python@3.10"
