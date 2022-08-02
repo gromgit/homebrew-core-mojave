@@ -3,33 +3,31 @@ class Flake8 < Formula
 
   desc "Lint your Python code for style and logical errors"
   homepage "https://flake8.pycqa.org/"
-  url "https://files.pythonhosted.org/packages/e6/84/d8db922289195c435779b4ca3a3f583f263f87e67954f7b2e83c8da21f48/flake8-4.0.1.tar.gz"
-  sha256 "806e034dda44114815e23c16ef92f95c91e4c71100ff52813adf7132a6ad870d"
+  url "https://files.pythonhosted.org/packages/dd/94/b407f9f904fa387522ed8ba7890bcd1af67b94e2988744159c263e516cf8/flake8-5.0.1.tar.gz"
+  sha256 "9c51d3d1426379fd444d3b79eabbeb887849368bd053039066439523d8486961"
   license "MIT"
   head "https://gitlab.com/PyCQA/flake8.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flake8"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "683c650e0c7855c1ca1a62b7cb56b5971afaf75900d799a4e57933a6b9e5e623"
+    sha256 cellar: :any_skip_relocation, mojave: "32c2bbf31cc9468efa161ab60cbd010cda5300ce94228c04ebd65f3c5cfc6660"
   end
-
 
   depends_on "python@3.10"
 
   resource "mccabe" do
-    url "https://files.pythonhosted.org/packages/06/18/fa675aa501e11d6d6ca0ae73a101b2f3571a565e0f7d38e062eec18a91ee/mccabe-0.6.1.tar.gz"
-    sha256 "dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
+    url "https://files.pythonhosted.org/packages/e7/ff/0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8/mccabe-0.7.0.tar.gz"
+    sha256 "348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"
   end
 
   resource "pycodestyle" do
-    url "https://files.pythonhosted.org/packages/08/dc/b29daf0a202b03f57c19e7295b60d1d5e1281c45a6f5f573e41830819918/pycodestyle-2.8.0.tar.gz"
-    sha256 "eddd5847ef438ea1c7870ca7eb78a9d47ce0cdb4851a5523949f2601d0cbbe7f"
+    url "https://files.pythonhosted.org/packages/f7/98/95b7936a9439bea0e537a42feca1404e7926518fe054f85d28ad7e4bc6fa/pycodestyle-2.9.0.tar.gz"
+    sha256 "beaba44501f89d785be791c9462553f06958a221d166c64e1f107320f839acc2"
   end
 
   resource "pyflakes" do
-    url "https://files.pythonhosted.org/packages/15/60/c577e54518086e98470e9088278247f4af1d39cb43bcbd731e2c307acd6a/pyflakes-2.4.0.tar.gz"
-    sha256 "05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"
+    url "https://files.pythonhosted.org/packages/07/92/f0cb5381f752e89a598dd2850941e7f570ac3cb8ea4a344854de486db152/pyflakes-2.5.0.tar.gz"
+    sha256 "491feb020dca48ccc562a8c0cbe8df07ee13078df59813b83959cbdada312ea3"
   end
 
   def install
