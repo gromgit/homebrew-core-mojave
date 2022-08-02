@@ -8,12 +8,15 @@ class GoAT116 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go@1.16"
-    sha256 cellar: :any_skip_relocation, mojave: "cc3a5cd5b3cf083cb546e250aa7763377ee5b61f4f2530752bd44afcbd390ab3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0ddb779aef8c7d63d6c986e7dc8879c59e08d575ddecae4ce2ab9ec0058f3ea4"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2022-03-15", because: :unsupported
+  # Original date: 2022-03-15
+  # The date below was adjusted to match `kubernetes-cli@1.22`.
+  deprecate! date: "2022-08-28", because: :unsupported
 
   depends_on "go" => :build
 
