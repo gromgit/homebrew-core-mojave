@@ -7,11 +7,14 @@ class Libxcrypt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcrypt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f8a8f0222f1e9f1febd1384d85289580badfce414490adeb1ec2948cdb095f7d"
+    rebuild 2
+    sha256 cellar: :any, mojave: "9860edbf4e5288e90773483099e7720f68a6d74993a0c7683ed2b72e1037c285"
   end
 
   keg_only :provided_by_macos
+
+  link_overwrite "include/crypt.h"
+  link_overwrite "lib/libcrypt.so"
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
