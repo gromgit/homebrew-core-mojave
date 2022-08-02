@@ -4,8 +4,8 @@ class Libdap < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://www.opendap.org/pub/source/libdap-3.20.10.tar.gz"
-    sha256 "d68c8a95916fa6057a5218c79a0f06e4bb2b24c2adff01ccd7e23e1678cabd90"
+    url "https://www.opendap.org/pub/source/libdap-3.20.11.tar.gz"
+    sha256 "850debf6ee6991350bf31051308093bee35ddd2121e4002be7e130a319de1415"
 
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
@@ -20,7 +20,7 @@ class Libdap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdap"
-    sha256 mojave: "714501fae3d645719fcabfb000e86d778e85c4ab51ab5de8c3d97d249c235557"
+    sha256 mojave: "a2bca098bd0983c9085d60bc5d71ce8cd56d0bfafe23aed0a972c1b941611a9b"
   end
 
   head do
