@@ -8,14 +8,17 @@ class Bowtie2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bowtie2"
-    sha256 cellar: :any_skip_relocation, mojave: "52c467411d45f1b891e593d7481e46480894174c46aaa9fc7fd117167fb4095e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7bb2e74b04000b466e2068342ef7960bfede3fb4bcf7f47288baf55f131a7dac"
   end
 
-  depends_on "simde"
-  depends_on "tbb"
-
-  uses_from_macos "python"
+  uses_from_macos "perl"
+  uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
+
+  on_arm do
+    depends_on "simde" => :build
+  end
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
