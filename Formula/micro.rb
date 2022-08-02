@@ -2,15 +2,14 @@ class Micro < Formula
   desc "Modern and intuitive terminal-based text editor"
   homepage "https://github.com/zyedidia/micro"
   url "https://github.com/zyedidia/micro.git",
-      tag:      "v2.0.10",
-      revision: "b97638566ea8431712f0faafe23661da2db0e8ec"
+      tag:      "v2.0.11",
+      revision: "225927b9a25f0d50ea63ea18bc7bb68e404c0cfd"
   license "MIT"
   head "https://github.com/zyedidia/micro.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micro"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b64ef00e05c38f4d17f8d660010303619192e9fb297acff17a646c7fa7047d2c"
+    sha256 cellar: :any_skip_relocation, mojave: "d6b5537f44d2a2f43b593476d36ef2db85c1124a483ba04b1d5bc427d2b41625"
   end
 
   depends_on "go" => :build
