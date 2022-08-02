@@ -11,10 +11,11 @@ class Kakoune < Formula
     strategy :github_latest
   end
 
+  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kakoune"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "20088187720ee1b2d976f7bcdaa777f5bac0f1b9948eadc45746afed2ebf2d41"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "f0a6e542ef4c969e110b6a47fd0147dc6a4d035219abf128264238aa9162b1f5"
   end
 
   depends_on macos: :high_sierra # needs C++17
@@ -26,7 +27,6 @@ class Kakoune < Formula
     depends_on "binutils" => :build
     depends_on "linux-headers@4.4" => :build
     depends_on "pkg-config" => :build
-    depends_on "gcc"
   end
 
   fails_with gcc: "5"
