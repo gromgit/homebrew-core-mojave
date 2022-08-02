@@ -5,11 +5,12 @@ class Gawk < Formula
   mirror "https://ftpmirror.gnu.org/gawk/gawk-5.1.1.tar.xz"
   sha256 "d87629386e894bbea11a5e00515fc909dc9b7249529dad9e6a3a2c77085f7ea2"
   license "GPL-3.0-or-later"
+  head "https://git.savannah.gnu.org/git/gawk.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gawk"
-    rebuild 2
-    sha256 mojave: "833ce97b3e353d0e3d1e01a6b1ee6bf3a361ecc52b54778051e2636bc22feca0"
+    rebuild 3
+    sha256 mojave: "405aa97030fad38a8827b08ed93974750dc5d4d62f64558b568ce78e11d8e19b"
   end
 
   depends_on "gettext"
@@ -20,6 +21,7 @@ class Gawk < Formula
     because: "both install an `awk` executable"
 
   def install
+    system "./bootstrap.sh" if build.head?
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
