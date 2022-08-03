@@ -11,9 +11,11 @@ class Rubberband < Formula
     regex(/href=.*?rubberband[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rubberband"
-    sha256 cellar: :any, mojave: "7c250dfe35536f2f312088d3284ad706917d3bb7d9a54c3ca6f8eef65801e695"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3df29ccdf95bfde5e52c3a515cb0aecfbd93159238a1c321d4fc6f4b0dd9d5af"
   end
 
   depends_on "meson" => :build
@@ -24,7 +26,6 @@ class Rubberband < Formula
 
   on_linux do
     depends_on "fftw"
-    depends_on "gcc"
     depends_on "ladspa-sdk"
     depends_on "vamp-plugin-sdk"
   end
