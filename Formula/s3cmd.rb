@@ -6,15 +6,15 @@ class S3cmd < Formula
   url "https://files.pythonhosted.org/packages/65/6c/f51ba2fbc74916f4fe3883228450306135e13be6dcca03a08d3e91239992/s3cmd-2.2.0.tar.gz"
   sha256 "2a7d2afe09ce5aa9f2ce925b68c6e0c1903dd8d4e4a591cd7047da8e983a99c3"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/s3tools/s3cmd.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s3cmd"
-    sha256 cellar: :any_skip_relocation, mojave: "82e7b9648f586bd28dd5164abfcf6a274863eed92d5e8b2bdffe16a266d09231"
+    sha256 cellar: :any_skip_relocation, mojave: "9cbfc380f0761ed6ea8d93b1adedcda917fe68681664ebe28068cf1d8d807950"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "python-dateutil" do
