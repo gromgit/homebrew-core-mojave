@@ -1,14 +1,14 @@
 class Openh264 < Formula
   desc "H.264 codec from Cisco"
   homepage "https://www.openh264.org/"
-  url "https://github.com/cisco/openh264/archive/v2.2.0.tar.gz"
-  sha256 "e4e5c8ba48e64ba6ce61e8b6e2b76b2d870c74c270147649082feabb40f25905"
+  url "https://github.com/cisco/openh264/archive/v2.3.0.tar.gz"
+  sha256 "99b0695272bee73a3b3a5fcb1afef462c11a142d1dc35a2c61fef5a4b7d60bc0"
   license "BSD-2-Clause"
   head "https://github.com/cisco/openh264.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openh264"
-    sha256 cellar: :any, mojave: "1aab1c02f1e3440c2fdbc0283832b487ca95682ba0d62cccdf3733880f96de0c"
+    sha256 cellar: :any, mojave: "62a995b5472624a6d495a69c6dca897e9bc23102cd5bfb4d452799715c433f74"
   end
 
   depends_on "nasm" => :build
