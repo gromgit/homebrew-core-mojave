@@ -3,14 +3,14 @@ class Pyinstaller < Formula
 
   desc "Bundle a Python application and all its dependencies"
   homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/9c/b1/5c9cf5bceade92613196b1be4b9cc1406e82d9edadb3c682da860be96cea/pyinstaller-5.2.tar.gz"
-  sha256 "5efc1b3ffb13fe50a51305fe57fb9e6e7bce00d009c16dd3cb76ea4d702a04ab"
+  url "https://files.pythonhosted.org/packages/7f/48/a60502c14ebafd3c1af193865141ede851591401287ce739816c99d12af2/pyinstaller-5.3.tar.gz"
+  sha256 "de71d4669806e4d54b23b477cc077e2e8fe9c4d57e79ed32d22b7585137fd7b7"
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyinstaller"
-    sha256 cellar: :any_skip_relocation, mojave: "11d34e6fe0e152cf5658484e9e32014f1341a3254a06b2d9b66a35ce02c3a315"
+    sha256 cellar: :any_skip_relocation, mojave: "05ba413c053ad493116d79f87206f74eb587bf417871ccfc41e3070646f53083"
   end
 
   depends_on "python@3.10"
