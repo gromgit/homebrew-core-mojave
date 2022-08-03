@@ -3,14 +3,14 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/9b/e9/fd5421218ce2393a6f1980dec2ef4d8a269820d6ee2c756e16acc9323138/pdm-2.0.3.tar.gz"
-  sha256 "6fb2835fd17311b2f48897b004b9ff76cb66b471481e7d9488c7f84271317bfb"
+  url "https://files.pythonhosted.org/packages/10/3c/922238ec072210da3757d63f8761aeeee14a0b30743c1d38113df3adf2bc/pdm-2.1.0.tar.gz"
+  sha256 "fcd287ce1b60aac5edde849543ffe4d2acb4a72c60dc3ec811ab2548c5266b8e"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdm"
-    sha256 cellar: :any_skip_relocation, mojave: "85fbb3a947060fe295b0bb5d63fac710d8e061df280c6cae8938571d8782aafa"
+    sha256 cellar: :any_skip_relocation, mojave: "ad540a939406e5c7d069b1ec89660298e049896fb10a233bef9c053a6f9d8130"
   end
 
   depends_on "python@3.10"
@@ -82,8 +82,8 @@ class Pdm < Formula
   end
 
   resource "pdm-pep517" do
-    url "https://files.pythonhosted.org/packages/b8/f2/19376707a470ceeeff96fdeb7526adef4f692fb78fdb2eb19af6bd5f26f7/pdm-pep517-1.0.2.tar.gz"
-    sha256 "9d5a2aa5896f3733755097945ec2a751cd19ee3399306e099514014b1e49adf1"
+    url "https://files.pythonhosted.org/packages/24/b6/1b06ac9506f531ef952217a20063413523c4192642b2e984433b2dc97919/pdm-pep517-1.0.3.tar.gz"
+    sha256 "0212afdd968c1da0ce5249e61b754c5bebb6778c9fd94f70a48711606c45207f"
   end
 
   resource "pep517" do
@@ -147,18 +147,18 @@ class Pdm < Formula
   end
 
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/91/ce/16a2880ab5ce732c7e40e30808419089112c75afc7bac32c8ba78e0ce869/unearth-0.5.2.tar.gz"
-    sha256 "e51696b1913f591b41927b3eef8cebe84668fb769bf81f88094b7cc99afa706d"
+    url "https://files.pythonhosted.org/packages/44/95/e53610248a8a590f2b5e716e173ca1b6b6f97734fa361069d316addac7ad/unearth-0.6.1.tar.gz"
+    sha256 "4b7bfbd7d34a11673d80dfae7fabbf921c139aac78383fb0ca16a90d3b53a66e"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/25/36/f056e5f1389004cf886bb7a8514077f24224238a7534497c014a6b9ac770/urllib3-1.26.10.tar.gz"
-    sha256 "879ba4d1e89654d9769ce13121e0f94310ea32e8d2f8cf587b77c08bbcdb30d6"
+    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
+    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a4/2f/05b77cb73501c01963de2cef343839f0803b64aab4d5476771ae303b97a6/virtualenv-20.15.1.tar.gz"
-    sha256 "288171134a2ff3bfb1a2f54f119e77cd1b81c29fc1265a2356f3e8d14c7d58c4"
+    url "https://files.pythonhosted.org/packages/9d/17/5a822952d90f791947f9d1d11c84c055ffc3b7a315c2552d4f46a0d6cd12/virtualenv-20.16.2.tar.gz"
+    sha256 "0ef5be6d07181946891f5abc8047fda8bc2f0b4b9bf222c64e6e8963baee76db"
   end
 
   resource "wheel" do
