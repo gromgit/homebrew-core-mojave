@@ -1,14 +1,14 @@
 class ProtobufC < Formula
   desc "Protocol buffers library"
   homepage "https://github.com/protobuf-c/protobuf-c"
-  url "https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.0/protobuf-c-1.4.0.tar.gz"
-  sha256 "26d98ee9bf18a6eba0d3f855ddec31dbe857667d269bc0b6017335572f85bbcb"
+  url "https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.1/protobuf-c-1.4.1.tar.gz"
+  sha256 "4cc4facd508172f3e0a4d3a8736225d472418aee35b4ad053384b137b220339f"
   license "BSD-2-Clause"
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf-c"
-    sha256 cellar: :any, mojave: "3e078aab8a20fc7221e9ab015d271713ed7390e4354c76209a6cb135349d8c4a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf-c-1.4.1"
+    sha256 cellar: :any, mojave: "2c1d78ee48cc052d94f1d32f6724b79a1ac0b3a1959d00aad88523c4e45ebdfb"
   end
 
   depends_on "pkg-config" => :build
@@ -16,6 +16,9 @@ class ProtobufC < Formula
 
   def install
     ENV.cxx11
+
+    # https://github.com/protocolbuffers/protobuf/issues/9947
+    ENV.append_to_cflags "-DNDEBUG"
 
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
