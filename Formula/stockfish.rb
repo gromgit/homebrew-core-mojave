@@ -11,13 +11,11 @@ class Stockfish < Formula
     regex(/^sf[._-]v?(\d+(?:\.\d+)*)$/i)
   end
 
+  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stockfish"
-    sha256 cellar: :any_skip_relocation, mojave: "f050fac04fc09e0726ff2f866a66b94f4d261f0b340bcb62fbc32ead7562199c"
-  end
-
-  on_linux do
-    depends_on "gcc" # For C++17
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "df56e7c1d12474f56ee321f0a29fbf0549bc684ac86818ecfc3d427052db06d4"
   end
 
   fails_with gcc: "5"
