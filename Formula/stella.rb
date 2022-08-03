@@ -6,9 +6,11 @@ class Stella < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/stella-emu/stella.git", branch: "master"
 
+  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stella"
-    sha256 cellar: :any, mojave: "cfb6111aad588843b06e3d14c8137259acd25af449861ee1c7e484283cc5f1dc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ae4abebb4dd642f03b947f329867ac2e0b06ae653f0c84b20b4cc4242589736c"
   end
 
   depends_on xcode: :build
@@ -16,10 +18,6 @@ class Stella < Formula
   depends_on "sdl2"
 
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
