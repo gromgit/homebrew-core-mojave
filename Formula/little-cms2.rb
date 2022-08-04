@@ -6,6 +6,7 @@ class LittleCms2 < Formula
   url "https://downloads.sourceforge.net/project/lcms/lcms/2.13/lcms2-2.13.1.tar.gz"
   sha256 "d473e796e7b27c5af01bd6d1552d42b45b43457e7182ce9903f38bb748203b88"
   license "MIT"
+  revision 1
   version_scheme 1
 
   # The Little CMS website has been redesigned and there's no longer a
@@ -19,17 +20,14 @@ class LittleCms2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/little-cms2"
-    rebuild 2
-    sha256 cellar: :any, mojave: "7ce41d2db80810f3f8e398d15d9b2229aa9128c60ea913b027dab300f9e0ac6d"
+    sha256 cellar: :any, mojave: "c87eb219e3b3b038b96d64b4eed075c6ed8c75722e6a672bdc8fb0fbc332e511"
   end
 
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libtiff"
 
   def install
-    args = %W[--disable-dependency-tracking --prefix=#{prefix}]
-
-    system "./configure", *args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
