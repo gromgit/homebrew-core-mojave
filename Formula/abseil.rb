@@ -6,14 +6,17 @@ class Abseil < Formula
   license "Apache-2.0"
   head "https://github.com/abseil/abseil-cpp.git", branch: "master"
 
-  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abseil"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c0b6decc0e18e6221d10309791e8481d4e509ad31b3528a20cb7cd5ba5148bad"
+    rebuild 2
+    sha256 cellar: :any, mojave: "28b8ff1f47fa9ab008533c1502f0ea7dbd9fcec0bd3cd39b2a93d8ec6dc90786"
   end
 
   depends_on "cmake" => :build
+
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5" # C++17
 
