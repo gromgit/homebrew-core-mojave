@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://github.com/lu-zero/cargo-c/archive/v0.9.10.tar.gz"
-  sha256 "e4ad4f6459522b4b1f485c2637f328f267b81bc46fdd85ec9ddbf011aa7873eb"
+  url "https://github.com/lu-zero/cargo-c/archive/v0.9.11.tar.gz"
+  sha256 "a3e9471e80e7963ab1d8aa09d0c8ce4d76509346569d89fc86848dd2a9d20d43"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class CargoC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-c"
-    sha256 cellar: :any, mojave: "43efe44e9d5e8cc96f2b33db24debc2c754028092fc8436f176099866137239a"
+    sha256 cellar: :any, mojave: "28b9467afcac09ecbf1c29a21aefb15fce78a7d1b555838e751537b210442cb6"
   end
 
   depends_on "rust" => :build
