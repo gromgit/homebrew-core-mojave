@@ -7,9 +7,11 @@ class Atk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atk"
-    sha256 cellar: :any, mojave: "7ce5e64f3aa4670989a45dbe624dbe7d366ffcfd5e9f93ab1c939d9543d2cbf6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cb8d9e015b9b2ec6b3369a6b7f4c29f6a6db055b9adf242c28d6c99cd2aa259d"
   end
 
+  depends_on "glib-utils" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
