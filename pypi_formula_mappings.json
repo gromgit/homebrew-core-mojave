@@ -274,6 +274,9 @@
   "ocrmypdf": {
     "exclude_packages": ["pillow"]
   },
+  "onlykey-agent": {
+    "exclude_packages": ["six", "Cython"]
+  },
   "openstackclient": {
     "extra_packages": ["python-heatclient", "python-octaviaclient"],
     "exclude_packages": ["six"]
