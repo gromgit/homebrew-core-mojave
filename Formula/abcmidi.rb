@@ -1,8 +1,8 @@
 class Abcmidi < Formula
   desc "Converts abc music notation files to MIDI files"
   homepage "https://ifdo.ca/~seymour/runabc/top.html"
-  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2022.07.31.zip"
-  sha256 "b1a44a9ec42014d61c00a5ff3f39f71530a975c603b719aa16a695b7387e223b"
+  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2022.08.01.zip"
+  sha256 "8d86eada3054a04947aa202874f62aac34e5d6fd0545ebad1b2c3548c5cde96a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Abcmidi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abcmidi"
-    sha256 cellar: :any_skip_relocation, mojave: "cdcdf7c2aec21e871d5e6f9634d5e322bb15711e3cc7d0767d50b5a7da349f8d"
+    sha256 cellar: :any_skip_relocation, mojave: "d52de6e114530469d1b8988f68ab246737699f11b2e534e7d3ae2d3d269b9f1c"
   end
 
   def install
