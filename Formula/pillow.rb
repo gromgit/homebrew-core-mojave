@@ -1,21 +1,22 @@
 class Pillow < Formula
   desc "Friendly PIL fork (Python Imaging Library)"
   homepage "https://python-pillow.org"
-  url "https://files.pythonhosted.org/packages/43/6e/59853546226ee6200f9ba6e574d11604b60ad0754d2cbd1c8f3246b70418/Pillow-9.1.1.tar.gz"
-  sha256 "7502539939b53d7565f3d11d87c78e7ec900d3c72945d4ee0e2f250d598309a0"
+  url "https://files.pythonhosted.org/packages/8c/92/2975b464d9926dc667020ed1abfa6276e68c3571dcb77e43347e15ee9eed/Pillow-9.2.0.tar.gz"
+  sha256 "75e636fd3e0fb872693f23ccb8a5ff2cd578801251f3a4f6854c6a5d437d3c04"
   license "HPND"
+  revision 1
   head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pillow"
-    sha256 cellar: :any, mojave: "7e0d5e035560fd8a7eeb9831b3dce222c682aaa51b41b4d726662f9fc51c3dbd"
+    sha256 cellar: :any, mojave: "983a91d90d69b837009c10ff233a8a14233843b56c187ba22db19f8e3d804ede"
   end
 
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.8" => [:build, :test]
   depends_on "python@3.9" => [:build, :test]
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libimagequant"
   depends_on "libraqm"
   depends_on "libtiff"
@@ -26,10 +27,6 @@ class Pillow < Formula
   depends_on "webp"
 
   uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "python@3.7" => [:build, :test] unless Hardware::CPU.arm?
-  end
 
   def pythons
     deps.map(&:to_formula)
