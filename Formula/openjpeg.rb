@@ -8,7 +8,8 @@ class Openjpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjpeg"
-    sha256 cellar: :any, mojave: "8a263cb6c1d6934be16c8c356808d6726d70caa80af1f06b2389c5683b08f6e4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b1937b00357fa7390aba8a8ba411d4a99bfdc6b22303e76a5f0cde61499f0ce8"
   end
 
   depends_on "cmake" => :build
@@ -18,8 +19,11 @@ class Openjpeg < Formula
   depends_on "little-cms2"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DBUILD_DOC=ON"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DBUILD_DOC=ON"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
