@@ -4,11 +4,11 @@ class JpegXl < Formula
   url "https://github.com/libjxl/libjxl/archive/v0.6.1.tar.gz"
   sha256 "ccbd5a729d730152303be399f033b905e608309d5802d77a61a95faa092592c5"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg-xl"
-    rebuild 2
-    sha256 cellar: :any, mojave: "28b65ff7f8e5755e9e1b9c10c762520648bc83da2938ab052276a75a1752360d"
+    sha256 cellar: :any, mojave: "9784e2561c6e09dabb2812a1a6d627ce4ca47222a9ffbece12298921f4bcee26"
   end
 
   depends_on "cmake" => :build
@@ -16,7 +16,7 @@ class JpegXl < Formula
   depends_on "brotli"
   depends_on "giflib"
   depends_on "imath"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "openexr"
   depends_on "webp"
