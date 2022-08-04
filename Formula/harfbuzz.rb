@@ -1,32 +1,25 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
+  url "https://github.com/harfbuzz/harfbuzz/archive/5.1.0.tar.gz"
+  sha256 "5352ff2eec538ea9a63a485cf01ad8332a3f63aa79921c5a2e301cef185caea1"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
-  stable do
-    url "https://github.com/harfbuzz/harfbuzz/archive/4.4.1.tar.gz"
-    sha256 "1a95b091a40546a211b6f38a65ccd0950fa5be38d95c77b5c4fa245130b418e1"
-
-    # Fix build on GCC <7, remove on next release.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/ae5613e951257f508f4b17e9e24a3ea2ccb43a3f/harfbuzz/fix-pregcc7-build.patch"
-      sha256 "17abbae47e09a0daa3f5afa5f6ba37353db00c2f0fe025a014856d8b023672b6"
-    end
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
-    sha256 cellar: :any, mojave: "15890697e5e0bdf27bca594b60fbfa3dc547ad21a7da491815f6e233839108d1"
+    sha256 cellar: :any, mojave: "85a90e3269f9e98f123104f973898a163f5a444d113ed92c5d4a06c51a789759"
   end
 
   depends_on "glib-utils" => :build
+  depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "pygobject3" => :test
   depends_on "cairo"
   depends_on "freetype"
   depends_on "glib"
-  depends_on "gobject-introspection"
   depends_on "graphite2"
   depends_on "icu4c"
 
@@ -48,11 +41,9 @@ class Harfbuzz < Formula
       -Dintrospection=enabled
     ]
 
-    mkdir "build" do
-      system "meson", *std_meson_args, *args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args, *args
+    system "meson", "compile", "-C", "build"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -60,5 +51,6 @@ class Harfbuzz < Formula
       shape = `echo 'സ്റ്റ്' | #{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf`.chomp
       assert_equal "[glyph201=0+1183|U0D4D=0+0]", shape
     end
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "from gi.repository import HarfBuzz"
   end
 end
