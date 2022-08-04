@@ -12,7 +12,8 @@ class Sdl2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2"
-    sha256 cellar: :any, mojave: "8246a4ac9ea82df6f724112f2395b6235d0fd587c8fe48e62c15f960487de1bf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e2973d228f98c49ea83eab6e431403ccfc285aa797531ab4edc067ed092a5ba8"
   end
 
   head do
@@ -29,8 +30,8 @@ class Sdl2 < Formula
     depends_on "libxcursor"
     depends_on "libxscrnsaver"
     depends_on "libxxf86vm"
-    depends_on "xinput"
     depends_on "pulseaudio"
+    depends_on "xinput"
   end
 
   def install
