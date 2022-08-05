@@ -3,14 +3,14 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/b3/b3/55713976aefdb0c3371dc5146b6f2c76fa4963824303b965a971c52a5c09/commitizen-2.29.2.tar.gz"
-  sha256 "676094c2aa485630ca8bff16be356a43043fa5dc3310f85a4f2764cf14c40f3d"
+  url "https://files.pythonhosted.org/packages/41/43/b23db33889acc3844dd09dcc5d68847a0a20c20862d3692b7d1bfd89d9cb/commitizen-2.29.3.tar.gz"
+  sha256 "fc9e960a082319731b38790a7100571db1c0bcea97ac3d1b5dad007215639815"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/commitizen"
-    sha256 cellar: :any_skip_relocation, mojave: "4fd646fb530d61d644d41db86ce779f9b4c2a767a37547e2d0e7803c579b1143"
+    sha256 cellar: :any_skip_relocation, mojave: "6774d355c50946e420b052f6f48734db70f876af4d52f69061600f076ed8779d"
   end
 
   depends_on "python@3.10"
