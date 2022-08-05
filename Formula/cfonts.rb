@@ -1,13 +1,19 @@
 class Cfonts < Formula
   desc "Sexy ANSI fonts for the console"
   homepage "https://github.com/dominikwilkowski/cfonts"
-  url "https://github.com/dominikwilkowski/cfonts/archive/refs/tags/v1.0.4rust.tar.gz"
-  sha256 "c8b82256e74091dc15570ccd1447259d27923cdb2eba16d26487b497518d33cc"
+  url "https://github.com/dominikwilkowski/cfonts/archive/refs/tags/v1.1.0rust.tar.gz"
+  sha256 "45c40dfc867234efc5c5a2df687ccfc40a6702fa5a82f2380b555f9e755508e6"
   license "GPL-3.0-or-later"
+  head "https://github.com/dominikwilkowski/cfonts.git", branch: "released"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)[._-]?rust$/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfonts"
-    sha256 cellar: :any_skip_relocation, mojave: "e218ecc59a3853828966573c9a28cbbbfaba725e7a11fb58d9109dd69e1760c0"
+    sha256 cellar: :any_skip_relocation, mojave: "e84825cc7fd8f5fdd720602d1b6b276a99925fe47a37dbb464342269ec65ec06"
   end
 
   depends_on "rust" => :build
