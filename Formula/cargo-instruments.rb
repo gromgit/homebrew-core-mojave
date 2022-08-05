@@ -1,13 +1,13 @@
 class CargoInstruments < Formula
   desc "Easily generate Instruments traces for your rust crate"
   homepage "https://github.com/cmyr/cargo-instruments"
-  url "https://github.com/cmyr/cargo-instruments/archive/v0.4.5.tar.gz"
-  sha256 "aa7539badcca7ede2973face64f0daacfa8c76fac511d21397b9b6837c138cda"
+  url "https://github.com/cmyr/cargo-instruments/archive/v0.4.7.tar.gz"
+  sha256 "05827aae15603ab8a3538a5c9df5d3571f8d28d9b5d52c50728fbc5b6f6bbfd6"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-instruments"
-    sha256 cellar: :any, mojave: "c10f12f63f2e6b3b18809a40bb513d899427de0e35bddf575dd30c2f5224a8b7"
+    sha256 cellar: :any, mojave: "9a0c9ab1773e3f5c0d1505fb8c2aa47362412f4e42967d44c5bf7c3a977fb949"
   end
 
   depends_on "rust" => :build
