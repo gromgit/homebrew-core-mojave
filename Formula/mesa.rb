@@ -3,17 +3,22 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-22.0.5.tar.xz"
-  sha256 "5ee2dc06eff19e19b2867f12eb0db0905c9691c07974f6253f2f1443df4c7a35"
   license "MIT"
-  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
-  # Linux bottle removed for GCC 12 migration
+  stable do
+    url "https://mesa.freedesktop.org/archive/mesa-22.1.3.tar.xz"
+    sha256 "b98f32ba7aa2a1ff5725fb36eb999c693079f0ca16f70aa2f103e2b6c3f093e3"
+
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/f0a40cf7d70ee5a25639b91d9a8088749a2dd04e/mesa/fix-build-on-macOS.patch"
+      sha256 "a9b646e48d4e4228c3e06d8ca28f65e01e59afede91f58d4bd5a9c42a66b338d"
+    end
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    rebuild 1
-    sha256 mojave: "6c1d837ef956905192648bb864df72310787452e90ae0ea8a785d67c729fa6cc"
+    sha256 mojave: "c860ed1eed70af5cc26e91c1b88c60c87938e4cca61dae819e8082a1695620ad"
   end
 
   depends_on "bison" => :build # can't use form macOS, needs '> 2.3'
@@ -21,6 +26,8 @@ class Mesa < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => :build
+  depends_on "xorgproto" => :build
+
   depends_on "expat"
   depends_on "gettext"
   depends_on "libx11"
@@ -35,6 +42,7 @@ class Mesa < Formula
 
   on_linux do
     depends_on "elfutils"
+    depends_on "gcc"
     depends_on "gzip"
     depends_on "libdrm"
     depends_on "libva"
@@ -53,8 +61,8 @@ class Mesa < Formula
   fails_with gcc: "5"
 
   resource "Mako" do
-    url "https://files.pythonhosted.org/packages/50/ec/1d687348f0954bda388bfd1330c158ba8d7dea4044fc160e74e080babdb9/Mako-1.2.0.tar.gz"
-    sha256 "9a7c7e922b87db3686210cf49d5d767033a41d4010b284e747682c92bddd8b39"
+    url "https://files.pythonhosted.org/packages/ad/dd/34201dae727bb183ca14fd8417e61f936fa068d6f503991f09ee3cac6697/Mako-1.2.1.tar.gz"
+    sha256 "f054a5ff4743492f1aa9ecc47172cb33b42b9d993cffcc146c9de17e717b0307"
   end
 
   resource "Pygments" do
@@ -73,7 +81,7 @@ class Mesa < Formula
   end
 
   resource "gl_wrap.h" do
-    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/ea99b861a256e63d029f0d476bf452681d821dd6/src/util/gl_wrap.h"
+    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/ddc35ca0ea2f18c5011c5573b4b624c128ca7616/src/util/gl_wrap.h"
     sha256 "41f5a84f8f5abe8ea2a21caebf5ff31094a46953a83a738a19e21c010c433c88"
   end
 
