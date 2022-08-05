@@ -5,16 +5,11 @@ class Ctl < Formula
   url "https://github.com/ampas/CTL/archive/ctl-1.5.2.tar.gz"
   sha256 "d7fac1439332c4d84abc3c285b365630acf20ea041033b154aa302befd25e0bd"
   license "AMPAS"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "eadc16c6d81b7d6ac0b4c15954575c3da812903b4af0273eacc5d9b0b7e1d6c9"
-    sha256                               arm64_big_sur:  "44e972aad69a12929209b71a8ce3f0cd2c64c3619d38fe8e99f9118dfd231877"
-    sha256 cellar: :any,                 monterey:       "cf416b8ac487a6ae5bd3845338e5efdaa9399cfb28c41c1d44d3e520be7af958"
-    sha256                               big_sur:        "ff72d9eb8d78bfbc8be7e2df6c5b12ebe84539599f2874df9a63cdeab65d0e93"
-    sha256                               catalina:       "348b69fc01982990dc24ba16332bd99851f8fbab4ccd25d05753288f4ff76344"
-    sha256                               mojave:         "37dce198f7d3aa8dab4ea3519da23f8a02ffacd61569323d6ee24a9b18c35190"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "058763c1d8b05ea4a1f1143ef678628d957d96aa0b73f20aac9ff5fff33fe8a6"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ctl"
+    sha256 cellar: :any, mojave: "4d2627e2b7de66e1a96a76dc27eb30af8b0e007a0e82ef2236b51ecb460232da"
   end
 
   depends_on "cmake" => :build
