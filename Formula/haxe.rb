@@ -23,7 +23,8 @@ class Haxe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haxe"
-    sha256 cellar: :any, mojave: "ecabb083e4405befca8b74c041ddd8364e011c53f9f130f4f6ba3e8a4e8cb42e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6cbc2554d182ef2c36eb57db87c6f9658655749e3e567a4c0fbe0fd74a1f357e"
   end
 
   depends_on "cmake" => :build
