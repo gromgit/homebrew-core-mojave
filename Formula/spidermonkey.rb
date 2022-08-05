@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/91.10.0esr/source/firefox-91.10.0esr.source.tar.xz"
-  version "91.10.0"
-  sha256 "825a8cb38bb5da9821ef87cc6de64af007cf0faef07c4ed0651283b56a0ee1bb"
+  url "https://archive.mozilla.org/pub/firefox/releases/91.11.0esr/source/firefox-91.11.0esr.source.tar.xz"
+  version "91.11.0"
+  sha256 "e59bbe92ee1ef94936ce928324253e442748d62b5777bc0846ad79ed4a2a05a4"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -16,7 +16,7 @@ class Spidermonkey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spidermonkey"
-    sha256 cellar: :any, mojave: "54c198204ba2f4d2723f27eec3a0d36bcc54d348956b1f9fcb433b99cf8f00be"
+    sha256 cellar: :any, mojave: "e029579bd9190294555cac9ae9478c29bd408fd6aedf0b5c9ecf6c6a7ead1c8e"
   end
 
   depends_on "autoconf@2.13" => :build
