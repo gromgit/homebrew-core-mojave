@@ -10,7 +10,8 @@ class AwsSsoUtil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-sso-util"
-    sha256 cellar: :any_skip_relocation, mojave: "bd7ac6b417e8fa3b68cf29592ad541e0f7c41af45778f877aae163306671b036"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e8953fd80b062fa1d7adf7fe1cfbcee11ce75219305b2381888d1137ec06ea45"
   end
 
   depends_on "rust" => :build
@@ -111,10 +112,10 @@ class AwsSsoUtil < Formula
   end
 
   test do
-    cmd = "#{bin}/aws-sso-util configure profile invalid"\
-          " --sso-start-url https://example.com/start --sso-region eu-west-1" \
-          " --account-id 000000000000 --role-name InvalidRole" \
-          " --region eu-west-1 --non-interactive"
+    cmd = "#{bin}/aws-sso-util configure profile invalid " \
+          "--sso-start-url https://example.com/start --sso-region eu-west-1 " \
+          "--account-id 000000000000 --role-name InvalidRole " \
+          "--region eu-west-1 --non-interactive"
 
     assert_empty shell_output "AWS_CONFIG_FILE=#{testpath}/config #{cmd}"
 
