@@ -3,14 +3,14 @@ class Flake8 < Formula
 
   desc "Lint your Python code for style and logical errors"
   homepage "https://flake8.pycqa.org/"
-  url "https://files.pythonhosted.org/packages/dd/94/b407f9f904fa387522ed8ba7890bcd1af67b94e2988744159c263e516cf8/flake8-5.0.1.tar.gz"
-  sha256 "9c51d3d1426379fd444d3b79eabbeb887849368bd053039066439523d8486961"
+  url "https://files.pythonhosted.org/packages/30/8a/dbc2e61f779a60252677f36833d040813f492bb0ca04dfe8aa480c2b39d4/flake8-5.0.3.tar.gz"
+  sha256 "b27fd7faa8d90aaae763664a489012292990388e5d3604f383b290caefbbc922"
   license "MIT"
   head "https://gitlab.com/PyCQA/flake8.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flake8"
-    sha256 cellar: :any_skip_relocation, mojave: "32c2bbf31cc9468efa161ab60cbd010cda5300ce94228c04ebd65f3c5cfc6660"
+    sha256 cellar: :any_skip_relocation, mojave: "cf33884f5626fef0519263433504107308ecbe5bfd63f508fe5963b1218529f4"
   end
 
   depends_on "python@3.10"
