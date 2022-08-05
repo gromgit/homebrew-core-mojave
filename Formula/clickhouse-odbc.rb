@@ -15,7 +15,8 @@ class ClickhouseOdbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-odbc"
-    sha256 cellar: :any, mojave: "6795f227b037836240dafcd99204be32cbc0838b085b77727d85bc69769b4c7d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ee0a6c53602563dfee93976220e7e69f73ab8f0e98bc48f174b909a83d7aef89"
   end
 
   depends_on "cmake" => :build
@@ -28,8 +29,8 @@ class ClickhouseOdbc < Formula
   end
 
   on_linux do
-    depends_on "unixodbc"
     depends_on "gcc"
+    depends_on "unixodbc"
   end
 
   fails_with gcc: "5"
