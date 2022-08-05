@@ -7,6 +7,7 @@ class Dnsmap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsmap"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "ee4c74471e1f23dc93bc79987387e4c014f73d7f7cbae2746731b9ae0b4aa299"
   end
 
