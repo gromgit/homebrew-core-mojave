@@ -4,13 +4,12 @@ class Bloaty < Formula
   url "https://github.com/google/bloaty/releases/download/v1.1/bloaty-1.1.tar.bz2"
   sha256 "a308d8369d5812aba45982e55e7c3db2ea4780b7496a5455792fb3dcba9abd6f"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bloaty"
-    sha256 cellar: :any, mojave: "7732d04662202fcce1777025ca3126f054f6b62c2b235739dc8321d44c6fdc51"
+    sha256 cellar: :any, mojave: "bdb752764cdc754b12d9a3a2bb050e221464d3d3ab7329bcc587d1d60c49e8a6"
   end
-
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -19,8 +18,11 @@ class Bloaty < Formula
   depends_on "re2"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    # https://github.com/protocolbuffers/protobuf/issues/9947
+    ENV.append_to_cflags "-DNDEBUG"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
