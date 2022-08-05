@@ -1,9 +1,9 @@
 class Clamav < Formula
   desc "Anti-virus software"
   homepage "https://www.clamav.net/"
-  url "https://www.clamav.net/downloads/production/clamav-0.105.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/clamav-0.105.0.tar.gz"
-  sha256 "270203a54c458049db54fcd93683ff5b2db19151f363c48e82cecefdde2b35d4"
+  url "https://www.clamav.net/downloads/production/clamav-0.105.1.tar.gz"
+  mirror "https://fossies.org/linux/misc/clamav-0.105.1.tar.gz"
+  sha256 "d2bc16374db889a6e5a6ac40f8c6e700254a039acaa536885a09eeea4b8529f6"
   license "GPL-2.0-or-later"
   head "https://github.com/Cisco-Talos/clamav-devel.git", branch: "main"
 
@@ -14,14 +14,13 @@ class Clamav < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clamav"
-    sha256 mojave: "586a8d289ebd54d2ca98343606961d0f14f988d32c430a0145c68a34f00914be"
+    sha256 mojave: "22f765b157d07260835a6fbcd3f2108321f2020f3b88efb87c5409d6e2c1c2e2"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "json-c"
-  depends_on "libtool"
   depends_on "openssl@1.1"
   depends_on "pcre2"
   depends_on "yara"
