@@ -13,13 +13,19 @@ class Couchdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/couchdb"
-    sha256 cellar: :any, mojave: "9a5e9211ff8ea78aae89fef560335d9d34e04f90fe8c6a5913d919d0b18ad8a3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "edd831cf671d6bea1cc701eade7962e4a5adb041ca327e42429b0073bd6969e4"
   end
 
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
-  depends_on "erlang" => :build
+  # Use Erlang 24 to work around a sporadic build error with rebar (v2) and Erlang 25.
+  # beam/beam_load.c(551): Error loading function rebar:save_options/2: op put_tuple u x:
+  #   please re-compile this module with an Erlang/OTP 25 compiler
+  # escript: exception error: undefined function rebar:main/1
+  # Ref: https://github.com/Homebrew/homebrew-core/pull/105876
+  depends_on "erlang@24" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
@@ -51,7 +57,7 @@ class Couchdb < Formula
     # setting new database dir
     inreplace "rel/couchdb/etc/default.ini", "./data", "#{var}/couchdb/data"
     # remove windows startup script
-    File.delete("rel/couchdb/bin/couchdb.cmd") if File.exist?("rel/couchdb/bin/couchdb.cmd")
+    rm_rf("rel/couchdb/bin/couchdb.cmd")
     # install files
     prefix.install Dir["rel/couchdb/*"]
     if File.exist?(prefix/"Library/LaunchDaemons/org.apache.couchdb.plist")
