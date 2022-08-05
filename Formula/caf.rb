@@ -9,8 +9,8 @@ class Caf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d9c94850103c86693f3f8e6cddd2abc8c5cb6e846a9624f4760a6acfe67c45e1"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8565206c58afd50a53c96bf6abca4a68f8c0d499af99a04d6d563225776a0e68"
   end
 
   depends_on "cmake" => :build
