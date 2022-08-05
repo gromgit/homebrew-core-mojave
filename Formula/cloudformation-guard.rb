@@ -1,14 +1,13 @@
 class CloudformationGuard < Formula
   desc "Checks CloudFormation templates for compliance using a declarative syntax"
   homepage "https://github.com/aws-cloudformation/cloudformation-guard"
-  url "https://github.com/aws-cloudformation/cloudformation-guard/archive/2.0.4.tar.gz"
-  sha256 "b401664363020474869a81a70d6920a3bfacec12459a601d8f9a7627000dfb56"
+  url "https://github.com/aws-cloudformation/cloudformation-guard/archive/2.1.0.tar.gz"
+  sha256 "8e7075e436a05d72e5c244def9765f475c07b97b432c6ed9b4cc9888a389f460"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudformation-guard"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "aa25d7c32c2e00dacf25c904908e2f856a04f261b6dd8f7d673e089000658992"
+    sha256 cellar: :any_skip_relocation, mojave: "61a78945687a87ceab3d2756555664d25fccef0731d09551f223103e864a84aa"
   end
 
   depends_on "rust" => :build
