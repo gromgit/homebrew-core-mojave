@@ -4,6 +4,7 @@ class Fltk < Formula
   url "https://www.fltk.org/pub/fltk/1.3.8/fltk-1.3.8-source.tar.gz"
   sha256 "f3c1102b07eb0e7a50538f9fc9037c18387165bc70d4b626e94ab725b9d4d1bf"
   license "LGPL-2.0-only" => { with: "FLTK-exception" }
+  revision 1
 
   livecheck do
     url "https://www.fltk.org/software.php"
@@ -12,16 +13,15 @@ class Fltk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fltk"
-    rebuild 2
-    sha256 mojave: "207e05b83a911049d10ce0534cf63960f41fc24efbc3d0822b12a229751d75d1"
+    sha256 mojave: "b48d73f94b8fa2119bcf09b4edd8504136c7edbd8d671f671dc07eb73717ed01"
   end
 
   head do
-    url "https://github.com/fltk/fltk.git"
+    url "https://github.com/fltk/fltk.git", branch: "master"
     depends_on "cmake" => :build
   end
 
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
 
   on_linux do
