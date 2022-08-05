@@ -1,14 +1,14 @@
 class Firefoxpwa < Formula
   desc "Tool to install, manage and use Progressive Web Apps in Mozilla Firefox"
   homepage "https://github.com/filips123/PWAsForFirefox"
-  url "https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v1.4.2.tar.gz"
-  sha256 "b853af50c6361838a90b50bdedd374571fcc09e7f3fdec436c233f0a316b0327"
+  url "https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "f7c2b05b7891a9df0659fd9e3cd4fb7a3224495dc8d90a5a97168dcfb544d171"
   license "MPL-2.0"
   head "https://github.com/filips123/PWAsForFirefox.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/firefoxpwa"
-    sha256 cellar: :any_skip_relocation, mojave: "92139db985629cc63f1a23317c57785cee8cee775f89a2c20ddcd1b2b5a96d4d"
+    sha256 cellar: :any_skip_relocation, mojave: "13c33e2cacc60e5b04816fa4ff3f4072fe846eb09932ef010286a878cd58e033"
   end
 
   depends_on "rust" => :build
@@ -61,6 +61,6 @@ class Firefoxpwa < Formula
 
     # Test launching non-existing site which should fail
     output = shell_output("#{bin}/firefoxpwa site launch 00000000000000000000000000 2>&1", 1)
-    assert_includes output, "Site does not exist"
+    assert_includes output, "Web app does not exist"
   end
 end
