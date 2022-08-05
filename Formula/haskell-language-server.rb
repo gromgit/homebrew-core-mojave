@@ -15,19 +15,20 @@ class HaskellLanguageServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haskell-language-server"
-    sha256 cellar: :any_skip_relocation, mojave: "9c9dcb38a1244e2443b5840368a4f699ae3c38e4016f7ee82900c3ce308067e5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e4235bf8e3af782999f4520440d2bd2a8632d6b28133071cdea2bdfb344af8a9"
   end
 
   depends_on "cabal-install" => [:build, :test]
   depends_on "ghc" => [:build, :test]
 
-  if Hardware::CPU.intel?
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
+
+  on_intel do
     depends_on "ghc@8.6" => [:build, :test]
     depends_on "ghc@8.8" => [:build, :test]
   end
-
-  uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   def ghcs
     deps.map(&:to_formula)
