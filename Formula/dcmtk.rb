@@ -1,6 +1,7 @@
 class Dcmtk < Formula
   desc "OFFIS DICOM toolkit command-line utilities"
   homepage "https://dicom.offis.de/dcmtk.php.en"
+  revision 1
   head "https://git.dcmtk.org/dcmtk.git", branch: "master"
 
   stable do
@@ -12,7 +13,7 @@ class Dcmtk < Formula
     # TODO: Remove in the next release along with stable block
     patch do
       url "https://git.dcmtk.org/?p=dcmtk.git;a=patch;h=5fba853b6f7c13b02bed28bd9f7d3f450e4c72bb"
-      sha256 "40ca9e6f377951e2d24a509a6c95b9e572224d74d694f0d648b8b33e4d67e285"
+      sha256 "533cfe46414f6c76dcdf56fd9633a399f813707a0cb8fe2630126cbd747134c8"
     end
   end
 
@@ -23,8 +24,7 @@ class Dcmtk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dcmtk"
-    rebuild 2
-    sha256 mojave: "11441202e1a89aee7b851e3bd2d6ce51a0ee7e376db468b8ec6f0925ee4a2b46"
+    sha256 mojave: "ee056bcf4d87532b28db41260a6951650cc8a8ef266f1bc6d9efcbf40f3e3a67"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +35,7 @@ class Dcmtk < Formula
   uses_from_macos "libxml2"
 
   def install
+    ENV.cxx11 if OS.linux? # due to `icu4c` dependency in `libxml2`
     system "cmake", "-S", ".", "-B", "build/shared", *std_cmake_args,
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}"
