@@ -7,9 +7,10 @@ class Neko < Formula
   revision 7
   head "https://github.com/HaxeFoundation/neko.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neko"
-    sha256 mojave: "0d0210fe13a6365a7eada2566488d4e596d4b362e5961a2a6fe87d6bb20bdb9c"
+    rebuild 1
+    sha256 mojave: "79b4dce82b0661141a3bc4c7e7557cd61e3a4a48b7e7be62e0e5714d34fcc3f8"
   end
 
   depends_on "cmake" => :build
@@ -26,9 +27,8 @@ bottle do
   on_linux do
     depends_on "apr"
     depends_on "apr-util"
+    depends_on "gtk+" # On mac, neko uses carbon. On Linux it uses gtk2
     depends_on "httpd"
-    # On mac, neko uses carbon. On Linux it uses gtk2
-    depends_on "gtk+"
   end
 
   # Don't redefine MSG_NOSIGNAL -- https://github.com/HaxeFoundation/neko/pull/217
