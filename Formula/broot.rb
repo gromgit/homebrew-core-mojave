@@ -1,14 +1,14 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://github.com/Canop/broot/archive/v1.13.1.tar.gz"
-  sha256 "95b4b01c43f23b8d4f06030b57c9b2e47a4fbbc4f6099acaf6e42d1f1697385e"
+  url "https://github.com/Canop/broot/archive/v1.14.2.tar.gz"
+  sha256 "992e3b5c2b73a25366bf67ccc8d99a51be9c07c75ec6ea413883dd8a8857c2e4"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/broot"
-    sha256 cellar: :any_skip_relocation, mojave: "577a0756c58b3785e9797dc33ee1c104d92a8a2784252ffb9a4a079c30b66f33"
+    sha256 cellar: :any_skip_relocation, mojave: "967fd0d048a634feb31304ef4a9aade87b35609e01eb206e2dd7240fd8f1e018"
   end
 
   depends_on "rust" => :build
@@ -45,10 +45,11 @@ class Broot < Formula
 
     require "pty"
     require "io/console"
-    PTY.spawn(bin/"broot", "--cmd", ":pt", "--color", "no", "--out", testpath/"output.txt", err: :out) do |r, w, pid|
-      r.winsize = [20, 80] # broot dependency termimad requires width > 2
+    PTY.spawn(bin/"broot", "-c", ":print_tree", "--color", "no", "--outcmd", testpath/"output.txt",
+                err: :out) do |r, w, pid|
+      r.winsize = [20, 80] # broot dependency terminal requires width > 2
       w.write "n\r"
-      assert_match "New Configuration file written in", r.read
+      assert_match "New Configuration files written in", r.read
       Process.wait(pid)
     end
     assert_equal 0, $CHILD_STATUS.exitstatus
