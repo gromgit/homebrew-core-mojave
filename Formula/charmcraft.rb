@@ -6,17 +6,18 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/1c/b1/950a8646e6fb58775f10aac2ac56abefc0511ce0bfa8ac76ffe3c62e6037/charmcraft-1.7.1.tar.gz"
   sha256 "1b9f61bd752495c23156b595a2df1c0cc5440a55aeee5f1feb1e1e1d56768049"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/charmcraft"
-    sha256 cellar: :any, mojave: "526b4760eabe3f9c1e37b20a386bbc6ed85f20845d812f9c1a757586378e3294"
+    sha256 cellar: :any, mojave: "3370ea6588e8af52e25b9fbf95ce5048b7dc59732c519b7028fb0cc7d486b519"
   end
 
   depends_on "rust" => :build
+  depends_on "libpython-tabulate"
   depends_on "libsodium"
   depends_on "libyaml"
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "attrs" do
