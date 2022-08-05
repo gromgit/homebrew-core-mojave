@@ -1,14 +1,15 @@
 class FluidSynth < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
   homepage "https://www.fluidsynth.org"
-  url "https://github.com/FluidSynth/fluidsynth/archive/v2.2.7.tar.gz"
-  sha256 "460d86d8d687f567dc4780890b72538c7ff6b2082080ef2f9359d41670a309cf"
+  url "https://github.com/FluidSynth/fluidsynth/archive/v2.2.8.tar.gz"
+  sha256 "7c29a5cb7a2755c8012d941d1335da7bda957bbb0a86b7c59215d26773bb51fe"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluid-synth"
-    sha256 cellar: :any, mojave: "13d8e1b773799a5dafbd1872dbb43e86ea0179938ebdbcfbffce0be461b72a8b"
+    sha256 cellar: :any, mojave: "42bfd189bf647d88a61bb050dc5db2dc52edcf45286bb8d3d95b21f3a148f034"
   end
 
   depends_on "cmake" => :build
@@ -16,6 +17,7 @@ class FluidSynth < Formula
   depends_on "glib"
   depends_on "libsndfile"
   depends_on "portaudio"
+  depends_on "readline"
 
   resource "homebrew-test" do
     url "https://upload.wikimedia.org/wikipedia/commons/6/61/Drum_sample.mid"
