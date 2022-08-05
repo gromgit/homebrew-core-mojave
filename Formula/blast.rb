@@ -13,8 +13,8 @@ class Blast < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blast"
-    rebuild 1
-    sha256 mojave: "79e560d4c695a4c86348513ece236fe96a671c0c56695e05c0f7b7d6066716c3"
+    rebuild 2
+    sha256 mojave: "cca14a07de4f690c40e57d28f8a089537ee0b5acc1945aa3b11ebf988643c31c"
   end
 
   depends_on "lmdb"
