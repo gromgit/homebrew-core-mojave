@@ -5,6 +5,7 @@ class Libpano < Formula
   version "13-2.9.21"
   sha256 "79e5a1452199305e2961462720ef5941152779c127c5b96fc340d2492e633590"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +14,11 @@ class Libpano < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpano"
-    sha256 cellar: :any, mojave: "4b97e36a3a20e84e5858ad118d6dd6d933e24b8b6ee4b477e269951c9cf8e0ee"
+    sha256 cellar: :any, mojave: "b97419d62363bf7b2e58f313fd26c9232ea3402cde08a3fb12c4b1ae7c5e22a5"
   end
 
   depends_on "cmake" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
 
@@ -26,11 +27,9 @@ class Libpano < Formula
   patch :DATA
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end
 
