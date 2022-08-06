@@ -12,7 +12,8 @@ class Libbluray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbluray"
-    sha256 cellar: :any, mojave: "e22f86ebd450de7f5c765b3426120250fe986180492c28e2430ef1d9c42c8260"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d831a1a3a14431a7b68bc418111d07779bd9b27a1c1cf3e3cb595010bd66b96c"
   end
 
   head do
@@ -43,6 +44,8 @@ class Libbluray < Formula
       #include <libbluray/bluray.h>
       int main(void) {
         BLURAY *bluray = bd_init();
+        bd_close(bluray);
+        return 0;
       }
     EOS
 
