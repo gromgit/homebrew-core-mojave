@@ -8,8 +8,8 @@ class LlvmAT8 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm@8"
-    rebuild 1
-    sha256 cellar: :any, mojave: "59cad6ea361cc13901db7840ec0427ff7559c31e6e7e5a271ab4777643e2e6bb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "20a37f3be751e2cf6ee04039681bab7d2fe1dd56f475db249f00ed92ac793d38"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -36,9 +36,9 @@ class LlvmAT8 < Formula
   end
 
   on_linux do
-    depends_on "glibc" if Formula["glibc"].any_version_installed?
     depends_on "binutils" # needed for gold and strip
     depends_on "elfutils" # openmp requires <gelf.h>
+    depends_on "glibc" if Formula["glibc"].any_version_installed?
   end
 
   resource "clang" do
