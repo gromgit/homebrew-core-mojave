@@ -8,7 +8,8 @@ class Hurl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hurl"
-    sha256 cellar: :any_skip_relocation, mojave: "9a0e8dc6222da9fa03abcafeb8b98dc644564fda743c29428c75f465954b6152"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8013c5604c2d89c3fa025a19cd9859c77c7c0e5f53f251bb63904ed1c3737534"
   end
 
   depends_on "rust" => :build
@@ -17,8 +18,8 @@ class Hurl < Formula
   uses_from_macos "libxml2"
 
   on_linux do
-    depends_on "openssl@1.1"
     depends_on "pkg-config" => :build
+    depends_on "openssl@1.1"
   end
 
   def install
