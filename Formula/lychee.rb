@@ -1,14 +1,14 @@
 class Lychee < Formula
   desc "Fast, async, resource-friendly link checker"
   homepage "https://github.com/lycheeverse/lychee"
-  url "https://github.com/lycheeverse/lychee/archive/v0.10.0.tar.gz"
-  sha256 "e7f8ae04c0d4714c4116f5cfccc41fef4b469d22c568a4f509c949378b30cafb"
+  url "https://github.com/lycheeverse/lychee/archive/v0.10.1.tar.gz"
+  sha256 "1ebc71f8741d644cdc1fd3f5c2f78f0991bc56e038c1132cbe8c9eee144c8f03"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/lycheeverse/lychee.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lychee"
-    sha256 cellar: :any, mojave: "b6d43909b5b2835565c8861cdb27ca5d7a08148c4b76a536c17a5b047b24cdaa"
+    sha256 cellar: :any, mojave: "d6dc1f7148379c64f54884236d1d83fec1daddce57a87ef1e4d47f0db5a8ec47"
   end
 
   depends_on "rust" => :build
