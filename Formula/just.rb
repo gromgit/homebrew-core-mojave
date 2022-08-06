@@ -1,8 +1,8 @@
 class Just < Formula
   desc "Handy way to save and run project-specific commands"
   homepage "https://github.com/casey/just"
-  url "https://github.com/casey/just/archive/1.2.0.tar.gz"
-  sha256 "86cefef3db824d2a5190c6fcd12f295e1d62ac6002de479342a048403e06919c"
+  url "https://github.com/casey/just/archive/1.3.0.tar.gz"
+  sha256 "0214a95b7a46c6a812d3257a976114a6971892bc2129ebc87ee3094a329d71e6"
   license "CC0-1.0"
   head "https://github.com/casey/just.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Just < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/just"
-    sha256 cellar: :any_skip_relocation, mojave: "ff46aed4dddb11948fb34c49683d9cc9a4ed26c6324e3e78e47ba6a565a1e1ce"
+    sha256 cellar: :any_skip_relocation, mojave: "0675e1c774e414553cc3cbfbfffead8a197fb052a8b0023db58035d9313a855f"
   end
 
   depends_on "rust" => :build
