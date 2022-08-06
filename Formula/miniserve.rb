@@ -1,13 +1,13 @@
 class Miniserve < Formula
   desc "High performance static file server"
   homepage "https://github.com/svenstaro/miniserve"
-  url "https://github.com/svenstaro/miniserve/archive/v0.19.5.tar.gz"
-  sha256 "6c758467bd546327505717ecab1a0f78a07226509dd5de098112065221882474"
+  url "https://github.com/svenstaro/miniserve/archive/v0.20.0.tar.gz"
+  sha256 "77aca0e3660564cc2b9a7f318c5d9065d471f3c5ab0a7d1b6850a5cb6e21904f"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miniserve"
-    sha256 cellar: :any_skip_relocation, mojave: "1a25d33bee619349b969ec53026429f1aa320709b4222bafbca24da87f8c82f8"
+    sha256 cellar: :any_skip_relocation, mojave: "13c6420bb6c81914a4a272abcd457bf22b4cf8fc3b74a04005a7a7fe38ffe22f"
   end
 
   depends_on "rust" => :build
