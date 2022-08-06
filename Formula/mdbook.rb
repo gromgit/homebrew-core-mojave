@@ -1,14 +1,14 @@
 class Mdbook < Formula
   desc "Create modern online books from Markdown files"
   homepage "https://rust-lang.github.io/mdBook/"
-  url "https://github.com/rust-lang/mdBook/archive/v0.4.18.tar.gz"
-  sha256 "ce357327f4443189fde307103f8008f43410ca8b738c5c61401ada9a54b8b5b5"
+  url "https://github.com/rust-lang/mdBook/archive/v0.4.21.tar.gz"
+  sha256 "17385837070c6a312eae4717fe0bfdd259ce07b4b653b5c258b4389062df886d"
   license "MPL-2.0"
   head "https://github.com/rust-lang/mdBook.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdbook"
-    sha256 cellar: :any_skip_relocation, mojave: "e657d7f84f1e4b19427c2bc286ad51fa6a31cdd1b4ba56c229ad687fb704ff67"
+    sha256 cellar: :any_skip_relocation, mojave: "1c17e28e1c569a45cc4f47c92ac00467828ae0cd777acccdcb883d0ca3d419a4"
   end
 
   depends_on "rust" => :build
