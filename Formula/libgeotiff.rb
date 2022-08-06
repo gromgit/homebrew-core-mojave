@@ -2,7 +2,7 @@ class Libgeotiff < Formula
   desc "Library and tools for dealing with GeoTIFF"
   homepage "https://github.com/OSGeo/libgeotiff"
   license "MIT"
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/OSGeo/libgeotiff/releases/download/1.7.1/libgeotiff-1.7.1.tar.gz"
@@ -22,27 +22,24 @@ class Libgeotiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgeotiff"
-    sha256 cellar: :any, mojave: "2824edede6c24bdcb2a264e3f4ca3e8f153009f24b1b81749b73824091552220"
+    sha256 cellar: :any, mojave: "f0f967a772ed9bf8398cce188b2760f6b1a0914403d9d1bff6629daeeb9b6710"
   end
 
   head do
-    url "https://github.com/OSGeo/libgeotiff.git"
+    url "https://github.com/OSGeo/libgeotiff.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "proj"
 
   def install
     system "./autogen.sh" if build.head?
-
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-jpeg"
+    system "./configure", *std_configure_args, "--with-jpeg"
     system "make" # Separate steps or install fails
     system "make", "install"
   end
@@ -80,6 +77,6 @@ class Libgeotiff < Formula
                    "-L#{Formula["libtiff"].opt_lib}", "-ltiff", "-o", "test"
     system "./test", "test.tif"
     output = shell_output("#{bin}/listgeo test.tif")
-    assert_match(/GeogInvFlatteningGeoKey.*123.456/, output)
+    assert_match(/GeogInvFlatteningGeoKey.*123\.456/, output)
   end
 end
