@@ -4,16 +4,17 @@ class Imlib2 < Formula
   url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.9.1/imlib2-1.9.1.tar.gz"
   sha256 "c319292f5bcab33b91bffaa6f7b0842f9e2d1b90df6c9a2a39db4f24d538b35b"
   license "Imlib2"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imlib2"
-    sha256 mojave: "e722f7b9ec62a5babde4ce3dd100956695a406b1db259d06f4fd1710ac1b4600"
+    sha256 mojave: "6b5f61c848e101624e656f53fa579476cd75efa61328544aac60a40682b8bd47"
   end
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "giflib"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libx11"
@@ -21,14 +22,7 @@ class Imlib2 < Formula
   depends_on "libxext"
 
   def install
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --enable-amd64=no
-      --without-id3
-    ]
-
-    system "./configure", *args
+    system "./configure", *std_configure_args, "--enable-amd64=no", "--without-id3"
     system "make", "install"
   end
 
