@@ -9,7 +9,8 @@ class Lc0 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lc0"
-    sha256 cellar: :any_skip_relocation, mojave: "2f08814323333840ce4b2213de2036fd27a2ff1fe1af20b4e6b70dce2e1b5b97"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bf8489371714622d23c1807be6dda26b14d1fbe916ae24172d60ecfb4280022e"
   end
 
   depends_on "cmake" => :build
