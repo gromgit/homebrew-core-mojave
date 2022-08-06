@@ -16,7 +16,8 @@ class LlvmAT13 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm@13"
-    sha256 cellar: :any, mojave: "329e5a791241054f38a52be2caf6ae270f8286b09b41aa89ad9226f0a304e121"
+    rebuild 1
+    sha256 cellar: :any, mojave: "eaf5e8098f1555f695b99667a044d4c6e4ef8ffb3d7ba7d9f4da2cdde87bf05b"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -38,11 +39,11 @@ class LlvmAT13 < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "glibc" if Formula["glibc"].any_version_installed?
     depends_on "pkg-config" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
     depends_on "gcc"
+    depends_on "glibc" if Formula["glibc"].any_version_installed?
   end
 
   # Fails at building LLDB
