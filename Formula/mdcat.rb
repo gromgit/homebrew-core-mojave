@@ -1,14 +1,14 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://codeberg.org/flausch/mdcat"
-  url "https://codeberg.org/flausch/mdcat/archive/mdcat-0.27.1.tar.gz"
-  sha256 "79961e0a842ee0f68aee3d54b39458352664c67388e56175a9d18d80f357bf14"
+  url "https://codeberg.org/flausch/mdcat/archive/mdcat-0.28.0.tar.gz"
+  sha256 "5d7b4f4b4c1066a679cd171e7d784b4ab8cad37c44d1e1b4250a21683abff9ca"
   license "MPL-2.0"
   head "https://codeberg.org/flausch/mdcat.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mdcat"
-    sha256 cellar: :any_skip_relocation, mojave: "65ec07306d797cf1902facf7cbd3bc21348d609fe3eec4d191421dec75c3d7e0"
+    sha256 cellar: :any_skip_relocation, mojave: "22c3d09a616160b84a0db673110e14631041952dc87d8f59315107e1f6df9385"
   end
 
   depends_on "cmake" => :build
