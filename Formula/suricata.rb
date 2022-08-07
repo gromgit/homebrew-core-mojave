@@ -1,8 +1,8 @@
 class Suricata < Formula
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata.io"
-  url "https://www.openinfosecfoundation.org/download/suricata-6.0.5.tar.gz"
-  sha256 "0d4197047c84ba070dfc6b1d9f9ee92f52a71403bfac0e29b2554bb21fe00754"
+  url "https://www.openinfosecfoundation.org/download/suricata-6.0.6.tar.gz"
+  sha256 "00173634fa76aee636e38a90b1c02616c903e42173107d47b4114960b5fbe839"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Suricata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/suricata"
-    sha256 mojave: "845adc2883a2d7e6b4fe9eb90c1747c14b5c1f584c8febb76e790838f96c6d4a"
+    sha256 mojave: "80fa75499001b3af03a68ebe505c4dacfd98d6e2f8403df62041d12978996080"
   end
 
   depends_on "pkg-config" => :build
