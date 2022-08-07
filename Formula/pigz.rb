@@ -4,6 +4,7 @@ class Pigz < Formula
   url "https://zlib.net/pigz/pigz-2.7.tar.gz"
   sha256 "b4c9e60344a08d5db37ca7ad00a5b2c76ccb9556354b722d56d55ca7e8b1c707"
   license "Zlib"
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,14 +13,15 @@ class Pigz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pigz"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3e01011912de6e47a405da0b80f6b481d0a65aa46d8502dc37d7527619e01be4"
+    sha256 cellar: :any, mojave: "b730dfc015d4e3f3849e0b928f678b064d4206f916a3c36e44f1655bdc1bb883"
   end
 
+  depends_on "zopfli"
   uses_from_macos "zlib"
 
   def install
-    system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"
+    libzopfli = Formula["zopfli"].opt_lib/shared_library("libzopfli")
+    system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "ZOP=#{libzopfli}"
     bin.install "pigz", "unpigz"
     man1.install "pigz.1"
     man1.install_symlink "pigz.1" => "unpigz.1"
