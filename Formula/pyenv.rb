@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "150ac8f7161c00e8e613bf5e273306f674b60037e3dace9c6bb7611dceb17144"
+  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "2a6093c922d2a420b5ae45143ab973b0a85ee486c408cb487188b64edadfab35"
   license "MIT"
   version_scheme 1
   head "https://github.com/pyenv/pyenv.git", branch: "master"
@@ -14,7 +14,7 @@ class Pyenv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyenv"
-    sha256 cellar: :any, mojave: "b20924f7ba7c0b67c7c7b8baa96ebb334e962b7da2c72de237b1888386d45ead"
+    sha256 cellar: :any, mojave: "5d3dad3148a8651aed233d6bcfad129119848a177f27e26b21822615b49098e5"
   end
 
   depends_on "autoconf"
