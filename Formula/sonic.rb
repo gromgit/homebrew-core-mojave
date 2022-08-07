@@ -1,14 +1,13 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://github.com/valeriansaliou/sonic/archive/v1.3.2.tar.gz"
-  sha256 "e07baccdc24dea6a6c0e6ef32e7faa3945318cfb2577127806c8558f1809283d"
+  url "https://github.com/valeriansaliou/sonic/archive/v1.3.5.tar.gz"
+  sha256 "ff6b72939e87d2172428ac302a3aa152ac8a37206b8b0d11e73ded14dcc8e858"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonic"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "062005ffcd8d69c30a32e0d4cfd19e29b29e49190d2f0678dffbeee10a1acf34"
+    sha256 cellar: :any_skip_relocation, mojave: "a0215dd621bef349a8a539968c17941b533466141b92eb227bbfa7351616688c"
   end
 
   depends_on "rust" => :build
