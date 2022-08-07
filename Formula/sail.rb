@@ -9,7 +9,8 @@ class Sail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sail"
-    sha256 cellar: :any, mojave: "6505a7dde0b2fd7ab01a2533ab8b48c4cfdd430848631b51a0d20a820a4f3533"
+    rebuild 1
+    sha256 cellar: :any, mojave: "50183f0ae9a0ad347e5d48d1b6d4bf1f06215a772849f5ca9e30c839a251fb73"
   end
 
   depends_on "rust" => :build
@@ -147,7 +148,7 @@ class Sail < Formula
 
   test do
     xy = Language::Python.major_minor_version "#{libexec}/bin/python"
-    unittest = "#{libexec}/bin/python -m unittest discover "\
+    unittest = "#{libexec}/bin/python -m unittest discover " \
                "#{libexec}/lib/python#{xy}/site-packages/sail/tests 2>&1"
 
     assert_match(version.to_s, shell_output("#{bin}/sail --version"))
