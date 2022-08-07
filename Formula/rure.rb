@@ -1,8 +1,8 @@
 class Rure < Formula
   desc "C API for RUst's REgex engine"
   homepage "https://github.com/rust-lang/regex/tree/HEAD/regex-capi"
-  url "https://github.com/rust-lang/regex/archive/1.5.6.tar.gz"
-  sha256 "2931fa4620c9360c28e0960c2023847baa127b72c326b77a5de0fbf5a4741db0"
+  url "https://github.com/rust-lang/regex/archive/1.6.0.tar.gz"
+  sha256 "1626e48f59865315419f56172d82906002cc6e54d26c785dfa6bc20b48ea09b1"
   license all_of: [
     "Unicode-TOU",
     any_of: ["Apache-2.0", "MIT"],
@@ -10,7 +10,7 @@ class Rure < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rure"
-    sha256 cellar: :any, mojave: "24f599bab23fd4445664390cd53a4e54c1dd39162b330b2924071d90ca3c20d1"
+    sha256 cellar: :any, mojave: "da30a1bff90ef92149802d4ceec0705c741cc948b57298ff0e1a8b2cfc37ceaa"
   end
 
   depends_on "rust" => :build
