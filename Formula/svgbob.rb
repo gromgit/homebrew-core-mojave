@@ -1,15 +1,14 @@
 class Svgbob < Formula
   desc "Convert your ascii diagram scribbles into happy little SVG"
   homepage "https://ivanceras.github.io/svgbob-editor/"
-  url "https://github.com/ivanceras/svgbob/archive/0.6.6.tar.gz"
-  sha256 "f9698ee0600b6533ec7adf4fbe7c35389eb7bf6e72cb03d1d8b46e0e3b45916e"
+  url "https://github.com/ivanceras/svgbob/archive/0.6.7.tar.gz"
+  sha256 "6f7a61dca076d7e2295e8ed5876cd5aff375b3f435ed03559b875f86a49a4a52"
   license "Apache-2.0"
   head "https://github.com/ivanceras/svgbob.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/svgbob"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "62e2edb8c9a2b3e84e8c4e2b96a21fb5ac6ed508d621cc7a477186000c540693"
+    sha256 cellar: :any_skip_relocation, mojave: "69b31ffbb435d55da70f1ac1cbe8e346961253d67f486d623af7d8c72f245b3b"
   end
 
   depends_on "rust" => :build
