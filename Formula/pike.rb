@@ -6,6 +6,7 @@ class Pike < Formula
   # Homepage has an expired SSL cert as of 16/12/2020, so we add a Debian mirror
   sha256 "1033bc90621896ef6145df448b48fdfa342dbdf01b48fd9ae8acf64f6a31b92a"
   license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "MPL-1.1"]
+  revision 1
 
   livecheck do
     url "https://pike.lysator.liu.se/download/pub/pike/latest-stable/"
@@ -14,22 +15,22 @@ class Pike < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pike"
-    sha256 mojave: "f7d52e2131fb60fe944c1e42e3598c75011ceaab28182800050889bed49d26c5"
+    sha256 mojave: "94aeb0de00e78f84494cdc508fd6fb50cd71ca663fe2af4fe5e8897ab57a2028"
   end
 
+  depends_on "gettext"
   depends_on "gmp"
+  depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "nettle"
   depends_on "pcre"
+  depends_on "webp"
 
+  uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
 
   on_macos do
     depends_on "gnu-sed" => :build
-  end
-
-  on_linux do
-    depends_on "jpeg"
   end
 
   def install
