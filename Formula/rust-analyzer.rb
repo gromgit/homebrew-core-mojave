@@ -2,20 +2,17 @@ class RustAnalyzer < Formula
   desc "Experimental Rust compiler front-end for IDEs"
   homepage "https://rust-analyzer.github.io/"
   url "https://github.com/rust-lang/rust-analyzer.git",
-       tag:      "2022-06-06",
-       revision: "ad6810e90bf89a4ef0ae21349d077050bc2a4fa2"
-  version "2022-06-06"
+       tag:      "2022-08-01",
+       revision: "2b472f6684bb1958274995d12b2c50310d88cc52"
+  version "2022-08-01"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust-analyzer"
-    sha256 cellar: :any_skip_relocation, mojave: "d9fe0f4a041b4ec471a18e6189c557cf50adfde2f2b2113bdce217202073f2e6"
+    sha256 cellar: :any_skip_relocation, mojave: "38997bc2ea1140cd17b42f689e11f9396d6df8b6d95a5f5b0080099089343f66"
   end
 
   depends_on "rust" => :build
-
-  # Remove this patch after rust 1.60 (https://github.com/rust-lang/rust-analyzer/issues/12080)
-  patch :DATA
 
   def install
     cd "crates/rust-analyzer" do
@@ -72,22 +69,3 @@ class RustAnalyzer < Formula
     assert_match output, pipe_output("#{bin}/rust-analyzer", input, 0)
   end
 end
-
-
-__END__
-diff --git a/Cargo.lock b/Cargo.lock
-index 62b2ac86f..bc06c853d 100644
---- a/Cargo.lock
-+++ b/Cargo.lock
-@@ -1546,9 +1546,9 @@ checksum = "f2dd574626839106c320a323308629dcb1acfc96e32a8cba364ddc61ac23ee83"
-
- [[package]]
- name = "smol_str"
--version = "0.1.23"
-+version = "0.1.21"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "7475118a28b7e3a2e157ce0131ba8c5526ea96e90ee601d9f6bb2e286a35ab44"
-+checksum = "61d15c83e300cce35b7c8cd39ff567c1ef42dde6d4a1a38dbdbf9a59902261bd"
- dependencies = [
-  "serde",
- ]
