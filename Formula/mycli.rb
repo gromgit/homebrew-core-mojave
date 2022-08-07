@@ -6,16 +6,17 @@ class Mycli < Formula
   url "https://files.pythonhosted.org/packages/fb/8d/3ce24791ec6bb7914830660f4a26ac780243d643860757a53fc99e4d4639/mycli-1.25.0.tar.gz"
   sha256 "fef12ed8125fd13edf4a04977e5ab9e8895a8a1ed10218629595206cdcd96108"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mycli"
-    sha256 cellar: :any, mojave: "6e35750b0216c8e5929f45e210475f66223e8bb168c38f14e8673047e7856a13"
+    sha256 cellar: :any, mojave: "2391dcacadf118b647799896c825c929e7c31761ae0b365e4bf4db7f2f0f3ca1"
   end
 
   depends_on "rust" => :build
+  depends_on "libpython-tabulate"
   depends_on "openssl@1.1"
-  depends_on "python-tabulate"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   on_linux do
     depends_on "pkg-config" => :build
