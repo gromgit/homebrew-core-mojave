@@ -4,6 +4,7 @@ class Onscripter < Formula
   url "https://onscripter.osdn.jp/onscripter-20220123.tar.gz"
   sha256 "5da41dc3471eeec8c93153906b39dac0a32edbb2bcefce0fa0a976c148b448ca"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,12 +13,11 @@ class Onscripter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onscripter"
-    rebuild 2
-    sha256 cellar: :any, mojave: "bc2ace860bde8625182dc3964deb9e8cd23797577b6e6ffd994ece51dc5bb815"
+    sha256 cellar: :any, mojave: "e1518a65feb86c179035c62d3900d4ca6c9f6204f32ebe34278b7c73f4585af9"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "lua"
   depends_on "sdl"
   depends_on "sdl_image"
@@ -39,14 +39,14 @@ class Onscripter < Formula
     incs = [
       `pkg-config --cflags sdl SDL_ttf SDL_image SDL_mixer`.chomp,
       `smpeg-config --cflags`.chomp,
-      "-I#{Formula["jpeg"].include}",
+      "-I#{Formula["jpeg-turbo"].include}",
       "-I#{Formula["lua"].opt_include}/lua",
     ]
 
     libs = [
       `pkg-config --libs sdl SDL_ttf SDL_image SDL_mixer`.chomp,
       `smpeg-config --libs`.chomp,
-      "-ljpeg",
+      "-L#{Formula["jpeg-turbo"].opt_lib} -ljpeg",
       "-lbz2",
       "-L#{Formula["lua"].opt_lib} -llua",
     ]
