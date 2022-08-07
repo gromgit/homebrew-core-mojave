@@ -12,11 +12,10 @@ class StoneSoup < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stone-soup"
-    rebuild 2
-    sha256 mojave: "a46cd3e80a0ec4740f73d5a657291fab8c453b9fb2b29486581b61c4630d8061"
+    rebuild 3
+    sha256 mojave: "dec149e946f23021596118c93ba015d0e7d4f5cff3ae93cfb5a993021451d47f"
   end
 
   depends_on "pkg-config" => :build
@@ -24,6 +23,10 @@ class StoneSoup < Formula
   depends_on "lua@5.1"
   depends_on "pcre"
   depends_on "sqlite"
+
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5"
 
