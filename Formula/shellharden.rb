@@ -1,13 +1,13 @@
 class Shellharden < Formula
   desc "Bash syntax highlighter that encourages/fixes variables quoting"
   homepage "https://github.com/anordal/shellharden"
-  url "https://github.com/anordal/shellharden/archive/v4.2.0.tar.gz"
-  sha256 "468406c3698c98deeabbcb0b933acec742dcd6439c24d85c60cd3d6926ffd02c"
+  url "https://github.com/anordal/shellharden/archive/v4.3.0.tar.gz"
+  sha256 "d17bf55bae4ed6aed9f0d5cea8efd11026623a47b6d840b826513ab5b48db3eb"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shellharden"
-    sha256 cellar: :any_skip_relocation, mojave: "fcaf3e187b632331a591e25f4ce17da9107556bb67c1a8561ddd10b488ad2ae5"
+    sha256 cellar: :any_skip_relocation, mojave: "a424c4e3e81e75c6d1ad7042b275827cf63f18d6c1e8dc9b8f47141bcf9ce8bb"
   end
 
   depends_on "rust" => :build
