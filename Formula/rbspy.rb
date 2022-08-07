@@ -7,10 +7,17 @@ class Rbspy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbspy"
-    sha256 cellar: :any_skip_relocation, mojave: "b96b758dee06026a83616b18c216a083acd1952fb40ec435b870be21fe44e3cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f4c6df5306ee604aa9f7f3505e8f56b0eef96638a7bdc53edaf54d7a4aa7ff90"
   end
 
   depends_on "rust" => :build
+
+  # Support rust 1.62+, remove after next release
+  patch do
+    url "https://github.com/rbspy/rbspy/commit/f5a8eecfbf2ad0b3ff9105115988478fb760d54d.patch?full_index=1"
+    sha256 "17a1c7d6d0eea2bbeb811f1bbe18534249553b61bedb69710b28a5ed9d4f9e2e"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
