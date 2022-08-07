@@ -1,13 +1,13 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https://github.com/launchbadge/sqlx"
-  url "https://github.com/launchbadge/sqlx/archive/v0.5.13.tar.gz"
-  sha256 "3ef2dabb47403ddbbdd5d6c48f73e00f7e9db45d2581e6991231e0492633a811"
+  url "https://github.com/launchbadge/sqlx/archive/v0.6.0.tar.gz"
+  sha256 "54cd83dfbc09e689a97f06d42359400b9301570e9adf4f891fea53c0382d9dcd"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sqlx-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "b1a439fba7a4f31b0be555c2b5b9b83cca65dc965653fc4283d047eb2f6b57e1"
+    sha256 cellar: :any_skip_relocation, mojave: "5900287a4c2549c7f3d307af3832015997ada79ef9c5f08de0dcc6a45768fcc0"
   end
 
   depends_on "rust" => :build
