@@ -12,6 +12,7 @@ class Pianod < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pianod"
+    rebuild 1
     sha256 mojave: "6c1bac30eee017dbc3644b90995922fbd1756307765718c7c753ce77ada54ce6"
   end
 
