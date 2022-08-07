@@ -10,14 +10,17 @@ class Spot < Formula
     regex(/href=.*?spot[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spot"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ea9c15843451c61d4893eb79a2869d03a9e8e07794b59935342fd2ea1bd2b065"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6aa482b9cbde8bb853a8017aeab16cd514e568ab43884405d2865b7d3b888691"
   end
 
   depends_on "python@3.10" => :build
+
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5" # C++17
 
