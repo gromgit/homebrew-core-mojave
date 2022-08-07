@@ -10,11 +10,14 @@ class Openfst < Formula
     regex(/href=.*?openfst[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openfst"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7b5808c70f33015aeeab712550521b15041e97254b8cb2a62e1fd00ff45f1cfb"
+    rebuild 2
+    sha256 cellar: :any, mojave: "bb40b41ade5cb118f5c0953297df0370ba9ac37edd53262c88538e3a7fae88d9"
+  end
+
+  on_linux do
+    depends_on "gcc" # for C++17
   end
 
   fails_with gcc: "5"
