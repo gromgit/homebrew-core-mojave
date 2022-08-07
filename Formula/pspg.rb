@@ -1,14 +1,14 @@
 class Pspg < Formula
   desc "Unix pager optimized for psql"
   homepage "https://github.com/okbob/pspg"
-  url "https://github.com/okbob/pspg/archive/5.5.5.tar.gz"
-  sha256 "0afca418cfe2bdf54cf1fd3d982f0eef53e0627f5ba1d96b464afe95635eebbf"
+  url "https://github.com/okbob/pspg/archive/5.5.6.tar.gz"
+  sha256 "220417b9b1adb9e512ee66c44f655c179cfb66ec53fc7f252e3e1c75ac77c884"
   license "BSD-2-Clause"
   head "https://github.com/okbob/pspg.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pspg"
-    sha256 cellar: :any, mojave: "f43ae5e0cbdf015f0cb76dd418c64902d2e17c33cbe8037eb7ed949d9c24b631"
+    sha256 cellar: :any, mojave: "6dc6f491ea268efe328ea13f7fc16794645945ce3d4c45ca6edb3f81e71ca1bd"
   end
 
   depends_on "libpq"
