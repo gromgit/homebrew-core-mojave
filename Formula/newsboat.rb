@@ -1,14 +1,14 @@
 class Newsboat < Formula
   desc "RSS/Atom feed reader for text terminals"
   homepage "https://newsboat.org/"
-  url "https://newsboat.org/releases/2.27/newsboat-2.27.tar.xz"
-  sha256 "fd5a40096689d4fc0f18441319197769fa377709821b1a3f1b2ba1f006625285"
+  url "https://newsboat.org/releases/2.28/newsboat-2.28.tar.xz"
+  sha256 "2508713ac850f1f2ae156e4b42cbc75a1c9e399d804e007b5773019115d3b0ec"
   license "MIT"
   head "https://github.com/newsboat/newsboat.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newsboat"
-    sha256 mojave: "e7232d8273019dae0e74ae5cdd0fa5ea5fc2968e126e1e165670ff03b3eb355a"
+    sha256 mojave: "95ddef73b629b93c26caa8c5a0b017fce46beafcad636d63a3f28a191ce15aef"
   end
 
   depends_on "asciidoctor" => :build
