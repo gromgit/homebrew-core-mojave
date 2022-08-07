@@ -1,8 +1,8 @@
 class Nano < Formula
   desc "Free (GNU) replacement for the Pico text editor"
   homepage "https://www.nano-editor.org/"
-  url "https://www.nano-editor.org/dist/v6/nano-6.3.tar.xz"
-  sha256 "eb532da4985672730b500f685dbaab885a466d08fbbf7415832b95805e6f8687"
+  url "https://www.nano-editor.org/dist/v6/nano-6.4.tar.xz"
+  sha256 "4199ae8ca78a7796de56de1a41b821dc47912c0307e9816b56cc317df34661c0"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Nano < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nano"
-    sha256 mojave: "5900a6019a2bc179173d751ab5088e53f1b8a634ac221a2ceee676078f74123c"
+    sha256 mojave: "e3045bb1526b7bbe5e5f49e5dc53271aa7fdc1a2674e5812ddc1504e475c3e97"
   end
 
   depends_on "pkg-config" => :build
