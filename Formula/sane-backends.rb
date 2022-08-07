@@ -2,6 +2,7 @@ class SaneBackends < Formula
   desc "Backends for scanner access"
   homepage "http://www.sane-project.org/"
   license "GPL-2.0-or-later"
+  revision 1
 
   stable do
     url "https://gitlab.com/sane-project/backends/uploads/7d30fab4e115029d91027b6a58d64b43/sane-backends-1.1.1.tar.gz"
@@ -21,11 +22,11 @@ class SaneBackends < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sane-backends"
-    sha256 mojave: "3b5c56eddd531ad2e979959b8d833714f0ed27b4342ec2c890ca135eaafae8d0"
+    sha256 mojave: "8775cdeb1a55ec71dc43fc244e0003fbd694a18a47430c209bee6966e287c5ce"
   end
 
   head do
-    url "https://gitlab.com/sane-project/backends.git"
+    url "https://gitlab.com/sane-project/backends.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -35,19 +36,19 @@ class SaneBackends < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libusb"
   depends_on "net-snmp"
   depends_on "openssl@1.1"
 
+  uses_from_macos "python" => :build
   uses_from_macos "libxml2"
 
   def install
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--localstatedir=#{var}",
                           "--without-gphoto2",
                           "--enable-local-backends",
