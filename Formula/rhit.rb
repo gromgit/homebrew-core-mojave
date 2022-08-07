@@ -1,14 +1,14 @@
 class Rhit < Formula
   desc "Nginx log explorer"
   homepage "https://dystroy.org/rhit/"
-  url "https://github.com/Canop/rhit/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "23f26ffd517949b70f7bc27955f2f219d744dca2bb44a3948ef09206478c678f"
+  url "https://github.com/Canop/rhit/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "51cec0ec3addaeb69904e5929ff4d3f8421f4b8630ec772151ef3a475c0a7aa8"
   license "MIT"
   head "https://github.com/Canop/rhit.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rhit"
-    sha256 cellar: :any_skip_relocation, mojave: "1fde8a824a1f834aa1585d3cb5f91755ccff290dc53ad0ee61e265c1258fb12c"
+    sha256 cellar: :any_skip_relocation, mojave: "a478657538cf72483dc22e5f8a3ba656323944b0ba572b4d7b2c46d18c51fbe0"
   end
 
   depends_on "rust" => :build
