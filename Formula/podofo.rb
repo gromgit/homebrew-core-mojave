@@ -4,17 +4,18 @@ class Podofo < Formula
   url "https://downloads.sourceforge.net/project/podofo/podofo/0.9.8/podofo-0.9.8.tar.gz"
   sha256 "5de607e15f192b8ad90738300759d88dea0f5ccdce3bf00048a0c932bc645154"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
+  revision 1
   head "svn://svn.code.sf.net/p/podofo/code/podofo/trunk"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/podofo"
-    sha256 cellar: :any, mojave: "29b99558fcbc5f01f017848bdc88fb27ad8aecd5a48779d79e80cc54c3e5a5f6"
+    sha256 cellar: :any, mojave: "a3882287bf7b2fb4b9517ce505c1a03cbd06b2bf4e8fd10d4b72aafee4da328c"
   end
 
   depends_on "cmake" => :build
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libidn"
   depends_on "libpng"
   depends_on "libtiff"
@@ -37,10 +38,9 @@ class Podofo < Formula
       -DCMAKE_CXX_STANDARD_REQUIRED=ON
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
