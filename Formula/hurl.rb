@@ -7,9 +7,9 @@ class Hurl < Formula
   head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hurl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8013c5604c2d89c3fa025a19cd9859c77c7c0e5f53f251bb63904ed1c3737534"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hurl-1.6.1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "13434da4f04b703fdf48ae29a1840837ef26debc4989e7844084a91293daa3b2"
   end
 
   depends_on "rust" => :build
