@@ -1,13 +1,13 @@
 class Zola < Formula
   desc "Fast static site generator in a single binary with everything built-in"
   homepage "https://www.getzola.org/"
-  url "https://github.com/getzola/zola/archive/v0.15.3.tar.gz"
-  sha256 "89a590549249e60a01f1a1f66ee23fedc711afd4e9a669ee1328e5c99ea958c8"
+  url "https://github.com/getzola/zola/archive/v0.16.0.tar.gz"
+  sha256 "d9e8496b88bbb69dd7b885d284f2599f50575fc7941b1bee81371b432ebc2d50"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zola"
-    sha256 cellar: :any_skip_relocation, mojave: "eb51d66c09d95890d00b392fff385525b0d37f4d9d804c298da5c4707b11a34b"
+    sha256 cellar: :any_skip_relocation, mojave: "578b826a1ed0b2bf5ae7482b342f37d0e309c2c1116cad1ab69bddd95957da55"
   end
 
   depends_on "cmake" => :build
