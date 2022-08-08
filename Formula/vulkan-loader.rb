@@ -9,7 +9,8 @@ class VulkanLoader < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vulkan-loader"
-    sha256 mojave: "4fdcce68bfe6397607c359ff332432c27057d2d64f6c187e7085f733976d89da"
+    rebuild 1
+    sha256 mojave: "bf42b29f80cfe376c3535aa1251e8d9481ea32d43776078f245b5b20eac9bb2d"
   end
 
   depends_on "cmake" => :build
@@ -18,9 +19,9 @@ class VulkanLoader < Formula
   depends_on "vulkan-headers"
 
   on_linux do
+    depends_on "libxrandr" => :build
     depends_on "libx11"
     depends_on "libxcb"
-    depends_on "libxrandr" => :build
     depends_on "wayland"
   end
 
