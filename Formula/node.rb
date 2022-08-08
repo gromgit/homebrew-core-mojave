@@ -13,7 +13,8 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node-18.7.0"
-    sha256 cellar: :any, mojave: "cb188a081dabf9058839e68fac6aec7f73a0e2364fbdd5cb9e788bde3a71f5d8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5a0ea892d9bc755c9d28641005d951a469b142ebe91f6017ce40fb2cdd812944"
   end
 
   depends_on "pkg-config" => :build
