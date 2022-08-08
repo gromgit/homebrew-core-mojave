@@ -4,6 +4,7 @@ class Vapoursynth < Formula
   url "https://github.com/vapoursynth/vapoursynth/archive/R59.tar.gz"
   sha256 "d713f767195cb3a9a7ccb97b1e61e0cf5a9332eed86c6362badfff6857792a86"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Vapoursynth < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vapoursynth"
-    sha256 cellar: :any, mojave: "0011f7410cb5df94a91be17bc9da1925a3863edd3ee50509c1310364f5410a38"
+    sha256 cellar: :any, mojave: "6b1ee12d08e05081c086513cf479e8beba2f421b07c5c43a9b8570bcf468fb26"
   end
 
   depends_on "autoconf" => :build
@@ -22,7 +23,7 @@ class Vapoursynth < Formula
   depends_on "libtool" => :build
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "zimg"
 
   on_linux do
@@ -62,7 +63,7 @@ class Vapoursynth < Formula
   end
 
   test do
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import vapoursynth"
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "import vapoursynth"
     system bin/"vspipe", "--version"
   end
 end
