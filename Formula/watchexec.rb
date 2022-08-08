@@ -1,9 +1,10 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://github.com/watchexec/watchexec"
-  url "https://github.com/watchexec/watchexec/archive/cli-v1.19.0.tar.gz"
-  sha256 "6837dff4d14802e1e3714a2f3ef4330f8faadd10449508b128cff7f93d921101"
+  url "https://github.com/watchexec/watchexec/archive/cli-v1.20.4.tar.gz"
+  sha256 "170d9ab9cd3661ca024ca15e341013b7adb56a87bbf486ce0dc34e092f2547a2"
   license "Apache-2.0"
+  head "https://github.com/watchexec/watchexec.git", branch: "main"
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Watchexec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/watchexec"
-    sha256 cellar: :any_skip_relocation, mojave: "e79ac643537a3cf1bbcc68a976d48cc0b2a40371fe2dde8e0b8f2ea66f5180a9"
+    sha256 cellar: :any_skip_relocation, mojave: "38a317819b2a8ef24f7c99351798d4cd5bfb7cead3175731d651a7dab8743a39"
   end
 
   depends_on "rust" => :build
@@ -20,9 +21,7 @@ class Watchexec < Formula
   uses_from_macos "zlib"
 
   def install
-    cd "cli" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "crates/cli")
     man1.install "doc/watchexec.1"
   end
 
