@@ -14,8 +14,9 @@ class Clarinet < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clarinet"
-    sha256 cellar: :any_skip_relocation, mojave: "fc5bd4fc08258474b5b578dfcf0c98c7cd446cc762bfb41e50126504a8cd2025"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clarinet-0.33.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1a7f179787ecaaa346edfa45517081cc91d08182026e2ba6b0f5c8c7ee035cde"
   end
 
   depends_on "rust" => :build
