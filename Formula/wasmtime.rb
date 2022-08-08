@@ -2,8 +2,8 @@ class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
   homepage "https://wasmtime.dev/"
   url "https://github.com/bytecodealliance/wasmtime.git",
-      tag:      "v0.36.0",
-      revision: "c0e58a1e1c22b53e0330829057da6125da89bef1"
+      tag:      "v0.39.1",
+      revision: "19b5436ac346b8e61230baeaf18e802db6f0b858"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Wasmtime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wasmtime"
-    sha256 cellar: :any_skip_relocation, mojave: "cddd51904c6a66fd324c5b76f164d82944b3fe3fd91177b72057a0938433ebcf"
+    sha256 cellar: :any_skip_relocation, mojave: "6023425b50b644db4950d3b20e47e12e4b8550a9aa72c7ef9a812ecfb51ce2cc"
   end
 
   depends_on "rust" => :build
