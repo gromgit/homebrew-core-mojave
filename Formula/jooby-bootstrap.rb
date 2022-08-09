@@ -7,12 +7,10 @@ class JoobyBootstrap < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jooby-bootstrap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bbfdafe4f00d1421416fe579a8be239daaff31dba67a4916d0dee084b114eb7c"
+    sha256 cellar: :any_skip_relocation, all: "3ca58a519ffa11530ab152b7a007c4b11e7bf76767b9296b84626e0516598c7b"
   end
 
-  deprecate! date: "2020-11-13", because: :unmaintained
+  disable! date: "2022-07-31", because: :unmaintained
 
   depends_on "maven"
   depends_on "openjdk@8"
