@@ -5,7 +5,7 @@ class DockerMachineDriverXhyve < Formula
       tag:      "v0.4.0",
       revision: "829c0968dac18547636f3ad6aa5ef83677f48267"
   license "BSD-3-Clause"
-  head "https://github.com/machine-drivers/docker-machine-driver-xhyve.git"
+  head "https://github.com/machine-drivers/docker-machine-driver-xhyve.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -15,7 +15,7 @@ class DockerMachineDriverXhyve < Formula
   end
 
   # xhyve is no longer used by Docker, replaced by hyperkit
-  deprecate! date: "2020-12-18", because: :does_not_build
+  disable! date: "2022-07-31", because: :does_not_build
 
   depends_on "go" => :build
   depends_on "docker-machine"
