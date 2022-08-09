@@ -2,23 +2,22 @@ class ParquetTools < Formula
   desc "Apache Parquet command-line tools and utilities"
   homepage "https://parquet.apache.org/"
   url "https://github.com/apache/parquet-mr.git",
-      tag:      "apache-parquet-1.12.0",
-      revision: "db75a6815f2ba1d1ee89d1a90aeb296f1f3a8f20"
+      tag:      "apache-parquet-1.12.2",
+      revision: "77e30c8093386ec52c3cfa6c34b7ef3321322c94"
   license "Apache-2.0"
   head "https://github.com/apache/parquet-mr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a0b30e5039eff7d29fd1ddfd8e8d840b23077005d7fb512144f0aaa0708f075"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "72bdfcf0a71023b65def0a02b1b581ba7a9b228ea5a1594923fddb2d1eb098d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "6eab85ecd2c97e14364443687196750c0cde7dac5733eb13805d866a086b462a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c84021c2e6e9475380715420dec0edc741c59edb525e197a1c355fd3679187e6"
-    sha256 cellar: :any_skip_relocation, catalina:       "0bb7bd347b698537ef9b8690648aa6b13c328fd3c60eec5c6614b94c8d770835"
-    sha256 cellar: :any_skip_relocation, mojave:         "17e6ad97c0d0fcab7989305eabd2b853cdc694f059f29d36cda5d94422de4e33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c27c4802070eea520a2a140569b8f0ec16591786caf4b87c7e8ccb9ee9414d15"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bccc742739150813fde729a1eb82b4cd122edeae186bbf2bc9845742d337a2f8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97878dc311bf03733c98f0315c9ec1a077664e1d5687b6d8553ef31e2db39c52"
+    sha256 cellar: :any_skip_relocation, monterey:       "74545f457e9f95a283f4a8bee126ab6cc05e79331c677a26db7fb2236076ffc0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4384c7d5a32e1681340d393babb1fb59226b0a87c29f1643c71e23c4658bec90"
+    sha256 cellar: :any_skip_relocation, catalina:       "40d62a070a0dcdc779e32f1054dd4bd2f220590a497d31c90c0230e653056c62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb10fb679729d2f61b8804013abb0a56aadaf14c5e81c644ade30123edd6c7a6"
   end
 
   # See https://issues.apache.org/jira/browse/PARQUET-1666
-  deprecate! date: "2021-03-25", because: :deprecated_upstream
+  disable! date: "2022-07-31", because: :deprecated_upstream
 
   depends_on "maven" => :build
   depends_on "openjdk"
