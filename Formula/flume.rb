@@ -7,19 +7,21 @@ class Flume < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cb04c708d2c0e6590e7cd6a504df26c480719eb70d5744108b7bf660bb90442a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ed56b1cc2920649c2942b963e5f0b77ad852679b3e1177b3438d8fdef86cd00f"
   end
 
   depends_on "hadoop"
-  depends_on "openjdk"
+  depends_on "openjdk@11"
 
   def install
     rm_f Dir["bin/*.cmd", "bin/*.ps1"]
     libexec.install %w[conf docs lib tools]
-    bin.install Dir["bin/*"]
-    bin.env_script_all_files libexec/"bin",
-                             JAVA_HOME:  Formula["openjdk"].opt_prefix,
-                             FLUME_HOME: libexec
+    prefix.install "bin"
+
+    flume_env = Language::Java.java_home_env("11")
+    flume_env[:FLUME_HOME] = libexec
+    bin.env_script_all_files libexec/"bin", flume_env
   end
 
   test do
