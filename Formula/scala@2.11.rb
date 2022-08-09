@@ -8,14 +8,12 @@ class ScalaAT211 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scala@2.11"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ae7ab033da2b229839701a4340d77b06353dd8ed050fadcb81b03c82f342a3df"
+    sha256 cellar: :any_skip_relocation, all: "cdabefb6cb6bbb4d3d5b297fe0148488f3162c62d348647f0a07b8b06b63300d"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2017-11-09", because: :unsupported
+  disable! date: "2022-07-31", because: :unsupported
 
   depends_on "openjdk@8"
 
