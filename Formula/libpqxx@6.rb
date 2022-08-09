@@ -7,14 +7,18 @@ class LibpqxxAT6 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpqxx@6"
     rebuild 1
-    sha256 cellar: :any, mojave: "4b43e01c10ab5d52e86a773c46a96db433c09fa1f7d246e1e3dad029b060125a"
+    sha256 cellar: :any,                 arm64_monterey: "e974d053a47127847a9643a1cf6a6b433d60ec95d583b56a877e2cd115819793"
+    sha256 cellar: :any,                 arm64_big_sur:  "1bc5d58c42e2b17d2dadf9e3ed6658f29b8cee2c1a6528c938e9f35dfb74f0de"
+    sha256 cellar: :any,                 monterey:       "344daa30b2c46d3cfafb04e343c12855e245e8d7a56c6f64b9924083ff6a8a0a"
+    sha256 cellar: :any,                 big_sur:        "fcf3b10ca0fc40cd85498d242c5daed948dd0b51bc1a435fb0f297f03ad87d10"
+    sha256 cellar: :any,                 catalina:       "646a08fa806d2f86d0d352daa71a3bdb254f73fa950d84c64ad8703d44cef9be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19f90f07fc8b266b4acff9ff552305b0b352220e77315d777536a6565c291934"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2020-06-23", because: :versioned_formula
+  disable! date: "2022-07-31", because: :versioned_formula
 
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => :build
