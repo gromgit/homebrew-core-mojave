@@ -7,8 +7,9 @@ class TremorRuntime < Formula
   head "https://github.com/tremor-rs/tremor-runtime.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tremor-runtime"
-    sha256 cellar: :any_skip_relocation, mojave: "4ec5a022aabbc43b09670f11ebcad266f79e3cfc86aca17b192eadeed1fe1ad9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tremor-runtime-0.12.4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d8f6acdebd8ad22bc5ea5ed2182780f0dcaaf9d021f292ed146da72fe5236597"
   end
 
   depends_on "cmake" => :build
