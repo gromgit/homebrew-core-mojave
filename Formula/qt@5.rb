@@ -8,10 +8,11 @@ class QtAT5 < Formula
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.5/single/qt-everywhere-opensource-src-5.15.5.tar.xz"
   sha256 "5a97827bdf9fd515f43bc7651defaf64fecb7a55e051c79b8f80510d0e990f06"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qt@5"
-    sha256 cellar: :any, mojave: "d29b4ae9c0988402649f86cdb1cb47fad8f929282884dfc09defc7a22ee30901"
+    sha256 cellar: :any, mojave: "c0ecb77340307743fe8d99f2990accd10dfe1574c90b9664974e9e3d16b3c2cc"
   end
 
   keg_only :versioned_formula
@@ -48,8 +49,8 @@ class QtAT5 < Formula
     depends_on "libproxy"
     depends_on "libsm"
     depends_on "libvpx"
-    depends_on "libxkbcommon"
     depends_on "libxcomposite"
+    depends_on "libxkbcommon"
     depends_on "libxkbfile"
     depends_on "libxrandr"
     depends_on "libxtst"
@@ -129,8 +130,8 @@ class QtAT5 < Formula
 
   # Patch for qmake on ARM
   # https://codereview.qt-project.org/c/qt/qtbase/+/327649
-  if Hardware::CPU.arm?
-    patch do
+  patch do
+    on_arm do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/9dc732/qt/qt-split-arch.patch"
       sha256 "36915fde68093af9a147d76f88a4e205b789eec38c0c6f422c21ae1e576d45c0"
       directory "qtbase"
@@ -231,22 +232,17 @@ class QtAT5 < Formula
     # of both Designer and Linguist as that relies on Assistant being in `bin`.)
     libexec.mkpath
     Pathname.glob("#{bin}/*.app") { |app| mv app, libexec }
+
+    # Fix find_package call using QtWebEngine version to find other Qt5 modules.
+    inreplace Dir[lib/"cmake/Qt5WebEngine*/*Config.cmake"],
+              " #{resource("qtwebengine").version} ", " #{version} "
   end
 
   def caveats
-    s = <<~EOS
+    <<~EOS
       We agreed to the Qt open source license for you.
       If this is unacceptable you should uninstall.
     EOS
-
-    if Hardware::CPU.arm?
-      s += <<~EOS
-
-        This version of Qt on Apple Silicon does not include QtWebEngine.
-      EOS
-    end
-
-    s
   end
 
   test do
