@@ -7,13 +7,14 @@ class NodeAT10 < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@10"
-    sha256 cellar: :any, mojave: "a7a60cb106ce21330d017b622c65f12bd939dd7166a5bed49d8b1043e7cc37af"
+    sha256 cellar: :any, monterey: "00f77d95e0903bd845a11e90d382066c6ffe493bd3ee8ba25d57663f1f4f3585"
+    sha256 cellar: :any, big_sur:  "564df395699ebca8cea0f6df252f7c4b0cc3dcfb54b965475d65edeabe9af00f"
+    sha256 cellar: :any, catalina: "8bfa95ea0017e43a1e32120655e84e75de4570f0a90ec0c8e9143aa66d8f4a35"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2021-04-30", because: :unsupported
+  disable! date: "2022-07-31", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "icu4c"
