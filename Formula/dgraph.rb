@@ -6,7 +6,7 @@ class Dgraph < Formula
   # Source code in this repository is variously licensed under the Apache Public License 2.0 (APL)
   # and the Dgraph Community License (DCL). A copy of each license can be found in the licenses directory.
   license "Apache-2.0"
-  head "https://github.com/dgraph-io/dgraph.git"
+  head "https://github.com/dgraph-io/dgraph.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "88693da8a26b8104d2362cc17f6f4311de51d96d1e0bd608e9042f77cdd6bf15"
@@ -17,7 +17,7 @@ class Dgraph < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "57fa2f974e4e0313fb58f7e35e2d9547a4d43319af7e84a4fc6619238e862885"
   end
 
-  deprecate! date: "2021-06-10", because: :unsupported
+  disable! date: "2022-07-31", because: :unsupported
 
   depends_on "go" => :build
   depends_on "jemalloc"
