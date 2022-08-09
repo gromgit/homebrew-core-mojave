@@ -9,13 +9,14 @@ class GmtAT5 < Formula
   revision 13
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmt@5"
-    sha256 mojave: "8b62521b1b826767bcf19275147980b57f3d95c664551c95dffc2e2be7e15921"
+    sha256 monterey: "be46e95fb3bb1cb83195f10338e991c3dcff7ffe68b9dfdaf0daa7c3777cb2c2"
+    sha256 big_sur:  "67c2cbd893bdb2d5e36aa034964df1d626547634608dc4b6385e0f64fe06163f"
+    sha256 catalina: "8c1f9855d6f7b0636b7bec1a2c6349a5cb1d6665598369f921b7b50b3c24b9d3"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2021-05-22", because: :unmaintained
+  disable! date: "2022-07-31", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "fftw"
