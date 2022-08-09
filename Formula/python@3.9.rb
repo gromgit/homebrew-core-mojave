@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.13/Python-3.9.13.tar.xz"
   sha256 "125b0c598f1e15d2aa65406e83f792df7d171cdf38c16803b149994316a3080f"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -13,8 +13,7 @@ class PythonAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.9"
-    rebuild 1
-    sha256 mojave: "c278c20d614c3a4f8e24aa8003183fed737067fa69ed4a652a664e61df80a6b4"
+    sha256 mojave: "2e227bc03256663d508ca658d541345b8af6e0c205934a9b95ab1f64a32733dd"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -58,13 +57,13 @@ class PythonAT39 < Formula
 
   # Always update to latest release
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4a/25/ec29a23ef38b9456f9965c57a9e1221e6c246d87abbf2a31158799bca201/setuptools-62.3.2.tar.gz"
-    sha256 "a43bdedf853c670e5fed28e5623403bad2f73cf02f9a2774e91def6bda8265a7"
+    url "https://files.pythonhosted.org/packages/a8/d9/28490a9ef6592c3471bd1bcacaf5bd0dee2bb05c8a8bcf901e673b2f1732/setuptools-63.3.0.tar.gz"
+    sha256 "273b6847ae61f7829c1affcdd9a32f67aa65233be508f4fbaab866c5faa4e408"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/3e/0a/6125e67aa4d3245faeed476e4e26f190b5209f84f01efd733ac6372eb247/pip-22.1.1.tar.gz"
-    sha256 "8dfb15d8a1c3d3085a4cbe11f29e19527dfaf2ba99354326fd62cec013eaee81"
+    url "https://files.pythonhosted.org/packages/46/28/addd7e66bb3af799d35a5dcbb79407b591a7ed674f4efd2bd8f930c40821/pip-22.2.1.tar.gz"
+    sha256 "50516e47a2b79e77446f0d05649f0d53772c192571486236b1905492bfc24bac"
   end
 
   resource "wheel" do
