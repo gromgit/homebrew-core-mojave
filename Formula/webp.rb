@@ -1,14 +1,13 @@
 class Webp < Formula
   desc "Image format providing lossless and lossy compression for web images"
   homepage "https://developers.google.com/speed/webp/"
-  url "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.2.3.tar.gz"
-  sha256 "f5d7ab2390b06b8a934a4fc35784291b3885b557780d099bd32f09241f9d83f9"
+  url "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.2.4.tar.gz"
+  sha256 "7bf5a8a28cc69bcfa8cb214f2c3095703c6b73ac5fba4d5480c205331d9494df"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webp"
-    sha256 cellar: :any, mojave: "10fc002e54f0c6beeadf024dd1da9c137cfbdd964cc5c260e07ec9ddde084865"
+    sha256 cellar: :any, mojave: "eb074196adc89304bfd484b75f4a0153b4bb8d5ac695df11f5593f1b4b520ded"
   end
 
   head do
