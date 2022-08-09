@@ -6,12 +6,17 @@ class GccAT49 < Formula
   sha256 "6c11d292cd01b294f9f84c9a59c230d80e9e4a47e5c6355f046bb36d4f358092"
   revision 2
 
+  bottle do
+    rebuild 1
+    sha256 x86_64_linux: "e4feb69ec4ab2d7bd847206e6cb419154f7a61a478f0bf7a631a82e9896981e8"
+  end
+
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
   # https://gcc.gnu.org/gcc-4.9/
-  disable! date: "2021-04-11", because: :deprecated_upstream
+  disable! date: "2022-07-31", because: :deprecated_upstream
 
   depends_on maximum_macos: [:high_sierra, :build]
 
@@ -74,8 +79,8 @@ class GccAT49 < Formula
   end
 
   # Fix issues with macOS 10.13 headers and parallel build on APFS
-  if MacOS.version == :high_sierra
-    patch do
+  patch do
+    on_high_sierra do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/b7c7883d/gcc%404.9/high_sierra_2.patch"
       sha256 "c7bcad4657292f6939b7322eb5e821c4a110c4f326fd5844890f0e9a85da8cae"
     end
@@ -132,7 +137,7 @@ class GccAT49 < Formula
       args << "--disable-multilib"
 
       # Change the default directory name for 64-bit libraries to `lib`
-      # http://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc.html
+      # https://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc-pass2.html
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64=."
     end
 
