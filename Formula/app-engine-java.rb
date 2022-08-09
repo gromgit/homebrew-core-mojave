@@ -9,9 +9,8 @@ class AppEngineJava < Formula
   end
 
   # https://cloud.google.com/appengine/docs/standard/java/sdk-gcloud-migration
-  deprecate! date: "2019-07-30", because: :deprecated_upstream
+  disable! date: "2022-07-31", because: :deprecated_upstream
 
-  depends_on arch: :x86_64 # openjdk@8 doesn't support ARM
   depends_on "openjdk@8"
 
   def install
