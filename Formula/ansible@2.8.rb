@@ -9,13 +9,15 @@ class AnsibleAT28 < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible@2.8"
-    sha256 cellar: :any, mojave: "b26a7936e868c468b4ad141c926635d6258d18b245e24aad335c8d5512e6976d"
+    sha256 cellar: :any,                 monterey:     "32ad0d9b268cc30e130b80338f832f1f0f78839be71f4504262f4ebb8794dec3"
+    sha256 cellar: :any,                 big_sur:      "3d3c4a7c3b54b3ab76ec1aeb78e1faf00dec6b775d912262ea9228e1beae7734"
+    sha256 cellar: :any,                 catalina:     "49f5e63f3f67588d6b71b79702a84eac580b54f905a111ced3a3386c81975888"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ce97b8ec3ea2d975c27f6018231261cddc8fb750be7067b630746a0b7296ad9b"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2021-04-12", because: :versioned_formula
+  disable! date: "2022-07-31", because: :versioned_formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
