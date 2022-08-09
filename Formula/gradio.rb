@@ -7,12 +7,14 @@ class Gradio < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gradio"
     rebuild 1
-    sha256 mojave: "074b2356c03dc99331b1cc1ff2b6553ac0b75bc101a80b5ac5dee7325ab0567b"
+    sha256 monterey:     "23007e95399ae41c47177de867ecc857cfe04a3573a2c78aaebb0fcd04a389aa"
+    sha256 big_sur:      "72f8e30b711bee61d93b6da03927edb44f7414b1be112e6259aba2ffe9f84fde"
+    sha256 catalina:     "0417071790ce31f0e7c80b800fabc91a0aef1b8faff27b892136defb02350067"
+    sha256 x86_64_linux: "88ba113096595acdaa8529ce24f0ce5735f1b595af740c8c1bd3b77a7c795d4e"
   end
 
-  deprecate! date: "2019-11-16", because: :repo_archived
+  disable! date: "2022-07-31", because: :repo_archived
 
   depends_on "graphviz" => :build # for vala
   depends_on "meson" => :build
