@@ -14,8 +14,9 @@ class FfmpegAT4 < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@4-4.4.2"
-    sha256 mojave: "424efc6dc75a4088e77b2475229143bcb6dda9b6cedcda2cb514d492dc6cf4fa"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@4"
+    rebuild 1
+    sha256 mojave: "20178bf8f969619b3b33ed6ee40e9bd0c883c660d419a1a5dbde35812b12adb2"
   end
 
   keg_only :versioned_formula
@@ -61,8 +62,9 @@ class FfmpegAT4 < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "libxv"
+    depends_on "alsa-lib"
     depends_on "gcc" # because rubberband is compiled with gcc
+    depends_on "libxv"
   end
 
   fails_with gcc: "5"
