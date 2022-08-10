@@ -12,7 +12,8 @@ class Aqbanking < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aqbanking"
-    sha256 mojave: "55e021910e9a1d096495c4d7fdf17ccf3d7e79005cb8847cc4d2fb8cc92522e3"
+    rebuild 1
+    sha256 mojave: "458c6f2ddbcdf8604fc715f86761cf31c1da9f0dfa49d8f114a5415f2f568603"
   end
 
   depends_on "gettext"
@@ -61,8 +62,8 @@ class Aqbanking < Formula
     EOS
 
     match = "110000000 000123456789 12.12.2022 -110.96 US44110000000000123456789 BYLADEM1001"
-    out = shell_output("#{bin}/aqbanking-cli -D .aqbanking listbal "\
-                       "-T '$(bankcode) $(accountnumber) $(dateAsString) "\
+    out = shell_output("#{bin}/aqbanking-cli -D .aqbanking listbal " \
+                       "-T '$(bankcode) $(accountnumber) $(dateAsString) " \
                        "$(valueAsString) $(iban) $(bic)' < #{context}")
     assert_match match, out.gsub(/\s+/, " ")
   end
