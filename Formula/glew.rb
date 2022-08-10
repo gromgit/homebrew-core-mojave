@@ -9,8 +9,8 @@ class Glew < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glew"
-    rebuild 4
-    sha256 cellar: :any, mojave: "8eb749faff79b85b0626d4473a20794967bc3cdaab482195efce7c065c0c60f6"
+    rebuild 5
+    sha256 cellar: :any, mojave: "d46b4ad99d02a94b2986f620cdf19298d4ee4ed7e1fa1c58071b1e756640df2f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -21,11 +21,9 @@ class Glew < Formula
   end
 
   def install
-    cd "build" do
-      system "cmake", "./cmake", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", "./build/cmake", "-B", "_build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
     doc.install Dir["doc/*"]
   end
 
