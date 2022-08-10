@@ -4,35 +4,31 @@ class Libavif < Formula
   url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "66e82854ceb84a3e542bc140a343bc90e56c68f3ecb4fff63e636c136ed9a05e"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libavif"
-    sha256 cellar: :any, mojave: "8dfc92aada757d48629542dfe0be1ec2ef1c6415502c8af585b3eaace44fbd2d"
+    sha256 cellar: :any, mojave: "82235b27592a47256957428b911d91a32d94bde9c74eb39218823ade75ec3c08"
   end
 
   depends_on "cmake" => :build
   depends_on "nasm" => :build
   depends_on "aom"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
 
   uses_from_macos "zlib"
 
   def install
-    args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DAVIF_CODEC_AOM=ON
-      -DAVIF_BUILD_APPS=ON
-      -DAVIF_BUILD_EXAMPLES=OFF
-      -DAVIF_BUILD_TESTS=OFF
-    ] + std_cmake_args
-
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-    end
-
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DAVIF_CODEC_AOM=ON",
+                    "-DAVIF_BUILD_APPS=ON",
+                    "-DAVIF_BUILD_EXAMPLES=OFF",
+                    "-DAVIF_BUILD_TESTS=OFF",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "examples"
   end
 
