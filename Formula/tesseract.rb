@@ -13,6 +13,7 @@ class Tesseract < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tesseract"
+    rebuild 1
     sha256 cellar: :any, mojave: "fccc7def758047b38f015931b6e23514894002e439bc504ae4221bb0640b6e1d"
   end
 
