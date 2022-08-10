@@ -2,19 +2,23 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.46.3",
-      revision: "53d69cc581c5b7305708587f4f1939278477c28a"
+      tag:      "v1.48.0",
+      revision: "d2054ec6c6e8abcecf0e24b0b4ee75035d80c3cc"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
+  # The "latest" release on GitHub is sometimes for an older major/minor and
+  # there's sometimes a notable gap between when a version is tagged and
+  # released, so we have to check the releases page instead.
   livecheck do
-    url :stable
-    strategy :github_latest
+    url "https://github.com/grpc/grpc/releases?q=prerelease%3Afalse"
+    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :page_match
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpc"
-    sha256 cellar: :any, mojave: "7e9f6e5d2fe4ba1383b410b8ab2fa7c16f444ca224f1a14db6653874c1ff675a"
+    sha256 cellar: :any, mojave: "746d2c84d615d9ec2b07b13318cc540b7e075e9b84d9f4192690562083451209"
   end
 
   depends_on "autoconf" => :build
