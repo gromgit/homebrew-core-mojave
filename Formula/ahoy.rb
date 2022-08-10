@@ -1,13 +1,13 @@
 class Ahoy < Formula
   desc "Creates self documenting CLI programs from commands in YAML files"
   homepage "https://ahoy-cli.readthedocs.io/"
-  url "https://github.com/ahoy-cli/ahoy/archive/refs/tags/2.0.1.tar.gz"
-  sha256 "44376afc56f2c24be78fff09bc80e8e621991eca7bc755daede664d0e8aaf122"
+  url "https://github.com/ahoy-cli/ahoy/archive/refs/tags/2.0.2.tar.gz"
+  sha256 "74125750452c751ec62966d0bea8646b2f8d883095892d3dad641ff65df6bf9b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ahoy"
-    sha256 cellar: :any_skip_relocation, mojave: "8f081f1b09982c3b6da87d37a61624680193b498fb896c65e8ca17ad357d8ff7"
+    sha256 cellar: :any_skip_relocation, mojave: "9f9540782b60933fff6173c0ebec1f6132a0b1d453061719a90c321b2696f43d"
   end
 
   depends_on "go" => :build
