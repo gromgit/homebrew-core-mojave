@@ -5,10 +5,10 @@ class Atkmm < Formula
   sha256 "6f62dd99f746985e573605937577ccfc944368f606a71ca46342d70e1cdae079"
   license "LGPL-2.1-or-later"
 
-  # Linux bottle removed for GCC 12 migration
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atkmm"
-    sha256 cellar: :any, mojave: "bf3ccb7feb6fab8ba598d84589131b10b178990efa10504edf85e2c316443d09"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b87c4a05442be2dd4274fd7fa3ac502d6c18fd132e73805a907b9021a3a562b7"
   end
 
   depends_on "meson" => :build
@@ -16,6 +16,10 @@ class Atkmm < Formula
   depends_on "pkg-config" => :build
   depends_on "atk"
   depends_on "glibmm"
+
+  on_linux do
+    depends_on "gcc" => :build
+  end
 
   fails_with gcc: "5"
 
