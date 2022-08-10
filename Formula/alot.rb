@@ -6,11 +6,12 @@ class Alot < Formula
   url "https://github.com/pazz/alot/archive/0.10.tar.gz"
   sha256 "71f382aa751fb90fde1a06a0a4ba43628ee6aa6d41b5cd53c8701fd7c5ab6e6e"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/pazz/alot.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alot"
-    sha256 cellar: :any_skip_relocation, mojave: "4b28319f9ada2a658472897d55e00465046f40e893b49a694d27a3b45e762f0b"
+    sha256 cellar: :any_skip_relocation, mojave: "75021f896691cd082c31a99c19399743b81e8fda4b3407976830d6e6cb04089f"
   end
 
   depends_on "sphinx-doc" => :build
@@ -18,7 +19,7 @@ class Alot < Formula
   depends_on "gpgme"
   depends_on "libmagic"
   depends_on "notmuch"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "Automat" do
@@ -113,26 +114,20 @@ class Alot < Formula
   end
 
   test do
-    (testpath/".notmuch-config").write "[database]\npath=#{testpath}/Mail"
+    (testpath/".notmuch-config").write <<~EOS
+      [database]
+      path=#{testpath}/Mail
+    EOS
     (testpath/"Mail").mkpath
     system Formula["notmuch"].bin/"notmuch", "new"
 
-    begin
-      pid = fork do
-        $stdout.reopen("/dev/null")
-        $stdin.reopen("/dev/null")
-        if OS.mac?
-          exec "script", "-q", "/dev/null", bin/"alot", "--logfile", testpath/"out.log"
-        else
-          exec "script", "-q", "/dev/null", "-e", "-c", "#{bin}/alot --logfile #{testpath}/out.log"
-        end
-      end
+    require "pty"
+    PTY.spawn(bin/"alot", "--logfile", testpath/"out.log") do |_r, _w, pid|
       sleep 10
-    ensure
       Process.kill 9, pid
     end
 
     assert_predicate testpath/"out.log", :exist?, "out.log file should exist"
-    assert_match "setup gui", File.read(testpath/"out.log")
+    assert_match "setup gui", (testpath/"out.log").read
   end
 end
