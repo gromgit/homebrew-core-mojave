@@ -4,6 +4,7 @@ class OpenMpi < Formula
   url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.4.tar.bz2"
   sha256 "92912e175fd1234368c8730c03f4996fe5942e7479bb1d10059405e7f2b3930d"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,8 +13,7 @@ class OpenMpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-mpi"
-    rebuild 1
-    sha256 mojave: "a1e13260e4b9c6024ec4a1440f52009254276a7d43fb8cf40af551de1eca5317"
+    sha256 mojave: "fd823cde45d73e4782c5845e4f2870b908bb11146326b883cd82c83150b9fe67"
   end
 
   head do
