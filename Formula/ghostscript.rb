@@ -4,6 +4,7 @@ class Ghostscript < Formula
   url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpdl-9.56.1.tar.xz"
   sha256 "05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299"
   license "AGPL-3.0-or-later"
+  revision 1
 
   # We check the tags from the `head` repository because the GitHub tags are
   # formatted ambiguously, like `gs9533` (corresponding to version 9.53.3).
@@ -15,7 +16,7 @@ class Ghostscript < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghostscript"
-    sha256 mojave: "1650714454e430b0c16bc26e2a0a370ac3fc9c1bb9ed186459f0cd040d7799a7"
+    sha256 mojave: "1e5d120ec20609e5023f5b3d9259ee7fa13d1524d3b106eb756f0ba4cc28bbd0"
   end
 
   head do
@@ -31,7 +32,7 @@ class Ghostscript < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jbig2dec"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libidn"
   depends_on "libpng"
   depends_on "libtiff"
@@ -51,6 +52,16 @@ class Ghostscript < Formula
   resource "fonts" do
     url "https://downloads.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz"
     sha256 "0eb6f356119f2e49b2563210852e17f57f9dcc5755f350a69a46a0d641a0c401"
+  end
+
+  # fmemopen is only supported from 10.13 onwards (https://news.ycombinator.com/item?id=25968777).
+  # For earlier versions of MacOS, needs to be excluded.
+  # This should be removed once patch added to next release of leptonica (which is incorporated by ghostscript in
+  # tarballs).
+  patch do
+    url "https://github.com/DanBloomberg/leptonica/commit/848df62ff7ad06965dd77ac556da1b2878e5e575.patch?full_index=1"
+    sha256 "7de1c4e596aad5c3d2628b309cea1e4fc1ff65e9c255fe64de1922b3fd2d60fc"
+    directory "leptonica"
   end
 
   def install
