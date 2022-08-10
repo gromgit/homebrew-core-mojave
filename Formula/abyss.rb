@@ -4,6 +4,7 @@ class Abyss < Formula
   url "https://github.com/bcgsc/abyss/releases/download/2.3.5/abyss-2.3.5.tar.gz"
   sha256 "5455f7708531681ee15ec4fd5620526a53c86d28f959e630dc495f526b7d40f7"
   license all_of: ["GPL-3.0-only", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
+  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Abyss < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abyss"
-    sha256 cellar: :any, mojave: "facf7543d9eb5f26e3085b0d300c59e8574a6205a931add9031d76fa12435197"
+    sha256 cellar: :any, mojave: "1b462b14c181273beab3bd5ee243000d30a3f71a201c6d9600ef38657c78f26e"
   end
 
   head do
