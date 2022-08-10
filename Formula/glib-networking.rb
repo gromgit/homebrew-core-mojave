@@ -1,13 +1,13 @@
 class GlibNetworking < Formula
   desc "Network related modules for glib"
   homepage "https://gitlab.gnome.org/GNOME/glib-networking"
-  url "https://download.gnome.org/sources/glib-networking/2.72/glib-networking-2.72.1.tar.xz"
-  sha256 "6fc1bedc8062484dc8a0204965995ef2367c3db5c934058ff1607e5a24d95a74"
+  url "https://download.gnome.org/sources/glib-networking/2.72/glib-networking-2.72.2.tar.xz"
+  sha256 "cd2a084c7bb91d78e849fb55d40e472f6d8f6862cddc9f12c39149359ba18268"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glib-networking"
-    sha256 mojave: "9d5a071170af18e97177a4bcce64bc6f9c2ef6aa1f3db479c40dc1298f460a17"
+    sha256 mojave: "81c7a29df082b493be113161db86c9877fd8833b6073f685670c745b8e0a3b47"
   end
 
   depends_on "meson" => :build
