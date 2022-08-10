@@ -4,7 +4,7 @@ class Libraw < Formula
   url "https://www.libraw.org/data/LibRaw-0.20.2.tar.gz"
   sha256 "dc1b486c2003435733043e4e05273477326e51c3ea554c6864a4eafaff1004a6"
   license any_of: ["LGPL-2.1-only", "CDDL-1.0"]
-  revision 2
+  revision 3
 
   livecheck do
     url "https://www.libraw.org/download/"
@@ -13,7 +13,7 @@ class Libraw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libraw"
-    sha256 cellar: :any, mojave: "b9ddaa5861142af74886c84642d6f275dd5c13e12d2689f1e028d30e477f239f"
+    sha256 cellar: :any, mojave: "ad87a381428093d0f0a9e09123d2007030efc68882f3adbc28ed36e86550d51b"
   end
 
   depends_on "autoconf" => :build
@@ -21,7 +21,7 @@ class Libraw < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "jasper"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "little-cms2"
 
   uses_from_macos "zlib"
