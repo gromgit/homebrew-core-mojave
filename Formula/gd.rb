@@ -4,11 +4,11 @@ class Gd < Formula
   url "https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.xz"
   sha256 "3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61"
   license :cannot_represent
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gd"
-    sha256 cellar: :any, mojave: "9c1fd1fcaf1c95abfcc75d4fb3c7fb7707e9c5fce029db9ca43ff6d0f60e8461"
+    sha256 cellar: :any, mojave: "e11c191c44abd15c93c01539df0c6f3abb1a9bca161726c5898f24306d998a6c"
   end
 
   head do
@@ -21,7 +21,7 @@ class Gd < Formula
 
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libavif"
   depends_on "libpng"
   depends_on "libtiff"
@@ -35,10 +35,14 @@ class Gd < Formula
 
   def install
     system "./bootstrap.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
+                          "--with-fontconfig=#{Formula["fontconfig"].opt_prefix}",
                           "--with-freetype=#{Formula["freetype"].opt_prefix}",
+                          "--with-jpeg=#{Formula["jpeg-turbo"].opt_prefix}",
+                          "--with-avif=#{Formula["libavif"].opt_prefix}",
                           "--with-png=#{Formula["libpng"].opt_prefix}",
+                          "--with-tiff=#{Formula["libtiff"].opt_prefix}",
+                          "--with-webp=#{Formula["webp"].opt_prefix}",
                           "--without-x",
                           "--without-xpm"
     system "make", "install"
