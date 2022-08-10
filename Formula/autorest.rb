@@ -3,13 +3,13 @@ require "language/node"
 class Autorest < Formula
   desc "Swagger (OpenAPI) Specification code generator"
   homepage "https://github.com/Azure/autorest"
-  url "https://registry.npmjs.org/autorest/-/autorest-3.6.1.tgz"
-  sha256 "a517e0e9dee7b3d36e4e03fd78e3f6bd7792de824e2faec2b64e44f2c2034758"
+  url "https://registry.npmjs.org/autorest/-/autorest-3.6.2.tgz"
+  sha256 "0839e480b0ea800091c9b6005397ad34390c6bbcc74e2e9c0f347907e7922b42"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autorest"
-    sha256 cellar: :any_skip_relocation, mojave: "ec88baabdae6900f41ea43ead3b79bba2d5cda45e2b73fd996f7778b86f63b62"
+    sha256 cellar: :any_skip_relocation, mojave: "cf223680cfa0f57c55925beccd0596480b78f32fd73d8beada3dcc26f7c1bd89"
   end
 
   depends_on "node"
