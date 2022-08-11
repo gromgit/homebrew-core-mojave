@@ -1,13 +1,13 @@
 class Cgal < Formula
   desc "Computational Geometry Algorithms Library"
   homepage "https://www.cgal.org/"
-  url "https://github.com/CGAL/cgal/releases/download/v5.4.1/CGAL-5.4.1.tar.xz"
-  sha256 "4c3dd7ee4d36d237111a4d72b6e14170093271595d5b695148532daa95323d76"
+  url "https://github.com/CGAL/cgal/releases/download/v5.5/CGAL-5.5.tar.xz"
+  sha256 "98ac395ca08aacf38b7a8170a822b650aedf10355df41dd0e4bfb238408e08a6"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgal"
-    sha256 cellar: :any_skip_relocation, mojave: "e35ab2a8b4ddd3b2f3be15df27e602b15457108623fa2a405046554cb55f1f55"
+    sha256 cellar: :any_skip_relocation, mojave: "5e4b5eba3494002500cbd62ca36251bd588b468717449c40cc6cefedb572b028"
   end
 
   depends_on "cmake" => [:build, :test]
