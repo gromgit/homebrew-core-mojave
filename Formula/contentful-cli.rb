@@ -3,14 +3,14 @@ require "language/node"
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://github.com/contentful/contentful-cli"
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-1.14.10.tgz"
-  sha256 "c18d64ee6189610983f8c0b06c6efebe0a4345536d8d222d8c3c975e36ea50bb"
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-1.14.25.tgz"
+  sha256 "12f1a0a280ecd586d4c5450126ed050a39f32cb0e9f89ce948cd6eddb871af6d"
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/contentful-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "838f4b209c62381091b5d9ca1b1e39535f8e122d054a49af0652d5af6ae463e3"
+    sha256 cellar: :any_skip_relocation, mojave: "8fa0b1de196f6fc18727a712d4b3a4966def75fcc9c7f0b0d4ae23b6d06be273"
   end
 
   depends_on "node"
