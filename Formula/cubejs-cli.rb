@@ -3,13 +3,13 @@ require "language/node"
 class CubejsCli < Formula
   desc "Cube.js command-line interface"
   homepage "https://cube.dev/"
-  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.30.25.tgz"
-  sha256 "01a8b814f71fe1aaf6d30070b90117fc68a507e7b0e9807f6142cf9e0c2fe051"
+  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.30.45.tgz"
+  sha256 "f492dc1d4fb0b0db451fe7a8d6d6bbe750b2021c1d0920d74b910da939e918ad"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cubejs-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "008880b79e663239d42042a5536637eb76b92d960962a5c7a09c19140c7cd8dc"
+    sha256 cellar: :any_skip_relocation, mojave: "f1a711022b104486e333d7c65f32cebc68b4e47cac75e57d91f1c0ceea294a0c"
   end
 
   depends_on "node"
