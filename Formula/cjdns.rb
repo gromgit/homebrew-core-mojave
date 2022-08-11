@@ -8,14 +8,21 @@ class Cjdns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cjdns"
-    sha256 cellar: :any_skip_relocation, mojave: "736b9f6de1102940a645e56ba4075f2c769273f1a2f1f41d36e89c47c7c9c726"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8837804224fae2673a729d7bc6b7300c5162a25d2b4ecee69e5f7c619c14eb4f"
   end
 
-
   depends_on "node" => :build
+  # Fails to build with python@3.10.
+  # AttributeError: module 'collections' has no attribute 'MutableSet'
+  # Related PR: https://github.com/cjdelisle/cjdns/pull/1246
+  depends_on "python@3.9" => :build
   depends_on "rust" => :build
 
   def install
+    # Libuv build fails on macOS with: env: python: No such file or directory
+    ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin" if OS.mac?
+
     # Avoid using -march=native
     inreplace "node_build/make.js",
               "var NO_MARCH_FLAG = ['arm', 'ppc', 'ppc64'];",
