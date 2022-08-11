@@ -4,6 +4,7 @@ class Castxml < Formula
   url "https://github.com/CastXML/CastXML/archive/v0.4.5.tar.gz"
   sha256 "007f6d073165e150df0e40e1ec331f6f94304684af9eed3b0e5dabaebcfb1197"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/CastXML/castxml.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Castxml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/castxml"
-    sha256 cellar: :any, mojave: "6e88f3260da4b9970699d66175f76d21d7c4ea9ff1a4e31db832115baf8a4ff7"
+    sha256 cellar: :any, mojave: "143055daf676043f60bc965c54571f1c74e28ae5708fb11dd61d061b4a1ba1ca"
   end
 
   depends_on "cmake" => :build
