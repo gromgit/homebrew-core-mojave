@@ -1,8 +1,8 @@
 class ExtraCmakeModules < Formula
   desc "Extra modules and scripts for CMake"
   homepage "https://api.kde.org/frameworks/extra-cmake-modules/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.95/extra-cmake-modules-5.95.0.tar.xz"
-  sha256 "ffa02309d92958353e8e7837970e0d038475da5a18074e3442bf6b78ac91ad5a"
+  url "https://download.kde.org/stable/frameworks/5.96/extra-cmake-modules-5.96.0.tar.xz"
+  sha256 "bdb54407b2e2c9bc1e5b54825818d6807b5b5cc94b173dd272ef1354dc96fdd9"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT"]
   head "https://invent.kde.org/frameworks/extra-cmake-modules.git", branch: "master"
 
@@ -15,7 +15,7 @@ class ExtraCmakeModules < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/extra-cmake-modules"
-    sha256 cellar: :any_skip_relocation, mojave: "f8882c48d2f3677acd6d1f5b0d6cf42c37bd1f0e39206317e9d8d1fb6ffa988b"
+    sha256 cellar: :any_skip_relocation, mojave: "2ef396f7fc53e98faefc4128f6b76c9dab9cf6e28e077537dfc36bb62d1c02da"
   end
 
   depends_on "cmake" => [:build, :test]
