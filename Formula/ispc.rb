@@ -4,11 +4,11 @@ class Ispc < Formula
   url "https://github.com/ispc/ispc/archive/v1.18.0.tar.gz"
   sha256 "81f2cc23b555c815faf53429e9eee37d1f2f16873ae7074e382ede94721ee042"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ispc"
-    sha256 cellar: :any, mojave: "8a589679a450a83b2120bfd8bf10dceeb0c8c5ae557b5192f2eb3196ee0ae5ee"
+    sha256 cellar: :any, mojave: "b7a7d103be6f54e97fa1b616e60865166e1304e3d0652c18059c73f1e94cea32"
   end
 
   depends_on "bison" => :build
