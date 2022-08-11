@@ -2,7 +2,7 @@ class Devil < Formula
   desc "Cross-platform image library"
   homepage "https://sourceforge.net/projects/openil/"
   license "LGPL-2.1-only"
-  revision 3
+  revision 4
   head "https://github.com/DentonW/DevIL.git", branch: "master"
 
   stable do
@@ -34,12 +34,12 @@ class Devil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/devil"
-    sha256 cellar: :any, mojave: "b9f248cc1883039999c02cd72ef4309fc86d48b3b58fa072ce5a113813608699"
+    sha256 cellar: :any, mojave: "7331f3a2daef94013ab0fe8bd944638e40e5fe3cdd2c447b822197ac69fb3320"
   end
 
   depends_on "cmake" => :build
   depends_on "jasper"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
@@ -48,10 +48,9 @@ class Devil < Formula
   patch :DATA
 
   def install
-    cd "DevIL" do
-      system "cmake", ".", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", "DevIL", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
