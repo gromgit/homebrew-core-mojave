@@ -15,7 +15,8 @@ class FfmpegAT28 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@2.8"
-    sha256 mojave: "b2b2d23b467670327684c067ffb79b9cde3281de118a2cf399496a70b3e9e89b"
+    rebuild 1
+    sha256 mojave: "6d947d9fd31923b21af4dcf0df80a0e9f074a5d475d6e328ebde00fae8261bba"
   end
 
   keg_only :versioned_formula
@@ -42,6 +43,7 @@ class FfmpegAT28 < Formula
   depends_on "x264"
   depends_on "x265"
   depends_on "xvid"
+  depends_on "xz" # try to change to uses_from_macos after python is not a dependency
 
   def install
     args = %W[
