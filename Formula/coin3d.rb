@@ -35,7 +35,8 @@ class Coin3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coin3d"
-    sha256 cellar: :any, mojave: "569f20fe089ba75a73a7303592c9a70479d0b8131d08c500890e294dca283f04"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2ca70b48256a7878459c4dda1ef1b5b2a3efd180a9cbd3253b775d09d3e14b95"
   end
 
   head do
@@ -53,6 +54,11 @@ class Coin3d < Formula
   depends_on "boost"
   depends_on "pyside@2"
   depends_on "python@3.10"
+
+  on_linux do
+    depends_on "mesa"
+    depends_on "mesa-glu"
+  end
 
   def install
     # Create an empty directory for cpack to make the build system
@@ -77,7 +83,7 @@ class Coin3d < Formula
 
     resource("pivy").stage do
       ENV.append_path "CMAKE_PREFIX_PATH", prefix.to_s
-      ENV["LDFLAGS"] = "-rpath #{opt_lib}"
+      ENV["LDFLAGS"] = "-Wl,-rpath,#{opt_lib}"
       system "python3", *Language::Python.setup_install_args(prefix),
                          "--install-lib=#{prefix/Language::Python.site_packages("python3")}"
     end
@@ -92,13 +98,23 @@ class Coin3d < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.cpp", "-L#{lib}", "-lCoin", "-Wl,-framework,OpenGL", \
-           "-o", "test"
+
+    opengl_flags = if OS.mac?
+      ["-Wl,-framework,OpenGL"]
+    else
+      ["-L#{Formula["mesa"].opt_lib}", "-lGL"]
+    end
+
+    system ENV.cc, "test.cpp", "-L#{lib}", "-lCoin", *opengl_flags, "-o", "test"
     system "./test"
 
     xy = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
     ENV.append_path "PYTHONPATH", "#{Formula["pyside@2"].opt_lib}/python#{xy}/site-packages"
+    # Set QT_QPA_PLATFORM to minimal to avoid error:
+    # "This application failed to start because no Qt platform plugin could be initialized."
+    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     system Formula["python@3.10"].opt_bin/"python3", "-c", <<~EOS
+      import shiboken2
       from pivy.sogui import SoGui
       assert SoGui.init("test") is not None
     EOS
