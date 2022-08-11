@@ -1,8 +1,8 @@
 class Dar < Formula
   desc "Backup directory tree and files"
   homepage "http://dar.linux.free.fr/doc/index.html"
-  url "https://downloads.sourceforge.net/project/dar/dar/2.7.6/dar-2.7.6.tar.gz"
-  sha256 "3d5e444891350768109d7e9051e26039bdeb906de30294e7e0d71105b87d6daa"
+  url "https://downloads.sourceforge.net/project/dar/dar/2.7.7/dar-2.7.7.tar.gz"
+  sha256 "c03e2f52efd65a2f047b60bbeda2460cb525165e1be32f110b60e0cece3f2cc9"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Dar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dar"
-    rebuild 1
-    sha256 mojave: "d203f894cb8225d737c6a6ae77d67142e95d5d7959dbde1fe6f754841a2ff58a"
+    sha256 mojave: "3c5c2fe362a023021bb331e201bc53cecdf69b18c832fc9a69fdfb2e3e1e7166"
   end
 
   depends_on "libgcrypt"
