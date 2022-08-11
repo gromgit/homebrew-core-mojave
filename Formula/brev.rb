@@ -12,10 +12,13 @@ class Brev < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brev"
-    sha256 cellar: :any_skip_relocation, mojave: "7552170dba915b79eef3ab1dce011a10a332073bb4ca71187b25bd85c2712e16"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "50a767b01d6a510748844dfccbdd543ce49fa5d9c981b40c5b46b08c0003d80a"
   end
 
-  depends_on "go" => :build
+  # Required latest gvisor.dev/gvisor/pkg/gohacks instead of inet.af/netstack/gohacks
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   def install
     ldflags = "-X github.com/brevdev/brev-cli/pkg/cmd/version.Version=v#{version}"
