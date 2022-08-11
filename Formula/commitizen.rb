@@ -3,14 +3,14 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/41/43/b23db33889acc3844dd09dcc5d68847a0a20c20862d3692b7d1bfd89d9cb/commitizen-2.29.3.tar.gz"
-  sha256 "fc9e960a082319731b38790a7100571db1c0bcea97ac3d1b5dad007215639815"
+  url "https://files.pythonhosted.org/packages/6e/24/1c9bee395034644dd846c6f010a52c0dd01690d03e4559247c740cd906dd/commitizen-2.29.5.tar.gz"
+  sha256 "a6ab0b9f6cffbc49b2a4d2b940cbcc1715a9373f04604653a64677ef20a6ba7f"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/commitizen"
-    sha256 cellar: :any_skip_relocation, mojave: "6774d355c50946e420b052f6f48734db70f876af4d52f69061600f076ed8779d"
+    sha256 cellar: :any_skip_relocation, mojave: "370b59dfb3f6d30f98da023a11cab0b9b7d25e10c91cad012f4fb14f483cc325"
   end
 
   depends_on "python@3.10"
@@ -20,9 +20,9 @@ class Commitizen < Formula
     sha256 "2c7dbffd8c045ea534921e63b0be6fe65e88599990d8dc408ac8c542b72a5445"
   end
 
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/31/a2/12c090713b3d0e141f367236d3a8bdc3e5fca0d83ff3647af4892c16c205/chardet-5.0.0.tar.gz"
-    sha256 "0368df2bfd78b5fc20572bb4e9bb7fb53e2c094f60ae9993339e8671d0afb8aa"
+  resource "charset-normalizer" do
+    url "https://files.pythonhosted.org/packages/93/1d/d9392056df6670ae2a29fcb04cfa5cee9f6fbde7311a1bb511d4115e9b7a/charset-normalizer-2.1.0.tar.gz"
+    sha256 "575e708016ff3a5e3681541cb9d79312c416835686d054a23accb873b254f413"
   end
 
   resource "colorama" do
