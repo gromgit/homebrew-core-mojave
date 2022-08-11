@@ -1,8 +1,8 @@
 class Dcm2niix < Formula
   desc "DICOM to NIfTI converter"
   homepage "https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage"
-  url "https://github.com/rordenlab/dcm2niix/archive/v1.0.20211006.tar.gz"
-  sha256 "44b737d0101483de17ac1273f2d2c6a4d572a7b76ea040d69aa34d5e484144b9"
+  url "https://github.com/rordenlab/dcm2niix/archive/v1.0.20220720.tar.gz"
+  sha256 "a095545d6d70c5ce2efd90dcd58aebe536f135410c12165a9f231532ddab8991"
   license "BSD-3-Clause"
   version_scheme 1
   head "https://github.com/rordenlab/dcm2niix.git", branch: "master"
@@ -14,10 +14,8 @@ class Dcm2niix < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dcm2niix"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a5a55d6c0d4148fe53874ad6a627a3c7f1d89f3958dc290a4e2d5ad19eb7e8d9"
+    sha256 cellar: :any_skip_relocation, mojave: "dea0acd4f4a2b4bc190ef38623065e9facec5bddcb2df9a2dd8cf68ad8788a04"
   end
-
 
   depends_on "cmake" => :build
 
