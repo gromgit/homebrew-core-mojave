@@ -4,6 +4,7 @@ class Wxwidgets < Formula
   url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.0/wxWidgets-3.2.0.tar.bz2"
   sha256 "356e9b55f1ae3d58ae1fed61478e9b754d46b820913e3bfbc971c50377c1903a"
   license "wxWindows"
+  revision 1
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -13,10 +14,10 @@ class Wxwidgets < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wxwidgets"
-    sha256 cellar: :any, mojave: "2900c2578d0f8225c19f5b052d896becee6383e69a7306dd22809b37f7b6d997"
+    sha256 cellar: :any, mojave: "27574d3a2a288580a0dd1916fe97018340e0b22bee9e2058a6ff307b8b7c4f86"
   end
 
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
 
@@ -65,10 +66,10 @@ class Wxwidgets < Formula
     # this ensures that Python software trying to locate wxpython headers
     # using wx-config can find both wxwidgets and wxpython headers,
     # which are linked to the same place
-    inreplace "#{bin}/wx-config", prefix, HOMEBREW_PREFIX
+    inreplace bin/"wx-config", prefix, HOMEBREW_PREFIX
 
     # For consistency with the versioned wxwidgets formulae
-    bin.install_symlink "#{bin}/wx-config" => "wx-config-#{version.major_minor}"
+    bin.install_symlink bin/"wx-config" => "wx-config-#{version.major_minor}"
     (share/"wx"/version.major_minor).install share/"aclocal", share/"bakefile"
   end
 
