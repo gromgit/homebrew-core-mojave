@@ -1,14 +1,14 @@
 class Firefoxpwa < Formula
   desc "Tool to install, manage and use Progressive Web Apps in Mozilla Firefox"
   homepage "https://github.com/filips123/PWAsForFirefox"
-  url "https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "f7c2b05b7891a9df0659fd9e3cd4fb7a3224495dc8d90a5a97168dcfb544d171"
+  url "https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "9f71d17f1655357ec939d1b10429595fc31ef36f481eb78851ad33422cf50eaf"
   license "MPL-2.0"
   head "https://github.com/filips123/PWAsForFirefox.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/firefoxpwa"
-    sha256 cellar: :any_skip_relocation, mojave: "13c33e2cacc60e5b04816fa4ff3f4072fe846eb09932ef010286a878cd58e033"
+    sha256 cellar: :any_skip_relocation, mojave: "e9085274e60b1f5b573aafc965c8a10022fef31ba68f80bf6a699246e51c5ddd"
   end
 
   depends_on "rust" => :build
