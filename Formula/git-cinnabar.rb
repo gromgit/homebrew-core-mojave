@@ -1,14 +1,14 @@
 class GitCinnabar < Formula
   desc "Git remote helper to interact with mercurial repositories"
   homepage "https://github.com/glandium/git-cinnabar"
-  url "https://github.com/glandium/git-cinnabar/archive/0.5.9.tar.gz"
-  sha256 "83374ff2c7e9ccbb5e866c6fb350ad3202cab4856841afbadaded1f1bef4d534"
+  url "https://github.com/glandium/git-cinnabar/archive/0.5.10.tar.gz"
+  sha256 "20792358201417fa64cb3b1b9ccd6753909f081b0bf11cb9908f55a3607627e1"
   license "GPL-2.0-only"
   head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cinnabar"
-    sha256 cellar: :any_skip_relocation, mojave: "048ef97a25eb8dae8a8ea128eb0f458e289bb614fe22d6ed11750cc52f67a0bf"
+    sha256 cellar: :any_skip_relocation, mojave: "fdf6f0d3872b8c9f4515393483b3274a7a341009e7e462896926a186047d6ada"
   end
 
   depends_on "mercurial"
