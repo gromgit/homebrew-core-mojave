@@ -1,8 +1,8 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
-  url "https://include-what-you-use.org/downloads/include-what-you-use-0.17.src.tar.gz"
-  sha256 "eca7c04f8b416b6385ed00e33669a7fa4693cd26cb72b522cde558828eb0c665"
+  url "https://include-what-you-use.org/downloads/include-what-you-use-0.18.src.tar.gz"
+  sha256 "9102fc8419294757df86a89ce6ec305f8d90a818d1f2598a139d15eb1894b8f3"
   license "NCSA"
   head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
 
@@ -17,7 +17,7 @@ class IncludeWhatYouUse < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/include-what-you-use"
-    sha256 mojave: "ecf1b2867410366da14f69b76ef1e9a902696578dd1c9789632d399ae274a681"
+    sha256 cellar: :any, mojave: "bf0f49ace614584a03449a2286592408734bd9b792a8ac29a83a6121c9199847"
   end
 
   depends_on "cmake" => :build
@@ -82,7 +82,7 @@ class IncludeWhatYouUse < Formula
       ---
     EOS
     assert_match expected_output,
-      shell_output("#{bin}/include-what-you-use main.c 2>&1", 4)
+      shell_output("#{bin}/include-what-you-use main.c 2>&1")
 
     (testpath/"main.cc").write <<~EOS
       #include <iostream>
@@ -95,6 +95,6 @@ class IncludeWhatYouUse < Formula
       (main.cc has correct #includes/fwd-decls)
     EOS
     assert_match expected_output,
-      shell_output("#{bin}/include-what-you-use main.cc 2>&1", 2)
+      shell_output("#{bin}/include-what-you-use main.cc 2>&1")
   end
 end
