@@ -4,6 +4,7 @@ class Halide < Formula
   url "https://github.com/halide/Halide/archive/v14.0.0.tar.gz"
   sha256 "f9fc9765217cbd10e3a3e3883a60fc8f2dbbeaac634b45c789577a8a87999a01"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Halide < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/halide"
-    sha256 cellar: :any, mojave: "f0454c23dd25cca25fc8084a513b1285a697328a0ad7ef4b1b8f0167bc00c639"
+    sha256 cellar: :any, mojave: "066e1e5af0ee40f79d1af3fdbb41147d5e5062d3d12c93c661ecaee082aaf6b5"
   end
 
   depends_on "cmake" => :build
