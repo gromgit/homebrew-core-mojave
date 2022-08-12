@@ -4,6 +4,7 @@ class Graphicsmagick < Formula
   url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.38/GraphicsMagick-1.3.38.tar.xz"
   sha256 "d60cd9db59351d2b9cb19beb443170acaa28f073d13d258f67b3627635e32675"
   license "MIT"
+  revision 1
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
   livecheck do
@@ -12,13 +13,13 @@ class Graphicsmagick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphicsmagick"
-    sha256 mojave: "3ef1726c0040fc82e853233e7bba95dccb8f2cff66f369d376c1879c685b9047"
+    sha256 mojave: "915b1f565664c7e3aa10f7f134f018437292ccfa07eef0ad8c4c0fc12e1af26d"
   end
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "jasper"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libtool"
