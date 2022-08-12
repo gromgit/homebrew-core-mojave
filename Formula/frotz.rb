@@ -4,16 +4,17 @@ class Frotz < Formula
   url "https://gitlab.com/DavidGriffith/frotz/-/archive/2.54/frotz-2.54.tar.bz2"
   sha256 "bdf9131e6de49108c9f032200cea3cb4011e5ca0c9fbdbf5b0c05f7c56c81395"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://gitlab.com/DavidGriffith/frotz.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frotz"
-    sha256 mojave: "4c6f3ac0eea8b44f248c94f821371311f54ff6750dfa33bd5aa004b48a37a54f"
+    sha256 mojave: "54da27192a7979ff3d6a189d102b287d3cc781083af69d4874e7a72243dc67c1"
   end
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libao"
   depends_on "libmodplug"
   depends_on "libpng"
