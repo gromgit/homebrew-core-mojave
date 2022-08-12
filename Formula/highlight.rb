@@ -13,7 +13,8 @@ class Highlight < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/highlight"
-    sha256 mojave: "f0365d28eac429511c09b5289970b5fc22806977a9fe20aa3b04462a124f88cc"
+    rebuild 1
+    sha256 mojave: "2627d8a374f99a08e3a4eaa2e3d247fefb71e4050b653c6c064f03b0459eb3ed"
   end
 
   depends_on "boost" => :build
