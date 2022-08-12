@@ -4,13 +4,13 @@ class GatsbyCli < Formula
   desc "Gatsby command-line interface"
   homepage "https://www.gatsbyjs.org/docs/gatsby-cli/"
   # gatsby-cli should only be updated every 10 releases on multiples of 10
-  url "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-4.16.0.tgz"
-  sha256 "bc9136aa3433796227d1e4d0b61d37690ff360c386ed4de36ee051e561b2433e"
+  url "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-4.20.0.tgz"
+  sha256 "65050bb6a7c8723e4c8230d4b6e0674c9c0f16ce896be8289753a1d5a4ed4236"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gatsby-cli"
-    sha256 mojave: "ea3c854deea30ed4a331aed12053d1a84e88d3ec4fb2b55e71ede014b0dc7d39"
+    sha256 mojave: "83c03fa1e6c20d8a2342ae003a76a2685592220f0e0a05b8c79ce28d2b329213"
   end
 
   depends_on "node"
@@ -31,7 +31,7 @@ class GatsbyCli < Formula
     node_modules = libexec/"lib/node_modules/#{name}/node_modules"
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     if OS.linux?
-      %w[lmdb @msgpackr-extract/msgpackr-extract].each do |mod|
+      %w[@lmdb/lmdb @msgpackr-extract/msgpackr-extract].each do |mod|
         node_modules.glob("#{mod}-linux-#{arch}/*.musl.node")
                     .map(&:unlink)
                     .empty? && raise("Unable to find #{mod} musl library to delete.")
