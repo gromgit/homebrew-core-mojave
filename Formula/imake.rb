@@ -4,7 +4,7 @@ class Imake < Formula
   url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.8.tar.bz2"
   sha256 "b8d2e416b3f29cd6482bcffaaf19286d32917a164d07102a0e531ccd41a2a702"
   license "MIT"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://xorg.freedesktop.org/releases/individual/util/"
@@ -13,7 +13,7 @@ class Imake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imake"
-    sha256 mojave: "5f432e0d567492deace61d2e7069c9bb233db77679605b4276df9e1629d0c552"
+    sha256 mojave: "8fb9fdfbcf801b0947588f69f64847ccfecd624d7355239a99b49865250165f5"
   end
 
   depends_on "pkg-config" => :build
