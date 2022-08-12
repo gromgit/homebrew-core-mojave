@@ -1,14 +1,14 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
   homepage "https://pandoc.org/"
-  url "https://hackage.haskell.org/package/pandoc-2.18/pandoc-2.18.tar.gz"
-  sha256 "d4d354781d76edc56039d11aa5d83a434fe793158823a9ce2e0b9897886ae609"
+  url "https://hackage.haskell.org/package/pandoc-2.19/pandoc-2.19.tar.gz"
+  sha256 "425c13728b4e158deb54996b6bd57bc71120af39f6d01a12b9c0ec21e8121cbf"
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/pandoc.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pandoc"
-    sha256 cellar: :any_skip_relocation, mojave: "1e30258a4c8ac2bca5ac8bc64f1c203283562f0b5782964f9a49e0e9b86ccdbb"
+    sha256 cellar: :any_skip_relocation, mojave: "df7b1c3bbbb9d4a23837c0d950a5087f3afb2dda4b1baec94acb3e52baa9a4be"
   end
 
   depends_on "cabal-install" => :build
