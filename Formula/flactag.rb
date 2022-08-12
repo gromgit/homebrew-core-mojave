@@ -4,26 +4,18 @@ class Flactag < Formula
   url "https://downloads.sourceforge.net/project/flactag/v2.0.4/flactag-2.0.4.tar.gz"
   sha256 "c96718ac3ed3a0af494a1970ff64a606bfa54ac78854c5d1c7c19586177335b2"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "1a5bde31200979e346adc3a7e9d498ca38479818c53d87a1a8f4a077b0af3b92"
-    sha256 cellar: :any,                 arm64_big_sur:  "959006d7aa293066610af7cff0ae1be3a9d21ceb3badfe6012d52d3e2830416a"
-    sha256 cellar: :any,                 monterey:       "3dc5913b1b5ad973d03232d55d15235f96e57b39599208e0c388aad9f50403f4"
-    sha256 cellar: :any,                 big_sur:        "fd81ade08727163108bf6eb86fa4c971a7e7f902b720b7eec59e21cbe10fd945"
-    sha256 cellar: :any,                 catalina:       "3bd18beb32b957d6adb4a4221fc5b833f4c9099798857911f8552294a104659b"
-    sha256 cellar: :any,                 mojave:         "89733c2da8653a9e86b2a4fc3e5693c3c7c434305d9aade353e52fd76f457dda"
-    sha256 cellar: :any,                 high_sierra:    "d066a517308ad0f3cbc6603fd7eeb53dba73dc796298163b6c1ec8c0379f72f6"
-    sha256 cellar: :any,                 sierra:         "c23293dce964c701fbaa822bda3a5f87602b28216b3862afced4da53c12728f3"
-    sha256 cellar: :any,                 el_capitan:     "d3e7a517f69ba267c5ff36c065837a4c2925a31d2b0cfe6f5cb32d8d0582fd8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1c0e0338dfba95d544567150993403813011ed31406ebeae071777cff0573e2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flactag"
+    sha256 cellar: :any, mojave: "ba1430c6e515e1a250e1c70dc5036674a7c0943f9b5778bd417d491a08d75c58"
   end
 
   depends_on "asciidoc" => :build
   depends_on "docbook-xsl" => :build
   depends_on "pkg-config" => :build
   depends_on "flac"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libdiscid"
   depends_on "libmusicbrainz"
   depends_on "neon"
@@ -42,8 +34,7 @@ class Flactag < Formula
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     ENV.append "LDFLAGS", "-lFLAC"
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
