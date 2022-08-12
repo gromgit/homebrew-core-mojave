@@ -13,7 +13,8 @@ class Fheroes2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fheroes2"
-    sha256 mojave: "aeeecc7c17f8069be32e40fb48f41fb414270819c2e6fae0eea366725dc5526b"
+    rebuild 1
+    sha256 mojave: "3b9ece7970f146ef77fab1c7a2bf884a7297720232c0a63f850d93435bbdb5cf"
   end
 
   depends_on "cmake" => :build
