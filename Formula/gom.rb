@@ -7,14 +7,15 @@ class Gom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gom"
-    sha256 cellar: :any, mojave: "ae64cb1b91f3fa2c914854c9df83c34eb03465bef08a570caf9ce526aef5a3f1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8816e1d7e68166ce89ad527439d30b70d8462c3128f36f1aafd2dc5a474423ac"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
@@ -22,10 +23,10 @@ class Gom < Formula
   uses_from_macos "sqlite"
 
   def install
-    pyver = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
+    site_packages = prefix/Language::Python.site_packages("python3")
 
     mkdir "build" do
-      system "meson", *std_meson_args, "-Dpygobject-override-dir=#{lib}/python#{pyver}/site-packages", ".."
+      system "meson", *std_meson_args, "-Dpygobject-override-dir=#{site_packages}", ".."
       system "ninja"
       system "ninja", "install"
     end
