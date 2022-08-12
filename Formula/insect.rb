@@ -9,12 +9,10 @@ class Insect < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/insect"
-    sha256 cellar: :any_skip_relocation, mojave: "e5a925fd6688be20cf8c5b931a6edb423bf3e7dbef8a3cfc4347c6ce86f0ab70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7aa86a55bde309754bb5c4118368f5a1def6a99e4752d94d55430d1fbd9f5c70"
   end
 
-  depends_on "psc-package" => :build
-  depends_on "pulp" => :build
-  depends_on "purescript" => :build
   depends_on "node"
 
   on_linux do
