@@ -9,7 +9,8 @@ class Gtop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtop"
-    sha256 cellar: :any_skip_relocation, mojave: "dbda516e9282e42cd7ac84102645e12de06ef840f8d7ef87419c6bdb8cd37d70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9050b578ecd41ad39ada14c3a1f1d0048080554f1092afc32dc3fea7a8349a85"
   end
 
   depends_on "node"
