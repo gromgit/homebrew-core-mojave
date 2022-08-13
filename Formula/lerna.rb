@@ -3,13 +3,13 @@ require "language/node"
 class Lerna < Formula
   desc "Tool for managing JavaScript projects with multiple packages"
   homepage "https://lerna.js.org"
-  url "https://registry.npmjs.org/lerna/-/lerna-5.1.4.tgz"
-  sha256 "4ff45c75f5cbedffae49e0e39b09a7ab9041e27d19211897e30790f22a9e473e"
+  url "https://registry.npmjs.org/lerna/-/lerna-5.1.8.tgz"
+  sha256 "96a2982e085ac6aa6966a71a615143f37ca923b80eb79c232cafcfe2594f8b2e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lerna"
-    sha256 cellar: :any_skip_relocation, mojave: "a9ea26766e6896e9cc81f7aa5baf600ecebcaa5604b655dcedd911e89a304abc"
+    sha256 cellar: :any_skip_relocation, mojave: "f70f1235d97e2002f9ceb10ec4bc037559fe8da529c0e60d2dc79df81f6cade6"
   end
 
   depends_on "node"
