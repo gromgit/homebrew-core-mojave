@@ -2,8 +2,8 @@ class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
   url "https://github.com/eclipse-openj9/openj9.git",
-      tag:      "openj9-0.32.0",
-      revision: "9a84ec34ed321967cdbe67b29ddcd732b591d051"
+      tag:      "openj9-0.33.0",
+      revision: "04a55b45b3a0d75813335fda0fb8703819690ee7"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -18,7 +18,7 @@ class Openj9 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openj9"
-    sha256 cellar: :any, mojave: "ef39c72b8277aefad2b857f1f4263532529794b2468c73693c08e0e18311595b"
+    sha256 cellar: :any, mojave: "33abf6245975771c331d9663c640b66e5a4214cb7cfc23c691925223ca1522bb"
   end
 
   keg_only :shadowed_by_macos
@@ -26,15 +26,13 @@ class Openj9 < Formula
   depends_on "autoconf" => :build
   depends_on "bash" => :build
   depends_on "cmake" => :build
-  depends_on "nasm" => :build if Hardware::CPU.intel?
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on arch: :x86_64 # https://github.com/eclipse-openj9/openj9/issues/11164
-
   depends_on "fontconfig"
   depends_on "giflib"
   depends_on "harfbuzz"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "little-cms2"
 
@@ -57,6 +55,10 @@ class Openj9 < Formula
     depends_on "numactl"
   end
 
+  on_intel do
+    depends_on "nasm" => :build
+  end
+
   # From https://github.com/eclipse-openj9/openj9/blob/openj9-#{version}/doc/build-instructions/
   resource "boot-jdk" do
     on_macos do
@@ -71,14 +73,14 @@ class Openj9 < Formula
 
   resource "omr" do
     url "https://github.com/eclipse-openj9/openj9-omr.git",
-        tag:      "openj9-0.32.0",
-        revision: "ab24b6666596140516d3f240486aa1c84a726775"
+        tag:      "openj9-0.33.0",
+        revision: "b58aa2708c095efadf522f67aaef9f7de2a7cbc7"
   end
 
   resource "openj9-openjdk-jdk" do
     url "https://github.com/ibmruntimes/openj9-openjdk-jdk17.git",
         branch:   "v0.32.0-release",
-        revision: "9a84ec34ed321967cdbe67b29ddcd732b591d051"
+        revision: "04a55b45b3a0d75813335fda0fb8703819690ee7"
   end
 
   def install
