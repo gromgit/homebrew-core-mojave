@@ -1,8 +1,8 @@
 class Msmtp < Formula
   desc "SMTP client that can be used as an SMTP plugin for Mutt"
   homepage "https://marlam.de/msmtp/"
-  url "https://marlam.de/msmtp/releases/msmtp-1.8.20.tar.xz"
-  sha256 "d93ae2aafc0f48af7dc9d0b394df1bb800588b8b4e8d096d8b3cf225344eb111"
+  url "https://marlam.de/msmtp/releases/msmtp-1.8.22.tar.xz"
+  sha256 "1b04206286a5b82622335e4eb09e17074368b7288e53d134543cbbc6b79ea3e7"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Msmtp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/msmtp"
-    sha256 mojave: "7684f57a085daf7e4c083d1caec2873f65a91aeecd00d6886c1c2b92f6e72e5d"
+    sha256 mojave: "5b9692acba50d25a359b75603d052b0fb1d085009a36647a67d5b285833a3e06"
   end
 
   depends_on "pkg-config" => :build
