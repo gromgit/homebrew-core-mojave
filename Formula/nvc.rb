@@ -4,10 +4,11 @@ class Nvc < Formula
   url "https://github.com/nickg/nvc/releases/download/r1.6.2/nvc-1.6.2.tar.gz"
   sha256 "e6e2db8e086ef0e54e0745b0346e83fbc5664f9c4bda11645843656736382d3c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nvc"
-    sha256 mojave: "27bc066c691b28492842c88ca38f93651550fe25585b2461de5262694cea3116"
+    sha256 mojave: "3de33eabaf67a4203c506b88b911f072bcb9d25a67afe9af14615d7f632fbfdc"
   end
 
   head do
