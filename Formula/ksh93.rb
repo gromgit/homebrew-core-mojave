@@ -1,14 +1,14 @@
 class Ksh93 < Formula
   desc "KornShell, ksh93"
   homepage "https://github.com/ksh93/ksh#readme"
-  url "https://github.com/ksh93/ksh/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "54f1fcfea77ec55a639e08f0fe66a1fc918c762f176cad917ee93b44f511e1ef"
+  url "https://github.com/ksh93/ksh/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "e62616caab07b2d090e9ad5e17f058d4b8b8f12b48f44017d9e5d6550dfd5c14"
   license "EPL-2.0"
   head "https://github.com/ksh93/ksh.git", branch: "dev"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ksh93"
-    sha256 cellar: :any_skip_relocation, mojave: "8934af3abf4d291778c313ea72019954da72b06f5398a49846bc09df50ecbc89"
+    sha256 cellar: :any_skip_relocation, mojave: "474984eb80cede5cdb420f80fee75ad6c0e2505a8124921424588111c8412e93"
   end
 
   def install
