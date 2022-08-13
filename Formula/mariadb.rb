@@ -22,7 +22,8 @@ class Mariadb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb"
-    sha256 mojave: "d31d73329b1dfb01afbdb2a9fcb8447e829e19a712f54bbb8e8923ace6d85025"
+    rebuild 1
+    sha256 mojave: "cb5ecf376ef554434a0fae26e60714484f9cb46865f5a0cec88256ee670ecc1e"
   end
 
   depends_on "bison" => :build
