@@ -8,7 +8,8 @@ class Ns3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ns-3"
-    sha256 cellar: :any, mojave: "42b68c118cfa1954f4acddf43f36338a6f725da0d3d93d634d194ed1e2764299"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3760eeba60d2440417410f36bd2bc08180132f427ceb5cc889609584a3930519"
   end
 
   depends_on "boost" => :build
