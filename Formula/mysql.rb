@@ -1,10 +1,9 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.29.tar.gz"
-  sha256 "fd34a84c65fc7b15609d55b1f5d128c4d5543a6b95fa638569c3277c5c7bb048"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.30.tar.gz"
+  sha256 "c331ac7a68099a2116097acbb14fd331423d486fe47ce0e346925111b44df69c"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -13,7 +12,7 @@ class Mysql < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql"
-    sha256 mojave: "cd9491bca93af50e2b7c4ea33a13783a828a8dffe942b720da89ef248d3bcf4f"
+    sha256 mojave: "7923ad90955886b62da25c12d6534edf8dd8009c1cd4703f8287a67d9f8b0918"
   end
 
   depends_on "cmake" => :build
@@ -24,12 +23,12 @@ class Mysql < Formula
   depends_on "lz4"
   depends_on "openssl@1.1"
   depends_on "protobuf"
+  depends_on "zlib" # Zlib 1.2.12+
   depends_on "zstd"
 
   uses_from_macos "curl"
   uses_from_macos "cyrus-sasl"
   uses_from_macos "libedit"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "patchelf" => :build
