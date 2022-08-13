@@ -9,7 +9,8 @@ class Newman < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newman"
-    sha256 cellar: :any_skip_relocation, mojave: "c977a6d2928ac6059e5dd58a0523b6fb91031c67cb5e326e89dc069a610d9d8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1beeee91ad4d6bc9679c05cadb2a2ac1386477b4e6d911a40cfde2353dcfd784"
   end
 
   depends_on "node"
