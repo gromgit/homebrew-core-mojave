@@ -1,14 +1,14 @@
 class Nickel < Formula
   desc "Better configuration for less"
   homepage "https://github.com/tweag/nickel"
-  url "https://github.com/tweag/nickel/archive/refs/tags/0.2.0.tar.gz"
-  sha256 "7d89803cb5ac235274461b44ebe665ab4a9dacc3e47aca29ed5be55765c9e6f2"
+  url "https://github.com/tweag/nickel/archive/refs/tags/0.2.1.tar.gz"
+  sha256 "50fa29dec01fb4cc5e6365c93fea5e7747506c1fb307233e5f0a82958a50d206"
   license "MIT"
   head "https://github.com/tweag/nickel.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nickel"
-    sha256 cellar: :any_skip_relocation, mojave: "0fcbfe6d1d19b3348f54b3409ff94d29d06c002dfdcbd26161c7136e4cd6e10d"
+    sha256 cellar: :any_skip_relocation, mojave: "2062788407f8a038d21ba128ef83d78415c26cdd5686099e32ca9b76683a31cc"
   end
 
   depends_on "rust" => :build
