@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/edenhill/librdkafka"
-  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "3a54cf375218977b7af4716ed9738378e37fe400a6c5ddb9d622354ca31fdc79"
+  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v1.9.2.tar.gz"
+  sha256 "3fba157a9f80a0889c982acdd44608be8a46142270a389008b22d921be1198ad"
   license "BSD-2-Clause"
   head "https://github.com/edenhill/librdkafka.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Librdkafka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librdkafka"
-    sha256 mojave: "5b563885204a167e976e9b6e817e3c1ce7fe64a824ed62a5c9b35075b1a8b0c4"
+    sha256 mojave: "c4e46ebee4aacb375a57f6b7c2ed447b706e139b1ece99fae77c84552fffc7b7"
   end
 
   depends_on "pkg-config" => :build
