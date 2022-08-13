@@ -4,10 +4,9 @@ class Libtorch < Formula
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
   url "https://github.com/pytorch/pytorch.git",
-      tag:      "v1.12.0",
-      revision: "67ece03c8cd632cce9523cd96efde6f2d1cc8121"
+      tag:      "v1.12.1",
+      revision: "664058fa83f1d8eede5d66418abff6e20bd76ca8"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -15,8 +14,8 @@ class Libtorch < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorch-1.12.0"
-    sha256 cellar: :any, mojave: "1dab109980f29f8e136c1a13de38e844688a4e58950b5d9ce3f2def6564c8f0b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtorch"
+    sha256 cellar: :any, mojave: "8de7bf652671b3ffaf00e965d36a0028d819092739b1b4daec53f8ecf9143f15"
   end
 
   depends_on "cmake" => :build
@@ -36,8 +35,8 @@ class Libtorch < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/fe/71/1df93bd59163c8084d812d166c907639646e8aac72886d563851b966bf18/typing_extensions-4.2.0.tar.gz"
-    sha256 "f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376"
+    url "https://files.pythonhosted.org/packages/9e/1d/d128169ff58c501059330f1ad96ed62b79114a2eb30b8238af63a2e27f70/typing_extensions-4.3.0.tar.gz"
+    sha256 "e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"
   end
 
   def install
