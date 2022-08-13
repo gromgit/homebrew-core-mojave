@@ -2,8 +2,8 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
   url "https://github.com/microsoft/onnxruntime.git",
-      tag:      "v1.12.0",
-      revision: "f4663641764ccc3e93a617ab63ae4ff1badc2ee1"
+      tag:      "v1.12.1",
+      revision: "70481649e3c2dba0f0e1728d15a00e440084a217"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class Onnxruntime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onnxruntime"
-    sha256 cellar: :any, mojave: "8937d947f7a0242a61645566797b33b0159050c96820beeaa3fddcfdb4ea546d"
+    sha256 cellar: :any, mojave: "ffae11bacc406424acbe7428f39cd85af99a429a3675ab4aeb75836e73e1c65d"
   end
 
   depends_on "cmake" => :build
