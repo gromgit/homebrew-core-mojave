@@ -41,19 +41,17 @@ class Luajit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit"
-    sha256 cellar: :any, mojave: "35ea1b8ee54373665ca57f193b184bd905cd09ff0e4f698793fb8e5cdf4c8024"
+    rebuild 1
+    sha256 cellar: :any, mojave: "90603ede278a8d5be6f6019558f37749aa4534f510d9daff40a76adb27ae918e"
   end
 
   def install
     # 1 - Override the hardcoded gcc.
     # 2 - Remove the "-march=i686" so we can set the march in cflags.
     # Both changes should persist and were discussed upstream.
-    # Also: Set `LUA_ROOT` to `HOMEBREW_PREFIX` so that Luajit can find modules outside its own keg.
-    # This should avoid the need for writing env scripts that specify `LUA_PATH` or `LUA_CPATH`.
     inreplace "src/Makefile" do |f|
       f.change_make_var! "CC", ENV.cc
       f.gsub!(/-march=\w+\s?/, "")
-      f.gsub!(/^(  TARGET_XCFLAGS\+= -DLUA_ROOT=)\\"\$\(PREFIX\)\\"$/, "\\1\\\"#{HOMEBREW_PREFIX}\\\"")
     end
 
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
@@ -61,9 +59,13 @@ class Luajit < Formula
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
     # Pass `Q= E=@:` to build verbosely.
-    args = %W[PREFIX=#{prefix} Q= E=@:]
-    system "make", "amalg", *args
-    system "make", "install", *args
+    verbose_args = %w[Q= E=@:]
+
+    # Build with PREFIX=$HOMEBREW_PREFIX so that luajit can find modules outside its own keg.
+    # This allows us to avoid having to set `LUA_PATH` and `LUA_CPATH` for non-vendored modules.
+    system "make", "amalg", "PREFIX=#{HOMEBREW_PREFIX}", *verbose_args
+    system "make", "install", "PREFIX=#{prefix}", *verbose_args
+    doc.install (buildpath/"doc").children
 
     # We need `stable.version` here to avoid breaking symlink generation for HEAD.
     upstream_version = stable.version.to_s.sub(/-\d+\.\d+$/, "")
