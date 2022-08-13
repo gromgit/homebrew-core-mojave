@@ -1,8 +1,8 @@
 class Libgsm < Formula
   desc "Lossy speech compression library"
   homepage "http://www.quut.com/gsm/"
-  url "http://www.quut.com/gsm/gsm-1.0.21.tar.gz"
-  sha256 "7d8439fc6ed8bfba1a85011f26800b2afee78b96555c9ed9ce9d3024d4da7754"
+  url "http://www.quut.com/gsm/gsm-1.0.22.tar.gz"
+  sha256 "f0072e91f6bb85a878b2f6dbf4a0b7c850c4deb8049d554c65340b3bf69df0ac"
   license "TU-Berlin-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libgsm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgsm"
-    sha256 cellar: :any, mojave: "9b1f2162781be9190d4ccb70100ba9037630408da653ac21f3caea86137cb146"
+    sha256 cellar: :any, mojave: "efdc730bb3cba8631ad34e542355bc1ef33faf03abbc29a93c50196d84dee611"
   end
 
   def install
