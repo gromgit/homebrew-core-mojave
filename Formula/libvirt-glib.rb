@@ -4,6 +4,7 @@ class LibvirtGlib < Formula
   url "https://libvirt.org/sources/glib/libvirt-glib-4.0.0.tar.xz"
   sha256 "8423f7069daa476307321d1c11e2ecc285340cd32ca9fc05207762843edeacbd"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://libvirt.org/sources/glib/"
@@ -11,15 +12,11 @@ class LibvirtGlib < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "e8bfac0fafee87488e06debd73ebcc991f1d628afa2106b32161da94a41faa22"
-    sha256 arm64_big_sur:  "4d4918afe72309394ab15e98a5b15cf5c77e8027b20bc7bc7c1f0fb7524dbf78"
-    sha256 monterey:       "7c4c421cc28957cbb15e3e4335908cda7f92f720dee6b749d8a224b141633f48"
-    sha256 big_sur:        "9695bd9cca917eabee5eeaa038470e0a42c13767c420357ece93519958aa7653"
-    sha256 catalina:       "101d1a4bf6b4c45b49261fc97ddfb73d34a30511f6a24fc8f31c48caff8e14f4"
-    sha256 mojave:         "9a3967ba636f27cd1c923603e1df533b5edc7a7d5c90b089bf0154cd7b408b7f"
-    sha256 x86_64_linux:   "dca22d86f5c9e75e1abd763a252c0468da812032f80fae12514f57bb33023ffb"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvirt-glib"
+    sha256 mojave: "882a41777adc3490305100a4f9df7c900c8fce6f5d351a32486b64a453646f86"
   end
 
+  depends_on "glib-utils" => :build
   depends_on "gobject-introspection" => :build
   depends_on "intltool" => :build
   depends_on "meson" => :build
