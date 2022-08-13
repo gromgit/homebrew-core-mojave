@@ -7,6 +7,7 @@ class Libmwaw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmwaw"
+    rebuild 1
     sha256 cellar: :any, mojave: "27241257136a23f8805abfc7364a8971dc48f54e506b8c49af8414a1b83020cc"
   end
 
