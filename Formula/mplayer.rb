@@ -4,6 +4,7 @@ class Mplayer < Formula
   url "https://mplayerhq.hu/MPlayer/releases/MPlayer-1.5.tar.xz"
   sha256 "650cd55bb3cb44c9b39ce36dac488428559799c5f18d16d98edb2b7256cbbf85"
   license all_of: ["GPL-2.0-only", "GPL-2.0-or-later"]
+  revision 1
 
   livecheck do
     url "https://mplayerhq.hu/MPlayer/releases/"
@@ -12,7 +13,7 @@ class Mplayer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mplayer"
-    sha256 cellar: :any, mojave: "6ecf6e97d962e891546fed44fe8ab73f9799ac74a7e168f96ee8513bd84b99bc"
+    sha256 cellar: :any, mojave: "9339d8b0b9eecf1ac83fec12704246ee53e7006ab959493d5b9a5509eebe8bce"
   end
 
   head do
@@ -27,6 +28,7 @@ class Mplayer < Formula
   depends_on "yasm" => :build
   depends_on "fontconfig"
   depends_on "freetype"
+  depends_on "jpeg-turbo"
   depends_on "libcaca"
 
   def install
