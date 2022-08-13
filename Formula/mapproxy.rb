@@ -6,15 +6,16 @@ class Mapproxy < Formula
   url "https://files.pythonhosted.org/packages/db/98/d8805c5434d4b636cd2b71d613148b2096d36ded5b6f6ba0e7325d03ba2b/MapProxy-1.15.1.tar.gz"
   sha256 "4952990cb1fc21f74d0f4fc1163fe5aeaa7b04d6a7a73923b93c6548c1a3ba26"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mapproxy"
-    sha256 cellar: :any, mojave: "231ba8733bc04be14ac01d237d49412eb76e825c2a00461f83e517c0d2c2cba2"
+    sha256 cellar: :any, mojave: "2b31e495e147042ab888a464ae6a0a674bd82dcfe110e793d4948eb8c9cb3543"
   end
 
   depends_on "pillow"
   depends_on "proj"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   resource "certifi" do
