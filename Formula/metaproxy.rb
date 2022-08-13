@@ -15,7 +15,7 @@ class Metaproxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/metaproxy"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "9c19230d786b07e523b185f569e6db0325ffc107be6e24a44f6b78f27797252c"
   end
 
