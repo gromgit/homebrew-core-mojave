@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://libvirt.org/"
-  url "https://libvirt.org/sources/libvirt-8.4.0.tar.xz"
-  sha256 "601a6e9bb03a43d05659f63e4a403df253ab0975b4a973f10a5607f3bbc018dd"
+  url "https://libvirt.org/sources/libvirt-8.6.0.tar.xz"
+  sha256 "a81847c43ac9ade61b6f8447c44e8ba2cc544ab49bac5c0b18a5b105f5da3ae2"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Libvirt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvirt"
-    sha256 mojave: "fa631bfa216f61c7aaa1490eb8e77a0944192b727af72c28b699cb77bc0ed8bd"
+    sha256 mojave: "a2d12a63a47eccd1ce5b7b274825ed730527328fe2dbdf5a03c7fff4f8fb7092"
   end
 
   depends_on "docutils" => :build
