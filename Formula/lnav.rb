@@ -12,8 +12,8 @@ class Lnav < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lnav"
-    rebuild 2
-    sha256 cellar: :any, mojave: "6a7f0becdf03e7a49d01b1f5d703fc5594c1c0295c7a629b6d427aae7c2a433c"
+    rebuild 3
+    sha256 cellar: :any, mojave: "34fc9137ac9702633c84883fe18e2be11db18ade8d8c388a239040191f995be5"
   end
 
   head do
