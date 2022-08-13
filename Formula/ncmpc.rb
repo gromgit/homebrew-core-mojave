@@ -12,6 +12,7 @@ class Ncmpc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncmpc"
+    rebuild 1
     sha256 cellar: :any, mojave: "16db1d476b1517a92c6386e416dd737b22e1ab2c02588c7048127c32f2358f9e"
   end
 
