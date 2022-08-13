@@ -1,9 +1,9 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_6_2;sf=tgz"
-  version "7.6.2"
-  sha256 "443f782f4adfd316e3f81bfad01d5367ae55ceb0d04c1acec1b87baae5c75e1c"
+  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_6_3;sf=tgz"
+  version "7.6.3"
+  sha256 "baae5b3a7a38825396fc45ef9d170db406339f5eeec62e21b21036afeda31200"
   license "LGPL-2.1-only"
 
   # The first-party download page (https://dev.opencascade.org/release)
@@ -21,7 +21,7 @@ class Opencascade < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencascade"
-    sha256 cellar: :any, mojave: "d0139a8488f3e450186f5e00ab8a5489e84a41a24d0e2b90fcfa701fd81499ef"
+    sha256 cellar: :any, mojave: "5b16eccb9d12ba94503600e721472e2f8b89bf6fc524cd76bbbd61bc04b7ca2e"
   end
 
   depends_on "cmake" => :build
