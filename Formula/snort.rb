@@ -9,8 +9,8 @@ class Snort < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snort"
-    rebuild 1
-    sha256 cellar: :any, mojave: "26febb1d51954c107e430c63e85691de768a86f893a2651514db8b5897068833"
+    rebuild 2
+    sha256 cellar: :any, mojave: "87344bca0919a297c4fa7fcaedc01f86b0f408a76e2cfb5f490d50ebf370113b"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +29,8 @@ class Snort < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "libunwind"
     depends_on "gcc"
+    depends_on "libunwind"
   end
 
   # Hyperscan improves IPS performance, but is only available for x86_64 arch.
