@@ -4,7 +4,7 @@ class Svg2pdf < Formula
   url "https://cairographics.org/snapshots/svg2pdf-0.1.3.tar.gz"
   sha256 "854a870722a9d7f6262881e304a0b5e08a1c61cecb16c23a8a2f42f2b6a9406b"
   license "LGPL-2.1"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://cairographics.org/snapshots/"
@@ -12,16 +12,8 @@ class Svg2pdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "b83f5a88a5b1e88ffcaf5c81186fbe2162e27d7b4fd93c60acd54c1d7897fb2d"
-    sha256 cellar: :any,                 arm64_big_sur:  "dd41fd5b107ce28bbb2dae882cb0c86f7ba7a57005f0e826d492ffa68a760978"
-    sha256 cellar: :any,                 monterey:       "9188bb1576693c48b47a326593d0a0ee1f14c1584ccc4c060c6ff042ef2fd191"
-    sha256 cellar: :any,                 big_sur:        "358f4578b7a5fb09569411c4ac192314e2fa082aeb14cba604f2275ed888b72a"
-    sha256 cellar: :any,                 catalina:       "7dff42459bf1ab33b0938f062d42c1857cb8274d1935f356b4f7dec76aac865c"
-    sha256 cellar: :any,                 mojave:         "ba3e83fc0bf7a58166f2c4449b0f0d4590b5902ac2072ece48b9ca5eed13429a"
-    sha256 cellar: :any,                 high_sierra:    "7a1c4ac8748a9c9013d6d6e50bd04b024e092dd718c878a0b7bcde3d9ca51a97"
-    sha256 cellar: :any,                 sierra:         "bba8555de1a81fb92de544d77dc62fbe03e005b1b371d16127472890b7697503"
-    sha256 cellar: :any,                 el_capitan:     "28e18b196650002c5c40c8cd6e38ecf26d16a5525f7d9ff9e2e3fe6dbfb9e17a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b96ed00f483970629081f0d297f7884327f10f58cde0fbac5d7f871ac06f95b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/svg2pdf"
+    sha256 cellar: :any, mojave: "f6cd5e3abec5e442e788bd163ac58aa9f92675debd72d7dfedc6324bae11c930"
   end
 
   depends_on "pkg-config" => :build
@@ -36,15 +28,11 @@ class Svg2pdf < Formula
     # Temporary Homebrew-specific work around for linker flag ordering problem in Ubuntu 16.04.
     # Remove after migration to 18.04.
     unless OS.mac?
-      inreplace "src/Makefile.in",
-        "$(svg2pdf_LDFLAGS) $(svg2pdf_OBJECTS)",
-        "$(svg2pdf_OBJECTS) $(svg2pdf_LDFLAGS)"
+      inreplace "src/Makefile.in", "$(svg2pdf_LDFLAGS) $(svg2pdf_OBJECTS)",
+                                   "$(svg2pdf_OBJECTS) $(svg2pdf_LDFLAGS)"
     end
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./configure", *std_configure_args, "--mandir=#{man}"
     system "make", "install"
   end
 
