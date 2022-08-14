@@ -3,13 +3,13 @@ require "language/node"
 class Truffle < Formula
   desc "Development environment, testing framework and asset pipeline for Ethereum"
   homepage "https://trufflesuite.com"
-  url "https://registry.npmjs.org/truffle/-/truffle-5.5.18.tgz"
-  sha256 "c3c125ac9777725d0bd08778b76e1ea123918a774b12866441f81f84683706df"
+  url "https://registry.npmjs.org/truffle/-/truffle-5.5.20.tgz"
+  sha256 "d2062c5ba8ba177cd2768ab7c411310174b9ed504905f5c72b54089e39f22ebe"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/truffle"
-    sha256 mojave: "5ff6a3862f2a2d33a2db0601c36709487559f9b09066ac8243b42a0933cdd408"
+    sha256 mojave: "127bee360c1e3da1c612ad682f36548a8dce612264b2d83075630aa2a17a4b1e"
   end
 
   depends_on "node"
