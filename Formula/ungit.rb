@@ -3,13 +3,13 @@ require "language/node"
 class Ungit < Formula
   desc "Easiest way to use Git. On any platform. Anywhere"
   homepage "https://github.com/FredrikNoren/ungit"
-  url "https://registry.npmjs.org/ungit/-/ungit-1.5.20.tgz"
-  sha256 "3a2f8cdf672442b4a833735e59b69b5b2892d377fa117f0c2249dc8e4e5e0e9d"
+  url "https://registry.npmjs.org/ungit/-/ungit-1.5.21.tgz"
+  sha256 "db8a15b1d914277ac45e908dbb74a1950dee3c5da1ac9b04d397dc34b57edf7d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ungit"
-    sha256 cellar: :any_skip_relocation, mojave: "d308e477ddbe2f15ba26930c1daf423f0fe1f710a259cb4be072019c6c6dcad5"
+    sha256 cellar: :any_skip_relocation, mojave: "8bb17357c665fe16e4edcfdaa98724183ce9c4a48828f33065370a1b564a0045"
   end
 
   depends_on "node"
