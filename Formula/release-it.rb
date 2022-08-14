@@ -3,13 +3,13 @@ require "language/node"
 class ReleaseIt < Formula
   desc "Generic CLI tool to automate versioning and package publishing related tasks"
   homepage "https://github.com/release-it/release-it"
-  url "https://registry.npmjs.org/release-it/-/release-it-15.0.0.tgz"
-  sha256 "52a22039887a5a131db2a3b8c524bd57f9bda4a091567711f5c5ee9cee8f8751"
+  url "https://registry.npmjs.org/release-it/-/release-it-15.2.0.tgz"
+  sha256 "f63b77054968285d6000f66cf4703bfd95ba341c8f48ba4683831c0324d86be0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/release-it"
-    sha256 cellar: :any_skip_relocation, mojave: "14756e5716d94cf93832b60b134309cad288747726b0e611c5b7ce31d691f33c"
+    sha256 cellar: :any_skip_relocation, mojave: "bad24014d5906dce3b1be3690772759018aaf0e311066c119875f8d5875432f1"
   end
 
   depends_on "node"
