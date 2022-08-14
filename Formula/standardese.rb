@@ -6,12 +6,12 @@ class Standardese < Formula
       tag:      "0.5.2",
       revision: "0b23537e235690e01ba7f8362a22d45125e7b675"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/standardese/standardese.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/standardese"
-    sha256 mojave: "b72d88024295b479e72698e5607c382e909425000bfc99d274c05104f9fa92d9"
+    sha256 mojave: "afa3379622acb78610dcc8a6f49d0f6393c1fc23277f35996343eb2001f96d1e"
   end
 
   depends_on "cmake" => :build
