@@ -1,8 +1,8 @@
 class Qbs < Formula
   desc "Build tool for developing projects across multiple platforms"
   homepage "https://wiki.qt.io/Qbs"
-  url "https://download.qt.io/official_releases/qbs/1.22.1/qbs-src-1.22.1.tar.gz"
-  sha256 "b06003f49683971b552bb800bc134bf6c76cff79e1809cce741c40382b297b04"
+  url "https://download.qt.io/official_releases/qbs/1.23.0/qbs-src-1.23.0.tar.gz"
+  sha256 "c86aa775446aec728bcbbed782ec128f4e6e2c26536710017343e684bb616d7a"
   license :cannot_represent
   head "https://code.qt.io/qbs/qbs.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Qbs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qbs"
-    sha256 cellar: :any, mojave: "c3ebb7a5b1b3de1f4dce6f96c00906a6a628b40a61fb982367c9d246b596a729"
+    sha256 cellar: :any, mojave: "0b11baf9bca9b664ea37f3aad9c7ca59533a6687ad6439cd1f88b9444692fa52"
   end
 
   depends_on "cmake" => :build
