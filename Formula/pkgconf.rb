@@ -1,8 +1,8 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://git.sr.ht/~kaniini/pkgconf"
-  url "https://distfiles.dereferenced.org/pkgconf/pkgconf-1.8.0.tar.xz"
-  sha256 "ef9c7e61822b7cb8356e6e9e1dca58d9556f3200d78acab35e4347e9d4c2bbaf"
+  url "https://distfiles.dereferenced.org/pkgconf/pkgconf-1.9.2.tar.xz"
+  sha256 "db6bf5426e0e9fc107042cc85fc62b1f391f1d7af46c4a3c39b7f5b5231dfa09"
   license "ISC"
 
   livecheck do
@@ -11,13 +11,8 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "de081f7770540f6df757f909825baee091fb2a2a5c938798a9e65824a258a747"
-    sha256 arm64_big_sur:  "4eb94e8870b9a8e817dc114e310fbb708d5d05226104087ffa18eac66a59bc65"
-    sha256 monterey:       "b1bac03399b7e53e23cc1ecdcc6b47a6faf7e74681f08ddca2b2a679bebc8735"
-    sha256 big_sur:        "c5a4e284bb365062326df5947cb459cee868538599b3cbb612d79df2e7c40efa"
-    sha256 catalina:       "e14c3c64737060d5514792608c0047e336554762a5e9928ab1dddfd8ee565553"
-    sha256 mojave:         "c161289fe2bfc1367be2d4e53465d9ebd80a824eb20630fba1d19d35041b5649"
-    sha256 x86_64_linux:   "e0f0f360a8d39ff1e210dc73008952d7374bd86672dc2280396b319227f6dea8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pkgconf"
+    sha256 mojave: "81c8e6ff366c3a7b219bf0a00670de5ef98d3bc3cf6a9422f9bb395aa900aa67"
   end
 
   def install
