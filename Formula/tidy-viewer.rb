@@ -1,8 +1,8 @@
 class TidyViewer < Formula
   desc "CLI csv pretty printer"
   homepage "https://github.com/alexhallam/tv"
-  url "https://github.com/alexhallam/tv/archive/refs/tags/1.4.6.tar.gz"
-  sha256 "e9a2fc904f2e115c715df80421c39e0f226b6750a56db96d994acfe9336ec219"
+  url "https://github.com/alexhallam/tv/archive/refs/tags/1.4.30.tar.gz"
+  sha256 "52beddc07283396c7fd30097dc2ea37b9f1872eee7f2d83546dc93dfe644747e"
   license "Unlicense"
 
   livecheck do
@@ -13,7 +13,7 @@ class TidyViewer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tidy-viewer"
-    sha256 cellar: :any_skip_relocation, mojave: "3a8293510455645435b6c8247b61217c00249ed607d71c80089779cddb756a1b"
+    sha256 cellar: :any_skip_relocation, mojave: "4f58b3112a24033b66a326e1244ca8c501f2ff0c701caeaf0cdd69d7ac97e781"
   end
 
   depends_on "rust" => :build
