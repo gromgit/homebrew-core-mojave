@@ -41,7 +41,8 @@ class Rtags < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtags"
-    sha256 cellar: :any, mojave: "6cf911a4dc30c483d325f5345e80e9b3873a35db73f801a873cf30f3f173d4d4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "87e879ea604796b9d5335900e2d2b177f9013bf934cf6689849532b86852c548"
   end
 
   depends_on "cmake" => :build
