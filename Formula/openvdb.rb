@@ -4,11 +4,12 @@ class Openvdb < Formula
   url "https://github.com/AcademySoftwareFoundation/openvdb/archive/v9.1.0.tar.gz"
   sha256 "914ee417b4607c75c95b53bc73a0599de4157c7d6a32e849e80f24e40fb64181"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openvdb"
-    sha256 cellar: :any, mojave: "698b284f0b8366a98f663bd1fc27c894820969b3ad18c47778f1dac226286a8e"
+    sha256 cellar: :any, mojave: "e5d7c2a8219a9cc2b406f6298c492eda2a67a6761f119ec7b1e3d7ed2a84762b"
   end
 
   depends_on "cmake" => :build
