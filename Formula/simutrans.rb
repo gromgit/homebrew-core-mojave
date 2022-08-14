@@ -14,7 +14,8 @@ class Simutrans < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simutrans"
-    sha256 cellar: :any, mojave: "c67fbcd25a29974925ba40b7961960ecfa3462e870df1003bc6db146cf0adbee"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0d431c9f9af32b9fe1f5d8cb510609ea834cfc6ad02bea6218e0c9f1200cf444"
   end
 
   depends_on "autoconf" => :build
