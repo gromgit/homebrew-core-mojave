@@ -1,8 +1,8 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
   homepage "https://github.com/kdheepak/taskwarrior-tui"
-  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.23.4.tar.gz"
-  sha256 "a394994c545ddfc382b14e34b9d348d9df03caf906273b77b1f23c78e0928aa3"
+  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.23.5.tar.gz"
+  sha256 "3d2596ccd73ea0c879b93ff08f156636c167293700dcc5dfd2c9324928c9639b"
   license "MIT"
   head "https://github.com/kdheepak/taskwarrior-tui.git", branch: "main"
 
@@ -13,7 +13,7 @@ class TaskwarriorTui < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/taskwarrior-tui"
-    sha256 cellar: :any_skip_relocation, mojave: "60c77fa429ddc86cfb7b5ccb4762903a68f862c4e09621ea0d92a10e54b80ff3"
+    sha256 cellar: :any_skip_relocation, mojave: "d2d45edc9231509672c8af3fa7e2df68b55ea5301a4bf886e33ccfc611e4e191"
   end
 
   depends_on "rust" => :build
