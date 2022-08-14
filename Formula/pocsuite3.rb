@@ -3,14 +3,14 @@ class Pocsuite3 < Formula
 
   desc "Open-sourced remote vulnerability testing framework"
   homepage "https://pocsuite.org/"
-  url "https://files.pythonhosted.org/packages/ae/46/54f9e747fd5a6dc65d7adc32d7910178c6a93c235886f427f6ae507eea38/pocsuite3-1.9.6.tar.gz"
-  sha256 "ed7a82bc64437590e54a1053e21fb75480bc32b8e7ff077d10d54a3c5d70b612"
+  url "https://files.pythonhosted.org/packages/c9/f6/211b0c61892793a11ebe26b6cdf6ceb7d9d30b75a96279b71548637a97ea/pocsuite3-1.9.8.tar.gz"
+  sha256 "2354b833b858a0ac556501524ec351ad176336297c0657b82795ffd037c8b7bf"
   license "GPL-2.0-only"
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pocsuite3"
-    sha256 cellar: :any_skip_relocation, mojave: "4c6b4f26ae36f34f9c449bf3156efefd97268e24ab8bf3ee085d2016a0086ef1"
+    sha256 cellar: :any_skip_relocation, mojave: "6898e6c570be395b668a84b9f024aacf545911b95164262e6ac25dbd31899677"
   end
 
   depends_on "python@3.10"
@@ -48,8 +48,8 @@ class Pocsuite3 < Formula
   end
 
   resource "Faker" do
-    url "https://files.pythonhosted.org/packages/57/0f/86e6547c58ad55b4e087d28367f2a8e251c6dd559cf5fb27a9a659bae84b/Faker-13.15.0.tar.gz"
-    sha256 "a126fa66f54e65a67f913dcc698c9d023def7277882536bde2968fcac701bfd5"
+    url "https://files.pythonhosted.org/packages/60/78/d6a75e9b58f22659c9e46b24a7d601c2d738b719b53b542f14248ab6177d/Faker-13.15.1.tar.gz"
+    sha256 "7c3f8ee807d3916415568169a172bf0893ea9cc3371ab55e4e5f5170d2185bea"
   end
 
   resource "idna" do
@@ -98,8 +98,8 @@ class Pocsuite3 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
-    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
+    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
+    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
   end
 
   resource "wcwidth" do
