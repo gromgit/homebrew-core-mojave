@@ -3,13 +3,13 @@ class Stanc3 < Formula
   homepage "https://github.com/stan-dev/stanc3"
   # git is needed for dune subst
   url "https://github.com/stan-dev/stanc3.git",
-      tag:      "v2.30.0",
-      revision: "4b398e851b38e83573287c4e52a46406e293540e"
+      tag:      "v2.30.1",
+      revision: "60c5597a544771416354418d3a3dbe7f9915fcd9"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stanc3"
-    sha256 cellar: :any_skip_relocation, mojave: "eb23c4b7014b37ab997adf559eeefa17d1e75e19a5f77865fc086ace1db17372"
+    sha256 cellar: :any_skip_relocation, mojave: "eed2bfb48f1a73f002566bcb1ccac69467cd390f9032a32247163764c07079e2"
   end
 
   depends_on "ocaml" => :build
