@@ -6,18 +6,17 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/f1/a7/8989377dfce48abf9115055baf6d2cfba55102929a7c5f3e5b9c8e8b5c18/trezor_agent-0.11.0.tar.gz"
   sha256 "139d917d6495bf290bcc21da457f84ccd2e74c78b4d59a649e0cdde4288cd20c"
   license "LGPL-3.0"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trezor-agent"
-    rebuild 3
-    sha256 cellar: :any, mojave: "a653b0fc0c3ec9c1365dd25b1048eed96433dd68e3db6ca5d724c3e1b4e9fdb9"
+    sha256 cellar: :any, mojave: "e961144d5985d6cfc834374019dd1506dfd42ea6f0808882604c3897596b03b7"
   end
 
   depends_on "rust" => :build # python-daemon resource depends on cryptography
   depends_on "libusb"
   depends_on "pillow"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "six"
 
   # Gather dependencies for trezor-agent, ledger-agent & keepkey-agent
