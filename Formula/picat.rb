@@ -1,9 +1,9 @@
 class Picat < Formula
   desc "Simple, and yet powerful, logic-based multi-paradigm programming language"
   homepage "http://picat-lang.org/"
-  url "http://picat-lang.org/download/picat320_src.tar.gz"
-  version "3.2"
-  sha256 "b72edbb3b81e1e74f6a5dc994587a2b0fe2b3ed123d809ca0fd6b0c171bcbbb0"
+  url "http://picat-lang.org/download/picat326_src.tar.gz"
+  version "3.2.6"
+  sha256 "7954396866e3e12944c09a7ca4123f9ce5d6193caecb8899b79cfd098ada399d"
   license "MPL-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class Picat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/picat"
-    sha256 cellar: :any_skip_relocation, mojave: "eaf78cf3a76a50735cc8b5ea5e5328b23a378cf5e54cbe15011529d004e7d411"
+    sha256 cellar: :any_skip_relocation, mojave: "7ad4c51c17bdca56106a2f9aa99c910afef87446bbad8c899d0c20e73490e834"
   end
 
   def install
