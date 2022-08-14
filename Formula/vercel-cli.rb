@@ -3,13 +3,13 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-25.1.0.tgz"
-  sha256 "6049084e2ceb9bc57cf58a187a870cabb3606e0d1c75fa79483dbe5e5c3f1228"
+  url "https://registry.npmjs.org/vercel/-/vercel-27.3.7.tgz"
+  sha256 "4eb0c783b6a943d24d802a6e10220bb6df72b2da11e5a965229595168684e19a"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vercel-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "6e0ed011e5f1108de538308c25cd2ec48e2420f3b73383ca5efaf6c2821613e9"
+    sha256 cellar: :any_skip_relocation, mojave: "182b0bf96efd33d419c8573b604fc24f7a013d38f1994986778e0852a1649908"
   end
 
   depends_on "node"
@@ -20,8 +20,8 @@ class VercelCli < Formula
 
   def install
     rm Dir["dist/{*.exe,xsel}"]
-    inreplace "dist/index.js", "exports.default = getUpdateCommand",
-                               "exports.default = async()=>'brew upgrade vercel-cli'"
+    inreplace "dist/index.js", "= getUpdateCommand",
+                               "= async()=>'brew upgrade vercel-cli'"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
