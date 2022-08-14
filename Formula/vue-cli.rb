@@ -3,13 +3,13 @@ require "language/node"
 class VueCli < Formula
   desc "Standard Tooling for Vue.js Development"
   homepage "https://cli.vuejs.org/"
-  url "https://registry.npmjs.org/@vue/cli/-/cli-5.0.6.tgz"
-  sha256 "931b352f6aa7fae2158a01240312fe391a3053f7dfaa9c686b2fb370aeee4c50"
+  url "https://registry.npmjs.org/@vue/cli/-/cli-5.0.8.tgz"
+  sha256 "29aa4eb0ba827624e42683e1339ebd40e663ad09836dd027df30e3d2108b0b71"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vue-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "efc0632b67a81ff9e783ea2a2df4d063bef514c2dfdfed7eebc58fa4fa0f7927"
+    sha256 cellar: :any_skip_relocation, mojave: "c53e3f94fcd8b78b2e6dd8f6d19436b06cfff531f135db2bafd3e8245cc8c7ba"
   end
 
   depends_on "node"
