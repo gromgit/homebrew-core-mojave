@@ -7,8 +7,8 @@ class TigerVnc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tiger-vnc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9d8d2a4a9fa701f88725eb218065ab3e4decb1a319dce55d062b9471c42591b4"
+    rebuild 2
+    sha256 cellar: :any, mojave: "1ca7ee90a5ffe94f4a1ac78bdcc82bf967dc2f9026e26f55ad3d4b654d4092ad"
   end
 
   depends_on "cmake" => :build
@@ -19,7 +19,6 @@ class TigerVnc < Formula
   depends_on "pixman"
 
   on_linux do
-    depends_on "linux-pam"
     depends_on "libx11"
     depends_on "libxcursor"
     depends_on "libxdamage"
@@ -31,6 +30,7 @@ class TigerVnc < Formula
     depends_on "libxrandr"
     depends_on "libxrender"
     depends_on "libxtst"
+    depends_on "linux-pam"
   end
 
   def install
