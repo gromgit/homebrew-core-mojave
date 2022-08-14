@@ -1,8 +1,8 @@
 class Pdnsrec < Formula
   desc "Non-authoritative/recursing DNS server"
   homepage "https://www.powerdns.com/recursor.html"
-  url "https://downloads.powerdns.com/releases/pdns-recursor-4.7.0.tar.bz2"
-  sha256 "e4872a1b11a35fc363f354d69ccb4ec88047bfc7d9308087497dc2ad3af3498c"
+  url "https://downloads.powerdns.com/releases/pdns-recursor-4.7.1.tar.bz2"
+  sha256 "d2f94573a6f0e63a1034ca2b301c27ebf2e1300a655ba669cc502d5ea8d6ec68"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,13 +12,13 @@ class Pdnsrec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdnsrec"
-    sha256 mojave: "ef594532d39e04a2321d8392825fd4a49caf62e086c780242ab8f7082fc7f3cd"
+    sha256 mojave: "b0907e34a92be1363875afc08f9854736317b8119861904a074278391716da51"
   end
 
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "lua"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_macos do
     # This shouldn't be needed for `:test`, but there's a bug in `brew`:
@@ -50,7 +50,7 @@ class Pdnsrec < Formula
       --sysconfdir=#{etc}/powerdns
       --disable-silent-rules
       --with-boost=#{Formula["boost"].opt_prefix}
-      --with-libcrypto=#{Formula["openssl@1.1"].opt_prefix}
+      --with-libcrypto=#{Formula["openssl@3"].opt_prefix}
       --with-lua
       --without-net-snmp
     ]
