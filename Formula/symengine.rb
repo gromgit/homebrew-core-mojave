@@ -4,11 +4,11 @@ class Symengine < Formula
   url "https://github.com/symengine/symengine/releases/download/v0.9.0/symengine-0.9.0.tar.gz"
   sha256 "dcf174ac708ed2acea46691f6e78b9eb946d8a2ba62f75e87cf3bf4f0d651724"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/symengine"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b068f341d1be1d4752f108415a699cd86604c9989599c066214a6b75fa93ddf7"
+    sha256 cellar: :any, mojave: "e3e79e8fcd17a48459afc74eb378bc6d8dd29158ec733f4de857e19efc92b91e"
   end
 
   depends_on "cmake" => :build
