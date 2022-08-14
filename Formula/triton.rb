@@ -9,8 +9,8 @@ class Triton < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/triton"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "401462af88eb80a1d0ab0c15ee1d22bd98215bdfe0ed7c970671a4fd2e19f9f2"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "6062ab366afb195d7dfdad9a4cde4a707e3f681b55f2b3c8cc5835dd0708f86e"
   end
 
   depends_on "node"
