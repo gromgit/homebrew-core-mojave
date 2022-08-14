@@ -3,18 +3,13 @@ require "language/node"
 class SqlLint < Formula
   desc "SQL linter to do sanity checks on your queries and bring errors back from the DB"
   homepage "https://github.com/joereynolds/sql-lint"
-  url "https://registry.npmjs.org/sql-lint/-/sql-lint-0.0.19.tgz"
-  sha256 "af38df9ffdea1647fa677b1fae1897c91c787455b1be8654f07c6866da09798e"
+  url "https://registry.npmjs.org/sql-lint/-/sql-lint-1.0.0.tgz"
+  sha256 "0ee3b71d812af3cc809829b663d9cd747996ec76e2b3e49fd3b7a5969398190e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "40da4a973168157d013437dd3c1dd200d3bd020db9377fc6f5eb1af81a0ad61f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "913a8c82424f7f0795cc2acb9a207d915e7ce41408324dcd0f1035bc4144dd9b"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7859c895da619aa57a318bdc528d5b5a6513240e86a7048aa98a2c5a790a1fa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8a7c08631d9f1d905fb44fcf587cee1f9e947b682695f4f698fa42b76d7acc6c"
-    sha256 cellar: :any_skip_relocation, catalina:       "8a7c08631d9f1d905fb44fcf587cee1f9e947b682695f4f698fa42b76d7acc6c"
-    sha256 cellar: :any_skip_relocation, mojave:         "8a7c08631d9f1d905fb44fcf587cee1f9e947b682695f4f698fa42b76d7acc6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6526ae7416a50c345e18cd17396455193fbd528ea8f87f05d097f9d9e4c87e03"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sql-lint"
+    sha256 cellar: :any_skip_relocation, mojave: "a1abb0bf427a60d56355852ba988e1f9eeb6161733094cf380e64a179abdbb46"
   end
 
   depends_on "node"
