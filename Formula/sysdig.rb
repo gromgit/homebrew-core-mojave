@@ -2,7 +2,7 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   stable do
     url "https://github.com/draios/sysdig/archive/0.29.3.tar.gz"
@@ -22,8 +22,8 @@ class Sysdig < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysdig-0.29.3"
-    sha256 mojave: "637b672b991954001e93dee35ddd2ee066b725bed45ac55494208e4784186691"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysdig"
+    sha256 mojave: "f5be94e5f0f5bddfb0b71d5e1fd6a916c2eaf74510583abaff8c092306da4471"
   end
 
   head do
