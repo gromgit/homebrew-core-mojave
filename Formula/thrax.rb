@@ -14,6 +14,7 @@ class Thrax < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/thrax"
+    rebuild 1
     sha256 cellar: :any, mojave: "568229d715edfa5746c6064eed4cdd5ef460d0864da6e6e85e84c6db06b404e5"
   end
 
