@@ -4,6 +4,7 @@ class Patchelf < Formula
   url "https://github.com/NixOS/patchelf/releases/download/0.15.0/patchelf-0.15.0.tar.bz2"
   sha256 "f4036d3ee4d8e228dec1befff0f6e46d8a40e9e570e0068e39d77e62e2c8bdc2"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/NixOS/patchelf.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Patchelf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/patchelf"
-    sha256 cellar: :any_skip_relocation, mojave: "1c37559beda80e62aa6b613b568e3c3455ffb1def1a2c5718caf74e262fec1b0"
+    sha256 cellar: :any_skip_relocation, mojave: "c79242e318958fbfc7e6245d75c580c38b844f6b8e3ae0f0a8a2d9fbb80c68da"
   end
 
   on_linux do
