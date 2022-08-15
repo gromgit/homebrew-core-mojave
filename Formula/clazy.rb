@@ -4,6 +4,7 @@ class Clazy < Formula
   url "https://download.kde.org/stable/clazy/1.11/src/clazy-1.11.tar.xz"
   sha256 "66165df33be8785218720c8947aa9099bae6d06c90b1501953d9f95fdfa0120a"
   license "LGPL-2.0-or-later"
+  revision 1
   head "https://invent.kde.org/sdk/clazy.git", branch: "master"
 
   livecheck do
@@ -12,8 +13,8 @@ class Clazy < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clazy"
-    sha256 cellar: :any, mojave: "2ea741188bbb378b52f95a6bdcc73d1e49de0d862c7427ffae06bfeb359953a8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clazy-1.11"
+    sha256 cellar: :any, mojave: "8a6f76eb39ead43faecaae7fbba8d0d93f2a87d9cac8e9ecc0eeed46456e3e36"
   end
 
   depends_on "cmake"   => [:build, :test]
@@ -25,6 +26,10 @@ class Clazy < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "gcc"
+  end
+
   fails_with gcc: "5" # C++17
 
   def install
@@ -35,6 +40,8 @@ class Clazy < Formula
   end
 
   test do
+    gcc_version = Formula["gcc"].version.major unless OS.mac?
+
     (testpath/"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION #{Formula["cmake"].version})
 
@@ -42,6 +49,12 @@ class Clazy < Formula
 
       set(CMAKE_CXX_STANDARD 17)
       set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+      if (UNIX AND NOT APPLE)
+        include_directories(#{Formula["gcc"].opt_include}/c++/#{gcc_version})
+        include_directories(#{Formula["gcc"].opt_include}/c++/#{gcc_version}/x86_64-pc-linux-gnu)
+        link_directories(#{Formula["gcc"].opt_lib}/gcc/#{gcc_version})
+      endif()
 
       set(CMAKE_AUTOMOC ON)
       set(CMAKE_AUTORCC ON)
