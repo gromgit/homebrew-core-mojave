@@ -9,7 +9,8 @@ class Ykdl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ykdl"
-    sha256 cellar: :any_skip_relocation, mojave: "758cea0b6211bbd3c9f2627b23a8e86be46a367c332b5625ea44d01996597daa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "35c65f4cf954277b48f323dad60af91dd2fdc6607660c09587e39b132f67c1e4"
   end
 
   depends_on "python@3.10"
@@ -38,6 +39,6 @@ class Ykdl < Formula
   end
 
   test do
-    system bin/"ykdl", "--info", "https://v.youku.com/v_show/id_XNTAzNDM5NTQ5Mg==.html"
+    system bin/"ykdl", "--info", "https://v.youku.com/v_show/id_XNTAwNjY3MjU3Mg==.html"
   end
 end
