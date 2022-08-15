@@ -3,13 +3,13 @@ require "language/node"
 class Zx < Formula
   desc "Tool for writing better scripts"
   homepage "https://github.com/google/zx"
-  url "https://registry.npmjs.org/zx/-/zx-7.0.0.tgz"
-  sha256 "d2b902838cf3f5d0544fb8cb16b1a74d86fd1f637c40bc661f220411ca4890fc"
+  url "https://registry.npmjs.org/zx/-/zx-7.0.8.tgz"
+  sha256 "d0334fc256613380ac84441c5d12922615868ab235ca5fa60d34db321eb49a2c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zx"
-    sha256 cellar: :any_skip_relocation, mojave: "2a0764575b6596e21b3157bb785d6cdf403e0d4d4b39e9fc59fd249b90f86b54"
+    sha256 cellar: :any_skip_relocation, mojave: "08b2a307f69e0b2059f7ede85373fb17e44a150481d27c679da610ee31eab2c1"
   end
 
   depends_on "node"
