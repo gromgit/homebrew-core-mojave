@@ -1,9 +1,9 @@
 class Wireshark < Formula
   desc "Graphical network analyzer and capture tool"
   homepage "https://www.wireshark.org"
-  url "https://www.wireshark.org/download/src/all-versions/wireshark-3.6.6.tar.xz"
-  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-3.6.6.tar.xz"
-  sha256 "beba27aeb4d3bb78df6202e88dda69e1dba9b0561044957bcac47e68b6ac28ba"
+  url "https://www.wireshark.org/download/src/all-versions/wireshark-3.6.7.tar.xz"
+  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-3.6.7.tar.xz"
+  sha256 "cce10a35caa2f79b73d3e6e4dc5388dd47d216114a550fdeb06ae78da0edb7c5"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Wireshark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wireshark"
-    sha256 mojave: "7688cfed8189319ce6eb334284eb471f8ecb7977610f3639a85deb89f7c0ebf3"
+    sha256 mojave: "1cee8208b97a628ec0d42fb3c9f5be23e6b26855108ee9323c38af564f08d4c4"
   end
 
   depends_on "cmake" => :build
@@ -30,6 +30,7 @@ class Wireshark < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "python" => :build
 
   def install
     args = std_cmake_args + %W[
@@ -40,7 +41,7 @@ class Wireshark < Formula
       -DENABLE_PORTAUDIO=OFF
       -DENABLE_LUA=ON
       -DLUA_INCLUDE_DIR=#{Formula["lua"].opt_include}/lua
-      -DLUA_LIBRARY=#{Formula["lua"].opt_lib}/liblua.dylib
+      -DLUA_LIBRARY=#{Formula["lua"].opt_lib/shared_library("liblua")}
       -DCARES_INCLUDE_DIR=#{Formula["c-ares"].opt_include}
       -DGCRYPT_INCLUDE_DIR=#{Formula["libgcrypt"].opt_include}
       -DGNUTLS_INCLUDE_DIR=#{Formula["gnutls"].opt_include}
