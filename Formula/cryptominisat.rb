@@ -6,7 +6,7 @@ class Cryptominisat < Formula
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
-  revision 2
+  revision 4
 
   livecheck do
     url :stable
@@ -14,14 +14,13 @@ class Cryptominisat < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cryptominisat"
-    rebuild 2
-    sha256 cellar: :any, mojave: "6d8b24088a01d6f18a8c6c7aaf7fd347f1008b55c6c3d0f4b27248f0fa8a6003"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cryptominisat-5.8.0"
+    sha256 cellar: :any, mojave: "191f087e5c1320769c8789694a43cd9838cb6546bab80dbb6a0147fb3f58ddbe"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   # Fix build error with setuptools 61+
   patch do
@@ -70,6 +69,6 @@ class Cryptominisat < Formula
       solver.add_clause([-1, 2, 3])
       print(solver.solve()[1])
     EOS
-    assert_equal "(None, True, False, True)\n", shell_output("#{Formula["python@3.9"].opt_bin}/python3 test.py")
+    assert_equal "(None, True, False, True)\n", shell_output("#{Formula["python@3.10"].opt_bin}/python3 test.py")
   end
 end
