@@ -5,6 +5,7 @@ class Openconnect < Formula
   mirror "https://fossies.org/linux/privat/openconnect-9.01.tar.gz"
   sha256 "b3d7faf830e9793299d6a41e81d84cd4a3e2789c148c9e598e4585010090e4c7"
   license "LGPL-2.1-only"
+  revision 2
 
   livecheck do
     url "https://www.infradead.org/openconnect/download.html"
@@ -12,8 +13,8 @@ class Openconnect < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openconnect"
-    sha256 mojave: "ba92dc390ef764228dab6a748d655ff7d91763b755b6caa4b8cb6c037ee3e480"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openconnect-9.01"
+    sha256 mojave: "573b0b410cd9f5fc5f3e537c97e7cc0970ab0034d49b937be6586d558adb57a0"
   end
 
   head do
@@ -30,13 +31,13 @@ class Openconnect < Formula
   depends_on "stoken"
 
   resource "vpnc-script" do
-    url "https://gitlab.com/openconnect/vpnc-scripts/raw/43195c25fd6aaa4d50f42c2dc51e53cf1b0baeb0/vpnc-script"
-    sha256 "48abc54ad462e70ed0e29ca525a33e1d58cf90651e80e49b7d4ff0aaaaeb68b5"
+    url "https://gitlab.com/openconnect/vpnc-scripts/raw/e52f8e66391c4c55ee818841d236ebbb6ae284ed/vpnc-script"
+    sha256 "6d95e3625cceb51e77628196055adb58c3e8325b9f66fcc8e97269caf42b8575"
   end
 
   def install
-    etc.install resource("vpnc-script")
-    chmod 0755, "#{etc}/vpnc-script"
+    (etc/"vpnc").install resource("vpnc-script")
+    chmod 0755, etc/"vpnc/vpnc-script"
 
     if build.head?
       ENV["LIBTOOLIZE"] = "glibtoolize"
@@ -47,14 +48,31 @@ class Openconnect < Formula
       --prefix=#{prefix}
       --sbindir=#{bin}
       --localstatedir=#{var}
-      --with-vpnc-script=#{etc}/vpnc-script
+      --with-vpnc-script=#{etc}/vpnc/vpnc-script
     ]
 
     system "./configure", *args
     system "make", "install"
   end
 
+  def caveats
+    s = <<~EOS
+      A `vpnc-script` has been installed at #{etc}/vpnc/vpnc-script.
+    EOS
+
+    s += if (etc/"vpnc/vpnc-script.default").exist?
+      <<~EOS
+
+        To avoid destroying any local changes you have made, a newer version of this script has
+        been installed as `vpnc-script.default`.
+      EOS
+    end.to_s
+
+    s
+  end
+
   test do
-    assert_match "POST https://localhost/", pipe_output("#{bin}/openconnect localhost 2>&1")
+    # We need to pipe an empty string to `openconnect` for this test to work.
+    assert_match "POST https://localhost/", pipe_output("#{bin}/openconnect localhost 2>&1", "")
   end
 end
