@@ -15,8 +15,9 @@ class Solana < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana"
-    sha256 cellar: :any_skip_relocation, mojave: "ca612e68c8ff3f48ce2f0a0ea0d7100f805481443405acd8664bf50b7d6682a3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana-1.10.34"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "01192f371504a10158f8c4346a12659410078d5aaf4a9fed9252ca355e5bc1bd"
   end
 
   depends_on "protobuf" => :build
