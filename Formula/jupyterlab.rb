@@ -10,8 +10,9 @@ class Jupyterlab < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jupyterlab"
-    sha256 cellar: :any, mojave: "4b4ddde36d5e7d8e559a1d994f88a2925ca6023882113e2f6a1746f7eacd2590"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jupyterlab-3.4.3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6002bda8314aee38522fb45181bd5c0f1ce4fa2779294da1aca7b51303ee6759"
   end
 
   depends_on "python-build" => :build
