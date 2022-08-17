@@ -1,8 +1,8 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
   homepage "https://www.openblas.net/"
-  url "https://github.com/xianyi/OpenBLAS/archive/v0.3.20.tar.gz"
-  sha256 "8495c9affc536253648e942908e88e097f2ec7753ede55aca52e5dead3029e3c"
+  url "https://github.com/xianyi/OpenBLAS/archive/v0.3.21.tar.gz"
+  sha256 "f36ba3d7a60e7c8bcc54cd9aaa9b1223dd42eaf02c811791c37e8ca707c241ca"
   license "BSD-3-Clause"
   head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
 
@@ -11,10 +11,9 @@ class Openblas < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openblas"
-    rebuild 1
-    sha256 cellar: :any, mojave: "1d870b8137de49f42112299e43214540dffd295c722ee347dc630cf3d8a8d25e"
+    sha256 cellar: :any, mojave: "d01a1b2c0e2365b4469b10ecdf2b2797e280fece150fc3574529cfa86474962e"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
@@ -26,7 +25,12 @@ bottle do
     ENV.runtime_cpu_detection
     ENV.deparallelize # build is parallel by default, but setting -j confuses it
 
-    ENV["DYNAMIC_ARCH"] = "1"
+    # The build log has many warnings of macOS build version mismatches.
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    # Setting `DYNAMIC_ARCH` is broken with binutils 2.38.
+    # https://github.com/xianyi/OpenBLAS/issues/3708
+    # https://sourceware.org/bugzilla/show_bug.cgi?id=29435
+    ENV["DYNAMIC_ARCH"] = "1" if OS.mac?
     ENV["USE_OPENMP"] = "1"
     # Force a large NUM_THREADS to support larger Macs than the VMs that build the bottles
     ENV["NUM_THREADS"] = "56"
