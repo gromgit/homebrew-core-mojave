@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/99designs/aws-vault"
-  url "https://github.com/99designs/aws-vault/archive/v6.5.0.tar.gz"
-  sha256 "b2127b20a58fd75d92a2af28e77368dd9ab3c576dc73c3d56c3817e496a45515"
+  url "https://github.com/99designs/aws-vault/archive/v6.6.0.tar.gz"
+  sha256 "c9973d25047dc2487f413b86f91ccc4272b385fea3132e397c3a921baa01c885"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class AwsVault < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-vault"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fbf2c607df9b8f189596ffee8395a9cea162a804895bfccc3cb7b080b153c700"
+    sha256 cellar: :any_skip_relocation, mojave: "8cf48cdde614abdb5dab86c9194cf9b05c05d2b3a4b2173981009c0c2475c9e1"
   end
 
   depends_on "go" => :build
@@ -33,7 +32,9 @@ class AwsVault < Formula
   end
 
   test do
-    assert_match("aws-vault: error: required argument 'profile' not provided, try --help",
-      shell_output("#{bin}/aws-vault login 2>&1", 1))
+    assert_match("aws-vault: error: login: argument 'profile' not provided, nor any AWS env vars found. Try --help",
+      shell_output("#{bin}/aws-vault --backend=file login 2>&1", 1))
+
+    assert_match version.to_s, shell_output("#{bin}/aws-vault --version 2>&1")
   end
 end
