@@ -1,8 +1,8 @@
 class Algernon < Formula
   desc "Pure Go web server with Lua, Markdown, HTTP/2 and template support"
   homepage "https://github.com/xyproto/algernon"
-  url "https://github.com/xyproto/algernon/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "8327c1687990386eb5a48d15fd46fc69e17d400c29d726b34f6087c9c4887b9c"
+  url "https://github.com/xyproto/algernon/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "2d30fe7a3f7c9b985f5fde7d6035888ad0c31ae4342fb38a96404de320ccd883"
   license "BSD-3-Clause"
   version_scheme 1
   head "https://github.com/xyproto/algernon.git", branch: "main"
@@ -14,7 +14,7 @@ class Algernon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/algernon"
-    sha256 cellar: :any_skip_relocation, mojave: "984605482d2c6c6ab34a6c3cbfd2e86d59c42a83b3cc72954c44ce066b6182f1"
+    sha256 cellar: :any_skip_relocation, mojave: "776dcc272c8827ab7575256d3f2dc7f5160c60d0f2e381cd4ac8351d60822e91"
   end
 
   depends_on "go" => :build
