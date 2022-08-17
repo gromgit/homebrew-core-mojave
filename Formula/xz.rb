@@ -3,31 +3,22 @@
 class Xz < Formula
   desc "General-purpose data compression with high compression ratio"
   homepage "https://tukaani.org/xz/"
-  url "https://downloads.sourceforge.net/project/lzmautils/xz-5.2.5.tar.gz"
-  mirror "https://tukaani.org/xz/xz-5.2.5.tar.gz"
-  # This mirror needs to be manually created at `archive.org`.
-  mirror "https://archive.org/download/xz-5.2.5.tar.gz/xz-5.2.5.tar.gz"
-  mirror "http://archive.org/download/xz-5.2.5.tar.gz/xz-5.2.5.tar.gz"
-  sha256 "f6f4910fd033078738bd82bfba4f49219d03b17eb0794eb91efbae419f4aba10"
+  # The archive.org mirror below needs to be manually created at `archive.org`.
+  url "https://downloads.sourceforge.net/project/lzmautils/xz-5.2.6.tar.gz"
+  mirror "https://tukaani.org/xz/xz-5.2.6.tar.gz"
+  mirror "https://archive.org/download/xz-5.2.6/xz-5.2.6.tar.gz"
+  mirror "http://archive.org/download/xz-5.2.6/xz-5.2.6.tar.gz"
+  sha256 "a2105abee17bcd2ebd15ced31b4f5eda6e17efd6b10f921a01cda4a44c91b3a0"
   license all_of: [
     :public_domain,
     "LGPL-2.1-or-later",
     "GPL-2.0-or-later",
     "GPL-3.0-or-later",
   ]
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xz"
-    rebuild 1
-    sha256 mojave: "05fa2ecbd58a9d20bb535c6e5a1d15e42847acb6abd8e576f53a1a9c678a49f5"
-  end
-
-  # Fix arbitrary-file-write vulnerability in `xzgrep`.
-  # https://seclists.org/oss-sec/2022/q2/18
-  patch do
-    url "https://tukaani.org/xz/xzgrep-ZDI-CAN-16587.patch"
-    sha256 "98c6cb1042284fe704ec30083f3fc87364ce9ed2ea51f62bbb0ee9d3448717ec"
+    sha256 mojave: "944bcafc05887061ce47fca7bd4adc69d013bd36847b6b6c017789bafd8fb959"
   end
 
   def install
