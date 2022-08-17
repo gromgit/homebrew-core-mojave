@@ -2,8 +2,8 @@ class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
   homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
   url "https://github.com/alexellis/arkade.git",
-      tag:      "0.8.28",
-      revision: "650ceaa1f922602f55bec71b70fe8f239f2b7b2b"
+      tag:      "0.8.32",
+      revision: "b004f9adb0f90c89ef1440f988685fd6b6111d3f"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class Arkade < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arkade"
-    sha256 cellar: :any_skip_relocation, mojave: "70d36862c828ebaed73796efb894ba1092ad23b663bfb339b80a19338a115025"
+    sha256 cellar: :any_skip_relocation, mojave: "da5864cfc4577ce0314a15f5e70343e75244103a031feeafe45b624959d21232"
   end
 
   depends_on "go" => :build
@@ -32,7 +32,7 @@ class Arkade < Formula
     (bash_completion/"arkade").write Utils.safe_popen_read(bin/"arkade", "completion", "bash")
     (fish_completion/"arkade.fish").write Utils.safe_popen_read(bin/"arkade", "completion", "fish")
     # make zsh completion also work for `ark` symlink
-    inreplace zsh_completion/"_arkade", "#compdef _arkade arkade", "#compdef _arkade arkade ark=arkade"
+    inreplace zsh_completion/"_arkade", "#compdef arkade", "#compdef arkade ark=arkade"
   end
 
   test do
