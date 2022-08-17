@@ -1,13 +1,13 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
   homepage "https://github.com/bitrise-io/bitrise"
-  url "https://github.com/bitrise-io/bitrise/archive/1.49.3.tar.gz"
-  sha256 "6af2f55c08a99412af6fc2dfe439515ef7dc666a91eebe10632b496e8c4f9d63"
+  url "https://github.com/bitrise-io/bitrise/archive/1.50.0.tar.gz"
+  sha256 "675ceef40ac5a183b62a63d3fbd6a827f35800e25f06c81db36e98845deb68c0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bitrise"
-    sha256 cellar: :any_skip_relocation, mojave: "293f2ac491728a6cc6707b8880c7497e30c9184007d30bd69ee583eec8581ece"
+    sha256 cellar: :any_skip_relocation, mojave: "f94bb51470089c40f8e96cc3fa129cbe146efe1d87436821a8d3970b7edb6aa4"
   end
 
   depends_on "go" => :build
