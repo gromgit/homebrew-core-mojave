@@ -11,7 +11,8 @@ class Libcython < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcython"
-    sha256 cellar: :any_skip_relocation, mojave: "eefa9d254188a6521ed940a56714bf1fce81c499761196eab10fedc931b51616"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3f069782656ac4a9a2a3ce8343e09fe20463829800b798eca07a4532f48ebdda"
   end
 
   keg_only <<~EOS
@@ -24,16 +25,14 @@ class Libcython < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/python@\d\.\d+/) }
-        .map(&:opt_bin)
-        .map { |bin| bin/"python3" }
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
     pythons.each do |python|
       ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python)
-      system python, *Language::Python.setup_install_args(libexec),
-             "--install-lib=#{libexec/Language::Python.site_packages(python)}"
+      system python, *Language::Python.setup_install_args(libexec, python)
     end
   end
 
