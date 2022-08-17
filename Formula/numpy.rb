@@ -1,14 +1,14 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/13/b1/0c22aa7ca1deda4915cdec9562f839546bb252eecf6ad596eaec0592bd35/numpy-1.23.1.tar.gz"
-  sha256 "d748ef349bfef2e1194b59da37ed5a29c19ea8d7e6342019921ba2ba4fd8b624"
+  url "https://files.pythonhosted.org/packages/f4/66/17b8e95770478436bf968353c89683ce6f9e14d92e0d4fb3111c09ba18d2/numpy-1.23.2.tar.gz"
+  sha256 "b78d00e48261fbbd04aa0d7427cf78d18401ee0abd89c7559bbf422e5b1c7d01"
   license "BSD-3-Clause"
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numpy"
-    sha256 cellar: :any, mojave: "ea3671655a5ea7fe492e8df150a4d1b45f5d8533b9782a25a77b9e8f161af721"
+    sha256 cellar: :any, mojave: "9764b65d9fcbab5a0eb0a8a4f088abeb3346c44ebcbb7d5f2882e714727974b1"
   end
 
   depends_on "gcc" => :build # for gfortran
@@ -21,10 +21,9 @@ class Numpy < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/python@\d\.\d+/) }
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
         .sort_by(&:version) # so that `bin/f2py` and `bin/f2py3` use python3.10
-        .map(&:opt_bin)
-        .map { |bin| bin/"python3" }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
@@ -47,8 +46,7 @@ class Numpy < Formula
 
       system python, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}/gfortran",
                                           "--parallel=#{ENV.make_jobs}"
-      system python, *Language::Python.setup_install_args(prefix),
-                     "--install-lib=#{prefix/site_packages}"
+      system python, *Language::Python.setup_install_args(prefix, python)
     end
   end
 
