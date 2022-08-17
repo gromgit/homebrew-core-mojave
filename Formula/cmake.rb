@@ -17,7 +17,8 @@ class Cmake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake"
-    sha256 cellar: :any_skip_relocation, mojave: "34d0294adb7b79f88d20831b00d87203fe1b96bb2a7e08163d337c0f6a23c0f6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2b687beb32922c050d1265b764eb29cfe86510a7be66d419e7f88bc7aa3b9895"
   end
 
   uses_from_macos "ncurses"
@@ -50,6 +51,7 @@ class Cmake < Formula
     end
 
     system "./bootstrap", *args, "--", *std_cmake_args,
+                                       "-DCMake_INSTALL_BASH_COMP_DIR=#{bash_completion}",
                                        "-DCMake_INSTALL_EMACS_DIR=#{elisp}",
                                        "-DCMake_BUILD_LTO=ON"
     system "make"
