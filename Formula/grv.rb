@@ -4,14 +4,10 @@ class Grv < Formula
   url "https://github.com/rgburke/grv/releases/download/v0.3.2/grv-0.3.2-src.tar.gz"
   sha256 "988788cce5c581531c26df9048e4187440c5ebc9811afd371d565436dfb65d57"
   license "GPL-3.0"
-  head "https://github.com/rgburke/grv.git"
+  head "https://github.com/rgburke/grv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, big_sur:     "b432708e238c550cd9e0c0cfa560d658eeaaf8f41f724316b81e6a56b77ff4ea"
-    sha256 cellar: :any, catalina:    "47ca79fcad09617a086eddf37627be483b9d6ca9a2436d11acac6754b0d2ce15"
-    sha256 cellar: :any, mojave:      "2f223f7ca56ee01201a05e8660c219a2f70d7ead2c5e4f0dac65f4a9b8cd5941"
-    sha256 cellar: :any, high_sierra: "d51249eec72ee11cc90b0d5b4c06e10b77eec0bd7ddf8b53df6d0a0d8a291605"
-    sha256 cellar: :any, sierra:      "19f2e8bedb458d0b339160b275e196add00abcca7db92ba141aaccae255bb973"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   # Reported upstream at
