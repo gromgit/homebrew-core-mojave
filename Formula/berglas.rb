@@ -1,14 +1,13 @@
 class Berglas < Formula
   desc "Tool for managing secrets on Google Cloud"
   homepage "https://github.com/GoogleCloudPlatform/berglas"
-  url "https://github.com/GoogleCloudPlatform/berglas/archive/v0.6.2.tar.gz"
-  sha256 "03ee83b49598f864537aec48ef081d3a79a0cf0f32027d815c37755bf5d31376"
+  url "https://github.com/GoogleCloudPlatform/berglas/archive/v1.0.0.tar.gz"
+  sha256 "634238a2793867a5b8c209617a025fe19002a88b53cb54eef45fc2b9c0fcc55a"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/berglas"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "60e5ebc3e7653dae83ff53713d2e9083c1dd26b133b85c06c26d53fd242200b3"
+    sha256 cellar: :any_skip_relocation, mojave: "ff63ca51e700ebeb990494659a7c5ce258c3d84ad34dc2b42ac010babc21c4c0"
   end
 
   depends_on "go" => :build
