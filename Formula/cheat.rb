@@ -1,13 +1,13 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
   homepage "https://github.com/cheat/cheat"
-  url "https://github.com/cheat/cheat/archive/refs/tags/4.2.5.tar.gz"
-  sha256 "727c19efb873e6ea29b922a480074da8e5b73a0d129c3277539484a736527033"
+  url "https://github.com/cheat/cheat/archive/refs/tags/4.3.1.tar.gz"
+  sha256 "10011b4dd8e66976decd7f3252e3221cb2c5a290740648ac3a70f3b20bac3109"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cheat"
-    sha256 cellar: :any_skip_relocation, mojave: "319617ecca9e2d1c72b1453cc9b5f009b92ddb3c6fee40d319b11da6fbb0e47e"
+    sha256 cellar: :any_skip_relocation, mojave: "bcc2ebe20cc60a935accc534f0d7c25a2686986c3746648e4e03dd5b46a95788"
   end
 
   depends_on "go" => :build
@@ -26,6 +26,6 @@ class Cheat < Formula
     assert_match version.to_s, shell_output("#{bin}/cheat --version")
 
     output = shell_output("#{bin}/cheat --init 2>&1")
-    assert_match "editor: vim", output
+    assert_match "editor: EDITOR_PATH", output
   end
 end
