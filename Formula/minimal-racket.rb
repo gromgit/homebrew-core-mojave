@@ -1,8 +1,8 @@
 class MinimalRacket < Formula
   desc "Modern programming language in the Lisp/Scheme family"
   homepage "https://racket-lang.org/"
-  url "https://mirror.racket-lang.org/installers/8.5/racket-minimal-8.5-src.tgz"
-  sha256 "55d585e3ac9fbaacfbe840a6ec74ce3e7bee9fe85e32213f1b3e4f6f593cae39"
+  url "https://mirror.racket-lang.org/installers/8.6/racket-minimal-8.6-src.tgz"
+  sha256 "01d509d5ffd82920ff4bb41de84c07ecc6af9122953716ad43d84aa7b3939f48"
   license any_of: ["MIT", "Apache-2.0"]
 
   # File links on the download page are created using JavaScript, so we parse
@@ -16,13 +16,13 @@ class MinimalRacket < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimal-racket"
-    rebuild 1
-    sha256 mojave: "68ca4720e78426211f5a358b7e65639c2966b58baa30fd8e8c56f219939674fb"
+    sha256 mojave: "d7af27b60d1a0c44cfdcd8472de1160dd62da5ea492c0ce5ce53b04048cb59c1"
   end
 
   depends_on "openssl@1.1"
 
   uses_from_macos "libffi"
+  uses_from_macos "zlib"
 
   # these two files are amended when (un)installing packages
   skip_clean "lib/racket/launchers.rktd", "lib/racket/mans.rktd"
