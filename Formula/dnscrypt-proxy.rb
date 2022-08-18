@@ -1,8 +1,8 @@
 class DnscryptProxy < Formula
   desc "Secure communications between a client and a DNS resolver"
   homepage "https://dnscrypt.info"
-  url "https://github.com/DNSCrypt/dnscrypt-proxy/archive/2.1.1.tar.gz"
-  sha256 "cc4a2f274ce48c3731ff981e940e6475d912fb356a80481e91725e81d67bde14"
+  url "https://github.com/DNSCrypt/dnscrypt-proxy/archive/2.1.2.tar.gz"
+  sha256 "aa55fd52b9c1b983405bf98b42ec754f5d6f59b429ba9c98115df617eef5dea4"
   license "ISC"
   head "https://github.com/DNSCrypt/dnscrypt-proxy.git", branch: "master"
 
@@ -13,10 +13,8 @@ class DnscryptProxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnscrypt-proxy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "46a23e376e06a99ea9b5ef2b39b4b61152ce4e20743254acfc9811c1a51cf085"
+    sha256 cellar: :any_skip_relocation, mojave: "6e586f8eaf69eeafb670c604d9b693f9dad6e9cf332a7825fed26032b4701649"
   end
-
 
   depends_on "go" => :build
 
