@@ -1,14 +1,14 @@
 class Dbdeployer < Formula
   desc "Tool to deploy sandboxed MySQL database servers"
   homepage "https://github.com/datacharmer/dbdeployer"
-  url "https://github.com/datacharmer/dbdeployer/archive/v1.66.0.tar.gz"
-  sha256 "fd93ad9fe7636217dcbea52aa38d219da74bd471e5f6f4d22ac8f3ab0cadf860"
+  url "https://github.com/datacharmer/dbdeployer/archive/v1.68.0.tar.gz"
+  sha256 "b90f910579b40dc2ced544006d92649b0b6e30c150b286c1575be3f77c262586"
   license "Apache-2.0"
   head "https://github.com/datacharmer/dbdeployer.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbdeployer"
-    sha256 cellar: :any_skip_relocation, mojave: "71f39dd9788d48eee14f541c87afca4f14bb018fed08287b46bbde17cc221463"
+    sha256 cellar: :any_skip_relocation, mojave: "5553742b9e327967ee1b69053f05bf42139c17be1b8285052061d8658edf3239"
   end
 
   depends_on "go" => :build
