@@ -1,14 +1,14 @@
 class Opam < Formula
   desc "OCaml package manager"
   homepage "https://opam.ocaml.org"
-  url "https://github.com/ocaml/opam/releases/download/2.1.2/opam-full-2.1.2.tar.gz"
-  sha256 "de1e3efffd5942e0101ef83dcdead548cc65a93e13986aecb4a264a059457ede"
+  url "https://github.com/ocaml/opam/releases/download/2.1.3/opam-full-2.1.3.tar.gz"
+  sha256 "cb2ab00661566178318939918085aa4b5c35c727df83751fd92d114fdd2fa001"
   license "LGPL-2.1-only"
   head "https://github.com/ocaml/opam.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opam"
-    sha256 cellar: :any_skip_relocation, mojave: "a17d05c3c4ae20a9b7ac41acf070ab6104479e03cd4e5754b7701ce177c7d75e"
+    sha256 cellar: :any_skip_relocation, mojave: "eeb5c3484640cd585ecab2a88b4353cba234870f0f050e29558c339ad9920e28"
   end
 
   depends_on "ocaml" => [:build, :test]
