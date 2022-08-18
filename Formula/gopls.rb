@@ -1,8 +1,8 @@
 class Gopls < Formula
   desc "Language server for the Go language"
   homepage "https://github.com/golang/tools/tree/master/gopls"
-  url "https://github.com/golang/tools/archive/gopls/v0.9.1.tar.gz"
-  sha256 "420fd56ed614fc8a56547ad7737c2d0f163255a6a2953f1e57d854eeb5cb1b7b"
+  url "https://github.com/golang/tools/archive/gopls/v0.9.4.tar.gz"
+  sha256 "dd43a39906e1ce4cf73694d0268c6878f87b3940c5b9d42e49e5257a0dc4701f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,7 +13,7 @@ class Gopls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gopls"
-    sha256 cellar: :any_skip_relocation, mojave: "4408db8a2c2c7f36ae175f482faefda0b69c518095cb96ff8035b34f199a7d8a"
+    sha256 cellar: :any_skip_relocation, mojave: "c0ad12b24464e57d3dca685e390da8cffc52554efc52a7f485d3ee1a9f30f3c0"
   end
 
   depends_on "go" => :build
