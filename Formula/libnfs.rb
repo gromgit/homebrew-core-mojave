@@ -1,13 +1,13 @@
 class Libnfs < Formula
   desc "C client library for NFS"
   homepage "https://github.com/sahlberg/libnfs"
-  url "https://github.com/sahlberg/libnfs/archive/libnfs-5.0.1.tar.gz"
-  sha256 "7ef445410b42f36b9bad426608b53ccb9ccca4101e545c383f564c11db672ca8"
+  url "https://github.com/sahlberg/libnfs/archive/libnfs-5.0.2.tar.gz"
+  sha256 "637e56643b19da9fba98f06847788c4dad308b723156a64748041035dcdf9bd3"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libnfs"
-    sha256 cellar: :any, mojave: "3ea3c1df927bf6daa5fa281c3067f19af1096087897c607def5b8b3dd41a113f"
+    sha256 cellar: :any, mojave: "1d0f485d33e8877b42e570686e5be82f19532db899fc8d4a41ce421f53302aa9"
   end
 
   depends_on "autoconf" => :build
