@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.0.363",
-      revision: "011375acd88f34db45a20de5c6d3d7353de5b447"
+      tag:      "v0.0.373",
+      revision: "52a33bddbb90f1bba4f856f3d2d48e384ffd52e1"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -14,10 +14,12 @@ class Flyctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flyctl"
-    sha256 cellar: :any_skip_relocation, mojave: "841ba60ca793217ced0fc162f06aa3ad1a7d5f7a2adb1fb650f4fec940b37ea2"
+    sha256 cellar: :any_skip_relocation, mojave: "67af4945d17f1f3d55d58123a68b6581cea7bda762570ce7714799a7ff08ab2d"
   end
 
-  depends_on "go" => :build
+  # Required latest gvisor.dev/gvisor/pkg/gohacks
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   def install
     ENV["CGO_ENABLED"] = "0"
