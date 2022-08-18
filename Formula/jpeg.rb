@@ -13,17 +13,18 @@ class Jpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg"
-    sha256 cellar: :any, mojave: "a1c266a851f6f6d50d7f0e47da2ab88819b9b3db0229c91809ac5504f28fe1d3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a4c72e004c15cf503f8b6387f67047db7582ff4b3ae7c6242ec0a8bafc29a7fb"
   end
 
+  keg_only "it conflicts with `jpeg-turbo`"
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/djpeg", test_fixtures("test.jpg")
+    system bin/"djpeg", test_fixtures("test.jpg")
   end
 end
