@@ -7,7 +7,8 @@ class Mailcatcher < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mailcatcher"
-    sha256 mojave: "14ced0f3b710b6f498dbd2fecc6abfbeef23ba967274c1ac0602e3cb5965e1d4"
+    rebuild 1
+    sha256 mojave: "f7f461e457c1450b867101fc694b36739dae2bc466228ffa576a79fb3a781620"
   end
 
   depends_on "pkg-config" => :build
@@ -108,7 +109,7 @@ class Mailcatcher < Formula
       when "sqlite"
         system "gem", "install", r.cached_download, "--ignore-dependencies",
                 "--no-document", "--install-dir", libexec, "--",
-                ENV.compiler == :clang ? "--with-cflags=-fdeclspec" : ""
+                (ENV.compiler == :clang) ? "--with-cflags=-fdeclspec" : ""
       when "bundler"
         # bundler is needed only at build-time
       else
