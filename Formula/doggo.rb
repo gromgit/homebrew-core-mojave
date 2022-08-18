@@ -8,10 +8,13 @@ class Doggo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doggo"
-    sha256 cellar: :any_skip_relocation, mojave: "115d0f01a5b4fc6b1cc5d69fe62dcc8f2df5e4f8480889ff11b03cc7fafaceff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d63312d5d6c957acf8606717c77938291fc5ff356c8dde556c2ab7bc41c19af5"
   end
 
-  depends_on "go" => :build
+  # Required lucas-clemente/quic-go >= 0.28
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   def install
     ldflags = %W[
