@@ -13,10 +13,13 @@ class K3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
-    sha256 cellar: :any_skip_relocation, mojave: "01ff0a546e15ee4039db86ae73b6e0a098b80f8aec569250159ac4c1c8274da0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "41f64b459f9f76aa27f7b9300351fa370c21057537f7a0aedd4adda5fa6032a2"
   end
 
-  depends_on "go" => :build
+  # Required latest https://pkg.go.dev/go4.org/unsafe/assume-no-moving-gc
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   def install
     require "net/http"
