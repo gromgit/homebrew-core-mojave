@@ -7,7 +7,7 @@ class Jigdo < Formula
   url "http://atterer.org/sites/atterer/files/2009-08/jigdo/jigdo-0.7.3.tar.bz2"
   sha256 "875c069abad67ce67d032a9479228acdb37c8162236c0e768369505f264827f0"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
-  revision 7
+  revision 8
 
   livecheck do
     url "https://www.einval.com/~steve/software/jigdo/download/"
@@ -16,12 +16,11 @@ class Jigdo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jigdo"
-    rebuild 1
-    sha256 mojave: "969b3eeb08541ba5cb5ea5443c1d70cff4fe2d8b5f0e090bee38e7d1c67908be"
+    sha256 mojave: "0d68f465350e23543a3d662171445ab261a15aabf9330e82a47ad284643ac1f0"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "berkeley-db@4" # keep berkeley-db < 6 to avoid AGPL incompatibility
+  depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "wget"
 
   uses_from_macos "bzip2"
