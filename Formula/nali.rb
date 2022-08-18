@@ -1,14 +1,14 @@
 class Nali < Formula
   desc "Tool for querying IP geographic information and CDN provider"
   homepage "https://github.com/zu1k/nali"
-  url "https://github.com/zu1k/nali/archive/v0.4.8.tar.gz"
-  sha256 "ce6a0be171839640634047f90fb40eafda17dd4439329df0caf110ce186bfc91"
+  url "https://github.com/zu1k/nali/archive/v0.5.3.tar.gz"
+  sha256 "e47c330bd66f6969b625571843451913f5667a25b2852e254ab028b3f3ed575b"
   license "MIT"
   head "https://github.com/zu1k/nali.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nali"
-    sha256 cellar: :any_skip_relocation, mojave: "81ff2ec4b0946969b4928b3f305a4cb89e1b96825e340a91ed83de39be6ee780"
+    sha256 cellar: :any_skip_relocation, mojave: "96f9aac3acca64d7db473e4ee67db32f33bbb8f94765232055babf407401fd04"
   end
 
   depends_on "go" => :build
@@ -24,7 +24,7 @@ class Nali < Formula
     ip = "1.1.1.1"
     # Default database used by program is in Chinese, while downloading an English one
     # requires an third-party account.
-    # This example reads "US APNIC&CloudFlare Public DNS Server".
-    assert_match "#{ip} [美国 APNIC&CloudFlare公共DNS服务器]", shell_output("#{bin}/nali #{ip}")
+    # This example reads "Australia APNIC/CloudFlare Public DNS Server".
+    assert_match "#{ip} [澳大利亚 APNIC/CloudFlare公共DNS服务器]", shell_output("#{bin}/nali #{ip}")
   end
 end
