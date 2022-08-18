@@ -8,14 +8,15 @@ class JsonnetBundler < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jsonnet-bundler"
-    sha256 cellar: :any_skip_relocation, mojave: "5375aed94a94a675565224695b95426ed721239d1fca8bfa223d76e0b113adfb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4c9a5ae896aca771eaa394910f56796c93422988e5f91d25222654ffd5b27ba9"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "static"
-    bin.install "_output/jb"
+    ENV["CGO_ENABLED"] = "0"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}", output: bin/"jb"), "./cmd/jb"
   end
 
   test do
