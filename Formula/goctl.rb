@@ -1,13 +1,13 @@
 class Goctl < Formula
   desc "Generates server-side and client-side code for web and RPC services"
   homepage "https://go-zero.dev"
-  url "https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.3.9.tar.gz"
-  sha256 "6ee84b3386a17446cfc63d3a27a57386d2e8f5318d54820bdca54926de01676c"
+  url "https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.4.0.tar.gz"
+  sha256 "f462ea2e6ab3e66d83dd59fab22066798693c972b2ef82b6c27ed5c630746d13"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goctl"
-    sha256 cellar: :any_skip_relocation, mojave: "35ae184417e66883a0d4585afc88094a8d2399501ac2b1981781b7100e4b0e54"
+    sha256 cellar: :any_skip_relocation, mojave: "c49a91eaf6401cc1fc880b946f0dc5c187b2c28dfcae1b284094648807590742"
   end
 
   depends_on "go" => :build
