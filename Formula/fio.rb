@@ -1,13 +1,13 @@
 class Fio < Formula
   desc "I/O benchmark and stress test"
   homepage "https://github.com/axboe/fio"
-  url "https://github.com/axboe/fio/archive/fio-3.30.tar.gz"
-  sha256 "305647377527a2827223065582dd8a9269e69866426b341699d55bb4e4d3cc71"
+  url "https://github.com/axboe/fio/archive/fio-3.31.tar.gz"
+  sha256 "077100819a243d0e00f232eb7c53fe1d30f4c54fba4d82847d5747eae1d255ab"
   license "GPL-2.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fio"
-    sha256 cellar: :any_skip_relocation, mojave: "cb25afe909fc6dd38785bb0d4178e6478867915efc2f7c26ea2909af41859235"
+    sha256 cellar: :any_skip_relocation, mojave: "93a5a51712141052b6fdc0528b7334e85aaa9aeabe68c6c40583130c6099a595"
   end
 
   uses_from_macos "zlib"
