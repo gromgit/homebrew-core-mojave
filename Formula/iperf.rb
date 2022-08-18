@@ -1,8 +1,8 @@
 class Iperf < Formula
   desc "Tool to measure maximum TCP and UDP bandwidth"
   homepage "https://sourceforge.net/projects/iperf2/"
-  url "https://downloads.sourceforge.net/project/iperf2/iperf-2.1.7.tar.gz"
-  sha256 "1aba2e1d7aa43641ef841951ed88e16cffba898460e0c51e6b2806f3ff20e9d4"
+  url "https://downloads.sourceforge.net/project/iperf2/iperf-2.1.8.tar.gz"
+  sha256 "8e2cf2fbc9d0d4d1cf9d109b1e328459f9622993dc9a4c5a7dc8a2088fb7beaf"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Iperf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iperf"
-    sha256 cellar: :any_skip_relocation, mojave: "6d5e04435ceb3902378e8912477c85f8a41c6755096fd16263b0fd982862b609"
+    sha256 cellar: :any_skip_relocation, mojave: "b6e603483d8178af76fa2228d020f8a0af0ef4f8dfbb6711398fc14d770570d3"
   end
 
   def install
