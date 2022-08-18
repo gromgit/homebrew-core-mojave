@@ -2,6 +2,7 @@ class Lynx < Formula
   desc "Text-based web browser"
   homepage "https://invisible-island.net/lynx/"
   url "https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.bz2"
+  mirror "https://fossies.org/linux/www/lynx2.8.9rel.1.tar.bz2"
   version "2.8.9rel.1"
   sha256 "387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595"
   license "GPL-2.0"
@@ -14,8 +15,8 @@ class Lynx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lynx"
-    rebuild 1
-    sha256 mojave: "b8be51a4a05ffb6dba341a5cffa5f6e33a1b0cb03c0d31024deb3449c08746ea"
+    rebuild 2
+    sha256 mojave: "817a275a6759095daa0c4fc0e31cd9478255a5751fe01656b0b1e86951fd14da"
   end
 
   depends_on "openssl@1.1"
