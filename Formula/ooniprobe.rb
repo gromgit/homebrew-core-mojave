@@ -12,10 +12,13 @@ class Ooniprobe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ooniprobe"
-    sha256 cellar: :any_skip_relocation, mojave: "4739ca721e4f6b6851c1b209fa772da20b8b8b94cb6652a5fd14d0eaeea35629"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5bc509137f4a1736222b768f6653b79c7fca67799cce97ca2cab649a03977f49"
   end
 
-  depends_on "go" => :build
+  # Required lucas-clemente/quic-go >= 0.28
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
   depends_on "tor"
 
   def install
