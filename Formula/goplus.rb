@@ -1,14 +1,14 @@
 class Goplus < Formula
   desc "Programming language for engineering, STEM education, and data science"
   homepage "https://goplus.org"
-  url "https://github.com/goplus/gop/archive/v1.1.2.tar.gz"
-  sha256 "a68fe2e64a2a183f129b96a225c9ba4638568ae16de3e23d3faa8f6753bb037b"
+  url "https://github.com/goplus/gop/archive/v1.1.3.tar.gz"
+  sha256 "11e676f1ff4a391248747bad9d4c1673d366fcf306bd3e185fee5870afd02fee"
   license "Apache-2.0"
   head "https://github.com/goplus/gop.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goplus"
-    sha256 mojave: "6444c1a7f6352f5131eef2d9768e851325bcfa31ccbee21eaa8ad7cfeb577077"
+    sha256 mojave: "ab8195503d22c607453f8da5a52675c0c4eb061ead0a39f736ec2e765b566353"
   end
 
   depends_on "go"
