@@ -22,13 +22,14 @@ class Ecl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ecl"
-    sha256 mojave: "923ef174e357b486dca4329ba0d9a8451e38a7c594220386a171355974386e68"
+    rebuild 1
+    sha256 mojave: "1144f4eff921a92b014712c17660296272bd3ae107e68fcc10f061285b179f2c"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
   depends_on "bdw-gc"
   depends_on "gmp"
-  depends_on "libffi"
+  uses_from_macos "libffi", since: :catalina
 
   def install
     ENV.deparallelize
@@ -36,12 +37,17 @@ class Ecl < Formula
     # Avoid -flat_namespace usage on macOS
     inreplace "src/configure", "-flat_namespace -undefined suppress ", "" if OS.mac?
 
+    libffi_prefix = if MacOS.version >= :catalina
+      MacOS.sdk_path
+    else
+      Formula["libffi"].opt_prefix
+    end
     system "./configure", "--prefix=#{prefix}",
                           "--enable-threads=yes",
                           "--enable-boehm=system",
                           "--enable-gmp=system",
                           "--with-gmp-prefix=#{Formula["gmp"].opt_prefix}",
-                          "--with-libffi-prefix=#{Formula["libffi"].opt_prefix}",
+                          "--with-libffi-prefix=#{libffi_prefix}",
                           "--with-libgc-prefix=#{Formula["bdw-gc"].opt_prefix}"
     system "make"
     system "make", "install"
@@ -87,7 +93,7 @@ index c6ec0a6..a1fa9fd 100644
 @@ -181,10 +181,30 @@
  (defun wt-temp (temp)
    (wt "T" temp))
- 
+
 +(defun wt-fixnum (value &optional vv)
 +  (declare (ignore vv))
 +  (princ value *compiler-output1*)
@@ -109,7 +115,7 @@ index c6ec0a6..a1fa9fd 100644
  (defun wt-number (value &optional vv)
 +  (declare (ignore vv))
    (wt value))
- 
+
  (defun wt-character (value &optional vv)
 +  (declare (ignore vv))
    ;; We do not use the '...' format because this creates objects of type
@@ -120,7 +126,7 @@ index 0c87a3c..4449602 100644
 --- a/src/cmp/cmptables.lsp
 +++ b/src/cmp/cmptables.lsp
 @@ -182,7 +182,7 @@
- 
+
      (temp . wt-temp)
      (lcl . wt-lcl-loc)
 -    (fixnum-value . wt-number)
