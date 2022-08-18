@@ -4,10 +4,12 @@ class Lazygit < Formula
   url "https://github.com/jesseduffield/lazygit/archive/v0.35.tar.gz"
   sha256 "fe5b2278d7b5b22058d139ec8961a09197d8fd26d7432d263a583fa9c1599d6d"
   license "MIT"
+  head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lazygit"
-    sha256 cellar: :any_skip_relocation, mojave: "4e16468fc3fe114e8e1d03d52ac4b55525bd52a7268e416e36dcaff55057a831"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "73d887d6e227725389a95fd4fcaa62f6910caf870ba6b67258d3964534e98931"
   end
 
   depends_on "go" => :build
