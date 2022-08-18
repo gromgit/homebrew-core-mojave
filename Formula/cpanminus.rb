@@ -11,7 +11,8 @@ class Cpanminus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpanminus"
-    sha256 cellar: :any_skip_relocation, mojave: "4d47cf54e738c85d981baac0f29c949dfab4551eb27cc18da52c3144344ee7c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "067306cccbe430d43e910a5ee4d2d945bec0ef0a6fd49ba4a1a900f069bf207b"
   end
 
   uses_from_macos "perl"
@@ -19,9 +20,19 @@ class Cpanminus < Formula
   def install
     cd "App-cpanminus" if build.head?
 
-    system "perl", "Makefile.PL", "INSTALL_BASE=#{prefix}", "INSTALLSITEMAN1DIR=#{man1}",
-                                                            "INSTALLSITEMAN3DIR=#{man3}"
+    system "perl", "Makefile.PL", "INSTALL_BASE=#{prefix}",
+                                  "INSTALLSITEMAN1DIR=#{man1}",
+                                  "INSTALLSITEMAN3DIR=#{man3}"
     system "make", "install"
+  end
+
+  def post_install
+    cpanm_lines = (bin/"cpanm").read.lines
+    return if cpanm_lines.first.match?(%r{^#!/usr/bin/env perl})
+
+    ohai "Adding `/usr/bin/env perl` shebang to `cpanm`..."
+    cpanm_lines.unshift "#!/usr/bin/env perl\n"
+    (bin/"cpanm").atomic_write cpanm_lines.join
   end
 
   test do
