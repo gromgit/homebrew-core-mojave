@@ -12,10 +12,13 @@ class Logcli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logcli"
-    sha256 cellar: :any_skip_relocation, mojave: "52005fc229a28df7c382e99765d979f6441f4dc6497e44c9d151c996c67a9d05"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "357c91a5cc4450b4355ca9fa8f4d1547fa6ec5e366cfabc7d4f08c16190bdcff"
   end
 
-  depends_on "go" => :build
+  # Required latest https://pkg.go.dev/go4.org/unsafe/assume-no-moving-gc
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
   depends_on "loki" => :test
 
   resource "testdata" do
