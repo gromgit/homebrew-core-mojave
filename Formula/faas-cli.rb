@@ -2,8 +2,8 @@ class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
   url "https://github.com/openfaas/faas-cli.git",
-      tag:      "0.14.2",
-      revision: "b1c09c0243f69990b6c81a17d7337f0fd23e7542"
+      tag:      "0.14.5",
+      revision: "3534df71572fe06356fb7085780ebeb3870ead37"
   license "MIT"
   head "https://github.com/openfaas/faas-cli.git", branch: "master"
 
@@ -14,12 +14,10 @@ class FaasCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faas-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5751f6a2d9a2fcb6bc21a72fac36c1e13e4428eb5ecd6f6c6dc31cddb20f342d"
+    sha256 cellar: :any_skip_relocation, mojave: "8827c54217a13372d9e1cda99fb00bee74d0b72dad166d6e02a1b13321884ae7"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     ENV["XC_OS"] = OS.kernel_name.downcase
