@@ -7,10 +7,13 @@ class GrafanaAgent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grafana-agent"
-    sha256 cellar: :any_skip_relocation, mojave: "b0d54e87aaaa6838bafe3342b02e678903dc452e5352e9a1f6ab53ab17cf7bb7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b70ffa85980fac87e9696862909dbe687a66609f88367517377fbaec4a747d70"
   end
 
-  depends_on "go" => :build
+  # Required latest https://pkg.go.dev/go4.org/unsafe/assume-no-moving-gc
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   on_linux do
     depends_on "systemd" => :build
