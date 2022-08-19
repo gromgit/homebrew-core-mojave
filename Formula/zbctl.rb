@@ -2,14 +2,14 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
   url "https://github.com/camunda/zeebe.git",
-      tag:      "8.0.4",
-      revision: "d9de58a0cee5a84df87cba1ebc0d4fee64836e7d"
+      tag:      "8.0.5",
+      revision: "1df153a7995e28bcfc2358199adb1f8f19d31def"
   license "Apache-2.0"
   head "https://github.com/camunda/zeebe.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zbctl"
-    sha256 cellar: :any_skip_relocation, mojave: "50c0c0586c3a3196c519779248eabb8dbb2b760bc5c46f5f43703e79a7c6ab41"
+    sha256 cellar: :any_skip_relocation, mojave: "379d498f6d93141fab0e7e37d92313e48ff28bda89b331cc135f4b462b162434"
   end
 
   depends_on "go" => :build
