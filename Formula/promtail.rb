@@ -12,10 +12,13 @@ class Promtail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/promtail"
-    sha256 cellar: :any_skip_relocation, mojave: "111df7eb99b46eae0190049a8d59fbba899fd1233cab4c7da2ca04aed509b702"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3c5e1fc7e2efecf93afc8f77414acaf5d39ae8d806945b20016ffa1637e864ae"
   end
 
-  depends_on "go" => :build
+  # Required latest https://pkg.go.dev/go4.org/unsafe/assume-no-moving-gc
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   on_linux do
     depends_on "systemd"
