@@ -13,7 +13,8 @@ class Pjproject < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pjproject"
-    sha256 cellar: :any, mojave: "ae429a4a4e1816d61153191cc3fd827218ccb9ffe5ac718ae696340419552a40"
+    rebuild 1
+    sha256 cellar: :any, mojave: "045dafaaf0325c84edd19a1816d14678dc6374c0e8647a1c19da36b2d3e636cc"
   end
 
   depends_on macos: :high_sierra # Uses Security framework API enum cases introduced in 10.13.4
@@ -32,7 +33,7 @@ class Pjproject < Formula
     system "make"
     system "make", "install"
 
-    arch = OS.mac? && Hardware::CPU.arm? ? "arm" : Hardware::CPU.arch.to_s
+    arch = (OS.mac? && Hardware::CPU.arm?) ? "arm" : Hardware::CPU.arch.to_s
     target = OS.mac? ? "apple-darwin#{OS.kernel_version}" : "unknown-linux-gnu"
 
     bin.install "pjsip-apps/bin/pjsua-#{arch}-#{target}" => "pjsua"
