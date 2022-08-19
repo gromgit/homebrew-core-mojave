@@ -1,14 +1,14 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://github.com/rclone/rclone/archive/v1.59.0.tar.gz"
-  sha256 "01b2aa4f6dfafcda11026a5aa024dd86ae6bd337fa54269dfac97c80fe280d7a"
+  url "https://github.com/rclone/rclone/archive/v1.59.1.tar.gz"
+  sha256 "3eb56502c49ffe53da0360b66d5c9ee6147433f1a9b0238686c1743855cc891f"
   license "MIT"
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rclone"
-    sha256 cellar: :any_skip_relocation, mojave: "e061f7ea925050c4a4478233325f0c52c3ba272334051383b6ffec5b833afa81"
+    sha256 cellar: :any_skip_relocation, mojave: "8d036bf53687c1f8887192b3ee95021d5783ee0b65d64aecee912da8b6641afe"
   end
 
   depends_on "go" => :build
