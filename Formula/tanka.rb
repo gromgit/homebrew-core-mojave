@@ -14,15 +14,20 @@ class Tanka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tanka"
-    sha256 cellar: :any_skip_relocation, mojave: "358838c34d877aa59c32f69e8517149dfb750d7950abbdbafd38c748018ba6e3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3a81a8efadf9bf91865374e4033a9a16eafbd379992984b427d10df31ff84322"
   end
 
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 
   def install
-    system "make", "static"
-    bin.install "tk"
+    ENV["CGO_ENABLED"] = "0"
+    ldflags = %W[
+      -s -w
+      -X github.com/grafana/tanka/pkg/tanka.CURRENT_VERSION=#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags.join(" "), output: bin/"tk"), "./cmd/tk"
   end
 
   test do
