@@ -2,14 +2,19 @@ class Pixie < Formula
   desc "Observability tool for Kubernetes applications"
   homepage "https://px.dev/"
   url "https://github.com/pixie-io/pixie.git",
-      tag:      "release/cli/v0.7.16",
-      revision: "131962699cf7581f4ed73b643c37517db8f4d777"
+      tag:      "release/cli/v0.7.17",
+      revision: "2f3f26c6bc929992744f303988ffdf99e998611f"
   license "Apache-2.0"
   head "https://github.com/pixie-io/pixie.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(%r{^release/cli/v?(\d+(?:\.\d+)+)$}i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pixie"
-    sha256 cellar: :any_skip_relocation, mojave: "b5aef563739bdb3f9a6f3f82889f2488f682eed2b10412798cf47a513386eb44"
+    sha256 cellar: :any_skip_relocation, mojave: "bbb3e3bfd4dc3e67b7a30c10052b18854c04b91d8bac07caf06be64a6a0b8dc0"
   end
 
   depends_on "go" => :build
