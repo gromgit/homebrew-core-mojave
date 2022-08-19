@@ -8,7 +8,8 @@ class Sslscan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sslscan"
-    sha256 cellar: :any, mojave: "d893afc71c448f40f5f21102ae4dee01851673e168c58920713984273d2222f0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1ac3a092c59e80d67b2c97ae14502a57d28b4b1a2b3ebd2031e57405b6a6f87f"
   end
 
   depends_on "openssl@1.1"
@@ -22,12 +23,12 @@ class Sslscan < Formula
     inreplace "Makefile", "static: openssl/libcrypto.a",
                           "static: #{Formula["openssl@1.1"].opt_lib}/#{shared_library("libcrypto")}"
 
-    system "make", "static"
+    system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    assert_match "static", shell_output("#{bin}/sslscan --version")
+    assert_match version.to_s, shell_output("#{bin}/sslscan --version")
     system "#{bin}/sslscan", "google.com"
   end
 end
