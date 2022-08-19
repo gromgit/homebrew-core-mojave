@@ -1,13 +1,13 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
   homepage "https://github.com/pgpartman/pg_partman"
-  url "https://github.com/pgpartman/pg_partman/archive/refs/tags/v4.6.2.tar.gz"
-  sha256 "81ec4371985fd2f95ce4321b63371c0a308d476e57e6a4b7a5e23d73a5e4b218"
+  url "https://github.com/pgpartman/pg_partman/archive/refs/tags/v4.7.0.tar.gz"
+  sha256 "c5d2653a705c98e544819ed48b04c84a18953b73aa1c45a2300d00f8c6506436"
   license "PostgreSQL"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pg_partman"
-    sha256 cellar: :any_skip_relocation, mojave: "c53dc161bed2724f1b86e223224c55236d6d55002c081f7d5d0e4e6c06b52542"
+    sha256 cellar: :any_skip_relocation, mojave: "d236734fa39e5117698d48bd4ebefb68f8a75ee863072c8e2631a24121cb9a96"
   end
 
   depends_on "postgresql"
