@@ -13,10 +13,13 @@ class Xray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xray"
-    sha256 cellar: :any_skip_relocation, mojave: "fa09387c0504d70327514f58755b2b03f534df570cd8b17a7fab7f4a0c09a9a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cdc2d805885d92a1506958f56b1fe4b27005443d10d2bbf3b92ac9a57466497e"
   end
 
-  depends_on "go" => :build
+  # Required lucas-clemente/quic-go >= 0.28
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   resource "geoip" do
     url "https://github.com/v2fly/geoip/releases/download/202204280105/geoip.dat"
