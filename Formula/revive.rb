@@ -2,14 +2,14 @@ class Revive < Formula
   desc "Fast, configurable, extensible, flexible, and beautiful linter for Go"
   homepage "https://revive.run"
   url "https://github.com/mgechev/revive.git",
-      tag:      "v1.2.1",
-      revision: "23828cc39d4f91b69247bdea0ab4903bd6c1912e"
+      tag:      "v1.2.3",
+      revision: "556d4852f934a726fae0e8cb3d1dcdaef8bf2440"
   license "MIT"
   head "https://github.com/mgechev/revive.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/revive"
-    sha256 cellar: :any_skip_relocation, mojave: "5450d5524e8838886536e0ade87db29e06ffebc5ca19c57a4020230b311b06eb"
+    sha256 cellar: :any_skip_relocation, mojave: "ec4ef29a5177ac62a9352db0694c901cf46795f3aa90ca1eed2080ba717a3c90"
   end
 
   depends_on "go" => :build
