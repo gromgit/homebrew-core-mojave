@@ -1,14 +1,14 @@
 class Tflint < Formula
   desc "Linter for Terraform files"
   homepage "https://github.com/terraform-linters/tflint"
-  url "https://github.com/terraform-linters/tflint/archive/v0.39.1.tar.gz"
-  sha256 "a6564ef7156d5a4942e761f85985201c319d93527191d4663c70c064ca9edf4f"
+  url "https://github.com/terraform-linters/tflint/archive/v0.39.3.tar.gz"
+  sha256 "d928f7f70741a6c33c2bc9b6db820e53f6f314dfa87d1591709ec395481cbb3d"
   license "MPL-2.0"
   head "https://github.com/terraform-linters/tflint.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tflint"
-    sha256 cellar: :any_skip_relocation, mojave: "a1b198122b6a136a3c4bc7e95ec384257ccf7cf5ed5a4c389be8450cc7e35e13"
+    sha256 cellar: :any_skip_relocation, mojave: "ff1f2ea90b45bc2094f082605ba404a7ae5ac5cac5b46fc6fbd373975d3dfe7f"
   end
 
   depends_on "go" => :build
