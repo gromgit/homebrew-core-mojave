@@ -2,14 +2,14 @@ class Scorecard < Formula
   desc "Security health metrics for Open Source"
   homepage "https://github.com/ossf/scorecard"
   url "https://github.com/ossf/scorecard.git",
-      tag:      "v4.4.0",
-      revision: "e42af756609b2cde6d757fd45ea05ddf0016ff62"
+      tag:      "v4.5.0",
+      revision: "69eb1ccf1d0cf8c5b291044479f18672bf250325"
   license "Apache-2.0"
   head "https://github.com/ossf/scorecard.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scorecard"
-    sha256 cellar: :any_skip_relocation, mojave: "184b85906a2be508cc34995d26526925b2a5374f4aa305ba7c49b4ff41c64fde"
+    sha256 cellar: :any_skip_relocation, mojave: "86a31535029c1704451819b8d78093573b9a18c0a23a545b68693215bea05992"
   end
 
   depends_on "go" => :build
