@@ -1,8 +1,8 @@
 class Xorgproto < Formula
   desc "X.Org: Protocol Headers"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2022.1.tar.bz2"
-  sha256 "1d2dcc66963f234d2c1e1f8d98a0d3e8725149cdac0a263df4097593c48bc2a6"
+  url "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2022.2.tar.gz"
+  sha256 "da351a403d07a7006d7bdc8dcfc14ddc1b588b38fb81adab9989a8eef605757b"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Xorgproto < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xorgproto"
-    sha256 cellar: :any_skip_relocation, mojave: "59bc0ef6734f03b980c00fed98dd2d607dda9abdfb9a0c0fb3b00ba8b5db26ac"
+    sha256 cellar: :any_skip_relocation, mojave: "d6deb2e4712bdd55eadfdcd7156814a6c42c9d94eb5cda72b89c9e4221a8a99d"
   end
 
   depends_on "pkg-config" => [:build, :test]
