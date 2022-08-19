@@ -12,10 +12,13 @@ class StorjUplink < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/storj-uplink"
-    sha256 cellar: :any_skip_relocation, mojave: "0346d08401d6ae0c9d35265d8c6da6bc3b352d1d48da61e9173a2f70ce158677"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fbf6ce85952178088c6f0201151fdf65f4fe7fca1078d140946ce2c8dcab3aea"
   end
 
-  depends_on "go" => :build
+  # Required lucas-clemente/quic-go >= 0.28
+  # Try to switch to the latest go on the next release
+  depends_on "go@1.18" => :build
 
   def install
     system "go", "build", *std_go_args, "-o", bin/"uplink", "./cmd/uplink"
