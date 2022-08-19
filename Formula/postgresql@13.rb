@@ -1,8 +1,8 @@
 class PostgresqlAT13 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v13.7/postgresql-13.7.tar.bz2"
-  sha256 "1b905bf4f3d83614a393b3c51fd345910fd261e4f5124a68d9a1fdd3a2a46399"
+  url "https://ftp.postgresql.org/pub/source/v13.8/postgresql-13.8.tar.bz2"
+  sha256 "73876fdd3a517087340458dca4ce15b8d2a4dbceb334c0441424551ae6c4cded"
   license "PostgreSQL"
 
   livecheck do
@@ -12,7 +12,7 @@ class PostgresqlAT13 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@13"
-    sha256 mojave: "f282c174c0e27fabed86ffd1fdc7ced9b59d14eb698f962a6404337e4c7e747c"
+    sha256 mojave: "39169361847a485028d1f618c217f13a4ae02106f049930cd62f009c4f20cad3"
   end
 
   keg_only :versioned_formula
