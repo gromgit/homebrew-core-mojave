@@ -8,9 +8,13 @@ class Terraforming < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraforming"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "bc246bd5720f4629f79dfb78ac1dcb7faad11f5b7b49fa80af524d78e34fbb4a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "01348aa9319307d5eee5576453f41a9c08853c7e1e77bd00b9194c6b2a97f597"
   end
+
+  # Upstream declared project "no longer actively maintained" on 2021-12-11.
+  # https://github.com/dtan4/terraforming#project-status-2021-12-11-no-longer-actively-maintained
+  deprecate! date: "2022-08-16", because: :unmaintained
 
   on_linux do
     depends_on "ruby@2.7"
