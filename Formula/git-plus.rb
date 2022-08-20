@@ -3,14 +3,14 @@ class GitPlus < Formula
 
   desc "Git utilities: git multi, git relation, git old-branches, git recent"
   homepage "https://github.com/tkrajina/git-plus"
-  url "https://files.pythonhosted.org/packages/b4/c8/11b61003533e8afc5e5730113c7b21f2268db87a46f37e2d910fb9bb7d76/git-plus-0.4.8.tar.gz"
-  sha256 "4df7103a4a56cec52ca6b93cd1626b727ace76c9d6673a084a473fac84ae5ff8"
+  url "https://files.pythonhosted.org/packages/d3/2a/c573678f7150f35305f50727bcfd41edf1415fb1e523860f0f0788d99205/git-plus-0.4.9.tar.gz"
+  sha256 "b9a9dbbffc030a044cb7d9ee46b3fe1b683162cee52172c7349eda8216680ec6"
   license "Apache-2.0"
   head "https://github.com/tkrajina/git-plus.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-plus"
-    sha256 cellar: :any_skip_relocation, mojave: "2b05fd7bb5104131594b5700fa86e34b6211a7aa0e5dadf079373e03adf8ca4f"
+    sha256 cellar: :any_skip_relocation, mojave: "54a3a8bf7d28d2dff77088e68eb79ed26543a7b9f93d9cd580964258d25c297e"
   end
 
   depends_on "python@3.10"
