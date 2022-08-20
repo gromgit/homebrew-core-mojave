@@ -2,14 +2,14 @@ class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
   url "https://github.com/docker/buildx.git",
-      tag:      "v0.9.0",
-      revision: "611329fc7f1365556789bff4747f608d40cdc8a9"
+      tag:      "v0.9.1",
+      revision: "ed00243a0ce2a0aee75311b06e32d33b44729689"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-buildx"
-    sha256 cellar: :any_skip_relocation, mojave: "9688997f3e0fefbdbbc76c341dade9ea51ee1c50ff664bc0ef4b27dca80d89ae"
+    sha256 cellar: :any_skip_relocation, mojave: "8fc5d5461cfb42584a48cf025630c9fefeb8385c3374452d152e4b9e5cbd99b8"
   end
 
   depends_on "go" => :build
