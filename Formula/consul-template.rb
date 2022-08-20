@@ -2,14 +2,14 @@ class ConsulTemplate < Formula
   desc "Generic template rendering and notifications with Consul"
   homepage "https://github.com/hashicorp/consul-template"
   url "https://github.com/hashicorp/consul-template.git",
-      tag:      "v0.29.1",
-      revision: "4525703f9dd1347a38446e137d56de94dcd06ee7"
+      tag:      "v0.29.2",
+      revision: "06389a3d3c6fc772f8c25903a4bd985a0c8141f0"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul-template.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/consul-template"
-    sha256 cellar: :any_skip_relocation, mojave: "846a8e02cbecd278d0acc10a5fb1345dfa84e161e26bfe46ae9f75ae54f88c2d"
+    sha256 cellar: :any_skip_relocation, mojave: "b8ffacfa6d368e852e843145f09aeb7d200e5ea6d39a20a6c816ebd14f48e001"
   end
 
   depends_on "go" => :build
