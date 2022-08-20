@@ -1,13 +1,13 @@
 class Dhall < Formula
   desc "Interpreter for the Dhall language"
   homepage "https://dhall-lang.org/"
-  url "https://hackage.haskell.org/package/dhall-1.41.1/dhall-1.41.1.tar.gz"
-  sha256 "9bea36ab0e1c965aef7474fabea67c3cfa3ca272007508ecd7bf22eaaae8d425"
+  url "https://hackage.haskell.org/package/dhall-1.41.2/dhall-1.41.2.tar.gz"
+  sha256 "6a9a026e698e5c1a1e103fcb376e8494615b03ef2450f0b6c5e6b43877cea592"
   license "BSD-3-Clause"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall"
-    sha256 cellar: :any_skip_relocation, mojave: "1f51fe912d3474f1611f7384ff837af53f1b93be524e2377b59c4869e6b9ff97"
+    sha256 cellar: :any_skip_relocation, mojave: "23d45f1f16de0a0cd77313c1d3b4814c2b3cf2a93db95ad9e4f2c21852204da6"
   end
 
   depends_on "cabal-install" => :build
