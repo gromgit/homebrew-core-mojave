@@ -4,6 +4,7 @@ class Adios2 < Formula
   url "https://github.com/ornladios/ADIOS2/archive/v2.8.2.tar.gz"
   sha256 "9909f6409dc44b2c28c1fda0042dab4b711f25ec3277ef0cb6ffc40f5483910d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Adios2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/adios2"
-    sha256 mojave: "4485abe09c4d0991e8565e1b70212b32316d9e3923109f7793f081eeb8cdf26f"
+    sha256 mojave: "6aff827c52f7d8874a87ac83f4e0e903a09cb0bd7eb28b3c9336930f79906ea3"
   end
 
   depends_on "cmake" => :build
