@@ -2,14 +2,14 @@ class Bazelisk < Formula
   desc "User-friendly launcher for Bazel"
   homepage "https://github.com/bazelbuild/bazelisk/"
   url "https://github.com/bazelbuild/bazelisk.git",
-      tag:      "v1.12.1",
-      revision: "89dc94cfa227ad17b940c8398c65cd1b9f2c5957"
+      tag:      "v1.12.2",
+      revision: "da51894202e245610c774eb81053577f9f3cc14a"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/bazelisk.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bazelisk"
-    sha256 cellar: :any_skip_relocation, mojave: "6359af111d67686ff2d9b64ff36f77159f8472b1b511ab8d4da3ab96f586db07"
+    sha256 cellar: :any_skip_relocation, mojave: "60ad3f979074c218ff5ce0b2da8cee10d928cfb4043bec4344f65ad86e2ddd05"
   end
 
   depends_on "go" => :build
