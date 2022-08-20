@@ -1,8 +1,8 @@
 class Htslib < Formula
   desc "C library for high-throughput sequencing data formats"
   homepage "https://www.htslib.org/"
-  url "https://github.com/samtools/htslib/releases/download/1.15.1/htslib-1.15.1.tar.bz2"
-  sha256 "8d7f8bf9658226942eeab70af2a22aca618577eaa8fe2ed9416ee306d5351aa1"
+  url "https://github.com/samtools/htslib/releases/download/1.16/htslib-1.16.tar.bz2"
+  sha256 "606b7c7aff73734cf033ecd156f40529fa5792f54524952a28938ca0890d7924"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Htslib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htslib"
-    sha256 cellar: :any, mojave: "34cf844c71045620e3a7084676fdcb5f76d15fc6f3dff98a41ac15e2421df295"
+    sha256 cellar: :any, mojave: "fd6060cdc1d7c3c1903df98d94ac48a31d032409eddc868f30e2dda9a6f07168"
   end
 
   depends_on "xz"
