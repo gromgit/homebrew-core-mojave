@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://github.com/dolthub/dolt/archive/v0.40.25.tar.gz"
-  sha256 "7df847d03cd97764995107b89f3e4aa19cb500c207dd48039af292e09169d572"
+  url "https://github.com/dolthub/dolt/archive/v0.40.27.tar.gz"
+  sha256 "e52652ece4e38b03883bd2182d74c129e2953c39055609c1752cb6efaf9bc330"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Dolt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dolt"
-    sha256 cellar: :any_skip_relocation, mojave: "9b7522d2da4c3215dd8486aeb5c7e9563b965298d6d38c5edcd263e0e4aa8e2b"
+    sha256 cellar: :any_skip_relocation, mojave: "6eda0672c23ee5c7836a21d2b24840e3f5989f5eac77d86852e666cc31e0a842"
   end
 
   depends_on "go" => :build
