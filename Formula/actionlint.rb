@@ -1,13 +1,13 @@
 class Actionlint < Formula
   desc "Static checker for GitHub Actions workflow files"
   homepage "https://rhysd.github.io/actionlint/"
-  url "https://github.com/rhysd/actionlint/archive/v1.6.15.tar.gz"
-  sha256 "805fa0288162eb88ed390a1a8f6650d9f6aff3b3129831a882e9e93d7ad185f8"
+  url "https://github.com/rhysd/actionlint/archive/v1.6.16.tar.gz"
+  sha256 "342a1d441d6e8df8aadeeb74de35ab8437456fde7ae6ff8e1fb790b2f5a9e47e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/actionlint"
-    sha256 cellar: :any_skip_relocation, mojave: "06246e417a38d1da297f4697964a45183eaa79ebb3380edd03d4679dd070820d"
+    sha256 cellar: :any_skip_relocation, mojave: "108705fc13a8481a5a265a2504981f9ace88cde1c5f40dfb9f41742c4eee5108"
   end
 
   depends_on "go" => :build
