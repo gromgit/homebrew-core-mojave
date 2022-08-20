@@ -1,14 +1,14 @@
 class DhallLspServer < Formula
   desc "Language Server Protocol (LSP) server for Dhall"
   homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server"
-  url "https://hackage.haskell.org/package/dhall-lsp-server-1.1.1/dhall-lsp-server-1.1.1.tar.gz"
-  sha256 "86b22a14be0ebe016e29cfd3436e4f9776f8817dfd72a9966437fceb8e608f7c"
+  url "https://hackage.haskell.org/package/dhall-lsp-server-1.1.2/dhall-lsp-server-1.1.2.tar.gz"
+  sha256 "f013992d7dfd8f40d149737d04a8772308014ccc5d52c27d72dc1c1185882bf3"
   license "BSD-3-Clause"
   head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dhall-lsp-server"
-    sha256 cellar: :any_skip_relocation, mojave: "b85f56de22b030338b6605b9ecb02a5b2b17035dbcc39e42761522e49022fd9a"
+    sha256 cellar: :any_skip_relocation, mojave: "6e4d6b0c41a7992f0820dc92950bbc84ff7ce7eef7eacba1dc0c3f2171da628e"
   end
 
   depends_on "cabal-install" => :build
