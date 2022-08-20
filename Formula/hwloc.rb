@@ -12,7 +12,8 @@ class Hwloc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hwloc"
-    sha256 cellar: :any, mojave: "8dd0e702fecb6581bb875ee848c5b964bdb98090f5d544f57cd854efc994054e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "358c390d2ad58df4a62763dd2c3387337da12cf1ff6302d5e27eb2b86e456a49"
   end
 
   head do
@@ -28,14 +29,12 @@ class Hwloc < Formula
 
   def install
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
+    system "./configure", *std_configure_args,
                           "--enable-shared",
                           "--enable-static",
-                          "--prefix=#{prefix}",
                           "--disable-cairo",
                           "--without-x"
-    system "make", "install"
+    system "make", "install", "bashcompletionsdir=#{bash_completion}"
 
     pkgshare.install "tests"
 
