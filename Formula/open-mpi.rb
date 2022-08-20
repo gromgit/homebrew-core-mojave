@@ -13,7 +13,8 @@ class OpenMpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-mpi"
-    sha256 mojave: "fd823cde45d73e4782c5845e4f2870b908bb11146326b883cd82c83150b9fe67"
+    rebuild 1
+    sha256 mojave: "c475be6de3a741fca41d47b14e020982ae69fd52cdfb914beb5055e220f4b9e0"
   end
 
   head do
@@ -50,25 +51,24 @@ class OpenMpi < Formula
     ENV.runtime_cpu_detection
 
     args = %W[
-      --prefix=#{prefix}
-      --disable-dependency-tracking
       --disable-silent-rules
       --enable-ipv6
       --enable-mca-no-build=reachable-netlink
+      --sysconfdir=#{etc}
       --with-libevent=#{Formula["libevent"].opt_prefix}
       --with-sge
     ]
     args << "--with-platform-optimized" if build.head?
 
     system "./autogen.pl", "--force" if build.head?
-    system "./configure", *args
+    system "./configure", *std_configure_args, *args
     system "make", "all"
     system "make", "check"
     system "make", "install"
 
     # Fortran bindings install stray `.mod` files (Fortran modules) in `lib`
     # that need to be moved to `include`.
-    include.install Dir["#{lib}/*.mod"]
+    include.install lib.glob("*.mod")
   end
 
   test do
