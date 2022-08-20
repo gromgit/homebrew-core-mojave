@@ -3,14 +3,14 @@ class Meson < Formula
 
   desc "Fast and user friendly build system"
   homepage "https://mesonbuild.com/"
-  url "https://github.com/mesonbuild/meson/releases/download/0.63.0/meson-0.63.0.tar.gz"
-  sha256 "3b51d451744c2bc71838524ec8d96cd4f8c4793d5b8d5d0d0a9c8a4f7c94cd6f"
+  url "https://github.com/mesonbuild/meson/releases/download/0.63.1/meson-0.63.1.tar.gz"
+  sha256 "06fe13297213d6ff0121c5d5aab25a56ef938ffec57414ed6086fda272cb65e9"
   license "Apache-2.0"
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/meson"
-    sha256 cellar: :any_skip_relocation, mojave: "70350e1dbc4561a8371896d253f9f4e56a5f50de3b3402ff5d5f42f9d9bbb1e0"
+    sha256 cellar: :any_skip_relocation, mojave: "320bcac6edc0b97f98778f90820a370133804e8bb6581ae2eeb93cd3784d990c"
   end
 
   depends_on "ninja"
