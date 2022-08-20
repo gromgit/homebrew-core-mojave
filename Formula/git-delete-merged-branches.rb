@@ -3,13 +3,13 @@ class GitDeleteMergedBranches < Formula
 
   desc "Command-line tool to delete merged Git branches"
   homepage "https://github.com/hartwork/git-delete-merged-branches"
-  url "https://files.pythonhosted.org/packages/61/2e/9c15363d21e85b91d1c6dc4253b2ae0d6d5a77a140474a3969a239786d49/git-delete-merged-branches-7.0.0.tar.gz"
-  sha256 "0ac1a543e4c5b585339c77d3abb14236516637a143e5e1ecc24f9b2ee2123433"
+  url "https://files.pythonhosted.org/packages/86/e1/3a92a5b45c72456804cf7bc3c5f6d1b231d4a65c6cc3c6dc4b91e6ba4a5d/git-delete-merged-branches-7.2.0.tar.gz"
+  sha256 "52c596569894481e7532d28dffbb7243547dfe3c13e6423eef18675e01b956a6"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-delete-merged-branches"
-    sha256 cellar: :any_skip_relocation, mojave: "14e13cdb4e08270d66e270a92cacfab452d1efe5693578eecd41d7f90c52c7c4"
+    sha256 cellar: :any_skip_relocation, mojave: "c3e3e8f083ea403115380125476b6223f63c5a41486dee51b253e41060364136"
   end
 
   depends_on "python@3.10"
