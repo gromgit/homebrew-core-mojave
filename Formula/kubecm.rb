@@ -7,13 +7,14 @@ class Kubecm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubecm"
-    sha256 cellar: :any_skip_relocation, mojave: "2a1b0aaf519fdaf270b631ad4d226379f9a4cb3eb13b415bd86b21e926bc27b2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "14ed9f522dabd31b0966d5f1fd23657312d69c05e7e3aafedcdc541d08b43c20"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/sunny0826/kubecm/cmd.kubecmVersion=#{version}"
+    ldflags = "-s -w -X github.com/sunny0826/kubecm/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # Install bash completion
