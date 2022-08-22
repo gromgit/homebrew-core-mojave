@@ -2,8 +2,8 @@ class Skaffold < Formula
   desc "Easy and Repeatable Kubernetes Development"
   homepage "https://skaffold.dev/"
   url "https://github.com/GoogleContainerTools/skaffold.git",
-      tag:      "v1.39.0",
-      revision: "73c46de08489140e8c034407a136c7491dd073d8"
+      tag:      "v1.39.2",
+      revision: "7ed1d722b53b55ac1c909f00d00a05b47d0964dd"
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
@@ -25,7 +25,7 @@ class Skaffold < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skaffold"
-    sha256 cellar: :any_skip_relocation, mojave: "4c39bb77537ceabdb36931e3594de6d0036b505853d4346f82267a7c7a65db90"
+    sha256 cellar: :any_skip_relocation, mojave: "4f1ac6501850dc5e3295de23b4e7b168134cef77dff90a8453376714ebd6ca3b"
   end
 
   # Bump to 1.18 on the next release, if possible.
