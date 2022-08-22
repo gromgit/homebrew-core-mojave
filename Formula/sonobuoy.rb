@@ -1,13 +1,13 @@
 class Sonobuoy < Formula
   desc "Kubernetes component that generates reports on cluster conformance"
   homepage "https://github.com/vmware-tanzu/sonobuoy"
-  url "https://github.com/vmware-tanzu/sonobuoy/archive/v0.56.9.tar.gz"
-  sha256 "fd1df6d90a2ff9d6c1a21601df5d2abfa212821e3ee077195c6a9543df4d635b"
+  url "https://github.com/vmware-tanzu/sonobuoy/archive/v0.56.10.tar.gz"
+  sha256 "c41f7207e5cc46e3635aa6e6ccd2e9be9527327c426be643418f30f4d9974ae2"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sonobuoy"
-    sha256 cellar: :any_skip_relocation, mojave: "f7cdc9ad6f0569b06d3559dba89e2110475871e7cbff5c64411b5971f4c3adc7"
+    sha256 cellar: :any_skip_relocation, mojave: "ef97573055f69b10fc3fdb8c4054fb249e95c48921d2ceb1578df160f6d7e109"
   end
 
   depends_on "go" => :build
