@@ -16,7 +16,8 @@ class MinimalRacket < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimal-racket"
-    sha256 mojave: "d7af27b60d1a0c44cfdcd8472de1160dd62da5ea492c0ce5ce53b04048cb59c1"
+    rebuild 1
+    sha256 mojave: "a11531f0195d77627aa8fcbd4234e148fbbf612776fbf0471f485feaca285a87"
   end
 
   depends_on "openssl@1.1"
@@ -26,6 +27,10 @@ class MinimalRacket < Formula
 
   # these two files are amended when (un)installing packages
   skip_clean "lib/racket/launchers.rktd", "lib/racket/mans.rktd"
+
+  def racket_config
+    etc/"racket/config.rktd"
+  end
 
   def install
     # configure racket's package tool (raco) to do the Right Thing
@@ -51,13 +56,20 @@ class MinimalRacket < Formula
       system "make"
       system "make", "install"
     end
+
+    inreplace racket_config, prefix, opt_prefix
   end
 
   def post_install
     # Run raco setup to make sure core libraries are properly compiled.
     # Sometimes the mtimes of .rkt and .zo files are messed up after a fresh
     # install, making Racket take 15s to start up because interpreting is slow.
-    system "#{bin}/raco", "setup"
+    system bin/"raco", "setup"
+
+    return unless racket_config.read.include?(HOMEBREW_CELLAR)
+
+    ohai "Fixing up Cellar references in #{racket_config}..."
+    inreplace racket_config, %r{#{Regexp.escape(HOMEBREW_CELLAR)}/minimal-racket/[^/]}o, opt_prefix
   end
 
   def caveats
