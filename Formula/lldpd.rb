@@ -1,8 +1,8 @@
 class Lldpd < Formula
   desc "Implementation of IEEE 802.1ab (LLDP)"
   homepage "https://lldpd.github.io/"
-  url "https://media.luffy.cx/files/lldpd/lldpd-1.0.14.tar.gz"
-  sha256 "a74819214f116a5dbc407a3d490caa01ba401a249517ac826a374059c12d12e8"
+  url "https://media.luffy.cx/files/lldpd/lldpd-1.0.15.tar.gz"
+  sha256 "f7fe3a130be98a19c491479ef60f36b8ee41a9e6bc4d7f2c41033f63956a3126"
   license "ISC"
 
   livecheck do
@@ -11,7 +11,7 @@ class Lldpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lldpd"
-    sha256 mojave: "1450700a5484b4807c2f37b3d32072cf078d31448234644e5d6d1d93bae7c957"
+    sha256 mojave: "baff027c4b5aae5a2cb94bb9eb5f781d8e968c75d0649e6c67d0fadf333ab22e"
   end
 
   depends_on "pkg-config" => :build
