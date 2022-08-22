@@ -1,8 +1,8 @@
 class Lwtools < Formula
   desc "Cross-development tools for Motorola 6809 and Hitachi 6309"
   homepage "http://www.lwtools.ca/"
-  url "http://www.lwtools.ca/releases/lwtools/lwtools-4.19.tar.gz"
-  sha256 "427fec1571c876541895111536f3ccbd9243dd3b3d613f1a9e4b183d031ff681"
+  url "http://www.lwtools.ca/releases/lwtools/lwtools-4.20.tar.gz"
+  sha256 "58ef6d09c5b69885c06f8bc73be3ee739e9ce3b7ceb3422fabdd892fd72917d4"
   license "GPL-3.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Lwtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lwtools"
-    sha256 cellar: :any_skip_relocation, mojave: "5fbca6d8e33ca02e123341bcd62c8278ce6ac95f1e18277fcf5e9583664f5e55"
+    sha256 cellar: :any_skip_relocation, mojave: "ee477c134a1715c55a77d98781d2a634a0d3ece1ecec996bb83734cea357248e"
   end
 
   def install
