@@ -1,10 +1,9 @@
 class Ldns < Formula
   desc "DNS library written in C"
   homepage "https://nlnetlabs.nl/projects/ldns/"
-  url "https://nlnetlabs.nl/downloads/ldns/ldns-1.8.1.tar.gz"
-  sha256 "958229abce4d3aaa19a75c0d127666564b17216902186e952ca4aef47c6d7fa3"
+  url "https://nlnetlabs.nl/downloads/ldns/ldns-1.8.3.tar.gz"
+  sha256 "c3f72dd1036b2907e3a56e6acf9dfb2e551256b3c1bbd9787942deeeb70e7860"
   license "BSD-3-Clause"
-  revision 1
 
   # https://nlnetlabs.nl/downloads/ldns/ since the first-party site has a
   # tendency to lead to an `execution expired` error.
@@ -15,7 +14,7 @@ class Ldns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldns"
-    sha256 cellar: :any, mojave: "bb78321cc2ff43d250933ec40b048553a2b0fed2ac864e1e32dd6f3c036daf92"
+    sha256 cellar: :any, mojave: "99cde9fad3b26e77c90dbfca8a827e17b1f82de8af7a7b32917405e5f311e7f4"
   end
 
   depends_on "swig" => :build
