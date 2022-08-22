@@ -1,13 +1,13 @@
 class Velero < Formula
   desc "Disaster recovery for Kubernetes resources and persistent volumes"
   homepage "https://github.com/vmware-tanzu/velero"
-  url "https://github.com/vmware-tanzu/velero/archive/v1.9.0.tar.gz"
-  sha256 "ad2b40ee7e80fb23b9e5b887d0dbc6ee49d4a708af8372e502872a157d30ed50"
+  url "https://github.com/vmware-tanzu/velero/archive/v1.9.1.tar.gz"
+  sha256 "6e3137c04a279647308fa89cefd4d14ab4f8333c40859594e8ee7014b3e7fc75"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/velero"
-    sha256 cellar: :any_skip_relocation, mojave: "eb6dbc81f074a91a07d48e793bf755ad20c2cd941e869d91626e9fa1d6ec2f47"
+    sha256 cellar: :any_skip_relocation, mojave: "fa78334a12b4c9e0cb20448f0ded2a90619971cf958571ad915b537c55f12292"
   end
 
   depends_on "go" => :build
