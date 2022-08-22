@@ -11,7 +11,8 @@ class PythonTkAT39 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-tk@3.9"
-    sha256 cellar: :any, mojave: "5d6fc5f4cf9e1ce3f1c3d5f3edad4e4c75be266d72a7a9aa02862803c5def42a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "de326255a58fc8f78c00f0e5b4ff5ff4f140b1abe40e9ccf140d3d8d198209d5"
   end
 
   depends_on "python@3.9"
@@ -35,17 +36,16 @@ class PythonTkAT39 < Formula
               ]
         )
       EOS
-      system Formula["python@3.9"].bin/"python3", *Language::Python.setup_install_args(libexec),
-                                                  "--install-lib=#{libexec}"
-      rm_r Dir[libexec/"*.egg-info"]
+      system "python3.9", *Language::Python.setup_install_args(libexec), "--install-lib=#{libexec}"
+      rm_r libexec.glob("*.egg-info")
     end
   end
 
   test do
-    system Formula["python@3.9"].bin/"python3", "-c", "import tkinter"
+    system "python3.9", "-c", "import tkinter"
 
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system Formula["python@3.9"].bin/"python3", "-c", "import tkinter; root = tkinter.Tk()"
+    system "python3.9", "-c", "import tkinter; root = tkinter.Tk()"
   end
 end
