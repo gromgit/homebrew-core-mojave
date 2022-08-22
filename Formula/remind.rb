@@ -1,8 +1,8 @@
 class Remind < Formula
   desc "Sophisticated calendar and alarm"
   homepage "https://dianne.skoll.ca/projects/remind/"
-  url "https://dianne.skoll.ca/projects/remind/download/remind-04.00.01.tar.gz"
-  sha256 "3615d2ed6a456cab911620160d2cbe83d3e861541ca6e80ba6940417f4b959e2"
+  url "https://dianne.skoll.ca/projects/remind/download/remind-04.00.03.tar.gz"
+  sha256 "b254de043ef3937694c5a458070aceb4dcf871b58bd2ae7b31ef125b00777879"
   license "GPL-2.0-only"
   head "https://git.skoll.ca/Skollsoft-Public/Remind.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Remind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/remind"
-    sha256 mojave: "f9425b2d702cfbe81fcf65497ba3482f7a756ad84307b6607b089518235a8569"
+    sha256 mojave: "2d9d22ad2473eb2ca238b176317e41a945f8ab5f97cabf91e4ed52263e19624b"
   end
 
   conflicts_with "rem", because: "both install `rem` binaries"
