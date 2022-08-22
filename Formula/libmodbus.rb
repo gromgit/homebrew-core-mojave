@@ -1,14 +1,14 @@
 class Libmodbus < Formula
   desc "Portable modbus library"
   homepage "https://libmodbus.org/"
-  url "https://github.com/stephane/libmodbus/archive/v3.1.7.tar.gz"
-  sha256 "af8ade1eec30fe3dc6ddf8f711b37f9a931532287f39a40f54e6f475402df389"
+  url "https://github.com/stephane/libmodbus/archive/v3.1.8.tar.gz"
+  sha256 "4cabc5dc01b2faab853474c5d9db6386d04f37a476f843e239bff25480310adb"
   license "LGPL-2.1-or-later"
   head "https://github.com/stephane/libmodbus.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmodbus"
-    sha256 cellar: :any, mojave: "8ed9b434c899f5d1840786113e30de703ffb68017469dbc0a582447651e31099"
+    sha256 cellar: :any, mojave: "727f27f33b292577af7fa5bc8e47da445371c19efcd069544e5e4e407d0c71ae"
   end
 
   depends_on "autoconf" => :build
