@@ -4,7 +4,7 @@ class Bitcoin < Formula
   url "https://bitcoincore.org/bin/bitcoin-core-23.0/bitcoin-23.0.tar.gz"
   sha256 "26748bf49d6d6b4014d0fedccac46bf2bcca42e9d34b3acfd9e3467c415acc05"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
   livecheck do
@@ -13,19 +13,22 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "85032174d1a8fef79d83bafa0d83a8658b991de922e5d6f22e4eab8685f7bb6e"
-    sha256 cellar: :any,                 arm64_big_sur:  "3a6071e17033c44f15b93df3d40c0a8ce3839fcc9459734b89e816af0dec3b43"
-    sha256 cellar: :any,                 monterey:       "bdaf808516f2d8e20d51781df622b0c8f7352b6b1d0ad8c2154c90435c04012e"
-    sha256 cellar: :any,                 big_sur:        "905774fb45316d1ca5e8188ee38b9c8ca1d5c5fd8d6dda41c3282788e3f9289b"
-    sha256 cellar: :any,                 catalina:       "2f428c157c1b86ab696b045afdd98fc3d4c414d4d7ea90b053bbc77bfa8760d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe839cb818d429fc721a45777db1568bef4b3b32cd66429d7d8574dc149a1596"
+    sha256 cellar: :any,                 arm64_monterey: "f6cf894a92fc754ea145beba3676d918518dcabe3e94ba152731d7e17aba75bd"
+    sha256 cellar: :any,                 arm64_big_sur:  "ac400352429a055e239c4277361599517c8d48a5d7aa62d93f85548191bcd4c5"
+    sha256 cellar: :any,                 monterey:       "7ba835979b1e23942a1064217d986f114cd2befaa1f0a9cc40dab4023110559a"
+    sha256 cellar: :any,                 big_sur:        "250aaa6c856cf4adb29597bee8bff6a03157f837a9f8ffce7868aaca6c7c47dd"
+    sha256 cellar: :any,                 catalina:       "5d15d68d17ef1567afd59f09004ab87ecf433b3534b5811f0aec7b34c49e6e5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb0cb3880b0ef7c530dc248cc7757d4618f7ef1e710b67f7afc81c761456ae29"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "berkeley-db@5"
+  # berkeley db should be kept at version 4
+  # https://github.com/bitcoin/bitcoin/blob/master/doc/build-osx.md
+  # https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md
+  depends_on "berkeley-db@4"
   depends_on "boost"
   depends_on "libevent"
   depends_on macos: :catalina
@@ -56,5 +59,15 @@ class Bitcoin < Formula
 
   test do
     system "#{bin}/test_bitcoin"
+
+    # Test that we're using the right version of `berkeley-db`.
+    port = free_port
+    bitcoind = spawn bin/"bitcoind", "-regtest", "-rpcport=#{port}", "-listen=0", "-datadir=#{testpath}"
+    sleep 15
+    # This command will fail if we have too new a version.
+    system bin/"bitcoin-cli", "-regtest", "-datadir=#{testpath}", "-rpcport=#{port}",
+                              "createwallet", "test-wallet", "false", "false", "", "false", "false"
+  ensure
+    Process.kill "TERM", bitcoind
   end
 end
