@@ -4,10 +4,11 @@ class Hdf5AT110 < Formula
   url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.8/src/hdf5-1.10.8.tar.bz2"
   sha256 "66ec544b195a4cb9f6ffed034fd82e52429d6112747c2996ab69853f606e546b"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5@1.10"
-    sha256 cellar: :any, mojave: "f95944fb921bef4f86367a77012e70c57e81cacf9c4f2950f29ff252eec169ef"
+    sha256 cellar: :any, mojave: "46225301d1d322556df9a16de30cb6dce7fe806273c8a90174e83ecdf1a57fb0"
   end
 
   keg_only :versioned_formula
