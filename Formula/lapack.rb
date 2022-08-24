@@ -4,11 +4,12 @@ class Lapack < Formula
   url "https://github.com/Reference-LAPACK/lapack/archive/v3.10.1.tar.gz"
   sha256 "cd005cd021f144d7d5f7f33c943942db9f03a28d110d6a3b80d718a295f7f714"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/Reference-LAPACK/lapack.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lapack"
-    sha256 cellar: :any, mojave: "2dfed4bebcef58cc8bee402219008a9b044ac1b8608b8824f44a394d9149d99d"
+    sha256 cellar: :any, mojave: "81985773a65343ced57c1c07d031224c2fd34d7e694f2d5898aaf44b3f5b2857"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LAPACK in Accelerate.framework"
