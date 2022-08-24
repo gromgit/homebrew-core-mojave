@@ -1,8 +1,8 @@
 class Lean < Formula
   desc "Theorem prover"
   homepage "https://leanprover-community.github.io/"
-  url "https://github.com/leanprover-community/lean/archive/v3.45.0.tar.gz"
-  sha256 "92d2676e46447a62103dd17b7a5cb17ab7054dc2878be345a846fb03d8e6bcf5"
+  url "https://github.com/leanprover-community/lean/archive/v3.46.0.tar.gz"
+  sha256 "3933dc7f9d795d31dd28c3a6548c8949e26e7f098fce11ee0abb12c4d4562bfc"
   license "Apache-2.0"
   head "https://github.com/leanprover-community/lean.git", branch: "master"
 
@@ -21,8 +21,7 @@ class Lean < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lean"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6c7a4fe3490a038c184872a52186fcf8878cb9d32a8f68c71d2bb274e171e283"
+    sha256 cellar: :any, mojave: "e47579477a4f769a9a81e66b544eb2e7d0c2e42cd5f5e2958749325b392d3987"
   end
 
   depends_on "cmake" => :build
