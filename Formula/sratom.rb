@@ -1,8 +1,8 @@
 class Sratom < Formula
   desc "Library for serializing LV2 atoms to/from RDF"
   homepage "https://drobilla.net/software/sratom.html"
-  url "https://download.drobilla.net/sratom-0.6.10.tar.bz2"
-  sha256 "e5951c0d7f0618672628295536a271d61c55ef0dab33ba9fc5767ed4db0a634d"
+  url "https://download.drobilla.net/sratom-0.6.12.tar.xz"
+  sha256 "349933ce75ee4b467f0d620defa5b2139a2194c16dbf11a837b5fa800c1a0c83"
   license "ISC"
 
   livecheck do
@@ -12,19 +12,22 @@ class Sratom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sratom"
-    sha256 cellar: :any, mojave: "3f950ecce3863e681aaba61bc5c09021d908c18f54b8ba7c74f7445d643ffb53"
+    sha256 cellar: :any, mojave: "2b4e0f38776c6b0a8d5ee60c249bc5c333c4e1efd7db46fd7bfe301ba5401af0"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
   depends_on "lv2"
   depends_on "serd"
   depends_on "sord"
 
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    system "python3", "./waf"
-    system "python3", "./waf", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, "-Dtests=disabled", ".."
+      system "ninja"
+      system "ninja", "install"
+    end
   end
 
   test do
