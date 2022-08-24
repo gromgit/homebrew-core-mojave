@@ -1,8 +1,8 @@
 class Lilv < Formula
   desc "C library to use LV2 plugins"
   homepage "https://drobilla.net/software/lilv.html"
-  url "https://download.drobilla.net/lilv-0.24.14.tar.bz2"
-  sha256 "6399dfcbead61a143acef3a38ad078047ab225b00470ad5d33745637341d6406"
+  url "https://download.drobilla.net/lilv-0.24.18.tar.xz"
+  sha256 "f65814ae60be54d65f1671dff7538aeddcda3610cb6e46ec96de47f84ab0f3b8"
   license "ISC"
 
   livecheck do
@@ -12,20 +12,35 @@ class Lilv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lilv"
-    sha256 cellar: :any, mojave: "cfa7eccbb28e50e8d286aee7b505ab4a97f31727f1e88ec6ae16d711f0aa4bc1"
+    sha256 cellar: :any, mojave: "7ec9ec2b0713ccb94e6c21cb51c4a48c03d628af946f0db59c49b348516048ce"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => [:build, :test]
+  depends_on "libsndfile"
   depends_on "lv2"
   depends_on "serd"
   depends_on "sord"
   depends_on "sratom"
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    system "python3", "./waf"
-    system "python3", "./waf", "install"
+    # FIXME: Meson tries to install into `prefix/HOMEBREW_PREFIX/lib/pythonX.Y/site-packages`
+    #        without setting `python.*libdir`.
+    prefix_site_packages = prefix/Language::Python.site_packages(python3)
+    system "meson", "setup", "build", "-Dtests=disabled",
+                                      "-Dbindings_py=enabled",
+                                      "-Dtools=enabled",
+                                      "-Dpython.platlibdir=#{prefix_site_packages}",
+                                      "-Dpython.purelibdir=#{prefix_site_packages}",
+                                      *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -40,6 +55,6 @@ class Lilv < Formula
     system ENV.cc, "test.c", "-I#{include}/lilv-0", "-L#{lib}", "-llilv-0", "-o", "test"
     system "./test"
 
-    system Formula["python@3.10"].opt_bin/"python3", "-c", "import lilv"
+    system python3, "-c", "import lilv"
   end
 end
