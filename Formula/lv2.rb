@@ -4,8 +4,8 @@ class Lv2 < Formula
 
   desc "Portable plugin standard for audio systems"
   homepage "https://lv2plug.in/"
-  url "https://lv2plug.in/spec/lv2-1.18.6.tar.xz"
-  sha256 "a552b60d615241a914f71b1100a64652e4760664354a26f2d2ac392dc9566241"
+  url "https://lv2plug.in/spec/lv2-1.18.8.tar.xz"
+  sha256 "b404cf14f776af40ca43808b45f4219dfa850a4f47aa33f89fa96ae719e174c8"
   license "ISC"
   head "https://gitlab.com/lv2/lv2.git", branch: "master"
 
@@ -16,7 +16,7 @@ class Lv2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lv2"
-    sha256 cellar: :any_skip_relocation, mojave: "bc141084477ceb559f63c04270dec5bca1fc7bf63a1f8903af64a1d77736d511"
+    sha256 cellar: :any_skip_relocation, mojave: "45bd7b9c363afe8dd8d621e261e6c5ff536af199c52eea92a9461080ab801924"
   end
 
   depends_on "meson" => :build
@@ -43,10 +43,6 @@ class Lv2 < Formula
     url "https://files.pythonhosted.org/packages/fc/8d/2d1c8a08471b4333657c98a3048642095f844f10cd1d4e28f9b08725c7bd/rdflib-6.2.0.tar.gz"
     sha256 "62dc3c86d1712db0f55785baf8047f63731fa59b2682be03219cb89262065942"
   end
-
-  # Fix for finding our `share` directory,  remove on next release
-  # https://gitlab.com/lv2/lv2/-/commit/53cce2dce0956239718f5f48793d1811cf543793
-  patch :DATA
 
   def install
     # Python resources and virtualenv are for the lv2specgen.py script that is installed
@@ -81,22 +77,3 @@ class Lv2 < Formula
            "-o", shared_library("amp")
   end
 end
-
-__END__
-diff --git a/lv2specgen/lv2specgen.py b/lv2specgen/lv2specgen.py
-index da58e4f..0c5a87d 100755
---- a/lv2specgen/lv2specgen.py
-+++ b/lv2specgen/lv2specgen.py
-@@ -1515,9 +1515,9 @@ if __name__ == "__main__":
-     for d in _data_dirs():
-         path = os.path.join(d, "lv2specgen")
-         if (
--            os.path.exists(os.path.join(d, "template.html"))
--            and os.path.exists(os.path.join(d, "style.css"))
--            and os.path.exists(os.path.join(d, "pygments.css"))
-+            os.path.exists(os.path.join(path, "template.html"))
-+            and os.path.exists(os.path.join(path, "style.css"))
-+            and os.path.exists(os.path.join(path, "pygments.css"))
-         ):
-             data_dir = path
-             break
