@@ -5,7 +5,7 @@ class Hdf5AT18 < Formula
   # (see: https://portal.hdfgroup.org/display/support/HDF5%201.8.22#HDF51.8.22-futureFutureofHDF5-1.8).
   url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.22/src/hdf5-1.8.22.tar.bz2"
   sha256 "689b88c6a5577b05d603541ce900545779c96d62b6f83d3f23f46559b48893a4"
-  revision 3
+  revision 4
 
   livecheck do
     url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/"
@@ -14,7 +14,7 @@ class Hdf5AT18 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5@1.8"
-    sha256 cellar: :any, mojave: "4c5c509a11228d57060fc0fcdd975cb23b24cb8fa3c026a4c42b62d742bc4314"
+    sha256 cellar: :any, mojave: "72d668e2be31cf74692f4acf255cb6debd8e2343fc67497786fab35cd9ac4934"
   end
 
   keg_only :versioned_formula
