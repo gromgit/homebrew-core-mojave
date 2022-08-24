@@ -8,11 +8,13 @@ class FluidSynthAT21 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluid-synth@2.1"
-    rebuild 1
-    sha256 cellar: :any, mojave: "74eb03a508c8233a59a9e41471c28b9cc623917a620b049066f351b78832fa63"
+    rebuild 2
+    sha256 cellar: :any, mojave: "02a2f120b42ef5f501d8c6d809264e28e1d856d411fe5dddbbe547de2698f5fc"
   end
 
   keg_only :versioned_formula
+
+  deprecate! date: "2022-08-15", because: :versioned_formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
