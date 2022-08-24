@@ -2,11 +2,10 @@ class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
   license "X11"
-  revision 1
 
   stable do
-    url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.35.tar.xz"
-    sha256 "8247f33e9a872c6ac859aa45018bc4c4d00b97e2feac9eebc10c93ce1f34dd79"
+    url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.36.tar.xz"
+    sha256 "12848f0a4408f65b530d3962cd9ff670b6ae796191cfeff37522b5772de8dc8e"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -24,7 +23,7 @@ class Libxslt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxslt"
-    sha256 cellar: :any, mojave: "1e0b4e4114e76935e0a41db4827369470063f1ab20365bd2a2571778aa825d31"
+    sha256 cellar: :any, mojave: "10db06d47b53df4b91afefd4f5d0f477a228182add247efd5163fe0c24ad61e0"
   end
 
   head do
