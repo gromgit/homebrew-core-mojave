@@ -17,7 +17,8 @@ class LlvmAT13 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm@13"
-    sha256 cellar: :any, mojave: "8c7989e3bdec845cff680e81195fd844c25298c6fcecf753d606d569be149c53"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5f9ad2ec863d5328274b3bf8ce38cb01c274c2e278319b74bf169e48d35ba32d"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -195,7 +196,7 @@ class LlvmAT13 < Formula
       #   2. requiring an existing Xcode installation
       xctoolchain = prefix/"Toolchains/LLVM#{version}.xctoolchain"
       xcode_version = MacOS::Xcode.installed? ? MacOS::Xcode.version : Version.new(MacOS::Xcode.latest_version)
-      compat_version = xcode_version < 8 ? "1" : "2"
+      compat_version = (xcode_version < 8) ? "1" : "2"
 
       system "/usr/libexec/PlistBuddy", "-c", "Add:CFBundleIdentifier string org.llvm.#{version}", "Info.plist"
       system "/usr/libexec/PlistBuddy", "-c", "Add:CompatibilityVersion integer #{compat_version}", "Info.plist"
