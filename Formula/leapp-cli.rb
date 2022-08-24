@@ -3,13 +3,13 @@ require "language/node"
 class LeappCli < Formula
   desc "Cloud credentials manager cli"
   homepage "https://github.com/noovolari/leapp"
-  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.16.tgz"
-  sha256 "10f23f18a1eee148b28122b2196bc80ecb875b4f47f35d6dfc9b71e688a9567b"
+  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.18.tgz"
+  sha256 "4c1fa2c76846b8e58785123211f89bdbca7916753a383dfbcac28fcc99cf086a"
   license "MPL-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/leapp-cli"
-    sha256 mojave: "586789cda5e059146f99dad9a987f2a917d8a923b1f3abfc0bc40623b1c7dccd"
+    sha256 mojave: "146fe9ee8f070a65229c851a2563023fd0d509a88418f2132a72e10c4e46e198"
   end
 
   depends_on "pkg-config" => :build
