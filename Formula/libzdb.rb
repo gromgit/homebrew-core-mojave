@@ -4,7 +4,7 @@ class Libzdb < Formula
   url "https://tildeslash.com/libzdb/dist/libzdb-3.2.2.tar.gz"
   sha256 "d51e4e21ee1ee84ac8763de91bf485360cd76860b951ca998e891824c4f195ae"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
 
   livecheck do
     url :homepage
@@ -13,13 +13,13 @@ class Libzdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libzdb"
-    sha256 cellar: :any, mojave: "4edf5c3df788953e3f51afdf18713742a38d392d8cdbef78908a9bd48cbaf008"
+    sha256 cellar: :any, mojave: "c27108b5c10fbee0cb6de067ad62866a00caa46afa32d81fe9b572e0ffb64624"
   end
 
+  depends_on "libpq"
   depends_on macos: :high_sierra # C++ 17 is required
   depends_on "mysql-client"
   depends_on "openssl@1.1"
-  depends_on "postgresql"
   depends_on "sqlite"
 
   on_linux do
