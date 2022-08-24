@@ -7,8 +7,8 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
-    url "https://mesa.freedesktop.org/archive/mesa-22.1.3.tar.xz"
-    sha256 "b98f32ba7aa2a1ff5725fb36eb999c693079f0ca16f70aa2f103e2b6c3f093e3"
+    url "https://mesa.freedesktop.org/archive/mesa-22.1.6.tar.xz"
+    sha256 "22ced061eb9adab8ea35368246c1995c09723f3f71653cd5050c5cec376e671a"
 
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/f0a40cf7d70ee5a25639b91d9a8088749a2dd04e/mesa/fix-build-on-macOS.patch"
@@ -18,7 +18,7 @@ class Mesa < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesa"
-    sha256 mojave: "c860ed1eed70af5cc26e91c1b88c60c87938e4cca61dae819e8082a1695620ad"
+    sha256 mojave: "198ff6c1d0d9c23d2527ef9e410c961390919cbdcb2e5000be4e177dcd1fe696"
   end
 
   depends_on "bison" => :build # can't use form macOS, needs '> 2.3'
