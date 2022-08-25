@@ -1,14 +1,14 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
   homepage "https://okteto.com"
-  url "https://github.com/okteto/okteto/archive/2.5.3.tar.gz"
-  sha256 "6957c3f0fcf24d50d7aca711ff59c1493bdb12fba97e1592f1c910f7a0942bbe"
+  url "https://github.com/okteto/okteto/archive/2.6.0.tar.gz"
+  sha256 "5cbd2e620741212c5588605a305f7180e79534238d8b934d073c32b2ae96a1bb"
   license "Apache-2.0"
   head "https://github.com/okteto/okteto.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/okteto"
-    sha256 cellar: :any_skip_relocation, mojave: "4b4fac5acb32934243549fe3ff38df263b17270b17317275bf80b68c7a086ba8"
+    sha256 cellar: :any_skip_relocation, mojave: "1846d0045f61020f313f86b96c1dfa2c9fd9b66a126cbfc8fe2863af61f00810"
   end
 
   depends_on "go" => :build
