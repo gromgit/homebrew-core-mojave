@@ -1,13 +1,13 @@
 class Oq < Formula
   desc "Performant, and portable jq wrapper to support formats other than JSON"
   homepage "https://blacksmoke16.github.io/oq"
-  url "https://github.com/Blacksmoke16/oq/archive/v1.3.2.tar.gz"
-  sha256 "5216b16a874e7c0e74d4e735c593c1d353061f91fac4e455f6af7975c6c22bc3"
+  url "https://github.com/Blacksmoke16/oq/archive/v1.3.4.tar.gz"
+  sha256 "9e99c9ba292c466ca39fb7f6d0053f9fe13c2768a7493d1ef88ea2ca2e0d0ca0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oq"
-    sha256 cellar: :any, mojave: "26190f4d7cd3578d86f28646f877f0b40911aa862679ab83b2c7e13ddf8ecf4f"
+    sha256 cellar: :any, mojave: "1f8b6ffd56e8ee011027653a83b7570fb681be9be070e45e819c50daf8c8233e"
   end
 
   depends_on "crystal" => :build
