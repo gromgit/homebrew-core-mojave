@@ -3,13 +3,13 @@ require "language/node"
 class Rospo < Formula
   desc "🐸 Simple, reliable, persistent ssh tunnels with embedded ssh server"
   homepage "https://github.com/ferama/rospo"
-  url "https://github.com/ferama/rospo/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "ed036506d58826f5494e7e67038c137e6735fa4ccc199cd18c9dae3da41a46b8"
+  url "https://github.com/ferama/rospo/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "967c0bb1d7a10686e93131e6cbbf586774f4f9f7f0bc52b5e6c3a62639a4c31c"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rospo"
-    sha256 cellar: :any_skip_relocation, mojave: "4cc873f193e07f851e75637081d16d0885f5c4e34254546260ec2c8b333f65bd"
+    sha256 cellar: :any_skip_relocation, mojave: "8350cf0b873dc31b5f81ebba27ba533df86650883f6e039ea16afc0d0e31a625"
   end
 
   depends_on "go" => :build
