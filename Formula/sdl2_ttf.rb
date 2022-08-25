@@ -1,13 +1,13 @@
 class Sdl2Ttf < Formula
   desc "Library for using TrueType fonts in SDL applications"
   homepage "https://github.com/libsdl-org/SDL_ttf"
-  url "https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.0/SDL2_ttf-2.20.0.tar.gz"
-  sha256 "874680232b72839555a558b48d71666b562e280f379e673b6f0c7445ea3b9b8a"
+  url "https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.1/SDL2_ttf-2.20.1.tar.gz"
+  sha256 "78cdad51f3cc3ada6932b1bb6e914b33798ab970a1e817763f22ddbfd97d0c57"
   license "Zlib"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2_ttf"
-    sha256 cellar: :any, mojave: "4d455ce737c173caf5e7866e13fd4ad7ca060cbf00c2002bf9fb360485c257d8"
+    sha256 cellar: :any, mojave: "f2fbc1c109fdc9a8548f0bcdffebee3d123abac17e099284d5c26d5a4b7a4141"
   end
 
   head do
