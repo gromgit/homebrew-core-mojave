@@ -1,8 +1,8 @@
 class Mt32emu < Formula
   desc "Multi-platform software synthesiser"
   homepage "https://github.com/munt/munt"
-  url "https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_6_3.tar.gz"
-  sha256 "a24ee0a8ae9aa4138ffb185f123768b23fbb8b5b3bebb07882f3ba2836ed4905"
+  url "https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_7_0.tar.gz"
+  sha256 "5ede7c3d28a3bb0d9e637935b8b96484fadb409c9e5952a9e5432b3e05e5dbc1"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Mt32emu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mt32emu"
-    sha256 cellar: :any, mojave: "1af0905ccc96f04e52f5a183a752546e91e960dd055087125d322a68935242cb"
+    sha256 cellar: :any, mojave: "89813e54d0ba343f675f96f28be41057cd39b097a470df8c2584f4ddc4942363"
   end
 
   depends_on "cmake" => :build
