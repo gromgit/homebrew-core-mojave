@@ -7,8 +7,8 @@ class NodeAT12 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@12"
-    rebuild 3
-    sha256 cellar: :any, mojave: "27be896b86d34a18ac2339bbed1540856cb954a83078440cd58ac92d871f4824"
+    rebuild 4
+    sha256 cellar: :any, mojave: "ec225c89f7511c8fdaf051ef44059e45ba697163d84ee034109fc14eedb717e0"
   end
 
   keg_only :versioned_formula
@@ -34,7 +34,7 @@ class NodeAT12 < Formula
 
   def install
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = python = Formula["python@3.9"].opt_bin/"python3"
+    ENV["PYTHON"] = python = Formula["python@3.9"].opt_bin/"python3.9"
 
     args = %W[
       --prefix=#{prefix}
