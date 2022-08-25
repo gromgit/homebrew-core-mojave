@@ -1,13 +1,13 @@
 class ReFlex < Formula
   desc "Regex-centric, fast and flexible scanner generator for C++"
   homepage "https://www.genivia.com/doc/reflex/html"
-  url "https://github.com/Genivia/RE-flex/archive/v3.2.9.tar.gz"
-  sha256 "b24eee8d1c8a1c18be260aa170cb8076a0a5bb1fc4cb3f5e21b05ae80ba7f377"
+  url "https://github.com/Genivia/RE-flex/archive/v3.2.10.tar.gz"
+  sha256 "335c6a05283349865d321e6def317df56321cddbe87da0eb939defba65a9959a"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/re-flex"
-    sha256 cellar: :any_skip_relocation, mojave: "afbf7a22b52052071cbb4506d097cbed2962775eaf462bdfd207e9205e30004d"
+    sha256 cellar: :any_skip_relocation, mojave: "7ef70970dad5fc75f6d51de988718ced51cb1484dda64980074df1319948860a"
   end
 
   depends_on "pcre2"
