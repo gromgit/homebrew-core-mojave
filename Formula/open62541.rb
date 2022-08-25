@@ -1,13 +1,18 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
   homepage "https://open62541.org/"
-  url "https://github.com/open62541/open62541/archive/refs/tags/v1.3.2.tar.gz"
-  sha256 "65511f7268bf1a311296b21e5ebdef6e48edf04383518570117ed2a490a42855"
+  url "https://github.com/open62541/open62541/archive/refs/tags/v1.3.3.tar.gz"
+  sha256 "52c049c0f107b4cc382c9e480d677a6360cdd96c472f84689af91b423bd108cb"
   license "MPL-2.0"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open62541"
-    sha256 cellar: :any, mojave: "9aa1fe6613c941d3c478c308e9e2a00e260d457c3847ee77b4c3125f8e9d990c"
+    sha256 cellar: :any, mojave: "ffc537829161a8e38cea719f66d277a93ed08401528544e4eeada73bffe22069"
   end
 
   depends_on "cmake" => :build
