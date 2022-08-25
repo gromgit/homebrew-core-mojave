@@ -1,10 +1,9 @@
 class OcamlFindlib < Formula
   desc "OCaml library manager"
   homepage "http://projects.camlcity.org/projects/findlib.html"
-  url "http://download.camlcity.org/download/findlib-1.9.1.tar.gz"
-  sha256 "2b42b8bd54488d64c4bf3cb7054b4b37bd30c1dc12bd431ea1e4d7ad8a980fe2"
+  url "http://download.camlcity.org/download/findlib-1.9.5.tar.gz"
+  sha256 "0d4704e60caf313c1bb4565d8690d503ce51fb93c2ea50e22b2e9812243a2571"
   license "MIT"
-  revision 1
 
   livecheck do
     url "http://download.camlcity.org/download/"
@@ -12,13 +11,8 @@ class OcamlFindlib < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "b05f66339e91c8aa5d0dc67242a82dc8c39a254532d8017c5d35bfd31139039e"
-    sha256 arm64_big_sur:  "747fcd3b425c998c45b5f83aaa72bab0a06a584ee409284447824472058a737e"
-    sha256 monterey:       "f5e661018713080fa77ad4d33f1890f51682971eb9593d821340e51655797be8"
-    sha256 big_sur:        "908202a20c99ce1e3021a2f415d876f59d8d65912df486d4085ca01b93b17e7a"
-    sha256 catalina:       "64e0d27b20e1b6ea55beda463d21701bb96688bd9dbda5b5e66095eddd25ef49"
-    sha256 mojave:         "e236f3f0d85b74fc8ced41f56cf5caae52d6ef5f542b26dc27563a1db1ecbccf"
-    sha256 x86_64_linux:   "fc83a61ef983085665a7a144d0d1d44d014da88cbb7a18b072a486555e460a40"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml-findlib"
+    sha256 mojave: "22be81971ed25bcbd2a1d9d2122403f8710de0276de14de1021a2d16d46a788b"
   end
 
   depends_on "ocaml"
