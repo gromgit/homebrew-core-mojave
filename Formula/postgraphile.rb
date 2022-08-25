@@ -6,15 +6,16 @@ class Postgraphile < Formula
   url "https://registry.npmjs.org/postgraphile/-/postgraphile-4.12.11.tgz"
   sha256 "553191171d304b35846d8fc8c40beace5649f85982d4363da13b992fd2aad3d3"
   license "MIT"
+  revision 1
   head "https://github.com/graphile/postgraphile.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgraphile"
-    sha256 cellar: :any_skip_relocation, mojave: "a93c0fea60f58bfea019b7ec4f3e3e07fae26fe4a0d53a25ef63e16fb505fb63"
+    sha256 cellar: :any_skip_relocation, mojave: "e4be2cdf36016aa9bc5aee0fa1d6f46167b75d0adabe8d028cb7cb348594d2ac"
   end
 
+  depends_on "postgresql" => :test
   depends_on "node"
-  depends_on "postgresql"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
