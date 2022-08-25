@@ -4,6 +4,7 @@ class Scalapack < Formula
   url "https://www.netlib.org/scalapack/scalapack-2.2.0.tgz"
   sha256 "40b9406c20735a9a3009d863318cb8d3e496fb073d201c5463df810e01ab2a57"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,7 +13,7 @@ class Scalapack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scalapack"
-    sha256 cellar: :any, mojave: "d99ca2aa968f724f300ab86be83f1957c2b9881b5c03266ef7ab4baaa5a9c6ab"
+    sha256 cellar: :any, mojave: "9b732cc62a2365cd94555e9b2cad66a496d365c2f77571287d3e2ff6121984ce"
   end
 
   depends_on "cmake" => :build
@@ -61,7 +62,7 @@ index 85ea82a..86222e0 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -232,7 +232,7 @@ append_subdir_files(src-C "SRC")
- 
+
  if (UNIX)
     add_library(scalapack ${blacs} ${tools} ${tools-C} ${extra_lapack} ${pblas} ${pblas-F} ${ptzblas} ${ptools} ${pbblas} ${redist} ${src} ${src-C})
 -   target_link_libraries( scalapack ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES})
