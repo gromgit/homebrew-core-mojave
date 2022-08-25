@@ -4,13 +4,11 @@ class Openfast < Formula
   url "https://github.com/openfast/openfast/archive/v3.0.0.tar.gz"
   sha256 "9af57af054e4128b6e257a76da368dc4ad0c7fbb2b22d51fc7ea63cdf999c530"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "157d1ec772acdfebd91e2f8dd7fd385d6baabb60d04288ff8936d84d551120d4"
-    sha256 cellar: :any,                 big_sur:      "b577b71497f13a85ffe284abcf2b7177a1af238e76d11b111bdd0b597f97feda"
-    sha256 cellar: :any,                 catalina:     "58f36f20e6f92384c04a7c670d35f7021af09fcf62cbc59dde7854f28c8fddbd"
-    sha256 cellar: :any,                 mojave:       "ccf3899fac01fc1ad9fae9d697297bea3bd4f29e30334e181615c8194f28d585"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ead63206558470611c8998927868967021e555a67d64f2b06f5594e9454afba1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openfast"
+    sha256 cellar: :any, mojave: "5930de0ac7a3a7385358f72c1a119f0970d5d5ecfdbb7db6b09efd7122cfec50"
   end
 
   depends_on "cmake" => :build
