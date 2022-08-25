@@ -1,13 +1,13 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https://github.com/oras-project/oras"
-  url "https://github.com/oras-project/oras/archive/v0.13.0.tar.gz"
-  sha256 "15a87644123cb99f2ab12301e93c1d752e8da4228e4932977452f3dcf54f3b5c"
+  url "https://github.com/oras-project/oras/archive/v0.14.0.tar.gz"
+  sha256 "112b3c9eeb6a84894c42f2f40490c7364bf45c8f7cbd10fec7b792805ed96eed"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oras"
-    sha256 cellar: :any_skip_relocation, mojave: "b611e89ada774fe333571b204e2e6ddcba535d8f80c2d3842c9a5f8c5eaaab9e"
+    sha256 cellar: :any_skip_relocation, mojave: "1e8a267e8995512194477779339e52da1c83ed9e0e88e0894693cb26752737cc"
   end
 
   depends_on "go" => :build
@@ -36,7 +36,7 @@ class Oras < Formula
     # Although it might not make much sense passing the JSON as both manifest and payload,
     # it helps make the test consistent as the error can randomly switch between either hash
     output = shell_output("oras push localhost:#{port}/test-artifact:v1 " \
-                          "--manifest-config test.json:application/vnd.homebrew.test.config.v1+json " \
+                          "--config test.json:application/vnd.homebrew.test.config.v1+json " \
                           "./test.json 2>&1", 1)
     assert_match "#{port}: connect: connection refused", output
   end
