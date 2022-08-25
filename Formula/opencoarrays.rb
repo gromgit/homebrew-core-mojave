@@ -4,11 +4,12 @@ class Opencoarrays < Formula
   url "https://github.com/sourceryinstitute/OpenCoarrays/releases/download/2.10.0/OpenCoarrays-2.10.0.tar.gz"
   sha256 "c08717aea6ed5c68057f80957188a621b9862ad0e1460470e7ec82cdd84ae798"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/sourceryinstitute/opencoarrays.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencoarrays"
-    sha256 cellar: :any, mojave: "f8e03d60f63552888c480a9e455c16abd3793ee780e8e05ffbcf8bdf5239cf86"
+    sha256 cellar: :any, mojave: "b86207f6104b8377b634fdb72fe718e114817231490d080210c3a96b522f17e1"
   end
 
   depends_on "cmake" => :build
