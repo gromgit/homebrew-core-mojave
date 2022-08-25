@@ -4,13 +4,13 @@ class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
   homepage "https://opensearch.org/docs/dashboards/index/"
   url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
-      tag:      "2.1.0",
-      revision: "e1380f14deb98cc7cce55c3b82c2d501826a78c3"
+      tag:      "2.2.0",
+      revision: "a93a0af270e48177fa0ba58d646789da9c1639f7"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opensearch-dashboards"
-    sha256 cellar: :any_skip_relocation, mojave: "5b3aa90da2b2fe9fe68108e3abde8c458f04b2da64aea312d12b285825a6db8e"
+    sha256 cellar: :any_skip_relocation, mojave: "d8aebd28ebafa353d6c51d4e72163f226f4ee1dd6486e67879d0edee59cd5e27"
   end
 
   depends_on "yarn" => :build
