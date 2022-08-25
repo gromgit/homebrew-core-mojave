@@ -7,7 +7,8 @@ class Mydumper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mydumper"
-    sha256 cellar: :any, mojave: "d6e9b84be5926cda134ce25dc2f3b5092ba6e68992e93b0df6e4a60e9e6275de"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dfde675305d95451297b698dcf22e6e6b6b0338de7183aca2c04bf9d329b17e0"
   end
 
   depends_on "cmake" => :build
