@@ -1,8 +1,8 @@
 class Sdl2Net < Formula
   desc "Small sample cross-platform networking library"
   homepage "https://github.com/libsdl-org/SDL_net"
-  url "https://www.libsdl.org/projects/SDL_net/release/SDL2_net-2.0.1.tar.gz"
-  sha256 "15ce8a7e5a23dafe8177c8df6e6c79b6749a03fff1e8196742d3571657609d21"
+  url "https://github.com/libsdl-org/SDL_net/releases/download/release-2.2.0/SDL2_net-2.2.0.tar.gz"
+  sha256 "4e4a891988316271974ff4e9585ed1ef729a123d22c08bd473129179dc857feb"
   license "Zlib"
 
   # NOTE: This should be updated to use the `GithubLatest` strategy if/when the
@@ -14,16 +14,8 @@ class Sdl2Net < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "7703b5b6acb691cf7c0ab3f94ae2c2a57929fc33d379a00dc5f701ff092dad77"
-    sha256 cellar: :any,                 arm64_big_sur:  "b1c2224931852ae88aa4a3ee1e70d5576ee74521c3a893ecd16876c7b0fa35db"
-    sha256 cellar: :any,                 monterey:       "b8a40bbb05a6fa5a744408a48ea332261c13ed7a6c23e8c93f91c69b42a69329"
-    sha256 cellar: :any,                 big_sur:        "d270144e643a239af9c4a7ad0f0ef5277e54bfd845caaa0cf9a7be232cd8d41a"
-    sha256 cellar: :any,                 catalina:       "920e892ba80cba3a99d4a15473351be5dc23f0d9445c28480c5dae904e8a8271"
-    sha256 cellar: :any,                 mojave:         "0631754a7016b3e6e175644cc7976cc22843f7b872e8f50662d0cb50a4264901"
-    sha256 cellar: :any,                 high_sierra:    "f193c7c2ae1b7f2c82cbbc9b83a16fc72d845c6396ecd33644eea19695a850ee"
-    sha256 cellar: :any,                 sierra:         "dc2b96762f77dd4d42fea1da4d4c2373692dd0a531f686f00de0dd4a6eed8df9"
-    sha256 cellar: :any,                 el_capitan:     "46d189ebe1f240381a9e8d99a2cb249e577cec98e6399e741e47275735a3471c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "861e38494187fb28cdbd10b7c796d45db51c08c38d62ca539b55b48befa0ae9a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2_net"
+    sha256 cellar: :any, mojave: "404c0b19fea3c0508abd4c9888c8ea5e59fba24a93d1c62daf743467add0de9b"
   end
 
   head do
