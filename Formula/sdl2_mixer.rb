@@ -1,8 +1,8 @@
 class Sdl2Mixer < Formula
   desc "Sample multi-channel audio mixer library"
   homepage "https://github.com/libsdl-org/SDL_mixer"
-  url "https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.0/SDL2_mixer-2.6.0.tar.gz"
-  sha256 "f94a4d3e878cb191c386a714be561838240012250fe17d496f4ff4341d59a391"
+  url "https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.2/SDL2_mixer-2.6.2.tar.gz"
+  sha256 "8cdea810366decba3c33d32b8071bccd1c309b2499a54946d92b48e6922aa371"
   license "Zlib"
 
   # This formula uses a file from a GitHub release, so we check the latest
@@ -10,11 +10,12 @@ class Sdl2Mixer < Formula
   livecheck do
     url :stable
     strategy :github_latest
+    regex(%r{href=.*?/tag/release[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2_mixer"
-    sha256 cellar: :any, mojave: "01a29809ef8d2efd568dec72cbe612589cce759419188150dd4d8cf70230929d"
+    sha256 cellar: :any, mojave: "4da28db924220419543fc735bdceed2581f667718ec33c28db0fff8d520019b7"
   end
 
   head do
