@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://github.com/djcb/mu/releases/download/v1.8.6/mu-1.8.6.tar.xz"
-  sha256 "ad68072865536c314e7c251fbb65c7bf0c7908ffcc2aa024720eb2af752944f1"
+  url "https://github.com/djcb/mu/releases/download/v1.8.9/mu-1.8.9.tar.xz"
+  sha256 "b86d2a6808fd0ee941bd7084fafcbc82992e33dcdb8a7aeee1c34a7ccba8ddb3"
   license "GPL-3.0-or-later"
   head "https://github.com/djcb/mu.git", branch: "master"
 
@@ -19,7 +19,7 @@ class Mu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mu"
-    sha256 mojave: "05de06cb4eb44e2a57cc6a9b70ca69dfddcb86b61a81a35abb6db87d3df766b6"
+    sha256 mojave: "1ce9ec915848cb7e621932148813a0a8aa65e66730ab9f44a98b57e55e63eac3"
   end
 
   depends_on "emacs" => :build
