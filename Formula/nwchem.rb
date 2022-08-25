@@ -5,7 +5,7 @@ class Nwchem < Formula
   version "7.0.2"
   sha256 "d9d19d87e70abf43d61b2d34e60c293371af60d14df4a6333bf40ea63f6dc8ce"
   license "ECL-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://github.com/nwchemgit/nwchem.git"
@@ -14,8 +14,7 @@ class Nwchem < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nwchem"
-    rebuild 3
-    sha256 cellar: :any, mojave: "4064fc1f4194f1ebcf1421ef187d21467acfbab62f134408d2a1ed292d8b9ceb"
+    sha256 cellar: :any, mojave: "ea5e497b4d2a03de9b8f18926428fc155849d825ecc1dff048960702c3120237"
   end
 
   depends_on "gcc" # for gfortran
