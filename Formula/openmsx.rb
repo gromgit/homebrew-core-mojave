@@ -14,8 +14,8 @@ class Openmsx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openmsx"
-    rebuild 2
-    sha256 cellar: :any, mojave: "a73ac010a7b8fe8a53b802d6dbf242b62ac159f85edf9a254ab020a74fe8b53e"
+    rebuild 3
+    sha256 cellar: :any, mojave: "a83d8ed80eaf0285c6df92a495c76bcb75159051e699dea988fc059749841a63"
   end
 
   depends_on "python@3.10" => :build
