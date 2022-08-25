@@ -4,6 +4,7 @@ class Pnetcdf < Formula
   url "https://parallel-netcdf.github.io/Release/pnetcdf-1.12.3.tar.gz"
   sha256 "439e359d09bb93d0e58a6e3f928f39c2eae965b6c97f64e67cd42220d6034f77"
   license "NetCDF"
+  revision 1
 
   livecheck do
     url "https://parallel-netcdf.github.io/wiki/Download.html"
@@ -12,8 +13,7 @@ class Pnetcdf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pnetcdf"
-    rebuild 1
-    sha256 mojave: "37fac1079a40a4e3dfeeca3ece146afbc7ea94b08604b7c0c2c3590acd2a4e87"
+    sha256 mojave: "74408ec0a4d294961e169276d1a30af71a23ac234203af6e3a916f7895eaf70c"
   end
 
   depends_on "gcc"
