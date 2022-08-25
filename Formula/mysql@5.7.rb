@@ -1,8 +1,8 @@
 class MysqlAT57 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/5.7/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-5.7/mysql-boost-5.7.38.tar.gz"
-  sha256 "89d2c42aaa7fd2e31f33b21c5619d2b4c7e1dc2081f820f9f6eec2f30c5fbbf8"
+  url "https://cdn.mysql.com/Downloads/MySQL-5.7/mysql-boost-5.7.39.tar.gz"
+  sha256 "8206d24cb93c52d900ce67cd50618331a4cc071c0040b3a72bcb4b94fa45468f"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class MysqlAT57 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql@5.7"
-    sha256 mojave: "112f1e4b61797c1e8c28e67e9d3bbeaf3d728ef8c4c00d67119eb51432480ce6"
+    sha256 mojave: "9722d9c7b2560f34aaa0659371e330dd4cba6fa01ef28c0bf4a5a8ab3133c87c"
   end
 
   keg_only :versioned_formula
@@ -21,6 +21,7 @@ class MysqlAT57 < Formula
   depends_on "openssl@1.1"
 
   uses_from_macos "libedit"
+  uses_from_macos "libxcrypt"
 
   on_linux do
     depends_on "pkg-config" => :build
