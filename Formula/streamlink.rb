@@ -3,14 +3,14 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/31/c8/dd8c1cfff095b39d42c2bcd72cba95983e43001d51928cd9d2874e81eb37/streamlink-4.2.0.tar.gz"
-  sha256 "8e745c4b91f1cc3789c619ac8dadbd461c10a66a73b70453e1d5dfa03f5bd6e4"
+  url "https://files.pythonhosted.org/packages/87/49/b895b90ea979b6fc19e88763840fd71d193ed489dc77dd274ac2114243dd/streamlink-4.3.0.tar.gz"
+  sha256 "49ab4f38f11308656e8cd241dff85fcc224bc2ff184e263ddbf6c74243f67d1f"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/streamlink"
-    sha256 cellar: :any, mojave: "1074f26e485d6026ef0b12a96651d0565e2d3f4af314164225dd14d0968dbeee"
+    sha256 cellar: :any, mojave: "98b273fa11979cec93cf9ba714d20af8894f785befca0f3418dcabdef1d807db"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
@@ -70,8 +70,8 @@ class Streamlink < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/25/36/f056e5f1389004cf886bb7a8514077f24224238a7534497c014a6b9ac770/urllib3-1.26.10.tar.gz"
-    sha256 "879ba4d1e89654d9769ce13121e0f94310ea32e8d2f8cf587b77c08bbcdb30d6"
+    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
+    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
   end
 
   resource "websocket-client" do
