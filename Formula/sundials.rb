@@ -1,8 +1,8 @@
 class Sundials < Formula
   desc "Nonlinear and differential/algebraic equations solver"
   homepage "https://computing.llnl.gov/projects/sundials"
-  url "https://github.com/LLNL/sundials/releases/download/v6.2.0/sundials-6.2.0.tar.gz"
-  sha256 "195d5593772fc483f63f08794d79e4bab30c2ec58e6ce4b0fb6bcc0e0c48f31d"
+  url "https://github.com/LLNL/sundials/releases/download/v6.3.0/sundials-6.3.0.tar.gz"
+  sha256 "89a22bea820ff250aa7239f634ab07fa34efe1d2dcfde29cc8d3af11455ba2a7"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Sundials < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sundials"
-    sha256 cellar: :any, mojave: "7d81c905f0d59ef33e7dba1d70d522f7cabf7eedc8955f647126c8fc8ca978bd"
+    sha256 cellar: :any, mojave: "a36b16584a6f3ab4a4e9a988c9f444673205be600481a37c251d65b5cd389eef"
   end
 
   depends_on "cmake" => :build
