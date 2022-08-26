@@ -11,10 +11,10 @@ class Todoman < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/todoman"
-    sha256 cellar: :any_skip_relocation, mojave: "124fe63492171251dc46a108a3f950d8dff193353fb8392c66a346f59d957ce7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "03fb88bb88debc5d2c97e08b3b39b4a1e506febae75e6bfc76d2e7ec28e2d140"
   end
 
-  depends_on "libpython-tabulate"
   depends_on "python@3.10"
   depends_on "six"
 
