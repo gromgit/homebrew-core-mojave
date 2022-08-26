@@ -1,15 +1,14 @@
 class Ttyd < Formula
   desc "Command-line tool for sharing terminal over the web"
   homepage "https://tsl0922.github.io/ttyd/"
-  url "https://github.com/tsl0922/ttyd/archive/1.6.3.tar.gz"
-  sha256 "1116419527edfe73717b71407fb6e06f46098fc8a8e6b0bb778c4c75dc9f64b9"
+  url "https://github.com/tsl0922/ttyd/archive/1.7.1.tar.gz"
+  sha256 "e1e9993b1320c8623447304ae27031502569a1e37227ec48d4e21dae7db6eb66"
   license "MIT"
-  revision 6
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ttyd"
-    sha256 mojave: "4c7266afdc59ab1aff134c58d7ff0ef2ea57d0fa66b708fc53f29f535375314c"
+    sha256 mojave: "d23dc753f89ec7e01308ce6a6a02587fea94f4a8f6327ac73019a889c781f57a"
   end
 
   depends_on "cmake" => :build
