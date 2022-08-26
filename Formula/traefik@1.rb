@@ -12,11 +12,14 @@ class TraefikAT1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/traefik@1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "45ce54bc91e6afce76de7a8ad36100f2b2db2dd666f4ead8afeb7321d4d68700"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bdfd04e38d8ae39dcebbd5b903bdf9befcca9b5e9d8a88739e88d26f4209e0de"
   end
 
   keg_only :versioned_formula
+
+  # support ended 2021-12-31: https://doc.traefik.io/traefik/deprecation/releases/
+  disable! date: "2022-12-31", because: :unsupported
 
   depends_on "go" => :build
   depends_on "go-bindata" => :build
