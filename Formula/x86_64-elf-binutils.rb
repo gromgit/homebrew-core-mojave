@@ -1,9 +1,9 @@
 class X8664ElfBinutils < Formula
   desc "GNU Binutils for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.xz"
-  sha256 "e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.39.tar.xz"
+  sha256 "645c25f563b8adc0a81dbd6a41cffbf4d37083a382e02d5d3df4f65c09516d00"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class X8664ElfBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-elf-binutils"
-    rebuild 1
-    sha256 mojave: "20ef398e2bc4b42240b10efddc2603bc359bfe8d1d5317d0c09f9fd6e3c6c83c"
+    sha256 mojave: "6cab0f6f36d33e1a375d0984d8fe944e962a249fe8093b5291153d0fac24475a"
   end
 
   uses_from_macos "texinfo"
