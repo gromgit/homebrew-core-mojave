@@ -1,8 +1,8 @@
 class Yq < Formula
   desc "Process YAML documents from the CLI"
   homepage "https://github.com/mikefarah/yq"
-  url "https://github.com/mikefarah/yq/archive/v4.26.1.tar.gz"
-  sha256 "aa280a6facafc8fc5d0f3b5926a0f990ed16520dec8cb18f33752dbf6b8dc998"
+  url "https://github.com/mikefarah/yq/archive/v4.27.2.tar.gz"
+  sha256 "7df68d38bd93804fe13dc61629453b6ef4f82d55287cd0d635efc41ff99cb5f5"
   license "MIT"
   head "https://github.com/mikefarah/yq.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Yq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yq"
-    sha256 cellar: :any_skip_relocation, mojave: "51a45167dee81c4f71345c9bacfc321e96954b1bdff70c22fdfbf0f861f8888a"
+    sha256 cellar: :any_skip_relocation, mojave: "56bbd4b3196d698ca3721a1b77338f41cc7c1204a43bfa7781970bdbf3235e51"
   end
 
   depends_on "go" => :build
