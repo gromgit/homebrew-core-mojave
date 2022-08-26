@@ -1,14 +1,14 @@
 class Trafficserver < Formula
   desc "HTTP/1.1 compliant caching proxy server"
   homepage "https://trafficserver.apache.org/"
-  url "https://downloads.apache.org/trafficserver/trafficserver-9.1.2.tar.bz2"
-  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.1.2.tar.bz2"
-  sha256 "62f27d4e16a515e7ec85393186f909d934a79db41c7905f21d15a9eacb82232f"
+  url "https://downloads.apache.org/trafficserver/trafficserver-9.1.3.tar.bz2"
+  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.1.3.tar.bz2"
+  sha256 "c8bf77b034b0da6c38d3ec9f3ca85ef1038aa046170e839308b0a59709d9afb6"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trafficserver"
-    sha256 mojave: "425658456437c75ec6cc87649dbb816653921dc7a18bca59ca32cceeed6ac422"
+    sha256 mojave: "de20d2814b3c94bebd2760a189c6a347ca66a3767db067688d19f184a56a9ac6"
   end
 
   head do
