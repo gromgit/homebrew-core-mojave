@@ -9,7 +9,8 @@ class Sysbench < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysbench"
-    sha256 cellar: :any, mojave: "27e4f06f1284e3fdd05c29dc57cd04f151866849d76ef0f89d1721d4de3de3fa"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cca9b3c6563460dc1344b245c4c6b488680f360d3107ae3c6121f75bb2a6b41e"
   end
 
   depends_on "autoconf" => :build
