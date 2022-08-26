@@ -1,13 +1,19 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://github.com/kubeshop/testkube/archive/v1.4.22.tar.gz"
-  sha256 "9070c995ed608ce762472c982baf0588a15e6ebc2cc8962d61767424e15b934d"
+  url "https://github.com/kubeshop/testkube/archive/v1.4.31.tar.gz"
+  sha256 "15a89a3d995ffc047ccb73e3b83bf8468d12f3182f08f11e43a8bb57d4bd7936"
   license "MIT"
+  head "https://github.com/kubeshop/testkube.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/testkube"
-    sha256 cellar: :any_skip_relocation, mojave: "910ce4430a2c10b668d2aa85006c3e2af18b6fec55e6bedf1011e79bc254d696"
+    sha256 cellar: :any_skip_relocation, mojave: "2aaaf7b42efc78e90e9e1ddad59f21d8f6c93489c932844e9163a64acdc90581"
   end
 
   depends_on "go" => :build
