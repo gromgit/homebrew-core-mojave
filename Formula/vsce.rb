@@ -3,8 +3,8 @@ require "language/node"
 class Vsce < Formula
   desc "Tool for packaging, publishing and managing VS Code extensions"
   homepage "https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce"
-  url "https://registry.npmjs.org/vsce/-/vsce-2.10.0.tgz"
-  sha256 "af3e2e8aaf5d59f27d123762aadc3cb59b3afedfb3a6f9be11be2b546b80a368"
+  url "https://registry.npmjs.org/vsce/-/vsce-2.10.2.tgz"
+  sha256 "5da4ecc1125e10390b2d45a93a6e6a3f0994c4bcfc0b4a3c38964acab6b2945d"
   license "MIT"
   head "https://github.com/microsoft/vscode-vsce.git", branch: "main"
 
@@ -15,7 +15,7 @@ class Vsce < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vsce"
-    sha256 mojave: "3dd17f349ca098970177ae1236893f3e119ff49e1c565d47f121061e699525a9"
+    sha256 mojave: "ba02d8251532d7d331950af50f2c90581bd1cd05841f951ef858b5a63a92f8e9"
   end
 
   depends_on "node"
