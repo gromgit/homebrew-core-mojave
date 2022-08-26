@@ -1,14 +1,14 @@
 class Tlsx < Formula
   desc "Fast and configurable TLS grabber focused on TLS based data collection"
   homepage "https://github.com/projectdiscovery/tlsx"
-  url "https://github.com/projectdiscovery/tlsx/archive/v0.0.5.tar.gz"
-  sha256 "f505d6154a204a834c1ff54065aa43fb64a8f127db433a30eead16c74483ebb7"
+  url "https://github.com/projectdiscovery/tlsx/archive/v0.0.6.tar.gz"
+  sha256 "79c663951053e866d0ad28a61bc218054e80611c29b4de6680d4eb7448c67593"
   license "MIT"
   head "https://github.com/projectdiscovery/tlsx.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tlsx"
-    sha256 cellar: :any_skip_relocation, mojave: "9dcf80614774cb6d79155e9fe2df9621eda002b4e1858a863173bba8d0a4714e"
+    sha256 cellar: :any_skip_relocation, mojave: "b92d4c3ad858acbfa9df414dbe535d4f43609dd72564ba77122d388a2255c62c"
   end
 
   depends_on "go" => :build
