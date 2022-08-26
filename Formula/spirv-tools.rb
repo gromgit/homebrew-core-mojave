@@ -1,13 +1,13 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
   homepage "https://github.com/KhronosGroup/SPIRV-Tools"
-  url "https://github.com/KhronosGroup/SPIRV-Tools/archive/v2022.2.tar.gz"
-  sha256 "909fc7e68049dca611ca2d57828883a86f503b0353ff78bc594eddc65eb882b9"
+  url "https://github.com/KhronosGroup/SPIRV-Tools/archive/v2022.3.tar.gz"
+  sha256 "df6dc5ed5351f99aaaa6acc78111342d3400b27b99f18148d3be408570144a70"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spirv-tools"
-    sha256 cellar: :any, mojave: "d6d13c78cea7f43b0408df4fd8da052e6b3c2a348df32792a23c033ce95a5fb8"
+    sha256 cellar: :any, mojave: "bc55d76b6ffeda9f2a0942db0c5754395d3b1890f8fc33619cdc83172c3e384c"
   end
 
   depends_on "cmake" => :build
@@ -16,7 +16,7 @@ class SpirvTools < Formula
   resource "re2" do
     # revision number could be found in ./DEPS
     url "https://github.com/google/re2.git",
-        revision: "0c5616df9c0aaa44c9440d87422012423d91c7d1"
+        revision: "5723bb8950318135ed9cf4fc76bed988a087f536"
   end
 
   resource "effcee" do
@@ -28,7 +28,7 @@ class SpirvTools < Formula
   resource "spirv-headers" do
     # revision number could be found in ./DEPS
     url "https://github.com/KhronosGroup/SPIRV-Headers.git",
-        revision: "4995a2f2723c401eb0ea3e10c81298906bf1422b"
+        revision: "b2a156e1c0434bc8c99aaebba1c7be98be7ac580"
   end
 
   def install
