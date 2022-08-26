@@ -2,18 +2,13 @@ class ThorsSerializer < Formula
   desc "Declarative serialization library (JSON/YAML) for C++"
   homepage "https://github.com/Loki-Astari/ThorsSerializer"
   url "https://github.com/Loki-Astari/ThorsSerializer.git",
-      tag:      "2.2.10",
-      revision: "9a508808d5b2a43a0f52a50aadb7645915202309"
+      tag:      "2.2.15",
+      revision: "8a6f4ace2461ee2939879ae8dc250f4454ba6e3d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "21992172551a86998c68a66c1cba7804b36bb7c9fa4172e26a27475d67f43bfe"
-    sha256 cellar: :any,                 arm64_big_sur:  "4651acf8a32970d42ea85a0e7db8649dba6221486f59d52bcf57ea089c0b5fb1"
-    sha256 cellar: :any,                 monterey:       "08e5784cde54f98fd26f16e831a20261373fb73aaa5ccfbcf74d3d33445a4e0a"
-    sha256 cellar: :any,                 big_sur:        "2b97e4a4d91ab8b977b18c176b1e440f238825e1e43a5a7cdebc6a56178b1f08"
-    sha256 cellar: :any,                 catalina:       "9c8f540a49fc00748a477344344adbe2dbf2fd867b599ffc8e9e1f0aa0dbd391"
-    sha256 cellar: :any,                 mojave:         "72728f0f7647bb87b6cfc5cb5123d18b090660c03c58dbeff12418629bf396b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "501f35e0df7b8d5131a06b59a2e03f366b7f6621f7c5309a0c0503a0c53bdb54"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/thors-serializer"
+    sha256 cellar: :any, mojave: "6938f481b80cd4b91aa1603b27db5f691eda5903f462323b9340aad4e1f0eaef"
   end
 
   depends_on "boost" => :build
