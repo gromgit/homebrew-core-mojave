@@ -1,9 +1,9 @@
 class X8664LinuxGnuBinutils < Formula
   desc "GNU Binutils for x86_64-linux-gnu cross development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.xz"
-  sha256 "e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.39.tar.xz"
+  sha256 "645c25f563b8adc0a81dbd6a41cffbf4d37083a382e02d5d3df4f65c09516d00"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,10 +12,14 @@ class X8664LinuxGnuBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-linux-gnu-binutils"
-    sha256 mojave: "750fcf34cfa2decf5993e9bd25b79a6749aad08ccadd9d2a7a68595e864a1ffd"
+    sha256 mojave: "59ae61c6d417d870b9a099564a95466ae0d1c6c5a5ad8e0b17de05139f88729e"
   end
 
   uses_from_macos "texinfo"
+
+  on_linux do
+    keg_only "it conflicts with `binutils`"
+  end
 
   def install
     ENV.cxx11
@@ -36,7 +40,8 @@ class X8664LinuxGnuBinutils < Formula
                           "--enable-ld=yes",
                           "--enable-interwork",
                           "--with-system-zlib",
-                          "--disable-nls"
+                          "--disable-nls",
+                          "--disable-gprofng" # Fails to build on Linux
     system "make"
     system "make", "install"
   end
