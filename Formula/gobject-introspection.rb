@@ -6,11 +6,11 @@ class GobjectIntrospection < Formula
   url "https://download.gnome.org/sources/gobject-introspection/1.72/gobject-introspection-1.72.0.tar.xz"
   sha256 "02fe8e590861d88f83060dd39cda5ccaa60b2da1d21d0f95499301b186beaabc"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobject-introspection"
-    sha256 mojave: "a8e6d332eb75c7730fe57fb4d556951c2db00d35dda0f7a5854f09b53a60329d"
+    sha256 mojave: "6b48620e6963f88f15c4b0692a713c3909f5ad09ddd66b6fd4be770a1c4e8441"
   end
 
   depends_on "bison" => :build
@@ -19,7 +19,7 @@ class GobjectIntrospection < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "pkg-config"
-  # TODO: Consider using `uses_from_macos "python"` instead.
+  # Ships a `_giscanner.cpython-310-darwin.so`, so needs a specific version.
   depends_on "python@3.10"
 
   uses_from_macos "flex" => :build
