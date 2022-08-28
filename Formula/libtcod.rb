@@ -1,17 +1,17 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
   homepage "https://github.com/libtcod/libtcod"
-  url "https://github.com/libtcod/libtcod/archive/1.21.0.tar.gz"
-  sha256 "443701105ba98c50a27e71d632f6cc1490b9ced55b3ee6750852f0c34ca0274f"
+  url "https://github.com/libtcod/libtcod/archive/1.22.2.tar.gz"
+  sha256 "8a19a44435bbf9ebecceb1b080cae6fb2cf4d3373fabf42536662c9f8b77acdf"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "295fc5d7cb7b28d5cb27ecacf4df3ec3a070095056425834bec9da424dc90530"
-    sha256 cellar: :any,                 arm64_big_sur:  "ee75d00fbbee426cbcde881fa5b4ccca5413230831f8ba04467bb8d968c66968"
-    sha256 cellar: :any,                 monterey:       "3e460bb77a31fe2760071ced8f96e881e8a73d96388463b54171cf513282a56c"
-    sha256 cellar: :any,                 big_sur:        "06afc0e1c0313023abcb8ff33865225df5196c7d5f1c9987826497a14301aa6c"
-    sha256 cellar: :any,                 catalina:       "92e61ba0917a8ab7ed60105024944bde1f87597e450554976dfb00eacea1a269"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bc4b15c7afd85b21a2ee81ec66924e8925dd3cfdcd39c0dc29733353c1d221e"
+    sha256 cellar: :any,                 arm64_monterey: "c605abec2c995c60ee9ca13c5fdec4c167257cf24c9fe6a2fbf9195b47e8928b"
+    sha256 cellar: :any,                 arm64_big_sur:  "cd2d77c7c1904f9ed7aba1c6a6dadf945e10c5ca15bf691920eb8610283a6be0"
+    sha256 cellar: :any,                 monterey:       "1ee5f17ffb63c30a5b9d593a0db5ec8ee0d7a18c75a5dd28af28ec367b8c05a1"
+    sha256 cellar: :any,                 big_sur:        "5dce8ecf88a934d7ead445002509dc45c55c90a1745487590c2a294caa5126de"
+    sha256 cellar: :any,                 catalina:       "58641b98b27edcbcc654c3d25a40e6fa23d37b78ee2fd4f608521ceb66c99cfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb78f54b7a97d26d8b18766fc58af18dd3f81612cf0130200ecea06f5d273e77"
   end
 
   depends_on "autoconf" => :build
