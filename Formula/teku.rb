@@ -2,12 +2,12 @@ class Teku < Formula
   desc "Java Implementation of the Ethereum 2.0 Beacon Chain"
   homepage "https://docs.teku.consensys.net/"
   url "https://github.com/ConsenSys/teku.git",
-        tag:      "22.8.0",
-        revision: "a9f80cb9f757a3ad68a8081dd06b32925a29ba34"
+        tag:      "22.8.1",
+        revision: "ebfb0449d245df5ef09ebf5954122985fb8c139c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9c0dc60e10539631a7160c3e256dae8ba31ab786817ac50f36187810989c2325"
+    sha256 cellar: :any_skip_relocation, all: "1d40975e0900fac05557794d032a2c57cf668e0802c1a8e1c7b39b158cc7b9e7"
   end
 
   depends_on "gradle" => :build
@@ -26,7 +26,7 @@ class Teku < Formula
 
     rest_port = free_port
     fork do
-      exec bin/"teku", "--rest-api-enabled", "--rest-api-port=#{rest_port}", "--p2p-enabled=false"
+      exec bin/"teku", "--rest-api-enabled", "--rest-api-port=#{rest_port}", "--p2p-enabled=false", "--ee-endpoint=http://127.0.0.1"
     end
     sleep 15
 
