@@ -1,17 +1,17 @@
 class Swiftdraw < Formula
   desc "Convert SVG into PDF, PNG, JPEG or SF Symbol"
   homepage "https://github.com/swhitty/SwiftDraw"
-  url "https://github.com/swhitty/SwiftDraw/archive/0.12.0.tar.gz"
-  sha256 "48397fa5761abc542f54739ee5bc9657d3646e8dced1043460ed18dd77f3db1e"
+  url "https://github.com/swhitty/SwiftDraw/archive/0.13.0.tar.gz"
+  sha256 "f36db04508de74e3da57a10f732bc889f1cfb23bf7bb99e9e0086108cd6ac26f"
   license "Zlib"
   head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "588f526b2a36b9898a14f08fbe216cd2b8bf9735c5b17590891759f3d633a391"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76bfaf3c223b0af3bfa23198dfe0f05add4bca3cc26d3099484a080fdbd4a24b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d57f3fd0d05222ad0a47d9f883a8bb9fdafb1930e3086b768350024deaf4e9b1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b44c12f1c81d7683679ccab50a2fae04c0bd1fa3452ddec59ae4cd02dfd8c2ff"
-    sha256                               x86_64_linux:   "4525f4ea0b710777e87508961025e882e49a4356e49fe12d2f1f4e4d4a3e98c4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3e86a4a23a2021bec540459705ef24b31f1227cc846a3d8eecc932c94a7bf52"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9803d2c1c5022ec06c75ee82da4c81037770fa24248be4ba6f17b6b15a154da2"
+    sha256 cellar: :any_skip_relocation, monterey:       "232741f96be5bf9188f2dde3b05ccd8d8a3e44c60e9520742d57bfab15c3e1e8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1adb8ed5498786091b1f680f6d8dc0f6ecb71ed018fc17c79f106da1fe5e618f"
+    sha256                               x86_64_linux:   "dd9a7c47c8aded52df8c1450e69661da9009c9daaef45f18715e96fd6af29c48"
   end
 
   depends_on xcode: ["12.5", :build]
