@@ -1,15 +1,14 @@
 class Libtasn1 < Formula
   desc "ASN.1 structure parser library"
   homepage "https://www.gnu.org/software/libtasn1/"
-  url "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.18.0.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libtasn1/libtasn1-4.18.0.tar.gz"
-  sha256 "4365c154953563d64c67a024b607d1ee75c6db76e0d0f65709ea80a334cd1898"
+  url "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.19.0.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libtasn1/libtasn1-4.19.0.tar.gz"
+  sha256 "1613f0ac1cf484d6ec0ce3b8c06d56263cc7242f1c23b30d82d23de345a63f7a"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtasn1"
-    rebuild 3
-    sha256 cellar: :any, mojave: "b98949e1c9ed4b1cf7c57869b5188d600a59f78a2573245eed1d6bc79b7c4f90"
+    sha256 cellar: :any, mojave: "6a270dfbe385ca2e387c2cdf367a6101988940605b0035c810b6a772a28877bd"
   end
 
   def install
