@@ -1,13 +1,13 @@
 class RubyInstall < Formula
   desc "Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby"
   homepage "https://github.com/postmodern/ruby-install#readme"
-  url "https://github.com/postmodern/ruby-install/archive/v0.8.4.tar.gz"
-  sha256 "e4b51e7ecc337690464ce42f81392d88c8c32c652034c77707e1d554ee3922e4"
+  url "https://github.com/postmodern/ruby-install/archive/v0.8.5.tar.gz"
+  sha256 "793fcf44dce375c6c191003c3bfd22ebc85fa296d751808ab315872f5ee0179b"
   license "MIT"
   head "https://github.com/postmodern/ruby-install.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0dadaeb59aaf650b91d8e137eec16c52715e046e02edd08f14d860cc3034e858"
+    sha256 cellar: :any_skip_relocation, all: "e0fe47d5a5ca9f84ffe59b40d48981341a0ab937342069d7f79c51dd4b95af0e"
   end
 
   def install
