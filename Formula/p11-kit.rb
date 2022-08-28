@@ -4,10 +4,11 @@ class P11Kit < Formula
   url "https://github.com/p11-glue/p11-kit/releases/download/0.24.1/p11-kit-0.24.1.tar.xz"
   sha256 "d8be783efd5cd4ae534cee4132338e3f40f182c3205d23b200094ec85faaaef8"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/p11-kit"
-    sha256 mojave: "6f6eff31b899e7e34ffb6c5fc6f73c49f2d6c0be9afcceb533d9118eeaf589e0"
+    sha256 mojave: "0d7544522c2f958e88716a184e95135d855098769d62753bf8ed0c6b07aa7845"
   end
 
   head do
@@ -21,8 +22,9 @@ class P11Kit < Formula
 
   depends_on "pkg-config" => :build
   depends_on "ca-certificates"
-  depends_on "libffi"
   depends_on "libtasn1"
+
+  uses_from_macos "libffi", since: :catalina
 
   def install
     # https://bugs.freedesktop.org/show_bug.cgi?id=91602#c1
