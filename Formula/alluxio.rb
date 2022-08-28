@@ -1,8 +1,8 @@
 class Alluxio < Formula
   desc "Open Source Memory Speed Virtual Distributed Storage"
   homepage "https://www.alluxio.io/"
-  url "https://downloads.alluxio.io/downloads/files/2.8.0/alluxio-2.8.0-bin.tar.gz"
-  sha256 "d2819ea49a14182b1406ed61796026605510abca8f53adeda1ae05305057d1ef"
+  url "https://downloads.alluxio.io/downloads/files/2.8.1/alluxio-2.8.1-bin.tar.gz"
+  sha256 "5cf36642b3c810e697378461dacea82b9a5b88dd49e4fca3895e490fc4846d63"
   license "Apache-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Alluxio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alluxio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9e269007f1167a134aac755cc0b3a158e9aa65d70c50ca679df6336201349f6a"
+    sha256 cellar: :any_skip_relocation, mojave: "d9ce4c40f191da033c417073d3d6c486e74b476380fd216871ab35d603b78147"
   end
 
   # Alluxio requires Java 8 or Java 11
