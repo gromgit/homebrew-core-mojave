@@ -133,6 +133,7 @@ class Glibc < Formula
         "--disable-silent-rules",
         "--prefix=#{prefix}",
         "--enable-obsolete-rpc",
+        "--without-gd",
         "--without-selinux",
         "--with-binutils=#{bootstrap_dir}/bin",
         "--with-headers=#{Formula["linux-headers@5.15"].include}",
