@@ -2,8 +2,8 @@ class Devspace < Formula
   desc "CLI helps develop/deploy/debug apps with Docker and k8s"
   homepage "https://devspace.sh/"
   url "https://github.com/loft-sh/devspace.git",
-      tag:      "v5.18.5",
-      revision: "025444ad7c568b99faaf524d90b1cd1495185459"
+      tag:      "v6.0.1",
+      revision: "ffa13178ef763580d2696a1d4b38061666db6873"
   license "Apache-2.0"
   head "https://github.com/loft-sh/devspace.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Devspace < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/devspace"
-    sha256 cellar: :any_skip_relocation, mojave: "beac88f660b8de22d2dae680fa69ae7b9fca213e4dce89bb0d40960670f399fe"
+    sha256 cellar: :any_skip_relocation, mojave: "b2bd97eaee11f70f833ff66e414b171bf453c85b2174add9421075c18146ef0f"
   end
 
   depends_on "go" => :build
