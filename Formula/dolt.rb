@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://github.com/dolthub/dolt/archive/v0.40.27.tar.gz"
-  sha256 "e52652ece4e38b03883bd2182d74c129e2953c39055609c1752cb6efaf9bc330"
+  url "https://github.com/dolthub/dolt/archive/v0.40.29.tar.gz"
+  sha256 "71e081f79ba537fcbf47e80124224fb9a27b8772b30fcebe88db18fd6d97c2cc"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Dolt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dolt"
-    sha256 cellar: :any_skip_relocation, mojave: "6eda0672c23ee5c7836a21d2b24840e3f5989f5eac77d86852e666cc31e0a842"
+    sha256 cellar: :any_skip_relocation, mojave: "4e4928807f86c0da7b7d664c3dd25fabc3dbe5f8135ada2846143f407264117d"
   end
 
   depends_on "go" => :build
@@ -20,8 +20,6 @@ class Dolt < Formula
   def install
     chdir "go" do
       system "go", "build", *std_go_args, "./cmd/dolt"
-      system "go", "build", *std_go_args(output: bin/"git-dolt"), "./cmd/git-dolt"
-      system "go", "build", *std_go_args(output: bin/"git-dolt-smudge"), "./cmd/git-dolt-smudge"
     end
   end
 
