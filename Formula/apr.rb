@@ -5,17 +5,18 @@ class Apr < Formula
   mirror "https://archive.apache.org/dist/apr/apr-1.7.0.tar.bz2"
   sha256 "e2e148f0b2e99b8e5c6caa09f6d4fb4dd3e83f744aa72a952f94f5a14436f7ea"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apr"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3be9db7b52ba7d20a3aeb614197f358de22c51499d673a4188394dfdb872023a"
+    sha256 cellar: :any, mojave: "410491619eee3d47872347b173ba85d1ac2fbd63ed5098147687f6e97877220f"
   end
 
   keg_only :provided_by_macos, "Apple's CLT provides apr"
 
   depends_on "autoconf@2.69" => :build
+
+  uses_from_macos "libxcrypt"
 
   on_linux do
     depends_on "util-linux"
