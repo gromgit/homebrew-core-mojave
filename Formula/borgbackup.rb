@@ -3,13 +3,13 @@ class Borgbackup < Formula
 
   desc "Deduplicating archiver with compression and authenticated encryption"
   homepage "https://borgbackup.org/"
-  url "https://files.pythonhosted.org/packages/e5/7e/3098f7ba4e5b6caec1657cd44e3c5d309fad83ba7bb6f6b8433315a5adbc/borgbackup-1.2.1.tar.gz"
-  sha256 "9f9ce2d1923cb33a147ee6d08177d860974567721b1142fca67914a02e64c633"
+  url "https://files.pythonhosted.org/packages/a2/98/479f364b69182b9a29c82607a17a9cf2e3cdc8743bb9570a4da9d511d0a6/borgbackup-1.2.2.tar.gz"
+  sha256 "d730687443f1beb602b1d72bae36318f6f9654818fcdc50458540ec579e57260"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/borgbackup"
-    sha256 cellar: :any, mojave: "4d595cc530f7323c5b907dbf85131bbfd051d115a28b2245c09f5dc83e7f7937"
+    sha256 cellar: :any, mojave: "e4001a23465101a99df86251e063c4fcc4a4e1748ca79cac5825630de9391b9c"
   end
 
   depends_on "pkg-config" => :build
@@ -40,16 +40,16 @@ class Borgbackup < Formula
   end
 
   def install
-    bash_completion.install "scripts/shell_completions/bash/borg"
-    fish_completion.install "scripts/shell_completions/fish/borg.fish"
-    zsh_completion.install "scripts/shell_completions/zsh/_borg"
-
     ENV["BORG_LIBB2_PREFIX"] = Formula["libb2"].prefix
     ENV["BORG_LIBLZ4_PREFIX"] = Formula["lz4"].prefix
     ENV["BORG_LIBXXHASH_PREFIX"] = Formula["xxhash"].prefix
     ENV["BORG_LIBZSTD_PREFIX"] = Formula["zstd"].prefix
     ENV["BORG_OPENSSL_PREFIX"] = Formula["openssl@1.1"].prefix
     virtualenv_install_with_resources
+
+    bash_completion.install "scripts/shell_completions/bash/borg"
+    fish_completion.install "scripts/shell_completions/fish/borg.fish"
+    zsh_completion.install "scripts/shell_completions/zsh/_borg"
   end
 
   test do
