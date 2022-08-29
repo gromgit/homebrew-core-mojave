@@ -8,21 +8,20 @@ class DoubleConversion < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/double-conversion"
-    sha256 cellar: :any, mojave: "41313dbc1e2d7dc5138b2c323fc40fd91d5243d6d5c99f7320339d6e8d75fc28"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8bec3530f60cdb73b49d01a9543afc89d5cbf5e89b26163e01b17b2075b0e538"
   end
 
   depends_on "cmake" => :build
 
   def install
-    mkdir "dc-build" do
-      system "cmake", "..", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
-      system "make", "install"
-      system "make", "clean"
+    system "cmake", "-S", ".", "-B", "shared", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "shared"
+    system "cmake", "--install", "shared"
 
-      system "cmake", "..", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
-      system "make"
-      lib.install "libdouble-conversion.a"
-    end
+    system "cmake", "-S", ".", "-B", "static", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
+    system "cmake", "--build", "static"
+    lib.install "static/libdouble-conversion.a"
   end
 
   test do
