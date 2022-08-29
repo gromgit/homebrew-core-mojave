@@ -9,8 +9,8 @@ class Caf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caf"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8565206c58afd50a53c96bf6abca4a68f8c0d499af99a04d6d563225776a0e68"
+    rebuild 3
+    sha256 cellar: :any, mojave: "a8297a34fca7b871ff8c984ae38ba0a1346438580e241a8a1651a5e1632c67a8"
   end
 
   depends_on "cmake" => :build
@@ -24,9 +24,10 @@ class Caf < Formula
 
   def install
     tools = pkgshare/"tools"
-    args = ["-DCAF_ENABLE_TESTING=OFF"]
-    args << "-DCMAKE_INSTALL_RPATH=#{rpath};@loader_path/#{lib.relative_path_from(tools)}" if OS.mac?
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    rpaths = [rpath, rpath(source: tools)]
+    args = ["-DCAF_ENABLE_TESTING=OFF", "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
