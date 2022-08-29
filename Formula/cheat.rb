@@ -1,13 +1,13 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
   homepage "https://github.com/cheat/cheat"
-  url "https://github.com/cheat/cheat/archive/refs/tags/4.3.1.tar.gz"
-  sha256 "10011b4dd8e66976decd7f3252e3221cb2c5a290740648ac3a70f3b20bac3109"
+  url "https://github.com/cheat/cheat/archive/refs/tags/4.3.3.tar.gz"
+  sha256 "6a1739b71d436f45dc7c028ec79863a34e30cc13da7159bf23604b77f43faaf2"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cheat"
-    sha256 cellar: :any_skip_relocation, mojave: "bcc2ebe20cc60a935accc534f0d7c25a2686986c3746648e4e03dd5b46a95788"
+    sha256 cellar: :any_skip_relocation, mojave: "40562182d1348c670edc426a77e2636ee459d8f5d8f3be27b9e2cb34fee0c27d"
   end
 
   depends_on "go" => :build
