@@ -5,9 +5,15 @@ class Fio < Formula
   sha256 "077100819a243d0e00f232eb7c53fe1d30f4c54fba4d82847d5747eae1d255ab"
   license "GPL-2.0-only"
 
+  livecheck do
+    url :stable
+    regex(/^fio[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fio"
-    sha256 cellar: :any_skip_relocation, mojave: "93a5a51712141052b6fdc0528b7334e85aaa9aeabe68c6c40583130c6099a595"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8ea12cd8eef7a5557102b5ccff5c93fc1d8af60ef190304d3317ee585f05acab"
   end
 
   uses_from_macos "zlib"
