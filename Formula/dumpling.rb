@@ -2,8 +2,8 @@ class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
   url "https://github.com/pingcap/tidb.git",
-      tag:      "v6.1.0",
-      revision: "1a89decdb192cbdce6a7b0020d71128bc964d30f"
+      tag:      "v6.2.0",
+      revision: "daf2b17cdfe30c02ce282361009fb5bdb05f2b0e"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Dumpling < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dumpling"
-    sha256 cellar: :any_skip_relocation, mojave: "8fb442f0db9c675472f068ea68c1acd11791a3263ad9ef26ddac0805fcf9fa57"
+    sha256 cellar: :any_skip_relocation, mojave: "6c1a482d913f9ba8d56ed54cebbbf2997448cf3af46206de6f82612f1b042f1f"
   end
 
   depends_on "go" => :build
