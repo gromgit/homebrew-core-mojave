@@ -8,7 +8,8 @@ class Austin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/austin"
-    sha256 cellar: :any_skip_relocation, mojave: "b5bb482e94a0e9a2b606ded388d1e4721d2c866711ce0fdea6ea58b12c0c104f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4c128cc47040dfc6448fb280f3e5015de0134a6fcb5c8c724d10ec1392cf9608"
   end
 
   depends_on "autoconf" => :build
@@ -24,6 +25,7 @@ class Austin < Formula
   end
 
   test do
-    shell_output(bin/"austin #{Formula["python@3.10"].opt_bin}/python3 -c \"from time import sleep; sleep(1)\"", 37)
+    python = Formula["python@3.10"].opt_bin/"python3.10"
+    shell_output(bin/"austin #{python} -c \"from time import sleep; sleep(1)\"", 37)
   end
 end
