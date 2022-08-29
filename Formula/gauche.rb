@@ -14,7 +14,8 @@ class Gauche < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gauche"
-    sha256 mojave: "606b0b078c059b05a0ab1980b7d185c704504328a1eec579824498734f72aed9"
+    rebuild 1
+    sha256 mojave: "bf9d9ad9ba17dc84706d78a0a6f12cc70db94f1e0fe5b94a94ed033b632ec043"
   end
 
   depends_on "mbedtls"
@@ -31,6 +32,7 @@ class Gauche < Formula
 
   test do
     output = shell_output("#{bin}/gosh -V")
-    assert_match "Gauche scheme shell, version #{version}", output
+    assert_match "(version \"#{version}\")", output
+    assert_match "(gauche.net.tls mbedtls)", output
   end
 end
