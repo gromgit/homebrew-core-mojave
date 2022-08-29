@@ -4,20 +4,16 @@ class Chapel < Formula
   url "https://github.com/chapel-lang/chapel/releases/download/1.27.0/chapel-1.27.0.tar.gz"
   sha256 "558b1376fb7757a5e1f254c717953f598a3e89850c8edd1936b8d09c464f3e8b"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/chapel-lang/chapel.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chapel"
-    sha256 mojave: "fec89d8b5db9227a0135baf579926611b88c6eef369ea22f19bd8863f8622316"
+    sha256 mojave: "69769cc72e4b6c34838798e6ed179f416ed3f6f90bd323b3aaf6b9c8cb3e5c00"
   end
 
   depends_on "gmp"
-  # `chapel` scripts use python on PATH (e.g. checking `command -v python3`),
-  # so it needs to depend on the currently linked Homebrew Python version.
-  # TODO: remove from versioned_dependencies_conflicts_allowlist when
-  # when Python dependency matches LLVM's Python for all OS versions.
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   # fatal error: cannot open file './sys_basic.h': No such file or directory
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/96915
@@ -43,6 +39,10 @@ class Chapel < Formula
   end
 
   def install
+    # Always detect Python used as dependency rather than needing aliased Python formula
+    python = "python3.10"
+    inreplace "util/config/find-python.sh", /^(for cmd in )(python3 )/, "\\1#{python} \\2"
+
     libexec.install Dir["*"]
     # Chapel uses this ENV to work out where to install.
     ENV["CHPL_HOME"] = libexec
@@ -51,18 +51,18 @@ class Chapel < Formula
     #   https://github.com/llvm/llvm-project/issues/54438
     ENV["CHPL_HOST_USE_SYSTEM_LIBCXX"] = "yes"
 
+    # don't try to set CHPL_LLVM_GCC_PREFIX since the llvm
+    # package should be configured to use a reasonable GCC
+    (libexec/"chplconfig").write <<~EOS
+      CHPL_RE2=bundled
+      CHPL_GMP=system
+      CHPL_LLVM_CONFIG=#{llvm.opt_bin}/llvm-config
+      CHPL_LLVM_GCC_PREFIX=none
+    EOS
+
     # Must be built from within CHPL_HOME to prevent build bugs.
     # https://github.com/Homebrew/legacy-homebrew/pull/35166
     cd libexec do
-      # don't try to set CHPL_LLVM_GCC_PREFIX since the llvm@13
-      # package should be configured to use a reasonable GCC
-      (libexec/"chplconfig").write <<~EOS
-        CHPL_RE2=bundled
-        CHPL_GMP=system
-        CHPL_LLVM_CONFIG=#{llvm.opt_bin}/llvm-config
-        CHPL_LLVM_GCC_PREFIX=none
-      EOS
-
       system "./util/printchplenv", "--all"
       with_env(CHPL_PIP_FROM_SOURCE: "1") do
         system "make", "test-venv"
