@@ -1,15 +1,14 @@
 class Restic < Formula
   desc "Fast, efficient and secure backup program"
   homepage "https://restic.net/"
-  url "https://github.com/restic/restic/archive/v0.13.1.tar.gz"
-  sha256 "8430f80dc17b98fd78aca6f7d635bf12a486687677e15989a891ff4f6d8490a9"
+  url "https://github.com/restic/restic/archive/v0.14.0.tar.gz"
+  sha256 "78cdd8994908ebe7923188395734bb3cdc9101477e4163c67e7cc3b8fd3b4bd6"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/restic/restic.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restic"
-    sha256 cellar: :any_skip_relocation, mojave: "b20f4e3f5683a908b592cb38a212410e74d77b8898adfaa4609106af734f4234"
+    sha256 cellar: :any_skip_relocation, mojave: "030fd47b302cdaef0b04967dd2adcd1600d6a24864a7737947a0d5dad2c50a7b"
   end
 
   depends_on "go" => :build
