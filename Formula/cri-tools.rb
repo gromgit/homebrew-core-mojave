@@ -1,14 +1,14 @@
 class CriTools < Formula
   desc "CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
   homepage "https://github.com/kubernetes-sigs/cri-tools"
-  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.24.2.tar.gz"
-  sha256 "cd70395a2a856a77785d231d41d3640fb6da4ba7b144f4242a938312b64855a0"
+  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.25.0.tar.gz"
+  sha256 "bd900fac00b3247fa601f7aca4e0e44825dfd67d399c2830cbc643b7d73dbe52"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cri-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "e3aa250f1df647d24a0595befc5a93b5da36db71fc12098cc18af3bd09dba8fb"
+    sha256 cellar: :any_skip_relocation, mojave: "eb45b4db58267183690c0fb42b88c9b3101ee00eeaa6bf2792d49727f3043f22"
   end
 
   depends_on "go" => :build
