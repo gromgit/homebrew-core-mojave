@@ -3,19 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/6a/68/74c12f195b517744f148965ab2df8433e249644b417e46d3b2349fe745f9/conan-1.51.0.tar.gz"
-  sha256 "2dc8a13e1a38052ee6bdab4f054a1ce91b3bb609673e3e05adb77f688d06ff25"
+  url "https://files.pythonhosted.org/packages/44/13/73f8d73d9774fa762d221e124867008e36da80fa22488ee2896e92e9c5ec/conan-1.51.3.tar.gz"
+  sha256 "5f7f2a39e4778250b02813606bd9e7a16616e430b4c889da22aaec99e02cc945"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conan"
-    sha256 cellar: :any_skip_relocation, mojave: "f9f16fdd4fcbfc96a61563c321c4629ada31275c8c66ed257f31b4002502192b"
+    sha256 cellar: :any_skip_relocation, mojave: "987fafb6d53669f1d49555966d49ef097b2cea184945bb9fc07583af09e8be9d"
   end
 
   depends_on "pkg-config" => :build
   depends_on "cmake" => :test
-  depends_on "libffi"
   depends_on "openssl@1.1"
   depends_on "python@3.10"
   depends_on "six"
@@ -81,8 +80,8 @@ class Conan < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
-    sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
+    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
+    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "PyJWT" do
