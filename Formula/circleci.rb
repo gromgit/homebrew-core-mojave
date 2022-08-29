@@ -3,14 +3,14 @@ class Circleci < Formula
   homepage "https://circleci.com/docs/2.0/local-cli/"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v0.1.20629",
-      revision: "ec7d8d3bff677e0bdce7830fdefaee6dcab64da7"
+      tag:      "v0.1.20788",
+      revision: "15e1fd4f85432c7fe7bf23e4eb5630a761f79dda"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circleci"
-    sha256 cellar: :any_skip_relocation, mojave: "7cc3b3a56f825d2b63f539350681e347d389f14a1df4e0a273971ae04c220948"
+    sha256 cellar: :any_skip_relocation, mojave: "b0120b7aff88d01a88066c13f0e9e4d837ae42e19966967763cf31ee948fbe6c"
   end
 
   # Bump to 1.18 when the x/sys dependency is updated upstream.
