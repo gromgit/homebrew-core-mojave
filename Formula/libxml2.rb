@@ -4,8 +4,8 @@ class Libxml2 < Formula
   license "MIT"
 
   stable do
-    url "https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.0.tar.xz"
-    sha256 "2dd33110ea778676de14bea4999ee1173c4ca55d5ff1452bca224e06f0152595"
+    url "https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.1.tar.xz"
+    sha256 "21a9e13cc7c4717a6c36268d0924f92c3f67a1ece6b7ff9d588958a6db9fb9d8"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -23,7 +23,7 @@ class Libxml2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxml2"
-    sha256 cellar: :any, mojave: "0f4b4110541ee049d96e170bcea2dfb23f4fe5f573d5aba276b0b2cd59eccf2d"
+    sha256 cellar: :any, mojave: "5bdb307891a66c5d5fad5fec65cdc3fa1749d76c894eed0c42e93d76ff6b43ce"
   end
 
   head do
