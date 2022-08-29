@@ -1,8 +1,8 @@
 class Goredo < Formula
   desc "Go implementation of djb's redo, a Makefile replacement that sucks less"
   homepage "http://www.goredo.cypherpunks.ru/"
-  url "http://www.goredo.cypherpunks.ru/download/goredo-1.25.0.tar.zst"
-  sha256 "7044c246fcf6159d84ba7233bc25202baaa08ecccb9c30ca3c26254065eda9a4"
+  url "http://www.goredo.cypherpunks.ru/download/goredo-1.26.0.tar.zst"
+  sha256 "e0849ed81431436e06542f56c6bde6895a4eff0ea19b44711ffe9a99f0a5e180"
   license "GPL-3.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Goredo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goredo"
-    sha256 cellar: :any_skip_relocation, mojave: "24b3b4bc35cd371bfa3cafde300d79d1746bdc705800767f7dc50bfddd813321"
+    sha256 cellar: :any_skip_relocation, mojave: "86f130e01e4d025cf4e776567a6e710a0e6ba23e13ce64226b9a2c26321ca791"
   end
 
   depends_on "go" => :build
