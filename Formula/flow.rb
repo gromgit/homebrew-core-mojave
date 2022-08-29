@@ -1,14 +1,14 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
   homepage "https://flowtype.org/"
-  url "https://github.com/facebook/flow/archive/v0.185.0.tar.gz"
-  sha256 "c091ad790bf2cfdbe668e7a03e10d23ba837a0055d2fbbdc2bfee7d9b01d80fb"
+  url "https://github.com/facebook/flow/archive/v0.185.2.tar.gz"
+  sha256 "1cdac9451720775943bdef577625c61d9b2bf639984c09f4087def0d0b7f01e7"
   license "MIT"
   head "https://github.com/facebook/flow.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flow"
-    sha256 cellar: :any_skip_relocation, mojave: "8380d99429c76f32bff0183bab5a381e729f6b74be7056c034a3c9c3a0476dc0"
+    sha256 cellar: :any_skip_relocation, mojave: "3683ed8efeb3a01ca27e3e0d81e0f43f2f0265542d269301ff48776242328011"
   end
 
   depends_on "ocaml" => :build
