@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.org/"
-  url "https://github.com/bareos/bareos/archive/Release/21.1.3.tar.gz"
-  sha256 "3fc1241981f095c5e3db4e7476cdb273633b630820b1e1eff792b2c4d99b3d11"
+  url "https://github.com/bareos/bareos/archive/Release/21.1.4.tar.gz"
+  sha256 "ed898221182f2dbca712d0e85715cb5f9dd9d2c78f0e20eb7a13ae35d08701bb"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class BareosClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bareos-client"
-    sha256 cellar: :any, mojave: "9568250a09b6f4e1e7807463a163df1df0bd0db5c0bd870c4db7a0a0578a04dc"
+    sha256 mojave: "e20984d5422d6e40d3b5ba04d94724d542e9e01307cdfb6383436068ae889652"
   end
 
   depends_on "cmake" => :build
