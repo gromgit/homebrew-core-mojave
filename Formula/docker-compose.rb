@@ -1,14 +1,14 @@
 class DockerCompose < Formula
   desc "Isolated development environments using Docker"
   homepage "https://docs.docker.com/compose/"
-  url "https://github.com/docker/compose/archive/v2.10.0.tar.gz"
-  sha256 "981282ee5cc454a69f1d56845efea5645ff90295b9198decfc62674a9e286baa"
+  url "https://github.com/docker/compose/archive/v2.10.2.tar.gz"
+  sha256 "74c86d544fcfb80bb2d3b58187bd017adb0e62863d22114a66c14fc94fdbc421"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-compose"
-    sha256 cellar: :any_skip_relocation, mojave: "2e93919f4e070a6cf792e3d47f0224dcaa328e2844b7c82f5a8ab0e013891904"
+    sha256 cellar: :any_skip_relocation, mojave: "e53ad8d98f9cae5bf9d8e2ebe094b9508c693bdad0f727a2f00d05e0d7fdc5e3"
   end
 
   depends_on "go" => :build
