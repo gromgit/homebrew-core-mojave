@@ -5,15 +5,17 @@ class Micropython < Formula
       tag:      "v1.19.1",
       revision: "9b486340da22931cde82872f79e1c34db959548b"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micropython"
-    sha256 cellar: :any, mojave: "d886751a41a2da364108cd01b472b955787413ba1705c2f0465b3ff43bd4e1c8"
+    sha256 cellar: :any, mojave: "77226af2e9bb81e28c71976e65dbce2066c30ab1414c36d645f52b7e2b46b7d7"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "libffi" # Requires libffi v3 closure API; macOS version is too old
   depends_on "python@3.10" # Requires python3 executable
+
+  uses_from_macos "libffi", since: :catalina # Requires libffi v3 closure API
 
   def install
     # Build mpy-cross before building the rest of micropython. Build process expects executable at
