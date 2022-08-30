@@ -1,10 +1,9 @@
 class Hatari < Formula
   desc "Atari ST/STE/TT/Falcon emulator"
   homepage "https://hatari.tuxfamily.org"
-  url "https://download.tuxfamily.org/hatari/2.3.1/hatari-2.3.1.tar.bz2"
-  sha256 "44a2f62ca995e38d9e0874806956f0b9c3cc84ea89e0169a63849b63cd3b64bd"
+  url "https://download.tuxfamily.org/hatari/2.4.1/hatari-2.4.1.tar.bz2"
+  sha256 "2a5da1932804167141de4bee6c1c5d8d53030260fe7fe7e31e5e71a4c00e0547"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://git.tuxfamily.org/hatari/hatari.git", branch: "master"
 
   livecheck do
@@ -14,20 +13,18 @@ class Hatari < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hatari"
-    rebuild 2
-    sha256 cellar: :any, mojave: "084d67ea2dbaaa1be545b6f49868007e542304a8b3e4667ec72a80e5f33ebda1"
+    sha256 cellar: :any, mojave: "53d52786676e1b92b53903a11e5a2993196810231dc38e7cbdda202713f165a6"
   end
 
   depends_on "cmake" => :build
   depends_on "libpng"
-  depends_on "portaudio"
   depends_on "python@3.10"
   depends_on "sdl2"
 
   # Download EmuTOS ROM image
   resource "emutos" do
-    url "https://downloads.sourceforge.net/project/emutos/emutos/1.0.1/emutos-512k-1.0.1.zip"
-    sha256 "96c698aa0fc0f51ecdb0f8b53484df9de273215467b5de3f44d245821dff795e"
+    url "https://downloads.sourceforge.net/project/emutos/emutos/1.2/emutos-1024k-1.2.zip"
+    sha256 "65933ffcda6cba87ab013b5e799c3a0896b9a7cb2b477032f88f091ab8578b2a"
   end
 
   def install
@@ -44,9 +41,9 @@ class Hatari < Formula
     end
     resource("emutos").stage do
       if OS.mac?
-        (prefix/"Hatari.app/Contents/Resources").install "etos512k.img" => "tos.img"
+        (prefix/"Hatari.app/Contents/Resources").install "etos1024k.img" => "tos.img"
       else
-        pkgshare.install "etos512k.img" => "tos.img"
+        pkgshare.install "etos1024k.img" => "tos.img"
       end
     end
   end
