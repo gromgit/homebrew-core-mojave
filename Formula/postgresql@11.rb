@@ -12,7 +12,8 @@ class PostgresqlAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@11"
-    sha256 mojave: "4f76c00a5d3aa37b57722f8050619303e9b64c8348e31bb44f365639d071106e"
+    rebuild 1
+    sha256 mojave: "758348948e8672dfdb95ae88e20ecac2a4eeb8132b86cff29bf4c10e0dd2569f"
   end
 
   keg_only :versioned_formula
@@ -119,10 +120,10 @@ class PostgresqlAT11 < Formula
   end
 
   service do
-    run [opt_bin/"postgres", "-D", var/"postgresql@11"]
+    run [opt_bin/"postgres", "-D", f.postgresql_datadir]
     keep_alive true
-    log_path var/"log/postgresql@11.log"
-    error_log_path var/"log/postgresql@11.log"
+    log_path f.postgresql_log_path
+    error_log_path f.postgresql_log_path
     working_dir HOMEBREW_PREFIX
   end
 
