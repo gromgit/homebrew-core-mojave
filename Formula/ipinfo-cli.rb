@@ -1,8 +1,8 @@
 class IpinfoCli < Formula
   desc "Official CLI for the IPinfo IP Address API"
   homepage "https://ipinfo.io/"
-  url "https://github.com/ipinfo/cli/archive/ipinfo-2.8.1.tar.gz"
-  sha256 "efc690a7a532db51395de9b744651e09c9db0fe8d7d8f1285409cddb476620d3"
+  url "https://github.com/ipinfo/cli/archive/ipinfo-2.9.0.tar.gz"
+  sha256 "299b853300a81a6dd2c3c22bf335917368b799c2108a354cd8be4ad269753adc"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class IpinfoCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipinfo-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "157ba3285c1443bca46e6feb8a601a4901568cc21ea0ef7612a3bef826ff4443"
+    sha256 cellar: :any_skip_relocation, mojave: "83a2ca43316b704e8e2716e3af117aace495103aac983f3fb0a7381f7ee4be05"
   end
 
   depends_on "go" => :build
