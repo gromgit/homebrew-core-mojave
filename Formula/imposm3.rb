@@ -4,10 +4,11 @@ class Imposm3 < Formula
   url "https://github.com/omniscale/imposm3/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "14045272aa0157dc5fde1cfe885fecc2703f3bf33506603f2922cdf28310ebf0"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imposm3"
-    sha256 cellar: :any, mojave: "76980c2f719d2915bf035d4ad4c13a4630905a65c112010c311c69562c8d0e05"
+    sha256 cellar: :any, mojave: "f676464dfd680d0f5996d242c22c6769fde09b2ee5f7572090f30456a024cd02"
   end
 
   depends_on "go" => :build
