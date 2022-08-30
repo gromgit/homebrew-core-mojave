@@ -1,14 +1,13 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https://i2pd.website/"
-  url "https://github.com/PurpleI2P/i2pd/archive/2.42.1.tar.gz"
-  sha256 "d52b55cf144a6eedbb3433214c035161c07f776090074daba0e5e83c01d09139"
+  url "https://github.com/PurpleI2P/i2pd/archive/2.43.0.tar.gz"
+  sha256 "db1679653491a411dd16fa329488d840296c8f680e0691f9fe0d0e796e5d7bca"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i2pd"
-    sha256 cellar: :any, mojave: "123970c4d5cf81a1d2a315b023b8c789cefebb221c9b272e085713a475e5927f"
+    sha256 cellar: :any, mojave: "857d31bcc345123b20b5f147dd5d8409337661cb7204ea8e55762826862dbd4a"
   end
 
   depends_on "boost"
@@ -25,8 +24,6 @@ class I2pd < Formula
 
     args << "USE_AESNI=no" if Hardware::CPU.arm?
 
-    # Homebrew-specific fix to make sure documentation is installed in `share`.
-    inreplace "Makefile.linux", "${PREFIX}/usr/share", "${PREFIX}/share"
     system "make", "install", *args
 
     # preinstall to prevent overwriting changed by user configs
