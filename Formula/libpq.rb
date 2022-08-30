@@ -6,12 +6,14 @@ class Libpq < Formula
   license "PostgreSQL"
 
   livecheck do
-    formula "postgresql"
+    url "https://ftp.postgresql.org/pub/source/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpq"
-    sha256 mojave: "70c7d34f273f26a8cec9ea53484025b0935822343adcb445fefeea69c2f3252b"
+    rebuild 1
+    sha256 mojave: "fe65d79fa01c9730b3652312f6c7757a27c6b286c7962d625ea246e9898d5c52"
   end
 
   keg_only "conflicts with postgres formula"
