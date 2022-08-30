@@ -1,9 +1,9 @@
 class Parallel < Formula
   desc "Shell command parallelization utility"
   homepage "https://savannah.gnu.org/projects/parallel/"
-  url "https://ftp.gnu.org/gnu/parallel/parallel-20220722.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/parallel/parallel-20220722.tar.bz2"
-  sha256 "0e4083ac0d850c434598c6dfbf98f3b6dd2cc932a3af9269eb1f9323e43af019"
+  url "https://ftp.gnu.org/gnu/parallel/parallel-20220822.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/parallel/parallel-20220822.tar.bz2"
+  sha256 "9d0d4457c40b45ac6034f3085a11fee94489e5d58e422c0b492cb143d71ab016"
   license "GPL-3.0-or-later"
   version_scheme 1
   head "https://git.savannah.gnu.org/git/parallel.git", branch: "master"
@@ -14,7 +14,8 @@ class Parallel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f975128d36fcc257e985a374eca0677fa812283ba7f3203ccb157b549373eba7"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/parallel"
+    sha256 cellar: :any_skip_relocation, mojave: "08d4b2cb728aa314f047ce81e3f0442e792a39661ed89f47632cd6f1d20501ce"
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"
