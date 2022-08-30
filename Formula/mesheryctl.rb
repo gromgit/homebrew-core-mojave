@@ -2,15 +2,14 @@ class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
   homepage "https://meshery.io"
   url "https://github.com/meshery/meshery.git",
-      tag:      "v0.6.0-rc.6fd",
-      revision: "f4e1ced2f1bb8f48022f9430cd8be19ee3fd8d02"
-  version "0.6.0-rc.6fd"
+      tag:      "v0.6.3",
+      revision: "36580ecdd6bb81edf19277ea380266db067fc465"
   license "Apache-2.0"
   head "https://github.com/meshery/meshery.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesheryctl"
-    sha256 cellar: :any_skip_relocation, mojave: "3e899bcc2604a59dc6276b178a031e146bb98bc423fac522f65482c791063231"
+    sha256 cellar: :any_skip_relocation, mojave: "646aff69fd4bf564764cd44b4b74622a022cf3527f7f9105693a93625b93a558"
   end
 
   depends_on "go" => :build
