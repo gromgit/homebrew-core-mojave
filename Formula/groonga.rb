@@ -1,8 +1,8 @@
 class Groonga < Formula
   desc "Fulltext search engine and column store"
   homepage "https://groonga.org/"
-  url "https://packages.groonga.org/source/groonga/groonga-12.0.5.tar.gz"
-  sha256 "abf1bdbf4b7ae1700f7725ea8d8139844fadb473457d7d907a8ebe94fdd5e451"
+  url "https://packages.groonga.org/source/groonga/groonga-12.0.6.tar.gz"
+  sha256 "0d5ba6d9f51ad41892c8bd1df21cd1a370331154915f6101ac9e030412317ed1"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Groonga < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/groonga"
-    sha256 mojave: "3d65e7306d2103f8356594723db46e6523937ca85dfdeb832be05ba6b927bfad"
+    sha256 mojave: "0a2b6c73e2eaf8725c097f07645d09c82fa3bdf51184680129a6928d4416fd09"
   end
 
   head do
