@@ -1,14 +1,14 @@
 class Libvatek < Formula
   desc "User library to control VATek chips"
   homepage "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2"
-  url "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2/archive/v3.05.tar.gz"
-  sha256 "35cabadc9a626460f030959ed86ad8619ce070ddb5fa528abf15dfa34c10619d"
+  url "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2/archive/v3.06.tar.gz"
+  sha256 "ff851c4f2d73f309ee0e04e87cd023cdd1254c8910f1bc6d996fe725126fc016"
   license "BSD-2-Clause"
   head "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvatek"
-    sha256 cellar: :any, mojave: "61c6378976fae8497065278926f864f086a0977809689932f7be9b7b20129f6c"
+    sha256 cellar: :any, mojave: "3488f17b44d0d01c6feb8c2f568277441f5eb124756fd340d39f9b1723a87105"
   end
 
   depends_on "cmake" => :build
