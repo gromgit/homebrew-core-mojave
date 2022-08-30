@@ -2,8 +2,8 @@ class K3sup < Formula
   desc "Utility to create k3s clusters on any local or remote VM"
   homepage "https://k3sup.dev"
   url "https://github.com/alexellis/k3sup.git",
-      tag:      "0.12.0",
-      revision: "c59d67b63ec76d5d5e399808cf4b11a1e02ddbc8"
+      tag:      "0.12.3",
+      revision: "c0a48331967e1c1e6b10dbd997b65c1496fbd32d"
   license "MIT"
   head "https://github.com/alexellis/k3sup.git", branch: "master"
 
@@ -14,7 +14,7 @@ class K3sup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3sup"
-    sha256 cellar: :any_skip_relocation, mojave: "ecb7123443da2cffac8ba6a6dba38705b4bdd513dec683d734cd81aed881515d"
+    sha256 cellar: :any_skip_relocation, mojave: "ed21704cd28944ebe1cc081b0b7ceaa9bc7f1f87bf7eb2293c455deae68d735f"
   end
 
   depends_on "go" => :build
