@@ -1,14 +1,14 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://github.com/kyma-project/cli/archive/2.5.0.tar.gz"
-  sha256 "12c06832e8083e620e8b8509d43309d578f8cedb2c1e865a091102b6e44004e3"
+  url "https://github.com/kyma-project/cli/archive/2.6.0.tar.gz"
+  sha256 "e2d4b2f6e48dfef09a387fb8cdb62be8e59e1e4f9aa443076a236fce8365bfe9"
   license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kyma-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "a9ca687dea7b5198ca5f85ac5d22961935f63bc11ba4f90e72a82f5b3863a2bc"
+    sha256 cellar: :any_skip_relocation, mojave: "bb498daa940ade5072bc2997df608f4da2cd7c636b96fee0774031caba3770fa"
   end
 
   depends_on "go" => :build
