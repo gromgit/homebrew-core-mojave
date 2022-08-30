@@ -8,14 +8,13 @@ class Idris < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idris"
-    rebuild 3
-    sha256 mojave: "c26ea5e4940e60b8452c84711513b777644590f3ed374027860048b408d4b946"
+    rebuild 4
+    sha256 mojave: "3f62706c6e7481a8c67acf61cef40a1cc9a6681ffd078d074e85888913c99aeb"
   end
 
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
   depends_on "ghc@8.8"
-  depends_on "libffi"
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
