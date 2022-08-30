@@ -1,8 +1,8 @@
 class Haproxy < Formula
   desc "Reliable, high performance TCP/HTTP load balancer"
   homepage "https://www.haproxy.org/"
-  url "https://www.haproxy.org/download/2.6/src/haproxy-2.6.3.tar.gz"
-  sha256 "d18f7224a87b5cd6bbabb04d238f79a79fa461f0f8e1f257575cef8da2a307d9"
+  url "https://www.haproxy.org/download/2.6/src/haproxy-2.6.4.tar.gz"
+  sha256 "f07d67ada2ff3a999fed4e34459c0489536331a549665ac90cb6a8df91f4a289"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -12,7 +12,7 @@ class Haproxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/haproxy"
-    sha256 cellar: :any, mojave: "54a50d269f86f83c5bf08bdc5a4753caba29b23685c52b2a7f24b72801d8f325"
+    sha256 cellar: :any, mojave: "a44953238d5aa857ae70784940cd9f78fa7e895e3d4aaa8f58e5805f00b3e613"
   end
 
   depends_on "openssl@3"
