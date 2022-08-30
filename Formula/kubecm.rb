@@ -1,13 +1,13 @@
 class Kubecm < Formula
   desc "KubeConfig Manager"
   homepage "https://kubecm.cloud"
-  url "https://github.com/sunny0826/kubecm/archive/v0.19.2.tar.gz"
-  sha256 "58e9490bf8efb6c694cfd2a33da7854a45bcc58fdad5b1f933d75bd990e58c92"
+  url "https://github.com/sunny0826/kubecm/archive/v0.19.3.tar.gz"
+  sha256 "fac64ce68b69af9e92367b28b12b93a2162d8e4cb683d6f18ecf56ef1c182cd8"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubecm"
-    sha256 cellar: :any_skip_relocation, mojave: "491c0e71b3b9b4e9bf08fb3041ec128e5ca829fde3314720b95f2886a9133d2f"
+    sha256 cellar: :any_skip_relocation, mojave: "6c2d4f6e5dea6323e7b96707ebae626621d9ea41a8ecf67844c537cc5c19ac07"
   end
 
   depends_on "go" => :build
