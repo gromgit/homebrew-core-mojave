@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://github.com/werf/werf/archive/refs/tags/v1.2.155.tar.gz"
-  sha256 "49cb19a93cb4eb57dd46a1572e2066853b4c9fd0b8d15c970118bcd1814e9fca"
+  url "https://github.com/werf/werf/archive/refs/tags/v1.2.165.tar.gz"
+  sha256 "881cbe028e4fffca408927e71b55387869e23d4f651fcda9c2618f7534c38b51"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -16,7 +16,7 @@ class Werf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/werf"
-    sha256 cellar: :any_skip_relocation, mojave: "2e6594b03a9148d1f57d2cbf5d9e392aaa792760f3953ceb3a142a3c7cb23c03"
+    sha256 cellar: :any_skip_relocation, mojave: "7bcc32fb495e31a4e77da8c5825b5007dacc5ef847d3a88630dd4c39242f2f09"
   end
 
   depends_on "go" => :build
