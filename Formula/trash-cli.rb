@@ -3,14 +3,14 @@ class TrashCli < Formula
 
   desc "Command-line interface to the freedesktop.org trashcan"
   homepage "https://github.com/andreafrancia/trash-cli"
-  url "https://files.pythonhosted.org/packages/c4/17/3d153e9ed159c8ab0e01fb3d991e7ac144c6a995d788ad96085c3ee7a093/trash-cli-0.22.8.21.16.tar.gz"
-  sha256 "ef77198e79ac02608872c027de91c0e18353f8d2bf1b7d11a1d8bde66fa5669e"
+  url "https://files.pythonhosted.org/packages/ce/93/62fa6fcf583c61f1ce21e1efaa0509729a72f9f1ebbf5f3664e16779ed00/trash-cli-0.22.8.27.tar.gz"
+  sha256 "b2799ed134c3fb2880fed12995ac9d9937466d86ff84936c16408f8d5778737b"
   license "GPL-2.0-or-later"
   head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trash-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "da6b4976c80fc6eaf62aa80085dc3597a8cf293186defe6905d5787982f6acd2"
+    sha256 cellar: :any_skip_relocation, mojave: "7d9f958f61b4204c2800dc565d7c48cb55f25a20932ebbb02f9c95e3cb3b1b3f"
   end
 
   depends_on "python@3.10"
