@@ -1,20 +1,20 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.21.0/step_0.21.0.tar.gz"
-  sha256 "bed0c7b4b946797bb3d0402b0bdb9a721dde0adcad848b97bfbbeae80e687cac"
+  url "https://github.com/smallstep/cli/releases/download/v0.22.0/step_0.22.0.tar.gz"
+  sha256 "2865b7268d5a3b27913f3fdf86cd9a030c9d44dc6359f6cee54085a5d9ad6dca"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/step"
-    sha256 cellar: :any_skip_relocation, mojave: "fdf24d030cda6978ce48f36c5b97f6cdaf6756a5feddeb0185d37d5ae6af54b2"
+    sha256 cellar: :any_skip_relocation, mojave: "d9b140aa7b11ece411a01434fc6fc1c7b96e745d1d706dd0bc1808d1c06cdbe1"
   end
 
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https://github.com/smallstep/certificates/releases/download/v0.21.0/step-ca_0.21.0.tar.gz"
-    sha256 "61ea96696f139fac0c87f957a84a1f1dc74e58f4d7f1720d192ab454a8a589c0"
+    url "https://github.com/smallstep/certificates/releases/download/v0.22.0/step-ca_0.22.0.tar.gz"
+    sha256 "fe11b8e8aa48d8c62ed54ae577c2a5abbd1dda4d3d93502f5c26260c12395e24"
   end
 
   def install
@@ -76,7 +76,7 @@ class Step < Formula
     # certificate using the API.
     (testpath/"password.txt").write("password")
     steppath = "#{testpath}/.step"
-    Dir.mkdir(steppath)
+    mkdir_p(steppath)
     ENV["STEPPATH"] = steppath
     system "#{bin}/step", "ca", "init", "--address", "127.0.0.1:8081",
         "--dns", "127.0.0.1", "--password-file", "#{testpath}/password.txt",
