@@ -14,7 +14,8 @@ class SwiProlog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swi-prolog"
-    sha256 mojave: "0af28b8ec6bbdb1ad2709791084952c6551914eebfd945e17e71dd630ba0b849"
+    rebuild 1
+    sha256 mojave: "2e1d1ed01745effc8e80e20a26fe9970fc35c13df41dcb0f7fc7afd1774b0295"
   end
 
   depends_on "cmake" => :build
@@ -41,13 +42,12 @@ class SwiProlog < Formula
       end
     end
 
-    args = ["-DSWIPL_PACKAGES_JAVA=OFF", "-DSWIPL_PACKAGES_X=OFF"]
-    args << "-DCMAKE_INSTALL_RPATH=@loader_path" if OS.mac?
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: libexec), *args
+    args = ["-DSWIPL_PACKAGES_JAVA=OFF", "-DSWIPL_PACKAGES_X=OFF", "-DCMAKE_INSTALL_RPATH=#{loader_path}"]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: libexec)
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.write_exec_script Dir["#{libexec}/bin/*"]
+    bin.write_exec_script (libexec/"bin").children
   end
 
   test do
