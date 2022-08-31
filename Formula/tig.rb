@@ -1,13 +1,13 @@
 class Tig < Formula
   desc "Text interface for Git repositories"
   homepage "https://jonas.github.io/tig/"
-  url "https://github.com/jonas/tig/releases/download/tig-2.5.6/tig-2.5.6.tar.gz"
-  sha256 "50bb5f33369b50b77748115c730c52b13e79b2de49cba7167bb634eb683d965f"
+  url "https://github.com/jonas/tig/releases/download/tig-2.5.7/tig-2.5.7.tar.gz"
+  sha256 "dbc7bac86b29098adaa005a76161e200f0734dda36de9f6bd35a861c7c29ca76"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tig"
-    sha256 cellar: :any, mojave: "d64e35b4672f88f78ee86adf3a57fe0806a577908d3a06cc7dbcdb778a21a265"
+    sha256 cellar: :any, mojave: "665c1abb9a227c77f5b2fca9873f41a861ea924f65a40262dfcc31fc4188fa73"
   end
 
   head do
