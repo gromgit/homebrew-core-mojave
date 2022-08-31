@@ -1,13 +1,13 @@
 class Scw < Formula
   desc "Command-line Interface for Scaleway"
   homepage "https://github.com/scaleway/scaleway-cli"
-  url "https://github.com/scaleway/scaleway-cli/archive/v2.5.4.tar.gz"
-  sha256 "1d6f0f0b334ca676b764f91551bc9b9b22665c5f23e6adf43ae0e09d9adbb50c"
+  url "https://github.com/scaleway/scaleway-cli/archive/v2.5.6.tar.gz"
+  sha256 "f2b52527e51087f29e67b76282df425ce383083fff6bfb48b531dc22fa259fc3"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scw"
-    sha256 cellar: :any_skip_relocation, mojave: "8dd130984d6a31a0c27cd0ef0ad523bebbb0d1ac059b666462de8cc30a505f18"
+    sha256 cellar: :any_skip_relocation, mojave: "a8b9b5bbe9239bcc09ddd8e565e7a64b32637a20a7f75e6802488457d87537a2"
   end
 
   depends_on "go" => :build
