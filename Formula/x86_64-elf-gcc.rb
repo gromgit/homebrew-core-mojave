@@ -1,9 +1,9 @@
 class X8664ElfGcc < Formula
   desc "GNU compiler collection for x86_64-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz"
-  sha256 "62fd634889f31c02b64af2c468f064b47ad1ca78411c45abe6ac4b5f8dd19c7b"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
+  sha256 "e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,7 +12,7 @@ class X8664ElfGcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-elf-gcc"
-    sha256 mojave: "f6a6924166945d05e06e67f1a001799cf96966fe71f61e3ea612f71206ac79e6"
+    sha256 mojave: "cd911a238d797eac81675433e10e43f42987a72e3682dbb4fc51bea82fce33d4"
   end
 
   depends_on "gmp"
