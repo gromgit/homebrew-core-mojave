@@ -1,8 +1,8 @@
 class Tree < Formula
   desc "Display directories as trees (with optional color/HTML output)"
   homepage "http://mama.indstate.edu/users/ice/tree/"
-  url "http://mama.indstate.edu/users/ice/tree/src/tree-2.0.2.tgz"
-  sha256 "7d693a1d88d3c4e70a73e03b8dbbdc12c2945d482647494f2f5bd83a479eeeaf"
+  url "http://mama.indstate.edu/users/ice/tree/src/tree-2.0.3.tgz"
+  sha256 "ba14e77b5f9dc7f8250c3f702ec5b6be2f93cd0fa87311bab3239676866a3b1d"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Tree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tree"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "48d3a38005d555b4859e05702f1d1db4b07fb4d02b3a57ec78c050a4b5ac0e18"
+    sha256 cellar: :any_skip_relocation, mojave: "a9624a18d6875b85a057239e76690c6a3f49f6dac125a1d60911654c64da6fd5"
   end
 
   def install
