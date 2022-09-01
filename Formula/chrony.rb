@@ -1,8 +1,8 @@
 class Chrony < Formula
   desc "Versatile implementation of the Network Time Protocol (NTP)"
   homepage "https://chrony.tuxfamily.org"
-  url "https://download.tuxfamily.org/chrony/chrony-4.2.tar.gz"
-  sha256 "273f9fd15c328ed6f3a5f6ba6baec35a421a34a73bb725605329b1712048db9a"
+  url "https://download.tuxfamily.org/chrony/chrony-4.3.tar.gz"
+  sha256 "9d0da889a865f089a5a21610ffb6713e3c9438ce303a63b49c2fb6eaff5b8804"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,9 +12,8 @@ class Chrony < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chrony"
-    sha256 cellar: :any_skip_relocation, mojave: "a17ec5432bbe426d1b615ef506ad0950b7a26018b033abc77ea9b6773fa41966"
+    sha256 cellar: :any_skip_relocation, mojave: "4c538a0907d827c9a500b131b54768a7cde55f9671ce44a8ed2ddb027c7679d1"
   end
-
 
   depends_on "nettle"
 
