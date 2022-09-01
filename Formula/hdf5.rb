@@ -4,6 +4,7 @@ class Hdf5 < Formula
   url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.2/src/hdf5-1.12.2.tar.bz2"
   sha256 "1a88bbe36213a2cea0c8397201a459643e7155c9dc91e062675b3fb07ee38afe"
   license "BSD-3-Clause"
+  revision 1
   version_scheme 1
 
   # This regex isn't matching filenames within href attributes (as we normally
@@ -16,7 +17,7 @@ class Hdf5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5"
-    sha256 cellar: :any, mojave: "7d97555330ccc7002f72122efb8585fab0f030d810e7579ccfffda849c85e04d"
+    sha256 cellar: :any, mojave: "9989efa82aa324eefb1d259865b850416140b9875228aed09526935c1264094a"
   end
 
   depends_on "autoconf" => :build
