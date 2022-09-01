@@ -4,12 +4,11 @@ class Dungeon < Formula
   url "https://github.com/GOFAI/dungeon/archive/4.1.tar.gz"
   sha256 "b88c49ef60e908e8611257fbb5a6a41860e1058760df2dfcb7eb141eb34e198b"
   license "HPND"
-  revision 2
+  revision 3
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dungeon"
-    rebuild 1
-    sha256 cellar: :any, mojave: "26923944f2d95d65ea41b2afdc18251d1d9cd72788d4669922deada9b8259e8b"
+    sha256 cellar: :any, mojave: "bca5f867a3c9c708f8eed07f571e115cda55810ddcf4205b386c12a33a090248"
   end
 
   depends_on "gcc" # for gfortran
