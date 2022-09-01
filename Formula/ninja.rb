@@ -1,8 +1,8 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
   homepage "https://ninja-build.org/"
-  url "https://github.com/ninja-build/ninja/archive/v1.11.0.tar.gz"
-  sha256 "3c6ba2e66400fe3f1ae83deb4b235faf3137ec20bd5b08c29bfc368db143e4c6"
+  url "https://github.com/ninja-build/ninja/archive/v1.11.1.tar.gz"
+  sha256 "31747ae633213f1eda3842686f83c2aa1412e0f5691d1c14dbbcc67fe7400cea"
   license "Apache-2.0"
   head "https://github.com/ninja-build/ninja.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Ninja < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ninja"
-    sha256 cellar: :any_skip_relocation, mojave: "d63786ade91a2b81c5d5857fa7846730132dc0e35f8c745de5cf6f2559a62fa2"
+    sha256 cellar: :any_skip_relocation, mojave: "48e38fcc97da4ba2569166dd1d6dfdde61b1c0f84810f000b583c344d750d5ff"
   end
 
   # Ninja only needs Python for some non-core functionality.
