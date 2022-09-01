@@ -8,7 +8,8 @@ class Coreutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coreutils"
-    sha256 mojave: "fb8487a9ac83c375f4df101201af5ad68832f8fded6f9a3162ecfa86b4231839"
+    rebuild 1
+    sha256 mojave: "05d55a5687dda608c16883e174d52093b619dfcaa635a96970e94d0ca8d56642"
   end
 
   head do
@@ -34,7 +35,6 @@ class Coreutils < Formula
   conflicts_with "b2sum", because: "both install `b2sum` binaries"
   conflicts_with "ganglia", because: "both install `gstat` binaries"
   conflicts_with "gdu", because: "both install `gdu` binaries"
-  conflicts_with "gegl", because: "both install `gcut` binaries"
   conflicts_with "idutils", because: "both install `gid` and `gid.1`"
   conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
   conflicts_with "truncate", because: "both install `truncate` binaries"
