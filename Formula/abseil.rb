@@ -1,15 +1,14 @@
 class Abseil < Formula
   desc "C++ Common Libraries"
   homepage "https://abseil.io"
-  url "https://github.com/abseil/abseil-cpp/archive/refs/tags/20220623.0.tar.gz"
-  sha256 "4208129b49006089ba1d6710845a45e31c59b0ab6bff9e5788a87f55c5abd602"
+  url "https://github.com/abseil/abseil-cpp/archive/refs/tags/20220623.1.tar.gz"
+  sha256 "91ac87d30cc6d79f9ab974c51874a704de9c2647c40f6932597329a282217ba8"
   license "Apache-2.0"
   head "https://github.com/abseil/abseil-cpp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abseil"
-    rebuild 2
-    sha256 cellar: :any, mojave: "28b8ff1f47fa9ab008533c1502f0ea7dbd9fcec0bd3cd39b2a93d8ec6dc90786"
+    sha256 cellar: :any, mojave: "72d6ba0b4300fc18716d5afa3c0b2799c46548a7be39eebf8d52fb66250e200a"
   end
 
   depends_on "cmake" => :build
