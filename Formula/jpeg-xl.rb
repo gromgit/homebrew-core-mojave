@@ -6,9 +6,15 @@ class JpegXl < Formula
   license "BSD-3-Clause"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg-xl"
-    sha256 cellar: :any, mojave: "9784e2561c6e09dabb2812a1a6d627ce4ca47222a9ffbece12298921f4bcee26"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5d842e4c9828293a25899d0253cb18d621037b314c4c242dce76865f2ac9b51e"
   end
 
   depends_on "cmake" => :build
