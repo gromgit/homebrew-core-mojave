@@ -4,7 +4,7 @@ class PythonAT310 < Formula
   url "https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz"
   sha256 "848cb06a5caa85da5c45bd7a9221bb821e33fc2bdcba088c127c58fad44e6343"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -13,7 +13,7 @@ class PythonAT310 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.10"
-    sha256 mojave: "67598418b45f9bd6d8bda8f30751697060509c8e0b8b97e9c72a825e614eb507"
+    sha256 mojave: "6c5bdcf1bc51d397aecd527e7e60927abb071c25134d25c1e599671fec14cc71"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -35,6 +35,10 @@ class PythonAT310 < Formula
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "libnsl"
+  end
 
   skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6", "bin/pip-3.7", "bin/pip-3.8", "bin/pip-3.9"
   skip_clean "bin/easy_install3", "bin/easy_install-3.4", "bin/easy_install-3.5", "bin/easy_install-3.6",
