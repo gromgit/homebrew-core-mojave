@@ -4,6 +4,7 @@ class Armadillo < Formula
   url "https://downloads.sourceforge.net/project/arma/armadillo-11.2.3.tar.xz"
   sha256 "4c2e97ce60707fc1f348f44f7af0cb6d2466d0aad0d0ea4bf5d5dc180e6cba41"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Armadillo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/armadillo"
-    sha256 cellar: :any, mojave: "0761e27932ad20f84efd2f3b757df9687ab3d035f0b266a69d18f8d2b723edbc"
+    sha256 cellar: :any, mojave: "d17664c560ed80555f8a0a051134daa4e6b99be56b78867f2728502910050eb2"
   end
 
   depends_on "cmake" => :build
