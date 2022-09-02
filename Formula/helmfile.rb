@@ -1,21 +1,25 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/helmfile/helmfile"
-  url "https://github.com/helmfile/helmfile/archive/v0.145.3.tar.gz"
-  sha256 "5818185689396589f10bac974164a3ba2060f90ae197a44ebc3958b5f22fe0b6"
+  url "https://github.com/helmfile/helmfile/archive/v0.145.4.tar.gz"
+  sha256 "1bfc5e805525c3629d2c28b30747ef5da7cbcce2c482cd163c0e716898f4f8be"
   license "MIT"
+  version_scheme 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmfile"
-    sha256 cellar: :any_skip_relocation, mojave: "ad1ff75aea60b75cdfca8f52e85835021da627e2b38c749a018b572e49c14e66"
+    sha256 cellar: :any_skip_relocation, mojave: "9531a33b463bea0d54600cc886ec94c1fd1c5f5db283a3ebb32307d4b186c4ce"
   end
 
   depends_on "go" => :build
   depends_on "helm"
 
   def install
-    system "go", "build", "-ldflags", "-X github.com/helmfile/helmfile/pkg/app/version.Version=v#{version}",
-             "-o", bin/"helmfile", "-v", "github.com/helmfile/helmfile"
+    ldflags = %W[
+      -s -w
+      -X github.com/helmfile/helmfile/pkg/app/version.Version=v#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
