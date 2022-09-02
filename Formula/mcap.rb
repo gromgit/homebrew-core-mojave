@@ -1,8 +1,8 @@
 class Mcap < Formula
   desc "Serialization-agnostic container file format for pub/sub messages"
   homepage "https://mcap.dev"
-  url "https://github.com/foxglove/mcap/archive/releases/mcap-cli/v0.0.16.tar.gz"
-  sha256 "289f6ab2f9b1efa655e8b3f6ed2baceb20ba4affd37194d20d4fb0bdd988c577"
+  url "https://github.com/foxglove/mcap/archive/releases/mcap-cli/v0.0.17.tar.gz"
+  sha256 "03495ce5af9950ac724f63107da7411b94be18d53dd3f439e4cca5a8d1593648"
   license "Apache-2.0"
   head "https://github.com/foxglove/mcap.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Mcap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mcap"
-    sha256 cellar: :any_skip_relocation, mojave: "fe11be0b1a55717002e47eb8987d80818517de2337caf7b16ca5a69e2bf82684"
+    sha256 cellar: :any_skip_relocation, mojave: "1900cc3c2bcc741383bd6c94e6a724434dd207d624844ad8badc5e4725581f59"
   end
 
   depends_on "go" => :build
