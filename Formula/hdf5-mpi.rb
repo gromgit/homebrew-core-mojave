@@ -4,6 +4,7 @@ class Hdf5Mpi < Formula
   url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.2/src/hdf5-1.12.2.tar.bz2"
   sha256 "1a88bbe36213a2cea0c8397201a459643e7155c9dc91e062675b3fb07ee38afe"
   license "BSD-3-Clause"
+  revision 1
   version_scheme 1
 
   livecheck do
@@ -12,7 +13,7 @@ class Hdf5Mpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5-mpi"
-    sha256 cellar: :any, mojave: "565ad4f2e58cd2062c9f5a76270697323a3dbe9198b80524ddf79680e195790d"
+    sha256 cellar: :any, mojave: "3ae3df8b63f0bba74bceef9a7763ba3cdf4f695b26351d07b4db7979ef8e7430"
   end
 
   depends_on "autoconf" => :build
