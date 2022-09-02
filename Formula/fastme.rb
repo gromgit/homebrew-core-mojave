@@ -3,6 +3,7 @@ class Fastme < Formula
   homepage "http://www.atgc-montpellier.fr/fastme/"
   url "https://gite.lirmm.fr/atgc/FastME/raw/v2.1.6.3/tarball/fastme-2.1.6.3.tar.gz"
   sha256 "09a23ea94e23c0821ab75f426b410ec701dac47da841943587443a25b2b85030"
+  revision 1
 
   livecheck do
     url "https://gite.lirmm.fr/atgc/FastME.git"
@@ -11,7 +12,7 @@ class Fastme < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastme"
-    sha256 cellar: :any, mojave: "1e5220c43069391684481b4e315c0c4dd2bead79699894d2a31ccdab9dfd4cd4"
+    sha256 cellar: :any, mojave: "567012da0c7d91e251b23bd0fdd8fbe1f1868c59366e15051680441a9fa7f8fc"
   end
 
   on_macos do
