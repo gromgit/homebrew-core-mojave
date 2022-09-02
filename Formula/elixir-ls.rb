@@ -1,13 +1,13 @@
 class ElixirLs < Formula
   desc "Language Server and Debugger for Elixir"
   homepage "https://elixir-lsp.github.io/elixir-ls"
-  url "https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "cba5b9afb46228c7472e2e2ecc5d7fd99a29e778ce3e726db1dd9f702a68bbbd"
+  url "https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "4dcb0908192993e654fd7d91234ed375bc15b873c1edc9e4a99e67404488bedb"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elixir-ls"
-    sha256 cellar: :any_skip_relocation, mojave: "2dbbd6cadc30397bf225b65c27f58ec50d4ec7c814e690f44f8cedcc0c197345"
+    sha256 cellar: :any_skip_relocation, mojave: "e8d92c5c7972bf9560747beb5428598bda3654e435e9410a3d2d7f18bf5fd922"
   end
 
   depends_on "elixir"
