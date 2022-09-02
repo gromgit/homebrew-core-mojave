@@ -12,7 +12,8 @@ class Krb5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/krb5"
-    sha256 mojave: "cb9f99aa69faa056f05b24bcafab3d8064d245fa9d4053b4db5d5b7c38887f75"
+    rebuild 1
+    sha256 mojave: "69bf2d17d425d1c9dd9026de89ef327d8859d656f6acc357f8aa9242c268c3cc"
   end
 
   keg_only :provided_by_macos
@@ -21,14 +22,11 @@ class Krb5 < Formula
 
   uses_from_macos "bison"
 
-  on_linux do
-    depends_on "gettext"
-  end
-
   def install
     cd "src" do
       system "./configure", "--disable-debug",
                             "--disable-dependency-tracking",
+                            "--disable-nls",
                             "--disable-silent-rules",
                             "--prefix=#{prefix}",
                             "--without-system-verto",
