@@ -4,12 +4,12 @@ class Kahip < Formula
   url "https://github.com/KaHIP/KaHIP/archive/v3.14.tar.gz"
   sha256 "9da04f3b0ea53b50eae670d6014ff54c0df2cb40f6679b2f6a96840c1217f242"
   license "MIT"
+  revision 1
   head "https://github.com/KaHIP/KaHIP.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kahip"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ea75ab011ff0e756692a0332d26aa95cf3746922c9c0644f0e84ad258258fe23"
+    sha256 cellar: :any, mojave: "c379dc92a7c8f397b0597254d0b0ee6d859380ecc5d7073df17fb7a31db7ef97"
   end
 
   depends_on "cmake" => :build
