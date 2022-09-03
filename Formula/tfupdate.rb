@@ -1,14 +1,14 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
   homepage "https://github.com/minamijoyo/tfupdate"
-  url "https://github.com/minamijoyo/tfupdate/archive/v0.6.6.tar.gz"
-  sha256 "1abdb562a21d98e7947f08e430786210f2abe828debdbd0a0e8c5b986cebe4fc"
+  url "https://github.com/minamijoyo/tfupdate/archive/v0.6.7.tar.gz"
+  sha256 "f62a8748ffef97c1a7697d76bb2e76b79a9254d957f799b1e15413b946b4ee33"
   license "MIT"
   head "https://github.com/minamijoyo/tfupdate.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfupdate"
-    sha256 cellar: :any_skip_relocation, mojave: "610c2b9ab7bbdde4570b6c9f475fadc8967b2bd39b28277118f5464c56bea18e"
+    sha256 cellar: :any_skip_relocation, mojave: "c617dce28f796c19208e9e98d87f91adeb3f589f1bc97e7dc68aec5c112cf042"
   end
 
   depends_on "go" => :build
