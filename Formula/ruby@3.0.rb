@@ -4,6 +4,7 @@ class RubyAT30 < Formula
   url "https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.4.tar.xz"
   sha256 "8e22fc7304520435522253210ed0aa9a50545f8f13c959fe01a05aea06bef2f0"
   license "Ruby"
+  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -12,7 +13,7 @@ class RubyAT30 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@3.0"
-    sha256 mojave: "d44f174867c096bde7256e8264a7c0ae7c866d47c4084c8ccc9d8248e07104f9"
+    sha256 mojave: "7763b3a5da7d1a3f31a60bf282ea3f4e8274442702d68887433e8ca4c6bd8822"
   end
 
   keg_only :versioned_formula
@@ -22,6 +23,7 @@ class RubyAT30 < Formula
   depends_on "openssl@1.1"
   depends_on "readline"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
   # Should be updated only when Ruby is updated (if an update is available).
