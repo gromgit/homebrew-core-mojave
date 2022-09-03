@@ -1,10 +1,9 @@
 class ScummvmTools < Formula
   desc "Collection of tools for ScummVM"
   homepage "https://www.scummvm.org/"
-  url "https://downloads.scummvm.org/frs/scummvm-tools/2.5.0/scummvm-tools-2.5.0.tar.xz"
-  sha256 "5cdc8173e1ee3fb74d62834e79995be0c5b1d999f72a0a125fab611222f927da"
-  license "GPL-2.0-or-later"
-  revision 2
+  url "https://downloads.scummvm.org/frs/scummvm-tools/2.6.0/scummvm-tools-2.6.0.tar.xz"
+  sha256 "9daf3ff8b26e3eb3d2215ea0416e78dc912b7ec21620cc496657225ea8a90428"
+  license "GPL-3.0-or-later"
   head "https://github.com/scummvm/scummvm-tools.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class ScummvmTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scummvm-tools"
-    sha256 cellar: :any, mojave: "3196755565fd576a4db71a0cc41bf6fdf8a81a9e79c45d771705f5eb5bdc99e6"
+    sha256 cellar: :any, mojave: "96d2bb735d5bda549c1e24c5e8cfbe8bc83684664b60c61cdc1823d6aea9688a"
   end
 
   depends_on "boost"
@@ -23,7 +22,7 @@ class ScummvmTools < Formula
   depends_on "libpng"
   depends_on "libvorbis"
   depends_on "mad"
-  depends_on "wxwidgets@3.0"
+  depends_on "wxwidgets"
 
   def install
     # configure will happily carry on even if it can't find wxwidgets,
@@ -43,6 +42,6 @@ class ScummvmTools < Formula
   end
 
   test do
-    system "#{bin}/scummvm-tools-cli", "--list"
+    system bin/"scummvm-tools-cli", "--list"
   end
 end
