@@ -12,13 +12,14 @@ class Txr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/txr"
-    sha256 cellar: :any, mojave: "e43584faed3893dceba65e40ddf3fdf5500ffc166187c4a072da7f00064f615b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2338507d85d6c6d99e809e3c97d8008f02de48346b5bd1d2dbe9f347db3de8bf"
   end
 
-  depends_on "libffi"
-
+  depends_on "pkg-config" => :build
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "libffi", since: :catalina
 
   def install
     system "./configure", "--prefix=#{prefix}", "--inline=static inline"
@@ -27,6 +28,6 @@ class Txr < Formula
   end
 
   test do
-    assert_equal "3", shell_output(bin/"txr -p '(+ 1 2)'").chomp
+    assert_equal "3", shell_output("#{bin}/txr -p '(+ 1 2)'").chomp
   end
 end
