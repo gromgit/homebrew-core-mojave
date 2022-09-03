@@ -4,6 +4,7 @@ class RubyAT27 < Formula
   url "https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.6.tar.xz"
   sha256 "54dcd3044726c4ab75a9d4604720501442b229a3aed6a55fe909567da8807f24"
   license "Ruby"
+  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -12,7 +13,7 @@ class RubyAT27 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@2.7"
-    sha256 mojave: "e4802037dd0e971ba4827c3fe89b61739a3538dafb3fb63f9f12fbd61b148b90"
+    sha256 mojave: "acdb7d3728147f47dbabd336f339743fb4e0b682b09b4cfad7c1726ab1ba9807"
   end
 
   keg_only :versioned_formula
@@ -22,6 +23,7 @@ class RubyAT27 < Formula
   depends_on "openssl@1.1"
   depends_on "readline"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
   # Should be updated only when Ruby is updated (if an update is available).
