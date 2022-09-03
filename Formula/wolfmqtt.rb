@@ -4,11 +4,12 @@ class Wolfmqtt < Formula
   url "https://github.com/wolfSSL/wolfMQTT/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "23a073bfac172e08331ccdd01d9fb19e029fdcab5a8b4aad0e8dd4719ea97c31"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/wolfSSL/wolfMQTT.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wolfmqtt"
-    sha256 cellar: :any, mojave: "ee9d7ba80f39879403f5f8c5115e4c5373701861899af2e61d670286c017bc9e"
+    sha256 cellar: :any, mojave: "8165a1b9b092368737e37ef3cb6cd8db64382c8db04d2ef2213c921e3013da1c"
   end
 
   depends_on "autoconf" => :build
