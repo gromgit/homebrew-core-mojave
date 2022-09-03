@@ -4,11 +4,12 @@ class Spdlog < Formula
   url "https://github.com/gabime/spdlog/archive/v1.10.0.tar.gz"
   sha256 "697f91700237dbae2326b90469be32b876b2b44888302afbc7aceb68bcfe8224"
   license "MIT"
+  revision 1
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spdlog"
-    sha256 cellar: :any, mojave: "5087d490968068aa796aa985b504461c8affff2a2b3ab57bdfc4386885eb27c8"
+    sha256 cellar: :any, mojave: "e016717f2580359b06bf068e9039831a51fb8e3a149ea92cf8ef31a9b0ffe39c"
   end
 
   depends_on "cmake" => :build
