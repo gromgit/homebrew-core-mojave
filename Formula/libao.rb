@@ -6,7 +6,7 @@ class Libao < Formula
   license "GPL-2.0"
   head "https://gitlab.xiph.org/xiph/libao.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libao"
     rebuild 4
     sha256 mojave: "6536700dc52a27b8494b9e4256a5b781f311ef69f024e7378227160bd91bb3ba"
