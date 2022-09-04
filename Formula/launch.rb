@@ -11,7 +11,7 @@ class Launch < Formula
     regex(/href=.*?launch[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/launch"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "15160204f16532550741151d2954ebbf21515c1ee7a10ac33d883734b6cd1abd"
