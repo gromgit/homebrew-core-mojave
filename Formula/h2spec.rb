@@ -7,7 +7,7 @@ class H2spec < Formula
   license "MIT"
   head "https://github.com/summerwind/h2spec.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/h2spec"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "b58d3b3862b60c38cc70a7172fae2f5fda795f43539f561f4d51a8fda51c0aa2"
