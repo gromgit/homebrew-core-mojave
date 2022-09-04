@@ -11,6 +11,10 @@ class ClozureCl < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on xcode: :build
   depends_on macos: :catalina # The GNU assembler frontend which ships macOS 10.14 is incompatible with clozure-ccl: https://github.com/Clozure/ccl/issues/271
 
