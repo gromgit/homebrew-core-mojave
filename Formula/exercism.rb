@@ -17,7 +17,6 @@ class Exercism < Formula
     sha256 cellar: :any_skip_relocation, mojave: "b98e5e9e1f138e072be157e06b762288470546d847feeee14dbdb34670e335f5"
   end
 
-
   depends_on "go" => :build
 
   def install
