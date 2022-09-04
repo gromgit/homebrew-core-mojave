@@ -7,8 +7,7 @@ class Py3cairo < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/py3cairo"
-    sha256 cellar: :any, mojave: "545fee1c5bb4da4ae151b66ae9629d35c9dea88d68a8525719f278ca64a840cb"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "pkg-config" => :build
@@ -18,16 +17,13 @@ class Py3cairo < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/python@\d\.\d+/) }
-        .map(&:opt_bin)
-        .map { |bin| bin/"python3" }
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
     pythons.each do |python|
-      system python, *Language::Python.setup_install_args(prefix),
-                     "--install-lib=#{prefix/Language::Python.site_packages(python)}",
-                     "--install-data=#{prefix}"
+      system python, *Language::Python.setup_install_args(prefix, python), "--install-data=#{prefix}"
     end
   end
 
