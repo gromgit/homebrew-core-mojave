@@ -5,7 +5,7 @@ class BasisUniversal < Formula
   sha256 "b89563aa5879eed20f56b9cfa03b52848e759531fd5a1d51a8f63c846f96c2ac"
   license "Apache-2.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/basis_universal"
     sha256 cellar: :any_skip_relocation, mojave: "50e64f2730965a038ccfab92b98841f7858484253d7c1409835b87b0ffb2f9ae"
   end
