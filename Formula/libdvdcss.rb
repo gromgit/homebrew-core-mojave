@@ -10,7 +10,7 @@ class Libdvdcss < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdvdcss"
     rebuild 1
     sha256 cellar: :any, mojave: "ecc66fc961aae236cfd38556d05dbfe84d61b63e73d8d206db2cf3a532dfef72"
