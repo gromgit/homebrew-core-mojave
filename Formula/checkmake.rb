@@ -6,7 +6,7 @@ class Checkmake < Formula
   license "MIT"
   head "https://github.com/mrtazz/checkmake.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/checkmake"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "1d512399242e39940022f8593eac8b508946f11b1d8882d3c4c717fc8ebe33a8"
