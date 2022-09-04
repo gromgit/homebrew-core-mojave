@@ -12,7 +12,7 @@ class Glm < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glm"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "b1fb9276b9c24de147b1c8d2ac8baa926489e5a0421ae9aa700bcc07caa5fcb8"
