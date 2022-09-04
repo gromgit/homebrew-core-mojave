@@ -12,7 +12,6 @@ class Libconfig < Formula
     sha256 cellar: :any, mojave: "fd0793bfdc7a5d02015f0d3e5a0562005ff4cc0afc630071321ad77f3f89e4ae"
   end
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
