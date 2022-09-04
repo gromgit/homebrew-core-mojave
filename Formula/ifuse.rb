@@ -4,13 +4,10 @@ class Ifuse < Formula
   url "https://github.com/libimobiledevice/ifuse/archive/1.1.4.tar.gz"
   sha256 "2a00769e8f1d8bad50898b9d00baf12c8ae1cda2d19ff49eaa9bf580e5dbe78c"
   license "LGPL-2.1-or-later"
-  head "https://cgit.sukimashita.com/ifuse.git"
+  head "https://cgit.sukimashita.com/ifuse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 catalina:     "cdce9fc5dbaf44641743b4a77434d340ae11cb8ed98f17b1a86a5653d2b6e1a2"
-    sha256 cellar: :any,                 mojave:       "e14e4f8e0f73324dc662b47f091261f682eddc73961e3d71a07bfeb62826a1f8"
-    sha256 cellar: :any,                 high_sierra:  "ff5577f28749cf18671eecd953e96f0c52a06dccf827dcf08e2d64f894dfdd5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec03965eeaecd9443c4b5d20a0b20e6275fed16c084a4e05fe1f6cb01f3f7e42"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "autoconf" => :build

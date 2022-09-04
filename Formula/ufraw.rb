@@ -3,11 +3,10 @@ class Ufraw < Formula
   homepage "https://ufraw.sourceforge.io"
   url "https://downloads.sourceforge.net/project/ufraw/ufraw/ufraw-0.22/ufraw-0.22.tar.gz"
   sha256 "f7abd28ce587db2a74b4c54149bd8a2523a7ddc09bedf4f923246ff0ae09a25e"
-  revision 4
+  revision 5
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ufraw"
-    sha256 mojave: "407d5454deb3113aa099cc5578bc3d4fdeb312d387b98def78e6134a2146e731"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "pkg-config" => :build
@@ -15,7 +14,7 @@ class Ufraw < Formula
   depends_on "gettext"
   depends_on "glib"
   depends_on "jasper"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
@@ -34,8 +33,7 @@ class Ufraw < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--without-gtk",
                           "--without-gimp"
     system "make", "install"

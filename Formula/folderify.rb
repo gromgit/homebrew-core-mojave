@@ -6,17 +6,17 @@ class Folderify < Formula
   url "https://files.pythonhosted.org/packages/68/03/a4834a40d95a0bc2debdbad7e0e1bf909a95ff68c0a64098ea52f6ccb794/folderify-2.3.1.tar.gz"
   sha256 "0927c9453dc8efb6ea4addb0eee2711528152045f22d411c9de1e7f45621f06c"
   license "MIT"
+  revision 1
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/folderify"
-    sha256 cellar: :any_skip_relocation, mojave: "29947d95fa2247143f23fbe08b0082d8302bf6d7391807fb9558dd9ae60e445b"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on xcode: :build
   depends_on "imagemagick"
   depends_on :macos
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "osxiconutils" do
     url "https://github.com/sveinbjornt/osxiconutils.git",
@@ -43,8 +43,9 @@ class Folderify < Formula
 
   test do
     # Copies an example icon
+    site_packages = libexec/Language::Python.site_packages(Formula["python@3.10"].opt_bin/"python3")
     cp(
-      libexec/"lib/python3.9/site-packages/folderify/GenericFolderIcon.Yosemite.iconset/icon_16x16.png",
+      "#{site_packages}/folderify/GenericFolderIcon.Yosemite.iconset/icon_16x16.png",
       "icon.png",
     )
     # folderify applies the test icon to a folder

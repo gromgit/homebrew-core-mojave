@@ -1,14 +1,13 @@
 class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
   homepage "https://opentelemetry.io/"
-  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "110f4fb2e38dcc72a421647631cfbb9429afd3c77c6c98829cc1d11bd0c72563"
+  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "802cf9132ee847bd1c72b72bd8116055fd7e78f60a44bb9c10225b41f5e35bff"
   license "Apache-2.0"
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opentelemetry-cpp"
-    sha256 cellar: :any_skip_relocation, mojave: "851ce27959c351d3ec77747d59ebafc7228b7a8c4a9250e5b3fce7086fd27a7f"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "cmake" => :build
@@ -45,6 +44,7 @@ class OpentelemetryCpp < Formula
       #include "opentelemetry/sdk/trace/tracer_provider.h"
       #include "opentelemetry/trace/provider.h"
       #include "opentelemetry/exporters/ostream/span_exporter.h"
+      #include "opentelemetry/exporters/otlp/otlp_recordable_utils.h"
 
       namespace trace_api = opentelemetry::trace;
       namespace trace_sdk = opentelemetry::sdk::trace;

@@ -6,7 +6,7 @@ class Forego < Formula
   license "Apache-2.0"
   head "https://github.com/ddollar/forego.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/forego"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "c61d006b84a9f2e05576626f127a956ac2090ebbe1bc654fb5ad6254d8664693"

@@ -7,9 +7,7 @@ class PysideAT2 < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyside@2-5.15.5"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f6ae55b54152161a41843235fa73bb563b8ce7f8932c731a8ab71e21bec02fc7"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   keg_only :versioned_formula
@@ -29,6 +27,10 @@ class PysideAT2 < Formula
 
   fails_with gcc: "5"
 
+  def python3
+    "python3.10"
+  end
+
   # Don't copy qt@5 tools.
   patch do
     url "https://src.fedoraproject.org/rpms/python-pyside2/raw/009100c67a63972e4c5252576af1894fec2e8855/f/pyside2-tools-obsolete.patch"
@@ -37,9 +39,8 @@ class PysideAT2 < Formula
 
   def install
     rpaths = if OS.mac?
-      site_packages = Language::Python.site_packages("python3")
-      prefix_relative_path = prefix.relative_path_from(prefix/site_packages/"PySide2")
-      [rpath, "@loader_path/#{prefix_relative_path}/lib"]
+      pyside2_module = prefix/Language::Python.site_packages(python3)/"PySide2"
+      [rpath, rpath(source: pyside2_module)]
     else
       # Add missing include dirs on Linux.
       # upstream issue: https://bugreports.qt.io/browse/PYSIDE-1684
@@ -51,21 +52,21 @@ class PysideAT2 < Formula
       [lib, Formula["qt@5"].opt_lib]
     end
 
-    args = std_cmake_args + %W[
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_lib
+    args = %W[
       -DCMAKE_CXX_COMPILER=#{ENV.cxx}
-      -DCMAKE_PREFIX_PATH=#{Formula["qt@5"].opt_lib}
-      -DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3
+      -DPYTHON_EXECUTABLE=#{which(python3)}
       -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
       -DFORCE_LIMITED_API=yes
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    python = Formula["python@3.10"].opt_bin/"python3"
+    python = which(python3)
     ENV.append_path "PYTHONPATH", prefix/Language::Python.site_packages(python)
 
     system python, "-c", "import PySide2"

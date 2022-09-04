@@ -9,8 +9,7 @@ class VapoursynthSub < Formula
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vapoursynth-sub"
-    sha256 cellar: :any, mojave: "997d82d47fcaebe1a8d4ee18ef731fce4603b798d49bb08b5d440f460bb51451"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "cmake" => :build
@@ -31,6 +30,10 @@ class VapoursynthSub < Formula
   end
 
   test do
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "from vapoursynth import core; core.sub"
+    python = Formula["vapoursynth"].deps
+                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
+                                   .to_formula
+                                   .opt_bin/"python3"
+    system python, "-c", "from vapoursynth import core; core.sub"
   end
 end

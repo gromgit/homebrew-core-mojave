@@ -6,7 +6,7 @@ class Jlog < Formula
   license "BSD-3-Clause"
   head "https://github.com/omniti-labs/jlog.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jlog"
     rebuild 1
     sha256 cellar: :any, mojave: "a368e7e2fb2356ee838c8438cbd1fe502ea87acab3a2e70031c43ac6ed17b270"

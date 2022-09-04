@@ -5,56 +5,22 @@ class Julia < Formula
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   stable do
-    url "https://github.com/JuliaLang/julia/releases/download/v1.7.2/julia-1.7.2.tar.gz"
-    sha256 "0847943dd65001f3322b00c7dc4e12f56e70e98c6b798ccbd4f02d27ce161fef"
+    # Use the `-full` tarball to avoid having to download during the build.
+    url "https://github.com/JuliaLang/julia/releases/download/v1.8.0/julia-1.8.0-full.tar.gz"
+    sha256 "fe278b2e8d59bb60abfd64cfad4074e23ee0353c26615423d70a5085de4124e1"
 
-    # Patches for compatibility with LLVM 13
+    # Fix compatibility with LibGit2 1.4.0+
     patch do
-      url "https://github.com/JuliaLang/julia/commit/677ce6d3adc2f70886f72795b0e5c739e75730ee.patch?full_index=1"
-      sha256 "ebcedfbc61b6cc77c0dd9aebb9f1dfa477326241bf5a54209533e4886aad5af3"
-    end
-
-    patch do
-      url "https://github.com/JuliaLang/julia/commit/47f9139e88917813cb7beee5e690c48c2ac65de4.patch?full_index=1"
-      sha256 "cdc41494b2a163ca363da8ea9bcf27d7541a6dc9e6b4eff72f6c8ff8ce1b67b6"
-    end
-
-    patch do
-      url "https://github.com/JuliaLang/julia/commit/1eb063f1957b2e287ad0c7435debc72af58bb6f1.patch?full_index=1"
-      sha256 "d95b9fb5f327bc3ac351c35317a776ef6a46c1cdff248562e70c76e58eb9a903"
-    end
-
-    # Backported from:
-    # https://github.com/JuliaLang/julia/commit/f8c918b00f7c62e204d324a827e2ee2ef05bb66a
-    patch do
-      url "https://raw.githubusercontent.com/archlinux/svntogit-community/074e62e4e946201779d2d6df9a261c91d111720f/trunk/f8c918b0.patch"
-      sha256 "bc6c85cbbca489ef0b2876dbeb6ae493c11573e058507b8bcb9e01273bc3a38c"
-    end
-
-    # Backported from:
-    # https://github.com/JuliaLang/julia/commit/6330398088e235e4d4fdbda38c41c87e02384edb.patch
-    patch do
-      url "https://raw.githubusercontent.com/archlinux/svntogit-community/df73abb8162e31e6541d2143d1db5f9f1d70b632/trunk/63303980.patch"
-      sha256 "ce9cd140c3bc39987d60340bf365d6238e79cf4d5385494272c49c64af22ef78"
-    end
-
-    # Fix compatibility with LibGit2 1.2.0+
-    # https://github.com/JuliaLang/julia/pull/43250
-    patch do
-      url "https://github.com/JuliaLang/julia/commit/4d7fc8465ed9eb820893235a6ff3d40274b643a7.patch?full_index=1"
-      sha256 "3a34a2cd553929c2aee74aba04c8e42ccb896f9d491fb677537cd4bca9ba7caa"
+      url "https://raw.githubusercontent.com/archlinux/svntogit-community/cd813138d8a6fd496d0972a033d55028613be06d/trunk/julia-libgit-1.4.patch"
+      sha256 "cfe498a090d0026b92f9db4ed65ac3818c2efa5ec83bcefed728d27abff73081"
     end
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/julia"
-    rebuild 1
-    sha256 cellar: :any, mojave: "28711bafff3adb327ce391e4c1735df26d2c7bdcefa4dab6b29619c1fa66dad6"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
-  # Requires the M1 fork of GCC to build
-  # https://github.com/JuliaLang/julia/issues/36617
-  depends_on arch: :x86_64
+  depends_on "cmake" => :build # Needed to build LLVM
   depends_on "ca-certificates"
   depends_on "curl"
   depends_on "gcc" # for gfortran
@@ -62,7 +28,6 @@ class Julia < Formula
   depends_on "libgit2"
   depends_on "libnghttp2"
   depends_on "libssh2"
-  depends_on "llvm"
   depends_on "mbedtls@2"
   depends_on "mpfr"
   depends_on "openblas"
@@ -78,48 +43,20 @@ class Julia < Formula
 
   on_linux do
     depends_on "patchelf" => :build
-
-    # This dependency can be dropped when upstream resolves
-    # https://github.com/JuliaLang/julia/issues/30154
-    depends_on "libunwind"
   end
 
   conflicts_with "juliaup", because: "both install `julia` binaries"
 
   fails_with gcc: "5"
 
-  # Fix segfaults with Curl 7.81. We need to patch the contents of a tarball, so this can't be a `patch` block.
-  # https://github.com/JuliaLang/Downloads.jl/issues/172
-  resource "curl-patch" do
-    url "https://raw.githubusercontent.com/archlinux/svntogit-community/6751794c82949589805db950119afba77549554a/trunk/julia-curl-7.81.patch"
-    sha256 "710587dd88c7698dc5cdf47a1a50f6f144b584b7d9ffb85fac3f5f79c65fce11"
-  end
-
-  # Fix compatibility with LibGit2 1.4.0+
+  # Link against libgcc_s.1.1.dylib, not libgcc_s.1.dylib
+  # https://github.com/JuliaLang/julia/pull/46240
   patch do
-    url "https://raw.githubusercontent.com/archlinux/svntogit-community/cd813138d8a6fd496d0972a033d55028613be06d/trunk/julia-libgit-1.4.patch"
-    sha256 "cfe498a090d0026b92f9db4ed65ac3818c2efa5ec83bcefed728d27abff73081"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/dd7279eea22d92688d2a821c245d92c4f8406fcf/julia/libgcc_s.diff"
+    sha256 "f12c11db53390145b4a9b1ea3b412019eee89c0d197eef6c78b0565bf7fd7aaf"
   end
 
   def install
-    # Fix segfaults with Curl 7.81. Remove when this is resolved upstream.
-    srccache = buildpath/"stdlib/srccache"
-    srccache.install resource("curl-patch")
-
-    cd srccache do
-      tarball = Pathname.glob("Downloads-*.tar.gz").first
-      system "tar", "-xzf", tarball
-      extracted_dir = Pathname.glob("JuliaLang-Downloads.jl-*").first
-      to_patch = extracted_dir/"src/Curl/Multi.jl"
-      system "patch", to_patch, "julia-curl-7.81.patch"
-      system "tar", "-czf", tarball, extracted_dir
-
-      md5sum = Digest::MD5.file(tarball).hexdigest
-      sha512sum = Digest::SHA512.file(tarball).hexdigest
-      (buildpath/"deps/checksums"/tarball/"md5").atomic_write md5sum
-      (buildpath/"deps/checksums"/tarball/"sha512").atomic_write sha512sum
-    end
-
     # Build documentation available at
     # https://github.com/JuliaLang/julia/blob/v#{version}/doc/build/build.md
     args = %W[
@@ -128,8 +65,6 @@ class Julia < Formula
       prefix=#{prefix}
       sysconfdir=#{etc}
       USE_SYSTEM_CSL=1
-      USE_SYSTEM_LLVM=1
-      USE_SYSTEM_LIBUNWIND=1
       USE_SYSTEM_PCRE=1
       USE_SYSTEM_OPENLIBM=1
       USE_SYSTEM_BLAS=1
@@ -152,19 +87,13 @@ class Julia < Formula
       LIBLAPACKNAME=libopenblas
       USE_BLAS64=0
       PYTHON=python3
+      LOCALBASE=#{HOMEBREW_PREFIX}
       MACOSX_VERSION_MIN=#{MacOS.version}
     ]
 
     # Set MARCH and JULIA_CPU_TARGET to ensure Julia works on machines we distribute to.
     # Values adapted from https://github.com/JuliaCI/julia-buildbot/blob/master/master/inventory.py
-    march = if build.head?
-      "native"
-    elsif Hardware::CPU.arm?
-      "armv8-a"
-    else
-      Hardware.oldest_cpu
-    end
-    args << "MARCH=#{march}"
+    args << "MARCH=#{Hardware.oldest_cpu}" if Hardware::CPU.intel?
 
     cpu_targets = ["generic"]
     cpu_targets += if Hardware::CPU.arm?
@@ -205,16 +134,7 @@ class Julia < Formula
       ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/julia"
     end
 
-    inreplace "Make.inc" do |s|
-      s.change_make_var! "LOCALBASE", HOMEBREW_PREFIX
-    end
-
-    # Don't try to use patchelf on our libLLVM.so. This is only present on 1.7.1.
-    patchelf = Regexp.escape("$(PATCHELF)")
-    shlib_ext = Regexp.escape(".$(SHLIB_EXT)")
-    inreplace "Makefile", %r{^\s+#{patchelf} --set-rpath .*/libLLVM#{shlib_ext}$}, "" if OS.linux? && build.stable?
-
-    # Remove library versions from MbedTLS_jll, nghttp2_jll and libLLVM_jll
+    # Remove library versions from MbedTLS_jll, nghttp2_jll and others
     # https://git.archlinux.org/svntogit/community.git/tree/trunk/julia-hardcoded-libs.patch?h=packages/julia
     %w[MbedTLS nghttp2 LibGit2 OpenLibm].each do |dep|
       (buildpath/"stdlib").glob("**/#{dep}_jll.jl") do |jll|
@@ -222,7 +142,6 @@ class Julia < Formula
         inreplace jll, /lib(\w+)\.so(\.\d+)*/, "lib\\1.so"
       end
     end
-    inreplace (buildpath/"stdlib").glob("**/libLLVM_jll.jl"), /libLLVM-\d+jl\.so/, "libLLVM.so"
 
     # Make Julia use a CA cert from `ca-certificates`
     cp Formula["ca-certificates"].pkgetc/"cert.pem", buildpath/"usr/share/julia"
@@ -238,9 +157,6 @@ class Julia < Formula
           ln_sf so.relative_path_from(lib/"julia"), lib/"julia"
         end
       end
-
-      libllvm = lib/"julia"/shared_library("libLLVM")
-      (lib/"julia").install_symlink libllvm.basename.to_s => libllvm.realpath.basename.to_s
     end
 
     # Create copies of the necessary gcc libraries in `buildpath/"usr/lib"`

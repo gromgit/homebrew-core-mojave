@@ -1,14 +1,13 @@
 class ProtocGenGo < Formula
   desc "Go support for Google's protocol buffers"
   homepage "https://github.com/protocolbuffers/protobuf-go"
-  url "https://github.com/protocolbuffers/protobuf-go/archive/v1.28.0.tar.gz"
-  sha256 "e59ae9ace31c3a84bddf1bc3f04a04c498adb9ea7f9fcde60db91bba33d55171"
+  url "https://github.com/protocolbuffers/protobuf-go/archive/v1.28.1.tar.gz"
+  sha256 "df0b3dceeff0e1b6d029e60f076edd0d852cb8f3c2fe4fe3fe40164f16ec9b6b"
   license "BSD-3-Clause"
   head "https://github.com/protocolbuffers/protobuf-go.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protoc-gen-go"
-    sha256 cellar: :any_skip_relocation, mojave: "887edab7a650f705dc5d42e2f1cdd9f9770bd5b8b21cd1bb8c5f2f87b696589b"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "go" => :build

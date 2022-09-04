@@ -7,9 +7,7 @@ class Planck < Formula
   head "https://github.com/planck-repl/planck.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/planck"
-    rebuild 1
-    sha256 cellar: :any, mojave: "52ff664686e1e0d6d5c1a86db7bd78b3f0ccf454c471bed063fa09b2b8a879b2"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "clojure" => :build
@@ -19,8 +17,40 @@ class Planck < Formula
   depends_on "icu4c"
   depends_on "libzip"
 
+  uses_from_macos "vim" => :build # for xxd
+  uses_from_macos "curl"
+  uses_from_macos "libffi"
+
+  on_linux do
+    depends_on "gcc"
+    depends_on "glib"
+    depends_on "pcre"
+    depends_on "webkitgtk"
+  end
+
+  fails_with gcc: "5"
+
+  # Apply upstream commit to fix issue with GNU sed.  Remove with next release.
+  patch do
+    url "https://github.com/planck-repl/planck/commit/f1f21bf9eb4cfca6312ff0117f75d3b38164b43d.patch?full_index=1"
+    sha256 "787ddf6fb1cfea1d70fa18a6f7b292579ea1ffbf1f437f1f775e3330d2b8d36c"
+  end
+
   def install
     ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+
+    if OS.linux?
+      ENV.prepend_path "PATH", Formula["openjdk"].opt_bin
+
+      # The webkitgtk pkg-config .pc file includes the API version in its name (ex. javascriptcore-4.1.pc).
+      # We extract this from the filename programmatically and store it in javascriptcore_api_version
+      # and make sure planck-c/CMakeLists.txt is updated accordingly.
+      # On macOS this dependency is provided by JavaScriptCore.Framework, a component of macOS.
+      javascriptcore_pc_file = (Formula["webkitgtk"].lib/"pkgconfig").glob("javascriptcoregtk-*.pc").first
+      javascriptcore_api_version = javascriptcore_pc_file.basename(".pc").to_s.split("-").second
+      inreplace "planck-c/CMakeLists.txt", "javascriptcoregtk-4.0", "javascriptcoregtk-#{javascriptcore_api_version}"
+    end
+
     system "./script/build-sandbox"
     bin.install "planck-c/build/planck"
     bin.install "planck-sh/plk"

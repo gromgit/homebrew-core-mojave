@@ -6,7 +6,7 @@ class GithubRelease < Formula
   license "MIT"
   head "https://github.com/github-release/github-release.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/github-release"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "30c45cea6b51990564d419f543847beb32b61c423515bbe415dbbdb4ef7dcf68"
