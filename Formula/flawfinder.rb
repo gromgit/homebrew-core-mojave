@@ -20,7 +20,6 @@ class Flawfinder < Formula
     sha256 cellar: :any_skip_relocation, mojave: "a116e75c92383e07b961fe90c74275cb34eb83eec5d40ff56891301eba4893aa"
   end
 
-
   depends_on "python@3.10"
 
   def install
