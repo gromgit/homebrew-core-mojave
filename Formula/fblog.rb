@@ -6,7 +6,7 @@ class Fblog < Formula
   license "WTFPL"
   head "https://github.com/brocode/fblog.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fblog"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6b7c150caeda2f647618b1dc7f1ec6a02c1b11c9429300e0a04a5add9968bb6e"
