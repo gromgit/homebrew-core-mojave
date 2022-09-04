@@ -17,7 +17,6 @@ class Flvmeta < Formula
     sha256 cellar: :any_skip_relocation, mojave: "a09788edaf87db76665a567308fbec9c95d7a976385b5d842cf368502ebe6208"
   end
 
-
   depends_on "cmake" => :build
 
   def install
