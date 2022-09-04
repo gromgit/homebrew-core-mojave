@@ -10,7 +10,7 @@ class Calceph < Formula
     regex(/href=.*?calceph[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/calceph"
     sha256 cellar: :any, mojave: "0df4dafa76e4c30228a4b10637e8d4e83a51963bfe2da05778380eeddca8a548"
   end
