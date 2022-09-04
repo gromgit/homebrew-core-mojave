@@ -5,7 +5,7 @@ class GitAnnexRemoteRclone < Formula
   sha256 "fb9bb77c6dd30dad4966926af87f63be92ef442cfeabcfd02202c657f40439d0"
   license "GPL-3.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-annex-remote-rclone"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "e2d8f06023713c788b8cf3f7681a75e38cee25b00046abbf71d720f74e7a202e"
