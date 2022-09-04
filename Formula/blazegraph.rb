@@ -16,7 +16,6 @@ class Blazegraph < Formula
     sha256 cellar: :any_skip_relocation, mojave: "facbc13f29b6da63b671d4861769f148cefae5e7ca2dfd3dd8df35d99126bb95"
   end
 
-
   # Dependencies can be lifted in the upcoming release, > 2.1.5
   depends_on "openjdk@8"
 
