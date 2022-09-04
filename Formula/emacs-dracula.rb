@@ -12,7 +12,6 @@ class EmacsDracula < Formula
     sha256 cellar: :any_skip_relocation, mojave: "aa40dba91ecffa781c3ebb2f6718c6622534bc9ce03f496eec07eb669d29de97"
   end
 
-
   depends_on "emacs"
 
   def install
