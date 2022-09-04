@@ -12,7 +12,6 @@ class Drafter < Formula
     sha256 cellar: :any, mojave: "930cf6a2ef3f50a572278d3aa48b9052d795888267ff6bf079de53b88e141dc2"
   end
 
-
   depends_on "cmake" => :build
 
   def install
