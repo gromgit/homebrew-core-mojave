@@ -5,6 +5,10 @@ class LinuxHeadersAT415 < Formula
   sha256 "ca13fa5c6e3a6b434556530d92bc1fc86532c2f4f5ae0ed766f6b709322d6495"
   license "GPL-2.0-only"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   keg_only :versioned_formula
 
   depends_on :linux
