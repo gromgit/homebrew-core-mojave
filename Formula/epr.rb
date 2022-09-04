@@ -8,7 +8,7 @@ class Epr < Formula
   license "MIT"
   head "https://github.com/wustho/epr.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/epr"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "7dac59061de29e07a88f4ec14b0bbbb117c62136d050f2ea2842c0b535b9367c"
