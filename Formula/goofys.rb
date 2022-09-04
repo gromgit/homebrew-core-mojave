@@ -5,14 +5,10 @@ class Goofys < Formula
       tag:      "v0.24.0",
       revision: "45b8d78375af1b24604439d2e60c567654bcdf88"
   license "Apache-2.0"
-  head "https://github.com/kahing/goofys.git"
+  head "https://github.com/kahing/goofys.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, catalina:     "da054592343f7423d91a3abadbe4d601295b1f74b3a404c36fdb4deb94f7019b"
-    sha256 cellar: :any_skip_relocation, mojave:       "cee50248f9ac4d33ef8ca585ad94e3c9e6226fc464dfad86de2b7f9497b9f2b7"
-    sha256 cellar: :any_skip_relocation, high_sierra:  "eb0a3cfe49104292c16d76dce71db34000b1a7214f660b3cff3a39e4b3ba7a44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "53acc931a935c3e7c6230a59d492bf0cea7238167415083232d6ef37741b1cdc"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "go" => :build
