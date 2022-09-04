@@ -5,7 +5,7 @@ class Ansilove < Formula
   sha256 "acc3d6431cdb53e275e5ddfc71de5f27df2f2c5ecc46dc8bb62be9e6f15a1cd0"
   license "BSD-2-Clause"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansilove"
     rebuild 1
     sha256 cellar: :any, mojave: "bb7fdde76443542d647120e79845d956c1b23d19fcb698f239fcf8be3297752e"
