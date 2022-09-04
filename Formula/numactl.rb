@@ -5,6 +5,10 @@ class Numactl < Formula
   sha256 "826bd148c1b6231e1284e42a4db510207747484b112aee25ed6b1078756bcff6"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", :public_domain, :cannot_represent]
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on :linux
 
   def install
