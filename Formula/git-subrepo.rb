@@ -11,7 +11,7 @@ class GitSubrepo < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-subrepo"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "42e686bfb0df1a1c2fdd15fd96f444f1d6400163d08da5c92b1eb06b560acd54"
