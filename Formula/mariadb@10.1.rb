@@ -6,16 +6,13 @@ class MariadbAT101 < Formula
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 big_sur:  "589a7ef3e92f6dc2d4c5e5db501286a839b747a37b454bdd81231a4ed7531a43"
-    sha256 catalina: "fcc29400068999b2b5126af489d88dcc4af98169b9132d6aeb99876247b1a412"
-    sha256 mojave:   "f568cbdbc7a6f86d08251456e6eb4d22e16c065a68865ce83b7c2c1f0d2b61f6"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   keg_only :versioned_formula
 
   # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-101/
-  deprecate! date: "2020-10-01", because: :unsupported
+  disable! date: "2022-01-01", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
