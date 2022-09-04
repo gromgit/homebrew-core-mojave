@@ -4,7 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v10.0.0.tar.bz2"
   sha256 "ba6b430aed72c63a3768531f6a3ffc2b0fde2c57a3b251450dcf489a894f0894"
   license "ZPL-2.1"
-  revision 1
+  revision 3
 
   livecheck do
     url :stable
@@ -13,8 +13,7 @@ class MingwW64 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mingw-w64"
-    rebuild 1
-    sha256 mojave: "02987197003f1a9c8d5fb34c28827444c3017dcbccaedce3be2d2e323413c538"
+    sha256 mojave: "02000e2d593e8ebc6aee31a7b414c02b9072b44fad7d10c269db050dde6ba899"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -26,22 +25,15 @@ class MingwW64 < Formula
   depends_on "mpfr"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.xz"
-    sha256 "e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024"
-
-    # Fix dlltool failures during parallel builds until the release after 2.38, upstream patch
-    # https://sourceware.org/bugzilla/show_bug.cgi?id=28885
-    #
-    # patch is from https://sourceware.org/git/?p=binutils-gdb.git;a=patch;h=d65c0ddddd85645cab6f11fd711d21638a74489f
-    # with ChangeLog patch removed
-    patch :DATA
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz"
+    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.39.tar.xz"
+    sha256 "645c25f563b8adc0a81dbd6a41cffbf4d37083a382e02d5d3df4f65c09516d00"
   end
 
   resource "gcc" do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz"
-    sha256 "62fd634889f31c02b64af2c468f064b47ad1ca78411c45abe6ac4b5f8dd19c7b"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
+    sha256 "e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff"
   end
 
   def target_archs
@@ -230,24 +222,3 @@ class MingwW64 < Formula
     end
   end
 end
-
-__END__
-diff --git a/binutils/dlltool.c b/binutils/dlltool.c
-index d95bf3f5470..89871510b45 100644
---- a/binutils/dlltool.c
-+++ b/binutils/dlltool.c
-@@ -3992,10 +3992,11 @@ main (int ac, char **av)
-   if (tmp_prefix == NULL)
-     {
-       /* If possible use a deterministic prefix.  */
--      if (dll_name)
-+      if (imp_name || delayimp_name)
-         {
--          tmp_prefix = xmalloc (strlen (dll_name) + 2);
--          sprintf (tmp_prefix, "%s_", dll_name);
-+          const char *input = imp_name ? imp_name : delayimp_name;
-+          tmp_prefix = xmalloc (strlen (input) + 2);
-+          sprintf (tmp_prefix, "%s_", input);
-           for (i = 0; tmp_prefix[i]; i++)
-             if (!ISALNUM (tmp_prefix[i]))
-               tmp_prefix[i] = '_';
