@@ -6,7 +6,7 @@ class Gotags < Formula
   license "MIT"
   head "https://github.com/jstemmer/gotags.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gotags"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "1cb71aa6e89f7d38e28c926996230fb8d35534c79a0ecf4c883f44b7d26a70e3"
