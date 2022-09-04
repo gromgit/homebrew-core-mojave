@@ -6,7 +6,7 @@ class Gx < Formula
   license "MIT"
   head "https://github.com/whyrusleeping/gx.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gx"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "905bb40f6f4310b37abcf7aba287021c6844318b61a754d48163b39cf1ccb46a"
