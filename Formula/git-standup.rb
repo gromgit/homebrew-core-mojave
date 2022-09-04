@@ -6,7 +6,7 @@ class GitStandup < Formula
   license "MIT"
   head "https://github.com/kamranahmedse/git-standup.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-standup"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "aa0b4c617369ac7e25189f82c90c2234ad9050bcb02f56f1cc867d27df9c5379"
