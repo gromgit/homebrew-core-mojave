@@ -10,7 +10,7 @@ class Libaacs < Formula
     regex(/href=.*?libaacs[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libaacs"
     sha256 cellar: :any, mojave: "c8673953d879eb6c1134b4b5f31484d5ff44b28068e8bfca39cfec3a127448f7"
   end
