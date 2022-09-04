@@ -9,7 +9,7 @@ class Gitup < Formula
   revision 5
   head "https://github.com/earwig/git-repo-updater.git", branch: "develop"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitup"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "059dea299ce0ed563b88890dcc024474f1817dd9671131127cdbfea958d2921c"
