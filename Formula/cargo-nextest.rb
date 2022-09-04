@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https://nexte.st"
-  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.33.tar.gz"
-  sha256 "f75c53b4df3c72ae5a89e75c15d571645ee6719d86bb1171d64d0281eb71361f"
+  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.35.tar.gz"
+  sha256 "24ed1d3d098ede98fbbcefe9dee7f223ba81ab8a52eb6361018cf03cd70e4d59"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class CargoNextest < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-nextest"
-    sha256 cellar: :any_skip_relocation, mojave: "355fdafffd757f67cae7a2ef70eae88b56b72e4cafd483487329686ee3f994f1"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "rust" # uses `cargo` at runtime
