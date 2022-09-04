@@ -18,7 +18,6 @@ class Eigen < Formula
     sha256 cellar: :any_skip_relocation, mojave: "fd84542a41038ad2174d98cd457140201cc53592b43591c44239afb45fe8458a"
   end
 
-
   depends_on "cmake" => :build
 
   conflicts_with "freeling", because: "freeling ships its own copy of eigen"
