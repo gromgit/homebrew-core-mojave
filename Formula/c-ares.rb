@@ -20,7 +20,6 @@ class CAres < Formula
     sha256 cellar: :any, mojave: "167c5c072a42a4d32d9c8f4c5c5e698e31a45d6c9b39359badfd46c09c82a9ff"
   end
 
-
   depends_on "cmake" => :build
 
   def install
