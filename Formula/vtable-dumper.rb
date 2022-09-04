@@ -5,6 +5,10 @@ class VtableDumper < Formula
   sha256 "6993781b6a00936fc5f76dc0db4c410acb46b6d6e9836ddbe2e3c525c6dd1fd2"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on "elfutils"
   depends_on :linux
 
