@@ -1,8 +1,8 @@
 class SwaggerCodegenAT2 < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/swagger-codegen/"
-  url "https://github.com/swagger-api/swagger-codegen/archive/v2.4.26.tar.gz"
-  sha256 "5bae383a96b8c97f4fa8def76d29da6d87c934bdd28792a0611da07f6c36b578"
+  url "https://github.com/swagger-api/swagger-codegen/archive/v2.4.28.tar.gz"
+  sha256 "fda101f9234aa9e28ba7e199ff19f13df4dcf598809d0f0a4795bac3e92eece7"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class SwaggerCodegenAT2 < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swagger-codegen@2"
-    sha256 cellar: :any_skip_relocation, mojave: "9bdf191c2e76b149a2116f9dc22660fe7ce206ceecbe06cffd9293bf86573fef"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   keg_only :versioned_formula
