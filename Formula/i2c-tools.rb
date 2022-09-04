@@ -11,6 +11,10 @@ class I2cTools < Formula
     regex(/href=.*?i2c-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on "python@3.10" => [:build, :test]
   depends_on :linux
 
