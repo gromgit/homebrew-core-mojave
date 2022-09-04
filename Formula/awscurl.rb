@@ -14,7 +14,6 @@ class Awscurl < Formula
     sha256 cellar: :any, mojave: "846e45609dc49fdf6d43f0157b25962d7873e2b590e0bc7aea00beb83899187b"
   end
 
-
   depends_on "rust" => :build
   depends_on "python@3.10"
   depends_on "six"
