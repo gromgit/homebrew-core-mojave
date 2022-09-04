@@ -9,7 +9,7 @@ class Libspnav < Formula
     regex(%r{url=.*?/libspnav[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libspnav"
     rebuild 1
     sha256 cellar: :any, mojave: "d1c7568a9f0e63caabdcdc2e8a2265571516ade3c693b90fc03db7191530353b"
