@@ -6,7 +6,7 @@ class Fpdns < Formula
   license "BSD-3-Clause"
   head "https://github.com/kirei/fpdns.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fpdns"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6942ee433bda3ed16f20f7c58d7e32f11731a3a245d406cd73da36fe9500ec2d"
