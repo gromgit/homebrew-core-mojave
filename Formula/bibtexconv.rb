@@ -11,7 +11,6 @@ class Bibtexconv < Formula
     sha256 cellar: :any, mojave: "0759cb8bdda51467511a47606077375b62939d45e67a4994a3bc07903a593d2e"
   end
 
-
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
