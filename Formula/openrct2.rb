@@ -2,24 +2,25 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https://openrct2.io/"
   url "https://github.com/OpenRCT2/OpenRCT2.git",
-      tag:      "v0.3.5.1",
-      revision: "61c67afc667bfee8a6c3b180e98e84e87f442550"
+      tag:      "v0.4.1",
+      revision: "be518f48e34184674cf176102d343e539b20549e"
   license "GPL-3.0-only"
-  revision 2
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openrct2"
-    sha256 cellar: :any, mojave: "095518482affa5a12973602141cc44cfdaa3e96f02415e16f815445b092e8a82"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "pkg-config" => :build
   depends_on "duktape"
+  depends_on "flac"
   depends_on "freetype"
   depends_on "icu4c"
+  depends_on "libogg"
   depends_on "libpng"
+  depends_on "libvorbis"
   depends_on "libzip"
   depends_on macos: :mojave # `error: call to unavailable member function 'value': introduced in macOS 10.14`
   depends_on "openssl@1.1"
@@ -35,13 +36,13 @@ class Openrct2 < Formula
   fails_with gcc: "5" # C++17
 
   resource "title-sequences" do
-    url "https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2c/title-sequences.zip"
-    sha256 "5284333fa501270835b5f0cf420cb52155742335f5658d7889ea35d136b52517"
+    url "https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.0/title-sequences.zip"
+    sha256 "6e7c7b554717072bfc7acb96fd0101dc8e7f0ea0ea316367a05c2e92950c9029"
   end
 
   resource "objects" do
-    url "https://github.com/OpenRCT2/objects/archive/v1.2.2.tar.gz"
-    sha256 "f24ed11bc21473c3eee3be3fd0f776e542af408b3b408eb6c35f6115b1bed89d"
+    url "https://github.com/OpenRCT2/objects/archive/v1.3.2.tar.gz"
+    sha256 "9c94e479ce676076c739a05edbd9196860d1baecff8753c378043dcea8e0b63b"
   end
 
   def install
