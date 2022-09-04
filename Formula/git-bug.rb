@@ -7,7 +7,7 @@ class GitBug < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/MichaelMure/git-bug.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-bug"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "d2f42d1693e7581c9a36c5f9ca6065c9e142f456b96520a0d3cac5ec8a8e2656"
