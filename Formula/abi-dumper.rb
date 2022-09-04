@@ -6,6 +6,10 @@ class AbiDumper < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/lvc/abi-dumper.git", branch: "master"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on "abi-compliance-checker"
   depends_on "elfutils"
   depends_on :linux
