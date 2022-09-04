@@ -13,7 +13,6 @@ class Dockviz < Formula
     sha256 cellar: :any_skip_relocation, mojave: "dd8db4c9e5771d3b741b5937411c0a5057739900d323a5c2ef35be9364dbad20"
   end
 
-
   depends_on "go" => :build
   depends_on "govendor" => :build
 
