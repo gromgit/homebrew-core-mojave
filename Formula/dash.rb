@@ -17,7 +17,6 @@ class Dash < Formula
     sha256 cellar: :any_skip_relocation, mojave: "4bd44f4002ac5b28e3f4f123c69d7eddabd30bdd6e3a8fc03ce96438e62199cb"
   end
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
