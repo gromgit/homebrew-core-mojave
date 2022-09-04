@@ -6,7 +6,7 @@ class FseventWatch < Formula
   license "MIT"
   head "https://github.com/proger/fsevent_watch.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fsevent_watch"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "24ca3296f24d34d45152a300acd9fcd303890f4fe08116699ef02adff4dfb285"
