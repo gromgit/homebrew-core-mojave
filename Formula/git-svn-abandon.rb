@@ -6,7 +6,7 @@ class GitSvnAbandon < Formula
   license "MIT"
   head "https://github.com/nothingmuch/git-svn-abandon.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-svn-abandon"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "214342b40fa8ee0a68937b223571fd157072ee61886f1312d132f221d5550229"
