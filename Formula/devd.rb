@@ -6,7 +6,7 @@ class Devd < Formula
   license "MIT"
   head "https://github.com/cortesi/devd.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/devd"
     rebuild 4
     sha256 cellar: :any_skip_relocation, mojave: "06eb69dd0bb943ecf86990b24ece1379a1a9fa234b511040bafcc1d94c5fa118"
