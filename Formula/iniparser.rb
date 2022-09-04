@@ -6,7 +6,7 @@ class Iniparser < Formula
   license "MIT"
   head "https://github.com/ndevilla/iniparser.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iniparser"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "0d2127b86c3024cda391a8e0f0872587f21dc13265e5546fc7f4d06a69ec9370"
