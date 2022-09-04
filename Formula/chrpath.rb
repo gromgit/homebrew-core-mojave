@@ -5,6 +5,10 @@ class Chrpath < Formula
   sha256 "bb0d4c54bac2990e1bdf8132f2c9477ae752859d523e141e72b3b11a12c26e7b"
   license "GPL-2.0-or-later"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on :linux
 
   def install
