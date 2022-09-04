@@ -1,18 +1,17 @@
 class Starship < Formula
   desc "Cross-shell prompt for astronauts"
   homepage "https://starship.rs"
-  url "https://github.com/starship/starship/archive/v1.9.1.tar.gz"
-  sha256 "2b54bee07bf67504a1bb170d37dc8d6accab4594d35731bbdf0e8a631c8d1585"
+  url "https://github.com/starship/starship/archive/v1.10.2.tar.gz"
+  sha256 "b3833c3b23906db778bd0d9a7d87ed232745739e47ce59bcfa8e92c7f0f930e9"
   license "ISC"
   head "https://github.com/starship/starship.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/starship"
-    sha256 cellar: :any_skip_relocation, mojave: "ac20b9f742e79c2801b38fee791f10ffcf88456f4af637d72182d9b03c770663"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
+  depends_on "cmake" => :build
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
 
