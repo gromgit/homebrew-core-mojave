@@ -12,7 +12,6 @@ class Exodriver < Formula
     sha256 cellar: :any, mojave: "d85e58b97531e8c172e4e7ffc26e97a1424940d773f4d83af8a367e3cd169ef4"
   end
 
-
   depends_on "libusb"
 
   def install
