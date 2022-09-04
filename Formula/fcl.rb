@@ -12,7 +12,6 @@ class Fcl < Formula
     sha256 cellar: :any, mojave: "6bab659f517de6ab5fcf0604337a9ff03707dc629fb495c578ab477332715ae3"
   end
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
