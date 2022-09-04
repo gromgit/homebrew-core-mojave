@@ -12,7 +12,7 @@ class Kona < Formula
     regex(%r{href=.*?/tag/(?:Win(?:64)?[._-])?v?(\d+(?:\.\d+)*)[^"' >]*["' >]}i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kona"
     sha256 cellar: :any_skip_relocation, mojave: "b8681599c7062e0170204122caae4859377aa1827149920eb1afc85c2e722513"
   end
