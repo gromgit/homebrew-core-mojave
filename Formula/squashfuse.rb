@@ -5,6 +5,10 @@ class Squashfuse < Formula
   sha256 "aa52460559e0d0b1753f6b1af5c68cfb777ca5a13913285e93f4f9b7aa894b3a"
   license "BSD-2-Clause"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on "pkg-config" => :build
   depends_on "lz4"
   depends_on "lzo"
