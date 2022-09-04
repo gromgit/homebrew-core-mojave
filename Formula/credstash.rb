@@ -14,7 +14,6 @@ class Credstash < Formula
     sha256 cellar: :any, mojave: "93d9e2ba925754a59a38b62b53aea50501a7fa549fae38f3554c396731a3b969"
   end
 
-
   depends_on "rust" => :build
   depends_on "openssl@1.1"
   depends_on "python@3.10"
