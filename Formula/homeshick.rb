@@ -6,7 +6,7 @@ class Homeshick < Formula
   license "MIT"
   head "https://github.com/andsens/homeshick.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homeshick"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "f408aa61cdc30224d5cb66f9495521ca975f24eae6d22b6e03d39cc7ae7042d5"
