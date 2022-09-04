@@ -12,7 +12,6 @@ class Geoip < Formula
     sha256 mojave: "abd0d0172e8bfe609294328283ee73810b09d3ff5b0cccac3bc68cbe710d52e5"
   end
 
-
   resource "database" do
     url "https://src.fedoraproject.org/lookaside/pkgs/GeoIP/GeoIP.dat.gz/4bc1e8280fe2db0adc3fe48663b8926e/GeoIP.dat.gz"
     sha256 "7fd7e4829aaaae2677a7975eeecd170134195e5b7e6fc7d30bf3caf34db41bcd"
