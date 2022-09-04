@@ -13,7 +13,6 @@ class Fairymax < Formula
     sha256 cellar: :any_skip_relocation, mojave: "0c573f61797a9bd24045ef14d65860b8602af16524af8f7fcfa16bf5b63b6b2d"
   end
 
-
   def install
     system "make", "all",
                    "INI_F=#{pkgshare}/fmax.ini",
