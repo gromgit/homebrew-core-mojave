@@ -1,14 +1,12 @@
 class Gotop < Formula
   desc "Terminal based graphical activity monitor inspired by gtop and vtop"
   homepage "https://github.com/xxxserxxx/gotop"
-  url "https://github.com/xxxserxxx/gotop/archive/v4.1.3.tar.gz"
-  sha256 "c0a02276e718b988d1220dc452063759c8634d42e1c01a04c021486c1e61612d"
+  url "https://github.com/xxxserxxx/gotop/archive/v4.1.4.tar.gz"
+  sha256 "9fe5eb25ee253e5679cd0dede0ec6e075d6782442bc3007bb9fea8c44e66b857"
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gotop"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "6ba6e25d461c8d9e0fcf95694b5ac392a09143235cf1d669a8af2957b4e46b92"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "go" => :build
