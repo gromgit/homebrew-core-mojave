@@ -9,7 +9,7 @@ class Grokmirror < Formula
   revision 1
   head "https://github.com/mricon/grokmirror.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grokmirror"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "470759696f3fb835eb9217f3c2e475b295c22ad27d438fddb367063d850005ca"
