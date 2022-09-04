@@ -1,11 +1,16 @@
 class Nef < Formula
   desc "💊 steroids for Xcode Playgrounds"
   homepage "https://nef.bow-swift.io"
-  url "https://github.com/bow-swift/nef/archive/0.6.2.tar.gz"
-  sha256 "23915dd21e6485829b5ad88b6a5f4ac6b4ea091fc70820d2322bafba09e2217a"
+  url "https://github.com/bow-swift/nef/archive/0.7.1.tar.gz"
+  sha256 "147b8723d65ababedd04abf2ea4445c2b16dd7c18814a92182ae61978eb1152e"
   license "Apache-2.0"
 
-  depends_on xcode: "11.4"
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
+  depends_on :macos
+  depends_on xcode: "13.1"
 
   def install
     system "make", "install", "prefix=#{prefix}", "version=#{version}"
