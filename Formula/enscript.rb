@@ -14,7 +14,6 @@ class Enscript < Formula
     sha256 mojave: "6201d52a700c4dba18d94b4b052d7ac62905c53cd9c51a61d56a8ad4dabfb018"
   end
 
-
   depends_on "gettext"
 
   conflicts_with "cspice", because: "both install `states` binaries"
