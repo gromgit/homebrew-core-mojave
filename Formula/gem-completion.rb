@@ -11,7 +11,7 @@ class GemCompletion < Formula
     formula "ruby-completion"
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gem-completion"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "0a01abb125cae8707c0684b207d5c3a08effd29a11048bdca549e245e60ea76c"
