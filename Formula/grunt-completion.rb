@@ -6,7 +6,7 @@ class GruntCompletion < Formula
   license "MIT"
   head "https://github.com/gruntjs/grunt-cli.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grunt-completion"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "e1ad30323785e0c2529c043a9c9329db66476e1561dc3516e74cf86c3481b528"
