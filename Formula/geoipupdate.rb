@@ -6,7 +6,7 @@ class Geoipupdate < Formula
   license "Apache-2.0"
   head "https://github.com/maxmind/geoipupdate.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geoipupdate"
     rebuild 1
     sha256 mojave: "bc1907a73b8bd9cb25720f4de21975610f273e95e25d55daf6667d87c8da7152"
