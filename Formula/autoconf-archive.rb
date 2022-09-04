@@ -6,7 +6,7 @@ class AutoconfArchive < Formula
   sha256 "78a61b611e2eeb55a89e0398e0ce387bcaf57fe2dd53c6fe427130f777ad1e8c"
   license "GPL-3.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autoconf-archive"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "a7598a766488626aa38a05643b6b66ee31114dfdfbc515bf301fe8cf3b8c4387"
