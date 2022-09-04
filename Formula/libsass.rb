@@ -12,7 +12,7 @@ class Libsass < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsass"
     rebuild 1
     sha256 cellar: :any, mojave: "0d16ff8ddbeed385bddafa58b6edec96329b337266d0d9e23466bfee8823e774"
