@@ -7,7 +7,7 @@ class CyralGimmeDbToken < Formula
   sha256 "6b8e907fcceb92601d26f74d613a2e8176a9a36e150727d4866631744434f2f9"
   license "Apache-2.0"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cyral-gimme-db-token"
     sha256 cellar: :any, mojave: "6be5cbe2fa79165f067964e0cf62c8f3dd702d3cc34d25435f83cf4015c2e09f"
   end
