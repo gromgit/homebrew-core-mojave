@@ -6,7 +6,7 @@ class KitchenCompletion < Formula
   license "MIT"
   head "https://github.com/MarkBorcherding/test-kitchen-bash-completion.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kitchen-completion"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "8c0958a87522fe9fa2159f1074d2a09d44395dfcd0af8559d96cd572620ddeee"
