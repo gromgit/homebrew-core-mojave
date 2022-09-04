@@ -11,7 +11,6 @@ class Cake < Formula
     sha256 cellar: :any_skip_relocation, mojave: "66131084e0cb86e097764898c2478d4ccc045ed80c5d11963840f2b891432327"
   end
 
-
   depends_on "mono"
 
   conflicts_with "coffeescript", because: "both install `cake` binaries"
