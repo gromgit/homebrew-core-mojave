@@ -12,7 +12,6 @@ class Digitemp < Formula
     sha256 cellar: :any, mojave: "8bc0b1dbf1fb2c479e5f1d068e087fa52fdb8ca6dc8bbdef0417daef4d1de4c6"
   end
 
-
   depends_on "libusb-compat"
 
   def install
