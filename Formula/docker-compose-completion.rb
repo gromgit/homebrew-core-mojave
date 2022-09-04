@@ -12,7 +12,6 @@ class DockerComposeCompletion < Formula
     sha256 cellar: :any_skip_relocation, mojave: "c597fd578d8931e28e1269735ced22f28c92fe2d77be6fcf93ac032f6660104b"
   end
 
-
   # See: https://github.com/docker/compose/issues/8550
   deprecate! date: "2021-10-02", because: "no upstream support for v2"
 
