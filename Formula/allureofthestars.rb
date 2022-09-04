@@ -11,7 +11,6 @@ class Allureofthestars < Formula
     sha256 mojave: "0aab87cc28db42afc56aa1b4a0afa683a055c6f847e12f4aa57c39380410cc0c"
   end
 
-
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
   depends_on "ghc"
