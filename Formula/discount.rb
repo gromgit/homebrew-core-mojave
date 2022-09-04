@@ -21,7 +21,6 @@ class Discount < Formula
     sha256 cellar: :any_skip_relocation, mojave: "bd6b5c227761c5155b98488ede40172da748d5c5a9176aae31e06c1bb50e8857"
   end
 
-
   conflicts_with "markdown", because: "both install `markdown` binaries"
   conflicts_with "multimarkdown", because: "both install `markdown` binaries"
 
