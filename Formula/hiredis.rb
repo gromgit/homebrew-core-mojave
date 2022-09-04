@@ -12,7 +12,6 @@ class Hiredis < Formula
     sha256 cellar: :any, mojave: "6a95b6852ddb804e74639e30d71c461084944151c84b2f3cc090ea215ceaa9c8"
   end
 
-
   # remove in next release
   patch do
     url "https://github.com/redis/hiredis/commit/8d86cb4.patch?full_index=1"
