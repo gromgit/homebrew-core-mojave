@@ -1,13 +1,17 @@
 class Libunwind < Formula
   desc "C API for determining the call-chain of a program"
   homepage "https://www.nongnu.org/libunwind/"
-  url "https://download.savannah.nongnu.org/releases/libunwind/libunwind-1.5.0.tar.gz"
-  sha256 "90337653d92d4a13de590781371c604f9031cdb50520366aa1e3a91e1efb1017"
+  url "https://download.savannah.nongnu.org/releases/libunwind/libunwind-1.6.2.tar.gz"
+  sha256 "4a6aec666991fb45d0889c44aede8ad6eb108071c3554fcdff671f9c94794976"
   license "MIT"
 
   livecheck do
     url "https://download.savannah.nongnu.org/releases/libunwind/"
     regex(/href=.*?libunwind[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   keg_only "libunwind conflicts with LLVM"
