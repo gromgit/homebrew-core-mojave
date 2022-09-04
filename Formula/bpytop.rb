@@ -13,7 +13,6 @@ class Bpytop < Formula
     sha256 cellar: :any_skip_relocation, mojave: "eeba5297947ceb1c86950e707a942027d988ec698e2abcd5742b5d1e9dc675ac"
   end
 
-
   depends_on "python@3.10"
   on_macos do
     depends_on "osx-cpu-temp"
