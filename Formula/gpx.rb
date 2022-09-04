@@ -6,7 +6,7 @@ class Gpx < Formula
   license "GPL-2.0"
   head "https://github.com/markwal/GPX.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpx"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "c72d10899953915d97d4379d84e227e9fa87f1301f85572ede06f613a569adee"
