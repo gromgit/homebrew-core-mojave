@@ -9,7 +9,7 @@ class GitImerge < Formula
   revision 1
   head "https://github.com/mhagger/git-imerge.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-imerge"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "29562abc4e678c99d83440de2d689ea42884159d6a9c5de55f7b6d19298363b9"
