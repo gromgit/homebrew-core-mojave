@@ -11,7 +11,7 @@ class Imagejs < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagejs"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "1d1a57a68f072f6edeb28900ca9fedd19ca5677bfa3783f7b6fc9195dc98d93c"
