@@ -7,7 +7,7 @@ class Gnirehtet < Formula
   revision 1
   head "https://github.com/Genymobile/gnirehtet.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnirehtet"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "30af374e560b0b8386d24e3bf12754eb87a6c6fe66056962cb50d90cdf353885"
