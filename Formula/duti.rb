@@ -18,7 +18,6 @@ class Duti < Formula
     sha256 cellar: :any_skip_relocation, mojave: "443a1354fff7ff14fae0e74fd64805815167259e19b90962ee3561da1e4f1028"
   end
 
-
   depends_on "autoconf" => :build
   depends_on :macos
 
