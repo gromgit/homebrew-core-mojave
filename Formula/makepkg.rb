@@ -5,13 +5,10 @@ class Makepkg < Formula
       tag:      "v5.0.2",
       revision: "0c633c27eaeab2a9d30efb01199579896ccf63c9"
   license "GPL-2.0"
-  head "https://git.archlinux.org/pacman.git"
+  head "https://git.archlinux.org/pacman.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 catalina:    "fb89c76eb6c2a50b14d2380ad1440b37f96e86f39d5bd60378ab5ac85cd02b08"
-    sha256 mojave:      "b6606a63e0727072c1016ffa8b60db28de0de67d3b5d3f495aa8d0728b7325c9"
-    sha256 high_sierra: "c8f2f6999669c56b5e40e2608ad1e0adfe2c8eb73f8cef959a229856d21da6ed"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   disable! date: "2022-03-28", because: "depends on fakeroot which does not build"
