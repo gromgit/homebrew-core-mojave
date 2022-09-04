@@ -5,6 +5,10 @@ class NetTools < Formula
   sha256 "b262435a5241e89bfa51c3cabd5133753952f7a7b7b93f32e08cb9d96f580d69"
   license "GPL-2.0-or-later"
 
+  bottle do
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+  end
+
   depends_on "libdnet"
   depends_on :linux
 
