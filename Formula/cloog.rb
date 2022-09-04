@@ -5,7 +5,7 @@ class Cloog < Formula
   sha256 "835c49951ff57be71dcceb6234d19d2cc22a3a5df84aea0a9d9760d92166fc72"
   license "LGPL-2.1-or-later"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloog"
     sha256 cellar: :any, mojave: "85ca932c1f21f44799fd1ef8c789bf2203c7a2de19c809c1c25ee93046bc9c34"
   end
