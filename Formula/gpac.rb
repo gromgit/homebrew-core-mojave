@@ -14,7 +14,7 @@ class Gpac < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/gpac/gpac.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpac"
     rebuild 1
     sha256 cellar: :any, mojave: "a46c64e2c044ec7f87a3d2dbdb9e96efa2d1b7c84b687d93f95513e44727c153"
