@@ -17,7 +17,6 @@ class Enet < Formula
     sha256 cellar: :any, mojave: "4d8d45d1746a4752745f6d2b97a1dc87042e11ac6fad6dd143aeaf2542a5abe4"
   end
 
-
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
