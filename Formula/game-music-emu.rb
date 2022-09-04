@@ -7,7 +7,7 @@ class GameMusicEmu < Formula
   revision 2
   head "https://bitbucket.org/mpyne/game-music-emu.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/game-music-emu"
     rebuild 1
     sha256 cellar: :any, mojave: "0e12ce5afc217f5a6f082e94b914a6599ceb3eaf37fd94bb9eb266553b5456f7"
