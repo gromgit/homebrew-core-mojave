@@ -14,7 +14,6 @@ class Dockward < Formula
     sha256 cellar: :any_skip_relocation, mojave: "928cc2831d02942156e16a5f67376500c95a79a13a7834055b3cc3b289bc78d6"
   end
 
-
   depends_on "go" => :build
 
   go_resource "github.com/Sirupsen/logrus" do
