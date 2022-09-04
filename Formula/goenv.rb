@@ -12,7 +12,7 @@ class Goenv < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goenv"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "5e3e502495172940ddbc77d6ab70b7172625d12154544e9bd5ecf2c7a8d4bb0f"
