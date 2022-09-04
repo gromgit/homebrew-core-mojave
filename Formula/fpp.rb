@@ -7,7 +7,7 @@ class Fpp < Formula
   revision 3
   head "https://github.com/facebook/pathpicker.git", branch: "main"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fpp"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "2440a694d1c0d0bd83cde61061dc1d33481f6c505ee08abbce171a2ca6d960de"
