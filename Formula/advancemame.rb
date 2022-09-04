@@ -11,7 +11,7 @@ class Advancemame < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/advancemame"
     sha256 mojave: "a55a50719af5d6c6a8905e1ef6836a023ba9d58c2a19363fb931987870036e51"
   end
