@@ -12,7 +12,6 @@ class Dosfstools < Formula
     sha256 cellar: :any_skip_relocation, mojave: "30208e7eef516fa86196f31e0aed61f5e225d1fd2e21c1443ee25d9cc45bd9fb"
   end
 
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gettext" => :build
