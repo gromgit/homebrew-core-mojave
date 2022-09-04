@@ -19,7 +19,6 @@ class EmacsClangCompleteAsync < Formula
     sha256 cellar: :any, mojave: "c560a516449cae44848e84b3af83accaa082d2a56b93d2dac4ac489f4f0d3ff0"
   end
 
-
   depends_on "llvm"
 
   # https://github.com/Golevka/emacs-clang-complete-async/pull/59
