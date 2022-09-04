@@ -6,7 +6,7 @@ class Gollum < Formula
   license "Apache-2.0"
   head "https://github.com/trivago/gollum.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gollum"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "276a27392c41286783e5c4e26a813210dfa920547da305f29d45bed181f7eacc"
