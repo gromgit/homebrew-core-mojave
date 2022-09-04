@@ -4,6 +4,7 @@ class Geeqie < Formula
   url "https://github.com/BestImageViewer/geeqie/releases/download/v1.7.3/geeqie-1.7.3.tar.xz"
   sha256 "25b1f71cf91bd9a96f399d2a9e70507e54bb377a56e64d89521c0f7a9ce5dd38"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,8 +12,7 @@ class Geeqie < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geeqie"
-    sha256 cellar: :any, mojave: "c5a490315f0e5476e78090e02b181ffead39391747794ade9752160c7fc6161a"
+    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
   end
 
   depends_on "autoconf" => :build
@@ -28,7 +28,7 @@ class Geeqie < Formula
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "imagemagick"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "libx11"
   depends_on "little-cms2"
@@ -41,8 +41,7 @@ class Geeqie < Formula
 
     ENV["NOCONFIGURE"] = "yes"
     system "./autogen.sh" # Seems to struggle to find GTK headers without this
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--disable-glibtest",
                           "--disable-gtktest",
                           "--enable-gtk3"
@@ -53,6 +52,6 @@ class Geeqie < Formula
     # Disable test on Linux because geeqie cannot run without a display.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}/geeqie", "--version"
+    system bin/"geeqie", "--version"
   end
 end
