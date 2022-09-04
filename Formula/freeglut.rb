@@ -5,7 +5,7 @@ class Freeglut < Formula
   sha256 "c5944a082df0bba96b5756dddb1f75d0cd72ce27b5395c6c1dde85c2ff297a50"
   license "MIT"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeglut"
     rebuild 1
     sha256 cellar: :any, mojave: "dd01219d9a7c18045f1286bc6f128109d529a2dae1cbdd576663b7495a02b6bd"
