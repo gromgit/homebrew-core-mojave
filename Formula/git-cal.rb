@@ -12,7 +12,7 @@ class GitCal < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cal"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "3bf18ff2ed64b3086e0d5fccb58cd2f05f6bcb68ba15d0e27d92e4ec8bf597ce"
