@@ -6,7 +6,7 @@ class GitIntegration < Formula
   license "GPL-2.0"
   head "https://github.com/johnkeeping/git-integration.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-integration"
     rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "5bc7934d1c2e7ded1b4794518ab3091df56ab947e001cc9279408673a89f384d"
