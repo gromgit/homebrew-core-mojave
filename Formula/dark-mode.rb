@@ -12,7 +12,6 @@ class DarkMode < Formula
     sha256 cellar: :any_skip_relocation, mojave: "1141d9f55b8fde1104019645435674b23b1f72be21e6e2b1dddad2ca2865562a"
   end
 
-
   depends_on xcode: :build
   depends_on :macos
   depends_on macos: :mojave
