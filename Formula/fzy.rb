@@ -6,7 +6,7 @@ class Fzy < Formula
   license "MIT"
   head "https://github.com/jhawthorn/fzy.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fzy"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "ad9932b2fe7695b0fc2e3d1b1792b5c441727a8f8b6c7545d4696964351119ef"
