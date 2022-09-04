@@ -7,7 +7,7 @@ class Gowsdl < Formula
   license "MPL-2.0"
   head "https://github.com/hooklift/gowsdl.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gowsdl"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "ba79f8c7ab597ebe1fd764b8ceb3189f480f1d810c67412d6bcd04a99488873f"
