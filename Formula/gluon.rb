@@ -11,7 +11,7 @@ class Gluon < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gluon"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "414693c2a2d9f529d2097321977ab85f39e37db96be769a50f1a8524bb63cc07"
