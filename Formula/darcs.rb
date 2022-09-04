@@ -5,7 +5,7 @@ class Darcs < Formula
   sha256 "d63c6cd236e31e812e8ad84433d27059387606269fbd953f4c349c3cb3aa242b"
   license "GPL-2.0-or-later"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/darcs"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "0b933093c9c0ce3702780c5d01f5e7fce892d15b0b41aa5efe2974f4fe6a939f"
