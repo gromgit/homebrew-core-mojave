@@ -11,7 +11,7 @@ class Jsonnet < Formula
     strategy :github_latest
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jsonnet"
     sha256 cellar: :any_skip_relocation, mojave: "91505108b16a4f4fcdb5cd81ff4bd6ff72f859243a344834b988da72c32f16d2"
   end
