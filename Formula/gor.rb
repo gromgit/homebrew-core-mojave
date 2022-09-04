@@ -12,7 +12,7 @@ class Gor < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gor"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "fb75aa29e93945581b738de4432c0ccad0d125a209671b99b0b20ef956844ad3"
