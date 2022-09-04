@@ -6,7 +6,7 @@ class GnuplotAT4 < Formula
   license "gnuplot"
   revision 4
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnuplot@4"
     sha256 mojave: "77e9af6f2a286cae89368c3d1f0f0bf5538381a305803363b5a8f6365a35a5ba"
   end
