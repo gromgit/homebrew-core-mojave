@@ -12,7 +12,6 @@ class Editorconfig < Formula
     sha256 cellar: :any, mojave: "687eb2b819295967d2894f16aeaf88c40f29cd973af558321961ac03f7f5eea5"
   end
 
-
   depends_on "cmake" => :build
   depends_on "pcre2"
 
