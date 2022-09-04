@@ -12,7 +12,6 @@ class Doubledown < Formula
     sha256 cellar: :any_skip_relocation, mojave: "1064ac05c9bfcf12e9b16120fef190e074863c78449028fa46b9ef324d5609bf"
   end
 
-
   def install
     bin.install Dir["bin/*"]
     man1.install Dir["man/man1/*.1"]
