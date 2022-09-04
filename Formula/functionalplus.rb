@@ -16,7 +16,7 @@ class Functionalplus < Formula
     end
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/functionalplus"
     rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "71017173ba2104a5c209423b544ebd640868c56388b821fb6e99c601786cf6d1"
