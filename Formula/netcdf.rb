@@ -4,7 +4,7 @@ class Netcdf < Formula
   url "https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.8.1.tar.gz"
   sha256 "bc018cc30d5da402622bf76462480664c6668b55eb16ba205a0dfb8647161dd0"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/Unidata/netcdf-c.git", branch: "main"
 
   livecheck do
@@ -14,8 +14,7 @@ class Netcdf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netcdf"
-    rebuild 1
-    sha256 cellar: :any, mojave: "df543ae1f18ade8ac66751ec5c90f98b0002d4b4dc657b3eac382c0918d6de69"
+    sha256 cellar: :any, mojave: "06d1ffa7b1367c04afb09da7a176196edd7c4ba98d1885bbde04ba040f26ff2b"
   end
 
   depends_on "cmake" => :build
