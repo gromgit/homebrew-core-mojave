@@ -6,7 +6,9 @@ class AnsibleCmdb < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "39eadb125103aac400189e36112333e6e1da17fb75eae26ec1dd34d99185d798"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ansible-cmdb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "39eadb125103aac400189e36112333e6e1da17fb75eae26ec1dd34d99185d798"
   end
 
   depends_on "libyaml"
