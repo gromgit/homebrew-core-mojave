@@ -10,7 +10,8 @@ class Fprettify < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fprettify"
-    sha256 cellar: :any_skip_relocation, mojave: "003792c125ef0380752d9dde144930d696a8dada1a1c3edce864e2417dfae574"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4b91f7d305993633724b59debf03c486218ab19603a490ac7fc75484f61eca7f"
   end
 
   depends_on "gcc" => :test
