@@ -11,7 +11,9 @@ class CargoNextest < Formula
   end
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-nextest"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4f31cba30ff67c60ec82f505d329654324067c4ec3c877e16bef66579d84ed4e"
   end
 
   depends_on "rust" # uses `cargo` at runtime
