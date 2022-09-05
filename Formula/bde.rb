@@ -13,7 +13,8 @@ class Bde < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bde"
-    sha256 cellar: :any, mojave: "a8aee2ae09885a62723099b52a0325c718514816312905e0befb2c814fb39e22"
+    rebuild 1
+    sha256 cellar: :any, mojave: "301f8b4a5bd812d6d19b6759cfbc483a9af48bebd532561cff9fb8bbaaf4ff82"
   end
 
   depends_on "cmake" => :build
@@ -41,7 +42,7 @@ class Bde < Formula
       -DCMAKE_MODULE_PATH=cmake
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_TOOLCHAIN_FILE=#{toolchain_file}
-      -DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin/"python3"}
+      -DPYTHON_EXECUTABLE=#{which("python3.10")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args
