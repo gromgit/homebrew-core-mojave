@@ -4,7 +4,7 @@ class Cgns < Formula
   url "https://github.com/CGNS/CGNS/archive/v4.3.0.tar.gz"
   sha256 "7709eb7d99731dea0dd1eff183f109eaef8d9556624e3fbc34dc5177afc0a032"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/CGNS/CGNS.git", branch: "develop"
 
   livecheck do
@@ -14,7 +14,7 @@ class Cgns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgns"
-    sha256 cellar: :any, mojave: "be24a555bd996b3442864264466d3df561721e73ad64400091fe3b25eb349d77"
+    sha256 cellar: :any, mojave: "7bdb451d1d61f6e53ef46edc80311783737948ab2baa9b04c6db5bba096bcdb8"
   end
 
   depends_on "cmake" => :build
