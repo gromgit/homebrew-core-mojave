@@ -13,8 +13,8 @@ class JpegXl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg-xl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5d842e4c9828293a25899d0253cb18d621037b314c4c242dce76865f2ac9b51e"
+    rebuild 2
+    sha256 cellar: :any, mojave: "843c9009108eba0b97c0110393f63387ce2d1efab8627f626cb776f40a78bfa3"
   end
 
   depends_on "cmake" => :build
