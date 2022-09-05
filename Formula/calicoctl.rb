@@ -14,6 +14,7 @@ class Calicoctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/calicoctl"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "2e846bc431a5d307fa85304da40b38ee0d743341b0ef9a8155f9620b327ce90c"
   end
 
