@@ -3,13 +3,13 @@ class Condure < Formula
 
   desc "HTTP/WebSocket connection manager"
   homepage "https://github.com/fanout/condure"
-  url "https://github.com/fanout/condure/archive/1.6.0.tar.gz"
-  sha256 "74c2fd5a165b9f7b1e255b17f07971ae33537a35b3c7bca9f10f57e840e4b7a5"
+  url "https://github.com/fanout/condure/archive/1.7.0.tar.gz"
+  sha256 "ca0c350731fc11eba0e7c28ffb4cc231a7c2142c458d77dff29627b0af7b458a"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/condure"
-    sha256 cellar: :any, mojave: "57f27bdd02e976b5161d18aa0d01ac0aea8a13433780c5f6c0dbd1ce0b42a6c9"
+    sha256 cellar: :any, mojave: "a8a4d3b167d93e9ccb48f0a984f9d49f559dfd8137686bcd06bb95225749e710"
   end
 
   depends_on "pkg-config" => :build
@@ -19,8 +19,8 @@ class Condure < Formula
   depends_on "zeromq"
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/6c/95/d37e7db364d7f569e71068882b1848800f221c58026670e93a4c6d50efe7/pyzmq-22.3.0.tar.gz"
-    sha256 "8eddc033e716f8c91c6a2112f0a8ebc5e00532b4a6ae1eb0ccc48e027f9c671c"
+    url "https://files.pythonhosted.org/packages/72/37/d5603f352522e249e44ee767a8a59b3fe7cf7f708a94fd40a637c6890add/pyzmq-23.2.1.tar.gz"
+    sha256 "2b381aa867ece7d0a82f30a0c7f3d4387b7cf2e0697e33efaa5bed6c5784abcd"
   end
 
   resource "tnetstring3" do
