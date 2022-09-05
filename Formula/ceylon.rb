@@ -14,7 +14,9 @@ class Ceylon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c9e8be2d72811dcc4310d1633801fa34e38a7e2bbc779e945ce732ff03172dc2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ceylon"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c9e8be2d72811dcc4310d1633801fa34e38a7e2bbc779e945ce732ff03172dc2"
   end
 
   depends_on "openjdk@8"
