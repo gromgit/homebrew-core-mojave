@@ -8,10 +8,9 @@ class Dsvpn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dsvpn"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "44cce830ec6784680a1a5e3138d6b1b4faa1f578bbffad1f133fd145f0fa86a4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ea7226c79cf63122b6da3c957ec060ebe126c9489a74eb33e48733e0c55cba69"
   end
-
 
   def install
     sbin.mkpath
