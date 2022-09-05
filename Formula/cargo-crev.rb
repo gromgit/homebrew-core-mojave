@@ -1,13 +1,18 @@
 class CargoCrev < Formula
   desc "Code review system for the cargo package manager"
   homepage "https://web.crev.dev/rust-reviews/"
-  url "https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.23.2.tar.gz"
-  sha256 "b37ca10e252bcd352634aed7ea366dfa84900446dbd74888f3178c0c10068d10"
+  url "https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.23.3.tar.gz"
+  sha256 "c66a057df87dda209ecca31d83da7ef04117a923d9bfcc88c0d505b30dabf29b"
   license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-crev"
-    sha256 cellar: :any_skip_relocation, mojave: "110d070b9c5f593ed51ed1c56dcaeb2dc0348dd249336af5f28e57513210a641"
+    sha256 cellar: :any_skip_relocation, mojave: "fa7755cb627f8fd03d7b058aed252e37c889c5ba84df4f4ccf170b8547a164fa"
   end
 
   depends_on "rust" => [:build, :test]
