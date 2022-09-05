@@ -9,6 +9,7 @@ class Cpplint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpplint"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "e453098f9d51ea4ea5869aafc40ad7601ecb01476021008830529a5c463d6689"
   end
 
