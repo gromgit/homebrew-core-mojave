@@ -6,7 +6,9 @@ class Fastmod < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastmod"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "388466c329dcd8dc5e0f757c58c877c0db27ef1781e0fc58c8708fdc7ebe4c05"
   end
 
   depends_on "rust" => :build
