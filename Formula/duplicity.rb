@@ -6,10 +6,11 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/fc/cf/4c492053398633154062759b1b8f7a4da77e029145c432ecfe3f76ca730c/duplicity-0.8.23.tar.gz"
   sha256 "35e0d218bc6569aa99e51795c5b521093af21283af8c4db4f20652e76c20fefd"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duplicity"
-    sha256 cellar: :any, mojave: "809daa92f08adecdb0357d456e3e1685eb7c056c5c54e6ef2af77bc6c62e3b46"
+    sha256 cellar: :any, mojave: "dbfbb32211cfef3553030deacd9fa1cfca6b28412261a0c83e0183b63c8529fe"
   end
 
   depends_on "rust" => :build # for cryptography
