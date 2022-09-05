@@ -8,10 +8,9 @@ class Fasttext < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fasttext"
-    rebuild 1
-    sha256 cellar: :any, mojave: "796bbafa28a86862f3343e0c377d455dbc2c54ebef303d4b6b50c1a56188d947"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e62af9a3264c310fccd0bc1b3f8675f120cdb46ad2c99d78823b638f779b47fa"
   end
-
 
   depends_on "cmake" => :build
 
