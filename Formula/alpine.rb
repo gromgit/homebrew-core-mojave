@@ -15,7 +15,8 @@ class Alpine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alpine"
-    sha256 mojave: "28af689e6a5797a38a6d1f8dc0e1f05d70ddb29d434991b21cc97dd86b9a7478"
+    rebuild 1
+    sha256 mojave: "82510bab5e5d6e47bd6a30225168be87d5bf34afc50579924c28629332b665ae"
   end
 
   depends_on "openssl@1.1"
