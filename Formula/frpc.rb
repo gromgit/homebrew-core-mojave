@@ -8,7 +8,8 @@ class Frpc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frpc"
-    sha256 cellar: :any_skip_relocation, mojave: "69b05bb296759d6264977ae698780e5aef4271be1a68b377cbe75bf4c9443d0e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a6b55c554884cc8a1e8ecea74a966978c25f0fdef176c9335707c48393e48cee"
   end
 
   depends_on "go" => :build
