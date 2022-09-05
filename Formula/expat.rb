@@ -13,6 +13,7 @@ class Expat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/expat"
+    rebuild 1
     sha256 cellar: :any, mojave: "8c2775f009f020cbaae4e47f20d54e0995f62926a6690e57617bdebc856686e5"
   end
 
