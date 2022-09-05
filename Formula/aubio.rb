@@ -12,8 +12,8 @@ class Aubio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aubio"
-    rebuild 2
-    sha256 cellar: :any, mojave: "0e583a4ba2ed872b883c05eb76d0f813440d9e03b77565b3083bc9335eeeb3a9"
+    rebuild 3
+    sha256 cellar: :any, mojave: "37cc33d60497b41eab0731d29071aa7b792b74b497c13936bb5fc61f150fa83e"
   end
 
   depends_on "libtool" => :build
@@ -34,15 +34,13 @@ class Aubio < Formula
     # Needed due to issue with recent clang (-fno-fused-madd))
     ENV.refurbish_args
 
-    # Ensure `python` references use our python3
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin"
+    python = "python3.10"
 
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    system "python3", "./waf", "build"
-    system "python3", "./waf", "install"
+    system python, "./waf", "configure", "--prefix=#{prefix}"
+    system python, "./waf", "build"
+    system python, "./waf", "install"
 
-    system "python3", *Language::Python.setup_install_args(prefix),
-                      "--install-lib=#{prefix/Language::Python.site_packages("python3")}"
+    system python, *Language::Python.setup_install_args(prefix, python)
   end
 
   test do
