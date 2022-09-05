@@ -1,8 +1,8 @@
 class Feh < Formula
   desc "X11 image viewer"
   homepage "https://feh.finalrewind.org/"
-  url "https://feh.finalrewind.org/feh-3.9.tar.bz2"
-  sha256 "8649962c41d2c7ec4cc3f438eb327638a1820ad5a66df6a9995964601ae6bca0"
+  url "https://feh.finalrewind.org/feh-3.9.1.tar.bz2"
+  sha256 "455c92711b588af149b945edc5c145f3e9aa137ed9689dabed49d5e4acac75fa"
   license "MIT-feh"
 
   livecheck do
@@ -12,7 +12,7 @@ class Feh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/feh"
-    sha256 mojave: "ac4ae899c3eceec7a01ab8352520cb0dedcddc921c6b061cbb5348e2246b2774"
+    sha256 mojave: "63c80d31f7448bd739689d06ce6868ce05ee48c6db68534701dd7bf61a4c0116"
   end
 
   depends_on "imlib2"
