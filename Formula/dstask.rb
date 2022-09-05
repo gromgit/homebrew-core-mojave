@@ -8,10 +8,9 @@ class Dstask < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dstask"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c33a6f5b6fe26101a87eda2b4260b102dd0040290ad34e22ca0bf7b11097e843"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5dad92d34fd8364d8d1e3c84e5367250447ccebaf1bdb7745207d7c0a3c060f7"
   end
-
 
   depends_on "go" => :build
 
