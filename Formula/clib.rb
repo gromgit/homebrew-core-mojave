@@ -13,6 +13,7 @@ class Clib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clib"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "ad60c601ed3fa9eb09ac9b9e3878032c96988b6c2e8a82f6d3adb18e8b85d389"
   end
 
