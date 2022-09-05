@@ -6,7 +6,9 @@ class CassandraReaper < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6988ca940a0e163014ed4c1f083aa0c2b0817593dc8b6fcf43b0edbe3a0a40ec"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra-reaper"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8a49399872dc4e661359552400daa9b6c45609c07431e0544f04171007c963b3"
   end
 
   depends_on "openjdk@11"
