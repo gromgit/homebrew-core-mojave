@@ -1,14 +1,14 @@
 class Autodiff < Formula
   desc "Automatic differentiation made easier for C++"
   homepage "https://autodiff.github.io"
-  url "https://github.com/autodiff/autodiff/archive/v0.6.9.tar.gz"
-  sha256 "eae26c9dcd8b423ebcecd1a65365c2af2be80cb6cd273602787900939626a961"
+  url "https://github.com/autodiff/autodiff/archive/v0.6.11.tar.gz"
+  sha256 "ac7a52387a10ecb8ba77ce5385ffb23893ff9a623467b4392bd204422a3b5c09"
   license "MIT"
   head "https://github.com/autodiff/autodiff.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autodiff"
-    sha256 cellar: :any_skip_relocation, mojave: "abcd1a4c7c0d8ee1d75a6bbc2ffa796779ad7372ab2a797be01f4801f581881f"
+    sha256 cellar: :any_skip_relocation, mojave: "54884aa4d90711eff7dc933fd78bd1d084d61df9280f6c186abb9123962f951e"
   end
 
   depends_on "cmake" => :build
