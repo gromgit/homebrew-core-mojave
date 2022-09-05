@@ -13,7 +13,9 @@ class Dust < Formula
   end
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dust"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0316a870f02832794cedc1406996d24cfb9acc9a81b428800a88cf1203890530"
   end
 
   depends_on "rust" => :build
