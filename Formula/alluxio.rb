@@ -12,6 +12,7 @@ class Alluxio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alluxio"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "d9ce4c40f191da033c417073d3d6c486e74b476380fd216871ab35d603b78147"
   end
 
