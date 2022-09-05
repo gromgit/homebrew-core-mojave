@@ -3,14 +3,14 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.7.21.tar.gz"
-  sha256 "5798b8a93f350f7e7df6d5d619b41823cfd7402e2a16bcb8411dd6e1c87810ec"
+  url "https://github.com/aws/aws-cli/archive/2.7.28.tar.gz"
+  sha256 "1067702c3f6ca58a1a034ca2ad83b8e9d692ba59c28cf11c7ccf73945dd44a34"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
-    sha256 cellar: :any, mojave: "6dadfeb248ff24b8c1bc1f036bbaa39b0fa6caa08ef47ca00680871c3b613a9f"
+    sha256 cellar: :any, mojave: "a9e605cd10903bf959e080bef52ad0fdb92c5e0c9dc96b02729a4f8f386b8df2"
   end
 
   depends_on "cmake" => :build
@@ -25,8 +25,8 @@ class Awscli < Formula
   # 2. Ignore `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/69/f6/f09b1035951a9dff428d9606aa361a78437fbb2572d22059c7adfff576f1/awscrt-0.13.11.tar.gz"
-    sha256 "631dc8dd10f9ecdc7a0af9b89a8739ce631b76c1de6223208437db414a2bdfc1"
+    url "https://files.pythonhosted.org/packages/69/5f/997b6c9a8f77cf5f2f1e434a35088a4ddd119254b1a6dc8fb196e0607d66/awscrt-0.14.3.tar.gz"
+    sha256 "9cb96574ee28b7258a9fdd4beaf0a2061f5cb29945acdf2d88ad6d7de8a4e98e"
   end
 
   resource "cffi" do
@@ -85,13 +85,17 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
-    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
+    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
+    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
   end
 
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/25/9d/0acbed6e4a4be4fc99148f275488580968f44ddb5e69b8ceb53fc9df55a0/wcwidth-0.1.9.tar.gz"
     sha256 "ee73862862a156bf77ff92b09034fc4825dd3af9cf81bc5b360668d425f3c5f1"
+  end
+
+  def python3
+    which("python3.10")
   end
 
   def install
@@ -101,7 +105,7 @@ class Awscli < Formula
     # ImportError: _awscrt.cpython-39-x86_64-linux-gnu.so: undefined symbol: EVP_CIPHER_CTX_init
     # As workaround, add relative path to local libcrypto.a before openssl's so it gets picked.
     if OS.linux?
-      python_version = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
+      python_version = Language::Python.major_minor_version(python3)
       ENV.prepend "CFLAGS", "-I./build/temp.linux-x86_64-#{python_version}/deps/install/include"
       ENV.prepend "LDFLAGS", "-L./build/temp.linux-x86_64-#{python_version}/deps/install/lib"
     end
@@ -136,7 +140,7 @@ class Awscli < Formula
 
   test do
     assert_match "topics", shell_output("#{bin}/aws help")
-    site_packages = libexec/Language::Python.site_packages(Formula["python@3.10"].opt_bin/"python3")
+    site_packages = libexec/Language::Python.site_packages(python3)
     assert_includes Dir[site_packages/"awscli/data/*"], "#{site_packages}/awscli/data/ac.index"
   end
 end
