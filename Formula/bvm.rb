@@ -8,7 +8,8 @@ class Bvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bvm"
-    sha256 cellar: :any_skip_relocation, mojave: "3f1d509d098fe5f1ddfab0c6a730260a0392dc23772f332b014878ed15106a99"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4fb57852c9c89886ae1cfbbb21aa5ca98ab8df15db51712ae8512743593a158f"
   end
 
   depends_on "rust" => :build
