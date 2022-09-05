@@ -12,7 +12,7 @@ class Dvdauthor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvdauthor"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "cb5c25ec0610eca2ff281dcb512c6b2493c11b42dfcad523176b4caca191950d"
   end
 
