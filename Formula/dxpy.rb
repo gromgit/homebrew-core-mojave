@@ -3,18 +3,20 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/b2/07/bf0509cee7d225156ec0a635db4659205c91a05c07f0b2527fbd6bea2910/dxpy-0.326.1.tar.gz"
-  sha256 "0a69bdb5ba4b64c0c332e3dbefb66de88f53c4e6f7c6a54829889784820e2546"
+  url "https://files.pythonhosted.org/packages/e6/83/f662e74a4eb428259f9c4846308fe4abfcff794b4c73b9cdf13c260df8ae/dxpy-0.327.1.tar.gz"
+  sha256 "e03e807eb03b2fd1991bbcd475a4c774751d23fb8247476199624dffc10936a3"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dxpy"
-    sha256 cellar: :any, mojave: "9909c3cad62d758c151ed05b8a99b2c4d50e67d0c2bed2e812722b097201f813"
+    sha256 cellar: :any, mojave: "aad728cf61f717855b75f9d1e1210b824da28bf5959cfffcbca09e6bcfc3539a"
   end
 
   depends_on "rust" => :build # for cryptography
   depends_on "python@3.10"
   depends_on "six"
+
+  uses_from_macos "libffi"
 
   on_macos do
     depends_on "readline"
@@ -22,7 +24,6 @@ class Dxpy < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "libffi"
   end
 
   resource "argcomplete" do
@@ -76,8 +77,8 @@ class Dxpy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/25/36/f056e5f1389004cf886bb7a8514077f24224238a7534497c014a6b9ac770/urllib3-1.26.10.tar.gz"
-    sha256 "879ba4d1e89654d9769ce13121e0f94310ea32e8d2f8cf587b77c08bbcdb30d6"
+    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
+    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
   end
 
   resource "websocket-client" do
