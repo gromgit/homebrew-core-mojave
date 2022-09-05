@@ -1,9 +1,10 @@
 class BoostPython3 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
-  url "https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2"
-  sha256 "8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc"
+  url "https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2"
+  sha256 "475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39"
   license "BSL-1.0"
+  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,17 @@ class BoostPython3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost-python3"
-    rebuild 2
-    sha256 cellar: :any, mojave: "5816ab6fccebc91891ab3aae0636930297291161313265fd4a958ffbea5638ff"
+    sha256 cellar: :any, mojave: "2816fcf1e76c3f83c87b40cbe17f883791eef437947c7f4da097ad4d8607fba6"
   end
 
   depends_on "numpy" => :build
   depends_on "boost"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
+
+  def python
+    deps.map(&:to_formula)
+        .find { |f| f.name.match?(/^python@\d\.\d+$/) }
+  end
 
   def install
     # "layout" should be synchronized with boost
@@ -42,9 +47,12 @@ class BoostPython3 < Formula
     # user-config.jam below.
     inreplace "bootstrap.sh", "using python", "#using python"
 
-    pyver = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
-    py_prefix = Formula["python@3.9"].opt_frameworks/"Python.framework/Versions/#{pyver}"
-    py_prefix = Formula["python@3.9"].opt_prefix if OS.linux?
+    pyver = Language::Python.major_minor_version python.opt_bin/"python3"
+    py_prefix = if OS.mac?
+      python.opt_frameworks/"Python.framework/Versions"/pyver
+    else
+      python.opt_prefix
+    end
 
     # Force boost to compile with the desired compiler
     compiler_text = if OS.mac?
@@ -71,10 +79,10 @@ class BoostPython3 < Formula
                    "python=#{pyver}",
                    *args
 
-    lib.install Dir["install-python3/lib/*.*"]
-    (lib/"cmake").install Dir["install-python3/lib/cmake/boost_python*"]
-    (lib/"cmake").install Dir["install-python3/lib/cmake/boost_numpy*"]
-    doc.install Dir["libs/python/doc/*"]
+    lib.install buildpath.glob("install-python3/lib/*.*")
+    (lib/"cmake").install buildpath.glob("install-python3/lib/cmake/boost_python*")
+    (lib/"cmake").install buildpath.glob("install-python3/lib/cmake/boost_numpy*")
+    doc.install (buildpath/"libs/python/doc").children
   end
 
   test do
@@ -89,9 +97,9 @@ class BoostPython3 < Formula
       }
     EOS
 
-    pyincludes = shell_output("#{Formula["python@3.9"].opt_bin}/python3-config --includes").chomp.split
-    pylib = shell_output("#{Formula["python@3.9"].opt_bin}/python3-config --ldflags --embed").chomp.split
-    pyver = Language::Python.major_minor_version(Formula["python@3.9"].opt_bin/"python3").to_s.delete(".")
+    pyincludes = shell_output("#{python.opt_bin}/python3-config --includes").chomp.split
+    pylib = shell_output("#{python.opt_bin}/python3-config --ldflags --embed").chomp.split
+    pyver = Language::Python.major_minor_version(python.opt_bin/"python3").to_s.delete(".")
 
     system ENV.cxx, "-shared", "-fPIC", "hello.cpp", "-L#{lib}", "-lboost_python#{pyver}", "-o",
            "hello.so", *pyincludes, *pylib
@@ -100,6 +108,6 @@ class BoostPython3 < Formula
       import hello
       print(hello.greet())
     EOS
-    assert_match "Hello, world!", pipe_output(Formula["python@3.9"].opt_bin/"python3", output, 0)
+    assert_match "Hello, world!", pipe_output(python.opt_bin/"python3", output, 0)
   end
 end
