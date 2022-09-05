@@ -12,6 +12,7 @@ class Exempi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exempi"
+    rebuild 1
     sha256 cellar: :any, mojave: "aad9384ae22f1ef3eb8785f415764e07313f63ec8c6b2fe6c5d9cf54b0901187"
   end
 
