@@ -8,7 +8,8 @@ class Gemgen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gemgen"
-    sha256 cellar: :any_skip_relocation, mojave: "c4ab97e97912bb937c6b37f7a0cea1d0f8ec865d6dc0b271f8cd126b91194a1a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "104093ff88bd896c1d9ab5b23c8338508a6018cc95a1bf16e777544933b7a907"
   end
 
   depends_on "go" => :build
