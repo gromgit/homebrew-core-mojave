@@ -11,7 +11,8 @@ class Alot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alot"
-    sha256 cellar: :any_skip_relocation, mojave: "75021f896691cd082c31a99c19399743b81e8fda4b3407976830d6e6cb04089f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "80801d732ec27ba5aecc10d3d161b4f41154417b312babdd7ddce778e6c32ab0"
   end
 
   depends_on "sphinx-doc" => :build
@@ -95,12 +96,13 @@ class Alot < Formula
   def install
     virtualenv_install_with_resources
 
+    python = "python3.10"
     # Add path configuration file to use notmuch CFFI bindings
-    site_packages = Language::Python.site_packages("python3")
+    site_packages = Language::Python.site_packages(python)
     pth_contents = "import site; site.addsitedir('#{Formula["notmuch"].opt_libexec/site_packages}')\n"
     (libexec/site_packages/"homebrew-notmuch2.pth").write pth_contents
 
-    pkgshare.install Dir["extra/*"] - %w[extra/completion]
+    pkgshare.install Pathname("extra").children - [Pathname("extra/completion")]
     zsh_completion.install "extra/completion/alot-completion.zsh" => "_alot"
 
     ENV["LC_ALL"] = "en_US.UTF-8"
@@ -109,7 +111,7 @@ class Alot < Formula
       system "make", "pickle"
       system "make", "man", "html"
       man1.install "build/man/alot.1"
-      doc.install Dir["build/html/*"]
+      doc.install Pathname("build/html").children
     end
   end
 
