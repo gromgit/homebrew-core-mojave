@@ -13,8 +13,8 @@ class Exa < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exa"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "405388d8099b215800a7f7414e1d8a818e7f32663faebad0bf65474a84200f79"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "ad0ed6aa48f52cad54975ca0c57a9c77886b2436c5378a557674cfde9bdc7274"
   end
 
   depends_on "pandoc" => :build
