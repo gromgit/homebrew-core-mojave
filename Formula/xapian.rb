@@ -13,7 +13,8 @@ class Xapian < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xapian"
-    sha256 cellar: :any, mojave: "b2e81816cf53815a54823a9cd80f6c48a1587dd06da3ad16c2a32670003b726b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f6991af433f327536570b946402f5c87a128db18c1beb5181f743cc919eb155a"
   end
 
   depends_on "python@3.10" => [:build, :test]
