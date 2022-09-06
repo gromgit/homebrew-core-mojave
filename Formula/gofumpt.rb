@@ -7,7 +7,8 @@ class Gofumpt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gofumpt"
-    sha256 cellar: :any_skip_relocation, mojave: "2785ea620e532aba380160adfece8e20c9d09dcd7df2a630e4d2625124675cf2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "04ca986d90c1734cba67146b2ccc104960160b6b0f0432d6c6ba712496b26796"
   end
 
   depends_on "go"
