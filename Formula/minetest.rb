@@ -4,17 +4,17 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://github.com/minetest/minetest/archive/5.5.1.tar.gz"
-    sha256 "dc0ae5188ef351db85c38b27f38f8549b133ed82aa46daea6deee148aa3454f4"
+    url "https://github.com/minetest/minetest/archive/5.6.0.tar.gz"
+    sha256 "3fdbc0c8d9f6a18c12954ba0caedb548a22f367520f59d079804a21de0347a91"
 
     resource "irrlichtmt" do
-      url "https://github.com/minetest/irrlicht/archive/1.9.0mt4.tar.gz"
-      sha256 "a0e2e5239ebca804adf54400ccaacaf228ec09223cfb2e1daddc9bf2694176e6"
+      url "https://github.com/minetest/irrlicht/archive/1.9.0mt7.tar.gz"
+      sha256 "c12cdbd4a852e1e6ebf7ba22789aa057a1a7f2d585dd81a2412a62f57a0e2619"
     end
 
     resource "minetest_game" do
-      url "https://github.com/minetest/minetest_game/archive/5.5.0.tar.gz"
-      sha256 "1e87252e26d6b1d3efe7720e3e097d489339dea4dd25980a828d5da212b01aaa"
+      url "https://github.com/minetest/minetest_game/archive/5.6.0.tar.gz"
+      sha256 "fd991d42c253db380559c593a2b035f22e07a81f867b5380a2f045e9a4d04c87"
     end
   end
 
@@ -25,11 +25,11 @@ class Minetest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minetest"
-    sha256 cellar: :any, mojave: "a16733e6fc72f0bd8dae3d29e97e382482adc06dcc21a4e9c921afd292400002"
+    sha256 cellar: :any, mojave: "95d6175d6df3019afff0bab2a6c538d8dd8e23dbae1c8533273a17b1d4a45f8a"
   end
 
   head do
-    url "https://github.com/minetest/minetest.git"
+    url "https://github.com/minetest/minetest.git", branch: "master"
 
     resource "irrlichtmt" do
       url "https://github.com/minetest/irrlicht.git", branch: "master"
@@ -44,12 +44,12 @@ class Minetest < Formula
   depends_on "gettext" => :build
   depends_on "freetype"
   depends_on "gmp"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "jsoncpp"
   depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"
-  depends_on "luajit-openresty"
+  depends_on "luajit"
   depends_on "zstd"
 
   uses_from_macos "curl"
@@ -62,6 +62,7 @@ class Minetest < Formula
     depends_on "libxxf86vm"
     depends_on "mesa"
     depends_on "openal-soft"
+    depends_on "xinput"
   end
 
   def install
@@ -93,22 +94,12 @@ class Minetest < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def caveats
-    <<~EOS
-      Put additional subgames and mods into "games" and "mods" folders under
-      "~/Library/Application Support/minetest/", respectively (you may have
-      to create those folders first).
-
-      If you would like to start the Minetest server from a terminal, run
-      "#{prefix}/minetest.app/Contents/MacOS/minetest --server".
-    EOS
+    bin.write_exec_script prefix/"minetest.app/Contents/MacOS/minetest" if OS.mac?
   end
 
   test do
-    minetest = OS.mac? ? prefix/"minetest.app/Contents/MacOS/minetest" : bin/"minetest"
-    output = shell_output("#{minetest} --version")
+    output = shell_output("#{bin}/minetest --version")
     assert_match "USE_CURL=1", output
     assert_match "USE_GETTEXT=1", output
     assert_match "USE_SOUND=1", output
