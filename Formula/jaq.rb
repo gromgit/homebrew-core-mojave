@@ -1,14 +1,14 @@
 class Jaq < Formula
   desc "JQ clone focussed on correctness, speed, and simplicity"
   homepage "https://github.com/01mf02/jaq"
-  url "https://github.com/01mf02/jaq/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "8ddf812157c4d0e999b2fadc25b9c13665528df08086114d575eee265973b81a"
+  url "https://github.com/01mf02/jaq/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "f78ee650c7058419d0dba37360ba0e9930b88f1432234b48f25dc89dbaaf665f"
   license "MIT"
   head "https://github.com/01mf02/jaq.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jaq"
-    sha256 cellar: :any_skip_relocation, mojave: "5cf975a5ad668308b5ade9337e1ae26df3c627b90249348c4ecc29b1181257c9"
+    sha256 cellar: :any_skip_relocation, mojave: "533ecf6b7add10d6b9b78ed3be4ae727f967b3a5d966c3e28b93fc1cc9184f46"
   end
 
   depends_on "rust" => :build
