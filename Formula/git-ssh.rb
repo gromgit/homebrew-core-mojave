@@ -6,10 +6,10 @@ class GitSsh < Formula
   license "GPL-2.0"
   head "https://github.com/lemarsu/git-ssh.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-ssh"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dde104fec14597a9a812f749b24865a2afc617fb282e5e5ee628c9e1b7d81712"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "4179225034ddab526af5f51c5ab61fafcd443386b3c36af1a8432b9812ffe275"
   end
 
   def install
