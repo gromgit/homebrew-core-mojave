@@ -1,14 +1,14 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
   homepage "https://github.com/PyO3/maturin"
-  url "https://github.com/PyO3/maturin/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "9258fd7ce202ba57956f95f557310c6fcdf6c7715b4eee06630355885d227962"
+  url "https://github.com/PyO3/maturin/archive/refs/tags/v0.13.2.tar.gz"
+  sha256 "22afa6d4367eed3225a8650604483f13c127df612cb4ed66e074244c2344c668"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maturin"
-    sha256 cellar: :any_skip_relocation, mojave: "2acc194980f9dae5fae6296a703b511d57e7988c2ddde186142155dcb210b1f4"
+    sha256 cellar: :any_skip_relocation, mojave: "e00e1494e952d38e88d6e6213613ba829ced87c2ba5d8dd20d590e117a8a3b97"
   end
 
   depends_on "python@3.10" => :test
