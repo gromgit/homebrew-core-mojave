@@ -13,6 +13,7 @@ class Mplayer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mplayer"
+    rebuild 1
     sha256 cellar: :any, mojave: "9339d8b0b9eecf1ac83fec12704246ee53e7006ab959493d5b9a5509eebe8bce"
   end
 
