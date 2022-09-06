@@ -8,7 +8,7 @@ class Keystone < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/keystone"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "827cb2a128f981a28a2298f36f37ff02f61770d1a13ed1f64f7cfb3aea4ad3e7"
   end
 
