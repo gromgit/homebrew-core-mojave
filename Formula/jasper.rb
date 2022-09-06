@@ -13,7 +13,8 @@ class Jasper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jasper"
-    sha256 cellar: :any, mojave: "a6404d1f8df84980191cfd4e5b4879270b770fe902f738976ad18a47e77536e9"
+    rebuild 1
+    sha256 cellar: :any, mojave: "89d60d1c948cb41f9d7e4ab1b95cff5a0f6d8d080d3c94d9660565b91511b72a"
   end
 
   depends_on "cmake" => :build
