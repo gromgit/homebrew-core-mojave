@@ -7,7 +7,8 @@ class Kondo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kondo"
-    sha256 cellar: :any_skip_relocation, mojave: "5b881b65ef0ef3351b80b12ca3ce0588b76efbcdd6b7b847ebcdbfdc26a7d8cd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3f8685d8f9b0728e5c449d233685e7f4d2353f79f3cf31e1fc9d750e5cfcd197"
   end
 
   depends_on "rust" => :build
