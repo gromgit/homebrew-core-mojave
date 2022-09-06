@@ -6,10 +6,10 @@ class Hr < Formula
   license "MIT"
   head "https://github.com/LuRsT/hr.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hr"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4c98d40a979dbd2c905c79eae280575dc320dbaa9528da0547cc4d19686b8b61"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "20167865a7329e3f771e97b1b0c6c5cc639507ad041c1abd99628bdc87514257"
   end
 
   def install
