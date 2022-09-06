@@ -6,7 +6,9 @@ class Goto < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "151a459ba41105325842a700dfca388a6df6512ca3b0b50173cae906cfc78509"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goto"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2987f6fbf9e2e5a2c551ab3cc25d9ce643fefbcbb9967b2b18cf65b6f2682f93"
   end
 
   def install
