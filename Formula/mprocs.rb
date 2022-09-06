@@ -1,14 +1,14 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
   homepage "https://github.com/pvolok/mprocs"
-  url "https://github.com/pvolok/mprocs/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "d7ac94e7053c5d3fa95d6c5582ffff9c5df091a198c88cb9d89d974d247f843b"
+  url "https://github.com/pvolok/mprocs/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "da00ed6c693b9282b2553f69cee05eed039b1b3e948620c20b5d8ca6b2542aba"
   license "MIT"
   head "https://github.com/pvolok/mprocs.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mprocs"
-    sha256 cellar: :any_skip_relocation, mojave: "6b8c6570391bce1bbdfd980d2a18b40d3f3d3d45eb747244cbde1bb497509288"
+    sha256 cellar: :any_skip_relocation, mojave: "e2648c7f114bd2bbe3d50ca8e928a32ee461ed210da0e3a8d1008c409f1a97ee"
   end
 
   depends_on "rust" => :build
@@ -20,7 +20,7 @@ class Mprocs < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "src")
   end
 
   test do
