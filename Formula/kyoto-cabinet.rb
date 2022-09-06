@@ -11,13 +11,9 @@ class KyotoCabinet < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "56224898ed5bf4ceecccd79901b90191180b89d4bf48e7cc218dbeff28fecc9d"
-    sha256 arm64_big_sur:  "fa9322ae66dc8295d2f60365999a371c6602bcfd98f050e0897992e745c53d93"
-    sha256 monterey:       "5aee992a2c97e53568a06313204e83e795debab5260ca564fa846e982db8ed10"
-    sha256 big_sur:        "8a7873835b5790ece37b54d398daf834e7aa75570202cd7a174ba7e5ebecf6a3"
-    sha256 catalina:       "c78b84f7dc1e82f12a8bdbeb934abeb9858968fa8c53dee9a405b1e55b49155d"
-    sha256 mojave:         "214ade984ae17b36058ceca13c37fb5612da6daa0c7cbd919e635c1c714a4a1b"
-    sha256 x86_64_linux:   "4e6693149609f558bf30685031113391e230fab20a738ab0ad98c08ef8bc1545"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kyoto-cabinet"
+    rebuild 1
+    sha256 mojave: "27b37438a63dce92100c72e6e7a07ca4556f8533df4c9015e6970f444a6b4823"
   end
 
   uses_from_macos "zlib"
