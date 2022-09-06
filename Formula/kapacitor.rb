@@ -2,8 +2,8 @@ class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
   url "https://github.com/influxdata/kapacitor.git",
-      tag:      "v1.6.4",
-      revision: "dfdea23b82343fca1976358b9d98cd8ec42e09df"
+      tag:      "v1.6.5",
+      revision: "c6c917f3097573544574ae94b5ef955a15256772"
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Kapacitor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kapacitor"
-    sha256 cellar: :any_skip_relocation, mojave: "876883e056dbe739d4811143037af0f2d3ce2d4c4b8655efc71db7bb1089b939"
+    sha256 cellar: :any_skip_relocation, mojave: "6be5a303f52dfc42ef82de7026622d4f83a96fea13c1e7ad07b2b0e1b1b17b44"
   end
 
   depends_on "go" => :build
@@ -27,8 +27,8 @@ class Kapacitor < Formula
   # NOTE: The version here is specified in the go.mod of kapacitor.
   # If you're upgrading to a newer kapacitor version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://github.com/influxdata/pkg-config/archive/v0.2.11.tar.gz"
-    sha256 "52b22c151163dfb051fd44e7d103fc4cde6ae8ff852ffc13adeef19d21c36682"
+    url "https://github.com/influxdata/pkg-config/archive/v0.2.12.tar.gz"
+    sha256 "23b2ed6a2f04d42906f5a8c28c8d681d03d47a1c32435b5df008adac5b935f1a"
   end
 
   def install
