@@ -10,7 +10,8 @@ class Mycli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mycli"
-    sha256 cellar: :any, mojave: "2391dcacadf118b647799896c825c929e7c31761ae0b365e4bf4db7f2f0f3ca1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2193008c7009b3232918ec65a27d6f7ceba90a4182edd6db08da46c7a4e5575b"
   end
 
   depends_on "rust" => :build
@@ -18,9 +19,10 @@ class Mycli < Formula
   depends_on "openssl@1.1"
   depends_on "python@3.10"
 
+  uses_from_macos "libffi"
+
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "libffi"
   end
 
   resource "cffi" do
