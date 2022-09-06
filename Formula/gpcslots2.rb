@@ -11,7 +11,9 @@ class Gpcslots2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4eb93c0df897b9c27e4df6c4238c2a70e6a983a7081a124f2bf59a575b2afddc"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpcslots2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4eb93c0df897b9c27e4df6c4238c2a70e6a983a7081a124f2bf59a575b2afddc"
   end
 
   def install
