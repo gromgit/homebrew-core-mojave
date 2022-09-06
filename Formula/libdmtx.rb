@@ -7,6 +7,7 @@ class Libdmtx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdmtx"
+    rebuild 1
     sha256 cellar: :any, mojave: "51bc9f47862ce7ddbf0f6c358afb0ddc9efe84bf9de5bf8c7fa9aa7ea94d0a24"
   end
 
