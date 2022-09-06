@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://github.com/JuliaLang/juliaup/archive/v1.6.12.tar.gz"
-  sha256 "6d3aec6f82de22994e38137258603ba51fc6280b292edc31f9542f990fa741ca"
+  url "https://github.com/JuliaLang/juliaup/archive/v1.7.22.tar.gz"
+  sha256 "8bd508e0add47f5b81533fcfc4d46e6d3e49681abbeccd6d13460c44fd905e46"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Juliaup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/juliaup"
-    sha256 cellar: :any_skip_relocation, mojave: "acf523c27519c359d16f3594cc9f7ea4272ec58f1f9efc68b1aa026278d9aca4"
+    sha256 cellar: :any_skip_relocation, mojave: "6f514585217a4545c92c14a320edde4bd1bea1ab108b63beb38b0c6755602686"
   end
 
   depends_on "rust" => :build
