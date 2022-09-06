@@ -1,8 +1,8 @@
 class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.1.tar.xz"
-  sha256 "c8162c6b8b8f1c5db706ab01b4ee29e31061182135dc27c4860224aaec1b3500"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.3.tar.xz"
+  sha256 "814641d7f61659cfbc17825d0462499ca1403e39ff53d76a8512050e6483e87a"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git"
-    sha256 mojave: "2e11b489601ccf1d421f72195bd75539ebf2657bb13b4cff60361d43d5d1ee30"
+    sha256 mojave: "03aeb8e64a60ae16e6c884fef74fae58cf1db5af557861239376c6779b316634"
   end
 
   depends_on "gettext"
@@ -24,18 +24,18 @@ class Git < Formula
   uses_from_macos "zlib", since: :high_sierra
 
   on_linux do
-    depends_on "linux-headers@4.4"
+    depends_on "linux-headers@5.15" => :build
     depends_on "openssl@1.1" # Uses CommonCrypto on macOS
   end
 
   resource "html" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.37.1.tar.xz"
-    sha256 "57c81d42d66880d3b3859e22d0f95c054389a97610f7d08d1e9e39e35771ad10"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.37.3.tar.xz"
+    sha256 "abbc43fe994622bc414d4d1282a84ebe665e49fe03ea944a67a9b905821874c2"
   end
 
   resource "man" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.37.1.tar.xz"
-    sha256 "4dcece78fcb9c585f362d2607b05189afb6c8b4e47a21dfdccb5fefd27fa1e25"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.37.3.tar.xz"
+    sha256 "9c5373549ae6131d4fc7bc04f6e064e33f5038710aacfb65c95e78e479927414"
   end
 
   resource "Net::SMTP::SSL" do
