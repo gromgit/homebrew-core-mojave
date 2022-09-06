@@ -4,6 +4,7 @@ class Gromacs < Formula
   url "https://ftp.gromacs.org/pub/gromacs/gromacs-2022.2.tar.gz"
   sha256 "656404f884d2fa2244c97d2a5b92af148d0dbea94ad13004724b3fcbf45e01bf"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://ftp.gromacs.org/pub/gromacs/"
@@ -12,7 +13,7 @@ class Gromacs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gromacs"
-    sha256 mojave: "57d548e69055cb1b5391d5a31a918049b5a4ba87d73b124dc977edbbd43e04a7"
+    sha256 mojave: "8c84e39c03ce620d80dbbaddf666c9cf89331cee502902ffcbbad7ad59021fb4"
   end
 
   depends_on "cmake" => :build
