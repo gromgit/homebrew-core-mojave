@@ -7,6 +7,7 @@ class Lsof < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lsof"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "aafa7fdab49eaf6f6a56a2ca919e7505bdbdede831d3c40b32558deb6f673046"
   end
 
