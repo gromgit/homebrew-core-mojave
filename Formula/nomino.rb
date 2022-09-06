@@ -1,14 +1,14 @@
 class Nomino < Formula
   desc "Batch rename utility"
   homepage "https://github.com/yaa110/nomino"
-  url "https://github.com/yaa110/nomino/archive/1.2.1.tar.gz"
-  sha256 "5814b18ce9a10bc955154b1cab96422e0c1fcb8b13169026198a78c07fbe3ed4"
+  url "https://github.com/yaa110/nomino/archive/1.2.2.tar.gz"
+  sha256 "d9c925a09e509c20f10aba6b8130412f6f6cf91cfa398933e432da2a6626b83e"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yaa110/nomino.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nomino"
-    sha256 cellar: :any_skip_relocation, mojave: "d89ce511bcb24347a0e754661d5a1c48675972850a1b03ce8b3e862f05c826eb"
+    sha256 cellar: :any_skip_relocation, mojave: "1d61f627fb500d5dfd7e58d7402fc55e814d78018d45253954f041a9119fcc7e"
   end
 
   depends_on "rust" => :build
