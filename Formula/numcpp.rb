@@ -7,7 +7,9 @@ class Numcpp < Formula
   head "https://github.com/dpilger26/NumCpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "11b0e73f6096a7bb0a074091dd6e66f492efb99b286aa00505cd3af67eebde8b"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numcpp"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fbb8db298286d5f19f997c83ece8f5e1448e9cfcc87ee931e89bc8431374a062"
   end
 
   depends_on "cmake" => :build
