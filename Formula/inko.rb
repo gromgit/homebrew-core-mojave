@@ -9,20 +9,19 @@ class Inko < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inko"
-    rebuild 1
-    sha256 cellar: :any, mojave: "855f1bd514822e7b4f10c368f9467bb6aa6e4fb9c60d94397aa69b16b48f5045"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8e6468be47a66d049ebab01e1333e0d1e038f59fb7fbace15e8ebf3a08a817ba"
   end
 
   depends_on "coreutils" => :build
   depends_on "rust" => :build
-  depends_on "libffi"
 
+  uses_from_macos "libffi", since: :catalina
   uses_from_macos "ruby", since: :sierra
 
   def install
-    system "make", "build", "PREFIX=#{libexec}", "FEATURES=libinko/libffi-system"
-    system "make", "install", "PREFIX=#{libexec}"
-    bin.install Dir[libexec/"bin/*"]
+    system "make", "build", "PREFIX=#{prefix}", "FEATURES=libinko/libffi-system"
+    system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
