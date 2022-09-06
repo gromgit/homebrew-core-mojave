@@ -7,7 +7,8 @@ class Goawk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goawk"
-    sha256 cellar: :any_skip_relocation, mojave: "9d48a5cc2914124050be0ade5d8841b0e18e90d189bc7ac122b5810a93b5e3c9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7f025573c8f738f58c9b58235981cc0ba3809b32a5b12dfebf5604ed037b54da"
   end
 
   depends_on "go" => :build
