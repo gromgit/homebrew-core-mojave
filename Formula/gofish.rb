@@ -8,8 +8,8 @@ class Gofish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gofish"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "10ec5ff54ecdc5cfea0d12d90fe1672f7182eee64aa85ecb17b09ba08ac2beef"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5a34388f3e3539f4651b0ae74f215f9e104efb6119c834f2bc525908dfee51aa"
   end
 
   deprecate! date: "2022-06-21", because: :repo_archived
