@@ -8,7 +8,7 @@ class Matlab2tikz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/matlab2tikz"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "f2189f2696a4ac8afcb36c43edd30731fdbd40a48889a724a3cc8fc4221b79a7"
   end
 
