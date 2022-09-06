@@ -7,6 +7,7 @@ class Libscrypt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libscrypt"
+    rebuild 1
     sha256 cellar: :any, mojave: "b97f2e9f143be926089659df2f392afbb7273942b8d7a1386b026b80e0f5287c"
   end
 
