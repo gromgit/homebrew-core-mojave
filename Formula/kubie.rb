@@ -1,9 +1,10 @@
 class Kubie < Formula
   desc "Much more powerful alternative to kubectx and kubens"
   homepage "https://blog.sbstp.ca/introducing-kubie/"
-  url "https://github.com/sbstp/kubie/archive/v0.17.0.tar.gz"
-  sha256 "775bebfadcb075abb519ff3a79bee4ef1e1d6a55dbff707a7cf3cd0a54c871c1"
+  url "https://github.com/sbstp/kubie/archive/v0.18.0.tar.gz"
+  sha256 "a9ed4ab1ef3dad8318fe3d3591b2e16310b90a541eb0f146fc94caefb4a3be37"
   license "Zlib"
+  head "https://github.com/sbstp/kubie.git", branch: "master"
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class Kubie < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubie"
-    sha256 cellar: :any_skip_relocation, mojave: "79f87ef85a185aa59c0f9401bc8803f3ad6376175c111227aa897934e8ddfc2f"
+    sha256 cellar: :any_skip_relocation, mojave: "1d8c807a7f1b8b59fef630bbc2e56f9a1ecc972a8661c93f5ffc7cf8ea8ecea4"
   end
 
   depends_on "rust" => :build
@@ -21,10 +22,10 @@ class Kubie < Formula
   def install
     system "cargo", "install", *std_cargo_args
     bash_completion.install "./completion/kubie.bash"
+    fish_completion.install "./completion/kubie.fish"
   end
 
   test do
-    mkdir_p testpath/".kube"
     (testpath/".kube/kubie-test.yaml").write <<~EOS
       apiVersion: v1
       clusters:
@@ -44,8 +45,6 @@ class Kubie < Formula
       - user:
         name: kubie-test-user
     EOS
-
-    assert_match "kubie #{version}", shell_output("#{bin}/kubie --version")
 
     assert_match "The connection to the server 0.0.0.0 was refused - did you specify the right host or port?",
       shell_output("#{bin}/kubie exec kubie-test kubie-test-namespace kubectl get pod 2>&1")
