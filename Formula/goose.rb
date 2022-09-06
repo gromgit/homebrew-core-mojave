@@ -7,7 +7,8 @@ class Goose < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goose"
-    sha256 cellar: :any_skip_relocation, mojave: "7702bb9146a3a0e27545a3efad6c10603ae8ffe41c382bce3eb01264bf10dc31"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "acd916bacb44c60585320a875c77f72fcdf1a1159c9f99049e5d93ed8ccade2b"
   end
 
   depends_on "go" => :build
