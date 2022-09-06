@@ -8,10 +8,9 @@ class Graphite2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphite2"
-    rebuild 1
-    sha256 cellar: :any, mojave: "aa246400a83cedc1df068fad0fb5a09dc7f6c12b20d20a2060d751446e4381ba"
+    rebuild 2
+    sha256 cellar: :any, mojave: "6ef9a3fb1f32c38dfef85d5c9cb5fb57a5507e460a4c75adb52e36174b214017"
   end
-
 
   depends_on "cmake" => :build
 
