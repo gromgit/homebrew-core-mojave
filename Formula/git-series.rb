@@ -4,11 +4,11 @@ class GitSeries < Formula
   url "https://github.com/git-series/git-series/archive/0.9.1.tar.gz"
   sha256 "c0362e19d3fa168a7cb0e260fcdecfe070853b163c9f2dfd2ad8213289bc7e5f"
   license "MIT"
-  revision 6
+  revision 7
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-series"
-    sha256 cellar: :any, mojave: "0fde9636dbb89c94d71505336e8a4b44300ecf35e8695ac30f89e9b670d9cc29"
+    sha256 cellar: :any, mojave: "ba0f6c29139b75c18fbc1d13efee3259d6e3178b7d3d41d02b8b738631e1ba55"
   end
 
   depends_on "cmake" => :build
