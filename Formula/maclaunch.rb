@@ -6,7 +6,9 @@ class Maclaunch < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "99d01d6f2421a1178744e66ca594636adb8d4e7ae6efcd9f3f688be215667977"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maclaunch"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "99d01d6f2421a1178744e66ca594636adb8d4e7ae6efcd9f3f688be215667977"
   end
   depends_on :macos
 
