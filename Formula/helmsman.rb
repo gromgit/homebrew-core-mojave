@@ -2,14 +2,14 @@ class Helmsman < Formula
   desc "Helm Charts as Code tool"
   homepage "https://github.com/Praqma/helmsman"
   url "https://github.com/Praqma/helmsman.git",
-      tag:      "v3.13.1",
-      revision: "fb1d6564b61605be8014c78f0ad9942b6fda4230"
+      tag:      "v3.14.0",
+      revision: "ac34dfe2afd8ce26618c1f297d29d79a9641263b"
   license "MIT"
   head "https://github.com/Praqma/helmsman.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmsman"
-    sha256 cellar: :any_skip_relocation, mojave: "7c07ee67cb5a0372cc9b00194e469ca778cafee9242353f81a0fd4deffde0b90"
+    sha256 cellar: :any_skip_relocation, mojave: "ff4751fedf343f2d07141e44512e780d0a5e2acee3406fc7df634bd60255a352"
   end
 
   depends_on "go" => :build
