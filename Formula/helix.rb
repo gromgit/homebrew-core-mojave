@@ -1,14 +1,14 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
   homepage "https://helix-editor.com"
-  url "https://github.com/helix-editor/helix/releases/download/22.05/helix-22.05-source.tar.xz"
-  sha256 "b5de56c98fcc177cb06ac802c7f466e069743f3dcd09d3910f4c08bead9c52ef"
+  url "https://github.com/helix-editor/helix/releases/download/22.08/helix-22.08-source.tar.xz"
+  sha256 "2c96c00d2c7df98d4426884ee3b217aaadb985f3301f5399e2436db6440373a3"
   license "MPL-2.0"
   head "https://github.com/helix-editor/helix.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helix"
-    sha256 cellar: :any, mojave: "021cfd3d74a9a734674c836c82657784887b7a77682bd9b305cce91563e6f407"
+    sha256 cellar: :any, mojave: "49867fe8a521afbd9d8bd7448617a18f987c8b133455670a6f7f61da8745762b"
   end
 
   depends_on "rust" => :build
@@ -21,6 +21,7 @@ class Helix < Formula
 
   def install
     system "cargo", "install", "-vv", *std_cargo_args(root: libexec, path: "helix-term")
+    rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
 
     (bin/"hx").write_env_script(libexec/"bin/hx", HELIX_RUNTIME: libexec/"runtime")
