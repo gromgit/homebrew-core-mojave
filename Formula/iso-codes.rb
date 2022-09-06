@@ -12,7 +12,9 @@ class IsoCodes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "695036b6f74cb6fb4aaa750be44edb5deb0232d7cf33d8402e0e83a154d0b7b4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iso-codes"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "695036b6f74cb6fb4aaa750be44edb5deb0232d7cf33d8402e0e83a154d0b7b4"
   end
 
   depends_on "gettext" => :build
