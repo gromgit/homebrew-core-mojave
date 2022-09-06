@@ -7,7 +7,9 @@ class NlohmannJson < Formula
   head "https://github.com/nlohmann/json.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9ca4704d40b8e80ae9405d98e64c89922ace4de66ededabe63b65d73d14d8bc8"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nlohmann-json"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9ca4704d40b8e80ae9405d98e64c89922ace4de66ededabe63b65d73d14d8bc8"
   end
 
   depends_on "cmake" => :build
