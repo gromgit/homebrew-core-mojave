@@ -4,20 +4,20 @@ class Grace < Formula
   url "https://deb.debian.org/debian/pool/main/g/grace/grace_5.1.25.orig.tar.gz"
   sha256 "751ab9917ed0f6232073c193aba74046037e185d73b77bab0f5af3e3ff1da2ac"
   license "GPL-2.0-only"
-  revision 4
+  revision 5
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/g/grace/"
     regex(/href=.*?grace[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grace"
-    sha256 mojave: "d7696f32a070fee428bf53116201a144fa46429919a7181d80f640d5a5a9026d"
+    sha256 mojave: "a2cecd8f538cbc591c97bc8352d0fc134a0f339b520d8f2817673b97e79ab360"
   end
 
   depends_on "fftw"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libice"
   depends_on "libpng"
   depends_on "libsm"
@@ -32,8 +32,7 @@ bottle do
   def install
     ENV.O1 # https://github.com/Homebrew/homebrew/issues/27840#issuecomment-38536704
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
-    system "./configure", "--disable-debug",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--enable-grace-home=#{prefix}",
                           "--disable-pdfdrv"
     system "make", "install"
