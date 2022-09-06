@@ -8,6 +8,7 @@ class Memcacheq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/memcacheq"
+    rebuild 1
     sha256 cellar: :any, mojave: "1b3260471ce7f3464e1650fd810b9ba770d90bba05e4b286d67579883bfded89"
   end
 
