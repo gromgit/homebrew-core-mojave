@@ -8,7 +8,8 @@ class Nlopt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nlopt"
-    sha256 mojave: "60b9529b92b9e31045e78f3afd897ea56cf670809d5caeb0e37e043d9c467aab"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0374fba99febfe54c30e8f09e31dfdc41da777647da7913db7327ad480f878a7"
   end
 
   depends_on "cmake" => [:build, :test]
