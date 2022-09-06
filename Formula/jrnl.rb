@@ -3,13 +3,13 @@ class Jrnl < Formula
 
   desc "Command-line note taker"
   homepage "http://jrnl.sh/en/stable/"
-  url "https://files.pythonhosted.org/packages/1a/06/26fa3eed503f58d492264b301104678c0345f398422c51c39ae0febe5916/jrnl-3.0.tar.gz"
-  sha256 "e676780351fd92a34855b802e6ca3d95041b8b6d4d4ed621b121e66908079e73"
+  url "https://files.pythonhosted.org/packages/5f/ae/f5a75aae2eddc1ad31f535b5d1350da60c588b18a7e917cddb571344f567/jrnl-3.1.tar.gz"
+  sha256 "f1c1438b26f01f09266693870c7e81e2cb9d28b9b4d3b7c60ccda06da4189a8b"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jrnl"
-    sha256 cellar: :any, mojave: "5ebb6937e31dc93dd7544fd27de9a11a96cf465a09a481582de6f38cfc53061a"
+    sha256 cellar: :any, mojave: "14100c493673aa61a71de556db72c54212d120db19960452b5c6d6c112080a00"
   end
 
   depends_on "rust" => :build
@@ -47,9 +47,14 @@ class Jrnl < Formula
     sha256 "63f9c17c0e2474ccbebc9302ce2f07b55b3b3fcb211ded18a42d5764f5c10a82"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
+    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
+  end
+
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/a4/9e/9d9eb6a6dc4f347bae8200a2e1dd65a7b96ae99e29ef8f7452ccc4ef9eea/keyring-23.6.0.tar.gz"
-    sha256 "3ac00c26e4c93739e19103091a9986a9f79665a78cf15a4df1dba7ea9ac8da2f"
+    url "https://files.pythonhosted.org/packages/a7/d8/ca70a209ea09e97e4d9feba2f6b38b4eaf918de15a7ada3f3a2246c26cf9/keyring-23.8.2.tar.gz"
+    sha256 "0d9973f8891850f1ade5f26aafd06bb16865fbbae3fc56b0defb6a14a2624003"
   end
 
   resource "parsedatetime" do
@@ -63,8 +68,8 @@ class Jrnl < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
-    sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
+    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
+    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "python-dateutil" do
@@ -72,9 +77,9 @@ class Jrnl < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/2f/5f/a0f653311adff905bbcaa6d3dfaf97edcf4d26138393c6ccd37a484851fb/pytz-2022.1.tar.gz"
-    sha256 "1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7"
+  resource "pytz-deprecation-shim" do
+    url "https://files.pythonhosted.org/packages/94/f0/909f94fea74759654390a3e1a9e4e185b6cd9aa810e533e3586f39da3097/pytz_deprecation_shim-0.1.0.post0.tar.gz"
+    sha256 "af097bae1b616dde5c5744441e2ddc69e74dfdcb0c263129610d85b87445a59d"
   end
 
   resource "pyxdg" do
@@ -83,8 +88,8 @@ class Jrnl < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/f5/f3/f87be42279b5cfba09f7f29e2f4a77063ccf5d9075042981e2cf48752d51/rich-12.4.4.tar.gz"
-    sha256 "4c586de507202505346f3e32d1363eb9ed6932f0c2f63184dea88983ff4971e2"
+    url "https://files.pythonhosted.org/packages/bb/2d/c902484141330ded63c6c40d66a9725f8da5e818770f67241cf429eef825/rich-12.5.1.tar.gz"
+    sha256 "63a5c5ce3673d3d5fbbf23cd87e11ab84b6b451436f1b7f19ec54b6bc36ed7ca"
   end
 
   resource "ruamel.yaml" do
@@ -97,14 +102,24 @@ class Jrnl < Formula
     sha256 "4ff604ce439abb20794f05613c374759ce10e3595d1867764dd1ae675b85acbd"
   end
 
+  resource "SecretStorage" do
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
+  end
+
   resource "textwrap3" do
     url "https://files.pythonhosted.org/packages/4d/02/cef645d4558411b51700e3f56cefd88f05f05ec1b8fa39a3142963f5fcd2/textwrap3-0.9.2.zip"
     sha256 "5008eeebdb236f6303dcd68f18b856d355f6197511d952ba74bc75e40e0c3414"
   end
 
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/3e/eb/a00286433c739bb1a0d83a069b2dc379a5d14b0b9c927e3cb00cb434d740/tzdata-2022.2.tar.gz"
+    sha256 "21f4f0d7241572efa7f7a4fdabb052e61b55dc48274e6842697ccdf5253e5451"
+  end
+
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/ce/73/99e4cc30db6b21cba6c3b3b80cffc472cc5a0feaf79c290f01f1ac460710/tzlocal-2.1.tar.gz"
-    sha256 "643c97c5294aedc737780a49d9df30889321cbe1204eac2c2ec6134035a92e44"
+    url "https://files.pythonhosted.org/packages/7d/b9/164d5f510e0547ae92280d0ca4a90407a15625901afbb9f57a19d9acd9eb/tzlocal-4.2.tar.gz"
+    sha256 "ee5842fa3a795f023514ac2d801c4a81d1743bbe642e3940143326b3a00addd7"
   end
 
   resource "asn1crypto" do
