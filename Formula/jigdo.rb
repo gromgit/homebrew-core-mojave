@@ -16,6 +16,7 @@ class Jigdo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jigdo"
+    rebuild 1
     sha256 mojave: "0d68f465350e23543a3d662171445ab261a15aabf9330e82a47ad284643ac1f0"
   end
 
