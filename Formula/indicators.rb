@@ -8,8 +8,8 @@ class Indicators < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/indicators"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "645b403cd3b05f4a0eed389275e840e2db973e39e71babfccceb6acfa25202b3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0ccc0c4c199e3e0655e59c1d5339899eb018b01dfa7316d25e5d648082233fbe"
   end
 
   depends_on "cmake" => :build
