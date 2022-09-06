@@ -8,8 +8,8 @@ class Libusrsctp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libusrsctp"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8b01fff5871799e0c0731107d7d1227e238484bac3d4cb036c4e86ea28e6c4c2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1ec880d7ef74e16935f2825fbe7ad276f8465928bb0888c38c7c05d0ebaea8a6"
   end
 
   depends_on "cmake" => :build
