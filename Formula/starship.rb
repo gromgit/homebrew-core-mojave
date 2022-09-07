@@ -7,7 +7,9 @@ class Starship < Formula
   head "https://github.com/starship/starship.git", branch: "master"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/starship"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "671807388ef4071e8e66e7aa671953d6d4712eab3e335d97e9d58599926e5d7b"
   end
 
   depends_on "cmake" => :build
