@@ -8,7 +8,9 @@ class Tilt < Formula
   head "https://github.com/tilt-dev/tilt.git", branch: "master"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tilt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7699b77660462f67bfaaba7014fb0d45408b1df28bcf600eb09f04887da87b01"
   end
 
   depends_on "go" => :build
