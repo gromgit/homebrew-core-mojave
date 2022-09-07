@@ -7,7 +7,9 @@ class RbenvBundler < Formula
   head "https://github.com/carsomyr/rbenv-bundler.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3b3c53b05f0504b05399bd47595ef5134e91c1a15475765550498b027d135a8c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbenv-bundler"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0f9e6f5d1c17a8608e940404724286aa2ac1f4efaa23feaaeef106aee49048c9"
   end
 
   depends_on "rbenv"
