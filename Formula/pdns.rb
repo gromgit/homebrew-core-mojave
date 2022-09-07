@@ -12,7 +12,8 @@ class Pdns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdns"
-    sha256 mojave: "426f9f0cb6e1b66a373fd78b0c5ac4214b5330ae6733603ffbb9ef4e7e497047"
+    rebuild 1
+    sha256 mojave: "095f41842bf8fb19f4985b5f528158684a3244856a52e3b777f18b8fe18f1fdc"
   end
 
   head do
