@@ -12,7 +12,8 @@ class PureFtpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pure-ftpd"
-    sha256 cellar: :any, mojave: "e133cb099acea4e7dde445f77748970721749792534ff5986c272aa59e8f1237"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cc10bbc3f8c6ca73a04eefdcc6af4b630bd6fe7c0fe3c36375200b42e27be520"
   end
 
   depends_on "libsodium"
