@@ -3,14 +3,14 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/dc/5e/b97f37c84559c1b1ffdb7bf0120d746e06176db4afbf4a98f956bb0a12f8/oci-cli-3.13.0.tar.gz"
-  sha256 "e3f016c9fd2d294e4c3638ee661097f20e197214887911a2625d0e82b2ca5ba2"
+  url "https://files.pythonhosted.org/packages/b7/84/1b392c86b2a004e341383ba7c47561d8780b7771e9bd663907044636eda9/oci-cli-3.15.2.tar.gz"
+  sha256 "c0e3aa739025e00ec9676d634f29c81fc7b7aab6afd1d7572708b930ee96c46b"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oci-cli"
-    sha256 cellar: :any, mojave: "89197ffa92d42659bd67668a6ac0701deb750cb2cac1d4707b2bfbcb37c79f34"
+    sha256 cellar: :any, mojave: "501b2946464ee8a478d9df405283c26ac7627128309ebd3178743eadff9d1633"
   end
 
   depends_on "rust" => :build
@@ -53,8 +53,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/ce/a8/277cb00f5e2293b40399d7b461f30265467a07ed92e2f210c8308c040e4b/oci-2.77.0.tar.gz"
-    sha256 "02418ca3395324648b0cef30009259dbb6397ebdc58f300df3b1744191355431"
+    url "https://files.pythonhosted.org/packages/d7/8b/74591babc2e5552db6d2500beb6e3a54d90f6fc00683c79d87a79fdfa1da/oci-2.80.1.tar.gz"
+    sha256 "149d58d463207714021cc36202487d9e1880fee9b159b3392bc8ebeb1876dde4"
   end
 
   resource "prompt-toolkit" do
@@ -78,8 +78,8 @@ class OciCli < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/2f/5f/a0f653311adff905bbcaa6d3dfaf97edcf4d26138393c6ccd37a484851fb/pytz-2022.1.tar.gz"
-    sha256 "1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7"
+    url "https://files.pythonhosted.org/packages/24/0c/401283bb1499768e33ddd2e1a35817c775405c1f047a9dc088a29ce2ea5d/pytz-2022.2.1.tar.gz"
+    sha256 "cea221417204f2d1a2aa03ddae3e867921971d0d76f14d87abb4414415bbdcf5"
   end
 
   resource "PyYAML" do
