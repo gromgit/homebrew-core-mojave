@@ -7,7 +7,9 @@ class Timedog < Formula
   head "https://github.com/nlfiedler/timedog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a0fa4a5e282aa24e8c97c2b522a32f3182b6c6b6d83da1dd5590fe9f31b9215c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/timedog"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2266951f3a03682bed3a308ebee43a726aac2c230cff9457474f3e6cd8605003"
   end
 
   depends_on :macos
