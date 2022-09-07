@@ -4,6 +4,7 @@ class Sslyze < Formula
   desc "SSL scanner"
   homepage "https://github.com/nabla-c0d3/sslyze"
   license "AGPL-3.0-only"
+  revision 1
 
   stable do
     url "https://files.pythonhosted.org/packages/3d/cc/ca058d60bac78d5d2110645be0c1a03052b08c145d06c5a8008e83dd4938/sslyze-5.0.5.tar.gz"
@@ -22,7 +23,7 @@ class Sslyze < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sslyze"
-    sha256 cellar: :any, mojave: "a63df6768ca884034d111faf81e1e9d52aab76227962ec8c007fc371f2df5850"
+    sha256 cellar: :any, mojave: "098643586d271fe2c25bed5d68cb4a059237e5829591894e456cd371a7231846"
   end
 
   head do
@@ -35,9 +36,9 @@ class Sslyze < Formula
 
   depends_on "pyinvoke" => :build
   depends_on "rust" => :build # for cryptography
-  depends_on "libffi"
   depends_on "openssl@1.1"
   depends_on "python@3.10"
+  uses_from_macos "libffi", since: :catalina
 
   resource "cffi" do
     url "https://files.pythonhosted.org/packages/00/9e/92de7e1217ccc3d5f352ba21e52398372525765b2e0c4530e6eb2ba9282a/cffi-1.15.0.tar.gz"
