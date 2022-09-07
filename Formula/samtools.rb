@@ -7,6 +7,7 @@ class Samtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/samtools"
+    rebuild 1
     sha256 cellar: :any, mojave: "8dc7b70ae4b44bf553d5270992e8a5f3c17b81c3ab4558f50a0b89c2e589ae7b"
   end
 
