@@ -1,13 +1,13 @@
 class Ttdl < Formula
   desc "Terminal Todo List Manager"
   homepage "https://github.com/VladimirMarkelov/ttdl"
-  url "https://github.com/VladimirMarkelov/ttdl/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "03a17397782f944ab8425e2ade224e90d181febc0202b8b80e791df62be7dbca"
+  url "https://github.com/VladimirMarkelov/ttdl/archive/refs/tags/v3.4.4.tar.gz"
+  sha256 "c20608c20233aa4495eabed631e70448e307e8ab0b006f328d6e72d3278311b5"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ttdl"
-    sha256 cellar: :any_skip_relocation, mojave: "e050d0730e146ceb387b86a00bf2b14fee19cdf2f86c3617a327301f976e2205"
+    sha256 cellar: :any_skip_relocation, mojave: "c6cb60aa369b8e0280a1f36d5bbd57ca8c487cd1c2e75f1191ff4723c5dea01c"
   end
 
   depends_on "rust" => :build
