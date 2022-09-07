@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/91.11.0esr/source/firefox-91.11.0esr.source.tar.xz"
-  version "91.11.0"
-  sha256 "e59bbe92ee1ef94936ce928324253e442748d62b5777bc0846ad79ed4a2a05a4"
+  url "https://archive.mozilla.org/pub/firefox/releases/91.13.0esr/source/firefox-91.13.0esr.source.tar.xz"
+  version "91.13.0"
+  sha256 "53be2bcde0b5ee3ec106bd8ba06b8ae95e7d489c484e881dfbe5360e4c920762"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -16,7 +16,7 @@ class Spidermonkey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spidermonkey"
-    sha256 cellar: :any, mojave: "e029579bd9190294555cac9ae9478c29bd408fd6aedf0b5c9ecf6c6a7ead1c8e"
+    sha256 cellar: :any, mojave: "d8c3fe731228dfb7dfa5b50af7758f442767d07469dcdb437b5e47857958bb8b"
   end
 
   depends_on "autoconf@2.13" => :build
@@ -44,6 +44,10 @@ class Spidermonkey < Formula
   end
 
   def install
+    # Avoid installing into HOMEBREW_PREFIX.
+    # https://github.com/Homebrew/homebrew-core/pull/98809
+    ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
+
     # Remove the broken *(for anyone but FF) install_name
     # _LOADER_PATH := @executable_path
     inreplace "config/rules.mk",
