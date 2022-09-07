@@ -6,10 +6,11 @@ class OnlykeyAgent < Formula
   url "https://files.pythonhosted.org/packages/02/c1/27c6cfbc5ee63fca91e37915d0182c0bfb988ca12362f01bcd5451e0ee10/onlykey-agent-1.1.14.tar.gz"
   sha256 "096f20580ae112f57c1b9b279ed17728dc8e6f0fca301be586b9d976177f1523"
   license "LGPL-3.0-only"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onlykey-agent"
-    sha256 cellar: :any, mojave: "7668ddd32c952ed141ce394874fed5d9858a278f8f2185bfbfb578b93762e4cf"
+    sha256 cellar: :any, mojave: "f16e9b8af3721c8bfa9d3cbb7f087746eacf496c5822b4a67e5b4459463556b5"
   end
 
   # https://docs.crp.to/onlykey-agent.html#installation
