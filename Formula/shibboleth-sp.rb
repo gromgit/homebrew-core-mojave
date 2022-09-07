@@ -12,8 +12,8 @@ class ShibbolethSp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shibboleth-sp"
-    rebuild 1
-    sha256 mojave: "08082efc4f22423e323a257830cc999a41f1c8e76d67df45c5042696a192a813"
+    rebuild 2
+    sha256 mojave: "debf550e2057208c7e2ba14d69f11b8edb9ba36cbb8ed9aecefeffdbb2b1cbbb"
   end
 
   depends_on "apr" => :build
