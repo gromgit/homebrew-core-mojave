@@ -13,7 +13,8 @@ class Tfsec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfsec"
-    sha256 cellar: :any_skip_relocation, mojave: "a8e4b6cb600e32fa9645efc651070b558d92d44c8b3930878d1f6862ab98d69d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "536276eee0ee319bfbc0acd9932f157224808217940735147ede0ddad41edbe1"
   end
 
   depends_on "go" => :build
