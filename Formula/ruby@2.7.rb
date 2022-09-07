@@ -13,7 +13,8 @@ class RubyAT27 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@2.7"
-    sha256 mojave: "acdb7d3728147f47dbabd336f339743fb4e0b682b09b4cfad7c1726ab1ba9807"
+    rebuild 1
+    sha256 mojave: "c25526a0abccd017a99799bdbc231c24bdb6662951d72a04f9df2c572726e7ca"
   end
 
   keg_only :versioned_formula
