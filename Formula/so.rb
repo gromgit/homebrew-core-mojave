@@ -1,14 +1,13 @@
 class So < Formula
   desc "Terminal interface for StackOverflow"
   homepage "https://github.com/samtay/so"
-  url "https://github.com/samtay/so/archive/v0.4.6.tar.gz"
-  sha256 "47a3cf5cef9d87dea223ef1c8fae3cf8c2ae0673d9eb4c8d73d733ce8ff45619"
+  url "https://github.com/samtay/so/archive/v0.4.9.tar.gz"
+  sha256 "b6327268acf3e9652acebea49c1dfa5d855cf25db6c7b380f1a0a85737464a4a"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/so"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7d0853800d0a30e00419d79daa563206f75dfbb16dcb15d36d2c9371823aa999"
+    sha256 cellar: :any_skip_relocation, mojave: "61e6190ad157f98168f0de510f012cc8fadc8c928ae9b6ee9c2b35b1718c4033"
   end
 
   depends_on "rust" => :build
