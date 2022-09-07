@@ -12,8 +12,8 @@ class PostgresqlAT13 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@13"
-    rebuild 1
-    sha256 mojave: "5a8cf7d6cc5ed9b8be30923e0ebc841b4be37017ea4d2d42050862ebe45daf8d"
+    rebuild 2
+    sha256 mojave: "fabf7ae778641812167243ed4c18c2dfdf0cca465270a35553af67e27f8c9724"
   end
 
   keg_only :versioned_formula
@@ -122,10 +122,6 @@ class PostgresqlAT13 < Formula
 
   def old_postgres_data_dir
     var/"postgres"
-  end
-
-  def postgresql_formula_present?
-    Formula["postgresql"].any_version_installed?
   end
 
   # Figure out what version of PostgreSQL the old data dir is
