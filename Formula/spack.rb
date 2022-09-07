@@ -13,6 +13,7 @@ class Spack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spack"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "3e61196fe5ea3e29d8c0e16f4f771c503a16b9d8dc62c88cfa336dde511974b6"
   end
 
