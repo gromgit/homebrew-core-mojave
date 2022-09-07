@@ -7,7 +7,8 @@ class PayloadDumperGo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/payload-dumper-go"
-    sha256 cellar: :any, mojave: "65c5dbf6b7e78dea725a2e3717318f5e3d4834ab9fd2b723fbcd8682c16da717"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bc1d4aecef45ab5afdf29dd2accdaa4b85a3b4e84187504c95c9cfd3743e219e"
   end
 
   # Bump to 1.18 on the next release, if possible.
