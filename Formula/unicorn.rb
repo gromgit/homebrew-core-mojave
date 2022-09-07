@@ -8,7 +8,8 @@ class Unicorn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unicorn"
-    sha256 cellar: :any, mojave: "131ad8bf7a1ba6287d54d59a8149c6a2120200824a960c9eccf6215f9ebd89be"
+    rebuild 1
+    sha256 cellar: :any, mojave: "61b966f3ea0f41610bcaca3d9e1d24c01d5b2ccd728e810b7b9dce9644511c0f"
   end
 
   depends_on "cmake" => :build
