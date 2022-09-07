@@ -13,14 +13,9 @@ class Ppl < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "3b7d7b75d9c40347d165192e5189725d94129dc5f95d848cc86251f493ccef91"
-    sha256 arm64_big_sur:  "f607e5d5ebefa0cb480bc84b1ba6e4eb1f2f07e7d7a00ae1f4c71958b5c82323"
-    sha256 monterey:       "f75956df3abc16149ff87a0df7347973863331d8cadad40fef8dc3b760bfd6cf"
-    sha256 big_sur:        "ceae5dd7024558587efdf935a870154a38e0cbf7e4882ba507cb3cebf574bed3"
-    sha256 catalina:       "65aa31c0201a860d32e874ab34cbdea7132101fc6461510e06641a11ca762e82"
-    sha256 mojave:         "253714635b8718e7822853e1385c546b665450b7059e8067e4008ed865eae261"
-    sha256 high_sierra:    "7a9b9ceabcf71bf31ed8185caaa6e78c065511ba3e6cf805be13402983c2a7e1"
-    sha256 x86_64_linux:   "09999d2760a2d719f28918c3040eadeceffd32112eee8e5f28f5b93db80d4d9d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ppl"
+    rebuild 1
+    sha256 mojave: "ea0dbe1fafcf324ce3e6f37abdf33350f3bdf38425b5530d710292510e107a23"
   end
 
   depends_on "gmp"
