@@ -1,14 +1,14 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://github.com/jqnatividad/qsv"
-  url "https://github.com/jqnatividad/qsv/archive/0.61.4.tar.gz"
-  sha256 "d82093b4b3fbae9469000b1970c34ad31b9e59918f617ffab6d9ba5eb785e04a"
+  url "https://github.com/jqnatividad/qsv/archive/0.65.0.tar.gz"
+  sha256 "789e09499cb9b74314f0ee54dc399822b099b8590b3bb82f658b1feb405e9510"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/jqnatividad/qsv.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qsv"
-    sha256 cellar: :any_skip_relocation, mojave: "e0996af1fc6b6f709f6ecdea1c23907306194fb737e58ca89c961762bb6c245c"
+    sha256 cellar: :any_skip_relocation, mojave: "a759202b0ece129237053288d369051fd8e172016b489852c2b5180d95a3b94c"
   end
 
   depends_on "rust" => :build
