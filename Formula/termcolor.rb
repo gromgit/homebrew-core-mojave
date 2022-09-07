@@ -6,7 +6,9 @@ class Termcolor < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "559fc780d17bbeaf1e09e1178775a0e88322d1f000a3bbe5e4937ba189468fbd"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/termcolor"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8dbd5a2916e763954c5dc87501aa18b28229865d7d7653445fafb22353a18740"
   end
 
   depends_on "cmake" => :build
