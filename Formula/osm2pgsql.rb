@@ -1,24 +1,25 @@
 class Osm2pgsql < Formula
   desc "OpenStreetMap data to PostgreSQL converter"
   homepage "https://osm2pgsql.org"
-  url "https://github.com/openstreetmap/osm2pgsql/archive/1.6.0.tar.gz"
-  sha256 "0ec8b58ab972ac8356185af4161270c1b625a77299f09e5fb7f45e616ef1a9a5"
+  url "https://github.com/openstreetmap/osm2pgsql/archive/1.7.0.tar.gz"
+  sha256 "0f722baf0f04eda387d934d86228aae07d848993900db6b9e7ab312c91fd84e5"
   license "GPL-2.0-only"
-  revision 3
   head "https://github.com/openstreetmap/osm2pgsql.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm2pgsql"
-    sha256 mojave: "f63e05231469a1c551d336007806f2733c7e14402953428c9b5655666bc4ba80"
+    sha256 mojave: "e4ccfbca3e55ab04bc42b14007a84d6bb3bbfcaa364d77a02b18c677b5ce6111"
   end
 
   depends_on "cmake" => :build
   depends_on "lua" => :build
   depends_on "boost"
   depends_on "geos"
-  depends_on "luajit-openresty"
-  depends_on "postgresql"
+  depends_on "libpq"
+  depends_on "luajit"
   depends_on "proj"
+
+  uses_from_macos "expat"
 
   def install
     # This is essentially a CMake disrespects superenv problem
