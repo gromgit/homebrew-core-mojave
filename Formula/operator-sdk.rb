@@ -14,7 +14,8 @@ class OperatorSdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/operator-sdk"
-    sha256 cellar: :any_skip_relocation, mojave: "f2670c86faed19fa1cdb00158d9dcbbc0a3b438b61b752d88eaef435dbd0fbe9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bfb91c102a3970747992047432520059093ad719c6f9e03e15b3240c3b708817"
   end
 
   depends_on "go"
