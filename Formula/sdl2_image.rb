@@ -15,6 +15,7 @@ class Sdl2Image < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2_image"
+    rebuild 1
     sha256 cellar: :any, mojave: "afb9b889309853fe1f4a3f808f6b520733a4c0c6f8e887c8a471931f109c43bd"
   end
 
