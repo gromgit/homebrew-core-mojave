@@ -13,7 +13,8 @@ class PostgresqlAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@14"
-    sha256 mojave: "c134e813f5a5e963b93f1d7379342aace2ac2b7a89beb50e725ba8410bc47c27"
+    rebuild 1
+    sha256 mojave: "078368a9ab9130b0df6933ed2fa68b28270f61c4e05672ef6710c86d1b78ef0a"
   end
 
   # https://www.postgresql.org/support/versioning/
@@ -140,7 +141,7 @@ class PostgresqlAT14 < Formula
         Previous versions of postgresql shared the same data directory.
 
         You can migrate to a versioned data directory by running:
-          mv -v "#{old_postgres_data_dir}" "#{postgresql_datadir}"
+          mv -v "#{old_postgres_data_dir}" "#{var/name}"
 
         (Make sure PostgreSQL is stopped before executing this command)
 
