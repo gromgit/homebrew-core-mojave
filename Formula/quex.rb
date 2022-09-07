@@ -13,7 +13,9 @@ class Quex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "369f0965ed61b6887f0b52c19827ac48b78844dc70525655f3a5d728605f82b2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quex"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "369f0965ed61b6887f0b52c19827ac48b78844dc70525655f3a5d728605f82b2"
   end
 
   depends_on "python@3.10"
