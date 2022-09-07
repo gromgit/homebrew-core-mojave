@@ -8,7 +8,8 @@ class OpenTyrian < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-tyrian"
-    sha256 mojave: "f9b334efd7ff761bd278cad82dafdc0cbf252f0d9e8576dfead2af68c9ef1d7b"
+    rebuild 1
+    sha256 mojave: "b8a97608aa44dd3d8e5bad1def2953a2e64b062c5213370464cf1cb57aa8bdcc"
   end
 
   depends_on "pkg-config" => :build
