@@ -13,7 +13,9 @@ class SshCopyId < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "41e65b946f66a2737c2ce8d3819726c5275f25506e406d9dd804327d63dc26b4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ssh-copy-id"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "41e65b946f66a2737c2ce8d3819726c5275f25506e406d9dd804327d63dc26b4"
   end
 
   keg_only :provided_by_macos
