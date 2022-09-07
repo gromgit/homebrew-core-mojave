@@ -19,6 +19,7 @@ class Remake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/remake"
+    rebuild 1
     sha256 mojave: "56ddace791b77aeaa3d0a6af1b7a1f313e62caef205f858859c75b4757e9aa2a"
   end
 
