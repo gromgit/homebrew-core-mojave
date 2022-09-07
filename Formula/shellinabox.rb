@@ -7,15 +7,9 @@ class Shellinabox < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aca878e8b4f6369029c1b724954c78db1ca67710a2e09d5118decb6dd3e0e280"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16393025f2b7dc93d7f01c9e7a0f8f538f3be37276e75afc7d50863d552124a5"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ef6e3b071f5c1e96cdbde3f2eb73945bc24f302ee4f393573ea09063726c7ef"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1bce570cc372ee17dd73bcde84ba9dc8db44ad968882eb25d842be7e3300a00c"
-    sha256 cellar: :any_skip_relocation, catalina:       "54a87f3514eb39cbbb1c4c127127d6b3eccd69d67f7ea26c32084218cb7d7d96"
-    sha256 cellar: :any_skip_relocation, mojave:         "364588ed44513d77da920c1dfa722b8bd6351f72b2f18f2e7ec4edcc808fe9d7"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "78a08258706eec184d42977bda76175e827a909389a70627f6eed67a10c78d45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6c0f58f84a0889e6de2142d0d36d2e8248edcf20b03ed16e5a244162cef4663"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shellinabox"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "de2f7d4adba2aa5b866abe4b312239642e5abcf10f96310dde2ac9d90359d3e1"
   end
 
   depends_on "autoconf" => :build
