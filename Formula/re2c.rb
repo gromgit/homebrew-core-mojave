@@ -7,6 +7,7 @@ class Re2c < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/re2c"
+    rebuild 1
     sha256 mojave: "0abe92191404f3e5da8745e66de0c76bd850af6352911fcae017379901d1285e"
   end
 
