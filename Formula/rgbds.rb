@@ -13,8 +13,8 @@ class Rgbds < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rgbds"
-    rebuild 2
-    sha256 cellar: :any, mojave: "41703f802053ff20011b2d895829fa3e93ad1f1b9150a0cd6d15a8c02cb541ed"
+    rebuild 3
+    sha256 cellar: :any, mojave: "9ed3c56662ee153522bb32475edcf5256996f14bb3ee1827c401ada4a47713f6"
   end
 
   depends_on "bison" => :build
@@ -25,6 +25,13 @@ class Rgbds < Formula
   resource "rgbobj" do
     url "https://github.com/gbdev/rgbobj/archive/refs/tags/v0.1.0.tar.gz"
     sha256 "359a3504dc5a5f7812dfee602a23aec80163d1d9ec13f713645b5495aeef2a9b"
+
+    # Fix support for clap 3.2+. Remove in the next release.
+    # Issue ref: https://github.com/gbdev/rgbobj/issues/4
+    patch do
+      url "https://github.com/gbdev/rgbobj/commit/b4e1fe42dbc297d67d67ed17004a3f6956de199f.patch?full_index=1"
+      sha256 "27aceed0020c7561e8259308df0868d19e0b7f21ad5e0f2a389d591e8b60027d"
+    end
   end
 
   def install
@@ -45,7 +52,7 @@ class Rgbds < Formula
         db 0
         assert @
     EOS
-    system "#{bin}/rgbasm", "-o", "output.o", "source.asm"
-    system "#{bin}/rgbobj", "-A", "-s", "data", "-p", "data", "output.o"
+    system bin/"rgbasm", "-o", "output.o", "source.asm"
+    system bin/"rgbobj", "-A", "-s", "data", "-p", "data", "output.o"
   end
 end
