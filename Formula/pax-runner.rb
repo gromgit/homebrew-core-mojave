@@ -11,7 +11,9 @@ class PaxRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "43997ebe4fabf5728e834d1476e4ce6b47a107548ae532f327d374d266cb39c4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pax-runner"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "43997ebe4fabf5728e834d1476e4ce6b47a107548ae532f327d374d266cb39c4"
   end
 
   def install
