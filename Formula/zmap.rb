@@ -9,7 +9,7 @@ class Zmap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zmap"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "520df29fbf3280d598de39587adaf4c4fbe2db86992c95b0a9a3d474228c91e1"
   end
 
