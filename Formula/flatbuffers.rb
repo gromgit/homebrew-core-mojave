@@ -13,7 +13,8 @@ class Flatbuffers < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flatbuffers"
-    sha256 cellar: :any, mojave: "9406c519be8cf2f044bd2dc7de2cc685406a53c7a1279d0666d0b6aa9a89f24c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4a9b65e61544717de8203ba4f4b6b5a2a842e2f654a918af868cf984ab69b4dc"
   end
 
   depends_on "cmake" => :build
