@@ -20,7 +20,8 @@ class Vgrep < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vgrep"
-    sha256 cellar: :any_skip_relocation, mojave: "60cc3104ab53fc025d820bd07f20484ee1169ae244f57129fc45960fdad43e42"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f7728f2bc86aae49798cb29e38b696c9b9ac8f0123a0eea0e956faf037ca6f16"
   end
 
   depends_on "go" => :build
