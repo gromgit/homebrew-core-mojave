@@ -7,7 +7,8 @@ class Zoxide < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zoxide"
-    sha256 cellar: :any_skip_relocation, mojave: "62401f3f7fa81ff49fd7ecfdbf2b8051990a217864d3debeb1a9f2e1b09ba0c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2c815a75526e1e052ee51ae115255240918ad6d0729ce319ffcfb2366e4bc214"
   end
 
   depends_on "rust" => :build
@@ -17,6 +18,7 @@ class Zoxide < Formula
     bash_completion.install "contrib/completions/zoxide.bash" => "zoxide"
     zsh_completion.install "contrib/completions/_zoxide"
     fish_completion.install "contrib/completions/zoxide.fish"
+    share.install "man"
   end
 
   test do
