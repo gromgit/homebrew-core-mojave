@@ -1,13 +1,13 @@
 class Libimagequant < Formula
   desc "Palette quantization library extracted from pnquant2"
   homepage "https://pngquant.org/lib/"
-  url "https://github.com/ImageOptim/libimagequant/archive/4.0.1.tar.gz"
-  sha256 "465ff764f437ffcfa7cad8d3a4098a781d3919f754483fdf406a642156af2540"
+  url "https://github.com/ImageOptim/libimagequant/archive/4.0.4.tar.gz"
+  sha256 "d121bbfb380a54aca8ea9d973c2e63afcbc1db67db46ea6bc63eeba44d7937c8"
   license :cannot_represent
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libimagequant"
-    sha256 cellar: :any, mojave: "152f93d3ea1aa1a095c07f4e4f35ae1f1be0843a358c9790456416cf185a91b8"
+    sha256 cellar: :any, mojave: "514a45cf951b71bf35c4586ed9c5d99527300004fcb9ec8afd688da9240ca5b0"
   end
 
   depends_on "cargo-c" => :build
