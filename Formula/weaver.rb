@@ -7,7 +7,8 @@ class Weaver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/weaver"
-    sha256 cellar: :any_skip_relocation, mojave: "667ded137f704f0fb0472f0b41af6e8945ed43c18cdd24c9ba834eb2b3fa3687"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "23ce88c63d9e955eb89765d20cffec5b89876fa2f01c6031a133209751185160"
   end
 
   depends_on xcode: ["11.2", :build]
