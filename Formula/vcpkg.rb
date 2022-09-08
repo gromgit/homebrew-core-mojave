@@ -5,6 +5,7 @@ class Vcpkg < Formula
   version "2022.07.21"
   sha256 "44085e694a913d529d8f16d03cb9d3c7ba614e82452fc0156bb075f7f6df5920"
   license "MIT"
+  revision 1
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
   # The source repository has pre-release tags with the same
@@ -17,7 +18,7 @@ class Vcpkg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcpkg"
-    sha256 cellar: :any, mojave: "ced9d6e3bb13407586422dfff38d6d0baa01f04b7d116b008d0aae42987f386f"
+    sha256 cellar: :any, mojave: "26e2a2f5d19a1aa03a4eb53f2b63ca340db6810501c3117b76a2be836b9bb552"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +30,13 @@ class Vcpkg < Formula
   end
 
   fails_with gcc: "5"
+
+  # Fix build with fmt 9+
+  # https://github.com/microsoft/vcpkg-tool/pull/634
+  patch do
+    url "https://github.com/microsoft/vcpkg-tool/commit/5fba654cc47c175202491a5d80f280c0e39b364d.patch?full_index=1"
+    sha256 "e9a61b8fc8e2ce21ae5eae36bf36b5e5214b0a624ef7c938ddea0e739a61340a"
+  end
 
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.
