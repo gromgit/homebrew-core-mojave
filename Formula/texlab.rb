@@ -8,7 +8,8 @@ class Texlab < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/texlab"
-    sha256 cellar: :any_skip_relocation, mojave: "c42b2a33266e24f67a51fa7ec82de8d57004fc86999cd07b9cd791009b0fefc5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bca21d5848c71a7b33e6ab4958b7949b22fb8d21de1e52c75def1214506a0a26"
   end
 
   depends_on "rust" => :build
