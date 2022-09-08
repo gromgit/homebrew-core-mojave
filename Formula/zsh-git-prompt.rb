@@ -6,7 +6,9 @@ class ZshGitPrompt < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d4fa3836434d56704bd03f88f3e45557cac6e12cb6e17cc251635ecdcbc431eb"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zsh-git-prompt"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d4fa3836434d56704bd03f88f3e45557cac6e12cb6e17cc251635ecdcbc431eb"
   end
 
   def install
