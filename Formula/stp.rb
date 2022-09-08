@@ -4,6 +4,7 @@ class Stp < Formula
   url "https://github.com/stp/stp/archive/refs/tags/2.3.3.tar.gz"
   sha256 "ea6115c0fc11312c797a4b7c4db8734afcfce4908d078f386616189e01b4fffa"
   license "MIT"
+  revision 2
   head "https://github.com/stp/stp.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,8 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "48ccc2aaaf6df0975dbfc46a822c5c97beb4649f2162909dd7425ed9ab253f77"
-    sha256 cellar: :any,                 arm64_big_sur:  "c85797a1bcf17ff2ee089ca7deffb73cb366073342c80805fb5d96f01b6862a8"
-    sha256 cellar: :any,                 monterey:       "353ab0e8c4f043a7db593c30821faab858c1f3aa531b4bf475ed78181d4847c2"
-    sha256 cellar: :any,                 big_sur:        "67c02fd361c644c8b084a169780a08b3a784dc9be52c9526f43c46eedd43fa8b"
-    sha256 cellar: :any,                 catalina:       "b62659c5952eb16980866fed30cfc8d12dd3b01093470307fc5b1bdbfdd079e1"
-    sha256 cellar: :any,                 mojave:         "665e74ae3f16e5f0a7f39f968e40a27adbbbe797b9abfabedbeb2105f8b39bb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47d8cff0c716d35720c9659d30d5561c567e6ca3557e735043a2d6a807591210"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stp"
+    sha256 cellar: :any, mojave: "037cf173afa3a440e98599028eace935bff111e5e6e996dc513f5a699354d29d"
   end
 
   # stp refuses to build with system bison and flex
@@ -28,7 +24,7 @@ class Stp < Formula
   depends_on "boost"
   depends_on "cryptominisat"
   depends_on "minisat"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   uses_from_macos "perl"
 
@@ -38,7 +34,7 @@ class Stp < Formula
     inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3",
+                    "-DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3",
                     "-DPYTHON_LIB_INSTALL_DIR=#{site_packages}",
                     *std_cmake_args
     system "cmake", "--build", "build"
