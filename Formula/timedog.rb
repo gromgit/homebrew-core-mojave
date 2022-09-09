@@ -8,8 +8,8 @@ class Timedog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/timedog"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "cf83117ce774b3dec0f149758569c7dc29d421e67bf4d8e937c1a60b447f590a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "94ca06345fb5d0d0b20869759d1090bba42d70b58250d1e664eb44b38fb91cd3"
   end
 
   depends_on :macos
