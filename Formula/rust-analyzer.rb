@@ -9,8 +9,8 @@ class RustAnalyzer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust-analyzer"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a88f9131a39c91b7411db56204737b7c0b9d0989b60b2fdb517f5a65e5c2b93a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "6ef8d3b30a5da18d0d6bb537854bef4183a37b49fc3e82e176243eb7a868be39"
   end
 
   depends_on "rust" => :build
