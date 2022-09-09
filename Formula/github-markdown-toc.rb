@@ -7,8 +7,8 @@ class GithubMarkdownToc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/github-markdown-toc"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "7a12f3df35d4f7277dfb750606d2eccd61be40021608295b9b67145d992320f4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "d54f89dffdcde8406a82d5febb20450fa17d67acc5dbe94cb85b7c7f7c3c7a02"
   end
 
   depends_on "go" => :build
