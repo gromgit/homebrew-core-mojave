@@ -9,8 +9,8 @@ class Inko < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inko"
-    rebuild 3
-    sha256 cellar: :any, mojave: "23a895d6d11a485bfdec47718c80f065ba9b4a7af1d0353bce619dcfda791a0c"
+    rebuild 4
+    sha256 cellar: :any, mojave: "48d6b3984ceccf70073ac5df46f29db8110f506d401955a47a50b49da55fd65e"
   end
 
   depends_on "coreutils" => :build
