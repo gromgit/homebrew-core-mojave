@@ -8,8 +8,8 @@ class SdlSound < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl_sound"
-    rebuild 1
-    sha256 cellar: :any, mojave: "52f8fb2a4646a854122ea81173a196378d009dfc390a98c6a3b9ab9c22b07698"
+    rebuild 2
+    sha256 cellar: :any, mojave: "650a430a82281b12a69721029a7b42afc799cf706d985c339d1d3457600d09fc"
   end
 
   head do
