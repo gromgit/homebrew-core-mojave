@@ -1,17 +1,17 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
   homepage "https://github.com/libtcod/libtcod"
-  url "https://github.com/libtcod/libtcod/archive/1.22.2.tar.gz"
-  sha256 "8a19a44435bbf9ebecceb1b080cae6fb2cf4d3373fabf42536662c9f8b77acdf"
+  url "https://github.com/libtcod/libtcod/archive/1.22.3.tar.gz"
+  sha256 "a6f05f009db1f468338cf4cf984245a869ebb197b6d2524a8369c22ff9f1b9f5"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c605abec2c995c60ee9ca13c5fdec4c167257cf24c9fe6a2fbf9195b47e8928b"
-    sha256 cellar: :any,                 arm64_big_sur:  "cd2d77c7c1904f9ed7aba1c6a6dadf945e10c5ca15bf691920eb8610283a6be0"
-    sha256 cellar: :any,                 monterey:       "1ee5f17ffb63c30a5b9d593a0db5ec8ee0d7a18c75a5dd28af28ec367b8c05a1"
-    sha256 cellar: :any,                 big_sur:        "5dce8ecf88a934d7ead445002509dc45c55c90a1745487590c2a294caa5126de"
-    sha256 cellar: :any,                 catalina:       "58641b98b27edcbcc654c3d25a40e6fa23d37b78ee2fd4f608521ceb66c99cfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb78f54b7a97d26d8b18766fc58af18dd3f81612cf0130200ecea06f5d273e77"
+    sha256 cellar: :any,                 arm64_monterey: "c67d0c383ddd1d295868fb89e0151efe480288adde3e6524421b52f84e903cd6"
+    sha256 cellar: :any,                 arm64_big_sur:  "2f13f66cb9f9db4f46e44fdf2c39c45fa9a4430d87f4e2d1b18cf72b9f2c4284"
+    sha256 cellar: :any,                 monterey:       "068f20ec5903fb688f08f58269de93731df9e274009abaa6b95f585c46f59acf"
+    sha256 cellar: :any,                 big_sur:        "00dd7c29d120ed771a0a2fac7fdec86c950cbfb4414c6510f1f9752456d5d65e"
+    sha256 cellar: :any,                 catalina:       "569ab7f045b21bffefda4b751b0f7cbb1c7b3dcb230a4f076880e2e4ab982c82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d2b12d79d8429e87c6140f71abfedca5f6cdbc379927f945954dae5e70367e4"
   end
 
   depends_on "autoconf" => :build
@@ -21,10 +21,6 @@ class Libtcod < Formula
   depends_on "python@3.10" => :build
   depends_on macos: :catalina
   depends_on "sdl2"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   conflicts_with "libzip", "minizip-ng", because: "libtcod, libzip and minizip-ng install a `zip.h` header"
 
