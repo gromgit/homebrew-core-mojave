@@ -10,6 +10,8 @@ class RubyInstall < Formula
     sha256 cellar: :any_skip_relocation, all: "e0fe47d5a5ca9f84ffe59b40d48981341a0ab937342069d7f79c51dd4b95af0e"
   end
 
+  depends_on "xz"
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
 
