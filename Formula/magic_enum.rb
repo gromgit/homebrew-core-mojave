@@ -6,16 +6,13 @@ class MagicEnum < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "baf0da490410d3efae5760f9a0690b835a35bb37766ba223b9aaa2a19d4b443b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b6f522d37fbd96ef7ddff60d8ab46a72843dd9757e858c641f6637b34689cbd3"
   end
 
   depends_on "cmake" => :build
 
-  on_linux do
-    depends_on "gcc" # C++17
-  end
-
-  fails_with gcc: "5"
+  fails_with gcc: "5" # C++17
 
   def install
     system "cmake", ".", *std_cmake_args
