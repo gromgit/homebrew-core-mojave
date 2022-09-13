@@ -5,7 +5,7 @@ class EulerPy < Formula
   sha256 "0d2f633bc3985c8acfd62bc76ff3f19d0bfb2274f7873ec7e40c2caef315e46d"
   license "MIT"
   revision 2
-  head "https://github.com/iKevinY/EulerPy.git"
+  head "https://github.com/iKevinY/EulerPy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5fc159b1ad9e6d6cd8fd7f7ab14186f6e894e0be2f46d6966f13f72723effec2"
@@ -19,20 +19,16 @@ class EulerPy < Formula
   end
 
   def install
-    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3"
+    ENV["PYTHON"] = python3 = which("python3.10")
+    site_packages = Language::Python.site_packages(python3)
 
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_create_path "PYTHONPATH", "#{libexec}/lib/python#{xy}/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/site_packages
     resource("click").stage do
-      system "python3", "setup.py", "install", "--prefix=#{libexec}",
-                        "--single-version-externally-managed",
-                        "--record=installed.txt"
+      system python3, *Language::Python.setup_install_args(libexec, python3)
     end
 
-    ENV.prepend_create_path "PYTHONPATH", "#{lib}/python#{xy}/site-packages"
-    system "python3", "setup.py", "install", "--prefix=#{prefix}",
-                      "--single-version-externally-managed",
-                      "--record=installed.txt"
+    ENV.prepend_create_path "PYTHONPATH", prefix/site_packages
+    system python3, *Language::Python.setup_install_args(prefix, python3)
 
     bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
