@@ -8,7 +8,7 @@
       "openshift", "passlib", "pexpect", "proxmoxer", "pysphere3", "python-consul", "python-neutronclient",
       "pywinrm", "requests-credssp", "shade", "zabbix-api"
     ],
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "ansible@2.8": false,
   "ansible@2.9": {
@@ -32,7 +32,7 @@
     "exclude_packages": ["six"]
   },
   "awscli@1": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "awsume": {
     "exclude_packages": ["six"]
@@ -193,6 +193,7 @@
   "howdoi": {
     "exclude_packages": ["six"]
   },
+  "httpie": "httpie",
   "http-prompt": {
     "exclude_packages": ["six"]
   },
@@ -329,7 +330,7 @@
     "exclude_packages": ["six"]
   },
   "pre-commit": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "principalmapper": {
     "exclude_packages": ["six"]
@@ -361,7 +362,7 @@
     "exclude_packages": ["tabulate"]
   },
   "remarshal": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "restview": {
     "exclude_packages": ["six"]
@@ -388,6 +389,9 @@
     "exclude_packages": ["six"]
   },
   "sceptre": {
+    "exclude_packages": ["six"]
+  },
+  "schemathesis": {
     "exclude_packages": ["six"]
   },
   "scipy": {
@@ -465,5 +469,8 @@
   "xdot": {
     "extra_packages": ["graphviz"]
   },
-  "xonsh": "xonsh[ptk,pygments,proctitle]"
+  "xonsh": "xonsh[ptk,pygments,proctitle]",
+  "yamllint": {
+    "exclude_packages": ["PyYAML"]
+  }
 }
