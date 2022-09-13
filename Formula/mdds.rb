@@ -6,7 +6,8 @@ class Mdds < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bebc791aaa0345a6005430a3935a2cd23fb97ef7f196d63046cc3c27d1dac748"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "69b451e38108463d874aa74896add69ed039c0aace5cd92ddf1af00aface4383"
   end
 
   head do
@@ -18,11 +19,7 @@ class Mdds < Formula
   depends_on "autoconf" => :build
   depends_on "boost"
 
-  on_linux do
-    depends_on "gcc" # for C++17
-  end
-
-  fails_with gcc: "5"
+  fails_with gcc: "5" # for C++17
 
   def install
     args = %W[
