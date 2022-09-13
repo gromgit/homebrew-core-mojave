@@ -7,14 +7,14 @@ class KibanaAT6 < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kibana@6"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "c8eda63e854352020cedbfe328928b69a233fae25c7164aa01a8031c8e65543b"
+    sha256 cellar: :any_skip_relocation, monterey: "3fdc7ae371689838ee1c29ce6d29a14780effc178fc5de39f20cf619f6af1c22"
+    sha256 cellar: :any_skip_relocation, big_sur:  "8b89272e13e281a61a7c82f03e279d11731c9e772f7ccdcdabf0f2b67546733f"
+    sha256 cellar: :any_skip_relocation, catalina: "fa529ae4e4890e3b7e7ee56e25a99c7f95852eadfd08d75121c9bc1f1baf4dd5"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2022-02-10", because: :unsupported
+  disable! date: "2022-07-31", because: :unsupported
 
   depends_on "yarn" => :build
   depends_on :macos # Due to Python 2
