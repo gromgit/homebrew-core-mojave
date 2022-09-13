@@ -7,9 +7,7 @@ class Indicators < Formula
   head "https://github.com/p-ranav/indicators.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/indicators"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "0ccc0c4c199e3e0655e59c1d5339899eb018b01dfa7316d25e5d648082233fbe"
+    sha256 cellar: :any_skip_relocation, all: "60d4242ee3f9af21462bd6416eb0250a24109ef6a15e55904cedccd9a1dff42e"
   end
 
   depends_on "cmake" => :build
@@ -62,7 +60,7 @@ class Indicators < Formula
     output = shell_output("./test")
 
     assert_equal output.scan(/(?=Brewing...)/).count, 100
-    (0..99).each do |n|
+    100.times do |n|
       assert_match "#{n}%", output
     end
   end
