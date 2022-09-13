@@ -10,9 +10,13 @@ class Gitup < Formula
   head "https://github.com/earwig/git-repo-updater.git", branch: "develop"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitup"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "059dea299ce0ed563b88890dcc024474f1817dd9671131127cdbfea958d2921c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff1d31029cc66522b235ec285341133a1074781dd57ff709e53caccb305ba3ee"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ff1d31029cc66522b235ec285341133a1074781dd57ff709e53caccb305ba3ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "75fd26446950358870cfd58d35f9f354ea7e64c8cda02672e35ee43288a40796"
+    sha256 cellar: :any_skip_relocation, big_sur:        "75fd26446950358870cfd58d35f9f354ea7e64c8cda02672e35ee43288a40796"
+    sha256 cellar: :any_skip_relocation, catalina:       "75fd26446950358870cfd58d35f9f354ea7e64c8cda02672e35ee43288a40796"
+    sha256 cellar: :any_skip_relocation, mojave:         "75fd26446950358870cfd58d35f9f354ea7e64c8cda02672e35ee43288a40796"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab75d63b467bb90432d40c39999e7d3524fc5ef7bff426be0d8aec63f256b093"
   end
 
   depends_on "python@3.10"
@@ -41,17 +45,17 @@ class Gitup < Formula
     virtualenv_install_with_resources
   end
 
-  test do
-    def prepare_repo(uri, local_head)
-      system "git", "init"
-      system "git", "remote", "add", "origin", uri
-      system "git", "fetch", "origin"
-      system "git", "checkout", local_head
-      system "git", "reset", "--hard"
-      system "git", "checkout", "-b", "master"
-      system "git", "branch", "--set-upstream-to=origin/master", "master"
-    end
+  def prepare_repo(uri, local_head)
+    system "git", "init"
+    system "git", "remote", "add", "origin", uri
+    system "git", "fetch", "origin"
+    system "git", "checkout", local_head
+    system "git", "reset", "--hard"
+    system "git", "checkout", "-b", "master"
+    system "git", "branch", "--set-upstream-to=origin/master", "master"
+  end
 
+  test do
     first_head_start = "f47ab45abdbc77e518776e5dc44f515721c523ae"
     mkdir "first" do
       prepare_repo("https://github.com/pr0d1r2/homebrew-contrib.git", first_head_start)
