@@ -6,12 +6,13 @@ class Libpqxx < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "41bb514c52d981ac96179d259a75cb67c0279030c8291db2ac7ec9fe1b55e706"
-    sha256 cellar: :any,                 arm64_big_sur:  "2bc989c08cab03b73e5f71092e8a1dcc8bcd8d206b3fc50ed54399b642a31607"
-    sha256 cellar: :any,                 monterey:       "0a21cb1e4cf425ba12d2a75ef844f7840a18d402537bca95610dbb800d56a808"
-    sha256 cellar: :any,                 big_sur:        "de2ba50a393064fb97f664b939933d2ae74e3ce825375578896f812d7bb944e0"
-    sha256 cellar: :any,                 catalina:       "61b12a60dacb5258d72f0219bf49023de032531ae56f25996ff88f3361cd2b3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1091f0b1369f8ac44f91a245c86830027667b576c35dded87394229cbe30c96e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "efc6a46c8f5be1b0cdba4b225d2c5ee6ab4a1ab781c6d15e3e91377b75086b27"
+    sha256 cellar: :any,                 arm64_big_sur:  "4d404ad40773faa6ee7c43f265dfad2469e6df3b225f081791beafca23e08ba6"
+    sha256 cellar: :any,                 monterey:       "817cffc912456f0e233dbee4be5db19bad19374051c27179b44af3da228470d3"
+    sha256 cellar: :any,                 big_sur:        "225c2c1f68f97c7cd1dc12e252dba50a7b987a8e6897f76a2091b5d81ea9f993"
+    sha256 cellar: :any,                 catalina:       "970f82f123653e725658e03e5cf1d8de48ba0af2d7e9a2eee7c01249fbcaac6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d52e95a1ebd81fca0bd0539e969cfbdaeea9a2cc615e19aa527678ace77cc082"
   end
 
   depends_on "pkg-config" => :build
@@ -20,11 +21,7 @@ class Libpqxx < Formula
   depends_on "libpq"
   depends_on macos: :catalina # requires std::filesystem
 
-  on_linux do
-    depends_on "gcc" # for C++17
-  end
-
-  fails_with gcc: "5"
+  fails_with gcc: "5" # for C++17
 
   def install
     ENV.append "CXXFLAGS", "-std=c++17"
