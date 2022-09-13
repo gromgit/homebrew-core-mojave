@@ -4,6 +4,7 @@ class Grokj2k < Formula
   url "https://github.com/GrokImageCompression/grok/archive/v9.7.1.tar.gz"
   sha256 "a7d433dca92b035349ef8203eb44cb6d0b2c9b41aecd2d12872a9ca2761e0606"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "170f081aa1ef55cdc4069a72a7bda2444c4de2613f74d8544984693336234558"
-    sha256 cellar: :any,                 arm64_big_sur:  "a27907174c61509e3acbb630a3b477ca17ae718e35be464d64339a5b404c8235"
-    sha256 cellar: :any,                 monterey:       "eac8d5c35074aa79606d23643dfce579e5ac817aeb55a5f8aa6e7e3f3ab54bec"
-    sha256 cellar: :any,                 big_sur:        "6fcd4632599e9119d23d900a864d5f9065a797f2cd18e567d660aafc513dc014"
-    sha256 cellar: :any,                 catalina:       "d60b4de529b9bb09b69e69be0b25ffde2d697dd42ba5ba09afb9ea9a06b505af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35b19ec573881184b88a8e165d4a693effcdaf6c5148a110debecbd2a4c2ae08"
+    sha256 cellar: :any,                 arm64_monterey: "523f7c9ee9c52917e57bd7f6fa2e20633129c3f43e1995209e27f7949c2961a3"
+    sha256 cellar: :any,                 arm64_big_sur:  "f80a84d849088f7be185480285c31f9475a878e73d9954cd695ceb183e03d85a"
+    sha256 cellar: :any,                 monterey:       "55854328cf329ca0387bfb4a709ba1af5acb0047ddf7863b8e8879816bd3e15d"
+    sha256 cellar: :any,                 big_sur:        "947600747a8a587efec374727fba82e070b78f06c41304bc4d39ef38ae1482b0"
+    sha256 cellar: :any,                 catalina:       "4b139d16e853870c2bc008a3432bcb8e7f030d7f9541c8f773d2a7d8ba3f5886"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "943d7f27d8ba714f00cad0a7745e3399a3f54d0e3c8e14a60b9798bea1c190ab"
   end
 
   depends_on "cmake" => :build
@@ -85,6 +86,7 @@ class Grokj2k < Formula
     # See https://github.com/GrokImageCompression/grok/issues/241
     ENV.append "CXXFLAGS", "-DCMS_NO_REGISTER_KEYWORD=1"
 
+    perl = DevelopmentTools.locate("perl")
     if OS.mac?
       # Workaround Perl 5.18 issues with C++11: pad.h:323:17: error: invalid suffix on literal
       ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal" if MacOS.version <= :catalina
@@ -92,9 +94,9 @@ class Grokj2k < Formula
       # Without this, CMake outputs: Could NOT find PerlLibs (missing: PERL_INCLUDE_PATH)
       perl_path = MacOS.sdk_path/"System/Library/Perl"/MacOS.preferred_perl_version
       args << "-DPERL_INCLUDE_PATH=#{perl_path}/darwin-thread-multi-2level/CORE"
+      args << "-DPERL_EXECUTABLE=#{perl}"
     else
       # Fix linkage error due to RPATH missing directory with libperl.so
-      perl = DevelopmentTools.locate("perl")
       perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
       ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}/CORE"
     end
