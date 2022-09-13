@@ -9,9 +9,13 @@ class ReconNg < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/recon-ng"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "73846ae0632362ccc333e8e736d28905df7f6bf7c68fdaf8fa6e935e3c851e51"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e2e45a733f31ec9e0530cfc1e8fff4be936a47aa9d16e5f18bdc6cf5604db61"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c67a45b9343f19d54224ea3d2d315395e2671e3956230cf773dcdb5809fc74e"
+    sha256 cellar: :any_skip_relocation, monterey:       "a61255c42019f8ca5865e11a54bc9e55a37ca6deefbb3f9f3f3502bca7b9a556"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b7641d98fbac1452c6bad5e4a07b8901faf28dbd66f7201db11a128f92650f84"
+    sha256 cellar: :any_skip_relocation, catalina:       "d1c3ff3698802850447b16d31118f020479b68e38f6f07a59e6f5ad33cec4da8"
+    sha256 cellar: :any_skip_relocation, mojave:         "52870b6cae825becbad66e89b672790ed2fe4107586e51cdc6fe5e44e40a0092"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3a1463e334a7e33e84d3c09fff13e8070aa42c7af678d88f65f9ab771a72b32"
   end
 
   depends_on "libyaml"
@@ -180,7 +184,7 @@ class ReconNg < Formula
 
   def install
     libexec.install Dir["*"]
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources
 
     # Replace shebang with virtualenv python
