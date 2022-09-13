@@ -12,21 +12,25 @@ class I2cTools < Formula
   end
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e2c612b1dec5fdb5204ca91afd7a475623924ba85bbd8e9894910bfb2b24b083"
   end
 
   depends_on "python@3.10" => [:build, :test]
   depends_on :linux
 
+  def python3
+    "python3.10"
+  end
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "EXTRA=eeprog"
     cd "py-smbus" do
-      system "python3", *Language::Python.setup_install_args(prefix)
+      system python3, *Language::Python.setup_install_args(prefix, python3)
     end
   end
 
   test do
-    system Formula["python@3.10"].opt_bin/"python3", "-c", "import smbus"
+    system Formula["python@3.10"].opt_bin/python3, "-c", "import smbus"
     assert_empty shell_output("#{sbin}/i2cdetect -l 2>&1").strip
     assert_match "/dev/i2c/0': No such file or directory", shell_output("#{sbin}/i2cget -y 0 0x08 2>&1", 1)
     assert_match "No EEPROM found", shell_output("#{bin}/decode-dimms 2>&1")
