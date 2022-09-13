@@ -6,8 +6,8 @@ class SimpleMtpfs < Formula
   license "GPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bb452a3c993c8330c578d255ce7d67c430eb802fae476c341415a7feea05bcfd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0a3312b826ab7fd86c703b24855864bb86660bbcefde74ecb949ad8d09ff035e"
   end
 
   depends_on "autoconf" => :build
@@ -21,7 +21,6 @@ class SimpleMtpfs < Formula
   end
 
   on_linux do
-    depends_on "gcc"
     depends_on "libfuse@2"
   end
 
