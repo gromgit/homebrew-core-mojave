@@ -20,15 +20,20 @@ class Minicom < Formula
     sha256 x86_64_linux:   "7d1b0aae1f169968d42e4dea644dff5a4f18010b59b334439aa2bd276c6e913a"
   end
 
+  head do
+    url "https://salsa.debian.org/minicom-team/minicom.git", branch: "master"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
   uses_from_macos "ncurses"
 
   def install
     # There is a silly bug in the Makefile where it forgets to link to iconv. Workaround below.
     ENV["LIBS"] = "-liconv" if OS.mac?
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args, "--mandir=#{man}"
     system "make", "install"
 
     (prefix/"etc").mkdir
