@@ -7,12 +7,13 @@ class Groestlcoin < Formula
   head "https://github.com/groestlcoin/groestlcoin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "8bccdc0813d7919a5234933088b4bba0905444d3e01c61edea1cd8da300698d3"
-    sha256 cellar: :any,                 arm64_big_sur:  "2a3beec995b7397d1bdae6c85c84d04cd3a6073d4513d1e3d75e65b882301fc5"
-    sha256 cellar: :any,                 monterey:       "c4833ca54a9cfc86b354ad5d9ebe4e0222b08270b629da53fe3f181690562e40"
-    sha256 cellar: :any,                 big_sur:        "bc3d72136cdc501ebb45737c857a5846f2810001fdfbeecec8f6f46c96c31e8c"
-    sha256 cellar: :any,                 catalina:       "45e2c1608558470482b260f7ee9dc8439dfacdbb98c6fd14d548ee139cbe698a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9d90eedf379fc2c28e9dc89ef5f562630146dacd6a9017ee4c85278eff0c5d1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "e271b0f7cffcc522b9b280e4f96d79aaac5aa5a89706a57575a159e67fda5215"
+    sha256 cellar: :any,                 arm64_big_sur:  "0bc45052b5f441bd2cd56a3b2205066c3eb6e5c20187f06e13740def6416b210"
+    sha256 cellar: :any,                 monterey:       "74770956a29628ed8c4f4f20db03947482e311d1a5b339e4006c8cb5c99da01f"
+    sha256 cellar: :any,                 big_sur:        "a9109bf51667122319ebeaaacd57a9b82d5d4dd45a235691d311b42e9c9455f0"
+    sha256 cellar: :any,                 catalina:       "8bdcc7cf88e1a1f8b32157e73afc17437c3714866dca1d00fd6efb3b872787bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4afc36c84ae0165d06b1b3c773e2b3639f1005f9df171d21be2e3bcc4cf510e2"
   end
 
   depends_on "autoconf" => :build
@@ -28,7 +29,6 @@ class Groestlcoin < Formula
 
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
-    depends_on "gcc"
   end
 
   fails_with gcc: "5"
