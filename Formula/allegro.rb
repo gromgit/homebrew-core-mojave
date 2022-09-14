@@ -4,7 +4,7 @@ class Allegro < Formula
   url "https://github.com/liballeg/allegro5/releases/download/5.2.8.0/allegro-5.2.8.0.tar.gz"
   sha256 "089fcbfab0543caa282cd61bd364793d0929876e3d2bf629380ae77b014e4aa4"
   license "Zlib"
-  revision 1
+  revision 2
   head "https://github.com/liballeg/allegro5.git", branch: "master"
 
   livecheck do
@@ -14,8 +14,7 @@ class Allegro < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/allegro"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3268b5b1a4395964f50ba3305ed9e22f0315e87fce0da58e8828078fcd0cf97a"
+    sha256 cellar: :any, mojave: "6fa7de3deaeecf681e07ea6a787fc568f503309bf7fc2dd20bc83893144d050e"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +29,6 @@ class Allegro < Formula
   depends_on "webp"
 
   on_linux do
-    depends_on "gcc"
     depends_on "jpeg-turbo"
     depends_on "libpng"
     depends_on "libx11"
@@ -65,8 +63,8 @@ class Allegro < Formula
       }
     EOS
 
-    system ENV.cxx, "-I#{include}", "-L#{lib}", "-lallegro", "-lallegro_main",
-                    "-o", "allegro_test", "allegro_test.cpp"
+    system ENV.cxx, "allegro_test.cpp", "-I#{include}", "-L#{lib}",
+                    "-lallegro", "-lallegro_main", "-o", "allegro_test"
     system "./allegro_test"
   end
 end
