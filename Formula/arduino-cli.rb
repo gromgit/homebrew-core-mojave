@@ -2,8 +2,8 @@ class ArduinoCli < Formula
   desc "Arduino command-line interface"
   homepage "https://github.com/arduino/arduino-cli"
   url "https://github.com/arduino/arduino-cli.git",
-      tag:      "0.26.0",
-      revision: "fc2ea72362c63b0f870c29cc31138c0a21006621"
+      tag:      "0.27.1",
+      revision: "a900cfb2e7e58a9ed7e06be607c0f9878a17b15d"
   license "GPL-3.0-only"
   head "https://github.com/arduino/arduino-cli.git", branch: "master"
 
@@ -14,7 +14,7 @@ class ArduinoCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arduino-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "4261bff552ec590dbc71ef42fb1afa4f3e4e1d18d9daf8b27d0bfe0b4ae94ee9"
+    sha256 cellar: :any_skip_relocation, mojave: "bb2b4bdf6fdccff380fc5e2f60df1c5208cd7842e71661dba80e7d0e4b038357"
   end
 
   depends_on "go" => :build
@@ -28,14 +28,7 @@ class ArduinoCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    output = Utils.safe_popen_read(bin/"arduino-cli", "completion", "bash")
-    (bash_completion/"arduino-cli").write output
-
-    output = Utils.safe_popen_read(bin/"arduino-cli", "completion", "zsh")
-    (zsh_completion/"_arduino-cli").write output
-
-    output = Utils.safe_popen_read(bin/"arduino-cli", "completion", "fish")
-    (fish_completion/"arduino-cli.fish").write output
+    generate_completions_from_executable(bin/"arduino-cli", "completion")
   end
 
   test do
