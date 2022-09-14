@@ -43,6 +43,9 @@
   "bandcamp-dl": {
     "exclude_packages": ["six"]
   },
+  "bandit": {
+    "exclude_packages": ["PyYAML"]
+  },
   "black": "black[d]",
   "bpython": {
     "exclude_packages": ["six"]
@@ -127,6 +130,9 @@
   "doitlive": {
     "exclude_packages": ["six"]
   },
+  "dooit": {
+    "exclude_packages": ["six", "PyYAML"]
+  },
   "duplicity": {
     "extra_packages": [
       "azure-storage-blob", "b2sdk", "boto", "boto3", "boxsdk[jwt]",
@@ -136,7 +142,7 @@
       "python-swiftclient", "requests[security]", "requests-oauthlib",
       "monotonic==1.5"
     ],
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "dvc": {
     "package_name": "dvc[all]",
@@ -397,12 +403,18 @@
   "scipy": {
     "exclude_packages": ["numpy"]
   },
+  "scour": {
+    "exclude_packages": ["six"]
+  },
   "semgrep": "semgrep",
   "shallow-backup": {
     "exclude_packages": ["six"]
   },
   "sphinx-doc": {
     "extra_packages": ["numpydoc"]
+  },
+  "sqlfluff": {
+    "exclude_packages": ["PyYAML"]
   },
   "sqlite-utils": {
     "exclude_packages": ["tabulate", "six"]
@@ -414,10 +426,13 @@
     "exclude_packages": ["six"]
   },
   "tarsnapper": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "termius": {
     "package_name": "termius",
+    "exclude_packages": ["six"]
+  },
+  "thefuck": {
     "exclude_packages": ["six"]
   },
   "theharvester": {
@@ -446,9 +461,18 @@
   "twtxt": {
     "exclude_packages": ["six"]
   },
+  "urlwatch": {
+    "exclude_packages": ["PyYAML"]
+  },
   "vdirsyncer": "vdirsyncer[google]",
+  "vint": {
+    "exclude_packages": ["PyYAML"]
+  },
   "virtualenv": {
     "exclude_packages": ["six"]
+  },
+  "virtualenvwrapper": {
+    "exclude_packages": ["six", "virtualenv"]
   },
   "volatility": {
     "extra_packages": ["capstone", "pycryptodome", "yara-python"]
@@ -460,7 +484,7 @@
     "exclude_packages": ["six"]
   },
   "woob": {
-    "exclude_packages": ["pillow", "six"],
+    "exclude_packages": ["pillow", "six", "PyYAML"],
     "extra_packages": ["colorama"]
   },
   "wxpython": {
@@ -470,6 +494,9 @@
     "extra_packages": ["graphviz"]
   },
   "xonsh": "xonsh[ptk,pygments,proctitle]",
+  "yamale": {
+    "exclude_packages": ["PyYAML"]
+  },
   "yamllint": {
     "exclude_packages": ["PyYAML"]
   }
