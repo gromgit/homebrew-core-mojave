@@ -1,14 +1,14 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
   homepage "https://www.uni-due.de/~be0001/bibtexconv/"
-  url "https://github.com/dreibh/bibtexconv/archive/bibtexconv-1.3.2.tar.gz"
-  sha256 "6eb1c82a8287ae749ac129d48c241c558881385a792dcc800a30809caf2a2109"
+  url "https://github.com/dreibh/bibtexconv/archive/bibtexconv-1.3.3.tar.gz"
+  sha256 "c0ce86b5f1eed75ed77cb5cf7c4f3dcea2a7bab512c4ed43489434a21a7967a4"
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bibtexconv"
-    sha256 cellar: :any, mojave: "0759cb8bdda51467511a47606077375b62939d45e67a4994a3bc07903a593d2e"
+    sha256 cellar: :any, mojave: "c03bc3e2c054127d4993c7c149f25a7fa7de33ab72799cad02baa45e1c9475e0"
   end
 
   depends_on "bison" => :build
