@@ -2,14 +2,14 @@ class Aztfy < Formula
   desc "Bring your existing Azure resources under the management of Terraform"
   homepage "https://azure.github.io/aztfy"
   url "https://github.com/Azure/aztfy.git",
-      tag:      "v0.6.0",
-      revision: "18b614bb384b1d413554867b8601feb753715575"
+      tag:      "v0.7.0",
+      revision: "071ef92a56ffb8b7a8ff208f00c58350d9925672"
   license "MPL-2.0"
   head "https://github.com/Azure/aztfy.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aztfy"
-    sha256 cellar: :any_skip_relocation, mojave: "0c1fbbb4c588cb9e035adada127e107b56f13381a9c34bdefcf212e6c858f3bc"
+    sha256 cellar: :any_skip_relocation, mojave: "248092b3e8792f4278eb9f981e8333a5c06410c4da6ed0c5379e784a9ce9329e"
   end
   depends_on "go" => :build
 
