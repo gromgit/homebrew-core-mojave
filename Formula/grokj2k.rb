@@ -13,12 +13,13 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "523f7c9ee9c52917e57bd7f6fa2e20633129c3f43e1995209e27f7949c2961a3"
-    sha256 cellar: :any,                 arm64_big_sur:  "f80a84d849088f7be185480285c31f9475a878e73d9954cd695ceb183e03d85a"
-    sha256 cellar: :any,                 monterey:       "55854328cf329ca0387bfb4a709ba1af5acb0047ddf7863b8e8879816bd3e15d"
-    sha256 cellar: :any,                 big_sur:        "947600747a8a587efec374727fba82e070b78f06c41304bc4d39ef38ae1482b0"
-    sha256 cellar: :any,                 catalina:       "4b139d16e853870c2bc008a3432bcb8e7f030d7f9541c8f773d2a7d8ba3f5886"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "943d7f27d8ba714f00cad0a7745e3399a3f54d0e3c8e14a60b9798bea1c190ab"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "f278c89c6747a0701b038b6c6c4cf924f2e320a6e398d8d638261e56a6a7ed5e"
+    sha256 cellar: :any,                 arm64_big_sur:  "5275d16ed57d86e7693149ea36d833ba0669e799e2759fa66d3c706ca4deb0b3"
+    sha256 cellar: :any,                 monterey:       "848f7f689ce0da957c6679b704c4a92d367955b82b71a4599ecfffb730c7dc8a"
+    sha256 cellar: :any,                 big_sur:        "778b6446451ce7d8b423564975ad3ef5e1d6804259ddd36dd8a109c9400bca72"
+    sha256 cellar: :any,                 catalina:       "bc1ebffbbc30c624050661ff22a14317b91e2afb728e820131c2986232f06690"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "115d7a94a7288ba4933a95683814f1f2684f1b9405a356bad3267c8504bdf25c"
   end
 
   depends_on "cmake" => :build
@@ -37,10 +38,6 @@ class Grokj2k < Formula
   on_macos do
     # HACK: this should not be a test dependency but is due to a limitation with fails_with
     depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version >= 1205
-  end
-
-  on_linux do
-    depends_on "gcc"
   end
 
   # https://github.com/GrokImageCompression/grok/blob/master/INSTALL.md#compilers
