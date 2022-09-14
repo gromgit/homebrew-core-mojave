@@ -13,9 +13,7 @@ class Quex < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/quex"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "369f0965ed61b6887f0b52c19827ac48b78844dc70525655f3a5d728605f82b2"
+    sha256 cellar: :any_skip_relocation, all: "369f0965ed61b6887f0b52c19827ac48b78844dc70525655f3a5d728605f82b2"
   end
 
   depends_on "python@3.10"
@@ -27,7 +25,7 @@ class Quex < Formula
     # Use a shim script to set QUEX_PATH on the user's behalf
     (bin/"quex").write <<~EOS
       #!/bin/bash
-      QUEX_PATH="#{libexec}" "#{Formula["python@3.10"].opt_bin}/python3" "#{libexec}/quex-exe.py" "$@"
+      QUEX_PATH="#{libexec}" "python3.10" "#{libexec}/quex-exe.py" "$@"
     EOS
 
     if build.head?
