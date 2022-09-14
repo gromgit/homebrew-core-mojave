@@ -9,7 +9,8 @@ class AwsNuke < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-nuke"
-    sha256 cellar: :any_skip_relocation, mojave: "ff6903617d95791f0b00bd698cbdaf5cea27547728a6e3cbc7335ce58fb6e9c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "99894d9424dc2c0799237b8858f9dfca8fc0e6e200def6c7dfe5f17e5dcc7897"
   end
 
   depends_on "go" => :build
@@ -31,9 +32,7 @@ class AwsNuke < Formula
 
     pkgshare.install "config"
 
-    (bash_completion/"aws-nuke").write Utils.safe_popen_read("#{bin}/aws-nuke", "completion", "bash")
-    (fish_completion/"aws-nuke.fish").write Utils.safe_popen_read("#{bin}/aws-nuke", "completion", "fish")
-    (zsh_completion/"_aws-nuke").write Utils.safe_popen_read("#{bin}/aws-nuke", "completion", "zsh")
+    generate_completions_from_executable(bin/"aws-nuke", "completion")
   end
 
   test do
