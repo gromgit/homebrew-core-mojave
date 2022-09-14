@@ -2,13 +2,13 @@ class ArgocdAutopilot < Formula
   desc "Opinionated way of installing Argo CD and managing GitOps repositories"
   homepage "https://argoproj.io"
   url "https://github.com/argoproj-labs/argocd-autopilot.git",
-      tag:      "v0.4.5",
-      revision: "bf3862a47cac6c7e928f6cac56c23d46024598e4"
+      tag:      "v0.4.7",
+      revision: "33e2451ced3a7e6983d0ac1c2aef548f1790abb0"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd-autopilot"
-    sha256 cellar: :any_skip_relocation, mojave: "247c89d53d9a2653b6298a7c01821b1adce995b1ffd40d138cdb5b82e5ac9cdc"
+    sha256 cellar: :any_skip_relocation, mojave: "682cbd031b3bc4ed1b3c7ede30efe1224536e58f40e0c92b0d1f0723a800d4d8"
   end
 
   depends_on "go" => :build
