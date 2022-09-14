@@ -1,8 +1,8 @@
 class Bgpq4 < Formula
   desc "BGP filtering automation for Cisco, Juniper, BIRD and OpenBGPD routers"
   homepage "https://github.com/bgp/bgpq4"
-  url "https://github.com/bgp/bgpq4/archive/refs/tags/1.5.tar.gz"
-  sha256 "6650494caff7ac78b92e0b416437b1726d607c2946f19aa4b9ec50176855ea60"
+  url "https://github.com/bgp/bgpq4/archive/refs/tags/1.6.tar.gz"
+  sha256 "7780d4f2fd2f7aeb53ec5378e6e6602124bc6fb7ef8b372590869b82ac29b2df"
   license "BSD-2-Clause"
   head "https://github.com/bgp/bgpq4.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Bgpq4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bgpq4"
-    sha256 cellar: :any_skip_relocation, mojave: "edd965d93aa94994fcce7fb09bd607ae2ada4cc2f4e2f87eb114e0ec2945a16a"
+    sha256 cellar: :any_skip_relocation, mojave: "92ab23caee042087efa7547d84a2a58f90e41740323188179f7305eac1c0b040"
   end
 
   depends_on "autoconf" => :build
