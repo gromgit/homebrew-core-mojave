@@ -5,7 +5,7 @@ class Mkvtoolnix < Formula
   mirror "https://fossies.org/linux/misc/mkvtoolnix-70.0.0.tar.xz"
   sha256 "64324b7ee6b4aa6fab5f517ca93667d12260a4ea92ea80b97575beda3a91693a"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -13,12 +13,12 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "b16fd142dddc9332abf39423840ca65a33435d5a44a49c95427582b7c46da077"
-    sha256 cellar: :any, arm64_big_sur:  "29b0763668256b59bdbb2bb8e2f27af9ce7fe362147e496db29996d0d0dc9469"
-    sha256 cellar: :any, monterey:       "ec113ec2d8e50f25c3b8adc9e26d6af8892ac422e9ed4c132b9b33d22d71c560"
-    sha256 cellar: :any, big_sur:        "a11dc0fa44af876dfbf426d4f2f0a91dd5e12c84b4cf25e4f5b0e4d6898f2d9e"
-    sha256 cellar: :any, catalina:       "f15a7da41b46305bbdaf8e959997d41cbc95b4ae0f38649c363b827fa0c492e3"
-    sha256               x86_64_linux:   "a851bae7a5af88b9486dab6b004a0d7691e4087e8dfb9de8d4ee59a2814e6160"
+    sha256 cellar: :any, arm64_monterey: "1df92980074c1de39228d0351c7b81493550df2b4accc0142fa6a8a0a7df3987"
+    sha256 cellar: :any, arm64_big_sur:  "f114401dc3881e554d1fcbf61df12f4b89bf405070557342f7e7efd5515e5afc"
+    sha256 cellar: :any, monterey:       "3e053c6d6adb2d5090503d8c52df1d9502657bb3b97a54b849c9658f089a3183"
+    sha256 cellar: :any, big_sur:        "318553244c3ecb42c837237b8fe1fcbfc5fd0afa98c8f567864d0e3f6d350b8f"
+    sha256 cellar: :any, catalina:       "7a4ccb6f535ea8132e4561cd1771efdfd833e24f2990d4abb6a255efc8869684"
+    sha256               x86_64_linux:   "9286d5379aadec32a6fd22357988914795d3364bec2796029c58a58e8c9e359b"
   end
 
   head do
@@ -48,10 +48,6 @@ class Mkvtoolnix < Formula
 
   uses_from_macos "libxslt" => :build
   uses_from_macos "ruby" => :build
-
-  on_linux do
-    depends_on "gcc" => :build
-  end
 
   fails_with gcc: "5"
 
