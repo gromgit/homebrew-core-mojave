@@ -1,14 +1,14 @@
 class Atlas < Formula
   desc "Database toolkit"
   homepage "https://atlasgo.io/"
-  url "https://github.com/ariga/atlas/archive/v0.6.4.tar.gz"
-  sha256 "5a5863a534ba6a8bff2cec5e11cb7a503b6ab89d23b692172a445a82bbf2121c"
+  url "https://github.com/ariga/atlas/archive/v0.7.0.tar.gz"
+  sha256 "7bcfbcf540e13d2070806eb8a2b58627e3472b4d36cbf3ad3078ebea5b61d4cd"
   license "Apache-2.0"
   head "https://github.com/ariga/atlas.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atlas"
-    sha256 cellar: :any_skip_relocation, mojave: "f97ab51511f1e175f76ecddb1d1ec43f785813d4ed9d15c36ba0ebbb5c3bec13"
+    sha256 cellar: :any_skip_relocation, mojave: "76bfcf95a51847fa2be131613a112415a2d97f0bafbf1608e6310c35621cbcbe"
   end
 
   depends_on "go" => :build
@@ -22,14 +22,7 @@ class Atlas < Formula
       system "go", "build", *std_go_args(ldflags: ldflags)
     end
 
-    bash_output = Utils.safe_popen_read(bin/"atlas", "completion", "bash")
-    (bash_completion/"atlas").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"atlas", "completion", "zsh")
-    (zsh_completion/"_atlas").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"atlas", "completion", "fish")
-    (fish_completion/"atlas.fish").write fish_output
+    generate_completions_from_executable(bin/"atlas", "completion")
   end
 
   test do
