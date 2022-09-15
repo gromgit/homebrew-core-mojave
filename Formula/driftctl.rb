@@ -7,7 +7,8 @@ class Driftctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/driftctl"
-    sha256 cellar: :any_skip_relocation, mojave: "9725833cb1dc6513ef37495f94e4d13eebbb40b120ed2883e9c617b60b700829"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4b5575f4899d7c241646461bf9c49d0aba5f7ca074213ac1c3d618f23b21f12f"
   end
 
   depends_on "go" => :build
@@ -23,14 +24,7 @@ class Driftctl < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    output = Utils.safe_popen_read("#{bin}/driftctl", "completion", "bash")
-    (bash_completion/"driftctl").write output
-
-    output = Utils.safe_popen_read("#{bin}/driftctl", "completion", "zsh")
-    (zsh_completion/"_driftctl").write output
-
-    output = Utils.safe_popen_read("#{bin}/driftctl", "completion", "fish")
-    (fish_completion/"driftctl.fish").write output
+    generate_completions_from_executable(bin/"driftctl", "completion")
   end
 
   test do
