@@ -2,8 +2,8 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      tag:      "v1.35.0",
-      revision: "0eb1a25a204cabcb888fb3f1f70c6d712347c203"
+      tag:      "v1.37.1",
+      revision: "0fa89821fab2d9451802ea6195b721d4a94d65a7"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class Fortio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fortio"
-    sha256 cellar: :any_skip_relocation, mojave: "dfa327a7942554edefd56344a3167b3c31ab82dc5aab6d8f828a62979f032b21"
+    sha256 cellar: :any_skip_relocation, mojave: "32fe20f0a9e576a39bcd168adaee771285e6a7995b5e4d5129a01c5d3798cb57"
   end
 
   depends_on "go" => :build
