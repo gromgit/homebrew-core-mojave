@@ -2,14 +2,14 @@ class Cxgo < Formula
   desc "Transpiling C to Go"
   homepage "https://github.com/gotranspile/cxgo"
   url "https://github.com/gotranspile/cxgo.git",
-      tag:      "v0.3.5",
-      revision: "9e272a916d7885801ab4970e5f881fa890bdbe6a"
+      tag:      "v0.3.6",
+      revision: "5598069da59995fa292f63c3c142d55041675033"
   license "MIT"
   head "https://github.com/gotranspile/cxgo.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cxgo"
-    sha256 cellar: :any_skip_relocation, mojave: "efc13961de2018fafc897c29a9cb45c905e10efbcdd2c6a69e90fff7d2632916"
+    sha256 cellar: :any_skip_relocation, mojave: "850aefd01d2155b315cdb2912f934bc185e904242865644122f74f1036cdf4f6"
   end
 
   depends_on "go" => :build
