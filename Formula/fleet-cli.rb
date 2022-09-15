@@ -2,8 +2,8 @@ class FleetCli < Formula
   desc "Manage large fleets of Kubernetes clusters"
   homepage "https://github.com/rancher/fleet"
   url "https://github.com/rancher/fleet.git",
-      tag:      "v0.3.10",
-      revision: "093cee590dd64451b0de23925ea05a44df866fe2"
+      tag:      "v0.3.11",
+      revision: "2958e9b7be782d21e8b19bd602f2f636ca5770ba"
   license "Apache-2.0"
   head "https://github.com/rancher/fleet.git", branch: "master"
 
@@ -14,7 +14,7 @@ class FleetCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fleet-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "28de4ef97113e33edc0d47f950667b2cde9c61489ca7e989f362604443234c8e"
+    sha256 cellar: :any_skip_relocation, mojave: "b69e63b2cdfb8c5e068c2aaab1cb4432f5cb328d8350579e7b61cfa93edea56f"
   end
 
   depends_on "go" => :build
