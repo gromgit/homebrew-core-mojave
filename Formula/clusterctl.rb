@@ -20,7 +20,8 @@ class Clusterctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clusterctl"
-    sha256 cellar: :any_skip_relocation, mojave: "cc61d73a2e650ecdfd129bb3b5becef77143ce49f868d7e12b79da44be2d523b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "11b7c05914662549e769880d7432ed153e1e62d2da6286a7ba01a7b8a257dadb"
   end
 
   depends_on "go" => :build
@@ -32,11 +33,7 @@ class Clusterctl < Formula
     system "make", "clusterctl"
     prefix.install "bin"
 
-    bash_output = Utils.safe_popen_read(bin/"clusterctl", "completion", "bash")
-    (bash_completion/"clusterctl").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"clusterctl", "completion", "zsh")
-    (zsh_completion/"_clusterctl").write zsh_output
+    generate_completions_from_executable(bin/"clusterctl", "completion", shells: [:bash, :zsh])
   end
 
   test do
