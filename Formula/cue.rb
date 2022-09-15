@@ -8,7 +8,8 @@ class Cue < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cue"
-    sha256 cellar: :any_skip_relocation, mojave: "850bb10bff13152daa34427e727208bfc3c37f503d0f2577952e27e0368dffd2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dd6582ed28584354cd2de02dffd3666913822aec0460f875b385c9cbe801c420"
   end
 
   depends_on "go" => :build
@@ -16,12 +17,7 @@ class Cue < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X cuelang.org/go/cmd/cue/cmd.version=v#{version}"), "./cmd/cue"
 
-    bash_output = Utils.safe_popen_read(bin/"cue", "completion", "bash")
-    (bash_completion/"cue").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"cue", "completion", "zsh")
-    (zsh_completion/"_cue").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"cue", "completion", "fish")
-    (fish_completion/"cue.fish").write fish_output
+    generate_completions_from_executable(bin/"cue", "completion")
   end
 
   test do
