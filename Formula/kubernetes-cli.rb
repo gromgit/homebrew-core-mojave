@@ -14,7 +14,8 @@ class KubernetesCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "4ea10b6affa203ab7c6d3d1e1e6594dc9f96b0059fd05492dd8e0d5625d1ec8f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0a4b705a8cfefeb89da34c28531300ac677aeada2d0e7d32579716306ac105ae"
   end
 
   depends_on "bash" => :build
@@ -36,17 +37,7 @@ class KubernetesCli < Formula
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"kubectl", "completion", "bash")
-    (bash_completion/"kubectl").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"kubectl", "completion", "zsh")
-    (zsh_completion/"_kubectl").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"kubectl", "completion", "fish")
-    (fish_completion/"kubectl.fish").write output
+    generate_completions_from_executable(bin/"kubectl", "completion", base_name: "kubectl")
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree
