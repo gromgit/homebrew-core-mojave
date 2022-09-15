@@ -13,7 +13,8 @@ class Certigo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certigo"
-    sha256 cellar: :any_skip_relocation, mojave: "6d29fe58c48dab66b4b1e6fb458849432cd8f186d69da2eac11b165e2f832c28"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3a0ac62aeaf819e2bc3d42881b33bdf113b6a530e57718f22c1c48806dcecf3e"
   end
 
   depends_on "go" => :build
@@ -22,13 +23,8 @@ class Certigo < Formula
     system "./build"
     bin.install "bin/certigo"
 
-    # Install bash completion
-    output = Utils.safe_popen_read("#{bin}/certigo", "--completion-script-bash")
-    (bash_completion/"certigo").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read("#{bin}/certigo", "--completion-script-zsh")
-    (zsh_completion/"_certigo").write output
+    generate_completions_from_executable(bin/"certigo", shell_parameter_format: "--completion-script-",
+                                                        shells:                 [:bash, :zsh])
   end
 
   test do
