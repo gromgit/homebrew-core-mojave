@@ -8,7 +8,8 @@ class Conftest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conftest"
-    sha256 cellar: :any_skip_relocation, mojave: "de3861a7a0dfc4759b86f63d4c392b37fb2bed20ed2f2b592929e1079d536400"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1855fb59ecd34d6c40b72689b4d60292509b98aa3a0e4932bbed9bd804775d2c"
   end
 
   depends_on "go" => :build
@@ -16,14 +17,7 @@ class Conftest < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/open-policy-agent/conftest/internal/commands.version=#{version}")
 
-    bash_output = Utils.safe_popen_read(bin/"conftest", "completion", "bash")
-    (bash_completion/"conftest").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"conftest", "completion", "zsh")
-    (zsh_completion/"_conftest").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"conftest", "completion", "fish")
-    (fish_completion/"conftest.fish").write fish_output
+    generate_completions_from_executable(bin/"conftest", "completion")
   end
 
   test do
