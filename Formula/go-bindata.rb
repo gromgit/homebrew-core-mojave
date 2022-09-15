@@ -1,13 +1,13 @@
 class GoBindata < Formula
   desc "Small utility that generates Go code from any file"
   homepage "https://github.com/kevinburke/go-bindata"
-  url "https://github.com/kevinburke/go-bindata/archive/v3.23.0.tar.gz"
-  sha256 "20b1f8efd275e981b0db87f7a0d2d010d73bea17b2a27d09104fa672801e3a89"
+  url "https://github.com/kevinburke/go-bindata/archive/v3.24.0.tar.gz"
+  sha256 "95ce1cf37be26c05ff02c01d3052406fac2dca257b264adb306043a085a78be9"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-bindata"
-    sha256 cellar: :any_skip_relocation, mojave: "84a30fdb81085a8214f0621737812ecf7478b98a17b1b37c0d10f55217687679"
+    sha256 cellar: :any_skip_relocation, mojave: "b4f5dd8358eae379208df587f8d25bbfa9b0887d87149dd3268a711016ba17da"
   end
 
   depends_on "go"
