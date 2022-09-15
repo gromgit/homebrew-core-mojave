@@ -1,14 +1,14 @@
 class Fabio < Formula
   desc "Zero-conf load balancing HTTP(S) router"
   homepage "https://github.com/fabiolb/fabio"
-  url "https://github.com/fabiolb/fabio/archive/v1.6.1.tar.gz"
-  sha256 "dafb85fb89a8d23a8edc6e96da54c4bdc0b86fce936fa6378e9f49fa70a04793"
+  url "https://github.com/fabiolb/fabio/archive/v1.6.2.tar.gz"
+  sha256 "9edd6ad52f9e2f6df921e173b6e0913bd1fda34693f0ed07f25c3621b1ffaee6"
   license "MIT"
   head "https://github.com/fabiolb/fabio.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fabio"
-    sha256 cellar: :any_skip_relocation, mojave: "731c287ef838cf3b86f5fd938ba4960ed470e07b97b9fc44d49d4e438a3e02d8"
+    sha256 cellar: :any_skip_relocation, mojave: "1e9c158407c60f815acb9812eb8be2861e061b7c34ebbff20a8b370689647486"
   end
 
   depends_on "go" => :build
@@ -19,6 +19,15 @@ class Fabio < Formula
     prefix.install_metafiles
   end
 
+  def port_open?(ip_address, port, seconds = 1)
+    Timeout.timeout(seconds) do
+      TCPSocket.new(ip_address, port).close
+    end
+    true
+  rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, Timeout::Error
+    false
+  end
+
   test do
     require "socket"
     require "timeout"
@@ -26,15 +35,6 @@ class Fabio < Formula
     consul_default_port = 8500
     fabio_default_port = 9999
     localhost_ip = "127.0.0.1".freeze
-
-    def port_open?(ip_address, port, seconds = 1)
-      Timeout.timeout(seconds) do
-        TCPSocket.new(ip_address, port).close
-      end
-      true
-    rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, Timeout::Error
-      false
-    end
 
     if port_open?(localhost_ip, fabio_default_port)
       puts "Fabio already running or Consul not available or starting fabio failed."
