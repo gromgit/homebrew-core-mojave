@@ -1,10 +1,9 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "http://fmv.jku.at/cadical/"
-  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-1.5.2.tar.gz"
-  sha256 "4a4251bf0191677ca8cda275cb7bf5e0cf074ae0056819642d5a7e5c1a952e6e"
+  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-1.5.3.tar.gz"
+  sha256 "0ff521ed36d57478a8dbc610e0d27536c9d3a2154d859152f33f8733a6dca31e"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +12,7 @@ class Cadical < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadical"
-    sha256 cellar: :any_skip_relocation, mojave: "1661098b4a6afd351fe6c606bcc6ff03c08adb7cbf07dcec0451c10b984bc8f8"
+    sha256 cellar: :any_skip_relocation, mojave: "392752d2ca837f54f7370c7abdc3c287bf1008fd765e4e4fdd3143f0b037bbab"
   end
 
   def install
