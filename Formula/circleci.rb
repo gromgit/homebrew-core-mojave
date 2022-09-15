@@ -3,14 +3,14 @@ class Circleci < Formula
   homepage "https://circleci.com/docs/2.0/local-cli/"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v0.1.20856",
-      revision: "991bd2aae331cf5668175acc77c7c8fb8e49accb"
+      tag:      "v0.1.21091",
+      revision: "45afa93d0ae256aded8a2c3bbd3daae8adfa8842"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circleci"
-    sha256 cellar: :any_skip_relocation, mojave: "8813a157785b75cde75472c6312ad313d0e4481d717ecffcd553a69f80fe6e87"
+    sha256 cellar: :any_skip_relocation, mojave: "2ff8a0d30b9fef1f6d725df366d0b8a701acc5dcc5b01693c66be9e41e54f13f"
   end
 
   # Bump to 1.18 when the x/sys dependency is updated upstream.
@@ -28,11 +28,8 @@ class Circleci < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    output = Utils.safe_popen_read("#{bin}/circleci", "--skip-update-check", "completion", "bash")
-    (bash_completion/"circleck").write output
-
-    output = Utils.safe_popen_read("#{bin}/circleci", "--skip-update-check", "completion", "zsh")
-    (zsh_completion/"_circleci").write output
+    generate_completions_from_executable(bin/"circleci", "--skip-update-check", "completion",
+                                        shells: [:bash, :zsh])
   end
 
   test do
