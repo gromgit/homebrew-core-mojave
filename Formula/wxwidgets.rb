@@ -1,10 +1,9 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.0/wxWidgets-3.2.0.tar.bz2"
-  sha256 "356e9b55f1ae3d58ae1fed61478e9b754d46b820913e3bfbc971c50377c1903a"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.1/wxWidgets-3.2.1.tar.bz2"
+  sha256 "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66"
   license "wxWindows"
-  revision 1
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -14,7 +13,7 @@ class Wxwidgets < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wxwidgets"
-    sha256 cellar: :any, mojave: "27574d3a2a288580a0dd1916fe97018340e0b22bee9e2058a6ff307b8b7c4f86"
+    sha256 cellar: :any, mojave: "f710d24a801abadfca207d086b049b0fa20b13b44492b230b3dd85f4e75b7af4"
   end
 
   depends_on "jpeg-turbo"
