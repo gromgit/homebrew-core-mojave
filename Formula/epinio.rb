@@ -1,13 +1,13 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://github.com/epinio/epinio/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "2066d00a6d91cc1b5410b90cad4f88d8e1be9dc4c013db50e80c516bb25c07f7"
+  url "https://github.com/epinio/epinio/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "54c194a3877074b3e9790d086abaa3d7004ace5970f856947098dcc65948fdb3"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/epinio"
-    sha256 cellar: :any_skip_relocation, mojave: "d07481206942a4fecef128d783444e19516e2f1a115434cb7e1c5db39082d417"
+    sha256 cellar: :any_skip_relocation, mojave: "fa269ed8676fc36960448c6fe11c60e78f3dd46d9963338a03f2977a2368da59"
   end
 
   depends_on "go" => :build
