@@ -5,11 +5,12 @@ class Daq < Formula
   mirror "https://fossies.org/linux/misc/libdaq-3.0.9.tar.gz"
   sha256 "c0e8535533720a6df05ab884b7c8f5fb4222f3aac12bdc11829e08c79716d338"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/snort3/libdaq.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/daq"
-    sha256 cellar: :any, mojave: "972071bddfbb75d55ec7ece8299ecd6d245af0beb20f06abc00b455fd5c39b85"
+    sha256 cellar: :any, mojave: "c07d9f9dcb85c5c5a77b01bfd4a6040dfdd1050d28bf59fee5d7d2ed8c1e9d31"
   end
 
   depends_on "autoconf" => :build
