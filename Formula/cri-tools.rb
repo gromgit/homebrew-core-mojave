@@ -8,7 +8,8 @@ class CriTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cri-tools"
-    sha256 cellar: :any_skip_relocation, mojave: "eb45b4db58267183690c0fb42b88c9b3101ee00eeaa6bf2792d49727f3043f22"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1eeeeba05bec486d114fce61b0e13bf5c349d7737f90cc58b467c4777c3457a9"
   end
 
   depends_on "go" => :build
@@ -22,14 +23,7 @@ class CriTools < Formula
       system "make", "install", "VERSION=#{version}"
     end
 
-    output = Utils.safe_popen_read("#{bin}/crictl", "completion", "bash")
-    (bash_completion/"crictl").write output
-
-    output = Utils.safe_popen_read("#{bin}/crictl", "completion", "zsh")
-    (zsh_completion/"_crictl").write output
-
-    output = Utils.safe_popen_read("#{bin}/crictl", "completion", "fish")
-    (fish_completion/"crictl.fish").write output
+    generate_completions_from_executable(bin/"crictl", "completion", base_name: "crictl")
   end
 
   test do
