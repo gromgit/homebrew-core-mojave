@@ -8,7 +8,8 @@ class Doctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doctl"
-    sha256 cellar: :any_skip_relocation, mojave: "607cde737cb018d76c114df8fbc73b475257e9e5236e16b3ed9afa674cc0f49c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bbb2f8485a05ec3fbe28a0f26cb9d3b8ba6299a7686351a9d59c30a4314ddfa3"
   end
 
   depends_on "go" => :build
@@ -24,9 +25,7 @@ class Doctl < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/doctl"
 
-    (bash_completion/"doctl").write `#{bin}/doctl completion bash`
-    (zsh_completion/"_doctl").write `#{bin}/doctl completion zsh`
-    (fish_completion/"doctl.fish").write `#{bin}/doctl completion fish`
+    generate_completions_from_executable(bin/"doctl", "completion")
   end
 
   test do
