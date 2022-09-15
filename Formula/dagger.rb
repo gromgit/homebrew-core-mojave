@@ -2,14 +2,14 @@ class Dagger < Formula
   desc "Portable devkit for CI/CD pipelines"
   homepage "https://dagger.io"
   url "https://github.com/dagger/dagger.git",
-      tag:      "v0.2.32",
-      revision: "624e5bb94696f2847c4f10b75e96694e8919acf3"
+      tag:      "v0.2.34",
+      revision: "46adf1fbd36cd8bd1052ed4e19f10f26df39540d"
   license "Apache-2.0"
   head "https://github.com/dagger/dagger.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dagger"
-    sha256 cellar: :any_skip_relocation, mojave: "226519cd7b90fa4759ebc694bf0792576b486b23aa7749ae619b494a23d91698"
+    sha256 cellar: :any_skip_relocation, mojave: "e8bf86f3fd94767eb39220ce57dcde1fb9a647e1bed47cc96a43bd704efc1a9b"
   end
 
   depends_on "go" => :build
@@ -24,14 +24,7 @@ class Dagger < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/dagger"
 
-    output = Utils.safe_popen_read(bin/"dagger", "completion", "bash")
-    (bash_completion/"dagger").write output
-
-    output = Utils.safe_popen_read(bin/"dagger", "completion", "zsh")
-    (zsh_completion/"_dagger").write output
-
-    output = Utils.safe_popen_read(bin/"dagger", "completion", "fish")
-    (fish_completion/"dagger.fish").write output
+    generate_completions_from_executable(bin/"dagger", "completion")
   end
 
   test do
