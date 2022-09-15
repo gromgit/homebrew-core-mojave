@@ -14,7 +14,8 @@ class FaasCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faas-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "72fbba4969ad4c8811991f2d84d6ce1bb17670b66f86a73b3f0478d06394f80c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "67263b44eddf249ebbe9018145b770b7779882234daa68bcd4291ab0736bb83e"
   end
 
   depends_on "go" => :build
@@ -31,8 +32,7 @@ class FaasCli < Formula
     system "go", "build", *std_go_args(ldflags: ldflags), "-a", "-installsuffix", "cgo"
     bin.install_symlink "faas-cli" => "faas"
 
-    (bash_completion/"faas-cli").write Utils.safe_popen_read(bin/"faas-cli", "completion", "--shell", "bash")
-    (zsh_completion/"_faas-cli").write Utils.safe_popen_read(bin/"faas-cli", "completion", "--shell", "zsh")
+    generate_completions_from_executable(bin/"faas-cli", "completion", "--shell", shells: [:bash, :zsh])
     # make zsh completions also work for `faas` symlink
     inreplace zsh_completion/"_faas-cli", "#compdef faas-cli", "#compdef faas-cli\ncompdef faas=faas-cli"
   end
