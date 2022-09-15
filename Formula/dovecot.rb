@@ -4,6 +4,7 @@ class Dovecot < Formula
   url "https://dovecot.org/releases/2.3/dovecot-2.3.19.1.tar.gz"
   sha256 "db5abcd87d7309659ea6b45b2cb6ee9c5f97486b2b719a5dd05a759e1f6a5c51"
   license all_of: ["BSD-3-Clause", "LGPL-2.1-or-later", "MIT", "Unicode-DFS-2016", :public_domain]
+  revision 1
 
   livecheck do
     url "https://www.dovecot.org/download/"
@@ -12,7 +13,7 @@ class Dovecot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dovecot"
-    sha256 mojave: "80306089b9c47bc792e98d3a9314472c968743314c248e45ac32da92e3f7d2df"
+    sha256 mojave: "89d58be0cc39562ec007ed52fca86a71ab5ce2dfb95800d62058305428b8af6b"
   end
 
   depends_on "openssl@1.1"
