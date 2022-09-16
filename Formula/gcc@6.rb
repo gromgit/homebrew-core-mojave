@@ -10,20 +10,18 @@ class GccAT6 < Formula
   ]
   revision 7
 
-  livecheck do
-    url :stable
-    regex(%r{href=.*?gcc[._-]v?(6(?:\.\d+)+)(?:/?["' >]|\.t)}i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc@6"
-    rebuild 1
-    sha256 mojave: "67d33d1268fb5382e57b040e62bfa70b5b344aaf1fa73f3c66fb5921daac182a"
+    rebuild 2
+    sha256 mojave: "5decf26e0ea8a324fcc1ff1228a6facbdad9a69cfc8460861b0adb711b9f986b"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
+
+  # https://gcc.gnu.org/gcc-6/
+  deprecate! date: "2022-09-09", because: :deprecated_upstream
 
   depends_on arch: :x86_64
   depends_on "gmp"
