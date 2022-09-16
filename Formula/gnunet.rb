@@ -1,14 +1,14 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.17.4.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.17.4.tar.gz"
-  sha256 "ba5a825550db429265beb73a54b1778e27a529ea841df5ef75021e65100c926e"
+  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.17.5.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.17.5.tar.gz"
+  sha256 "8a744ff7a95d1e83215cce118050640f6c12261abe4c60a56bcf88e500f0023d"
   license "AGPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnunet"
-    sha256 cellar: :any, mojave: "c9a41001ae1ee966a6fe6da11bbae0aaf6ea2b1fb4485a066bfeb0120bd96c14"
+    sha256 cellar: :any, mojave: "911b53165acaa636ce44c235055a84d2c0c00dce49978822e9bdd780131a7eff"
   end
 
   depends_on "pkg-config" => :build
