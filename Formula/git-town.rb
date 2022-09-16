@@ -7,7 +7,8 @@ class GitTown < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-town"
-    sha256 cellar: :any_skip_relocation, mojave: "2be7ba6cbc0bf0a52b7666e9c62f6b232450aae4b273d7832b72588053f001f2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b9315b5453707529643dccd5e73a19ffd145bf674342d0ffcb02b49a477f906e"
   end
 
   depends_on "go" => :build
@@ -21,9 +22,7 @@ class GitTown < Formula
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # Install shell completions
-    (bash_completion/"git-town").write Utils.safe_popen_read(bin/"git-town", "completions", "bash")
-    (zsh_completion/"_git-town").write Utils.safe_popen_read(bin/"git-town", "completions", "zsh")
-    (fish_completion/"git-town.fish").write Utils.safe_popen_read(bin/"git-town", "completions", "fish")
+    generate_completions_from_executable(bin/"git-town", "completions")
   end
 
   test do
