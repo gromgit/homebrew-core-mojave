@@ -1,15 +1,14 @@
 class Gocloc < Formula
   desc "Little fast LoC counter"
   homepage "https://github.com/hhatto/gocloc"
-  url "https://github.com/hhatto/gocloc/archive/v0.4.2.tar.gz"
-  sha256 "4b3c092b405d9bd50b49d1aee1c3fa284445812b3fcfae95989a0dd2b75a25c0"
+  url "https://github.com/hhatto/gocloc/archive/v0.4.3.tar.gz"
+  sha256 "b96a3da5c5ec084107f29c339414774a7bf0c3c71e41ae5101cc48824ab9ecb2"
   license "MIT"
   head "https://github.com/hhatto/gocloc.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gocloc"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "22506d410d8615d1fa85b9ccb8995e94d719f78eb9134cba226102d48e487b6e"
+    sha256 cellar: :any_skip_relocation, mojave: "4615dd213e99a331ca801918c4f194d2508f1b4e32661c7b28585b0286e92ec4"
   end
 
   depends_on "go" => :build
