@@ -4,16 +4,11 @@ class GetFlashVideos < Formula
   url "https://github.com/monsieurvideo/get-flash-videos/archive/1.25.99.03.tar.gz"
   sha256 "37267b41c7b0c240d99ed1f5e7ba04d00f98a8daff82ac9edd2b12c3bca83d73"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "168600d7a501abf32e1243c34491a501913c16034de8021d73128f2366fc717c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "79a6359023b8e477bc3a033747b817c57a476cf19938a1ae484ce2a52f2ce4ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7e7d4e346def5ba7fa8f641f7c3803125e604370302f6f5667e667da2b364c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2778b4877b9a5f717f247e73ce571db7f3215ca6a31e77dfaaebc4d7b0664bd7"
-    sha256 cellar: :any_skip_relocation, catalina:       "aac5558ccf7b7198eb48b71d7cdb9d07b93f4174926182a6e540678b0c4f9648"
-    sha256 cellar: :any_skip_relocation, mojave:         "f67cf7971842dbfaa8f8ecb24ba6692bd506688c4ff6b0e51cc05dd3d13f6d11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f30f8fc39ae0520abc73aaa87fcc61417656a36a802b7355aa75db08f2efae47"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/get-flash-videos"
+    sha256 cellar: :any_skip_relocation, mojave: "f712d00bb15daa9b52ce9b3dcc7c38c70193d22a2eb3ae4f354f88a7737f225c"
   end
 
   depends_on "rtmpdump"
@@ -165,6 +160,12 @@ class GetFlashVideos < Formula
     bin.install "bin/get_flash_videos"
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
     chmod 0755, libexec/"bin/get_flash_videos"
+    # Replace cellar path to perl with opt path.
+    if OS.linux?
+      inreplace libexec/"bin/get_flash_videos",
+                Formula["perl"].bin.realpath,
+                Formula["perl"].opt_bin
+    end
 
     man1.install "blib/man1/get_flash_videos.1"
   end
