@@ -4,10 +4,11 @@ class GnustepBase < Formula
   url "https://github.com/gnustep/libs-base/releases/download/base-1_28_0/gnustep-base-1.28.0.tar.gz"
   sha256 "c7d7c6e64ac5f5d0a4d5c4369170fc24ed503209e91935eb0e2979d1601039ed"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnustep-base"
-    sha256 cellar: :any, mojave: "fd9c46b760f626bb1a0a78d5b98e746082107d9dca3a7aa4bce0827a5dd44674"
+    sha256 cellar: :any, mojave: "66c0d65a695f294270a15499d9d43052c521a4a86ec77433b66cc215abc0c2c3"
   end
 
   depends_on "gnustep-make" => :build
