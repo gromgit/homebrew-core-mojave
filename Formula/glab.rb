@@ -8,7 +8,8 @@ class Glab < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glab"
-    sha256 cellar: :any_skip_relocation, mojave: "ba139a423de2219f8f3f7294f666bcfd41d9324cd2fcbc1d27f746d8f49fbf11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ebe933987f81bae17476949844bbfa2ff3babfc95ef038e24536093b010fc978"
   end
 
   depends_on "go" => :build
@@ -18,9 +19,7 @@ class Glab < Formula
 
     system "make", "GLAB_VERSION=#{version}"
     bin.install "bin/glab"
-    (bash_completion/"glab").write Utils.safe_popen_read(bin/"glab", "completion", "--shell=bash")
-    (zsh_completion/"_glab").write Utils.safe_popen_read(bin/"glab", "completion", "--shell=zsh")
-    (fish_completion/"glab.fish").write Utils.safe_popen_read(bin/"glab", "completion", "--shell=fish")
+    generate_completions_from_executable(bin/"glab", "completion", "--shell")
   end
 
   test do
