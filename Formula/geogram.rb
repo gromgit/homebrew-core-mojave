@@ -1,14 +1,19 @@
 class Geogram < Formula
   desc "Programming library of geometric algorithms"
-  homepage "http://alice.loria.fr/software/geogram/doc/html/index.html"
-  url "https://members.loria.fr/BLevy/PACKAGES/geogram_1.7.8.tar.gz"
-  sha256 "28e70b353705faec555700d8a7b7b9d703687702f46866bad09e033f86a96faf"
+  homepage "https://brunolevy.github.io/geogram/"
+  url "https://brunolevy.github.io/geogram/Releases/geogram_1.8.0.tar.gz"
+  sha256 "7e59db5176ca22580055a5c48862d6fd50399f33551ab9bc20c80a4cc0adeb9e"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
+  head "https://github.com/BrunoLevy/geogram.git", branch: "main"
+
+  livecheck do
+    url "https://brunolevy.github.io/geogram/Releases/"
+    regex(/href=.*?geogram[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/geogram"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c38541a24a11eef5f1b08aff0fb8930031a4aa0f7dea2e65f8215dc2b48157df"
+    sha256 cellar: :any, mojave: "ad79404a2e6899bf34cf9bce7d582d23d35402d37d31a8a9f881c61fbc4f668f"
   end
 
   depends_on "cmake" => :build
