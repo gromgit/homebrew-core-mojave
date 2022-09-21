@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://docs.brev.dev"
-  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.104.tar.gz"
-  sha256 "34decf70f69fd3ca6c140d734a7ddf8a29ce3859019a0dcd6209c31099ee37f2"
+  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.110.tar.gz"
+  sha256 "da813da961eef14af42d3a733e61e76d1a5ee4e5aba23c720e20967e3fa0ba14"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Brev < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brev"
-    sha256 cellar: :any_skip_relocation, mojave: "10360f57c7f08a92be8b8c6aa71a272dff9ddc2bd1d55dc43aa1770875962887"
+    sha256 cellar: :any_skip_relocation, mojave: "78b118416e2e42a9b06838ff429a2ed7a1657209d000eb28b5783bfb7eb3be38"
   end
 
   # Required latest gvisor.dev/gvisor/pkg/gohacks instead of inet.af/netstack/gohacks
