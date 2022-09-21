@@ -2,18 +2,18 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/tuist/xcbeautify"
   url "https://github.com/tuist/xcbeautify.git",
-      tag:      "0.13.0",
-      revision: "a3f5db18e7218a3817031b1b8227b1cb5704cb93"
+      tag:      "0.14.0",
+      revision: "4db350b05e3f1bcb8de0e039a13c4df6e7d55caa"
   license "MIT"
   head "https://github.com/tuist/xcbeautify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68ad1f6b9862d756a3ff9ba893b09ecb8f7b6572ce0d8f82cf64cad6736b3932"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "388db60d60c9a11545d0b4a558aeb4d8e0202b4d5b2f03e250959449e2a803b0"
-    sha256 cellar: :any_skip_relocation, monterey:       "54971517fc3bdc96deef9509ccf6ec8e1715e5fb571d58616dbf3f877ae6afb3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "67465b77816c0254a88c79555e63ad964e0b53d9455f22f9ef36d68cbfd6738d"
-    sha256 cellar: :any_skip_relocation, catalina:       "63b7eaada4012033b5bbd0cce21b03691e446283faa5770a2b5ba9da3e383bdc"
-    sha256                               x86_64_linux:   "602e001f5c1660034c0e4688ad7ac30293cfab880f932849f186c563c45b589e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7bac43c0bbe8da2e4529d3fa86c159296d8903fa49886ada7d5acb64b0d945b4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8138c460c3c89fae4ebd1d7ab0e1424c34470446c1543d315dbf2b511bea921c"
+    sha256 cellar: :any_skip_relocation, monterey:       "929ee94b5ac4611eb10b7272f853e99c1c07b9a827f4a01993202a2ef8240635"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ebfcc191c2a183d093f105a0be12d12d7be6257859805ae7450a3f6811d5d6e5"
+    sha256 cellar: :any_skip_relocation, catalina:       "5cbdb95374051a247b58695278983a45ab05d64571c6399a7853aa6b187940c2"
+    sha256                               x86_64_linux:   "c0d7cd27e73e5de977d1e8d61cd2ac9283c5249307368ba532eff6cd58a69ad2"
   end
 
   depends_on xcode: ["11.4", :build]
