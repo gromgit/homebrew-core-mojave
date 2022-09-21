@@ -1,8 +1,8 @@
 class Coredns < Formula
   desc "DNS server that chains plugins"
   homepage "https://coredns.io/"
-  url "https://github.com/coredns/coredns/archive/v1.9.4.tar.gz"
-  sha256 "3356e1f795dddf067d69aff08cd3142763e8ead040c65d93994b6de3156f15a4"
+  url "https://github.com/coredns/coredns/archive/v1.10.0.tar.gz"
+  sha256 "0fa6631899c0ae93d1b557add54fb18587a5c55627b177eb9f31cdfdf8677184"
   license "Apache-2.0"
   head "https://github.com/coredns/coredns.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Coredns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coredns"
-    sha256 cellar: :any_skip_relocation, mojave: "3ce64dc259c1494dfaa2b08172fb282a0d2686340e724a26d775a320a0441dc1"
+    sha256 cellar: :any_skip_relocation, mojave: "d02b80b3f2372d30b4c38740684ad9919fb6e0876bdeecac2d77ebc9e3b5febd"
   end
 
   depends_on "go" => :build
