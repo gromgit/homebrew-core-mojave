@@ -4,7 +4,7 @@ class PostgresqlAT14 < Formula
   url "https://ftp.postgresql.org/pub/source/v14.5/postgresql-14.5.tar.bz2"
   sha256 "d4f72cb5fb857c9a9f75ec8cf091a1771272802f2178f0b2e65b7b6ff64f4a30"
   license "PostgreSQL"
-  revision 1
+  revision 4
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -13,8 +13,7 @@ class PostgresqlAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@14"
-    rebuild 1
-    sha256 mojave: "078368a9ab9130b0df6933ed2fa68b28270f61c4e05672ef6710c86d1b78ef0a"
+    sha256 mojave: "232218970baba02caa110f783ed578d256d5618490f4866ce0b80d3050335233"
   end
 
   # https://www.postgresql.org/support/versioning/
