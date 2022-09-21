@@ -7,7 +7,8 @@ class Nerdctl < Formula
   head "https://github.com/containerd/nerdctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "380eae0469649631c0e5c2a226875fba347d9977cb4d3865043b68da9e4b1e70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "424b79bcc70aece2d26c20cc609641cb314edd6a29006958fff19a19be7286e3"
   end
 
   depends_on "go" => :build
@@ -16,6 +17,8 @@ class Nerdctl < Formula
   def install
     ldflags = "-s -w -X github.com/containerd/nerdctl/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/nerdctl"
+
+    generate_completions_from_executable(bin/"nerdctl", "completion")
   end
 
   test do
