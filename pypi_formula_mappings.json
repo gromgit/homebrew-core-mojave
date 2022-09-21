@@ -19,8 +19,11 @@
     ],
     "exclude_packages": ["pycrypto", "six"]
   },
+  "ansible-lint": {
+    "exclude_packages": ["PyYAML", "jsonschema", "attrs", "pyrsistent", "yamllint", "pathspec", "ansible-core", "cryptography", "Jinja2", "MarkupSafe", "resolvelib"]
+  },
   "arxiv_latex_cleaner": {
-    "exclude_packages": ["pillow", "six"]
+    "exclude_packages": ["pillow", "six", "PyYAML"]
   },
   "athenacli": {
     "exclude_packages": ["six", "tabulate"]
@@ -35,7 +38,7 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "awsume": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "b2-tools": {
     "exclude_packages": ["six"]
@@ -67,10 +70,10 @@
     "exclude_packages": ["six"]
   },
   "cfn-flip": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "cfn-lint": {
-    "exclude_packages": ["junit-xml", "six"]
+    "exclude_packages": ["junit-xml", "six", "PyYAML"]
   },
   "charmcraft": {
     "extra_packages": ["appdirs", "pydantic", "pyyaml"],
@@ -98,8 +101,11 @@
     "exclude_packages": ["six"],
     "extra_packages": ["distro"]
   },
+  "commitizen": {
+    "exclude_packages": ["PyYAML"]
+  },
   "cookiecutter": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "cppman": {
     "exclude_packages": ["six"]
@@ -120,7 +126,10 @@
     "exclude_packages": ["six"]
   },
   "datasette": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
+  },
+  "detect-secrets": {
+    "exclude_packages": ["PyYAML"]
   },
   "diffoscope": "diffoscope[cmdline]",
   "dnstwist": "dnstwist[full]",
@@ -155,7 +164,7 @@
     "exclude_packages": ["PyMuPDF", "six"]
   },
   "esphome": {
-    "exclude_packages": ["protobuf", "six", "tabulate"]
+    "exclude_packages": ["protobuf", "six", "tabulate", "PyYAML"]
   },
   "esptool": {
     "exclude_packages": ["six"]
@@ -167,7 +176,7 @@
     "exclude_packages": ["six"]
   },
   "fdroidserver": {
-    "exclude_packages": ["numpy", "pillow", "six"],
+    "exclude_packages": ["numpy", "pillow", "six", "PyYAML", "yamllint", "pathspec"],
     "extra_packages": ["wheel"]
   },
   "flintrock": {
@@ -201,7 +210,7 @@
   },
   "httpie": "httpie",
   "http-prompt": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "internetarchive": {
     "exclude_packages": ["six"]
@@ -214,9 +223,12 @@
     "exclude_packages": ["six"]
   },
   "jenkins-job-builder": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
-  "jinja2-cli": "jinja2-cli[yaml,toml,xml]",
+  "jinja2-cli": {
+    "package_name": "jinja2-cli[yaml,toml,xml]",
+    "exclude_packages": ["PyYAML"]
+  },
   "jrnl": {
     "exclude_packages": ["six"]
   },
@@ -256,8 +268,11 @@
     "extra_packages": ["wheel"]
   },
   "mapproxy": {
-    "exclude_packages": ["pillow"],
+    "exclude_packages": ["pillow", "PyYAML"],
     "extra_packages": ["pyproj"]
+  },
+  "mathlibtools": {
+    "exclude_packages": ["PyYAML"]
   },
   "mkdocs": {
     "exclude_packages": ["six"]
@@ -268,7 +283,7 @@
   },
   "moto": {
     "package_name": "moto[all,server]",
-    "exclude_packages": ["junit-xml", "six"],
+    "exclude_packages": ["junit-xml", "six", "jsonschema", "attrs", "pyrsistent", "PyYAML"],
     "extra_packages": ["junit-xml-2"]
   },
   "mycli": {
@@ -304,7 +319,7 @@
     "exclude_packages": ["six"]
   },
   "parliament": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "pdm": {
     "exclude_packages": ["six"],
@@ -312,6 +327,9 @@
   },
   "percol": {
     "exclude_packages": ["six"]
+  },
+  "peru": {
+    "exclude_packages": ["PyYAML"]
   },
   "pgcli": {
     "exclude_packages": ["six", "tabulate"]
@@ -329,11 +347,14 @@
   "platformio": {
     "exclude_packages": ["tabulate"]
   },
+  "podman-compose": {
+    "exclude_packages": ["PyYAML"]
+  },
   "pocsuite3": {
     "exclude_packages": ["six"]
   },
   "poetry": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "jsonschema", "attrs", "pyrsistent"]
   },
   "pre-commit": {
     "exclude_packages": ["six", "PyYAML"]
@@ -385,11 +406,14 @@
   },
   "sail": {
     "package_name": "sailed-io",
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "salt": {
     "extra_packages": ["pycryptodome", "pygit2"],
     "exclude_packages": ["six"]
+  },
+  "shyaml": {
+    "exclude_packages": ["PyYAML"]
   },
   "rtv": {
     "exclude_packages": ["six"]
@@ -406,9 +430,14 @@
   "scour": {
     "exclude_packages": ["six"]
   },
-  "semgrep": "semgrep",
+  "semgrep": {
+    "exclude_packages": ["jsonschema", "attrs", "pyrsistent"]
+  },
   "shallow-backup": {
     "exclude_packages": ["six"]
+  },
+  "snakemake": {
+    "exclude_packages": ["tabulate", "PyYAML", "jsonschema", "attrs", "pyrsistent"]
   },
   "sphinx-doc": {
     "extra_packages": ["numpydoc"]
@@ -430,13 +459,13 @@
   },
   "termius": {
     "package_name": "termius",
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "thefuck": {
     "exclude_packages": ["six"]
   },
   "theharvester": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "todoman": {
     "exclude_packages": ["six", "tabulate"]
@@ -480,8 +509,11 @@
   "watson": {
     "exclude_packages": ["six"]
   },
+  "weasyprint": {
+    "exclude_packages": ["Brotli", "fonttools", "Pillow", "six"]
+  },
   "west": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "woob": {
     "exclude_packages": ["pillow", "six", "PyYAML"],
@@ -494,6 +526,9 @@
     "extra_packages": ["graphviz"]
   },
   "xonsh": "xonsh[ptk,pygments,proctitle]",
+  "xxh": {
+    "exclude_packages": ["PyYAML"]
+  },
   "yamale": {
     "exclude_packages": ["PyYAML"]
   },
