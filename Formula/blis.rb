@@ -8,14 +8,11 @@ class Blis < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blis"
-    sha256 cellar: :any, mojave: "29f7ffe5c482c0a528c0f80afd51e287033725ea6299d947f8fd59a700eea849"
+    rebuild 1
+    sha256 cellar: :any, mojave: "42b711f5ad894a55b58901c5d62d8c26389857341f4c398aa75c1f3032978cb4"
   end
 
   uses_from_macos "python" => :build
-
-  on_linux do
-    depends_on "gcc" => [:build, :test]
-  end
 
   fails_with gcc: "5"
 
