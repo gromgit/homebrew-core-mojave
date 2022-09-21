@@ -9,10 +9,11 @@ class Binutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/binutils"
-    sha256 mojave: "9af2e03ddf4cd2403b7166fcda022b808bb36c05df1828525887a69905e17b55"
+    rebuild 1
+    sha256 mojave: "df788ae8c15796469454d6c14b0bab292b602b095c9f1cc04e646f33fe3d7177"
   end
 
-  keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"
+  keg_only "it shadows the host toolchain"
 
   uses_from_macos "bison" => :build
   uses_from_macos "zlib"
