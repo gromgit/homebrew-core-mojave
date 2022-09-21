@@ -4,11 +4,11 @@ class BoostAT176 < Formula
   url "https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2"
   sha256 "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
   license "BSL-1.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost@1.76"
-    sha256 cellar: :any, mojave: "df03788890e93b5a554e31820852ad57d2da742f9defae84ed5b838e72eb2cdb"
+    sha256 cellar: :any, mojave: "2a77683e3be86e359d2d08bb20b858b9cd396c8e970f6af678f6e94d09c7f47c"
   end
 
   keg_only :versioned_formula
