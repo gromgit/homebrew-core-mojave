@@ -11,14 +11,11 @@ class Cimg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "efe9e36007f4aca5bafa42322e36a007510b40e4c66f0ea699e617461045f17b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "48c62f62b212950f3e1d57e3acfdf342334b90fabb4978da800a5d7988c06b1f"
   end
 
-  on_linux do
-    depends_on "gcc" # C++ 17 is required
-  end
-
-  fails_with gcc: "5"
+  fails_with gcc: "5" # C++ 17 is required
 
   def install
     include.install "CImg.h"
