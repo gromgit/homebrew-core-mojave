@@ -1,9 +1,9 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "http://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.37/libpng-1.6.37.tar.xz"
-  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.37/libpng-1.6.37.tar.xz"
-  sha256 "505e70834d35383537b6491e7ae8641f1a4bed1876dbfe361201fc80868d88ca"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.38/libpng-1.6.38.tar.xz"
+  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.38/libpng-1.6.38.tar.xz"
+  sha256 "b3683e8b8111ebf6f1ac004ebb6b0c975cd310ec469d98364388e9cedbfa68be"
   license "libpng-2.0"
 
   livecheck do
@@ -13,8 +13,7 @@ class Libpng < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpng"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d90a4028d59c3f2b3907dfc83228629a05ac99e6e491688eb9e94e53ac608b52"
+    sha256 cellar: :any, mojave: "37a543c270a6f02d2b4d81b00126eee0f063a5888c6cc1f7480c8b41761e94b5"
   end
 
   head do
