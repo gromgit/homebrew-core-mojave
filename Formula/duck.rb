@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.3.2.37449.tar.gz"
-  sha256 "111a45739d66d0518f5c608b05445afaa5febc0ea2343dd7a1015954c2ef06be"
+  url "https://dist.duck.sh/duck-src-8.4.4.38366.tar.gz"
+  sha256 "5c404f4fbfac67a36630b4bf8e900065979e776623a585461d2edc2044376c2e"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
@@ -12,18 +12,21 @@ class Duck < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duck"
-    sha256 cellar: :any, mojave: "eceb9e1fa4510376a2cad4c180e820e177e20f7266882bcb375b7635c1b70cad"
+    rebuild 1
+    sha256 cellar: :any, arm64_monterey: "08cf3b33772adab08301ffe8b581129ab1778043b52cdb1d6ef1b4119553b6b2"
+    sha256 cellar: :any, arm64_big_sur:  "01114f65db78693eae44d2996406edeb3f4294f9159c3e81affb70f6bb76803c"
+    sha256 cellar: :any, monterey:       "d6ce0dda3f43412b120afafe2d5bfa49e4b3f9220eb9913d202b7e3bda8f944a"
+    sha256 cellar: :any, big_sur:        "c896bd2eb9aa728c7c9d04b99bc0ff040a60cc39a3db636c4e487c16b6b4d645"
+    sha256               x86_64_linux:   "c19e9f9d1d6004381c49c078115328dfa5d4fe4417f746ca7543478d5a7eb940"
   end
 
   depends_on "ant" => :build
   depends_on "maven" => :build
   depends_on "pkg-config" => :build
-  depends_on xcode: :build
-
-  depends_on "libffi"
+  depends_on xcode: ["13.1", :build]
   depends_on "openjdk"
 
+  uses_from_macos "libffi", since: :monterey # Uses `FFI_BAD_ARGTYPE`.
   uses_from_macos "zlib"
 
   on_linux do
@@ -39,8 +42,8 @@ class Duck < Formula
   end
 
   resource "jna" do
-    url "https://github.com/java-native-access/jna/archive/refs/tags/5.10.0.tar.gz"
-    sha256 "6ef63cbf6ff7c8eea7d72331958e79c9fd3635c987ce419c9f296db6c4fd66a4"
+    url "https://github.com/java-native-access/jna/archive/refs/tags/5.12.1.tar.gz"
+    sha256 "2046655137ecd7f03e57a14bbe05e14d8299440604f993cef171c449daa3789c"
   end
 
   resource "rococoa" do
@@ -57,12 +60,18 @@ class Duck < Formula
     # Consider creating a formula for this if other formulae need the same library
     resource("jna").stage do
       os = if OS.mac?
-        # Add linker flags for libffi because Makefile call to pkg-config doesn't seem to work properly.
-        inreplace "native/Makefile", "LIBS=", "LIBS=-L#{Formula["libffi"].opt_lib} -lffi"
-        # Force shared library to have dylib extension on macOS instead of jnilib
-        inreplace "native/Makefile",
-                  "LIBRARY=$(BUILD)/$(LIBPFX)jnidispatch$(JNISFX)",
-                  "LIBRARY=$(BUILD)/$(LIBPFX)jnidispatch$(LIBSFX)"
+        inreplace "native/Makefile" do |s|
+          libffi_libdir = if MacOS.version >= :monterey
+            MacOS.sdk_path/"usr/lib"
+          else
+            Formula["libffi"].opt_lib
+          end
+          # Add linker flags for libffi because Makefile call to pkg-config doesn't seem to work properly.
+          s.change_make_var! "LIBS", "-L#{libffi_libdir} -lffi"
+          library_var = s.get_make_var("LIBRARY")
+          # Force shared library to have dylib extension on macOS instead of jnilib
+          s.change_make_var! "LIBRARY", library_var.sub("JNISFX", "LIBSFX")
+        end
 
         "mac"
       else
@@ -86,10 +95,12 @@ class Duck < Formula
         ENV.deparallelize
         ENV["JAVA_HOME"] = Language::Java.java_home(Formula["openjdk"].version.major.to_s)
 
-        # Fix zip error on macOS because libjnidispatch.dylib is not in file list
-        inreplace "build.sh", "libjnidispatch.so", "libjnidispatch.so libjnidispatch.dylib" if OS.mac?
-        # Fix relative path in build script, which is designed to be run out extracted zip archive
-        inreplace "build.sh", "cd native", "cd ../native"
+        inreplace "build.sh" do |s|
+          # Fix zip error on macOS because libjnidispatch.dylib is not in file list
+          s.gsub! "libjnidispatch.so", "libjnidispatch.so libjnidispatch.dylib" if OS.mac?
+          # Fix relative path in build script, which is designed to be run out extracted zip archive
+          s.gsub! "cd native", "cd ../native"
+        end
 
         system "sh", "build.sh"
         buildpath.install shared_library("libjnidispatch")
