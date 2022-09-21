@@ -1,14 +1,14 @@
 class ChainBench < Formula
   desc "Software supply chain auditing tool based on CIS benchmark"
   homepage "https://github.com/aquasecurity/chain-bench"
-  url "https://github.com/aquasecurity/chain-bench/archive/v0.1.3.tar.gz"
-  sha256 "46b63528ddd0e09b65539a69aefbf4229343e636854d0dd5a241870717843423"
+  url "https://github.com/aquasecurity/chain-bench/archive/v0.1.4.tar.gz"
+  sha256 "b75e3e1f5eba97d4d8a29a476ea4fca4a0f354ceb232028efdb50a19ebdc5afc"
   license "Apache-2.0"
   head "https://github.com/aquasecurity/chain-bench.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chain-bench"
-    sha256 cellar: :any_skip_relocation, mojave: "f441cc1fa0580a1a77f314b6afb58014363c00ae094f54d9702bc85facdae539"
+    sha256 cellar: :any_skip_relocation, mojave: "f1dd61ac5d30961becb582e2efc565e161e57987fc01a81f3efc044035d468bc"
   end
 
   depends_on "go" => :build
