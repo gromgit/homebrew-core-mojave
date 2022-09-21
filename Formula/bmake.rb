@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20220901.tar.gz"
-  sha256 "3f67c575ee9ae443a5f589a40acac0163743da98cb50afd1144b4246cd5063ad"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20220909.tar.gz"
+  sha256 "34e9704a93fc183e3f1d87a81f9eabeba3200052f57fed4a751a5968d6b70225"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Bmake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bmake"
-    sha256 mojave: "9efcc192a9be858e474bb4e1fd0cf905b1858315487561e6690eceacc425e31f"
+    sha256 mojave: "bcf3e4b626fcd1e8c0a4006a271dbfbf130867c3b8800774c31e76e9ac3d381b"
   end
 
   def install
