@@ -5,15 +5,14 @@ class Po4a < Formula
 
   desc "Documentation translation maintenance tool"
   homepage "https://po4a.org"
-  url "https://github.com/mquinson/po4a/releases/download/v0.67/po4a-0.67.tar.gz"
-  sha256 "4a4166a480d9b5bcc80b688604501b5545f1c9f67067e8f5494846de167a18a7"
+  url "https://github.com/mquinson/po4a/releases/download/v0.68/po4a-0.68.tar.gz"
+  sha256 "af6124e68c04a0f02a3316cd5610e5d9b923bc2ede77bb7f9b1537717f44b110"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/mquinson/po4a.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/po4a"
-    sha256 cellar: :any, mojave: "2d5aa8a28abc2314b2747cccc83eced2ccad933de4afb493cc689efc13dd4fdd"
+    sha256 cellar: :any, mojave: "318759f5c8c60397ab6f84d88e63ba13da57e44e2bc157130a43205069b25e54"
   end
 
   depends_on "docbook-xsl" => :build
@@ -124,13 +123,13 @@ class Po4a < Formula
       \\end{document}
     EOS
 
-    system bin/"po4a-gettextize", "-f", "latex", "-m", "en.tex", "-p", "latex.pot"
+    system bin/"po4a-updatepo", "-f", "latex", "-m", "en.tex", "-p", "latex.pot"
     assert_match "Hello from Homebrew!", (testpath/"latex.pot").read
 
     # Markdown
 
     (testpath/"en.md").write("Hello from Homebrew!")
-    system bin/"po4a-gettextize", "-f", "text", "-m", "en.md", "-p", "text.pot"
+    system bin/"po4a-updatepo", "-f", "text", "-m", "en.md", "-p", "text.pot"
     assert_match "Hello from Homebrew!", (testpath/"text.pot").read
   end
 end
