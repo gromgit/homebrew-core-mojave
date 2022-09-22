@@ -1,8 +1,8 @@
 class Lbdb < Formula
   desc "Little brother's database for the mutt mail reader"
   homepage "https://www.spinnaker.de/lbdb/"
-  url "https://www.spinnaker.de/lbdb/download/lbdb-0.50.tar.gz"
-  sha256 "afac83d8a4e33732007af70debf71a702db256213998e2efb313bb9bb17b81b0"
+  url "https://www.spinnaker.de/lbdb/download/lbdb-0.51.1.tar.gz"
+  sha256 "97e69fa6535e59869fc42431abe70f5cca4164890d0df2736081a94e1b3625ef"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Lbdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lbdb"
-    sha256 cellar: :any_skip_relocation, mojave: "4eb4819fa53e6927691cfd97e38250d9d6c1868c962703d5964090eb8633f8d8"
+    sha256 cellar: :any_skip_relocation, mojave: "8331247e961e123f909152ce0d0e24855870b0451da58eb63b4eb740471c07a4"
   end
 
   depends_on "abook"
