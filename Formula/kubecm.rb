@@ -1,13 +1,13 @@
 class Kubecm < Formula
   desc "KubeConfig Manager"
   homepage "https://kubecm.cloud"
-  url "https://github.com/sunny0826/kubecm/archive/v0.19.3.tar.gz"
-  sha256 "fac64ce68b69af9e92367b28b12b93a2162d8e4cb683d6f18ecf56ef1c182cd8"
+  url "https://github.com/sunny0826/kubecm/archive/v0.21.0.tar.gz"
+  sha256 "50767ca3dfd1fa050d93409bee4bbdb49b021ef4ee2329c788efe5016ef9e28c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubecm"
-    sha256 cellar: :any_skip_relocation, mojave: "6c2d4f6e5dea6323e7b96707ebae626621d9ea41a8ecf67844c537cc5c19ac07"
+    sha256 cellar: :any_skip_relocation, mojave: "805d8b1ba3f208ab3b420a09883f690d5a411910b9e62b06105f441c993acc80"
   end
 
   depends_on "go" => :build
@@ -16,17 +16,7 @@ class Kubecm < Formula
     ldflags = "-s -w -X github.com/sunny0826/kubecm/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"kubecm", "completion", "bash")
-    (bash_completion/"kubecm").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"kubecm", "completion", "zsh")
-    (zsh_completion/"_kubecm").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"kubecm", "completion", "fish")
-    (fish_completion/"kubecm.fish").write output
+    generate_completions_from_executable(bin/"kubecm", "completion")
   end
 
   test do
