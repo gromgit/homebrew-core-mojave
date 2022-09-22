@@ -1,8 +1,8 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
   homepage "https://kics.io/"
-  url "https://github.com/Checkmarx/kics/archive/refs/tags/v1.5.14.tar.gz"
-  sha256 "add406312b8f611a0d8b68b06ae0b105d78af13d10172be70e40f41b66ebb1a6"
+  url "https://github.com/Checkmarx/kics/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "8f2b3e65279bc292628e3b03b41d28ecbb0d1cc666143b901286633af64c0624"
   license "Apache-2.0"
   head "https://github.com/Checkmarx/kics.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Kics < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kics"
-    sha256 cellar: :any_skip_relocation, mojave: "fb74008b691c9fd7afe562cb49af4062a958cd3451ee403f085d6515f561ab45"
+    sha256 cellar: :any_skip_relocation, mojave: "e1b3ad8fab45bb5b955d378d7b2cbf6d8eb6fa7f5b65b8b5e4a2be1fbab491f2"
   end
 
   depends_on "go" => :build
@@ -41,7 +41,7 @@ class Kics < Formula
     ENV["KICS_QUERIES_PATH"] = pkgshare/"assets/queries"
     ENV["DISABLE_CRASH_REPORT"] = "0"
 
-    assert_match "No files were scanned", shell_output("#{bin}/kics scan -p #{testpath}")
+    assert_match "Files scanned: 0", shell_output("#{bin}/kics scan -p #{testpath}")
     assert_match version.to_s, shell_output("#{bin}/kics version")
   end
 end
