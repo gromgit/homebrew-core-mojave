@@ -7,7 +7,8 @@ class Ko < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ko"
-    sha256 cellar: :any_skip_relocation, mojave: "30d11d88a7cc421715ad8bcb594b714dd410dbde4326e3e6d2d620db158549af"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fda6299eab3477d54a303ec2678ecff8939c439222687c684b7d68de4619269a"
   end
 
   depends_on "go" => :build
@@ -15,14 +16,7 @@ class Ko < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/google/ko/pkg/commands.Version=#{version}")
 
-    bash_output = Utils.safe_popen_read(bin/"ko", "completion", "bash")
-    (bash_completion/"ko").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"ko", "completion", "zsh")
-    (zsh_completion/"_ko").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"ko", "completion", "fish")
-    (fish_completion/"ko.fish").write fish_output
+    generate_completions_from_executable(bin/"ko", "completion")
   end
 
   test do
