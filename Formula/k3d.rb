@@ -13,7 +13,8 @@ class K3d < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3d"
-    sha256 cellar: :any_skip_relocation, mojave: "f278074235c80e24840c86c487b6b1dca213cc0155d133376e1004d0ed06cd89"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d5b3de8867378171fb33dd4bb0a0938769738ca0c0bcd87f3269c695f28471f6"
   end
 
   depends_on "go" => :build
@@ -33,17 +34,7 @@ class K3d < Formula
 
     system "go", "build", "-mod=readonly", *std_go_args(ldflags: ldflags)
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"k3d", "completion", "bash")
-    (bash_completion/"k3d").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"k3d", "completion", "zsh")
-    (zsh_completion/"_k3d").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"k3d", "completion", "fish")
-    (fish_completion/"k3d.fish").write output
+    generate_completions_from_executable(bin/"k3d", "completion")
   end
 
   test do
