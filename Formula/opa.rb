@@ -1,14 +1,14 @@
 class Opa < Formula
   desc "Open source, general-purpose policy engine"
   homepage "https://www.openpolicyagent.org"
-  url "https://github.com/open-policy-agent/opa/archive/v0.43.0.tar.gz"
-  sha256 "c5ac0f4a2c50e347cbcdf97f711ef70f9d7bd8594f8d92036fdea78d34c8400e"
+  url "https://github.com/open-policy-agent/opa/archive/v0.44.0.tar.gz"
+  sha256 "277745ca4328671791ec3fc37bf16b4e270c4057c9a43eefdf855986c364dc9a"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/opa.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opa"
-    sha256 cellar: :any_skip_relocation, mojave: "6870846ceeeee2d46191de9fe1c5143b2031d5d4214699afef8ef459551ef1be"
+    sha256 cellar: :any_skip_relocation, mojave: "83908821e79ac4a72497230ff018ed8e2d3508b407c8da41264bc5379fd00f21"
   end
 
   depends_on "go" => :build
@@ -19,14 +19,7 @@ class Opa < Formula
     system "./build/gen-man.sh", "man1"
     man.install "man1"
 
-    bash_output = Utils.safe_popen_read(bin/"opa", "completion", "bash")
-    (bash_completion/"opa").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"opa", "completion", "zsh")
-    (zsh_completion/"_opa").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"opa", "completion", "fish")
-    (fish_completion/"opa.fish").write fish_output
+    generate_completions_from_executable(bin/"opa", "completion")
   end
 
   test do
