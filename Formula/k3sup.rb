@@ -14,7 +14,8 @@ class K3sup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k3sup"
-    sha256 cellar: :any_skip_relocation, mojave: "ed21704cd28944ebe1cc081b0b7ceaa9bc7f1f87bf7eb2293c455deae68d735f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cd9baf3b0efa24f6d7cb2d3b56043cd415a1d4dda1f6526bb7a5b97328a0de20"
   end
 
   depends_on "go" => :build
@@ -27,9 +28,7 @@ class K3sup < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    (bash_completion/"k3sup").write Utils.safe_popen_read(bin/"k3sup", "completion", "bash")
-    (zsh_completion/"_k3sup").write Utils.safe_popen_read(bin/"k3sup", "completion", "zsh")
-    (fish_completion/"k3sup.fish").write Utils.safe_popen_read(bin/"k3sup", "completion", "fish")
+    generate_completions_from_executable(bin/"k3sup", "completion")
   end
 
   test do
