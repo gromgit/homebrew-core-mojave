@@ -13,7 +13,8 @@ class Linkerd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/linkerd"
-    sha256 cellar: :any_skip_relocation, mojave: "afee172cfeec45153431e6cdde85d8561418f33013229570a4aea860c3574fae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cfbd0952652486b892afdedcd3812dc94e9f91eb797a957f5718d762640b9af3"
   end
 
   depends_on "go" => :build
@@ -25,17 +26,7 @@ class Linkerd < Formula
     bin.install Dir["target/cli/*/linkerd"]
     prefix.install_metafiles
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"linkerd", "completion", "bash")
-    (bash_completion/"linkerd").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"linkerd", "completion", "zsh")
-    (zsh_completion/"_linkerd").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"linkerd", "completion", "fish")
-    (fish_completion/"linkerd.fish").write output
+    generate_completions_from_executable(bin/"linkerd", "completion")
   end
 
   test do
