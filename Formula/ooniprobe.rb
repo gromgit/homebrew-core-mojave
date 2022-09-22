@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://github.com/ooni/probe-cli/archive/v3.15.3.tar.gz"
-  sha256 "40ca23d3a08e91ff72c95e835eb59d8922bf7424464782b16d2704e8d630eecb"
+  url "https://github.com/ooni/probe-cli/archive/v3.16.3.tar.gz"
+  sha256 "f3e86d1682a750e8dd85c519715af540abb470af4df1b3bdac42a9ed3b9d6461"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,13 +12,10 @@ class Ooniprobe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ooniprobe"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5bc509137f4a1736222b768f6653b79c7fca67799cce97ca2cab649a03977f49"
+    sha256 cellar: :any_skip_relocation, mojave: "62bca67028777cb13dc44289d6e943fc11b98368906ea9b08a168ce96e63e066"
   end
 
-  # Required lucas-clemente/quic-go >= 0.28
-  # Try to switch to the latest go on the next release
-  depends_on "go@1.18" => :build
+  depends_on "go" => :build
   depends_on "tor"
 
   def install
