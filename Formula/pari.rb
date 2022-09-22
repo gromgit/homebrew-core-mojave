@@ -1,8 +1,8 @@
 class Pari < Formula
   desc "Computer algebra system designed for fast computations in number theory"
   homepage "https://pari.math.u-bordeaux.fr/"
-  url "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.13.4.tar.gz"
-  sha256 "bcde9eceae1592814381c1697cdb7063567b6504201b1be47bb58920f3bce185"
+  url "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.15.0.tar.gz"
+  sha256 "e474851e0d16d4e4f9a0d9612c746a2ae7c9a1ec185d04c440b1c74a85755685"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Pari < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pari"
-    sha256 cellar: :any, mojave: "f7aa34447682d2e08ab0cd5f729c94e6954a8b529571b1f9e9fc6c1f96d15d56"
+    sha256 cellar: :any, mojave: "4af9002de0a84e5b935841fc062745cdd3d23a20c9c1d5ef65e2d4dbe6bb0d96"
   end
 
   depends_on "gmp"
