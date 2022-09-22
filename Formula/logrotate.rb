@@ -7,7 +7,8 @@ class Logrotate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logrotate"
-    sha256 cellar: :any, mojave: "bd8be919f61fe08e610a1c3d867ba6838e4bd65da548039b8d13bb023b85052f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dec8588d075eeb131c7a48828a5cfd4d4100bde81e48eb695d084a4b742bb409"
   end
 
   depends_on "popt"
