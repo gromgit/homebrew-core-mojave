@@ -4,10 +4,11 @@ class Libfontenc < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/libfontenc-1.1.6.tar.gz"
   sha256 "c103543a47ce5c0200fb1867f32df5e754a7c3ef575bf1fe72187117eac22a53"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libfontenc"
-    sha256 cellar: :any, mojave: "316b81709d6f37f7e0f3db86dc755a8c453da30a371f2ad8bda67673f6214a10"
+    sha256 cellar: :any, mojave: "6f8bd2bce00de5ada7825996bcd47835185c761ec320fa6c77cc65c9ad126d17"
   end
 
   depends_on "font-util" => :build
