@@ -2,8 +2,8 @@ class KubernetesCliAT122 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.22.13",
-      revision: "a43c0904d0de10f92aa3956c74489c45e6453d6e"
+      tag:      "v1.22.14",
+      revision: "bccf857df03c5a99a35e34020b3b63055f0c12ec"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class KubernetesCliAT122 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli@1.22"
-    sha256 cellar: :any_skip_relocation, mojave: "007d106bd29ccb0c8404d394adf5506a32ec57a45b0e741e085472b4a1f6f963"
+    sha256 cellar: :any_skip_relocation, mojave: "2fd0f5999c4927d78db7c25c3d8a5127771632cee20de643014b063f13f85d00"
   end
 
   keg_only :versioned_formula
@@ -41,13 +41,7 @@ class KubernetesCliAT122 < Formula
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"kubectl", "completion", "bash")
-    (bash_completion/"kubectl").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"kubectl", "completion", "zsh")
-    (zsh_completion/"_kubectl").write output
+    generate_completions_from_executable(bin/"kubectl", "completion", base_name: "kubectl", shells: [:bash, :zsh])
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree
