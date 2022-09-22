@@ -1,14 +1,14 @@
 class NewrelicCli < Formula
   desc "Command-line interface for New Relic"
   homepage "https://github.com/newrelic/newrelic-cli"
-  url "https://github.com/newrelic/newrelic-cli/archive/v0.53.2.tar.gz"
-  sha256 "69abc6198d7f4889db51adfd94b2a79aaa95806bd6f09098557b05447b9afa09"
+  url "https://github.com/newrelic/newrelic-cli/archive/v0.54.1.tar.gz"
+  sha256 "8c80f43d14ffc510d74a968f2b6d5bb79b486ede217afaafc85619745e49045b"
   license "Apache-2.0"
   head "https://github.com/newrelic/newrelic-cli.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newrelic-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "214ee552ac4500fe2ce228aa0c9c66256defbf03fd36b2866d0e9769cb7d44e3"
+    sha256 cellar: :any_skip_relocation, mojave: "90877bd92c5cc73fd734efa3fd6fc7418f34770ee98e9597e3edfbb3f9c1e947"
   end
 
   depends_on "go" => :build
@@ -18,12 +18,7 @@ class NewrelicCli < Formula
     system "make", "compile-only"
     bin.install "bin/#{OS.kernel_name.downcase}/newrelic"
 
-    output = Utils.safe_popen_read(bin/"newrelic", "completion", "--shell", "bash")
-    (bash_completion/"newrelic").write output
-    output = Utils.safe_popen_read(bin/"newrelic", "completion", "--shell", "zsh")
-    (zsh_completion/"_newrelic").write output
-    output = Utils.safe_popen_read(bin/"newrelic", "completion", "--shell", "fish")
-    (fish_completion/"newrelic.fish").write output
+    generate_completions_from_executable(bin/"newrelic", "completion", "--shell", base_name: "newrelic")
   end
 
   test do
