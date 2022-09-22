@@ -1,13 +1,13 @@
 class Goctl < Formula
   desc "Generates server-side and client-side code for web and RPC services"
   homepage "https://go-zero.dev"
-  url "https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.4.0.tar.gz"
-  sha256 "f462ea2e6ab3e66d83dd59fab22066798693c972b2ef82b6c27ed5c630746d13"
+  url "https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.4.1.tar.gz"
+  sha256 "019cbb71d900903656282e448fca8ffa45b6288a3f50e7295b5a4cd68ab0a3f0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goctl"
-    sha256 cellar: :any_skip_relocation, mojave: "c49a91eaf6401cc1fc880b946f0dc5c187b2c28dfcae1b284094648807590742"
+    sha256 cellar: :any_skip_relocation, mojave: "6cab91f6caa0d13234fae7823a44e35f2e33b567df6a0820d22938fa91b9d089"
   end
 
   depends_on "go" => :build
@@ -16,6 +16,8 @@ class Goctl < Formula
     chdir "tools/goctl" do
       system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"goctl"), "goctl.go"
     end
+
+    generate_completions_from_executable(bin/"goctl", "completion")
   end
 
   test do
