@@ -8,16 +8,15 @@ class Nali < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nali"
-    sha256 cellar: :any_skip_relocation, mojave: "96f9aac3acca64d7db473e4ee67db32f33bbb8f94765232055babf407401fd04"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "be18bbcaf0c60a4841416d2662f6cba418ce8bc8e9732b0be7b91bf0a299738f"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    (bash_completion/"nali").write Utils.safe_popen_read(bin/"nali", "completion", "bash")
-    (fish_completion/"nali.fish").write Utils.safe_popen_read(bin/"nali", "completion", "fish")
-    (zsh_completion/"_nali").write Utils.safe_popen_read(bin/"nali", "completion", "zsh")
+    generate_completions_from_executable(bin/"nali", "completion")
   end
 
   test do
