@@ -14,11 +14,8 @@ class Patchelf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/patchelf"
-    sha256 cellar: :any_skip_relocation, mojave: "c79242e318958fbfc7e6245d75c580c38b844f6b8e3ae0f0a8a2d9fbb80c68da"
-  end
-
-  on_linux do
-    depends_on "gcc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9655a84b2287f7f0ce4d4010f6572428b8ab94fdc544b08d907a7a4704e8b985"
   end
 
   fails_with gcc: "5" # Needs std::optional
