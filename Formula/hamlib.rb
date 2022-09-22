@@ -6,10 +6,10 @@ class Hamlib < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/hamlib/hamlib.git", branch: "master"
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hamlib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "49a14441b0de911b0f9f41b7007c11d5925f34692a64e72031872d51d1da72b6"
+    rebuild 2
+    sha256 cellar: :any, mojave: "987f337f4d3d2eade4b4a813c58dfd777c423886487ba38a87cbb5371e2eb7d7"
   end
 
   depends_on "autoconf" => :build
@@ -17,10 +17,6 @@ bottle do
   depends_on "pkg-config" => :build
   depends_on "libtool"
   depends_on "libusb-compat"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
