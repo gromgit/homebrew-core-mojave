@@ -13,7 +13,8 @@ class Mongocli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongocli"
-    sha256 cellar: :any_skip_relocation, mojave: "4bef8f30da2b345e884d3da2c3b86600c52503b3c7ec1725fe3c7f83e64b027e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3aeaa12497e440ca5493aada232acf208641bbadb118e67efdf86e7ea8eec746"
   end
 
   depends_on "go" => :build
@@ -27,9 +28,7 @@ class Mongocli < Formula
     end
     bin.install "bin/mongocli"
 
-    (bash_completion/"mongocli").write Utils.safe_popen_read(bin/"mongocli", "completion", "bash")
-    (fish_completion/"mongocli.fish").write Utils.safe_popen_read(bin/"mongocli", "completion", "fish")
-    (zsh_completion/"_mongocli").write Utils.safe_popen_read(bin/"mongocli", "completion", "zsh")
+    generate_completions_from_executable(bin/"mongocli", "completion")
   end
 
   test do
