@@ -16,7 +16,8 @@ class Kyverno < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kyverno"
-    sha256 cellar: :any_skip_relocation, mojave: "3562e3044d70f5004004ce02aa54a8c3afdf2f71224b8a68c0df2f9107e95111"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "527981130532657a77fe74594c64ee39a2949457a5473a904b3fa38964022ad8"
   end
 
   depends_on "go" => :build
@@ -31,9 +32,7 @@ class Kyverno < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cli/kubectl-kyverno"
 
-    (bash_completion/"kyverno").write Utils.safe_popen_read(bin/"kyverno", "completion", "bash")
-    (zsh_completion/"_kyverno").write Utils.safe_popen_read(bin/"kyverno", "completion", "zsh")
-    (fish_completion/"kyverno.fish").write Utils.safe_popen_read(bin/"kyverno", "completion", "fish")
+    generate_completions_from_executable(bin/"kyverno", "completion")
   end
 
   test do
