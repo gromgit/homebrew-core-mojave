@@ -2,8 +2,8 @@ class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https://ipfs.tech/"
   url "https://github.com/ipfs/kubo.git",
-      tag:      "v0.14.0",
-      revision: "e0fabd6dbf69624a259dd735065465e09ebb0a61"
+      tag:      "v0.15.0",
+      revision: "3ae52a41e39ec95aacc48d67b2882c9baeabc2ff"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -17,7 +17,7 @@ class Ipfs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipfs"
-    sha256 cellar: :any_skip_relocation, mojave: "04bfb7d13093ef04b1a147bb3e495d9acc2f0901bb59e27d0dd0265e5185c24b"
+    sha256 cellar: :any_skip_relocation, mojave: "879e561749ccc4147a82a25056db9a2f843245915ba958672fddd8c254c91ca1"
   end
 
   # Required lucas-clemente/quic-go >= 0.28
@@ -28,8 +28,7 @@ class Ipfs < Formula
     system "make", "build"
     bin.install "cmd/ipfs/ipfs"
 
-    bash_output = Utils.safe_popen_read(bin/"ipfs", "commands", "completion", "bash")
-    (bash_completion/"ipfs-completion.bash").write bash_output
+    generate_completions_from_executable(bin/"ipfs", "commands", "completion", shells: [:bash])
   end
 
   service do
