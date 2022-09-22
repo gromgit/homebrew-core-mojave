@@ -14,7 +14,8 @@ class Kustomize < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kustomize"
-    sha256 cellar: :any_skip_relocation, mojave: "cf2b64973dfc607dd4270e1e12180d9972cc5b9957cc4f2ea50bc5638b7c7f3d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d52e325133db60f0d08d7bfd0eb0c9e31470e5afb9b9df251645ecb1985a9cf5"
   end
 
   depends_on "go" => :build
@@ -33,14 +34,7 @@ class Kustomize < Formula
       system "go", "build", *std_go_args(ldflags: ldflags)
     end
 
-    output = Utils.safe_popen_read("#{bin}/kustomize", "completion", "bash")
-    (bash_completion/"kustomize").write output
-
-    output = Utils.safe_popen_read("#{bin}/kustomize", "completion", "zsh")
-    (zsh_completion/"_kustomize").write output
-
-    output = Utils.safe_popen_read("#{bin}/kustomize", "completion", "fish")
-    (fish_completion/"kustomize.fish").write output
+    generate_completions_from_executable(bin/"kustomize", "completion")
   end
 
   test do
