@@ -2,14 +2,14 @@ class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
   homepage "https://meshery.io"
   url "https://github.com/meshery/meshery.git",
-      tag:      "v0.6.4",
-      revision: "d2288a872b138e36912caca39631ae9a1b03098e"
+      tag:      "v0.6.8",
+      revision: "931b5bbee492e7139b75a5f806facb7bfcdb6e50"
   license "Apache-2.0"
   head "https://github.com/meshery/meshery.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mesheryctl"
-    sha256 cellar: :any_skip_relocation, mojave: "1304eb853e085a14c03ac635ea818101e2a29524219eb5865d4d6ff400fbf484"
+    sha256 cellar: :any_skip_relocation, mojave: "13cbee685a7c16781679ccc25d74a783afd5be1ca89076f454c67fb80da737c7"
   end
 
   depends_on "go" => :build
@@ -26,14 +26,7 @@ class Mesheryctl < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./mesheryctl/cmd/mesheryctl"
 
-    output = Utils.safe_popen_read("#{bin}/mesheryctl", "completion", "bash")
-    (bash_completion/"mesheryctl").write output
-
-    output = Utils.safe_popen_read("#{bin}/mesheryctl", "completion", "zsh")
-    (zsh_completion/"_mesheryctl").write output
-
-    output = Utils.safe_popen_read("#{bin}/mesheryctl", "completion", "fish")
-    (fish_completion/"mesheryctl.fish").write output
+    generate_completions_from_executable(bin/"mesheryctl", "completion")
   end
 
   test do
