@@ -14,8 +14,8 @@ class OperatorSdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/operator-sdk"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bfb91c102a3970747992047432520059093ad719c6f9e03e15b3240c3b708817"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1d0910bc20a2580c9550d21687b8c19763d5de33cbadbf8e0369653b775c6929"
   end
 
   depends_on "go"
@@ -24,17 +24,7 @@ class OperatorSdk < Formula
     ENV["GOBIN"] = libexec/"bin"
     system "make", "install"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(libexec/"bin/operator-sdk", "completion", "bash")
-    (bash_completion/"operator-sdk").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(libexec/"bin/operator-sdk", "completion", "zsh")
-    (zsh_completion/"_operator-sdk").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(libexec/"bin/operator-sdk", "completion", "fish")
-    (fish_completion/"operator-sdk.fish").write output
+    generate_completions_from_executable(libexec/"bin/operator-sdk", "completion")
 
     output = libexec/"bin/operator-sdk"
     (bin/"operator-sdk").write_env_script(output, PATH: "$PATH:#{Formula["go@1.17"].opt_bin}")
