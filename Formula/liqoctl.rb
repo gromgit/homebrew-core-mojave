@@ -7,7 +7,8 @@ class Liqoctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liqoctl"
-    sha256 cellar: :any_skip_relocation, mojave: "ab45220dcfba835f03ef45dd3f8ab6ffea0983dc924a09e5fd788dc62d99a3c2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3725f4f6f2347f0d128cfe46c6642b74a5aba8fa7db2ebe33bea68692238593b"
   end
 
   depends_on "go" => :build
@@ -22,12 +23,7 @@ class Liqoctl < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/liqoctl"
 
-    output = Utils.safe_popen_read(bin/"liqoctl", "completion", "bash")
-    (bash_completion/"liqoctl").write output
-    output = Utils.safe_popen_read(bin/"liqoctl", "completion", "zsh")
-    (zsh_completion/"_liqoctl").write output
-    output = Utils.safe_popen_read(bin/"liqoctl", "completion", "fish")
-    (fish_completion/"liqoctl").write output
+    generate_completions_from_executable(bin/"liqoctl", "completion")
   end
 
   test do
