@@ -1,14 +1,14 @@
 class Octosql < Formula
   desc "SQL query tool to analyze data from different file formats and databases"
   homepage "https://github.com/cube2222/octosql/"
-  url "https://github.com/cube2222/octosql/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "129ce13c45ab2d2d4a7f0db2fc1e63a93d38e80f929f9b387b8c530f9be56b59"
+  url "https://github.com/cube2222/octosql/archive/refs/tags/v0.9.4.tar.gz"
+  sha256 "31d5d37948fd6206c68a6163c5d91e4f99ba0bda362816a0018279f947d1ff37"
   license "MPL-2.0"
   head "https://github.com/cube2222/octosql.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octosql"
-    sha256 cellar: :any_skip_relocation, mojave: "dbe4df61ab939edfea96666c9f3b384db96a52614c302a9d45cd0146bc9fee0d"
+    sha256 cellar: :any_skip_relocation, mojave: "911de79d10553e34d9ad4c5d70e210461d50e36ee40fc9f4edfcc6c979064a7a"
   end
 
   depends_on "go" => :build
@@ -17,14 +17,7 @@ class Octosql < Formula
     ldflags = "-s -w -X github.com/cube2222/octosql/cmd.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    bash_output = Utils.safe_popen_read(bin/"octosql", "completion", "bash")
-    (bash_completion/"octosql").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"octosql", "completion", "zsh")
-    (zsh_completion/"_octosql").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"octosql", "completion", "fish")
-    (fish_completion/"octosql.fish").write fish_output
+    generate_completions_from_executable(bin/"octosql", "completion")
   end
 
   test do
