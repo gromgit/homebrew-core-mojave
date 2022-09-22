@@ -7,7 +7,8 @@ class Hcloud < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcloud"
-    sha256 cellar: :any_skip_relocation, mojave: "1e32b82052aa887412e4d3f8483c2d366a279be8b4eb96847a0da0235ff56e68"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "23ef87c3de81a92dc6b7590261be119130e60348fd89de486a0c1dc95b3509ce"
   end
 
   depends_on "go" => :build
@@ -16,12 +17,7 @@ class Hcloud < Formula
     ldflags = "-s -w -X github.com/hetznercloud/cli/internal/version.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/hcloud"
 
-    output = Utils.safe_popen_read(bin/"hcloud", "completion", "bash")
-    (bash_completion/"hcloud").write output
-    output = Utils.safe_popen_read(bin/"hcloud", "completion", "zsh")
-    (zsh_completion/"_hcloud").write output
-    output = Utils.safe_popen_read(bin/"hcloud", "completion", "fish")
-    (fish_completion/"hcloud.fish").write output
+    generate_completions_from_executable(bin/"hcloud", "completion")
   end
 
   test do
