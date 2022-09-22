@@ -1,14 +1,14 @@
 class Gomplate < Formula
   desc "Command-line Golang template processor"
   homepage "https://gomplate.hairyhenderson.ca/"
-  url "https://github.com/hairyhenderson/gomplate/archive/v3.11.2.tar.gz"
-  sha256 "310f2ae19f409ad45f0f19a53045a3e8345e4723fa5ca9c5eeb8cbaf7cc0e195"
+  url "https://github.com/hairyhenderson/gomplate/archive/v3.11.3.tar.gz"
+  sha256 "4f26895921e52e0515b273659508802676aafa4765cc3751c383b27eb0e9dca1"
   license "MIT"
   head "https://github.com/hairyhenderson/gomplate.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gomplate"
-    sha256 cellar: :any_skip_relocation, mojave: "ec9c3529344540584ef54b5305eff03024f7ce1ad2a4d105fe3ec646d7fbe44b"
+    sha256 cellar: :any_skip_relocation, mojave: "63a7d0e4594a01a31d8edf201a4b22288b4c014b619472ae7b39efd4a36ffb4e"
   end
 
   depends_on "go" => :build
