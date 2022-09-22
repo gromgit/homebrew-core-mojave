@@ -7,8 +7,8 @@ class Kompose < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kompose"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7230ae9590b965ccd24db4653af289b2c97203bd9e25fbd1687e4d9ba57415d0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7cc00c1b1ea57be91ec133e93aae794c6789c0e1b5d5141cdc7e3a8294d417bb"
   end
 
   # Bump to 1.18 on the next release, if possible.
@@ -17,14 +17,7 @@ class Kompose < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    output = Utils.safe_popen_read(bin/"kompose", "completion", "bash")
-    (bash_completion/"kompose").write output
-
-    output = Utils.safe_popen_read(bin/"kompose", "completion", "zsh")
-    (zsh_completion/"_kompose").write output
-
-    output = Utils.safe_popen_read(bin/"kompose", "completion", "fish")
-    (fish_completion/"kompose.fish").write output
+    generate_completions_from_executable(bin/"kompose", "completion")
   end
 
   test do
