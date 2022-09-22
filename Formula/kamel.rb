@@ -2,8 +2,8 @@ class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
   url "https://github.com/apache/camel-k.git",
-      tag:      "v1.9.2",
-      revision: "405f535a9fe6f1f051ae2f5cd11c6b447e3d9e1c"
+      tag:      "v1.10.0",
+      revision: "72db4771cc03e5b3f03aded1d5c6f9fa828c1d55"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Kamel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kamel"
-    sha256 cellar: :any_skip_relocation, mojave: "871063f1012e498760c72ab107e51172518892b295467a7d8dff678452df05d2"
+    sha256 cellar: :any_skip_relocation, mojave: "91a5e465c0f0321b648349d2252c45f9b2fa8e75fef88d69fc5791856808d4f8"
   end
 
   depends_on "go" => :build
@@ -26,11 +26,7 @@ class Kamel < Formula
     system "make", "build-kamel"
     bin.install "kamel"
 
-    output = Utils.safe_popen_read("#{bin}/kamel", "completion", "bash")
-    (bash_completion/"kamel").write output
-
-    output = Utils.safe_popen_read("#{bin}/kamel", "completion", "zsh")
-    (zsh_completion/"_kamel").write output
+    generate_completions_from_executable(bin/"kamel", "completion", shells: [:bash, :zsh])
   end
 
   test do
@@ -48,9 +44,6 @@ class Kamel < Formula
 
     run_output = shell_output("echo $(#{bin}/kamel run 2>&1)")
     assert_match "Error: run expects at least 1 argument, received 0", run_output
-
-    run_none_output = shell_output("echo $(#{bin}/kamel run None.java 2>&1)")
-    assert_match "cannot read sources: missing file or unsupported scheme in None.java", run_none_output
 
     reset_output = shell_output("echo $(#{bin}/kamel reset 2>&1)")
     assert_match "Error: cannot get command client: invalid configuration", reset_output
