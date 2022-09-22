@@ -9,7 +9,8 @@ class K9s < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k9s"
-    sha256 cellar: :any_skip_relocation, mojave: "9398fa3b9108a50f0224c8f007efdc7d5f1007f23efe0dd11165d71003ef6791"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7085e38cf3475bd5408a034ee75495ef0beaec7ab8d490597f3c375fd4685271"
   end
 
   depends_on "go" => :build
@@ -22,14 +23,7 @@ class K9s < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    bash_output = Utils.safe_popen_read(bin/"k9s", "completion", "bash")
-    (bash_completion/"k9s").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"k9s", "completion", "zsh")
-    (zsh_completion/"_k9s").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"k9s", "completion", "fish")
-    (fish_completion/"k9s.fish").write fish_output
+    generate_completions_from_executable(bin/"k9s", "completion")
   end
 
   test do
