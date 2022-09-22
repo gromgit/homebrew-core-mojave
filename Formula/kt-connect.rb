@@ -8,7 +8,8 @@ class KtConnect < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kt-connect"
-    sha256 cellar: :any_skip_relocation, mojave: "ad57f3ece149c062833306a9c82222d14146fbc01e217d2a2b571982ed1eba30"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7e918c24c10fa88839e5051809e50d385ceed86b6463efd4e1693811bfcd41c6"
   end
 
   depends_on "go" => :build
@@ -17,17 +18,7 @@ class KtConnect < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"ktctl"), "./cmd/ktctl"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"ktctl", "completion", "bash")
-    (bash_completion/"ktctl").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"ktctl", "completion", "zsh")
-    (zsh_completion/"_ktctl").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"ktctl", "completion", "fish")
-    (fish_completion/"ktctl.fish").write output
+    generate_completions_from_executable(bin/"ktctl", "completion", base_name: "ktctl")
   end
 
   test do
