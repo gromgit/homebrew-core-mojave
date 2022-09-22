@@ -1,9 +1,9 @@
 class Imapsync < Formula
   desc "Migrate or backup IMAP mail accounts"
   homepage "https://imapsync.lamiral.info/"
-  url "https://imapsync.lamiral.info/dist2/imapsync-2.200.tgz"
+  url "https://imapsync.lamiral.info/dist2/imapsync-2.229.tgz"
   # NOTE: The mirror will return 404 until the version becomes outdated.
-  sha256 "115f3e3be2ec5fd5235501240292c5f15bd289d47e39f7581da861b92bca5be5"
+  sha256 "553ce6d6535b954987a859fa0c3c74da446df74157d398ab09159c7f8ed8043d"
   license "NLPL"
   head "https://github.com/imapsync/imapsync.git", branch: "master"
 
@@ -14,8 +14,7 @@ class Imapsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imapsync"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6b45474528443f2bc899efa0ea96292794d382b5bc4501b7c93e174ee4f65c40"
+    sha256 cellar: :any_skip_relocation, mojave: "8fc5851ab2b813dfcfd525254060ecdff03d1753f55b59fe81db951751ef8bbd"
   end
 
   depends_on "pod2man" => :build
@@ -74,6 +73,13 @@ class Imapsync < Formula
     end
   end
 
+  resource "Module::Build" do
+    on_system :linux, macos: :catalina_or_older do
+      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz"
+      sha256 "7e0f4c692c1740c1ac84ea14d7ea3d8bc798b2fb26c09877229e04f430b2b717"
+    end
+  end
+
   resource "Encode::IMAPUTF7" do
     url "https://cpan.metacpan.org/authors/id/P/PM/PMAKHOLM/Encode-IMAPUTF7-1.05.tar.gz"
     sha256 "470305ddc37483cfe8d3c16d13770a28011f600bf557acb8c3e07739997c37e1"
@@ -110,20 +116,13 @@ class Imapsync < Formula
   end
 
   resource "JSON" do
-    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.03.tar.gz"
-    sha256 "e41f8761a5e7b9b27af26fe5780d44550d7a6a66bf3078e337d676d07a699941"
+    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.09.tar.gz"
+    sha256 "6780a51f438c0932eec0534fc9cd2b1ad0d64817eda4add8ede5ec77d6d2c991"
   end
 
   resource "Test::MockObject" do
     url "https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Test-MockObject-1.20200122.tar.gz"
     sha256 "2b7f80da87f5a6fe0360d9ee521051053017442c3a26e85db68dfac9f8307623"
-  end
-
-  resource "Module::Build" do
-    on_system :linux, macos: :catalina_or_older do
-      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz"
-      sha256 "7e0f4c692c1740c1ac84ea14d7ea3d8bc798b2fb26c09877229e04f430b2b717"
-    end
   end
 
   resource "JSON::WebToken" do
