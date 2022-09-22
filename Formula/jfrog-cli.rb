@@ -1,13 +1,13 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://www.jfrog.com/confluence/display/CLI/JFrog+CLI"
-  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.25.2.tar.gz"
-  sha256 "7849419dcfed8ce92eee183e7d29432d58515db0eec36059d93eb21a38ebaf3f"
+  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.26.1.tar.gz"
+  sha256 "bdcfcabce7b3cd02555a57169319ec7f3ab312e84882531f0f47b56b63d605ba"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jfrog-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "13521a8e53bea80cbb8585b3dbbb42ed919bcc4ea9345b1928879f6015d531c6"
+    sha256 cellar: :any_skip_relocation, mojave: "dc5bc9935a5f188d9f66ea4ab6bbb9ea004516ea1339166d35c404ae98a39774"
   end
 
   depends_on "go" => :build
@@ -16,17 +16,7 @@ class JfrogCli < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w -extldflags '-static'", output: bin/"jf")
     bin.install_symlink "jf" => "jfrog"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"jf", "completion", "bash")
-    (bash_completion/"jf").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"jf", "completion", "zsh")
-    (zsh_completion/"_jf").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"jf", "completion", "fish")
-    (fish_completion/"jf.fish").write output
+    generate_completions_from_executable(bin/"jf", "completion", base_name: "jf")
   end
 
   test do
