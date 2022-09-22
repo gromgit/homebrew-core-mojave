@@ -13,13 +13,16 @@ class Fluxctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluxctl"
-    sha256 cellar: :any_skip_relocation, mojave: "c684cd370b1ecdf5adb6ecc8e824275086671db50df3749c1789f256fbd7536e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "df17d3c52037c4c2c79fcfb3cf82cb1c6db3925667c0183238442d46d9d09a82"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fluxctl"
+
+    generate_completions_from_executable(bin/"fluxctl", "completion")
   end
 
   test do
