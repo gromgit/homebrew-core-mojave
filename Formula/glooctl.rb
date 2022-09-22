@@ -4,8 +4,8 @@ class Glooctl < Formula
   # NOTE: Please wait until the newest stable release is finished building and
   # no longer marked as "Pre-release" before creating a PR for a new version.
   url "https://github.com/solo-io/gloo.git",
-      tag:      "v1.12.16",
-      revision: "c0267d4e2c01a3e559ea33d427848ae6968723c9"
+      tag:      "v1.12.19",
+      revision: "2ae44e598d479753ff31ec488b52552586622b0b"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "master"
 
@@ -16,7 +16,7 @@ class Glooctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glooctl"
-    sha256 cellar: :any_skip_relocation, mojave: "d1886b76826065f7b87f51cc06fe5c30a4fd7413de5e59ba90d99d5046c96e80"
+    sha256 cellar: :any_skip_relocation, mojave: "248becaa0c3374ea841e78d872d41fb719a5c8167cd10e32d40418120a153473"
   end
 
   depends_on "go" => :build
@@ -24,6 +24,8 @@ class Glooctl < Formula
   def install
     system "make", "glooctl", "VERSION=v#{version}"
     bin.install "_output/glooctl"
+
+    generate_completions_from_executable(bin/"glooctl", "completion", shells: [:bash, :zsh])
   end
 
   test do
@@ -32,8 +34,6 @@ class Glooctl < Formula
 
     version_output = shell_output("#{bin}/glooctl version 2>&1")
     assert_match "Client: {\"version\":\"v#{version}\"}", version_output
-
-    version_output = shell_output("#{bin}/glooctl version 2>&1")
     assert_match "Server: version undefined", version_output
 
     # Should error out as it needs access to a Kubernetes cluster to operate correctly
