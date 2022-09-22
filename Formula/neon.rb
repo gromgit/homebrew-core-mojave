@@ -1,9 +1,9 @@
 class Neon < Formula
   desc "HTTP and WebDAV client library with a C interface"
   homepage "https://notroj.github.io/neon/"
-  url "https://notroj.github.io/neon/neon-0.32.2.tar.gz"
-  mirror "https://fossies.org/linux/www/neon-0.32.2.tar.gz"
-  sha256 "986566468c6295fc5d0fb141a5981e31c9f82ee38e938374abed8471ef2fb286"
+  url "https://notroj.github.io/neon/neon-0.32.4.tar.gz"
+  mirror "https://fossies.org/linux/www/neon-0.32.4.tar.gz"
+  sha256 "b1e2120e4ae07df952c4a858731619733115c5f438965de4fab41d6bf7e7a508"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -13,7 +13,7 @@ class Neon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neon"
-    sha256 cellar: :any, mojave: "ac87f53f18fa7657efa560d90a8744d2d8816bdaaa0cae5f8d5f68ee7d4292b4"
+    sha256 cellar: :any, mojave: "2af9ff24f2cebd5be1ff826137d6af6a0d926854cf2c1e82caea283b881a3577"
   end
 
   depends_on "pkg-config" => :build
