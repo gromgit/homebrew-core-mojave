@@ -1,15 +1,14 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https://gohugo.io/"
-  url "https://github.com/gohugoio/hugo/archive/v0.102.2.tar.gz"
-  sha256 "55c2f1bbddaa1a7be6d95ab983e4a671e6d5f7ecbc1bde8a425295845f0dd764"
+  url "https://github.com/gohugoio/hugo/archive/v0.103.1.tar.gz"
+  sha256 "9065beec7b46be56052c44bc4a2f8a561ae842af643f59915a98842531f62efb"
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hugo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8a0fa9d8250e29ba67f7363b764042e609c986edd423611982a6fbf5bfc2ebfa"
+    sha256 cellar: :any_skip_relocation, mojave: "af3e3e931db7d55ac51d6206880b65db036c2a8f91fd5ca22aba0fdac8d4e5ff"
   end
 
   depends_on "go" => :build
@@ -17,17 +16,7 @@ class Hugo < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", "extended"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"hugo", "completion", "bash")
-    (bash_completion/"hugo").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"hugo", "completion", "zsh")
-    (zsh_completion/"_hugo").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"hugo", "completion", "fish")
-    (fish_completion/"hugo.fish").write output
+    generate_completions_from_executable(bin/"hugo", "completion")
 
     # Build man pages; target dir man/ is hardcoded :(
     (Pathname.pwd/"man").mkpath
