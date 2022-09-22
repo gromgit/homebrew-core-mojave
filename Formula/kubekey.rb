@@ -8,7 +8,8 @@ class Kubekey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubekey"
-    sha256 cellar: :any_skip_relocation, mojave: "721b7d90ec6c9d52da0850cbf42956da44429bf7ae3f9a30e62367737c23c1f7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c6bb053ddef70081f805a2d69fc1299c5b8a86b4c8f2a0e1c336c88d47be1826"
   end
 
   depends_on "go" => :build
@@ -22,8 +23,7 @@ class Kubekey < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"kk"), "./cmd"
 
-    (zsh_completion/"_kk").write Utils.safe_popen_read(bin/"kk", "completion", "--type", "zsh")
-    (bash_completion/"kk").write Utils.safe_popen_read(bin/"kk", "completion", "--type", "bash")
+    generate_completions_from_executable(bin/"kk", "completion", "--type", shells: [:bash, :zsh], base_name: "kk")
   end
 
   test do
