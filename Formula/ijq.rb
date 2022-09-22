@@ -2,14 +2,14 @@ class Ijq < Formula
   desc "Interactive jq"
   homepage "https://sr.ht/~gpanders/ijq/"
   url "https://git.sr.ht/~gpanders/ijq",
-      tag:      "v0.4.0",
-      revision: "41aabdc0a6801cc31b6828bd677cb5e7766b7dd1"
+      tag:      "v0.4.1",
+      revision: "22034bea72c80db75cb8aa9fdd5808940bd45fd4"
   license "GPL-3.0-or-later"
   head "https://git.sr.ht/~gpanders/ijq", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ijq"
-    sha256 cellar: :any_skip_relocation, mojave: "a04aaefe6a9090d4c1c66a8ef6f0af57f1bfb14255298748fd350ba6ff5b3fed"
+    sha256 cellar: :any_skip_relocation, mojave: "a4fa2ec501b6f34dd9629d3ed49a9c083dc51fe4f214a39997d08e062710578e"
   end
 
   depends_on "go" => :build
