@@ -9,7 +9,8 @@ class Helm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helm"
-    sha256 cellar: :any_skip_relocation, mojave: "3e27529ed2c9ac95389ebb1ac71873b926938eee9ebc03b856f693198fd46528"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "797cc64ec7a0078b95e1639625029b4ea4a62b6192ee533e9f77ad592e4a10c6"
   end
 
   depends_on "go" => :build
@@ -26,14 +27,7 @@ class Helm < Formula
       man1.install Dir["*"]
     end
 
-    output = Utils.safe_popen_read(bin/"helm", "completion", "bash")
-    (bash_completion/"helm").write output
-
-    output = Utils.safe_popen_read(bin/"helm", "completion", "zsh")
-    (zsh_completion/"_helm").write output
-
-    output = Utils.safe_popen_read(bin/"helm", "completion", "fish")
-    (fish_completion/"helm.fish").write output
+    generate_completions_from_executable(bin/"helm", "completion")
   end
 
   test do
