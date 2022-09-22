@@ -14,11 +14,9 @@ class Mlton < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 monterey:     "ae1960f379bae7ffc49962c1d30a8eeb1110063f7c8a136605cb06e49549a308"
-    sha256 cellar: :any,                 big_sur:      "be6a6d599390e1182ab91f99c8e4cbeb20ed10cbd472d7a7fda790cbb9e60b88"
-    sha256 cellar: :any,                 catalina:     "9690c5e07e46081d3f771797ea92f8ddef37fb79e3104263794f8c7473170f18"
-    sha256 cellar: :any,                 mojave:       "e6fdecbf689992c25e1429e2f33d5cd66c5bdee500ec1fe07759ac8d53593fdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "37b7f50290f97fee13414549f234cc0cee45bfa6c91d696dda799e6eed431e2a"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlton"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d044459fcc80384bb59a3e08fd305b506bbe1f7f8609b769b7aa81dd62043156"
   end
 
   depends_on "autoconf" => :build
@@ -62,6 +60,7 @@ class Mlton < Formula
       PREFIX=#{prefix}
       MAN_PREFIX_EXTRA=/share
     ]
+    args << "OLD_MLTON_COMPILE_ARGS=-link-opt '-no-pie'" if OS.linux?
     system "make", *(args + ["all"])
     system "make", *(args + ["install"])
   end
