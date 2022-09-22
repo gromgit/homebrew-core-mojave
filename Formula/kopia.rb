@@ -8,7 +8,8 @@ class Kopia < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kopia"
-    sha256 cellar: :any_skip_relocation, mojave: "781decf8dd1b45ae92e5143c93b6704227d11df184e8961e4989221aca88f84f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b344cddb5ba2fd885cde2adb613a4f4d12fd54cc8cb7d3197df604479c36ee5a"
   end
 
   depends_on "go" => :build
@@ -24,11 +25,8 @@ class Kopia < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    output = Utils.safe_popen_read(bin/"kopia", "--completion-script-bash")
-    (bash_completion/"kopia").write output
-
-    output = Utils.safe_popen_read(bin/"kopia", "--completion-script-zsh")
-    (zsh_completion/"_kopia").write output
+    generate_completions_from_executable(bin/"kopia", shells:                 [:bash, :zsh],
+                                                      shell_parameter_format: "--completion-script-")
 
     output = Utils.safe_popen_read(bin/"kopia", "--help-man")
     (man1/"kopia.1").write output
