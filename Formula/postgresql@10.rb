@@ -4,6 +4,7 @@ class PostgresqlAT10 < Formula
   url "https://ftp.postgresql.org/pub/source/v10.22/postgresql-10.22.tar.bz2"
   sha256 "955977555c69df1a64f44b81d4a1987eb74abbd1870579f5ad9d946133dd8e4d"
   license "PostgreSQL"
+  revision 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,7 +13,7 @@ class PostgresqlAT10 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@10"
-    sha256 mojave: "66401259294b191cb1c67168f91a70036fd67bfe33980e2b78b3b60bdbabf2a9"
+    sha256 mojave: "e45450b2d7d8599f08ad25ae390f6c95c5dcbbc8a09dd74bbd485b307a2e751b"
   end
 
   keg_only :versioned_formula
