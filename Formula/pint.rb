@@ -1,13 +1,13 @@
 class Pint < Formula
   desc "Prometheus rule linter/validator"
   homepage "https://cloudflare.github.io/pint/"
-  url "https://github.com/cloudflare/pint/archive/refs/tags/v0.29.2.tar.gz"
-  sha256 "b90a648c4881f8962ac0f46039db6007144fb2fdca85bfecf803f471c1fbcad3"
+  url "https://github.com/cloudflare/pint/archive/refs/tags/v0.30.1.tar.gz"
+  sha256 "f38377a2c70e118e2a75dad58446e44142d03776bb48e476747d548e17d1365d"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pint"
-    sha256 cellar: :any_skip_relocation, mojave: "09ea22467a9a98edc5e6528511a603e1330a7cbf5aea5b3e1b54fbc6300844c9"
+    sha256 cellar: :any_skip_relocation, mojave: "c1019418adbaff7c9dd1da2ee1154787243b0269026978445111fc34d5a7c5c2"
   end
 
   depends_on "go" => :build
