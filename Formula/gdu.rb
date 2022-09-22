@@ -1,13 +1,13 @@
 class Gdu < Formula
   desc "Disk usage analyzer with console interface written in Go"
   homepage "https://github.com/dundee/gdu"
-  url "https://github.com/dundee/gdu/archive/v5.17.1.tar.gz"
-  sha256 "1b37383e0054e059b02f71b3b5f216c19044f64432b5c5e59d62b361c12c9ad3"
+  url "https://github.com/dundee/gdu/archive/v5.18.1.tar.gz"
+  sha256 "a841230f59243965c6591d40761b624d1df207963f2cf29bda0fc6c1645ae9be"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdu"
-    sha256 cellar: :any_skip_relocation, mojave: "ab113fd655e754a6652af0e13cadece9796724028475e34c7ebd58b8bf4d6a0c"
+    sha256 cellar: :any_skip_relocation, mojave: "179faaf1fa40fb7e170966ddaaee324c562dfcb32a833041fdedd5d5f9bc2a35"
   end
 
   depends_on "go" => :build
