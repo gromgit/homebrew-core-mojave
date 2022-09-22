@@ -1,13 +1,13 @@
 class Libdeflate < Formula
   desc "Heavily optimized DEFLATE/zlib/gzip compression and decompression"
   homepage "https://github.com/ebiggers/libdeflate"
-  url "https://github.com/ebiggers/libdeflate/archive/v1.13.tar.gz"
-  sha256 "0d81f197dc31dc4ef7b6198fde570f4e8653c77f4698fcb2163d820a9607c838"
+  url "https://github.com/ebiggers/libdeflate/archive/v1.14.tar.gz"
+  sha256 "89e7df898c37c3427b0f39aadcf733731321a278771d20fc553f92da8d4808ac"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdeflate"
-    sha256 cellar: :any, mojave: "a24847cfd3e388253bc1b7d10f9a7f3122e2b4c73fb09aeb28ae5af6db285982"
+    sha256 cellar: :any, mojave: "4aee7013ffd380f128d11d3b7f60add966eeb4e9741baaa8252d14b7b46e7496"
   end
 
   def install
