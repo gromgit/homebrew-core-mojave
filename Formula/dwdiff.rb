@@ -4,7 +4,7 @@ class Dwdiff < Formula
   url "https://os.ghalkes.nl/dist/dwdiff-2.1.4.tar.bz2"
   sha256 "df16fec44dcb467d65a4246a43628f93741996c1773e930b90c6dde22dd58e0a"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   livecheck do
     url "https://os.ghalkes.nl/dist/"
@@ -13,7 +13,7 @@ class Dwdiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dwdiff"
-    sha256 mojave: "a92cc1c3063bfb86c50d89d104c3315687c73287f21a727d92d172ded36a6d30"
+    sha256 mojave: "b4ab41af833e21d4f8ecd192a2c6209508a7396b0051f15118fa05b79193b4a6"
   end
 
   depends_on "pkg-config" => :build
