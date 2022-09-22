@@ -4,11 +4,12 @@ class PerlBuild < Formula
   url "https://github.com/tokuhirom/Perl-Build/archive/1.33.tar.gz"
   sha256 "79cfe7cdad693ab7b5a9544b81cff43c5ee7d09c057c86af524395313d53759b"
   license any_of: ["Artistic-1.0", "GPL-1.0-or-later"]
+  revision 1
   head "https://github.com/tokuhirom/perl-build.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/perl-build"
-    sha256 cellar: :any_skip_relocation, mojave: "e5a90d6b835d10b7633f01f087a0d3c5e76692687c0c96af08ee7de16ca49c0f"
+    sha256 cellar: :any_skip_relocation, mojave: "42d9bf13a08d62c3a191540f6b159534d9046b8682d6e08af61a021acdb38dad"
   end
 
   uses_from_macos "perl"
@@ -121,6 +122,13 @@ class PerlBuild < Formula
 
     %w[perl-build plenv-install plenv-uninstall].each do |cmd|
       (bin/cmd).write_env_script(libexec/"bin/#{cmd}", PERL5LIB: ENV["PERL5LIB"])
+    end
+
+    # Replace cellar path to perl with opt path.
+    if OS.linux?
+      inreplace Dir[libexec/"bin/{perl-build,config_data}"] do |s|
+        s.sub! Formula["perl"].bin.realpath, Formula["perl"].opt_bin
+      end
     end
   end
 
