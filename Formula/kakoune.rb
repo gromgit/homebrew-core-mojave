@@ -13,8 +13,8 @@ class Kakoune < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kakoune"
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, mojave: "6503100eeca87d489811ff06de892bcbf75fd42df46d93efafb1caa42eac2a52"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, mojave: "ae845287c8b2f368e2cd281eb3a2c10c4e935c13d54977a7025cc9301bec4013"
   end
 
   depends_on macos: :high_sierra # needs C++17
@@ -24,9 +24,8 @@ class Kakoune < Formula
 
   on_linux do
     depends_on "binutils" => :build
-    depends_on "linux-headers@4.4" => :build
+    depends_on "linux-headers@5.15" => :build
     depends_on "pkg-config" => :build
-    depends_on "gcc"
   end
 
   fails_with gcc: "5"
