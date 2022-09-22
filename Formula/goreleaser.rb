@@ -2,14 +2,14 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https://goreleaser.com/"
   url "https://github.com/goreleaser/goreleaser.git",
-      tag:      "v1.11.2",
-      revision: "e31f7806dc0073159cc12dce7605073259105a67"
+      tag:      "v1.11.4",
+      revision: "d19ff6eb1eeca75e2bb3fbeaf473b3d0dc6ffc81"
   license "MIT"
   head "https://github.com/goreleaser/goreleaser.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goreleaser"
-    sha256 cellar: :any_skip_relocation, mojave: "6da5f387b50d615c7ed9d22d6ae41821083baf052f43d23b83207168c4ca1dc6"
+    sha256 cellar: :any_skip_relocation, mojave: "73d82d962439d2cb0c9b2a1e2a458abb5a116dfc4ad8ae6854e21a6f9ceff05f"
   end
 
   depends_on "go" => :build
@@ -25,14 +25,7 @@ class Goreleaser < Formula
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # Install shell completions
-    output = Utils.safe_popen_read("#{bin}/goreleaser", "completion", "bash")
-    (bash_completion/"goreleaser").write output
-
-    output = Utils.safe_popen_read("#{bin}/goreleaser", "completion", "zsh")
-    (zsh_completion/"_goreleaser").write output
-
-    output = Utils.safe_popen_read("#{bin}/goreleaser", "completion", "fish")
-    (fish_completion/"goreleaser.fish").write output
+    generate_completions_from_executable(bin/"goreleaser", "completion")
   end
 
   test do
