@@ -7,7 +7,8 @@ class Hubble < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hubble"
-    sha256 cellar: :any_skip_relocation, mojave: "13b2bfa9551f0f3e1dfaaecc75684fe6c9656fd7335ccedc8b0d70a6c406f6d1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "503a719b0d2ffc9df8878526a7ca5bd7a146c7fbb8697ff85b777a40c0ac939a"
   end
 
   depends_on "go" => :build
@@ -16,12 +17,7 @@ class Hubble < Formula
     ldflags = "-s -w -X github.com/cilium/hubble/pkg.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    bash_output = Utils.safe_popen_read(bin/"hubble", "completion", "bash")
-    (bash_completion/"hubble").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"hubble", "completion", "zsh")
-    (zsh_completion/"_hubble").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"hubble", "completion", "fish")
-    (fish_completion/"hubble.fish").write fish_output
+    generate_completions_from_executable(bin/"hubble", "completion")
   end
 
   test do
