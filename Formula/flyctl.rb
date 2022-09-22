@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.0.386",
-      revision: "53d515b5aaa1fe396539aab985b0367994096c9c"
+      tag:      "v0.0.394",
+      revision: "e5c99a224cb45b6b523556649766686a74b7c9c9"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Flyctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flyctl"
-    sha256 cellar: :any_skip_relocation, mojave: "8d0091475baaaaea5255ea212cb2f8d349c66b9244f0ef82cfe3ff5aa123c21c"
+    sha256 cellar: :any_skip_relocation, mojave: "73b4f583de060f412545b7f75860c784c17aae92c6ba3cc88b56bf46b7ce5d76"
   end
 
   # Required latest gvisor.dev/gvisor/pkg/gohacks
@@ -34,12 +34,7 @@ class Flyctl < Formula
 
     bin.install_symlink "flyctl" => "fly"
 
-    bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
-    (bash_completion/"flyctl").write bash_output
-    zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
-    (zsh_completion/"_flyctl").write zsh_output
-    fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
-    (fish_completion/"flyctl.fish").write fish_output
+    generate_completions_from_executable(bin/"flyctl", "completion")
   end
 
   test do
