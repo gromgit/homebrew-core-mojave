@@ -9,7 +9,8 @@ class Periscope < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/periscope"
-    sha256 cellar: :any_skip_relocation, mojave: "276585c6eca331050623e6c68dd9a8e1b4c5a2160f7d4c836b9161d721717e19"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bd3f59b02caeb44260f45276e7cf6dd79a6dc532fb4d02f139c189426835cf84"
   end
 
   depends_on "go" => :build
@@ -22,17 +23,7 @@ class Periscope < Formula
     ]
     system "go", "build", *std_go_args(output: bin/"psc", ldflags: ldflags), "./cmd/psc"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"psc", "completion", "bash")
-    (bash_completion/"psc").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"psc", "completion", "zsh")
-    (zsh_completion/"_psc").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"psc", "completion", "fish")
-    (fish_completion/"psc.fish").write output
+    generate_completions_from_executable(bin/"psc", "completion", base_name: "psc")
   end
 
   test do
