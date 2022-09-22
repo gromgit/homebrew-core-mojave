@@ -9,7 +9,8 @@ class GolangciLint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/golangci-lint"
-    sha256 cellar: :any_skip_relocation, mojave: "33146491e5a48639afc8ae0c9ba5fa7ae49a5753dda9b0b57ad392b211c5f01b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f78e01815a97208c0f3ffe186dccb18457899840414b18fc7cb03d7377ca5819"
   end
 
   depends_on "go"
@@ -24,14 +25,7 @@ class GolangciLint < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/golangci-lint"
 
-    output = Utils.safe_popen_read("#{bin}/golangci-lint", "completion", "bash")
-    (bash_completion/"golangci-lint").write output
-
-    output = Utils.safe_popen_read("#{bin}/golangci-lint", "completion", "zsh")
-    (zsh_completion/"_golangci-lint").write output
-
-    output = Utils.safe_popen_read("#{bin}/golangci-lint", "completion", "fish")
-    (fish_completion/"golangci-lint.fish").write output
+    generate_completions_from_executable(bin/"golangci-lint", "completion")
   end
 
   test do
