@@ -7,7 +7,8 @@ class Velero < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/velero"
-    sha256 cellar: :any_skip_relocation, mojave: "fa78334a12b4c9e0cb20448f0ded2a90619971cf958571ad915b537c55f12292"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d1a17e27c7a7dc8a0c3639a3bfc4e4bbee32f10ea8c1e556f7b43c15754fb589"
   end
 
   depends_on "go" => :build
@@ -19,17 +20,7 @@ class Velero < Formula
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "-installsuffix", "static", "./cmd/velero"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"velero", "completion", "bash")
-    (bash_completion/"velero").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"velero", "completion", "zsh")
-    (zsh_completion/"_velero").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"velero", "completion", "fish")
-    (fish_completion/"velero.fish").write output
+    generate_completions_from_executable(bin/"velero", "completion")
   end
 
   test do
