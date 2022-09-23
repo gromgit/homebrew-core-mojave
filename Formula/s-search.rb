@@ -8,7 +8,8 @@ class SSearch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s-search"
-    sha256 cellar: :any_skip_relocation, mojave: "d21aefee749d82bb18425e17da8f7e01508f1f52b8d440b7308c6f975db6e99e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6db918d882a6fce5775a13f62a9c824db42874a445f05bc8135aa1228634c4c3"
   end
 
   depends_on "go" => :build
@@ -16,14 +17,7 @@ class SSearch < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"s"
 
-    output = Utils.safe_popen_read("#{bin}/s", "--completion", "bash")
-    (bash_completion/"s-completion.bash").write output
-
-    output = Utils.safe_popen_read("#{bin}/s", "--completion", "zsh")
-    (zsh_completion/"_s").write output
-
-    output = Utils.safe_popen_read("#{bin}/s", "--completion", "fish")
-    (fish_completion/"s.fish").write output
+    generate_completions_from_executable(bin/"s", "--completion", base_name: "s")
   end
 
   test do
