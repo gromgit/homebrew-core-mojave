@@ -1,25 +1,34 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
   homepage "https://spaceship-prompt.sh"
-  url "https://github.com/spaceship-prompt/spaceship-prompt/archive/v3.16.7.tar.gz"
-  sha256 "af048497cfa4cfb58827299834922a9d60dee970364f2f00ae7ec3083ab0cc30"
+  url "https://github.com/spaceship-prompt/spaceship-prompt/archive/v4.3.2.tar.gz"
+  sha256 "0739d3f06787bdd65bfe6456f7af1a6e4ec477b4caddad43fb9b3adf49c9ccd0"
   license "MIT"
   head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1a757fe26e52516229142d4c6e943beb5b05f538c89135fe7a5d3bfac55366d2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spaceship"
+    sha256 cellar: :any_skip_relocation, mojave: "d62a10c01da88207d66d769026a38dfb71dad401e26b33147193dbb84c23ffd3"
   end
 
-  depends_on "zsh" => :test
+  depends_on "zsh-async"
+  uses_from_macos "zsh" => :test
 
   def install
-    libexec.install "spaceship.zsh", "lib", "sections"
-    zsh_function.install_symlink libexec/"spaceship.zsh" => "prompt_spaceship_setup"
+    system "make", "compile"
+    prefix.install Dir["*"]
+  end
+
+  def caveats
+    <<~EOS
+      To activate Spaceship, add the following line to ~/.zshrc:
+        source "#{opt_prefix}/spaceship.zsh"
+      If your .zshrc sets ZSH_THEME, remove that line.
+    EOS
   end
 
   test do
-    ENV["SPACESHIP_CHAR_SYMBOL"] = "🍺"
-    prompt = "setopt prompt_subst; autoload -U promptinit; promptinit && prompt -p spaceship"
-    assert_match ENV["SPACESHIP_CHAR_SYMBOL"], shell_output("zsh -c '#{prompt}'")
+    assert_match "SUCCESS",
+      shell_output("zsh -fic '. #{opt_prefix}/spaceship.zsh && (( ${+SPACESHIP_VERSION} )) && echo SUCCESS'")
   end
 end
