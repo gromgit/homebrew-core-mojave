@@ -1,13 +1,13 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
   homepage "https://github.com/VirusTotal/vt-cli"
-  url "https://github.com/VirusTotal/vt-cli/archive/0.10.2.tar.gz"
-  sha256 "09953ce45c2fbf872f70294d5fb58e856c0167ed6a7e1312f770e45bab18356b"
+  url "https://github.com/VirusTotal/vt-cli/archive/0.10.3.tar.gz"
+  sha256 "ca1a37c40b8fc7f328f412d19dd54a36180894ac1e6c233b53af84ca23deb0d5"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/virustotal-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "d1d2864c413a4a361d33c855f9fd8465bc693562f6c9bf38059bb8b474ab9ebe"
+    sha256 cellar: :any_skip_relocation, mojave: "a1f089f61b5c2a4595e5e22075354f7948d4b5dbc84e9ed3b0b378e9886dee64"
   end
 
   # Bump to 1.18 on the next release, if possible.
@@ -18,11 +18,7 @@ class VirustotalCli < Formula
             "-X cmd.Version=#{version}",
             "-o", bin/"vt", "./vt/main.go"
 
-    output = Utils.safe_popen_read("#{bin}/vt", "completion", "bash")
-    (bash_completion/"vt").write output
-
-    output = Utils.safe_popen_read("#{bin}/vt", "completion", "zsh")
-    (zsh_completion/"_vt").write output
+    generate_completions_from_executable(bin/"vt", "completion", base_name: "vt", shells: [:bash, :zsh])
   end
 
   test do
