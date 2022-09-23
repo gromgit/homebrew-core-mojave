@@ -1,8 +1,8 @@
 class Xpipe < Formula
   desc "Split input and feed it into the given utility"
   homepage "https://www.netmeister.org/apps/xpipe.html"
-  url "https://www.netmeister.org/apps/xpipe-1.0.tar.gz"
-  sha256 "6f15286f81720c23f1714d6f4999d388d29f67b6ac6cef427a43563322fb6dc1"
+  url "https://www.netmeister.org/apps/xpipe-2.1.tar.gz"
+  sha256 "0d0656a738fcec16dc01e5a6a62e9d9e00016ea750bc5f972ee077022dd04715"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,10 +12,15 @@ class Xpipe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xpipe"
-    sha256 cellar: :any_skip_relocation, mojave: "a55365dbbee92205ab2054e4429fc153eb432a9ed4f017aa0c99b89f567fd239"
+    sha256 cellar: :any_skip_relocation, mojave: "89f8bf2b2db995b0df683c96a16f9069bedc4ac19eb0c67457411e3719025ced"
+  end
+
+  on_linux do
+    depends_on "libbsd"
   end
 
   def install
+    inreplace "Makefile", "${PREFIX}/include/bsd", "#{Formula["libbsd"].opt_include}/bsd"
     system "make", "PREFIX=#{prefix}", "install"
   end
 
