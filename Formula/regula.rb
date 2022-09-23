@@ -9,7 +9,8 @@ class Regula < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regula"
-    sha256 cellar: :any_skip_relocation, mojave: "2b236b83875a47042fa8232a8d375335723d1866622b393f0f1fb186b53a7b4d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ff1977a0fb0af28dd230b4a33f56a32516159b2ad7f043b00e9a901b884841a9"
   end
 
   depends_on "go" => :build
@@ -23,12 +24,7 @@ class Regula < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    bash_output = Utils.safe_popen_read(bin/"regula", "completion", "bash")
-    (bash_completion/"regula").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"regula", "completion", "zsh")
-    (zsh_completion/"_regula").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"regula", "completion", "fish")
-    (fish_completion/"regula.fish").write fish_output
+    generate_completions_from_executable(bin/"regula", "completion")
   end
 
   test do
