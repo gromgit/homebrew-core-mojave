@@ -2,14 +2,14 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
   url "https://github.com/camunda/zeebe.git",
-      tag:      "8.0.5",
-      revision: "1df153a7995e28bcfc2358199adb1f8f19d31def"
+      tag:      "8.0.6",
+      revision: "eab2ac867d0dba7208b2322679085f395bbb6db2"
   license "Apache-2.0"
   head "https://github.com/camunda/zeebe.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zbctl"
-    sha256 cellar: :any_skip_relocation, mojave: "379d498f6d93141fab0e7e37d92313e48ff28bda89b331cc135f4b462b162434"
+    sha256 cellar: :any_skip_relocation, mojave: "271c388319605c4e17f440bbd5776d95c488e4a76263e320688cbc6114153ea9"
   end
 
   depends_on "go" => :build
@@ -24,6 +24,8 @@ class Zbctl < Formula
         -X #{project}.Commit=#{commit}
       ]
       system "go", "build", "-tags", "netgo", *std_go_args(ldflags: ldflags)
+
+      generate_completions_from_executable(bin/"zbctl", "completion")
     end
   end
 
