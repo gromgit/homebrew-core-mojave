@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.3.7.tar.gz"
-  sha256 "542915e240ae8b5c7dcec8d1589e6067818532900d45cfef226cea9f0e671d13"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.3.8.tar.gz"
+  sha256 "e5620975523059a38709bb53c0567600adbbcb8011066a2d2fe1b4db9efe0ba3"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,7 +12,7 @@ class Ser2net < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ser2net"
-    sha256 cellar: :any, mojave: "68baecd6ab362f957f872f08002aa62a51081057bd17561af2c5dc9167dba12a"
+    sha256 cellar: :any, mojave: "0c03e600bcbe908f90c7307f432a7914188c7921fc7c4333b003744f412acbc2"
   end
 
   depends_on "libyaml"
