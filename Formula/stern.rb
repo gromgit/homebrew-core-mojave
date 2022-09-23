@@ -8,7 +8,8 @@ class Stern < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stern"
-    sha256 cellar: :any_skip_relocation, mojave: "57ec2f922e695d8a1b0e7761abfa130c8975dc25d8ab16cfa4952299a77b0ea9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "13000352a2d0c2f2398c475d3cad15266773d9b57b5f4c979095bc98dbb814ff"
   end
 
   depends_on "go" => :build
@@ -17,14 +18,7 @@ class Stern < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/stern/stern/cmd.version=#{version}")
 
     # Install shell completion
-    output = Utils.safe_popen_read("#{bin}/stern", "--completion=bash")
-    (bash_completion/"stern").write output
-
-    output = Utils.safe_popen_read("#{bin}/stern", "--completion=zsh")
-    (zsh_completion/"_stern").write output
-
-    output = Utils.safe_popen_read("#{bin}/stern", "--completion=fish")
-    (fish_completion/"stern.fish").write output
+    generate_completions_from_executable(bin/"stern", "--completion")
   end
 
   test do
