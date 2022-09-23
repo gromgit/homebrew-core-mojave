@@ -3,7 +3,7 @@ class Timidity < Formula
   homepage "https://timidity.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/timidity/TiMidity++/TiMidity++-2.15.0/TiMidity++-2.15.0.tar.bz2"
   sha256 "161fc0395af16b51f7117ad007c3e434c825a308fa29ad44b626ee8f9bb1c8f5"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -11,14 +11,8 @@ class Timidity < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_monterey: "207353939838f83aec0c2fd6f68363f7f961f7f08d69f317aecfece613732583"
-    sha256 arm64_big_sur:  "b6a5b9258ca86e58a8f535a3d7d2c8c51faf608df5bc119b37d99dccfb549142"
-    sha256 monterey:       "61d1189c1afa7ca17680f8e8bcfc4f5277f9e30e7b2e47f89a246714606059e3"
-    sha256 big_sur:        "513868c11a5ecbc1b8044eea517c19490858173d6b61f0245c54f9b061956237"
-    sha256 catalina:       "31a2aaefcf9e293bbfce210de4a0521bdf6df205f4fb5bb009f98ad1c01bd6f1"
-    sha256 mojave:         "9dec67aa3004c6ad228dd143eea25c2db9fc568269cae1f80320c00addc3c782"
-    sha256 x86_64_linux:   "b6a6bd68c511b87eb952bdf7d0be891eba703720d1b5e339eb3375fe3a809d4f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/timidity"
+    sha256 mojave: "76f682095681451af3b187407637b30506acd22596d6ac5f202b8ad157bd7f68"
   end
 
   depends_on "autoconf" => :build
