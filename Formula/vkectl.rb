@@ -7,8 +7,8 @@ class Vkectl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vkectl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "238415c8c72c5cdf9cd9602bcf33b9803df12d7c750e115d7997a51bba2d0ff1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "2030441d1775307b5041868e28d913817c560d363710aa0f14d02e33f038b35e"
   end
 
   # Bump to 1.18 on the next release, if possible.
@@ -16,6 +16,8 @@ class Vkectl < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/volcengine/vkectl/pkg/version.version=v#{version}"), "./main"
+
+    generate_completions_from_executable(bin/"vkectl", "completion")
   end
 
   test do
