@@ -1,8 +1,8 @@
 class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
-  url "https://github.com/hashicorp/terraform/archive/v1.2.8.tar.gz"
-  sha256 "46b4f3295781ead715f1f579f369ae78d9771a28ba855dcc91a21ef629c92cd6"
+  url "https://github.com/hashicorp/terraform/archive/v1.2.9.tar.gz"
+  sha256 "40aba75e2fcc3088a88b086a6038c8fb3b1dbe93ac769124c72ce1983558bec7"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform.git", branch: "main"
 
@@ -13,14 +13,10 @@ class Terraform < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraform"
-    sha256 cellar: :any_skip_relocation, mojave: "5c0f8b7b5b489f9b0f2903fefefe8ffd2ec002b5e69062ef9746ec24ce4c23d9"
+    sha256 cellar: :any_skip_relocation, mojave: "4d8ecaf27ff2687ee3967aa2a8ac3f7a254f1bdf98314e8bddfdf3e9ebed56f4"
   end
 
   depends_on "go" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
 
