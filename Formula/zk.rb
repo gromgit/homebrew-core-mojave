@@ -4,11 +4,12 @@ class Zk < Formula
   url "https://github.com/mickael-menu/zk/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "c38e88cbf8a6b1a00df51e1d87d6dbff4d13279c18bfef6ed275e7dc28dce0d8"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/mickael-menu/zk.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zk"
-    sha256 cellar: :any, mojave: "e2708801c43225e50991aba46d3fee1be171f781526610e92debcfe27dcb98d4"
+    sha256 cellar: :any, mojave: "49e31bcaffcfbc12eb8bd33e05b56f722d9d02479123e5f741739efc245bdf2a"
   end
 
   depends_on "go" => :build
