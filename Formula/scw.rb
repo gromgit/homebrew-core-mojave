@@ -7,7 +7,8 @@ class Scw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scw"
-    sha256 cellar: :any_skip_relocation, mojave: "a8b9b5bbe9239bcc09ddd8e565e7a64b32637a20a7f75e6802488457d87537a2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c1934811660d9ac4b7f57a9842e2d1e435423732bbcfa546eb526e676ed6c799"
   end
 
   depends_on "go" => :build
@@ -15,14 +16,7 @@ class Scw < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/scw"
 
-    zsh_output = Utils.safe_popen_read({ "SHELL" => "zsh" }, bin/"scw", "autocomplete", "script")
-    (zsh_completion/"_scw").write zsh_output
-
-    bash_output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"scw", "autocomplete", "script")
-    (bash_completion/"scw").write bash_output
-
-    fish_output = Utils.safe_popen_read({ "SHELL" => "fish" }, bin/"scw", "autocomplete", "script")
-    (fish_completion/"scw.fish").write fish_output
+    generate_completions_from_executable(bin/"scw", "autocomplete", "script", shell_parameter_format: :none)
   end
 
   test do
