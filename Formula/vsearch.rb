@@ -1,13 +1,13 @@
 class Vsearch < Formula
   desc "Versatile open-source tool for microbiome analysis"
   homepage "https://github.com/torognes/vsearch"
-  url "https://github.com/torognes/vsearch/archive/v2.21.1.tar.gz"
-  sha256 "0c5f4c981bc8ecbf23ee618d1b45667f81ae9845d64b9d6a310edbd196c84638"
+  url "https://github.com/torognes/vsearch/archive/v2.22.1.tar.gz"
+  sha256 "c62bf69e7cc3d011a12e3b522ba8c0c91fb90deea782359e9569677d0c991778"
   license any_of: ["BSD-2-Clause", "GPL-3.0-or-later"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vsearch"
-    sha256 cellar: :any_skip_relocation, mojave: "41f6b38aaaed719467d207c3e54181debdea95e807f0fef9ec2d28228cb66d7c"
+    sha256 cellar: :any_skip_relocation, mojave: "656147ec44a050b03f74be338cebc43888d4384083bea162780ca9541b212cfb"
   end
 
   depends_on "autoconf" => :build
