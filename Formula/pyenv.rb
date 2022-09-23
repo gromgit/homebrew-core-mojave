@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.3.tar.gz"
-  sha256 "2a6093c922d2a420b5ae45143ab973b0a85ee486c408cb487188b64edadfab35"
+  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.4.tar.gz"
+  sha256 "e223c0c6a53a87eba2536268ef417af645fa08b983d4345e6e00795bd8b5ef31"
   license "MIT"
   version_scheme 1
   head "https://github.com/pyenv/pyenv.git", branch: "master"
@@ -14,7 +14,7 @@ class Pyenv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pyenv"
-    sha256 cellar: :any, mojave: "5d3dad3148a8651aed233d6bcfad129119848a177f27e26b21822615b49098e5"
+    sha256 cellar: :any, mojave: "d1a57cd8b460e6edda933a6990fd51cd13d05f443702f8c82e769ec0741ef9da"
   end
 
   depends_on "autoconf"
@@ -22,15 +22,12 @@ class Pyenv < Formula
   depends_on "pkg-config"
   depends_on "readline"
 
+  uses_from_macos "python" => :test
   uses_from_macos "bzip2"
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "xz"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "python@3.9" => :test
-  end
 
   def install
     inreplace "libexec/pyenv", "/usr/local", HOMEBREW_PREFIX
