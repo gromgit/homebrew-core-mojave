@@ -1,8 +1,8 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https://github.com/tektoncd/cli"
-  url "https://github.com/tektoncd/cli/archive/v0.25.0.tar.gz"
-  sha256 "24bbda9bc5839f951f94a97bbc572e7fb8b4defed0a69b2b588c7cbced2dbccc"
+  url "https://github.com/tektoncd/cli/archive/v0.26.0.tar.gz"
+  sha256 "6be12ab8e741bdaebfb1f8095ece38f117f884566be8ac9397eeb105d0c4906a"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class TektoncdCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tektoncd-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "9c3a08c43ed7b79eeb3d5e7e60f3dc2de7a0a72b270a4795c69036dc592f2c50"
+    sha256 cellar: :any_skip_relocation, mojave: "95976fdbaa18843f4ff5de403b3ca267512827e7543f9a05f478d3b895461a49"
   end
 
   depends_on "go" => :build
@@ -21,12 +21,7 @@ class TektoncdCli < Formula
     system "make", "bin/tkn"
     bin.install "bin/tkn" => "tkn"
 
-    output = Utils.safe_popen_read(bin/"tkn", "completion", "bash")
-    (bash_completion/"tkn").write output
-    output = Utils.safe_popen_read(bin/"tkn", "completion", "zsh")
-    (zsh_completion/"_tkn").write output
-    output = Utils.safe_popen_read(bin/"tkn", "completion", "fish")
-    (fish_completion/"tkn.fish").write output
+    generate_completions_from_executable(bin/"tkn", "completion", base_name: "tkn")
   end
 
   test do
