@@ -13,15 +13,11 @@ class Stockfish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stockfish"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "41d0bf86fcab5ab089915b2ed20c7f635b269c4b0dc18099cccafd43a1a1e081"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "32d91351e5513e22f871d7b74c02462ff80de59d13dab270c2921aa452bac154"
   end
 
-  on_linux do
-    depends_on "gcc" # For C++17
-  end
-
-  fails_with gcc: "5"
+  fails_with gcc: "5" # For C++17
 
   def install
     arch = Hardware::CPU.arm? ? "apple-silicon" : "x86-64-modern"
