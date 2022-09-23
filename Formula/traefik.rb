@@ -1,20 +1,18 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https://traefik.io/"
-  url "https://github.com/traefik/traefik/releases/download/v2.8.3/traefik-v2.8.3.src.tar.gz"
-  sha256 "fff69f8d593a2499fcda2c630656f23b01ac0647f6891d513c1e69d7b47d28fb"
+  url "https://github.com/traefik/traefik/releases/download/v2.8.5/traefik-v2.8.5.src.tar.gz"
+  sha256 "8b19cdab130813ace1856cadb5ee4987b625e6f6068eea85e38e5b26fa7ac3be"
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/traefik"
-    sha256 cellar: :any_skip_relocation, mojave: "d93e0c25109c1423c8735b5f6c18382a2b91b5a9f33a1b99629eeb2962357bd1"
+    sha256 cellar: :any_skip_relocation, mojave: "7f62261ad5a805ffd74f034be7f294bcbeae70297acfac51ce0d75303c97a08d"
   end
 
+  depends_on "go" => :build
   depends_on "go-bindata" => :build
-  # Required lucas-clemente/quic-go >= 0.28
-  # Try to switch to the latest go on the next release
-  depends_on "go@1.18" => :build
 
   def install
     ldflags = %W[
