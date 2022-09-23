@@ -3,7 +3,7 @@ class Restund < Formula
   homepage "https://web.archive.org/web/20200427184619/www.creytiv.com/restund.html"
   url "https://sources.openwrt.org/restund-0.4.12.tar.gz"
   sha256 "3170441dc882352ab0275556b6fc889b38b14203d936071b5fa12f39a5c86d47"
-  revision 4
+  revision 5
 
   # The sources.openwrt.org directory listing page is 2+ MB in size and
   # growing. This alternative check is less ideal but only a few KB. Versions
@@ -16,7 +16,7 @@ class Restund < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restund"
-    sha256 mojave: "1059e65ebe009aea63fd050b7241b6a98cd4841f1954a3de0dad26fae8b7abd5"
+    sha256 mojave: "8222dc5572d728a7d5041c999075c52d754a65b99f6521102e3da442284c769b"
   end
 
   depends_on "libre"
