@@ -2,14 +2,14 @@ class Pulumi < Formula
   desc "Cloud native development platform"
   homepage "https://pulumi.io/"
   url "https://github.com/pulumi/pulumi.git",
-      tag:      "v3.38.0",
-      revision: "03e5471a1e05df1c5a0bfadac8bc398cee6e0bec"
+      tag:      "v3.40.1",
+      revision: "23212c919d06a1789545f4cb35d2610ef653a8d5"
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pulumi"
-    sha256 cellar: :any_skip_relocation, mojave: "5dff46cfd64403f0522bc170c2db1c49146685a1eca52abbd2b1c3d9c9bc1876"
+    sha256 cellar: :any_skip_relocation, mojave: "1d7ace34c2033e504e8a0acfd2ae2b50d28a262e0004fc5e269db98d654c6f70"
   end
 
   depends_on "go" => :build
@@ -27,9 +27,7 @@ class Pulumi < Formula
     bin.install Dir["#{ENV["GOPATH"]}/bin/pulumi*"]
 
     # Install shell completions
-    (bash_completion/"pulumi.bash").write Utils.safe_popen_read(bin/"pulumi", "gen-completion", "bash")
-    (zsh_completion/"_pulumi").write Utils.safe_popen_read(bin/"pulumi", "gen-completion", "zsh")
-    (fish_completion/"pulumi.fish").write Utils.safe_popen_read(bin/"pulumi", "gen-completion", "fish")
+    generate_completions_from_executable(bin/"pulumi", "gen-completion")
   end
 
   test do
