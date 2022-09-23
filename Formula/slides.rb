@@ -1,15 +1,14 @@
 class Slides < Formula
   desc "Terminal based presentation tool"
   homepage "https://github.com/maaslalani/slides"
-  url "https://github.com/maaslalani/slides/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "9180bc3fe88b44fe254c14d89c8554c442c3cfc6a1c1cd8f482db3f3ef13098d"
+  url "https://github.com/maaslalani/slides/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "fcce0dbbe767e0b1f0800e4ea934ee9babbfb18ab2ec4b343e3cd6359cd48330"
   license "MIT"
   head "https://github.com/maaslalani/slides.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/slides"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "411b2eac51f1352437d4bf2f348a9a6107490cc8c787fb354df69fea9b662801"
+    sha256 cellar: :any_skip_relocation, mojave: "4ef8fd6d4edce38e29ef4e7034f939d4dc55d27340ef52ce39e7f500921a0c31"
   end
 
   depends_on "go" => :build
