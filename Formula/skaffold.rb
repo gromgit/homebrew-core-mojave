@@ -25,7 +25,8 @@ class Skaffold < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skaffold"
-    sha256 cellar: :any_skip_relocation, mojave: "4f1ac6501850dc5e3295de23b4e7b168134cef77dff90a8453376714ebd6ca3b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "beb97929ca8dbad49df1e818909633b3252c0a2fc183ec7ccbcf03649ab7e40e"
   end
 
   # Bump to 1.18 on the next release, if possible.
@@ -34,10 +35,7 @@ class Skaffold < Formula
   def install
     system "make"
     bin.install "out/skaffold"
-    output = Utils.safe_popen_read("#{bin}/skaffold", "completion", "bash")
-    (bash_completion/"skaffold").write output
-    output = Utils.safe_popen_read("#{bin}/skaffold", "completion", "zsh")
-    (zsh_completion/"_skaffold").write output
+    generate_completions_from_executable(bin/"skaffold", "completion", shells: [:bash, :zsh])
   end
 
   test do
