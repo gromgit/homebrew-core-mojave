@@ -1,14 +1,13 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
   homepage "https://tcpreplay.appneta.com/"
-  url "https://github.com/appneta/tcpreplay/releases/download/v4.4.1/tcpreplay-4.4.1.tar.gz"
-  sha256 "cb67b6491a618867fc4f9848f586019f1bb2ebd149f393afac5544ee55e4544f"
+  url "https://github.com/appneta/tcpreplay/releases/download/v4.4.2/tcpreplay-4.4.2.tar.gz"
+  sha256 "5b272cd83b67d6288a234ea15f89ecd93b4fadda65eddc44e7b5fcb2f395b615"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcpreplay"
-    rebuild 1
-    sha256 cellar: :any, mojave: "4b5bfb8967bfd15e0eaf4a54e2401ac2d481526461ff005ae54d741e32b23750"
+    sha256 cellar: :any, mojave: "af79b21f773b3ef48ea3be1aa5e99593e422b1a63aea671fc6b3b87977191344"
   end
 
   depends_on "autoconf" => :build
@@ -36,7 +35,6 @@ class Tcpreplay < Formula
       "--with-libpcap=#{Formula["libpcap"].opt_prefix}"
     end
 
-    system "./autogen.sh"
     system "./configure", *args
 
     system "make", "install"
