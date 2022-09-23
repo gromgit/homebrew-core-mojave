@@ -1,8 +1,8 @@
 class SstpClient < Formula
   desc "SSTP (Microsofts Remote Access Solution for PPP over SSL) client"
   homepage "https://sstp-client.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/sstp-client/sstp-client/sstp-client-1.0.17.tar.gz"
-  sha256 "29dd3b9c7111ad6983cd663d5a2f069e1f8a95a913aabc8e166970146657925d"
+  url "https://downloads.sourceforge.net/project/sstp-client/sstp-client/sstp-client-1.0.18.tar.gz"
+  sha256 "d879f4f35ab7eae87486edc48b50f99a9af65f5eb6fb4427993ca578bb0e0dc8"
   license "GPL-2.0-or-later"
   version_scheme 1
 
@@ -13,7 +13,7 @@ class SstpClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sstp-client"
-    sha256 mojave: "6e23a66912bb9b8ac0f4c48b95960a10b7815d0bc314c9793de09c8d1ee5b53f"
+    sha256 mojave: "7bd03631993d13e2423025b74d9a3e80f348f8e9553652ca03e11e359f426fcd"
   end
 
   depends_on "pkg-config" => :build
