@@ -9,7 +9,8 @@ class Tygo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tygo"
-    sha256 cellar: :any_skip_relocation, mojave: "0a59d09f80606863fede14f10e1bd16e9169d0bfd23a302cb74203fce2c2bc9b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a3139909a41f10e7480649c7314e9b715bb418a613594323318dd04fff473f27"
   end
 
   depends_on "go" => [:build, :test]
@@ -24,9 +25,7 @@ class Tygo < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    (zsh_completion/"_tygo").write Utils.safe_popen_read(bin/"tygo", "completion", "zsh")
-    (bash_completion/"tygo").write Utils.safe_popen_read(bin/"tygo", "completion", "bash")
-    (fish_completion/"tygo.fish").write Utils.safe_popen_read(bin/"tygo", "completion", "fish")
+    generate_completions_from_executable(bin/"tygo", "completion")
     pkgshare.install "examples"
   end
 
