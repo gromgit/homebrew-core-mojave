@@ -4,10 +4,11 @@ class Smartmontools < Formula
   url "https://downloads.sourceforge.net/project/smartmontools/smartmontools/7.3/smartmontools-7.3.tar.gz"
   sha256 "a544f8808d0c58cfb0e7424ca1841cb858a974922b035d505d4e4c248be3a22b"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/smartmontools"
-    sha256 mojave: "a671377640220b7b3456fe198363f5183d0e45f1b5f8032eb32613b2dfa8ffbc"
+    sha256 mojave: "c35b667e808612233e8a77cd8a1c841eba03b5cafa12fc23c2fbd84fd504ee49"
   end
 
   def install
@@ -20,7 +21,8 @@ class Smartmontools < Formula
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "--with-savestates",
-                          "--with-attributelog"
+                          "--with-attributelog",
+                          "--with-nvme-devicescan"
     system "make", "install"
   end
 
