@@ -1,8 +1,8 @@
 class Wcslib < Formula
   desc "Library and utilities for the FITS World Coordinate System"
   homepage "https://www.atnf.csiro.au/people/mcalabre/WCS/"
-  url "https://www.atnf.csiro.au/pub/software/wcslib/wcslib-7.11.tar.bz2"
-  sha256 "46befbfdf50cd4953896676a7d570094dc7661e2ae9677b092e7fb13cee3da5f"
+  url "https://www.atnf.csiro.au/pub/software/wcslib/wcslib-7.12.tar.bz2"
+  sha256 "9cf8de50e109a97fa04511d4111e8d14bd0a44077132acf73e6cf0029fe96bd4"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Wcslib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wcslib"
-    rebuild 1
-    sha256 cellar: :any, mojave: "61a78743bffb16e35116c3f56327ddd406b58af4ef65658a5855b2a83f6373da"
+    sha256 cellar: :any, mojave: "efc89b3964b23ea01d412a83521b7e37b86a34002c100428fcab31783bccd8e5"
   end
 
   depends_on "cfitsio"
