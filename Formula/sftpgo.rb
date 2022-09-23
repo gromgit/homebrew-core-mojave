@@ -1,28 +1,29 @@
 class Sftpgo < Formula
   desc "Fully featured SFTP server with optional HTTP/S, FTP/S and WebDAV support"
   homepage "https://github.com/drakkan/sftpgo"
-  url "https://github.com/drakkan/sftpgo/releases/download/v2.3.3/sftpgo_v2.3.3_src_with_deps.tar.xz"
-  sha256 "aeccd56f22e27b7fe221d346d4785b590167a4fd8fade8bdc2dab0b253f2bd5f"
+  url "https://github.com/drakkan/sftpgo/releases/download/v2.3.5/sftpgo_v2.3.5_src_with_deps.tar.xz"
+  sha256 "99dca9e97549124d4238ce53732c396ce54d600b5287d3bc61832bd74a00add4"
   license "AGPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sftpgo"
-    sha256 mojave: "ace7e535055650a856d1613d42aff2d3f3b7b196b40a2422fa5ea9470918ac39"
+    sha256 mojave: "e665c8b6790a4d21a3c386629d310a248bd39b49106b3376d939174c76bdc2a0"
   end
 
   depends_on "go" => :build
 
   def install
+    git_sha = (buildpath/"VERSION.txt").read.lines.second.strip
     ldflags = %W[
       -s -w
       -X github.com/drakkan/sftpgo/v2/util.additionalSharedDataSearchPath=#{opt_pkgshare}
+      -X github.com/drakkan/sftpgo/v2/version.commit=#{git_sha}
+      -X github.com/drakkan/sftpgo/v2/version.date=#{time.iso8601}
     ].join(" ")
     system "go", "build", *std_go_args(ldflags: ldflags)
     system bin/"sftpgo", "gen", "man", "-d", man1
 
-    (zsh_completion/"_sftpgo").write Utils.safe_popen_read(bin/"sftpgo", "gen", "completion", "zsh")
-    (bash_completion/"sftpgo").write Utils.safe_popen_read(bin/"sftpgo", "gen", "completion", "bash")
-    (fish_completion/"sftpgo.fish").write Utils.safe_popen_read(bin/"sftpgo", "gen", "completion", "fish")
+    generate_completions_from_executable(bin/"sftpgo", "gen", "completion")
 
     inreplace "sftpgo.json" do |s|
       s.gsub! "\"users_base_dir\": \"\"", "\"users_base_dir\": \"#{var}/sftpgo/data\""
