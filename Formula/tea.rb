@@ -1,14 +1,14 @@
 class Tea < Formula
   desc "Command-line tool to interact with Gitea servers"
   homepage "https://gitea.com/gitea/tea"
-  url "https://gitea.com/gitea/tea/archive/v0.8.0.tar.gz"
-  sha256 "6c73c0a7b66cdfd1e5a302257d54df06a3a41eb9bdbfeb547966db431ae23b23"
+  url "https://gitea.com/gitea/tea/archive/v0.9.0.tar.gz"
+  sha256 "b7658a074508c117c2af3a55b7b37abf194f84fe94939c9b6b7ff324696258b9"
   license "MIT"
-  head "https://gitea.com/gitea/tea.git", branch: "master"
+  head "https://gitea.com/gitea/tea.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tea"
-    sha256 cellar: :any_skip_relocation, mojave: "1f9ac11f66dcecc8f85fdf9e2fa10c4f4c727c80b86ad55f66006ef6e7587e96"
+    sha256 cellar: :any_skip_relocation, mojave: "d4bfaab81714db96dfa9af7d485de7255f99dd2bedc40cf732fdd79b6ee35d5c"
   end
 
   depends_on "go" => :build
