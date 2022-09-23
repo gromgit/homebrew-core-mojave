@@ -1,14 +1,14 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.app/"
-  url "https://github.com/railwayapp/cli/archive/refs/tags/v2.0.10.tar.gz"
-  sha256 "b0077fd4408227c4b5509971a220fd4ae5d8bec1b05d340503905a6dae306fdd"
+  url "https://github.com/railwayapp/cli/archive/refs/tags/v2.0.11.tar.gz"
+  sha256 "f7a1ebc94c4f780e90a7fd5d7078e9935cc5b00cec3ba07d4df379dd7d30d35b"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/railway"
-    sha256 cellar: :any_skip_relocation, mojave: "d8d8d02a50d7a8caaedc26ede6a3e8b27d6b54b9db21fba0ab9a2e567470349e"
+    sha256 cellar: :any_skip_relocation, mojave: "7540c56f12ea6912685267df68024f43afee1deef7085f8505c6a60e63009b79"
   end
 
   depends_on "go" => :build
@@ -19,12 +19,7 @@ class Railway < Formula
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # Install shell completions
-    output = Utils.safe_popen_read(bin/"railway", "completion", "bash")
-    (bash_completion/"railway").write output
-    output = Utils.safe_popen_read(bin/"railway", "completion", "zsh")
-    (zsh_completion/"_railway").write output
-    output = Utils.safe_popen_read(bin/"railway", "completion", "fish")
-    (fish_completion/"railway.fish").write output
+    generate_completions_from_executable(bin/"railway", "completion")
   end
 
   test do
