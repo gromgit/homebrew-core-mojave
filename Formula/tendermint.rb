@@ -6,9 +6,15 @@ class Tendermint < Formula
   license "Apache-2.0"
   head "https://github.com/tendermint/tendermint.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tendermint"
-    sha256 cellar: :any_skip_relocation, mojave: "e4357081b48aa3b764e67d9e488c3c66268e6d525920ec25aef63fde5eca6032"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3f11c613fea297ee130cebe861ea79b28000725f3d0215205bdaa5e8f826e682"
   end
 
   depends_on "go" => :build
