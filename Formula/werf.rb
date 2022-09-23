@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://github.com/werf/werf/archive/refs/tags/v1.2.166.tar.gz"
-  sha256 "c88c3de3eaa0023be5e5aa94114fcc9fa32074dd64f9a9490c5a8bc18e6849d4"
+  url "https://github.com/werf/werf/archive/refs/tags/v1.2.174.tar.gz"
+  sha256 "4ce7ee0c6c561e8ce89df12e229c72d04834c28e00f311644dc2a85f0b2a8dd0"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -16,7 +16,7 @@ class Werf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/werf"
-    sha256 cellar: :any_skip_relocation, mojave: "a4a94bb828537be9a96340539c329f3ecd8ff2b4096013bbd28f2991c6d1920a"
+    sha256 cellar: :any_skip_relocation, mojave: "40e6df93ffcf61672b4557d224939411b2848031fea3e0b1b3488c0cd20cdde0"
   end
 
   depends_on "go" => :build
@@ -29,12 +29,7 @@ class Werf < Formula
 
     system "go", "build", *std_go_args(ldflags: ldflags), "-tags", tags, "./cmd/werf"
 
-    bash_output = Utils.safe_popen_read(bin/"werf", "completion", "bash")
-    (bash_completion/"werf").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"werf", "completion", "zsh")
-    (zsh_completion/"_werf").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"werf", "completion", "fish")
-    (fish_completion/"werf.fish").write fish_output
+    generate_completions_from_executable(bin/"werf", "completion")
   end
 
   test do
