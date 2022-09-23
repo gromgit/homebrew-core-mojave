@@ -8,8 +8,8 @@ class Kubekey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubekey"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c6bb053ddef70081f805a2d69fc1299c5b8a86b4c8f2a0e1c336c88d47be1826"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e7cfa54c95b5f9909c92929252cd7c575ddbc77c7d0148034a664565474fe128"
   end
 
   depends_on "go" => :build
