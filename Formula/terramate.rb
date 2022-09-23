@@ -1,14 +1,14 @@
 class Terramate < Formula
   desc "Managing Terraform stacks with change detections and code generations"
   homepage "https://github.com/mineiros-io/terramate"
-  url "https://github.com/mineiros-io/terramate/archive/refs/tags/v0.1.26.tar.gz"
-  sha256 "49f7cb00b441895c31e5244c225f3cb233c5d6287a9dd2a3ae6e45a347946414"
+  url "https://github.com/mineiros-io/terramate/archive/refs/tags/v0.1.29.tar.gz"
+  sha256 "dcc64e0011478279de5ca9650a1b723077805cceb820bf14a3074a8b0374419b"
   license "Apache-2.0"
   head "https://github.com/mineiros-io/terramate.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terramate"
-    sha256 cellar: :any_skip_relocation, mojave: "9d8c5fd8d99415a85a94d57d3099de5b83beb2f4034deecf874f62cba79264fe"
+    sha256 cellar: :any_skip_relocation, mojave: "c0e2370c3562e8994fd8d254d37b83ae83941976273460f23c3aa127c807df0a"
   end
 
   depends_on "go" => :build
