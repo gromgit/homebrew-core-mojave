@@ -2,14 +2,14 @@ class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
   homepage "https://eksctl.io"
   url "https://github.com/weaveworks/eksctl.git",
-      tag:      "0.109.0",
-      revision: "78243b4c9758855f51f10bb24efe6395b810d397"
+      tag:      "0.111.0",
+      revision: "9a99e9218dca43507e940996072ab3872da9361a"
   license "Apache-2.0"
   head "https://github.com/weaveworks/eksctl.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eksctl"
-    sha256 cellar: :any_skip_relocation, mojave: "29f6255f80c8ffa17acf87bfcf904c1cfdad797b0616c5970e20f2e5a66790f7"
+    sha256 cellar: :any_skip_relocation, mojave: "2677ece3fab260977269bd785f151624b97e952f516afacccd177f25009048a8"
   end
 
   depends_on "counterfeiter" => :build
@@ -38,12 +38,7 @@ class Eksctl < Formula
     system "make", "build"
     bin.install "eksctl"
 
-    bash_output = Utils.safe_popen_read(bin/"eksctl", "completion", "bash")
-    (bash_completion/"eksctl").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"eksctl", "completion", "zsh")
-    (zsh_completion/"_eksctl").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"eksctl", "completion", "fish")
-    (fish_completion/"eksctl.fish").write fish_output
+    generate_completions_from_executable(bin/"eksctl", "completion")
   end
 
   test do
