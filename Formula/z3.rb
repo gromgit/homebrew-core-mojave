@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://github.com/Z3Prover/z3/archive/z3-4.11.0.tar.gz"
-  sha256 "afa761ee2c00b66afcf7f77ccf3f9820f97142bba988040ba56ed876443b811c"
+  url "https://github.com/Z3Prover/z3/archive/z3-4.11.2.tar.gz"
+  sha256 "e3a82431b95412408a9c994466fad7252135c8ed3f719c986cd75c8c5f234c7e"
   license "MIT"
   head "https://github.com/Z3Prover/z3.git", branch: "develop"
 
@@ -14,21 +14,17 @@ class Z3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/z3"
-    sha256 cellar: :any, mojave: "baacf150811ab22506b3355e8ec15ac9dfb8385bf4ac5a77d5720732613594b1"
+    sha256 cellar: :any, mojave: "95581497eccc899e9fa3592e968ce4bdeedc0cec6b0e7a74412a7556c06c1109"
   end
 
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
   depends_on "python@3.10" => :build
 
-  on_linux do
-    depends_on "gcc" # For C++17
-  end
-
   fails_with gcc: "5"
 
   def install
-    python3 = Formula["python@3.10"].opt_bin/"python3"
+    python3 = Formula["python@3.10"].opt_bin/"python3.10"
     system python3, "scripts/mk_make.py",
                      "--prefix=#{prefix}",
                      "--python",
@@ -47,8 +43,8 @@ class Z3 < Formula
   end
 
   test do
-    system ENV.cc, "-I#{include}", "-L#{lib}", "-lz3",
-           pkgshare/"examples/c/test_capi.c", "-o", testpath/"test"
+    system ENV.cc, pkgshare/"examples/c/test_capi.c",
+           "-I#{include}", "-L#{lib}", "-lz3", "-o", testpath/"test"
     system "./test"
   end
 end
