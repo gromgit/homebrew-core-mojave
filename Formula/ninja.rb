@@ -13,15 +13,16 @@ class Ninja < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ninja"
-    sha256 cellar: :any_skip_relocation, mojave: "48e38fcc97da4ba2569166dd1d6dfdde61b1c0f84810f000b583c344d750d5ff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2dbb241eacaf337b6f544c073fe28bd80ddb4809c81df7b55a01ce01736d7557"
   end
 
   # Ninja only needs Python for some non-core functionality.
-  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.10" => :build
+  uses_from_macos "python" => :test, since: :catalina
 
   def install
-    py = Formula["python@3.10"].opt_bin/"python3"
-    system py, "./configure.py", "--bootstrap", "--verbose", "--with-python=python3"
+    system "python3.10", "./configure.py", "--bootstrap", "--verbose", "--with-python=python3"
 
     bin.install "ninja"
     bash_completion.install "misc/bash-completion" => "ninja-completion.sh"
@@ -32,7 +33,6 @@ class Ninja < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_bin
     (testpath/"build.ninja").write <<~EOS
       cflags = -Wall
 
@@ -46,7 +46,7 @@ class Ninja < Formula
     fork do
       exec bin/"ninja", "-t", "browse", "--port=#{port}", "--hostname=127.0.0.1", "--no-browser", "foo.o"
     end
-    sleep 2
+    sleep 15
     assert_match "foo.c", shell_output("curl -s http://127.0.0.1:#{port}?foo.o")
   end
 end
