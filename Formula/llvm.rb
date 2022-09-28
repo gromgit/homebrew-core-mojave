@@ -14,7 +14,8 @@ class Llvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm"
-    sha256 cellar: :any, mojave: "9059d581c3c9d2e73ec1f3e899edc3f04ef405d90db21d7d9a08396d0306a382"
+    rebuild 1
+    sha256 cellar: :any, mojave: "756818f9b34149f1e72d6192f5f581143ee2edbb3aa1dfbb8af11a33b68c06c4"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
