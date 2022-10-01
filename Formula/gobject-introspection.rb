@@ -3,14 +3,13 @@ class GobjectIntrospection < Formula
 
   desc "Generate introspection data for GObject libraries"
   homepage "https://gi.readthedocs.io/en/latest/"
-  url "https://download.gnome.org/sources/gobject-introspection/1.72/gobject-introspection-1.72.0.tar.xz"
-  sha256 "02fe8e590861d88f83060dd39cda5ccaa60b2da1d21d0f95499301b186beaabc"
+  url "https://download.gnome.org/sources/gobject-introspection/1.74/gobject-introspection-1.74.0.tar.xz"
+  sha256 "347b3a719e68ba4c69ff2d57ee2689233ea8c07fc492205e573386779e42d653"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
-  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobject-introspection"
-    sha256 mojave: "6b48620e6963f88f15c4b0692a713c3909f5ad09ddd66b6fd4be770a1c4e8441"
+    sha256 mojave: "fd456d95cdf0ce3362730dce73ed2590653a95773563cededdf66cb4ec949b3b"
   end
 
   depends_on "bison" => :build
