@@ -1,8 +1,9 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v18.7.0/node-v18.7.0.tar.xz"
-  sha256 "8834a33c92dfe6ba8903e6715caeaa25dff4657e703c54cd06ec113493e2c3c2"
+  # TODO: Remove `ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib` at rebuild.
+  url "https://nodejs.org/dist/v18.9.0/node-v18.9.0.tar.xz"
+  sha256 "c75cc89afead976791900accde02a7b1e7e762702f0f6fa68eaacb01984d9654"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,9 +13,8 @@ class Node < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node-18.7.0"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5a0ea892d9bc755c9d28641005d951a469b142ebe91f6017ce40fb2cdd812944"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
+    sha256 cellar: :any, mojave: "d0bb02820fd61623899333db51f8bad52d7896907955069566c0d2118cc69692"
   end
 
   depends_on "pkg-config" => :build
@@ -33,10 +33,6 @@ class Node < Formula
     depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1100
   end
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with :clang do
     build 1100
     cause <<~EOS
@@ -49,8 +45,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-8.15.0.tgz"
-    sha256 "6bdf219336595f7bffde7cb3996fffc96fcc2bdac3f1952491937d6a9d89db92"
+    url "https://registry.npmjs.org/npm/-/npm-8.19.1.tgz"
+    sha256 "00a29eaa1fa8d44f6c3f3a114becc3b677a019dde90d87b41fd855663fe47742"
   end
 
   def install
@@ -58,7 +54,7 @@ class Node < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3")
+    ENV["PYTHON"] = which("python3.10")
 
     # Never install the bundled "npm", always prefer our
     # installation from tarball for better packaging control.
