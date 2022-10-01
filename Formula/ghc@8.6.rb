@@ -12,8 +12,8 @@ class GhcAT86 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@8.6"
-    rebuild 2
-    sha256 mojave: "8763e6d3c7594654cc6b18306d63eb64c8e9c62c21415a6c0e5ed52692e99266"
+    rebuild 3
+    sha256 mojave: "0097f4fa8f55a38ef47ff121017fee40970bc24dc1690fee43b13630b892433d"
   end
 
   keg_only :versioned_formula
@@ -46,8 +46,8 @@ class GhcAT86 < Formula
     end
 
     on_linux do
-      url "https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb8-linux.tar.xz"
-      sha256 "c419fd0aa9065fe4d2eb9a248e323860c696ddf3859749ca96a84938aee49107"
+      url "https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-fedora27-linux.tar.xz"
+      sha256 "cf78b53eaf336083e7a05f4a3000afbae4abe5bbc77ef80cc40e09d04ac5b4a1"
     end
   end
 
@@ -57,7 +57,7 @@ class GhcAT86 < Formula
   def install
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
-    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3"
+    ENV["PYTHON"] = which("python3.10")
 
     args = %w[--enable-numa=no]
     if OS.mac?
