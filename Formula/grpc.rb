@@ -1,9 +1,10 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
+  # TODO: Remove `ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib` at rebuild.
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.48.0",
-      revision: "d2054ec6c6e8abcecf0e24b0b4ee75035d80c3cc"
+      tag:      "v1.49.0",
+      revision: "8f8edfd04b46ee67f90454b3f6a70aa58ff82c2d"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -18,7 +19,7 @@ class Grpc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpc"
-    sha256 cellar: :any, mojave: "746d2c84d615d9ec2b07b13318cc540b7e075e9b84d9f4192690562083451209"
+    sha256 cellar: :any, mojave: "1b48bd8b87b9e46cfae45559f3f4e59380ea2468cca6e24e0b669fa8922e2d5d"
   end
 
   depends_on "autoconf" => :build
@@ -38,10 +39,6 @@ class Grpc < Formula
     # This shouldn't be needed for `:test`, but there's a bug in `brew`:
     # CompilerSelectionError: pdnsrec cannot be built with any available compilers.
     depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1100
-  end
-
-  on_linux do
-    depends_on "gcc"
   end
 
   fails_with :clang do
