@@ -7,7 +7,8 @@ class Libxcb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcb"
-    sha256 cellar: :any, mojave: "2bd6df8be66c0fa87229135ff92a12d80e64d3bf181039c24cf34f41a6e45f44"
+    rebuild 1
+    sha256 cellar: :any, mojave: "60f813bedab686f45ecf1dd368ca6f711271fc4696f0b98013b71f3b45032da3"
   end
 
   depends_on "pkg-config" => :build
@@ -31,7 +32,7 @@ class Libxcb < Formula
       --disable-silent-rules
       --enable-devel-docs=no
       --with-doxygen=no
-      PYTHON=python3
+      PYTHON=python3.10
     ]
 
     system "./configure", *args
