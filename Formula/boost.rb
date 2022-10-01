@@ -17,7 +17,8 @@ class Boost < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost"
-    sha256 cellar: :any, mojave: "1dad847cb53696bc675bc0f2af6a963525861ede7d3880c63174d4b8b80255cc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e540f6c31ab34c7f9354f3395d84cc59a51cad993031011e06dc4425e89a525e"
   end
 
   depends_on "icu4c"
