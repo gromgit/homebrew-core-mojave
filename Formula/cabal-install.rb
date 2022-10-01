@@ -1,15 +1,14 @@
 class CabalInstall < Formula
   desc "Command-line interface for Cabal and Hackage"
   homepage "https://www.haskell.org/cabal/"
-  url "https://hackage.haskell.org/package/cabal-install-3.6.2.0/cabal-install-3.6.2.0.tar.gz"
-  sha256 "dcf99e1d5f1c6e569e7386312fe96e9804b3cfb2d4f17ded1e01f60149bd3036"
+  url "https://hackage.haskell.org/package/cabal-install-3.8.1.0/cabal-install-3.8.1.0.tar.gz"
+  sha256 "61ce436f2e14e12bf07ea1c81402362f46275014cd841a76566f0766d0ea67e6"
   license "BSD-3-Clause"
-  head "https://github.com/haskell/cabal.git", branch: "3.6"
+  head "https://github.com/haskell/cabal.git", branch: "3.8"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cabal-install"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "b261267b1989accf54e6ef11b946a4d6496ecb078e054a51d79bd973e895d1fb"
+    sha256 cellar: :any_skip_relocation, mojave: "696645ded732343a76c978233c821f971be75817d9fb3e1a0d286c659818bbf8"
   end
 
   depends_on "ghc"
@@ -43,6 +42,7 @@ class CabalInstall < Formula
   end
 
   test do
-    system "#{bin}/cabal", "--config-file=#{testpath}/config", "info", "Cabal"
+    system bin/"cabal", "--config-file=#{testpath}/config", "user-config", "init"
+    system bin/"cabal", "--config-file=#{testpath}/config", "info", "Cabal"
   end
 end
