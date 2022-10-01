@@ -1,14 +1,14 @@
 class Agg < Formula
   desc "Asciicast to GIF converter"
   homepage "https://github.com/asciinema/agg"
-  url "https://github.com/asciinema/agg/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "2c7ba642dd84025b3df7b70f52ddde8e7ecf14499520a15af7db348a148ed604"
+  url "https://github.com/asciinema/agg/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "51cb553f9adde28f85e5e945c0013679c545820c4c023fefb9e74b765549e709"
   license "Apache-2.0"
   head "https://github.com/asciinema/agg.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/agg"
-    sha256 cellar: :any_skip_relocation, mojave: "9970c70607c02abf09558b88548d33e4bbf3fb5341b550541d2e0e2bfbbc5588"
+    sha256 cellar: :any_skip_relocation, mojave: "f9c9a7cd8f1cdac5d3286b5574bacf5e4d0a165c781cd36f05796896101e00ca"
   end
 
   depends_on "rust" => :build
