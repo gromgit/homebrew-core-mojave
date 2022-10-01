@@ -1,8 +1,8 @@
 class AmqpCpp < Formula
   desc "C++ library for communicating with a RabbitMQ message broker"
   homepage "https://github.com/CopernicaMarketingSoftware/AMQP-CPP"
-  url "https://github.com/CopernicaMarketingSoftware/AMQP-CPP/archive/v4.3.17.tar.gz"
-  sha256 "e69377633c3b63eb2af911446c57bada3b591456cb61daf4d9625593a0ef1f96"
+  url "https://github.com/CopernicaMarketingSoftware/AMQP-CPP/archive/v4.3.18.tar.gz"
+  sha256 "cc2c1fc5da00a1778c2804306e06bdedc782a5f74762b9d9b442d3a498dd0c4f"
   license "Apache-2.0"
   head "https://github.com/CopernicaMarketingSoftware/AMQP-CPP.git", branch: "master"
 
@@ -13,7 +13,7 @@ class AmqpCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amqp-cpp"
-    sha256 cellar: :any_skip_relocation, mojave: "7b00aa2c46e170d3c8b9ee0bf8483ffdf1c7658d9499fca43128102b1c3ff65e"
+    sha256 cellar: :any_skip_relocation, mojave: "62d2b4981abc903d056eeee5a87266787ba8a8732a8cce56f8eaaecac5e27b6d"
   end
 
   depends_on "cmake" => :build
