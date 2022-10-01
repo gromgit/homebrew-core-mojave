@@ -14,17 +14,14 @@ class Doxygen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doxygen"
-    sha256 cellar: :any_skip_relocation, mojave: "5d9f6517d5beda75903ace77a5b7d2b28a52d1d2f074e775fa035e7af6dac044"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5619b4b7601a69f58574bef2759f00de681846b9fc9b3ef09b3e4b1562543e45"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "python@3.10" => :build # Fails to build with macOS Python3
   uses_from_macos "flex" => :build, since: :big_sur
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   # Need gcc>=7.2. See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=66297
   fails_with gcc: "5"
