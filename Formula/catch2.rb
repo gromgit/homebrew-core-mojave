@@ -7,14 +7,11 @@ class Catch2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/catch2"
-    sha256 cellar: :any_skip_relocation, mojave: "010e4a70c9fbfa55e9e2ceafe34c037ffa634573dff1561efb1e987bde06a410"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "305fa14d0e2893e965d4311ce21a327eebaad83f8d87f69f40b6e9919598e506"
   end
 
   depends_on "cmake" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
