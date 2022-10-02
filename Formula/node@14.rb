@@ -4,6 +4,7 @@ class NodeAT14 < Formula
   url "https://nodejs.org/dist/v14.20.0/node-v14.20.0.tar.xz"
   sha256 "2b5098498889d1e6a9709d63f3d6f94e696a5ad8221618c5d51159cee363996a"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://nodejs.org/dist/"
@@ -12,7 +13,7 @@ class NodeAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@14"
-    sha256 cellar: :any, mojave: "6f555de362440d0ceaa7d7b80cba0ccddc17193f5fd364adcb6c48858416f2eb"
+    sha256 cellar: :any, mojave: "6e82a20f8f647e7005c20c2307986be12099f0154197f59a881e2a5674359bde"
   end
 
   keg_only :versioned_formula
@@ -33,9 +34,13 @@ class NodeAT14 < Formula
     depends_on "macos-term-size"
   end
 
+  def python3
+    Formula["python@3.10"]
+  end
+
   def install
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3")
+    ENV["PYTHON"] = python = python3.opt_bin/"python3.10"
 
     args = %W[
       --prefix=#{prefix}
@@ -58,7 +63,7 @@ class NodeAT14 < Formula
       --shared-cares-libpath=#{Formula["c-ares"].lib}
       --openssl-use-def-ca-store
     ]
-    system "python3", "configure.py", *args
+    system python, "configure.py", *args
     system "make", "install"
 
     term_size_vendor_dir = lib/"node_modules/npm/node_modules/term-size/vendor"
@@ -90,7 +95,7 @@ class NodeAT14 < Formula
 
     # make sure npm can find node and python
     ENV.prepend_path "PATH", opt_bin
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin" if OS.mac?
+    ENV.prepend_path "PATH", python3.opt_libexec/"bin" if OS.mac?
     ENV.delete "NVM_NODEJS_ORG_MIRROR"
     assert_equal which("node"), opt_bin/"node"
     assert_predicate bin/"npm", :exist?, "npm must exist"
