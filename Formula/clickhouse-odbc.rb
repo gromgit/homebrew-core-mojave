@@ -5,7 +5,7 @@ class ClickhouseOdbc < Formula
       tag:      "v1.1.10.20210822",
       revision: "c7aaff6860e448acee523f5f7d3ee97862fd07d2"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"
 
   livecheck do
@@ -15,8 +15,7 @@ class ClickhouseOdbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-odbc"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ee0a6c53602563dfee93976220e7e69f73ab8f0e98bc48f174b909a83d7aef89"
+    sha256 cellar: :any, mojave: "bb0333894433f844a719f8bd1c4ba1fb6f0a4e37ccad2819b7f2d09e87614889"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +28,6 @@ class ClickhouseOdbc < Formula
   end
 
   on_linux do
-    depends_on "gcc"
     depends_on "unixodbc"
   end
 
