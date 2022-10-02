@@ -4,6 +4,7 @@ class Libxml2 < Formula
   url "https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.2.tar.xz"
   sha256 "d240abe6da9c65cb1900dd9bf3a3501ccf88b3c2a1cb98317d03f272dda5b265"
   license "MIT"
+  revision 1
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,7 +15,7 @@ class Libxml2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxml2"
-    sha256 cellar: :any, mojave: "632730366702416c505603b16b9d4b2f98b3766d159ad30980c8cc429aa429d1"
+    sha256 cellar: :any, mojave: "b41acc6257d980d83e65df67acdee670422c5fc4ba10fbb5cedc37bb9d3a0814"
   end
 
   head do
