@@ -4,13 +4,13 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/bb/f0/9b5721c50270a0e9d9b5acc92da42d3a7ffe904b12eaa22062c018e4cd12/checkov-2.1.165.tar.gz"
-  sha256 "1150cd6c84323a847d04a0b95df07d428f68914b2632ddf2288720374af35c4b"
+  url "https://files.pythonhosted.org/packages/c2/af/09d6bbd5e56ee2a6672ab81310b5c0581b432e4a6dad576ba7f60f675a5d/checkov-2.1.210.tar.gz"
+  sha256 "99169cdedceb435f7dc71581f52e9ee69d40c7339cc84bdf207586984181704b"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/checkov"
-    sha256 cellar: :any, mojave: "c9f0b3db801a426e15a915948b2d08d768f8e73976ccd07b5f41f0f0a4641940"
+    sha256 cellar: :any, mojave: "c6cdd8015263df5321bd2cbf96a86c75cd25dc7ceca7375e2284c7a7a318bef7"
   end
 
   depends_on "libpython-tabulate"
@@ -63,13 +63,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/07/c1/518382f907b2fce495be0ee7d7c188042ac6b72c321237f9662be656bcda/boto3-1.24.62.tar.gz"
-    sha256 "818a40b82e4f66b4bdd4fa38fcc3ed0fb26542f7d8c4d15279d4ba1d4762cd95"
+    url "https://files.pythonhosted.org/packages/4b/5f/d627332882ba6b68a6aaabc441fa3ac4e0ea1bef976ace92ee5b89b625a9/boto3-1.24.73.tar.gz"
+    sha256 "a8911d55f1497dc55d69d2029c3a5120887af4846ef6b9fe3ef0c777dc1b394e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fd/ab/a26d4b3c0a55441244f53fdd418453886f30ba17eda5d74abdcfe89f4350/botocore-1.27.62.tar.gz"
-    sha256 "8563c7d8b80e8041667cf35b397f1c399537f6c887e1c501f0064bfd7ae541ba"
+    url "https://files.pythonhosted.org/packages/cb/bb/73b99f5cfe851a24cfaed42ab299657ee77e0eca6c8eb437c63c94108796/botocore-1.27.73.tar.gz"
+    sha256 "e281e45e84d2728207d63499a37cea1dc1dde6093167ab238370ece67f6e7316"
   end
 
   resource "cached-property" do
@@ -83,8 +83,8 @@ class Checkov < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/cc/85/319a8a684e8ac6d87a1193090e06b6bbb302717496380e225ee10487c888/certifi-2022.6.15.tar.gz"
-    sha256 "84c85a9078b11105f04f3036a9482ae10e4621616db313fe045dd24743a0820d"
+    url "https://files.pythonhosted.org/packages/ca/48/88ec470f8b68319b6782ca3a0570789886ad5ca24c1af2f3771699135baa/certifi-2022.9.14.tar.gz"
+    sha256 "36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5"
   end
 
   resource "cffi" do
@@ -178,8 +178,8 @@ class Checkov < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/62/08/e3fc7c8161090f742f504f40b1bccbfc544d4a4e09eb774bf40aafce5436/idna-3.3.tar.gz"
-    sha256 "9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
+    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
+    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
   resource "Jinja2" do
@@ -258,8 +258,8 @@ class Checkov < Formula
   end
 
   resource "prettytable" do
-    url "https://files.pythonhosted.org/packages/63/42/b8b24cfe616a8217515011fc54ed37b45077cd4467230b3a0132166696a1/prettytable-3.4.0.tar.gz"
-    sha256 "d16747b5108c252bf065ea1cd239aab3c87bd8bb10a9f7973c9f192bbcfed26e"
+    url "https://files.pythonhosted.org/packages/a5/aa/0852b0ee91587a766fbc872f398ed26366c7bf26373d5feb974bebbde8d2/prettytable-3.4.1.tar.gz"
+    sha256 "7d7dd84d0b206f2daac4471a72f299d6907f34516064feb2838e333a4e2567bd"
   end
 
   resource "pycares" do
@@ -268,8 +268,8 @@ class Checkov < Formula
   end
 
   resource "pycep-parser" do
-    url "https://files.pythonhosted.org/packages/3b/a7/6ccfd104b89a34b5d594d42fcb0aee8ce934c7d57857c1bb5951e2655650/pycep-parser-0.3.8.tar.gz"
-    sha256 "c1663b7ebf151cb8f07c05682bc54c100c55705966eb0ea671d78add30e1e711"
+    url "https://files.pythonhosted.org/packages/7f/22/a684b8df900e2808129383474e4ec8237b07fc5080518efbd90608e87e7c/pycep-parser-0.3.9.tar.gz"
+    sha256 "6d3d1e18b497ec5db0d9b133a634f12f6431f6c61aff1d2fe83cfdf306b7d200"
   end
 
   resource "pycparser" do
@@ -298,8 +298,8 @@ class Checkov < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f7/e1/8b46ff54516faea4ea9469c4f5b50f2e9e73131f54d19e6827141698a822/regex-2022.8.17.tar.gz"
-    sha256 "5c77eab46f3a2b2cd8bbe06467df783543bf7396df431eb4a144cc4b89e9fb3c"
+    url "https://files.pythonhosted.org/packages/f8/43/b85d103acc0bfb54939f801908bf83354085579e8422eeaa22c017950c02/regex-2022.9.13.tar.gz"
+    sha256 "f07373b6e56a6f3a0df3d75b651a278ca7bd357a796078a26a958ea1ce0588fd"
   end
 
   resource "requests" do
@@ -338,8 +338,8 @@ class Checkov < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz"
-    sha256 "1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"
+    url "https://files.pythonhosted.org/packages/c1/ee/ad1f448e360e4b662fbff9e75cd210b73ad79998ce6483086e9df5b8e7e2/termcolor-2.0.1.tar.gz"
+    sha256 "6b2cf769e93364a2676e1de56a7c0cff2cf5bd07f37e9cc80b0dd6320ebfe388"
   end
 
   resource "toml" do
@@ -348,8 +348,8 @@ class Checkov < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/98/2a/838de32e09bd511cf69fe4ae13ffc748ac143449bfc24bb3fd172d53a84f/tqdm-4.64.0.tar.gz"
-    sha256 "40be55d30e200777a307a7585aee69e4eabb46b4ec6a4b4a5f2d9f11e7d5408d"
+    url "https://files.pythonhosted.org/packages/c1/c2/d8a40e5363fb01806870e444fc1d066282743292ff32a9da54af51ce36a2/tqdm-4.64.1.tar.gz"
+    sha256 "5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"
   end
 
   resource "typing-extensions" do
@@ -373,8 +373,8 @@ class Checkov < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/71/aa/69c635c6d209a3e67cfcaa0cf6d2de71cf7575347f63d5976c8792b8be2e/websocket-client-1.4.0.tar.gz"
-    sha256 "79d730c9776f4f112f33b10b78c8d209f23b5806d9a783e296b3813fc5add2f1"
+    url "https://files.pythonhosted.org/packages/99/11/01fe7ebcb7545a1990c53c11f31230afe1388b0b34256e3fd20e49482245/websocket-client-1.4.1.tar.gz"
+    sha256 "f9611eb65c8241a67fb373bef040b3cf8ad377a9f6546a12b620b6511e8ea9ef"
   end
 
   resource "yarl" do
