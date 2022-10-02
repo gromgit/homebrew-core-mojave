@@ -4,6 +4,7 @@ class NodeAT16 < Formula
   url "https://nodejs.org/dist/v16.17.0/node-v16.17.0.tar.xz"
   sha256 "1d28c285685e446985921bc963565ca9c0c5f4fda9755e489c06808ea9795645"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://nodejs.org/dist/"
@@ -12,7 +13,7 @@ class NodeAT16 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@16"
-    sha256 cellar: :any, mojave: "f685e26ab9f0f7dce6848f942be309e04b3466b36cf4589cbe7f3d53add0e39b"
+    sha256 cellar: :any, mojave: "b7c457d1592bbabced9f25d1e2c3387cffd07f865b55fdc4efd7e5afebd9c8c6"
   end
 
   keg_only :versioned_formula
@@ -29,10 +30,6 @@ class NodeAT16 < Formula
   uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with :clang do
     build 1099
     cause "Node requires Xcode CLT 11+"
@@ -41,8 +38,9 @@ class NodeAT16 < Formula
   fails_with gcc: "5"
 
   def install
+    python3 = "python3.10"
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3")
+    ENV["PYTHON"] = which(python3)
 
     args = %W[
       --prefix=#{prefix}
@@ -65,7 +63,7 @@ class NodeAT16 < Formula
       --shared-cares-libpath=#{Formula["c-ares"].lib}
       --openssl-use-def-ca-store
     ]
-    system "python3", "configure.py", *args
+    system python3, "configure.py", *args
     system "make", "install"
   end
 
