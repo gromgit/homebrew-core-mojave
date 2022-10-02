@@ -3,9 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  # balena-cli should only be updated every 10 releases on multiples of 10
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-14.3.0.tgz"
-  sha256 "6b9ce0c55fa56d68c3aa41ceff1a0de41779ff5fa7794a34bb010c5166f69e82"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-14.3.1.tgz"
+  sha256 "0a1c4034b3a073352f05df9480da5c1afcb430ad252fc41daf5c3a002b9e13b2"
   license "Apache-2.0"
 
   livecheck do
@@ -15,7 +14,7 @@ class BalenaCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/balena-cli"
-    sha256 mojave: "dbc44ef54b9b7199271f8b6a6a9c080468e3f5a6ad1e8504d9b988f41e2ec1de"
+    sha256 mojave: "f0052f14ba6d23045a98cc66f28dc58b8b5daff03c3e34ff6da069875746011a"
   end
 
   # Node looks for an unversioned `python` at build-time.
