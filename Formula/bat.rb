@@ -1,14 +1,14 @@
 class Bat < Formula
   desc "Clone of cat(1) with syntax highlighting and Git integration"
   homepage "https://github.com/sharkdp/bat"
-  url "https://github.com/sharkdp/bat/archive/v0.21.0.tar.gz"
-  sha256 "3dff1e52d577d0a105f4afe3fe7722a4a2b8bb2eb3e7a6a5284ac7add586a3ee"
+  url "https://github.com/sharkdp/bat/archive/v0.22.1.tar.gz"
+  sha256 "25e45debf7c86794281d63a51564feefa96fdfdf575381e3adc5c06653ecaeca"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/bat.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bat"
-    sha256 cellar: :any_skip_relocation, mojave: "fe2b97980f7240ed3ae63d9537138682e6904a625dd30d1705b3573240670b3b"
+    sha256 cellar: :any_skip_relocation, mojave: "4594dfc9a85a7ac597dd2ce411e3b934e5e1f1d156f6d141413d4eb6a6b988db"
   end
 
   depends_on "rust" => :build
