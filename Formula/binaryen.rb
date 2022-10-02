@@ -8,15 +8,12 @@ class Binaryen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/binaryen"
-    sha256 cellar: :any, mojave: "d5e7619872d6b0fcc019858ede3303a1f6ea3d5c9f3e5e51e2e445f267eb9ce2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ec1eecfbec6cc2333a5803ec97272cf45839a8e9d33ae7690abb8b1c4dea2403"
   end
 
   depends_on "cmake" => :build
   depends_on "python@3.10" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
