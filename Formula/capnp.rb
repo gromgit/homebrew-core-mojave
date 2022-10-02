@@ -13,7 +13,8 @@ class Capnp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/capnp"
-    sha256 mojave: "2da6e4ee95f72feafb280fad786fc763df05815a555144d3906bb2b96c911e4c"
+    rebuild 1
+    sha256 mojave: "5003d020136f9607d76fd3d238ea74e76f6a48946fb71b9f2190de6e4ff8bfa1"
   end
 
   depends_on "cmake" => :build
