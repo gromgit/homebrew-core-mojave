@@ -10,7 +10,8 @@ class Bpython < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bpython"
-    sha256 cellar: :any_skip_relocation, mojave: "85acf311bf5c2c010007bcf1c71c0a58f76c580f5421832ecf5a70981b04e56b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e6f12359372ad461f86de75c1dc85e85bcbe950564009807fc03bbcc33a6ee82"
   end
 
   depends_on "python@3.10"
@@ -77,14 +78,15 @@ class Bpython < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, Formula["python@3.10"].opt_bin/"python3")
+    python3 = Formula["python@3.10"].opt_bin/"python3.10"
+    venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     venv.pip_install buildpath
 
     # Make the Homebrew site-packages available in the interpreter environment
-    xy = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
-    ENV.prepend_path "PYTHONPATH", HOMEBREW_PREFIX/"lib/python#{xy}/site-packages"
-    ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", HOMEBREW_PREFIX/site_packages
+    ENV.prepend_path "PYTHONPATH", libexec/site_packages
     combined_pythonpath = ENV["PYTHONPATH"] + "${PYTHONPATH:+:}$PYTHONPATH"
     %w[bpdb bpython].each do |cmd|
       (bin/cmd).write_env_script libexec/"bin/#{cmd}", PYTHONPATH: combined_pythonpath
