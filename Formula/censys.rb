@@ -9,7 +9,8 @@ class Censys < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/censys"
-    sha256 cellar: :any_skip_relocation, mojave: "db376eef4ff764921d78b7e5b16a8704ccbfad6c931421b534b0a7409382d547"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b69245f18960ee6ce793412350a442a5e90c1a8d3d4c208d942a33aae58fd57d"
   end
 
   depends_on "python@3.10"
@@ -60,7 +61,7 @@ class Censys < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
+    virtualenv_create(libexec, "python3.10")
     virtualenv_install_with_resources
   end
 
