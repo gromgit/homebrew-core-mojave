@@ -8,17 +8,14 @@ class Autodiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autodiff"
-    sha256 cellar: :any_skip_relocation, mojave: "54884aa4d90711eff7dc933fd78bd1d084d61df9280f6c186abb9123962f951e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7d3b07bc3c8d4d3c8a7ba47b5923a1da5f8b52f3301eaca755c0574d666f9222"
   end
 
   depends_on "cmake" => :build
   depends_on "python@3.10" => :build
   depends_on "eigen"
   depends_on "pybind11"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
