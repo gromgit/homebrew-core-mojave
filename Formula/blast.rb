@@ -13,8 +13,8 @@ class Blast < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blast"
-    rebuild 2
-    sha256 mojave: "cca14a07de4f690c40e57d28f8a089537ee0b5acc1945aa3b11ebf988643c31c"
+    rebuild 3
+    sha256 mojave: "21cb9d31a546b839fd53bff46b37547d4bdb52cd075d500ae3f4016ed56d6a0d"
   end
 
   depends_on "lmdb"
@@ -25,10 +25,6 @@ class Blast < Formula
 
   on_macos do
     depends_on "libomp"
-  end
-
-  on_linux do
-    depends_on "gcc"
   end
 
   conflicts_with "proj", because: "both install a `libproj.a` library"
