@@ -10,7 +10,8 @@ class Bpytop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bpytop"
-    sha256 cellar: :any_skip_relocation, mojave: "eeba5297947ceb1c86950e707a942027d988ec698e2abcd5742b5d1e9dc675ac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7ed5898181321afcce433341b54ca0de92b5f9e78cad3e40e2f5f403f2f678fc"
   end
 
   depends_on "python@3.10"
@@ -24,7 +25,7 @@ class Bpytop < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources
     system "make", "install", "PREFIX=#{prefix}"
     pkgshare.install "themes"
