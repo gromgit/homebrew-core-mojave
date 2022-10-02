@@ -13,8 +13,8 @@ class Bde < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bde"
-    rebuild 1
-    sha256 cellar: :any, mojave: "301f8b4a5bd812d6d19b6759cfbc483a9af48bebd532561cff9fb8bbaaf4ff82"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d1e756066fb1259cef889ffc82da3ca18d6f8834f358f8ddeb0d6dcc8f3e6394"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +25,14 @@ class Bde < Formula
   resource "bde-tools" do
     url "https://github.com/bloomberg/bde-tools/archive/3.61.0.0.tar.gz"
     sha256 "7d66eb149c7e59021467c386ba5c6149a8923e836c6a61b815651b3cac019a7d"
+  end
+
+  # Backport support for Apple Silicon. Remove in the next release
+  patch do
+    on_arm do
+      url "https://github.com/bloomberg/bde/commit/39a52e09c83eec761874be2260b692b715117fae.patch?full_index=1"
+      sha256 "d3721d8a297687ddd2003386845aaa6ec3f8664ab81551b1ef581fe65ad1cb96"
+    end
   end
 
   def install
