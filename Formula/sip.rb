@@ -11,7 +11,8 @@ class Sip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sip"
-    sha256 cellar: :any_skip_relocation, mojave: "720af652ec434f81ecaab8e531a4065d06964fa058450d64836759c32a225504"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6a5220194699b98cfba24fd03e3a2e6dce507701f039e656f63d749f37008a00"
   end
 
   depends_on "python@3.10"
@@ -37,16 +38,15 @@ class Sip < Formula
   end
 
   def install
-    python = Formula["python@3.10"]
-    venv = virtualenv_create(libexec, python.bin/"python3")
+    python3 = "python3.10"
+    venv = virtualenv_create(libexec, python3)
     resources.each do |r|
       venv.pip_install r
     end
 
-    system python.bin/"python3", *Language::Python.setup_install_args(prefix),
-                                 "--install-lib=#{prefix/Language::Python.site_packages("python3")}"
+    system python3, *Language::Python.setup_install_args(prefix, python3)
 
-    site_packages = Language::Python.site_packages(python)
+    site_packages = Language::Python.site_packages(python3)
     pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
     (prefix/site_packages/"homebrew-sip.pth").write pth_contents
   end
