@@ -3,8 +3,8 @@ class Netpbm < Formula
   homepage "https://netpbm.sourceforge.io/"
   # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
   # for stable versions and matching revisions.
-  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4328"
-  version "10.86.33"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4365"
+  version "10.86.34"
   license "GPL-3.0-or-later"
   version_scheme 1
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
@@ -17,11 +17,11 @@ class Netpbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netpbm"
-    sha256 mojave: "9fd3589af9bf7d7e517f7438b7fb31f5cfa08f200d8c50e9a01ccc7aaad48e2f"
+    sha256 mojave: "5f0b86f0cda4f6ffe153e7d7a10db8fb7599656853c656990ce54e57eff9e129"
   end
 
   depends_on "jasper"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
 
@@ -41,8 +41,8 @@ class Netpbm < Formula
       s.change_make_var! "PNGLIB", "-lpng"
       s.change_make_var! "ZLIB", "-lz"
       s.change_make_var! "JASPERLIB", "-ljasper"
-      s.change_make_var! "JASPERHDR_DIR", "#{Formula["jasper"].opt_include}/jasper"
-      s.gsub! "/usr/local/netpbm/rgb.txt", "#{prefix}/misc/rgb.txt"
+      s.change_make_var! "JASPERHDR_DIR", Formula["jasper"].opt_include/"jasper"
+      s.gsub! "/usr/local/netpbm/rgb.txt", prefix/"misc/rgb.txt"
 
       if OS.mac?
         s.change_make_var! "CFLAGS_SHLIB", "-fno-common"
@@ -66,7 +66,7 @@ class Netpbm < Formula
       end
 
       prefix.install %w[bin include lib misc]
-      lib.install Dir["staticlink/*.a"], Dir["sharedlink/#{shared_library("*")}"]
+      lib.install buildpath.glob("staticlink/*.a"), buildpath.glob("sharedlink/#{shared_library("*")}")
       (lib/"pkgconfig").install "pkgconfig_template" => "netpbm.pc"
     end
   end
@@ -74,7 +74,7 @@ class Netpbm < Formula
   test do
     fwrite = shell_output("#{bin}/pngtopam #{test_fixtures("test.png")} -alphapam")
     (testpath/"test.pam").write fwrite
-    system "#{bin}/pamdice", "test.pam", "-outstem", testpath/"testing"
+    system bin/"pamdice", "test.pam", "-outstem", testpath/"testing"
     assert_predicate testpath/"testing_0_0.pam", :exist?
     (testpath/"test.xpm").write <<~EOS
       /* XPM */
