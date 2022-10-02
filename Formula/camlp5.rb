@@ -4,6 +4,7 @@ class Camlp5 < Formula
   url "https://github.com/camlp5/camlp5/archive/refs/tags/rel8.00.03.tar.gz"
   sha256 "1a710e2a6dbb0f4440867850d605f31fe8407ee8a56c9e067866e34e584385b4"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
@@ -13,11 +14,11 @@ class Camlp5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/camlp5"
-    rebuild 1
-    sha256 mojave: "7cf991f621ae0fd7bcd0e469b33db2e07210c62406c65994e70e4960c284d81f"
+    sha256 mojave: "823e0fabcd948252e92e035344b25111e3be2ffde202f1c6177200e00beff687"
   end
 
   depends_on "ocaml-findlib" => :build
+  depends_on "camlp-streams"
   depends_on "ocaml"
 
   def install
