@@ -8,16 +8,13 @@ class ClickhouseCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-cpp"
-    sha256 cellar: :any, mojave: "df6b1d6690ca30b29a319b5b4d255366fb4b839df530561c3156930f0b49acb8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a62b31114725600003ab4ba3f525832d68202ef7cdb7b419f9591ff43f3693fe"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
   depends_on "openssl@1.1"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
   fails_with gcc: "6"
