@@ -1,10 +1,10 @@
 class CmakeDocs < Formula
   desc "Documentation for CMake"
   homepage "https://www.cmake.org/"
-  url "https://github.com/Kitware/CMake/releases/download/v3.24.1/cmake-3.24.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/cmake-3.24.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/cmake-3.24.0.tar.gz"
-  sha256 "4931e277a4db1a805f13baa7013a7757a0cbfe5b7932882925c7061d9d1fa82b"
+  url "https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/cmake-3.24.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/cmake-3.24.2.tar.gz"
+  sha256 "0d9020f06f3ddf17fb537dc228e1a56c927ee506b486f55fe2dc19f69bf0c8db"
   license "BSD-3-Clause"
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
 
@@ -14,7 +14,7 @@ class CmakeDocs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmake-docs"
-    sha256 cellar: :any_skip_relocation, mojave: "779bd9de1ae4fd4c2f6009a2ef3ded13215b4c1bc61d685c63bf8245d50ccc48"
+    sha256 cellar: :any_skip_relocation, mojave: "cd60c83393cc001950ee7539bcfc14017166d15c9a11367e415a1f2a7f7b5dfa"
   end
 
   depends_on "cmake" => :build
