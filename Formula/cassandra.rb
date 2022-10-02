@@ -11,7 +11,8 @@ class Cassandra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra"
-    sha256 cellar: :any_skip_relocation, mojave: "21c838cea187f85f020023358dda33a3cc38be16bd9260c6d6da4fec12cb5d82"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "10d7e5d9bece538fdad7ac2cb1f62043c940f785e1104d6c7a39a2387849f67f"
   end
 
   depends_on "libcython" => :build
@@ -48,7 +49,8 @@ class Cassandra < Formula
     (var/"lib/cassandra").mkpath
     (var/"log/cassandra").mkpath
 
-    venv = virtualenv_create(libexec/"vendor", "python3")
+    python3 = "python3.10"
+    venv = virtualenv_create(libexec/"vendor", python3)
     venv.pip_install resources
 
     inreplace "conf/cassandra.yaml", "/var/lib/cassandra", var/"lib/cassandra"
@@ -121,7 +123,7 @@ class Cassandra < Formula
               pkgshare/"cassandra-tools.in.sh"
 
     venv_bin = libexec/"vendor/bin"
-    rw_info = python_shebang_rewrite_info(venv_bin/"python")
+    rw_info = python_shebang_rewrite_info(venv_bin/python3)
     rewrite_shebang rw_info, libexec/"bin/cqlsh.py"
 
     # Make sure tools are available
