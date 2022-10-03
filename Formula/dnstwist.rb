@@ -9,7 +9,8 @@ class Dnstwist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnstwist"
-    sha256 cellar: :any_skip_relocation, mojave: "4802b5e930c72518d4fbba55c9207a258996070ca3b711407a1a622e9584fd50"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "80252bb7158f764712d89c39e7c6746124a89d803e3c682ec4e350b80620c0d5"
   end
 
   depends_on "geoip"
@@ -111,7 +112,7 @@ class Dnstwist < Formula
   def install
     ENV.append "CPPFLAGS", "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi"
 
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources
 
     (libexec/"bin").install "dnstwist.py" => "dnstwist"
