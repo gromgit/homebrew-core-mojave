@@ -16,7 +16,8 @@ class EyeD3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eye-d3"
-    sha256 cellar: :any_skip_relocation, mojave: "f6c7b4de736ae5e226eaf23724e9b8fdcf1393469e2d9b8c9f9b58c5b0674f05"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dac6daf9fd456e88d60e0dc12a496241fa43beea98f78bb680ec919a0a01e3c3"
   end
 
   depends_on "python@3.10"
@@ -55,11 +56,12 @@ class EyeD3 < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    python3 = "python3.10"
+    venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
 
     bin_before = Dir[libexec/"bin/*"].to_set
-    system libexec/"bin/python3", *Language::Python.setup_install_args(libexec)
+    system libexec/"bin"/python3, *Language::Python.setup_install_args(libexec, python3)
     bin.install_symlink (Dir[libexec/"bin/*"].to_set - bin_before).to_a
     share.install Dir["docs/*"]
   end
