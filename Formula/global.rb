@@ -10,7 +10,8 @@ class Global < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/global"
-    sha256 mojave: "fe8c5db6ef8ae93a46a87344ed8696b1b37679263251b3c15ebab44269c1f65e"
+    rebuild 1
+    sha256 mojave: "fd83858c07d5bea33a67ca65bea265573ed1f79b6857de3826d81f53cfb44a20"
   end
 
   head do
@@ -40,10 +41,11 @@ class Global < Formula
   def install
     system "sh", "reconf.sh" if build.head?
 
-    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages("python3")
+    python3 = "python3.10"
+    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
 
     resource("Pygments").stage do
-      system "python3", *Language::Python.setup_install_args(libexec)
+      system python3, *Language::Python.setup_install_args(libexec, python3)
     end
 
     args = %W[
