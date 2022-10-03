@@ -13,7 +13,8 @@ class Fail2ban < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fail2ban"
-    sha256 cellar: :any_skip_relocation, mojave: "a81c3b3ea79be5241226d49afc2c67c785d388eb01a0e4c7e7fd25397444bc30"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b12f10984115d52c4c487ecb326addf429146b1f2c6979c3300be39a188313aa"
   end
 
   depends_on "help2man" => :build
@@ -41,8 +42,9 @@ class Fail2ban < Formula
   end
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages("python3")
-    ENV["PYTHON"] = which("python3")
+    python3 = "python3.10"
+    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
+    ENV["PYTHON"] = which(python3)
 
     rm "setup.cfg"
     Dir["config/paths-*.conf"].each do |r|
@@ -94,9 +96,7 @@ class Fail2ban < Formula
     inreplace "setup.py", "platform_system in ('linux',", "platform_system in ('linux', 'darwin',"
 
     system "./fail2ban-2to3"
-    system "python3", *Language::Python.setup_install_args(libexec),
-                      "--install-lib=#{libexec/Language::Python.site_packages("python3")}",
-                      "--without-tests"
+    system python3, *Language::Python.setup_install_args(libexec, python3), "--without-tests"
 
     cd "doc" do
       system "make", "dirhtml", "SPHINXBUILD=sphinx-build"
