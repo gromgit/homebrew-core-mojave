@@ -3,10 +3,9 @@ class FbClient < Formula
 
   desc "Shell-script client for https://paste.xinu.at"
   homepage "https://paste.xinu.at"
-  url "https://paste.xinu.at/data/client/fb-2.1.1.tar.gz"
-  sha256 "8fbcffc853b298a8497ab0f66b254c0c9ae4cbd31ab9889912a44a8c5c7cef0e"
+  url "https://paste.xinu.at/data/client/fb-2.3.0.tar.gz"
+  sha256 "1164eca06eeacb4210d462c4baf1c4004272a6197d873d61166e7793539d1983"
   license "GPL-3.0-only"
-  revision 3
   head "https://git.server-speed.net/users/flo/fb", using: :git, branch: "master"
 
   livecheck do
@@ -15,13 +14,8 @@ class FbClient < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "3bc9c8e679824e4aa1881940c2f31388009a092e82a7dab9aeb194356a3512e1"
-    sha256 cellar: :any,                 arm64_big_sur:  "a870e1dd933cdd27887bba730779541f1b9a118de7b77faafcd946a11987216a"
-    sha256 cellar: :any,                 monterey:       "dce8cbedeb2a437cdc4fa837e6a793b884cf754a9f99e139bb419dca961ca710"
-    sha256 cellar: :any,                 big_sur:        "15022e572c324e76d5b28922b1239f8ff8aba221bf2ed7cae49903ea85f9a4ae"
-    sha256 cellar: :any,                 catalina:       "ca22959ea5179efb908e13f0463e2a7d4bc0127322166594524a8db3be1a6925"
-    sha256 cellar: :any,                 mojave:         "d0681ab4b033fde92bcc83801c86342b1f97e27e849ea1404a7e8b3cf803a65c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8512aac59977ac082cb01cb01511c606c84b4daad6b95494b268ba6fe54c0e88"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fb-client"
+    sha256 cellar: :any, mojave: "16a2ca5f3758322c38d1ea2d88ee2227727377d1a3ed43a54ecf51358703af08"
   end
 
   depends_on "pkg-config" => :build
