@@ -1,14 +1,14 @@
 class RiemannClient < Formula
   desc "C client library for the Riemann monitoring system"
-  homepage "https://github.com/algernon/riemann-c-client"
-  url "https://github.com/algernon/riemann-c-client/archive/riemann-c-client-2.0.1.tar.gz"
-  sha256 "2ed963eeef5517f7be921790ef0cde13c7bcac172ac14ce5818d84a261cc3b31"
+  homepage "https://git.madhouse-project.org/algernon/riemann-c-client"
+  url "https://git.madhouse-project.org/algernon/riemann-c-client/archive/riemann-c-client-2.1.0.tar.gz"
+  sha256 "e1a4439ee23f4557d7563a88c67044d50c384641cf160d95114480404c547085"
   license "LGPL-3.0-or-later"
-  head "https://github.com/algernon/riemann-c-client.git", branch: "master"
+  head "https://git.madhouse-project.org/algernon/riemann-c-client.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/riemann-client"
-    sha256 cellar: :any, mojave: "09ab7c53e2269ac1518f242daf28a012c3aa04c4a34b960680ce1d3205f200d3"
+    sha256 cellar: :any, mojave: "ea58b6f156ed3e8046f1e2808c83dcd3c4bec0b1b55d68e2c1daef0ed3d4d379"
   end
 
   depends_on "autoconf" => :build
