@@ -2,13 +2,13 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/duckdb/duckdb.git",
-      tag:      "v0.4.0",
-      revision: "da9ee490df829a96bfbcfcd737f95f8dbc707d0a"
+      tag:      "v0.5.1",
+      revision: "7c111322de1095436350f95e33c5553b09302165"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duckdb"
-    sha256 cellar: :any, mojave: "1da987aa2a89c38d845a7a15607b60fe4ab5147fec5abee56870d39a56421e7f"
+    sha256 cellar: :any, mojave: "99fdf9172c5ebd5b5009009a4691e2d3b4fa1e38121e180cfe232994f1cd3415"
   end
 
   depends_on "cmake" => :build
@@ -17,8 +17,9 @@ class Duckdb < Formula
   def install
     ENV.deparallelize if OS.linux? # amalgamation builds take GBs of RAM
     mkdir "build/amalgamation"
-    system Formula["python@3.10"].opt_bin/"python3", "scripts/amalgamation.py", "--extended"
-    system Formula["python@3.10"].opt_bin/"python3", "scripts/parquet_amalgamation.py"
+    python3 = "python3.10"
+    system python3, "scripts/amalgamation.py", "--extended"
+    system python3, "scripts/parquet_amalgamation.py"
     cd "src/amalgamation" do
       system "cmake", "../..", *std_cmake_args
       system "make"
