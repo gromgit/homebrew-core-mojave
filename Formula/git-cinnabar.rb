@@ -8,7 +8,8 @@ class GitCinnabar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cinnabar"
-    sha256 cellar: :any_skip_relocation, mojave: "fdf6f0d3872b8c9f4515393483b3274a7a341009e7e462896926a186047d6ada"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5280355a2969d3b9917f629400b6950d87034ddccd1945eb9ca0ca591fb8bf08"
   end
 
   depends_on "mercurial"
@@ -23,7 +24,7 @@ class GitCinnabar < Formula
     prefix.install "cinnabar"
     bin.install "git-cinnabar", "git-cinnabar-helper", "git-remote-hg"
     bin.env_script_all_files(libexec, PYTHONPATH:          prefix,
-                                      GIT_CINNABAR_PYTHON: Formula["python@3.10"].opt_bin/"python3")
+                                      GIT_CINNABAR_PYTHON: which("python3.10"))
   end
 
   test do
