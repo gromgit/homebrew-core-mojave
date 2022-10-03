@@ -13,7 +13,8 @@ class Hatari < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hatari"
-    sha256 cellar: :any, mojave: "53d52786676e1b92b53903a11e5a2993196810231dc38e7cbdda202713f165a6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "33e5741d441fb0fa9e0823486561711ed66b261bf3cbd54b7a34de23a3b16e9e"
   end
 
   depends_on "cmake" => :build
@@ -30,8 +31,9 @@ class Hatari < Formula
   def install
     # Set .app bundle destination
     inreplace "src/CMakeLists.txt", "/Applications", prefix
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-      "-DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DPYTHON_EXECUTABLE=#{which("python3.10")}",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     if OS.mac?
       prefix.install "build/src/Hatari.app"
