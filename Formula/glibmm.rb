@@ -1,13 +1,13 @@
 class Glibmm < Formula
   desc "C++ interface to glib"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/glibmm/2.72/glibmm-2.72.1.tar.xz"
-  sha256 "2a7649a28ab5dc53ac4dabb76c9f61599fbc628923ab6a7dd74bf675d9155cd8"
+  url "https://download.gnome.org/sources/glibmm/2.74/glibmm-2.74.0.tar.xz"
+  sha256 "2b472696cbac79db8e405724118ec945219c5b9b18af63dc8cfb7f1d89b0f1fa"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glibmm"
-    sha256 cellar: :any, mojave: "2fda3848a15f7594f503f38f8d4f9ccc46fe03440c7e9bfcca33e4b15bc4d4c3"
+    sha256 cellar: :any, mojave: "04b01b7faa9cd2f5f172a5b6297a0b16fa5fab1823aa3ddce68410c390b1bc38"
   end
 
   depends_on "meson" => :build
@@ -15,10 +15,6 @@ class Glibmm < Formula
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "libsigc++"
-
-  on_linux do
-    depends_on "gcc" => :build
-  end
 
   fails_with gcc: "5"
 
