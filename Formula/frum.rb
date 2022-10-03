@@ -13,8 +13,8 @@ class Frum < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frum"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "b192063b21a67e329817e8d01f1ead08df3566d4818e15ac09f407836adccba4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "73d429ed76e95e69665f2733a932d2e50e8ac326ce9907c64654453049435905"
   end
 
   depends_on "rust" => :build
@@ -24,9 +24,7 @@ class Frum < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    (bash_completion/"frum").write Utils.safe_popen_read(bin/"frum", "completions", "--shell=bash")
-    (fish_completion/"frum.fish").write Utils.safe_popen_read(bin/"frum", "completions", "--shell=fish")
-    (zsh_completion/"_frum").write Utils.safe_popen_read(bin/"frum", "completions", "--shell=zsh")
+    generate_completions_from_executable(bin/"frum", "completions", "--shell")
   end
 
   test do
