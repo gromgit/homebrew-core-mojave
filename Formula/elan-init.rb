@@ -1,14 +1,14 @@
 class ElanInit < Formula
   desc "Lean Theorem Prover installer and version manager"
   homepage "https://github.com/leanprover/elan"
-  url "https://github.com/leanprover/elan/archive/v1.4.1.tar.gz"
-  sha256 "eac4925100624e1d77d70a35408805fb88672e87b60a44fd93c31e8cfa4bfa91"
+  url "https://github.com/leanprover/elan/archive/v1.4.2.tar.gz"
+  sha256 "d15dc93575601224b73c4744c27f28cb118655659b20d444e93ed63ba30b7def"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/leanprover/elan.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elan-init"
-    sha256 cellar: :any_skip_relocation, mojave: "15f756501cc129fcbf6e8e4774d3c95ca0a28996377097a016b8de2fe46a7710"
+    sha256 cellar: :any_skip_relocation, mojave: "5f1368e711d3e134e0b81666b15294401ec7d2f920d65adc70bfbdb5d97e6ece"
   end
 
   depends_on "rust" => :build
@@ -30,12 +30,7 @@ class ElanInit < Formula
       bin.install_symlink "elan-init" => link
     end
 
-    bash_output = Utils.safe_popen_read(bin/"elan", "completions", "bash")
-    (bash_completion/"elan").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"elan", "completions", "zsh")
-    (zsh_completion/"_elan").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"elan", "completions", "fish")
-    (fish_completion/"elan.fish").write fish_output
+    generate_completions_from_executable(bin/"elan", "completions", base_name: "elan")
   end
 
   test do
