@@ -9,7 +9,8 @@ class Diffoscope < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diffoscope"
-    sha256 cellar: :any_skip_relocation, mojave: "d8e2653b56cb361a14d431540bdf86ba9b40cf9d1fe32a5355a31eef9939c14e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "122994dc32e2af6f42e3746d710142ddd2e087073ff1d999e075380580c81294"
   end
 
   depends_on "libarchive"
@@ -37,7 +38,7 @@ class Diffoscope < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources
     venv.pip_install buildpath
 
