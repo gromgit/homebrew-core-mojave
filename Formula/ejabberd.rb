@@ -8,7 +8,8 @@ class Ejabberd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejabberd"
-    sha256 cellar: :any, mojave: "0d95616f0b642464305b88192bebb8f0206379b723c58b61993140433592e530"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b9ecf3c6aa67c38cf1020efe81cbd724f546444020dda07c90324b27485a7a5f"
   end
 
   depends_on "autoconf" => :build
