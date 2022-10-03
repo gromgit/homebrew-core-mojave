@@ -9,18 +9,14 @@ class Ctemplate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ctemplate"
-    rebuild 2
-    sha256 cellar: :any, mojave: "00cbb3a7c309da275a40702c00c285103bf722d0d1d5714228bec272b944d3f0"
+    rebuild 3
+    sha256 cellar: :any, mojave: "bac2b0bfe76577d7a75e4e67ff68ea44067090681099dbb4ce59bacbf904394e"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "python@3.10" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
@@ -42,8 +38,8 @@ class Ctemplate < Formula
       }
     EOS
 
-    system ENV.cxx, "-std=c++11", "-I#{include}", "-L#{lib}",
-                    "-lctemplate_nothreads", "test.cpp", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
+                    "-lctemplate_nothreads", "-o", "test"
     system "./test"
   end
 end
