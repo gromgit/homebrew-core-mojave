@@ -1,15 +1,14 @@
 class CrispyDoom < Formula
   desc "Limit-removing enhanced-resolution Doom source port based on Chocolate Doom"
   homepage "https://github.com/fabiangreffrath/crispy-doom"
-  url "https://github.com/fabiangreffrath/crispy-doom/archive/crispy-doom-5.11.1.tar.gz"
-  sha256 "7c5bb36393dec39b9732e53963dadd6bcc3bd193370c4ec5b1c0121df3b38faa"
+  url "https://github.com/fabiangreffrath/crispy-doom/archive/crispy-doom-5.12.0.tar.gz"
+  sha256 "d85d6e76aa949385458b7702e6fb594996745b94032ffb13e1790376eeecb462"
   license "GPL-2.0-only"
   head "https://github.com/fabiangreffrath/crispy-doom.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crispy-doom"
-    rebuild 1
-    sha256 cellar: :any, mojave: "92a39fa79103754d3109f4960bba8bf35bf873ec261f855d5c165f49e1a0c24a"
+    sha256 cellar: :any, mojave: "25f6708451624cf451dd7998839879fa3941ae8ad697aad09179b1ba3405b832"
   end
 
   depends_on "autoconf" => :build
