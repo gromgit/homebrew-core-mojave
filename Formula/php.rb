@@ -2,10 +2,11 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.1.8.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.8.tar.xz"
-  sha256 "04c065515bc347bc68e0bb1ac7182669a98a731e4a17727e5731650ad3d8de4c"
+  url "https://www.php.net/distributions/php-8.1.10.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.1.10.tar.xz"
+  sha256 "90e7120c77ee83630e6ac928d23bc6396603d62d83a3cf5df8a450d2e3070162"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -14,7 +15,7 @@ class Php < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php"
-    sha256 mojave: "dbafe5bbc4df821de0a3908a24088ca6a922494df9874566f65c8fe0c6ae3615"
+    sha256 mojave: "ed68aef21d7cfa11e87bf3f7e9bec3e30e9ce4582cf4110000c1199f470ee951"
   end
 
   head do
