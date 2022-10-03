@@ -10,7 +10,8 @@ class Gdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdb"
-    sha256 mojave: "58740b2e608a411541c05895b71727be41a681d462e9149dddbc253b82f3cb65"
+    rebuild 1
+    sha256 mojave: "d6ef6574be8700e99a9104d62783a003fb849ce68e523c2282529bed5d10eb89"
   end
 
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
@@ -25,7 +26,6 @@ class Gdb < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "gcc"
     depends_on "guile"
   end
 
@@ -46,7 +46,7 @@ class Gdb < Formula
       --disable-debug
       --disable-dependency-tracking
       --with-lzma
-      --with-python=#{Formula["python@3.10"].opt_bin}/python3
+      --with-python=#{Formula["python@3.10"].opt_bin}/python3.10
       --disable-binutils
     ]
 
