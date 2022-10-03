@@ -1,14 +1,14 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https://github.com/lima-vm/lima"
-  url "https://github.com/lima-vm/lima/archive/v0.11.0.tar.gz"
-  sha256 "b4f89cd8be84d2530a9ca86544ee9709b6d90c50ea0a08bac5959813f4bd435d"
+  url "https://github.com/lima-vm/lima/archive/v0.12.0.tar.gz"
+  sha256 "d3b04081d6712e6463df447b49afb08ceabba9b22e98a4cc82dc3a494ea47cf0"
   license "Apache-2.0"
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lima"
-    sha256 cellar: :any_skip_relocation, mojave: "29340ffb3095de850aaee6d209dd2fa13bda6476ab3935d543da1723a20f8ad1"
+    sha256 cellar: :any_skip_relocation, mojave: "d73048e4cd2fada7695f637eb7f9bdbf9aadf6e44da624dd3c2761ddd6eace16"
   end
 
   depends_on "go" => :build
@@ -21,12 +21,7 @@ class Lima < Formula
     share.install Dir["_output/share/*"]
 
     # Install shell completions
-    output = Utils.safe_popen_read("#{bin}/limactl", "completion", "bash")
-    (bash_completion/"limactl").write output
-    output = Utils.safe_popen_read("#{bin}/limactl", "completion", "zsh")
-    (zsh_completion/"_limactl").write output
-    output = Utils.safe_popen_read("#{bin}/limactl", "completion", "fish")
-    (fish_completion/"limactl.fish").write output
+    generate_completions_from_executable(bin/"limactl", "completion", base_name: "limactl")
   end
 
   test do
