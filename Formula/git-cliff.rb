@@ -1,13 +1,13 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https://github.com/orhun/git-cliff"
-  url "https://github.com/orhun/git-cliff/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "0d7390ff23ee16efc93e8d7f2061cfa16c079ed609bcee045e67590c62eccd07"
+  url "https://github.com/orhun/git-cliff/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "98bdf069714bb9f6c82d3aff0199178ac06c0063ddcd82b3e17127fbd4c465e3"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cliff"
-    sha256 cellar: :any_skip_relocation, mojave: "ebe0ca4e209b1df09397fa4c088df31df02f1b8c572bc1da7bca032b52de8f3b"
+    sha256 cellar: :any_skip_relocation, mojave: "005cd2b67deafaa0314e651fbcfb5b41ee23376037b5cdbf00e11e4425d3a037"
   end
 
   depends_on "rust" => :build
