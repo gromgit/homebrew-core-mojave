@@ -1,13 +1,13 @@
 class H3 < Formula
   desc "Hexagonal hierarchical geospatial indexing system"
   homepage "https://uber.github.io/h3/"
-  url "https://github.com/uber/h3/archive/v4.0.0.tar.gz"
-  sha256 "218ce453cf7548a843fc23271dc48523cd6a601b6d26d9dd8d23a35b6128793b"
+  url "https://github.com/uber/h3/archive/v4.0.1.tar.gz"
+  sha256 "01891901707c6430caaea7e645ff5ac6980cae166094a6f924ded197e5774a19"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/h3"
-    sha256 cellar: :any, mojave: "e9c0e54d68a018eb65eed7725207ca82737fa752c6e23567658e4bf164744e51"
+    sha256 cellar: :any, mojave: "34e0d2c49ecd202c9a2dd5a8d7f93c72655083adf6a99db5d5e51c5206671d6d"
   end
 
   depends_on "cmake" => :build
