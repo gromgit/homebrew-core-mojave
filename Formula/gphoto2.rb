@@ -4,6 +4,7 @@ class Gphoto2 < Formula
   url "https://downloads.sourceforge.net/project/gphoto/gphoto/2.5.28/gphoto2-2.5.28.tar.bz2"
   sha256 "2a648dcdf12da19e208255df4ebed3e7d2a02f905be4165f2443c984cf887375"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +13,11 @@ class Gphoto2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gphoto2"
-    sha256 mojave: "ba92d78b61e2419dc00920e44564f0b476554be628cc650609a1e5a1e8dc42fa"
+    sha256 mojave: "629914db98b6062167e4ccd63cfb266ed7c9f25d0f1ad4abdc15277badeeb550"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "libgphoto2"
   depends_on "popt"
