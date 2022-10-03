@@ -13,7 +13,8 @@ class Fnm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fnm"
-    sha256 cellar: :any_skip_relocation, mojave: "1056d29b5dbc2238883c1e2cb7cd57020cc565fc855c927d87300994972c8077"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2d2eec91fce99f9134dff2ef9483ae9544bd83081c2d575c6ba3ac7cd9944254"
   end
 
   depends_on "rust" => :build
@@ -23,9 +24,7 @@ class Fnm < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    (bash_completion/"fnm").write Utils.safe_popen_read(bin/"fnm", "completions", "--shell=bash")
-    (fish_completion/"fnm.fish").write Utils.safe_popen_read(bin/"fnm", "completions", "--shell=fish")
-    (zsh_completion/"_fnm").write Utils.safe_popen_read(bin/"fnm", "completions", "--shell=zsh")
+    generate_completions_from_executable(bin/"fnm", "completions", "--shell")
   end
 
   test do
