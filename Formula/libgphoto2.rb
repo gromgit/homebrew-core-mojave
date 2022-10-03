@@ -4,6 +4,7 @@ class Libgphoto2 < Formula
   url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.30/libgphoto2-2.5.30.tar.bz2"
   sha256 "ee61a1dac6ad5cf711d114e06b90a6d431961a6e7ec59f4b757a7cd77b1c0fb4"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +13,11 @@ class Libgphoto2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgphoto2"
-    sha256 mojave: "01bff4691983c90399556f3bf98e98757a4377a4f28d8ae73b59ed53f08ad885"
+    sha256 mojave: "fe2bd4969eac9097c8117252756b2e6d8a72a753da2b923319c6fb0ec2bb08d7"
   end
 
   head do
-    url "https://github.com/gphoto/libgphoto2.git"
+    url "https://github.com/gphoto/libgphoto2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -25,11 +26,16 @@ class Libgphoto2 < Formula
 
   depends_on "pkg-config" => :build
   depends_on "gd"
+  depends_on "jpeg-turbo"
+  depends_on "libexif"
   depends_on "libtool"
   depends_on "libusb-compat"
 
+  uses_from_macos "curl"
+  uses_from_macos "libxml2"
+
   def install
-    system "autoreconf", "-fvi" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
