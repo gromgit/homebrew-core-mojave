@@ -14,7 +14,8 @@ class Netcdf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netcdf"
-    sha256 cellar: :any, mojave: "06d1ffa7b1367c04afb09da7a176196edd7c4ba98d1885bbde04ba040f26ff2b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d22aab0be65631f3d159399369cd8440060a60ee6bdd9f2de08b59311d0865f4"
   end
 
   depends_on "cmake" => :build
