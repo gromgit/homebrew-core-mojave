@@ -1,13 +1,13 @@
 class GopassJsonapi < Formula
   desc "Gopass Browser Bindings"
   homepage "https://github.com/gopasspw/gopass-jsonapi"
-  url "https://github.com/gopasspw/gopass-jsonapi/archive/v1.14.3.tar.gz"
-  sha256 "64aea30cc1473bce81e80e407bf2911b0b67d08dbe17321c729685f847904259"
+  url "https://github.com/gopasspw/gopass-jsonapi/releases/download/v1.14.6/gopass-jsonapi-1.14.6.tar.gz"
+  sha256 "3ce434ee44c2cd17ac241bfc4a62e95d98d0e78e068f78a7d71106a4d555c6b3"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gopass-jsonapi"
-    sha256 cellar: :any_skip_relocation, mojave: "2cd56f4b54b864579622f697232bb65070d3768e4efdddb002dfdfb2babc26e2"
+    sha256 cellar: :any_skip_relocation, mojave: "bdd2c2961fe9c08542a835a78d56eecd1beb80ddbaba6141181748b0559db901"
   end
 
   depends_on "go" => :build
