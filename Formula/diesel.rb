@@ -8,7 +8,8 @@ class Diesel < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diesel"
-    sha256 cellar: :any, mojave: "366a9cd9d1a6b887446298f064d6e9340b0502aee54bb12b2c531cffecdfd6c0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "091c6c9ef7bbba7e78ee1188435a94fed3ae052105fe089d600c84d93fb34f0b"
   end
 
   depends_on "rust" => [:build, :test]
@@ -26,12 +27,7 @@ class Diesel < Formula
       system "cargo", "install", *std_cargo_args
     end
 
-    bash_output = Utils.safe_popen_read(bin/"diesel", "completions", "bash")
-    (bash_completion/"diesel").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"diesel", "completions", "zsh")
-    (zsh_completion/"_diesel").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"diesel", "completions", "fish")
-    (fish_completion/"diesel.fish").write fish_output
+    generate_completions_from_executable(bin/"diesel", "completions")
   end
 
   test do
