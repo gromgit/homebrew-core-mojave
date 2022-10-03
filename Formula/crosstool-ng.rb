@@ -13,7 +13,8 @@ class CrosstoolNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crosstool-ng"
-    sha256 cellar: :any, mojave: "6e58070291540ec58600059e687f57bf97eeed4eff42c7d283f45fa0c12ab91d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "09e92b8b3709c30185bddd68fda5b15ed97710e043a1249931f1ca985343621a"
   end
 
   depends_on "help2man" => :build
@@ -49,10 +50,14 @@ class CrosstoolNg < Formula
 
     ENV["BISON"] = Formula["bison"].opt_bin/"bison"
     ENV["M4"] = Formula["m4"].opt_bin/"m4"
-    ENV["MAKE"] = Formula["make"].opt_bin/"gmake" if OS.mac?
-    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3"
-    ENV.append "LDFLAGS", "-lintl" if OS.mac?
-    ENV.append "CFLAGS", "-I#{Formula["ncurses"].include}/ncursesw" unless OS.mac?
+    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/"python3.10"
+
+    if OS.mac?
+      ENV["MAKE"] = Formula["make"].opt_bin/"gmake"
+      ENV.append "LDFLAGS", "-lintl"
+    else
+      ENV.append "CFLAGS", "-I#{Formula["ncurses"].include}/ncursesw"
+    end
 
     system "./configure", "--prefix=#{prefix}"
 
@@ -60,11 +65,7 @@ class CrosstoolNg < Formula
     system "make"
     system "make", "install"
 
-    unless OS.mac?
-      [bin/"ct-ng", pkgshare/"paths.sh"].each do |file|
-        inreplace file, Superenv.shims_path/"make", "make"
-      end
-    end
+    inreplace [bin/"ct-ng", pkgshare/"paths.sh"], Superenv.shims_path/"make", "make" unless OS.mac?
   end
 
   test do
