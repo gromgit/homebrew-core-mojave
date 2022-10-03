@@ -7,7 +7,8 @@ class GitAbsorb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-absorb"
-    sha256 cellar: :any_skip_relocation, mojave: "b2fa05826ea4afc029304c3d467eeadbf5355ac88d5b494042cf6ff0321811de"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6cd9e042c24b0f2a9788601c74a64874c2ff6f20c5f7c307f1f9be424e512ab6"
   end
 
   depends_on "rust" => :build
@@ -18,9 +19,7 @@ class GitAbsorb < Formula
     system "cargo", "install", *std_cargo_args
     man1.install "Documentation/git-absorb.1"
 
-    (zsh_completion/"_git-absorb").write Utils.safe_popen_read("#{bin}/git-absorb", "--gen-completions", "zsh")
-    (bash_completion/"git-absorb").write Utils.safe_popen_read("#{bin}/git-absorb", "--gen-completions", "bash")
-    (fish_completion/"git-absorb.fish").write Utils.safe_popen_read("#{bin}/git-absorb", "--gen-completions", "fish")
+    generate_completions_from_executable(bin/"git-absorb", "--gen-completions")
   end
 
   test do
