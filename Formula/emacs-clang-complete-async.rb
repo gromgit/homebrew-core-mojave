@@ -2,7 +2,7 @@ class EmacsClangCompleteAsync < Formula
   desc "Emacs plugin using libclang to complete C/C++ code"
   homepage "https://github.com/Golevka/emacs-clang-complete-async"
   license "GPL-3.0"
-  revision 6
+  revision 7
   head "https://github.com/Golevka/emacs-clang-complete-async.git", branch: "master"
 
   stable do
@@ -15,8 +15,7 @@ class EmacsClangCompleteAsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emacs-clang-complete-async"
-    rebuild 3
-    sha256 cellar: :any, mojave: "c560a516449cae44848e84b3af83accaa082d2a56b93d2dac4ac489f4f0d3ff0"
+    sha256 cellar: :any, mojave: "a547cc5f5aecc6eef50b9b47247dc14a0e435af8097496a19feb4a995327c573"
   end
 
   depends_on "llvm"
