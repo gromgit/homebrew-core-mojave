@@ -7,17 +7,15 @@ class Libsigcxx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsigc++"
-    sha256 cellar: :any, mojave: "335bb545191ea24aa60373289427e8f0586ef800bb9222c76b3574ed7efd4de5"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bec8a93276ed160bc34903dbb2b3949dacb39928897d08c88ac3316cb546ce92"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on macos: :high_sierra # needs C++17
 
-  on_linux do
-    depends_on "m4" => :build
-    depends_on "gcc"
-  end
+  uses_from_macos "m4" => :build
 
   fails_with gcc: "5"
 
