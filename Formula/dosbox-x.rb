@@ -14,7 +14,8 @@ class DosboxX < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-x"
-    sha256 cellar: :any, mojave: "7c2e6ef5a62bdd174e4878cd553e98f1e0a56ad7043314313ad4a095c1dceb2b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "cac35851920e907ae2adff9fc49db8ebd0d3793e9aab3b40b1d929e8128da335"
   end
 
   depends_on "autoconf" => :build
@@ -24,8 +25,7 @@ class DosboxX < Formula
   depends_on macos: :high_sierra # needs futimens
 
   on_linux do
-    depends_on "linux-headers@4.15" => :build
-    depends_on "gcc"
+    depends_on "linux-headers@5.15" => :build
     depends_on "sdl2"
   end
 
