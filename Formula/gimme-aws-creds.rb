@@ -9,7 +9,8 @@ class GimmeAwsCreds < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gimme-aws-creds"
-    sha256 cellar: :any, mojave: "689b51b965852719fe552f405ddf33a64c7c21fa59fa97ffd6608d505c41d9cf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1ae2c2be74b8bd922c04d66f6f936846e74f5cd76242b838e7cb659c72fa2e7b"
   end
 
   depends_on "rust" => :build
@@ -182,7 +183,7 @@ class GimmeAwsCreds < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     res = resources.map(&:name).to_set
     if OS.mac?
       res -= ["jeepney", "SecretStorage"]
