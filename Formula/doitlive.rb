@@ -10,7 +10,8 @@ class Doitlive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doitlive"
-    sha256 cellar: :any_skip_relocation, mojave: "642021221a7743ad723caf6350305b4de5ad440bb406a16b459084a17512d745"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1bcb326929d707a74527d1bbe9faf047952044208966a2f67cd25fdd357775c1"
   end
 
   depends_on "python@3.10"
@@ -59,11 +60,8 @@ class Doitlive < Formula
   def install
     virtualenv_install_with_resources
 
-    output = Utils.safe_popen_read({ "SHELL" => "bash" }, libexec/"bin/doitlive", "completion")
-    (bash_completion/"doitlive").write output
-
-    output = Utils.safe_popen_read({ "SHELL" => "zsh" }, libexec/"bin/doitlive", "completion")
-    (zsh_completion/"_doitlive").write output
+    generate_completions_from_executable(libexec/"bin/doitlive", "completion",
+                                         shells: [:bash, :zsh], shell_parameter_format: :none)
   end
 
   test do
