@@ -11,8 +11,8 @@ class MysqlClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql-client"
-    rebuild 1
-    sha256 mojave: "0d763ca807bdb3698d3e9407a8f7f2849192105b0fde66af6ae9ba20cd16cb80"
+    rebuild 2
+    sha256 mojave: "8b996d33f59c2816fdce44405640b36d8275778b928489fda435466596240cb8"
   end
 
   keg_only "it conflicts with mysql (which contains client libraries)"
@@ -28,10 +28,6 @@ class MysqlClient < Formula
   depends_on "zstd"
 
   uses_from_macos "libedit"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
