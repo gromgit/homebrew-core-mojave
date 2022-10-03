@@ -5,6 +5,7 @@ class Spidermonkey < Formula
   version "91.13.0"
   sha256 "53be2bcde0b5ee3ec106bd8ba06b8ae95e7d489c484e881dfbe5360e4c920762"
   license "MPL-2.0"
+  revision 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
@@ -16,7 +17,7 @@ class Spidermonkey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spidermonkey"
-    sha256 cellar: :any, mojave: "d8c3fe731228dfb7dfa5b50af7758f442767d07469dcdb437b5e47857958bb8b"
+    sha256 cellar: :any, mojave: "d54764c702b2a300f7949097f0cd08e6f3d37037917febc7a738c10c53a6c7c6"
   end
 
   depends_on "autoconf@2.13" => :build
@@ -30,10 +31,6 @@ class Spidermonkey < Formula
   uses_from_macos "llvm" => :build # for llvm-objdump
   uses_from_macos "m4" => :build
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   conflicts_with "narwhal", because: "both install a js binary"
 
