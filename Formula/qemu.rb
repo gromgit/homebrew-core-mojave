@@ -1,14 +1,14 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-7.0.0.tar.xz"
-  sha256 "f6b375c7951f728402798b0baabb2d86478ca53d44cedbefabbe1c46bf46f839"
+  url "https://download.qemu.org/qemu-7.1.0.tar.xz"
+  sha256 "a0634e536bded57cf38ec8a751adb124b89c776fe0846f21ab6c6728f1cbbbe6"
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qemu"
-    sha256 mojave: "188f1512abe6df27c7771fdd7e8a70a887ad50380227ecc60f3fb4ad71106bc0"
+    sha256 mojave: "a37ace7aa82afb4b8e6d1f6f12a00e03e67f080d2ccef1bfd6d239a7f341a0e7"
   end
 
   depends_on "libtool" => :build
@@ -16,9 +16,10 @@ class Qemu < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "capstone"
   depends_on "glib"
   depends_on "gnutls"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libslirp"
   depends_on "libssh"
@@ -29,10 +30,10 @@ class Qemu < Formula
   depends_on "pixman"
   depends_on "snappy"
   depends_on "vde"
+  depends_on "zstd"
 
   on_linux do
     depends_on "attr"
-    depends_on "gcc"
     depends_on "gtk+3"
     depends_on "libcap-ng"
   end
@@ -54,17 +55,16 @@ class Qemu < Formula
       --host-cc=#{ENV.cc}
       --disable-bsd-user
       --disable-guest-agent
+      --enable-capstone
       --enable-curses
       --enable-libssh
       --enable-slirp=system
       --enable-vde
       --enable-virtfs
+      --enable-zstd
       --extra-cflags=-DNCURSES_WIDECHAR=1
       --disable-sdl
     ]
-
-    # Please remove this line when the CI gets updated to a recent version of Ubuntu(kernel version >= 4.9)
-    args << "--disable-linux-user"
 
     # Sharing Samba directories in QEMU requires the samba.org smbd which is
     # incompatible with the macOS-provided version. This will lead to
@@ -73,9 +73,11 @@ class Qemu < Formula
     # Samba installations from external taps.
     args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
 
-    args << "--disable-gtk" if OS.mac?
-    args << "--enable-cocoa" if OS.mac?
-    args << "--enable-gtk" if OS.linux?
+    args += if OS.mac?
+      ["--disable-gtk", "--enable-cocoa"]
+    else
+      ["--enable-gtk"]
+    end
 
     system "./configure", *args
     system "make", "V=1", "install"
