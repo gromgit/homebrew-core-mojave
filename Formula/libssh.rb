@@ -1,14 +1,14 @@
 class Libssh < Formula
   desc "C library SSHv1/SSHv2 client and server protocols"
   homepage "https://www.libssh.org/"
-  url "https://www.libssh.org/files/0.10/libssh-0.10.0.tar.xz"
-  sha256 "0dc158c534cd838ad0b785a82dec586de40da7e096523ae6c08c9b7bd2af0b57"
+  url "https://www.libssh.org/files/0.10/libssh-0.10.4.tar.xz"
+  sha256 "07392c54ab61476288d1c1f0a7c557b50211797ad00c34c3af2bbc4dbc4bd97d"
   license "LGPL-2.1-or-later"
   head "https://git.libssh.org/projects/libssh.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libssh"
-    sha256 cellar: :any, mojave: "c35c3ecd5966fb687f9afbd7bc5af62262704eb900590cf70bd19aea864d23e2"
+    sha256 cellar: :any, mojave: "e0b83e4fb62423b3320027d4ad07a1cddd4f652a663d5a3fd4d10ba509a3acc3"
   end
 
   depends_on "cmake" => :build
