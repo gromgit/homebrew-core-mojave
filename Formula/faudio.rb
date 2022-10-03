@@ -8,7 +8,8 @@ class Faudio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faudio"
-    sha256 cellar: :any, mojave: "8fb8c2969b52bf245f1a5a66104f7238ae0c88a7a8b44f263c984c8b8baf18f6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6a3498eaaa865d70f517e0404956bf25d6412d37de46380b4972b9df20858260"
   end
 
   depends_on "cmake" => :build
@@ -19,12 +20,6 @@ class Faudio < Formula
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
-  end
-
-  def caveats
-    <<~EOS
-      FAudio is built without FFmpeg support for decoding xWMA resources.
-    EOS
   end
 
   test do
