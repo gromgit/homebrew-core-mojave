@@ -1,15 +1,14 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
   homepage "https://hurl.dev"
-  url "https://github.com/Orange-OpenSource/hurl/archive/refs/tags/1.6.1.tar.gz"
-  sha256 "5b3de8c0375a87094ecbccdd57b89a65b465c25e2ffd8dfdffb1ab08346e4cb1"
+  url "https://github.com/Orange-OpenSource/hurl/archive/refs/tags/1.7.0.tar.gz"
+  sha256 "6f5b01de19a1c3376a714c9636aa8d4497d060826a5656cb94785fb4be3468e5"
   license "Apache-2.0"
   head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hurl-1.6.1"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "13434da4f04b703fdf48ae29a1840837ef26debc4989e7844084a91293daa3b2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hurl"
+    sha256 cellar: :any_skip_relocation, mojave: "f2bbcea704ff685572e7afd28707df1291b697081f4e842fdc5047f6a58f02cf"
   end
 
   depends_on "rust" => :build
@@ -28,8 +27,8 @@ class Hurl < Formula
     system "cargo", "install", *std_cargo_args(path: "packages/hurl")
     system "cargo", "install", *std_cargo_args(path: "packages/hurlfmt")
 
-    man1.install "docs/man/hurl.1"
-    man1.install "docs/man/hurlfmt.1"
+    man1.install "docs/manual/hurl.1"
+    man1.install "docs/manual/hurlfmt.1"
   end
 
   test do
