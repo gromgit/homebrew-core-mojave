@@ -1,7 +1,7 @@
 class Liblqr < Formula
   desc "C/C++ seam carving library"
   homepage "https://liblqr.wikidot.com/"
-  license "LGPL-3.0"
+  license "LGPL-3.0-only"
   revision 1
   head "https://github.com/carlobaldassi/liblqr.git", branch: "master"
 
@@ -16,18 +16,40 @@ class Liblqr < Formula
     end
   end
 
-bottle do
+  bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblqr"
-    rebuild 2
-    sha256 cellar: :any, mojave: "3d69ddb1234403f986452994601e016a71713feabf03361e15a5b22e24e63f26"
+    rebuild 3
+    sha256 cellar: :any, mojave: "906e9bb426774bf3758d6d9bcbe176a378ecea967a113a8fa186157d0b64f4e3"
   end
 
   depends_on "pkg-config" => :build
   depends_on "glib"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args, "--enable-install-man"
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~EOS
+      #include <lqr.h>
+      int main() {
+        guchar* buffer = calloc(1, sizeof(guchar));
+
+        LqrCarver *carver = lqr_carver_new(buffer, 1, 1, 1);
+        if (carver == NULL) return 1;
+
+        lqr_carver_destroy(carver);
+
+        return 0;
+      }
+    EOS
+
+    system ENV.cc, "test.c",
+                   "-I#{include}/lqr-1",
+                   "-I#{Formula["glib"].opt_include}/glib-2.0",
+                   "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
+                   "-L#{lib}", "-llqr-1"
+    system "./a.out"
   end
 end
