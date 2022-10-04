@@ -10,7 +10,8 @@ class Mitmproxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mitmproxy"
-    sha256 cellar: :any, mojave: "887233759298e911461845a2455acdfdd92f4da653b21594e08834139d04dbea"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8aec8c5911f1028e7b1b0ac55bd2534a2a6f4b91eb1788314804d733ec99029a"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -191,7 +192,7 @@ class Mitmproxy < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resource("cffi")
     venv.pip_install resources
     venv.pip_install_and_link buildpath
