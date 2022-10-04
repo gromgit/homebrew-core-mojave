@@ -4,11 +4,11 @@ class Libpsl < Formula
   url "https://github.com/rockdaboot/libpsl/releases/download/0.21.1/libpsl-0.21.1.tar.gz"
   sha256 "ac6ce1e1fbd4d0254c4ddb9d37f1fa99dec83619c1253328155206b896210d4c"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpsl"
-    sha256 cellar: :any, mojave: "554024acf621dfc7c68d58002d98f85d7996f511ee1d380986ba869acf043b04"
+    sha256 cellar: :any, mojave: "73cadda73aa74972e7e06f1468880a0fc636988f101de834c58661f8a8545944"
   end
 
   depends_on "meson" => :build
