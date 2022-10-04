@@ -11,7 +11,8 @@ class HomeassistantCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homeassistant-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "b6f9712bb16b1b6aa4a60fd03f47b7c048bc2befbe190f9139c020b0a97037cd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "36d2b676224afbdcbac650ef2e48e04a2025f63f59bd6b76adce69d5986267eb"
   end
 
   depends_on "libpython-tabulate"
@@ -171,8 +172,8 @@ class HomeassistantCli < Formula
   def install
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/hass-cli"
-    (bash_completion/"hass-cli").write Utils.safe_popen_read(bin/"hass-cli", "completion", "bash")
-    (zsh_completion/"_hass-cli").write Utils.safe_popen_read(bin/"hass-cli", "completion", "zsh")
+    generate_completions_from_executable(bin/"hass-cli", "completion", base_name: "hass-cli",
+                                                                       shells:    [:bash, :zsh])
   end
 
   test do
