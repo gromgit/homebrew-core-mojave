@@ -1,15 +1,14 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
   homepage "https://github.com/luvit/luv"
-  url "https://github.com/luvit/luv/archive/1.44.2-0.tar.gz"
-  sha256 "44ccda27035bfe683e6325a2a93f2c254be1eb76bde6efc2bd37c56a7af7b00a"
+  url "https://github.com/luvit/luv/archive/1.44.2-1.tar.gz"
+  sha256 "f8c69908e17ec8ab370253d1508e23deaecfc0c4752d2efb77e427e579501104"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luv"
-    sha256 cellar: :any, mojave: "282651795174f709df19b72ccd5cf1bfaec730ef00db21ed9681c4a33a6e40fd"
+    sha256 cellar: :any, mojave: "acc899f424dd52eb8609e90f6fd534a7ac94e90b8feaa46428b0682cbcca63d4"
   end
 
   depends_on "cmake" => :build
