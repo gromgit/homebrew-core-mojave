@@ -9,6 +9,7 @@ class Libserdes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libserdes"
+    rebuild 1
     sha256 cellar: :any, mojave: "ae17d9bcb091d2d9556e8461ada0a49053471ca2fecd616ce3df91071dcbe2b1"
   end
 
