@@ -8,7 +8,8 @@ class Libgosu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgosu"
-    sha256 cellar: :any, mojave: "2168aa6913eefeaade7c3d471dcdbbd4be16b2a2d925443110f47bad09fe3ee7"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3aa1abfb5b1f03ea53fc170fbdba4bb6e56a933f4ae80c92aca327355fff446e"
   end
 
   depends_on "cmake" => :build
@@ -17,7 +18,6 @@ class Libgosu < Formula
 
   on_linux do
     depends_on "fontconfig"
-    depends_on "gcc"
     depends_on "mesa"
     depends_on "mesa-glu"
     depends_on "openal-soft"
