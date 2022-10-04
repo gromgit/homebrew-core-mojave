@@ -22,7 +22,8 @@ class Lensfun < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lensfun"
-    sha256 mojave: "87745747e4040f0bc14cb9b3b311eaa458e6474983d5249c822c86677007dc26"
+    rebuild 1
+    sha256 mojave: "3420c649f31e941042cdfebe1516abac9d9e418a7a89b1922b985d02a9481f61"
   end
 
   depends_on "cmake" => :build
@@ -38,7 +39,7 @@ class Lensfun < Formula
 
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
-    site_packages = prefix/Language::Python.site_packages("python3")
+    site_packages = prefix/Language::Python.site_packages("python3.10")
     inreplace "apps/CMakeLists.txt", "${SETUP_PY} install ", "\\0 --install-lib=#{site_packages} "
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
