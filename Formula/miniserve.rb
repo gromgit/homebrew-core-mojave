@@ -1,13 +1,13 @@
 class Miniserve < Formula
   desc "High performance static file server"
   homepage "https://github.com/svenstaro/miniserve"
-  url "https://github.com/svenstaro/miniserve/archive/v0.20.0.tar.gz"
-  sha256 "77aca0e3660564cc2b9a7f318c5d9065d471f3c5ab0a7d1b6850a5cb6e21904f"
+  url "https://github.com/svenstaro/miniserve/archive/v0.22.0.tar.gz"
+  sha256 "325f6cde391c468000b1bdcc8455ec2c6950b3c930029187671c536507b185ba"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/miniserve"
-    sha256 cellar: :any_skip_relocation, mojave: "13c6420bb6c81914a4a272abcd457bf22b4cf8fc3b74a04005a7a7fe38ffe22f"
+    sha256 cellar: :any_skip_relocation, mojave: "fbcf16c5fbc2fc5ca6ac55ebd9597ac143a4a32d011511090a31069976c50698"
   end
 
   depends_on "rust" => :build
@@ -15,12 +15,7 @@ class Miniserve < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_output = Utils.safe_popen_read("#{bin}/miniserve", "--print-completions", "bash")
-    (bash_completion/"miniserve").write bash_output
-    zsh_output = Utils.safe_popen_read("#{bin}/miniserve", "--print-completions", "zsh")
-    (zsh_completion/"_miniserve").write zsh_output
-    fish_output = Utils.safe_popen_read("#{bin}/miniserve", "--print-completions", "fish")
-    (fish_completion/"miniserve.fish").write fish_output
+    generate_completions_from_executable(bin/"miniserve", "--print-completions")
   end
 
   test do
