@@ -11,7 +11,8 @@ class Libnetworkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libnetworkit"
-    sha256 cellar: :any, mojave: "22dffe0040f04e83e22707c828f4ed930443286b7c87008d4fb665662b76e470"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a910c443205e292cf4ae3c6f4ca2c0c97a603fe45c88e5e56def9ba31f4934e7"
   end
 
   depends_on "cmake" => :build
@@ -20,10 +21,6 @@ class Libnetworkit < Formula
 
   on_macos do
     depends_on "libomp"
-  end
-
-  on_linux do
-    depends_on "gcc"
   end
 
   fails_with gcc: "5"
