@@ -4,12 +4,12 @@ class Liblcf < Formula
   url "https://easyrpg.org/downloads/player/0.7.0/liblcf-0.7.0.tar.xz"
   sha256 "ed76501bf973bf2f5bd7240ab32a8ae3824dce387ef7bb3db8f6c073f0bc7a6a"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/EasyRPG/liblcf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblcf"
-    sha256 cellar: :any, mojave: "cf0e031ba3bd45002305ed03375b0d7609b676d93cde6929c0b0bb8dd17369f4"
+    sha256 cellar: :any, mojave: "0f0d97b748a4f771dc9f03ddcad94dd458d0ddeab8fed137e173acdebd1856a4"
   end
 
   depends_on "cmake" => :build
