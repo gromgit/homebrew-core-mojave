@@ -8,14 +8,11 @@ class Jinx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jinx"
-    sha256 cellar: :any_skip_relocation, mojave: "19d19aa4b29a0f37ee1f94858e8b7052e936d1117389cb292af67da82b1a2bba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1a9feb17934f2ac23401441f1b02c153f6511972c99b943807c77e7345e91535"
   end
 
   depends_on "cmake" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
