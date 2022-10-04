@@ -3,7 +3,7 @@ class Libmp3splt < Formula
   homepage "https://mp3splt.sourceforge.io"
   url "https://downloads.sourceforge.net/project/mp3splt/libmp3splt/0.9.2/libmp3splt-0.9.2.tar.gz"
   sha256 "30eed64fce58cb379b7cc6a0d8e545579cb99d0f0f31eb00b9acc8aaa1b035dc"
-  revision 3
+  revision 4
 
   # We check the "libmp3splt" directory page since versions aren't present in
   # the RSS feed as of writing.
@@ -15,7 +15,7 @@ class Libmp3splt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmp3splt"
-    sha256 mojave: "fd5d23bb39c3ea080de66dc294d8f9dc64ca556fc1e369b7665860fc5b7725c1"
+    sha256 mojave: "ea7226bd325a46347936330f2e295bdac51aed4baea76eb6d53abe9e0cf2730d"
   end
 
   depends_on "pkg-config" => :build
