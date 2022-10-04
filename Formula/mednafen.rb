@@ -4,7 +4,7 @@ class Mednafen < Formula
   url "https://mednafen.github.io/releases/files/mednafen-1.29.0.tar.xz"
   sha256 "da3fbcf02877f9be0f028bfa5d1cb59e953a4049b90fe7e39388a3386d9f362e"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://mednafen.github.io/releases/"
@@ -13,8 +13,7 @@ class Mednafen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mednafen"
-    rebuild 1
-    sha256 mojave: "bdb7c0ac5725ef7afc3c5ae0ef3e47aeb65ff6fb21b7081135b6c6bfd3c49c9b"
+    sha256 mojave: "d365afa5a062d38918d1d0fb1b8b56b8e4dee17494f364da53dccea6c4406b28"
   end
 
   depends_on "pkg-config" => :build
