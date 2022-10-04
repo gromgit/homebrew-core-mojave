@@ -9,8 +9,8 @@ class Lc0 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lc0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bf8489371714622d23c1807be6dda26b14d1fbe916ae24172d60ecfb4280022e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3859065d4180180b6987ddd9840fa90ea06b51274b1364ae84ec819da50a88e2"
   end
 
   depends_on "cmake" => :build
@@ -23,11 +23,10 @@ class Lc0 < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "gcc" # for C++17
     depends_on "openblas"
   end
 
-  fails_with gcc: "5"
+  fails_with gcc: "5" # for C++17
 
   resource "network" do
     url "https://training.lczero.org/get_network?sha=00af53b081e80147172e6f281c01daf5ca19ada173321438914c730370aa4267", using: :nounzip
