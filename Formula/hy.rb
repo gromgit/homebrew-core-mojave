@@ -9,7 +9,8 @@ class Hy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hy"
-    sha256 cellar: :any_skip_relocation, mojave: "388b3d022173f72d59d8543491d0a58292746116cc07d4a974f57311c603d220"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c4ac38c68fb2670620245499761af74158d6cf527b08bf0a8ca03eb7121455cd"
   end
 
   depends_on "python@3.10"
@@ -29,12 +30,12 @@ class Hy < Formula
   end
 
   test do
-    site_packages = libexec/Language::Python.site_packages(Formula["python@3.10"].opt_bin/"python3")
-    ENV.prepend_path "PYTHONPATH", site_packages
+    python3 = "python3.10"
+    ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
 
     (testpath/"test.hy").write "(print (+ 2 2))"
     assert_match "4", shell_output("#{bin}/hy test.hy")
     (testpath/"test.py").write shell_output("#{bin}/hy2py test.hy")
-    assert_match "4", shell_output("#{Formula["python@3.10"].bin}/python3 test.py")
+    assert_match "4", shell_output("#{python3} test.py")
   end
 end
