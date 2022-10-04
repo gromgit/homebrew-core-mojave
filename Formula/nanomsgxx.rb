@@ -8,7 +8,8 @@ class Nanomsgxx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nanomsgxx"
-    sha256 cellar: :any, mojave: "4d278fb698a57ab2088153ee80ed7aff21b5463c865979726fc6b74fadfa1abe"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b6993bf1faefb1be1483edf17ff9ed8683ccacf58d78ced6ec1b4e4ab66c8a20"
   end
 
   depends_on "pkg-config" => :build
@@ -47,9 +48,10 @@ class Nanomsgxx < Formula
       --prefix=#{prefix}
     ]
 
-    system "python3", "./waf", "configure", *args
-    system "python3", "./waf", "build"
-    system "python3", "./waf", "install"
+    python3 = "python3.10"
+    system python3, "./waf", "configure", *args
+    system python3, "./waf", "build"
+    system python3, "./waf", "install"
   end
 
   test do
