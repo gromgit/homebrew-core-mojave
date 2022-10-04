@@ -4,6 +4,7 @@ class Libebml < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/Matroska-Org/libebml.git", branch: "master"
 
+  # Remove stable block in next release with merged patch
   stable do
     url "https://dl.matroska.org/downloads/libebml/libebml-1.4.2.tar.xz"
     sha256 "41c7237ce05828fb220f62086018b080af4db4bb142f31bec0022c925889b9f2"
@@ -21,17 +22,11 @@ class Libebml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libebml"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7cba1311be0bfe38d5d412a82396f952e550ab1f0307f94831f3643f71cf76f1"
+    rebuild 2
+    sha256 cellar: :any, mojave: "cb5601335ea62cbe703e5fcd76c100525cec7b89593e963d71a21f24696d07f7"
   end
-
-  # Remove stable block in next release with merged patch
 
   depends_on "cmake" => :build
-
-  on_linux do
-    depends_on "gcc" => :build
-  end
 
   fails_with gcc: "5"
 
