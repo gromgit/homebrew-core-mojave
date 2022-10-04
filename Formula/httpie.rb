@@ -3,14 +3,15 @@ class Httpie < Formula
 
   desc "User-friendly cURL replacement (command-line HTTP client)"
   homepage "https://httpie.io/"
-  url "https://files.pythonhosted.org/packages/e9/38/e94dac67b61f4dab49c1d26dd47e0b13be8c69c8c1c4fad5a4a87de1d647/httpie-3.2.1.tar.gz"
-  sha256 "c9c0032ca3a8d62492b7231b2dd83d94becf3b71baf8a4bbcd9ed1038537e3ec"
+  url "https://github.com/httpie/httpie/archive/refs/tags/3.2.1.tar.gz"
+  sha256 "803e1624e005c2f7002802a77ebc687b05375aca76af42639f844405328633eb"
   license "BSD-3-Clause"
   head "https://github.com/httpie/httpie.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/httpie"
-    sha256 cellar: :any_skip_relocation, mojave: "36bf1418766d6c666a2632598e61ea8c6e8389508ad51aafb6a1cca5197252f7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ab3ff52e1366e4fe9bef5ee8d64efd03d2de19731c9f0f865966f8888c447dcf"
   end
 
   depends_on "python@3.10"
@@ -76,7 +77,7 @@ class Httpie < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, Formula["python@3.10"].opt_bin/"python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources
 
     # We use a special file called __build_channel__.py to denote which source
@@ -88,6 +89,9 @@ class Httpie < Formula
     man1.install_symlink libexec/"share/man/man1/http.1"
     man1.install_symlink libexec/"share/man/man1/https.1"
     man1.install_symlink libexec/"share/man/man1/httpie.1"
+
+    bash_completion.install "extras/httpie-completion.bash" => "httpie"
+    fish_completion.install "extras/httpie-completion.fish" => "httpie.fish"
   end
 
   test do
