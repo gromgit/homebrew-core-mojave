@@ -1,8 +1,8 @@
 class Kubie < Formula
   desc "Much more powerful alternative to kubectx and kubens"
   homepage "https://blog.sbstp.ca/introducing-kubie/"
-  url "https://github.com/sbstp/kubie/archive/v0.18.0.tar.gz"
-  sha256 "a9ed4ab1ef3dad8318fe3d3591b2e16310b90a541eb0f146fc94caefb4a3be37"
+  url "https://github.com/sbstp/kubie/archive/v0.19.0.tar.gz"
+  sha256 "d0408a3fab02fd5a43ef6190956b65765f2ebb1b48432f7ed98314ec8b2f7f56"
   license "Zlib"
   head "https://github.com/sbstp/kubie.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Kubie < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubie"
-    sha256 cellar: :any_skip_relocation, mojave: "1d8c807a7f1b8b59fef630bbc2e56f9a1ecc972a8661c93f5ffc7cf8ea8ecea4"
+    sha256 cellar: :any_skip_relocation, mojave: "b5c0d69585c25f01f722fceb42b5a37a79ac68aaf593357466291310c9138808"
   end
 
   depends_on "rust" => :build
