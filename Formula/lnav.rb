@@ -1,8 +1,8 @@
 class Lnav < Formula
   desc "Curses-based tool for viewing and analyzing log files"
   homepage "https://lnav.org/"
-  url "https://github.com/tstack/lnav/releases/download/v0.10.1/lnav-0.10.1.tar.gz"
-  sha256 "a1fd65916bf06e5f01f07aca73ff9cca783f0562465facdf28fa24e9cf568209"
+  url "https://github.com/tstack/lnav/releases/download/v0.11.0/lnav-0.11.0.tar.gz"
+  sha256 "d3fa5909af8e5eb2aa7818b90120cae35aa7dd1775a3b0d2097d7e6075b8f935"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,8 +12,7 @@ class Lnav < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lnav"
-    rebuild 3
-    sha256 cellar: :any, mojave: "34fc9137ac9702633c84883fe18e2be11db18ade8d8c388a239040191f995be5"
+    sha256 cellar: :any, mojave: "37231772208847200893904b96b055366e3780e93a2b13e7cc3fce2e6351877d"
   end
 
   head do
@@ -28,10 +27,7 @@ class Lnav < Formula
   depends_on "pcre"
   depends_on "readline"
   depends_on "sqlite"
-
-  on_linux do
-    depends_on "gcc"
-  end
+  uses_from_macos "curl"
 
   fails_with gcc: "5"
 
