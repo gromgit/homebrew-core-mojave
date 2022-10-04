@@ -1,26 +1,22 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
   homepage "https://luau-lang.org"
-  url "https://github.com/Roblox/luau/archive/0.542.tar.gz"
-  sha256 "cac9bfbdc1490ea69171b211ac0ebf8c63fcb24c3cff8482922c67d95b01d5e1"
+  url "https://github.com/Roblox/luau/archive/0.545.tar.gz"
+  sha256 "7863c3d29af213fd393415af60ae4a5546999902bf2da1ef3370cf03e2cbd2ea"
   license "MIT"
   head "https://github.com/Roblox/luau.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luau"
-    sha256 cellar: :any_skip_relocation, mojave: "dd455fa54b019258bcb0e6596f496b9465a44e08cceaa3d03e4af79e5e4838c3"
+    sha256 cellar: :any_skip_relocation, mojave: "4ef117d04d53a66e141a7a4dc7d463558cf7d1d3c3d0a0d6902ed0ae28e809fc"
   end
 
   depends_on "cmake" => :build
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with gcc: "5"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DLUAU_BUILD_TESTS=OFF"
+    system "cmake", "-S", ".", "-B", "build", "-DLUAU_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     bin.install "build/luau", "build/luau-analyze"
   end
