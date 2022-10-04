@@ -1,16 +1,14 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.9.0.tar.gz"
-  sha256 "311f6e675e6f7ca488a71022b62edbbc16946f907d7e1695f3f96747ece2051f"
+  url "https://releases.inko-lang.org/0.10.0.tar.gz"
+  sha256 "d38e13532a71290386164246ac8cf7efb884131716dba6553b66a170dd3a2796"
   license "MPL-2.0"
-  revision 1
   head "https://gitlab.com/inko-lang/inko.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inko"
-    rebuild 4
-    sha256 cellar: :any, mojave: "48d6b3984ceccf70073ac5df46f29db8110f506d401955a47a50b49da55fd65e"
+    sha256 cellar: :any, mojave: "59aa536b26a3a5f4d989503fc4a868513fb3d9c162b7969c9e868f03a09529ce"
   end
 
   depends_on "coreutils" => :build
@@ -20,15 +18,19 @@ class Inko < Formula
   uses_from_macos "ruby", since: :sierra
 
   def install
-    system "make", "build", "PREFIX=#{prefix}", "FEATURES=libinko/libffi-system"
+    system "make", "build", "PREFIX=#{prefix}", "FEATURES=libffi/system"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
     (testpath/"hello.inko").write <<~EOS
-      import std::stdio::stdout
+      import std::stdio::STDOUT
 
-      stdout.print('Hello, world!')
+      class async Main {
+        fn async main {
+          STDOUT.new.print('Hello, world!')
+        }
+      }
     EOS
     assert_equal "Hello, world!\n", shell_output("#{bin}/inko hello.inko")
   end
