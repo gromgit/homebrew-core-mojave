@@ -13,7 +13,8 @@ class I386ElfGdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i386-elf-gdb"
-    sha256 mojave: "266f856ac107d2d5e13c295bcecd648b3d4e44083101ddc36b4b807dfa139be9"
+    rebuild 1
+    sha256 mojave: "27bfb00496f38bb32217a652b50e228c42479c3da279fbc76836d35811ebcef4"
   end
 
   depends_on "i686-elf-gcc" => :test
@@ -36,7 +37,7 @@ class I386ElfGdb < Formula
       --disable-debug
       --disable-dependency-tracking
       --with-lzma
-      --with-python=#{Formula["python@3.10"].opt_bin}/python3
+      --with-python=#{which("python3.10")}
       --with-system-zlib
       --disable-binutils
     ]
