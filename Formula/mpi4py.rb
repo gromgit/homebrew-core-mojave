@@ -8,26 +8,30 @@ class Mpi4py < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpi4py"
-    sha256 cellar: :any, mojave: "af23065021b4282d63116433127cb6f11d67ece98e0b671aad95b8e6ad629de1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "38030463c34800303ffd21144d85616f5ec9fc3f683860e8ea76e1667dd03b94"
   end
 
   depends_on "libcython" => :build
   depends_on "open-mpi"
   depends_on "python@3.10"
 
-  def install
-    system "python3", *Language::Python.setup_install_args(libexec),
-                      "--install-lib=#{libexec/Language::Python.site_packages("python3")}"
+  def python3
+    "python3.10"
+  end
 
-    system "python3", "setup.py",
-                      "build", "--mpicc=mpicc -shared", "--parallel=#{ENV.make_jobs}",
-                      "install", "--prefix=#{prefix}",
-                      "--single-version-externally-managed", "--record=installed.txt",
-                      "--install-lib=#{prefix/Language::Python.site_packages("python3")}"
+  def install
+    system python3, *Language::Python.setup_install_args(libexec, python3)
+
+    system python3, "setup.py",
+                    "build", "--mpicc=mpicc -shared", "--parallel=#{ENV.make_jobs}",
+                    "install", "--prefix=#{prefix}",
+                    "--single-version-externally-managed", "--record=installed.txt",
+                    "--install-lib=#{prefix/Language::Python.site_packages(python3)}"
   end
 
   test do
-    python = Formula["python@3.10"].opt_bin/"python3"
+    python = Formula["python@3.10"].opt_bin/python3
 
     system python, "-c", "import mpi4py"
     system python, "-c", "import mpi4py.MPI"
