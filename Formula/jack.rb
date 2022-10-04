@@ -12,7 +12,8 @@ class Jack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jack"
-    sha256 mojave: "edb0cba781e856d0b953ad24d92a68f18cc02293d3af3a5c1a80d86fa8a10f8c"
+    rebuild 1
+    sha256 mojave: "7239e4a44e0d9bdc6f33dae265d474bcf097fd96afb8d87723c67a8d3014f83b"
   end
 
   depends_on "autoconf" => :build
@@ -40,9 +41,10 @@ class Jack < Formula
       ENV.append "LDFLAGS", "-Wl,-compatibility_version,1"
       ENV.append "LDFLAGS", "-Wl,-current_version,#{version}"
     end
-    system Formula["python@3.10"].opt_bin/"python3", "./waf", "configure", "--prefix=#{prefix}", "--example-tools"
-    system Formula["python@3.10"].opt_bin/"python3", "./waf", "build"
-    system Formula["python@3.10"].opt_bin/"python3", "./waf", "install"
+    python3 = "python3.10"
+    system python3, "./waf", "configure", "--prefix=#{prefix}", "--example-tools"
+    system python3, "./waf", "build"
+    system python3, "./waf", "install"
   end
 
   service do
