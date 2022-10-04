@@ -14,7 +14,8 @@ class Ldns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldns"
-    sha256 cellar: :any, mojave: "99cde9fad3b26e77c90dbfca8a827e17b1f82de8af7a7b32917405e5f311e7f4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "57b3b0765176f5a60569075a58071f4fe8632ac06107b977a4b590b0a6728710"
   end
 
   depends_on "swig" => :build
@@ -24,13 +25,14 @@ class Ldns < Formula
   conflicts_with "drill", because: "both install a `drill` binary"
 
   def install
+    python3 = "python3.10"
     args = %W[
       --prefix=#{prefix}
       --with-drill
       --with-examples
       --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
       --with-pyldns
-      PYTHON_SITE_PKG=#{prefix/Language::Python.site_packages("python3")}
+      PYTHON_SITE_PKG=#{prefix/Language::Python.site_packages(python3)}
       --disable-dane-verify
       --without-xcode-sdk
     ]
@@ -38,7 +40,7 @@ class Ldns < Formula
     # Fixes: ./contrib/python/ldns_wrapper.c:2746:10: fatal error: 'ldns.h' file not found
     inreplace "contrib/python/ldns.i", "#include \"ldns.h\"", "#include <ldns/ldns.h>"
 
-    ENV["PYTHON"] = which("python3")
+    ENV["PYTHON"] = which(python3)
     system "./configure", *args
 
     if OS.mac?
