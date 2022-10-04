@@ -1,13 +1,13 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://github.com/igraph/igraph/releases/download/0.9.9/igraph-0.9.9.tar.gz"
-  sha256 "ee358d9bd13e3b491533e3eda5cda934bc5238aa756a68c2defaab4e33ee57ab"
+  url "https://github.com/igraph/igraph/releases/download/0.10.1/igraph-0.10.1.tar.gz"
+  sha256 "11ac87336b7adc61b4cb3d9c29fd9ed74db383a1fd994f6c47a870a86f68038c"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/igraph"
-    sha256 cellar: :any, mojave: "df35c7d50d0a160edb3ae7ecacacf2a328a84a0b63a620bb707928e2fe907bb2"
+    sha256 cellar: :any, mojave: "90fa4337b6b81f5c6e2c5b27a50957ab7000c6f4cb60cbe97268c38e5238c713"
   end
 
   depends_on "cmake" => :build
@@ -58,13 +58,13 @@ class Igraph < Formula
         igraph_t graph;
         igraph_rng_seed(igraph_rng_default(), 42);
         igraph_erdos_renyi_game(&graph, IGRAPH_ERDOS_RENYI_GNP, 1000, 5.0/1000, IGRAPH_UNDIRECTED, IGRAPH_NO_LOOPS);
-        igraph_diameter(&graph, &diameter, 0, 0, 0, IGRAPH_UNDIRECTED, 1);
+        igraph_diameter(&graph, &diameter, 0, 0, 0, 0, IGRAPH_UNDIRECTED, 1);
         printf("Diameter = %f\\n", (double) diameter);
         igraph_destroy(&graph);
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}/igraph", "-L#{lib}",
                    "-ligraph", "-lm", "-o", "test"
-    assert_match "Diameter = 9", shell_output("./test")
+    assert_match "Diameter = 8", shell_output("./test")
   end
 end
