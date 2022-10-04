@@ -16,7 +16,8 @@ class Lv2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lv2"
-    sha256 cellar: :any_skip_relocation, mojave: "45bd7b9c363afe8dd8d621e261e6c5ff536af199c52eea92a9461080ab801924"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f7407c5d7cf6e550213315f137544d3107917f360430373d2cb73f79cfff6121"
   end
 
   depends_on "meson" => :build
@@ -46,7 +47,7 @@ class Lv2 < Formula
 
   def install
     # Python resources and virtualenv are for the lv2specgen.py script that is installed
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources
     rw_info = python_shebang_rewrite_info("#{libexec}/bin/python3")
     rewrite_shebang rw_info, *Dir.glob("lv2specgen/*.py")
