@@ -1,13 +1,13 @@
 class Liblouis < Formula
   desc "Open-source braille translator and back-translator"
   homepage "http://liblouis.org"
-  url "https://github.com/liblouis/liblouis/releases/download/v3.22.0/liblouis-3.22.0.tar.gz"
-  sha256 "79bc508425822e4df2ea50ac4a648e80ef0878afcd979b655bfcac5c1766763f"
+  url "https://github.com/liblouis/liblouis/releases/download/v3.23.0/liblouis-3.23.0.tar.gz"
+  sha256 "706fa0888a530f3c16b55c6ce0f085b25472c7f4e7047400f9df07cffbc71cfb"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblouis"
-    sha256 mojave: "3a190a790d7f8afbcd9302df154409806e07e027e56bbbb28f12d332f6f5c2ec"
+    sha256 mojave: "40ab32e671bde22dabc2170d7058ec341c0a82b164d102d80fe3d72678f72178"
   end
 
   head do
@@ -31,9 +31,9 @@ class Liblouis < Formula
     system "make"
     system "make", "check"
     system "make", "install"
+    python3 = "python3.10"
     cd "python" do
-      system "python3", *Language::Python.setup_install_args(prefix),
-                        "--install-lib=#{prefix/Language::Python.site_packages("python3")}"
+      system python3, *Language::Python.setup_install_args(prefix, python3)
     end
     mkdir "#{prefix}/tools"
     mv "#{bin}/lou_maketable", "#{prefix}/tools/", force: true
