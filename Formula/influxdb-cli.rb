@@ -2,8 +2,8 @@ class InfluxdbCli < Formula
   desc "CLI for managing resources in InfluxDB v2"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influx-cli.git",
-      tag:      "v2.3.0",
-      revision: "88ba3464cd07599375b4f21589f93bf5a9b1e7e1"
+      tag:      "v2.4.0",
+      revision: "5c7c34f16db858e1287cdfe162e6481a36f79145"
   license "MIT"
   head "https://github.com/influxdata/influx-cli.git", branch: "main"
 
@@ -14,7 +14,7 @@ class InfluxdbCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "90233c0fd1f8757741b6f175ff123fc6caa99cc01e7930289364f8d853b9846a"
+    sha256 cellar: :any_skip_relocation, mojave: "78ac3a19099f9a6cfbb8754abbe3a35f980bd09ee8136e8e7fc9e172f4bf7c06"
   end
 
   depends_on "go" => :build
@@ -31,11 +31,7 @@ class InfluxdbCli < Formula
 
     system "go", "build", *std_go_args(output: bin/"influx", ldflags: ldflags), "./cmd/influx"
 
-    output = Utils.safe_popen_read(bin/"influx", "completion", "bash")
-    (bash_completion/"influx").write output
-
-    output = Utils.safe_popen_read(bin/"influx", "completion", "zsh")
-    (zsh_completion/"_influx").write output
+    generate_completions_from_executable(bin/"influx", "completion", base_name: "influx", shells: [:bash, :zsh])
   end
 
   test do
