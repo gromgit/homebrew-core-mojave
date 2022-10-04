@@ -13,7 +13,8 @@ class MbedtlsAT2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbedtls@2"
-    sha256 cellar: :any, mojave: "a373974868f2fe21682852b7778c24e3be1ffc12bf04b4643bdd551429d281eb"
+    rebuild 1
+    sha256 cellar: :any, mojave: "54b0d217f8ca93a9b0e638c799fdd2f6f10baab730897fc77ed91124db06f286"
   end
 
   keg_only :versioned_formula
@@ -31,7 +32,7 @@ class MbedtlsAT2 < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DUSE_SHARED_MBEDTLS_LIBRARY=On",
-                    "-DPython3_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3",
+                    "-DPython3_EXECUTABLE=#{which("python3.10")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     # We run CTest because this is a crypto library. Running tests in parallel causes failures.
