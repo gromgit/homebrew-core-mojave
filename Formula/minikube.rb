@@ -2,14 +2,14 @@ class Minikube < Formula
   desc "Run a Kubernetes cluster locally"
   homepage "https://minikube.sigs.k8s.io/"
   url "https://github.com/kubernetes/minikube.git",
-      tag:      "v1.26.1",
-      revision: "62e108c3dfdec8029a890ad6d8ef96b6461426dc"
+      tag:      "v1.27.0",
+      revision: "4243041b7a72319b9be7842a7d34b6767bbdac2b"
   license "Apache-2.0"
   head "https://github.com/kubernetes/minikube.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minikube"
-    sha256 cellar: :any_skip_relocation, mojave: "147cc3d2ff6186776860ca88bc6eaaff615ca89a1f92797ddaa3efe398b68b6c"
+    sha256 cellar: :any_skip_relocation, mojave: "619178e4ef6bb9facd49450ed3f34d1c2bfc91309d055b47ec5d14e3a00abbc4"
   end
 
   depends_on "go" => :build
@@ -20,14 +20,7 @@ class Minikube < Formula
     system "make"
     bin.install "out/minikube"
 
-    output = Utils.safe_popen_read(bin/"minikube", "completion", "bash")
-    (bash_completion/"minikube").write output
-
-    output = Utils.safe_popen_read(bin/"minikube", "completion", "zsh")
-    (zsh_completion/"_minikube").write output
-
-    output = Utils.safe_popen_read(bin/"minikube", "completion", "fish")
-    (fish_completion/"minikube.fish").write output
+    generate_completions_from_executable(bin/"minikube", "completion")
   end
 
   test do
