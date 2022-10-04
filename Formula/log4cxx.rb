@@ -8,15 +8,12 @@ class Log4cxx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/log4cxx"
-    sha256 cellar: :any, mojave: "2e48d76445968120a733bf8932a52960c8c1ff6e28a23f2587a72354e6ca86cf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "48440f535be3751c61e66d6a29109d5dc0a78ad593c313b63eabddbddb1174c8"
   end
 
   depends_on "cmake" => :build
   depends_on "apr-util"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5" # needs C++17 or Boost
 
