@@ -1,8 +1,8 @@
 class LibxmlxxAT5 < Formula
   desc "C++ wrapper for libxml"
   homepage "https://libxmlplusplus.sourceforge.io/"
-  url "https://download.gnome.org/sources/libxml++/5.0/libxml++-5.0.1.tar.xz"
-  sha256 "15c38307a964fa6199f4da6683a599eb7e63cc89198545b36349b87cf9aa0098"
+  url "https://download.gnome.org/sources/libxml++/5.0/libxml++-5.0.2.tar.xz"
+  sha256 "7c17cc3e5a2214314dee5a1354f4b436f266ded6185232a0534f352a76240d5a"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class LibxmlxxAT5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxml++@5"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7fb10f42b538ccfd44a428403ec432c98902ff1963dacdf35b390d7f56a9c6ad"
+    sha256 cellar: :any, mojave: "76e37b654d10056609b8672fdeeced752d819406b9c7d0eb3555376bbb45c042"
   end
 
   depends_on "meson" => :build
