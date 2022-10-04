@@ -4,6 +4,7 @@ class Mysql < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.30.tar.gz"
   sha256 "c331ac7a68099a2116097acbb14fd331423d486fe47ce0e346925111b44df69c"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -12,7 +13,7 @@ class Mysql < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql"
-    sha256 mojave: "7923ad90955886b62da25c12d6534edf8dd8009c1cd4703f8287a67d9f8b0918"
+    sha256 mojave: "1eb7e15b1bb894010c23f16f935f101492bc5764941db4c73e3c3b58e5d6eac2"
   end
 
   depends_on "cmake" => :build
@@ -39,6 +40,14 @@ class Mysql < Formula
     because: "mysql, mariadb, and percona install the same binaries"
 
   fails_with gcc: "5"
+
+  # Patch out check for Homebrew `boost`.
+  # This should not be necessary when building inside `brew`.
+  # https://github.com/Homebrew/homebrew-test-bot/pull/820
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
+    sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
+  end
 
   def datadir
     var/"mysql"
