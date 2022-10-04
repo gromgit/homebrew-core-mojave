@@ -1,14 +1,14 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
   homepage "https://github.com/sharkdp/hyperfine"
-  url "https://github.com/sharkdp/hyperfine/archive/v1.14.0.tar.gz"
-  sha256 "59018c22242dd2ad2bd5fb4a34c0524948b7921d02aa79419ccec4c1ffd3da14"
+  url "https://github.com/sharkdp/hyperfine/archive/v1.15.0.tar.gz"
+  sha256 "b1a7a11a1352cdb549cc098dd9caa6c231947cc4dd9cd91ec25072d6d2978172"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/hyperfine.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hyperfine"
-    sha256 cellar: :any_skip_relocation, mojave: "6b1d35c885d5b82ea661669ea849d0a08a76759e01840f5b4b45d2646144ac7b"
+    sha256 cellar: :any_skip_relocation, mojave: "4549fe191b2c1864bd05079ee0902517782e4a2d0c629e0f4886398009beadef"
   end
 
   depends_on "rust" => :build
