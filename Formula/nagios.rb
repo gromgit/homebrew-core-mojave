@@ -3,7 +3,7 @@ class Nagios < Formula
   homepage "https://www.nagios.org/"
   url "https://downloads.sourceforge.net/project/nagios/nagios-4.x/nagios-4.4.7/nagios-4.4.7.tar.gz"
   sha256 "6429d93cc7db688bc529519a020cad648dc55b5eff7e258994f21c83fbf16c4d"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   revision 1
 
   livecheck do
@@ -12,7 +12,9 @@ class Nagios < Formula
   end
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nagios"
+    rebuild 1
+    sha256 mojave: "ae65604fcf2f191bb7835495c62cc55a48c2417e9872ac9671b3da417fd2c80a"
   end
 
   depends_on "gd"
@@ -77,10 +79,10 @@ class Nagios < Formula
     (var/"lib/nagios/rw").mkpath
 
     config = etc/"nagios/nagios.cfg"
-    return unless File.exist?(config)
-    return if File.read(config).include?(ENV["USER"])
+    return unless config.exist?
+    return if config.read.include?("nagios_user=#{ENV["USER"]}")
 
-    inreplace config, "brew", ENV["USER"]
+    inreplace config, /^nagios_user=.*/, "nagios_user=#{ENV["USER"]}"
   end
 
   def caveats
