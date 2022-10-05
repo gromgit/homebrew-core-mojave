@@ -4,12 +4,12 @@ class Opencoarrays < Formula
   url "https://github.com/sourceryinstitute/OpenCoarrays/releases/download/2.10.0/OpenCoarrays-2.10.0.tar.gz"
   sha256 "c08717aea6ed5c68057f80957188a621b9862ad0e1460470e7ec82cdd84ae798"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/sourceryinstitute/opencoarrays.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencoarrays"
-    sha256 cellar: :any, mojave: "b86207f6104b8377b634fdb72fe718e114817231490d080210c3a96b522f17e1"
+    sha256 cellar: :any, mojave: "09052cbad22156fc3afd93aa52fe15856e82d3af98ecefdd8ff0e80e5e9ba924"
   end
 
   depends_on "cmake" => :build
@@ -47,5 +47,6 @@ class Opencoarrays < Formula
     EOS
     system "#{bin}/caf", "tally.f90", "-o", "tally"
     system "#{bin}/cafrun", "-np", "3", "--oversubscribe", "./tally"
+    assert_match Formula["open-mpi"].lib.realpath.to_s, shell_output("#{bin}/caf --show")
   end
 end
