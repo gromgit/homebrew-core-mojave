@@ -13,7 +13,8 @@ class Oclgrind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oclgrind"
-    sha256 cellar: :any, mojave: "49386907484b0f15a36ed0e99dc6b212266dc9a87a14290d652e54b1d4843783"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f89ae1c2ec1c78db307414cbe4976ef60223acff1c1d558edcdc20dc679d031d"
   end
 
   depends_on "cmake" => :build
@@ -22,10 +23,7 @@ class Oclgrind < Formula
 
   on_linux do
     depends_on "opencl-headers" => :test
-    depends_on "gcc"
   end
-
-  fails_with gcc: "5" # LLVM is built with GCC
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
