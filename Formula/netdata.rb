@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v1.35.1/netdata-v1.35.1.tar.gz"
-  sha256 "587f6cce421015f8e0a527e3964a4de8cc17085c354498150bc3ade21606bbf9"
+  url "https://github.com/netdata/netdata/releases/download/v1.36.1/netdata-v1.36.1.tar.gz"
+  sha256 "f4a1233112b55e07e2862ffda0416255f0aa4c8e2b16929b76fa7ad6b69fd931"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +12,7 @@ class Netdata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netdata"
-    sha256 mojave: "dda6a9fc254d3a4bfb0def7b71151934a1cfc9deeadfa94f481e589ffa3a53ea"
+    sha256 mojave: "28f4cd462f4589b791eaa9c4f8fbecc604a862f024b9ccbf4961aeb8002f55ec"
   end
 
   depends_on "autoconf" => :build
@@ -22,7 +21,7 @@ class Netdata < Formula
   depends_on "json-c"
   depends_on "libuv"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf-c"
 
   uses_from_macos "zlib"
