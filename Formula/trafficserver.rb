@@ -8,7 +8,8 @@ class Trafficserver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trafficserver"
-    sha256 mojave: "de20d2814b3c94bebd2760a189c6a347ca66a3767db067688d19f184a56a9ac6"
+    rebuild 1
+    sha256 mojave: "aa0d316212e5d9f610418f24633780103b4f995b42f3bda2ee6c1104add86e8a"
   end
 
   head do
@@ -32,10 +33,6 @@ class Trafficserver < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool"  => :build
-  end
-
-  on_linux do
-    depends_on "gcc"
   end
 
   fails_with gcc: "5" # needs C++17
