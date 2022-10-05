@@ -10,7 +10,8 @@ class RobotFramework < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/robot-framework"
-    sha256 cellar: :any, mojave: "e8a09d4a54f8096557cb500058d01d6655704ea7bc56c83d6d27d846b2bc1625"
+    rebuild 1
+    sha256 cellar: :any, mojave: "256107ca54fef268f6b8c3ea469381a57e95f1848b38bcee7161874bf8e76e88"
   end
 
   depends_on "rust" => :build
@@ -87,7 +88,7 @@ class RobotFramework < Formula
     virtualenv_install_with_resources
 
     # remove non-native binary
-    (libexec/Language::Python.site_packages("python3")/"selenium/webdriver/firefox/x86/x_ignore_nofocus.so").unlink
+    (libexec/Language::Python.site_packages("python3.10")/"selenium/webdriver/firefox/x86/x_ignore_nofocus.so").unlink
   end
 
   test do
