@@ -8,8 +8,8 @@ class Stella < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stella"
-    rebuild 2
-    sha256 cellar: :any, mojave: "76dcebeec5b33c92f316b6c836e50e273c3002c2dc45a86b4fbc408fa0294d59"
+    rebuild 3
+    sha256 cellar: :any, mojave: "becb4c3c5d633e048291f8f35673aa8723a9199e28d1c9eb918c0471544b2f08"
   end
 
   depends_on xcode: :build
@@ -17,10 +17,6 @@ class Stella < Formula
   depends_on "sdl2"
 
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
