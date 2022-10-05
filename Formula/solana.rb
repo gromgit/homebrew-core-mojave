@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://solana.com"
-  url "https://github.com/solana-labs/solana/archive/v1.10.34.tar.gz"
-  sha256 "0c35585c0e82a86186243b56239dcc0fa1a7ffd0ba64436bcf87db6820a52dc6"
+  url "https://github.com/solana-labs/solana/archive/v1.13.0.tar.gz"
+  sha256 "ce2c7ae830bbf79bce81d2267a7267651a58d3a4dade0269533bf023ecd7c578"
   license "Apache-2.0"
 
   # This formula tracks the stable channel but the "latest" release on GitHub
@@ -15,9 +15,8 @@ class Solana < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana-1.10.34"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "01192f371504a10158f8c4346a12659410078d5aaf4a9fed9252ca355e5bc1bd"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solana"
+    sha256 cellar: :any_skip_relocation, mojave: "c9de94e24187ab36933f54b781ca4f7734db06b1ec5bd5f38334217106f5dddc"
   end
 
   depends_on "protobuf" => :build
