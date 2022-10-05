@@ -1,10 +1,10 @@
 class Rsync < Formula
   desc "Utility that provides fast incremental file transfer"
   homepage "https://rsync.samba.org/"
-  url "https://rsync.samba.org/ftp/rsync/rsync-3.2.5.tar.gz"
-  mirror "https://mirrors.kernel.org/gentoo/distfiles/rsync-3.2.5.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-3.2.5.tar.gz"
-  sha256 "2ac4d21635cdf791867bc377c35ca6dda7f50d919a58be45057fd51600c69aba"
+  url "https://rsync.samba.org/ftp/rsync/rsync-3.2.6.tar.gz"
+  mirror "https://mirrors.kernel.org/gentoo/distfiles/rsync-3.2.6.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-3.2.6.tar.gz"
+  sha256 "fb3365bab27837d41feaf42e967c57bd3a47bc8f10765a3671efd6a3835454d3"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -14,7 +14,7 @@ class Rsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rsync"
-    sha256 cellar: :any, mojave: "c5a10d02014969670b71ec67bcd87d401bcb0c6e8eda1537189ae232fc1af71f"
+    sha256 cellar: :any, mojave: "635b7acefa4eacba7a144ae874b49b9dfd7e9480a613c3cd5fbca8a27101104e"
   end
 
   depends_on "lz4"
@@ -26,11 +26,11 @@ class Rsync < Formula
   uses_from_macos "zlib"
 
   # hfs-compression.diff has been marked by upstream as broken since 3.1.3
-  # and has not been reported fixed as of 3.2.4
+  # and has not been reported fixed as of 3.2.6
   patch do
-    url "https://download.samba.org/pub/rsync/src/rsync-patches-3.2.4.tar.gz"
-    mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-patches-3.2.4.tar.gz"
-    sha256 "70a597590af6c61cf3d05d663429ff9f60ffe24e44f9c73a4cdc69ebdc1322a4"
+    url "https://download.samba.org/pub/rsync/src/rsync-patches-3.2.6.tar.gz"
+    mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-patches-3.2.6.tar.gz"
+    sha256 "c3d13132b560f456fd8fc9fdf9f59377e91adf0dfc8117e33800d14b483d1a85"
     apply "patches/fileflags.diff"
   end
 
