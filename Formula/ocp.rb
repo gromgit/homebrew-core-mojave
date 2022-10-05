@@ -4,6 +4,7 @@ class Ocp < Formula
   url "https://stian.cubic.org/ocp/ocp-0.2.99.tar.xz"
   sha256 "d00165e206403b876b18edfc264abc8b6ce3d772be7e784fe4d358e37e57affd"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
   livecheck do
@@ -13,8 +14,7 @@ class Ocp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocp"
-    rebuild 1
-    sha256 mojave: "24e986b7884065ccbd3fe38f74e75a2ee00a4d0a83508a9cd92fbc8bfafb53d3"
+    sha256 mojave: "f85e68b15445de2bb53e420def29f69d0ad0dc1977e50e1ce4a2cdd30e02ffec"
   end
 
   depends_on "pkg-config" => :build
