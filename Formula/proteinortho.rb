@@ -1,13 +1,13 @@
 class Proteinortho < Formula
   desc "Detecting orthologous genes within different species"
   homepage "https://gitlab.com/paulklemm_PHD/proteinortho"
-  url "https://gitlab.com/paulklemm_PHD/proteinortho/-/archive/v6.1.0/proteinortho-v6.1.0.tar.gz"
-  sha256 "4c087cbfd91051136df808a679694ab2ada3c266c175b4187689f302e8ccf8ac"
+  url "https://gitlab.com/paulklemm_PHD/proteinortho/-/archive/v6.1.1/proteinortho-v6.1.1.tar.gz"
+  sha256 "04fad661070d33d42df542ecf04db07e496b1efcc29bdd5fd7cdefafaa2dd0b1"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proteinortho"
-    sha256 cellar: :any, mojave: "9cb4c6280b4719eeea514193ea0ed04fc9ba0ce215659dff2663f0e369f03c7b"
+    sha256 cellar: :any, mojave: "7ffc4b4983a143a839ef05731f462d13e31de86834041823cac8e3f731640ce2"
   end
 
   depends_on "diamond"
