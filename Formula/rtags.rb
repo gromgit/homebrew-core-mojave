@@ -2,6 +2,7 @@ class Rtags < Formula
   desc "Source code cross-referencer like ctags with a clang frontend"
   homepage "https://github.com/Andersbakken/rtags"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/Andersbakken/rtags.git", branch: "master"
 
   stable do
@@ -41,8 +42,7 @@ class Rtags < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtags"
-    rebuild 1
-    sha256 cellar: :any, mojave: "87e879ea604796b9d5335900e2d2b177f9013bf934cf6689849532b86852c548"
+    sha256 cellar: :any, mojave: "fddabb1fcdc1a60614de243c34698111acfbb33f648000968a639d423fa5f327"
   end
 
   depends_on "cmake" => :build
@@ -50,16 +50,10 @@ class Rtags < Formula
   depends_on "llvm"
   depends_on "openssl@1.1"
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args << "-DRTAGS_NO_BUILD_CLANG=ON"
-
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "-S", ".", "-B", "build", "-DRTAGS_NO_BUILD_CLANG=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
