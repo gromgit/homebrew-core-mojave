@@ -8,14 +8,11 @@ class Simdjson < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/simdjson"
-    sha256 cellar: :any, mojave: "954bcb3de96f0dcfaa6fa287940f42451ce7546e6cb34940c0ba9aa47fa641cc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "aee8f82f4d188c086c26eb190aeeab98672e8834deeb8a39a4a1a49356d3aec2"
   end
 
   depends_on "cmake" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
