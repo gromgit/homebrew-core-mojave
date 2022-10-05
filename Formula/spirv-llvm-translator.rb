@@ -1,21 +1,17 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
   homepage "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
-  url "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v14.0.0.tar.gz"
-  sha256 "1afc52bb4e39aeb9b5b69324a201c81bd986364f347b559995eff6fd6f013318"
+  url "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v15.0.0.tar.gz"
+  sha256 "b1bebd77f72988758c00852e78c2ddc545815a612169a0cb377d021e2f846d88"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spirv-llvm-translator"
-    sha256 cellar: :any, mojave: "9c1c7ecf07f167a66d96ec31f7cac277aaf2411f0510f05285ceee732f522745"
+    sha256 cellar: :any, mojave: "aa7a351c1b685b7b9cb8d4d64bed992c5b53ac0c2a752f1609a430038799364b"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   # See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56480
   fails_with gcc: "5"
