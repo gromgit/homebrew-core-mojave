@@ -9,15 +9,12 @@ class Spdlog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spdlog"
-    sha256 cellar: :any, mojave: "e016717f2580359b06bf068e9039831a51fb8e3a149ea92cf8ef31a9b0ffe39c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "763d29224cb1d25bf85f1e51aa15a53bc9779fd8dcb64f040423a1135ef3e5b7"
   end
 
   depends_on "cmake" => :build
   depends_on "fmt"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   # error: specialization of 'template<class T, ...> struct fmt::v8::formatter' in different namespace
   fails_with gcc: "5"
