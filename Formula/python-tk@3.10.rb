@@ -11,13 +11,18 @@ class PythonTkAT310 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-tk@3.10"
-    sha256 cellar: :any, mojave: "7fad6271142f96bb4ef7d61f1e93b819240ad17df7f696a8fe2885c01b3533f0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "63574c10c5f2cec44f11afbbf927914d1270229f2402faf3378ffe607bdf2dfd"
   end
 
   keg_only :versioned_formula
 
   depends_on "python@3.10"
   depends_on "tcl-tk"
+
+  def python3
+    "python3.10"
+  end
 
   def install
     cd "Modules" do
@@ -37,17 +42,17 @@ class PythonTkAT310 < Formula
               ]
         )
       EOS
-      system Formula["python@3.10"].bin/"python3", *Language::Python.setup_install_args(libexec),
-                                                  "--install-lib=#{libexec}"
+      system python3, *Language::Python.setup_install_args(libexec, python3),
+                      "--install-lib=#{libexec}"
       rm_r Dir[libexec/"*.egg-info"]
     end
   end
 
   test do
-    system Formula["python@3.10"].bin/"python3", "-c", "import tkinter"
+    system python3, "-c", "import tkinter"
 
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system Formula["python@3.10"].bin/"python3", "-c", "import tkinter; root = tkinter.Tk()"
+    system python3, "-c", "import tkinter; root = tkinter.Tk()"
   end
 end
