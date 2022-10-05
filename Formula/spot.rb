@@ -12,15 +12,11 @@ class Spot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spot"
-    rebuild 2
-    sha256 cellar: :any, mojave: "6aa482b9cbde8bb853a8017aeab16cd514e568ab43884405d2865b7d3b888691"
+    rebuild 3
+    sha256 cellar: :any, mojave: "e650d78a831e5063854fd093d20743fde7633f3348a2e71e271ab3d15c1842cb"
   end
 
   depends_on "python@3.10" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5" # C++17
 
