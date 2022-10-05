@@ -1,14 +1,14 @@
 class Selene < Formula
   desc "Blazing-fast modern Lua linter"
   homepage "https://kampfkarren.github.io/selene"
-  url "https://github.com/Kampfkarren/selene/archive/0.20.0.tar.gz"
-  sha256 "ff37af1ef978ff66cd77d03396185b8abcaacb9860f1f1195d01325b4874cfd9"
+  url "https://github.com/Kampfkarren/selene/archive/0.21.1.tar.gz"
+  sha256 "a0f43dc3afd71674ade4e47adfd8243c07aca7e27ed83f20b354958a59d908f1"
   license "MPL-2.0"
   head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/selene"
-    sha256 cellar: :any_skip_relocation, mojave: "5fe673c840a696bfba3b243d900f9075e1b2168cedf1beb4b229ad72f8863683"
+    sha256 cellar: :any_skip_relocation, mojave: "addb4875895cc79be003cbc85faff3be80366036eadf5b511c6b2ae6df5c08ab"
   end
 
   depends_on "rust" => :build
@@ -25,6 +25,7 @@ class Selene < Formula
   end
 
   test do
+    (testpath/"selene.toml").write("std = \"lua52\"")
     (testpath/"test.lua").write("print(1 / 0)")
     assert_match "warning[divide_by_zero]", shell_output("#{bin}/selene #{testpath}/test.lua", 1)
   end
