@@ -13,14 +13,11 @@ class Sentencepiece < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sentencepiece"
-    sha256 cellar: :any, mojave: "34cd66b55770b9d70bb3173e8bbf6cf7f2021ecb6409d56ec53e52b86aa394df"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f5502c666551b10b5834d4e255ee542861226c0e289b82ba85690c87211f24a2"
   end
 
   depends_on "cmake" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
