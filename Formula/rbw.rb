@@ -8,8 +8,8 @@ class Rbw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rbw"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "397375fd5446ebff5ebb2ad0bacb3aaf3c43d0d932bb8bfae1cfb5db64d41c49"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c40e112644bc4df40b13ce6f665f9ff1d368fe83979e2530071353331b3b12c2"
   end
 
   depends_on "rust" => :build
@@ -18,14 +18,7 @@ class Rbw < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_output = Utils.safe_popen_read(bin/"rbw", "gen-completions", "bash")
-    (bash_completion/"rbw").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"rbw", "gen-completions", "zsh")
-    (zsh_completion/"_rbw").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"rbw", "gen-completions", "fish")
-    (fish_completion/"rbw.fish").write fish_output
+    generate_completions_from_executable(bin/"rbw", "gen-completions")
   end
 
   test do
