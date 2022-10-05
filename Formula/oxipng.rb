@@ -1,14 +1,13 @@
 class Oxipng < Formula
   desc "Multithreaded PNG optimizer written in Rust"
   homepage "https://github.com/shssoichiro/oxipng"
-  url "https://github.com/shssoichiro/oxipng/archive/v5.0.1.tar.gz"
-  sha256 "aff72d2f627617f3f36d9796e65b83eb34f24d2c94f3a55612ade2df8ab8d946"
+  url "https://github.com/shssoichiro/oxipng/archive/v6.0.1.tar.gz"
+  sha256 "02625687bf19263bc2d537f9f81f85784c5b729c003e9dbb8551126d0e28ba7a"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oxipng"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "f87582baebc090270fe3166d3b2816daebeb96ca2fd20b2c10610ca7efdcca72"
+    sha256 cellar: :any_skip_relocation, mojave: "d8d3302a869b29784cebf2f30460a6066c4c0e347c9002aebeea493983eb807e"
   end
 
   depends_on "rust" => :build
