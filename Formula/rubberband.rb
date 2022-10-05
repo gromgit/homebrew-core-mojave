@@ -13,8 +13,8 @@ class Rubberband < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rubberband"
-    rebuild 2
-    sha256 cellar: :any, mojave: "7c250dfe35536f2f312088d3284ad706917d3bb7d9a54c3ca6f8eef65801e695"
+    rebuild 3
+    sha256 cellar: :any, mojave: "00449fe45669baf93acbb1801c39997544b55b0a49772bd2e3b5b3d117f40323"
   end
 
   depends_on "meson" => :build
@@ -25,7 +25,6 @@ class Rubberband < Formula
 
   on_linux do
     depends_on "fftw"
-    depends_on "gcc"
     depends_on "ladspa-sdk"
     depends_on "vamp-plugin-sdk"
   end
