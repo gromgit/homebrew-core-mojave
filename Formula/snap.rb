@@ -1,9 +1,9 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://github.com/snapcore/snapd/releases/download/2.57.1/snapd_2.57.1.vendor.tar.xz"
-  version "2.57.1"
-  sha256 "01a421514ced3d7856ce4128b3812d1ca83cdc8f8f438037a1ffd857ac78e4c8"
+  url "https://github.com/snapcore/snapd/releases/download/2.57.3/snapd_2.57.3.vendor.tar.xz"
+  version "2.57.3"
+  sha256 "17187b5846db3b71649792784c4d5d68226ae67585dac253c147c1b244861103"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,7 +13,7 @@ class Snap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snap"
-    sha256 cellar: :any_skip_relocation, mojave: "70d710dc1a0c13c3c6f0dd2ba1240221a5e34d5a0dbeaecb2f8e8ff85e49d348"
+    sha256 cellar: :any_skip_relocation, mojave: "ec4ed2d6745c19a07b69fcefdc67ab618bd10e92a5381890a3af484981bbbe01"
   end
 
   depends_on "go" => :build
