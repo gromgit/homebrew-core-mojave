@@ -13,8 +13,8 @@ class Openttd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openttd"
-    rebuild 3
-    sha256 cellar: :any, mojave: "2879cc2954a33c01d7501be32aedd6a948095decd7d77565231f3409b3786ce8"
+    rebuild 4
+    sha256 cellar: :any, mojave: "78988ab2ff5048edd600765a366adc0822714e835c98272b5e57d426fdae7c0b"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +27,6 @@ class Openttd < Formula
     depends_on "fluid-synth"
     depends_on "fontconfig"
     depends_on "freetype"
-    depends_on "gcc"
     depends_on "mesa"
     depends_on "mesa-glu"
     depends_on "sdl2"
