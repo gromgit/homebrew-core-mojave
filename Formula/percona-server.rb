@@ -1,10 +1,10 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.28-20/source/tarball/percona-server-8.0.28-20.tar.gz"
-  sha256 "88890e081d70901f938e39b688663d4514910773488fca42cd6de0f4371fb157"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.29-21/source/tarball/percona-server-8.0.29-21.tar.gz"
+  sha256 "a54c45b23719d4f6ba1e409bb2916c59dc0c9aaae98e24299ff26f150ad4f735"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.percona.com/downloads/Percona-Server-LATEST/"
@@ -13,7 +13,7 @@ class PerconaServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/percona-server"
-    sha256 mojave: "db3b707aa1f6180c9cf244d052bf7289e7ada2b4b434dd89ece488018a68b04e"
+    sha256 mojave: "515207cfdd7e9da83bcbde5b432f45dc49621229f948996f465085c370aa20c4"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +34,7 @@ class PerconaServer < Formula
 
   on_linux do
     depends_on "patchelf" => :build
-    depends_on "gcc"
+    depends_on "libtirpc"
     depends_on "readline"
 
     # Fix build with OpenLDAP 2.5+, which merged libldap_r into libldap
@@ -58,15 +58,16 @@ class PerconaServer < Formula
 
   # https://github.com/percona/percona-server/blob/Percona-Server-#{version}/cmake/boost.cmake
   resource "boost" do
-    url "https://boostorg.jfrog.io/artifactory/main/release/1.73.0/source/boost_1_73_0.tar.bz2"
-    sha256 "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+    url "https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2"
+    sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
   end
 
-  # Fix libfibo2 finding; fix unneeded copying of openssl@1.1 libs
-  # Remove in the next version (8.0.29)
+  # Patch out check for Homebrew `boost`.
+  # This should not be necessary when building inside `brew`.
+  # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/3e668c9996eef41f7d7fa4e2d647f2b80da699e1/percona-server/8.0.28-19.diff"
-    sha256 "1410c30b8634c2bb011de08a45ea2b2c7edce13b846871a8447658c1c262ddbf"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/percona-server/boost-check.patch"
+    sha256 "3223f7eebd04b471de1c21104c46b2cdec3fe7b26e13535bdcd0d7b8fd341bde"
   end
 
   def install
