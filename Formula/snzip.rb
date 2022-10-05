@@ -7,6 +7,7 @@ class Snzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snzip"
+    rebuild 1
     sha256 cellar: :any, mojave: "2d60027b15322555ffbf80633c23e0decfc9698b21e29876aa7758856d79be32"
   end
 
