@@ -1,30 +1,29 @@
 class Qpdf < Formula
   desc "Tools for and transforming and inspecting PDF files"
   homepage "https://github.com/qpdf/qpdf"
-  url "https://github.com/qpdf/qpdf/releases/download/release-qpdf-10.6.3/qpdf-10.6.3.tar.gz"
-  sha256 "e8fc23b2a584ea68c963a897515d3eb3129186741dd19d13c86d31fa33493811"
+  url "https://github.com/qpdf/qpdf/releases/download/v11.1.0/qpdf-11.1.0.tar.gz"
+  sha256 "34a7cf3ac6e239510e9a20d7cbe10a4aff0f572c20e0a9bed0badb820a69e22d"
   license "Apache-2.0"
-  revision 1
-
-  livecheck do
-    url :stable
-    regex(/^release-qpdf[._-]v?(\d+(?:\.\d+)+)$/i)
-  end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qpdf"
-    sha256 cellar: :any, mojave: "95ab867f669c2add67474169f9d5ab08c5eea77059c8f8e9a232e2a45ead0694"
+    sha256 cellar: :any, mojave: "079d0abc315dc08afcfe848419256d7185c5f7ca5029ee2ffe376357f5bff4f0"
   end
 
+  depends_on "cmake" => :build
   depends_on "jpeg-turbo"
   depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DUSE_IMPLICIT_CRYPTO=0",
+                    "-DREQUIRE_CRYPTO_OPENSSL=1",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
