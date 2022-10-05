@@ -10,7 +10,8 @@ class Pipx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipx"
-    sha256 cellar: :any_skip_relocation, mojave: "75427355433a5ca67b7a1979f8dfa3becce8ad801c45639224f79fbc9bbe09d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f9fd426e8249e33be82e0222326ab8943029700ba07e047be0e87cd65bb8275b"
   end
 
   depends_on "python@3.10"
@@ -44,12 +45,8 @@ class Pipx < Formula
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/register-python-argcomplete"
 
-    # Install shell completions
-    output = Utils.safe_popen_read(libexec/"bin/register-python-argcomplete", "--shell=bash", "pipx")
-    (bash_completion/"pipx").write output
-
-    output = Utils.safe_popen_read(libexec/"bin/register-python-argcomplete", "--shell=fish", "pipx")
-    (fish_completion/"pipx.fish").write output
+    generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "pipx", "--shell",
+                                         shells: [:bash, :fish])
   end
 
   test do
