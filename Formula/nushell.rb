@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https://www.nushell.sh"
-  url "https://github.com/nushell/nushell/archive/0.67.0.tar.gz"
-  sha256 "a8c4c092087d035805781dff11000f2b7c4a44ae487b013f9d0a59c4dc610546"
+  url "https://github.com/nushell/nushell/archive/0.68.1.tar.gz"
+  sha256 "d3719f5b3eca5dee6215e39fe1da1b559d49837f0baf18c7edc14f1719c986bb"
   license "MIT"
   head "https://github.com/nushell/nushell.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Nushell < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nushell"
-    sha256 cellar: :any, mojave: "100d5396905aecff56317f1a875558164d84cf80a467eefc792e86dad953f48d"
+    sha256 cellar: :any, mojave: "e6875915f6c02de37afa8f12ab52b9c9ce572e06829bcaf05bf390895b110bc2"
   end
 
   depends_on "rust" => :build
