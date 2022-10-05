@@ -1,15 +1,14 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via Apache/NGINX"
   homepage "https://www.phusionpassenger.com/"
-  url "https://github.com/phusion/passenger/releases/download/release-6.0.14/passenger-6.0.14.tar.gz"
-  sha256 "41cd40acfadca1e8adffca3b23d63a1d6d37f976d8c29e4eff0de6250f4113a2"
+  url "https://github.com/phusion/passenger/releases/download/release-6.0.15/passenger-6.0.15.tar.gz"
+  sha256 "73fa22da5a11e4bc4ad6b95c13a0e393ba18109e6e07bd1953c45b2f0c0aae80"
   license "MIT"
-  revision 2
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/passenger"
-    sha256 cellar: :any, mojave: "2c2ea1c54b239d4820a719b9a8dc9040821621c90437c7bedf34d8d967e511d7"
+    sha256 cellar: :any, mojave: "1cd4564311482bd468d5e79482c283cc25b7b01181063ba823593565a105462d"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
