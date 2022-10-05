@@ -13,17 +13,14 @@ class S2geometry < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s2geometry"
-    sha256 cellar: :any, mojave: "e1d5cb5d92fa14e20be4757934ae8fd52342ab54a2467d40fc994873c5d1593f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b64d49011f08299d4e4781496c58301136c4456ed4cb6c5b52f4b8c3fa65da46"
   end
 
   depends_on "cmake" => :build
   depends_on "abseil"
   depends_on "glog"
   depends_on "openssl@1.1"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5" # C++17
 
