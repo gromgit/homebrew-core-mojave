@@ -1,15 +1,13 @@
 class SagittariusScheme < Formula
   desc "Free Scheme implementation supporting R6RS and R7RS"
   homepage "https://bitbucket.org/ktakashi/sagittarius-scheme/wiki/Home"
-  url "https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/sagittarius-0.9.8.tar.gz"
-  sha256 "09d9c1a53abe734e09762a5f848888f0491516c09cd341a1f9c039cd810d32a2"
+  url "https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/sagittarius-0.9.9.tar.gz"
+  sha256 "501ecb7f273669f4c8556e522221f15e2db0ca8542d90d82953912390e9498f8"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sagittarius-scheme"
-    rebuild 1
-    sha256 cellar: :any, mojave: "2156ca50b86cf0a9a521686ac284cafccf48239dbbf10f5f25aba9845ef10db3"
+    sha256 cellar: :any, mojave: "9fac25406de61c0a440c21319b9660900cb54b49ec6ce8c6ccb7aa8afd2ed01b"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +20,10 @@ class SagittariusScheme < Formula
   uses_from_macos "zlib"
 
   def install
+    # Work around build error on Apple Silicon by forcing little endian.
+    # src/sagittarius/private/sagittariusdefs.h:200:3: error: Failed to detect endian
+    ENV.append_to_cflags "-D_LITTLE_ENDIAN" if OS.mac? && Hardware::CPU.arm?
+
     system "cmake", "-S", ".", "-B", "build", "-DODBC_LIBRARIES=odbc", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
