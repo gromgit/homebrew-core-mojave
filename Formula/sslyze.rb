@@ -23,7 +23,8 @@ class Sslyze < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sslyze"
-    sha256 cellar: :any, mojave: "098643586d271fe2c25bed5d68cb4a059237e5829591894e456cd371a7231846"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e247f3566fbce231efe64bd935b57e3d7f4b878ed2cab6ff1bd50b938131b820"
   end
 
   head do
@@ -71,10 +72,10 @@ class Sslyze < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources.reject { |r| r.name == "nassl" }
 
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", libexec/"bin"
     resource("nassl").stage do
       system "invoke", "build.all"
       venv.pip_install Pathname.pwd
