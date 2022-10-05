@@ -1,14 +1,13 @@
 class Openfast < Formula
   desc "NREL-supported OpenFAST whole-turbine simulation code"
   homepage "https://openfast.readthedocs.io"
-  url "https://github.com/openfast/openfast/archive/v3.0.0.tar.gz"
-  sha256 "9af57af054e4128b6e257a76da368dc4ad0c7fbb2b22d51fc7ea63cdf999c530"
+  url "https://github.com/openfast/openfast/archive/v3.2.1.tar.gz"
+  sha256 "29beab5eba93ab94b411a62eaad38b19b0fba1e04c1fc8e6d79c898d37c6f81e"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openfast"
-    sha256 cellar: :any, mojave: "5930de0ac7a3a7385358f72c1a119f0970d5d5ecfdbb7db6b09efd7122cfec50"
+    sha256 cellar: :any, mojave: "c62412d9e493e3be9bd338741ef90a88d5d3073ae024565c03f7b4b85e4373c4"
   end
 
   depends_on "cmake" => :build
@@ -50,6 +49,17 @@ class Openfast < Formula
                 0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
                 0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
                 0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
+                0   MHK             - MHK turbine type (switch) {0: not an MHK turbine, 1: fixed MHK turbine, 2: floating MHK turbine}
+      ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------------------------
+           9.8066   Gravity         - Gravity (m/s^2).
+            1.225   AirDens         - AirDens - Air density (kg/m^3)
+             1025   WtrDens         - Water density (kg/m^3)
+       1.4639E-05   KinVisc         - Kinematic air viscosity, m^2/sec
+              335   SpdSound        - Speed of sound in working fluid (m/s)
+        1.035e+05   Patm            - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
+          1.7e+03   Pvap            - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
+               50   WtrDpth         - Water Depth (m) positive value.
+                0   MSL2SWL         - Offset between still-water level and mean sea level (m) [positive upward]
       ---------------------- INPUT FILES ---------------------------------------------
       "elastodyn.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
       "unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
@@ -200,8 +210,6 @@ class Openfast < Formula
       False         Echo        - Echo input data to "<RootName>.ech" (flag)
                 3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
             0.005   DT          - Integration time step (s)
-      ---------------------- ENVIRONMENTAL CONDITION ---------------------------------
-          9.80665   Gravity     - Gravitational acceleration (m/s^2)
       ---------------------- DEGREES OF FREEDOM --------------------------------------
       True          FlapDOF1    - First flapwise blade mode DOF (flag)
       True          FlapDOF2    - Second flapwise blade mode DOF (flag)
