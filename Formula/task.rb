@@ -4,6 +4,7 @@ class Task < Formula
   url "https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v2.6.2/task-2.6.2.tar.gz"
   sha256 "b1d3a7f000cd0fd60640670064e0e001613c9e1cb2242b9b3a9066c78862cfec"
   license "MIT"
+  revision 1
   head "https://github.com/GothenburgBitFactory/taskwarrior.git", branch: "develop"
 
   livecheck do
@@ -13,15 +14,14 @@ class Task < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/task"
-    sha256 mojave: "9c9436b55f47acc06a34a266d71298f7a569f5fba8fd6274addb8ab1e94d9012"
+    sha256 mojave: "cd457488993360e53de8459a7d99f2ede668befee96d928800a67ee556839228"
   end
 
   depends_on "cmake" => :build
   depends_on "gnutls"
 
   on_linux do
-    depends_on "gcc"
-    depends_on "linux-headers@4.4"
+    depends_on "linux-headers@5.15" => :build
     depends_on "readline"
     depends_on "util-linux"
   end
