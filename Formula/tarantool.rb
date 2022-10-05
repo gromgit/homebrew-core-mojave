@@ -1,9 +1,10 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
   homepage "https://tarantool.org/"
-  url "https://download.tarantool.org/tarantool/src/tarantool-2.10.1.tar.gz"
-  sha256 "615c9471ed4b4277427bd24b008a7ca7942da349d3391ba466823dab2bc34e6f"
+  url "https://download.tarantool.org/tarantool/src/tarantool-2.10.2.tar.gz"
+  sha256 "2873992c88a7f549d953d9bc155e102300a78af24eb928fb40b642b2d1aca0ae"
   license "BSD-2-Clause"
+  revision 1
   version_scheme 1
   head "https://github.com/tarantool/tarantool.git", branch: "master"
 
@@ -14,7 +15,7 @@ class Tarantool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tarantool"
-    sha256 mojave: "de5ac53f5405be20388d6da0105b943b368f7d265335876b8599820a5c2d1c94"
+    sha256 mojave: "1b0ce90a919715e1ed2c3a34a4276b25d8905b0712cdca471d013b375201ae6b"
   end
 
   depends_on "cmake" => :build
