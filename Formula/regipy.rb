@@ -10,7 +10,8 @@ class Regipy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regipy"
-    sha256 cellar: :any_skip_relocation, mojave: "f9bb4d004788628baed1c2a5a31f1f857313af555262a33c2d7313b2534416e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a4ba1effb6ddaeed1fac88b791aec5a76b4299cd9a9fc227553cc3a81ebf3dbf"
   end
 
   depends_on "libpython-tabulate"
@@ -47,7 +48,7 @@ class Regipy < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources.reject { |r| r.name == "test_hive" }
     venv.pip_install_and_link buildpath
   end
