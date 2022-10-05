@@ -13,7 +13,8 @@ class Newt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/newt"
-    sha256 cellar: :any, mojave: "7ddcfffa42b0e67317dae4ac3dc7ac253a47f6d6a563d77160535f28f29ec741"
+    rebuild 1
+    sha256 cellar: :any, mojave: "31fc0ca56706b3ec3ec39b403fcdb3bf25484a1c3d091a873726e253b3097780"
   end
 
   depends_on "gettext"
@@ -21,9 +22,12 @@ class Newt < Formula
   depends_on "python@3.10"
   depends_on "s-lang"
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    xy = Language::Python.major_minor_version("python3")
-    args = %W[--prefix=#{prefix} --without-tcl --with-python=python#{xy}]
+    args = %W[--prefix=#{prefix} --without-tcl --with-python=#{python3}]
 
     if OS.mac?
       inreplace "Makefile.in" do |s|
@@ -46,7 +50,7 @@ class Newt < Formula
 
   test do
     ENV["TERM"] = "xterm"
-    system Formula["python@3.10"].opt_bin/"python3", "-c", "import snack"
+    system python3, "-c", "import snack"
 
     (testpath/"test.c").write <<~EOS
       #import <newt.h>
