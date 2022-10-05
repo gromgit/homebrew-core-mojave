@@ -12,7 +12,8 @@ class Otf2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/otf2"
-    sha256 mojave: "c7f122902f827c6c2b5644975af2d250bf5a54146257f65dae827d2e8c53c751"
+    rebuild 1
+    sha256 mojave: "267798404b75ca5dd0f28babce2aedbb31572a8978807575229976ab06645b32"
   end
 
   depends_on "sphinx-doc" => :build
@@ -34,7 +35,7 @@ class Otf2 < Formula
   end
 
   def install
-    ENV["PYTHON"] = which("python3")
+    ENV["PYTHON"] = which("python3.10")
     ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin/"sphinx-build"
 
     system "./configure", *std_configure_args, "--disable-silent-rules"
@@ -67,7 +68,7 @@ class Otf2 < Formula
       rm_rf "./ArchivePath"
       system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_writer_example"
       assert_predicate workdir/"ArchivePath/ArchiveName.otf2", :exist?
-      (0...2).each do |n|
+      2.times do |n|
         assert_predicate workdir/"ArchivePath/ArchiveName/#{n}.evt", :exist?
       end
       system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_reader_example"
