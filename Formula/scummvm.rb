@@ -4,6 +4,7 @@ class Scummvm < Formula
   url "https://downloads.scummvm.org/frs/scummvm/2.6.0/scummvm-2.6.0.tar.xz"
   sha256 "1c1438e8d0c9d9e15fd129e2e9e2d2227715bd7559f83b2e7208f5d8704ffc17"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/scummvm/scummvm.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Scummvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scummvm"
-    sha256 mojave: "0a98d793c8b1d837547369517316f4524a85bbc95cb6036227a33dcfe2663175"
+    sha256 mojave: "278a2a5316d9fb0e3ed2c81bc6c948a2f0065a3d1da6e2b121ec63ed4a18ae5c"
   end
 
   depends_on "a52dec"
