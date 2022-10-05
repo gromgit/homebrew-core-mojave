@@ -1,13 +1,14 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://github.com/nickg/nvc"
-  url "https://github.com/nickg/nvc/releases/download/r1.7.0/nvc-1.7.0.tar.gz"
-  sha256 "bc10ec3777b457582a66bb94f97c614d8d83956547aee4c658402da6e2474b32"
+  url "https://github.com/nickg/nvc/releases/download/r1.7.1/nvc-1.7.1.tar.gz"
+  sha256 "c800bbe70be4210326020afc873252ff93354739085c1064dc65ebb93722943d"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nvc"
-    sha256 mojave: "4ba8a24f8746e34736e8a63eb70886ced8655c52d785dcc1d18006216d06aea6"
+    sha256 mojave: "1a62c3ba2c10ab9ef51bfafe9f3e9c96b001ae37de31c97abfd7471060178ff4"
   end
 
   head do
@@ -30,20 +31,11 @@ class Nvc < Formula
         revision: "fcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9b"
   end
 
-  patch do
-    # Fix build with glibc < 2.36
-    # Remove in the next release
-    on_linux do
-      url "https://github.com/nickg/nvc/commit/3f1a495360d4c97bf6537e62eb77c1269297dcb2.patch?full_index=1"
-      sha256 "d5bda0f89c346f618b9bc5ce96095be5bb9eb8e0fec3caea4ebddfe1ae2dee23"
-    end
-  end
-
   def install
     system "./autogen.sh" if build.head?
 
     # Avoid hardcoding path to the `ld` shim.
-    inreplace "configure", "#define LINKER_PATH \\\"$linker_path\\\"", "#define LINKER_PATH \\\"ld\\\"" if OS.linux?
+    ENV["ac_cv_path_linker_path"] = "ld" if OS.linux?
 
     # In-tree builds are not supported.
     mkdir "build" do
