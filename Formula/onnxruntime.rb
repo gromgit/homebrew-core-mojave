@@ -13,15 +13,12 @@ class Onnxruntime < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onnxruntime"
-    sha256 cellar: :any, mojave: "ffae11bacc406424acbe7428f39cd85af99a429a3675ab4aeb75836e73e1c65d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "424ddc5ee7d0ba62963db131f6349b599a264f7787606b7a461fa0f604d8b17a"
   end
 
   depends_on "cmake" => :build
   depends_on "python@3.10" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5" # GCC version < 7 is no longer supported
 
@@ -29,15 +26,14 @@ class Onnxruntime < Formula
     cmake_args = %W[
       -Donnxruntime_RUN_ONNX_TESTS=OFF
       -Donnxruntime_GENERATE_TEST_REPORTS=OFF
-      -DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3
+      -DPYTHON_EXECUTABLE=#{which("python3.10")}
       -Donnxruntime_BUILD_SHARED_LIB=ON
       -Donnxruntime_BUILD_UNIT_TESTS=OFF
     ]
 
-    mkdir "build" do
-      system "cmake", "../cmake", *std_cmake_args, *cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", "cmake", "-B", "build", *cmake_args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
