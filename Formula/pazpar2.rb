@@ -4,7 +4,7 @@ class Pazpar2 < Formula
   url "https://ftp.indexdata.com/pub/pazpar2/pazpar2-1.14.1.tar.gz"
   sha256 "9baf590adb52cd796eccf01144eeaaf7353db1fd05ae436bdb174fe24362db53"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.indexdata.com/pub/pazpar2/"
@@ -13,7 +13,7 @@ class Pazpar2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pazpar2"
-    sha256 cellar: :any, mojave: "b6066369a7817b5f340bc29159f7b8f29931fa3c303701968989d1de7faa8c37"
+    sha256 cellar: :any, mojave: "93d1bedbba940604889ce0ffe43e0518f4ae7b8ebb9d1e792c8155db3e90d2fc"
   end
 
   head do
