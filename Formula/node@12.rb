@@ -4,11 +4,11 @@ class NodeAT12 < Formula
   url "https://nodejs.org/dist/v12.22.12/node-v12.22.12.tar.xz"
   sha256 "bc42b7f8495b9bfc7f7850dd180bb02a5bdf139cc232b8c6f02a6967e20714f2"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@12"
-    rebuild 4
-    sha256 cellar: :any, mojave: "ec225c89f7511c8fdaf051ef44059e45ba697163d84ee034109fc14eedb717e0"
+    sha256 cellar: :any, mojave: "35b091c54bd1c8fb91d0d8ceaf18c16f6dce208d45164aba785de32997ca7c76"
   end
 
   keg_only :versioned_formula
