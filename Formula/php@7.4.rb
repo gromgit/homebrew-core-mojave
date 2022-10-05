@@ -6,6 +6,7 @@ class PhpAT74 < Formula
   mirror "https://fossies.org/linux/www/php-7.4.30.tar.xz"
   sha256 "ea72a34f32c67e79ac2da7dfe96177f3c451c3eefae5810ba13312ed398ba70d"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -14,8 +15,7 @@ class PhpAT74 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/php@7.4"
-    rebuild 1
-    sha256 mojave: "bb2544f307a7854d20bf95329f6fb561d2299c0244a76d26fa76ff2ae9838ea2"
+    sha256 mojave: "c71f08fd4de67086252269da207b85ec5c783b8ed740cc3b6ed07baaa30102cb"
   end
 
   keg_only :versioned_formula
