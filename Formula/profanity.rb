@@ -1,14 +1,13 @@
 class Profanity < Formula
   desc "Console based XMPP client"
   homepage "https://profanity-im.github.io"
-  url "https://profanity-im.github.io/tarballs/profanity-0.12.1.tar.gz"
-  sha256 "e344481e7bf3b16baf58a169d321b809c4700becffb70db6f1c39adc3fad306e"
+  url "https://profanity-im.github.io/tarballs/profanity-0.13.0.tar.gz"
+  sha256 "7a562cd4ba703a39e5caa6f00a01c5a09fe51db20a73885f56b23bc3f82fc492"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/profanity"
-    sha256 mojave: "07e66b7b89a65a2de563369dc24ddc05a00eab7aa74a898a87b6af97a3e30b24"
+    sha256 mojave: "1367d1a4379a0dd14be0fd1d133424e39513f58f603eec2e0cd71f3f804b37a1"
   end
 
   head do
