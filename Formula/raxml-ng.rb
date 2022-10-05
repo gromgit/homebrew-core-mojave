@@ -8,8 +8,8 @@ class RaxmlNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/raxml-ng"
-    rebuild 3
-    sha256 cellar: :any, mojave: "30822fa0bca4805d6a091f431fcc540b3b8653de95b75ee37e4ec0ac0c4b9590"
+    rebuild 4
+    sha256 cellar: :any, mojave: "37a193d8082b2f8a9190bd21c26d0e6eb3c37ff3e77bc59f1ce59a7652f91eab"
   end
 
   depends_on "autoconf" => :build
@@ -21,6 +21,17 @@ class RaxmlNg < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+
+  # Backport ARM support. Remove in the next release.
+  # Ref: https://github.com/amkozlov/raxml-ng/commit/6a8f3d98ba0243b9f1452e0f7aab928e45d59b6f
+  on_arm do
+    patch :DATA
+    patch do
+      url "https://github.com/xflouris/libpll-2/commit/201983d128aa34e658d145e99ad775f441b42197.patch?full_index=1"
+      sha256 "6f14c55450567672aa7c2b82dcce19c6e00395f7f9b8ed7529a18b3030e70e16"
+      directory "libs/pll-modules/libs/libpll"
+    end
+  end
 
   resource "homebrew-example" do
     url "https://sco.h-its.org/exelixis/resource/download/hands-on/dna.phy"
@@ -46,3 +57,26 @@ class RaxmlNg < Formula
     system "#{bin}/raxml-ng", "--msa", "dna.phy", "--start", "--model", "GTR"
   end
 end
+
+__END__
+diff --git a/src/util/sysutil.cpp b/src/util/sysutil.cpp
+index 8d6501f..cdc4c72 100644
+--- a/src/util/sysutil.cpp
++++ b/src/util/sysutil.cpp
+@@ -1,4 +1,4 @@
+-#ifndef _WIN32
++#if (!defined(_WIN32) && !defined(__aarch64__))
+ #include <cpuid.h>
+ #endif
+ #include <sys/time.h>
+@@ -170,7 +170,9 @@ unsigned long sysutil_get_memtotal(bool ignore_errors)
+
+ static void get_cpuid(int32_t out[4], int32_t x)
+ {
+-#ifdef _WIN32
++#ifdef __aarch64__
++// not supported
++#elif defined(_WIN32)
+   __cpuid(out, x);
+ #else
+   __cpuid_count(x, 0, out[0], out[1], out[2], out[3]);
