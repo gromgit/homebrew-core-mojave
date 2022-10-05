@@ -12,8 +12,8 @@ class Pianod < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pianod"
-    rebuild 1
-    sha256 mojave: "6c1bac30eee017dbc3644b90995922fbd1756307765718c7c753ce77ada54ce6"
+    rebuild 2
+    sha256 mojave: "229ac95b6ba35809278aac41157edfbe8a132b22ae31a76d09731896ff861266"
   end
 
   depends_on "pkg-config" => :build
@@ -30,7 +30,6 @@ class Pianod < Formula
   on_linux do
     # pianod uses avfoundation on macOS, ffmpeg on Linux
     depends_on "ffmpeg@4"
-    depends_on "gcc"
     depends_on "gnutls"
     depends_on "libbsd"
   end
