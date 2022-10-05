@@ -7,7 +7,8 @@ class Norm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/norm"
-    sha256 cellar: :any, mojave: "5d94d95876aeece0d30ef7338de954efd53af9e5b0b1793a89b747a8ddb5af31"
+    rebuild 1
+    sha256 cellar: :any, mojave: "5746cef33c9333707531b108945e41fda898e9abe0f9d02b023253dc58dd7019"
   end
 
   depends_on "python@3.10" => :build
@@ -22,8 +23,9 @@ class Norm < Formula
   end
 
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    system "python3", "./waf", "install"
+    python3 = "python3.10"
+    system python3, "./waf", "configure", "--prefix=#{prefix}"
+    system python3, "./waf", "install"
 
     include.install "include/normApi.h"
   end
