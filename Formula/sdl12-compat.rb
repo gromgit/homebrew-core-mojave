@@ -1,15 +1,14 @@
 class Sdl12Compat < Formula
   desc "SDL 1.2 compatibility layer that uses SDL 2.0 behind the scenes"
   homepage "https://github.com/libsdl-org/sdl12-compat"
-  url "https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.52.tar.gz"
-  sha256 "5bd7942703575554670a8767ae030f7921a0ac3c5e2fd173a537b7c7a8599014"
+  url "https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.56.tar.gz"
+  sha256 "f62f3e15f95aade366ee6c03f291e8825c4689390a6be681535259a877259c58"
   license all_of: ["Zlib", "MIT-0"]
-  revision 1
   head "https://github.com/libsdl-org/sdl12-compat.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl12-compat"
-    sha256 cellar: :any, mojave: "5378c1290d3aa109968c66d8106ea317f3deebe49324aaaed1390278c9824057"
+    sha256 cellar: :any, mojave: "08adecca68129ad11390f7058c083aab412d2757320d3970515c586b2b0aedb6"
   end
 
   depends_on "cmake" => :build
