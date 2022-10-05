@@ -1,8 +1,9 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://github.com/kubeshop/testkube/archive/v1.5.6.tar.gz"
-  sha256 "a569e32adea6a0c8eb1da67250909a8ef1cf698da379692f9d65652e5281d031"
+  # testkube should only be updated every 5 releases on multiples of 5
+  url "https://github.com/kubeshop/testkube/archive/v1.5.25.tar.gz"
+  sha256 "1eeadc33675d12972083187a059b4b919c0d3e12d4cb58f33d5515acc8343193"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -13,10 +14,12 @@ class Testkube < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/testkube"
-    sha256 cellar: :any_skip_relocation, mojave: "e7e406af99bde68d50b9088e5697b0757b31097cf935c159eaf21531d6117436"
+    sha256 cellar: :any_skip_relocation, mojave: "f98ae684ff7dd32052df9880c14bf6ba6ffd27b232905045e8e2d52426cf10b2"
   end
 
   depends_on "go" => :build
+  depends_on "helm"
+  depends_on "kubernetes-cli"
 
   def install
     ENV["CGO_ENABLED"] = "0"
@@ -28,6 +31,8 @@ class Testkube < Formula
 
     system "go", "build", *std_go_args(output: bin/"kubectl-testkube", ldflags: ldflags),
       "cmd/kubectl-testkube/main.go"
+
+    generate_completions_from_executable(bin/"kubectl-testkube", "completion")
   end
 
   test do
