@@ -8,7 +8,8 @@ class Rocksdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rocksdb"
-    sha256 cellar: :any, mojave: "2a4e0ba4e3af1dfe973e77cf5508f61d544e9968c74ac279e54c8e2a87e2e2e8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c2ab178d92889444f8f80411f34102be154a8aec6cec7ef0b4510dee291f15b5"
   end
 
   depends_on "cmake" => :build
@@ -19,10 +20,6 @@ class Rocksdb < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with :gcc do
     version "6"
