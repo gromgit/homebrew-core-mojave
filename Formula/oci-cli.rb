@@ -3,14 +3,14 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/b7/84/1b392c86b2a004e341383ba7c47561d8780b7771e9bd663907044636eda9/oci-cli-3.15.2.tar.gz"
-  sha256 "c0e3aa739025e00ec9676d634f29c81fc7b7aab6afd1d7572708b930ee96c46b"
+  url "https://files.pythonhosted.org/packages/4c/e8/5cf64c45cf34750dae9f966048a5665c7a87b1d3034e2eeaab206f7c71fe/oci-cli-3.17.0.tar.gz"
+  sha256 "ad13e86d4062f069a5295cdd9c14ae37b005c0f2844643b90e189a2b38550299"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oci-cli"
-    sha256 cellar: :any, mojave: "501b2946464ee8a478d9df405283c26ac7627128309ebd3178743eadff9d1633"
+    sha256 cellar: :any, mojave: "a840fcb89ebfc772e2282882a5727cd3f9f83350378ca80906973ac30626fb21"
   end
 
   depends_on "rust" => :build
@@ -18,13 +18,13 @@ class OciCli < Formula
   depends_on "six"
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/48/28/30a5748af715b0ab9c2b81cf08bd9e261e47a6261e247553afb7f6421b24/arrow-1.2.2.tar.gz"
-    sha256 "05caf1fd3d9a11a1135b2b6f09887421153b94558e5ef4d090b567b47173ac2b"
+    url "https://files.pythonhosted.org/packages/7f/c0/c601ea7811f422700ef809f167683899cdfddec5aa3f83597edf97349962/arrow-1.2.3.tar.gz"
+    sha256 "3934b30ca1b9f292376d9db15b19446088d12ec58629bc3f0da28fd55fb633a1"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/cc/85/319a8a684e8ac6d87a1193090e06b6bbb302717496380e225ee10487c888/certifi-2022.6.15.tar.gz"
-    sha256 "84c85a9078b11105f04f3036a9482ae10e4621616db313fe045dd24743a0820d"
+    url "https://files.pythonhosted.org/packages/ca/48/88ec470f8b68319b6782ca3a0570789886ad5ca24c1af2f3771699135baa/certifi-2022.9.14.tar.gz"
+    sha256 "36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5"
   end
 
   resource "cffi" do
@@ -53,8 +53,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/d7/8b/74591babc2e5552db6d2500beb6e3a54d90f6fc00683c79d87a79fdfa1da/oci-2.80.1.tar.gz"
-    sha256 "149d58d463207714021cc36202487d9e1880fee9b159b3392bc8ebeb1876dde4"
+    url "https://files.pythonhosted.org/packages/75/f5/184a7ec334c36960be8eff385bb9ba83e0037d7852f4e723dc2f696e665d/oci-2.83.0.tar.gz"
+    sha256 "180d7aec253cacfc99fbe737dd3687e8183c7d9cbbf5420af0b3c2f9d9c37f6c"
   end
 
   resource "prompt-toolkit" do
