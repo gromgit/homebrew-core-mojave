@@ -4,16 +4,11 @@ class OcamlNum < Formula
   url "https://github.com/ocaml/num/archive/v1.4.tar.gz"
   sha256 "015088b68e717b04c07997920e33c53219711dfaf36d1196d02313f48ea00f24"
   license "LGPL-2.1"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "8a5d1c3625dc2fb163fed6576507e859f4d117b9612a69c8569d6047de63f9dd"
-    sha256 cellar: :any,                 arm64_big_sur:  "f1f22afab148209110159c9fcbe9cdfd7f27ca6a25b55ddd11358c130da033fb"
-    sha256 cellar: :any,                 monterey:       "b8812394abf008510cf45d72e0d136203a1fe5c93ed7dd2be50e251ad34d249c"
-    sha256 cellar: :any,                 big_sur:        "4563053ebf720e623e0afeb935f803ab1aedc3c15d6d99d6bc2818301eeb4ecb"
-    sha256 cellar: :any,                 catalina:       "26b165d15abd314baafa8c8a055236684eb26ae86740d85edca087321c5c311c"
-    sha256 cellar: :any,                 mojave:         "c14f476a964f149d3dc3145cb219286fea6585962351ada79aa1ed4606d9f781"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a73e9edb89bf0770888357b1d3020a704bbb068cf3cede057db573ed0f4f7be2"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml-num"
+    sha256 cellar: :any, mojave: "f94743cc3ef73c04d96078d4a42cb3bcb78a12bc3761b39fa782984975ad3491"
   end
 
   depends_on "ocaml-findlib" => :build
