@@ -1,10 +1,9 @@
 class Onscripter < Formula
   desc "NScripter-compatible visual novel engine"
   homepage "https://onscripter.osdn.jp/onscripter.html"
-  url "https://onscripter.osdn.jp/onscripter-20220123.tar.gz"
-  sha256 "5da41dc3471eeec8c93153906b39dac0a32edbb2bcefce0fa0a976c148b448ca"
+  url "https://onscripter.osdn.jp/onscripter-20220816.tar.gz"
+  sha256 "e2bea400a51777e91a10e6a30e2bb4060e30fe7eb1d293c659b4a9668742d5d5"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :homepage
@@ -13,7 +12,7 @@ class Onscripter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/onscripter"
-    sha256 cellar: :any, mojave: "e1518a65feb86c179035c62d3900d4ca6c9f6204f32ebe34278b7c73f4585af9"
+    sha256 cellar: :any, mojave: "ed8fde161936a9c522400ec99bc931d9e372284380ae8edc3b3ee8eb75a930bc"
   end
 
   depends_on "pkg-config" => :build
