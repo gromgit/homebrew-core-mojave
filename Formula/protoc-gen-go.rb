@@ -7,7 +7,9 @@ class ProtocGenGo < Formula
   head "https://github.com/protocolbuffers/protobuf-go.git", branch: "master"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protoc-gen-go"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "08dc4b490fa4f689dc8ea1f5056f6e69d6ed3ae249acb5e89614dba5931fbead"
   end
 
   depends_on "go" => :build
