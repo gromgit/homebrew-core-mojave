@@ -1,10 +1,11 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0246.tar.gz"
-  version "0.246"
-  sha256 "293c8f4b550694e0f6aa21165d7f7be9aa3a5284d957265c4e7469159a71b5d5"
+  url "https://github.com/mamedev/mame/archive/mame0247.tar.gz"
+  version "0.247"
+  sha256 "a2486d34b15f13c3d7028436f7da373d37c7fd47f34a2ea19ff48cf57daf29e1"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/mamedev/mame.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class RomTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rom-tools"
-    sha256 cellar: :any, mojave: "17ca333e8088796b30601ed81203a4ade3e06f28f995baef76cd38f9eedaa229"
+    sha256 cellar: :any, mojave: "51ebf77d3900bfe29ae1bcbc854a80f3b25a8e2622b3f96aeb66f784ea4eb365"
   end
 
   depends_on "pkg-config" => :build
@@ -33,10 +34,9 @@ class RomTools < Formula
     depends_on "pulseaudio" => :build
     depends_on "qt@5" => :build
     depends_on "sdl2_ttf" => :build
-    depends_on "gcc" # for C++17
   end
 
-  fails_with gcc: "5"
+  fails_with gcc: "5" # for C++17
   fails_with gcc: "6"
 
   def install
@@ -46,7 +46,7 @@ class RomTools < Formula
     # Use bundled asio instead of latest version.
     # See: <https://github.com/mamedev/mame/issues/5721>
     args = %W[
-      PYTHON_EXECUTABLE=#{which("python3")}
+      PYTHON_EXECUTABLE=#{which("python3.10")}
       TOOLS=1
       USE_LIBSDL=1
       USE_SYSTEM_LIB_EXPAT=1
