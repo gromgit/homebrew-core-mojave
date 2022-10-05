@@ -1,15 +1,14 @@
 class Starship < Formula
   desc "Cross-shell prompt for astronauts"
   homepage "https://starship.rs"
-  url "https://github.com/starship/starship/archive/v1.10.2.tar.gz"
-  sha256 "b3833c3b23906db778bd0d9a7d87ed232745739e47ce59bcfa8e92c7f0f930e9"
+  url "https://github.com/starship/starship/archive/v1.10.3.tar.gz"
+  sha256 "39c5f8f88a8aa6d32575ddb26017572f2683fae129b9be5442acbae74019ea5e"
   license "ISC"
   head "https://github.com/starship/starship.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/starship"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "671807388ef4071e8e66e7aa671953d6d4712eab3e335d97e9d58599926e5d7b"
+    sha256 cellar: :any_skip_relocation, mojave: "1c07972f583ec7cce5b54354591816159ec636b5f4b8a7879a3729c2a2b98ec7"
   end
 
   depends_on "cmake" => :build
@@ -25,14 +24,7 @@ class Starship < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_output = Utils.safe_popen_read("#{bin}/starship", "completions", "bash")
-    (bash_completion/"starship").write bash_output
-
-    zsh_output = Utils.safe_popen_read("#{bin}/starship", "completions", "zsh")
-    (zsh_completion/"_starship").write zsh_output
-
-    fish_output = Utils.safe_popen_read("#{bin}/starship", "completions", "fish")
-    (fish_completion/"starship.fish").write fish_output
+    generate_completions_from_executable(bin/"starship", "completions")
   end
 
   test do
