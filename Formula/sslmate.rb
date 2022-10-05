@@ -17,7 +17,8 @@ class Sslmate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sslmate"
-    sha256 cellar: :any_skip_relocation, mojave: "9ead2020caefa0a140ed33fabb9d37fc7b4ee803421b037ffae8b20c53f4fa36"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "25187a50dd32d474940fd4d9c22b8887eda823afbba3ddac85c19ede06975be0"
   end
 
   depends_on "python@3.10"
@@ -44,7 +45,7 @@ class Sslmate < Formula
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"vendor/lib/perl5"
 
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resource("boto")
 
     resources.each do |r|
