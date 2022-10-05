@@ -7,10 +7,12 @@ class Skopeo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/skopeo"
-    sha256 mojave: "a77ed7dfe2d44015fc7df632906c7ab6262454f5a7b0d69eb128824562987c4a"
+    rebuild 1
+    sha256 mojave: "38ab94b20049f8c9cfce0f0b550aaf56196f0138191653fce1df417ada6bd7ca"
   end
 
   depends_on "go" => :build
+  depends_on "go-md2man" => :build
   depends_on "gpgme"
 
   on_linux do
@@ -21,7 +23,7 @@ class Skopeo < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
     ENV.append "CGO_FLAGS", ENV.cppflags
-    ENV.append "CGO_FLAGS", Utils.safe_popen_read("#{Formula["gpgme"].bin}/gpgme-config", "--cflags")
+    ENV.append "CGO_FLAGS", Utils.safe_popen_read(Formula["gpgme"].opt_bin/"gpgme-config", "--cflags")
 
     buildtags = [
       "containers_image_ostree_stub",
@@ -30,26 +32,22 @@ class Skopeo < Formula
       Utils.safe_popen_read("hack/libdm_tag.sh").chomp,
     ].uniq.join(" ")
 
-    ldflags = [
-      "-X main.gitCommit=",
-      "-X github.com/containers/image/v5/docker.systemRegistriesDirPath=#{etc/"containers/registries.d"}",
-      "-X github.com/containers/image/v5/internal/tmpdir.unixTempDirForBigFiles=/var/tmp",
-      "-X github.com/containers/image/v5/signature.systemDefaultPolicyPath=#{etc/"containers/policy.json"}",
-      "-X github.com/containers/image/v5/pkg/sysregistriesv2.systemRegistriesConfPath=" \
-      "#{etc/"containers/registries.conf"}",
-    ].join(" ")
+    ldflag_prefix = "github.com/containers/image/v5"
+    ldflags = %W[
+      -X main.gitCommit=
+      -X #{ldflag_prefix}/docker.systemRegistriesDirPath=#{etc}/containers/registries.d
+      -X #{ldflag_prefix}/internal/tmpdir.unixTempDirForBigFiles=/var/tmp
+      -X #{ldflag_prefix}/signature.systemDefaultPolicyPath=#{etc}/containers/policy.json
+      -X #{ldflag_prefix}/pkg/sysregistriesv2.systemRegistriesConfPath=#{etc}/containers/registries.conf
+    ]
 
-    system "go", "build", "-tags", buildtags, "-ldflags", ldflags, *std_go_args, "./cmd/skopeo"
+    system "go", "build", "-tags", buildtags, *std_go_args(ldflags: ldflags), "./cmd/skopeo"
+    system "make", "PREFIX=#{prefix}", "GOMD2MAN=go-md2man", "install-docs"
 
     (etc/"containers").install "default-policy.json" => "policy.json"
     (etc/"containers/registries.d").install "default.yaml"
 
-    bash_output = Utils.safe_popen_read(bin/"skopeo", "completion", "bash")
-    (bash_completion/"skopeo").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"skopeo", "completion", "zsh")
-    (zsh_completion/"_skopeo").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"skopeo", "completion", "fish")
-    (fish_completion/"skopeo.fish").write fish_output
+    generate_completions_from_executable(bin/"skopeo", "completion")
   end
 
   test do
