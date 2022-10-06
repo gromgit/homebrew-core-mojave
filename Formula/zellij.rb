@@ -1,13 +1,13 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
   homepage "https://zellij.dev"
-  url "https://github.com/zellij-org/zellij/archive/v0.31.3.tar.gz"
-  sha256 "61949cc0c44b11082e6a4347d50910c576b1f131daa054a17ed153a6fd0e8b20"
+  url "https://github.com/zellij-org/zellij/archive/v0.31.4.tar.gz"
+  sha256 "286b08523457cdadee89bb1839f8d08ac402af00f3e27063520a7ed9ee7afc8a"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zellij"
-    sha256 cellar: :any_skip_relocation, mojave: "7e59e65d633a18c80d6abe4a57fa0b04809b12d1e0a1e0ca469126e4c3decae6"
+    sha256 cellar: :any_skip_relocation, mojave: "a2849f2eb9599b4069c1f039572047e555f7e97bf5fb0edc28aa4ec591d24381"
   end
 
   depends_on "rust" => :build
@@ -15,12 +15,7 @@ class Zellij < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_output = Utils.safe_popen_read(bin/"zellij", "setup", "--generate-completion", "bash")
-    (bash_completion/"zellij").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"zellij", "setup", "--generate-completion", "zsh")
-    (zsh_completion/"_zellij").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"zellij", "setup", "--generate-completion", "fish")
-    (fish_completion/"zellij.fish").write fish_output
+    generate_completions_from_executable(bin/"zellij", "setup", "--generate-completion")
   end
 
   test do
