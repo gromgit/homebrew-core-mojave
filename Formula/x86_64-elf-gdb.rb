@@ -13,7 +13,8 @@ class X8664ElfGdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-elf-gdb"
-    sha256 mojave: "89e1343e72288ad23d03cbf8422a6b90f187fe2ecb2615f0d8217f00d9362c22"
+    rebuild 1
+    sha256 mojave: "d0a7cc08d910d952974dc9ba576ebe70783e45196e956ef48bb36df203a90f6b"
   end
 
   depends_on "x86_64-elf-gcc" => :test
@@ -36,7 +37,7 @@ class X8664ElfGdb < Formula
       --disable-debug
       --disable-dependency-tracking
       --with-lzma
-      --with-python=#{Formula["python@3.10"].opt_bin}/python3
+      --with-python=#{Formula["python@3.10"].opt_bin}/python3.10
       --with-system-zlib
       --disable-binutils
     ]
