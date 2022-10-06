@@ -4,12 +4,12 @@ class Uwsgi < Formula
   url "https://files.pythonhosted.org/packages/24/fd/93851e4a076719199868d4c918cc93a52742e68370188c1c570a6e42a54f/uwsgi-2.0.20.tar.gz"
   sha256 "88ab9867d8973d8ae84719cf233b7dafc54326fcaec89683c3f9f77c002cdff9"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uwsgi"
-    sha256 mojave: "651008a54596b09ad484db8c8afd9bb953022949e8a7f2d66e6bec941319f19f"
+    sha256 mojave: "2108377b5a4e9fad81388d1faa30f75d1a80641dc87fd9eb20e36fa149198db7"
   end
 
   depends_on "pkg-config" => :build
@@ -44,7 +44,8 @@ class Uwsgi < Formula
       embedded_plugins = null
     EOS
 
-    system "python3", "uwsgiconfig.py", "--verbose", "--build", "brew"
+    python3 = "python3.10"
+    system python3, "uwsgiconfig.py", "--verbose", "--build", "brew"
 
     plugins = %w[airbrake alarm_curl asyncio cache
                  carbon cgi cheaper_backlog2 cheaper_busyness
@@ -67,10 +68,10 @@ class Uwsgi < Formula
 
     (libexec/"uwsgi").mkpath
     plugins.each do |plugin|
-      system "python3", "uwsgiconfig.py", "--verbose", "--plugin", "plugins/#{plugin}", "brew"
+      system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins/#{plugin}", "brew"
     end
 
-    system "python3", "uwsgiconfig.py", "--verbose", "--plugin", "plugins/python", "brew", "python3"
+    system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins/python", "brew", "python3"
 
     bin.install "uwsgi"
   end
