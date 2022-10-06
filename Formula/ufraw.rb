@@ -6,7 +6,9 @@ class Ufraw < Formula
   revision 5
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ufraw"
+    rebuild 1
+    sha256 mojave: "2ebe585ad926f12a32e431a57c3266a03f56b41c16cda86f8779bcf00459730c"
   end
 
   depends_on "pkg-config" => :build
