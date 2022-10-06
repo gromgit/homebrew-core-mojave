@@ -2,6 +2,7 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
+  # TODO: Remove `ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib` at rebuild.
   url "https://github.com/v8/v8/archive/10.2.154.4.tar.gz"
   sha256 "6f4865ffe499f51da3e422cf7e4d85d3dab1b0a99b2d5bf204910ce423505597"
   license "BSD-3-Clause"
@@ -12,8 +13,9 @@ class V8 < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v8-10.2.154.4"
-    sha256 cellar: :any, mojave: "cfa85eaa5e2267b1be64dc9bfd206fedd1932b0f2d9422ffe83fd3dd4c8b9e04"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "bb5d2046c5280990a7055ef811f5955837a8538a730ce8d613d5eb9657ae9a35"
   end
 
   depends_on "ninja" => :build
@@ -26,7 +28,6 @@ class V8 < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "gcc"
     depends_on "glib"
   end
 
@@ -75,10 +76,6 @@ class V8 < Formula
         revision: "a6d209ab932df0f1c9d5b7dc67cfa74e8a3272c0"
   end
 
-  # Apply patch to fix v8 build with glibc < 2.27. See here for details:
-  # https://libc-alpha.sourceware.narkive.com/XOENQFwL/add-fcntl-sealing-interfaces-from-linux-3-17-to-bits-fcntl-linux-h
-  patch :DATA
-
   def install
     (buildpath/"build").install resource("v8/build")
     (buildpath/"third_party/jinja2").install resource("v8/third_party/jinja2")
@@ -91,7 +88,7 @@ class V8 < Formula
     # Build gn from source and add it to the PATH
     (buildpath/"gn").install resource("gn")
     cd "gn" do
-      system "python3", "build/gen.py"
+      system "python3.10", "build/gen.py"
       system "ninja", "-C", "out/", "gn"
     end
     ENV.prepend_path "PATH", buildpath/"gn/out"
@@ -129,7 +126,7 @@ class V8 < Formula
     # use clang from homebrew llvm formula, because the system clang is unreliable
     ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib # but link against system libc++
     # Make sure private libraries can be found from lib
-    ENV.prepend "LDFLAGS", "-Wl,-rpath,#{libexec}"
+    ENV.prepend "LDFLAGS", "-Wl,-rpath,#{rpath(target: libexec)}"
 
     # Transform to args string
     gn_args_string = gn_args.map { |k, v| "#{k}=#{v}" }.join(" ")
@@ -140,15 +137,20 @@ class V8 < Formula
 
     # Install libraries and headers into libexec so d8 can find them, and into standard directories
     # so other packages can find them and they are linked into HOMEBREW_PREFIX
-    (libexec/"include").install Dir["include/*"]
-    include.install_symlink Dir[libexec/"include/*"]
+    libexec.install "include"
 
-    libexec.install Dir["out.gn/d8", "out.gn/icudtl.dat"]
+    # Make sure we don't symlink non-headers into `include`.
+    header_files_and_directories = (libexec/"include").children.select do |child|
+      (child.extname == ".h") || child.directory?
+    end
+    include.install_symlink header_files_and_directories
+
+    libexec.install "out.gn/d8", "out.gn/icudtl.dat"
     bin.write_exec_script libexec/"d8"
 
-    libexec.install Dir["out.gn/#{shared_library("*")}"]
-    lib.install_symlink Dir[libexec/shared_library("libv8*")]
-    rm Dir[lib/"*.TOC"] if OS.linux? # Remove symlinks to .so.TOC text files
+    libexec.install Pathname.glob("out.gn/#{shared_library("*")}")
+    lib.install_symlink libexec.glob(shared_library("libv8*"))
+    lib.glob("*.TOC").map(&:unlink) if OS.linux? # Remove symlinks to .so.TOC text files
   end
 
   test do
@@ -169,22 +171,8 @@ class V8 < Formula
 
     # link against installed libc++
     system ENV.cxx, "-std=c++14", "test.cpp",
-      "-I#{include}",
-      "-L#{lib}", "-lv8", "-lv8_libplatform"
+                    "-I#{include}", "-L#{lib}",
+                    "-Wl,-rpath,#{libexec}",
+                    "-lv8", "-lv8_libplatform"
   end
 end
-
-__END__
---- a/src/base/platform/platform-posix.cc
-+++ b/src/base/platform/platform-posix.cc
-@@ -88,6 +88,11 @@ extern int madvise(caddr_t, size_t, int);
- extern "C" void* __libc_stack_end;
- #endif
-
-+#ifndef MFD_CLOEXEC
-+#define MFD_CLOEXEC 0x0001U
-+#define MFD_ALLOW_SEALING 0x0002U
-+#endif
-+
- namespace v8 {
- namespace base {
