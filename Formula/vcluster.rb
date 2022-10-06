@@ -2,14 +2,14 @@ class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https://www.vcluster.com"
   url "https://github.com/loft-sh/vcluster.git",
-      tag:      "v0.11.1",
-      revision: "893710319456ddfd33a463ed0d590d77b7fa1b95"
+      tag:      "v0.12.0",
+      revision: "eba499bcdff242e4ca73c9450020f9fb4ab9afa7"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcluster"
-    sha256 mojave: "0174883aa4fd7a1155bb0f3ce8dee30a80e1c8a505370fe932aa1fa35122f24b"
+    sha256 mojave: "5d16d31dcc4c233a5e15f1c6920049f099e0deecb3b5ea95e205b6362820a03a"
   end
 
   depends_on "go" => :build
@@ -24,8 +24,7 @@ class Vcluster < Formula
       -X main.version=#{version}
     ]
     system "go", "build", "-mod", "vendor", *std_go_args(ldflags: ldflags), "./cmd/vclusterctl/main.go"
-    (zsh_completion/"_vcluster").write Utils.safe_popen_read(bin/"vcluster", "completion", "zsh")
-    (bash_completion/"vcluster").write Utils.safe_popen_read(bin/"vcluster", "completion", "bash")
+    generate_completions_from_executable(bin/"vcluster", "completion", shells: [:zsh, :bash])
   end
 
   test do
