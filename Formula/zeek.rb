@@ -14,7 +14,8 @@ class Zeek < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zeek"
-    sha256 mojave: "c4415ded2f06415c06e6f837716fd6c0ff0adb67d2ad3c12f310f092bd52bcab"
+    rebuild 1
+    sha256 mojave: "04fbcf7bd38c4270d9e04736877c67fbd0085d7af7e86f6fa647c77972c00969"
   end
 
   depends_on "bison" => :build
@@ -31,10 +32,6 @@ class Zeek < Formula
   uses_from_macos "libpcap"
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "gcc" # For C++17
-  end
 
   fails_with gcc: "5"
 
