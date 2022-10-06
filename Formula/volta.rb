@@ -13,8 +13,8 @@ class Volta < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/volta"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "50b58bb2b059f2197a1a01dfaa74620eec4afb44917e1d6050de210c356048da"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "813453ec9c97926b3eb263f4793bb7376f2527b1d54a15e3e7f5f77568885fd5"
   end
 
   depends_on "rust" => :build
@@ -27,12 +27,7 @@ class Volta < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_output = Utils.safe_popen_read(bin/"volta", "completions", "bash")
-    (bash_completion/"volta").write bash_output
-    zsh_output = Utils.safe_popen_read(bin/"volta", "completions", "zsh")
-    (zsh_completion/"_volta").write zsh_output
-    fish_output = Utils.safe_popen_read(bin/"volta", "completions", "fish")
-    (fish_completion/"volta.fish").write fish_output
+    generate_completions_from_executable(bin/"volta", "completions")
   end
 
   test do
