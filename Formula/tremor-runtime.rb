@@ -7,9 +7,9 @@ class TremorRuntime < Formula
   head "https://github.com/tremor-rs/tremor-runtime.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tremor-runtime-0.12.4"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d8f6acdebd8ad22bc5ea5ed2182780f0dcaaf9d021f292ed146da72fe5236597"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tremor-runtime"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c65b96c3578ecaa83cf0c5b6120ac5a71096529dd6588f2db780f427e39a086c"
   end
 
   depends_on "cmake" => :build
@@ -17,7 +17,6 @@ class TremorRuntime < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "gcc"
     depends_on "llvm"
     depends_on "openssl@1.1"
   end
@@ -33,9 +32,7 @@ class TremorRuntime < Formula
 
     system "cargo", "install", *std_cargo_args(path: "tremor-cli")
 
-    (bash_completion/"tremor").write Utils.safe_popen_read("#{bin}/tremor", "completions", "bash")
-    (zsh_completion/"_tremor").write Utils.safe_popen_read("#{bin}/tremor", "completions", "zsh")
-    (fish_completion/"tremor.fish").write Utils.safe_popen_read("#{bin}/tremor", "completions", "fish")
+    generate_completions_from_executable(bin/"tremor", "completions", base_name: "tremor")
 
     # main binary
     bin.install "target/release/tremor"
