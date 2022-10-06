@@ -1,14 +1,13 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https://www.veripool.org/wiki/verilator"
-  url "https://github.com/verilator/verilator/archive/refs/tags/v4.224.tar.gz"
-  sha256 "010ff2b5c76d4dbc2ed4a3278a5599ba35c8ed4c05690e57296d6b281591367b"
+  url "https://github.com/verilator/verilator/archive/refs/tags/v4.226.tar.gz"
+  sha256 "70bc941d86e4810253d51aa94898b0802d916ab76296a398f8ceb8798122c9be"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/verilator"
-    sha256 mojave: "bcd3cf331abd9a61288f5341ca1adbf98312557e5622633fea3cafded3bb3885"
+    sha256 mojave: "1f361ae6f0edef46139b04dc1632516c74ebd786d59e7bf18e778b7c09526017"
   end
 
   head do
@@ -23,10 +22,6 @@ class Verilator < Formula
   uses_from_macos "flex"
   uses_from_macos "perl"
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   skip_clean "bin" # Allows perl scripts to keep their executable flag
 
   # error: specialization of 'template<class _Tp> struct std::hash' in different namespace
@@ -38,18 +33,6 @@ class Verilator < Formula
     # `make` and `make install` need to be separate for parallel builds
     system "make"
     system "make", "install"
-  end
-
-  def post_install
-    return if OS.mac?
-
-    # Ensure the hard-coded versioned `gcc` reference does not go stale.
-    ohai "Fixing up GCC references..."
-    gcc_version = Formula["gcc"].any_installed_version.major
-    inreplace(pkgshare/"include/verilated.mk") do |s|
-      s.change_make_var! "CXX", "g++-#{gcc_version}"
-      s.change_make_var! "LINK", "g++-#{gcc_version}"
-    end
   end
 
   test do
