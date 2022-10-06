@@ -3,13 +3,13 @@ class YtDlp < Formula
 
   desc "Fork of youtube-dl with additional features and fixes"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/be/7e/2db5256371519d978e0c4b768157cfeaa08271986786107a0680d6382e41/yt-dlp-2022.8.19.tar.gz"
-  sha256 "cc290ac8a1fec626841765fed12f7a1ebdfe01791ae5c5f3794edfce35d81843"
+  url "https://files.pythonhosted.org/packages/f8/ef/cdf55266ace06a9451e94a594dd57202910f86b24adfc5f5af4c66331322/yt-dlp-2022.9.1.tar.gz"
+  sha256 "bc74ee255790043e458197aaf25c6c104fefc9fcda4458f652619447ab4ae0d7"
   license "Unlicense"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yt-dlp"
-    sha256 cellar: :any_skip_relocation, mojave: "cf8268c14b81c3ddeb5b0624e6a804bebd7bd2dcd8e5ef9bad5676f8e69bfc4c"
+    sha256 cellar: :any_skip_relocation, mojave: "0808dc63163180bba18ca1b8682f39cdc6e86b69f5fbc210d0cff9eb9e636686"
   end
 
   head do
