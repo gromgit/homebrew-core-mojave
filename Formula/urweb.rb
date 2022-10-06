@@ -3,12 +3,11 @@ class Urweb < Formula
   homepage "http://www.impredicative.com/ur/"
   url "https://github.com/urweb/urweb/releases/download/20200209/urweb-20200209.tar.gz"
   sha256 "ac3010c57f8d90f09f49dfcd6b2dc4d5da1cdbb41cbf12cb386e96e93ae30662"
-  revision 5
+  revision 6
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/urweb"
-    rebuild 1
-    sha256 mojave: "3513f4ca8a1739d0ff7e957484480913c5b479198252a5599b66ae842019d689"
+    sha256 mojave: "6a940959601142ee746f55d7d8877e831e2c63c93fb0edbd196d0247e8a2a88a"
   end
 
   depends_on "autoconf" => :build
