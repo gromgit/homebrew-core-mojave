@@ -15,7 +15,8 @@ class Influxdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb"
-    sha256 cellar: :any_skip_relocation, mojave: "9bd0e6b922ffe7cfd3f33de9fb0821910647ace86942d1451f962e06b64d63cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ce1908a40be6d393aeea48151a56e49f49b286baefcf916c2e3551285ccfe249"
   end
 
   depends_on "breezy" => :build
