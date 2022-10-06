@@ -8,8 +8,8 @@ class RaxmlNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/raxml-ng"
-    rebuild 4
-    sha256 cellar: :any, mojave: "37a193d8082b2f8a9190bd21c26d0e6eb3c37ff3e77bc59f1ce59a7652f91eab"
+    rebuild 5
+    sha256 cellar: :any, mojave: "8d3cbb34c71a0b48010575d21fce42b716753416e81ef6088b46a288391e624f"
   end
 
   depends_on "autoconf" => :build
