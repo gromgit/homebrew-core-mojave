@@ -2,7 +2,7 @@ class Collectd < Formula
   desc "Statistics collection and monitoring daemon"
   homepage "https://collectd.org/"
   license "MIT"
-  revision 2
+  revision 4
 
   stable do
     url "https://collectd.org/files/collectd-5.12.0.tar.bz2"
@@ -22,11 +22,11 @@ class Collectd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/collectd"
-    sha256 mojave: "878bcf24ed09f8996e20460d0372c140b166b830738ec5d5d68567696e814d77"
+    sha256 mojave: "be9389eaa3e0071c52d22fbbb9f1919bc4d69d34ac5d88b7123b61e2a1cbbe67"
   end
 
   head do
-    url "https://github.com/collectd/collectd.git"
+    url "https://github.com/collectd/collectd.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -38,19 +38,17 @@ class Collectd < Formula
   depends_on "net-snmp"
   depends_on "riemann-client"
 
-  uses_from_macos "bison"
-  uses_from_macos "flex"
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
   uses_from_macos "perl"
 
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = std_configure_args + %W[
       --localstatedir=#{var}
       --disable-java
       --enable-write_riemann
     ]
+    args << "--with-perl-bindings=PREFIX=#{prefix} INSTALLSITEMAN3DIR=#{man3}" if OS.linux?
 
     system "./build.sh" if build.head?
     system "./configure", *args
