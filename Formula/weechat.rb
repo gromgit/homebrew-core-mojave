@@ -4,11 +4,12 @@ class Weechat < Formula
   url "https://weechat.org/files/src/weechat-3.6.tar.xz"
   sha256 "9d85d71b3b7d04c03bd35ab6501afa8b5b3c609dce7691709ec740fecc31f2de"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/weechat"
-    sha256 mojave: "6fb69192911e70ab5dc467ac5bec7d2aaab06457b2fcc08d5740be852707344d"
+    sha256 mojave: "c35ea304adc75a9c180ab48e673d08a2a80fbfc2430398a0fb51ae882e78ae38"
   end
 
   depends_on "asciidoctor" => :build
