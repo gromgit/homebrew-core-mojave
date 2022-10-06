@@ -2,7 +2,7 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 4
+  revision 6
 
   stable do
     url "https://github.com/draios/sysdig/archive/0.29.3.tar.gz"
@@ -23,7 +23,7 @@ class Sysdig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sysdig"
-    sha256 mojave: "f5be94e5f0f5bddfb0b71d5e1fd6a916c2eaf74510583abaff8c092306da4471"
+    sha256 mojave: "4d0e109f5bcb9e6be16de4059e1340dd111222749067557ce566b2cd44120d52"
   end
 
   head do
@@ -38,7 +38,7 @@ class Sysdig < Formula
   depends_on "nlohmann-json" => :build
   depends_on "c-ares"
   depends_on "jsoncpp"
-  depends_on "luajit-openresty"
+  depends_on "luajit"
   depends_on "openssl@1.1"
   depends_on "tbb"
   depends_on "yaml-cpp"
@@ -50,7 +50,6 @@ class Sysdig < Formula
   on_linux do
     depends_on "libb64" => :build
     depends_on "elfutils"
-    depends_on "gcc"
     depends_on "grpc"
     depends_on "jq"
     depends_on "protobuf"
