@@ -13,8 +13,8 @@ class Xapian < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xapian"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f6991af433f327536570b946402f5c87a128db18c1beb5181f743cc919eb155a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8527d615c862978a884f727ad259bf7acde85384e79d360527ee241747353cb0"
   end
 
   depends_on "python@3.10" => [:build, :test]
@@ -39,8 +39,12 @@ class Xapian < Formula
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    python = Formula["python@3.10"].opt_bin/"python3"
+    python = Formula["python@3.10"].opt_bin/python3
     ENV["PYTHON"] = python
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
@@ -66,6 +70,6 @@ class Xapian < Formula
 
   test do
     system bin/"xapian-config", "--libs"
-    system Formula["python@3.10"].opt_bin/"python3", "-c", "import xapian"
+    system Formula["python@3.10"].opt_bin/python3, "-c", "import xapian"
   end
 end
