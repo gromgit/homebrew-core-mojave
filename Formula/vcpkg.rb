@@ -18,16 +18,13 @@ class Vcpkg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vcpkg"
-    sha256 cellar: :any, mojave: "26e2a2f5d19a1aa03a4eb53f2b63ca340db6810501c3117b76a2be836b9bb552"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1ea988e31980a31d0ab684ab1762bdf7cbce9361e32d704c6722b3b9dc846c2e"
   end
 
   depends_on "cmake" => :build
   depends_on "fmt"
   depends_on "ninja" # This will install its own copy at runtime if one isn't found.
-
-  on_linux do
-    depends_on "gcc" # for C++17
-  end
 
   fails_with gcc: "5"
 
