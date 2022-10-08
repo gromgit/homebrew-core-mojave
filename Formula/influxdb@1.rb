@@ -1,8 +1,8 @@
 class InfluxdbAT1 < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
-  url "https://github.com/influxdata/influxdb/archive/v1.9.7.tar.gz"
-  sha256 "f2f514ce67378d859a039faa2068871bf933d082e95d731b1e22c7971d5bd01f"
+  url "https://github.com/influxdata/influxdb/archive/v1.10.0.tar.gz"
+  sha256 "2efe515ba55e4fee18a994902bb3de242f0d498e3662e6cec1548c7f700d8278"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class InfluxdbAT1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb@1"
-    sha256 cellar: :any_skip_relocation, mojave: "865bc424d959dbb12f5aade2f14433938fed73e2921550d0c112163ac49eb457"
+    sha256 cellar: :any_skip_relocation, mojave: "07f2c34917af05a0d93b64c28838c603884cd6c9c22cb945efd1576d2f0d3253"
   end
 
   keg_only :versioned_formula
@@ -43,11 +43,12 @@ class InfluxdbAT1 < Formula
     end
 
     etc.install "etc/config.sample.toml" => "influxdb.conf"
-    inreplace etc/"influxdb.conf" do |s|
-      s.gsub! "/var/lib/influxdb/data", "#{var}/influxdb/data"
-      s.gsub! "/var/lib/influxdb/meta", "#{var}/influxdb/meta"
-      s.gsub! "/var/lib/influxdb/wal", "#{var}/influxdb/wal"
-    end
+    # NOTE: Failing replacements
+    #inreplace etc/"influxdb.conf" do |s|
+    #  s.gsub! "/var/lib/influxdb/data", "#{var}/influxdb/data"
+    #  s.gsub! "/var/lib/influxdb/meta", "#{var}/influxdb/meta"
+    #  s.gsub! "/var/lib/influxdb/wal", "#{var}/influxdb/wal"
+    #end
 
     (var/"influxdb/data").mkpath
     (var/"influxdb/meta").mkpath
