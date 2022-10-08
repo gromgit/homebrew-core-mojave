@@ -8,8 +8,8 @@ class Hurl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hurl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6d0bdc0cac5551606f25e8af81fd5b7dc19e48d131e9f3ca98c4e0439fc58257"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f2cac36cfd15172183c674b31e81070a22949c96856f427cb975f1e51f5e207e"
   end
 
   depends_on "rust" => :build
