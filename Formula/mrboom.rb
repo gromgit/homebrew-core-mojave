@@ -7,13 +7,9 @@ class Mrboom < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "cf2c1633672145fe98dcc7ed89e75b1282081941d8def655b84967c5d2a80ea8"
-    sha256 cellar: :any,                 arm64_big_sur:  "90484ee7a62a29aa82242664b917340def45c3b999a7d21197ac10e020617194"
-    sha256 cellar: :any,                 monterey:       "fd4bf9a47d15da1e296433860388dd78cbc6d46d036a0145eb36c651693fce25"
-    sha256 cellar: :any,                 big_sur:        "904cd506e99c6269809fe4c593263de7cc1f0746fe0c5b5180aa63ef522ca212"
-    sha256 cellar: :any,                 catalina:       "7fc60e5a37d093f2311b797c5822dbeb098cdf47c038c808496973d29f563f2c"
-    sha256 cellar: :any,                 mojave:         "262fab23ed3b5a3b80948ae4fb4eca1c0c0cad04220a031a731905d812aebaae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb5d8f528c43dfa0eb5970a5ba8e0b98d4db662f903ec2d62751d98ef013f780"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mrboom"
+    rebuild 1
+    sha256 cellar: :any, mojave: "71d222c2c2e4f83545e05331190b9efbaf28370b5446da4fee1239f73e7f6eab"
   end
 
   depends_on "cmake" => :build
@@ -23,6 +19,9 @@ class Mrboom < Formula
   depends_on "sdl2_mixer"
 
   def install
+    if MacOS.version < :catalina
+      inreplace "Makefile", "-I/usr/local/include", "-I#{HOMEBREW_PREFIX}/include/SDL2 -I#{HOMEBREW_PREFIX}/include"
+    end
     system "make", "mrboom", "LIBSDL2=1"
     system "make", "install", "PREFIX=#{prefix}", "MANDIR=share/man/man6"
   end
