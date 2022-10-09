@@ -1,13 +1,13 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
   homepage "https://github.com/cesanta/mongoose"
-  url "https://github.com/cesanta/mongoose/archive/7.7.tar.gz"
-  sha256 "4e5733dae31c3a81156af63ca9aa3a6b9b736547f21f23c3ab2f8e3f1ecc16c0"
+  url "https://github.com/cesanta/mongoose/archive/7.8.tar.gz"
+  sha256 "55073dcd427ab9475731ad855e417884f4fbfb24b7d5694f6cabadbee1329f16"
   license "GPL-2.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongoose"
-    sha256 cellar: :any, mojave: "cf7c229b9c683f3914bd79143393229f7e5f0fd306e912ff15bdcbfb433f72b6"
+    sha256 cellar: :any, mojave: "6ec7443d2754894048b3bd649f80772eeae67df1d7ddfe3d42c86d35f8784121"
   end
 
   depends_on "openssl@1.1"
