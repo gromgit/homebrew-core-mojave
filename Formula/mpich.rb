@@ -5,6 +5,7 @@ class Mpich < Formula
   mirror "https://fossies.org/linux/misc/mpich-4.0.2.tar.gz"
   sha256 "5a42f1a889d4a2d996c26e48cbf9c595cbf4316c6814f7c181e3320d21dedd42"
   license "mpich2"
+  revision 1
 
   livecheck do
     url "https://www.mpich.org/static/downloads/"
@@ -13,7 +14,7 @@ class Mpich < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpich"
-    sha256 cellar: :any, mojave: "77fb68b1c6bf3fea191b2b32fdbcb04d9929a085d75a0a270942c5b84633415e"
+    sha256 cellar: :any, mojave: "d255bcb0f4db9412f570718d949851796c6dd7025647b162e76ce82472a13ce4"
   end
 
   head do
@@ -26,9 +27,13 @@ class Mpich < Formula
 
   depends_on "gcc" # for gfortran
   depends_on "hwloc"
+  if MacOS.version < :catalina
+    depends_on "python@3.10" => :build
+  else
+    uses_from_macos "python" => :build
+  end
 
   on_macos do
-    depends_on "python@3.9" if MacOS.version < :catalina
     conflicts_with "libfabric", because: "both install `fabric.h`"
   end
 
