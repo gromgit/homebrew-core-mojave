@@ -1,15 +1,14 @@
 class Raylib < Formula
   desc "Simple and easy-to-use library to learn videogames programming"
   homepage "https://www.raylib.com/"
-  url "https://github.com/raysan5/raylib/archive/4.0.0.tar.gz"
-  sha256 "11f6087dc7bedf9efb3f69c0c872f637e421d914e5ecea99bbe7781f173dc38c"
+  url "https://github.com/raysan5/raylib/archive/4.2.0.tar.gz"
+  sha256 "676217604a5830cb4aa31e0ede0e4233c942e2fc5c206691bded58ebcd82a590"
   license "Zlib"
   head "https://github.com/raysan5/raylib.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/raylib"
-    rebuild 3
-    sha256 cellar: :any, mojave: "d2a6098bf2b67b2d63a05dade0852af3f82bb46f0faff2ca8e521b81c59931c1"
+    sha256 cellar: :any_skip_relocation, mojave: "3530d40c3ad73602fd09bd4034266d40be4d17d75c8e7cbb6df00cb98383d819"
   end
 
   depends_on "cmake" => :build
