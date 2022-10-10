@@ -2,9 +2,9 @@ class Puzzles < Formula
   desc "Collection of one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
   # Extract https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles.tar.gz to get the version number
-  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20220613.387d323.tar.gz"
-  version "20220613"
-  sha256 "55c9bb8310bd47bbef2e48241db96f10e38d18b91848718c45f48192d80dfe84"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20221008.85d2a7d.tar.gz"
+  version "20221008"
+  sha256 "3a37c808222076449e1482895090efa347afa3f72e8e87cf5422ae48450a7807"
   license "MIT"
   head "https://git.tartarus.org/simon/puzzles.git", branch: "main"
 
@@ -19,7 +19,7 @@ class Puzzles < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/puzzles"
-    sha256 cellar: :any_skip_relocation, mojave: "e5db7545a10f7a7f48665594b5390eed41baa1ab29cb431bee676c1491766898"
+    sha256 cellar: :any_skip_relocation, mojave: "df4326a4f263816f7ee3e3b9bef334b9fbf638d1efbcfc1ee8ed710ba109d5e4"
   end
 
   depends_on "cmake" => :build
