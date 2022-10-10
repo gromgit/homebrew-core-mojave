@@ -2,8 +2,8 @@ class Osm < Formula
   desc "Open Service Mesh (OSM)"
   homepage "https://openservicemesh.io/"
   url "https://github.com/openservicemesh/osm.git",
-      tag:      "v1.2.0",
-      revision: "893ff8722a65bbfc2afa6e416bdca88c58393d00"
+      tag:      "v1.2.1",
+      revision: "76db0c6d81c67b1434bd248f0463ca43870862cb"
   license "Apache-2.0"
   head "https://github.com/openservicemesh/osm.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Osm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osm"
-    sha256 cellar: :any_skip_relocation, mojave: "30dae14e2b112aa775a281708cdebbd59cebd0a26ccb0c19163b13ba28daae45"
+    sha256 cellar: :any_skip_relocation, mojave: "8e4397363a131bb7d140d8754f33d0f579f45b4fdfe0bc1cf928defbe5ad0d9a"
   end
 
   depends_on "go" => :build
