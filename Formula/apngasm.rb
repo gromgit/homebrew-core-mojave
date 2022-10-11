@@ -4,16 +4,16 @@ class Apngasm < Formula
   url "https://github.com/apngasm/apngasm/archive/3.1.10.tar.gz"
   sha256 "8171e2c1d37ab231a2061320cb1e5d15cee37642e3ce78e8ab0b8dfc45b80f6c"
   license "Zlib"
-  revision 2
+  revision 3
   head "https://github.com/apngasm/apngasm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "417ef627abddb455da5fda0eb6615b1c23fe0b0fe6f2920cffa6eb73f0a7930e"
-    sha256 cellar: :any,                 arm64_big_sur:  "b20fcddf36955cc5233687bb2090f95877970501f63569c5b0cae6f743063373"
-    sha256 cellar: :any,                 monterey:       "d44e728d2f8000e6e46ad8f231f047cc21da5be3f2734faf043fe54d92f24c2c"
-    sha256 cellar: :any,                 big_sur:        "973092d55f2cdc1e30030c73c6f90b5ab5622f4c63e285233aaeff73f05fc690"
-    sha256 cellar: :any,                 catalina:       "c576196db665297b539c284175b7fc76e04d7b2e71d64602e3d81259331e8193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5308106ba734492bd70672e601539937771e254ec43c0ca747fe30245d53a71"
+    sha256 cellar: :any,                 arm64_monterey: "c177663cbe53b8e95df7f58e4ae29d474ad6d6a783fa06759d29873a36c92a41"
+    sha256 cellar: :any,                 arm64_big_sur:  "c292d029d6a70e1232f30423690b71be59baa2738bf2f025ac9e7d4c3513f734"
+    sha256 cellar: :any,                 monterey:       "b2beca474fc168a54f16fabe8800ebb73fc3928409bb8dc04f6367bceb9909c4"
+    sha256 cellar: :any,                 big_sur:        "41ad219c9048cca6c303833ec301f50924a0cafc190ef5425f93544f2d56fc13"
+    sha256 cellar: :any,                 catalina:       "406db22f6432af40fd166975ac9050ad7d2152ea95cd62c4124c67e1eca1b76f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f3921b1583e8912557caa117dfe36ff7f63083d1969743373a11684768ba6b5"
   end
 
   depends_on "cmake" => :build
@@ -22,10 +22,6 @@ class Apngasm < Formula
   depends_on "libpng"
   depends_on "lzlib"
   depends_on macos: :catalina
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with :gcc do
     version "7"
