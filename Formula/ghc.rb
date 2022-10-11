@@ -16,12 +16,17 @@ class Ghc < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc"
-    sha256 mojave: "957b6a7e4cb1999adde754b419ca6073ad1c7193298ada5039fbf13694228f96"
+    sha256 cellar: :any,                 arm64_monterey: "e561c3b8ae12ab2a7b94a09b3c3b5895b9684a08eb136d484c9924e6d1f1efa2"
+    sha256 cellar: :any,                 arm64_big_sur:  "4673cdb3ffc12715c76c1531c6b67f2bb76c2b0f46857d89037971fcfccdfd69"
+    sha256                               monterey:       "9958adc0fe9861b032206d1d08f1b3ffc2d1db10ac3ca75c470ef1db03cc54c0"
+    sha256                               big_sur:        "2aaeb6627b6266759a3812ce9a1ffdbf82067dc1ade27736f0ec74706bc5870e"
+    sha256                               catalina:       "e32a672210b61c79a293e64040a6135f78617de5ee8d1f9e0ea83ee8fd11015f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66de55e420c039535422aed4c7803285faedf5292dd2385f6b7d7bcc5d899d94"
   end
 
   depends_on "python@3.10" => :build
   depends_on "sphinx-doc" => :build
+  depends_on macos: :catalina
 
   uses_from_macos "m4" => :build
   uses_from_macos "ncurses"
@@ -69,15 +74,6 @@ class Ghc < Formula
     ENV.append_path "C_INCLUDE_PATH", "#{MacOS.sdk_path_if_needed}/usr/include/ffi" if OS.mac? && Hardware::CPU.arm?
 
     resource("binary").stage do
-      if MacOS.version == :mojave
-        ohai "Fixing MacOSX.sdk paths"
-        inreplace %w[
-          configure
-          lib/package.conf.d/ghci-9.0.2.conf
-          lib/package.conf.d/ghc-9.0.2.conf
-          lib/package.conf.d/rts-1.0.2.conf
-        ], "MacOSX.sdk", "MacOSX10.14.sdk"
-      end
       binary = buildpath/"binary"
 
       binary_args = []
