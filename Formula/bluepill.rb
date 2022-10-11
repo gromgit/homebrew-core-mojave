@@ -2,8 +2,8 @@ class Bluepill < Formula
   desc "Testing tool for iOS that runs UI tests using multiple simulators"
   homepage "https://github.com/MobileNativeFoundation/bluepill"
   url "https://github.com/MobileNativeFoundation/bluepill.git",
-      tag:      "v5.8.1",
-      revision: "2dfc0a965ab564d015a2a0f00be89edf53c0f256"
+      tag:      "v5.12.1",
+      revision: "dd6d563d8b822113190896dea400d1a837671a6a"
   license "BSD-2-Clause"
   head "https://github.com/MobileNativeFoundation/bluepill.git", branch: "master"
 
@@ -17,20 +17,22 @@ class Bluepill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5fdf4a0439be240af92600dfd6b22accd2e66a2615fd3039e44622d545701616"
-    sha256 cellar: :any_skip_relocation, big_sur:       "27d44ba07c149043b52f823607f63a10f16b7d94066c93ac57f1aed756e25d74"
-    sha256 cellar: :any_skip_relocation, catalina:      "e3fb55552964c2544ffafd63050d0c82463dc98ee4742d761d843272a69fc0a9"
-    sha256 cellar: :any_skip_relocation, mojave:        "9926fb42710ce7c6067603a51520b66941b3b86e4827e7e7b63ae73db460ee05"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7373831fe04c0d176b524b5b6b6691f85978938361a943ad61f6d8afd4220cbd"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef1e09d0fe5e2d21734c10e3fee0c9e2756c8ecf53d420e109aa7c672b215cf5"
   end
 
-  depends_on xcode: ["11.2", :build]
+  depends_on xcode: ["14.0", :build]
   depends_on :macos
 
   def install
+    pbxprojs = ["bluepill", "bp"].map { |name| "#{name}/#{name}.xcodeproj/project.pbxproj" }
+    inreplace pbxprojs, "x86_64", Hardware::CPU.arch.to_s
+
     xcodebuild "-workspace", "Bluepill.xcworkspace",
                "-scheme", "bluepill",
                "-configuration", "Release",
-               "SYMROOT=../"
+               "SYMROOT=../",
+               "ARCHS=#{Hardware::CPU.arch}"
     bin.install "Release/bluepill", "Release/bp"
   end
 
