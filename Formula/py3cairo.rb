@@ -7,7 +7,9 @@ class Py3cairo < Formula
   revision 1
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/py3cairo"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "625d540e11d87b84881457749feb182f6a6e1cc174adca3c11fedb253b5f2614"
   end
 
   depends_on "pkg-config" => :build
