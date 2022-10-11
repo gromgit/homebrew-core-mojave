@@ -1,13 +1,13 @@
 class ParallelHashmap < Formula
   desc "Family of header-only, fast, memory-friendly C++ hashmap and btree containers"
   homepage "https://greg7mdp.github.io/parallel-hashmap/"
-  url "https://github.com/greg7mdp/parallel-hashmap/archive/1.35.tar.gz"
-  sha256 "308ab6f92e4c6f49304562e352890cf7140de85ce723c097e74fbdec88e0e1ce"
+  url "https://github.com/greg7mdp/parallel-hashmap/archive/1.36.tar.gz"
+  sha256 "33acf44158a9661a9d630d13f9250a2aa27a770cb3771df77b1ba1a661c0b766"
   license "Apache-2.0"
   head "https://github.com/greg7mdp/parallel-hashmap.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62b3c2b212276c17c008d2823e4bb3b4c4c1fc8e77f1a82dee40d829b74ed0dd"
+    sha256 cellar: :any_skip_relocation, all: "4880cd61e4cc74cbd16d6aa4d302f57e0904c7c6a177a1ba80261e87c5597cc3"
   end
 
   depends_on "cmake" => :build
