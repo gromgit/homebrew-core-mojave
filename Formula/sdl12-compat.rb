@@ -4,17 +4,16 @@ class Sdl12Compat < Formula
   url "https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.56.tar.gz"
   sha256 "f62f3e15f95aade366ee6c03f291e8825c4689390a6be681535259a877259c58"
   license all_of: ["Zlib", "MIT-0"]
+  revision 1
   head "https://github.com/libsdl-org/sdl12-compat.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl12-compat"
-    sha256 cellar: :any, mojave: "08adecca68129ad11390f7058c083aab412d2757320d3970515c586b2b0aedb6"
+    sha256 cellar: :any, mojave: "4e7ad8b4d6e350e385946846d8b1f7cabe9c25759a3d4d3e06c8f59b8710fac4"
   end
 
   depends_on "cmake" => :build
   depends_on "sdl2"
-
-  conflicts_with "sdl", because: "sdl12-compat is a drop-in replacement for sdl"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
@@ -26,6 +25,10 @@ class Sdl12Compat < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     (lib/"pkgconfig").install_symlink "sdl12_compat.pc" => "sdl.pc"
+
+    # we have to do this because most build scripts assume that all sdl modules
+    # are installed to the same prefix. Consequently SDL stuff cannot be keg-only
+    inreplace [bin/"sdl-config", lib/"pkgconfig/sdl12_compat.pc"], prefix, HOMEBREW_PREFIX
   end
 
   test do
