@@ -8,8 +8,8 @@ class Harfbuzz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "f616a28b2115e8832facbf32329be2c023d00038714ebd86b8b3dfd100680ef5"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "803caf96939033930794afac74f140d96eb8034af8e0c8bd229489752f197770"
   end
 
   depends_on "gobject-introspection" => :build
