@@ -1,14 +1,13 @@
 class Zim < Formula
   desc "Graphical text editor used to maintain a collection of wiki pages"
   homepage "https://zim-wiki.org/"
-  url "https://github.com/zim-desktop-wiki/zim-desktop-wiki/archive/0.74.3.tar.gz"
-  sha256 "4a5cff2f8bf99a89f9acaf1368df2ab711edee8d19dcbf3c4b4aeeba89e808aa"
+  url "https://github.com/zim-desktop-wiki/zim-desktop-wiki/archive/0.75.0.tar.gz"
+  sha256 "2b86efa11f56a4383779c711d6fe0fc79424e9e01a577e88d5a5208ad14b6313"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/zim-desktop-wiki/zim-desktop-wiki.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "41b43dd50f09c794b6bf6e6ca0a02bbb88bf935e35941d6846762e1aa1912d16"
+    sha256 cellar: :any_skip_relocation, all: "8d876bff0e718c99b0066e214b56c1687e27a46bf25d09e69992aedb80b85d7a"
   end
 
   depends_on "pkg-config" => :build
@@ -20,8 +19,8 @@ class Zim < Formula
   depends_on "python@3.10"
 
   resource "pyxdg" do
-    url "https://files.pythonhosted.org/packages/6f/2e/2251b5ae2f003d865beef79c8fcd517e907ed6a69f58c32403cec3eba9b2/pyxdg-0.27.tar.gz"
-    sha256 "80bd93aae5ed82435f20462ea0208fb198d8eec262e831ee06ce9ddb6b91c5a5"
+    url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
+    sha256 "3267bb3074e934df202af2ee0868575484108581e6f3cb006af1da35395e88b4"
   end
 
   def install
@@ -66,6 +65,7 @@ class Zim < Formula
     )
     system bin/"zim", "--index", "./Notes"
     system bin/"zim", "--export", "-r", "-o", "HTML", "./Notes"
-    system "grep", '<a href="https://brew.sh".*Homebrew</a>', "HTML/Homebrew/Homebrew.html"
+    assert_match "Homebrew:Homebrew", (testpath/"HTML/Homebrew/Homebrew.html").read
+    assert_match "https://brew.sh|Homebrew", (testpath/"Notes/Homebrew/Homebrew.txt").read
   end
 end
