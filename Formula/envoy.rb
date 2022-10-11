@@ -8,21 +8,17 @@ class Envoy < Formula
 
   stable do
     url "https://github.com/envoyproxy/envoy.git",
-        tag:      "v1.22.2",
-        revision: "c919bdec19d79e97f4f56e4095706f8e6a383f1c"
+        tag:      "v1.23.1",
+        revision: "edd69583372955fdfa0b8ca3820dd7312c094e46"
 
-    # Fix build on Apple Silicon which fails on undefined symbol:
-    # v8::internal::trap_handler::TryHandleSignal(int, __siginfo*, void*)
+    # Fix build failure on macOS 10.15 due to error at
+    # source/extensions/filters/http/file_system_buffer/filter.cc:402:53:
+    # error: no viable constructor or deduction guide for deduction of template arguments of 'weak_ptr'.
+    # For the next v1.23.x release, this can be removed after https://github.com/envoyproxy/envoy/pull/23177
+    # is merged.
     patch do
-      url "https://github.com/envoyproxy/envoy/commit/823f81ea8a3c0f792a7dbb0d08422c6a3d251152.patch?full_index=1"
-      sha256 "c48ecebc8a63f41f8bf8c4598a6442402470f2f04d20511e1aa3a1f322beccc7"
-    end
-
-    # Fix build with GCC in "opt" mode which fails on strict-aliasing rules:
-    # type_url_, reinterpret_cast<std::vector<DecodedResourcePtr>&>(decoded_resources),
-    patch do
-      url "https://github.com/envoyproxy/envoy/commit/aa06f653ed736b428f3ea69900aa864ce4187305.patch?full_index=1"
-      sha256 "d05b1519e6d0d78619457deb3d0bed6bb69ee2f095d31b9913cc70c9ee851e80"
+      url "https://github.com/envoyproxy/envoy/commit/68aa00067bbeb7aaf13599f75e54e8837cfb13ef.patch?full_index=1"
+      sha256 "0efbefd5cab5ada6c46845535644339733c4198ac21582401ba038605bc4ed5b"
     end
   end
 
@@ -32,12 +28,12 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "122977e8eee980aab6b9d5fa2ba9fc1e58f831e68345e417e7fdc52df554d7a4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78d13f1e2a098f849805bf575c53e52dd452ae45c8fa2134e93941c7bcdb7e89"
-    sha256 cellar: :any_skip_relocation, monterey:       "97dde181e8691fb7594cdf1d788049d9e9e658128fd912128eb2be31ccbe0b9c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "55c03e83374c3637254dc03c3ecf67833861cd6f6ef013d8c9b91d6b5d0a48ab"
-    sha256 cellar: :any_skip_relocation, catalina:       "6ec9fb982745c52765ec8cb02f9ea7bceb53ff821e30100e45d4cbb2b9587c38"
-    sha256                               x86_64_linux:   "7add4d2d423ab7ab170c5ded6e8681a6b7c1b6806ecb4ef18f772f3cc785e121"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7bf1c8a8edd41908a662bcf5f4d12fe097635c16a5274de321e5e632a72ec4f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f63c8c45373a38df81fe854f6064c0c4bcecd0c8b5cadf0bf5408999b29e6aac"
+    sha256 cellar: :any_skip_relocation, monterey:       "3aaa744a59e5ed4dd1b316ec020fdaaa03ea267b7aa33d3a7ce25b0031d1c6a5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dd38a660c9d1623b968e7c13d9f250b885488381a3cf866358a9d960d4dceb01"
+    sha256 cellar: :any_skip_relocation, catalina:       "e2240ae23e6351058022840344b0c30aee820977eec71acd29a641338ea4991d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ce1642222af2cb38ea97a5da78b71b8d1ea0ad1aa4930284b07d23252db247e"
   end
 
   depends_on "automake" => :build
@@ -52,8 +48,8 @@ class Envoy < Formula
   depends_on macos: :catalina
 
   on_linux do
+    depends_on "gcc@9" => [:build, :test] # Use host/Homebrew GCC runtime libraries.
     depends_on "python@3.10" => :build
-    depends_on "gcc@9"
   end
 
   # https://github.com/envoyproxy/envoy/tree/main/bazel#supported-compiler-versions
