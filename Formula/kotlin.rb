@@ -1,8 +1,8 @@
 class Kotlin < Formula
   desc "Statically typed programming language for the JVM"
   homepage "https://kotlinlang.org/"
-  url "https://github.com/JetBrains/kotlin/releases/download/v1.7.10/kotlin-compiler-1.7.10.zip"
-  sha256 "7683f5451ef308eb773a686ee7779a76a95ed8b143c69ac247937619d7ca3a09"
+  url "https://github.com/JetBrains/kotlin/releases/download/v1.7.20/kotlin-compiler-1.7.20.zip"
+  sha256 "5e3c8d0f965410ff12e90d6f8dc5df2fc09fd595a684d514616851ce7e94ae7d"
   license "Apache-2.0"
 
   # This repository has thousands of development tags, so the `GithubLatest`
@@ -13,7 +13,7 @@ class Kotlin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e26706c1ae9ec914c941335c53764e2f30b07aa73c111c5ff783aa68dba7582d"
+    sha256 cellar: :any_skip_relocation, all: "ea9a41cf573e763edf09e62a24da0a9df95f4e00abac82c44afa14732443d535"
   end
 
   depends_on "openjdk"
