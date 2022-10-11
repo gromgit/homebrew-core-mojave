@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
-  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.5.2.tar.xz"
-  sha256 "cc5c374c2831c9e390d9c5f08029a81c3ca2b778abc0dd1426c81c657628fe9d"
+  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.5.3.tar.xz"
+  sha256 "e5b14a37125b7caf9534aad0670e0686b516e2fe9d4d441408397bb498c5c10a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,8 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "da7230a82bcceb2f521b5235d3d1693d1da1ba5a7d1c0556c42b9e5c004a49da"
+    rebuild 1
+    sha256 x86_64_linux: "0549678dc2a0a4abdbf6f90021bf4f514c10750caacb5c73353f22f0c2fdfd06"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,6 @@ class Apt < Formula
   depends_on "berkeley-db"
   depends_on "bzip2"
   depends_on "dpkg"
-  depends_on "gcc"
   depends_on "gettext"
   depends_on "gnupg"
   depends_on "gnutls"
