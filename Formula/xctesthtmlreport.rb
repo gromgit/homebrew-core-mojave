@@ -1,16 +1,16 @@
 class Xctesthtmlreport < Formula
   desc "Xcode-like HTML report for Unit and UI Tests"
   homepage "https://github.com/XCTestHTMLReport/XCTestHTMLReport"
-  url "https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.2.3.tar.gz"
-  sha256 "675c46efa869b1b6d21dce5c58d740999a65e2ab0c8a0dd3762988080f4e709d"
+  url "https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.2.4.tar.gz"
+  sha256 "d6f015d974bc7b281a531be7482400068bfaeb1b7f58040f197655cbea4900f3"
   license "MIT"
   head "https://github.com/XCTestHTMLReport/XCTestHTMLReport.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb73c9527f1127b456a979cd86abc91f03268f0edd17a4482b25de82d955f846"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46760c2f0606a76cdb739c58d8f3561eb44983fcaef7b4dbd7f8d680ee657ae2"
-    sha256 cellar: :any_skip_relocation, monterey:       "a973866444d0edc34188722f4fea8dc7d65cf030a5f3cee0fb5ea7e1b51d8bc3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7c1e9a9758be2f30d19d96d29e79d5287bd28c89dbc30cd39bd696b622511681"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09adf8c3aaef36698802f2f4ec9df0c54a2c30331793ad02443486e45bd157db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f68268a932d48a169c9645c8b9bd9daa7927289736b5ff0bdf8a30363b1d5556"
+    sha256 cellar: :any_skip_relocation, monterey:       "8fadf0792948314dff43eeec059bde7cc9ff10494cbb7542c279dca7424dd264"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0beaf5cedab2fada15b51b9e6225674e70457aa20ab2f5e682ed89ad3462a1a5"
   end
 
   depends_on :macos
