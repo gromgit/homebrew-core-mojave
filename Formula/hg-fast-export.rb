@@ -3,13 +3,12 @@ class HgFastExport < Formula
 
   desc "Fast Mercurial to Git converter"
   homepage "https://repo.or.cz/fast-export.git"
-  url "https://github.com/frej/fast-export/archive/v210917.tar.gz"
-  sha256 "168f51301f01b4a2572bb00dd9474ee9a50b85f24aa5ed5a7b8abb12896d951a"
+  url "https://github.com/frej/fast-export/archive/v220921.tar.gz"
+  sha256 "7bd9243d0d3a18304a0fda829cb15425f0640ce5cc1dc69c334e7a281f806075"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1c3c08a5e4f6fbb7790d42d5721db3d8b4927a5595056fbc27b90d6171b9c8b4"
+    sha256 cellar: :any_skip_relocation, all: "bfdfd4196291880578a9c75882feeab0bd0afb6a1321443cc74307dcd243eb0e"
   end
 
   depends_on "mercurial"
@@ -21,7 +20,7 @@ class HgFastExport < Formula
     # See https://github.com/Homebrew/homebrew-core/pull/90709#issuecomment-988548657
     %w[hg-fast-export.sh hg-reset.sh].each do |f|
       inreplace f, "for python_cmd in ",
-                   "for python_cmd in '#{which("python3")}' "
+                   "for python_cmd in '#{which("python3.10")}' "
     end
 
     libexec.install Dir["*"]
@@ -41,6 +40,7 @@ class HgFastExport < Formula
     end
 
     mkdir testpath/"git-repo" do
+      system "git", "config", "--global", "init.defaultBranch", "master"
       system "git", "init"
       system "git", "config", "core.ignoreCase", "false"
       system "hg-fast-export.sh", "-r", "#{testpath}/hg-repo"
