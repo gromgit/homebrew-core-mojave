@@ -13,8 +13,8 @@ class OpensslAT3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssl@3"
-    rebuild 1
-    sha256 mojave: "21e0498c5b9bccaff841b120eec32be692caeaaf00bf7aac861a3572705bb757"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "eef592ab3e8852797eedbd493f03b04e726d380cc7f778ca4a89445177e2eae0"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
@@ -38,6 +38,13 @@ class OpensslAT3 < Formula
       url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.62.tar.gz"
       sha256 "5022ad857fd76bd3f6b16af099fe2324639d9932e08f21e891fb313d9cae1705"
     end
+  end
+
+  # Fix compile on older macOS (Xcode 10.1 and earlier).
+  # Remove with the next release.
+  patch do
+    url "https://github.com/openssl/openssl/commit/c95e2030c34646176b4843b5f0f48720d896f427.patch?full_index=1"
+    sha256 "91b4ef7049aec75bd3c2784472b70652cc1bad60e66f6a7129d5061d6004af43"
   end
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
