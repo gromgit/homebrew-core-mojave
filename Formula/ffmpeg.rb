@@ -1,12 +1,11 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-5.0.1.tar.xz"
-  sha256 "ef2efae259ce80a240de48ec85ecb062cecca26e4352ffb3fda562c21a93007b"
+  url "https://ffmpeg.org/releases/ffmpeg-5.1.1.tar.xz"
+  sha256 "95bf3ff8c496511e71e958fb249e663c8c9c3de583c5bebc0f5a9745abbc0435"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -16,7 +15,7 @@ class Ffmpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg"
-    sha256 mojave: "599eb32b830570be5c87e848849227ce1aafb2870a505982077b3b941cb6ae67"
+    sha256 cellar: :any_skip_relocation, mojave: "d3c1566ac50a5d65fc112aa71905299fd64b40c7c5deda0221fd8f6401efffb4"
   end
 
   depends_on "nasm" => :build
@@ -60,8 +59,9 @@ class Ffmpeg < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "libxv"
+    depends_on "alsa-lib"
     depends_on "gcc" # because rubberband is compiled with gcc
+    depends_on "libxv"
   end
 
   fails_with gcc: "5"
@@ -118,15 +118,6 @@ class Ffmpeg < Formula
     # Needs corefoundation, coremedia, corevideo
     args << "--enable-videotoolbox" if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
-
-    # Replace hardcoded default VMAF model path
-    unless build.head?
-      %w[doc/filters.texi libavfilter/vf_libvmaf.c].each do |f|
-        inreplace f, "/usr/local/share/model", HOMEBREW_PREFIX/"share/libvmaf/model"
-        # Since libvmaf v2.0.0, `.pkl` model files have been deprecated in favor of `.json` model files.
-        inreplace f, "vmaf_v0.6.1.pkl", "vmaf_v0.6.1.json"
-      end
-    end
 
     system "./configure", *args
     system "make", "install"
