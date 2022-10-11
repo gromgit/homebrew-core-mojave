@@ -4,10 +4,11 @@ class Pygobject3 < Formula
   url "https://download.gnome.org/sources/pygobject/3.42/pygobject-3.42.2.tar.xz"
   sha256 "ade8695e2a7073849dd0316d31d8728e15e1e0bc71d9ff6d1c09e86be52bc957"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pygobject3"
-    sha256 cellar: :any, mojave: "26440b36aa1e19bd8afa1a1884f39e9334766e5376fdf37b80cf561f49dfc92b"
+    sha256 cellar: :any_skip_relocation, mojave: "8e3257f05d3da7a4451ac65d341102d7e19dba165512ae2c454a6ca1efce2bae"
   end
 
   depends_on "meson" => :build
@@ -20,9 +21,8 @@ class Pygobject3 < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/python@\d\.\d+/) }
-        .map(&:opt_bin)
-        .map { |bin| bin/"python3" }
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def site_packages(python)
@@ -31,17 +31,17 @@ class Pygobject3 < Formula
 
   def install
     pythons.each do |python|
-      mkdir "buildpy3" do
-        system "meson", *std_meson_args,
-                        "-Dpycairo=enabled",
-                        "-Dpython=#{python}",
-                        "-Dpython.platlibdir=#{site_packages(python)}",
-                        "-Dpython.purelibdir=#{site_packages(python)}",
-                        ".."
-        system "ninja", "-v"
-        system "ninja", "install", "-v"
-      end
-      rm_rf "buildpy3"
+      xy = Language::Python.major_minor_version(python)
+      builddir = "buildpy#{xy}".delete(".")
+
+      system "meson", "setup", builddir, "-Dpycairo=enabled",
+                                         "-Dpython=#{python}",
+                                         "-Dpython.platlibdir=#{site_packages(python)}",
+                                         "-Dpython.purelibdir=#{site_packages(python)}",
+                                         *std_meson_args
+
+      system "meson", "compile", "-C", builddir, "--verbose"
+      system "meson", "install", "-C", builddir
     end
   end
 
@@ -55,7 +55,6 @@ class Pygobject3 < Formula
     EOS
 
     pythons.each do |python|
-      ENV.prepend_path "PYTHONPATH", site_packages(python)
       system python, "test.py"
     end
   end
