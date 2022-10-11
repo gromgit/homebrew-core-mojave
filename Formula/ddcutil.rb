@@ -1,12 +1,17 @@
 class Ddcutil < Formula
   desc "Control monitor settings using DDC/CI and USB"
   homepage "https://www.ddcutil.com"
-  url "https://www.ddcutil.com/tarballs/ddcutil-1.2.2.tar.gz"
-  sha256 "822faa342b0bcbb41f15c1910a2bc9d50ffd78f695d6dd04387964010b69cba1"
+  url "https://www.ddcutil.com/tarballs/ddcutil-1.3.2.tar.gz"
+  sha256 "bd923b3aab868d9d24a00add3962a47c5b5f4730afb579bc946142524965a042"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://www.ddcutil.com/releases/"
+    regex(/href=.*?ddcutil[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf0178655ff935497c7790df894ff2d01207ef5be117528498d44b6e4e7c85ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "df4a31ba6fdbead2533760c2f14709230398d377d833fe93ebdfb810f73c1f63"
   end
 
   depends_on "glib"
