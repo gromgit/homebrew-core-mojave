@@ -4,14 +4,14 @@ class Fastnetmon < Formula
   url "https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "4de0fe9390673f7e2fc8f3f1e3696a1455ea659049430c4870fcf82600c2ea2d"
   license "GPL-2.0-only"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "8d4de0b01f7951f5315e4651971d80aefa1413401d9b469c329f182c33a38d97"
-    sha256 cellar: :any,                 arm64_big_sur:  "6950231b1781ae917835fce4445ea86e14467ce6ca682d44ec507d207a404b13"
-    sha256 cellar: :any,                 monterey:       "b5eebdbca11f5a17c358d827577e131c5c73e66ada37880511f8abeadb019b38"
-    sha256 cellar: :any,                 big_sur:        "dc87e379004d17826d28c176bdeb00722a87a21196c9220df815a3e333506bcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3965fab5d050d3cc4a4db9ef79a77c3a27799ce2d143cd28e9ffdc4377e1c4f6"
+    sha256 cellar: :any,                 arm64_monterey: "9436e691e23e9971ee759c564e66885be03082da42bf7605b83c61c1a5620029"
+    sha256 cellar: :any,                 arm64_big_sur:  "67c8bf6a970b0e3cc7c09551ed29843d7a847058877b5e040b5b0a69ef01a6c2"
+    sha256 cellar: :any,                 monterey:       "0c9b4d9187690b9fa45918c742f1550b5ca37319aac85f838bc0c6e5c67dab3c"
+    sha256 cellar: :any,                 big_sur:        "5d7e917b62e8db6b691c4701c594a39f951d12e57eafbe558b0ecd00df60dc19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d91d5bf09010a94523580a7a782803e20dcb5ed282acb814a781578f2ce463c7"
   end
 
   depends_on "cmake" => :build
