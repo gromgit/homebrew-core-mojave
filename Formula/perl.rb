@@ -1,11 +1,21 @@
 class Perl < Formula
   desc "Highly capable, feature-rich programming language"
   homepage "https://www.perl.org/"
-  url "https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz"
-  sha256 "82c2e5e5c71b0e10487a80d79140469ab1f8056349ca8545140a224dbbed7ded"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 1
   head "https://github.com/perl/perl5.git", branch: "blead"
+
+  stable do
+    url "https://www.cpan.org/src/5.0/perl-5.36.0.tar.xz"
+    sha256 "0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0"
+
+    # Apply upstream commit to remove nsl from libswanted:
+    # https://github.com/Perl/perl5/commit/7e19816aa8661ce0e984742e2df11dd20dcdff18
+    # Remove with next tagged release that includes the change.
+    patch do
+      url "https://github.com/Perl/perl5/commit/7e19816aa8661ce0e984742e2df11dd20dcdff18.patch?full_index=1"
+      sha256 "03f64cf62b9b519cefdf76a120a6e505cf9dc4add863b9ad795862c071b05613"
+    end
+  end
 
   livecheck do
     url "https://www.cpan.org/src/"
@@ -14,7 +24,7 @@ class Perl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/perl"
-    sha256 mojave: "8cde325eb49fa73b9875e4254160033ae9a0d5c176bec4eb2ea9eb610f1861ca"
+    sha256 mojave: "8281c68c5cfbee6cfadce4866d0f63932856bed458b1f9ffd9f30582a8b4b8ce"
   end
 
   depends_on "berkeley-db"
@@ -26,17 +36,10 @@ class Perl < Formula
   # Prevent site_perl directories from being removed
   skip_clean "lib/perl5/site_perl"
 
-  # Apply upstream commit to remove nsl from libswanted:
-  # https://github.com/Perl/perl5/commit/7e19816aa8661ce0e984742e2df11dd20dcdff18
-  # Remove with next tagged release that includes the change.
-  patch do
-    url "https://github.com/Perl/perl5/commit/7e19816aa8661ce0e984742e2df11dd20dcdff18.patch?full_index=1"
-    sha256 "03f64cf62b9b519cefdf76a120a6e505cf9dc4add863b9ad795862c071b05613"
-  end
-
   def install
     args = %W[
       -des
+      -Dinstallstyle=lib/perl5
       -Dinstallprefix=#{prefix}
       -Dprefix=#{opt_prefix}
       -Dprivlib=#{opt_lib}/perl5/#{version.major_minor}
@@ -50,13 +53,10 @@ class Perl < Formula
       -Duselargefiles
       -Dusethreads
     ]
-
     args << "-Dusedevel" if build.head?
 
     system "./Configure", *args
-
     system "make"
-
     system "make", "install"
   end
 
