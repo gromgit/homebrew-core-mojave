@@ -1,17 +1,16 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://github.com/harfbuzz/harfbuzz/archive/5.1.0.tar.gz"
-  sha256 "5352ff2eec538ea9a63a485cf01ad8332a3f63aa79921c5a2e301cef185caea1"
+  url "https://github.com/harfbuzz/harfbuzz/archive/5.2.0.tar.gz"
+  sha256 "a9fd9869efeec4cd6ab34527ed1e82df65be39cbfdb750d02dfa66148eac4c04"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
-    sha256 cellar: :any, mojave: "85a90e3269f9e98f123104f973898a163f5a444d113ed92c5d4a06c51a789759"
+    sha256 cellar: :any_skip_relocation, mojave: "91080b3577dbc06f7b43250823d6b2693602e3930e3a3f07138e421039dc070e"
   end
 
-  depends_on "glib-utils" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -42,7 +41,7 @@ class Harfbuzz < Formula
     ]
 
     system "meson", "setup", "build", *std_meson_args, *args
-    system "meson", "compile", "-C", "build"
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
@@ -51,6 +50,6 @@ class Harfbuzz < Formula
       shape = `echo 'സ്റ്റ്' | #{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf`.chomp
       assert_equal "[glyph201=0+1183|U0D4D=0+0]", shape
     end
-    system Formula["python@3.10"].opt_bin/"python3", "-c", "from gi.repository import HarfBuzz"
+    system "python3.10", "-c", "from gi.repository import HarfBuzz"
   end
 end
