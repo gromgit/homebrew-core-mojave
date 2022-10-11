@@ -2,19 +2,17 @@ class Bartycrouch < Formula
   desc "Incrementally update/translate your Strings files"
   homepage "https://github.com/FlineDev/BartyCrouch"
   url "https://github.com/FlineDev/BartyCrouch.git",
-      tag:      "4.11.0",
-      revision: "31c4cb250caae44dc3ab62c84becd3a85e55e8ad"
+      tag:      "4.13.0",
+      revision: "36cc46399abe717986cda40ccd6d6eb34c6ff70d"
   license "MIT"
   head "https://github.com/FlineDev/BartyCrouch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c7ce850d5c1cc49da218324e7f9fea5720fda9c5a84043fadf47afb53838233"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1e7a2f682e92d36b55d7af5169bcf78abd688475083550ab785bf2c9277ad438"
-    sha256 cellar: :any_skip_relocation, monterey:       "296152c7b9ece6d199d04f569293b610c4594eb7a85fc34b80948e7022d33a65"
-    sha256 cellar: :any_skip_relocation, big_sur:        "91e75b3257969acc5a38e0bff550fdfea6f8b8d54bed52443b88b32451be0512"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "451f872bb60d12f471624c23dad49f040abfb23d0cc4eecd6f8970e59772460f"
+    sha256 cellar: :any_skip_relocation, monterey:       "f2860b77f98f794025464a34cf1a565c8991336850d9f88cd8b5c57d3498ab3a"
   end
 
-  depends_on xcode: ["12.5", :build]
+  depends_on xcode: ["14.0", :build]
   depends_on :macos
 
   def install
