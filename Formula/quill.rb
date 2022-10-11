@@ -1,19 +1,18 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
   homepage "https://github.com/odygrd/quill"
-  url "https://github.com/odygrd/quill/archive/v2.1.0.tar.gz"
-  sha256 "66c59501ad827207e7d4682ccba0f1c33ca215269aa13a388df4d59ca195ee76"
+  url "https://github.com/odygrd/quill/archive/v2.2.0.tar.gz"
+  sha256 "6b123b60b16d41009228d907851f025c8be974d5fcf41af0b6afbe48edebbf73"
   license "MIT"
   head "https://github.com/odygrd/quill.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9da39652cc8a8062fb29f133cca8169fcc97a7d99e274354ceeae53f4fa631ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "358f4fdc5c5af2ba5a66f1cd289d527d021c2ac215c3b99f0bd3f73415eac949"
-    sha256 cellar: :any_skip_relocation, monterey:       "96f579939efcd4561b42b35ada08992ccf3ed5ea8674f3ac4148fda74bd9a5ff"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d46bffb6fe69bb16447610147df267527eab987e9b102383a09d0d7e0b8bad89"
-    sha256 cellar: :any_skip_relocation, catalina:       "95470ef86303a15a927b293383935f68c99d7ee72ab6eebdce7c432a0f451d13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3440c7c92f4cf8f3980028c8d861743af7e77eb45c18efa8e9ad78868252f135"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6b6f2a46adcfe06c1e8d72be422adc8c3ec7ff05df471c35e68af93fdac7480"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "29ab9ddd25212a7bf167292a15df51643dbe4505e92fbc509687226de5d4ff4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "aafbe74438ce76cd8c8b5d0098db6536b1cbac9afb8c351955454f3da3b2daa3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "17fdaadf3d8772cd0091f098974cb6c5099f2ff68744fc51f6f073642f4e3aa5"
+    sha256 cellar: :any_skip_relocation, catalina:       "23383dafba958cdd763f4dffa27a2fb096e6ee6775b73fdb5852c45d2d1bf704"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be5e9d7240b231908318db4ee7e778bb3a52ea097aba5fefaeaef416da84537"
   end
 
   depends_on "cmake" => :build
