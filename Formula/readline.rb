@@ -1,12 +1,29 @@
 class Readline < Formula
   desc "Library for command-line editing"
   homepage "https://tiswww.case.edu/php/chet/readline/rltop.html"
-  url "https://ftp.gnu.org/gnu/readline/readline-8.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/readline/readline-8.1.tar.gz"
-  version "8.1.2"
-  sha256 "f8ceb4ee131e3232226a17f51b164afc46cd0b9e6cef344be87c65962cb82b02"
+  url "https://ftp.gnu.org/gnu/readline/readline-8.2.tar.gz"
+  mirror "https://ftpmirror.gnu.org/readline/readline-8.2.tar.gz"
+  version "8.2.1"
+  sha256 "3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/readline"
+    sha256 cellar: :any, mojave: "65c82c7903044d66eab8542351566359361401f308568975fb326ee4f81fe7df"
+  end
+
+  %w[
+    001 bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7
+  ].each_slice(2) do |p, checksum|
+    patch :p0 do
+      url "https://ftp.gnu.org/gnu/readline/readline-8.2-patches/readline82-#{p}"
+      mirror "https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-#{p}"
+      sha256 checksum
+    end
+  end
+
+  # We're not using `url :stable` here because we need `url` to be a string
+  # when we use it in the `strategy` block.
   livecheck do
     url "https://ftp.gnu.org/gnu/readline/"
     regex(/href=.*?readline[._-]v?(\d+(?:\.\d+)+)\.t/i)
@@ -41,42 +58,17 @@ class Readline < Formula
     end
   end
 
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/readline"
-    rebuild 2
-    sha256 cellar: :any, mojave: "2d61382e40509f6ebb6cb53cbc9374c5cddcc982d25e44d2be094fbeb85c4d98"
-  end
-
-  %w[
-    001 682a465a68633650565c43d59f0b8cdf149c13a874682d3c20cb4af6709b9144
-    002 e55be055a68cb0719b0ccb5edc9a74edcc1d1f689e8a501525b3bc5ebad325dc
-  ].each_slice(2) do |p, checksum|
-    patch :p0 do
-      url "https://ftp.gnu.org/gnu/readline/readline-8.1-patches/readline81-#{p}"
-      mirror "https://ftpmirror.gnu.org/readline/readline-8.1-patches/readline81-#{p}"
-      sha256 checksum
-    end
-  end
-
-  # We're not using `url :stable` here because we need `url` to be a string
-  # when we use it in the `strategy` block.
-
   keg_only :shadowed_by_macos, "macOS provides BSD libedit"
 
   uses_from_macos "ncurses"
 
   def install
-    args = ["--prefix=#{prefix}"]
-    args << "--with-curses" if OS.linux?
-    system "./configure", *args
-
-    args = []
-    args << "SHLIB_LIBS=-lcurses" if OS.linux?
-    # There is no termcap.pc in the base system, so we have to comment out
-    # the corresponding Requires.private line.
-    # Otherwise, pkg-config will consider the readline module unusable.
-    inreplace "readline.pc", /^(Requires.private: .*)$/, "# \\1"
-    system "make", "install", *args
+    system "./configure", "--prefix=#{prefix}", "--with-curses"
+    # FIXME: Setting `SHLIB_LIBS` should not be needed, but, on Linux,
+    #        many dependents expect readline to link with ncurses and
+    #        are broken without it. Readline should be agnostic about
+    #        the terminfo library on Linux.
+    system "make", "install", "SHLIB_LIBS=-lcurses"
   end
 
   test do
@@ -91,8 +83,8 @@ class Readline < Formula
         return 0;
       }
     EOS
+
     system ENV.cc, "-L", lib, "test.c", "-L#{lib}", "-lreadline", "-o", "test"
-    assert_equal "test> Hello, World!\nHello, World!",
-      pipe_output("./test", "Hello, World!\n").strip
+    assert_equal "test> Hello, World!\nHello, World!", pipe_output("./test", "Hello, World!\n").strip
   end
 end
