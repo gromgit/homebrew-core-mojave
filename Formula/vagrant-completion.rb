@@ -1,15 +1,13 @@
 class VagrantCompletion < Formula
   desc "Bash completion for Vagrant"
   homepage "https://github.com/hashicorp/vagrant"
-  url "https://github.com/hashicorp/vagrant/archive/v2.3.0.tar.gz"
-  sha256 "1931dbf29ec3c6622a649ae145fe706e5b957d7075870ce577358dd22c3d5dca"
+  url "https://github.com/hashicorp/vagrant/archive/v2.3.1.tar.gz"
+  sha256 "661401d2368289150299f6ede2c50b1f70510ccee77222b47b457209507505db"
   license "MIT"
   head "https://github.com/hashicorp/vagrant.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vagrant-completion"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b2487c069920ffff8017652613976561d60b1e29c6d7786d72c280ca3a4ad771"
+    sha256 cellar: :any_skip_relocation, all: "7790dd08702b67d015d26e127d6d6da18eed72b210d32d2f71689e3d0e6bbd6b"
   end
 
   def install
