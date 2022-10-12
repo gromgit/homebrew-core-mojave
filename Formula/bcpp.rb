@@ -1,8 +1,8 @@
 class Bcpp < Formula
   desc "C(++) beautifier"
   homepage "https://invisible-island.net/bcpp/"
-  url "https://invisible-mirror.net/archives/bcpp/bcpp-20210108.tgz"
-  sha256 "567ca0e803bfd57c41686f3b1a7df4ee4cec3c2d57ad4f8e5cda247fc5735269"
+  url "https://invisible-mirror.net/archives/bcpp/bcpp-20221002.tgz"
+  sha256 "ad87caf9f1df0212994ca6eff1c4e0e7b63559aaef0a4ba54555092ebc438437"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class Bcpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcpp"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cf9ead8dc67c65c93e4ec054e1504e533551759b9a6fef0b1e2c260a0e8a2d96"
+    sha256 cellar: :any_skip_relocation, mojave: "0bc7de4c155a3cd4d24243ce7e0c0479efcc76a6e93b157d0ddae6aff47133c0"
   end
 
   fails_with gcc: "5"
