@@ -5,11 +5,11 @@ class Help2man < Formula
   mirror "https://ftpmirror.gnu.org/help2man/help2man-1.49.2.tar.xz"
   sha256 "9e2e0e213a7e0a36244eed6204d902b6504602a578b6ecd15268b1454deadd36"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/help2man"
-    rebuild 2
-    sha256 cellar: :any, mojave: "56676d2e1ee792616f35e352cd0a25feaffde3ac09ba03599b222f3e1d9b9e67"
+    sha256 cellar: :any, mojave: "ee8fbcbff801607dc6e94a617c967b52879730df956a61078239d5a225e730f1"
   end
 
   uses_from_macos "perl", since: :mojave
