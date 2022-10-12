@@ -1,9 +1,9 @@
 class Popt < Formula
   desc "Library like getopt(3) with a number of enhancements"
   homepage "https://github.com/rpm-software-management/popt"
-  url "http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.18.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/popt-1.18.tar.gz"
-  sha256 "5159bc03a20b28ce363aa96765f37df99ea4d8850b1ece17d1e6ad5c24fdc5d1"
+  url "http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.19.tar.gz"
+  mirror "https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/popt-1.19.tar.gz"
+  sha256 "c25a4838fc8e4c1c8aacb8bd620edb3084a3d63bf8987fdad3ca2758c63240f9"
   license "MIT"
 
   # The stable archive is found at https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/
@@ -17,8 +17,7 @@ class Popt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/popt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8fd0257906d1fd7cfe83b893013e5a9e5bd4d1dd4cb6c7391bd12c7537703518"
+    sha256 cellar: :any, mojave: "dde66a8b26624e4d5d221ffa04b91d06003466f12f063a753a8e43637b52a107"
   end
 
   def install
