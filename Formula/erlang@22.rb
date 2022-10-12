@@ -6,17 +6,16 @@ class ErlangAT22 < Formula
   sha256 "ee281e4638c8d671dd99459a11381345ee9d70f1f8338f5db31fc082349a370e"
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^OTP[._-]v?(22(?:\.\d+)+)$/i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erlang@22"
-    sha256 cellar: :any, mojave: "da7e3308c2a86e373a0daa566a9889fa51e43a99001d4e7f5cb04e1e35674162"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d97bc1c4fb872a0b88b1e1ba5624c74c2e720cc3351cb5dfa4f236b2e81712d2"
   end
 
   keg_only :versioned_formula
+
+  # EOL with OTP-25 release
+  deprecate! date: "2022-09-20", because: :unsupported
 
   depends_on "openssl@1.1"
   depends_on "wxwidgets" # for GUI apps like observer
