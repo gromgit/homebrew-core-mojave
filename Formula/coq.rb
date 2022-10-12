@@ -1,8 +1,8 @@
 class Coq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://coq.inria.fr/"
-  url "https://github.com/coq/coq/archive/V8.15.2.tar.gz"
-  sha256 "13a67c0a4559ae22e9765c8fdb88957b16c2b335a2d5f47e4d6d9b4b8b299926"
+  url "https://github.com/coq/coq/archive/V8.16.0.tar.gz"
+  sha256 "36577b55f4a4b1c64682c387de7abea932d0fd42fc0cd5406927dca344f53587"
   license "LGPL-2.1-only"
   head "https://github.com/coq/coq.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Coq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coq"
-    sha256 mojave: "437b0809553385f20e37d4c171333ce1d75dd8150acab7f2ea68c52b147d0717"
+    sha256 mojave: "af07b159281fc8c7323ac7f2fddd6167f02330e66130db0dc0bc26f5c9ce6758"
   end
 
   depends_on "dune" => :build
@@ -27,6 +27,7 @@ class Coq < Formula
 
   def install
     ENV.prepend_path "OCAMLPATH", Formula["ocaml-zarith"].opt_lib/"ocaml"
+    ENV.prepend_path "OCAMLPATH", Formula["ocaml-findlib"].opt_lib/"ocaml"
     system "./configure", "-prefix", prefix,
                           "-mandir", man,
                           "-docdir", pkgshare/"latex",
