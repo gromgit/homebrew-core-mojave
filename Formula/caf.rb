@@ -9,16 +9,12 @@ class Caf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caf"
-    rebuild 3
-    sha256 cellar: :any, mojave: "a8297a34fca7b871ff8c984ae38ba0a1346438580e241a8a1651a5e1632c67a8"
+    rebuild 4
+    sha256 cellar: :any, mojave: "385bc09b0fac24ca7a758398ddaa43ccae0e9cc6ea93ede5ddcb4752ac391154"
   end
 
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
-
-  on_linux do
-    depends_on "gcc" # For C++17
-  end
 
   fails_with gcc: "5"
 
