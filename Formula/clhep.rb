@@ -1,8 +1,8 @@
 class Clhep < Formula
   desc "Class Library for High Energy Physics"
   homepage "https://proj-clhep.web.cern.ch/proj-clhep/"
-  url "https://proj-clhep.web.cern.ch/proj-clhep/dist1/clhep-2.4.5.3.tgz"
-  sha256 "45f63eeb097f02fe67b86a7dadbf10d409b401c28a1a3e172db36252c3097c13"
+  url "https://proj-clhep.web.cern.ch/proj-clhep/dist1/clhep-2.4.6.0.tgz"
+  sha256 "e8d16debb84ced28e40e9ae84789cf5a0adad45f9213fbac3ce7583e06caa7b1"
   license "GPL-3.0-only"
   head "https://gitlab.cern.ch/CLHEP/CLHEP.git", branch: "develop"
 
@@ -13,7 +13,7 @@ class Clhep < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clhep"
-    sha256 cellar: :any, mojave: "8ee86727facffd5ee271f8059f3842be62a6dab313dfc60a91b6a83aa1cd12b0"
+    sha256 cellar: :any, mojave: "1990e2f1d1833e3b2718adf53c1e2984bc2dc3c3bb8b6bfcd037d149e6c8aed8"
   end
 
   depends_on "cmake" => :build
