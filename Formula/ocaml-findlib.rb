@@ -1,8 +1,8 @@
 class OcamlFindlib < Formula
   desc "OCaml library manager"
   homepage "http://projects.camlcity.org/projects/findlib.html"
-  url "http://download.camlcity.org/download/findlib-1.9.5.tar.gz"
-  sha256 "0d4704e60caf313c1bb4565d8690d503ce51fb93c2ea50e22b2e9812243a2571"
+  url "http://download.camlcity.org/download/findlib-1.9.6.tar.gz"
+  sha256 "2df996279ae16b606db5ff5879f93dbfade0898db9f1a3e82f7f845faa2930a2"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class OcamlFindlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml-findlib"
-    sha256 mojave: "22be81971ed25bcbd2a1d9d2122403f8710de0276de14de1021a2d16d46a788b"
+    sha256 mojave: "6a47274217d5eb48539801d16f89d0d972c10355a476b11e56838279d1b8c8c7"
   end
 
   depends_on "ocaml"
