@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://docs.brev.dev"
-  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.110.tar.gz"
-  sha256 "da813da961eef14af42d3a733e61e76d1a5ee4e5aba23c720e20967e3fa0ba14"
+  url "https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.118.tar.gz"
+  sha256 "1d0ec8807a44e1117c35045dc0b414ee3c0404e610cb06a4e35b980fa0bb80ea"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Brev < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brev"
-    sha256 cellar: :any_skip_relocation, mojave: "78b118416e2e42a9b06838ff429a2ed7a1657209d000eb28b5783bfb7eb3be38"
+    sha256 cellar: :any_skip_relocation, mojave: "c3790f259eadb5adab6e4cdb1114d9cec5113d65e99528254c99755adf540c01"
   end
 
   # Required latest gvisor.dev/gvisor/pkg/gohacks instead of inet.af/netstack/gohacks
@@ -22,6 +22,8 @@ class Brev < Formula
   def install
     ldflags = "-X github.com/brevdev/brev-cli/pkg/cmd/version.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
+
+    generate_completions_from_executable(bin/"brev", "completion")
   end
 
   test do
