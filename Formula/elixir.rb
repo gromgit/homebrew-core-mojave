@@ -1,14 +1,14 @@
 class Elixir < Formula
   desc "Functional metaprogramming aware language built on Erlang VM"
   homepage "https://elixir-lang.org/"
-  url "https://github.com/elixir-lang/elixir/archive/v1.14.0.tar.gz"
-  sha256 "ac129e266a1e04cdc389551843ec3dbdf36086bb2174d3d7e7936e820735003b"
+  url "https://github.com/elixir-lang/elixir/archive/v1.14.1.tar.gz"
+  sha256 "8ad537eb84471c24c3e6984c37884f06a7834ff2efd72c436c222baee8df9a11"
   license "Apache-2.0"
   head "https://github.com/elixir-lang/elixir.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elixir"
-    sha256 cellar: :any_skip_relocation, mojave: "592ffc7854e7016d0785da30b9067905b00bce87f8d69effeb0083fdff7b512e"
+    sha256 cellar: :any_skip_relocation, mojave: "553952ec9dffc871b648c235fe3041044e528478bc1016b2fab6c0899c3eb4c0"
   end
 
   depends_on "erlang"
