@@ -1,10 +1,10 @@
 class Libnghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://github.com/nghttp2/nghttp2/releases/download/v1.49.0/nghttp2-1.49.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.49.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/legacy/nghttp2-1.49.0.tar.gz"
-  sha256 "14dd5654e369227afebfba5198793a1788a0af9d30cddb19af3ec275d110a7a6"
+  url "https://github.com/nghttp2/nghttp2/releases/download/v1.50.0/nghttp2-1.50.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.50.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/legacy/nghttp2-1.50.0.tar.gz"
+  sha256 "d162468980dba58e54e31aa2cbaf96fd2f0890e6dd141af100f6bd1b30aa73c6"
   license "MIT"
 
   livecheck do
@@ -13,7 +13,7 @@ class Libnghttp2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libnghttp2"
-    sha256 cellar: :any, mojave: "1be0c08f5491c3d02df5f5f8042f3e7c83627964a15d1186adb33826caf42743"
+    sha256 cellar: :any, mojave: "8d78f8babe071340a22c3ba5bcc976ba43961209242a57aa5ab9e7678f40e73b"
   end
 
   head do
