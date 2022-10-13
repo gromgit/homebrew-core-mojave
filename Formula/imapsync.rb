@@ -5,6 +5,7 @@ class Imapsync < Formula
   # NOTE: The mirror will return 404 until the version becomes outdated.
   sha256 "553ce6d6535b954987a859fa0c3c74da446df74157d398ab09159c7f8ed8043d"
   license "NLPL"
+  revision 1
   head "https://github.com/imapsync/imapsync.git", branch: "master"
 
   livecheck do
@@ -14,7 +15,7 @@ class Imapsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imapsync"
-    sha256 cellar: :any_skip_relocation, mojave: "8fc5851ab2b813dfcfd525254060ecdff03d1753f55b59fe81db951751ef8bbd"
+    sha256 cellar: :any_skip_relocation, mojave: "e7b934799f0931343ffafc732e022b74b4eb021eaa7d07d37823c7e10459c793"
   end
 
   depends_on "pod2man" => :build
