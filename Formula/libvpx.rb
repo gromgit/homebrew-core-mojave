@@ -8,8 +8,8 @@ class Libvpx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvpx"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6f1e2c3fea7a2eef1abd940bc88c9375dd171cfe0fe318407f472c6124ad59bc"
+    rebuild 2
+    sha256 cellar: :any, mojave: "187ebac26343835638acfff6dab42cbb401aa0af34d20f635ba77c624f171a22"
   end
 
   depends_on "yasm" => :build
@@ -24,10 +24,6 @@ class Libvpx < Formula
       --enable-shared
       --enable-vp9-highbitdepth
     ]
-
-    # `configure` misdetects Monterey as `generic-gnu`.
-    # Reported via email to https://groups.google.com/a/webmproject.org/group/codec-devel
-    args << "--target=#{Hardware::CPU.arch}-darwin20-gcc" if OS.mac? && MacOS.version >= :monterey
 
     if Hardware::CPU.intel?
       ENV.runtime_cpu_detection
