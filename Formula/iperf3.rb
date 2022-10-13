@@ -1,13 +1,13 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https://github.com/esnet/iperf"
-  url "https://github.com/esnet/iperf/archive/3.11.tar.gz"
-  sha256 "96e909c0d3ab6034c52328c2954fb3934aaff349395c4bc2611dcd50e6b89875"
+  url "https://github.com/esnet/iperf/archive/3.12.tar.gz"
+  sha256 "e38e0a97b30a97b4355da93467160a20dea10932f6c17473774802e03d61d4a7"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iperf3"
-    sha256 cellar: :any, mojave: "88c9c25729e1aad39ae6827b29285f2902131af3cd11134efde408e1a97fb1e9"
+    sha256 cellar: :any, mojave: "a1271bb467a6a49c71e3c22aa4c84a95560ac298e7082be70f3f3737a30cfca9"
   end
 
   head do
