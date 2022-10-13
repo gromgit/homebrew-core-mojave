@@ -7,8 +7,8 @@ class MariadbAT102 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.2"
-    rebuild 5
-    sha256 mojave: "710b49fd2e08cf33862b5b951db96fb600dac622b8ab73f73383f6bb8ba92462"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, mojave: "7013d3b1cdcf9c343ee5a92bc02c5d939f9f99190647b6de9d2ccaca956074af"
   end
 
   keg_only :versioned_formula
@@ -30,7 +30,6 @@ class MariadbAT102 < Formula
   # This upstream commit was added for MariaDB 10.3+, but not 10.2. If it is not
   # added in the next release, we should open an upstream PR to do so.
   on_linux do
-    depends_on "gcc"
     depends_on "linux-pam"
   end
 
