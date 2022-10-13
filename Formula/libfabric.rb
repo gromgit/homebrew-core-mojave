@@ -1,14 +1,14 @@
 class Libfabric < Formula
   desc "OpenFabrics libfabric"
   homepage "https://ofiwg.github.io/libfabric/"
-  url "https://github.com/ofiwg/libfabric/releases/download/v1.15.2/libfabric-1.15.2.tar.bz2"
-  sha256 "8d050b88bee62e8512a88f5aa25f532f46bef587bc3f91022ecdb9b3b2676c7e"
+  url "https://github.com/ofiwg/libfabric/releases/download/v1.16.1/libfabric-1.16.1.tar.bz2"
+  sha256 "53f992d33f9afe94b8a4ea3d105504887f4311cf4b68cea99a24a85fcc39193f"
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
   head "https://github.com/ofiwg/libfabric.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libfabric"
-    sha256 cellar: :any, mojave: "cb94e3b0ba00d4ba505d931e21ce2458b1a80b202cc14675bcead1bb2f994988"
+    sha256 cellar: :any, mojave: "bff3be3105f3d3223fd1a331612e2858a6f6f283e5f935630691a196131743a5"
   end
 
   depends_on "autoconf" => :build
