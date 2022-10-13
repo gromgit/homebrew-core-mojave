@@ -13,7 +13,8 @@ class GccAT9 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc@9"
-    sha256 mojave: "f7b4b6bb82b68127eb1d9bb4f97d8749b396e646a66b0e1593c823a229a6f09d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "64ba035e2ee4778dc316ab216720430349eb98048f4679e4da88e128f918073f"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -180,7 +181,7 @@ class GccAT9 < Formula
       #   * `-idirafter <dir>` instructs gcc to search system header
       #     files after gcc internal header files.
       # For libraries:
-      #   * `-nostdlib -L#{libgcc}` instructs gcc to use brewed glibc
+      #   * `-nostdlib -L#{libgcc} -L#{glibc.opt_lib}` instructs gcc to use brewed glibc
       #     if applied.
       #   * `-L#{libdir}` instructs gcc to find the corresponding gcc
       #     libraries. It is essential if there are multiple brewed gcc
@@ -194,7 +195,7 @@ class GccAT9 < Formula
         + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
 
         *link_libgcc:
-        #{glibc_installed ? "-nostdlib -L#{libgcc}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
+        #{glibc_installed ? "-nostdlib -L#{libgcc} -L#{glibc.opt_lib}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
 
         *link:
         + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir} -rpath #{HOMEBREW_PREFIX}/lib
