@@ -1,15 +1,14 @@
 class Jpegoptim < Formula
   desc "Utility to optimize JPEG files"
   homepage "https://github.com/tjko/jpegoptim"
-  url "https://github.com/tjko/jpegoptim/archive/RELEASE.1.4.7.tar.gz"
-  sha256 "9d2a13b7c531d122f360209422645206931c74ada76497c4aeb953610f0d70c1"
+  url "https://github.com/tjko/jpegoptim/archive/v1.5.0.tar.gz"
+  sha256 "67b0feba73fd72f0bd383f25bf84149a73378d34c0c25bc0b9b25b0264d85824"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/tjko/jpegoptim.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpegoptim"
-    sha256 cellar: :any, mojave: "c999aca7bae06e1674564d4569ac731724ec5672ebee8c53d65cfabb8370a3f8"
+    sha256 cellar: :any, mojave: "65f7608bb59cc40d2dd81a76fe0921e352538e48c2f8fd3e0953f013ea588ca1"
   end
 
   depends_on "jpeg-turbo"
