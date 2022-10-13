@@ -1,13 +1,13 @@
 class Libfido2 < Formula
   desc "Provides library functionality for FIDO U2F & FIDO 2.0, including USB"
   homepage "https://developers.yubico.com/libfido2/"
-  url "https://github.com/Yubico/libfido2/archive/1.11.0.tar.gz"
-  sha256 "0830c5853e3b44099a97166e0cec54a65b54b7faaac07071872f77b8e4d7b302"
+  url "https://github.com/Yubico/libfido2/archive/1.12.0.tar.gz"
+  sha256 "813d6d25116143d16d2e96791718a74825da16b774a8d093d96f06ae1730d9c5"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libfido2"
-    sha256 cellar: :any, mojave: "e1e77e4025408e5c4035078428bd6fb7a08df74bbfbc50e5c0e5cf5fd7cfa275"
+    sha256 cellar: :any, mojave: "a83c23e3d15b01cc68d6b4eb75108d3b54c9243f13cfccb44d9ad932889fdbc8"
   end
 
   depends_on "cmake" => :build
