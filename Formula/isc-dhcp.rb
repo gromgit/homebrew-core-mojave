@@ -1,8 +1,8 @@
 class IscDhcp < Formula
   desc "Production-grade DHCP solution"
   homepage "https://www.isc.org/dhcp"
-  url "https://ftp.isc.org/isc/dhcp/4.4.3/dhcp-4.4.3.tar.gz"
-  sha256 "0e3ec6b4c2a05ec0148874bcd999a66d05518378d77421f607fb0bc9d0135818"
+  url "https://ftp.isc.org/isc/dhcp/4.4.3-P1/dhcp-4.4.3-P1.tar.gz"
+  sha256 "0ac416bb55997ca8632174fd10737fd61cdb8dba2752160a335775bc21dc73c7"
   license "MPL-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class IscDhcp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isc-dhcp"
-    sha256 mojave: "c805faefa16bda2ea28c50b06b0cf9de3f73d88b4afc5cd73438d136a6ea5f3a"
+    sha256 mojave: "5b50588d187b3ae5ef998d324bf5bacddbcedc6b8426b65dbf38abf95a05d3c5"
   end
 
   def install
