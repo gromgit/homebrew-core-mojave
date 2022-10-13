@@ -7,22 +7,27 @@ class Ipmiutil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipmiutil"
-    sha256 cellar: :any_skip_relocation, mojave: "2e17021392c4778698c421df2c4b70b1249045c96ea2b41a4ea295c7b26506b3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d1db80754c3296c2194880c926124134660b6181493bed9a31b4b6a96dc3a0b5"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "openssl@1.1"
+  on_macos do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
 
   conflicts_with "renameutils", because: "both install `icmd` binaries"
 
   def install
     # Darwin does not exist only on PowerPC
-    inreplace "configure.ac", "test \"$archp\" = \"powerpc\"", "true"
-    system "autoreconf", "-fiv"
+    if OS.mac?
+      inreplace "configure.ac", "test \"$archp\" = \"powerpc\"", "true"
+      system "autoreconf", "--force", "--install", "--verbose"
+    end
 
     system "./configure", *std_configure_args,
+                          "--disable-silent-rules",
                           "--disable-lanplus",
                           "--enable-sha256",
                           "--enable-gpl"
