@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://github.com/pupnp/pupnp/releases/download/release-1.14.13/libupnp-1.14.13.tar.bz2"
-  sha256 "025d7aee1ac5ca8f0bd99cb58b83fcfca0efab0c5c9c1d48f72667fe40788a4e"
+  url "https://github.com/pupnp/pupnp/releases/download/release-1.14.14/libupnp-1.14.14.tar.bz2"
+  sha256 "3ae23a2f2dbe3c4fe845a14d114d092743dac1184d024a8e900c2d3e78362150"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Libupnp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libupnp"
-    sha256 cellar: :any, mojave: "f113fb2cf104963ff808050cac477074d5c2924b05e56606a04e5d51823ce6b3"
+    sha256 cellar: :any, mojave: "1eafaa8f5749e534f21e564355abf74b02bcd3e3b7b76be31189950bfafbfc00"
   end
 
   def install
