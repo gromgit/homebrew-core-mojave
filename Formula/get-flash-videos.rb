@@ -4,11 +4,11 @@ class GetFlashVideos < Formula
   url "https://github.com/monsieurvideo/get-flash-videos/archive/1.25.99.03.tar.gz"
   sha256 "37267b41c7b0c240d99ed1f5e7ba04d00f98a8daff82ac9edd2b12c3bca83d73"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/get-flash-videos"
-    sha256 cellar: :any_skip_relocation, mojave: "f712d00bb15daa9b52ce9b3dcc7c38c70193d22a2eb3ae4f354f88a7737f225c"
+    sha256 cellar: :any_skip_relocation, mojave: "81bbf841dee2ae01c0dd4a427eb5dbe5cc23dd3e44022aed96ab32d3550a92c9"
   end
 
   depends_on "rtmpdump"
