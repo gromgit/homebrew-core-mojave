@@ -1,14 +1,14 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
   homepage "https://luau-lang.org"
-  url "https://github.com/Roblox/luau/archive/0.545.tar.gz"
-  sha256 "7863c3d29af213fd393415af60ae4a5546999902bf2da1ef3370cf03e2cbd2ea"
+  url "https://github.com/Roblox/luau/archive/0.548.tar.gz"
+  sha256 "1ec0aa919955aaa2d88dbef115801681d3b4dbfa7a276435a03d20230918659c"
   license "MIT"
   head "https://github.com/Roblox/luau.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luau"
-    sha256 cellar: :any_skip_relocation, mojave: "4ef117d04d53a66e141a7a4dc7d463558cf7d1d3c3d0a0d6902ed0ae28e809fc"
+    sha256 cellar: :any_skip_relocation, mojave: "ab78184f3fc255c7601082784e02bd1be3a09916878acb0d330de09c6f122ed2"
   end
 
   depends_on "cmake" => :build
