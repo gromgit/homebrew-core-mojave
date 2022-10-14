@@ -1,15 +1,14 @@
 class Portmidi < Formula
   desc "Cross-platform library for real-time MIDI I/O"
   homepage "https://github.com/PortMidi/portmidi"
-  url "https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "934f80e1b09762664d995e7ab5a9932033bc70639e8ceabead817183a54c60d0"
+  url "https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.4.tar.gz"
+  sha256 "64893e823ae146cabd3ad7f9a9a9c5332746abe7847c557b99b2577afa8a607c"
   license "MIT"
-  revision 1
   version_scheme 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/portmidi"
-    sha256 cellar: :any, mojave: "f86f306df7b544be696cf81415ca0e926054ebd303f3404067a7fe2b0bc3168a"
+    sha256 cellar: :any, mojave: "a58d3ede45d508da28bc00b7e85df0344cabc08e7d171e694d4515be2167af68"
   end
 
   depends_on "cmake" => :build
@@ -27,9 +26,9 @@ class Portmidi < Formula
       ENV["SDKROOT"] = MacOS.sdk_path
     end
 
-    system "cmake", ".", *std_cmake_args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
