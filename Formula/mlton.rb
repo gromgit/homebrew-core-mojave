@@ -15,8 +15,8 @@ class Mlton < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlton"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d044459fcc80384bb59a3e08fd305b506bbe1f7f8609b769b7aa81dd62043156"
+    rebuild 2
+    sha256 cellar: :any, mojave: "ae609cda4714d8946a380f2b1ffaac881d190c9d48f87fdf14474a452f508824"
   end
 
   depends_on "autoconf" => :build
@@ -26,11 +26,19 @@ class Mlton < Formula
   # The corresponding upstream binary release used to bootstrap.
   resource "bootstrap" do
     on_macos do
+      # See https://projects.laas.fr/tina/howto-arm64-darwin.html and
+      # https://projects.laas.fr/tina/software.php
+      on_arm do
+        url "https://projects.laas.fr/tina/software/mlton-20210117-1.arm64-darwin-21.6-gmp-static.tgz"
+        sha256 "5d8cc4046f502ca7d98670d53915e3a1973ec0826e4c4c23e25d483fa657c1e8"
+      end
       # https://github.com/Homebrew/homebrew-core/pull/58438#issuecomment-665375929
       # new `mlton-20210117-1.amd64-darwin-17.7.gmp-static.tgz` artifact
       # used here for bootstrapping all homebrew versions
-      url "https://downloads.sourceforge.net/project/mlton/mlton/20210117/mlton-20210117-1.amd64-darwin-19.6.gmp-static.tgz"
-      sha256 "5bea9f60136ea6847890c5f4e45d7126a32ef14fd46a2303cab875ca95c8cd76"
+      on_intel do
+        url "https://downloads.sourceforge.net/project/mlton/mlton/20210117/mlton-20210117-1.amd64-darwin-19.6.gmp-static.tgz"
+        sha256 "5bea9f60136ea6847890c5f4e45d7126a32ef14fd46a2303cab875ca95c8cd76"
+      end
     end
 
     on_linux do
