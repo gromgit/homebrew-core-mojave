@@ -1,14 +1,14 @@
 class Nfdump < Formula
   desc "Tools to collect and process netflow data on the command-line"
   homepage "https://github.com/phaag/nfdump"
-  url "https://github.com/phaag/nfdump/archive/v1.6.24.tar.gz"
-  sha256 "11ea7ecba405d57076c321f6f77491f1c64538062630131c98ac62dc4870545e"
+  url "https://github.com/phaag/nfdump/archive/v1.7.0.1.tar.gz"
+  sha256 "d7c4b400f506bee1b0f0baecb9285bb7230588f0afa050bb898d5d48454b1632"
   license "BSD-3-Clause"
   head "https://github.com/phaag/nfdump.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nfdump"
-    sha256 cellar: :any, mojave: "399f771738bacc10748d3ac50934b468aec2822b1db99e8009bc199720182964"
+    sha256 mojave: "643f11e2e11ef9c595bdf3ae0aa95215acfcdd405ec9cc3ab7fdc11d06ea3353"
   end
 
   depends_on "autoconf" => :build
