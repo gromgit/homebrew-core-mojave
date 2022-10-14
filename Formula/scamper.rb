@@ -1,8 +1,8 @@
 class Scamper < Formula
   desc "Advanced traceroute and network measurement utility"
   homepage "https://www.caida.org/catalog/software/scamper/"
-  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20211212a.tar.gz"
-  sha256 "d986b429655dce36629d1821ea6f32d65cc418f7d22b1ea4330621bffb35c18c"
+  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20211212c.tar.gz"
+  sha256 "c04417aaf7eed717b88b49b7174bb5fb3a6e33da8f989523d110b3f6f37ff8c3"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,17 +12,11 @@ class Scamper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scamper"
-    sha256 cellar: :any, mojave: "7e1dee330057a612a955f417e544e25b7b05ab42fb22a254d1635f075f74fadd"
+    sha256 cellar: :any, mojave: "942045b1ad43c661e364bfba1caccde6c817098a183ec09d2546463c6d6e003c"
   end
 
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     system "./configure", *std_configure_args
