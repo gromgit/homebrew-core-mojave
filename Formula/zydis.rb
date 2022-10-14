@@ -1,25 +1,33 @@
 class Zydis < Formula
   desc "Fast and lightweight x86/x86_64 disassembler library"
   homepage "https://zydis.re"
-  url "https://github.com/zyantific/zydis.git",
-      tag:      "v3.2.1",
-      revision: "4022f22f9280650082a9480519c86a6e2afde2f3"
   license "MIT"
   head "https://github.com/zyantific/zydis.git", branch: "master"
 
+  stable do
+    url "https://github.com/zyantific/zydis.git",
+        tag:      "v3.2.1",
+        revision: "4022f22f9280650082a9480519c86a6e2afde2f3"
+
+    # Fix build on ARM Monterey. Remove in the next release.
+    patch do
+      url "https://github.com/zyantific/zydis/commit/29bb0163342b782b0c07134f989c0a9bb76beec0.patch?full_index=1"
+      sha256 "8a23636bee945f9397367c65b4c0559e33f40a7650942047f5aca5c18b3601f6"
+    end
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zydis"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "3f97e852161157729678c9972cb41270b262a95dd67c0373da3c5822f3f63421"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "0a63d8ae8def963707e741d727a3a463b5d7dbaabc090aa831fd5d090bf9a1d7"
   end
 
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
