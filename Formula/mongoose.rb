@@ -4,10 +4,11 @@ class Mongoose < Formula
   url "https://github.com/cesanta/mongoose/archive/7.8.tar.gz"
   sha256 "55073dcd427ab9475731ad855e417884f4fbfb24b7d5694f6cabadbee1329f16"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mongoose"
-    sha256 cellar: :any, mojave: "6ec7443d2754894048b3bd649f80772eeae67df1d7ddfe3d42c86d35f8784121"
+    sha256 cellar: :any, mojave: "6d8de184e3a6f1ca6e11cd2c015407d942dce170da234298d51da6190031b3b9"
   end
 
   depends_on "openssl@1.1"
