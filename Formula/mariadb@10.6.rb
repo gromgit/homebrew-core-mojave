@@ -1,10 +1,9 @@
 class MariadbAT106 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.6.8/source/mariadb-10.6.8.tar.gz"
-  sha256 "57a9488559ccbdfb8506b781089a7a08d8e0e1b647cffb8f2706af06f69ed438"
+  url "https://downloads.mariadb.com/MariaDB/mariadb-10.6.10/source/mariadb-10.6.10.tar.gz"
+  sha256 "6ad9fa86f0c85c8eeafad2643549d5ff5dd2872002964e754752de91863aa3b7"
   license "GPL-2.0-only"
-  revision 1
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
   # requirement. In the future, this will be updated to use a `Json` strategy
@@ -25,7 +24,7 @@ class MariadbAT106 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.6"
-    sha256 mojave: "e0fe858a93862c640689252e8dfdab7621bce8f8ec88596039e147cc1923fd2a"
+    sha256 cellar: :any_skip_relocation, mojave: "f0774544bc655834669270721fc294fabbf89e9576f0a113cb63334930c1ab03"
   end
 
   keg_only :versioned_formula
@@ -46,7 +45,6 @@ class MariadbAT106 < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "gcc"
     depends_on "linux-pam"
     depends_on "readline" # uses libedit on macOS
   end
