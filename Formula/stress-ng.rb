@@ -1,13 +1,13 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
   homepage "https://wiki.ubuntu.com/Kernel/Reference/stress-ng"
-  url "https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.14.05.tar.gz"
-  sha256 "2ee20333d306037cf44f4e8d038bc6253106dcb54f37ee548e9adfd94a6a391c"
+  url "https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.14.06.tar.gz"
+  sha256 "54f6c3f84b20efedafd3394ec168e53632a685cfdd76f24270653e898d9ede08"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stress-ng"
-    sha256 cellar: :any_skip_relocation, mojave: "ea9028e120f7b8a3896e00d4e6755c3db0ab9917f4fa7f8895d945ade4e38e40"
+    sha256 cellar: :any_skip_relocation, mojave: "e23f0116becbdec618bbfa374ed5b00074c3b4b58cf8eaa6bd67416163f7fbe8"
   end
 
   depends_on macos: :sierra
