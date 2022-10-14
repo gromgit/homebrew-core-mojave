@@ -1,14 +1,14 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
   homepage "https://xmake.io/"
-  url "https://github.com/xmake-io/xmake/releases/download/v2.7.1/xmake-v2.7.1.tar.gz"
-  sha256 "e44085090641547d8814afcc345d641d8ce1e38b6e05fee7375fc88150c0803d"
+  url "https://github.com/xmake-io/xmake/releases/download/v2.7.2/xmake-v2.7.2.tar.gz"
+  sha256 "2d1159fd8910cd532b09315cbf7e3c8943df57f2b22952174c8cd04ba0358a14"
   license "Apache-2.0"
   head "https://github.com/xmake-io/xmake.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xmake"
-    sha256 cellar: :any_skip_relocation, mojave: "43fefe7a1a84521be6dcd363a20ef1f74ce749ad318e7603a9b0495ec9a5fefb"
+    sha256 cellar: :any_skip_relocation, mojave: "81a5c1b8a7ccca3de6817cdcc3587c5d7354a8a93e188396dba676093aa13594"
   end
 
   on_linux do
