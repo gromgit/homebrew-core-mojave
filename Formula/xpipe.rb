@@ -1,8 +1,8 @@
 class Xpipe < Formula
   desc "Split input and feed it into the given utility"
   homepage "https://www.netmeister.org/apps/xpipe.html"
-  url "https://www.netmeister.org/apps/xpipe-2.1.tar.gz"
-  sha256 "0d0656a738fcec16dc01e5a6a62e9d9e00016ea750bc5f972ee077022dd04715"
+  url "https://www.netmeister.org/apps/xpipe-2.2.tar.gz"
+  sha256 "a381be1047adcfa937072dffa6b463455d1f0777db6bc5ea2682cd6321dc5add"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Xpipe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xpipe"
-    sha256 cellar: :any_skip_relocation, mojave: "89f8bf2b2db995b0df683c96a16f9069bedc4ac19eb0c67457411e3719025ced"
+    sha256 cellar: :any_skip_relocation, mojave: "78781679c3d7bea6ac9be9d10da89942ef500ad6f1a5644c9717081ee3fcbc08"
   end
 
   on_linux do
