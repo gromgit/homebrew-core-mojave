@@ -25,7 +25,8 @@ class MariadbAT104 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb@10.4"
-    sha256 mojave: "70c9da71d19093d64488a019e2b746af42ea9705448b9713302af53dc05c088b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b37bb9b8ad919b9fbba1070afb463c9ea160d07956131bbc272d44808d8a2c24"
   end
 
   keg_only :versioned_formula
@@ -46,7 +47,6 @@ class MariadbAT104 < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "gcc"
     depends_on "linux-pam"
   end
 
