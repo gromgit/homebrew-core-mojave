@@ -1,9 +1,9 @@
 class Flac < Formula
   desc "Free lossless audio codec"
   homepage "https://xiph.org/flac/"
-  url "https://downloads.xiph.org/releases/flac/flac-1.4.0.tar.xz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.0.tar.xz"
-  sha256 "af41c0733c93c237c3e52f64dd87e3b0d9af38259f1c7d11e8cbf583c48c2506"
+  url "https://downloads.xiph.org/releases/flac/flac-1.4.1.tar.xz", using: :homebrew_curl
+  mirror "https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.1.tar.xz"
+  sha256 "91303c3e5dfde52c3e94e75976c0ab3ee14ced278ab8f60033a3a12db9209ae6"
   license all_of: [
     "BSD-3-Clause",
     "GPL-2.0-or-later",
@@ -21,7 +21,7 @@ class Flac < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flac"
-    sha256 cellar: :any, mojave: "885daaadd1d24f52e7f3c5845c7d9f61d914a7d6c18acb50a67d1e9e67c385f7"
+    sha256 cellar: :any_skip_relocation, mojave: "6a34da6fc81d9fb6ce354ac44642eb13da61230622a0dc9cbfd0de3163b335a9"
   end
 
   head do
