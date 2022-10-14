@@ -1,9 +1,9 @@
 class WlaDx < Formula
   desc "Yet another crossassembler package"
   homepage "https://github.com/vhelin/wla-dx"
-  url "https://github.com/vhelin/wla-dx/archive/v10.2.tar.gz"
-  sha256 "c02045c70a26c224f1921dde67acd38eb570d2fb3fc4d5c19119cce7f62114db"
-  license "GPL-2.0"
+  url "https://github.com/vhelin/wla-dx/archive/v10.3.tar.gz"
+  sha256 "e07d157746f43ceba97c1706c4fc86db2e7e0345e94cd2e3eadd7cf8c6d2f8a7"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
@@ -13,7 +13,7 @@ class WlaDx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wla-dx"
-    sha256 cellar: :any_skip_relocation, mojave: "71fffd1ebf464f842d004b2a38d7df72a4709bf2b44b784e691a8e24b946fd44"
+    sha256 cellar: :any_skip_relocation, mojave: "07165525d894793615e71aab814becb916c936bc2fed68dfa8576f2ade942cda"
   end
 
   depends_on "cmake" => :build
