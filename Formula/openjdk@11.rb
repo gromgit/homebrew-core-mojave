@@ -4,6 +4,7 @@ class OpenjdkAT11 < Formula
   url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.16.1-ga.tar.gz"
   sha256 "3008e50e258a5e9a488a814df2998b9823b6c2959d6a5a85221d333534d2f24c"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +13,7 @@ class OpenjdkAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk@11"
-    sha256 cellar: :any, mojave: "5ef9d72c44b2609c80234455ebcb6db91669cac2e048914f1430a72675e214f4"
+    sha256 cellar: :any_skip_relocation, mojave: "930438bb87c93cf540eb11435dce3bbbc0359f8042ecaf953281ea9a09af9792"
   end
 
   keg_only :versioned_formula
@@ -33,6 +34,9 @@ class OpenjdkAT11 < Formula
     depends_on "unzip"
     depends_on "zip"
 
+    # FIXME: This should not be needed because of the `-rpath` flag
+    #        we set in `--with-extra-ldflags`, but this configuration
+    #        does not appear to have made it to the linker.
     ignore_missing_libraries "libjvm.so"
   end
 
@@ -78,11 +82,13 @@ class OpenjdkAT11 < Formula
       --without-version-pre
     ]
 
+    ldflags = ["-Wl,-rpath,#{loader_path}/server"]
     args += if OS.mac?
+      ldflags << "-headerpad_max_install_names"
+
       %W[
+        --enable-dtrace
         --with-sysroot=#{MacOS.sdk_path}
-        --enable-dtrace=auto
-        --with-extra-ldflags=-headerpad_max_install_names
       ]
     else
       %W[
@@ -91,6 +97,7 @@ class OpenjdkAT11 < Formula
         --with-fontconfig=#{HOMEBREW_PREFIX}
       ]
     end
+    args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
     chmod 0755, "configure"
     system "./configure", *args
