@@ -2,15 +2,14 @@ class Helm < Formula
   desc "Kubernetes package manager"
   homepage "https://helm.sh/"
   url "https://github.com/helm/helm.git",
-      tag:      "v3.9.4",
-      revision: "dbc6d8e20fe1d58d50e6ed30f09a04a77e4c68db"
+      tag:      "v3.10.0",
+      revision: "ce66412a723e4d89555dc67217607c6579ffcb21"
   license "Apache-2.0"
   head "https://github.com/helm/helm.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "797cc64ec7a0078b95e1639625029b4ea4a62b6192ee533e9f77ad592e4a10c6"
+    sha256 cellar: :any_skip_relocation, mojave: "6950c4f60083594cca3688ab30d0b5e84d72b49521644783c474f4db2db4c61e"
   end
 
   depends_on "go" => :build
