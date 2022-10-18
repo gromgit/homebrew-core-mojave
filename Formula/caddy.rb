@@ -1,21 +1,21 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/v2.5.2.tar.gz"
-  sha256 "6a3e03774658af8009c0ece287301d73c1ea961d01e6ef7c6f44962e4349f5e5"
+  url "https://github.com/caddyserver/caddy/archive/v2.6.1.tar.gz"
+  sha256 "ae698b4618dc6ffe7370b0607d59ee78833cb4986ca5663c50a9ae0b90072ac1"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/caddy"
-    sha256 cellar: :any_skip_relocation, mojave: "3d482b1c9c2d499bbc79c7515ca91a9a9ba0f58d65b92398c16737e915c7b17a"
+    sha256 cellar: :any_skip_relocation, mojave: "49f9e1388aec5cb41e644c59473f06e80ee26e18ce2622db509ef021c655bd1a"
   end
 
   depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https://github.com/caddyserver/xcaddy/archive/v0.3.0.tar.gz"
-    sha256 "1a59ff6f51959072a512002e7ec280ea96775361277ba046a8af5a820a37aacd"
+    url "https://github.com/caddyserver/xcaddy/archive/v0.3.1.tar.gz"
+    sha256 "b99d989590724deac893859002c3fc573fb66b3606c1012c425ae563d0971440"
   end
 
   def install
@@ -24,6 +24,8 @@ class Caddy < Formula
     resource("xcaddy").stage do
       system "go", "run", "cmd/xcaddy/main.go", "build", revision, "--output", bin/"caddy"
     end
+
+    generate_completions_from_executable("go", "run", "cmd/caddy/main.go", "completion")
   end
 
   service do
