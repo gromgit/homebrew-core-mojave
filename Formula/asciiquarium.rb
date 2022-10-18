@@ -8,7 +8,7 @@ class Asciiquarium < Formula
   url "https://robobunny.com/projects/asciiquarium/asciiquarium_1.1.tar.gz"
   sha256 "1b08c6613525e75e87546f4e8984ab3b33f1e922080268c749f1777d56c9d361"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
 
   livecheck do
     url "https://robobunny.com/projects/asciiquarium/"
@@ -17,8 +17,7 @@ class Asciiquarium < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciiquarium"
-    rebuild 1
-    sha256 cellar: :any, mojave: "47569eea81fe4330bf405c13e1f7661a3e25be42f2a2f202533da4ac3f7b9bcf"
+    sha256 cellar: :any, mojave: "225f74b82da686ee7f67736bd602a6892f783c0d2caff07944935d51860e959d"
   end
 
   depends_on "ncurses"
