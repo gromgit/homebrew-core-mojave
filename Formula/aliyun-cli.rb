@@ -2,13 +2,13 @@ class AliyunCli < Formula
   desc "Universal Command-Line Interface for Alibaba Cloud"
   homepage "https://github.com/aliyun/aliyun-cli"
   url "https://github.com/aliyun/aliyun-cli.git",
-      tag:      "v3.0.125",
-      revision: "5ae6a7cb26202440429d8f4f8f13f2508128b2db"
+      tag:      "v3.0.128",
+      revision: "2b91f599be2a628e4c4905b385f2115568b1331b"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aliyun-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "196fb531964014b439aea9938fd71e4a3a10416c428b35a41991d4a740ce96fd"
+    sha256 cellar: :any_skip_relocation, mojave: "17b280ccc10295c847f68f14de3df15c645283bc2af14d23f2f7140b5a7a88ef"
   end
 
   depends_on "go" => :build
