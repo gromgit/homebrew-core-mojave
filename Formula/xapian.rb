@@ -1,8 +1,8 @@
 class Xapian < Formula
   desc "C++ search engine library"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.20/xapian-core-1.4.20.tar.xz"
-  sha256 "ce2be5eff72075c8106c0340e70b1093dbcebe2ab42dc1c1be08dd3ad419442d"
+  url "https://oligarchy.co.uk/xapian/1.4.21/xapian-core-1.4.21.tar.xz"
+  sha256 "80f86034d2fb55900795481dfae681bfaa10efbe818abad3622cdc0c55e06f88"
   license "GPL-2.0-or-later"
   version_scheme 1
 
@@ -13,8 +13,7 @@ class Xapian < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xapian"
-    rebuild 2
-    sha256 cellar: :any, mojave: "8527d615c862978a884f727ad259bf7acde85384e79d360527ee241747353cb0"
+    sha256 cellar: :any, mojave: "0c3096328614bea8ee61b54b76754adbe6cea2d23a1004d1766c06c1c6bf135e"
   end
 
   depends_on "python@3.10" => [:build, :test]
