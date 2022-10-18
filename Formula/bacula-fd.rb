@@ -3,20 +3,20 @@ class BaculaFd < Formula
   homepage "https://www.bacula.org/"
   url "https://downloads.sourceforge.net/project/bacula/bacula/13.0.1/bacula-13.0.1.tar.gz"
   sha256 "d63848d695ac15c1ccfc117892753314bcb9232a852c40e32cca88c0e918978a"
-  license "AGPL-3.0-only"
+  license "AGPL-3.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bacula-fd"
-    sha256 mojave: "9ba7d55abb9a330b0d1ddb5ee48918e9fc99029fe5a9ee18f3928d470e318db8"
+    rebuild 1
+    sha256 mojave: "6b78800f14028b0e32018b30b441994070b78887d2f3dba3a6920abcd13fd479"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "zlib"
 
-  conflicts_with "bareos-client",
-    because: "both install a `bconsole` executable"
+  conflicts_with "bareos-client", because: "both install a `bconsole` executable"
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
