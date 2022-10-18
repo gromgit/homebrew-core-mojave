@@ -4,11 +4,11 @@ class SdlMixer < Formula
   url "https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.12.tar.gz"
   sha256 "1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a"
   license "Zlib"
-  revision 5
+  revision 6
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl_mixer"
-    sha256 cellar: :any, mojave: "a5aec07a08ea314449ea7f9e402d146e1ae3fec9677ff4d0391712a49b74a1b1"
+    sha256 cellar: :any, mojave: "e8a0f9a37391157dd2bf3a945a2c7483fe4311963ed365e17bbc40449ce48a22"
   end
 
   head do
@@ -28,7 +28,7 @@ class SdlMixer < Formula
   depends_on "libmikmod"
   depends_on "libogg"
   depends_on "libvorbis"
-  depends_on "sdl"
+  depends_on "sdl12-compat"
 
   # Source file for sdl_mixer example
   resource "playwave" do
@@ -59,9 +59,9 @@ class SdlMixer < Formula
     cocoa = []
     cocoa << "-Wl,-framework,Cocoa" if OS.mac?
     system ENV.cc, "playwave.c", *cocoa, "-I#{include}/SDL",
-                   "-I#{Formula["sdl"].opt_include}/SDL",
+                   "-I#{Formula["sdl12-compat"].opt_include}/SDL",
                    "-L#{lib}", "-lSDL_mixer",
-                   "-L#{Formula["sdl"].lib}", "-lSDLmain", "-lSDL",
+                   "-L#{Formula["sdl12-compat"].lib}", "-lSDLmain", "-lSDL",
                    "-o", "playwave"
     Utils.safe_popen_read({ "SDL_VIDEODRIVER" => "dummy", "SDL_AUDIODRIVER" => "disk" },
                           "./playwave", test_fixtures("test.wav"))
