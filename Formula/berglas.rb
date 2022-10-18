@@ -7,13 +7,16 @@ class Berglas < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/berglas"
-    sha256 cellar: :any_skip_relocation, mojave: "15baee033fd6e55f60e49db28ded626c32264e2a7b248db13fd595e534a52f25"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9c6d325897ff96f3395e7981bbee8f8a8a48469c626f6e02af104151cedefe97"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args
+
+    generate_completions_from_executable(bin/"berglas", "completion", shells: [:bash, :zsh])
   end
 
   test do
