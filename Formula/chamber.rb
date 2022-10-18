@@ -14,11 +14,11 @@ class Chamber < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chamber"
-    sha256 cellar: :any_skip_relocation, mojave: "bc37d88982bdee1eb7bac8a8580a5836b4fa6be9e351cc8cb4607a78ca2fad7e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0d60b1eac00b47ae004e9dd8f0f8a99a35d6d4fad4f30f1f942b601214a3bef9"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", "-ldflags", "-s -w -X main.Version=v#{version}", "-trimpath", "-o", bin/"chamber"
