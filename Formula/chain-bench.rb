@@ -8,13 +8,16 @@ class ChainBench < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chain-bench"
-    sha256 cellar: :any_skip_relocation, mojave: "f1dd61ac5d30961becb582e2efc565e161e57987fc01a81f3efc044035d468bc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7663d0c808b00e24f592c0256d0c46128fdd9cd8387d8d34d2c016305dc3de45"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X=main.version=#{version}"), "./cmd/chain-bench"
+
+    generate_completions_from_executable(bin/"chain-bench", "completion")
   end
 
   test do
