@@ -8,7 +8,8 @@ class ArgocdAutopilot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argocd-autopilot"
-    sha256 cellar: :any_skip_relocation, mojave: "682cbd031b3bc4ed1b3c7ede30efe1224536e58f40e0c92b0d1f0723a800d4d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ece1c56bef78f2e9deead4613127559df09f3294a8af716d362788082815c671"
   end
 
   depends_on "go" => :build
@@ -16,6 +17,8 @@ class ArgocdAutopilot < Formula
   def install
     system "make", "cli-package", "DEV_MODE=false"
     bin.install "dist/argocd-autopilot"
+
+    generate_completions_from_executable(bin/"argocd-autopilot", "completion")
   end
 
   test do
