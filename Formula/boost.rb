@@ -1,10 +1,9 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2"
-  sha256 "475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39"
+  url "https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.tar.bz2"
+  sha256 "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
   license "BSL-1.0"
-  revision 2
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -17,8 +16,7 @@ class Boost < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost"
-    rebuild 1
-    sha256 cellar: :any, mojave: "e540f6c31ab34c7f9354f3395d84cc59a51cad993031011e06dc4425e89a525e"
+    sha256 cellar: :any, mojave: "48b54dadb4523387e07d85009b5d76999eb3e824ffbf887d8655f794342e16f5"
   end
 
   depends_on "icu4c"
