@@ -8,13 +8,16 @@ class Assh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/assh"
-    sha256 cellar: :any_skip_relocation, mojave: "ed54ea07e5e08f8ad3b82d080d6d838f9cd9d202bccb39f5e348b3407d615e08"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d0ce56d489f6fc6f815604008f5d6c5fcd61080e2ad2efc243c0fc4ca87af175"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    generate_completions_from_executable(bin/"assh", "completion")
   end
 
   test do
