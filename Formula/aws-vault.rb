@@ -12,7 +12,8 @@ class AwsVault < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-vault"
-    sha256 cellar: :any_skip_relocation, mojave: "8cf48cdde614abdb5dab86c9194cf9b05c05d2b3a4b2173981009c0c2475c9e1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "33bb08e49fb54af17783f7baac87a9fb25cd6e6c6bab1efafa129a093a203d3a"
   end
 
   depends_on "go" => :build
@@ -29,6 +30,7 @@ class AwsVault < Formula
 
     zsh_completion.install "contrib/completions/zsh/aws-vault.zsh"
     bash_completion.install "contrib/completions/bash/aws-vault.bash"
+    fish_completion.install "contrib/completions/fish/aws-vault.fish"
   end
 
   test do
