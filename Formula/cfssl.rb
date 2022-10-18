@@ -1,14 +1,14 @@
 class Cfssl < Formula
   desc "CloudFlare's PKI toolkit"
   homepage "https://cfssl.org/"
-  url "https://github.com/cloudflare/cfssl/archive/v1.6.2.tar.gz"
-  sha256 "8285ebc135a04ed4e927f8ec9253b683976cf73f683f3be7d11af677f3435341"
+  url "https://github.com/cloudflare/cfssl/archive/v1.6.3.tar.gz"
+  sha256 "501e44601baabfac0a4f3431ff989b6052ce5b715e0fe4586eaf5e1ecac68ed3"
   license "BSD-2-Clause"
   head "https://github.com/cloudflare/cfssl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfssl"
-    sha256 cellar: :any_skip_relocation, mojave: "09a76e642702079f3f9b2c37ccafba3cdc3f61b4b37f98d8b45f999cc91477dc"
+    sha256 cellar: :any_skip_relocation, mojave: "3cec02bc8ee05e0f0f4204f45ac6397655faeab20d0dcbf38242bad5b98b772c"
   end
 
   depends_on "go" => :build
