@@ -4,6 +4,7 @@ class AircrackNg < Formula
   url "https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz"
   sha256 "05a704e3c8f7792a17315080a21214a4448fd2452c1b0dd5226a3a55f90b58c3"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause", "OpenSSL"]
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,15 +13,14 @@ class AircrackNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aircrack-ng"
-    rebuild 1
-    sha256 mojave: "788f1d6a44b04eba0862cd7729432bb285b3999fd4c6b79e24a0005c7906ce04"
+    sha256 mojave: "7fb862ca2dd2443e8acb017efe3a31363a7c0d342983b76bd4c6e8043c64033a"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
   depends_on "sqlite"
 
