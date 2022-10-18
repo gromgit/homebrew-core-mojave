@@ -4,6 +4,7 @@ class Atari800 < Formula
   url "https://github.com/atari800/atari800/releases/download/ATARI800_5_0_0/atari800-5.0.0-src.tgz"
   sha256 "eaa2df7b76646f1e49d5e564391707e5a4b56d961810cff6bc7c809bfa774605"
   license "GPL-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +14,11 @@ class Atari800 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atari800"
-    sha256 cellar: :any, mojave: "7901dcdd58298c0b4b7487e73ab2adf4d6762bd0852d5592697cc51c36213cd6"
+    sha256 cellar: :any, mojave: "3522dc7dbc69219a5de61e16977cc14631118d3b673459502efae0464636c901"
   end
 
   depends_on "libpng"
-  depends_on "sdl"
+  depends_on "sdl12-compat"
 
   def install
     system "./configure", "--prefix=#{prefix}",
