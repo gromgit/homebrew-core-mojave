@@ -1,8 +1,8 @@
 class Cortex < Formula
   desc "Long term storage for Prometheus"
   homepage "https://cortexmetrics.io/"
-  url "https://github.com/cortexproject/cortex/archive/v1.13.0.tar.gz"
-  sha256 "dd955b58091b7b0596e4bdc716cb855b8b15fdafa878c35c86ebbf4eac922064"
+  url "https://github.com/cortexproject/cortex/archive/v1.13.1.tar.gz"
+  sha256 "aa742a608c8201fcca41061cd2264d1b8eebe61c22259a5289de3a226aeee7e3"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Cortex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cortex"
-    sha256 cellar: :any_skip_relocation, mojave: "e9d6c5563f97604f893109240a313fe991704bdb120bd172a5fe761603f9f233"
+    sha256 cellar: :any_skip_relocation, mojave: "d4bd4b5efb27ded3a05506ea13713b3ce88fe33cdc6cf82a68e0ad69eca8fa2b"
   end
 
   depends_on "go" => :build
