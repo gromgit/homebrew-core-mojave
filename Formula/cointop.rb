@@ -7,14 +7,16 @@ class Cointop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cointop"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "94a66e9aae526b1a5ac7a524a9badcbbc4e6d1f3f9d5bbd9b936ec50b88c9ec2"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "46bf035fe31dc6ccb04fde1df94f28e82572a9abb748b0571237a430baeb615c"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/cointop-sh/cointop/cointop.version=#{version}")
+
+    generate_completions_from_executable(bin/"cointop", "completion")
   end
 
   test do
