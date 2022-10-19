@@ -9,7 +9,8 @@ class DockerBuildx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-buildx"
-    sha256 cellar: :any_skip_relocation, mojave: "8fc5d5461cfb42584a48cf025630c9fefeb8385c3374452d152e4b9e5cbd99b8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2bc3837b17a25ebb95b780cf1f234bc91bb52120b1c2b28df774035fc8a49d99"
   end
 
   depends_on "go" => :build
@@ -24,6 +25,8 @@ class DockerBuildx < Formula
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/buildx"
 
     doc.install Dir["docs/reference/*.md"]
+
+    generate_completions_from_executable(bin/"docker-buildx", "completion")
   end
 
   def caveats
