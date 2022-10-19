@@ -2,14 +2,14 @@ class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
   homepage "https://eksctl.io"
   url "https://github.com/weaveworks/eksctl.git",
-      tag:      "0.111.0",
-      revision: "9a99e9218dca43507e940996072ab3872da9361a"
+      tag:      "0.114.0",
+      revision: "48660cbd1a03a57eb2a5de09be49375a116ec080"
   license "Apache-2.0"
   head "https://github.com/weaveworks/eksctl.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eksctl"
-    sha256 cellar: :any_skip_relocation, mojave: "2677ece3fab260977269bd785f151624b97e952f516afacccd177f25009048a8"
+    sha256 cellar: :any_skip_relocation, mojave: "879ccfded57f2d3b352780ec0ba8941c15f1334727bfdcedf1a506d80c3dd78e"
   end
 
   depends_on "counterfeiter" => :build
@@ -35,6 +35,7 @@ class Eksctl < Formula
                                                           buildpath/"ifacemaker"
 
     ENV["GOBIN"] = HOMEBREW_PREFIX/"bin"
+    ENV.deparallelize # Makefile prerequisites need to be run in order
     system "make", "build"
     bin.install "eksctl"
 
