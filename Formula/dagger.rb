@@ -9,7 +9,8 @@ class Dagger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dagger"
-    sha256 cellar: :any_skip_relocation, mojave: "6137cf523fb0cd66013a99314f2e200aec61aa31b9bed0625f72fbe9f82b1c29"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9ba39915928dd0afec5db61741b6c7d28af242c536e2819ba716eb2c7114199c"
   end
 
   depends_on "go" => :build
