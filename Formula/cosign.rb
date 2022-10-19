@@ -2,14 +2,14 @@ class Cosign < Formula
   desc "Container Signing"
   homepage "https://github.com/sigstore/cosign"
   url "https://github.com/sigstore/cosign.git",
-      tag:      "v1.12.0",
-      revision: "8483d6c71f153f38f237ba79c88d0fda6306e6e3"
+      tag:      "v1.13.0",
+      revision: "6b9820a68e861c91d07b1d0414d150411b60111f"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cosign"
-    sha256 cellar: :any_skip_relocation, mojave: "0f5cab717cfbef4c488a2126e4b0414df647f49bde12d9c4a5c187db3280ec59"
+    sha256 cellar: :any_skip_relocation, mojave: "1b37dcd46ac6bc7d4f6f2e9664c2e5661f1e8d1ca20d32f4440dd7c9fe28a865"
   end
 
   depends_on "go" => :build
@@ -25,6 +25,8 @@ class Cosign < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cosign"
+
+    generate_completions_from_executable(bin/"cosign", "completion")
   end
 
   test do
