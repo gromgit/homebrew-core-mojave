@@ -8,11 +8,11 @@ class Ctop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ctop"
-    sha256 cellar: :any_skip_relocation, mojave: "7d3d0b8d4867f9f476996652451ea3ff26eea24b09fb3a52d7706fdd2a8cabd2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "af96ab25f413170e55ead7bd2cbba7c71ff6e21ae6c7377438038d15dec13c56"
   end
 
-  # Bump to 1.18 on the next release (0.7.7 or later).
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "make", "build"
