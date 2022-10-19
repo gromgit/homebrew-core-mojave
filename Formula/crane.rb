@@ -7,7 +7,8 @@ class Crane < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crane"
-    sha256 cellar: :any_skip_relocation, mojave: "c03e485d1cc0fc151e271983ea781f79a10b3a860e186692d252ceaeb29b1ab2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "db007b35f1ba8352b8897f95963b9db5aaa4e15d6182180a995ced698b5246ca"
   end
 
   depends_on "go" => :build
@@ -19,6 +20,8 @@ class Crane < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/crane"
+
+    generate_completions_from_executable(bin/"crane", "completion")
   end
 
   test do
