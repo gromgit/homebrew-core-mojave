@@ -1,14 +1,14 @@
 class Dasel < Formula
   desc "JSON, YAML, TOML, XML, and CSV query and modification tool"
   homepage "https://github.com/TomWright/dasel"
-  url "https://github.com/TomWright/dasel/archive/v1.26.1.tar.gz"
-  sha256 "44c90753cf4c1b6e7fb82074c6701fd4b47dc6dc26fe4e5504dcccb4d273b946"
+  url "https://github.com/TomWright/dasel/archive/v1.27.1.tar.gz"
+  sha256 "4dd83d68347b895d62ec2749d782a9dbddf314bafef502eac7c5fdcc4058b85d"
   license "MIT"
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dasel"
-    sha256 cellar: :any_skip_relocation, mojave: "bb31b1605663e5aeefe675f1c969f62d718a9b260a17cf07cc61f77d27d7988d"
+    sha256 cellar: :any_skip_relocation, mojave: "b4cb4d7a49d287a0e4d878b75813089bc40c2d7c1f554bd64c94fcb6e3aa3829"
   end
 
   depends_on "go" => :build
@@ -16,6 +16,8 @@ class Dasel < Formula
   def install
     ldflags = "-X 'github.com/tomwright/dasel/internal.Version=#{version}'"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/dasel"
+
+    generate_completions_from_executable(bin/"dasel", "completion")
   end
 
   test do
