@@ -23,9 +23,15 @@ class Devd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/devd"
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, mojave: "48b3ab4c2f8b6567da1bebcf0b8d66a109d40b411ceff8ae5edf6eca515f781f"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, mojave: "10b5153c020b6a6e4bdef2f3044a0f4eafd61985364d770530f792bb8f4677d2"
   end
+
+  # Current release is from 2019-01-20 and needs deprecated `dep` to build.
+  # We backported upstream support for Go modules, but have not received
+  # a response on request for a new release since 2021-01-21.
+  # Issue ref: https://github.com/cortesi/devd/issues/115
+  deprecate! date: "2022-09-21", because: :unmaintained
 
   depends_on "go" => :build
 
