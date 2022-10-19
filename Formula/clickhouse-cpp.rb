@@ -4,24 +4,26 @@ class ClickhouseCpp < Formula
   url "https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "53eaccb1dbb96f82d27400a8e336bbf59c9bcb15495458c09e4c569717314f17"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-cpp"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a62b31114725600003ab4ba3f525832d68202ef7cdb7b419f9591ff43f3693fe"
+    sha256 cellar: :any, mojave: "95cbb51eb1572f26f8b44a4c1e301feefe44baeb3ae1bcad8910297245b96631"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   fails_with gcc: "5"
   fails_with gcc: "6"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-      "-DWITH_OPENSSL=ON", "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}", *std_cmake_args
+                    "-DWITH_OPENSSL=ON",
+                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
