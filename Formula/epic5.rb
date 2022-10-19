@@ -5,6 +5,7 @@ class Epic5 < Formula
   mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/epic5/epic5-2.1.12.tar.xz"
   sha256 "c89ae4fc014ddcf0084b748e22f47b46a85ab1ac9bf0b22560360ba8626b6da6"
   license "BSD-3-Clause"
+  revision 1
   head "http://git.epicsol.org/epic5.git", branch: "master"
 
   livecheck do
@@ -14,20 +15,19 @@ class Epic5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/epic5"
-    sha256 mojave: "17135f6c4c97a8e5535defa8eec4c10ece2804bdd58e72a4d1ab91ac2697d8d4"
+    sha256 mojave: "aa105b62d0e194632b5f792ee3a16c9e878b10cf58c1e23594f588d610c24ab4"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--mandir=#{man}",
                           "--with-ipv6",
-                          "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}"
+                          "--with-ssl=#{Formula["openssl@3"].opt_prefix}"
     system "make"
     system "make", "install"
   end
