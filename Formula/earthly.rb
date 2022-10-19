@@ -2,14 +2,14 @@ class Earthly < Formula
   desc "Build automation tool for the container era"
   homepage "https://earthly.dev/"
   url "https://github.com/earthly/earthly.git",
-      tag:      "v0.6.23",
-      revision: "d6f689104aaaf38178a3f58e1a969eacded7341d"
+      tag:      "v0.6.25",
+      revision: "b9a16aa25c15201998ddc7781efca5934c1f7660"
   license "MPL-2.0"
   head "https://github.com/earthly/earthly.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/earthly"
-    sha256 cellar: :any_skip_relocation, mojave: "ab31097f38932c26e5f3c4682fc2683dda796cbe5f3dc6011c3f1649ddb77d44"
+    sha256 cellar: :any_skip_relocation, mojave: "9401185665060bf8ff9147118d3af7980709d4e4181a600c444aa7c64fed7e94"
   end
 
   depends_on "go" => :build
