@@ -1,14 +1,14 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https://www.citusdata.com"
-  url "https://github.com/citusdata/citus/archive/v11.1.1.tar.gz"
-  sha256 "fa678e03d633467379448cbd64fca89f70a0653b0b26745a38ad64bed1ed2cff"
+  url "https://github.com/citusdata/citus/archive/v11.1.2.tar.gz"
+  sha256 "1cdc917606dc4fdbd3eb7cc6c98171713c50a9f31f3a872f6e295546b1224244"
   license "AGPL-3.0-only"
   head "https://github.com/citusdata/citus.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/citus"
-    sha256 cellar: :any, mojave: "e36474f61e0f0cfac45653e39dc3f696ad7f092bb9d99a55f9739e009e77850e"
+    sha256 cellar: :any, mojave: "f4a6f73bb02e7387d5a9bd7e9ca60691514b08d69c0cd780c89e1ab12bb19359"
   end
 
   depends_on "lz4"
