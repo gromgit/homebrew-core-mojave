@@ -7,13 +7,16 @@ class Ghorg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghorg"
-    sha256 cellar: :any_skip_relocation, mojave: "e02595dbea5882aafc2d349424d8a3b8431e5bddb1c5640b031f83ee24cae59d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6311eb45432b9c07fa4d1b1ff5bab86fdb2e6630e33c3d6dd013e57fb0cfe6ed"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    generate_completions_from_executable(bin/"ghorg", "completion")
   end
 
   test do
