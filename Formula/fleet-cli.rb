@@ -14,7 +14,8 @@ class FleetCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fleet-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "b69e63b2cdfb8c5e068c2aaab1cb4432f5cb328d8350579e7b61cfa93edea56f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4197d9c11d298d064f96b370546addaeb4bbd205ac4a1ea470df6303c0772996"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,8 @@ class FleetCli < Formula
       -X github.com/rancher/fleet/pkg/version.GitCommit=#{Utils.git_short_head}
     ]
     system "go", "build", *std_go_args(output: bin/"fleet", ldflags: ldflags)
+
+    generate_completions_from_executable(bin/"fleet", "completion", base_name: "fleet")
   end
 
   test do
