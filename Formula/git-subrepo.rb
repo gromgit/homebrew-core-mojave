@@ -1,8 +1,8 @@
 class GitSubrepo < Formula
   desc "Git Submodule Alternative"
   homepage "https://github.com/ingydotnet/git-subrepo"
-  url "https://github.com/ingydotnet/git-subrepo/archive/0.4.3.tar.gz"
-  sha256 "d2e3cc58f8ac3d90f6f351ae2f9cc999b133b8581ab7a0f7db4933dec8e62c2a"
+  url "https://github.com/ingydotnet/git-subrepo/archive/0.4.5.tar.gz"
+  sha256 "bb2f139222cfecb85fe9983cd8f9d572942f60097d6d736e2e6b01d1292e0a8a"
   license "MIT"
   head "https://github.com/ingydotnet/git-subrepo.git", branch: "master"
 
@@ -13,8 +13,7 @@ class GitSubrepo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-subrepo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "42e686bfb0df1a1c2fdd15fd96f444f1d6400163d08da5c92b1eb06b560acd54"
+    sha256 cellar: :any_skip_relocation, mojave: "1980304e4b65652e9ffd9b211844698ecf19b5a963819616681733fb98302b3a"
   end
 
   depends_on "bash"
