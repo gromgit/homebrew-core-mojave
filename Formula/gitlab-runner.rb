@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v15.3.0",
-      revision: "bbcb5aba76d966f60c76629301d0e2cac4ee09b7"
+      tag:      "v15.4.0",
+      revision: "43b2dc3d83ed12442f8a106ceef1be993797f355"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -14,11 +14,10 @@ class GitlabRunner < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
-    sha256 cellar: :any_skip_relocation, mojave: "cf75733c8494155b9d3a3b93708b563dcd7621feb9e74b66f9d5bf79e3bec8cd"
+    sha256 cellar: :any_skip_relocation, mojave: "e4387c00f324a1245b3d1ac6ceccc1e1459c10b7d04426f9fe47ae8f30726478"
   end
 
-  # Bump to 1.18 when x/sys is updated (likely 14.9).
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     proj = "gitlab.com/gitlab-org/gitlab-runner"
