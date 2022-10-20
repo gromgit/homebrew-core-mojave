@@ -8,6 +8,7 @@ class Kpcli < Formula
   url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.8.1.pl"
   sha256 "6c84f8639245799bf9b2d5ce297c41b5d4ec0789f7f5fa9e8767556816ea472c"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
 
   livecheck do
     url :stable
@@ -16,7 +17,7 @@ class Kpcli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kpcli"
-    sha256 cellar: :any, mojave: "32ee48ba1463d47eb2d3f8615fa2f7da4ea79e316675098abf5707d61567cad0"
+    sha256 cellar: :any, mojave: "7e6437a3bc5f869238292ba2d86ff38135c5ff9947b8a949b240fb66a6292b72"
   end
 
   depends_on "readline"
