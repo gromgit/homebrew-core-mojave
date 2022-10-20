@@ -12,7 +12,8 @@ class Immudb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/immudb"
-    sha256 cellar: :any_skip_relocation, mojave: "88daa42dce2c44c663af9f5c1357ab040f39c6ece3853f40d19c838e9e58e359"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c0f4b369b0cfb9a78e1fe9fa8aa28fe60b7b86c41bd8bcd0704de15d998549ca"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,11 @@ class Immudb < Formula
   def install
     ENV["WEBCONSOLE"] = "default"
     system "make", "all"
-    bin.install %w[immudb immuclient immuadmin]
+
+    %w[immudb immuclient immuadmin].each do |binary|
+      bin.install binary
+      generate_completions_from_executable(bin/binary, "completion")
+    end
   end
 
   def post_install
