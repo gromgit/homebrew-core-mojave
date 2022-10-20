@@ -4,10 +4,11 @@ class Gptfdisk < Formula
   url "https://downloads.sourceforge.net/project/gptfdisk/gptfdisk/1.0.9/gptfdisk-1.0.9.tar.gz"
   sha256 "dafead2693faeb8e8b97832b23407f6ed5b3219bc1784f482dd855774e2d50c2"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gptfdisk"
-    sha256 cellar: :any, mojave: "ed13c0bcc27692e29cb7412f908a2817e023f7372a46bcea126cc5520f4bf2b6"
+    sha256 cellar: :any, mojave: "bb73e5bc9f19a602ccaeefebf679bd76dbd38dd7028f6c074d450647c4764173"
   end
 
   depends_on "popt"
@@ -17,6 +18,10 @@ class Gptfdisk < Formula
   on_linux do
     depends_on "util-linux"
   end
+
+  # Backport upstream commit to fix crash with popt 1.19. Remove in the next release.
+  # Ref: https://sourceforge.net/p/gptfdisk/code/ci/5d5e76d369a412bfb3d2cebb5fc0a7509cef878d/
+  patch :DATA
 
   def install
     if OS.mac?
@@ -48,3 +53,16 @@ class Gptfdisk < Formula
     assert_match "Found valid GPT with protective MBR", shell_output("#{bin}/gdisk -l test.dmg")
   end
 end
+
+__END__
+--- a/gptcl.cc
++++ b/gptcl.cc
+@@ -155,7 +155,7 @@
+    } // while
+
+    // Assume first non-option argument is the device filename....
+-   device = (char*) poptGetArg(poptCon);
++   device = strdup((char*) poptGetArg(poptCon));
+    poptResetContext(poptCon);
+
+    if (device != NULL) {
