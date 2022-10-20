@@ -2,7 +2,7 @@ class SdlImage < Formula
   desc "Image file loading library"
   homepage "https://github.com/libsdl-org/SDL_image"
   license "Zlib"
-  revision 8
+  revision 9
 
   stable do
     url "https://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.12.tar.gz"
@@ -19,7 +19,7 @@ class SdlImage < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl_image"
-    sha256 cellar: :any, mojave: "6f62b9308533072a25b895f4ad48a596d91e31b612f368e853221726ad8746aa"
+    sha256 cellar: :any, mojave: "b7405efbd6663c24f1b17881ef2d99f71fa2dacf5270e39a7bb8da2755ef870e"
   end
 
   head do
@@ -38,7 +38,7 @@ class SdlImage < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "sdl"
+  depends_on "sdl12-compat"
   depends_on "webp"
 
   def install
