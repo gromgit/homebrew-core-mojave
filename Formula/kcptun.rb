@@ -1,14 +1,14 @@
 class Kcptun < Formula
   desc "Stable & Secure Tunnel based on KCP with N:M multiplexing and FEC"
   homepage "https://github.com/xtaci/kcptun"
-  url "https://github.com/xtaci/kcptun/archive/refs/tags/v20220628.tar.gz"
-  sha256 "6a63facc902594b4ca5f0456e58196cf7b2a2451594fe2f69b55ac712ceb85e8"
+  url "https://github.com/xtaci/kcptun/archive/refs/tags/v20221008.tar.gz"
+  sha256 "a52dcbe336a27c256a4f25ceed5961754ea584a899b92757c54e7bac25d5efae"
   license "MIT"
   head "https://github.com/xtaci/kcptun.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kcptun"
-    sha256 cellar: :any_skip_relocation, mojave: "9175671388190ffe28116f3cc888e289069846a0140be0d9b9f1bdf0b7d0681c"
+    sha256 cellar: :any_skip_relocation, mojave: "0fbdc5dde811a50b1c49de37ac8dbfc51303b50c48f550d5f13f04a74efa8092"
   end
 
   depends_on "go" => :build
