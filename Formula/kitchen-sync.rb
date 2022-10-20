@@ -13,17 +13,13 @@ class KitchenSync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kitchen-sync"
-    rebuild 1
-    sha256 cellar: :any, mojave: "3d1e929e3eccaaa9b091a38398140f75a0e18745c3f916c6e117bf7529fb5ce3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "2bf9367311c743957fae7b03b2ef22d6c0af4c396db44b224bad2e12094bef0d"
   end
 
   depends_on "cmake" => :build
   depends_on "libpq"
   depends_on "mysql-client"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
