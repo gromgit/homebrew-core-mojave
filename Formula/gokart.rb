@@ -1,14 +1,14 @@
 class Gokart < Formula
   desc "Static code analysis for securing Go code"
   homepage "https://github.com/praetorian-inc/gokart"
-  url "https://github.com/praetorian-inc/gokart/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "ac73f90d274851ac00e2f3fb269a493ea9b4c06eb8d6d1db0ae953bf85129ad6"
+  url "https://github.com/praetorian-inc/gokart/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "81bf1e26531117de4da9b160ede80aa8f6c4d4984cc1d7dea398083b8e232eb7"
   license "Apache-2.0"
   head "https://github.com/praetorian-inc/gokart.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gokart"
-    sha256 cellar: :any_skip_relocation, mojave: "a7bb67337799a6441f637f7c1e844ded7a09780a5d9381e1464f08eb436c5628"
+    sha256 cellar: :any_skip_relocation, mojave: "fe21c55df3429ca876c8b7286d4e4ef5a43a5dd407f97f5ac0e9dde64b115d30"
   end
 
   depends_on "go" => [:build, :test]
