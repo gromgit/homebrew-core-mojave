@@ -7,13 +7,16 @@ class K6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/k6"
-    sha256 cellar: :any_skip_relocation, mojave: "5daf03a916f88647348cd869674ded432cb42b4784dcb4ea3c8ff9f920a28461"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "666ec0b41e50e54196fef0b07604b83680a56ebbe79f41ca312f96ca2a636d06"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    generate_completions_from_executable(bin/"k6", "completion")
   end
 
   test do
