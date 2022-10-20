@@ -13,14 +13,15 @@ class Graphicsmagick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphicsmagick"
-    rebuild 1
-    sha256 mojave: "ded5e42e2b9533f38be6f9448f0caab937502e376d9aae08507e3ddc8760b3eb"
+    rebuild 2
+    sha256 mojave: "5b0f583e9a18189bbc8bdd61ee51954155f2fce4db05bedb059d9b55311aaa44"
   end
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "jasper"
   depends_on "jpeg-turbo"
+  depends_on "jpeg-xl"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libtool"
@@ -47,7 +48,7 @@ class Graphicsmagick < Formula
       --without-gslib
       --with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts
       --without-wmf
-      --without-jxl
+      --with-jxl
     ]
 
     # versioned stuff in main tree is pointless for us
