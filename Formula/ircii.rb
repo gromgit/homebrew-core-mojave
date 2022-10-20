@@ -19,12 +19,13 @@ class Ircii < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ircii"
-    rebuild 1
-    sha256 mojave: "d56b1b315a78204f69d04e122cc499e5917c9f86d15dadac663f13408e3c17dc"
+    rebuild 2
+    sha256 mojave: "6ac00e33f57c799bf3d3a3890362f68202d79e4a2aa081db6c8aab34061f2ae0"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
 
   def install
