@@ -4,12 +4,12 @@ class Innotop < Formula
   url "https://github.com/innotop/innotop/archive/v1.13.0.tar.gz"
   sha256 "6ec91568e32bda3126661523d9917c7fbbd4b9f85db79224c01b2a740727a65c"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 2
+  revision 3
   head "https://github.com/innotop/innotop.git"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/innotop"
-    sha256 cellar: :any, mojave: "139a09f36409ed3edf70b71bb0246203940446846912ce8e26ad926d08d63a2c"
+    sha256 cellar: :any, mojave: "ec077f5808f807de042739e272773ca5940dc4cdb0456b4df3003d9cee237759"
   end
 
   depends_on "mysql-client"
