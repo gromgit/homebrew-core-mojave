@@ -7,13 +7,14 @@ class Gaze < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gaze"
-    sha256 cellar: :any_skip_relocation, mojave: "f48865bf7b3d7492262860e2c45dcb151cb537138f2161b0e2fa60b27b4ca2f5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "50be79c8fb492dccc9a587b2e8fd0008f6916c22bfbe9ac114405acc9dd213e1"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "cmd/gaze/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/gaze/main.go"
   end
 
   test do
