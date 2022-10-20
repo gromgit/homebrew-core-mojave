@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://github.com/onflow/flow-cli/archive/v0.39.3.tar.gz"
-  sha256 "e51d1db4c01147ca3f94c63c03d532c733055aa7bba608559700f3aac957a5f3"
+  url "https://github.com/onflow/flow-cli/archive/v0.41.0.tar.gz"
+  sha256 "475538f6c3a16e5ce0cc2eebaee7609f85a096d0e92ba42b4493c32933fbcf2c"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -13,7 +13,7 @@ class FlowCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flow-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "dc6933729c05764ded60e06b0653e3e081b71877254727b3c9975a3d5d97a9b5"
+    sha256 cellar: :any_skip_relocation, mojave: "4720717e284d8e766febfe0342ad8f6893c3368b97ae6839474d1e1dd9f3d032"
   end
 
   depends_on "go" => :build
@@ -21,6 +21,8 @@ class FlowCli < Formula
   def install
     system "make", "cmd/flow/flow", "VERSION=v#{version}"
     bin.install "cmd/flow/flow"
+
+    generate_completions_from_executable(bin/"flow", "completion", base_name: "flow")
   end
 
   test do
