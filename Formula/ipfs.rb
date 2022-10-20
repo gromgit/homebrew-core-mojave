@@ -2,8 +2,8 @@ class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https://ipfs.tech/"
   url "https://github.com/ipfs/kubo.git",
-      tag:      "v0.15.0",
-      revision: "3ae52a41e39ec95aacc48d67b2882c9baeabc2ff"
+      tag:      "v0.16.0",
+      revision: "38117db6fcd76f38d9183f597739fd5be81c893f"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -17,12 +17,10 @@ class Ipfs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipfs"
-    sha256 cellar: :any_skip_relocation, mojave: "879e561749ccc4147a82a25056db9a2f843245915ba958672fddd8c254c91ca1"
+    sha256 cellar: :any_skip_relocation, mojave: "bfef262291d0379d50191aa585aaad274e9b57236010df1091e1b15f654a4a07"
   end
 
-  # Required lucas-clemente/quic-go >= 0.28
-  # Try to switch to the latest go on the next release
-  depends_on "go@1.18" => :build
+  depends_on "go" => :build
 
   def install
     system "make", "build"
