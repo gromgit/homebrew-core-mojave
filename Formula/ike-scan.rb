@@ -8,21 +8,20 @@ class IkeScan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ike-scan"
-    rebuild 1
-    sha256 mojave: "88728ac1f5b9a1f5b902538c2054a9cea44e814565a51251db8bb1336563aa0a"
+    rebuild 2
+    sha256 mojave: "e0d89e1fb8fe6db9450bd2a89096d25e07a0abb95e31da9c55a77fdbd1e1a4d2"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
-    system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args,
                           "--mandir=#{man}",
-                          "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}"
+                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
   end
 
