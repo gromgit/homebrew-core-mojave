@@ -1,14 +1,14 @@
 class Gator < Formula
   desc "CLI Utility for Open Policy Agent Gatekeeper"
   homepage "https://open-policy-agent.github.io/gatekeeper/website/docs/gator"
-  url "https://github.com/open-policy-agent/gatekeeper/archive/refs/tags/v3.9.0.tar.gz"
-  sha256 "af77ac7eedbe429e2b7df2f8470bc98d0af41a99f0829d95fc7883d34e23ba4d"
+  url "https://github.com/open-policy-agent/gatekeeper/archive/refs/tags/v3.9.1.tar.gz"
+  sha256 "4f7691aa7562b7ee5c707d6f322d2dc25ab06cf4784f6f9ca991ee27ec5b839e"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/gatekeeper.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gator"
-    sha256 cellar: :any_skip_relocation, mojave: "b114d1f9bf900e7cb934ecdd3e3ca521fe061ef95ed7aec2f5f380ae3b60c1e1"
+    sha256 cellar: :any_skip_relocation, mojave: "2a17d7b571e30a8f27ed3ca87121bc3fd802ee7403ea9dff05f525ed068f4eeb"
   end
 
   depends_on "go" => :build
@@ -19,6 +19,8 @@ class Gator < Formula
       -X github.com/open-policy-agent/gatekeeper/pkg/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gator"
+
+    generate_completions_from_executable(bin/"gator", "completion")
   end
 
   test do
