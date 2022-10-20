@@ -7,11 +7,11 @@ class Grpcui < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpcui"
-    sha256 cellar: :any_skip_relocation, mojave: "e531c4ae7f3f18a8d74c819961ce5b11c3bb1eeefd7ee3e92dbc8a6dab655728"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d71463952f5a94519dc70e33e86e9e85ea6f203880fef49dcc620adca361db22"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/grpcui"
