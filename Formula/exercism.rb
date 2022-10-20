@@ -1,8 +1,8 @@
 class Exercism < Formula
   desc "Command-line tool to interact with exercism.io"
   homepage "https://exercism.io/cli/"
-  url "https://github.com/exercism/cli/archive/v3.0.13.tar.gz"
-  sha256 "ecc27f272792bc8909d14f11dd08f0d2e9bde4cc663b3769e00eab6e65328a9f"
+  url "https://github.com/exercism/cli/archive/v3.1.0.tar.gz"
+  sha256 "34653a6a45d49daef10db05672c9b4e36c3c30e09d57c3c0f737034d071ae4f6"
   license "MIT"
   head "https://github.com/exercism/cli.git", branch: "main"
 
@@ -13,8 +13,7 @@ class Exercism < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exercism"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "b98e5e9e1f138e072be157e06b762288470546d847feeee14dbdb34670e335f5"
+    sha256 cellar: :any_skip_relocation, mojave: "2a9e942e5a2a613a774f098be960b289174dc41b9a73ef144b61977d087d430c"
   end
 
   depends_on "go" => :build
