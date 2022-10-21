@@ -7,11 +7,11 @@ class Lf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lf"
-    sha256 cellar: :any_skip_relocation, mojave: "bb3061c216a1ee54500ac208e70346819410930b5f944f02e222a6888dd7dd87"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ffcec518d849189e3468bb4c641cfe35a5bcfd2b640ce72af63e32d61d0606e5"
   end
 
-  # Bump to 1.18 on the next release.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.gVersion=#{version}")
