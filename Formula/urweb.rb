@@ -7,7 +7,8 @@ class Urweb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/urweb"
-    sha256 mojave: "6a940959601142ee746f55d7d8877e831e2c63c93fb0edbd196d0247e8a2a88a"
+    rebuild 1
+    sha256 mojave: "fe4390deadf370bfaa734583295c78031352602d86b62cbe36840d1a07e1f1ae"
   end
 
   depends_on "autoconf" => :build
