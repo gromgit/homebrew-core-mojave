@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://gravitational.com/teleport"
-  url "https://github.com/gravitational/teleport/archive/v10.2.2.tar.gz"
-  sha256 "aaa475f8538cffe443e6138a54cd6eebec54444a48fc70c761579832518736c6"
+  url "https://github.com/gravitational/teleport/archive/v10.3.1.tar.gz"
+  sha256 "1546a7ad535732fd6d6e80d54bca31b6f02195cf5f58b6930801a1b457d47516"
   license "Apache-2.0"
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -17,7 +17,7 @@ class Teleport < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teleport"
-    sha256 cellar: :any, mojave: "75cb51f92f614d1a666e95d6b92083729e4a5315d4115c6225606bbaaf6d1528"
+    sha256 cellar: :any, mojave: "38a4b3b48f7b5c50e3fa0a686a9c5c8aba76655cdc011f6a3cad0d5a89158329"
   end
 
   depends_on "go" => :build
@@ -32,8 +32,8 @@ class Teleport < Formula
 
   # Keep this in sync with https://github.com/gravitational/teleport/tree/v#{version}
   resource "webassets" do
-    url "https://github.com/gravitational/webassets/archive/e42ac15dbc20b8e302187a4ad9cf2ce95df2e7ae.tar.gz"
-    sha256 "78308ce7d724da0b7004d23061e8cd8b4132150797b15c24fff85327427a93bf"
+    url "https://github.com/gravitational/webassets/archive/6710dcd0dc19ad101bac3259c463ef940f2ab1f3.tar.gz"
+    sha256 "29115a3be8f570dd0951484435fa56166d7fa352f18399e8d20f5ba8242f11f7"
   end
 
   def install
