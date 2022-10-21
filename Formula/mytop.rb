@@ -5,7 +5,7 @@ class Mytop < Formula
   mirror "https://deb.debian.org/debian/pool/main/m/mytop/mytop_1.9.1.orig.tar.gz"
   sha256 "179d79459d0013ab9cea2040a41c49a79822162d6e64a7a85f84cdc44828145e"
   license "GPL-2.0-or-later"
-  revision 10
+  revision 11
 
   livecheck do
     skip "Upstream is gone and the formula uses archive.org URLs"
@@ -13,8 +13,7 @@ class Mytop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mytop"
-    rebuild 1
-    sha256 cellar: :any, mojave: "5c49d9fde955798d53564a8cf7ad93d828c400750b3aa7cc18bb9bf5445d8539"
+    sha256 cellar: :any, mojave: "6322f1945709a917a5bd57c44403d9003b11f2d8abb7af0d30c1e2550aead7e0"
   end
 
   depends_on "mysql-client"
