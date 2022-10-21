@@ -2,14 +2,14 @@ class Serf < Formula
   desc "Service orchestration and management tool"
   homepage "https://serfdom.io/"
   url "https://github.com/hashicorp/serf.git",
-      tag:      "v0.10.0",
-      revision: "3805ead385cbd7f3bf57d41facefbe0fe2e848c7"
+      tag:      "v0.10.1",
+      revision: "e853b565da00a84dadd5e2ea0dc7919250ddb726"
   license "MPL-2.0"
   head "https://github.com/hashicorp/serf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/serf"
-    sha256 cellar: :any_skip_relocation, mojave: "7605125182aec862fb8895eb25b433f8093b08a79001871f69d5ecd019edf83c"
+    sha256 cellar: :any_skip_relocation, mojave: "4933a3baf9b7e2ff1aeda49842e560b7c6c598311d7289e1d7a6dfbb8f0d95ac"
   end
 
   depends_on "go" => :build
