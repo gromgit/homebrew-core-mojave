@@ -4,8 +4,8 @@ class Strongswan < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://download.strongswan.org/strongswan-5.9.7.tar.bz2"
-    sha256 "9e64a2ba62efeac81abff1d962522404ebc6ed6c0d352a23ab7c0b2c639e3fcf"
+    url "https://download.strongswan.org/strongswan-5.9.8.tar.bz2"
+    sha256 "d3303a43c0bd7b75a12b64855e8edcb53696f06190364f26d1533bde1f2e453c"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -21,7 +21,7 @@ class Strongswan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/strongswan"
-    sha256 mojave: "da6f95ef3a41b410253083f5fead7120a5b92f060e72bbdf0c08256048722db0"
+    sha256 mojave: "f453516a6400ba162cc722ea2b20bc5f3aa568decbe6b5a64900c1073c3edfc3"
   end
 
   head do
@@ -35,7 +35,7 @@ class Strongswan < Formula
     depends_on "pkg-config" => :build
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     args = %W[
