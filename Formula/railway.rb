@@ -1,14 +1,14 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.app/"
-  url "https://github.com/railwayapp/cli/archive/refs/tags/v2.0.11.tar.gz"
-  sha256 "f7a1ebc94c4f780e90a7fd5d7078e9935cc5b00cec3ba07d4df379dd7d30d35b"
+  url "https://github.com/railwayapp/cli/archive/refs/tags/v2.0.13.tar.gz"
+  sha256 "3f8c754e2ad72fcf7690242ab04d258781c6918b9283c2f1e88b16665802d950"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/railway"
-    sha256 cellar: :any_skip_relocation, mojave: "7540c56f12ea6912685267df68024f43afee1deef7085f8505c6a60e63009b79"
+    sha256 cellar: :any_skip_relocation, mojave: "dd920e81026a98a7fc5e346183c143d5157829915950103214ea090b83dfaf4b"
   end
 
   depends_on "go" => :build
