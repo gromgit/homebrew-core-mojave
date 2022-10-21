@@ -1,17 +1,17 @@
 class Twty < Formula
   desc "Command-line twitter client written in golang"
-  homepage "https://mattn.kaoriya.net/"
+  homepage "https://github.com/mattn/twty/"
   url "https://github.com/mattn/twty/archive/refs/tags/v0.0.13.tar.gz"
   sha256 "4e76ada5e7c5f2e20881fbf303fb50d3d4a443a8e37f2444371a90102737e49b"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/twty"
-    sha256 cellar: :any_skip_relocation, mojave: "88a204abdc6b91f39fad5342d860ec3e2faba7455ad898293b2ed502a91ab5fa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1c684da854c8d6f826c19cb695d1ddc4a0fae9a201897294983bb70969ba6451"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
