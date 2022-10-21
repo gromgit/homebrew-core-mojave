@@ -1,8 +1,8 @@
 class Pgloader < Formula
   desc "Data loading tool for PostgreSQL"
   homepage "https://github.com/dimitri/pgloader"
-  url "https://github.com/dimitri/pgloader/releases/download/v3.6.7/pgloader-bundle-3.6.7.tgz"
-  sha256 "25f1767a5d2f2630c0c81da5dc7e1d2e010882799796b094558283a63da33356"
+  url "https://github.com/dimitri/pgloader/releases/download/v3.6.8/pgloader-bundle-3.6.8.tgz"
+  sha256 "879bc1f8a39aa5b5ec49534855612c69a9f27336827e5f35f925dd88d98d6e81"
   license "PostgreSQL"
   head "https://github.com/dimitri/pgloader.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Pgloader < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgloader"
-    sha256 cellar: :any, mojave: "f6ecca43f89e61714b2e68a1365677a0e1837f8b1affc86d7b11feaf82bc054c"
+    sha256 cellar: :any, mojave: "7a8a7db8a385f4e90b615ca13ef747e31469cc16500c47b6caa837612d7743b3"
   end
 
   depends_on "buildapp" => :build
