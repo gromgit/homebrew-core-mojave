@@ -2,15 +2,14 @@ class Tygo < Formula
   desc "Generate Typescript types from Golang source code"
   homepage "https://github.com/gzuidhof/tygo"
   url "https://github.com/gzuidhof/tygo.git",
-      tag:      "v0.2.3",
-      revision: "8d1f7f32209636f2d3127ffbf56ecd50a641579f"
+      tag:      "v0.2.4",
+      revision: "29d8a4124314a880c4058cd670a4d96acfd208aa"
   license "MIT"
   head "https://github.com/gzuidhof/tygo.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tygo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a3139909a41f10e7480649c7314e9b715bb418a613594323318dd04fff473f27"
+    sha256 cellar: :any_skip_relocation, mojave: "9052db675ea79b3eaa528f4ece1025799052258c312b3aee1e93a50233ecf47b"
   end
 
   depends_on "go" => [:build, :test]
