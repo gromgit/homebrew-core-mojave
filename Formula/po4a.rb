@@ -8,11 +8,12 @@ class Po4a < Formula
   url "https://github.com/mquinson/po4a/releases/download/v0.68/po4a-0.68.tar.gz"
   sha256 "af6124e68c04a0f02a3316cd5610e5d9b923bc2ede77bb7f9b1537717f44b110"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/mquinson/po4a.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/po4a"
-    sha256 cellar: :any, mojave: "318759f5c8c60397ab6f84d88e63ba13da57e44e2bc157130a43205069b25e54"
+    sha256 cellar: :any, mojave: "7fa367282f736bc5e85ceae0f1c4e8542335a84a4936546dabd4d333e515c9db"
   end
 
   depends_on "docbook-xsl" => :build
