@@ -2,8 +2,8 @@ class Kyverno < Formula
   desc "Kubernetes Native Policy Management"
   homepage "https://kyverno.io/"
   url "https://github.com/kyverno/kyverno.git",
-      tag:      "v1.7.3",
-      revision: "f2b63cef77d31697191c63aeef9972ee534974d3"
+      tag:      "v1.8.0",
+      revision: "957a6bc543aa30017b0695eae5a63ded8fe91a32"
   license "Apache-2.0"
   head "https://github.com/kyverno/kyverno.git", branch: "main"
 
@@ -16,8 +16,7 @@ class Kyverno < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kyverno"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "527981130532657a77fe74594c64ee39a2949457a5473a904b3fa38964022ad8"
+    sha256 cellar: :any_skip_relocation, mojave: "93e17fd845dfebae4e79e87cc0e15cbfec4c24fe52f3fa89bfc48572b549455f"
   end
 
   depends_on "go" => :build
