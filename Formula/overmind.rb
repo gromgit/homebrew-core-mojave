@@ -8,15 +8,15 @@ class Overmind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/overmind"
-    sha256 cellar: :any_skip_relocation, mojave: "797014abf41687e3f52dbf940f2d66dcce909831df481e8eccd2b567a4d3d6df"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b9df20df4135c8269061f9b09d88d0ccdabdd7d7fdff8d87cc90875573e897d8"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
   depends_on "tmux"
 
   def install
-    system "go", "build", "-ldflags", "-s -w", "-trimpath", "-o", bin/"overmind"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
     prefix.install_metafiles
   end
 
