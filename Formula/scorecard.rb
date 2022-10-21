@@ -2,14 +2,14 @@ class Scorecard < Formula
   desc "Security health metrics for Open Source"
   homepage "https://github.com/ossf/scorecard"
   url "https://github.com/ossf/scorecard.git",
-      tag:      "v4.5.0",
-      revision: "69eb1ccf1d0cf8c5b291044479f18672bf250325"
+      tag:      "v4.7.0",
+      revision: "7cd6406aef0b80a819402e631919293d5eb6adcf"
   license "Apache-2.0"
   head "https://github.com/ossf/scorecard.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scorecard"
-    sha256 cellar: :any_skip_relocation, mojave: "86a31535029c1704451819b8d78093573b9a18c0a23a545b68693215bea05992"
+    sha256 cellar: :any_skip_relocation, mojave: "8b980c9b63b891d1f822ae78e074925fd1cfd34abc39431f69ff4d368c5b539f"
   end
 
   depends_on "go" => :build
@@ -30,7 +30,7 @@ class Scorecard < Formula
 
   test do
     ENV["GITHUB_AUTH_TOKEN"] = "test"
-    output = shell_output("#{bin}/scorecard --repo=github.com/kubernetes/kubernetes --checks=Maintained 2>&1", 2)
+    output = shell_output("#{bin}/scorecard --repo=github.com/kubernetes/kubernetes --checks=Maintained 2>&1", 1)
     expected_output = "InitRepo: repo unreachable: GET https://api.github.com/repos/google/oss-fuzz: 401"
     assert_match expected_output, output
 
