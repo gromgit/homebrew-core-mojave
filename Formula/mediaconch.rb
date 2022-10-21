@@ -1,8 +1,9 @@
 class Mediaconch < Formula
   desc "Conformance checker and technical metadata reporter"
   homepage "https://mediaarea.net/MediaConch"
-  url "https://mediaarea.net/download/binary/mediaconch/22.03/MediaConch_CLI_22.03_GNU_FromSource.tar.bz2"
-  sha256 "0c35434b55c7f507b20ef13e0a33fdbc4868cca353b145abb5d2cd13c7f11f23"
+  url "https://mediaarea.net/download/binary/mediaconch/22.09/MediaConch_CLI_22.09_GNU_FromSource.tar.bz2"
+  sha256 "7ce9c4ac76b395029f86d9bed92dd1031375e4387758c9a9fb7275461300cef0"
+  license "BSD-2-Clause"
 
   livecheck do
     url "https://mediaarea.net/MediaConch/Download/Source"
@@ -11,7 +12,7 @@ class Mediaconch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mediaconch"
-    sha256 cellar: :any, mojave: "92e05985e70615186410d35b763ff64d2ce9a79375722368149f80cc2e4356b5"
+    sha256 cellar: :any, mojave: "6812b6676ae64154d4a558fdc118bb95bbc46a54912e9d0d8eb61afb2dd83098"
   end
 
   depends_on "pkg-config" => :build
