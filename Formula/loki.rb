@@ -6,10 +6,15 @@ class Loki < Formula
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/loki"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2cf37fae86cf9cad566d64ab963809ead8a3e125b4a444ebb007db64d463174b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3cb6471a50aaeac127f4393989908e49e3228293dc9ee832d3a21bddbdb440af"
   end
 
   # Required latest https://pkg.go.dev/go4.org/unsafe/assume-no-moving-gc
