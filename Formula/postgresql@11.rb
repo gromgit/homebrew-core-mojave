@@ -4,7 +4,7 @@ class PostgresqlAT11 < Formula
   url "https://ftp.postgresql.org/pub/source/v11.17/postgresql-11.17.tar.bz2"
   sha256 "6e984963ae0765e61577995103a7e6594db0f0bd01528ac123e0de4a6a4cb4c4"
   license "PostgreSQL"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -13,7 +13,7 @@ class PostgresqlAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@11"
-    sha256 mojave: "a19639816164b8933f3bef649b3df04e2d7f5f744924cb3c1a9bbf6e37bfbd01"
+    sha256 cellar: :any_skip_relocation, mojave: "bc60f4fe7a85ad5e1a937b312e4c0a7b78fa03f1c4cd30169695f36f6eaa961e"
   end
 
   keg_only :versioned_formula
