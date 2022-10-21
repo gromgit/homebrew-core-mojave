@@ -4,11 +4,12 @@ class MathComp < Formula
   url "https://github.com/math-comp/math-comp/archive/mathcomp-1.15.0.tar.gz"
   sha256 "33105615c937ae1661e12e9bc00e0dbad143c317a6ab78b1a15e1d28339d2d95"
   license "CECILL-B"
+  revision 1
   head "https://github.com/math-comp/math-comp.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/math-comp"
-    sha256 cellar: :any_skip_relocation, mojave: "aa71faaac146a13e6bc9681d7c2979a747f542ea2fddc5374c79535f45f1c25f"
+    sha256 cellar: :any_skip_relocation, mojave: "c7f17879256c11fb75a026f30dc53cbd15eb613cd9842f08272a41f38304b98a"
   end
 
   depends_on "ocaml" => :build
