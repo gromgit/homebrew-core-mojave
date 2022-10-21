@@ -2,14 +2,14 @@ class Kubevela < Formula
   desc "Application Platform based on Kubernetes and Open Application Model"
   homepage "https://kubevela.io"
   url "https://github.com/kubevela/kubevela.git",
-      tag:      "v1.5.5",
-      revision: "b6a7d8621fd515e2a861e90c8e79dd73a4d123d5"
+      tag:      "v1.5.6",
+      revision: "4c525f8e5d51358551418d49e64ef9fdd2885367"
   license "Apache-2.0"
   head "https://github.com/kubevela/kubevela.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubevela"
-    sha256 cellar: :any_skip_relocation, mojave: "db0ad3d85c0e6109d2317c01b0efb05362426f03bfa42fed58398e8f79baacf4"
+    sha256 cellar: :any_skip_relocation, mojave: "a392afab2580be7aebc6db68ddc6cf13c5dcea441619269a5cf05c90525329f5"
   end
 
   depends_on "go" => :build
@@ -23,6 +23,8 @@ class Kubevela < Formula
     ]
 
     system "go", "build", *std_go_args(output: bin/"vela", ldflags: ldflags), "./references/cmd/cli"
+
+    generate_completions_from_executable(bin/"vela", "completion", shells: [:bash, :zsh], base_name: "vela")
   end
 
   test do
