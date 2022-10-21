@@ -4,6 +4,7 @@ class Libmpeg2 < Formula
   url "https://libmpeg2.sourceforge.io/files/libmpeg2-0.5.1.tar.gz"
   sha256 "dee22e893cb5fc2b2b6ebd60b88478ab8556cb3b93f9a0d7ce8f3b61851871d4"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://libmpeg2.sourceforge.io/downloads.html"
@@ -11,20 +12,14 @@ class Libmpeg2 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_monterey: "53c217af18cab898a3583262ceeb010b754b4bedd8f781087725e0e13420014d"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2f1a24fdb40a15928f35ae84326fab5b8d1293ca2b378aee8e45aab9bb5766c"
-    sha256 cellar: :any,                 monterey:       "34f4023a88e69b1c6e59a991dd64973280db238f57daa6dca61ee2da5d77bdbb"
-    sha256 cellar: :any,                 big_sur:        "9f2cfd80d47e975333747fdea41d336071282ae359e9a345835a70611467bd43"
-    sha256 cellar: :any,                 catalina:       "9a8c812495f38eb0d46bff246c632c5dfd97413b2bc949defd9c5d318b9da439"
-    sha256 cellar: :any,                 mojave:         "81161223100cfa38704d3194519be5651f4fcb47765b7e99f1d53ce05e433142"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe8cebc1c57f728d647e10b0d5bd67571274d5c856363e5f7f2959fdc529a3c1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmpeg2"
+    sha256 cellar: :any, mojave: "b8f751210369d9431b70a78e8300db18e7ccdff9184f1b5cc3e21a327c3fa38b"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "sdl"
+  depends_on "sdl12-compat"
 
   def install
     # Otherwise compilation fails in clang with `duplicate symbol ___sputc`
