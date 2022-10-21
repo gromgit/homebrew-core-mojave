@@ -1,14 +1,14 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://github.com/kyma-project/cli/archive/2.6.2.tar.gz"
-  sha256 "c73377dfabca4fb3dcf5ccd28970f8fc1ece771a5c03f33fc05738b55ed59610"
+  url "https://github.com/kyma-project/cli/archive/2.7.1.tar.gz"
+  sha256 "00a1fbdeb6cc258813f456adc6bd7b3b7c3c98eae348849c19911a83be9ccad0"
   license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kyma-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "c2bf1af48cd15dbd7d3a7149f2259e0fd41afee564d81378e20bb1fd1c4814d6"
+    sha256 cellar: :any_skip_relocation, mojave: "887ed77835b36dece7db1fddd0c90f88f16cfcf0e26fe1975bbb45824a6d74a2"
   end
 
   depends_on "go" => :build
@@ -20,6 +20,8 @@ class KymaCli < Formula
     ]
 
     system "go", "build", *std_go_args(output: bin/"kyma", ldflags: ldflags), "./cmd"
+
+    generate_completions_from_executable(bin/"kyma", "completion", base_name: "kyma")
   end
 
   test do
