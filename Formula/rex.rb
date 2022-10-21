@@ -3,11 +3,11 @@ class Rex < Formula
   homepage "https://www.rexify.org"
   url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.13.4.tar.gz"
   sha256 "a86e9270159b41c9a8fce96f9ddc97c5caa68167ca4ed33e97908bfce17098cf"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rex"
-    sha256 cellar: :any_skip_relocation, mojave: "ecdbbb9e8aa500c9ce240d135cdd8f41957c25e8f01ec0b1b98f212e62bc5c7b"
+    sha256 cellar: :any_skip_relocation, mojave: "8b11f6d510c11375aeba30f33055459f0b0fc4c29eb5bfd031bb51195c6c2f9b"
   end
 
   uses_from_macos "perl", since: :big_sur
