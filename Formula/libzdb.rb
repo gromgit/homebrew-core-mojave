@@ -13,7 +13,8 @@ class Libzdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libzdb"
-    sha256 cellar: :any, mojave: "c27108b5c10fbee0cb6de067ad62866a00caa46afa32d81fe9b572e0ffb64624"
+    rebuild 1
+    sha256 cellar: :any, mojave: "de93f4f123be57e25b89d2f8d42c8bec7d1d2ca38b085fa254d0a5a690831e9f"
   end
 
   depends_on "libpq"
@@ -22,11 +23,7 @@ class Libzdb < Formula
   depends_on "openssl@1.1"
   depends_on "sqlite"
 
-  on_linux do
-    depends_on "gcc" # C++ 17 is required
-  end
-
-  fails_with gcc: "5"
+  fails_with gcc: "5" # C++ 17 is required
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
