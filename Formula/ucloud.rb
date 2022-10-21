@@ -7,11 +7,11 @@ class Ucloud < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ucloud"
-    sha256 cellar: :any_skip_relocation, mojave: "b9be8bcb0e42179990f709c474d5438e1136d7ce94ee711872d83a335e47697b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4ffaeace3873b2a648bd17fe76903ab2f283f8ff50d31eae0255f45e3c3e1aac"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     dir = buildpath/"src/github.com/ucloud/ucloud-cli"
