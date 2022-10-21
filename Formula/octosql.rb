@@ -1,14 +1,14 @@
 class Octosql < Formula
   desc "SQL query tool to analyze data from different file formats and databases"
   homepage "https://github.com/cube2222/octosql/"
-  url "https://github.com/cube2222/octosql/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "31d5d37948fd6206c68a6163c5d91e4f99ba0bda362816a0018279f947d1ff37"
+  url "https://github.com/cube2222/octosql/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "7c891953d0e4a286a04ac7cf92a6524493de061f1ad45c3c7a9fc85a7b170558"
   license "MPL-2.0"
   head "https://github.com/cube2222/octosql.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octosql"
-    sha256 cellar: :any_skip_relocation, mojave: "911de79d10553e34d9ad4c5d70e210461d50e36ee40fc9f4edfcc6c979064a7a"
+    sha256 cellar: :any_skip_relocation, mojave: "1997ccab56024ee8cfffdc49caefd53d869b11319de96d826cc2b8a8facd1bca"
   end
 
   depends_on "go" => :build
