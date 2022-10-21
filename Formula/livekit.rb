@@ -1,14 +1,14 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
   homepage "https://livekit.io"
-  url "https://github.com/livekit/livekit/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "e3cc9d98c8936ce1c3d55aed93ed7932f29b077370ae63ed4e81d4b052a72512"
+  url "https://github.com/livekit/livekit/archive/refs/tags/v1.2.3.tar.gz"
+  sha256 "68163a751eb1eccee1233bfba8d3fcf8508b2695b47bd20373aa6ccebbfe369d"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/livekit"
-    sha256 cellar: :any_skip_relocation, mojave: "5db338de037fe469d0219299097a20d4db431470d8a58d25b01e8dd2b60781f7"
+    sha256 cellar: :any_skip_relocation, mojave: "3f728335d8ed46f56af4eda54dd4283732545ba622baaa8d3413e8ab2994cc94"
   end
 
   depends_on "go" => :build
