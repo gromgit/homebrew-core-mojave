@@ -1,8 +1,8 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https://nim-lang.org/"
-  url "https://nim-lang.org/download/nim-1.6.6.tar.xz"
-  sha256 "67b111ce6f3861503b9fcc1cae59fc34d0122566d3ecfef3a064a2174121a452"
+  url "https://nim-lang.org/download/nim-1.6.8.tar.xz"
+  sha256 "0f5b65cdb60f78af41cb075c238983689a1e1f7e25c819f179862c18a484cf57"
   license "MIT"
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
 
@@ -13,10 +13,14 @@ class Nim < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nim"
-    sha256 cellar: :any_skip_relocation, mojave: "9b7dde15ecb952eb5a0c3feed35f6cf1274f6f4cb9d79359827bc42e0c8f9931"
+    sha256 cellar: :any_skip_relocation, mojave: "8dbf652ea40c453696b794d70962d26df759f86741f6548f701501adc2c2a47c"
   end
 
   depends_on "help2man" => :build
+
+  on_linux do
+    depends_on "openssl@1.1"
+  end
 
   def install
     if build.head?
