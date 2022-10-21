@@ -1,19 +1,19 @@
 class Openfortivpn < Formula
   desc "Open Fortinet client for PPP+SSL VPN tunnel services"
   homepage "https://github.com/adrienverge/openfortivpn"
-  url "https://github.com/adrienverge/openfortivpn/archive/v1.18.0.tar.gz"
-  sha256 "01f4c5d97113d55d469b8078d1b2a8966ee1dfd231574322b36ec48c897c5ae9"
+  url "https://github.com/adrienverge/openfortivpn/archive/v1.19.0.tar.gz"
+  sha256 "9e244c3b63176269ce433349e67f8fd6e532f7c8d515f4c97558911a449152c3"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openfortivpn"
-    sha256 mojave: "68231e30686cc0a9eced3965c38555260c7c1cf8816149388543c7ed757b2641"
+    sha256 mojave: "5925455f7a792bb619d24ec750daf86de2ef22d56bf84433d93635a5e7154970"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "./autogen.sh"
