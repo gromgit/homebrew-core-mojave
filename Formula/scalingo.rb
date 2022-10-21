@@ -1,13 +1,13 @@
 class Scalingo < Formula
   desc "CLI for working with Scalingo's PaaS"
   homepage "https://doc.scalingo.com/cli"
-  url "https://github.com/Scalingo/cli/archive/1.25.0.tar.gz"
-  sha256 "6c3a9b45fdda66d548a12a37c9978477bd927fd53e6f7f08d11159a480c8ea77"
+  url "https://github.com/Scalingo/cli/archive/1.26.0.tar.gz"
+  sha256 "34e56539e67c296e90ff10ceeaa070c280fbe4528bcfbe3394ba238f9acc1c99"
   license "BSD-4-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scalingo"
-    sha256 cellar: :any_skip_relocation, mojave: "e88710925a00b34d6a07a4dc299f3d4d6c084a98d22e5e3efb526f88699ec6ed"
+    sha256 cellar: :any_skip_relocation, mojave: "1b1eee9c59902bb433fb4639fcdb0e1a8f25ab245928797738f2c759fede03f6"
   end
 
   depends_on "go" => :build
