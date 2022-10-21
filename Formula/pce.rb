@@ -1,33 +1,38 @@
 class Pce < Formula
   desc "PC emulator"
   homepage "http://www.hampa.ch/pce/"
-  url "http://www.hampa.ch/pub/pce/pce-0.2.2.tar.gz"
-  sha256 "a8c0560fcbf0cc154c8f5012186f3d3952afdbd144b419124c09a56f9baab999"
-  revision 2
-  head "git://git.hampa.ch/pce.git", branch: "master"
+  revision 3
+
+  # TODO: Remove `-fcommon` workaround and switch to `sdl2` on next release
+  stable do
+    url "http://www.hampa.ch/pub/pce/pce-0.2.2.tar.gz"
+    sha256 "a8c0560fcbf0cc154c8f5012186f3d3952afdbd144b419124c09a56f9baab999"
+    depends_on "sdl12-compat"
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ac061de748e0b6bba56957a0b712c65b380d02b4bbc8314a610dee3f6c780e8e"
-    sha256 cellar: :any,                 arm64_big_sur:  "c65bf1ca8a8b83b77fd383807fd783696ce9167b1c54b7a03452b6954cfc7733"
-    sha256 cellar: :any,                 monterey:       "347b4b3c1fce486b29e8123c4511025e4f9e1907171de26f42d65f4fc32216be"
-    sha256 cellar: :any,                 big_sur:        "554c878d6f17167377d677797c295ec5cb65d8e8e5af0ebe320972a42d037c89"
-    sha256 cellar: :any,                 catalina:       "de9b733199b55e9cf2cdd0d73643c3ea199d132320600adf81428d08ebfba8af"
-    sha256 cellar: :any,                 mojave:         "8c0364c490a9b01875ab9c05c7bc5a6cba190e27d941c72bbbb3e17af71ab88a"
-    sha256 cellar: :any,                 high_sierra:    "6c67f811c813423d7380894d6de77aeeeba20d9f18fd36a71653c23b97c433f6"
-    sha256 cellar: :any,                 sierra:         "ae09a42321608dfa10291d2a2a1afed87a137c9612a54e513360022de8e908b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b219c1e06cdb370c7865c4e2a39eb50df89889585a7b77320acfb758bbe13696"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pce"
+    sha256 cellar: :any, mojave: "c67aa89af84c793e9d705a329ea0757514977decb5b3757e4de4a9f4c52121ee"
+  end
+
+  head do
+    url "git://git.hampa.ch/pce.git", branch: "master"
+    depends_on "sdl2"
   end
 
   depends_on "readline"
-  depends_on "sdl"
 
   on_high_sierra :or_newer do
     depends_on "nasm" => :build
   end
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # src/cpu/e68000/e68000.a(e68000.o):(.bss+0x0): multiple definition of `e68_ea_tab'
+    # TODO: Remove in the next release.
+    ENV.append_to_cflags "-fcommon" if OS.linux? && build.stable?
+
+    system "./configure", *std_configure_args,
                           "--without-x",
                           "--enable-readline"
     system "make"
@@ -40,6 +45,6 @@ class Pce < Formula
   end
 
   test do
-    system "#{bin}/pce-ibmpc", "-V"
+    system bin/"pce-ibmpc", "-V"
   end
 end
