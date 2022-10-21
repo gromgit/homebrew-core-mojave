@@ -11,6 +11,7 @@ class SNail < Formula
     "HPND-sell-variant", # GSSAPI code
     "RSA-MD", # MD5 code
   ]
+  revision 1
 
   livecheck do
     url :homepage
@@ -19,18 +20,16 @@ class SNail < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s-nail"
-    rebuild 2
-    sha256 mojave: "cfbf997ca81a95d03c38844b8d338b8fae985e05367ae34e629812a1e9134f4b"
+    sha256 mojave: "ca3200b8daa2d56676b76f5d7baa47718636b47de9468c74a762318124a65c1c"
   end
 
-  depends_on "awk" => :build
-  depends_on "libidn"
-  depends_on "openssl@1.1"
+  depends_on "libidn2"
+  depends_on "openssl@3"
 
   def install
     system "make", "CC=#{ENV.cc}",
-                   "C_INCLUDE_PATH=#{Formula["openssl@1.1"].opt_include}",
-                   "LDFLAGS=-L#{Formula["openssl@1.1"].opt_lib}",
+                   "C_INCLUDE_PATH=#{Formula["openssl@3"].opt_include}",
+                   "LDFLAGS=-L#{Formula["openssl@3"].opt_lib}",
                    "VAL_PREFIX=#{prefix}",
                    "OPT_DOTLOCK=no",
                    "config"
