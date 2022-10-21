@@ -2,8 +2,8 @@ class Kubeseal < Formula
   desc "Kubernetes controller and tool for one-way encrypted Secrets"
   homepage "https://github.com/bitnami-labs/sealed-secrets"
   url "https://github.com/bitnami-labs/sealed-secrets.git",
-      tag:      "v0.18.2",
-      revision: "13f3bcbcc1921cf93f1eb66762d48fd49baeee7f"
+      tag:      "v0.18.5",
+      revision: "d0eb9930cbdc31fbdcb0a00f5bc10cdc391f1edc"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class Kubeseal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubeseal"
-    sha256 cellar: :any_skip_relocation, mojave: "6df6929e0dda337402685359aea821022eb31fbcb6bb82fcd457dc5b6a13913d"
+    sha256 cellar: :any_skip_relocation, mojave: "a4cbc15784fdd3ad330d66e81786d3e3b4cf002d781d041710c148641aa574d6"
   end
 
   depends_on "go" => :build
