@@ -4,7 +4,7 @@ class Ocp < Formula
   url "https://stian.cubic.org/ocp/ocp-0.2.99.tar.xz"
   sha256 "d00165e206403b876b18edfc264abc8b6ce3d772be7e784fe4d358e37e57affd"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
   livecheck do
@@ -14,7 +14,7 @@ class Ocp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocp"
-    sha256 mojave: "f85e68b15445de2bb53e420def29f69d0ad0dc1977e50e1ce4a2cdd30e02ffec"
+    sha256 mojave: "d178fffabf67c6a6f69a5602e5d1bdba9f15cb64111f459c89fc6a5f6c9737cd"
   end
 
   depends_on "pkg-config" => :build
@@ -31,12 +31,12 @@ class Ocp < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  on_catalina :or_newer do
-    depends_on "sdl2"
+  on_mojave :or_older do
+    depends_on "sdl12-compat"
   end
 
-  on_system :linux, macos: :mojave_or_older do
-    depends_on "sdl"
+  on_system :linux, macos: :catalina_or_newer do
+    depends_on "sdl2"
   end
 
   on_linux do
@@ -67,7 +67,7 @@ class Ocp < Formula
       --with-unifontdir=#{share}
     ]
 
-    args << if MacOS.version < :catalina
+    args << if OS.mac? && MacOS.version < :catalina
       "--without-sdl2"
     else
       "--without-sdl"
