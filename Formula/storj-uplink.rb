@@ -1,27 +1,24 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://github.com/storj/storj/archive/refs/tags/v1.57.2.tar.gz"
-  sha256 "ba0cd9d2433eaff571082ef52bbc26ea74ef3b90760919cb48176dac3936f326"
+  url "https://github.com/storj/storj/archive/refs/tags/v1.64.1.tar.gz"
+  sha256 "691a9b10a9e723f73a23d3bd5ece14ab9fc4ec571a58fabd8b2952388aabf56d"
   license "AGPL-3.0-only"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/storj-uplink"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "fbf6ce85952178088c6f0201151fdf65f4fe7fca1078d140946ce2c8dcab3aea"
+    sha256 cellar: :any_skip_relocation, mojave: "8e08526338cfd303a7adfca0bd896299052fa6b532be031e4c99eb2411d72eae"
   end
 
-  # Required lucas-clemente/quic-go >= 0.28
-  # Try to switch to the latest go on the next release
-  depends_on "go@1.18" => :build
+  depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "-o", bin/"uplink", "./cmd/uplink"
+    system "go", "build", *std_go_args(output: bin/"uplink"), "./cmd/uplink"
   end
 
   test do
