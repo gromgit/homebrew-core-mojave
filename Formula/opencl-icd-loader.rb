@@ -1,14 +1,14 @@
 class OpenclIcdLoader < Formula
   desc "OpenCL Installable Client Driver (ICD) Loader"
   homepage "https://www.khronos.org/registry/OpenCL/"
-  url "https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/refs/tags/v2022.05.18.tar.gz"
-  sha256 "71f70bba797a501b13b6b0905dc852f3fd6e264d74ce294f2df98d29914c4303"
+  url "https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/refs/tags/v2022.09.30.tar.gz"
+  sha256 "e9522fb736627dd4feae2a9c467a864e7d25bb715f808de8a04eea5a7d394b74"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencl-icd-loader"
-    sha256 cellar: :any, mojave: "c8bf2be67e4ad5369681411f2a42e4e99a906ea17cedf9d0defffbbf5a7dda1d"
+    sha256 cellar: :any, mojave: "1981cca65ecce5a46a135bc717dfbe8b60b465f8c31a9f7752c36aedc1104894"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"
