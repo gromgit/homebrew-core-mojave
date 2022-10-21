@@ -1,9 +1,9 @@
 class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
-  homepage "https://coreos.com/operators/"
+  homepage "https://sdk.operatorframework.io/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.23.0",
-      revision: "1eaeb5adb56be05fe8cc6dd70517e441696846a4"
+      tag:      "v1.24.0",
+      revision: "de6a14d03de3c36dcc9de3891af788b49d15f0f3"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
@@ -14,20 +14,16 @@ class OperatorSdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/operator-sdk"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "1d0910bc20a2580c9550d21687b8c19763d5de33cbadbf8e0369653b775c6929"
+    sha256 cellar: :any_skip_relocation, mojave: "7852e1b92cf70e3798e25a6b99abd26954ae5176f75eee4e6f28ef0cfeef75ab"
   end
 
   depends_on "go"
 
   def install
-    ENV["GOBIN"] = libexec/"bin"
+    ENV["GOBIN"] = bin
     system "make", "install"
 
-    generate_completions_from_executable(libexec/"bin/operator-sdk", "completion")
-
-    output = libexec/"bin/operator-sdk"
-    (bin/"operator-sdk").write_env_script(output, PATH: "$PATH:#{Formula["go@1.17"].opt_bin}")
+    generate_completions_from_executable(bin/"operator-sdk", "completion")
   end
 
   test do
