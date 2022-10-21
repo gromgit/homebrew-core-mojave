@@ -4,11 +4,11 @@ class Latexindent < Formula
   url "https://github.com/cmhughes/latexindent.pl/archive/V3.18.tar.gz"
   sha256 "ac67f08c4deb8d75adc7704d17f1145e96131a87abda9b996b67a66bd27a3b7c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latexindent"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ec7bad70dbcc11e34eacaaba8606629dc23bd6dbb0056fc45efaf35cceceb0c3"
+    sha256 cellar: :any_skip_relocation, mojave: "333e067c11b1ba66d9a0385ca5d92478d77980ef3ce23781c23c83c9f4768873"
   end
 
   depends_on "perl"
