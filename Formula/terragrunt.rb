@@ -1,13 +1,13 @@
 class Terragrunt < Formula
   desc "Thin wrapper for Terraform e.g. for locking state"
   homepage "https://terragrunt.gruntwork.io/"
-  url "https://github.com/gruntwork-io/terragrunt/archive/v0.38.12.tar.gz"
-  sha256 "4b467c7eecbf81d4606374e51b3fbe11c8d4f1303a252d527974caba8833c603"
+  url "https://github.com/gruntwork-io/terragrunt/archive/v0.39.1.tar.gz"
+  sha256 "f4921b3f4e7b73420e293a36c7d1417896a397bbad593f07bae666110ccca02e"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terragrunt"
-    sha256 cellar: :any_skip_relocation, mojave: "bb7d385cc4b2985546946b098ff38961343f12dcf09b4086f5decd74f5e3c9a2"
+    sha256 cellar: :any_skip_relocation, mojave: "559c992b734207d82c1eda72dfe6ad869a41e8392bdc145f57ada0ae60a5db48"
   end
 
   depends_on "go" => :build
