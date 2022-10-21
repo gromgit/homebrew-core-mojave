@@ -4,28 +4,27 @@ class Nuvie < Formula
   url "https://downloads.sourceforge.net/project/nuvie/Nuvie/0.5/nuvie-0.5.tgz"
   sha256 "ff026f6d569d006d9fe954f44fdf0c2276dbf129b0fc5c0d4ef8dce01f0fc257"
   license "GPL-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_monterey: "f7805724351df16fa62facb997e4144de77fd95926e1a83fe60d66f7a2ac259d"
-    sha256 cellar: :any,                 arm64_big_sur:  "ec6682677f932e9214822c36b6c50a6bcd7e6fe9549e096e051fb4fd1e981aa5"
-    sha256 cellar: :any,                 monterey:       "f73230d2bd54af3d14a0359439ccb96cb6a2b69157083801d6ee0d97f48418a6"
-    sha256 cellar: :any,                 big_sur:        "71b1a9ea103fe37952db150053066dfbf96678106bd3d369f9ac417bc2586a76"
-    sha256 cellar: :any,                 catalina:       "286980f2c5b977f355d59bf2b10366b3c38613764b66707852e2934649089bc6"
-    sha256 cellar: :any,                 mojave:         "b1cefbd62e4b350d330853e14f789cc0b137c19b434271d1837114e10a73b0ca"
-    sha256 cellar: :any,                 high_sierra:    "f066beb078dd00f4b339ce25b7ff06dadd6ddf62283008ee149d2758c80e439b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cc0f2582a64e3dbbf804b886a1e6353908722c139318feba9617c62c527a17c"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nuvie"
+    sha256 cellar: :any, mojave: "aa7ad87e08042ba7f26fdd925fe340e7c4b115e2afc972a500304c66b9e88aae"
   end
 
   head do
-    url "https://github.com/nuvie/nuvie.git"
+    url "https://github.com/nuvie/nuvie.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
 
-  depends_on "sdl"
+  depends_on "sdl12-compat"
 
   def install
+    # Work around GCC 11 failure due to default C++17 standard.
+    # We use C++03 standard as C++11 standard needs upstream fix.
+    # Ref: https://github.com/nuvie/nuvie/commit/69fb52d35d5eaffcf3bca56929ab58a99defec3d
+    ENV.append "CXXFLAGS", "-std=c++03" if OS.linux?
+
     inreplace "./nuvie.cpp" do |s|
       s.gsub! 'datadir", "./data"',
               "datadir\", \"#{lib}/data\""
@@ -39,10 +38,7 @@ class Nuvie < Formula
               "#{var}/nuvie/"
     end
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-sdltest",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args, "--disable-sdltest"
     system "make"
     bin.install "nuvie"
     pkgshare.install "data"
