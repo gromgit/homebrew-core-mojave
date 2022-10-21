@@ -1,13 +1,14 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https://github.com/oras-project/oras"
-  url "https://github.com/oras-project/oras/archive/v0.14.1.tar.gz"
-  sha256 "29e934ef24092209c488a411a89af80cfcd93a4c880a36192e91085a58f0c2f7"
+  url "https://github.com/oras-project/oras/archive/v0.15.0.tar.gz"
+  sha256 "0d75af9e7d95b8c6b61328cd7587e1a49c64f1a6f2f5af34f40a0e576562857f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oras"
-    sha256 cellar: :any_skip_relocation, mojave: "2e29f5a528b625f8074402cd12a2cb8e33be9b5f8064412238b0255cc8e13ac8"
+    sha256 cellar: :any_skip_relocation, mojave: "c8483e7e2b29179703a2b33f1e7318ed85ccbcf0a53b9a8118a5d096fa53dd97"
   end
 
   depends_on "go" => :build
