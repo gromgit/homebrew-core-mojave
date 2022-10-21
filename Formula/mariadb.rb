@@ -22,8 +22,8 @@ class Mariadb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mariadb"
-    rebuild 1
-    sha256 mojave: "cb5ecf376ef554434a0fae26e60714484f9cb46865f5a0cec88256ee670ecc1e"
+    rebuild 2
+    sha256 mojave: "e8553635f94858d45c58981484a18f78e34612ed8981611cd332b129f1baad11"
   end
 
   depends_on "bison" => :build
@@ -41,7 +41,6 @@ class Mariadb < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "gcc"
     depends_on "linux-pam"
     depends_on "readline" # uses libedit on macOS
   end
