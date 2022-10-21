@@ -1,8 +1,8 @@
 class Uuu < Formula
   desc "Universal Update Utility, mfgtools 3.0. NXP I.MX Chip image deploy tools"
   homepage "https://github.com/NXPmicro/mfgtools"
-  url "https://github.com/NXPmicro/mfgtools/releases/download/uuu_1.4.193/uuu_source-1.4.193.tar.gz"
-  sha256 "a9b8b74e32e6718d591c66951b8b52276df7862db80ee943e046947f7313e57f"
+  url "https://github.com/NXPmicro/mfgtools/releases/download/uuu_1.4.243/uuu_source-1.4.243.tar.gz"
+  sha256 "9fcfe317c379be1e274aae34c19e1fd57188107f8fd0cdd379fe4473aacc92b1"
   license "BSD-3-Clause"
   head "https://github.com/NXPmicro/mfgtools.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Uuu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/uuu"
-    sha256 mojave: "2f8bd75eede3e51210c3f03c08fcc8f6463193745a27877174f25e0ba73674a6"
+    sha256 mojave: "a4e51ff1da1ca968a971a642611361c845c74bbfaad35ae17b35a512bed311e0"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Uuu < Formula
 
   depends_on "libusb"
   depends_on "libzip"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
