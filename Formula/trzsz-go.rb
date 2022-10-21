@@ -7,15 +7,16 @@ class TrzszGo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/trzsz-go"
-    sha256 cellar: :any_skip_relocation, mojave: "fbfe8389767f82296819bf4c19823a2ddc431726785d80811bd093a47186675a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "23a1158cbbf8fbc96827d264864a9f14fce8cd3492ec0f4dbd15fd35d186c25a"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", bin/"trz", "./cmd/trz"
-    system "go", "build", "-o", bin/"tsz", "./cmd/tsz"
-    system "go", "build", "-o", bin/"trzsz", "./cmd/trzsz"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"trz"), "./cmd/trz"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"tsz"), "./cmd/tsz"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"trzsz"), "./cmd/trzsz"
   end
 
   test do
