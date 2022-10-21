@@ -4,6 +4,7 @@ class Latexml < Formula
   url "https://dlmf.nist.gov/LaTeXML/releases/LaTeXML-0.8.6.tar.gz"
   sha256 "9529c651b67f5e8ddef1fd1852f974e756a17b711c46d4118f0677ad0e6e9bb1"
   license :public_domain
+  revision 1
   head "https://github.com/brucemiller/LaTeXML.git", branch: "master"
 
   livecheck do
@@ -13,7 +14,7 @@ class Latexml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/latexml"
-    sha256 cellar: :any_skip_relocation, mojave: "5b93ae9fd5352721ba8670c0da6c8ba0574b4f12bc0693da84614cfd28c6986b"
+    sha256 cellar: :any_skip_relocation, mojave: "f2c98b5afd32cdf45320e07999cd07d705817f9d6dfccd4ba2285896a7964e99"
   end
 
   depends_on "pkg-config" => :build
