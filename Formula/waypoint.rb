@@ -1,14 +1,14 @@
 class Waypoint < Formula
   desc "Tool to build, deploy, and release any application on any platform"
   homepage "https://www.waypointproject.io/"
-  url "https://github.com/hashicorp/waypoint/archive/v0.10.0.tar.gz"
-  sha256 "2304f3e48dab78751b5307c6be0fcf9efffa434042d9debfb28434ae05cec097"
+  url "https://github.com/hashicorp/waypoint/archive/v0.10.2.tar.gz"
+  sha256 "0980532b1388e7a55468d131d823f12e9565eb706b31438faf9bde2fa8d5705d"
   license "MPL-2.0"
   head "https://github.com/hashicorp/waypoint.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/waypoint"
-    sha256 cellar: :any_skip_relocation, mojave: "c7a3592795a65b9877dddb509546123f4a878d1c90f1c0bd1469b41af1070e9f"
+    sha256 cellar: :any_skip_relocation, mojave: "0b8a7edd0edfcbb2dc8f8da4c0ae853c5e38009dc789f5eff1da4bf75f653b6e"
   end
 
   depends_on "go" => :build
