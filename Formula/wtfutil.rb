@@ -2,14 +2,14 @@ class Wtfutil < Formula
   desc "Personal information dashboard for your terminal"
   homepage "https://wtfutil.com"
   url "https://github.com/wtfutil/wtf.git",
-      tag:      "v0.41.0",
-      revision: "fb027f1ec75b52137bc2828a8e0976a510b5591e"
+      tag:      "v0.42.0",
+      revision: "a63329214c888cfbfc67c7ddcf31887c3c8a1c36"
   license "MPL-2.0"
   head "https://github.com/wtfutil/wtf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wtfutil"
-    sha256 cellar: :any_skip_relocation, mojave: "b875d7da7ec9a5f7e03073c278daa2f0813e8e4a255854afd71745ef29ed2e0c"
+    sha256 cellar: :any_skip_relocation, mojave: "09520f3b94f25b204ac887bc8c2761507535599c1c108c3c1eb1c79820d3f515"
   end
 
   depends_on "go" => :build
