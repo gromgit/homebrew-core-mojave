@@ -13,16 +13,18 @@ class VorbisTools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vorbis-tools"
-    sha256 cellar: :any, mojave: "eadca6683e6069e4044c9745107b794d58f773c90b98a0fbf7e2163c1ba409e7"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b0ba049ded07d92702e6922ba2cba7f77a39799b2f23400c7cd8c0e45535b2ad"
   end
 
   depends_on "pkg-config" => :build
+  # FIXME: This should be `uses_from_macos "curl"`, but linkage with Homebrew curl
+  #        is unavoidable because this does `using: :homebrew_curl` above.
+  depends_on "curl"
   depends_on "flac"
   depends_on "libao"
   depends_on "libogg"
   depends_on "libvorbis"
-
-  uses_from_macos "curl"
 
   def install
     system "./configure", *std_configure_args, "--disable-nls"
