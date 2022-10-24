@@ -1,9 +1,15 @@
 class Biber < Formula
   desc "Backend processor for BibLaTeX"
   homepage "https://sourceforge.net/projects/biblatex-biber/"
-  url "https://github.com/plk/biber/archive/refs/tags/v2.16.tar.gz"
-  sha256 "57111ebc6d0d1933e55d3fe1a92f8ef57c602388ae83598a8073c8a77fd811e2"
+  url "https://github.com/plk/biber/archive/refs/tags/v2.17.tar.gz"
+  sha256 "1ee7efdd8343e982046f2301c1b0dcf09e1f9a997ac86ed1018dcb41d04c9e88"
   license "Artistic-2.0"
+  revision 2
+
+  bottle do
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/biber"
+    sha256 cellar: :any_skip_relocation, mojave: "0b75a763e3484c7caa92aa4ca9a49cce23ed990a3ff4ec3a6768717eb99a2093"
+  end
 
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
@@ -321,12 +327,8 @@ class Biber < Formula
     sha256 "122c8900000a9d388aa8e44f911cab6c118fe8497417917a84a8ec183971b449"
   end
   resource "Net::SSLeay" do
-    url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.90.tar.gz"
-    sha256 "f8696cfaca98234679efeedc288a9398fcf77176f1f515dbc589ada7c650dc93"
-    # workaround for `dyld` behaviour change (https://openradar.appspot.com/FB9725981)
-    # adapted from https://github.com/macports/macports-ports/commit/08e3e0bd0f0383263a88331336bcab244a902a31
-    # upstream issue link: https://github.com/radiator-software/p5-net-ssleay/issues/329
-    patch :p0, :DATA if MacOS.version == :monterey
+    url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz"
+    sha256 "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9"
   end
   resource "URI" do
     url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz"
@@ -500,13 +502,13 @@ class Biber < Formula
     url "https://cpan.metacpan.org/authors/id/V/VP/VPIT/autovivification-0.18.tar.gz"
     sha256 "2d99975685242980d0a9904f639144c059d6ece15899efde4acb742d3253f105"
   end
-  resource "test.bcf" do
-    url "https://downloads.sourceforge.net/project/biblatex-biber/biblatex-biber/testfiles/test.bcf"
-    sha256 "245abe25c586d2ad87782bc113fdf16510e42199bb21f2b143eb64cbe3e54093"
-  end
-  resource "test.bib" do
-    url "https://downloads.sourceforge.net/project/biblatex-biber/biblatex-biber/testfiles/test.bib"
-    sha256 "9bc875cdda0093db27f4890dc5801f6677117a495bafd16fa41625441f099368"
+
+  # Fix Perl 5.36.0 compatibility
+  # Remove in the next release
+  # See https://github.com/plk/biber/pull/411
+  patch do
+    url "https://github.com/plk/biber/commit/760e6e4ec08a3097f7e6136331541a7b8c1c9df7.patch?full_index=1"
+    sha256 "68586264731e1583331ada69151026333a48b53ab90786f43c36ecac0807d32e"
   end
 
   def install
@@ -515,11 +517,7 @@ class Biber < Formula
     ENV["PERL_MM_USE_DEFAULT"] = "1"
     ENV["OPENSSL_PREFIX"] = Formula["openssl@1.1"].opt_prefix
 
-    testresources = %w[test.bcf test.bib]
-
     resources.each do |r|
-      next if testresources.include?(r.name)
-
       r.stage do
         # fix libbtparse.so linkage failure on Linux
         if r.name == "Text::BibTeX" && OS.linux?
@@ -540,35 +538,27 @@ class Biber < Formula
       end
     end
 
+    bin_before = Dir[libexec/"bin/*"].to_set
     system "perl", "Build.PL", "--install_base", libexec
     system "./Build"
     system "./Build", "install"
-
-    bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
+    bin_after = Dir[libexec/"bin/*"].to_set
+    (bin_after - bin_before).each do |file|
+      basename = Pathname(file).basename
+      (bin/basename).write_env_script file, PERL5LIB: ENV["PERL5LIB"]
+    end
     man1.install libexec/"man/man1/biber.1"
+    (pkgshare/"test").install "t/tdata/annotations.bcf", "t/tdata/annotations.bib"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/biber --version")
 
-    resource("test.bcf").stage testpath
-    resource("test.bib").stage testpath
-    assert_match "Output to test.bbl", shell_output("#{bin}/biber --validate-control --convert-control test")
-    assert_predicate testpath/"test.bcf.html", :exist?
-    assert_predicate testpath/"test.blg", :exist?
-    assert_predicate testpath/"test.bbl", :exist?
+    cp (pkgshare/"test").children, testpath
+    output = shell_output("#{bin}/biber --validate-control --convert-control annotations")
+    assert_match "Output to annotations.bbl", output
+    assert_predicate testpath/"annotations.bcf.html", :exist?
+    assert_predicate testpath/"annotations.blg", :exist?
+    assert_predicate testpath/"annotations.bbl", :exist?
   end
 end
-
-__END__
---- Makefile.PL
-+++ Makefile.PL
-@@ -157,7 +157,7 @@
-     for ("$prefix/include", "$prefix/inc32", '/usr/kerberos/include') {
-       push @{$opts->{inc_paths}}, $_ if -f "$_/openssl/ssl.h";
-     }
--    for ($prefix, "$prefix/lib64", "$prefix/lib", "$prefix/out32dll") {
-+    for ("$prefix/lib64", "$prefix/lib", "$prefix/out32dll") {
-       push @{$opts->{lib_paths}}, $_ if -d $_;
-     }
