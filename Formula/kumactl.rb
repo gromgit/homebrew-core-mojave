@@ -1,8 +1,8 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https://kuma.io/"
-  url "https://github.com/kumahq/kuma/archive/1.8.0.tar.gz"
-  sha256 "14b02c104c6cb724a47a7fe48c76f84b462c4b72e8fe1a371ae858aacd57916b"
+  url "https://github.com/kumahq/kuma/archive/1.8.1.tar.gz"
+  sha256 "cd984743386c65e7b6bd0cc00d459b8848f1342c61b39acd4c3d9aba9c03779b"
   license "Apache-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Kumactl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kumactl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "cf9ef35f013666d6e0c7a31ca7817c4457c4b2fabc0cca357f1a799041b0e2e3"
+    sha256 cellar: :any_skip_relocation, mojave: "a6c1a0a4cb6d9ca7b6e085870cd7f1995b5b99ea906283f32fb5787aa76d3e44"
   end
 
   depends_on "go" => :build
