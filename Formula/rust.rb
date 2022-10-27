@@ -4,20 +4,20 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.63.0-src.tar.gz"
-    sha256 "1f9580295642ef5da7e475a8da2397d65153d3f2cb92849dbd08ed0effca99d0"
+    url "https://static.rust-lang.org/dist/rustc-1.64.0-src.tar.gz"
+    sha256 "b3cd9f481e1a2901bf6f3808d30c69cc4ea80d93c4cc4e2ed52258b180381205"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git",
-          tag:      "0.64.0",
-          revision: "fd9c4297ccbee36d39e9a79067edab0b614edb5a"
+          tag:      "0.65.0",
+          revision: "387270bc7f446d17869c7f208207c73231d6a252"
     end
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust"
-    sha256 cellar: :any, mojave: "8ab3c9e44cb08ee007366076f6ae0d8b2c851287671b8a2be72ce50fbdf46320"
+    sha256 cellar: :any_skip_relocation, mojave: "59cf3f25e12b346128a120a02256b8b36b634e93506f8f28a19ee8c7a22cc411"
   end
 
   head do
@@ -42,19 +42,19 @@ class Rust < Formula
     on_macos do
       # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.json
       on_arm do
-        url "https://static.rust-lang.org/dist/2022-06-30/cargo-1.62.0-aarch64-apple-darwin.tar.gz"
-        sha256 "8a4c0f52491382d537753531a51a45355135e0b19f85f20588785d604f1eff2b"
+        url "https://static.rust-lang.org/dist/2022-08-11/cargo-1.63.0-aarch64-apple-darwin.tar.gz"
+        sha256 "4ae53dd1a0c059ba4a02a728c9250c785e39bd4f51550e2d3040e96457db4731"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2022-06-30/cargo-1.62.0-x86_64-apple-darwin.tar.gz"
-        sha256 "4957c596cc5327921be523fb1de935b1072caa12f9cedaa68cff3e85898fd09a"
+        url "https://static.rust-lang.org/dist/2022-08-11/cargo-1.63.0-x86_64-apple-darwin.tar.gz"
+        sha256 "91fe0d3477036b0630b09db2a9ef340c29b8be56c48ed244428e2490043ca841"
       end
     end
 
     on_linux do
       # From: https://github.com/rust-lang/rust/blob/#{version}/src/stage0.json
-      url "https://static.rust-lang.org/dist/2022-06-30/cargo-1.62.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fb0141db9fdea4606beb106ca10494548f24866b39a10bde8d1e162f653e94d8"
+      url "https://static.rust-lang.org/dist/2022-08-11/cargo-1.63.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "43445b2131cefa466943ed4867876f5835fcb17243a18e1db1c8231417a1b27e"
     end
   end
 
