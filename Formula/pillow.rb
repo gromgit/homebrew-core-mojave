@@ -9,7 +9,8 @@ class Pillow < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pillow"
-    sha256 cellar: :any, mojave: "983a91d90d69b837009c10ff233a8a14233843b56c187ba22db19f8e3d804ede"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fb1e6f1deb53c11ea0ace2e8928dc06603789e07518bab0f095451cd5fbd5266"
   end
 
   depends_on "pkg-config" => :build
@@ -30,9 +31,8 @@ class Pillow < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/python@\d\.\d+/) }
-        .map(&:opt_bin)
-        .map { |bin| bin/"python3" }
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
@@ -61,9 +61,11 @@ class Pillow < Formula
     inreplace "setup.py", "DEBUG = False", "DEBUG = True"
 
     pythons.each do |python|
+      prefix_site_packages = prefix/Language::Python.site_packages(python)
       system python, "setup.py",
                      "build_ext", *build_ext_args,
-                     "install", *install_args, "--install-lib=#{prefix/Language::Python.site_packages(python)}"
+                     "install", *install_args,
+                     "--install-lib=#{prefix_site_packages}"
     end
   end
 
