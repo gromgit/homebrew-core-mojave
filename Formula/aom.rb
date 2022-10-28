@@ -2,13 +2,14 @@ class Aom < Formula
   desc "Codec library for encoding and decoding AV1 video streams"
   homepage "https://aomedia.googlesource.com/aom"
   url "https://aomedia.googlesource.com/aom.git",
-      tag:      "v3.4.0",
-      revision: "fc430c57c7b0307b4c5ffb686cd90b3c010d08d2"
+      tag:      "v3.5.0",
+      revision: "bcfe6fbfed315f83ee8a95465c654ee8078dbff9"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aom"
-    sha256 cellar: :any, mojave: "0b81b577035c1b8b91e306b36357432fafecb97740aea8d202feac8a48b9b242"
+    sha256 cellar: :any_skip_relocation, mojave: "80edcdfe5e1bef1f5b9d4738ded282b010e20bb9174f8d824086bf87bcf22fe1"
   end
 
   depends_on "cmake" => :build
