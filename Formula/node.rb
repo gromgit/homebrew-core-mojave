@@ -1,9 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  # TODO: Remove `ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib` at rebuild.
-  url "https://nodejs.org/dist/v18.9.0/node-v18.9.0.tar.xz"
-  sha256 "c75cc89afead976791900accde02a7b1e7e762702f0f6fa68eaacb01984d9654"
+  url "https://nodejs.org/dist/v18.10.0/node-v18.10.0.tar.xz"
+  sha256 "ad711b54e2be4a7d24f37c73fb2801adeaf6d26d298d431be98d6abc0202e89f"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -14,7 +13,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    sha256 cellar: :any, mojave: "d0bb02820fd61623899333db51f8bad52d7896907955069566c0d2118cc69692"
+    sha256 cellar: :any_skip_relocation, mojave: "a3b24a9e79e34cf213e8964e29b4f617e793dbaced31211cab3a3a1faf05404d"
   end
 
   depends_on "pkg-config" => :build
@@ -45,12 +44,11 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-8.19.1.tgz"
-    sha256 "00a29eaa1fa8d44f6c3f3a114becc3b677a019dde90d87b41fd855663fe47742"
+    url "https://registry.npmjs.org/npm/-/npm-8.19.2.tgz"
+    sha256 "439fb2276f7039d2fba2739e361006f3bc25d6a6b3f88c1edb4d28ab5a7eb3f7"
   end
 
   def install
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
     # make sure subprocesses spawned by make are using our Python 3
