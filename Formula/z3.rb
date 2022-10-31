@@ -4,7 +4,7 @@ class Z3 < Formula
   url "https://github.com/Z3Prover/z3/archive/z3-4.11.2.tar.gz"
   sha256 "e3a82431b95412408a9c994466fad7252135c8ed3f719c986cd75c8c5f234c7e"
   license "MIT"
-  head "https://github.com/Z3Prover/z3.git", branch: "develop"
+  head "https://github.com/Z3Prover/z3.git", branch: "master"
 
   livecheck do
     url :stable
@@ -14,7 +14,8 @@ class Z3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/z3"
-    sha256 cellar: :any, mojave: "95581497eccc899e9fa3592e968ce4bdeedc0cec6b0e7a74412a7556c06c1109"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a2e399cde1ec35959c8a97664273a1a0d45eabb0b4ac5d05b3dcdea6b82e944a"
   end
 
   # Has Python bindings but are supplementary to the main library
