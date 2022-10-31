@@ -6,10 +6,6 @@ class EnvoyAT118 < Formula
       revision: "bef18019d8fc33a4ed6aca3679aff2100241ac5e"
   license "Apache-2.0"
 
-  bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
-  end
-
   # Apple M1/arm64 is pending envoyproxy/envoy#16482
 
   keg_only :versioned_formula

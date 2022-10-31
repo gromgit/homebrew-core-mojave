@@ -7,15 +7,6 @@ class Apngasm < Formula
   revision 3
   head "https://github.com/apngasm/apngasm.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c177663cbe53b8e95df7f58e4ae29d474ad6d6a783fa06759d29873a36c92a41"
-    sha256 cellar: :any,                 arm64_big_sur:  "c292d029d6a70e1232f30423690b71be59baa2738bf2f025ac9e7d4c3513f734"
-    sha256 cellar: :any,                 monterey:       "b2beca474fc168a54f16fabe8800ebb73fc3928409bb8dc04f6367bceb9909c4"
-    sha256 cellar: :any,                 big_sur:        "41ad219c9048cca6c303833ec301f50924a0cafc190ef5425f93544f2d56fc13"
-    sha256 cellar: :any,                 catalina:       "406db22f6432af40fd166975ac9050ad7d2152ea95cd62c4124c67e1eca1b76f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f3921b1583e8912557caa117dfe36ff7f63083d1969743373a11684768ba6b5"
-  end
-
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "icu4c"

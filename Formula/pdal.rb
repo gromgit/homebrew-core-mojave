@@ -1,26 +1,20 @@
 class Pdal < Formula
   desc "Point data abstraction library"
   homepage "https://www.pdal.io/"
-  url "https://github.com/PDAL/PDAL/releases/download/2.3.0/PDAL-2.3.0-src.tar.gz"
-  sha256 "5b0b92258874ef722b5027054d64c8b318b524e7a9b2b250d0330d76e19b8618"
+  url "https://github.com/PDAL/PDAL/releases/download/2.4.3/PDAL-2.4.3-src.tar.gz"
+  sha256 "abac604c6dcafdcd8a36a7d00982be966f7da00c37d89db2785637643e963e4c"
   license "BSD-3-Clause"
   revision 1
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
-  # The upstream GitHub repository sometimes tags a commit with only a
-  # major/minor version (`1.2`) and then uses major/minor/patch (`1.2.3`) for
-  # the release (with downloadable assets). This inconsistency can be a problem
-  # if we need to substitute the version from livecheck in the `stable` URL, so
-  # we use the `GithubLatest` strategy here.
+  # The upstream GitHub repository sometimes creates tags that only include a
+  # major/minor version (`1.2`) and then uses major/minor/patch (`1.2.0`) for
+  # the release tarball. This inconsistency can be a problem if we need to
+  # substitute the version from livecheck in the `stable` URL, so we check the
+  # first-party download page, which links to the tarballs on GitHub.
   livecheck do
-    url :stable
+    url "https://pdal.io/en/stable/download.html"
     regex(/href=.*?PDAL[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
-    strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pdal"
-    sha256 mojave: "a991a803e45d3802e9c86c9c3c85822ed50fa6e40cb779ff66fc6b5dfa069d85"
   end
 
   depends_on "cmake" => :build
@@ -28,16 +22,17 @@ class Pdal < Formula
   depends_on "gdal"
   depends_on "hdf5"
   depends_on "laszip"
+  depends_on "libpq"
+  depends_on macos: :catalina # requires fs::exists
   depends_on "numpy"
-  depends_on "pcl"
-  depends_on "postgresql"
+
+  fails_with gcc: "5" # gdal is compiled with GCC
 
   def install
     system "cmake", ".", *std_cmake_args,
                          "-DWITH_LASZIP=TRUE",
                          "-DBUILD_PLUGIN_GREYHOUND=ON",
                          "-DBUILD_PLUGIN_ICEBRIDGE=ON",
-                         "-DBUILD_PLUGIN_PCL=ON",
                          "-DBUILD_PLUGIN_PGPOINTCLOUD=ON",
                          "-DBUILD_PLUGIN_PYTHON=ON",
                          "-DBUILD_PLUGIN_SQLITE=ON"

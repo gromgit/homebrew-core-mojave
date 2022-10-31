@@ -9,15 +9,6 @@ class ArcadeLearningEnvironment < Formula
   license "GPL-2.0-only"
   head "https://github.com/mgbellemare/Arcade-Learning-Environment.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "adf35799b996642207c8521340a7a0147b3d95f73a201a9b2ee750132ec51864"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7edb9ab548f123e0870883ab5febb193ae47d2d4d1769431e509f988289874d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "168806383f23e87f0cf73e70b247162c05fa0dfa4e0e9b6f5d818dcb48325315"
-    sha256 cellar: :any_skip_relocation, big_sur:        "de3b95ae2b19b2e9bacd51380efc693a6f10c9513b6c93e00be2ebeef43f9153"
-    sha256 cellar: :any_skip_relocation, catalina:       "e09abbcf812cb94058540295d656f9c79cc0078108ead83d158aac6fee2a48fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b386e45174d0450d08c80c5b703c34291d486ead9ee61d11fcc1fdd7f1d1b05"
-  end
-
   depends_on "cmake" => :build
   depends_on macos: :catalina # requires std::filesystem
   depends_on "numpy"
