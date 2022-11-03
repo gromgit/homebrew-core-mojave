@@ -7,18 +7,14 @@ class Pstoedit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pstoedit"
-    rebuild 1
-    sha256 mojave: "c6c8dba96419792faeeb78e52f5ada681af4a58ca39283a4429957cf52e02fdf"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "abedb12300897ed38a47e2438da3f08f4b49c149b197090adc7bd8451cf55ac9"
   end
 
   depends_on "pkg-config" => :build
   depends_on "ghostscript"
   depends_on "imagemagick"
   depends_on "plotutils"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   # "You need a C++ compiler, e.g., g++ (newer than 6.0) to compile pstoedit."
   fails_with gcc: "5"
