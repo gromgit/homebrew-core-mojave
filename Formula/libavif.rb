@@ -4,11 +4,11 @@ class Libavif < Formula
   url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "66e82854ceb84a3e542bc140a343bc90e56c68f3ecb4fff63e636c136ed9a05e"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libavif"
-    sha256 cellar: :any, mojave: "82235b27592a47256957428b911d91a32d94bde9c74eb39218823ade75ec3c08"
+    sha256 cellar: :any_skip_relocation, mojave: "a6576085e3079827bb37401384fe6b26a1312515aa3c54f30bd9c49a6a72782d"
   end
 
   depends_on "cmake" => :build
