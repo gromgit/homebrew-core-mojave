@@ -1,22 +1,22 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpdl-9.56.1.tar.xz"
-  sha256 "05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299"
+  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostpdl-10.0.0.tar.xz"
+  sha256 "8f2b7941f60df694b4f5c029b739007f7c4e0d43858471ae481e319a967d5d8b"
   license "AGPL-3.0-or-later"
-  revision 1
 
-  # We check the tags from the `head` repository because the GitHub tags are
-  # formatted ambiguously, like `gs9533` (corresponding to version 9.53.3).
+  # The GitHub tags omit delimiters (e.g. `gs9533` for version 9.53.3). The
+  # `head` repository tags are formatted fine (e.g. `ghostpdl-9.53.3`) but a
+  # version may be tagged before the release is available on GitHub, so we
+  # check the version from the first-party website instead.
   livecheck do
-    url :stable
-    regex(/href=.*?ghostpdl[._-]v?(\d+(?:\.\d+)+)\.t/i)
-    strategy :github_latest
+    url "https://www.ghostscript.com/json/settings.json"
+    regex(/["']GS_VER["']:\s*?["']v?(\d+(?:\.\d+)+)["']/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghostscript"
-    sha256 mojave: "1e5d120ec20609e5023f5b3d9259ee7fa13d1524d3b106eb756f0ba4cc28bbd0"
+    sha256 cellar: :any_skip_relocation, mojave: "9712363673b6d370f22e1809a50f228d8b8b67be721c29f38575396eb457b7ff"
   end
 
   head do
@@ -42,10 +42,6 @@ class Ghostscript < Formula
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with gcc: "5"
 
   # https://sourceforge.net/projects/gs-fonts/
@@ -65,38 +61,17 @@ class Ghostscript < Formula
   end
 
   def install
-    # Fix vendored tesseract build error: 'cstring' file not found
-    # Remove when possible to link to system tesseract
-    ENV.append_to_cflags "-stdlib=libc++" if ENV.compiler == :clang
-
-    # Fix VERSION file incorrectly included as C++20 <version> header
-    # Remove when possible to link to system tesseract
-    rm "tesseract/VERSION"
-
     # Delete local vendored sources so build uses system dependencies
-    rm_rf "expat"
-    rm_rf "freetype"
-    rm_rf "jbig2dec"
-    rm_rf "jpeg"
-    rm_rf "lcms2mt"
-    rm_rf "libpng"
-    rm_rf "openjpeg"
-    rm_rf "tiff"
-    rm_rf "zlib"
+    libs = %w[expat freetype jbig2dec jpeg lcms2mt libpng openjpeg tiff zlib]
+    libs.each { |l| (buildpath/l).rmtree }
 
-    args = %w[
-      --disable-compile-inits
-      --disable-cups
-      --disable-gtk
-      --with-system-libtiff
-      --without-x
-    ]
-
-    if build.head?
-      system "./autogen.sh", *std_configure_args, *args
-    else
-      system "./configure", *std_configure_args, *args
-    end
+    configure = build.head? ? "./autogen.sh" : "./configure"
+    system configure, *std_configure_args,
+                      "--disable-compile-inits",
+                      "--disable-cups",
+                      "--disable-gtk",
+                      "--with-system-libtiff",
+                      "--without-x"
 
     # Install binaries and libraries
     system "make", "install"
