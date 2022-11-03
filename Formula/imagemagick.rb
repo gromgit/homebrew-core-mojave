@@ -1,8 +1,8 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-45.tar.xz"
-  sha256 "2b5e88d3b895be4a7a6fc70ab4603d02f84477b8c15d3819f0b2c4b3ad1447a0"
+  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-50.tar.xz"
+  sha256 "cc8cf9e302a5afe5668ab17003769d9d8753104d2cf82883b72b175e152dc67a"
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Imagemagick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick"
-    sha256 mojave: "9d162fed27fe572eafc402af40f95d41fef3f3b6777a00051a5d25140ca92866"
+    sha256 cellar: :any_skip_relocation, mojave: "6a68ae7c7378118f97c17383567fede71c69a7d72b4a9e010f0554b258b6a709"
   end
 
   depends_on "pkg-config" => :build
@@ -41,13 +41,10 @@ class Imagemagick < Formula
   end
 
   on_linux do
-    depends_on "gcc"
     depends_on "libx11"
   end
 
   skip_clean :la
-
-  fails_with gcc: "5" # ghostscript is built with GCC
 
   def install
     # Avoid references to shim
