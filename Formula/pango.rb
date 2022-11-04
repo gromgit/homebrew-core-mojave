@@ -1,17 +1,16 @@
 class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "https://pango.gnome.org"
-  url "https://download.gnome.org/sources/pango/1.50/pango-1.50.8.tar.xz"
-  sha256 "cf626f59dd146c023174c4034920e9667f1d25ac2c1569516d63136c311255fa"
+  url "https://download.gnome.org/sources/pango/1.50/pango-1.50.11.tar.xz"
+  sha256 "8800f812d89ee61388188703203f3a7878963c22f8695aaf1fa0a1a1428d17ae"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pango"
-    sha256 cellar: :any, mojave: "534009ac7285e21b06ca9e0fa01edc760bb88cd65141deab2cb6e5ae841b5068"
+    sha256 cellar: :any_skip_relocation, mojave: "a0dc6c980db88a5b9478fcb2df682639c6a398ba67adca12a20ee6713bd48148"
   end
 
-  depends_on "glib-utils" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -24,21 +23,18 @@ class Pango < Formula
   depends_on "harfbuzz"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args,
-                      "-Ddefault_library=both",
-                      "-Dintrospection=enabled",
-                      "-Dfontconfig=enabled",
-                      "-Dcairo=enabled",
-                      "-Dfreetype=enabled",
-                      ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", *std_meson_args, "build",
+                    "-Ddefault_library=both",
+                    "-Dintrospection=enabled",
+                    "-Dfontconfig=enabled",
+                    "-Dcairo=enabled",
+                    "-Dfreetype=enabled"
+    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "install", "-C", "build"
   end
 
   test do
-    system "#{bin}/pango-view", "--version"
+    system bin/"pango-view", "--version"
     (testpath/"test.c").write <<~EOS
       #include <pango/pangocairo.h>
 
