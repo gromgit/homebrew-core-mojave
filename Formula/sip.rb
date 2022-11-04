@@ -3,16 +3,14 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://www.riverbankcomputing.com/software/sip/intro"
-  url "https://files.pythonhosted.org/packages/5b/cb/c27c925ae07bd03a2597fa1db17bfc2a4ac57da61aeb90f8ec98ffbb975b/sip-6.6.2.tar.gz"
-  sha256 "0e3efac1c5dfd8e525ae57140927df26993e13f58b89d1577c314f4105bfd90d"
+  url "https://files.pythonhosted.org/packages/28/09/87e20f2be19051bea42df699947aba30f84422908ec2b8d827bcdf0ab365/sip-6.7.1.tar.gz"
+  sha256 "28170fdf880f937026fc87faa9c177b062c353c5d169ea3242b07802614ddd0c"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
-  revision 1
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sip"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6a5220194699b98cfba24fd03e3a2e6dce507701f039e656f63d749f37008a00"
+    sha256 cellar: :any_skip_relocation, mojave: "f7fefe7f5db4b75a8562e5f2dbccb3b8e25f3ec8091ee1bc55836a553142cd5e"
   end
 
   depends_on "python@3.10"
