@@ -1,8 +1,8 @@
 class Eccodes < Formula
   desc "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats"
   homepage "https://confluence.ecmwf.int/display/ECC"
-  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.26.0-Source.tar.gz"
-  sha256 "392f632612e16a8c0bb0b8f6d627cbc3f54e56f51ace05bceac368377ab52e49"
+  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.27.0-Source.tar.gz"
+  sha256 "ede5b3ffd503967a5eac89100e8ead5e16a881b7585d02f033584ed0c4269c99"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Eccodes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eccodes"
-    sha256 mojave: "8c9059dd70f3cee673770b8a241bb8433291d219bf277daeea64b9c0b4bbee41"
+    sha256 cellar: :any_skip_relocation, mojave: "4177fc1ac8d9080d316bb7770970030d363b685826525c4fcd5eb1a75073b874"
   end
 
   depends_on "cmake" => :build
