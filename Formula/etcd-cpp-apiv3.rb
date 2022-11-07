@@ -7,7 +7,8 @@ class EtcdCppApiv3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd-cpp-apiv3"
-    sha256 cellar: :any_skip_relocation, mojave: "aa2030692799b7be3bc0c592826068f01dc3c5b3e4a72299a8fcd173d2b5e98b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "be3663340ff8c0d1f9b50bae0d4a4eb56a043ca71f6da9bcc3c90da9b1249af5"
   end
 
   depends_on "cmake" => :build
