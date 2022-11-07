@@ -4,9 +4,9 @@ class Thrift < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://www.apache.org/dyn/closer.lua?path=thrift/0.16.0/thrift-0.16.0.tar.gz"
-    mirror "https://archive.apache.org/dist/thrift/0.16.0/thrift-0.16.0.tar.gz"
-    sha256 "f460b5c1ca30d8918ff95ea3eb6291b3951cf518553566088f3f2be8981f6209"
+    url "https://www.apache.org/dyn/closer.lua?path=thrift/0.17.0/thrift-0.17.0.tar.gz"
+    mirror "https://archive.apache.org/dist/thrift/0.17.0/thrift-0.17.0.tar.gz"
+    sha256 "b272c1788bb165d99521a2599b31b97fa69e5931d099015d91ae107a0b0cc58f"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -17,8 +17,7 @@ class Thrift < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/thrift"
-    rebuild 3
-    sha256 cellar: :any, mojave: "ad761277f6ab5eed445fe67e2a5b7a795423cacef329f749d45752fca042b26b"
+    sha256 cellar: :any_skip_relocation, mojave: "a0a0fcba0e36e1353497e92456dfba95834afbf1ade4650b4af4c2400dbd4cdb"
   end
 
   head do
