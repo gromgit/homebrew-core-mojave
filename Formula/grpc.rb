@@ -1,10 +1,9 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
-  # TODO: Remove `ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib` at rebuild.
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.49.0",
-      revision: "8f8edfd04b46ee67f90454b3f6a70aa58ff82c2d"
+      tag:      "v1.49.1",
+      revision: "a80a8f74b8f2ff0a89b8b1d3510d14d87efa7d06"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -19,7 +18,7 @@ class Grpc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpc"
-    sha256 cellar: :any, mojave: "1b48bd8b87b9e46cfae45559f3f4e59380ea2468cca6e24e0b669fa8922e2d5d"
+    sha256 cellar: :any_skip_relocation, mojave: "77e5b5fdfcbe0855479c52794070ba5e68a825929b08ad04e6570bfb667b9e37"
   end
 
   depends_on "autoconf" => :build
@@ -36,9 +35,7 @@ class Grpc < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    # This shouldn't be needed for `:test`, but there's a bug in `brew`:
-    # CompilerSelectionError: pdnsrec cannot be built with any available compilers.
-    depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1100
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
   end
 
   fails_with :clang do
@@ -49,7 +46,6 @@ class Grpc < Formula
   fails_with gcc: "5" # C++17
 
   def install
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
     mkdir "cmake/build" do
       args = %W[
@@ -91,9 +87,6 @@ class Grpc < Formula
   end
 
   test do
-    # Force use of system clang on Mojave
-    ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
-
     (testpath/"test.cpp").write <<~EOS
       #include <grpc/grpc.h>
       int main() {
