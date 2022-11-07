@@ -9,8 +9,8 @@ class Etcd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c4641610bb19d462018cca7f97ad01a814c4d1d9cc7bed5b92abc5b09dbbc641"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "c947468ca5cde18146849273a809fb78d179a79ca1d3c08058ae86812b6b6156"
   end
 
   depends_on "go" => :build
