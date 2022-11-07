@@ -1,14 +1,13 @@
 class EtcdCppApiv3 < Formula
   desc "C++ implementation for etcd's v3 client API, i.e., ETCDCTL_API=3"
   homepage "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3"
-  url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.2.6.tar.gz"
-  sha256 "ef2bee616031316bc4cbc416cf9932fd1b2273f5f8fe9c24d2b3602c14277e8a"
+  url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.2.8.tar.gz"
+  sha256 "8fa03d54debb79e242c617fc2871dde9f841359e34f7d87d59abecc72cfe5e2f"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/etcd-cpp-apiv3"
-    sha256 cellar: :any, mojave: "9963d3e2f557ee69a7f4d8092950469c1d236108638209450f125a9e0b9153f0"
+    sha256 cellar: :any_skip_relocation, mojave: "aa2030692799b7be3bc0c592826068f01dc3c5b3e4a72299a8fcd173d2b5e98b"
   end
 
   depends_on "cmake" => :build
@@ -19,12 +18,6 @@ class EtcdCppApiv3 < Formula
   depends_on "grpc"
   depends_on "openssl@1.1"
   depends_on "protobuf"
-
-  # grpc requrires high version of gcc and are built with high version of gcc,
-  # thus gcc 5 won't work
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
@@ -81,13 +74,11 @@ class EtcdCppApiv3 < Formula
 
     # prepare etcd
     etcd_pid = fork do
-      on_macos do
-        if Hardware::CPU.arm?
-          # etcd isn't officially supported on arm64
-          # https://github.com/etcd-io/etcd/issues/10318
-          # https://github.com/etcd-io/etcd/issues/10677
-          ENV["ETCD_UNSUPPORTED_ARCH"]="arm64"
-        end
+      if OS.mac? && Hardware::CPU.arm?
+        # etcd isn't officially supported on arm64
+        # https://github.com/etcd-io/etcd/issues/10318
+        # https://github.com/etcd-io/etcd/issues/10677
+        ENV["ETCD_UNSUPPORTED_ARCH"]="arm64"
       end
 
       exec "#{Formula["etcd"].opt_prefix}/bin/etcd",
