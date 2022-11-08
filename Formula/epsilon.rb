@@ -14,6 +14,7 @@ class Epsilon < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "547069ed37303eb1cd4e8757cc595338852617040c9eadb2493aca79ca014571"
     sha256 cellar: :any,                 arm64_monterey: "670034faf15b3c9d8aee0684969850959349bfe460dac4df70dd7b379a6103f2"
     sha256 cellar: :any,                 arm64_big_sur:  "38532cb4e33c6bb1da6f76c3e218c141ccf6888a56200807d05358d64a6709c7"
     sha256 cellar: :any,                 monterey:       "85c792185e97c4bf15321c4947d284df6f8246d84c007a28d0f2ae269d37ba79"
