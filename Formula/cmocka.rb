@@ -7,6 +7,7 @@ class Cmocka < Formula
   head "https://git.cryptomilk.org/projects/cmocka.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "a8f740f136437949637b8587bcb355b51b31a8a58f872738caabdafb8f649f56"
     sha256 cellar: :any,                 arm64_monterey: "a504b57668ab63e04fd3ca656d6a0a48a215779b9779dad64e6e65e56441c2fd"
     sha256 cellar: :any,                 arm64_big_sur:  "e2ed51c48c56006bb4b8591259eb206968e46457e78b15570c567d990b5f97d3"
     sha256 cellar: :any,                 monterey:       "221d35e014f83b7ba5c115ed5dc058508f956ff551141676a13ece2be1c476a3"
