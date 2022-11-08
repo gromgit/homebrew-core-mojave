@@ -11,6 +11,7 @@ class AescryptPacketizer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aescrypt-packetizer"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9c9a7c9e15fd4128906015d8f0825b30f809efc926e45489382c4ad64e993aee"
   end
 
