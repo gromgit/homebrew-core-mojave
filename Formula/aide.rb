@@ -7,7 +7,8 @@ class Aide < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aide"
-    sha256 cellar: :any, mojave: "d45c73e602e3905a18109334e8c9b688a60c8b65313ea15defaf21a1451caeef"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9bed5bebef591cf4da655e50f64c990a7d0787c1cd1e731245c2a0a05c94738d"
   end
 
   head do
