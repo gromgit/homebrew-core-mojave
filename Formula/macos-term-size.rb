@@ -7,6 +7,7 @@ class MacosTermSize < Formula
   head "https://github.com/sindresorhus/macos-term-size.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bc40ca23b802dbca1e7895f476a61f62cabbd2ee4b149028cf7e9a57b1ee1cd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f44cab0d2907e1fe48658f15eb8719e2df21e904df6b00ccd69b3dda4be38752"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d921643767d4c489f435e467e0f5bd9d50a1f8a93ccf2be116eb6987af36d86"
     sha256 cellar: :any_skip_relocation, monterey:       "c9171245cbf3ba0231147e961ae6cb2e4d8e13a8c7abc64bad1a0e57a4274efb"
