@@ -7,9 +7,14 @@ class Tz < Formula
   head "https://github.com/oz/tz.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tz"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "132d6904a3f320563a312635f2e0c16e9346f5296ed376c4075c390a04786004"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c7b5d50f3a4932dd5938d575c745556751e0bdb422365e81b8940fd8095468e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ffcc6e47c89080907b571031d530046fe710d4c74c45183a8981c6c67ed3515a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ffcc6e47c89080907b571031d530046fe710d4c74c45183a8981c6c67ed3515a"
+    sha256 cellar: :any_skip_relocation, monterey:       "2ce8046b150966b4e05f0f13255f17d6589650331578256f6f6f41ec25823f81"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2ce8046b150966b4e05f0f13255f17d6589650331578256f6f6f41ec25823f81"
+    sha256 cellar: :any_skip_relocation, catalina:       "2ce8046b150966b4e05f0f13255f17d6589650331578256f6f6f41ec25823f81"
+    sha256 cellar: :any_skip_relocation, mojave:         "2ce8046b150966b4e05f0f13255f17d6589650331578256f6f6f41ec25823f81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec421c74a0f6646bc9c0607eb43ce4a7b7330aabf3b8e8949740ae6674deac0f"
   end
 
   depends_on "go" => :build
