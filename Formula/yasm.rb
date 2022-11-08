@@ -8,6 +8,7 @@ class Yasm < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b59763588b57923ad20c8090a7382aa361efc2503ad788dae648c95f24f410a4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6d1a844ce9a26db6d2a5c72dbced52b7fbfc8491bfde95a2f026eaa1e46433be"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "398b7f3d8a22e43b5af2335fe2d39448a3e9cc7a769ef1faf60c25fda0873d50"
     sha256 cellar: :any_skip_relocation, monterey:       "8348a13c38c499aa114f71e4d46f311105b68dbafbf0e92f6c19d5b492eed569"
@@ -72,6 +73,8 @@ class Yasm < Formula
       EOS
       system "#{bin}/yasm", "-f", "macho64", "test.asm"
       system "/usr/bin/ld", "-macosx_version_min", "10.8.0", "-static", "-o", "test", "test.o"
+      assert_match "Mach-O 64-bit object x86_64", shell_output("file test.o")
+      assert_match "Mach-O 64-bit executable x86_64", shell_output("file test")
     else
       (testpath/"test.asm").write <<~EOS
         global _start
@@ -92,6 +95,6 @@ class Yasm < Formula
       system "#{bin}/yasm", "-f", "elf64", "test.asm"
       system "/usr/bin/ld", "-static", "-o", "test", "test.o"
     end
-    assert_equal "Hello, world!\n", shell_output("./test")
+    assert_equal "Hello, world!\n", shell_output("./test") if Hardware::CPU.intel?
   end
 end
