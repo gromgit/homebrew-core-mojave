@@ -7,14 +7,17 @@ class NumpyAT116 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/numpy@1.16"
     rebuild 1
-    sha256 cellar: :any, mojave: "fede6a0d599d5201d002e23c6e1cde6796125d2d45a65217e1037b18239dfc18"
+    sha256 cellar: :any, arm64_monterey: "44632bb6f64ba1e0c69135cedb6492366d1bb694db485e98d5ad9154c2de7fe1"
+    sha256 cellar: :any, arm64_big_sur:  "7642b59316ab6f72a98404891e507f30ace7fa4155b51f0bee34bd0420616b7b"
+    sha256 cellar: :any, monterey:       "d6bb3264733e935d0d0de1d88169424cf4135bc93ff3f634a5878054531f035f"
+    sha256 cellar: :any, big_sur:        "06715ef4325d085e529164cc2818e5cf21acb4ef38014a36f93a13adcdbf66c8"
+    sha256 cellar: :any, catalina:       "e394780485048f7e2629b168da0a01d0ad55d17200f69749a33e7ac1059f7aac"
   end
 
   # was used only by opencv@2 which was deprecated on the same date
   # also uses Python 2 which is not supported anymore
-  deprecate! date: "2015-02-01", because: :unsupported
+  disable! date: "2022-11-04", because: :unsupported
 
   depends_on "gcc" => :build # for gfortran
   depends_on :macos # Due to Python 2
