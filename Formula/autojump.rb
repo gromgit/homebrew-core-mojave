@@ -8,15 +8,15 @@ class Autojump < Formula
   head "https://github.com/wting/autojump.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c6a0a482a3808d06e96d84c1298faa0844c844645d87f4c9fee3944c3e62398d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "4d351b7fec964e67bd52e43d457b573edaa772f345f06fb66e6d74c03a4bfa55"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
-    python3 = Formula["python@3.10"]
-    system python3.opt_bin/"python3.10", "install.py", "-d", prefix, "-z", zsh_completion
+    python_bin = Formula["python@3.11"].opt_libexec/"bin"
+    system python_bin/"python", "install.py", "-d", prefix, "-z", zsh_completion
 
     # ensure uniform bottles
     inreplace prefix/"etc/profile.d/autojump.sh", "/usr/local", HOMEBREW_PREFIX
@@ -26,7 +26,7 @@ class Autojump < Formula
     (prefix/"etc").install_symlink prefix/"etc/profile.d/autojump.sh"
 
     libexec.install bin
-    (bin/"autojump").write_env_script libexec/"bin/autojump", PATH: "#{python3.opt_libexec}/bin:$PATH"
+    (bin/"autojump").write_env_script libexec/"bin/autojump", PATH: "#{python_bin}:$PATH"
   end
 
   def caveats
