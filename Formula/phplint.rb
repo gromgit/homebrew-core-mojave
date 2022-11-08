@@ -5,12 +5,6 @@ class Phplint < Formula
   version "4.2.0-20200308"
   sha256 "a0d0a726dc2662c1bc6fae95c904430b0c68d0b4e4e19c38777da38c2823a094"
 
-  # The downloads page uses `href2` attributes instead of `href`.
-  livecheck do
-    url "https://www.icosaedro.it/phplint/download.html"
-    regex(/href2?=.*?phplint[._-]v?(\d+(?:\.\d+)+(?:[._-]\d{6,8})?)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ecb11516875f096c647e254ef2451687ead874112397779abdb1afeafd8e0563"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14f43ce602719839c32da02be3464239085fbe253a38617305a51e5619cbb9b4"
@@ -21,7 +15,7 @@ class Phplint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecb11516875f096c647e254ef2451687ead874112397779abdb1afeafd8e0563"
   end
 
-  deprecate! date: "2020-11-26", because: "only supports deprecated PHP versions"
+  disable! date: "2022-10-19", because: "only supports deprecated PHP versions"
 
   depends_on "php@7.4"
 
