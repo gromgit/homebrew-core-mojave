@@ -12,6 +12,7 @@ class LuaAT53 < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "7644320966d9d947a316aaf416a4f8584b300b8e69d504756b36dab4174d2624"
     sha256 cellar: :any,                 arm64_monterey: "c8b7e58e974dbd961e98ca2454e079834d9ab587a8793421541d9f3819b94499"
     sha256 cellar: :any,                 arm64_big_sur:  "e06800c163acfcb6a1d0201ca303a631b8fef9c9047855c59795f015d23bd52b"
     sha256 cellar: :any,                 monterey:       "dd559951c01f28022e4d2a9729f4eb2f94803d365ff272ab3c361e06490cdfee"
