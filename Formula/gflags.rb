@@ -7,6 +7,7 @@ class Gflags < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "6e795ef1c92a6c9a29df890b9113e48e30576ad72e1fd86bf0874cc9a8c1f042"
     sha256 cellar: :any,                 arm64_monterey: "b7b14b5ab926ce5519ac34e1998f50fcd086eea1f0cb964fdae920e1c559162a"
     sha256 cellar: :any,                 arm64_big_sur:  "3c47ffe18412eab890f339191cfe1b9142d7eb9d499d68ac4ac55db2707e6f3b"
     sha256 cellar: :any,                 monterey:       "131b300ff91b74fc06ef08208a7474c6f21d46ea785e0d76f236d5167d4ecbdf"
