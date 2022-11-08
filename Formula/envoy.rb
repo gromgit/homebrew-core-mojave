@@ -27,6 +27,16 @@ class Envoy < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a6670aa7eaf0fb59ae07319e0ecc4ba0f5e7707b1f2ac494ee4756635d21311"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7bf1c8a8edd41908a662bcf5f4d12fe097635c16a5274de321e5e632a72ec4f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f63c8c45373a38df81fe854f6064c0c4bcecd0c8b5cadf0bf5408999b29e6aac"
+    sha256 cellar: :any_skip_relocation, monterey:       "3aaa744a59e5ed4dd1b316ec020fdaaa03ea267b7aa33d3a7ce25b0031d1c6a5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dd38a660c9d1623b968e7c13d9f250b885488381a3cf866358a9d960d4dceb01"
+    sha256 cellar: :any_skip_relocation, catalina:       "e2240ae23e6351058022840344b0c30aee820977eec71acd29a641338ea4991d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ce1642222af2cb38ea97a5da78b71b8d1ea0ad1aa4930284b07d23252db247e"
+  end
+
   depends_on "automake" => :build
   depends_on "bazelisk" => :build
   depends_on "cmake" => :build
