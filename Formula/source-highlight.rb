@@ -12,6 +12,7 @@ class SourceHighlight < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "dddc83be2e682364f8d04b17885d93a5413b9b2978190e584f35fb48f1f36538"
     sha256 arm64_monterey: "b9eb7acf4fe56cfe110ac6fae44645dc71f4b7dde15ed02573b985354753b488"
     sha256 arm64_big_sur:  "5571281923274d301cadd6ea132603c76a8865fe222b1f9b912ed54618ce8944"
     sha256 monterey:       "b9d065ee32f8627dad64340fe885c26eb6a2310267eec333f15ba3a3fb0989e6"
