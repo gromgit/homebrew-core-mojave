@@ -15,11 +15,17 @@ class Rtmpdump < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtmpdump"
-    rebuild 2
-    sha256 cellar: :any, mojave: "bbbe9274717078299cb27fa22c2b6ef7dbe7abfaf32ecf3b75c4d904d4bc3bb5"
+    sha256 cellar: :any,                 arm64_ventura:  "6a1838baea154e65800058df58a36adcbb2e153337803503b7b1bed5989fd6f1"
+    sha256 cellar: :any,                 arm64_monterey: "f0787745f3b2ac7c173b3582b7079a2f30ad82dcad69a34fb79edf76e804dbb2"
+    sha256 cellar: :any,                 arm64_big_sur:  "67c47ecf95d2f4367685fb0ab04c913d55743e5bafccce721f665c6579f3b599"
+    sha256 cellar: :any,                 monterey:       "f85231e41536d97be7e733be388641ddc32e7c3fd32d07437760ea69a0298778"
+    sha256 cellar: :any,                 big_sur:        "b9e42bf8023a8634a741402f7f902bbd0083e663b2e0d36d3e70dec657f1dd07"
+    sha256 cellar: :any,                 catalina:       "f39d714005d28ed61728832877433a68dd256796bc225bac68b505b2c1d97ef4"
+    sha256 cellar: :any,                 mojave:         "97cf25d61d474c2115f6448940f924324d630b60776396398662b1368b4544da"
+    sha256 cellar: :any,                 high_sierra:    "7e95dc18fc03a6c1f19385e1507448f23e2e570c9b3ad60bd3fbc05c65295fb8"
+    sha256 cellar: :any,                 sierra:         "2118d007922d98ae71169be417106f594636e6ff979611b9e51dd2cf09c002b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1d50c3dc8938a0e69c86d29046c924c3e9f7d80c567c8bd848fe368ae0a992e"
   end
-
 
   depends_on "openssl@1.1"
 
