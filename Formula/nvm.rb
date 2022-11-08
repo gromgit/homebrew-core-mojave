@@ -1,14 +1,13 @@
 class Nvm < Formula
   desc "Manage multiple Node.js versions"
   homepage "https://github.com/nvm-sh/nvm"
-  url "https://github.com/nvm-sh/nvm/archive/v0.39.1.tar.gz"
-  sha256 "4b6f6af05f94839b1116d661adb7d3af4ac17a7f10c280cdf84be084c7ab3b61"
+  url "https://github.com/nvm-sh/nvm/archive/v0.39.2.tar.gz"
+  sha256 "3168f6503038bbb068389d966fc810b54808384ab247e13d8f4f642e14ce1079"
   license "MIT"
-  revision 1
   head "https://github.com/nvm-sh/nvm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6e14c8a2bf94212545c1ebac9a722df168c318d0e8af2fc75b729a07fea54efe"
+    sha256 cellar: :any_skip_relocation, all: "d76a0d093ab555e00c7453ac06cb69d9eadce49588d5e5830a332d18e09b1ce2"
   end
 
   def install
@@ -55,6 +54,6 @@ class Nvm < Formula
     output = pipe_output("NODE_VERSION=homebrewtest #{prefix}/nvm-exec 2>&1")
     refute_match(/No such file or directory/, output)
     refute_match(/nvm: command not found/, output)
-    assert_match "N/A: version \"homebrewtest -> N/A\" is not yet installed", output
+    assert_match "N/A: version \"homebrewtest\" is not yet installed", output
   end
 end
