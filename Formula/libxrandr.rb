@@ -6,6 +6,7 @@ class Libxrandr < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "2830680f8c2be89740e7e0338d835c3cbda416fda2455d700eb7140b077dbc87"
     sha256 cellar: :any,                 arm64_monterey: "18ea888945e931d168308aac190c22bb0ad6a39322d6fc17068d9dcdba2e0f34"
     sha256 cellar: :any,                 arm64_big_sur:  "57638149377d964bb0452e1bdf36b9712ebe35254ed05e06ac2ff66fdbf6beb6"
     sha256 cellar: :any,                 monterey:       "6ead71682d570ad0bb9d6a0169f34b6c37ad53c13ba52218d11da7451b1cd02b"
