@@ -7,9 +7,14 @@ class Fcl < Formula
   head "https://github.com/flexible-collision-library/fcl.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fcl"
-    rebuild 1
-    sha256 cellar: :any, mojave: "6bab659f517de6ab5fcf0604337a9ff03707dc629fb495c578ab477332715ae3"
+    sha256 cellar: :any,                 arm64_ventura:  "a32e966491d45e0fb152424f58b4015748e253738afaa0316a2f91c83c340202"
+    sha256 cellar: :any,                 arm64_monterey: "15b9e1b7c5166ad222c94e848259726896f59187b4a31c90671f4bdd00547591"
+    sha256 cellar: :any,                 arm64_big_sur:  "d2054fa4adf473a736ee945e0a1817772a77b423c1fbd314f7ced016ad616760"
+    sha256 cellar: :any,                 monterey:       "b79ff81383e9aa9de0a692f11d287365751a9610395e99b0acaff1eae9a8f4c8"
+    sha256 cellar: :any,                 big_sur:        "211e57fdf880e25e2441be78170dd1433d746aee1bb9a98990479abc2037a546"
+    sha256 cellar: :any,                 catalina:       "2bac88b84304ad8de56bbf604f7466ee147c31e04484df02ff45ef4aa9c966cc"
+    sha256 cellar: :any,                 mojave:         "095c6887a9007ec034751d8326fa7f5052180b78605d5df92223e081a17cad3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b0a2f8116b46c0f78f86c850ca6a808282bbc8dc6a7768d716faef891ce64bf"
   end
 
   depends_on "cmake" => :build
