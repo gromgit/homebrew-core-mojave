@@ -6,6 +6,7 @@ class Libogg < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "f18fefb04d186e649753d48a9cffd1ce6a7b7a94fe0470c932eb09ee7b9c4cd5"
     sha256 cellar: :any,                 arm64_monterey: "119687ca3010a96ff903a55160690c62fa3864e8c23b89854b6decf4416f9762"
     sha256 cellar: :any,                 arm64_big_sur:  "86f7182a3e7ad1a6cbc0520424875fcad195c97ee62db95d7b5e863be95eee95"
     sha256 cellar: :any,                 monterey:       "61cbbd4f4b5c7229dce6121d61ca24806c52c435a70b15bf060ca2f2e6412bbc"
