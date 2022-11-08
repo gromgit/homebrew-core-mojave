@@ -6,6 +6,7 @@ class AngleGrinder < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "132501b8412eaf82b228e23607495d3e4b4077e3a1f6e427e610fc7c19268b69"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aac94d72d3e7b33100dec2efdcf5e77678f81f424ab8d408ae2f044214c59f7f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "116d320e843719451ec991b97c2bb8c1aa2dea3623f387c866f12a718b512993"
     sha256 cellar: :any_skip_relocation, monterey:       "2b1e7b6bfef8586378fb75138e655a70717ccc2be44c9023421e7775a83e9bd2"
@@ -16,11 +17,6 @@ class AngleGrinder < Formula
   end
 
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "openssl@1.1"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
