@@ -7,6 +7,7 @@ class Asroute < Formula
   head "https://github.com/stevenpack/asroute.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95fed5d2399c60c38bf16a397ed05407d9bce377a88634cc6e2ec947772c20c7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "de290cf1ef3bef31bef256e64ddc4d7446fb2d81bcdd553660cb65baeb2db425"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "816be1190f677bb1ba13d1b1fd92a0ca7550341810310b59be200227936afc9c"
     sha256 cellar: :any_skip_relocation, monterey:       "b166f13f96b3c06f632e3924b1c0a03ab0dfc0d3b3ade5e9b58599dccbf2e4ed"
