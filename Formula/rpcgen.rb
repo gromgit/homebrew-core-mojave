@@ -1,16 +1,12 @@
 class Rpcgen < Formula
   desc "Protocol Compiler"
   homepage "https://opensource.apple.com/"
-  url "https://opensource.apple.com/tarballs/developer_cmds/developer_cmds-66.tar.gz"
-  sha256 "99d6c4ef4f32593df937a42d50400c17054247e875ab8cfb3bf0f2de19a90860"
+  url "https://github.com/apple-oss-distributions/developer_cmds/archive/refs/tags/developer_cmds-66.tar.gz"
+  sha256 "ac994255d8e86286e15dd6924c95f4a7c20e845e93c99708be9e49a62fbcfb38"
   # Sun-RPC license issue, https://github.com/spdx/license-list-XML/issues/906
 
-  livecheck do
-    url "https://opensource.apple.com/tarballs/developer_cmds/"
-    regex(/href=.*?developer_cmds[._-]v?(\d+(?:\.\d+)*)\.t/i)
-  end
-
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "526706cff9cc8d304a10c7fb6e8d1d5d9e9809a5dfd01d43672df89ced300293"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "78dfb8bb78945458e7800dcc9dec612a7b2d72dcc8f128965c3a62463641526d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e4b76a3f59923370fd526a8d0d7c2d045e24c0fd3bc8a90520a75a0600b2b42"
     sha256 cellar: :any_skip_relocation, monterey:       "614287949fb3eecb3109d34b8d0c8573d2b46ebf63dc1d59bf97fac5ab02942a"
