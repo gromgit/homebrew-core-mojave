@@ -6,6 +6,7 @@ class Libxfixes < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "538a4e96e9cfcfe82377be06fed103c8d5fa2649240ec89c70cd587e40d68eb9"
     sha256 cellar: :any,                 arm64_monterey: "c7f7012b751ab6c83a41cec7c95f6628a2c1d3e2a9f2f1271ee7a8a5844c1a5d"
     sha256 cellar: :any,                 arm64_big_sur:  "9668a973a8a220609add6d2af60547745b81cb198936930fcd05bfd6b9aca47c"
     sha256 cellar: :any,                 monterey:       "7325a129c439a5239c04b469d456ca5ec3ca6d93bc444aa25be30973b61f5cfd"
