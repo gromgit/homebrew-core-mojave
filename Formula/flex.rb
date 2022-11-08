@@ -16,6 +16,7 @@ class Flex < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "900f81d92ac336f0deac4e23141807b77cd15c57460c55ddfafa873d62447d0c"
     sha256 arm64_monterey: "fba3fc3fe93abae2c8c436f0cf2fba194f6cf68e6938496937163c416fe6f402"
     sha256 arm64_big_sur:  "ba78304da35f69526d386e1d1decca8818b155b4dda4f470d9393d23cf713e11"
     sha256 monterey:       "937f34d36419d74cb32ef93df71f5fad1638b2ec5290cb865840e1fcc95ac595"
