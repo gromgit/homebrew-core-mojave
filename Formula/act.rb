@@ -1,14 +1,14 @@
 class Act < Formula
   desc "Run your GitHub Actions locally 🚀"
   homepage "https://github.com/nektos/act"
-  url "https://github.com/nektos/act/archive/v0.2.32.tar.gz"
-  sha256 "1d97468200aeae51cef70bc0b7c7497854d7fb512720768e2aba8d9661a28fc7"
+  url "https://github.com/nektos/act/archive/v0.2.33.tar.gz"
+  sha256 "ac4a3171f3c98da1ef0b409635df7661a6fb282831cc27da4e7779bef583dc82"
   license "MIT"
   head "https://github.com/nektos/act.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/act"
-    sha256 cellar: :any_skip_relocation, mojave: "b0afe8e7e551a22ef4ccd6c804e9d520aebabf214271d588bc59edc7ebd65ed9"
+    sha256 cellar: :any_skip_relocation, mojave: "52447a3e30f712797e6bcf9a611f64e425c330a1aaee77ef6debbcf74f0a3004"
   end
 
   depends_on "go" => :build
