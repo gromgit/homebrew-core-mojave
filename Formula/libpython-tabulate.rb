@@ -4,16 +4,18 @@ class LibpythonTabulate < Formula
   url "https://files.pythonhosted.org/packages/7a/53/afac341569b3fd558bf2b5428e925e2eb8753ad9627c1f9188104c6e0c4a/tabulate-0.8.10.tar.gz"
   sha256 "6c57f3f3dd7ac2782770155f3adb2db0b1a269637e42f27599925e64b114f519"
   license "MIT"
+  revision 1
 
   livecheck do
     formula "python-tabulate"
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "761c33fc48f6ed2af1a83df2cddbdcd4f8090569a50cb8b0f25fcce1bfe0b091"
+    sha256 cellar: :any_skip_relocation, all: "f58920620a2e967a0d918dad5ef9f636f0b5883e525bf1c4967d49bfd38699ec"
   end
 
   depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.9" => [:build, :test]
 
   def pythons
