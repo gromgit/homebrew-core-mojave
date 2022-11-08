@@ -6,6 +6,7 @@ class AsTree < Formula
   license "BlueOak-1.0.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73706b2d3272f947eadcbc7f308401e133804ff2df73eeb55e2cb53ee0783c25"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dfbf2bc08e68378f4d8701afe6f92163ecf3880a6db549396d98d379daf2379f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88d57e70554e56a2405b3369e6ae2d1e507b5dc331d2c5b1bbf82726fe13b87a"
     sha256 cellar: :any_skip_relocation, monterey:       "3156c35a8f8aebb7c2d371b2b248a4b883882c90463f6a561111d3babdacefe9"
