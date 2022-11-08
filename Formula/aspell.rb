@@ -8,6 +8,7 @@ class Aspell < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_ventura:  "f00a63fb34af5c118d0a44b6847e012905f7abf6749a6e71b16cb09057774793"
     sha256 arm64_monterey: "d75d3b4e2929123244786e9adb7ff335ec75943617e7dbd855d71c7ce3035173"
     sha256 arm64_big_sur:  "bdd761d4454523f1bc8c0adba2db1a23c215c01371e348cd162b573347791159"
     sha256 monterey:       "91f9e3083f86a059d0db046aa78e3ddf95a3c6cf531c982b7ca470dd0e57db3b"
