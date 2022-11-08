@@ -7,9 +7,14 @@ class Microplane < Formula
   head "https://github.com/Clever/microplane.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/microplane"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3d4d8627469a9ac78a71d3c52c1e0d1e37eba528abb35d187190063ef6246eb1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a01017eab3eee84e622e7eb9d39235af14aa90af2033392022307131298f853"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9683ab03d43b65a9b9f2800126aa5ebe96fa9c639dbe9d5bdd86d53334fac010"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb8cd7544c9c9801ea665666d9a0abf44fbc9a38c15e4749d2137ab62a4f33ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "08f86bc537d804034c176ab2445e7caeae118a7815500655456a30a57fdab75d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ad84fa0e4efc89cd232632aec23c676ebfc23f787037f0da5a8356dc0b765028"
+    sha256 cellar: :any_skip_relocation, catalina:       "f9e918678833d61cedb4decb86652ccc356665aed0febcc48b30d950bc8c9b71"
+    sha256 cellar: :any_skip_relocation, mojave:         "5105e70832a0200105c87bf33d04e4852d7a01d8eb05ac9d7f7d3816d3f8748a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2439149f7ad75feb2d3bc41479fb626f8916b1e0796eeef71b69ea630b8afc27"
   end
 
   depends_on "go" => :build
