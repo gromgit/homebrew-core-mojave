@@ -1,12 +1,12 @@
 class MypaintBrushes < Formula
   desc "Brushes used by MyPaint and other software using libmypaint"
   homepage "https://github.com/mypaint/mypaint-brushes"
-  url "https://github.com/mypaint/mypaint-brushes/archive/v1.3.0.tar.gz"
-  sha256 "704bb6420e65085acfd7a61d6050e96b0395c5eab078433f11406c355f16b214"
+  url "https://github.com/mypaint/mypaint-brushes/archive/v2.0.2.tar.gz"
+  sha256 "01032550dd817bb0f8e85d83a632ed2e50bc16e0735630839e6c508f02f800ac"
   license "CC0-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2b8fbd8c3ccf9886c94c523593f14496f9fb2bb2b548c5147f053e63527938e8"
+    sha256 cellar: :any_skip_relocation, all: "ea16090070ac3b74d22f1bf9a4fd67087603bb9157785add7af285b1d439281e"
   end
 
   depends_on "autoconf" => :build
