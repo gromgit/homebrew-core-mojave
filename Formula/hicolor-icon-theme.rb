@@ -11,6 +11,7 @@ class HicolorIconTheme < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fca72dd306b23edae0d4d66b0bd485e66f53f175ba1ca87a6167309d73533bc8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1153e436e03439c74a2eae87b6b5fbb6c8192607420dd5b01d0295a8ef29d2e5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16e984b4dc9809fb223592f9b2c8a45cc49e796bd3b03f0b9507e80953167292"
     sha256 cellar: :any_skip_relocation, monterey:       "1153e436e03439c74a2eae87b6b5fbb6c8192607420dd5b01d0295a8ef29d2e5"
