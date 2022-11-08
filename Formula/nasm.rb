@@ -11,6 +11,7 @@ class Nasm < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea233a725bc6ecde3e61967f64d1ffad54e17a3cf3947b700b8d4a46ef9bc310"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b890027bb7fef2cf20c69f3fd38ed0c19c373bce79c949ab6d123601617ae949"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e3fb019ffdfcd4ce6b418adbe3d1d1d0e1e232a7de3b62fc4872c2401543cb3"
     sha256 cellar: :any_skip_relocation, monterey:       "d22292dce7f323c908b6774fbc76c4716142e2b73a292556e22d3b42589fd5d4"
