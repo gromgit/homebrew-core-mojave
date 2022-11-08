@@ -22,6 +22,7 @@ class Theora < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any,                 arm64_ventura:  "b4b1fe0a53ce538d88ca098fce885c20cca62175c2d2141ad96454e7163674a6"
     sha256 cellar: :any,                 arm64_monterey: "56008e9450fcf3f712f34ec79407b8e738953d5fc50feaf72a6434dd28fc1101"
     sha256 cellar: :any,                 arm64_big_sur:  "1e5271cb88e3dad8eb5f06460e7f3f2cec0129679c7f7fb4f84db1d09664b827"
     sha256 cellar: :any,                 monterey:       "0bdb8acd2fafffff1e172c94aa6f67ce20ea67760d5296ac108ca1ec7e9e4c22"
