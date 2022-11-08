@@ -7,10 +7,16 @@ class EnvoyAT118 < Formula
   license "Apache-2.0"
 
   # Apple M1/arm64 is pending envoyproxy/envoy#16482
+  bottle do
+    sha256 cellar: :any_skip_relocation, big_sur:  "3536e288183abeb9f36505065c889bc376ca3b3b3e526f8850a33d5b9a0399d5"
+    sha256 cellar: :any_skip_relocation, catalina: "2af03e6c0a7f978f1f87ffdb84861c9e75995ff783356f14e088c07bb8bbb03f"
+  end
 
   keg_only :versioned_formula
+
   # https://github.com/envoyproxy/envoy/blob/main/RELEASES.md#release-schedule
-  deprecate! date: "2022-04-15", because: :unsupported
+  # Original deprecation date: 2022-04-15
+  disable! date: "2022-11-04", because: :unsupported
 
   depends_on "automake" => :build
   depends_on "bazelisk" => :build
