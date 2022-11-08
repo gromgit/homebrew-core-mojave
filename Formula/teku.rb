@@ -2,12 +2,12 @@ class Teku < Formula
   desc "Java Implementation of the Ethereum 2.0 Beacon Chain"
   homepage "https://docs.teku.consensys.net/"
   url "https://github.com/ConsenSys/teku.git",
-        tag:      "22.10.0",
-        revision: "ae21d1cf339f1517692fb3735bb99161e4ab28cf"
+        tag:      "22.10.2",
+        revision: "182f5601ff5ef35ce10dba59eb64d441358843d5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c0bbb1c2ae37a62038b0aacd3c982eae2db37c667a34e5739848a4290ed35db8"
+    sha256 cellar: :any_skip_relocation, all: "21372b639d8eacf8e648ec52f2afef66f425b3add2a461d4c4b0ea896b011748"
   end
 
   depends_on "gradle" => :build
