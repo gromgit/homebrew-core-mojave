@@ -7,14 +7,6 @@ class TinyFugue < Formula
   license "GPL-2.0-or-later"
   revision 2
 
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/tf[._-]v?(\d+(?:\.\d+)*(?:[a-z]\d+?)?)\.t}i)
-    strategy :sourceforge do |page, regex|
-      page.scan(regex).map { |match| match.first.sub(/^(\d)(\d)([a-z])/i, '\1.\2\3') }
-    end
-  end
-
   bottle do
     sha256 arm64_monterey: "efbd40e8291c53ca89d75dc25c15b18e3cbbba58e1da3b99b200a8458128609e"
     sha256 arm64_big_sur:  "de2a1d16b807c1cede3b8f574a1dbaa5a8bda47b4c65307b33b975b9eec665f7"
@@ -25,6 +17,8 @@ class TinyFugue < Formula
     sha256 high_sierra:    "b1ddefa5c2a52f3399f5a90c0586d65e5e7ccc9940715cbe682a1a30e8dc6e76"
     sha256 x86_64_linux:   "c92a44ad82e402fb01b555a22f7e276a344d799b1b666ef76286a3397617770c"
   end
+
+  deprecate! date: "2022-10-25", because: :unmaintained
 
   depends_on "libnet"
   depends_on "openssl@1.1"
