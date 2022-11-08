@@ -6,6 +6,7 @@ class Libxpm < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "8415ca95daa747940d5a7d18a9ab237872513cf8e67c1ee716290ba47f037650"
     sha256 cellar: :any,                 arm64_monterey: "8b1e709e3a1c65e21f58ab2f43174c67a1528aeaabac6af88de7818c3ed46f34"
     sha256 cellar: :any,                 arm64_big_sur:  "a776d9437e8557afeb4dd8e1e91e439ff049df1d8d256af9c34be49843ef7591"
     sha256 cellar: :any,                 monterey:       "4e4ffef5d95c5ef0e30408c1b00aebc0455fa08fc77e5158bcf326b4a1cbcb2e"
