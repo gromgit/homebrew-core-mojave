@@ -12,6 +12,7 @@ class BdwGc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bdw-gc"
+    rebuild 1
     sha256 cellar: :any, mojave: "1a3b451804a5f8231411f86d2de67c827a1539b5eca8d78658a4c25a7d0bc5ff"
   end
 
