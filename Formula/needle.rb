@@ -1,21 +1,23 @@
 class Needle < Formula
   desc "Compile-time safe Swift dependency injection framework with real code"
   homepage "https://github.com/uber/needle"
-  # TODO: Check if a GitHub tarball is sufficient here.
-  url "https://github.com/uber/needle.git",
-      tag:      "v0.19.0",
-      revision: "9d15211866bd307c7bfef789fe77ce1e97aeb978"
+  url "https://github.com/uber/needle/archive/v0.19.0.tar.gz"
+  sha256 "481e5727e529efca7a2a5046f243f0ae35ce6ea135a3d675acad86637c9fdb6f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "0cdbc53949504cdb3d0d723af00bf452731c3891c6eca10a89edfb9871c7bd08"
-    sha256 cellar: :any, arm64_big_sur:  "97cb4f17a1642708c59a07eca04d36b377d2a1f0ca0a71aa595b66935875e1a5"
-    sha256 cellar: :any, monterey:       "f99d8fc72e9588b310cc7e44895722214edccc536b2a1646bcbd35d63425675d"
-    sha256 cellar: :any, big_sur:        "ab1412e10cbe5098cba3bd3729dd9c2189c0f9a24edb865b76e2c9d0174ba85e"
+    rebuild 1
+    sha256 cellar: :any, arm64_monterey: "5f7596f47983a00c77e834ea206dbf2e4215c39bd9abaab5b00619d18cedc1e0"
+    sha256 cellar: :any, arm64_big_sur:  "1a8b8bbaa47d29a4812a20f2b7756fab6fcb9f99b661fba42efd6742deb79d2e"
+    sha256 cellar: :any, monterey:       "99ede06d21e4cf785268c81c44b52d699240cb5af86466c09d12c1c616c466a4"
+    sha256 cellar: :any, big_sur:        "fb25e66dc86b857118df649494f02ae38daa33a38315a28bb7ebf8529e72ada6"
   end
 
   depends_on xcode: ["13.0", :build] # Swift 5.5+
   depends_on :macos
+
+  # Support Swift 5.7+
+  patch :DATA
 
   def install
     # Avoid building a universal binary.
@@ -46,3 +48,20 @@ class Needle < Formula
     assert_match version.to_s, shell_output("#{bin}/needle version")
   end
 end
+
+__END__
+diff --git a/Generator/Package.swift b/Generator/Package.swift
+index 915889b..485be3d 100644
+--- a/Generator/Package.swift
++++ b/Generator/Package.swift
+@@ -2,7 +2,9 @@
+ import PackageDescription
+
+ // Based on https://github.com/apple/swift-syntax#readme
+-#if swift(>=5.6) && swift(<5.8)
++#if swift(>=5.7) && swift(<5.8)
++let swiftSyntaxVersion: Version = "0.50700.0"
++#elseif swift(>=5.6)
+ let swiftSyntaxVersion: Version = "0.50600.1"
+ #elseif swift(>=5.5)
+ let swiftSyntaxVersion: Version = "0.50500.0"
