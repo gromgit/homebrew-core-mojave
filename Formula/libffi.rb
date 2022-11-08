@@ -1,13 +1,13 @@
 class Libffi < Formula
   desc "Portable Foreign Function Interface library"
   homepage "https://sourceware.org/libffi/"
-  url "https://github.com/libffi/libffi/releases/download/v3.4.3/libffi-3.4.3.tar.gz"
-  sha256 "4416dd92b6ae8fcb5b10421e711c4d3cb31203d77521a77d85d0102311e6c3b8"
+  url "https://github.com/libffi/libffi/releases/download/v3.4.4/libffi-3.4.4.tar.gz"
+  sha256 "d66c56ad259a82cf2a9dfc408b32bf5da52371500b84745f7fb8b645712df676"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libffi"
-    sha256 cellar: :any, mojave: "bdf61dc3074df68ee18c6dad976ebe38a36e4f570ad90d64198be6917ab4e769"
+    sha256 cellar: :any, mojave: "625e95a057d0a884b145952430a8ff72f7775ed6079e87e69d4008b1c45b2216"
   end
 
   head do
