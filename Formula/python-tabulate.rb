@@ -7,15 +7,16 @@ class PythonTabulate < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e521ca072a0ffb9f7e0cd463b7b9988a8285584172dabb197663c1b60ab3c1c8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "61e7d23a6d7de917886da888949aef4363ee874ce4d1f153344992b6f2e2c9e5"
   end
 
   depends_on "libpython-tabulate"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     # Install the binary only, the lib part is provided by libpython-tabulate
-    system "python3.10", "setup.py", "--no-user-cfg", "install_scripts", "--install-dir=#{bin}", "--skip-build"
+    system "python3.11", "setup.py", "--no-user-cfg", "install_scripts", "--install-dir=#{bin}", "--skip-build"
   end
 
   test do
