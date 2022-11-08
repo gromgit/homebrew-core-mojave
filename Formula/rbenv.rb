@@ -7,6 +7,7 @@ class Rbenv < Formula
   head "https://github.com/rbenv/rbenv.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "09bccc5974bd7b23f60a42c94bf7bc7d0e605cf4ef1f4068f63a1fe905bc5c74"
     sha256 cellar: :any,                 arm64_monterey: "dede9454bc8a665ac2b1858a0522fb77d95deebb5db7437918cfb056ff119b16"
     sha256 cellar: :any,                 arm64_big_sur:  "d5e6168ad6ab8843946273319fc6949b322c80f2d666a6bdda62466e256e6746"
     sha256 cellar: :any,                 monterey:       "42657e04e2d1e8bf9abb9c5f0ba50e567df95f93a2a212491f005e4bd0ad9cee"
