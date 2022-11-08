@@ -7,9 +7,14 @@ class Libusrsctp < Formula
   head "https://github.com/sctplab/usrsctp.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libusrsctp"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "1ec880d7ef74e16935f2825fbe7ad276f8465928bb0888c38c7c05d0ebaea8a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1327b9355f6c879443e9a3b8d405559d87ee245e05b435a0fe5257b3d72fd5b4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bf65d4cad3f3abcec79432f82c040761b3bf8b5b04417172ea343efc7ff878c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cccdb95cc428680b9dc8c57ae970f23874889797d8438eaa9079e675473ab394"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a5ea16561b37ed98f235bd62e33534c85439244a41f3e917ffdabd6c97d74b0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ca45d1d9431028ad9b7025e6d5486a10f98c6c49e39dd1a4e1d033c75bee6135"
+    sha256 cellar: :any_skip_relocation, catalina:       "5c2a6b26e354c0498e0e3ef590dfc9f9651f70ce36112f196baec64ef76aec31"
+    sha256 cellar: :any_skip_relocation, mojave:         "fe831b138df6c6b80d260d8a224bf1b1114af51d1b14186e9d714fd99f035e30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b8b7629549478dc7d3b0ca0498cd6c181ce4a94e5dfddb19b34de124621ef8"
   end
 
   depends_on "cmake" => :build
