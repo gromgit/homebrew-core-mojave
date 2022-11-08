@@ -7,6 +7,7 @@ class Hub < Formula
   head "https://github.com/github/hub.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1b4d7c179ca172a5d00781021defae38a452408eab7077e26ad4f317cfad9e6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "00602733d9a4c8049e34cb20a7c96dbd51f98a60e1cb5fbc9aec72663324ce89"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "19d761270350d4c4b6d5118d096dc7c012e7b58b43c0d81f9c6d8bded1888dd9"
     sha256 cellar: :any_skip_relocation, monterey:       "d4c647211cc8a8e9aa9bedfaa4cb079a3a5fafea3f8378c7eaf5c50e2503cd0e"
@@ -20,8 +21,11 @@ class Hub < Formula
   # Bump to 1.18 on the next release, if possible.
   depends_on "go@1.17" => :build
 
-  uses_from_macos "groff" => :build
   uses_from_macos "ruby" => :build
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "groff" => :build
+  end
 
   on_linux do
     depends_on "util-linux"
