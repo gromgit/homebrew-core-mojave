@@ -21,6 +21,7 @@ class Jq < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "4622927182fbc7bf27c4b706e005fbae2700d15e69a68ef7002aed2676b8a4f7"
     sha256 cellar: :any,                 arm64_monterey: "f70e1ae8df182b242ca004492cc0a664e2a8195e2e46f30546fe78e265d5eb87"
     sha256 cellar: :any,                 arm64_big_sur:  "674b3ae41c399f1e8e44c271b0e6909babff9fcd2e04a2127d25e2407ea4dd33"
     sha256 cellar: :any,                 monterey:       "7fee6ea327062b37d34ef5346a84810a1752cc7146fff1223fab76c9b45686e0"
