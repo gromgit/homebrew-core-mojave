@@ -11,6 +11,7 @@ class Lame < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "dde2fd627f56465b34aa521ec5ea789a2b6672f0336f5f9a0b6b831342b1052e"
     sha256 cellar: :any,                 arm64_monterey: "67ee7aa900fa0b411c3731783ee53b17517145a03a90b1f35068b01d17b5c347"
     sha256 cellar: :any,                 arm64_big_sur:  "2ff2c6ad3cfd26e1ba53230631e2f04734a4638c344cce50ff0b8fc36b45c403"
     sha256 cellar: :any,                 monterey:       "11e516ec779a6f469e9853dbdf65c57e5514177474d70f38cef9c4163b92dfab"
