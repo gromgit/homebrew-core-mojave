@@ -12,6 +12,7 @@ class Libvorbis < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "7c0b32505548e1e6e475923981587d90c92544e4e06838e0043c931ec1b9ce2e"
     sha256 cellar: :any,                 arm64_monterey: "521810a7d5d4d0779cfc22a7d8ba37bb452fea06a3ab8205d882961d1eeb8ff7"
     sha256 cellar: :any,                 arm64_big_sur:  "07ab1118fc6d389a8b0506d0b74a3cfc12026a837c8f2609b2133318c8818c81"
     sha256 cellar: :any,                 monterey:       "ce6cfb42216b79203bf86458b0f22cc42c0aeb5e1b1c0ab56e604b83ef374553"
