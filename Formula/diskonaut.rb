@@ -6,6 +6,7 @@ class Diskonaut < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9205493cd0b62de4cef98806d38630ca2ef81cf33cc9981f3c3947494d02fc6d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "274b273acc115561a92e1d25b2090f1acab3f8081eac548771a4f693d877698e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6d4fc3eb1244ec14a1719e29e97a5a884a6a48c5918ed0df626db002312be23a"
     sha256 cellar: :any_skip_relocation, monterey:       "47ec2678d78687e62e493656eac0603dce2aaa2610e6727db4ae791732cb64ea"
