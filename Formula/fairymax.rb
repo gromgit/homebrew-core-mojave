@@ -8,9 +8,15 @@ class Fairymax < Formula
   head "http://hgm.nubati.net/git/fairymax.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fairymax"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "0c573f61797a9bd24045ef14d65860b8602af16524af8f7fcfa16bf5b63b6b2d"
+    sha256                               arm64_ventura:  "16510c0f87a8895135e6b4bcbbbef25a2d525abcdc98d09aa3a792de04d08e40"
+    sha256                               arm64_monterey: "85ed95611bf8ffcdec73d5d5f3f3372b4e72d73a0c4eed0dcf3183b2ec94743d"
+    sha256                               arm64_big_sur:  "77d45d92cbfb8e3318ba17fe95aa3fdd24fa4f7e7cfdffdd7aaa8a29d5f837ec"
+    sha256                               monterey:       "2f0f4b0871f97165e8a76bd696b71cb721cfa60eaf8dc6d3195fe3b7e85464b2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "497488cd10ab4c0e87e6fc38cfa250b275e1ceea07ac7694b4ae37996da32c9d"
+    sha256 cellar: :any_skip_relocation, catalina:       "8dad1d34ed2ce478abebc9ac986bbf5d7d0bf7af5f8326839da735d8fb3d11c6"
+    sha256 cellar: :any_skip_relocation, mojave:         "5c4d837d9726fd83661fac0703cda7829f2c81e48f69ac98016915f97dad15cf"
+    sha256 cellar: :any_skip_relocation, high_sierra:    "7da2c1f0d3c9f8cdfd5729c22b16bb3a0c81e0189988e4afe43ccaa69518beda"
+    sha256                               x86_64_linux:   "52e93b116c8cd56ff7fb4d7f3a9661a924be044489c5b66bad3d17b4419819c2"
   end
 
   def install
