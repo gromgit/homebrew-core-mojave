@@ -7,13 +7,10 @@ class DockerMachineCompletion < Formula
   head "https://github.com/docker/machine.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-machine-completion"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4a2957964ec5ed559c6ad72523c23cb7b5804f1c96fb77c404e6b38f376656a8"
+    sha256 cellar: :any_skip_relocation, all: "a953e0a6776024c35f839a0f4a23a782e186318fd07fdaa0a8405f41fadbd01a"
   end
 
-
-  deprecate! date: "2021-09-30", because: :repo_archived
+  disable! date: "2022-10-19", because: :repo_archived
 
   conflicts_with "docker-machine",
     because: "docker-machine already includes completion scripts"
