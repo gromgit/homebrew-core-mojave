@@ -1,12 +1,12 @@
 class Libpciaccess < Formula
   desc "Generic PCI access library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/pub/individual/lib/libpciaccess-0.16.tar.bz2"
-  sha256 "214c9d0d884fdd7375ec8da8dcb91a8d3169f263294c9a90c575bf1938b9f489"
+  url "https://www.x.org/pub/individual/lib/libpciaccess-0.17.tar.gz"
+  sha256 "bf6985a77d2ecb00e2c79da3edfb26b909178ffca3f2e9d14ed0620259ab733b"
   license "MIT"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ea67393c5a32066f823858c124136a6b0e296fb033321c7bb073a618c65d2b9"
   end
 
   depends_on "pkg-config" => :build
