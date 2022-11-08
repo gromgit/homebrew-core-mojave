@@ -6,6 +6,7 @@ class JsonGlib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_ventura:  "9f17fc23523cce11c9fa0731030f32a4a6bbc45e2635147e2faeb781cca1df80"
     sha256 arm64_monterey: "8d0477538b5e84536dd970d2dda48d46d89b5159996f41bf2c17b02ea7ee4075"
     sha256 arm64_big_sur:  "dbaac34029a64a5d23c4c3d58f579cca68a9b65fa2ba6d8e44cac55781acce32"
     sha256 monterey:       "e23445c25a457a3fd6b076a60a1ec4d2732e1f8a22ff73f4db2a06b36cc40430"
