@@ -6,6 +6,7 @@ class Libb2 < Formula
   license "CC0-1.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "6c9ffaf08fde8879febf2998a289d6e9bfa505ed29cdf5f4c41d52a632c11f1e"
     sha256 cellar: :any,                 arm64_monterey: "fa45f83dfa716f0f69bb395eeb3016c9cc3223c975b64bed5544304e0eb4cd2c"
     sha256 cellar: :any,                 arm64_big_sur:  "7713b483f3474a3531c5830bbc8de7ad1903989e55e5da3ff5bfd85e87c5c045"
     sha256 cellar: :any,                 monterey:       "f526645f4114ef85c577d611383bb7e0acdc2697719caa73cd8677260b516a25"
