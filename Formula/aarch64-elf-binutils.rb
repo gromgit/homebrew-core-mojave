@@ -12,10 +12,13 @@ class Aarch64ElfBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aarch64-elf-binutils"
-    sha256 mojave: "2b6c4ed2b1c27219bcc549a7b11c966b613981ae82586636f83f013d9852f7ce"
+    rebuild 1
+    sha256 mojave: "6614c10b4f609bce3322ac7ed25ecdf65ad00e78c51624e74c0f0321383b1289"
   end
 
-  uses_from_macos "texinfo"
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   def install
     target = "aarch64-elf"
