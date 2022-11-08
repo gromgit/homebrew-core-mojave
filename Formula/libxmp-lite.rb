@@ -6,9 +6,14 @@ class LibxmpLite < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxmp-lite"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a53564e44bca668a5066c5f6c55923dcaf3cadf2cd8debe0d83302adaacb1444"
+    sha256 cellar: :any,                 arm64_ventura:  "ef306919a426ff7cb4bbeb9ee62191ea08539b25776fbb386f501c7cf7de3a07"
+    sha256 cellar: :any,                 arm64_monterey: "026c3cdd675caf62652f8f2a1c5c4b6183565d1ac9bc0aa8f439926e496fa865"
+    sha256 cellar: :any,                 arm64_big_sur:  "3e5ad6d3a6c5e8f8e78055aa92d7b92bcc28faf2ae4904154b28d8d5cc83426e"
+    sha256 cellar: :any,                 monterey:       "ecd2af08822aa07e9b7a2a3b872a368979de55b8d359a22fbd6f4826175e24d2"
+    sha256 cellar: :any,                 big_sur:        "da41c0decc2231fc35a884c1bfa61240261958e6cde77d863c3d62dd34830d5f"
+    sha256 cellar: :any,                 catalina:       "2fd028d14695096bcb8fb8839758fb962c36d3edfd83e959a652bd735d4684b4"
+    sha256 cellar: :any,                 mojave:         "457442a50a49ab9267dfa586d7abeb3e3bebcdf1860a0d9ee0d0b34e341bf71a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f603edfccc033acfd35d3b207a43d91a5e57ae4ddc019d2422a880137d5f5ac"
   end
 
   def install
