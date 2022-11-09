@@ -13,7 +13,8 @@ class OpenjdkAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk@11"
-    sha256 cellar: :any_skip_relocation, mojave: "930438bb87c93cf540eb11435dce3bbbc0359f8042ecaf953281ea9a09af9792"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a321c9c42b92341ecd6576e1fc95bc752d7210721b49d066f5115461ce9028df"
   end
 
   keg_only :versioned_formula
