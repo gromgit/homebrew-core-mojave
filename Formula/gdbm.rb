@@ -8,8 +8,8 @@ class Gdbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdbm"
-    rebuild 4
-    sha256 mojave: "146461ed0286d06445af246f1bd70fc439ef46034fad890f6cdf0d0ce4fc7ec9"
+    rebuild 5
+    sha256 mojave: "9d04d4ebef4f4da063794397e5d801980246403ecf7a1854ce3ceb552c3739c1"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
