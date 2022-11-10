@@ -10,8 +10,8 @@ class Ncurses < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ncurses"
-    rebuild 2
-    sha256 mojave: "d349d6d9ae8a28a6fa763d897d8b63f83ef4ecbf82563caa1827d19d1d4681f7"
+    rebuild 3
+    sha256 mojave: "d52d9ef210ae4729e3f20a6459fb2481e11f7a98ae66e53327bb65f7454b3d7e"
   end
 
   keg_only :provided_by_macos
