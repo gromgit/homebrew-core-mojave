@@ -12,10 +12,13 @@ class ArmLinuxGnueabihfBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arm-linux-gnueabihf-binutils"
-    sha256 mojave: "801da05f4402fd31938c61712dc5579d2ee44ec5235a469f58223ee9e58900d3"
+    rebuild 1
+    sha256 mojave: "47bcef6ae7a15a3f698e2691cab355f2cf45c0031fac9b1b2f2c28553bb2f279"
   end
 
-  uses_from_macos "texinfo"
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   def install
     ENV.cxx11
