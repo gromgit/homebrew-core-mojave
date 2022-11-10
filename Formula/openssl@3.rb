@@ -1,9 +1,9 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-3.0.5.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.0.5.tar.gz"
-  sha256 "aa7d8d9bef71ad6525c55ba11e5f4397889ce49c2c9349dcea6d3e4f0b024a7a"
+  url "https://www.openssl.org/source/openssl-3.0.7.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.0.7.tar.gz"
+  sha256 "83049d042a260e696f62406ac5c08bf706fd84383f945cf21bd61e9ed95c396e"
   license "Apache-2.0"
 
   livecheck do
@@ -13,8 +13,7 @@ class OpensslAT3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssl@3"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "eef592ab3e8852797eedbd493f03b04e726d380cc7f778ca4a89445177e2eae0"
+    sha256 cellar: :any_skip_relocation, mojave: "9d267f9a82e48429f7bcc5fad881c500e9d2877583f680e7af8f2ff3f25cc4c6"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
@@ -38,13 +37,6 @@ class OpensslAT3 < Formula
       url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.62.tar.gz"
       sha256 "5022ad857fd76bd3f6b16af099fe2324639d9932e08f21e891fb313d9cae1705"
     end
-  end
-
-  # Fix compile on older macOS (Xcode 10.1 and earlier).
-  # Remove with the next release.
-  patch do
-    url "https://github.com/openssl/openssl/commit/c95e2030c34646176b4843b5f0f48720d896f427.patch?full_index=1"
-    sha256 "91b4ef7049aec75bd3c2784472b70652cc1bad60e66f6a7129d5061d6004af43"
   end
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
