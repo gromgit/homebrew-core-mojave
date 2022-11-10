@@ -8,8 +8,8 @@ class Coreutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coreutils"
-    rebuild 1
-    sha256 mojave: "05d55a5687dda608c16883e174d52093b619dfcaa635a96970e94d0ca8d56642"
+    rebuild 2
+    sha256 mojave: "a8f5391f4be7878ad1328744ed1afc00765ac5a18dd307b45f8241c1fc278f30"
   end
 
   head do
