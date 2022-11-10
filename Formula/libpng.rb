@@ -13,6 +13,7 @@ class Libpng < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpng"
+    rebuild 1
     sha256 cellar: :any, mojave: "37a543c270a6f02d2b4d81b00126eee0f063a5888c6cc1f7480c8b41761e94b5"
   end
 
