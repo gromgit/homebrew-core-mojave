@@ -8,6 +8,7 @@ class Gsl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gsl"
+    rebuild 1
     sha256 cellar: :any, mojave: "593456866557ec868eef702b10d2372af2227e27eed57722e436206248ab5d05"
   end
 
