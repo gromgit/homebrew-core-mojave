@@ -1,9 +1,9 @@
 class GoAT118 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.18.7.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.18.7.src.tar.gz"
-  sha256 "9467e33b819f71bebb21fb0ee1dd6794fd2244ae94907a984286712f9839a944"
+  url "https://go.dev/dl/go1.18.8.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.18.8.src.tar.gz"
+  sha256 "1f79802305015479e77d8c641530bc54ec994657d5c5271e0172eb7118346a12"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,7 +13,7 @@ class GoAT118 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go@1.18"
-    sha256 cellar: :any_skip_relocation, mojave: "bbd8613117f3fcb7c2a937b6fb3e3e4e7d065901fe82e3a6d69661ab7f768e9c"
+    sha256 cellar: :any_skip_relocation, mojave: "9f2d5315ca3b664167db1f54ade4c5af4833baf4bef92eaeaedc3e8f66fe9034"
   end
 
   keg_only :versioned_formula
