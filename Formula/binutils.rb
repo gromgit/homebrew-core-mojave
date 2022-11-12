@@ -9,8 +9,8 @@ class Binutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/binutils"
-    rebuild 1
-    sha256 mojave: "df788ae8c15796469454d6c14b0bab292b602b095c9f1cc04e646f33fe3d7177"
+    rebuild 2
+    sha256 mojave: "07cc5af6743a5050bb87ab3a9aa54bb50160d99fbb549593f8ba58baea5f7cdc"
   end
 
   keg_only "it shadows the host toolchain"
