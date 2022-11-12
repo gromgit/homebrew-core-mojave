@@ -15,6 +15,7 @@ class Lz4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lz4"
+    rebuild 1
     sha256 cellar: :any, mojave: "3ff38c2dd4d71565deea157b08263cdac3bdcc585dcb869c60f725c14e4819fb"
   end
 
