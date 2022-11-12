@@ -14,6 +14,7 @@ class BoostBuild < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost-build"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "7f3ecf30f08316798e0843137ae3c9edc43d644c9d4b26d307c3c6a9e3aabdc4"
   end
 
