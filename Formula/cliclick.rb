@@ -8,6 +8,7 @@ class Cliclick < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cliclick"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "0dfaeb2f42a1eaca530b0121c704530ee0de3981554e5ecf5b8b9c54fe308950"
   end
 
