@@ -1,8 +1,8 @@
 class Byacc < Formula
   desc "(Arguably) the best yacc variant"
   homepage "https://invisible-island.net/byacc/"
-  url "https://invisible-mirror.net/archives/byacc/byacc-20220128.tgz"
-  sha256 "42c1805cc529314e6a76326fe1b33e80c70862a44b01474da362e2f7db2d749c"
+  url "https://invisible-mirror.net/archives/byacc/byacc-20221106.tgz"
+  sha256 "a899be227bbcac9cf7700f7dbb5a8494688f1f9f0617b510762daeace47b9d12"
   license :public_domain
 
   livecheck do
@@ -12,7 +12,7 @@ class Byacc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/byacc"
-    sha256 cellar: :any_skip_relocation, mojave: "9b387471831f716749785b3077fa8a55ff167adccc707c463d9a398a2cf1608f"
+    sha256 cellar: :any_skip_relocation, mojave: "608e9e0fbad08f61f444c48a2d684dcb57ee32721bca48ae3f170c7cf36d5c62"
   end
 
   def install
