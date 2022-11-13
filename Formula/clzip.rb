@@ -13,6 +13,7 @@ class Clzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clzip"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "09cd7e8f9d101204a982f72cffdb3cfd99a1c9d9ee5b3dd1edb1edf02ae8ccd3"
   end
 
