@@ -12,8 +12,8 @@ class Duktape < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duktape"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c550548ccf53c0e02f6f3ef1b1d558b7c45763ebddfa601834154a53b21c177b"
+    rebuild 2
+    sha256 cellar: :any, mojave: "64ca4d1eeb958f7115d3a34157105d20f63a6d6e91ad0bcb1a29afbda85e60c8"
   end
 
   def install
