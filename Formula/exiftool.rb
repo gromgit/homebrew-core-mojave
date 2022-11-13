@@ -16,7 +16,8 @@ class Exiftool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exiftool"
-    sha256 cellar: :any_skip_relocation, mojave: "5a32f4e2cf0bf03b9e8767653e858f0e2bf741b8e684ddf881090e79dd9d9201"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "18e98e200f05a54679b4b4822605e731165ac019ca673f3431c92b321a2c429e"
   end
 
   uses_from_macos "perl"
