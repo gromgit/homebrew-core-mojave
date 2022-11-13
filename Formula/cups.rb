@@ -15,6 +15,7 @@ class Cups < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cups"
+    rebuild 1
     sha256 mojave: "6b2b478a448f3966bb25bec8754e6b98c8f0e9dcf5b8a911a0c8afb8021d05e4"
   end
 
