@@ -8,7 +8,8 @@ class Cloc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloc"
-    sha256 cellar: :any_skip_relocation, mojave: "08d2b8cdf5af4b8fb320e49a7545b58df43718c72b713910be12c6d04e1d5b28"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "46d657b8ebc522627834891b41aa19a4baafe1f3597d916d4e43599ff00bc766"
   end
 
   uses_from_macos "perl"
