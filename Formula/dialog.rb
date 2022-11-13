@@ -12,6 +12,7 @@ class Dialog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dialog"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9d394726ff7f96d2fe1930489308cf866081d9a7c35452fbb358a6322530d7e0"
   end
 
