@@ -8,6 +8,7 @@ class Dylibbundler < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dylibbundler"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "aabfd5686086d7e52f177a86a9499405893ac1f43e662f2926534259752439be"
   end
 
