@@ -8,6 +8,7 @@ class Ddrescue < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ddrescue"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "4c90e596b6fda7bf777c9939db1bfb37f4aedfd79919060b24ec22442e9d9780"
   end
 
