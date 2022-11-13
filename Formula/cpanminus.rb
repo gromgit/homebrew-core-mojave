@@ -11,7 +11,7 @@ class Cpanminus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpanminus"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "067306cccbe430d43e910a5ee4d2d945bec0ef0a6fd49ba4a1a900f069bf207b"
   end
 
