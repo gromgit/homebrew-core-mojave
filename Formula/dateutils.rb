@@ -7,6 +7,7 @@ class Dateutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dateutils"
+    rebuild 1
     sha256 mojave: "b7e5c749d52bd3a7b12abe5c5b9dea7495281accfaf86f8f29407253e1b59eca"
   end
 
