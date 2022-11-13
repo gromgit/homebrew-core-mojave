@@ -8,6 +8,7 @@ class Nettle < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nettle"
+    rebuild 1
     sha256 cellar: :any, mojave: "c8fa97bcd17fbd28bd37e83351273d51e91aadc7afcd2ac235d996836385c404"
   end
 
