@@ -13,6 +13,7 @@ class Dos2unix < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dos2unix"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9d6c1cb1753728a6736698289d2b8e2644918b9dd8d1d14d05a4b207a18b2aae"
   end
 
