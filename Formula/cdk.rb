@@ -1,8 +1,8 @@
 class Cdk < Formula
   desc "Curses development kit provides predefined curses widget for apps"
   homepage "https://invisible-island.net/cdk/"
-  url "https://invisible-mirror.net/archives/cdk/cdk-5.0-20211216.tgz"
-  sha256 "aeec4d9be2255970c8dca0785a0a996f0d242eb4f73cf927a3ec04997a3e63e8"
+  url "https://invisible-mirror.net/archives/cdk/cdk-5.0-20221025.tgz"
+  sha256 "03ccfa21c9fc3d61ddd0fda19da545359055bbeef5a1c882dfb9ff48f3746af2"
   license "BSD-4-Clause-UC"
 
   livecheck do
@@ -12,9 +12,8 @@ class Cdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdk"
-    sha256 cellar: :any_skip_relocation, mojave: "ae37706b3a66338a8dbfb8b475a2855d406430969edb43e17a4b6dc8cb9aa80a"
+    sha256 cellar: :any_skip_relocation, mojave: "41d981fec19743a71c03b860c54f1c8ccff499ce55613fffcd18c0f992061b3a"
   end
-
 
   uses_from_macos "ncurses"
 
