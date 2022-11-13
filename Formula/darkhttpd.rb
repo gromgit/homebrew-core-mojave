@@ -7,6 +7,7 @@ class Darkhttpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/darkhttpd"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9dfb91c9ff3141e2c57c924081e3d2d6c34976ef25fb2a61301ec07127d73e4c"
   end
 
