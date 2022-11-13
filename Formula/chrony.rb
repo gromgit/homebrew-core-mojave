@@ -12,6 +12,7 @@ class Chrony < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chrony"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "4c538a0907d827c9a500b131b54768a7cde55f9671ce44a8ed2ddb027c7679d1"
   end
 
