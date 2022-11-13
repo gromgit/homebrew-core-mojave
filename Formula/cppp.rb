@@ -12,6 +12,7 @@ class Cppp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppp"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6fd73dbdd4ee182af5093c868d0950c4c7654eb3dac58029e4f3853a1e0d66c3"
   end
 
