@@ -9,7 +9,8 @@ class Cpio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpio"
-    sha256 mojave: "3f2619bd6e9fac2b58323cfe99d1234fb9a50aa30f310e5c2ac81fafce4faa4c"
+    rebuild 1
+    sha256 mojave: "0126473c2dd65291f9ee926204d3c615e81bc1c89a65cf3562636fc0de471c7b"
   end
 
   keg_only :shadowed_by_macos, "macOS provides cpio"
