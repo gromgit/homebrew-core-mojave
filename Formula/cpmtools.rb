@@ -1,8 +1,8 @@
 class Cpmtools < Formula
   desc "Tools to access CP/M file systems"
   homepage "http://www.moria.de/~michael/cpmtools/"
-  url "http://www.moria.de/~michael/cpmtools/files/cpmtools-2.21.tar.gz"
-  sha256 "a0032a17f9350ad1a2b80dea52c94c66cb2b49dfb38e402b5df22bdc2c5029d0"
+  url "http://www.moria.de/~michael/cpmtools/files/cpmtools-2.23.tar.gz"
+  sha256 "7839b19ac15ba554e1a1fc1dbe898f62cf2fd4db3dcdc126515facc6b929746f"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,8 @@ class Cpmtools < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "f11ea8bafd7bf4befef1903f1fc6635210a9372792fb80ab2bcec3ca30882015"
-    sha256 arm64_big_sur:  "15e7282d0aaab6c0fdcba963da488dc134a3a91cdf386f975531ad6cb412eb4d"
-    sha256 monterey:       "99d41c418cb5bd93df5611972aa2e34471121caac053e789758b5d4f52732c92"
-    sha256 big_sur:        "72ac1f5c8c685e8a8e9e10ce3ba100883473f9578994752d0bcaab1bb987d27f"
-    sha256 catalina:       "d685ce1a2f98dbab825d3b7c7584303214682f55fbd4222740a314ee9225d3e5"
-    sha256 mojave:         "189b7777108827592800a7b8182357721a5314d2dae1559ec0d3663d5072870b"
-    sha256 x86_64_linux:   "383545b1998781d320884df6f77fb354e81fbb1d482140f7a161548c4cc760b0"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpmtools"
+    sha256 mojave: "1b0ba3e79bb923624726b71cf8c7f0be99417ec5fa1bb771cf8fc6eac4a47304"
   end
 
   depends_on "autoconf" => :build
