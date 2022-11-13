@@ -8,6 +8,7 @@ class Intltool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/intltool"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "743ff02675bf6a8b52311d8fb93ceff3ef512487d29940b547992e3e8f6e494e"
   end
 
