@@ -33,7 +33,8 @@ class Ocaml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml"
-    sha256 cellar: :any, mojave: "a472e930d17af91e1f00c207476782820a45190efccfe422795f1ac8a1846e39"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2c23259ba2367c371d4bc4c91d3fa5387c22dcb672aae704d966be0415d11d6e"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default
