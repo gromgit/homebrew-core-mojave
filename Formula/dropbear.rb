@@ -13,6 +13,7 @@ class Dropbear < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dropbear"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "88e3a6bda4b76eb590f1d14c085c8cb6ce76ec28d30bdc3e824ddf56e492f8bf"
   end
 
