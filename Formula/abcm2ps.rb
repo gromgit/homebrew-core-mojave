@@ -7,6 +7,7 @@ class Abcm2ps < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abcm2ps"
+    rebuild 1
     sha256 mojave: "7b1bcc240dcbd26dd06d1025d517d8ae4b3d965892edeb1273b3f3eece6c560d"
   end
 
