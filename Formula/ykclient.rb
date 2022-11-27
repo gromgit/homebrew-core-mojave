@@ -20,6 +20,7 @@ class Ykclient < Formula
     sha256 cellar: :any,                 arm64_ventura:  "23db2cdc9c298cc6ddcf0db595ba661ab352d3bc70dde9b9063a6a76666c76da"
     sha256 cellar: :any,                 arm64_monterey: "00e116a04b11a1d3c6d15f608d5088de2a1ac864b154da2494d9c3e5f7fa328a"
     sha256 cellar: :any,                 arm64_big_sur:  "39c01c0420ae7a6f3af3a97f9e413b3137730f251d4784bb5ab7f878793c34c1"
+    sha256 cellar: :any,                 ventura:        "5bfb6a9e25a07c820e4900c7e683044c41d56926200556a6dcae16d792eed098"
     sha256 cellar: :any,                 monterey:       "985f62c5ed17437ef7670ff6b9bc8b1db77049015701f5ed6587bf51ebd1edbf"
     sha256 cellar: :any,                 big_sur:        "9763765c3a3eb3d2fac970755b9c0ed1c48c8d74d7dd767dd824c8b0b3cfffd7"
     sha256 cellar: :any,                 catalina:       "1a0d524e983bd1b22c012a00d60c4529b776640386e978fb3f6046b52e17eed7"
