@@ -9,6 +9,7 @@ class Antibody < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf2e769768dc7f397dc7fc16bfa3aab88dde1b64dd34c5b36afe1893acf275b7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ecfbe9268b6f4468d331bcd1d2f1f3f888476eeef3f10fe7c506e51a93c65bf4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "720cfb0bfae9001e929d57101e482b1206f5d2b6f0ca546681c8a5450113c74d"
+    sha256 cellar: :any_skip_relocation, ventura:        "24cdb490d51a7fd95359ef48242cb1d0fe68f1c4f7ae1b16fd80685fd3ff152a"
     sha256 cellar: :any_skip_relocation, monterey:       "281479cf4916b767d99242f0fcc6fbe43cf3f96f5d4d7df6b424ab5ee86d3b80"
     sha256 cellar: :any_skip_relocation, big_sur:        "68b409c42eeab15437a9c64a55e13f69c37f6e085bcff794bb1f9a8ca6419e98"
     sha256 cellar: :any_skip_relocation, catalina:       "572351da6247daf6bf29afbdcc8ff10c4fe47e9e413c2ae0df0dd249e855599d"
