@@ -6,8 +6,10 @@ class Setweblocthumb < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6eb231e7fa24dcebe8d1d863bc1bbbcec86943522f4391dce30c0d0a14a99e7e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6f306986d59d8d148fe8619ef3a14b12fc89235e199ab18cfd691885009cc47f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "849e242cc0d75408abb95ed3afead495868ae730132fd4a648f032ea3b873774"
+    sha256 cellar: :any_skip_relocation, ventura:        "7731be759ebec8e9e06e70056f4ddc19498872cc8daafa4079baa7610a0662d0"
     sha256 cellar: :any_skip_relocation, monterey:       "20e1fe63be72e27183b5e0a5885f5456882b1a72487e72c446ae48723f793920"
     sha256 cellar: :any_skip_relocation, big_sur:        "565f0fb62158115fcd9e1618282b989bd50007f5c8c0260df5f47f85660adb87"
     sha256 cellar: :any_skip_relocation, catalina:       "6849eb0b22ee09260daa9432881f66dbb97ef44b26e1d469ca11d316658ee4f2"
