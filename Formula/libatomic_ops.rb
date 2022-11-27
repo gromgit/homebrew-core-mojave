@@ -12,7 +12,7 @@ class LibatomicOps < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libatomic_ops"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "ad16a7ede10eb338b3dcbad102bf8afe3925c7d05ff05742e4de20d81edae64d"
   end
 
