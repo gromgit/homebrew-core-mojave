@@ -1,8 +1,9 @@
 class Vramsteg < Formula
   desc "Add progress bars to command-line applications"
   homepage "https://gothenburgbitfactory.org/projects/vramsteg.html"
-  url "https://gothenburgbitfactory.org/download/vramsteg-1.1.0.tar.gz"
+  url "https://github.com/GothenburgBitFactory/vramsteg/releases/download/v1.1.0/vramsteg-1.1.0.tar.gz"
   sha256 "9cc82eb195e4673d9ee6151373746bd22513033e96411ffc1d250920801f7037"
+  license "MIT"
   head "https://github.com/GothenburgBitFactory/vramsteg.git", branch: "1.1.1"
 
   livecheck do
@@ -11,6 +12,7 @@ class Vramsteg < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2158611ee7a141add85d1e540484a167ca3ba679d9e0ce60d9381b938e20ecb1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "efdbbb479580eea937df42d340735d4d621783ba8fdff2987a4ac05b38623dbf"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7bc2f2c1ca7f14f5c6551f48907f9be12b623c5ebc16cd454afefe337760336"
     sha256 cellar: :any_skip_relocation, monterey:       "0464b7532d2b80277a1c560422b20affe4e7b5ce41b8d5e33937a5038fe35993"
