@@ -6,8 +6,10 @@ class Nettoe < Formula
   license "GPL-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af2f3dde5a365c56fb7e055b1a4dba60b1af8dfa0bdb02150965d407e1d69f3d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e809cedf43aead29ed0e328f3a2a2a3a5cb15b55462392cc94bee353d015ec8a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9f2e1b0a27c15f903c42fd54af41f52553d9027cde5aff110e7f8a895b934a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf8359f959025e11e174d90006395597eb4caaedaa83e47f75272b34d4ff67e1"
     sha256 cellar: :any_skip_relocation, monterey:       "af7fe17e2294568f6c4140418c1e5ca0ce73daf59dc5defe5036ec611a697666"
     sha256 cellar: :any_skip_relocation, big_sur:        "2387ff01457bbf7019cff906e9503de1b7cc718f055abd3eaa9523b847d951a5"
     sha256 cellar: :any_skip_relocation, catalina:       "59cab1291f69cb1c35a269d18343a3d07eaf55d6f0d178c9548afb282497fc50"
