@@ -6,8 +6,10 @@ class Ltl2ba < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89c79976b12030dc618c9466ad4f1f9f14fe9dff815850ac6ecc38ab10f63981"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1e35ea05ee9b358df863d969c190abea48b61ec737c7aaa5fb01f9f7de455330"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "577639caaf79515113fee790d593bc735b9f54bbb2bf93ae2788655a455aecaa"
+    sha256 cellar: :any_skip_relocation, ventura:        "18f8eb78ca95bd4217b9ca697e608c62cc0f0fb8a632585f3ce57f75e82b2b66"
     sha256 cellar: :any_skip_relocation, monterey:       "287ea81802bff62078478fccce3b85695feb945996f59bbf17d3e28712bb51ac"
     sha256 cellar: :any_skip_relocation, big_sur:        "c85c152985dcdd33f028941a0b2e62d20d5f247142111b9fb30c11ea9dd424b7"
     sha256 cellar: :any_skip_relocation, catalina:       "ede3b5e5b22b886bce4f6f2ead352dc4a676e3d8a95f9543930f2be2b3a0b4b4"
