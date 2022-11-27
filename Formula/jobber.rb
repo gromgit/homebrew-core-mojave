@@ -11,6 +11,7 @@ class Jobber < Formula
     sha256 arm64_ventura:  "bf6c94807680d1fefa82b1a1bda602454ccd86a6981ef3d4042cac8beaf209c0"
     sha256 arm64_monterey: "14087e07df78fd1e53fa44cc873df0db56eee9b0c89154161ee1a4c617c8ae9d"
     sha256 arm64_big_sur:  "c751dfdc4e8a2336eb4441dde62d3fc83d8ca869fe95e4804cecb99112551361"
+    sha256 ventura:        "52cb55ed06ba90923ec1fc7c022b653bd48138c233f35d0d7fd2efa7b86b152e"
     sha256 monterey:       "d54b324e8914c637f54418851308b825241d2c3142c8c13e9a6316ff31ab6e99"
     sha256 big_sur:        "669af998fd35ba85849f725ba8360cffbadfba87a8bd5f7adc43aa3a830caba5"
     sha256 catalina:       "993170495768a40b7f86927bfc14a66397b9109c3d9520815727f0123409b1e0"
