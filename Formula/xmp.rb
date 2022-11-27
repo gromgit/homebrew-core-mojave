@@ -12,8 +12,10 @@ class Xmp < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "3ae0cdbec5798aa32c8672a6cf52fa6c149d8aba8fbeb33e8087a07db0178b87"
     sha256 cellar: :any,                 arm64_monterey: "3c26ef9b53e449f11014a97c30bdf8d81b09118bdb5a80f7ecc8088af44c0b31"
     sha256 cellar: :any,                 arm64_big_sur:  "a070ab6f7dc8b2c4177f11128d266b0ac606b7e8c252a320d2bf6a5be030d377"
+    sha256 cellar: :any,                 ventura:        "8da6d8db5ad790cd922b6aaba9a0e0e914ffc6386a431dd76136e57bf20b0abf"
     sha256 cellar: :any,                 monterey:       "6799f4d2377cf20ecd85e76e7797d589602a98977c20cdbdf9503d390a38a12e"
     sha256 cellar: :any,                 big_sur:        "b4bf3702bd78bd9ce370c85978fa9cb822c4c77560f8cea753ec7098c13ab4de"
     sha256 cellar: :any,                 catalina:       "dc4399be2df77f0534bf1151201fd52b61694df7285bd58d9c1fe16522f199f6"
