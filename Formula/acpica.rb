@@ -8,12 +8,13 @@ class Acpica < Formula
 
   livecheck do
     url "https://acpica.org/downloads"
-    regex(/current release of ACPICA is version <strong>v?(\d{6,8}) </i)
+    regex(/href=.*?acpica-unix[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/acpica"
-    sha256 cellar: :any_skip_relocation, mojave: "4c1a3ea66eea85eac714f2bd6cc0995e9a8a28ba4a8c85ead4dd97cc9d7a181f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2bd3c0d36e2229fcbd924bd39824af5ae6727a7912d9d7f73b2b644fafb4949e"
   end
 
   uses_from_macos "bison" => :build
