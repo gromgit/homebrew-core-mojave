@@ -8,7 +8,7 @@ class Libtool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtool"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "dd102b7145d5e319af85f07ef4c3c8a298de07e78c3c1c60783c7048f2cff9ba"
   end
 
