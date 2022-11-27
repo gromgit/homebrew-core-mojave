@@ -6,6 +6,7 @@ class Bic < Formula
   license "GPL-2.0"
 
   bottle do
+    sha256 cellar: :any,                 ventura:      "b2949645cf730b7d5b1a9286c5134775190c8353a9e8dbc28af7414b97f63253"
     sha256 cellar: :any,                 monterey:     "cfa83a9ccd1d192b77af48d3198acf0f082d9f929a6256bb978f293543210940"
     sha256 cellar: :any,                 big_sur:      "36f71fa3f987da036e8bf8cefd3e640479868f2eb033f307848679b41d7ee393"
     sha256 cellar: :any,                 catalina:     "41d1871d125642f8437b5bb7b74f205b0eee956be0ad46b7677680b76764c0cb"
