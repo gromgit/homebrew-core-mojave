@@ -1,18 +1,20 @@
 class GnustepMake < Formula
   desc "Basic GNUstep Makefiles"
   homepage "http://gnustep.org"
-  url "http://ftpmain.gnustep.org/pub/gnustep/core/gnustep-make-2.9.0.tar.gz"
+  url "https://github.com/gnustep/tools-make/releases/download/make-2_9_0/gnustep-make-2.9.0.tar.gz"
   sha256 "a0b066c11257879c7c85311dea69c67f6dc741ef339db6514f85b64992c40d2a"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "http://ftpmain.gnustep.org/pub/gnustep/core/"
-    regex(/href=.*?gnustep-make[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "766a6f8d245162ae284da0da2ffd00216c6df677e4455a67796173f4ac6fe474"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "45930b2ff42fd3d595f0bda8fa1c5a59489038e7242e447a4251d01f80a49557"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f16315c14cfbdab197ea1562749d533ebbf19435b848a8173ae7c3ed08502968"
+    sha256 cellar: :any_skip_relocation, ventura:        "56bf7011e1da8ca1fff98f5f71ea0264c5d0ef1eb91d4d51a884367aefee166a"
     sha256 cellar: :any_skip_relocation, monterey:       "caed84d95fbd7da54554e30aee0cfbcd46c7693011226b2904d51b97dc499986"
     sha256 cellar: :any_skip_relocation, big_sur:        "b0a74dcdffdd9331348c0215f53967dcd4ecd9b2f8c2fdbdff32f27c288136af"
     sha256 cellar: :any_skip_relocation, catalina:       "3fb00ffefe165c26880819f9d670468d5c874a055792a0a2b25ca47e4dcad43a"
