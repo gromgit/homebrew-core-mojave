@@ -9,6 +9,7 @@ class Kanif < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9976ca3c9f4b867f909300da1ac522ea0aa81db1beba857edb033b7475d5b16"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c9976ca3c9f4b867f909300da1ac522ea0aa81db1beba857edb033b7475d5b16"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfc06314d243173b2b0f0de1188570adde896ef6002dcbb75e7ce9fe056ae172"
+    sha256 cellar: :any_skip_relocation, ventura:        "c9976ca3c9f4b867f909300da1ac522ea0aa81db1beba857edb033b7475d5b16"
     sha256 cellar: :any_skip_relocation, monterey:       "c9976ca3c9f4b867f909300da1ac522ea0aa81db1beba857edb033b7475d5b16"
     sha256 cellar: :any_skip_relocation, big_sur:        "ea9c4a641227762b26e89a7015aa328d16fdfdb23796c29abcdb83ab19638b59"
     sha256 cellar: :any_skip_relocation, catalina:       "e69f751ab52a8f0892e452bcd3e2e43df27a94cd5e3a5b8cc972529758e0ebf0"
