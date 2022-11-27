@@ -3,28 +3,30 @@ class Terminator < Formula
 
   desc "Multiple GNOME terminals in one window"
   homepage "https://gnome-terminator.org"
-  url "https://github.com/gnome-terminator/terminator/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "ee1907bc9bfe03244f6d8074b214ef1638a964b38e21ca2ad4cca993d0c1d31e"
+  url "https://github.com/gnome-terminator/terminator/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "8239dfa28a51b288c463459a937225d3f657cde926f4db481be49f1691bd5083"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c180712581d30b046b14a4ee5279f2cea55b3bff7a62b2737b21693e993996c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8c177f5b4ceed9612e512051ae5ce29a4d04a9d26e942fbe485e4f5053f437e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf82ea3cadca21e1ae94e3b2fdb8e3d814f04d33623203797ec08fda18071ba3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8039dfc9e641c81615932afdb6bec92a512e123079974e4d87acbf6bd904a5fb"
-    sha256 cellar: :any_skip_relocation, catalina:       "8c257067fdc58cceaa2f4f68fd569aa408db036faff673fe27f3950224745987"
-    sha256 cellar: :any_skip_relocation, mojave:         "cbaae7d439b7f9fb6d2149c3fba76eefefb2120aac26504c60ebaab4d842846b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1dc76a8265f1bdfc5c593661afe56dbd247c3ee8ece4963c22894078b80adc9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "553547ec5d0f5f0704c279cdd9f1df9ba027f9eb704ed52877865f2e6f064d22"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ada81984b24711c6cfdd4e31dd4015582bf81eec755423ae29d7ae9bc8365f0f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f8d4d53151ad1204d1af781c284a4353a30910ccdaab57f8dff08fb70a5c9dc4"
+    sha256 cellar: :any_skip_relocation, ventura:        "10d1ddcb032ee692a31e415b988a37c79b9bba7a897768ef17311ec83073720a"
+    sha256 cellar: :any_skip_relocation, monterey:       "9983a9baec039953cf6c2c91cbe363a63e276e77bb84723e7634fb040417779a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b8e88d9fba374decf7b2629a4369c9a23e358e2b48752f6ff7f099d9770be673"
+    sha256 cellar: :any_skip_relocation, catalina:       "c1fce0d5da33ab49ff3594ecbbeaff1f5f3f14b91d85f1c773df4f6f19fafaf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68406abd3adba8d745c09e2ab5869e21785c3e16237078f0e3ae98da2f8580e8"
   end
 
   depends_on "pygobject3"
-  depends_on "python@3.9"
+  depends_on "python@3.11"
   depends_on "six"
   depends_on "vte3"
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/b0/7276de53321c12981717490516b7e612364f2cb372ee8901bd4a66a000d7/psutil-5.8.0.tar.gz"
-    sha256 "0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6"
+    url "https://files.pythonhosted.org/packages/de/eb/1c01a34c86ee3b058c556e407ce5b07cb7d186ebe47b3e69d6f152ca5cc5/psutil-5.9.3.tar.gz"
+    sha256 "7ccfcdfea4fc4b0a02ca2c31de7fcd186beb9cff8207800e14ab66f79c773af6"
   end
 
   resource "configobj" do
