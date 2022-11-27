@@ -16,6 +16,7 @@ class AardvarkShellUtils < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "19675479ac1913e690b2820e6cd788e67ac3e3b7fd42fa86f0395df61408f559"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9c21b88c0adf1d80654686705f6961c5fcde8c99ee5e27cc15ecd6e0eef9ced9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43c817950566219fac5ddffbf9e4e2810f1841c29d1c742c96364932aae6d0a0"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e2cf7fb21cec6ec0b573987f67638f6824c691a4bef53b5e2ae9753e0b00735"
     sha256 cellar: :any_skip_relocation, monterey:       "dc442adf6c9d2756745bd7fef2eafcc739754af1000827fdad1dd3dcca3a5a84"
     sha256 cellar: :any_skip_relocation, big_sur:        "9e7fad807aa43cee3917dce5a8f83ad734155167e446cf16145a91766ae7f503"
     sha256 cellar: :any_skip_relocation, catalina:       "df44cfc6ab0cf9b275f806ab72b47ab47475e35ca3faabbcbbe2054d65f6aa4e"
