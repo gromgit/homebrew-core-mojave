@@ -4,22 +4,26 @@ class VtkAT82 < Formula
   url "https://www.vtk.org/files/release/8.2/VTK-8.2.0.tar.gz"
   sha256 "34c3dc775261be5e45a8049155f7228b6bd668106c72a3c435d95730d17d57bb"
   license "BSD-3-Clause"
-  revision 8
+  revision 9
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vtk@8.2"
-    sha256 mojave: "4ea09d268b98a1b01d77c7cbe08b57777e6755c8617cee956f7190ac32336290"
+    sha256                               arm64_monterey: "7599052ffa9026d7c5040d3df537e53de5fc58a8cc2ebec4dd80af479a79c97b"
+    sha256                               arm64_big_sur:  "ca42c0efabcb7ca6f9334a0dd30565e904283f5fcf119345e7ed98c0fd42cdc4"
+    sha256                               monterey:       "fe78ada0ed2cea3f40764888c7c7646a44a64e698a62bcb379e3034f8b27e8ce"
+    sha256                               big_sur:        "2e2b4b5ebef9cb72c107ccfa0db90e8e950fb9276c2e92f1a35226e13cb62531"
+    sha256                               catalina:       "2df7f2d759193b423224e3eb2b6e1eba30871098a955acfcc865587b4c02e2df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54461f2367cedbad42433f5c76be14eacbf797af544ca4dadeebef8543a76285"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2020-05-14", because: :versioned_formula
+  disable! date: "2022-11-20", because: :versioned_formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
   depends_on "fontconfig"
   depends_on "hdf5"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "netcdf"
@@ -32,12 +36,7 @@ class VtkAT82 < Formula
   uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
-  end
-
   on_linux do
-    depends_on "gcc"
     depends_on "icu4c"
     depends_on "libaec"
     depends_on "libxt"
@@ -46,12 +45,6 @@ class VtkAT82 < Formula
 
   fails_with gcc: "5"
 
-  # clang: error: unable to execute command: Bus error: 10
-  # clang: error: clang frontend command failed due to signal (use -v to see invocation)
-  # Apple clang version 13.1.6 (clang-1316.0.21.2)
-  fails_with :clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
-
-  # TODO: use diff
   # Fix compile issues on Mojave and later
   patch do
     url "https://gitlab.kitware.com/vtk/vtk/commit/ca3b5a50d945b6e65f0e764b3138cad17bd7eb8d.diff"
@@ -77,11 +70,6 @@ class VtkAT82 < Formula
   end
 
   def install
-    if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
-      ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
-      ENV.llvm_clang
-    end
-
     # Do not record compiler path because it references the shim directory
     inreplace "Common/Core/vtkConfigure.h.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
@@ -89,8 +77,8 @@ class VtkAT82 < Formula
     # Adapted from https://bugs.gentoo.org/attachment.cgi?id=641488&action=diff
     inreplace "CMake/VTKGenerateExportHeader.cmake", "[3-9]", "[1-9][0-9]" if OS.linux?
 
-    pyver = Language::Python.major_minor_version "python3"
-    args = std_cmake_args + %W[
+    python3 = "python3.9"
+    args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_TESTING=OFF
       -DCMAKE_INSTALL_NAME_DIR:STRING=#{lib}
@@ -109,8 +97,8 @@ class VtkAT82 < Formula
       -DVTK_USE_SYSTEM_ZLIB=ON
       -DVTK_WRAP_PYTHON=ON
       -DVTK_PYTHON_VERSION=3
-      -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3
-      -DVTK_INSTALL_PYTHON_MODULE_DIR=#{lib}/python#{pyver}/site-packages
+      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DVTK_INSTALL_PYTHON_MODULE_DIR=#{prefix/Language::Python.site_packages(python3)}
       -DVTK_QT_VERSION:STRING=5
       -DVTK_Group_Qt=ON
       -DVTK_WRAP_PYTHON_SIP=ON
@@ -119,11 +107,9 @@ class VtkAT82 < Formula
 
     args << "-DVTK_USE_COCOA=ON" if OS.mac?
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # Avoid hard-coding HDF5's Cellar path
     inreplace Dir["#{lib}/cmake/**/vtkhdf5.cmake"].first,
@@ -149,9 +135,6 @@ class VtkAT82 < Formula
   end
 
   test do
-    # Force use of Apple Clang on macOS that needs LLVM to build
-    ENV.clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
-
     (testpath/"CMakeLists.txt").write <<~EOS
       set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
       set(CMAKE_INSTALL_RPATH "#{Formula["vtk@8.2"].opt_lib}")
@@ -174,8 +157,7 @@ class VtkAT82 < Formula
     EOS
 
     vtk_dir = Dir[opt_lib/"cmake/vtk-*"].first
-    system "cmake", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_VERBOSE_MAKEFILE=ON",
-      "-DVTK_DIR=#{vtk_dir}", "."
+    system "cmake", ".", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DVTK_DIR=#{vtk_dir}"
     system "make"
     system "./Distance2BetweenPoints"
 
