@@ -12,8 +12,8 @@ class Aarch64ElfBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aarch64-elf-binutils"
-    rebuild 1
-    sha256 mojave: "6614c10b4f609bce3322ac7ed25ecdf65ad00e78c51624e74c0f0321383b1289"
+    rebuild 2
+    sha256 mojave: "ef6d4f3d05d8ff8fd6a887c3f3cac16b893d4d1ce0517db7a4d77f53581f3522"
   end
 
   on_system :linux, macos: :ventura_or_newer do
