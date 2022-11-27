@@ -8,7 +8,8 @@ class Texinfo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/texinfo"
-    sha256 mojave: "4b4295903cee1eb76e2c5c2422119a3bdaeee9230e1fead7ad23d7dc4059c6d5"
+    rebuild 1
+    sha256 mojave: "bc5cd25fe8b17c4f693ef8232ac95aaba9c837cb098c4cb91ef4aa9a0a0a499c"
   end
 
   uses_from_macos "ncurses"
