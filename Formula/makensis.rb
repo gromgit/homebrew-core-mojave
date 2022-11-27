@@ -6,8 +6,10 @@ class Makensis < Formula
   license "Zlib"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc4524675c0efffcdedcc5bb92d348afa0577c33fd69e1ef75a8da48cf0c6e90"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4e9d197faa2cb6ee296902f69def0deb0dcc30db077cc6ff2943e12a5c4bdb3c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4656747f66941fb5b2f4adaad2c4bdd64e99a48c1938a580f91befce75700c4d"
+    sha256 cellar: :any_skip_relocation, ventura:        "4532aeda1faa4cd83fe4c881f34a59dc87e4e24d69b1b6b196ac16e84ede3a21"
     sha256 cellar: :any_skip_relocation, monterey:       "e4df4ea446eaf4b905b3e9f102a133894cb36d7b33620be03b5374fa59703975"
     sha256 cellar: :any_skip_relocation, big_sur:        "21f3aa213be2e8c0a0a2d992fb117cc5e5c5cf625b3299bcf1f7506c117900f5"
     sha256 cellar: :any_skip_relocation, catalina:       "0e86809dd3b7c95a587bc467a7b12a2ab07cacf91f31ead7174fffe3cc1d7c6f"
