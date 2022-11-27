@@ -7,8 +7,10 @@ class Snap7 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e3169f10899c5bbc65ca3982e7ad9ddb27ebaff7577f9f9c8c0c74be8fb0f271"
     sha256 cellar: :any,                 arm64_monterey: "3ec8ebc46f5b20dafc71b4a2f3c55e0323df337d7fd01e959e2f98c439fe0afa"
     sha256 cellar: :any,                 arm64_big_sur:  "7d60b716e639ad9c24153b94a474dab5d11ad5889e492846ea87235d7abd9e18"
+    sha256 cellar: :any,                 ventura:        "839e29976a348f6196df376d1f4c13ee808a8aacd3ff9d64369c6b7a3c390385"
     sha256 cellar: :any,                 monterey:       "0e80fc31c025dc39b1b551adb4328023a0b9f99643d8e246ab644529b9b7e3e1"
     sha256 cellar: :any,                 big_sur:        "52d04e1646b47ba15e5877e8c24b8f2d0267a51d8b7b07ee47330ecd2c44d95a"
     sha256 cellar: :any,                 catalina:       "015a23b1cb6728a86716811511e51fba427c69febabd1af5507af31d77523802"
