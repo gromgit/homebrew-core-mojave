@@ -1,18 +1,19 @@
 class Vte3 < Formula
   desc "Terminal emulator widget used by GNOME terminal"
-  homepage "https://developer.gnome.org/vte/"
-  url "https://download.gnome.org/sources/vte/0.64/vte-0.64.2.tar.xz"
-  sha256 "2b3c820b65a667c1d8859ba20478be626d1519cc3159dac25f703330c6d07e18"
+  homepage "https://wiki.gnome.org/Apps/Terminal/VTE"
+  url "https://download.gnome.org/sources/vte/0.70/vte-0.70.1.tar.xz"
+  sha256 "1f4601cbfea5302b96902208c8f185e5b18b259b5358bc93cf392bf59871c5b6"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_monterey: "9f516a4870878d39bf2913997df595b7e153829c3e3aee764a0e81bdba3c6152"
-    sha256 arm64_big_sur:  "805b98e4a5b77ac8385fdf15c555bdbc6cfa19fa586e140d7f030366c80b1f69"
-    sha256 monterey:       "3967df10f8100cc5a5e99f740b6cade8d3f58fcb9589cc974fd6292a60a2fa4e"
-    sha256 big_sur:        "80db6f9c0b62cd99beaf9eaadde7be8cfe3c09a54eb9b385bd103891d7a12af8"
-    sha256 catalina:       "ad7a7e195ce43afdf30eff81f83e606b79e78db8e6ed39f0370ef34ebeeb39e4"
-    sha256 mojave:         "2404d321dc1eb3e61c5f6282c214395beae288e97ae62d6d6b5afe3edd9b7adf"
-    sha256 x86_64_linux:   "fb813f9bc1317086d4e1374aa003f0796084aeabc85fa077a40e0a785b877a54"
+    sha256 arm64_ventura:  "1e742f063653d2293512d3674daf9e69ec76e77a51f375086b97af62fe7a86b2"
+    sha256 arm64_monterey: "188c1908497394ff888514b9448b9aa227cd75795e199903a7a0a591833ba65c"
+    sha256 arm64_big_sur:  "c4ff06f24d88f35bf209e42d0620298bd710b0b019cafb16dda53bff7142d6ab"
+    sha256 ventura:        "593cce9e868f5e164c1d2a49fd25a5ccb590688977e4927ad8c30834fab23d80"
+    sha256 monterey:       "f1202007bb1b0df10e5f0b39b4a7d6c1dc022b8b3082e5df55d4e4f2f923e5b4"
+    sha256 big_sur:        "e2562bd7ba9cf08c9f7502bf4438f1d8ad6722c2d51ba460feac7af1002846cc"
+    sha256 catalina:       "80edc4b33865ddbf06d4966d25a07b5b5eb1d34adc5a7b317ddf22acc679dcc8"
+    sha256 x86_64_linux:   "5145354fe0e2fcecc94fb225401d9febd5fb2ca413d24ce91de02cad29370686"
   end
 
   depends_on "gobject-introspection" => :build
@@ -23,39 +24,54 @@ class Vte3 < Formula
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "gtk+3"
+  depends_on "icu4c"
   depends_on macos: :mojave
   depends_on "pcre2"
 
+  on_macos do
+    depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1200
+  end
+
   on_linux do
-    depends_on "linux-headers@4.15" => :build
-    depends_on "gcc" # for C++17
+    depends_on "linux-headers@5.15" => :build
     depends_on "systemd"
   end
 
-  fails_with gcc: "5"
+  fails_with :clang do
+    build 1200
+    cause "Requires C++20"
+  end
+
+  fails_with :gcc do
+    version "9"
+    cause "Requires C++20"
+  end
 
   # submitted upstream as https://gitlab.gnome.org/tschoonj/vte/merge_requests/1
   patch :DATA
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
-    args = std_meson_args + %w[
-      -Dgir=true
-      -Dgtk3=true
-      -Dgnutls=true
-      -Dvapi=true
-      -D_b_symbolic_functions=false
-    ]
+    # Work around for ../src/widget.cc:765:30: error: use of undeclared identifier 'W_EXITCODE'
+    # Issue ref: https://gitlab.gnome.org/GNOME/vte/-/issues/2592
+    # TODO: Remove once issue is fixed upstream.
+    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
 
-    mkdir "build" do
-      system "meson", *args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", *std_meson_args, "build",
+                    "-Dgir=true",
+                    "-Dgtk3=true",
+                    "-Dgnutls=true",
+                    "-Dvapi=true",
+                    "-D_b_symbolic_functions=false"
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
+    ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
+
     (testpath/"test.c").write <<~EOS
       #include <vte/vte.h>
 
@@ -125,9 +141,7 @@ class Vte3 < Formula
       -lvte-2.91
       -lz
     ]
-    on_macos do
-      flags << "-lintl"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
