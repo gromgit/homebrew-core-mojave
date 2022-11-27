@@ -7,8 +7,13 @@ class Tfel < Formula
   head "https://github.com/thelfer/tfel.git", using: :git, branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tfel"
-    sha256 cellar: :any_skip_relocation, mojave: "667d905f15cc9731da1bbec9e4828b32df1af76a8b2181c1cee3eb37bf865ea2"
+    sha256 arm64_ventura:  "59b9c42949b700cab9615c9609b4796082943ca2b25b696ac640998965d2f566"
+    sha256 arm64_monterey: "76becea0d88eda0120ab478674d1da58d06431229ca13f6fcbf1c3dd3cfa7f64"
+    sha256 arm64_big_sur:  "4ca6638063893dab97dafd9b3cf92d8cac9496982c2579a2673513cfb9f15e1e"
+    sha256 monterey:       "ef668e81efe8f87893df00bc96cb9fb2c2d2752d421b0b3d438cd41c4e5e1ec1"
+    sha256 big_sur:        "3a41186585b769edf830702083d5ab36273d9c299587a024113b3053d293e75d"
+    sha256 catalina:       "d9d2f38025e918e0cbff8064aa1983c621c1861fd8e8112a84624e70e81386c8"
+    sha256 x86_64_linux:   "8250a622ef271143657e5087638906c959ba8a33bfc8398b3305b249e8c4af22"
   end
 
   depends_on "cmake" => :build
