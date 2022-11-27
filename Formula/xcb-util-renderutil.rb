@@ -1,18 +1,19 @@
 class XcbUtilRenderutil < Formula
   desc "Convenience functions for the X Render extension"
   homepage "https://xcb.freedesktop.org"
-  url "https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.9.tar.bz2"
-  sha256 "c6e97e48fb1286d6394dddb1c1732f00227c70bd1bedb7d1acabefdd340bea5b"
+  url "https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.10.tar.gz"
+  sha256 "e04143c48e1644c5e074243fa293d88f99005b3c50d1d54358954404e635128a"
   license all_of: ["X11", "HPND-sell-variant"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d52c308bf4f9bba6c7975638ef05f64967c8af37f05a02d0b684e40ed80324b8"
-    sha256 cellar: :any,                 arm64_big_sur:  "7091c73aa3571aa8c4cc2568175f91b3dffe7714dbb1ab334c86da174395d2e1"
-    sha256 cellar: :any,                 monterey:       "4a2090d06a94251f761eb18610a4757df663a7ff98f0c7c52a0d492be2cf31f4"
-    sha256 cellar: :any,                 big_sur:        "0941200260ef409b5daa61664cad100fe69b08e99b8cb440297079387e2dadff"
-    sha256 cellar: :any,                 catalina:       "5fb7ef030a443af89504e74d04fccf3000ac04bf152798e7d4242247e2378ae2"
-    sha256 cellar: :any,                 mojave:         "b0a2c992673650129ee49fcb4fbe6873ef4b8d29a5677ae873a27e05fc7a0d27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a38fd262818572bab58fd490775a5628a982b510850b0fddc48da6e37077823d"
+    sha256 cellar: :any,                 arm64_ventura:  "2ed461a699bf32016f2a95f313ed16c492dfedd98249dd86b2b6e558374fb0ae"
+    sha256 cellar: :any,                 arm64_monterey: "295e5e58b68d75ee1938c78dda67904e0ba42ed6173357ea357f22140069b7dd"
+    sha256 cellar: :any,                 arm64_big_sur:  "e9b427a9928e8cf63481ecb3a3d1bbc9ac4091df0229c6bfde4735a723e0e073"
+    sha256 cellar: :any,                 ventura:        "825d17209bb9384ae1f65cf1e909653151e2ba290c39a4ca20021f6a732133ef"
+    sha256 cellar: :any,                 monterey:       "2f416f529c5764d88b98ea0c29d1afad765affb466aa69e465d998b7bd042fba"
+    sha256 cellar: :any,                 big_sur:        "3a61dcebbe56e1dcff526e7ea2fe39007bf8bc1b40900f230ab4d3d318e40211"
+    sha256 cellar: :any,                 catalina:       "444c4008a4d37a2a687b13316302e1fc67a1794f9bcb83f91d23e9e4ba532ad8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9de153c6d1351a146e6cd98c7b8b0b5dddc413dbbc5baa739d3310813186839d"
   end
 
   head do
