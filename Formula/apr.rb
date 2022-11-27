@@ -9,8 +9,8 @@ class Apr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apr"
-    rebuild 1
-    sha256 cellar: :any, mojave: "cab708f16197c25d17588386b238dd44923b1b0cb98d34ebdc4d8223e8f272ff"
+    rebuild 2
+    sha256 cellar: :any, mojave: "508cc251960d9c48abfe401c3774f322a054ac02ecb94878f13e6168c1b676c3"
   end
 
   keg_only :provided_by_macos, "Apple's CLT provides apr"
