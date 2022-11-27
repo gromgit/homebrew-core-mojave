@@ -11,6 +11,7 @@ class CreateApi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea82962c830a75f2aa103e2784d7381d3d18a713de84a4a7cdac3bb141666ef5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6fd943082f76afd4a3d720dfd6755506bdc5707ebab8e369220bf421b1f6126d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "656971de18aae0e52439531a0e352b9ecf02be4084b7950063ce45e460df5bd3"
+    sha256 cellar: :any_skip_relocation, ventura:        "6a6791cb2c18c74b7691b1ce99c891bc1eae88cc73f5cb8234340c19082e2f0f"
     sha256 cellar: :any_skip_relocation, monterey:       "2f744934002eae068f08ae003a0a236e5601827b02f1c856c1685726f6aa7498"
     sha256 cellar: :any_skip_relocation, big_sur:        "d51f35fb247060f2744e6db98bce27ab239d6ee6e09b8acdcc19c7edd92120e9"
     sha256                               x86_64_linux:   "1d929a93961640d42c2f2fc286cb0b22b29955e164962395df4dd70f5a057a7b"
