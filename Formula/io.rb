@@ -8,13 +8,18 @@ class Io < Formula
   head "https://github.com/IoLanguage/io.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/io"
-    rebuild 1
-    sha256 mojave: "c9faeefd255141b768490aecac8ce676751fa20939a303deaa0322aae9e52015"
+    sha256 ventura:      "48d3b14d0c9b9fc74b24bbd9b5e4cc5283a00ef49c1c0854a7d768b68f6a4bea"
+    sha256 monterey:     "7e191e8affbfeb613d6cf895ae482a077f54de8f2087ca2f4a8742fc488c73f2"
+    sha256 big_sur:      "fae9b76e33ac8a9f4dd4f3c2335b13b003c2bdc01b81c4a2efbf5d7435c51e15"
+    sha256 catalina:     "c4c862d20a8e4ddb1e6e588414a9e23ae2a17baa490e3beb621614aca7a8ca87"
+    sha256 mojave:       "48c37d6f30d8b01d391e7f4ef777b5087425d89a9df0077414769a59333db420"
+    sha256 high_sierra:  "a061482b97c1ada8eea9d658f13fe0cfbfa223d97762b51611c4cab2de4c0273"
+    sha256 x86_64_linux: "67983adeeab7db99c20e4e524211afe6d3d5bd04b13fca5dcc4cfd841743f146"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on arch: :x86_64 # https://github.com/IoLanguage/io/issues/465
 
   uses_from_macos "libxml2"
 
