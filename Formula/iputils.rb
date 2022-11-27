@@ -1,13 +1,13 @@
 class Iputils < Formula
   desc "Set of small useful utilities for Linux networking"
   homepage "https://github.com/iputils/iputils"
-  url "https://github.com/iputils/iputils/archive/refs/tags/20211215.tar.gz"
-  sha256 "b6f67fc705490673ff4471d006221b4a2f1b1180b929d9fefd771352621ccedf"
+  url "https://github.com/iputils/iputils/archive/refs/tags/20221126.tar.gz"
+  sha256 "745ea711fe06d5c57d470d21acce3c3ab866eb6afb69379a16c6d60b89bd4311"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/iputils/iputils.git", branch: "master"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a4c2aeac589e8e27fec7e508eae669bd861e69155e61b467eacdd5ea522e6835"
   end
 
   depends_on "meson" => :build
