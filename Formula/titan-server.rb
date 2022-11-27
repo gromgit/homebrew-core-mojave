@@ -15,6 +15,7 @@ class TitanServer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6d98726b834d82fe0adb786919652c5f0e0974ff3cb03969b2c69042cd4998c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d152d5cdf3a9a8f600f9956f9e1687a4cbcccbda4398c69ddde2d44a42d43723"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d152d5cdf3a9a8f600f9956f9e1687a4cbcccbda4398c69ddde2d44a42d43723"
+    sha256 cellar: :any_skip_relocation, ventura:        "11f1ceef4d191f1bf683fdec2a0cff3ffff8510b373e83fa12065af581583e0e"
     sha256 cellar: :any_skip_relocation, monterey:       "6e84706c4de8f9288fe11a9c28d0b6901289ce45ddcd7ff51abc1ecfcc6f3ac3"
     sha256 cellar: :any_skip_relocation, big_sur:        "6e84706c4de8f9288fe11a9c28d0b6901289ce45ddcd7ff51abc1ecfcc6f3ac3"
     sha256 cellar: :any_skip_relocation, catalina:       "6e84706c4de8f9288fe11a9c28d0b6901289ce45ddcd7ff51abc1ecfcc6f3ac3"
