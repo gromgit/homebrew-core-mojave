@@ -18,8 +18,10 @@ class JsonSpirit < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "ff7bae0412c5ee77fbf5579e6b15df6f20af925b091c955115c7a002a7836172"
     sha256 cellar: :any,                 arm64_monterey: "52958b3d198dfb427701516e4ee494219f60d4a9948fd435ddbb818a92c1e1a9"
     sha256 cellar: :any,                 arm64_big_sur:  "ef7641e5dd587a4595e326e74f438c9f99e411acceaeee75dc7450835e126895"
+    sha256 cellar: :any,                 ventura:        "163cd63f53754c3c98eae77ad56d49a82061bc50f82cfd348efc9ca248d464a0"
     sha256 cellar: :any,                 monterey:       "dd47e079b246ef23274d0ec78ad55c9ae7ce81fbc170913f21a6b150f5038539"
     sha256 cellar: :any,                 big_sur:        "850ab2dda8c7ca10c88a25cf0fe971d8aeaee0d5942c44eea746fc44fc857f7d"
     sha256 cellar: :any,                 catalina:       "31aaf302e4238b13797722028ac46a7deade1df4f042b46feb7d455cb05e4599"
