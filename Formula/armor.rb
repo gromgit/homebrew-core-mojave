@@ -8,8 +8,10 @@ class Armor < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02d7191c5a891d0f0ef728f8bc365d81a8a79668b94c5c14745189e672380422"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "db7d324f8f1434871982290e8ce54ddae0652d1d82f8bfd478d4af44ec4f9727"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99f1b988d091e6175983074889c2695625a0bcd3ee3df94bfbea09851906848b"
+    sha256 cellar: :any_skip_relocation, ventura:        "75226afa391ae7591d4325e011b9beaac23ec1b958e7e19a17836022bd59ae9c"
     sha256 cellar: :any_skip_relocation, monterey:       "26e58dd0953eca688f53bbbdc792d9b2457bc0369c3c7f8652da627430d8bc3c"
     sha256 cellar: :any_skip_relocation, big_sur:        "06a9bcd5cee3c858cb616f2165ca3dfb0b9e6d5f9811297a260f909791ade865"
     sha256 cellar: :any_skip_relocation, catalina:       "d0bbf39148c0dabb28f777b951492814a708dc64610106587b1315fcd6a08559"
