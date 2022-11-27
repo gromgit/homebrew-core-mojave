@@ -9,6 +9,7 @@ class Poster < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3502b06b6c852fa6ba935acf4a862b72987beff8658b37a11f40cf349acbafde"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "33532f868bdc3667b1be77b533608c5f5837f19fe5683f0ee5d33ec945748e67"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebf74df79fee5779f0a6631c938af2db579bfdf27c077fadcca06f21579bfee1"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc8ca26f680993d3584c3aaad86a2b9f3ae56d199a0cc614fbb1f93fd27493aa"
     sha256 cellar: :any_skip_relocation, monterey:       "fa63cfd184e101b839afd59ff181bd3e089925ce5a8b93936b579249dd08f955"
     sha256 cellar: :any_skip_relocation, big_sur:        "1dfc4b7649d3ad9c7b22693d9dd966c395a11385c6f5ecea07ab879972f5845f"
     sha256 cellar: :any_skip_relocation, catalina:       "e0afaa430ab84862c5a481145e73affbb572c008c1b40d6b8cd93eb465163b4e"
