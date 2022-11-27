@@ -10,6 +10,7 @@ class Shelltestrunner < Formula
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a8727bdd254b5af7101182d68e536f23421e6a08d880c4adf4ac949daed5628"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58f03249e05d5808baff4da11f784b37bd818f35c3243855bdc467562526ff76"
+    sha256 cellar: :any_skip_relocation, ventura:        "9e42d023a03505d850b8b9d3bd7b9448d8c9711d604242015053438aedcea9fa"
     sha256 cellar: :any_skip_relocation, monterey:       "bebde8731a6adaa4322920451c277f820335aeb161783cbbbdf345e0b6e584ff"
     sha256 cellar: :any_skip_relocation, big_sur:        "e42bf02d5f462aca20fe7a9b80ba6e2431b15940b81f5304ff1611665a29bac0"
     sha256 cellar: :any_skip_relocation, catalina:       "d425959bf27c059fb22a6e2f916f839645c0e79f180903b2c99c189ba52f4d96"
