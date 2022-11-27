@@ -11,8 +11,10 @@ class Grepcidr < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61836780a0413a58d38b7cf1acd66ad5b1f96554889cde682b2db21df0c5f037"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e1e9fe9d6d9eeed951aa7bc502e9bea2e03f6196225d57826bf4882854c86980"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2a44c09499df8266ce513c939722e15a3b8365cb9802a1311450d470ad01b0e"
+    sha256 cellar: :any_skip_relocation, ventura:        "642f5f57ecbc3b84581648265f483180d40b741e3e3092b9689e25f7d9472248"
     sha256 cellar: :any_skip_relocation, monterey:       "bd5e42708f90385a347624dafd62092c377d8ae0b31d4fb244203f505f427055"
     sha256 cellar: :any_skip_relocation, big_sur:        "1aee569b691f9aee204924d4059b55b5d28be63394350b9ed5993d42a131c081"
     sha256 cellar: :any_skip_relocation, catalina:       "29222220edfad5ce8db2a197f1e0a3fe1d703a62338c5dc8d28ed8ce47afe987"
