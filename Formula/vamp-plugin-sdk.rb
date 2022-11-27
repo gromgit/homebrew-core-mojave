@@ -20,6 +20,7 @@ class VampPluginSdk < Formula
     sha256 cellar: :any,                 arm64_ventura:  "44b58e44044cc29d6a56f0e4feeb15db3fb619f393c63800c91240eb82ab16f4"
     sha256 cellar: :any,                 arm64_monterey: "e10a03b4cbf89602757ef2f2bd43757bc7a734d3c200ca2a4258b304c05e9351"
     sha256 cellar: :any,                 arm64_big_sur:  "aa6184c469e855de77725477097a0c6998a04d4753bc852aa756123edaac446c"
+    sha256 cellar: :any,                 ventura:        "1ebd73fe29f4263a5633bd47cd33bb87e3108479fe0d4d875ca025ad5f36af9b"
     sha256 cellar: :any,                 monterey:       "2e24031117d9bed00ea07b4bb2b3ca4c09305a001647a2a256928f2e29e2a999"
     sha256 cellar: :any,                 big_sur:        "21e590739905e6794c11e4f7037adfa6fa83da4d7c2ab2b083c43563449d8a45"
     sha256 cellar: :any,                 catalina:       "b31926ceedbd7f79dc9783da8092b543c549d800705d9d8e8d8d0fd451d093de"
