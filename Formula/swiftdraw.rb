@@ -8,8 +8,10 @@ class Swiftdraw < Formula
   head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d93eaffdbc185a245adf55516cea1f9100a26c92e721e6e6f3a3e8946b7dd1e2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9f95d453508270539da6af86ea47f2bc6493aee2f776cb8c2a2ab2a2d0d9e0af"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8546420c4b714d33ed403874e528d3d3c7bf71f28ee975a7cbeee52a8f7adc74"
+    sha256 cellar: :any_skip_relocation, ventura:        "b444134b8a5c72e0ef2bf11d3d342cfaa3917a427ee31e8c1266a7c000c84c1d"
     sha256 cellar: :any_skip_relocation, monterey:       "90afabb16780e38bfcd45af849ce109561da56afb444b8f021fa2bc23604fa7c"
     sha256 cellar: :any_skip_relocation, big_sur:        "ffd0df423c90c1f0768df5234869e0da05486d6397d51bd46ee49a06557126a3"
     sha256                               x86_64_linux:   "c2624b9959c228a26ff122663131393048001e4f45f8f46e42047bdb5b22d825"
