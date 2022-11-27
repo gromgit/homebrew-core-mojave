@@ -4,6 +4,7 @@ class SourceHighlight < Formula
   url "https://ftp.gnu.org/gnu/src-highlite/source-highlight-3.1.9.tar.gz"
   mirror "https://ftpmirror.gnu.org/src-highlite/source-highlight-3.1.9.tar.gz"
   sha256 "3a7fd28378cb5416f8de2c9e77196ec915145d44e30ff4e0ee8beb3fe6211c91"
+  license "GPL-3.0-or-later"
   revision 5
 
   livecheck do
@@ -15,6 +16,7 @@ class SourceHighlight < Formula
     sha256 arm64_ventura:  "dddc83be2e682364f8d04b17885d93a5413b9b2978190e584f35fb48f1f36538"
     sha256 arm64_monterey: "b9eb7acf4fe56cfe110ac6fae44645dc71f4b7dde15ed02573b985354753b488"
     sha256 arm64_big_sur:  "5571281923274d301cadd6ea132603c76a8865fe222b1f9b912ed54618ce8944"
+    sha256 ventura:        "00c9f2aa3ec6407652f9483a3ca017f3a6260b42a4fd5785d6811e1f113e965e"
     sha256 monterey:       "b9d065ee32f8627dad64340fe885c26eb6a2310267eec333f15ba3a3fb0989e6"
     sha256 big_sur:        "22764adfe8f5adef5fe50654e9d4218dd0966272cebfae37cb37004bb7e7f88e"
     sha256 catalina:       "defe1639783fd04bb3993487e15a68958bc53413229f008b6c5307bee623fa07"
