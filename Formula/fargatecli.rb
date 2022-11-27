@@ -6,8 +6,10 @@ class Fargatecli < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c985223243a5cf6878445059c2abc05cb8cc2535b52c1feedd62c58854afc901"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "183015f15c85815aff732a2361baa4866507b6a98a92267f518e1b8dfc543859"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ba7b19d6b21be020f27b1fc3b65e41b3c58467d92e289399abecb48cad82b9c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "a96872766210deb91b9212423660530cfe191e9919fdb6cd7f65780e993d4a8b"
     sha256 cellar: :any_skip_relocation, monterey:       "c344a892d3d21c9499db679db25f6927f3c713d4afffd9f8a9bd42bcaf111435"
     sha256 cellar: :any_skip_relocation, big_sur:        "c35cbba29b8f2bd5bb92841a2356fa300622a9c42defca0c3f6886e93c3f5ef9"
     sha256 cellar: :any_skip_relocation, catalina:       "4cf90341de4a444842414de2364ae5ed51283008dfd99739cde4fcd00583f50a"
