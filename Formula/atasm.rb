@@ -12,8 +12,10 @@ class Atasm < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "727eea7c68b8de0a001e3b0937c429af8797af568433be534d74ada42a1925eb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fab0b76cba3104965e4627681e2f5776df2337ad3300ba6acf140a0151afe237"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4c812d6e1cc7f0b02d3c00160d7656779fe163f62c55da63ae2359bc472585b"
+    sha256 cellar: :any_skip_relocation, ventura:        "516c1388cf1e4c11c805dd8f9670b53be3ee63469b0d4804c24917b5cba18432"
     sha256 cellar: :any_skip_relocation, monterey:       "16ea6c4cd36ace328c78bbe3daeaad7e22ea30c5e013b07584eb00e9931ef67e"
     sha256 cellar: :any_skip_relocation, big_sur:        "8d7eba0c0fa5194201d4fac69466c807bf01d3676424a1501d3bc35cec2e43c1"
     sha256 cellar: :any_skip_relocation, catalina:       "d89f9e6ccd622ec72be4e8c3e5c01fa1b70abc1cf79b8cd5379ff986aae6d616"
