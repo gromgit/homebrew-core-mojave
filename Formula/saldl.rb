@@ -10,6 +10,7 @@ class Saldl < Formula
     sha256 cellar: :any,                 arm64_ventura:  "7fdcae247e92bee8f6925e7c9c4adfaa800bb06989a34180ef52a2001c7396c1"
     sha256 cellar: :any,                 arm64_monterey: "7d946fb405f3e50a3bd407a5deb8d1dc1c71094cd5092d9a314385e0165d446b"
     sha256 cellar: :any,                 arm64_big_sur:  "2b965040a5e53c33801a86f8090a3339b8967903b1a11c3cc5b8bfca9e9de33c"
+    sha256 cellar: :any,                 ventura:        "b0f8ecfc2391fd88eb373c9332279e1db1a49710f0009b1f9ee0638251b1217d"
     sha256 cellar: :any,                 monterey:       "bf33da07c23b69e41cdc44c0bcef25625128da44e134ac0f3417bd60fe67801e"
     sha256 cellar: :any,                 big_sur:        "787ac1c4f96155b215ebc0eb06b6fbb404ac4dcca1cd88670c127ec1d504d709"
     sha256 cellar: :any,                 catalina:       "9ac9aaa7e2882bcdb821c33c5bf7013b2ba1221242c1ad7d3da4e85d8febb324"
