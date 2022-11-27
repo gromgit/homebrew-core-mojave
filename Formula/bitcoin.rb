@@ -1,10 +1,9 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-23.0/bitcoin-23.0.tar.gz"
-  sha256 "26748bf49d6d6b4014d0fedccac46bf2bcca42e9d34b3acfd9e3467c415acc05"
+  url "https://bitcoincore.org/bin/bitcoin-core-24.0/bitcoin-24.0.tar.gz"
+  sha256 "9cfa4a9f4acb5093e85b8b528392f0f05067f3f8fafacd4dcfe8a396158fd9f4"
   license "MIT"
-  revision 4
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
   livecheck do
@@ -13,14 +12,14 @@ class Bitcoin < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "3a68bac456e01f907ebcfd99052d1dd21bee6c578183ec835e26147f84011bc5"
-    sha256 cellar: :any,                 arm64_monterey: "9fd296ac6a1ceeb057e054db69d75cb07ed6ab179f9be9aa46e203d71575ac79"
-    sha256 cellar: :any,                 arm64_big_sur:  "488fb488a492c659af53bee662a2898a6f1df5fd1fe7b90a49e1eafd20a221f4"
-    sha256 cellar: :any,                 monterey:       "28f59efb56c19c9ffca71b3e478e6340284863c3f06443ad9147cc046b276dc2"
-    sha256 cellar: :any,                 big_sur:        "ec2c1135c41d86bf22d28ae706c1fe308533f629db837982b9def8e8785d8db2"
-    sha256 cellar: :any,                 catalina:       "29335f3ab42d7114c254e903498ee3dfde71baf5290c9294b707c5f4031cd111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60740358df872851ce702141b24c49caf71bd0913741652c9848774a7c22b539"
+    sha256 cellar: :any,                 arm64_ventura:  "e56672fac2ad8156d7aea28336c2a04d494013e98d0b70eb610b8464992b5929"
+    sha256 cellar: :any,                 arm64_monterey: "e1a4c5decd6681167e3366a1b0b828a602f5284477d45882959b1494a80243ea"
+    sha256 cellar: :any,                 arm64_big_sur:  "259562fee9d95cb93899173e86086aea48eebec490d188912d134a35a1274629"
+    sha256 cellar: :any,                 ventura:        "3dbb3b0eb1d558f03166ad8b031d9a7f2747dfd600338310fe318b9b7b100da9"
+    sha256 cellar: :any,                 monterey:       "a83c6d1041da647995af5235fbcf12d3f548bf4a621d0cd660b7b910ecbc4e4b"
+    sha256 cellar: :any,                 big_sur:        "4c0c6526ec8eda4ec15e3767d7b56f322cfdd9392f103ea3ec3386246bab8f21"
+    sha256 cellar: :any,                 catalina:       "be76b3c20499a3ad4fc0318fc7875609162b77af95eb7798355296dc6884be63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21d04d67d68a27ad0cada5606007b3c5089dfa4ef9e7439c36484351f4ef82fa"
   end
 
   depends_on "autoconf" => :build
