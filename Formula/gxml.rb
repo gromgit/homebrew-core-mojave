@@ -9,6 +9,7 @@ class Gxml < Formula
     sha256 arm64_ventura:  "77b5367f913c707314c8f0e73651959c905fda763ced192c7b93de1b69de44a7"
     sha256 arm64_monterey: "7fe768a5398f9cb19eb57263e3b9b57716b48a149b175ff9b970eb1e898fbacd"
     sha256 arm64_big_sur:  "33e373491cc352e2b11da05fc36b7c9e66451efcbee7b10c06b8454bda72b92c"
+    sha256 ventura:        "db5bde4b60fb33beb7094c4dee7a6ba3996c709895e45e0b248bcda5f99b252b"
     sha256 monterey:       "79846b0652593f371cdc95ad36d037c58b51db809b5a0bb6baff00afee0a0c12"
     sha256 big_sur:        "93014bd6358485893840d5e1fcb66bbb2b9528c342d5d38e08525ffd6c8dfd4c"
     sha256 catalina:       "7ac6b48935cda53013a788e02cb0169fd609589beac7b1af2ad6b3b64e3045a2"
