@@ -1,8 +1,8 @@
 class PythonAT310 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz"
-  sha256 "1b2e4e2df697c52d36731666979e648beeda5941d0f95740aafbf4163e5cc126"
+  url "https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz"
+  sha256 "f400c3fb394b8bef1292f6dc1292c5fadc3533039a5bc0c3e885f3e16738029a"
   license "Python-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class PythonAT310 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.10"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "035471a2bab183549646018a6de900b5ff6c9f8801852b33229ba7ae8407b590"
+    sha256 cellar: :any_skip_relocation, mojave: "a70c052ca62b4dc05c52d45d151ec3786b8ef4089fa2f62db27d9bd38fe700b9"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -62,8 +61,8 @@ class PythonAT310 < Formula
 
   # Always update to latest release
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/cc/83/7ea9d9b3a6ff3225aca2fce5e4df373bee7e0a74c539711a4fbfda53374f/setuptools-65.3.0.tar.gz"
-    sha256 "7732871f4f7fa58fb6bdcaeadb0161b2bd046c85905dbaa066bdcbcc81953b57"
+    url "https://files.pythonhosted.org/packages/03/c9/7b050ea4cc4144d0328f15e0b43c839e759c6c639370a3b932ecf4c6358f/setuptools-65.4.1.tar.gz"
+    sha256 "3050e338e5871e70c72983072fe34f6032ae1cdeeeb67338199c2f74e083a80e"
   end
 
   resource "pip" do
@@ -139,13 +138,16 @@ class PythonAT310 < Formula
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       --with-dbmliborder=gdbm:ndbm
       --enable-optimizations
-      --with-lto
       --with-system-expat
       --with-system-ffi
       --with-system-libmpdec
     ]
 
     if OS.mac?
+      # Enabling LTO on Linux makes libpython3.*.a unusable for anyone whose GCC
+      # install does not match the one in CI _exactly_ (major and minor version).
+      # https://github.com/orgs/Homebrew/discussions/3734
+      args << "--with-lto"
       args << "--enable-framework=#{frameworks}"
       args << "--with-dtrace"
     else
