@@ -11,8 +11,10 @@ class Since < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70fe591dc225eb74e0f27c8d8f913771f6873665fd9441498ffeba1c277358ba"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "be177eae27c7bc16dcabf649437a4b99dc2bcba9b4771d2038844785a3150b7a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "95b9b96522d9cdb0ac317550daf1c9ee102d1a4df7736cd2072d896adf05fc04"
+    sha256 cellar: :any_skip_relocation, ventura:        "75b5ed6525afee018674228668bf45b282016187f09dd42dd95fb474e0e1a232"
     sha256 cellar: :any_skip_relocation, monterey:       "3db05c5b4e33cc28cf9dd8352dbc6038b139cb6bf8056bc9c5a85bd0db7ee9c2"
     sha256 cellar: :any_skip_relocation, big_sur:        "60c3738e71c6455fa5a7445a21a79695d4644a34de06cbc05743a52c4f5b40f8"
     sha256 cellar: :any_skip_relocation, catalina:       "20b3f4888282ed47021562eb24efe9c37ef3a652ad64164460a5f368260e75d8"
