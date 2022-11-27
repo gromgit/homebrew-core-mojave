@@ -10,6 +10,7 @@ class Forego < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "544f9c669387997e9197bf3de714106580d23b38fbcd7ba5d5dfba80876563e7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "add9895abd190b3c092406ff31939139d7f4e84ea4b8826a3e81e701ce5a482f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae42636ee209a05effd8db31e34d9458bac997f778227eb9bab935fc3699f3fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "26c2704d12c1d17ec4a2c5da4d57088de37c98d08403771e1bc216bf39ac1fef"
     sha256 cellar: :any_skip_relocation, monterey:       "cc406f5189dfc536b2cf7cc3e9bdbc955717630027770be5c73f8684ca607a5e"
     sha256 cellar: :any_skip_relocation, big_sur:        "3aa5d4a73ba9ec2d2905bac72b65166394c33d7f6ade2cd842d7e7eeceaedd34"
     sha256 cellar: :any_skip_relocation, catalina:       "3004f019d2361f0831bcd83d6f7f6d581f666be9c8a5a6e0a3b81f84d3170146"
