@@ -9,6 +9,7 @@ class Srecord < Formula
     sha256 cellar: :any,                 arm64_ventura:  "1e62d98c025da186f7de2347a0339eba7f8028133503ff17d263b2c1c8f69fb7"
     sha256 cellar: :any,                 arm64_monterey: "ea6f0e094cd533b6e4a1edd1be1dca4ccfb1386203fbde1e50d9868cd6145793"
     sha256 cellar: :any,                 arm64_big_sur:  "2531dde4b69ae50e0cb15b498b2729862e64d00b98be831e581989d9e907f36a"
+    sha256 cellar: :any,                 ventura:        "979ba3f127c770c9ccc53559a8605683c89301ad1c031e854eeefad3a59ca245"
     sha256 cellar: :any,                 monterey:       "00588bcdaa60466ebedf0f60caec0c94c21447640b6df81c0dac9b83e9f63057"
     sha256 cellar: :any,                 big_sur:        "5c5129ae228ef644b5ed2a26516295feabd198aea270eab03c5c6d3e418980b1"
     sha256 cellar: :any,                 catalina:       "cc4e1e89835954876853f5f7bcccbfd172adbb5651c1f2790ea3da10e4347845"
