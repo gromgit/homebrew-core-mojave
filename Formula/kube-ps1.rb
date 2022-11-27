@@ -1,15 +1,13 @@
 class KubePs1 < Formula
   desc "Kubernetes prompt info for bash and zsh"
   homepage "https://github.com/jonmosco/kube-ps1"
-  url "https://github.com/jonmosco/kube-ps1/archive/v0.7.0.tar.gz"
-  sha256 "f5ccaf6537e944db5b9cf40d3f01cf99732dce5adaaaf840780aa38b1b030471"
+  url "https://github.com/jonmosco/kube-ps1/archive/v0.8.0.tar.gz"
+  sha256 "7e57dc42d60f6c18fc1c814800c74b0ffb4e6f9d8e2b53f6f40bd7076f6c50a0"
   license "Apache-2.0"
   head "https://github.com/jonmosco/kube-ps1.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kube-ps1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ef5a7081e4a6258c623301a7a7f2715f53c850b5da7fbbe1acda0a88fd27e37f"
+    sha256 cellar: :any_skip_relocation, all: "e5d9cf3512efbda9b7fcbabd2726adbee97ae8c38596835197f648b14b7d94ab"
   end
 
   depends_on "kubernetes-cli"
@@ -30,7 +28,7 @@ class KubePs1 < Formula
 
   test do
     ENV["LC_CTYPE"] = "en_CA.UTF-8"
-    assert_equal "bash", shell_output("bash -c '. #{opt_share}/kube-ps1.sh && echo $KUBE_PS1_SHELL'").chomp
-    assert_match "zsh", shell_output("zsh -c '. #{opt_share}/kube-ps1.sh && echo $KUBE_PS1_SHELL'").chomp
+    assert_equal "bash", shell_output("bash -c '. #{opt_share}/kube-ps1.sh && echo $(_kube_ps1_shell_type)'").chomp
+    assert_match "zsh", shell_output("zsh -c '. #{opt_share}/kube-ps1.sh && echo $(_kube_ps1_shell_type)'").chomp
   end
 end
