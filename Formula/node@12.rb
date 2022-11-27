@@ -7,14 +7,19 @@ class NodeAT12 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@12"
-    sha256 cellar: :any, mojave: "35b091c54bd1c8fb91d0d8ceaf18c16f6dce208d45164aba785de32997ca7c76"
+    sha256 cellar: :any,                 arm64_ventura:  "045359c8f591ca97d2f4ab9f6348cd456331c03f68cb88913fc7724145fb76ec"
+    sha256 cellar: :any,                 arm64_monterey: "080b711a20d34d0272b737fe0b764afe8e0339c6cf298faee8397a4870ac3b7d"
+    sha256 cellar: :any,                 arm64_big_sur:  "535bf5c436d07b3078237460cba937124540b3fa92c4123a290b24fed6e0a0d9"
+    sha256 cellar: :any,                 monterey:       "a9f6e355460a7eaa9309ae1ba8332040a51409ce3dd462ca957b80ff45c65c42"
+    sha256 cellar: :any,                 big_sur:        "1f790b5c3a7cb07599d61e61be28a076d3980b14f14939d2e3f29daf5f9f4d9e"
+    sha256 cellar: :any,                 catalina:       "a9544a2762f1c2fd862c44cebc867cd2e3ad97836229d5228ac4340bbd0301be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "744c889c42c289732d392589d369c3c462ee83579c863375c0ec745c1e7de10a"
   end
 
   keg_only :versioned_formula
 
   # https://nodejs.org/en/about/releases/
-  deprecate! date: "2022-04-30", because: :unsupported
+  disable! date: "2022-04-30", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build # fails with Python 3.10
