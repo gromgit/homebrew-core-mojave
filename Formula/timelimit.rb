@@ -11,8 +11,10 @@ class Timelimit < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6de9b594eb3e3f9509fc78a4c7ed04a1f91bf7caef6fb175bcca2c3f4d0709f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "942effb229cb7f279a5cd4471bf3b70111bd0c79f286ad4954f924dc9805d096"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "857697f444d4ddc8658970890885230fe12eb21474cb212112a3ccbbbbaf81b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "423aa0f95a7a8aac71a1dc99378049a4f5a467426c59c24f9628c6dcfb3e705f"
     sha256 cellar: :any_skip_relocation, monterey:       "04d40a5e190cb1ed96e44690538d8445b7e097663a5df16577ad90e3ff3f7d01"
     sha256 cellar: :any_skip_relocation, big_sur:        "3888001f62e0dfdf0573b405dc2c0c5a36ce1274d1091a0cb0f38ee18438cfc4"
     sha256 cellar: :any_skip_relocation, catalina:       "e083932ebe7fa08f9afaa28254e5a73df07a29bf072cb932065678d708127a87"
