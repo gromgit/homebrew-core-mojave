@@ -11,8 +11,10 @@ class TokyoDystopia < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "b668547ea69b42bff8b084ec960fb1d1b0233179b2b8b2ea5bb83b013ab81f84"
     sha256 cellar: :any,                 arm64_monterey: "6c120e05bb6ced87121536beab4895c0b03d0e94206fe6fafac4a96326bf2e32"
     sha256 cellar: :any,                 arm64_big_sur:  "9e0c8988268eec1f5fe33f5d7f494f636c64690f417e179e37a83f9b4880b315"
+    sha256 cellar: :any,                 ventura:        "21e551f8a8e43d5c841619fa462b209aa25a18140cbe0ece3f923a14e3cab1fa"
     sha256 cellar: :any,                 monterey:       "60710bf05465d1a0d1b9820998971cbe2ba9387e4bb121bc6aeadc4aa00a2d91"
     sha256 cellar: :any,                 big_sur:        "f771602cfd9301739750f839295241f829528eee8ecfe02ac95b55fc24c3841e"
     sha256 cellar: :any,                 catalina:       "eb04133c9d459ee1ab9a4fe00b3f6b31621d9df2672a252784779a44a5991b77"

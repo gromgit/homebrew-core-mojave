@@ -1,25 +1,20 @@
 class Zydis < Formula
   desc "Fast and lightweight x86/x86_64 disassembler library"
   homepage "https://zydis.re"
+  url "https://github.com/zyantific/zydis.git",
+      tag:      "v4.0.0",
+      revision: "1ba75aeefae37094c7be8eba07ff81d4fe0f1f20"
   license "MIT"
   head "https://github.com/zyantific/zydis.git", branch: "master"
 
-  stable do
-    url "https://github.com/zyantific/zydis.git",
-        tag:      "v3.2.1",
-        revision: "4022f22f9280650082a9480519c86a6e2afde2f3"
-
-    # Fix build on ARM Monterey. Remove in the next release.
-    patch do
-      url "https://github.com/zyantific/zydis/commit/29bb0163342b782b0c07134f989c0a9bb76beec0.patch?full_index=1"
-      sha256 "8a23636bee945f9397367c65b4c0559e33f40a7650942047f5aca5c18b3601f6"
-    end
-  end
-
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zydis"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "0a63d8ae8def963707e741d727a3a463b5d7dbaabc090aa831fd5d090bf9a1d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b70bb8aec9d6f049046a37de51972c220408f747dde8881bddde7006f54d4371"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "151c4579826dace15babff8ee96994a477927c84dcf0345064c4af5e6f796fd1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfda85213ebb2135914d60fb36c82f401ee463f8adb6142a6e5d8a930724f3f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "a22ba879337f31e0f67b0938567b80e6c84c6db2fdfb4b6024399029862bebe5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6bfc2b206264de685d541f6f83c735d2dc1e98bf854884415b07e7cc23eba8c9"
+    sha256 cellar: :any_skip_relocation, catalina:       "01e219ba0e015f596bcd44ebec6a1b9311b3db6108db23ab9329ffb32bde08b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70750d47ee38a79417d6a490ac7ee63c7e66911f29d185698e7467ab730da8bf"
   end
 
   depends_on "cmake" => :build

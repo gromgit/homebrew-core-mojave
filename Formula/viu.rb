@@ -7,8 +7,14 @@ class Viu < Formula
   head "https://github.com/atanunq/viu.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/viu"
-    sha256 cellar: :any_skip_relocation, mojave: "dabe9478c1c6bcb0340b99384b916402724225eeca774c73669f32fe871aa502"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5518815ffa424b2f4341703d8e12b62a7b0c7b86591e24e48f22e5dbebf9499"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "31abf104e6a99f2168f865b6461657aa6a7a30c014239eb72f76bffc525bec95"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fefcfa184185f643d81e7a206e782349a0813e947222f2ea092eff3f92dfa5b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f01ea745004309835c0ee4ebee71ff8186246ea0c74b2c5286a3f021d425238"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1d88e2dcf78308bdb60b2072cb03a31d6fad4d84d760360b597feea0a0a1b2a5"
+    sha256 cellar: :any_skip_relocation, catalina:       "d2082f85f1290d91864b6ff81b8ea76c93ae6482cf5375efede73afe69bb96fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9affa5440243080d044e7dce00b6d2efa411cfcbbbce88aeb4c2b5268b5107a"
   end
 
   depends_on "rust" => :build

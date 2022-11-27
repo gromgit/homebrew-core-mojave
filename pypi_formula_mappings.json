@@ -1,6 +1,6 @@
 {
   "anime-downloader": {
-    "exclude_packages": ["tabulate"]
+    "exclude_packages": ["six", "tabulate"]
   },
   "ansible": {
     "extra_packages": [
@@ -23,7 +23,7 @@
     "exclude_packages": [
       "PyYAML", "jsonschema", "attrs", "pyrsistent", "yamllint", "pathspec",
       "ansible-core", "cryptography", "Jinja2", "MarkupSafe", "resolvelib",
-      "Pygments"
+      "Pygments", "black", "click", "mypy-extensions", "platformdirs"
     ]
   },
   "arxiv_latex_cleaner": {
@@ -35,11 +35,17 @@
   "aws-google-auth": {
     "exclude_packages": ["pillow", "six", "tabulate"]
   },
+  "aws-shell" : {
+    "exclude_packages": ["six", "Pygments", "docutils"]
+  },
   "aws-sso-util": {
     "exclude_packages": ["six"]
   },
   "awscli@1": {
-    "exclude_packages": ["six", "PyYAML"]
+    "exclude_packages": ["six", "PyYAML", "docutils"]
+  },
+  "awslogs": {
+    "exclude_packages": ["six"]
   },
   "awsume": {
     "exclude_packages": ["six", "PyYAML"]
@@ -57,15 +63,12 @@
     "exclude_packages": ["six"]
   },
   "black": "black[d]",
-  "borgmatic": {
-    "exclude_packages": ["jsonschema", "attrs", "pyrsistent"]
-  },
   "bpython": {
     "exclude_packages": ["six", "Pygments"]
   },
   "bpytop": "bpytop",
   "breezy": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "buku": {
     "package_name": "buku[server]",
@@ -74,6 +77,10 @@
   },
   "bzt": {
     "exclude_packages": ["numpy", "six", "Cython", "PyYAML"]
+  },
+  "ccm": {
+    "extra_packages": ["cassandra-driver"],
+    "exclude_packages": ["PyYAML", "six"]
   },
   "censys": {
     "exclude_packages": ["Pygments"]
@@ -157,7 +164,7 @@
   "diffoscope": "diffoscope[cmdline]",
   "dnstwist": "dnstwist[full]",
   "doc8": {
-    "exclude_packages": ["docutils"]
+    "exclude_packages": ["docutils", "Pygments"]
   },
   "docker-squash": {
     "exclude_packages": ["six"]
@@ -173,9 +180,8 @@
       "azure-storage-blob", "b2sdk", "boto", "boto3", "boxsdk[jwt]",
       "dropbox", "gdata-python3", "google-api-python-client",
       "google-auth-oauthlib", "jottalib", "keyring", "megatools",
-      "paramiko", "pexpect", "psutil", "pydrive", "pyrax",
-      "python-swiftclient", "requests[security]", "requests-oauthlib",
-      "monotonic==1.5"
+      "paramiko", "pexpect", "psutil", "pydrive2",
+      "python-swiftclient[keystone]", "requests[security]", "requests-oauthlib"
     ],
     "exclude_packages": ["six", "PyYAML", "typing-extensions"]
   },
@@ -213,6 +219,10 @@
   "flintrock": {
     "exclude_packages": ["six"]
   },
+  "flit": {
+    "exclude_packages": ["docutils"]
+  },
+  "fobis": "fobis-py",
   "fonttools": {
     "extra_packages": ["Brotli"]
   },
@@ -237,7 +247,7 @@
     "exclude_packages": ["six"]
   },
   "hatch": {
-    "exclude_packages": ["six", "Pygments", "virtualenv"]
+    "exclude_packages": ["Pygments", "virtualenv"]
   },
   "homeassistant-cli": {
     "exclude_packages": ["tabulate"]
@@ -268,6 +278,9 @@
   "jc": {
     "exclude_packages": ["Pygments"]
   },
+  "jello": {
+    "exclude_packages": ["Pygments"]
+  },
   "jenkins-job-builder": {
     "exclude_packages": ["six", "PyYAML"]
   },
@@ -278,6 +291,9 @@
   "jrnl": {
     "exclude_packages": ["six", "Pygments"]
   },
+  "juju-wait": {
+    "exclude_packages": ["PyYAML"]
+  },
   "jupyterlab": {
     "exclude_packages": [
       "ipython", "appnope", "asttokens", "backcall", "decorator", "executing", "jedi",
@@ -287,7 +303,7 @@
     ]
   },
   "keepkey-agent": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "docutils"]
   },
   "khal": {
     "exclude_packages": ["six"]
@@ -334,7 +350,7 @@
   "molecule": {
     "extra_packages": ["docker-py", "molecule-vagrant", "python-vagrant"],
     "exclude_packages": [
-      "six", "PyYAML", "jsonschema", "attrs", "pyrsistent", "Pygments",
+      "six", "PyYAML", "Pygments",
       "cookiecutter", "arrow", "binaryornot", "certifi", "chardet", "charset-normalizer",
       "click", "idna", "Jinja2", "jinja2-time", "MarkupSafe", "python-dateutil",
       "python-slugify", "requests", "text-unidecode", "urllib3"
@@ -345,20 +361,30 @@
   },
   "moto": {
     "package_name": "moto[all,server]",
-    "exclude_packages": ["junit-xml", "six", "jsonschema", "attrs", "pyrsistent", "PyYAML"],
+    "exclude_packages": ["junit-xml", "six", "PyYAML"],
     "extra_packages": ["junit-xml-2"]
   },
   "mycli": {
-    "exclude_packages": ["tabulate", "Pygments"]
+    "exclude_packages": ["six", "tabulate", "Pygments"]
   },
   "nbdime": {
-    "exclude_packages": ["six"]
+    "exclude_packages": [
+      "jupyterlab", "ipython",
+      "anyio", "argon2-cffi", "bleach", "certifi", "cffi", "charset-normalizer",
+      "defusedxml", "entrypoints", "idna", "ipython_genutils", "Jinja2",
+      "jupyter-client", "jupyter-core", "jupyter-server", "jupyterlab-pygments",
+      "MarkupSafe", "mistune", "nbclient", "nbconvert", "nbformat", "nest-asyncio",
+      "packaging", "pandocfilters", "prometheus-client",  "pycparser", "pyparsing",
+      "python-dateutil", "pyzmq", "requests", "Send2Trash", "sniffio", "terminado",
+      "tornado", "urllib3", "webencodings", "websocket-client",
+      "appnope", "asttokens", "backcall", "decorator", "executing", "jedi",
+      "matplotlib-inline", "parso", "pexpect", "pickleshare", "prompt-toolkit", "ptyprocess",
+      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth",
+      "jsonschema", "attrs", "pyrsistent"
+    ]
   },
   "nicotine-plus": {
     "exclude_packages": ["pycairo", "PyGObject"]
-  },
-  "notifiers": {
-    "exclude_packages": ["jsonschema", "attrs", "pyrsistent"]
   },
   "nox": {
     "exclude_packages": ["six", "virtualenv"]
@@ -419,7 +445,7 @@
     "exclude_packages": ["six"]
   },
   "poetry": {
-    "exclude_packages": ["six", "jsonschema", "attrs", "pyrsistent", "virtualenv"]
+    "exclude_packages": ["six", "virtualenv"]
   },
   "pre-commit": {
     "exclude_packages": ["six", "PyYAML", "virtualenv"]
@@ -442,6 +468,16 @@
   },
   "pylint": {
     "exclude_packages": ["isort"]
+  },
+  "pyqt": {
+    "exclude_packages": [
+      "PyQt6-3D-Qt6", "PyQt6-Charts-Qt6", "PyQt6-DataVisualization-Qt6",
+      "PyQt6-NetworkAuth-Qt6", "PyQt6-WebEngine-Qt6", "PyQt6-Qt6"
+    ],
+    "extra_packages": [
+      "PyQt6-3D", "PyQt6-Charts", "PyQt6-DataVisualization",
+      "PyQt6-NetworkAuth", "PyQt6-WebEngine"
+    ]
   },
   "pyqt-builder": {
     "exclude_packages": ["packaging", "pyparsing", "sip", "toml"]
@@ -469,11 +505,17 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "restview": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "Pygments", "docutils"]
+  },
+  "rich-cli": {
+    "exclude_packages": ["Pygments", "docutils"]
   },
   "robot-framework": {
     "extra_packages": ["robotframework-archivelibrary", "robotframework-selenium2library", "robotframework-sshlibrary"],
     "exclude_packages": ["six"]
+  },
+  "rst-lint": {
+    "exclude_packages": ["docutils"]
   },
   "s3cmd": {
     "exclude_packages": ["six"]
@@ -505,7 +547,7 @@
     "exclude_packages": ["six"]
   },
   "schemathesis": {
-    "exclude_packages": ["six", "PyYAML", "jsonschema", "attrs", "pyrsistent",  "typing-extensions"]
+    "exclude_packages": ["six", "PyYAML", "typing-extensions"]
   },
   "scipy": {
     "exclude_packages": ["numpy"]
@@ -518,7 +560,7 @@
   },
   "semgrep": {
     "package_name": "semgrep",
-    "exclude_packages": ["jsonschema", "attrs", "pyrsistent", "typing-extensions"]
+    "exclude_packages": ["typing-extensions"]
   },
   "sgr": {
     "exclude_packages": ["typing-extensions", "jsonschema", "attrs", "pyrsistent"]
@@ -527,7 +569,7 @@
     "exclude_packages": ["six"]
   },
   "snakemake": {
-    "exclude_packages": ["tabulate", "PyYAML", "jsonschema", "attrs", "pyrsistent"]
+    "exclude_packages": ["tabulate", "PyYAML", "jsonschema", "attrs", "pyrsistent", "docutils"]
   },
   "sphinx-doc": {
     "extra_packages": ["numpydoc"],
@@ -577,7 +619,7 @@
     "exclude_packages": ["six"]
   },
   "trezor-agent": {
-    "exclude_packages": ["pillow", "six", "typing-extensions"],
+    "exclude_packages": ["pillow", "six", "typing-extensions", "docutils"],
     "extra_packages": ["ledger-agent", "keepkey-agent"]
   },
   "trzsz": {
@@ -588,7 +630,7 @@
     "exclude_packages": ["six"]
   },
   "twine-pypi": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "Pygments", "docutils"]
   },
   "urlwatch": {
     "exclude_packages": ["PyYAML"]

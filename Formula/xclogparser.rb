@@ -1,22 +1,21 @@
 class Xclogparser < Formula
   desc "Tool to parse the SLF serialization format used by Xcode"
   homepage "https://github.com/MobileNativeFoundation/XCLogParser"
-  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/v0.2.34.tar.gz"
-  sha256 "25e1275229064e314ce6f1107541891a5a6438c76a10ecc6d2b592f5a441713b"
+  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/v0.2.36.tar.gz"
+  sha256 "d3b2e0d75b3c6920535398c882d75c92f901262a302a344a75fe23adfe01e10c"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "874facba4b7d151f623d033a310974b03d443c2fa2729fa45144d9951879e9df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e813bd26c732d18903f050dc8556bcbf44c87c707606e72fc87b8494eced38c0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1913c040932b88bc7319db6bf8c3eb388b804fb5b0d93eda35cd4419f7a4e373"
-    sha256 cellar: :any_skip_relocation, monterey:       "1471bf0035f4bd72db87c19404848fac8ea922e678128cff0eedf9d8d4713b72"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e326d092e7f54022f4cdd0592973c26b67fcffc635e5048da888edc00b1ccfa0"
-    sha256 cellar: :any_skip_relocation, catalina:       "16b724430cdb6e6cda995d699123c9fa709d268a8ac33c54bd7e19d50cd38a5b"
-    sha256                               x86_64_linux:   "3c22a8bf4058f19ad67afa2ac381779e9fb0561c3589df9fa1f04125e2c6d571"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4563ff5ac2c03cb10b0bc33b41b3d97a56c99bf0a3c0511924d5ef18374602c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb83245ca0057d737291cc85e863341cfe4fdfcadbb5863bd9d462e748b38599"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b422ad12e5b7a6113460778c5e1f78bd728d926b8e0a3bd37697d82f15a34e51"
+    sha256 cellar: :any_skip_relocation, ventura:        "668b6a84f964e11a7f51a136e4343de59c2636a8d5d1e78fffc43ea522984ba7"
+    sha256 cellar: :any_skip_relocation, monterey:       "e9fffc983c4c0b6657e064e512b18bafb20a56c98a2d3305ad8fff34e7120c97"
+    sha256 cellar: :any_skip_relocation, big_sur:        "de504bfd1d8d5ec7b84f7755461187d9718fe9b814fc6d781f566fa7c6968496"
+    sha256                               x86_64_linux:   "ca6680fd588fa15a2227693d76ec24f87b46185e9cf4366e9476e9b77c31b0a5"
   end
 
-  depends_on xcode: "12.0"
+  depends_on xcode: "13.0"
 
   uses_from_macos "swift"
 

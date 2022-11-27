@@ -5,8 +5,10 @@ class Xlslib < Formula
   sha256 "05a5d052ffdd6590755949d80d16a56285561557bc9a5e887e3b8b3fef92a3f3"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "8a846a14e97ca4104d9d56be6ba54c6159a798b334b8172d1c941848bb3581aa"
     sha256 cellar: :any,                 arm64_monterey: "6aa0abeea10e22729ad231d42c44b194eff33d203c786f05fdbc72e6a62a590d"
     sha256 cellar: :any,                 arm64_big_sur:  "7e4fb2b977db04da50bae5952609b346fb2fd3b2687f2226747c1ff3401f9450"
+    sha256 cellar: :any,                 ventura:        "cf8a30118932104eb0e9a53bf3ca590356a6c4a8ab9b87229b9b3fc58df860ec"
     sha256 cellar: :any,                 monterey:       "f40738098dfd10961f28deb59266aa468165ca9011658852a3d8a97f51742175"
     sha256 cellar: :any,                 big_sur:        "a4b1d70f77f5cab84266761845d3910821315696114c3c19250660d4a9bd18a0"
     sha256 cellar: :any,                 catalina:       "9db0f101930faf04be3a8c7cccfafefeb82efc3009e88ab7494296b371631bc3"
