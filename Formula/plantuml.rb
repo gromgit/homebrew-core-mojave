@@ -1,18 +1,18 @@
 class Plantuml < Formula
   desc "Draw UML diagrams"
   homepage "https://plantuml.com/"
-  url "https://github.com/plantuml/plantuml/releases/download/v1.2022.12/plantuml-1.2022.12.jar"
-  sha256 "9014a0fb014fae37584edf1f4271b5f947b60376ba9a95546eb97e82f3b97f2f"
+  url "https://github.com/plantuml/plantuml/releases/download/v1.2022.13/plantuml-1.2022.13.jar"
+  sha256 "dd54cde638aad75aafdbaa7a28dca0dc6bb4dcba8cacce5c810572c5e5d2a522"
   license "GPL-3.0-or-later"
   version_scheme 1
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/plantuml[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c0acc646b2d2e7337f3e4e4a944f46aaff6495fc1f32c79d3c5ba4740bc4f772"
+    sha256 cellar: :any_skip_relocation, all: "934413f4923dc4c51997f139abe6fce343babc7e13eea2e9a57b5660adbf0d55"
   end
 
   depends_on "graphviz"
