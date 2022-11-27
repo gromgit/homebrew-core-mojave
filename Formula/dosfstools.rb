@@ -7,9 +7,15 @@ class Dosfstools < Formula
   head "https://github.com/dosfstools/dosfstools.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosfstools"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "30208e7eef516fa86196f31e0aed61f5e225d1fd2e21c1443ee25d9cc45bd9fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40a3ed816a04a4104a60aa95f8ae76bee9be12872e8147c0a41fa3f879f11ced"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "41e7da04f31a04e5ad7fc460b9c15b6526780fab0de0339fcdea540dfbaec964"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d8437b8921385c7675d2502c0c7b746f060e6b1656923e061173d568927f34d"
+    sha256 cellar: :any_skip_relocation, ventura:        "134a64a971297ad37b2635532916116f6350c3771c03efa6ea3da259bb260ce1"
+    sha256 cellar: :any_skip_relocation, monterey:       "e288a32bae22472eb31806afad3a025220d7284ddf6cdbf5b48a196ec5831139"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c4f450bef47449fa57d911e1c3610cd65bf8d7fd661e3efc8a0a44c7d45510f5"
+    sha256 cellar: :any_skip_relocation, catalina:       "df9afee3d6ec3da028a6fdd487b98800099f8aa248261c35ed2821e984b91a70"
+    sha256 cellar: :any_skip_relocation, mojave:         "4d910d3f83352692379e5ead97f3c52ab845cc187a1d791f655ed02ef7b7b9e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "584daa5a52ed21b3b23eba4323ebec3fa8421062c9cac5d833e60b91da0a7636"
   end
 
   depends_on "autoconf" => :build
