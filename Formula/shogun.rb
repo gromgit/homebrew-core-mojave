@@ -7,10 +7,6 @@ class Shogun < Formula
   license "BSD-3-Clause"
   revision 12
 
-  bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
-  end
-
   disable! date: "2021-11-15", because: "has an incompatible license"
 
   depends_on "cmake" => :build
