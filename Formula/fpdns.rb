@@ -10,6 +10,7 @@ class Fpdns < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb77e083c32bc72c0f52807fd1ff356ef7fe5f2513e19e7a21df53fa714bd4f8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "913d16a19cc4f3da646f509dd0a3f392949171f915811e351b375d2534c821cc"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b622516234b6e929c375a741e0024467632a691cab2e61f86044b6553b5d394"
+    sha256 cellar: :any_skip_relocation, ventura:        "135e95b0470401a3a650251c06a28f55f30b0ce50e69ec15fc9a0aeaada9e451"
     sha256 cellar: :any_skip_relocation, monterey:       "6449eb8bcfee73a6f2c8149075a8f9e04953cff9989a2622511190ddbb5649a1"
     sha256 cellar: :any_skip_relocation, big_sur:        "b0dcb11f28f97cf7ecb129a0e7ecbcd91bb8b60ffe9091fc690da73bf6a88b29"
     sha256 cellar: :any_skip_relocation, catalina:       "fcf157864bccda7f1064856e592acf3b6ef7d46c8dcd48aab66ceae5ef2b394e"
