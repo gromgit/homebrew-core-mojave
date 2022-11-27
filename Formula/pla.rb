@@ -14,6 +14,7 @@ class Pla < Formula
     sha256 cellar: :any,                 arm64_ventura:  "7be71e6a234104ac6da8b3fdbf000f04345d08c4e1ba933bf736833628e1c415"
     sha256 cellar: :any,                 arm64_monterey: "f335f954b419f71258a566f1abee2db8211f21aee91bb98f1c97ea8d42e48761"
     sha256 cellar: :any,                 arm64_big_sur:  "2cf83294bbf3d2bd6679e81eb248c588a413ddeadac46ceb24de6affb368aa06"
+    sha256 cellar: :any,                 ventura:        "326cc1c21ff09f02478fc21e8a9050c413c5a6d233e53a49920bc8b0fde09b83"
     sha256 cellar: :any,                 monterey:       "0787de036e4a83bc03c2153ec4f447d187d6382c5bbf55f19cefb96488412b1a"
     sha256 cellar: :any,                 big_sur:        "a40094ed802100f73d1ba8fedf5e536649c7fcae1e8a1bed9e240abdc690f221"
     sha256 cellar: :any,                 catalina:       "9f16be821eecfd9fdc72071f1c2071790904f06ca56c0cf106021e7a1f4c8342"
