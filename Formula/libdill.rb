@@ -9,6 +9,7 @@ class Libdill < Formula
     sha256 cellar: :any,                 arm64_ventura:  "b6196fd106aa6de14be8a61b18cdeb4244a721eaf03fb2512188d50248f9061a"
     sha256 cellar: :any,                 arm64_monterey: "091479e5dd7d08123896444b8a398cb4bec0b7ee72cc24bef0903919a2ceedd1"
     sha256 cellar: :any,                 arm64_big_sur:  "709ff85bcf90ca86729fec8a0e01fe9b98e0f42a5e215de469d4f95a6eb93f6a"
+    sha256 cellar: :any,                 ventura:        "ada9dbf183f0b016fcbb7f2eeeb155ae5ffd68b32dbee479b8a976b0c93a5359"
     sha256 cellar: :any,                 monterey:       "f3d32c4b24787b52512ae841b0daf82e256bb7f7e42dad115bbc059541103507"
     sha256 cellar: :any,                 big_sur:        "d0bc288a3ce54ab333f48ae08d127aa78300f6ee4921f0a9b59ca7f685649a93"
     sha256 cellar: :any,                 catalina:       "124f2fd7aa4ba68e528bd2700637511943ae55ec9c2b2c9dcdb3bff1f2e34909"
