@@ -6,8 +6,10 @@ class ChooseGui < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15d2bee79fda8a6f9e569558bd549f0bdb14cb61c681a887d5caf461a8ea265c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "37b3b5778df9ba0fc55ff277bb2ab4a6d920ba21875460c6e7ab4d944411e21a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8abc11fca77fb82fc0cbf01c8a4a36a0abdd490f63066bd490ca1ff23af8ccf"
+    sha256 cellar: :any_skip_relocation, ventura:        "2526b5a830c8e2057fe9a2d06d060e84e4d0d4d479f5ec2003d854bb76202330"
     sha256 cellar: :any_skip_relocation, monterey:       "11f10c376ce467c5cee44f5dd22db0970ebd5bc2c5a3959995a3846fed39166b"
     sha256 cellar: :any_skip_relocation, big_sur:        "83c49f5cf2fd316b1dac396341921547b7a6db1b33710d0a5413cb53ba100d8b"
     sha256 cellar: :any_skip_relocation, catalina:       "8df952db2e54267c80dadb67f0da6a249fb0e3d58c92e1d7ac9e791ab8157f76"
