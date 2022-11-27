@@ -7,8 +7,10 @@ class Rainbarf < Formula
   head "https://github.com/creaktive/rainbarf.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef63dec71481ba7ea8f46ebe302945b5d09845825dde684183a2cf2bc65c3684"
+    sha256 cellar: :any_skip_relocation, ventura:        "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
     sha256 cellar: :any_skip_relocation, monterey:       "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
     sha256 cellar: :any_skip_relocation, big_sur:        "ef63dec71481ba7ea8f46ebe302945b5d09845825dde684183a2cf2bc65c3684"
     sha256 cellar: :any_skip_relocation, catalina:       "cc3cc692fe18a6c757c92ed7c251a2b23dc04df3d2e88acd30fc776620cd8059"
