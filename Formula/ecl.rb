@@ -22,8 +22,8 @@ class Ecl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ecl"
-    rebuild 2
-    sha256 mojave: "9bdbfb8e20030b39b5ffe00281159810d4a51eb01d12bb27b8f9a1b3f8dac347"
+    rebuild 3
+    sha256 mojave: "e40c510473f99cc78c5f143e1907c0fcd2f9ae12535030239aa7d8e88e137117"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
