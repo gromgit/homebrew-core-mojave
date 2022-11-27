@@ -11,8 +11,10 @@ class Sylpheed < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "0ebdb5823c1cf1a0c7b4d0888578b1c87e64fbf0f7fa920565f1021a0fddc8b4"
     sha256 arm64_monterey: "77a7980e9c83d77c1416057cf5b59a623061ecc2e61d527485a1f58d7c28ad4e"
     sha256 arm64_big_sur:  "ae2f9828834200f3a587a7d596560bf8809f173a1044e997a58a0ea8d8a45acc"
+    sha256 ventura:        "ea5818164e16758ce4ef9ba82167fba08b6baee4e2791273154c7a5e54468234"
     sha256 monterey:       "0d52dc0953029819c21263981a3b596d7084667a924bbe84c6e444e8f8fcdbe8"
     sha256 big_sur:        "b8d825cf9222f047cf9eec78a8a8b81c8133cd75ded1c66e3423d38318226c41"
     sha256 catalina:       "294ac17fa03002cb92f7f1bcb5f1a9b4f56157e54b564bd8e4e673f5902fc8a0"
