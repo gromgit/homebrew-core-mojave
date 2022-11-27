@@ -15,6 +15,7 @@ class Nacl < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, ventura:      "8295f77303ae90ec9c22cfb16f5d676b435804447edc5347ab5f1a8d55ea2ddd"
     sha256 cellar: :any_skip_relocation, monterey:     "925c585e1140b37453c5f7ac60f944221e1de495654aefc70d5352e43fa0f730"
     sha256 cellar: :any_skip_relocation, big_sur:      "89574694f733c8aa852e09e3828f10dd6ce2ece4219bd825e5f6c18253bddb28"
     sha256 cellar: :any_skip_relocation, catalina:     "b9fb1445709388168d0e1c56964a7540e8ff4e6294d31eb23c62368ce56e6d1b"
@@ -24,6 +25,8 @@ class Nacl < Formula
     sha256 cellar: :any_skip_relocation, el_capitan:   "e08c93b814989405fa3b7db9e3a9c4f149e36aaab32aba44e9a2f1659d2d3efd"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "03cbc3623ab6388289a613b8499f4e120d19cda47b661bd494e0d0cdfc355288"
   end
+
+  depends_on arch: :x86_64
 
   def install
     # Print the build to stdout rather than the default logfile.
