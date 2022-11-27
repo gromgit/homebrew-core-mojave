@@ -16,6 +16,7 @@ class Mpdas < Formula
     sha256 arm64_ventura:  "a33d1f587e538bbc81db4d3bf60dc7c37c82ee462400c6051785e4338f1c46e1"
     sha256 arm64_monterey: "89b5e45abcb88c8df236dea703162ed9d7f372c0872c3af23630c56e18e31c8e"
     sha256 arm64_big_sur:  "a7fd32d05844b78fb8eede1ff4a1285e531250919e296166f0eb74d6a9f0cd39"
+    sha256 ventura:        "559fcd0228ecbdcca8fd8147e611c05d6e71e071823090e669da2985140bbf5b"
     sha256 monterey:       "25dd98ffb770fa018112f3014ae2574ab346b2d54d542b4feab516f264f30ced"
     sha256 big_sur:        "1f41b8a297270de980e814104f1a74d9437777caa9443686fb251cac6625494b"
     sha256 catalina:       "ae3eaddea864370fbcb2ad3f815165ba4f79f57470cbf0b3d81c781f0aaccc37"
