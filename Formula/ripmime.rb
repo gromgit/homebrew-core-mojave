@@ -11,8 +11,10 @@ class Ripmime < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "196b469fe408f1074e36d108ff2dd7472da2207d679b33c4dbde489040bf6bfd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "da00b953f185e99b41682ed5a122a6404f1fb7b3e814639011f66748b56d748e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb13e6706e28ff4a6fe8f976934c31baa1ab1d0709ec26ff9474ba38c3cea286"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f61cf853405ec3218e0725fc9d17a56c882cf3a21b5fc5192fac608c5cefb6b"
     sha256 cellar: :any_skip_relocation, monterey:       "d87658f4fca98cfa99b8520fa6f2435e991d93c0cfb527f0dc031a2810475076"
     sha256 cellar: :any_skip_relocation, big_sur:        "151baef43758c5fa5166b3b6dba2d3340e8f117c5d2e67dc9ee86a366143ab54"
     sha256 cellar: :any_skip_relocation, catalina:       "bbdb33bd7b2a1c5a2073b6cbd0c3916caa99d5de809f4915e138f523cb752026"
