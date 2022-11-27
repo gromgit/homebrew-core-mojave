@@ -12,8 +12,10 @@ class Normalize < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "f579a1e316959c958663d8cff690f2ad7d06da059e0234478ef19d4f67561b14"
     sha256 cellar: :any, arm64_monterey: "bd34a009747e235d7049f560d836ca8be0a722807b8f2b936e24c6d4618890af"
     sha256 cellar: :any, arm64_big_sur:  "31e0c2d4f6dd0aaae6830e87242bfc8c71077b04c94a41b4079d36e45eedc4ab"
+    sha256 cellar: :any, ventura:        "cade314811b32193662502121c6004253e965fade1dce8d30c488c86872e1a9a"
     sha256 cellar: :any, monterey:       "4b27d07f9a6b9455c555682b9c43443bee7f70fb40d44a2f50dba54100164e18"
     sha256 cellar: :any, big_sur:        "a35a01c8d74067d94fda21d31a0ab65128842e6dc1ed0629ed6cadf99f13a9b5"
     sha256 cellar: :any, catalina:       "363ac4a56ccb75ff32f3af3ef42a6cf5d74f24b977939bb08c14fddc30ff2ef5"
