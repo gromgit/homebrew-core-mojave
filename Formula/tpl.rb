@@ -7,8 +7,10 @@ class Tpl < Formula
   head "https://github.com/troydhanson/tpl.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "2bfb6b7bbdfecfa9aa8e25c3841dd9dbc6d333c746792a446ac729536c643475"
     sha256 cellar: :any,                 arm64_monterey: "cd423b01e4be55cc76cfc5c780582519f9583073f8b4e42a823c007cc59805e6"
     sha256 cellar: :any,                 arm64_big_sur:  "28d206fb0a8b3d318bbb8281a2cf64cb371f6a78896bc6c4b0b4187a2c109e96"
+    sha256 cellar: :any,                 ventura:        "b67d07d542d44a4fd9f2bb91e6f080796a264229eaffee4b19fad72295576db5"
     sha256 cellar: :any,                 monterey:       "0b544b3ee645924b61bd2a7f2b2d237e02796e26fd57be3688a900b050c7fb33"
     sha256 cellar: :any,                 big_sur:        "cdfa3d793f5b6086e7f50abdce45fd21bb869444dc202e285f8c486f18e9f1f8"
     sha256 cellar: :any,                 catalina:       "25b8a5fa1deda50c6dd07d69e96dd41e647b78b0f57f2696e5ddd056e509c71b"
