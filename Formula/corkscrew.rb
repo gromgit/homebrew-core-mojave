@@ -14,6 +14,7 @@ class Corkscrew < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bd52cc5c72e9ca3461dc63fdfb584ac3622a57effae88f14a8e7eab146a57b8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d1add42728d114c019b0621bbd8aa9f3f95c433e006f38bdba71d9387e667357"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7882ab8fa538eb9eee596f56fa6f65c14f1f3e467a822ce7a39ea197d2fe08a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "16b81ff2ca5d308f0eb953399f4ec771870ff1019d93b69630f1218fbd185dc5"
     sha256 cellar: :any_skip_relocation, monterey:       "51bb3c53d276f9abc51f7b6338ef96f3b2bd7686d8b331eb0ffdb52b51bdf9f1"
     sha256 cellar: :any_skip_relocation, big_sur:        "af93a7005479f2004b385e484c633f42577d7cd99272d5e7ec4c17e3d0239a7b"
     sha256 cellar: :any_skip_relocation, catalina:       "83db433b1d34ad662d310504a476bcd5848955b0cc78087203b8e25164e4c8a8"
