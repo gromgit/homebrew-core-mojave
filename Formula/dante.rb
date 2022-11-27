@@ -13,6 +13,7 @@ class Dante < Formula
     sha256 cellar: :any,                 arm64_ventura:  "a922a104d5d267fffd6cbc3a7e476ecf9ac4ffe71c6b3b90880fd3c2df661a04"
     sha256 cellar: :any,                 arm64_monterey: "6ba49e77d7e95f26793d9283ea19a0fd2649480808873491ce1263087e0bab0f"
     sha256 cellar: :any,                 arm64_big_sur:  "7b25a50f17292cdad4dd0e52de401117411fc6bb660c66bedbdbc8c7759dea9a"
+    sha256 cellar: :any,                 ventura:        "5e7f2f4d7eefed3dedc103f89cd6f0b91fb9b67e6569f90ac20df70bc4d083f3"
     sha256 cellar: :any,                 monterey:       "df57fb7fae717cc7673b29a6665d6f6f74f9d32e3ea959174e65ff31ce87db9f"
     sha256 cellar: :any,                 big_sur:        "098dc6c46d4ee77860f8fefcd44bc21533bf70423add42de899910757796d410"
     sha256 cellar: :any,                 catalina:       "4b33f0996ade01cae7bc72f40cf7c8011f86133755e782cc40a15a0d610560c1"
