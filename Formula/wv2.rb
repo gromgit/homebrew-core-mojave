@@ -3,6 +3,11 @@ class Wv2 < Formula
   homepage "https://wvware.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/wvware/wv2-0.4.2.tar.bz2"
   sha256 "9f2b6d3910cb0e29c9ff432f935a594ceec0101bca46ba2fc251aff251ee38dc"
+  license all_of: [
+    "LGPL-2.0-only",
+    "LGPL-2.0-or-later", # ustring files from KDE project
+    "LGPL-2.1-only", # zcodec files
+  ]
 
   livecheck do
     url :stable
@@ -13,6 +18,7 @@ class Wv2 < Formula
     sha256 cellar: :any,                 arm64_ventura:  "590dea1f89ca9fe964215ad6b338aa92ca782157d77bb867a568c380cf9259f0"
     sha256 cellar: :any,                 arm64_monterey: "dda217f7db1f6f78199bb54741c836013f9bc563641925be66e76fee4f001738"
     sha256 cellar: :any,                 arm64_big_sur:  "e757d5cf4bd8db93cd2b4383b38c748ea78f0f301d1740aa661ec35ee9e9ea1d"
+    sha256 cellar: :any,                 ventura:        "f9dec0774e036ac09259037d18e036fa27098f72e5ce2f4ce0386e484e3a19eb"
     sha256 cellar: :any,                 monterey:       "2ad3a28d44f4fbdfc073a3de3cb1067497d718478eb33d678dbe12cad6c905ef"
     sha256 cellar: :any,                 big_sur:        "097b7d4e10b4ef00d8298ef897acb9baa3c9b84aa0b7416e4e561700e8ab408b"
     sha256 cellar: :any,                 catalina:       "944451190aa61c6ea3dd74fffbc9e92e999b8eeb559a46f4c4708d5f9b4f154f"
