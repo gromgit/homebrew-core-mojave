@@ -9,6 +9,7 @@ class Elm < Formula
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ce89444a740bfc41ae2a03006171af4fb21dd2659164b5f68ff7fed681b214bb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7efd5b1f3446827c5c06502a65c4bf80cabde7ecf11156e206a373d0c568af35"
+    sha256 cellar: :any_skip_relocation, ventura:        "958032075f348d62564a86ced5fc4b188a7e2ad934910cefee945b12be051b87"
     sha256 cellar: :any_skip_relocation, monterey:       "fef837b97895efeb899730e1381953b637f34910dd9e94d8c0a60e1da00d4b32"
     sha256 cellar: :any_skip_relocation, big_sur:        "8054bda935a4760f4cfd799f2bef0bb8fd2b25c10cc2d1fc1c0824625eaf30a3"
     sha256 cellar: :any_skip_relocation, catalina:       "0df96547e648ed70d25f67cbec301e8b1e9af814da5dba059c0c54cb594d1d0d"
