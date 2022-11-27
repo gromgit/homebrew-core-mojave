@@ -1,58 +1,58 @@
 class Zbar < Formula
   desc "Suite of barcodes-reading tools"
   homepage "https://github.com/mchehab/zbar"
-  url "https://github.com/mchehab/zbar/archive/0.23.90.tar.gz"
-  sha256 "25fdd6726d5c4c6f95c95d37591bfbb2dde63d13d0b10cb1350923ea8b11963b"
+  url "https://linuxtv.org/downloads/zbar/zbar-0.23.90.tar.bz2"
+  sha256 "9152c8fb302b3891e1cb9cc719883d2f4ccd2483e3430783a2cf2d93bd5901ad"
   license "LGPL-2.1-only"
-  revision 1
-  head "https://github.com/mchehab/zbar.git", branch: "master"
+  revision 2
 
   livecheck do
-    url :stable
+    url :homepage
     strategy :github_latest
   end
 
   bottle do
-    sha256 arm64_monterey: "a8c52a7dede836b5ec86f3a7ef42463b684a0d6882e898e810424004b5440ffe"
-    sha256 arm64_big_sur:  "baa3cd1c3c1f3942f21809ce8da4135007a447a5c00162962fe7ed2a86eb3221"
-    sha256 monterey:       "56ff6ecef94a14d19f42acb9077d3a48a9b34aa2dae7d84a22a2df8eb65d770e"
-    sha256 big_sur:        "4bdea261367d272a41f9546056eb9b6ba65f1d88fbbeb07fbea7f2ac8da225bb"
-    sha256 catalina:       "e49e72eb04239895bbd43b085c03f24ddf86288530d1d7afedbd933fee8b172f"
-    sha256 mojave:         "cb9d3b6678c961ae919859751707682658a1cb40b268d329ace6c64e3dbb9c12"
-    sha256 x86_64_linux:   "7f6956b81e35c47342447c03fc27ee441d9babb705e4ce9832a0418d6275310e"
+    rebuild 1
+    sha256 arm64_ventura:  "0148fabe1084ac13f107a34c15e69a68a4e0de8c1212550ea927d5873450843b"
+    sha256 arm64_monterey: "e9b2610d5fa22cd12a463ac2701240acc8f6e1c1c190e6fbe1e8f56b12fb695e"
+    sha256 arm64_big_sur:  "66d7b6a0b9cc69e2d0786aa626577abc917adba4dd76b79e7bc959afd9eefb7c"
+    sha256 ventura:        "e7b877bc80e132b018fe786882ade65d5650ab81ae7e087c81f1a61d278ffb7f"
+    sha256 monterey:       "e3f3cd2101683ec1e5d129d9c590f9e61283dd078968231211c994ebd919eeeb"
+    sha256 big_sur:        "7a440c19a50c6dd6ebf77b41a254e78fa5ffc641877ae180d131f1cc0d2f4e6b"
+    sha256 catalina:       "6524034479ef1b0329914bba94b9a778f07436a4fdcef8d5685df31152a1d990"
+    sha256 x86_64_linux:   "b95de47606556882a0e828e77e7230a3e02d49df3fac48d6692f18e33a9e88b6"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "gettext" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https://github.com/mchehab/zbar.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkg-config" => :build
   depends_on "xmlto" => :build
-  depends_on "freetype"
   depends_on "imagemagick"
-  depends_on "jpeg"
-  depends_on "libtool"
-  depends_on "ufraw"
-  depends_on "xz"
+  depends_on "jpeg-turbo"
 
   on_linux do
     depends_on "dbus"
   end
 
+  fails_with gcc: "5" # imagemagick is built with GCC
+
   def install
-    system "autoreconf", "-fvi"
-
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --without-python
-      --without-qt
-      --disable-video
-      --without-gtk
-      --without-x
-    ]
-
-    system "./configure", *args
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules",
+                          "--disable-video",
+                          "--without-python",
+                          "--without-qt",
+                          "--without-gtk",
+                          "--without-x"
     system "make", "install"
   end
 
