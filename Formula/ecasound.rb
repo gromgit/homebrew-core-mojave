@@ -13,6 +13,7 @@ class Ecasound < Formula
   bottle do
     sha256 arm64_monterey: "73ca5b440adf4626dea12d21da27ecc13d76829efee851e8160dedb78709023d"
     sha256 arm64_big_sur:  "3032ed920ff4b40250c2c1efcd19a591e0df1b2714159aed9fd6ea4db094af4c"
+    sha256 ventura:        "ee2fba8822efd205930d9b0329d54d2175eb14043d19aeea77130acc193dece7"
     sha256 monterey:       "34a6f3f1ac115bd659329799ee74b5d3a04fdf5a2bb5c8b99d6786c5a81d1283"
     sha256 big_sur:        "d3a693686266e5570afbd54ecaede7930145c6a69461e7839c97857b373c63f6"
     sha256 catalina:       "f6fede56fea73bdfd32cebd514448b50dec47542ff7d76342f950a61160a9fff"
