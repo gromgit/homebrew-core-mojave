@@ -6,8 +6,10 @@ class Cctz < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "72f87dc452212bdf12aefe25c5ae745d15a6df0b5161919c3c01bcac29a39477"
     sha256 cellar: :any,                 arm64_monterey: "756dc7625a50e7e2e607a45c75fa7f2002fc7e8bcec504ddcb06eab20766948d"
     sha256 cellar: :any,                 arm64_big_sur:  "4895638a03396673d972613bed298d7288d369fe91aca165ddcf9b0357aade18"
+    sha256 cellar: :any,                 ventura:        "347a197be8fddb79983086f3a54fc3f7adda08b00cf926bb7596b1f71f898ea2"
     sha256 cellar: :any,                 monterey:       "ee512d1b222211307cfc2f3e5e6c4ce33085ec79bb0a25aec62ce16cca13fd7f"
     sha256 cellar: :any,                 big_sur:        "b0796719cf068ae526435e86922477820dedd3afd5a9044fd099fe3ff6c90765"
     sha256 cellar: :any,                 catalina:       "3a73ab9d2f67020d95657e8c5b32a26d7eb81987cee2eace2b9d26eab2621bbb"
