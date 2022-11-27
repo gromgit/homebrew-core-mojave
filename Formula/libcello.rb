@@ -15,6 +15,7 @@ class Libcello < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "38071f3aa78102240020ea1e40db1c431f87fbf8d6d07308cb3952bd46577b41"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a700988ca7ac195700131c8ff6f2c1b555d0446351c01cc2e2a6f22a65b70c2a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "788079e8b941d6af2ee4c7f1fb84e1ed04072e85fb76a915203e04b0d0bfaaa6"
+    sha256 cellar: :any_skip_relocation, ventura:        "2a9787e8b4a681876780ed84d5f5966c13ebcf754d14b6bd3a4ee4310cd3520b"
     sha256 cellar: :any_skip_relocation, monterey:       "96b8179944a4750d50e977d1b721569287476fa08fa8af3d832934c12c77761f"
     sha256 cellar: :any_skip_relocation, big_sur:        "171593b100ed2671982457816482a474c3be1223bad986a68df71803f3f6b435"
     sha256 cellar: :any_skip_relocation, catalina:       "a6ad4a498c30ce4713cf0a76800cabe412f1471a4262459ce38a477f163354e9"
