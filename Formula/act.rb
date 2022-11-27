@@ -8,7 +8,8 @@ class Act < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/act"
-    sha256 cellar: :any_skip_relocation, mojave: "52447a3e30f712797e6bcf9a611f64e425c330a1aaee77ef6debbcf74f0a3004"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ece560235054f0b6835ceacc92e699e2d01ffb97c9e41d7262763e1546fafd21"
   end
 
   depends_on "go" => :build
