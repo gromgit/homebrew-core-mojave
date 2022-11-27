@@ -7,6 +7,7 @@ class Libffi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libffi"
+    rebuild 1
     sha256 cellar: :any, mojave: "625e95a057d0a884b145952430a8ff72f7775ed6079e87e69d4008b1c45b2216"
   end
 
