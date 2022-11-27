@@ -12,6 +12,7 @@ class Ibex < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, ventura:      "ac2a9082a320228a386cc45989c65f01f014642db9fc18cd94b998fdf84737fc"
     sha256 cellar: :any_skip_relocation, monterey:     "5c659f26d051f9c2e25308976051cff13d3c99a5ff579116ece615f0172d1705"
     sha256 cellar: :any_skip_relocation, big_sur:      "2fe73bcec8be89daf46ad449cced7ea3d5584d1eb8138343359fc0898e3ec826"
     sha256 cellar: :any_skip_relocation, catalina:     "838265b9b44453641e3cbc39dbbb8903666ba3413ef8c7dc68af69f9759f4351"
