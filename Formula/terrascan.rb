@@ -1,14 +1,20 @@
 class Terrascan < Formula
   desc "Detect compliance and security violations across Infrastructure as Code"
   homepage "https://github.com/tenable/terrascan"
-  url "https://github.com/tenable/terrascan/archive/v1.15.2.tar.gz"
-  sha256 "348133d7285670b745a30609ab94c1d6de6079bf01ad48dbd2fc6c14b8be1513"
+  url "https://github.com/tenable/terrascan/archive/v1.17.0.tar.gz"
+  sha256 "b9d8448e7bb94d6fd352f9d7fe6a2426253ff1dc7460c4ca12fa7fce74684255"
   license "Apache-2.0"
   head "https://github.com/tenable/terrascan.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terrascan"
-    sha256 cellar: :any_skip_relocation, mojave: "b14ab2b1e251e6dc185268c6a73fbd143d1601075c4565f6d7f68f9429382715"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89fe3b80c44367ddafb43e11af73df6ae6b7b13185e3cb16d6f1226c514a13f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4150c9143a7619c1bfc0d79c6cb2ca3d54f3e5a29b88f3875da0accb24ebc74"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8320ca46467b26375cfd9ca53ea62d927fd0a312dd3ab165cb143a17836c6c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "8984e004c50f7a11e1b1621f6ac9dd7685cdf1569cd97e36e0ecc7236e782eba"
+    sha256 cellar: :any_skip_relocation, monterey:       "a73c8ccd3c2bc8548a584d92bc4f2e35f33224427033272fd3ad332c45f031c8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dc96b214ba2ec4d6720bf602ed66e07357bcb0b24bb755de1fd82d56070a9abc"
+    sha256 cellar: :any_skip_relocation, catalina:       "f7c1446677dec200d8e13122fec823b4430fe352e95c456a7b6bc4d048f9b319"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "531a4daedc06877a65ce1b1f9a7d29ecaece8252d876639abeb63d82bdce113c"
   end
 
   depends_on "go" => :build
