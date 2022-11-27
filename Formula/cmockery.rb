@@ -8,8 +8,10 @@ class Cmockery < Formula
   license all_of: ["BSD-3-Clause", "Apache-2.0"]
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "27e2a27f99126c4d28ca0460cc4c95cc5329bde175485fdecee4370382fae971"
     sha256 cellar: :any,                 arm64_monterey: "97f59df29c326e7b2fafd9a2590f57e168626b0b4a3056b3989298f2a26346b8"
     sha256 cellar: :any,                 arm64_big_sur:  "aa62f9303682b243044246c155e301361e9ea68a52b9ff66a83a6432aa7b1ddd"
+    sha256 cellar: :any,                 ventura:        "165de9e0e46a0169854fe359b5c4ba2650e6649796eb89f412e2e16ee4d26963"
     sha256 cellar: :any,                 monterey:       "43839a0ebd0077d09add32aa3206b15ead3e3e8423c81a406ee5c8dc64f9c2e2"
     sha256 cellar: :any,                 big_sur:        "cfecce020c743de6d0e72dbcc3d5a104024e69979c3b8fa085997b3a5ae17619"
     sha256 cellar: :any,                 catalina:       "1df72472ccf182fc7de6a14b047affceba8e7c986110f883ef55701b93b19d0f"
