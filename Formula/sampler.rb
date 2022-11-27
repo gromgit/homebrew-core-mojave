@@ -6,8 +6,10 @@ class Sampler < Formula
   license "GPL-3.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae4392df3f779677167dde63083627a60da11e80c1afac173f5ae67bd4e1f495"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7ba9d52f3a2030da4c3c5464e5286907ff9f614d50f11555aa780f2087121f93"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "330a2e3de5d8352c9d11fa8d7f850b8fe41f869b2ec6f953944a500d0ba2143b"
+    sha256 cellar: :any_skip_relocation, ventura:        "6fd6a327e70bc18043da635cb29864cd21e85edf1268a47fb577babceb336c01"
     sha256 cellar: :any_skip_relocation, monterey:       "56b5b7b0cd61ff5557cbf5c58bb25b793de0a17303292f2c28b2d73584650a5d"
     sha256 cellar: :any_skip_relocation, big_sur:        "3dd48615b2dd049e17d2635df81cd8f312e004d2e9c50a0d68d7f4f40516e61c"
     sha256 cellar: :any_skip_relocation, catalina:       "1b4a4c841691d8a6ca9ea4649092684511bff1f60d7d80e364db13115f2e6399"
