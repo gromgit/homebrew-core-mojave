@@ -12,8 +12,10 @@ class Icecast < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "2097c7798e9bed9f601d9ab0507042e5104d53f90d5671dc216cb20b009d2b64"
     sha256 cellar: :any,                 arm64_monterey: "ee9b017f63375783c7bd5444482414a947700b1fd7ac059b9e52068d458d2da5"
     sha256 cellar: :any,                 arm64_big_sur:  "596b1545aab7c712d069851a2f1b5fa0937d8f429fa9a6590363b172d9d27b2e"
+    sha256 cellar: :any,                 ventura:        "dde7103e52ac835c06dd060de0aed77fc99bc7e131fdd9a931106bfe47cf3750"
     sha256 cellar: :any,                 monterey:       "d5f4d654c1a377a5b88fea62d1d6eed2de14c166bbc4ac5072272ff48d9920a6"
     sha256 cellar: :any,                 big_sur:        "170c2fefda083f993451d4a6ccd6349ab6742ed3581c9610730cf88ae7083fb1"
     sha256 cellar: :any,                 catalina:       "824f7d295c28fbdb17da3015b4e4d6ca76be536f6bf81e98d5312dd7b9a095cd"
