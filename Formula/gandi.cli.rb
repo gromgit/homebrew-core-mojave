@@ -12,6 +12,7 @@ class GandiCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "289a1fdea826d6a8e7d1e52ff54a0c6c78c035e10984eee3d225ddb8e7c18a81"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a51b821358228a6eda89d5871ed61a576d29157751c94f31fb9dab31dcbe5a59"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f92e3816c8cb90e68025ff5cf626d5f7e0c4077bf759a6dc36336e6288200145"
+    sha256 cellar: :any_skip_relocation, ventura:        "7573394b60505d7b1330449251a4b36891ca5fb60fbb71b820fec61c403d7b1b"
     sha256 cellar: :any_skip_relocation, monterey:       "85d5158ef37b4b330e2603d2dca062b38c68291a9e6e798f8a67b10c176a9a81"
     sha256 cellar: :any_skip_relocation, big_sur:        "11e62f36fadd38cc20d2e178abaf7ba5bbe34595c5c51229e0b0c7fc3813a714"
     sha256 cellar: :any_skip_relocation, catalina:       "612bd7ab8250d396f355bdb48c3a71a615b23c6631512721a1e76507484d8365"
