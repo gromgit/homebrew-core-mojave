@@ -20,8 +20,10 @@ class Kytea < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "ef9042105ea5b55cfc0dde6e495c287601ec8aad58d8e14342702e127a7d97dd"
     sha256 arm64_monterey: "5de2fbf7e068e2c61aac03c0b672990f22280ab377d7034dc708d96b5ce76ce6"
     sha256 arm64_big_sur:  "e6507d77b03cee09e01eed90d0eb1c724c8acce9ffb7ad0d75a4dfc7ba434fe8"
+    sha256 ventura:        "0ec4d5bde1d09dd1b51f2cd047b8e586b1aebadc0a8d418025f778ef68ce1c72"
     sha256 monterey:       "98ff434e2b5ebf881d6090accee434dd9fb6912319cd4113b34fbd59fead6e78"
     sha256 big_sur:        "2efc4bc6d1c77859c5012819331672e30b9e8c4491c696aac132e8356e08b483"
     sha256 catalina:       "927aac3d562cc2977f84670c850ab262a05a010bfe7e7f16aa0eb7d9532eae7b"
