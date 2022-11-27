@@ -11,6 +11,7 @@ class Uni2ascii < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "49692068ab523b29ff30943843d3c017b9c6e70fc5082e05d404e8dd4b6e3aa5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "de4fbbd1260caf3ea247e5127a0e0f77a7bba4ec57e3ed54b3cd4c40d83bbd22"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfe655d4eef2cd9e47feec80bdca9905e61ba0de528db266d3fc76ad187c7ff2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b8a59fc1998a56e96d6879998bc900f53294a9addee3b8404f4869a39db4714"
     sha256 cellar: :any_skip_relocation, monterey:       "347f9bb0221a0a4355db70dc23de8256448d5156d949e8ae2e0603e359954458"
     sha256 cellar: :any_skip_relocation, big_sur:        "3550f8535a4dcb997bd0f1aa3fb0868771d22eaf138b9ac3136b600a5c424fd3"
     sha256 cellar: :any_skip_relocation, catalina:       "58d99cd9438e838d70d1fe8299f44ddaaf6f9378cb5849c0d8e89a178a32fafe"
