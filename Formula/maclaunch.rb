@@ -1,14 +1,12 @@
 class Maclaunch < Formula
   desc "Manage your macOS startup items"
   homepage "https://github.com/hazcod/maclaunch"
-  url "https://github.com/hazcod/maclaunch/archive/2.3.2.tar.gz"
-  sha256 "c751bfaf57ec796d8d6e53c3be41c847598fb40c1df7dd3e720b33253a69f7fe"
+  url "https://github.com/hazcod/maclaunch/archive/2.4.tar.gz"
+  sha256 "9ae98a3bf592f002d2235f240c4c3318551cb17cdf1680ad060000fd69e11bf9"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/maclaunch"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "99d01d6f2421a1178744e66ca594636adb8d4e7ae6efcd9f3f688be215667977"
+    sha256 cellar: :any_skip_relocation, all: "85afa782ab131dd363d78f2401de325d6ed04730612ac20fb6ec727cc92ebc65"
   end
   depends_on :macos
 
