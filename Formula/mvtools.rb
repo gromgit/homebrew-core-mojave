@@ -11,6 +11,7 @@ class Mvtools < Formula
     sha256 cellar: :any,                 arm64_ventura:  "8b39f0c8bf4f7ebb2377f63af919539e3027a606c03467875234d0a952342856"
     sha256 cellar: :any,                 arm64_monterey: "103ac07596bd7b5e6142b3fbedabf5adffdc553381d8b9eb9e5832a1a8df8f3a"
     sha256 cellar: :any,                 arm64_big_sur:  "d532c9381d9c889e06a0ce330ed9f3a95d5552572981605f233efd28a052b34f"
+    sha256 cellar: :any,                 ventura:        "75c77e62d51e537cc492f2176d43cf072f2ed86f40807095a4cfd879a28119aa"
     sha256 cellar: :any,                 monterey:       "5fc1c4a4fda847ebc2a78fe9972fd99fa7c4f7f52b74cb68825181634f9c3d5e"
     sha256 cellar: :any,                 big_sur:        "df691836b6052e38806e3e4a662f0b5da22120f8f586ad6ea388e2673dcf01b3"
     sha256 cellar: :any,                 catalina:       "01785cf0cea2080cb2b875df545e027aaaf339fbbddeca53fd5dae8f39bf4726"
