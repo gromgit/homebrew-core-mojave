@@ -8,8 +8,10 @@ class Redshift < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_ventura:  "a14f34f6fee41eb43734e14fc6b18965bc5438aa7a4acbf3a5b881e31bef5663"
     sha256 arm64_monterey: "639cdf26164ff6a637c3adb96d4e5b92f6712199c8d49276638965836ac142c9"
     sha256 arm64_big_sur:  "043dc8ec9eff54763ea0fdf2c3ca325a9906d8fd1098568255ced2a497841315"
+    sha256 ventura:        "4bfe11cbe2b92cf2775376c681c96593bb2ff33a98766cd18d0a261bf8005179"
     sha256 monterey:       "442b3c30b0cd25d42a4c5e03ed166a264c59bb67b4eb51bbccef29c819e6aa39"
     sha256 big_sur:        "8be47c6b6015ca4ccd2c706dd58541c49c4177a1d69144452a7aa483c977f805"
     sha256 catalina:       "344ea69571839ab32210854f990474239fde828b10a019ec5e88695eb4c7ffcb"
