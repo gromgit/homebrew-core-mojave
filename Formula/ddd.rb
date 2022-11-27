@@ -9,6 +9,7 @@ class Ddd < Formula
 
   bottle do
     rebuild 2
+    sha256 ventura:      "1125f5ef41d7edc523a57c7d5682d6aa8570db7bc99925627b4d7a55c54d64aa"
     sha256 monterey:     "93fa51898f3e60c09d6baf1696799a89fac8fed798a4c6dac0321b1b8518dd6b"
     sha256 big_sur:      "498ceb2dc933d2c85e7407f077d187c6cd799ba2f539694087134d038bb211d9"
     sha256 catalina:     "df163eb838675a73c69913af1e1526a5c20e5cbeafa58836112ce4ae642a705a"
@@ -18,6 +19,7 @@ class Ddd < Formula
   end
 
   depends_on "gdb" => :test
+  depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "libice"
   depends_on "libsm"
   depends_on "libx11"
