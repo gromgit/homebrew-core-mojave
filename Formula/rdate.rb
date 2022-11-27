@@ -12,8 +12,10 @@ class Rdate < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0bd69ad7d1cf67af981ff2b0ea4d6bda4f7860a8568de2dca05f5b2bb96e222"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0de4bc85f7374d04a639fb682bdb6108a4b2a2bd2d97c4a7f2d79ce897e5350e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3606f3683c8c1465c87a5c3fe427c4e067420f7de3ff4abdabb61871105e190"
+    sha256 cellar: :any_skip_relocation, ventura:        "47d99c2597971f7a34e1fda26735afe5c728c64973513f1aa03ab4761110268c"
     sha256 cellar: :any_skip_relocation, monterey:       "5a12e0fcd7da29e05eaff27265ee4e6ccb6579d691bea8ff46859bd645ad82f2"
     sha256 cellar: :any_skip_relocation, big_sur:        "afe7b66e5e3a57f51a7a87567026c8b9688f4b7f0c8fd03314d400164c4ac532"
     sha256 cellar: :any_skip_relocation, catalina:       "68597f7989ddba1ff853f54c0cf3adf36b3567268b69ca43d7b0795d290304b4"
