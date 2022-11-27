@@ -16,6 +16,7 @@ class Httperf < Formula
     sha256 cellar: :any,                 arm64_ventura:  "3381391da57a081b647ac8d8aa09a6048c63a1c23211f947f2add0a684b35afc"
     sha256 cellar: :any,                 arm64_monterey: "1d154cd3cc694cb0a57056fd7a3348a681892e7e808fea2639402db0e9b8930e"
     sha256 cellar: :any,                 arm64_big_sur:  "2628055d8209f52ee35bd325c155bb506c36b581fa697d013f6fe32ed6ab0b2f"
+    sha256 cellar: :any,                 ventura:        "58e5433b256076f049d4d88f3deddcde0b35937ce24d4a8bea953a133fcd20b2"
     sha256 cellar: :any,                 monterey:       "2db16578e75d150f3abe98f416359a307c1632ee00dcea6cc8f904ba95754eb1"
     sha256 cellar: :any,                 big_sur:        "5c8f3e33c44d4d705ea1e23663ac922cc61019299787defcf60df6161608a5de"
     sha256 cellar: :any,                 catalina:       "80a2634adda8fe39ebda84ccdf6cbbb0357668da3615067b6f9714229801d085"
