@@ -10,6 +10,7 @@ class Ngrep < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6eb14e55176c89bc45e0cda15f725b5ff35d15d8dc017a5bf47609c763964271"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c9539b7c9783bce244c1310c691766b6c14fbc9a1c0b00ed9b480ed41575717d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5bc88f61eaba46026963de70f44e84f73f04b041e913051fb21f3351d16cd9e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f7aa884659d815ab2ace822663bd3a444ef90b8580dfe1ece26b4a93eacc79f"
     sha256 cellar: :any_skip_relocation, monterey:       "b7f33fabe9f42533580c021d441d4ef8132150c345add38cf9fc6452efa611a5"
     sha256 cellar: :any_skip_relocation, big_sur:        "6ab0d459dad3462b127af805de369dac2f099844126d70e89e531ea181d0e794"
     sha256 cellar: :any_skip_relocation, catalina:       "53bf6d68b15a2f07a01d828cdcd137131a45871141da411328c376ed90768265"
