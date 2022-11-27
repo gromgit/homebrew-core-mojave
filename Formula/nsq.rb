@@ -8,8 +8,10 @@ class Nsq < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f11a6e46b208fe586f460fa203c303f1a84a7e73dff8dafb205b3cb15d3216c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "00f88216761ea1bed39c94c68c67acf66fccc895e0b212e44867b86be41bfe40"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30543659d3c5990aa86f08346feea09adc2c7f5a388418f0c8eaff486cf388ec"
+    sha256 cellar: :any_skip_relocation, ventura:        "fbbef797a7843dd61b15e48188c6ef1c2edf6b6705a256c4f47946b7e5bc65e2"
     sha256 cellar: :any_skip_relocation, monterey:       "269501de2272e478c383ad7d71cee76c20c5191ff1f5cb25a69bf51364f5a980"
     sha256 cellar: :any_skip_relocation, big_sur:        "daaf9729cff4ae0e02895d2c1fd398c592ee89f25b195be732c71a4b33f4a617"
     sha256 cellar: :any_skip_relocation, catalina:       "533d1087999114a2a426dd589f4417d2b8cdb5a11b399a6004bca83f572aeb50"
