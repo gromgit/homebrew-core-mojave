@@ -11,8 +11,10 @@ class RandomizeLines < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c351e68f794607d01893bca67180a80b721b597260304eb258f3108227950f8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6aa2233b5cb7b9dd6ca98f51a6afee212967af3a1dd5b5d27f4ef0a7359c7bd0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c107eea0fba80096a370db46e622320bdb9ea825b837280e46ad236b3a37bbd4"
+    sha256 cellar: :any_skip_relocation, ventura:        "489084bd61495369766199746c6a3f011fe598d5b17eb809c10e99c9cfec7526"
     sha256 cellar: :any_skip_relocation, monterey:       "7dd7d179e5ac4567f69860ca54a379be5424a0c5e6fd8f0088ce6c158a77c47f"
     sha256 cellar: :any_skip_relocation, big_sur:        "05b5f772ee8d86ef341e30e91194b0a4b0cdbe5d3e16c8e319ed5e74a901e806"
     sha256 cellar: :any_skip_relocation, catalina:       "ff6262e5a351158ca8a2b25b577a892fc4cf2b7f9a2330e9fec595970c81674d"
