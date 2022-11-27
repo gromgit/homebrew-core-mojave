@@ -1,19 +1,20 @@
 class Tfk8s < Formula
   desc "Kubernetes YAML manifests to Terraform HCL converter"
   homepage "https://github.com/jrhouston/tfk8s"
-  url "https://github.com/jrhouston/tfk8s/archive/v0.1.7.tar.gz"
-  sha256 "02607090e93ed081dc0f926db4ca08cded6b31243977726b8374d435e25beab9"
+  url "https://github.com/jrhouston/tfk8s/archive/v0.1.8.tar.gz"
+  sha256 "2a11dc4279ec2995384cb62dbd529ebec027c01d69ab2c1d64346b8bce8987dc"
   license "MIT"
   head "https://github.com/jrhouston/tfk8s.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "60e7ac0c249bc2685997731a51b363062cb9878ba6fb1d2b7772285ce3abadd8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a1b1a9bb816036abc0784dfe452695e60c1c68afd115e67939d3d433e86482b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "39b84355ef177d210193b06cde1ed3869a5a2bbf08ec6b5f144dd8507fb69c4c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b5f31892d190ba1efd7022a82807897a6425541eb9ac4145d6ee1dec65b9182c"
-    sha256 cellar: :any_skip_relocation, catalina:       "6c59969d1485a8da95fc91f36651f66e408ab914dbbab5de7506c7116984eb18"
-    sha256 cellar: :any_skip_relocation, mojave:         "5719e16f622f7b70c2ddbcab9e3eef4e4039f5c73be904608ac50bc7d515031b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7957afd5e810dca0c340a217f9ddafae13ed173dc10d8b0cc7642607a3ad72be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2e2e554a35f92663f9f20d5182b48e8d093cd7b20acbbb9daf1fbd3c2fb204f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "082cedd2dd68336a0cfda85459c05dc47e7e1820c939aa1c648e92101aa78ba6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3cb9e3e2fa04aff9647a6cefbf2672581d53c114e24cb7bb1aff53ad369c3172"
+    sha256 cellar: :any_skip_relocation, ventura:        "187d9b65edfcc80ccd6d707cf686d784d2ed9b249cb4d19cca6ebc6538df9fe1"
+    sha256 cellar: :any_skip_relocation, monterey:       "935cdadbe7d304e663c2b8f6cc0734a8e6a7c623c898f93192a4fbf1fb0812f2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4490b7efa220ab3ddecb2924c8dc8306156f197a66b51b8931b6b565674a674d"
+    sha256 cellar: :any_skip_relocation, catalina:       "469a8ecb88db3b79f01e212e7588f6d6a956b2432a904fc294d947857f499dfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c12e2c6586d3e67cd45691886bec8f011e0fde237a47c901bbbc07f5e7fded60"
   end
 
   depends_on "go" => :build
