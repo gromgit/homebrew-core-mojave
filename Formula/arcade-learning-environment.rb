@@ -9,10 +9,21 @@ class ArcadeLearningEnvironment < Formula
   license "GPL-2.0-only"
   head "https://github.com/mgbellemare/Arcade-Learning-Environment.git", branch: "master"
 
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f33932e7707d642c4fdc38f5474d8ee82c6cd7c31491081e947d5df4445a8a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c26a068c64184f700b8b638e37c978b9e4b611e74fb5834016982706c7dd4009"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "35debc9b99e3b5142b5f626a8fa370c8025ba2f09f8d64c7948e4387d84beb2a"
+    sha256 cellar: :any_skip_relocation, monterey:       "efb722d0b171efa9869925d762361d301a98181d8dd053972cbff2b1dad80ef4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cb7e5a9f35472e9b25499a5163cea73b27026908bee527aee9e521229676db00"
+    sha256 cellar: :any_skip_relocation, catalina:       "6c9f67f4b5653089a35e6d50df593bd93ed60078cbce10ca815f2aca176a6f58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63248a068444838a906590b26dabe111465a225de384c50c7f89faac0be16c92"
+  end
+
   depends_on "cmake" => :build
   depends_on macos: :catalina # requires std::filesystem
   depends_on "numpy"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "sdl2"
 
   uses_from_macos "zlib"
@@ -20,12 +31,12 @@ class ArcadeLearningEnvironment < Formula
   fails_with gcc: "5"
 
   resource "importlib-resources" do
-    url "https://files.pythonhosted.org/packages/38/b6/bc58f9261c70abb5fd670f9ad5d84445a402b4b473f308c5bf699cd379e0/importlib_resources-5.9.0.tar.gz"
-    sha256 "5481e97fb45af8dcf2f798952625591c58fe599d0735d86b10f54de086a61681"
+    url "https://files.pythonhosted.org/packages/06/72/6bf0df4fe7a139147f5d6b473f16d5aefb7bc5b719ba5dd33f230d35760f/importlib_resources-5.10.0.tar.gz"
+    sha256 "c01b1b94210d9849f286b86bb51bcea7cd56dde0600d8db721d7b81330711668"
   end
 
   def python3
-    "python3.10"
+    "python3.11"
   end
 
   def install
@@ -45,7 +56,8 @@ class ArcadeLearningEnvironment < Formula
 
     # `venv.pip_install_and_link buildpath` fails to install scripts, so manually run setup.py instead
     bin_before = (libexec/"bin").children.to_set
-    system libexec/"bin/python", *Language::Python.setup_install_args(libexec)
+    venv_python = libexec/"bin/python"
+    system venv_python, *Language::Python.setup_install_args(libexec, venv_python)
     bin.install_symlink ((libexec/"bin").children.to_set - bin_before).to_a
 
     site_packages = Language::Python.site_packages(python3)
