@@ -11,6 +11,7 @@ class C2048 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e42083282cbcd84c2806771527e8fd9c9204d2dd2d48c55b19eac81481d56fe9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aa6a9009c2300a5ecb2dcde91e5c416363d5293e2e166a715eb4792c33e188a2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89bc7f84063b8621271115ee8f9c84c836ae1e57a72db5533b11d8247d57e043"
+    sha256 cellar: :any_skip_relocation, ventura:        "9cb25e5e7547b089dbc9cf0ae00bb5ebe227c931817d4ac744295b474d037764"
     sha256 cellar: :any_skip_relocation, monterey:       "011a8529dc50ea6349f9b1d288ae11fac8e4a4969372c66036b31d158e960b5b"
     sha256 cellar: :any_skip_relocation, big_sur:        "abe17673a8930d93f04d97f5e209621b83968e28a075578e9b1f42c07464145d"
     sha256 cellar: :any_skip_relocation, catalina:       "727165d714b210f559b5f5450d6608bed0e7bfbf87c7a7cd5994259b65865411"
