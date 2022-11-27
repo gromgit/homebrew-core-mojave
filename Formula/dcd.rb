@@ -8,8 +8,10 @@ class Dcd < Formula
   head "https://github.com/dlang-community/dcd.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ffdfedffcd4042b0a465b01ec5c9d0ded3e0f0cad6e39b361b851e5d298d32f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "56500aa45f06a73e05c97dc0162ded325510615148e59cda54ef9e9187951a39"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7e2b6351728ee0dad099824dd51e31042a3f66f3e66695063530e115e1e3e44e"
+    sha256 cellar: :any_skip_relocation, ventura:        "e4bea961c017d7686de1ffaa9cd1ac55ac31e64cd668d81dba5a98f4f72142f5"
     sha256 cellar: :any_skip_relocation, monterey:       "9e223a3fef8a39d75bbec9012bfa534d50772aa2d536857160c39221fe08f5bb"
     sha256 cellar: :any_skip_relocation, big_sur:        "e97405796485c96ea4dd9f7458cd548ed609f61ed8d5e006fb73ec00072d0811"
     sha256 cellar: :any_skip_relocation, catalina:       "1455dd1a3d4919d261c6cc8a73d05f62f4436f17b66d8790db249bcf4fbdcc6f"
