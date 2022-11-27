@@ -10,8 +10,10 @@ class Ttf2pt1 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6dae9b03e84c199e865c7b0852804a408627bcc5251dc219841371e391a8753"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "821e641a7addc5001641aac0fb7f610cc2ede29766dd09df88dea12968d3eda8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b3f1cd65430d9bf494da6fceebb293a0f21840191009525090258871eced58b"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf3ba7fa8cbaf80acc4667dbc7abf8004d8d86892448b857573f6330bda988dc"
     sha256 cellar: :any_skip_relocation, monterey:       "94c056ea4644c7820eb48d3c85964b43c6e42f479efd374128f311f919a93f65"
     sha256 cellar: :any_skip_relocation, big_sur:        "736c22b9245fa658e10cbb775f943e93bbf42f90477999647461102e87832f29"
     sha256 cellar: :any_skip_relocation, catalina:       "29a39e797de6107bfe0878e68eb0eabd67d7cbb9b10e76055f1d9d3618a1a842"
