@@ -8,7 +8,7 @@ class Libsigsegv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsigsegv"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "9eb16b54aac87c248f8024417adf230945335fd3b09680189f352eacba8e9fbe"
   end
 
