@@ -14,7 +14,7 @@ class Lmdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lmdb"
-    rebuild 3
+    rebuild 4
     sha256 cellar: :any, mojave: "926f4eb3a985f3facec15c6bb1301fddc6aaed0d041241fb41f2dd6f31b80d2f"
   end
 
