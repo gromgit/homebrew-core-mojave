@@ -9,7 +9,8 @@ class ActivemqCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/activemq-cpp"
-    sha256 cellar: :any, mojave: "0eefc0125134f3c7646c4071f208942f6abf6dbac25f11f9459fe0b5f26a2988"
+    rebuild 1
+    sha256 cellar: :any, mojave: "63570c38ad4d9b4141fc8866ba61bebef238644f4eb994cf21df67f3b6fe368d"
   end
 
   depends_on "pkg-config" => :build
