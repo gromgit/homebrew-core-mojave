@@ -20,7 +20,7 @@ class Algol68g < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/algol68g"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "1d1b8e1f55a4da274916d81d8cfd12bbaf8dbd7d738a74c8dbf3035e7db05af8"
   end
 
