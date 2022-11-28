@@ -12,8 +12,8 @@ class Bmake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bmake"
-    rebuild 1
-    sha256 mojave: "de99b59cf4ec74a77f412a52e7d32e323a1b415dce584e3a7b90f0d6ecffc201"
+    rebuild 2
+    sha256 mojave: "ebf8c2eadba36263633763855468b833ca49d32ff6f27b9fc7ec965e1807452c"
   end
 
   def install
