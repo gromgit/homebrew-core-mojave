@@ -12,6 +12,7 @@ class Cpmtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpmtools"
+    rebuild 1
     sha256 mojave: "1b0ba3e79bb923624726b71cf8c7f0be99417ec5fa1bb771cf8fc6eac4a47304"
   end
 
