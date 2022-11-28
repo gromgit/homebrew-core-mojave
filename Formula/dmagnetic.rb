@@ -12,6 +12,7 @@ class Dmagnetic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dmagnetic"
+    rebuild 1
     sha256 mojave: "8bcc246efce5f043832b62798380de92e4fcbadaa0a12ac4b34104edeb67010b"
   end
 
