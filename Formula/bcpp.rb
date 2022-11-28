@@ -12,6 +12,7 @@ class Bcpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcpp"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "0bc7de4c155a3cd4d24243ce7e0c0479efcc76a6e93b157d0ddae6aff47133c0"
   end
 
