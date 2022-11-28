@@ -12,6 +12,7 @@ class Bcal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcal"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "4081e588b2c71525a044b6bfeb4bfd760ca44327dd7dad16ec9c14038f70a134"
   end
 
