@@ -12,8 +12,8 @@ class OcamlFindlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml-findlib"
-    rebuild 1
-    sha256 mojave: "eb691ec087203c14e69b3d0a8fe8212afa4c1e333f3a54315ff301a4038c45a6"
+    rebuild 2
+    sha256 mojave: "02bce81752ad7a6c3f8b9734d38cd3d9e441b61a5253dfff363991ecf0faa0f1"
   end
 
   depends_on "ocaml"
