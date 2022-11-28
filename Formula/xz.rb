@@ -18,8 +18,8 @@ class Xz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xz"
-    rebuild 1
-    sha256 mojave: "0a5574ca65ed1851392a78bc3b20b2a93b83e61d67aabbbed65f8f43179b1a13"
+    rebuild 2
+    sha256 mojave: "9fe9ad76649875d150b3c7025d404efd3eeb3d6d98b291cb806fe61304f50fa3"
   end
 
   def install
