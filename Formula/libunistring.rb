@@ -9,6 +9,7 @@ class Libunistring < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libunistring"
+    rebuild 1
     sha256 cellar: :any, mojave: "777a93c4f10c379d63c410f3fa3b7c335f1edb8a63bd7da55169ffe2ebdef679"
   end
 
