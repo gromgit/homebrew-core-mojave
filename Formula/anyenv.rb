@@ -7,7 +7,7 @@ class Anyenv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/anyenv"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "e7a9bd58702840c6aee47e42ff2691681721a494a47cceac00cf10e1b1748879"
   end
 
