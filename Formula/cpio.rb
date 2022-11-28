@@ -9,7 +9,7 @@ class Cpio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpio"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "0126473c2dd65291f9ee926204d3c615e81bc1c89a65cf3562636fc0de471c7b"
   end
 
