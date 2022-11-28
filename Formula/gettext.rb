@@ -9,7 +9,8 @@ class Gettext < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gettext"
-    sha256 mojave: "718060468240a42d4b9509d51c1e63535028e9192d08dff848d48364efcd23c2"
+    rebuild 1
+    sha256 mojave: "91d262a73a68abb7a56ca3724ff9bb24e72e80b74970d87d3a694c6a967a29c7"
   end
 
   uses_from_macos "libxml2"
