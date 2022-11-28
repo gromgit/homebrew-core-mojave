@@ -7,6 +7,7 @@ class Swig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swig"
+    rebuild 1
     sha256 mojave: "acdf0e463045ea4d95e7330b44d9ab2551b7de655f008cb0bd2ea6253d0380bd"
   end
 
