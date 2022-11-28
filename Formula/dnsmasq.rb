@@ -12,7 +12,7 @@ class Dnsmasq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsmasq"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "91e272535aeda490ed84d1ef8db9a892380832ea0666ffc82d517ee3899f1c89"
   end
 
