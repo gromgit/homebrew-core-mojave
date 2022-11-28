@@ -12,7 +12,7 @@ class Lzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lzip"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "ef882dfec4e425bcf001ce92fa2def4aee6e5e5ff233b1fa7c5ba17867e47d79"
   end
 
