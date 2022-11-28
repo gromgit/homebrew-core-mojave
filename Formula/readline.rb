@@ -9,7 +9,7 @@ class Readline < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/readline"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "65c82c7903044d66eab8542351566359361401f308568975fb326ee4f81fe7df"
   end
 
