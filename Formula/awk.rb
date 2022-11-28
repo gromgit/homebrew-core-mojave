@@ -9,7 +9,7 @@ class Awk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awk"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "6d9a931d2d152a84461a2a8c95a86df69118dfb39ff7add346e0bd9cac679ccf"
   end
 
