@@ -7,6 +7,7 @@ class Dehydrated < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dehydrated"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "ebef64bfbbb961baab69a546da164867b6d3d0acc2090b6f0a8d9d1b2e6ac26b"
   end
 
