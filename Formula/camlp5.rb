@@ -14,7 +14,8 @@ class Camlp5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/camlp5"
-    sha256 mojave: "823e0fabcd948252e92e035344b25111e3be2ffde202f1c6177200e00beff687"
+    rebuild 1
+    sha256 mojave: "b75947396f1273e2725615f97f7f4e1dbba9fd1bfd067e61b2cd1486e05151e2"
   end
 
   depends_on "ocaml-findlib" => :build
