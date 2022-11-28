@@ -11,7 +11,7 @@ class Cfitsio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfitsio"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "427e277300bdc41d3cddac8629646bf29542cb5e4275d3fde4eb697d64473798"
   end
 
