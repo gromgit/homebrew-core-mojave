@@ -7,7 +7,7 @@ class Ddcctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ddcctl"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "a735acd6dec0b3a861e30ee973f0f62cc4f8f2a5d4d5c22c3efafaaeffefcadb"
   end
 
