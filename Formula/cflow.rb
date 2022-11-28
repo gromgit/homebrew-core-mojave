@@ -8,7 +8,8 @@ class Cflow < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cflow"
-    sha256 mojave: "0242015585d0f557bc53d30b89efd93957d5db1e925e1e763ede3ec61de724bb"
+    rebuild 1
+    sha256 mojave: "10b1f0438100da98fa19696cb580e0c8596b957bf98dfac55e5d967ba7e02a57"
   end
 
   def install
