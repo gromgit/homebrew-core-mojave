@@ -14,6 +14,7 @@ class Angband < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/angband"
+    rebuild 1
     sha256 mojave: "1625c54466f46582faa4685b738247923d2d64c23076146cfff6b3428a5ca4a5"
   end
 
