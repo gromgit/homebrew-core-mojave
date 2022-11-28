@@ -27,7 +27,7 @@ class Isl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isl"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "8dd3f3c30683bb024468320eae3c79052ecd06f614624d546214644c5e81911b"
   end
 
