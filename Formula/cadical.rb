@@ -12,8 +12,8 @@ class Cadical < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadical"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "277bafd80bc367ba255338636300f44a1670d34c58942057a203c16357f6d3a5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "477838c7ae2005e98f59b8fd6ccd6cde1820360b0c27dfd942ddcd4d80bd6a28"
   end
 
   def install
