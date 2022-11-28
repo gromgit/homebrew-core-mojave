@@ -14,7 +14,7 @@ class Cspice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cspice"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "4833e5a468a63d25248dea1af0b77a1d7e2a6092627219d53f75faa4a85c4361"
   end
 
