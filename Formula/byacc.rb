@@ -12,6 +12,7 @@ class Byacc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/byacc"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "608e9e0fbad08f61f444c48a2d684dcb57ee32721bca48ae3f170c7cf36d5c62"
   end
 
