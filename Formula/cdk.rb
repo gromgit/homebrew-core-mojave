@@ -12,6 +12,7 @@ class Cdk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cdk"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "41d981fec19743a71c03b860c54f1c8ccff499ce55613fffcd18c0f992061b3a"
   end
 
