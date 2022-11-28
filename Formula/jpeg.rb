@@ -13,7 +13,7 @@ class Jpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "a4c72e004c15cf503f8b6387f67047db7582ff4b3ae7c6242ec0a8bafc29a7fb"
   end
 
