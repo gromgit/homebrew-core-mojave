@@ -7,6 +7,7 @@ class Csvprintf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csvprintf"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "52463ad216f9dffde2014a8569036e3881886c1ac5b6b06889b5ded8ec4b7444"
   end
 
