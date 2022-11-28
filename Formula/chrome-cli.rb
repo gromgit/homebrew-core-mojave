@@ -8,8 +8,8 @@ class ChromeCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chrome-cli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6421665ab2258564b02b5d0ea72175b59a8762023c171f2353687f04e077ae64"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "43f0305e2c7c2ddbcdbd3eec90a39ed89722fbcf12a8ba914789847f5c7c32a9"
   end
 
   depends_on xcode: :build
