@@ -13,7 +13,8 @@ class Ats2Postiats < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ats2-postiats"
-    sha256 cellar: :any_skip_relocation, mojave: "b120723d5303ef7b24d40bd33bc79ea566f67bc96843cfd9e44f771d8773c417"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9736d492ab9f351eeecb1ebb48707ab9716b82479160929f3ff3422df5ab9ba1"
   end
 
   depends_on "gmp"
