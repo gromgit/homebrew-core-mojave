@@ -13,7 +13,8 @@ class Clipsafe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clipsafe"
-    sha256 cellar: :any_skip_relocation, mojave: "f294626a970557580f6c6a2910f39df944c1c464020dc19a0d5d3dc1343b3a4f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3935c5f9f348118e76338c31542f718f56adce53f627e1d6fe4d28f72b41065b"
   end
 
   uses_from_macos "perl"
