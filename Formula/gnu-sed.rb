@@ -8,6 +8,7 @@ class GnuSed < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-sed"
+    rebuild 1
     sha256 mojave: "0d49a0817f120b457dc3bb1fa84cc5e2f6d37d7fa408fa314bbbf468508070a5"
   end
 
