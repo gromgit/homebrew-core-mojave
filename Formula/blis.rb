@@ -8,7 +8,7 @@ class Blis < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blis"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "42b711f5ad894a55b58901c5d62d8c26389857341f4c398aa75c1f3032978cb4"
   end
 
