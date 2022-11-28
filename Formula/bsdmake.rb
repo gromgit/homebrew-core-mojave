@@ -7,7 +7,7 @@ class Bsdmake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bsdmake"
-    rebuild 2
+    rebuild 3
     sha256 mojave: "bc314fff46d4ebbe1f815c3505920c40efa049e2161f8e4554ddace4569dd44b"
   end
 
