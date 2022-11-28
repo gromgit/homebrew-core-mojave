@@ -12,6 +12,7 @@ class Cuba < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cuba"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "3a2bf3bfdfd3bc503dfc5aa32a8fbb8402961162095b1a50deef83a826e0b083"
   end
 
