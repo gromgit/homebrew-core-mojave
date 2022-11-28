@@ -9,6 +9,7 @@ class Blink1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/blink1"
+    rebuild 1
     sha256 cellar: :any, mojave: "c73f771ecbf47ae069a73cf329def05632e996848dd5470c896be5733ed862e2"
   end
 
