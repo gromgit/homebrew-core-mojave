@@ -7,6 +7,7 @@ class Bedops < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bedops"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "88a9066c23d5d95ea59d569e51a130ae5b1d6911de432654438b3d3693c08282"
   end
 
