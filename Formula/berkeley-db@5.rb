@@ -8,7 +8,8 @@ class BerkeleyDbAT5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/berkeley-db@5"
-    sha256 cellar: :any_skip_relocation, mojave: "ca6764dfe81c494fa47fff1f79b43c3d6ea36698bb29bd64d162663161f4fc60"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1ca49a420e5562d6ed0ca0134a0312859f20b61d69d7704d2eb6b042bd65ea24"
   end
 
   keg_only :versioned_formula
