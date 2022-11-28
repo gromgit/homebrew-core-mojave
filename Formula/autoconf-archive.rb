@@ -8,7 +8,7 @@ class AutoconfArchive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autoconf-archive"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "e7e7b1edebfa9d71d86a1885139b5271986eaddb691f5a5b826337910595fe68"
   end
 
