@@ -8,7 +8,7 @@ class ArpScan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arp-scan"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "66dc61cedff973a97f8bb2e9ba58bb64739d20c647df3908dbcd1dd4ba9c82b3"
   end
 
