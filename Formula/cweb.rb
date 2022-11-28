@@ -13,7 +13,7 @@ class Cweb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cweb"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "0f6c2be05484a7981e6f1c67e21bf240fca0788fe990a57a19682dac8e8da4b9"
   end
 
