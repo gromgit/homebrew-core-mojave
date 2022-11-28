@@ -8,6 +8,7 @@ class Cpufetch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpufetch"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "39938edef1b5a10a751d20c83bc49f4f47a8198b93d4bc8cd8076a545f9a81e5"
   end
 
