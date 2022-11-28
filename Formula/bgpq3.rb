@@ -13,7 +13,7 @@ class Bgpq3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bgpq3"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "42b1ae08191ee6b930340d32b00b4512c20a3ae8211bddf098c6e2ca48ec3921"
   end
 
