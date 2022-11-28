@@ -11,7 +11,7 @@ class Anttweakbar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/anttweakbar"
-    rebuild 2
+    rebuild 3
     sha256 cellar: :any, mojave: "c49fd0db31acd9cb4913f245ed1fe90ef406903ceb526697b7fbd7ff70c9e2f1"
   end
 
