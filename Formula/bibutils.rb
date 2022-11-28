@@ -12,8 +12,8 @@ class Bibutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bibutils"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "005bc2118e20ed1c7c5abe3762766d25c6282020476ff0d0d0994c5db0b62f48"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "90deafe6884046d408a6108247bae4174aba8372d6c42b7024543adac53e8c3d"
   end
 
   def install
