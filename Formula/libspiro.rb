@@ -1,14 +1,14 @@
 class Libspiro < Formula
   desc "Library to simplify the drawing of curves"
   homepage "https://github.com/fontforge/libspiro"
-  url "https://github.com/fontforge/libspiro/releases/download/20220722/libspiro-dist-20220722.tar.gz"
-  sha256 "3b8e54473f3d4d99c014f2630e62f966f5f4e25c28ca59b63d30bd8e9b7593f5"
-  license "GPL-3.0"
+  url "https://github.com/fontforge/libspiro/releases/download/20221101/libspiro-dist-20221101.tar.gz"
+  sha256 "5984fb5af3e4e1f927f3a74850b705a711fb86284802a5e6170b09786440e8be"
+  license "GPL-3.0-or-later"
   version_scheme 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libspiro"
-    sha256 cellar: :any, mojave: "f7f414e43ed4293c47c15ecfd6aa560c0602c2f507d08b887fa823832491fda2"
+    sha256 cellar: :any, mojave: "ceb87efe9db2735a65ecdbd799104f67008420f9f1b465cd6fddcb1a5e5b1639"
   end
 
   head do
