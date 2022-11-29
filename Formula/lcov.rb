@@ -12,7 +12,8 @@ class Lcov < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lcov"
-    sha256 cellar: :any_skip_relocation, mojave: "2e61be928419d9a6bebc8a9a21688df846df5e4f62ff558e2157db8cb87576b3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a33e8f5f25f041a78dab3e26bdf2f078cb2d8b07a13b8e889756e4072602f9ae"
   end
 
   uses_from_macos "perl"
