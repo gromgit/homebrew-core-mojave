@@ -12,6 +12,7 @@ class MediaInfo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/media-info"
+    rebuild 1
     sha256 cellar: :any, mojave: "b4eb6c2b150d974ecd19cf7464287ac0a0260d1b898007ad3975a815d419d116"
   end
 
