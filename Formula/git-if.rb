@@ -9,6 +9,7 @@ class GitIf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-if"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "164565964a0d32a1404fb7e6ae019683fa679b9fd8b694e043c74794a1d10ab8"
   end
 
