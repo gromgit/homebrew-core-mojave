@@ -8,7 +8,7 @@ class Findutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/findutils"
-    rebuild 2
+    rebuild 3
     sha256 cellar: :any_skip_relocation, mojave: "bf68be96eebb7bf6601a98dfededfdb6a2059e58c0361a521b22a04442a3c844"
   end
 
