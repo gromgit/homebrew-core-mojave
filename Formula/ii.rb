@@ -13,6 +13,7 @@ class Ii < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ii"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "e64f70bc6300a1c009911b6c5e2df2c2403b8428299e4a4ce1fcc55a5617b10e"
   end
 
