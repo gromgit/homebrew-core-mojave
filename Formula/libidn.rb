@@ -8,7 +8,8 @@ class Libidn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libidn"
-    sha256 mojave: "635b9e2916342d4f4f0af3d1ed031fd2e1d010f19f36919c66dd500f24c56254"
+    rebuild 1
+    sha256 mojave: "42f02550f14ded93357d47d2a4de5bf3ae64c8ad9b19af5d2c11ef7436c82c8b"
   end
 
   depends_on "pkg-config" => :build
