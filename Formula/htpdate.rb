@@ -12,7 +12,8 @@ class Htpdate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htpdate"
-    sha256 cellar: :any_skip_relocation, mojave: "0494b7be7cfa3b1140b1c120697b3633ceca48e5f26f755bcebf93c6820ce68e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5a493cb7cd245fb4532f39f7489347dc0f2fad59c82bd37f1c43522096f9481c"
   end
 
   def install
