@@ -7,8 +7,8 @@ class Libxls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxls"
-    rebuild 2
-    sha256 cellar: :any, mojave: "28f46657b9396817ccbeb9601dd4d99d10ec20593a6c0a703ed880147c59f654"
+    rebuild 3
+    sha256 cellar: :any, mojave: "b3bb49b51a4565e6a5950fe7b6230aeebdd1c7efce65d6f270f2b9da026ad4c9"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
