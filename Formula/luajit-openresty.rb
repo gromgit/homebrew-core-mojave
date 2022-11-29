@@ -20,6 +20,7 @@ class LuajitOpenresty < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit-openresty"
+    rebuild 1
     sha256 cellar: :any, mojave: "3711df8bc370bcb7a15485db6f4e2fba5ebcc067e333daa32ea44ee30bffd4c3"
   end
 
