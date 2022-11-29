@@ -12,7 +12,7 @@ class Joe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/joe"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "3422fe57352586d4a57b7670cdb1b25a316d2adc3e158aff4a6980f22bd1484b"
   end
 
