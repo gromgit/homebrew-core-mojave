@@ -7,6 +7,7 @@ class Hblock < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hblock"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9f1a12561e4c1d6a5c2fc4bc4178b4f9d49382ae2ab33e5e283264ecf3ee7ac8"
   end
 
