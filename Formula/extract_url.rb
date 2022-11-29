@@ -8,7 +8,8 @@ class ExtractUrl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/extract_url"
-    sha256 cellar: :any_skip_relocation, mojave: "3cd944370adec8186362c52771d33fc3cd185e4503cbd4de1fef2c3c4375007e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "40ca72e4e42bd09de7b90aebd19c69cac93187e0100aae8fad924f2fb3b15138"
   end
 
   uses_from_macos "ncurses"
