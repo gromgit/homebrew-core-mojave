@@ -1,8 +1,8 @@
 class Luit < Formula
   desc "Filter run between arbitrary application and UTF-8 terminal emulator"
   homepage "https://invisible-island.net/luit/"
-  url "https://invisible-mirror.net/archives/luit/luit-20220111.tgz"
-  sha256 "86c07a4ff2d4374a655a1eef2ec7504582d42bba5971c79b111364e2b26ed468"
+  url "https://invisible-mirror.net/archives/luit/luit-20221028.tgz"
+  sha256 "ef78b3a64a697cb70a881558abb8251e4b30748ceefb8d44adbd8ea797bcfca6"
   license "MIT"
 
   livecheck do
@@ -12,8 +12,7 @@ class Luit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luit"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d9160e7aa3c96266e1eee6b70147b62a937c811b8e7a62ef0fd0cf3cf4a6e39e"
+    sha256 cellar: :any_skip_relocation, mojave: "4bbce4fe9cf04527202d18326b372915cb846c4a2692bd2e6e7d5326ad12c705"
   end
 
   uses_from_macos "zlib"
