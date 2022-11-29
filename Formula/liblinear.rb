@@ -13,6 +13,7 @@ class Liblinear < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblinear"
+    rebuild 1
     sha256 cellar: :any, mojave: "71eea8d73d31d227845147dfed2fe10549723785ac95a20c8bb2ed059f59bdf5"
   end
 
