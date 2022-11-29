@@ -12,8 +12,8 @@ class Log4shib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/log4shib"
-    rebuild 2
-    sha256 cellar: :any, mojave: "adfadc2f255b40b73b065ecd2ee8a3e4e56348858cef6097c9745281615b72b6"
+    rebuild 3
+    sha256 cellar: :any, mojave: "91fb220b358492204bf714cb10fe8c37868e7df401f331db312e58c64b10e899"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
