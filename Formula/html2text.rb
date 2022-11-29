@@ -8,6 +8,7 @@ class Html2text < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/html2text"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "d34920ef3df30af67e6156adbfba45ed20103dba769148394819f7049673eace"
   end
 
