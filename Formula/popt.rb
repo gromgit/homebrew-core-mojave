@@ -17,7 +17,8 @@ class Popt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/popt"
-    sha256 cellar: :any, mojave: "dde66a8b26624e4d5d221ffa04b91d06003466f12f063a753a8e43637b52a107"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9b11e05820090606945847e27c13a9869a5caa7bec0cb566b34053ee411ed5a4"
   end
 
   def install
