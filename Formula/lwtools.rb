@@ -12,6 +12,7 @@ class Lwtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lwtools"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "ee477c134a1715c55a77d98781d2a634a0d3ece1ecec996bb83734cea357248e"
   end
 
