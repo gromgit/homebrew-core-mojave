@@ -8,8 +8,8 @@ class Doggo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doggo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d63312d5d6c957acf8606717c77938291fc5ff356c8dde556c2ab7bc41c19af5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a8a881eafbe5e03c96638e8dda9a0cbc2eede4c83878e2a1a7c63c51de2920a0"
   end
 
   # Required lucas-clemente/quic-go >= 0.28
