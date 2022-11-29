@@ -12,7 +12,7 @@ class Dtc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dtc"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "e8b22d3afd2636f31f9b6fc6948dd46978c5115b362e71ff3d0516db6966d92e"
   end
 
