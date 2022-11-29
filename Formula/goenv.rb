@@ -1,8 +1,8 @@
 class Goenv < Formula
   desc "Go version management"
   homepage "https://github.com/syndbg/goenv"
-  url "https://github.com/syndbg/goenv/archive/1.23.3.tar.gz"
-  sha256 "1559f2907ee0339328466fe93f3c9637b7674917db81754412c7f842749e3201"
+  url "https://github.com/syndbg/goenv/archive/2.0.4.tar.gz"
+  sha256 "f516d7d00d483a0d328dd4156e65399c2c84e12625080c82eaef500b0211a515"
   license "MIT"
   version_scheme 1
   head "https://github.com/syndbg/goenv.git", branch: "master"
@@ -14,8 +14,7 @@ class Goenv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goenv"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "5e3e502495172940ddbc77d6ab70b7172625d12154544e9bd5ecf2c7a8d4bb0f"
+    sha256 cellar: :any_skip_relocation, mojave: "dee76e5bf5df3d39deed32510baa9e1420e1395df898551da1ad19189c12d922"
   end
 
   def install
@@ -25,7 +24,6 @@ class Goenv < Formula
       "test/goenv.bats",
       "test/test_helper.bash",
     ]
-    inreplace_files << "test/init.bats" unless build.head?
     inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
 
     prefix.install Dir["*"]
