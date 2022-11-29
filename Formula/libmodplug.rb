@@ -11,8 +11,8 @@ class Libmodplug < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmodplug"
-    rebuild 3
-    sha256 cellar: :any, mojave: "05067e2df22e09d4e1cdffb48d47dd2c882a9a603ad602954baf0ebe30bcdc38"
+    rebuild 4
+    sha256 cellar: :any, mojave: "dd16c7dff0522239ee3e0127516a19f9a25b9a11bd598d14476d720a3fb09009"
   end
 
   resource "testmod" do
