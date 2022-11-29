@@ -12,7 +12,7 @@ class Libmagic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmagic"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "47f064fe6f92249163e215d221e42f7e86ed8e7204cef1a33199f5998917c30e"
   end
 
