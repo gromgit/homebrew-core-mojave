@@ -8,7 +8,8 @@ class Libiconv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libiconv"
-    sha256 mojave: "657a346cac68e1e29cf91faf9b0e0525b219cf5c9951919e12d1561248774d9c"
+    rebuild 1
+    sha256 mojave: "5bbd24a66787636545c79fd8268641e7af86a4f0a917a4976e26cd0e203bcc22"
   end
 
   keg_only :provided_by_macos
