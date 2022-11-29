@@ -14,8 +14,8 @@ class Mandoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mandoc"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "3f727da2da2c73c4c7a3f28b77b0cdbde39630a089a2fa40d84afdd728540a8e"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "54cedcac1cd16440e501df1b25168657936de8e1994794a8b012b1407f7602d8"
   end
 
   uses_from_macos "zlib"
