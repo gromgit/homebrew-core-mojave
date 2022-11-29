@@ -8,6 +8,7 @@ class Mg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mg"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "a4b09993a42d733861a7fbb1315eb4833b4ec56aca20e0c46b061fe3801ee728"
   end
 
