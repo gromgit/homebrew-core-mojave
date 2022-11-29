@@ -12,6 +12,7 @@ class Libusb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libusb"
+    rebuild 1
     sha256 cellar: :any, mojave: "06df5b70504011eff6c98e9e53ec5fd076ff82b67380587ee335f4459b08d378"
   end
 
