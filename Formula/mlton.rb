@@ -15,7 +15,7 @@ class Mlton < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlton"
-    rebuild 2
+    rebuild 3
     sha256 cellar: :any, mojave: "ae609cda4714d8946a380f2b1ffaac881d190c9d48f87fdf14474a452f508824"
   end
 
