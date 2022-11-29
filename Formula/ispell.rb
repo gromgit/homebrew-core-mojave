@@ -13,6 +13,7 @@ class Ispell < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ispell"
+    rebuild 1
     sha256 mojave: "bc087dc48216758f5a98ab8244c66116e35041e2b992527b3dbca4acb0cb7eab"
   end
 
