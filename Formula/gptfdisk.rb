@@ -8,6 +8,7 @@ class Gptfdisk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gptfdisk"
+    rebuild 1
     sha256 cellar: :any, mojave: "bb73e5bc9f19a602ccaeefebf679bd76dbd38dd7028f6c074d450647c4764173"
   end
 
