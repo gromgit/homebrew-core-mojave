@@ -1,10 +1,9 @@
 class Dropbear < Formula
   desc "Small SSH server/client for POSIX-based system"
   homepage "https://matt.ucc.asn.au/dropbear/dropbear.html"
-  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2022.82.tar.bz2"
-  sha256 "3a038d2bbc02bf28bbdd20c012091f741a3ec5cbe460691811d714876aad75d1"
+  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2022.83.tar.bz2"
+  sha256 "bc5a121ffbc94b5171ad5ebe01be42746d50aa797c9549a4639894a16749443b"
   license "MIT"
-  revision 1
 
   livecheck do
     url :homepage
@@ -13,8 +12,7 @@ class Dropbear < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dropbear"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "88e3a6bda4b76eb590f1d14c085c8cb6ce76ec28d30bdc3e824ddf56e492f8bf"
+    sha256 cellar: :any_skip_relocation, mojave: "f1433ddd7cde375b0d380eb105ee70c1189c5820e605fc94cc6101e80f19e9a6"
   end
 
   head do
