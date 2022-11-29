@@ -9,12 +9,12 @@ class Luajit < Formula
   # Update this to the tip of the `v2.1` branch at the start of every month.
   # Get the latest commit with:
   #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
-  url "https://github.com/LuaJIT/LuaJIT/archive/6c4826f12c4d33b8b978004bc681eb1eef2be977.tar.gz"
+  url "https://github.com/LuaJIT/LuaJIT/archive/46aa45dcbd9f3843503ddf3e00f8dda89eac6789.tar.gz"
   # Use the version scheme `2.1.0-beta3-yyyymmdd.x` where `yyyymmdd` is the date of the
   # latest commit at the time of updating, and `x` is the number of commits on that date.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.0-beta3-20221004.1"
-  sha256 "19a911fdd77af69e48fa50749606a9009696f543cc88e898b4480d8d3c8828f5"
+  version "2.1.0-beta3-20221122.1"
+  sha256 "110c043716ca683573b8417b70d49c09443826e100776182ca7288d780db8d6a"
   license "MIT"
   head "https://luajit.org/git/luajit-2.0.git", branch: "v2.1"
 
@@ -41,7 +41,7 @@ class Luajit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/luajit"
-    sha256 cellar: :any, mojave: "9db323b0e982b42723f51696149c5f9971d6c2a5fa32132eb275df58ac2e4108"
+    sha256 cellar: :any, mojave: "24982e78386b496baccaa5026ec4fbfd9c9a3b890eababd6effdb1c6f9a59321"
   end
 
   def install
