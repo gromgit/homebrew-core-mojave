@@ -12,6 +12,7 @@ class Log4cplus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/log4cplus"
+    rebuild 1
     sha256 cellar: :any, mojave: "0551051f37ea7e6c2be01daa2f5e0a246aa40fd27ac674b79eb7bf84af12705e"
   end
 
