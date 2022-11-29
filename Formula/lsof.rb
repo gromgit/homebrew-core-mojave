@@ -1,13 +1,13 @@
 class Lsof < Formula
   desc "Utility to list open files"
   homepage "https://github.com/lsof-org/lsof"
-  url "https://github.com/lsof-org/lsof/archive/4.96.3-freebsd.tar.gz"
-  sha256 "bcb673c547d234da327a8ee0d1ef59d3b7eac12e0c066242ec13cb706485560d"
+  url "https://github.com/lsof-org/lsof/archive/refs/tags/4.96.4.tar.gz"
+  sha256 "b5a052cac8d6b2726bbb1de2b98c6d9204c7619263fb63e9b6b1bd6bbb37bf14"
   license "Zlib"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lsof"
-    sha256 cellar: :any_skip_relocation, mojave: "d9c2ae8fcd9f015c56e7c42d9f72750da0bd23354ddab00b1703d72f1efab4ee"
+    sha256 cellar: :any_skip_relocation, mojave: "ec67898679ab6b62274660640bdc0bc1af27ebde184fbda3fa6772528e2e825b"
   end
 
   keg_only :provided_by_macos
