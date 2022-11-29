@@ -13,7 +13,8 @@ class Icon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/icon"
-    sha256 cellar: :any_skip_relocation, mojave: "d737e18b2aefdb178fdf8776dfdd765915f557fd5cce9c9d15276945d7b85964"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a0ae25e55f0d0f20b281496e37b123541bba5eaef43da856537161863b9f86e2"
   end
 
   def install
