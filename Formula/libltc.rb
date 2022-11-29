@@ -7,6 +7,7 @@ class Libltc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libltc"
+    rebuild 1
     sha256 cellar: :any, mojave: "72e1365ced9701b332fbbad044f029ceab3c06ac1fddbf7d069a0dd3227df79f"
   end
 
