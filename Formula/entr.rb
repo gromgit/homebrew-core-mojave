@@ -13,7 +13,7 @@ class Entr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/entr"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "87a893916547c504b0c209517231b2e3111f6aeb49ae03e6c5b5e3e45649e901"
   end
 
