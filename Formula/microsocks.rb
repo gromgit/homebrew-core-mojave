@@ -8,6 +8,7 @@ class Microsocks < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/microsocks"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "35401080d5d1bbdc3f016647cf4df23f3bb1e27448405b6696d05b79679dd60c"
   end
 
