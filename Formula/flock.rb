@@ -7,6 +7,7 @@ class Flock < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flock"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "3f9b45fea1d0a707239683f7cf54db96c3b24e74db42e1c0c8315e9c6ae88545"
   end
 
