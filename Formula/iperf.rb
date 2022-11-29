@@ -12,6 +12,7 @@ class Iperf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iperf"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "b6e603483d8178af76fa2228d020f8a0af0ef4f8dfbb6711398fc14d770570d3"
   end
 
