@@ -8,6 +8,7 @@ class Gzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gzip"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "693114a5d41193fa0f873228fd61910aa6e3cd97e191bfb9046efa8ce8b460cd"
   end
 
