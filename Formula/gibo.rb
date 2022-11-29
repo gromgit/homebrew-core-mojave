@@ -7,6 +7,7 @@ class Gibo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gibo"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "fd7791136b3bc08945b017def9fcecee3904250e0870ccd20c8a28b68160198e"
   end
 
