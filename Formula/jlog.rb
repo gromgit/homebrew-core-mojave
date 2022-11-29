@@ -8,6 +8,7 @@ class Jlog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jlog"
+    rebuild 1
     sha256 cellar: :any, mojave: "b1c90c2b2dfde8f15c62c413a268eb9bd6ab701f80ffd0b45773402ef0a63287"
   end
 
