@@ -9,8 +9,8 @@ class GnuTar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-tar"
-    rebuild 1
-    sha256 mojave: "90432716d50eddaec87062ef29ba71a1cb499b056b38034e1c8cd2546cf8c019"
+    rebuild 2
+    sha256 mojave: "7432e2c29fc450d92ff0bb7a3fe524fdcd1babc6604186cda3f16dafd9c3599b"
   end
 
   head do
