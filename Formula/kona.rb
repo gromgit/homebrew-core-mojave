@@ -14,7 +14,8 @@ class Kona < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kona"
-    sha256 cellar: :any_skip_relocation, mojave: "b8681599c7062e0170204122caae4859377aa1827149920eb1afc85c2e722513"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5c58fe8d71c1ac787f52ea97d67d6aa40c0da9443292cec475dbf0da7d0ca5f5"
   end
 
   def install
