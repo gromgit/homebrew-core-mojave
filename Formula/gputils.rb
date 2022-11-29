@@ -12,7 +12,8 @@ class Gputils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gputils"
-    sha256 mojave: "68754d33b3b3534d975c0917bcda90fe7e734b6223f583fef39bcd93a1d1b741"
+    rebuild 1
+    sha256 mojave: "382ae813fabb1a3b7e8721fc79b9151f21b99d72e2ee744ef78bf50594cc0011"
   end
 
   def install
