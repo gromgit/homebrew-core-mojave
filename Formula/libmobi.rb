@@ -7,7 +7,8 @@ class Libmobi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmobi"
-    sha256 cellar: :any, mojave: "d5561a0802c95707625c9138452250be7d217c05e2a65be4b85e07a1a1dcbf0e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c14424c214a2bcf45c6c958a4eee99adc86d4e79f97a6b9c8795b1d88dc3eb09"
   end
 
   uses_from_macos "libxml2"
