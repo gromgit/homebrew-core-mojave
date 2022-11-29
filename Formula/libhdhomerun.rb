@@ -13,6 +13,7 @@ class Libhdhomerun < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libhdhomerun"
+    rebuild 1
     sha256 cellar: :any, mojave: "e62a746c5cfd865a9cf3dccaf7931c7beb61380a080b579c982189d1fe0049e4"
   end
 
