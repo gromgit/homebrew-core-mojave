@@ -17,7 +17,8 @@ class IosDeploy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ios-deploy"
-    sha256 cellar: :any_skip_relocation, mojave: "678835037233cdf4c92077a1e9759914b55a9ea332e8ccb80790e24720c91718"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "39155833ffcb9ef99fdf8dd326467d9a22072c1d24ccea8d651a1f03e9a4b933"
   end
 
   depends_on xcode: :build
