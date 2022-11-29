@@ -12,10 +12,13 @@ class I686ElfBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i686-elf-binutils"
-    sha256 mojave: "fe081439f5de236fc31774c8c332912d193a6acb0b009eef8c97e9418d2a0f53"
+    rebuild 1
+    sha256 mojave: "2fc56ff272d7387fd351740c1b25e7f30871ee22a552289b5792baea22df2e04"
   end
 
-  uses_from_macos "texinfo"
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   def install
     target = "i686-elf"
