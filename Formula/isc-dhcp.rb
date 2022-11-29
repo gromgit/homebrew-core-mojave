@@ -12,7 +12,8 @@ class IscDhcp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isc-dhcp"
-    sha256 mojave: "5b50588d187b3ae5ef998d324bf5bacddbcedc6b8426b65dbf38abf95a05d3c5"
+    rebuild 1
+    sha256 mojave: "0f65bda441518184c5ac58d3180a2f9769e40762399d81045c6e9e795480b0df"
   end
 
   def install
