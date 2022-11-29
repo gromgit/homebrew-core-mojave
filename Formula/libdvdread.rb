@@ -21,6 +21,7 @@ class Libdvdread < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdvdread"
+    rebuild 1
     sha256 cellar: :any, mojave: "6dd3bc60c89c099aeeb83692945ee50c8dccbe506a990e9ad1f82d4cab4e5c0f"
   end
 
