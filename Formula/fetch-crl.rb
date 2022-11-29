@@ -12,7 +12,8 @@ class FetchCrl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fetch-crl"
-    sha256 cellar: :any_skip_relocation, mojave: "3ae1f9b5031969f75ed0165dae9e866a2da1b1dc603c4a62725eb3e51eab3e1b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dec438161b1f1e6dc25b6b7e51b4940a795dd635f571046450474d3e8b634e1a"
   end
 
   uses_from_macos "perl"
