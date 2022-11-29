@@ -8,7 +8,7 @@ class Gti < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gti"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "286d5c3451034be587c79ca0418b521e88d2a01ee264a0a18e523dd8f6d1a25d"
   end
 
