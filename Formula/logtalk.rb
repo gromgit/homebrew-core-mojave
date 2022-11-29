@@ -1,9 +1,9 @@
 class Logtalk < Formula
   desc "Declarative object-oriented logic programming language"
   homepage "https://logtalk.org/"
-  url "https://github.com/LogtalkDotOrg/logtalk3/archive/lgt3580stable.tar.gz"
-  version "3.58.0"
-  sha256 "ac2c9dcbacdcd24ffe411cfa2dbbbab10e6b2a6075dc49f6ed19c534dd79c38e"
+  url "https://github.com/LogtalkDotOrg/logtalk3/archive/lgt3600stable.tar.gz"
+  version "3.60.0"
+  sha256 "254997f38c67756b1087f3caa958403a7a30ae2b241b9fada4ad9e07fae4d120"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class Logtalk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/logtalk"
-    sha256 cellar: :any_skip_relocation, mojave: "499fe3deac24fc533aae0ab4956e0119cecce96c5440037a59c7c30a7d235205"
+    sha256 cellar: :any_skip_relocation, mojave: "67ef23440949a30237100432732bcdffeee810ec0a057a31788ae7888dcb12ac"
   end
 
   depends_on "gnu-prolog"
