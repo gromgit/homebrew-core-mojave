@@ -15,7 +15,8 @@ class Imapsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imapsync"
-    sha256 cellar: :any_skip_relocation, mojave: "e7b934799f0931343ffafc732e022b74b4eb021eaa7d07d37823c7e10459c793"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2a12745a28fc1fa7eb08beaadafe2c2e59270ff39ae03b69d371ef30e33c758a"
   end
 
   depends_on "pod2man" => :build
