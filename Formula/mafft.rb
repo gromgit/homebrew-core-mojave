@@ -13,8 +13,8 @@ class Mafft < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mafft"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "ce7cb5cea7ce65f0f0aae2aeedfcb9be296d57535f9eba0a2cc24f1d9c0c6ec7"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "d043536be61ca977125e21654b5ba53f113696127f1a9c38813ed7c4f112b1a8"
   end
 
   def install
