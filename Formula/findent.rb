@@ -1,8 +1,8 @@
 class Findent < Formula
   desc "Indent and beautify Fortran sources and generate dependency information"
   homepage "https://www.ratrabbit.nl/ratrabbit/findent/index.html"
-  url "https://downloads.sourceforge.net/project/findent/findent-4.2.1.tar.gz"
-  sha256 "c010ce4d020ec77c055e0dea1f29a2f52815cb4debe052fd559cf09049fac702"
+  url "https://downloads.sourceforge.net/project/findent/findent-4.2.3.tar.gz"
+  sha256 "1a67c3fa684072942bd5f0696158ababb1a7198d32e686ca8c1fb74f85f5d745"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Findent < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/findent"
-    sha256 cellar: :any_skip_relocation, mojave: "b9cbefc6a62a046a76e3be5352467c34a310bc541a0464239de53c9d2e5d866e"
+    sha256 cellar: :any_skip_relocation, mojave: "9152af1c5eb2682c3d1efbbe87edb3f7bda6157de31afe35e4bc94e7159a4759"
   end
 
   def install
