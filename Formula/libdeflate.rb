@@ -7,6 +7,7 @@ class Libdeflate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdeflate"
+    rebuild 1
     sha256 cellar: :any, mojave: "4aee7013ffd380f128d11d3b7f60add966eeb4e9741baaa8252d14b7b46e7496"
   end
 
