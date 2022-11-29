@@ -7,6 +7,7 @@ class Libb64 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libb64"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "08b37594d0cb2632d4b3a885e4690bfff5d65a2f3dcd51f826f116f1393be075"
   end
 
