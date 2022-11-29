@@ -15,6 +15,7 @@ class Jsmin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jsmin"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6a2ff57239c77679ab37195cf0dbff3da2d1f75f269091546648a01dc340bef3"
   end
 
