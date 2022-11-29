@@ -6,15 +6,14 @@ class Jnethack < Formula
   homepage "https://jnethack.osdn.jp/"
   # We use a git checkout to avoid patching the upstream NetHack tarball.
   url "https://scm.osdn.net/gitroot/jnethack/source.git",
-      tag:      "v3.6.6-0.5",
-      revision: "b73f026674d524b563794826884c141ae8217dea"
+      tag:      "v3.6.6-0.6",
+      revision: "1fe57469d3f3bc20997f5f219c33bf4973a41b82"
   license "NGPL"
   head "https://github.com/jnethack/jnethack-alpha.git", branch: "develop"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jnethack"
-    rebuild 1
-    sha256 mojave: "f5afac0c4be920d43fd9b1e6787ac2595a8d4e8a9ae1dde0a9f76c7eed158f6c"
+    sha256 mojave: "4e1e080d2c7c91f0d2f92f81fc6248590926aa5408608560534630a7c92ec615"
   end
 
   depends_on "nkf" => :build
