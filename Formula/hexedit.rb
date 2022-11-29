@@ -8,6 +8,7 @@ class Hexedit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hexedit"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "4275a9b07f153af73e084017285d37c64d48a08858910c8de3112484a83cda72"
   end
 
