@@ -13,6 +13,7 @@ class Lzlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lzlib"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "f60a01bc1a7d26df21592166afee61e83a74dbf72ea957e415a643c90dbe67e2"
   end
 
