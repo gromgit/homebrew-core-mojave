@@ -12,6 +12,7 @@ class Jdupes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jdupes"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "0427b07cec341f8e3adc3682ad2f2eb83fd1b87a5c491424a28a5f852891a3d2"
   end
 
