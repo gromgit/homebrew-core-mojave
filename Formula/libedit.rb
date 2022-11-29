@@ -1,9 +1,9 @@
 class Libedit < Formula
   desc "BSD-style licensed readline alternative"
   homepage "https://thrysoee.dk/editline/"
-  url "https://thrysoee.dk/editline/libedit-20221009-3.1.tar.gz"
-  version "20221009-3.1"
-  sha256 "b7b135a5112ce4344c9ac3dff57cc057b2b0e1b912619a36cf1d13fce8e88626"
+  url "https://thrysoee.dk/editline/libedit-20221030-3.1.tar.gz"
+  version "20221030-3.1"
+  sha256 "f0925a5adf4b1bf116ee19766b7daa766917aec198747943b1c4edf67a4be2bb"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,7 +13,7 @@ class Libedit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libedit"
-    sha256 cellar: :any, mojave: "00365c9eb44d4c125ee30624bfb6bd1bdd2c1f6b89c2b0b1b5dc39accc2d407e"
+    sha256 cellar: :any, mojave: "49977fbe20759fc2f1959017159857011664acb3ee4460208183fca28dcb9970"
   end
 
   keg_only :provided_by_macos
