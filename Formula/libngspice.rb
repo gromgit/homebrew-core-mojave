@@ -3,8 +3,8 @@ class Libngspice < Formula
   homepage "https://ngspice.sourceforge.io/"
 
   stable do
-    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/37/ngspice-37.tar.gz"
-    sha256 "9beea6741a36a36a70f3152a36c82b728ee124c59a495312796376b30c8becbe"
+    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/38/ngspice-38.tar.gz"
+    sha256 "2c3e22f6c47b165db241cf355371a0a7558540ab2af3f8b5eedeeb289a317c56"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -19,7 +19,7 @@ class Libngspice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libngspice"
-    sha256 cellar: :any, mojave: "665f55a51e10bc5fe7b2b747fbbde53f3cb8f182110c0f5cae04191abd928182"
+    sha256 cellar: :any, mojave: "6369170ab65b35c620119ba384d8b46939ab4509adeb62a585e9f9e98d4c45ac"
   end
 
   head do
