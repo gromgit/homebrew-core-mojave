@@ -12,7 +12,7 @@ class Minimap2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/minimap2"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "52c98a07e4ed941c44cd99626c35e8fec412b970f01814a3c217afc66648c85f"
   end
 
