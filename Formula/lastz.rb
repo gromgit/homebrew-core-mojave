@@ -8,6 +8,7 @@ class Lastz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lastz"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9f75f2af5b72090e71c9617822d06bbd0cdb5ba07e01283107e1c9c330df0c2e"
   end
 
