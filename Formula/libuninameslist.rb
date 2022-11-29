@@ -1,8 +1,8 @@
 class Libuninameslist < Formula
   desc "Library of Unicode names and annotation data"
   homepage "https://github.com/fontforge/libuninameslist"
-  url "https://github.com/fontforge/libuninameslist/releases/download/20211114/libuninameslist-dist-20211114.tar.gz"
-  sha256 "f5f69090de4a483721207a9df7de5327c13c812a1d23de074d8f0496bc2b740d"
+  url "https://github.com/fontforge/libuninameslist/releases/download/20221022/libuninameslist-dist-20221022.tar.gz"
+  sha256 "92c833936d653b2f205fb5e7ac82818311824dabdc7abdc2e81f07c3a0ea39bb"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,8 +13,7 @@ class Libuninameslist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libuninameslist"
-    rebuild 2
-    sha256 cellar: :any, mojave: "838cd647ccea8006d68810932703a3cbcfec8a845a4e67d150e969a64544f078"
+    sha256 cellar: :any, mojave: "f4f3da43a2d61de2315e747e6775bd7c52ceceaac9f65959b4956579ec2fbec2"
   end
 
   head do
