@@ -7,6 +7,7 @@ class Hyx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hyx"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "07bd2d86309e1c9396f832890d5e0f69d2623d81c52835779a2e4583fed1391c"
   end
 
