@@ -7,8 +7,8 @@ class Mailcatcher < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mailcatcher"
-    rebuild 1
-    sha256 mojave: "f7f461e457c1450b867101fc694b36739dae2bc466228ffa576a79fb3a781620"
+    rebuild 2
+    sha256 mojave: "db748c33abfd6cbf229dd943a18a712d98be263c23696a16a98c1cb73b5a7439"
   end
 
   depends_on "pkg-config" => :build
