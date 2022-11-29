@@ -7,6 +7,7 @@ class Lynis < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/lynis"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "f43da37593963aba57890c739e944505c5ccc6ef78b2cf19255c8c9748c69894"
   end
 
