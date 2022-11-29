@@ -7,7 +7,8 @@ class Hello < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hello"
-    sha256 mojave: "ad12298b658801a2d4c8698e66efbd7ebaafdf82ae31de5d05afb3b5c8b915c9"
+    rebuild 1
+    sha256 mojave: "76575e7f1195c7ced7bff12c51cc49234eb7d568155317d62448922b478a7fb4"
   end
 
   conflicts_with "perkeep", because: "both install `hello` binaries"
