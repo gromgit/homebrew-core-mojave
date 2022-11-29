@@ -12,6 +12,7 @@ class Json2tsv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/json2tsv"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "cccbb8bd53430537b7c1ef1da5ff743ef35c7441b927d9799fe043a8ea605ee6"
   end
 
