@@ -7,6 +7,7 @@ class Fribidi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fribidi"
+    rebuild 1
     sha256 cellar: :any, mojave: "22e8e8ed931f41f7fb80376dee1941e073111e25b870f4e49953908afdd1738d"
   end
 
