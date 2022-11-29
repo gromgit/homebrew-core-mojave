@@ -12,7 +12,8 @@ class Fswatch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fswatch"
-    sha256 mojave: "eff28896177316f3c71aa8b33d3326dd3d15f5eac8763a6a8b2a0b75d256d38c"
+    rebuild 1
+    sha256 mojave: "9f5aec131fc9cd1eaddb6196180523e85d4f1d39ff4e1db2bfa6b286643844c2"
   end
 
   def install
