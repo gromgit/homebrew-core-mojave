@@ -7,6 +7,7 @@ class Libmaxminddb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmaxminddb"
+    rebuild 1
     sha256 cellar: :any, mojave: "8e67cd5c7731fdbd23052201b2bc3400082ddeb4c23e6abbc5a537172da284a7"
   end
 
