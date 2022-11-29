@@ -12,7 +12,8 @@ class HtmlXmlUtils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/html-xml-utils"
-    sha256 cellar: :any, mojave: "7bb8ffe88d56f352164047b1ab4439c3adbbea3959bbfb3ced2b544a4db98377"
+    rebuild 1
+    sha256 cellar: :any, mojave: "91a60afdbdcc972f7919dc4ba41550cc77b443d5936ebafa6bd41b3d4c18b660"
   end
 
   def install
