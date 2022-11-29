@@ -12,7 +12,7 @@ class Fping < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fping"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "8ca348d6ca9101a5ae19fb41033612ccf31a0e063f5b1c6bca934d91b3ad8c1b"
   end
 
