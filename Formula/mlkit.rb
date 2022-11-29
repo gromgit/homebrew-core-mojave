@@ -13,11 +13,13 @@ class Mlkit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mlkit"
-    sha256 mojave: "da563eff9603ec3fffcc1fa247935ff2fe97c7848c444ef1a4771ec8e9c4843a"
+    rebuild 1
+    sha256 mojave: "2332fcc04cbcf0a21e44898e3ff0bad0f62b596b771118270fb07a1ccbbd0285"
   end
 
   depends_on "autoconf" => :build
   depends_on "mlton" => :build
+  depends_on arch: :x86_64 # https://github.com/melsman/mlkit/issues/115
   depends_on "gmp"
 
   def install
