@@ -8,6 +8,7 @@ class Mkp224o < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mkp224o"
+    rebuild 1
     sha256 cellar: :any, mojave: "19f9e5bde3fe5dfa4093e801add5529ccffc9677eb7479548bcf34ebbd52377b"
   end
 
