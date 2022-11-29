@@ -8,6 +8,7 @@ class Glui < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glui"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "ba99bfb121e8476dbd3f28feb3e41e946c1e094c476b3d93c47e000f09e3abe7"
   end
 
