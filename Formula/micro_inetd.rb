@@ -8,6 +8,7 @@ class MicroInetd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/micro_inetd"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "df96a09bb64b31dbbfd4ad7b06a3c8432b5586564df74bd3914002735b669a7a"
   end
 
