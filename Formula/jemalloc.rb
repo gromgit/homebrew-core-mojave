@@ -7,6 +7,7 @@ class Jemalloc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jemalloc"
+    rebuild 1
     sha256 cellar: :any, mojave: "c66784edd0335e74eb17e3052d74f4cdd4d505f162c7b3372842c92e0e742f67"
   end
 
