@@ -3,11 +3,10 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.42.tar.gz"
-  mirror "https://exiftool.org/Image-ExifTool-12.42.tar.gz"
-  sha256 "31d805ed59f2114f19c569f8a2aaffb89fa211453733d2c650d843a3e46236df"
+  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.50.tar.gz"
+  mirror "https://exiftool.org/Image-ExifTool-12.50.tar.gz"
+  sha256 "bce841fc5c10302f0f3ef7678c3bf146953a8c065c0ba18c41f734007e2ec0a8"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 1
 
   livecheck do
     url "https://exiftool.org/history.html"
@@ -16,8 +15,7 @@ class Exiftool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exiftool"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "18e98e200f05a54679b4b4822605e731165ac019ca673f3431c92b321a2c429e"
+    sha256 cellar: :any_skip_relocation, mojave: "701fd921067e418d2339305c801f21b85197bc15fd6174e15093b02d6f3664c9"
   end
 
   uses_from_macos "perl"
