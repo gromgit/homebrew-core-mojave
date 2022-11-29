@@ -8,7 +8,8 @@ class Iblinter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iblinter"
-    sha256 cellar: :any_skip_relocation, mojave: "95affe89a65a6305c0d2675701ac052561ed31fbab3fc33b26376e131ed95f64"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a1cd1ce75c81e1e5a5f1806e5fb8c737b60cbeae0c8d54340f6d08e283de142f"
   end
 
   depends_on xcode: ["10.2", :build]
