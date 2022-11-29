@@ -8,6 +8,7 @@ class Ghi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghi"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9f2de66ccc47b1b1721f3b5558312e58eacf89641eb59b23e16b8e47bbf9915a"
   end
 
