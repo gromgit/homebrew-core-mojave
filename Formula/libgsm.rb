@@ -12,6 +12,7 @@ class Libgsm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgsm"
+    rebuild 1
     sha256 cellar: :any, mojave: "efdc730bb3cba8631ad34e542355bc1ef33faf03abbc29a93c50196d84dee611"
   end
 
