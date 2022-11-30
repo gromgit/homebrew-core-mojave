@@ -12,6 +12,7 @@ class Xpipe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xpipe"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "78781679c3d7bea6ac9be9d10da89942ef500ad6f1a5644c9717081ee3fcbc08"
   end
 
