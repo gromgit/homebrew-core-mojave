@@ -12,7 +12,7 @@ class Openfst < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openfst"
-    rebuild 3
+    rebuild 4
     sha256 cellar: :any, mojave: "615820be68d9248ab94aad2ac3722abd9eb122d919eb2220828075d609e756d9"
   end
 
