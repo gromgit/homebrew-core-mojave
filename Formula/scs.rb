@@ -7,6 +7,7 @@ class Scs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scs"
+    rebuild 1
     sha256 cellar: :any, mojave: "ded70126486320652f3b8d402f2e4b647b79b4f8ed513a9933191e937ba7d032"
   end
 
