@@ -1,8 +1,8 @@
 class Spack < Formula
   desc "Package manager that builds multiple versions and configurations of software"
   homepage "https://spack.io"
-  url "https://github.com/spack/spack/archive/v0.18.1.tar.gz"
-  sha256 "d1491374ce280653ee0bc48cd80527d06860b886af8b0d4a7cf1d0a2309191b7"
+  url "https://github.com/spack/spack/archive/v0.19.0.tar.gz"
+  sha256 "b4225daf4f365a15caa58ef465d125b0d108ac5430b74d53ca4e807777943daf"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spack/spack.git", branch: "develop"
 
@@ -13,8 +13,7 @@ class Spack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spack"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3e61196fe5ea3e29d8c0e16f4f771c503a16b9d8dc62c88cfa336dde511974b6"
+    sha256 cellar: :any_skip_relocation, mojave: "ec35b7ce41593c506dd2cbf2761de1863c45836501a1fa637a15c448e5da5f61"
   end
 
   uses_from_macos "python"
