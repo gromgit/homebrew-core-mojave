@@ -8,6 +8,7 @@ class Picocom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/picocom"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "039291c11406dc539a67eace144367ac5376907b739d589f4cf3c019b4ad1fff"
   end
 
