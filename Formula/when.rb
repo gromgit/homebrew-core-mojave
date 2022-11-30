@@ -8,7 +8,8 @@ class When < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/when"
-    sha256 cellar: :any_skip_relocation, mojave: "63155f7606d0225a1c48c8d801dc8f48201da7cd7fe1c723c7fd9e108acae0bf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dfecfbb0b3406bffc885574f3bb6328d3a586295d36bc889ed2ea57a97417ad6"
   end
 
   def install
