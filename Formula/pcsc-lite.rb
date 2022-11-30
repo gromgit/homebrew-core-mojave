@@ -12,6 +12,7 @@ class PcscLite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcsc-lite"
+    rebuild 1
     sha256 cellar: :any, mojave: "0b67cb77d942515b824e46a8af119656d298561aa29624efa60c508edb438da3"
   end
 
