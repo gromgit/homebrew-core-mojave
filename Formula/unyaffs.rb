@@ -13,8 +13,8 @@ class Unyaffs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unyaffs"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "ffbdfa1e9894bbed5530f1df28ca89de765a950824afe1c236cd7a460ef5cac6"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "68296422811e0e3c065b8f0c2f91f6ce6781f6a42ac188b6ab9d4e4869471172"
   end
 
   def install
