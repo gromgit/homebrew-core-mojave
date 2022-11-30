@@ -8,11 +8,15 @@ class Vifm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vifm"
-    sha256 mojave: "74704e29d6628780363dd664d32730cfa64eeb47602857730209dc3a545eca70"
+    rebuild 1
+    sha256 mojave: "eb1829a6203b7f6ca3aaa133e123eeabe6f34b610854826441d2ba8f290f6b3d"
   end
 
-  uses_from_macos "groff" => :build
   uses_from_macos "ncurses"
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "groff" => :build
+  end
 
   def install
     system "./configure", "--disable-dependency-tracking",
