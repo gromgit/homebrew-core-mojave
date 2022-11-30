@@ -1,13 +1,13 @@
 class Weaver < Formula
   desc "Command-line tool for Weaver"
   homepage "https://github.com/scribd/Weaver"
-  url "https://github.com/scribd/Weaver/archive/1.1.3.tar.gz"
-  sha256 "d1fd7d767a4b5cea852378046c6bc9eb50a252aeb3dc96feb5c0128c60472f96"
+  url "https://github.com/scribd/Weaver/archive/1.1.4.tar.gz"
+  sha256 "d3bb488a618fa96e0c1b50db317ae7e9da9cb62d42c2da643731aa94f2fcb724"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/weaver"
-    sha256 cellar: :any_skip_relocation, mojave: "76c5839b875b9fae93b09197547f962822ddbb3e8e1c59dfba104a989eae73de"
+    sha256 cellar: :any_skip_relocation, mojave: "e9e6e3aa1c81cf178907dbb7e9adc12671b8f5722a0e80567eb8f47b81f1532a"
   end
 
   depends_on xcode: ["11.2", :build]
