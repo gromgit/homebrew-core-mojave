@@ -9,7 +9,8 @@ class PerlBuild < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/perl-build"
-    sha256 cellar: :any_skip_relocation, mojave: "42d9bf13a08d62c3a191540f6b159534d9046b8682d6e08af61a021acdb38dad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6faae2b5a1e599441947e8266c105fa48352ed0fd4c0722cef97d3885dff8f0b"
   end
 
   uses_from_macos "perl"
