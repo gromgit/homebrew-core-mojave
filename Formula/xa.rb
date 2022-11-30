@@ -12,6 +12,7 @@ class Xa < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xa"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "3cc635df71dcab94644d9feb5bb34f541443a16dc3c7bde72e9e4828e851014b"
   end
 
