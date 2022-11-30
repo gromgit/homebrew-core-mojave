@@ -8,7 +8,8 @@ class Polyml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/polyml"
-    sha256 mojave: "60bd333e7bf57e6c03f486f6964ae2a317c93286050e6e6f97dd435d8ed5751e"
+    rebuild 1
+    sha256 mojave: "bd6f4ca04283e7fcc0b55f4ee93f662c9e427343e42b0ba84f7f80a32efee0e9"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
