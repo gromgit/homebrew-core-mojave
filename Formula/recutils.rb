@@ -8,7 +8,8 @@ class Recutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/recutils"
-    sha256 mojave: "ada1f13781b8907524ceb508c9c1e210ed5153c9ed9af83442b7b8c3944ac829"
+    rebuild 1
+    sha256 mojave: "cd8428c57b7a45afb4f484344a98aa386e8326875d7eafc35786d026c6b38c53"
   end
 
   on_linux do
