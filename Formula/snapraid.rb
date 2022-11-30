@@ -7,6 +7,7 @@ class Snapraid < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snapraid"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "3c273de7e8058988e5c8417c26992e0b237e397dcf385df5017f09ef9da50520"
   end
 
