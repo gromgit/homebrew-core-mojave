@@ -8,7 +8,7 @@ class Pacparser < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pacparser"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "6688910c11d07d119481d1c029e3e5428a89aee18a522ed976d7537f300a91c2"
   end
 
