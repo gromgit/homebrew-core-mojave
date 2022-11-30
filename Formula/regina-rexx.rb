@@ -8,7 +8,8 @@ class ReginaRexx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regina-rexx"
-    sha256 mojave: "2f2720be070541292abeb3c23f9ae2515596ed3d3d048c619ac3c4d6ec7e00c6"
+    rebuild 1
+    sha256 mojave: "7cd8a44c8886454337bfa2d53dbb3c95ccfdf74ff60e9fcba94c03be9dd586a9"
   end
 
   uses_from_macos "libxcrypt"
