@@ -9,8 +9,8 @@ class Nu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nu"
-    rebuild 1
-    sha256 cellar: :any, mojave: "120f4007605aea6ddf0f48ae62ce7664ae7e8b91bd8b9b13d7a46867bb43be64"
+    rebuild 2
+    sha256 cellar: :any, mojave: "74f13551941242ebc94eeef183c1db5bcc0c7f0fd57ab158b56294fe809fbcf4"
   end
 
   depends_on "pcre"
