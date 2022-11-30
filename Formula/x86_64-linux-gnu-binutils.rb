@@ -12,11 +12,13 @@ class X8664LinuxGnuBinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x86_64-linux-gnu-binutils"
-    rebuild 1
-    sha256 mojave: "fc7c0658cc9931247d2a7559fbf00c2cbd5905b2e1eeb8c48bc8791e29d53a6d"
+    rebuild 2
+    sha256 mojave: "bdc1ccacdc176931a8d93879aafaf9a78a5807578391222ec59ad1d93bbbf2e1"
   end
 
-  uses_from_macos "texinfo"
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   on_linux do
     keg_only "it conflicts with `binutils`"
