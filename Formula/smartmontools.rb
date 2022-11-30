@@ -8,6 +8,7 @@ class Smartmontools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/smartmontools"
+    rebuild 1
     sha256 mojave: "c35b667e808612233e8a77cd8a1c841eba03b5cafa12fc23c2fbd84fd504ee49"
   end
 
