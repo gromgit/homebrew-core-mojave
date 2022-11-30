@@ -7,8 +7,8 @@ class Pcalc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pcalc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7bfc28a1411b4cfb9cce500a6fcaa9ac3025db2c497ced839b2d7f5449efe751"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "1f17f0e143548512eeb8604fff490e087b93b709582add1e954a8678ef6de0f8"
   end
 
   uses_from_macos "ncurses"
