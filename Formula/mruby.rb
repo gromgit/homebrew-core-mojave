@@ -8,7 +8,8 @@ class Mruby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mruby"
-    sha256 cellar: :any_skip_relocation, mojave: "3f8e590035804fb16ec804967756d066f4004fc285cd7e7d56e4de23209baaa9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a630faf97159e0c37274e34fedd2256264209fff8c86f366f5d1b4c1b3091843"
   end
 
   depends_on "bison" => :build
