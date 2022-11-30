@@ -12,6 +12,7 @@ class Sponge < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sponge"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "9683b6109e9b4e27c4250bfd5aec439449630bacf04944486f89e9a21b2c70a9"
   end
 
