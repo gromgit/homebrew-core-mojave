@@ -17,6 +17,7 @@ class Nauty < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nauty"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "477deed1bbab9d1038b638085b2e4c494f2418b8e9ec74ad0fc0cb89e7d7c387"
   end
 
