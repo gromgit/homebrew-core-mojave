@@ -7,7 +7,8 @@ class Mp4v2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mp4v2"
-    sha256 cellar: :any, mojave: "4c96eed2a552c77c679e45976fa3be81217353cce2216245bcaa1bfdaeace786"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f832876fd4608e39bfdf2858652f2a700b190750bd8f012dd989b8b097a4cbda"
   end
 
   conflicts_with "bento4",
