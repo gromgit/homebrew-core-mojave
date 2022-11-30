@@ -8,6 +8,7 @@ class ZshFastSyntaxHighlighting < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zsh-fast-syntax-highlighting"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "196df85afadfaeac5121915b914bab28a77e6fdbf6d4bb3e5d0fc6f7e8c4dbbb"
   end
 
