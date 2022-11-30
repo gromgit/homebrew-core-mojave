@@ -8,6 +8,7 @@ class TeensyLoaderCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/teensy_loader_cli"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "53d3820c12bd41cfe6b24b8d6502ae6b977a8a14b55688bc01ae79c4c0cd0010"
   end
 
