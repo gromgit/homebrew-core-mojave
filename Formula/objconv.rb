@@ -19,6 +19,7 @@ class Objconv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/objconv"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "7e29c2c500179bb30fb4184401573bdce6d42b6098e3a1286718c2fe4f148548"
   end
 
