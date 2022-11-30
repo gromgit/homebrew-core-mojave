@@ -13,7 +13,8 @@ class Sfk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sfk"
-    sha256 cellar: :any_skip_relocation, mojave: "bf396bbe089fef46f2c6fcbc7c6d22eb7620ee402bc31ffcba5833a9bc5888cf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "aaa8a990e053aa21797536cc83f4813daf86257fd8c3be1442aa1b1d5cf6dfdc"
   end
 
   def install
