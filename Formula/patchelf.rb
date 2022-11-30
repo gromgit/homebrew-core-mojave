@@ -1,11 +1,9 @@
 class Patchelf < Formula
   desc "Modify dynamic ELF executables"
   homepage "https://github.com/NixOS/patchelf"
-  url "https://github.com/NixOS/patchelf/releases/download/0.15.0/patchelf-0.15.0.tar.bz2"
-  sha256 "f4036d3ee4d8e228dec1befff0f6e46d8a40e9e570e0068e39d77e62e2c8bdc2"
+  url "https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0.tar.bz2"
+  sha256 "45d76f4a31688a523718ec512f31650b1f35d1affec3eafeb3feeb5448d341e1"
   license "GPL-3.0-or-later"
-  revision 1
-  head "https://github.com/NixOS/patchelf.git", branch: "master"
 
   livecheck do
     url :stable
@@ -14,8 +12,14 @@ class Patchelf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/patchelf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9655a84b2287f7f0ce4d4010f6572428b8ab94fdc544b08d907a7a4704e8b985"
+    sha256 cellar: :any_skip_relocation, mojave: "c089a93c1b01389cc2aaeca73c009b6218c34503f31e52f1d1e451e2264a632b"
+  end
+
+  head do
+    url "https://github.com/NixOS/patchelf.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
   end
 
   fails_with gcc: "5" # Needs std::optional
@@ -33,6 +37,7 @@ class Patchelf < Formula
       ENV["HOMEBREW_RPATH_PATHS"] = nil
     end
 
+    system "./bootstrap.sh" if build.head?
     system "./configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules"
