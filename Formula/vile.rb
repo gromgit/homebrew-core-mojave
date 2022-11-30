@@ -7,15 +7,19 @@ class Vile < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vile"
-    sha256 mojave: "09f0973f07fa6262769ada8c826815219b3ff739e3f494403618384e2b66ab05"
+    rebuild 1
+    sha256 mojave: "56abb68a9b7de5db03ab0afff5701c1ed0b6398108c64ba5700571a1b4c3f344"
   end
 
   uses_from_macos "flex" => :build
-  uses_from_macos "groff" => :build
   uses_from_macos "expect" => :test
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "perl"
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "groff" => :build
+  end
 
   def install
     system "./configure", *std_configure_args,
