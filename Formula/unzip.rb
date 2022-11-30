@@ -14,6 +14,7 @@ class Unzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unzip"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "aa7d2f05db310d61bf5f35c4401c0193c13a6e676bb571bdfa5989bde1046c74"
   end
 
