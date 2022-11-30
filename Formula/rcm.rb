@@ -14,6 +14,7 @@ class Rcm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rcm"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6b4023f9e2b482466d619cd2597001e167da9abd8d8a4306f79d7de32494f08a"
   end
 
