@@ -7,6 +7,7 @@ class Yank < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yank"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6960130f5546c3db0973c3fe8c7bcee5c971e9427d5cf30436d1afc8a2718c97"
   end
 
