@@ -1,14 +1,14 @@
 class N < Formula
   desc "Node version management"
   homepage "https://github.com/tj/n"
-  url "https://github.com/tj/n/archive/v9.0.0.tar.gz"
-  sha256 "37a987230d1ed0392a83f9c02c1e535a524977c00c64a4adb771ab60237be1c6"
+  url "https://github.com/tj/n/archive/v9.0.1.tar.gz"
+  sha256 "ad305e8ee9111aa5b08e6dbde23f01109401ad2d25deecacd880b3f9ea45702b"
   license "MIT"
   head "https://github.com/tj/n.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/n"
-    sha256 cellar: :any_skip_relocation, mojave: "22fc6ee54f7100c38558c8bbc044a6e5709088ef9ea9c6085265f6eda61d400b"
+    sha256 cellar: :any_skip_relocation, mojave: "ba3883ee8187e4990fba2df1315831f211e579ecd83f680f582c9f33af541a34"
   end
 
   def install
