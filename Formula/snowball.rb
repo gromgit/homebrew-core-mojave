@@ -7,6 +7,7 @@ class Snowball < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/snowball"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "791297c02b70b32946061c2d3ee49167da82e1f6effd6742b833495dc2ed2d3f"
   end
 
