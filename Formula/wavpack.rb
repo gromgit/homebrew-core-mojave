@@ -7,6 +7,7 @@ class Wavpack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wavpack"
+    rebuild 1
     sha256 cellar: :any, mojave: "60f2eebdb9c92023f6af5ce05e7f906ff2723da800034ca193115223928020fc"
   end
 
