@@ -12,7 +12,7 @@ class Stm32flash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stm32flash"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "0118a701843f0d74899fdba66d41faff5fb9113bf842a98ef107400d429d7d24"
   end
 
