@@ -7,6 +7,7 @@ class Pgformatter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgformatter"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "e475bf116f1638ceafe659f0dd8685a70b9b2466256e927de8d14dd8655a7b3f"
   end
 
