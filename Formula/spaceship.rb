@@ -1,14 +1,14 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
   homepage "https://spaceship-prompt.sh"
-  url "https://github.com/spaceship-prompt/spaceship-prompt/archive/v4.6.0.tar.gz"
-  sha256 "30e67f867262606db5d7f9a108b62a75a360e202074337f122ca6459368e5668"
+  url "https://github.com/spaceship-prompt/spaceship-prompt/archive/v4.10.1.tar.gz"
+  sha256 "6c55a2ff66df95425c5fe7cb93a85c52b5b2959f1e246984580b0b291e02089a"
   license "MIT"
   head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spaceship"
-    sha256 cellar: :any_skip_relocation, mojave: "88e804c48c8277db7d6fae777afb205468864fdbf5a5813d5bcefbd05c083301"
+    sha256 cellar: :any_skip_relocation, mojave: "d37ac69d04f1168ef48d91697a50182964d53dcd94a895c799535c9b5c80cdac"
   end
 
   depends_on "zsh-async"
