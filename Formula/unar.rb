@@ -9,7 +9,8 @@ class Unar < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unar"
-    sha256 cellar: :any, mojave: "75d83d2a47f9a44b95ce68dfe5a56ff4557288eef42ddf61fef239426a6b94c1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8fe26b651711b0ae35e8ddc9572f6b49c4e3b86f5874f676f1d9ae3a6f76fbc4"
   end
 
   depends_on xcode: :build
