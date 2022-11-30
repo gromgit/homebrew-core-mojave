@@ -13,6 +13,7 @@ class Sic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sic"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "89373db152631c65f7cf4b00596028e55031bd74ce1aa956bb06361cf2623340"
   end
 
