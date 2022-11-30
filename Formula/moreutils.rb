@@ -12,7 +12,8 @@ class Moreutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/moreutils"
-    sha256 cellar: :any_skip_relocation, mojave: "3a8129953d482fdd017107177a5da77dacb18ef24a2d5ab237042da6653d919e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e636c6e8d75ae8691ded970f6d34f4d2b05ea3756a1cb13ebe0d2de67676a7dc"
   end
 
   depends_on "docbook-xsl" => :build
