@@ -8,7 +8,8 @@ class Rswift < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rswift"
-    sha256 cellar: :any_skip_relocation, mojave: "23c4405071898027c3ef894bc5be1bd28001b2bf8cb4e3e7a95b25ee50973b46"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "04afe6ec87f5f5aad3cc66d425b1eb71107200f703ddf160f37445c954b58f78"
   end
 
   depends_on :macos # needs CoreGraphics, a macOS-only library
