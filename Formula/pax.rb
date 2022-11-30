@@ -7,6 +7,7 @@ class Pax < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pax"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "1ee6b0840ec0b2f9d64decc61b302066c8b317e10a38b507f816833ad218dd82"
   end
 
