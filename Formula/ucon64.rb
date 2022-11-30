@@ -13,7 +13,8 @@ class Ucon64 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ucon64"
-    sha256 mojave: "0f47a5a2547239d17aff2aa2c0304f67d64b9686da47552f1c136630f0c0550c"
+    rebuild 1
+    sha256 mojave: "781d2d110bc001465b54fad87f3756786ea306280cd9fa16dbc88e173c3e1bc4"
   end
 
   uses_from_macos "unzip" => [:build, :test]
