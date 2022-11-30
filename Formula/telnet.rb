@@ -7,7 +7,8 @@ class Telnet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/telnet"
-    sha256 cellar: :any_skip_relocation, mojave: "c4b39922253e22bcfc2ada9ff0e5d75ace75719015b11fa5fc373d2d458e40d4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "85a02309414cfea24b17bd0547261aef3386fabef28e6eeedfcf5a48453d9e02"
   end
 
   depends_on xcode: :build
@@ -16,8 +17,8 @@ class Telnet < Formula
   conflicts_with "inetutils", because: "both install 'telnet' binaries"
 
   resource "libtelnet" do
-    url "https://opensource.apple.com/tarballs/libtelnet/libtelnet-13.tar.gz"
-    sha256 "e7d203083c2d9fa363da4cc4b7377d4a18f8a6f569b9bcf58f97255941a2ebd1"
+    url "https://github.com/apple-oss-distributions/libtelnet/archive/refs/tags/libtelnet-13.tar.gz"
+    sha256 "4ffc494a069257477c3a02769a395da8f72f5c26218a02b9ea73fa2a63216cee"
   end
 
   def install
