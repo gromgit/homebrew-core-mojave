@@ -8,6 +8,7 @@ class Rhash < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rhash"
+    rebuild 1
     sha256 mojave: "94dcacaf27db0630018d8cb2415c8fc88b633e429960eaa8d1066e6d18078ac0"
   end
 
