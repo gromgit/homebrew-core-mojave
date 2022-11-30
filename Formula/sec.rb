@@ -7,6 +7,7 @@ class Sec < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sec"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "30b242f22b62c67d6b5e862fd9884ec05b327e33ee6d146137b3566e0d2a178b"
   end
 
