@@ -19,6 +19,7 @@ class Screen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/screen"
+    rebuild 1
     sha256 mojave: "5431d9997dac6ea3abfb006662c498aef8f2f4df998e9ae43408e0e3f334c2d5"
   end
 
