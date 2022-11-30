@@ -12,8 +12,8 @@ class Rtmidi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rtmidi"
-    rebuild 3
-    sha256 cellar: :any, mojave: "7417c9cd7a82220e7c9a8a00d26789d345407b1c5ee94aaf294f0cd0c2c76605"
+    rebuild 4
+    sha256 cellar: :any, mojave: "890110463afb13e2d0e4ac91d488937ac9756b2faac1fa714e5f26e0f03c3bb2"
   end
 
   head do
