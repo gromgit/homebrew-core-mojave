@@ -8,7 +8,7 @@ class Nbsdgames < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nbsdgames"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "e08248dd94e9506dc2ad43bad89d6ece698d307c713ae8e9ee1143e7901f7cdb"
   end
 
