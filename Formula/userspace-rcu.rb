@@ -12,6 +12,7 @@ class UserspaceRcu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/userspace-rcu"
+    rebuild 1
     sha256 cellar: :any, mojave: "579d25d15e27449ecdfd4dec2df89d30eba1f8d0bba4b7f74001a35a95d12e0c"
   end
 
