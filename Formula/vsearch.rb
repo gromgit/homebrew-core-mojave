@@ -7,6 +7,7 @@ class Vsearch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vsearch"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "656147ec44a050b03f74be338cebc43888d4384083bea162780ca9541b212cfb"
   end
 
