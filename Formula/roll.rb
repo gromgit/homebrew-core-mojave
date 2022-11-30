@@ -7,7 +7,8 @@ class Roll < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/roll"
-    sha256 cellar: :any_skip_relocation, mojave: "529dd0b7277a3ff57155727d3d68d2ecd3549be4627fe4bc20f6f06cadde6d5f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "68dcedb5946a88c255fb8dd9f898fb9109101e4aed9d1c690e921a146bdd52b1"
   end
 
   head do
