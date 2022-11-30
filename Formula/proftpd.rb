@@ -19,7 +19,8 @@ class Proftpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proftpd"
-    sha256 mojave: "66000095ec11fb459b1390dc541cce3d9dd491ac576d16ba4bd0587031e2ecdb"
+    rebuild 1
+    sha256 mojave: "0e849aa9478982ab071cb5ec2777902dde3c99ab0c0284794a517ea929f0d7e6"
   end
 
   uses_from_macos "libxcrypt"
