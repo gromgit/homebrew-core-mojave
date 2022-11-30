@@ -8,6 +8,7 @@ class Mtr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mtr"
+    rebuild 1
     sha256 cellar: :any, mojave: "39ba922bb1f0c0a263a20948ac08474ce86539414dd2568af2052e22883f13f8"
   end
 
