@@ -13,7 +13,8 @@ class Passwdqc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/passwdqc"
-    sha256 cellar: :any, mojave: "5ebb25c4bd18deff7321754fc97cfce049e04ba9bd6ffcb01b5275d80587d91a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2a91ae0830e6597ff362d38d9e8633537f4149083df4cf2d53d4cf92478e3942"
   end
 
   uses_from_macos "libxcrypt"
