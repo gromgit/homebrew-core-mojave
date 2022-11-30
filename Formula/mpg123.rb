@@ -1,9 +1,9 @@
 class Mpg123 < Formula
   desc "MP3 player for Linux and UNIX"
   homepage "https://www.mpg123.de/"
-  url "https://www.mpg123.de/download/mpg123-1.30.2.tar.bz2"
-  mirror "https://downloads.sourceforge.net/project/mpg123/mpg123/1.30.2/mpg123-1.30.2.tar.bz2"
-  sha256 "c7ea863756bb79daed7cba2942ad3b267a410f26d2dfbd9aaf84451ff28a05d7"
+  url "https://www.mpg123.de/download/mpg123-1.31.1.tar.bz2"
+  mirror "https://downloads.sourceforge.net/project/mpg123/mpg123/1.31.1/mpg123-1.31.1.tar.bz2"
+  sha256 "5dcb0936efd44cb583498b6585845206f002a7b19d5066a2683be361954d955a"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -13,7 +13,7 @@ class Mpg123 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mpg123"
-    sha256 mojave: "510b8a46b22ee74c6876f09ed422cf25abbdaea42a26d66864747f7427f5c069"
+    sha256 mojave: "d92158c39147c9fcf6f4fa54e33d63b0dcd9094c1165d9428591c3e5a6c2bffd"
   end
 
   def install
