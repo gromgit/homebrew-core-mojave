@@ -14,6 +14,7 @@ class Premake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/premake"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "d9d158c41c99c309f13903902766106d705c81c87f33737f66735d0ae7311c6e"
   end
 
