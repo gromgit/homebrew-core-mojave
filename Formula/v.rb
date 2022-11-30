@@ -8,6 +8,7 @@ class V < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/v"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "18192fa0168a1a7750f041306e4b308bd0dc36373c8dc8faac7e54e94cfbdd81"
   end
 
