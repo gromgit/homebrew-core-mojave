@@ -9,6 +9,7 @@ class Neatvi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neatvi"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "cbf90d3282b63a1772c40988caede61ea99b73018785959cf6c92284e8927e4a"
   end
 
