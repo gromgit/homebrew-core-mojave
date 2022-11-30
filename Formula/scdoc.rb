@@ -7,7 +7,7 @@ class Scdoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scdoc"
-    rebuild 3
+    rebuild 4
     sha256 cellar: :any_skip_relocation, mojave: "49ee3557f4ff1757260d4224d6118ab42de0eb80a9b1b90cd0283ad3e9a629b0"
   end
 
