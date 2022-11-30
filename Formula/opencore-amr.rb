@@ -12,6 +12,7 @@ class OpencoreAmr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencore-amr"
+    rebuild 1
     sha256 cellar: :any, mojave: "1507156780269559b8b82b30a909a82813a023a726fd4922c26d21c567db52e3"
   end
 
