@@ -8,7 +8,8 @@ class Pgbadger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgbadger"
-    sha256 cellar: :any_skip_relocation, mojave: "eccf4e6afdc27eaca71528218329fca5a525555e54d7cfada49c5fde15a275a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "55ff20cb46b588b7b7913a5fc8e64dd771e173fc7f51afd0263b5bce87f23bde"
   end
 
   def install
