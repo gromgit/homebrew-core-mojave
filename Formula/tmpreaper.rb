@@ -13,6 +13,7 @@ class Tmpreaper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tmpreaper"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "f401ba4b2f518bf971c396566252cec7f29ccfd3e14b134501750b0864764856"
   end
 
