@@ -13,6 +13,7 @@ class Picat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/picat"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "1f19f33b01ce670dbdaf2725ea0097b1067b72a4a7c9648a9f081d4a07a70366"
   end
 
