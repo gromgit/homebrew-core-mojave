@@ -12,8 +12,8 @@ class YazeAg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yaze-ag"
-    rebuild 1
-    sha256 mojave: "15f49e59757bafbffa95ffb24202be2e2390a311318618632b17206b2c03f29d"
+    rebuild 2
+    sha256 mojave: "0071073b74cea2e74c7977e0068ad0a0a0959e51e45eac9d61f15bab11bdafe3"
   end
 
   def install
