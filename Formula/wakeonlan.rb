@@ -7,6 +7,7 @@ class Wakeonlan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wakeonlan"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "a54812034696435a392dd80980cd74b56c8dc2bc30a5d001b679637a00ce6b8e"
   end
 
