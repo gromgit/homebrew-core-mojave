@@ -7,6 +7,7 @@ class WrenCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wren-cli"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "b4115cdd4d07bb36eded9c0dbe0f11ac18990dfffcd27087eb271ebdd324de25"
   end
 
