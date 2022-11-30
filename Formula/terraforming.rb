@@ -8,8 +8,8 @@ class Terraforming < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/terraforming"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "01348aa9319307d5eee5576453f41a9c08853c7e1e77bd00b9194c6b2a97f597"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, mojave: "3f050890cf6bf1d1fb017ec8213d9c1cb389adcc398cb524c207d78a6efdaabd"
   end
 
   # Upstream declared project "no longer actively maintained" on 2021-12-11.
