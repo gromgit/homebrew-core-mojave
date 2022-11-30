@@ -8,6 +8,7 @@ class Pgpdump < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pgpdump"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6ebc8152402418b0c261b72e66a5857bc0f19cc9e17d9c97811562376ca50dfb"
   end
 
