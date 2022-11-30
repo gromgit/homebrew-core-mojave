@@ -8,6 +8,7 @@ class Termbox < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/termbox"
+    rebuild 1
     sha256 cellar: :any, mojave: "842dfc8467705f8f3c2df0453529fae62e2828e0ce1a00087f1a3fecbd40baa4"
   end
 
