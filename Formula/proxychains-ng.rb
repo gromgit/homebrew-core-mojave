@@ -8,6 +8,7 @@ class ProxychainsNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proxychains-ng"
+    rebuild 1
     sha256 mojave: "45ab6e6ea80284908734c6a99be9438a6d32875141ebbecb57f72fa3822fd90f"
   end
 
