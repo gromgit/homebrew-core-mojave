@@ -7,7 +7,8 @@ class Zlog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zlog"
-    sha256 cellar: :any, mojave: "a5ddb94a9439dcb8d34b6e90a6ebaa4b150c44b49a3251804537ecdf1c93a7d2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f26bcc31c8968d9a503a84edbb4427c7bb08055359b58a6e5be27e8855ebb08a"
   end
 
   def install
