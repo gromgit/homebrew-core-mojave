@@ -12,6 +12,7 @@ class Regldg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/regldg"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "e9a7589f73cb855f78f61d8e68865bde4a3c332ed19d3b111249080d175bf4d7"
   end
 
