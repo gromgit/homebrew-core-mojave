@@ -12,7 +12,7 @@ class Stk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/stk"
-    rebuild 3
+    rebuild 4
     sha256 cellar: :any_skip_relocation, mojave: "03901a87535f700ea2628592e9e3b564695ec74f98e8b346013edae4d56c0b70"
   end
 
