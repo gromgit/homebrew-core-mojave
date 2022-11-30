@@ -12,6 +12,7 @@ class Xorgproto < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xorgproto"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "d6deb2e4712bdd55eadfdcd7156814a6c42c9d94eb5cda72b89c9e4221a8a99d"
   end
 
