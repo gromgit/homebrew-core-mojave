@@ -13,7 +13,8 @@ class Radare2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/radare2"
-    sha256 mojave: "6bfa1cefd0de2bdd6a3fcaed335e40d647f88cf2b3e688b743618c91a22fa880"
+    rebuild 1
+    sha256 mojave: "33b613376c10b39e9670ab91f4d54da3acf8f4ce368cdb3c74b885f2716fb830"
   end
 
   def install
