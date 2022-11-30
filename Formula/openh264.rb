@@ -8,6 +8,7 @@ class Openh264 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openh264"
+    rebuild 1
     sha256 cellar: :any, mojave: "46741288d8c76b24ae50f80a018671ede01be198d30e8b0ef07471ad809059fc"
   end
 
