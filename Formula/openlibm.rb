@@ -7,6 +7,7 @@ class Openlibm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openlibm"
+    rebuild 1
     sha256 cellar: :any, mojave: "0f540640e981e61068c0cc7b36eb6d599f97adc054a9d4b24ac016d983b2a1d3"
   end
 
