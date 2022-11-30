@@ -8,6 +8,7 @@ class Mysqltuner < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysqltuner"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "dde5020c41fd2f0a91dc626bff3a72649f78498d5bdcd7098dc60ef7cb323381"
   end
 
