@@ -12,7 +12,8 @@ class SqlTranslator < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sql-translator"
-    sha256 cellar: :any_skip_relocation, mojave: "449537ed6f9855112752cf8e4b94367c04b0e7df60ea33be9de6b93f32140d85"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e9281eef67a938498efe2b492921cf73bf2f328e0766dc47e4a84a0ee472c588"
   end
 
   uses_from_macos "perl"
