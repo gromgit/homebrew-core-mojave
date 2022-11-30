@@ -7,12 +7,16 @@ class Netmask < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netmask"
-    sha256 cellar: :any_skip_relocation, mojave: "0205b6aff148b10473c30f9838adf9c857b800d272c8505c74cde2bf17d076f3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "038a077363a2084e99dc66366e3e257a07b58e542c4af18af69100f93cfb7940"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  uses_from_macos "texinfo" => :build
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   def install
     system "./autogen"
