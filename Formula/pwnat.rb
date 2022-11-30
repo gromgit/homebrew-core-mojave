@@ -8,7 +8,7 @@ class Pwnat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pwnat"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "206d078a98622c104f60a9e67e9819f6821488aca1ced524e1d498901a58288a"
   end
 
