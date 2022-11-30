@@ -40,14 +40,16 @@ class X264 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/x264"
-    rebuild 1
-    sha256 cellar: :any, mojave: "7f06ff02a4bc1b4febb6a788a3c7655cffbadfa9a5deb49e66d6369561d72376"
+    rebuild 2
+    sha256 cellar: :any, mojave: "a3e0ca3e00d44d3976a66ffeb26a59c0b40af1be392cb33eaf159ff2695acdd2"
   end
-
-  depends_on "nasm" => :build
 
   on_macos do
     depends_on "gcc" if DevelopmentTools.clang_build_version <= 902
+  end
+
+  on_intel do
+    depends_on "nasm" => :build
   end
 
   # https://code.videolan.org/videolan/x264/-/commit/b5bc5d69c580429ff716bafcd43655e855c31b02
