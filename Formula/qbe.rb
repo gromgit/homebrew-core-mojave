@@ -12,6 +12,7 @@ class Qbe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/qbe"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "b4320301d2895474d4307790b7df8ba4b7993500474e1275af56dd7b70233287"
   end
 
