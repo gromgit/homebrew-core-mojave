@@ -12,6 +12,7 @@ class Prips < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/prips"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "f9fbae9e11ef278264eb7bca298070b73d21cafd3d24789d47dde39bc474bafc"
   end
 
