@@ -12,6 +12,7 @@ class S6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s6"
+    rebuild 1
     sha256 mojave: "11166a736bf0feab87a86bb0e48f07a554c74e8db17e24f78725e796d961c0ba"
   end
 
