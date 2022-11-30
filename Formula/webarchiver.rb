@@ -6,13 +6,9 @@ class Webarchiver < Formula
   head "https://github.com/newzealandpaul/webarchiver.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01db745b1093daa64bf029a355126fabade68c7a2126f8cbec2b2db22d812628"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "50bf552bad7141e95abb811a7bb8e200747183486e3875524281175c83e81941"
-    sha256 cellar: :any_skip_relocation, monterey:       "3525514b45d1ca489e33f62150d803354902264444ab78ecbfdbdfcefbc8c27d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b25c37b0ebcc11c2e38b75f094e8772fbb5864fc5e32d67dd5d35e398f8a6ed4"
-    sha256 cellar: :any_skip_relocation, catalina:       "7413d45de93fbe6fcc3bc9af073a2bb063cdad7f3479d6bf890634d48761df22"
-    sha256 cellar: :any_skip_relocation, mojave:         "ffd1e97727c1551d6bfc63ba3980469ca7be4c99bbd89c1036671a1e3463e3e3"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "fe85ee50f8a3da76dcbcd8bb24c1bea05bde33525055c4d471c8b07fccadfa65"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webarchiver"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f8c5615d92a4376036a30cc7bdb388088180aac6f0b303e88cc42eebb1662f2e"
   end
 
   depends_on xcode: ["6.0.1", :build]
