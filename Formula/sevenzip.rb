@@ -13,6 +13,7 @@ class Sevenzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sevenzip"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "90bc141c8ea453c97f5534c1c5a1324ec3a1121704c846193c079d8cbef40d22"
   end
 
