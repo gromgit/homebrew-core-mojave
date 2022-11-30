@@ -12,6 +12,7 @@ class Pkgconf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pkgconf"
+    rebuild 1
     sha256 mojave: "a6e5ecaf1bd61ef679393fee010e04240325c1ccce1e6126de411aab021aad4f"
   end
 
