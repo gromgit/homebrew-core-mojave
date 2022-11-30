@@ -8,7 +8,8 @@ class Rush < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rush"
-    sha256 mojave: "6256ccafd84e65f63108d57112c28dd560c08bfb225013e8b081286a9ab9acf7"
+    rebuild 1
+    sha256 mojave: "f470f0787d189c647e38fdf4aac7785a55fe17cdf7c4a831ceb5590dd51c149d"
   end
 
   def install
