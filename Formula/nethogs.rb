@@ -7,6 +7,7 @@ class Nethogs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nethogs"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "893995526f80faa733a6c0361b72ef203297b59f5308c80b8cb5a61b715e59b0"
   end
 
