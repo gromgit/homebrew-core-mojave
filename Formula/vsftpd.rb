@@ -13,8 +13,8 @@ class Vsftpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vsftpd"
-    rebuild 2
-    sha256 mojave: "9121e429635fe3e47f63e13495c2df1e5e43b577d0bc0fe76ab7d11957bd8ad2"
+    rebuild 3
+    sha256 mojave: "82e9f30bce5be21e2a0c3d535450e3ed5d24873fa72f8238aec304b539748dfe"
   end
 
   uses_from_macos "perl" => :build
