@@ -12,7 +12,8 @@ class Nspr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nspr"
-    sha256 cellar: :any, mojave: "38e5637df7eb160e452bfced796aab25c19ef750b9a8ffde5a41357c8e347ae8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "fc80a3a943a8a47344895a9e4ddd40b912f27d11df9d080870b562df07d38942"
   end
 
   def install
