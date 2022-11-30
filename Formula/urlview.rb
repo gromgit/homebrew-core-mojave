@@ -16,6 +16,7 @@ class Urlview < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/urlview"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "81a4f1e7c09b3d7a492aad58c821338b5e78ea0b2418b2b536e76d3dab0d197e"
   end
 
