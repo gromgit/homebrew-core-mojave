@@ -1,13 +1,13 @@
 class Odpi < Formula
   desc "Oracle Database Programming Interface for Drivers and Applications"
   homepage "https://oracle.github.io/odpi/"
-  url "https://github.com/oracle/odpi/archive/v4.5.0.tar.gz"
-  sha256 "f87042ed1467f158e729f6e763d4467fd4bca4ab7005eefcf6a6b7d6fb210b0b"
+  url "https://github.com/oracle/odpi/archive/v4.6.0.tar.gz"
+  sha256 "fdb07c734c59b807787b5677ef23edd52766bd2d3cf075d285994793edeb40c5"
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/odpi"
-    sha256 cellar: :any, mojave: "cf1fbb5821ffa463c78c7c4f135591ff34a06e77c51af90d421de300a8885b89"
+    sha256 cellar: :any, mojave: "61b0bb1ec421ad6c6e2204c11b5c1bcfac5d881a58468b4a4e1573c4d6488304"
   end
 
   def install
