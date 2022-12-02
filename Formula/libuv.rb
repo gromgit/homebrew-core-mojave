@@ -13,7 +13,8 @@ class Libuv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libuv"
-    sha256 cellar: :any, mojave: "dc4281a09ab4078f76a37666ad6ab3e2ab778a083d34e8a81b3a98b29e8d6bee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ee285cc3a52926e994b99856e2f866a849ddf1a192b5bbec0bdbaa86014aab73"
   end
 
   depends_on "autoconf" => :build
