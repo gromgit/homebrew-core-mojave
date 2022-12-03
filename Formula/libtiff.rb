@@ -14,20 +14,22 @@ class Libtiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libtiff"
-    sha256 cellar: :any, mojave: "da40c7907efe283b0b40717ba4eb0fa5d3789816dd0c96ebac9caa7689edfade"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "873b0f1b4b38598f54712e621018ca416f799f3bfa9e2a6e6fd1294f6e4501bf"
   end
 
   depends_on "jpeg-turbo"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 
   def install
     args = %W[
       --prefix=#{prefix}
+      --enable-zstd
       --disable-dependency-tracking
       --disable-lzma
       --disable-webp
-      --disable-zstd
       --with-jpeg-include-dir=#{Formula["jpeg-turbo"].opt_include}
       --with-jpeg-lib-dir=#{Formula["jpeg-turbo"].opt_lib}
       --without-x
