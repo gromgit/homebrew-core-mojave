@@ -1,13 +1,13 @@
 class Imath < Formula
   desc "Library of 2D and 3D vector, matrix, and math operations"
   homepage "https://www.openexr.com/"
-  url "https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.1.5.tar.gz"
-  sha256 "1e9c7c94797cf7b7e61908aed1f80a331088cc7d8873318f70376e4aed5f25fb"
+  url "https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.1.6.tar.gz"
+  sha256 "ea5592230f5ab917bea3ceab266cf38eb4aa4a523078d46eac0f5a89c52304db"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imath"
-    sha256 cellar: :any, mojave: "36f7f81d67d56dd7e4a20c76559c68c5186ec0e0938d8116b9bb7c0d8c992fc7"
+    sha256 cellar: :any_skip_relocation, mojave: "a4bfed8c50819d11401a5aa78a9caf34fb3d253607c5019b205a4a4de52ed188"
   end
 
   depends_on "cmake" => :build
