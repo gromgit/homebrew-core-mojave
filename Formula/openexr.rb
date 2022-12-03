@@ -8,8 +8,8 @@ class Openexr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openexr"
-    rebuild 1
-    sha256 cellar: :any, mojave: "f709ccca694909ae9795b3a07e0d5a74828939fbea8892b6bffae573d656256d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "16608cbf389e91db6d1ea6ed6dd4968dadaaec8e9e64b4dc1e4bcfd02965dbf7"
   end
 
   depends_on "cmake" => :build
