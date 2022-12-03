@@ -12,7 +12,8 @@ class PythonAT311 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.11"
-    sha256 cellar: :any_skip_relocation, mojave: "4e9961675e67a37478d9b708898f03d8ae5295a0603ef71a829592e52813f94c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bf8436a0b7f0ed6b8b6f21c278e18554f3031b3f016c641fa607f593e8e7bf71"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
