@@ -7,7 +7,8 @@ class Webp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/webp"
-    sha256 cellar: :any, mojave: "eb074196adc89304bfd484b75f4a0153b4bb8d5ac695df11f5593f1b4b520ded"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "662a8f23291b3a490ede98c6fb28ca856f5af00c7299ba7d839b750ee183cbd7"
   end
 
   head do
