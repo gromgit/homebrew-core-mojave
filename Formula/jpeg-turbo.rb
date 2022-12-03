@@ -8,7 +8,8 @@ class JpegTurbo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jpeg-turbo"
-    sha256 cellar: :any, mojave: "f470843e572f23b568f24651f1a560e36a4b08067ec9f19fcd84cda9aabd6564"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "66d04329cbc60d5a8f4189e10842598d6ee3f0589874be2cd19b35e6c0aad545"
   end
 
   depends_on "cmake" => :build
