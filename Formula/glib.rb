@@ -9,7 +9,8 @@ class Glib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glib"
-    sha256 mojave: "08ba579da9469c939a2a1315b8f9128a9b97cc1bd24480a8550a3298da98246e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ca81928cb83f5599d04fd7d8be33193fec7b254885a8cef0e065b0d460c13336"
   end
 
   depends_on "meson" => :build
