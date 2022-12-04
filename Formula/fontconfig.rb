@@ -1,8 +1,8 @@
 class Fontconfig < Formula
   desc "XML-based font configuration API for X Windows"
   homepage "https://wiki.freedesktop.org/www/Software/fontconfig/"
-  url "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.0.tar.xz"
-  sha256 "dcbeb84c9c74bbfdb133d535fe1c7bedc9f2221a8daf3914b984c44c520e9bac"
+  url "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.1.tar.xz"
+  sha256 "298e883f6e11d2c5e6d53c8a8394de58d563902cfab934e6be12fb5a5f361ef0"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class Fontconfig < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fontconfig"
-    sha256 mojave: "dfa06350afb9a97a5e6f72739fcd17abc5e627107d9fd2e037c25a17b565e380"
+    sha256 cellar: :any_skip_relocation, mojave: "f459d9608aaa9472d0c4dad1de01695efb2e120486a64469ff518abf9700912f"
   end
 
   head do
