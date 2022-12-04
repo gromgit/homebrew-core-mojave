@@ -7,20 +7,21 @@ class Libxcb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcb"
-    rebuild 1
-    sha256 cellar: :any, mojave: "60f813bedab686f45ecf1dd368ca6f711271fc4696f0b98013b71f3b45032da3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "62984ce87c63be1ad9096071b2e9cf1b2bbdada4e585c753e0e98f539187497f"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build # match version in `xcb-proto`
   depends_on "xcb-proto" => :build
   depends_on "libpthread-stubs"
   depends_on "libxau"
   depends_on "libxdmcp"
 
   def install
+    python3 = "python3.11"
+
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --enable-dri3
@@ -28,14 +29,13 @@ class Libxcb < Formula
       --enable-xevie
       --enable-xprint
       --enable-selinux
-      --disable-dependency-tracking
       --disable-silent-rules
       --enable-devel-docs=no
       --with-doxygen=no
-      PYTHON=python3.10
+      PYTHON=#{python3}
     ]
 
-    system "./configure", *args
+    system "./configure", *std_configure_args, *args
     system "make"
     system "make", "install"
   end
