@@ -9,7 +9,8 @@ class Guile < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/guile"
-    sha256 mojave: "bc1d6bf1c25bfc211fa5eb4530e510404eabe0204ecb4588c5607b71337f4681"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "02aafce793a4599456cc3f55372bf3f9f733f61b3867ab92c6f8d5be54c65b38"
   end
 
   head do
