@@ -8,7 +8,8 @@ class P11Kit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/p11-kit"
-    sha256 mojave: "0d7544522c2f958e88716a184e95135d855098769d62753bf8ed0c6b07aa7845"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a1897157e080bc8f3fa3ee07cb6611225c201311990e7e590b62236486c95dfd"
   end
 
   head do
