@@ -3,7 +3,7 @@ class Libgit2 < Formula
   homepage "https://libgit2.github.com/"
   url "https://github.com/libgit2/libgit2/archive/v1.5.0.tar.gz"
   sha256 "8de872a0f201b33d9522b817c92e14edb4efad18dae95cf156cf240b2efff93e"
-  license "GPL-2.0-only"
+  license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   head "https://github.com/libgit2/libgit2.git", branch: "main"
 
   livecheck do
@@ -13,7 +13,8 @@ class Libgit2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgit2"
-    sha256 cellar: :any, mojave: "d27408c8a174815dea6832afcbc4d02df5206ec9647e430b6c13f03b20f8f72b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "49b927c7981868c71a2a451ad8d731e67a8b689fb74828881534a815be023e68"
   end
 
   depends_on "cmake" => :build
