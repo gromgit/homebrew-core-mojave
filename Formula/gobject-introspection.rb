@@ -9,7 +9,8 @@ class GobjectIntrospection < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobject-introspection"
-    sha256 mojave: "fd456d95cdf0ce3362730dce73ed2590653a95773563cededdf66cb4ec949b3b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5db06709060fe9fb62a247d5f94f626077093a822341336ca2d0b2e61f5ab6e0"
   end
 
   depends_on "bison" => :build
@@ -18,8 +19,8 @@ class GobjectIntrospection < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "pkg-config"
-  # Ships a `_giscanner.cpython-310-darwin.so`, so needs a specific version.
-  depends_on "python@3.10"
+  # Ships a `_giscanner.cpython-311-darwin.so`, so needs a specific version.
+  depends_on "python@3.11"
 
   uses_from_macos "flex" => :build
   uses_from_macos "libffi", since: :catalina
@@ -38,13 +39,19 @@ class GobjectIntrospection < Formula
   end
 
   def install
+    python3 = "python3.11"
+
+    # Allow scripts to find "python3" during build if Python formula is altinstall'ed
+    pyver = Language::Python.major_minor_version python3
+    ENV.prepend_path "PATH", Formula["python@#{pyver}"].opt_libexec/"bin"
+
     ENV["GI_SCANNER_DISABLE_CACHE"] = "true"
     inreplace "giscanner/transformer.py", "/usr/share", "#{HOMEBREW_PREFIX}/share"
     inreplace "meson.build",
       "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))",
       "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', '#{HOMEBREW_PREFIX}/lib')"
 
-    system "meson", "setup", "build", "-Dpython=#{Formula["python@3.10"].opt_bin}/python3.10",
+    system "meson", "setup", "build", "-Dpython=#{which(python3)}",
                                       "-Dextra_library_paths=#{HOMEBREW_PREFIX}/lib",
                                       *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
