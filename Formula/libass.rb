@@ -7,7 +7,8 @@ class Libass < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libass"
-    sha256 cellar: :any, mojave: "5af3ea3cbb1e53535e2e9ae7526857fd1cbf1c7061152da9b4f138485dc22e91"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6744d18d7492af3ae6bdaaabb2a024dba61ba1a36e8d1c4567fc40a75ebf6e20"
   end
 
   head do
@@ -18,7 +19,6 @@ class Libass < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "nasm" => :build
   depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "fribidi"
@@ -26,6 +26,10 @@ class Libass < Formula
 
   on_linux do
     depends_on "fontconfig"
+  end
+
+  on_intel do
+    depends_on "nasm" => :build
   end
 
   def install
