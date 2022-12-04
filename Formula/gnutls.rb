@@ -13,7 +13,8 @@ class Gnutls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnutls"
-    sha256 mojave: "2991a0e66ba312504edcbcdb95f0207a9022afd0fa20605d20de121f6ae28500"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "387fa46a1c411a22885776e89eb6e9b5804eab2248c2962709d068542b819a28"
   end
 
   depends_on "pkg-config" => :build
