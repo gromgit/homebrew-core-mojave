@@ -1,8 +1,8 @@
 class Rubberband < Formula
   desc "Audio time stretcher tool and library"
   homepage "https://breakfastquay.com/rubberband/"
-  url "https://breakfastquay.com/files/releases/rubberband-3.0.0.tar.bz2"
-  sha256 "df6530b403c8300a23973df22f36f3c263f010d53792063e411f633cebb9ed85"
+  url "https://breakfastquay.com/files/releases/rubberband-3.1.1.tar.bz2"
+  sha256 "a442551fe7d26fb4a54dd1c34178733dc9c76ac9ce051a02325f5cb35d154381"
   license "GPL-2.0-or-later"
   head "https://hg.sr.ht/~breakfastquay/rubberband", using: :hg
 
@@ -13,8 +13,7 @@ class Rubberband < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rubberband"
-    rebuild 3
-    sha256 cellar: :any, mojave: "00449fe45669baf93acbb1801c39997544b55b0a49772bd2e3b5b3d117f40323"
+    sha256 cellar: :any_skip_relocation, mojave: "1294cf462f620f1976b3e9bbcfbe286091d9ee9a75466a68874288edadf0bff6"
   end
 
   depends_on "meson" => :build
