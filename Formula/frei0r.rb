@@ -12,7 +12,8 @@ class Frei0r < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frei0r"
-    sha256 cellar: :any_skip_relocation, mojave: "dd7cff184ab10b3546882bb1724b7d644b255796c70cbe2f128babf11d8c89c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cfc7af0facdfe8d107243087ef040c6f4f3bcfc07e4f6979e663f1692acc7de5"
   end
 
   depends_on "cmake" => :build
