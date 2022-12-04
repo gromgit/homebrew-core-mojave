@@ -7,12 +7,16 @@ class Libvmaf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libvmaf"
-    sha256 cellar: :any, mojave: "0f466d084c5e09a33d6022df9b87fc16ce2fa66b19ebc95f234bb70c9da6c06a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cc4f54a99eac7c0347ad59ce5a092ca2be80f61995a7c6e6d2e96e65f43374ce"
   end
 
   depends_on "meson" => :build
-  depends_on "nasm" => :build
   depends_on "ninja" => :build
+
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   def install
     Dir.chdir("libvmaf") do
