@@ -8,8 +8,8 @@ class Openjpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjpeg"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b1937b00357fa7390aba8a8ba411d4a99bfdc6b22303e76a5f0cde61499f0ce8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "3a9662feb26f0fed3cdc770a712bf57c4f0d49dfbafedba5fdc5d57951c16995"
   end
 
   depends_on "cmake" => :build
