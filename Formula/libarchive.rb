@@ -12,7 +12,8 @@ class Libarchive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libarchive"
-    sha256 cellar: :any, mojave: "47c17a6bece508ddf294b73a1414732859bd478b600123d98c4a5d3947645ce8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6bf108626c1487ae0f2dcd721f1604faa5eec855170ea41ee2acf4a10facdae0"
   end
 
   keg_only :provided_by_macos
