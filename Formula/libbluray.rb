@@ -12,7 +12,8 @@ class Libbluray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbluray"
-    sha256 cellar: :any_skip_relocation, mojave: "cf130a5057beacc497317e0457fe3fc9871ae93169eb6fdc6de2fb2bbda28341"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3ac6284aedc627ed54eecce6a15f856d3e8db8a286c9317a27eba7adb86cdde8"
   end
 
   head do
