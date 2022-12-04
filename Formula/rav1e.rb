@@ -13,12 +13,16 @@ class Rav1e < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rav1e"
-    sha256 cellar: :any, mojave: "33336cbbe2a94d7739be33d2555fab6310a618a3e1096b3ebf04001af1dd68a0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "01157cb50beace68ce2aa249f8a4470cd4e68e446faf8678905772c5b7d8a686"
   end
 
   depends_on "cargo-c" => :build
-  depends_on "nasm" => :build
   depends_on "rust" => :build
+
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   resource "bus_qcif_7.5fps.y4m" do
     url "https://media.xiph.org/video/derf/y4m/bus_qcif_7.5fps.y4m"
