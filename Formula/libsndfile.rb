@@ -13,19 +13,20 @@ class Libsndfile < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsndfile"
-    sha256 cellar: :any, mojave: "2929886a1bc7c11073a8a877c57c5ef3a70ffe8c4151a8a1dd33cd9ffd7ac098"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c5bb17196653f3ec34f4b209149ee94f07d39e9543236e66c8b43eeee22d5ade"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  # TODO: check if this can be `uses_from_macos "python" => :build`.
-  depends_on "python@3.10" => :build
   depends_on "flac"
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "opus"
+
+  uses_from_macos "python" => :build
 
   # Fix unsubstituted variable @EXTERNAL_MPEG_LIBS@ in sndfile.pc
   # PR ref: https://github.com/libsndfile/libsndfile/pull/828
@@ -37,7 +38,7 @@ class Libsndfile < Formula
 
   def install
     system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
