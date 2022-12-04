@@ -14,8 +14,8 @@ class Mbedtls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbedtls"
-    rebuild 1
-    sha256 cellar: :any, mojave: "a023915a9318ffb7f1d1ef9b1e7c7d68eba57d01135593256fed663f3bfcc4e5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "74c5c2eea1771ec9d1934a5e92bcbe1e091b1e8eb28b0c4eefc4a4826b9285de"
   end
 
   depends_on "cmake" => :build
