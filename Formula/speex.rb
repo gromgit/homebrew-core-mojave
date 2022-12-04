@@ -13,7 +13,8 @@ class Speex < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/speex"
-    sha256 cellar: :any, mojave: "31e8d80f363ae97e323f5b7a755af4765b357db83ef59c9465a1a5bc6807388b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "40b0a9a1104b22139ae0c9440c82a7483277e71f1f2a7737c1d1bcfbf2e774b2"
   end
 
   depends_on "pkg-config" => :build
