@@ -14,7 +14,8 @@ class Librist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librist"
-    sha256 cellar: :any, mojave: "3240809473d3c8f37b59069471e454ef9293aab415bf6837ed01863b31285b8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6637d1cca743763a8bbdfa768dc565c5dcdfde445cd44f62f998e1a9aa62f787"
   end
 
   depends_on "meson" => :build
