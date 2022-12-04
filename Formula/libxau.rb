@@ -7,7 +7,8 @@ class Libxau < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxau"
-    sha256 cellar: :any, mojave: "377b241279bd952ce8bfaac8cf2f4abb99c4bc403b1945c0bc8269429c1b565c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "005af6c3033400d4291d908a34e8565d284db13e91c13fd8d06b99536d09ee85"
   end
 
   depends_on "pkg-config" => :build
