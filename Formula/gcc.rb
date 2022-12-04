@@ -24,8 +24,8 @@ class Gcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc"
-    rebuild 1
-    sha256 mojave: "9873da7ece4c2333a51e8973f15b1fc2b3fc237e52bc38c458ead793022786b9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "7510a5390cb5faad87abf46bf940749d3e7bf3a928bf9f6ba9f16dcaa3fc3fd2"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
