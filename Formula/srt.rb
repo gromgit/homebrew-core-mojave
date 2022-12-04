@@ -8,7 +8,8 @@ class Srt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/srt"
-    sha256 cellar: :any, mojave: "f421a86f2a92fe07a52e98d288879b917820b9eb949121533bb4c72ecbcd9184"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a583755464faa6a6c450640dce11526b009310fe9da5e55b2cef988900f0baa7"
   end
 
   depends_on "cmake" => :build
