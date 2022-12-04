@@ -9,17 +9,21 @@ class Aom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aom"
-    sha256 cellar: :any_skip_relocation, mojave: "80edcdfe5e1bef1f5b9d4738ded282b010e20bb9174f8d824086bf87bcf22fe1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "dae12dd6cca4146f8820857be154f588ea89dd7aaeba5b729c855a10f6252a12"
   end
 
   depends_on "cmake" => :build
-  depends_on "yasm" => :build
 
   # `jpeg-xl` is currently not bottled on Linux
   on_macos do
     depends_on "pkg-config" => :build
     depends_on "jpeg-xl"
     depends_on "libvmaf"
+  end
+
+  on_intel do
+    depends_on "yasm" => :build
   end
 
   resource "homebrew-bus_qcif_15fps.y4m" do
