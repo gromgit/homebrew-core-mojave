@@ -13,7 +13,8 @@ class Leptonica < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/leptonica"
-    sha256 cellar: :any, mojave: "d3386654f5b28ebf7ccbeaf0edcc428ebdf7845e47f4fa40804fe4c30f6346c2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c2ec03529a9d998b1ef5781bb95be44a0e5801ff8e51093f55dd6f8ea50f3ef9"
   end
 
   depends_on "pkg-config" => :build
