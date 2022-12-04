@@ -1,21 +1,20 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://github.com/harfbuzz/harfbuzz/archive/5.2.0.tar.gz"
-  sha256 "a9fd9869efeec4cd6ab34527ed1e82df65be39cbfdb750d02dfa66148eac4c04"
+  url "https://github.com/harfbuzz/harfbuzz/archive/5.3.1.tar.gz"
+  sha256 "77c8c903f4539b050a6d3a5be79705c7ccf7b1cb66d68152a651486e261edbd2"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harfbuzz"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "803caf96939033930794afac74f140d96eb8034af8e0c8bd229489752f197770"
+    sha256 cellar: :any_skip_relocation, mojave: "efece6d2993b420929a86a1c78216b9a5b2bd9400df16ccb1fe346cf917cce6a"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
   depends_on "pygobject3" => :test
   depends_on "cairo"
   depends_on "freetype"
@@ -39,6 +38,7 @@ class Harfbuzz < Formula
       -Dgraphite=enabled
       -Dicu=enabled
       -Dintrospection=enabled
+      -Dtests=disabled
     ]
 
     system "meson", "setup", "build", *std_meson_args, *args
@@ -48,9 +48,9 @@ class Harfbuzz < Formula
 
   test do
     resource("homebrew-test-ttf").stage do
-      shape = `echo 'സ്റ്റ്' | #{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf`.chomp
+      shape = pipe_output("#{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf", "സ്റ്റ്").chomp
       assert_equal "[glyph201=0+1183|U0D4D=0+0]", shape
     end
-    system "python3.10", "-c", "from gi.repository import HarfBuzz"
+    system "python3.11", "-c", "from gi.repository import HarfBuzz"
   end
 end
