@@ -13,7 +13,8 @@ class Openblas < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openblas"
-    sha256 cellar: :any, mojave: "d01a1b2c0e2365b4469b10ecdf2b2797e280fece150fc3574529cfa86474962e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c28f3d78d885c97e6b5eef2230056b8479beb7bab924ef164d263a9a8c35e5ba"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
