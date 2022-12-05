@@ -7,7 +7,8 @@ class Libraqm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libraqm"
-    sha256 cellar: :any, mojave: "beb36c99ed261038df3a673bf5a9788afe2cfac794d0d5a32a651f8c9fcd9825"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "20053a5499ba012b821f270c5d634e86f23be5a1a8015e15a78340c6f77fb380"
   end
 
   depends_on "meson" => :build
