@@ -7,7 +7,8 @@ class Libimagequant < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libimagequant"
-    sha256 cellar: :any, mojave: "514a45cf951b71bf35c4586ed9c5d99527300004fcb9ec8afd688da9240ca5b0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f9e995df0deaaacc1cadd57f592cb2aae4502b6d667f0989ebba7f850dd886c0"
   end
 
   depends_on "cargo-c" => :build
