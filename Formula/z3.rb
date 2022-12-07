@@ -14,28 +14,43 @@ class Z3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/z3"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a2e399cde1ec35959c8a97664273a1a0d45eabb0b4ac5d05b3dcdea6b82e944a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "fbf5666a444f836e7c56912c7d79ce5a2af71aef9f9f0ca7c505ad83d44edea6"
   end
 
+  depends_on "cmake" => :build
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
-  depends_on "python@3.10" => :build
+  depends_on "python@3.10" => [:build, :test]
 
   fails_with gcc: "5"
 
-  def install
-    python3 = Formula["python@3.10"].opt_bin/"python3.10"
-    system python3, "scripts/mk_make.py",
-                     "--prefix=#{prefix}",
-                     "--python",
-                     "--pypkgdir=#{prefix/Language::Python.site_packages(python3)}",
-                     "--staticlib"
+  def python3
+    which("python3.10")
+  end
 
-    cd "build" do
-      system "make"
-      system "make", "install"
-    end
+  def install
+    # LTO on Intel Monterey produces segfaults.
+    # https://github.com/Z3Prover/z3/issues/6414
+    do_lto = MacOS.version < :monterey || Hardware::CPU.arm?
+    args = %W[
+      -DZ3_LINK_TIME_OPTIMIZATION=#{do_lto ? "ON" : "OFF"}
+      -DZ3_INCLUDE_GIT_DESCRIBE=OFF
+      -DZ3_INCLUDE_GIT_HASH=OFF
+      -DZ3_INSTALL_PYTHON_BINDINGS=ON
+      -DZ3_BUILD_EXECUTABLE=ON
+      -DZ3_BUILD_TEST_EXECUTABLES=OFF
+      -DZ3_BUILD_PYTHON_BINDINGS=ON
+      -DZ3_BUILD_DOTNET_BINDINGS=OFF
+      -DZ3_BUILD_JAVA_BINDINGS=OFF
+      -DZ3_USE_LIB_GMP=OFF
+      -DPYTHON_EXECUTABLE=#{python3}
+      -DCMAKE_INSTALL_PYTHON_PKG_DIR=#{Language::Python.site_packages(python3)}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     system "make", "-C", "contrib/qprofdiff"
     bin.install "contrib/qprofdiff/qprofdiff"
@@ -44,8 +59,9 @@ class Z3 < Formula
   end
 
   test do
-    system ENV.cc, pkgshare/"examples/c/test_capi.c",
-           "-I#{include}", "-L#{lib}", "-lz3", "-o", testpath/"test"
+    system ENV.cc, pkgshare/"examples/c/test_capi.c", "-I#{include}",
+                   "-L#{lib}", "-lz3", "-o", testpath/"test"
     system "./test"
+    assert_equal version.to_s, shell_output("#{python3} -c 'import z3; print(z3.get_version_string())'").strip
   end
 end
