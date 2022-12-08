@@ -1,8 +1,9 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/llvm-project-15.0.2.src.tar.xz"
-  sha256 "7877cd67714728556a79e5ec0cc72d66b6926448cf73b12b2cb901b268f7a872"
+  # NOTE: `ccls` will need rebuilding on every version bump.
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.5/llvm-project-15.0.5.src.tar.xz"
+  sha256 "9c4278a6b8884eb7f4ae7dfe3c8e5445019824885e47cfdf1392563c47316fd6"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -14,7 +15,7 @@ class Llvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/llvm"
-    sha256 cellar: :any_skip_relocation, mojave: "ea7f9d520f0695aff2bc31b11b82c53ef985b4f49322445bb92aa87b25f72f4a"
+    sha256 cellar: :any_skip_relocation, mojave: "c24b96e3545cdf8b1216c5c059fc8ba7f9b4faf3c3721c1278af0a113a07014b"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -27,7 +28,7 @@ class Llvm < Formula
   # See: Homebrew/homebrew-core/issues/35513
   depends_on "cmake" => :build
   depends_on "swig" => :build
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "six"
   depends_on "z3"
   depends_on "zstd"
@@ -47,7 +48,7 @@ class Llvm < Formula
   fails_with gcc: "5"
 
   def python3
-    "python3.10"
+    "python3.11"
   end
 
   def install
@@ -284,7 +285,7 @@ class Llvm < Formula
         # Make sure brewed glibc will be used if it is installed.
         linux_library_paths = [
           Formula["glibc"].opt_lib,
-          HOMBEREW_PREFIX/"lib",
+          HOMEBREW_PREFIX/"lib",
         ]
         linux_linker_flags = linux_library_paths.map { |path| "-L#{path} -Wl,-rpath,#{path}" }
         # Add opt_libs for dependencies to RPATH.
@@ -436,14 +437,18 @@ class Llvm < Formula
     lib.glob("*.a").each do |static_archive|
       mktemp do
         system bin/"llvm-ar", "x", static_archive
+        rebuilt_files = []
+
         Pathname.glob("*.o").each do |bc_file|
           file_type = Utils.safe_popen_read("file", bc_file)
           next unless file_type.match?("LLVM bitcode")
 
+          rebuilt_files << bc_file
           system bin/"clang", "-fno-lto", "-Wno-unused-command-line-argument",
                               "-x", "ir", bc_file, "-c", "-o", bc_file
-          system bin/"llvm-ar", "r", static_archive, bc_file
         end
+
+        system bin/"llvm-ar", "r", static_archive, *rebuilt_files if rebuilt_files.present?
       end
     end
   end
