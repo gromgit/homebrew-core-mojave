@@ -8,8 +8,8 @@ class DoubleConversion < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/double-conversion"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8bec3530f60cdb73b49d01a9543afc89d5cbf5e89b26163e01b17b2075b0e538"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e5a980e687321ac0da9a04f8cb05a61932fa0461d2edb7c6d4267c7a3f0c5b08"
   end
 
   depends_on "cmake" => :build
