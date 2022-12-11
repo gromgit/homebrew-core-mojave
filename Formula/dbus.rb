@@ -2,9 +2,9 @@ class Dbus < Formula
   # releases: even (1.12.x) = stable, odd (1.13.x) = development
   desc "Message bus system, providing inter-application communication"
   homepage "https://wiki.freedesktop.org/www/Software/dbus"
-  url "https://dbus.freedesktop.org/releases/dbus/dbus-1.14.0.tar.xz"
-  mirror "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.14.0.orig.tar.xz"
-  sha256 "ccd7cce37596e0a19558fd6648d1272ab43f011d80c8635aea8fd0bad58aebd4"
+  url "https://dbus.freedesktop.org/releases/dbus/dbus-1.14.4.tar.xz"
+  mirror "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.14.4.orig.tar.xz"
+  sha256 "7c0f9b8e5ec0ff2479383e62c0084a3a29af99edf1514e9f659b81b30d4e353e"
   license any_of: ["AFL-2.1", "GPL-2.0-or-later"]
 
   livecheck do
@@ -14,12 +14,11 @@ class Dbus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dbus"
-    rebuild 1
-    sha256 mojave: "9e88c9c676d757517c4a20e544387a3199add1ee4b8757faeed4fcd71334d66f"
+    sha256 cellar: :any_skip_relocation, mojave: "84183bd267f2faae8065a4f50ab5ed38b3ef28fe50f6b52d6759a9041128b6f6"
   end
 
   head do
-    url "https://gitlab.freedesktop.org/dbus/dbus.git"
+    url "https://gitlab.freedesktop.org/dbus/dbus.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
