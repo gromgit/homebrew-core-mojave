@@ -1,13 +1,13 @@
 class Asciidoctor < Formula
   desc "Text processor and publishing toolchain for AsciiDoc"
   homepage "https://asciidoctor.org/"
-  url "https://github.com/asciidoctor/asciidoctor/archive/v2.0.17.tar.gz"
-  sha256 "ca939b978d5d3bfe0cfcf1bcf5513f199aa77813e4a19f568dc6b6f17b892728"
+  url "https://github.com/asciidoctor/asciidoctor/archive/v2.0.18.tar.gz"
+  sha256 "fad34373023f3212090635d7b793c2528e64c0593b2ba5c38b59f3fb6fd517f5"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciidoctor"
-    sha256 cellar: :any_skip_relocation, mojave: "db1f813ba232a8b064690db52850f33fb8897323a3b379d9660fdc69db93b7b0"
+    sha256 cellar: :any_skip_relocation, mojave: "c546c459cdcfb33b69df6b93e87f803cf67768a8a5d8dbe67252c3c71c665280"
   end
 
   uses_from_macos "ruby", since: :catalina
