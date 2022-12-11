@@ -1,10 +1,21 @@
 class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz"
-  sha256 "61843112389f02b735428b53bb64cf988ad9fb81858b8248e22e57336f24a83e"
   license "Ruby"
   revision 1
+
+  stable do
+    url "https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz"
+    sha256 "61843112389f02b735428b53bb64cf988ad9fb81858b8248e22e57336f24a83e"
+
+    # Should be updated only when Ruby is updated (if an update is available).
+    # The exception is Rubygem security fixes, which mandate updating this
+    # formula & the versioned equivalents and bumping the revisions.
+    resource "rubygems" do
+      url "https://rubygems.org/rubygems/rubygems-3.3.11.tgz"
+      sha256 "64184aec5bf3d4314eca3b8bae2085c5ddec50564b822340035187431dc1c074"
+    end
+  end
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -13,11 +24,12 @@ class Ruby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby"
-    sha256 mojave: "effa825c7c97dad4a8060eb6c9f5d81e96835ac9d8ba5b3b3e1b66b1050b80ad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b672fe40d57fe32f86cea6c2dae811009b1b860251458ccb88c505c76e386db6"
   end
 
   head do
-    url "https://github.com/ruby/ruby.git", branch: "trunk"
+    url "https://github.com/ruby/ruby.git", branch: "master"
     depends_on "autoconf" => :build
   end
 
@@ -31,14 +43,6 @@ class Ruby < Formula
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
-
-  # Should be updated only when Ruby is updated (if an update is available).
-  # The exception is Rubygem security fixes, which mandate updating this
-  # formula & the versioned equivalents and bumping the revisions.
-  resource "rubygems" do
-    url "https://rubygems.org/rubygems/rubygems-3.3.11.tgz"
-    sha256 "64184aec5bf3d4314eca3b8bae2085c5ddec50564b822340035187431dc1c074"
-  end
 
   def api_version
     Utils.safe_popen_read("#{bin}/ruby", "-e", "print Gem.ruby_api_version")
@@ -94,6 +98,8 @@ class Ruby < Formula
 
     # A newer version of ruby-mode.el is shipped with Emacs
     elisp.install Dir["misc/*.el"].reject { |f| f == "misc/ruby-mode.el" }
+
+    return if build.head? # Use bundled RubyGems for --HEAD (will be newer)
 
     # This is easier than trying to keep both current & versioned Ruby
     # formulae repeatedly updated with Rubygem patches.
