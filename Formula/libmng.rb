@@ -11,7 +11,8 @@ class Libmng < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmng"
-    sha256 cellar: :any, mojave: "3d490f8da62691dc585f99c7cd42d8bc06dc71bacf5c17ee3f9fa4649703100a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3affdcb7e2b7286ffde2872021ecc2b1313c7dd203d7db150b1c025a9a1ac8ce"
   end
 
   depends_on "jpeg-turbo"
