@@ -7,7 +7,8 @@ class GnuGetopt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-getopt"
-    sha256 cellar: :any, mojave: "202328c18fa961aef9f55973ee2f09cd7008afbf8d89f06c2556080d90910b84"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8f984eca0339613dbc4670d2e4ebdfcfac04e052ba12aa53b21eb30954430fbd"
   end
 
   keg_only :provided_by_macos
