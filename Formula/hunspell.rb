@@ -7,7 +7,8 @@ class Hunspell < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hunspell"
-    sha256 cellar: :any, mojave: "3f04d06eeb7d9a90b88ecc0d7dcc66add0d5c24359fffdc0b88313b4b204b8b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "55fcae75208645d1b01a6a25e659a6b229cebfb9183f96f02862fe455e98cfad"
   end
 
   depends_on "gettext"
@@ -31,7 +32,7 @@ class Hunspell < Formula
       ~/Library/Spelling/ or /Library/Spelling/.  Homebrew itself
       provides no dictionaries for Hunspell, but you can download
       compatible dictionaries from other sources, such as
-      https://wiki.openoffice.org/wiki/Dictionaries .
+      https://cgit.freedesktop.org/libreoffice/dictionaries/tree/ .
     EOS
   end
 
