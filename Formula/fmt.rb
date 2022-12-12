@@ -8,7 +8,8 @@ class Fmt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fmt"
-    sha256 cellar: :any, mojave: "20dc7e7dcbff98b1652ac08daf96fd788c0c242517bc16065bc0c3d00f8a5b62"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a2ecd04c3b7e35a2f9d8f9419623b47c7a9bc729f950391c49438bbe8b871396"
   end
 
   depends_on "cmake" => :build
