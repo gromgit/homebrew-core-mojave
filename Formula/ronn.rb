@@ -13,7 +13,8 @@ class Ronn < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ronn"
-    sha256 mojave: "22530381062c6b4a04a8f68441f091c20f89212ad0d8d26c95859a50dccf56fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ccf5f21256026ad304967cf643643006e8bc5603b40b3e6ce00625113fe89252"
   end
 
   depends_on "groff" => :test
