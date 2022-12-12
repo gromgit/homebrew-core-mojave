@@ -12,7 +12,8 @@ class Htslib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htslib"
-    sha256 cellar: :any, mojave: "fd6060cdc1d7c3c1903df98d94ac48a31d032409eddc868f30e2dda9a6f07168"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2132f3742886e2d45bf5797bd4e4896a5241cb59146662721f2bccaaf941c6b7"
   end
 
   depends_on "xz"
