@@ -8,7 +8,8 @@ class Googletest < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/googletest"
-    sha256 cellar: :any_skip_relocation, mojave: "bd12951bc2d67dbb195a571c4a902273db61a41d048328b328286de3b60b6905"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "12315e362b3c6c7890b4c2032eb347fc1ad1a6099792b14db3963b5c7c1acd89"
   end
 
   depends_on "cmake" => :build
