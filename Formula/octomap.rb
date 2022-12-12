@@ -7,7 +7,8 @@ class Octomap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/octomap"
-    sha256 cellar: :any, mojave: "0031d5becb26ebee6efced44cbb9fcc4c213ccebd6de2db73a16d77471027394"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "0c2e136ada6b32ebd4ebb85490c29d204db8c37db5acf8785a1467fac69b0dda"
   end
 
   depends_on "cmake" => :build
