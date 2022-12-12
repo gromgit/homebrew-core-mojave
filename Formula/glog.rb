@@ -8,7 +8,8 @@ class Glog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glog"
-    sha256 cellar: :any, mojave: "befa7b1edec78c4f2f9681a34e07c0e1d4e19a3d52de62b5b843c3694d7591a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "114c85e1251d6e7804a7d2fba6f7fe9ce571b90cc9c2c59e8d9712c225251b53"
   end
 
   depends_on "cmake" => :build
