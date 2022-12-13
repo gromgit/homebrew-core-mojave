@@ -4,16 +4,16 @@ class PythonTypingExtensions < Formula
   url "https://files.pythonhosted.org/packages/e3/a7/8f4e456ef0adac43f452efc2d0e4b242ab831297f1bac60ac815d37eb9cf/typing_extensions-4.4.0.tar.gz"
   sha256 "1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa"
   license "Python-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-typing-extensions"
-    sha256 cellar: :any_skip_relocation, mojave: "33332bc8bbbef9c68222173485f8aa6ec121f76412355e58a7ee5948db70bfa7"
+    sha256 cellar: :any_skip_relocation, mojave: "deaf3595f3749c32b2c20c9dc8ae0afd4bd819c39d4c201de55145922460ded2"
   end
 
   depends_on "flit" => :build
   depends_on "python@3.10" => [:build, :test]
-  depends_on "python@3.8" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
   depends_on "mypy" => :test
 
   def pythons
