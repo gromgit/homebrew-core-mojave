@@ -13,7 +13,8 @@ class OpenMpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/open-mpi"
-    sha256 mojave: "a3116fc51ad82efe30d1d461bb909530488805740111ff4d6016cfd7441247b9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6f77a67413880e560ee7898c8ca695a650a3d545f6c31054351182fb2599018a"
   end
 
   head do
