@@ -13,7 +13,8 @@ class Fftw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fftw"
-    sha256 cellar: :any, mojave: "391480d34c3d97e7aae1316683bed410af0563c22b3ad48e27ac63228c9e7bda"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b6d55382cab8cd60fcdfbea1ff6335dd65b0af7022489941b88667c97d238c74"
   end
 
   depends_on "open-mpi"
