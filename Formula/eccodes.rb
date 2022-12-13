@@ -12,7 +12,8 @@ class Eccodes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eccodes"
-    sha256 cellar: :any_skip_relocation, mojave: "4177fc1ac8d9080d316bb7770970030d363b685826525c4fcd5eb1a75073b874"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "868b97da7b103bcdfb9880e26e6a14ae75923a4c26204d235d6d426f7fcb3c3f"
   end
 
   depends_on "cmake" => :build
