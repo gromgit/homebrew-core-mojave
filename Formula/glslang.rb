@@ -1,8 +1,8 @@
 class Glslang < Formula
   desc "OpenGL and OpenGL ES reference compiler for shading languages"
   homepage "https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/"
-  url "https://github.com/KhronosGroup/glslang/archive/11.11.0.tar.gz"
-  sha256 "26c216c3062512c018cbdd752224b8dad703b7e5bb90bf338ba2dbb5d4f11438"
+  url "https://github.com/KhronosGroup/glslang/archive/11.12.0.tar.gz"
+  sha256 "7795a97450fecd9779f3d821858fbc2d1a3bf1dd602617d95b685ccbcabc302f"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "MIT", "Apache-2.0"]
   head "https://github.com/KhronosGroup/glslang.git"
 
@@ -13,7 +13,7 @@ class Glslang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glslang"
-    sha256 cellar: :any_skip_relocation, mojave: "0c4d638d4d93a26da4f74a3af3ec3d930f71cacfcb061e77f5275dbfb9c2bbba"
+    sha256 cellar: :any_skip_relocation, mojave: "c39ed711cdd082c29c7cfc5c60d0f89144e9c4a2c3c44aca3b30103f2abebd12"
   end
 
   depends_on "cmake" => :build
