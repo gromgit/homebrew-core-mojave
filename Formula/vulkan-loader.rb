@@ -1,8 +1,8 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
   homepage "https://github.com/KhronosGroup/Vulkan-Loader"
-  url "https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.230.tar.gz"
-  sha256 "068d945faad57bc40dcf13ec5a918a17a2af2f80d090e382a33eb69ba753263d"
+  url "https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.235.tar.gz"
+  sha256 "948407ba3662801b87bae170db2ed1a7aebe900bb66405be7d301bf656140595"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "master"
 
@@ -13,12 +13,12 @@ class VulkanLoader < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vulkan-loader"
-    sha256 cellar: :any_skip_relocation, mojave: "884ecd8c5e4ccb761e7e39778e4211f33195ae3635de0dfe9184dbc2b49fcc0b"
+    sha256 cellar: :any_skip_relocation, mojave: "c7bb48d47d78a9b22a18a8d8d7564200ce50de6e65f838f26e7b368a824a6fd0"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "vulkan-headers"
 
   on_linux do
