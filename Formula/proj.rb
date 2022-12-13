@@ -8,7 +8,8 @@ class Proj < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
-    sha256 mojave: "2341dd5ad2dbdb84252edfe5967c7e3177adbf03ff42d902dd7ff9614edc5d6f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3330a7e66aa27d22cc1e2b49b07e68d5a29fee24bdff92bf3994ca4cd33d3087"
   end
 
   depends_on "cmake" => :build
