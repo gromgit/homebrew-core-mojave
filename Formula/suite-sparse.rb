@@ -19,7 +19,8 @@ class SuiteSparse < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/suite-sparse"
-    sha256 cellar: :any, mojave: "caa272f6732c29586c062e5ac61985bc654b2e3ce5659f412817dbfb8b9cf593"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6cdf8f6554be167f9184ac91b25ea4b88fd705946bdd480b5d49c5b5ffec968d"
   end
 
   depends_on "cmake" => :build
