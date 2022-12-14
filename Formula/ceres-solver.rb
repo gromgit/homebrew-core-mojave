@@ -14,8 +14,8 @@ class CeresSolver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ceres-solver"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8f145c4819aded78f92909d69b3317983190b6d582873ef00d88714c903fb089"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "82b2bd8c0e5b5aca62f6adbce1962396e30db0a02997fdae4a59e0eee8827849"
   end
 
   depends_on "cmake" => [:build, :test]
