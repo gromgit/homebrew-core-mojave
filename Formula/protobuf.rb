@@ -22,7 +22,8 @@ class Protobuf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf"
-    sha256 cellar: :any_skip_relocation, mojave: "4d75cd027acbe8eeff133c1a1a2ff0ff25ce0ccfb6d2e236294d9877eca33a02"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "00a2f527fecfc16ac78e614a8081c1606052216d1c725961f2ded391b06c621b"
   end
 
   head do
