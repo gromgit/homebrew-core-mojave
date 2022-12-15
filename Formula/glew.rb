@@ -9,8 +9,8 @@ class Glew < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glew"
-    rebuild 5
-    sha256 cellar: :any, mojave: "d46b4ad99d02a94b2986f620cdf19298d4ee4ed7e1fa1c58071b1e756640df2f"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, mojave: "386d8dfe91abdd7dff93cfd61b6e9370a279d5d7be5e04f5ce9efb051fc094c3"
   end
 
   depends_on "cmake" => [:build, :test]
