@@ -1,10 +1,9 @@
 class NodeAT16 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v16.17.0/node-v16.17.0.tar.xz"
-  sha256 "1d28c285685e446985921bc963565ca9c0c5f4fda9755e489c06808ea9795645"
+  url "https://nodejs.org/dist/v16.18.1/node-v16.18.1.tar.xz"
+  sha256 "1f8051a88f86f42064f4415fe7a980e59b0a502ecc8def583f6303bc4d445238"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://nodejs.org/dist/"
@@ -13,10 +12,13 @@ class NodeAT16 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@16"
-    sha256 cellar: :any, mojave: "b7c457d1592bbabced9f25d1e2c3387cffd07f865b55fdc4efd7e5afebd9c8c6"
+    sha256 cellar: :any_skip_relocation, mojave: "47bed31b20298de27bba623840aefb8abceb29f215e8d42ccafd948d0e706c37"
   end
 
   keg_only :versioned_formula
+
+  # https://nodejs.org/en/about/releases/
+  # disable! date: "2023-09-11", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => :build
