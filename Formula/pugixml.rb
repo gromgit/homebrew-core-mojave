@@ -1,10 +1,9 @@
 class Pugixml < Formula
   desc "Light-weight C++ XML processing library"
   homepage "https://pugixml.org/"
-  url "https://github.com/zeux/pugixml/releases/download/v1.12.1/pugixml-1.12.1.tar.gz"
-  sha256 "dcf671a919cc4051210f08ffd3edf9e4247f79ad583c61577a13ee93af33afc7"
+  url "https://github.com/zeux/pugixml/releases/download/v1.13/pugixml-1.13.tar.gz"
+  sha256 "40c0b3914ec131485640fa57e55bf1136446026b41db91c1bef678186a12abbe"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,7 +12,7 @@ class Pugixml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pugixml"
-    sha256 cellar: :any, mojave: "3232c33c8c2284314daed03d3b27ae62b5d0f14018d3a2df0a53347bf73391eb"
+    sha256 cellar: :any_skip_relocation, mojave: "7375a0b079429aac657ffc7cffe238e3448e434981bfc48178affe60f9b73ab0"
   end
 
   depends_on "cmake" => :build
