@@ -3,17 +3,17 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://www.riverbankcomputing.com/software/sip/intro"
-  url "https://files.pythonhosted.org/packages/28/09/87e20f2be19051bea42df699947aba30f84422908ec2b8d827bcdf0ab365/sip-6.7.1.tar.gz"
-  sha256 "28170fdf880f937026fc87faa9c177b062c353c5d169ea3242b07802614ddd0c"
+  url "https://files.pythonhosted.org/packages/fd/9b/8e727256983e5b1d975f8dfce6f477b5ab6bada14a00b07fa3db51fcd6fe/sip-6.7.5.tar.gz"
+  sha256 "9655d089e1d0c5fbf66bde11558a874980729132b5bd0c2ae355ac1a7b893ab4"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sip"
-    sha256 cellar: :any_skip_relocation, mojave: "f7fefe7f5db4b75a8562e5f2dbccb3b8e25f3ec8091ee1bc55836a553142cd5e"
+    sha256 cellar: :any_skip_relocation, mojave: "18c5e2e5f229f97140b6b71d04c817aaab6475b3795ee45bd2b245bb4d89ad9f"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
@@ -36,12 +36,10 @@ class Sip < Formula
   end
 
   def install
-    python3 = "python3.10"
+    python3 = "python3.11"
     venv = virtualenv_create(libexec, python3)
-    resources.each do |r|
-      venv.pip_install r
-    end
-
+    venv.pip_install resources
+    # We don't install into venv as sip-install writes the sys.executable in scripts
     system python3, *Language::Python.setup_install_args(prefix, python3)
 
     site_packages = Language::Python.site_packages(python3)
