@@ -13,7 +13,8 @@ class Jsoncpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jsoncpp"
-    sha256 cellar: :any, mojave: "e73528d3a6fe7a82deee1f5d1fab5e82cd884a488c32f18384e22f3f81000d13"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4064822e00f97ad6eb0dbd3d8afd37d9e64290f41a135ffc2f94746f5c757c81"
   end
 
   depends_on "meson" => :build
