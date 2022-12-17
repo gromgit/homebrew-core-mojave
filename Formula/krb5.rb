@@ -1,8 +1,8 @@
 class Krb5 < Formula
   desc "Network authentication protocol"
   homepage "https://web.mit.edu/kerberos/"
-  url "https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz"
-  sha256 "7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f"
+  url "https://kerberos.org/dist/krb5/1.20/krb5-1.20.1.tar.gz"
+  sha256 "704aed49b19eb5a7178b34b2873620ec299db08752d6a8574f95d41879ab8851"
   license :cannot_represent
 
   livecheck do
@@ -12,8 +12,7 @@ class Krb5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/krb5"
-    rebuild 1
-    sha256 mojave: "69bf2d17d425d1c9dd9026de89ef327d8859d656f6acc357f8aa9242c268c3cc"
+    sha256 cellar: :any_skip_relocation, mojave: "57bbccb7c046a45c59452666d5ff7837b53862517cda8e2b87b0b0471b47bed6"
   end
 
   keg_only :provided_by_macos
@@ -21,6 +20,7 @@ class Krb5 < Formula
   depends_on "openssl@1.1"
 
   uses_from_macos "bison"
+  uses_from_macos "libedit"
 
   def install
     cd "src" do
