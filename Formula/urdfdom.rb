@@ -12,8 +12,8 @@ class Urdfdom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/urdfdom"
-    rebuild 1
-    sha256 cellar: :any, mojave: "9b132c85d15529b03a9b24aee5f4c440e96bb2551e91fa4265f2ebf508b65558"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "fe1386ec7287836c15cc42a7093e11adc3af00347823328a42f758d00e975d9a"
   end
 
   depends_on "cmake" => :build
