@@ -7,7 +7,8 @@ class ConsoleBridge < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/console_bridge"
-    sha256 cellar: :any, mojave: "098a916dcbb31a5f0e7bdfceb03400d74c21f7056fc8723e0a339d126acf6297"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f17bd66cde82acda6f1c061a7c0b2b55acee3f756e3353e9db425f7022997a31"
   end
 
   depends_on "cmake" => :build
