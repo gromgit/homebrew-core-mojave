@@ -10,7 +10,7 @@ class PythonLspServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python-lsp-server"
-    sha256 cellar: :any_skip_relocation, mojave: "e1d992414464c89efb923fff6e5724f2cc17222dca68a0147bed4820554b52c3"
+    sha256 cellar: :any_skip_relocation, mojave: "7ffa25f2f0bed12a5da6d67f3acb340eeea62581a2c7cf5026c5969c5954aecd"
   end
 
   depends_on "python@3.11"
