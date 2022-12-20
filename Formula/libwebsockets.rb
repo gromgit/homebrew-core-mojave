@@ -13,7 +13,8 @@ class Libwebsockets < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libwebsockets"
-    sha256 mojave: "2c2d15a65f5864f33e365727bf0271efb23771a1c95d8a93404aeb847f0ed384"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "60dc1d3d76d2b4edbf34c0f68450d8e127d43655ff00b20e44201ca32f6b07a6"
   end
 
   depends_on "cmake" => :build
