@@ -9,6 +9,7 @@ class Libbinio < Formula
     sha256 cellar: :any,                 arm64_ventura:  "d47d5255715fc0638111c50a4ec1fe4eea4fd90409389331874df8ef76f61c08"
     sha256 cellar: :any,                 arm64_monterey: "3b66d91c0bc97b7ade4576bb7d54403ebbf4e22a46c1ad7a1eb165a5cec24368"
     sha256 cellar: :any,                 arm64_big_sur:  "6490acae30e6e1047e5770b4aab37e4c043488c5c2e8a8919962208c1da2cdd4"
+    sha256 cellar: :any,                 ventura:        "79dab1370400b3395c8370da7895c60ab281d3410820852787e8e16851bd22ee"
     sha256 cellar: :any,                 monterey:       "f2f87992d693266d8fc333fc9c583b8c372657da0018b24538d771598c76570c"
     sha256 cellar: :any,                 big_sur:        "5ca7b1faccab23de4efee72cfe82244e419c40c78775f09a01e5669aeed4a8e1"
     sha256 cellar: :any,                 catalina:       "157efedae7e8169175623b12f91d8a786fdde524075a2a98a956e910aed5e507"
