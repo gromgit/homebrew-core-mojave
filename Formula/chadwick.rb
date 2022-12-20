@@ -14,6 +14,7 @@ class Chadwick < Formula
     sha256 cellar: :any,                 arm64_ventura:  "0686220c29d180a3aa51a536564ae3289dca57e26fc74b15076a7b00af5121dc"
     sha256 cellar: :any,                 arm64_monterey: "38685dff8c84293981d24cb109e29e7daab5054c8b643e5d4f4345a6ca5b68ab"
     sha256 cellar: :any,                 arm64_big_sur:  "3feae6163c485d40c22f4dcbd0f2772245e8010e7beb4b9f9c399bd93d46f475"
+    sha256 cellar: :any,                 ventura:        "d1038d6d2b346cd1569b3150c8fdef655d9fd8f26634481b7283b382fafc6273"
     sha256 cellar: :any,                 monterey:       "12a233aaf2854a5ab2d7561581465d51f014f9622e2231b5e3da98f4041937be"
     sha256 cellar: :any,                 big_sur:        "d03f388d1a56550fdc5b9832bf0a952c35a5b7d38f0661885c0dc4b7ee01d718"
     sha256 cellar: :any,                 catalina:       "693c6ee0980401936a83453bdbc398aeb0eb06ba9bb8e101046508b14edfdc98"
