@@ -10,6 +10,7 @@ class Libantlr3c < Formula
     sha256 cellar: :any,                 arm64_ventura:  "b7265d5141b9b1115b4db096b40a131aa140fe4a6b2d97a08152d880665ed196"
     sha256 cellar: :any,                 arm64_monterey: "192faf2b2502946c3a8b27cade6a6febbd579de8fb1b9da136c48ea6a74bc621"
     sha256 cellar: :any,                 arm64_big_sur:  "0ba9d61434c3b1a05ef0ff9bb86e1e6d238c91723383204daeb5115976b05b02"
+    sha256 cellar: :any,                 ventura:        "f83b901e8bbe67b933aecaf5d0db440b228d892c23e4917d2aaf7c1518b3c555"
     sha256 cellar: :any,                 monterey:       "8fa311163c90642a02332aebc6b4bd77d24fc2d0a45ecbc6f5670acb54e29977"
     sha256 cellar: :any,                 big_sur:        "3e442dfcc1083a693b77995703d2a2bb5100d13dfbae8cf174816fd112e90cb5"
     sha256 cellar: :any,                 catalina:       "53bc5810ecd6cc4be26da750839d53981ebba6ad931e13005661e599cfd69501"
