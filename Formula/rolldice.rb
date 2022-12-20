@@ -9,6 +9,7 @@ class Rolldice < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "adeb468985368ac97a5e5e16a8276ca39a7c87f9615dbab892298e74d3d0f018"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2fa79795244358b512e08fddb6cc86a27029ce8f14038130ab7fc33b84724f43"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1feb7522fecad653acb8a6d91152475486f1fa0f19107df1086c7674074a6870"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f3fa0150cb26cb71c0df08c79226e1258e738eb6c3f965a491d3e649dbf2b4f"
     sha256 cellar: :any_skip_relocation, monterey:       "66ee3760def3920ddbeb564ed32f772fe12538c5db6124c7ebd56ef1a82eed97"
     sha256 cellar: :any_skip_relocation, big_sur:        "65289049d189acb12af84edb62fb1fb5b0e8faa55931176aa4430d4442e28cdb"
     sha256 cellar: :any_skip_relocation, catalina:       "a3fec25c1ccaf264a80a81f276aabf54cea670f3e88a48a40c7ffa9c7942bad4"
