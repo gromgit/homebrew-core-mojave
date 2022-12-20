@@ -13,6 +13,7 @@ class Fastbit < Formula
     sha256 cellar: :any,                 arm64_ventura:  "d4860526007422d2c3f3d2857f4af11daac63b571050b1d60994b24a5170ad5b"
     sha256 cellar: :any,                 arm64_monterey: "cb5166c40241b15850b828ec9719276cea4931305701458adfe41c74f88cf72d"
     sha256 cellar: :any,                 arm64_big_sur:  "09dc75c92fa358be93b38636c4e747d0768af669e396b07854975684bdba8494"
+    sha256 cellar: :any,                 ventura:        "93657ebe3a5ba3c353cf57f060771777f9e34334624bb76a5c769c3adf6ea7ca"
     sha256 cellar: :any,                 monterey:       "99413781b207c1e4c7911cc8eb8f300de0601fdf3c0092fe1f4c0c68f985562e"
     sha256 cellar: :any,                 big_sur:        "ce5bd1a75d14f7f11b2bdcb9cf63aebc63f3c722dd4a39380e50d2c8489b2347"
     sha256 cellar: :any,                 catalina:       "31e723c0610621033859357ab2a6dc373cf955847ab5c3dcf32696d260fa0de3"
