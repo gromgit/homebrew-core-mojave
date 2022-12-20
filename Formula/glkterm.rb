@@ -14,6 +14,7 @@ class Glkterm < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a16c7170ae9eecce9419bbcb844b97ffd38cf62eba26c92f2d8bd4f1e5b1e88c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3c6a484e614b2100efbb81a9724035e7dd974a0e4c15cba7b846cf11ee543e09"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dfa6c028a6b6c70b258e19faa4f274c5c993ee55d8fa21e7574aa1df32e6cd2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "634360102e7a03bf06bd75c090d336ffdbcd07a3f0abbc177585b92bfe519dff"
     sha256 cellar: :any_skip_relocation, monterey:       "e47a9f144d3113fc05b42020d4ebf5d49afd666c73ee7b0cee980083e577f8c4"
     sha256 cellar: :any_skip_relocation, big_sur:        "a82e9471f88cd16b842beb87305959fcdec9fbc083cb7e4b6b213cb7f7c9f701"
     sha256 cellar: :any_skip_relocation, catalina:       "c337df9d5b7c6343fe21abf1f17143d51d4e61e747b1c6da7d31ad557653a7a0"
