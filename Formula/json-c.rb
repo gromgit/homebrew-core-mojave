@@ -14,7 +14,8 @@ class JsonC < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/json-c"
-    sha256 cellar: :any, mojave: "f97b7bc4981d46e786fe6414885a8bb680b6df0520fd9cc8564f8c5d5e9f5e2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ba07596199e46ca2a5477456688035c679ac0ee5cf03b6b29cc2652ae6eabe7c"
   end
 
   depends_on "cmake" => :build
