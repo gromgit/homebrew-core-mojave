@@ -15,6 +15,7 @@ class Libdivecomputer < Formula
     sha256 cellar: :any,                 arm64_ventura:  "00cafca196e5b09177dca8eaa98c677973c2d860f76d9465f078e9e5b7f36ffa"
     sha256 cellar: :any,                 arm64_monterey: "2a7bd7af77fe467bda4a336616f3e1e8a054b8481b97bd5f5b9507f265318e83"
     sha256 cellar: :any,                 arm64_big_sur:  "c5f918bf0cf0716949639440453e31eb929a918d5328fb1d4dd50ad6f6a497a5"
+    sha256 cellar: :any,                 ventura:        "731dbf939d3483a23b7bbd0c82d2ca7b4d33bec268e1ec23bdb611384324f5e6"
     sha256 cellar: :any,                 monterey:       "e60b9733a86f7f911241780c4b12619c33850e152c816adbf9893f48e17d82cb"
     sha256 cellar: :any,                 big_sur:        "80a648490411d90cee0ae9bbafbc91e48e6ee1d4b449bfad5795cd375b5337d0"
     sha256 cellar: :any,                 catalina:       "b0e1c5af39a3a474f72a89b669acfd82628f91aabe21c719e2eee78dc0099950"
