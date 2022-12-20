@@ -1,12 +1,12 @@
 class LinuxHeadersAT516 < Formula
   desc "Header files of the Linux kernel"
   homepage "https://kernel.org/"
-  url "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.16.10.tar.gz"
-  sha256 "1c71b2eb775bf4d2aae32907fa7ca42770c58e114c0990d7398e9db5a636bcac"
+  url "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.16.20.tar.gz"
+  sha256 "3fa593807c25d772f3b876ccdb9c4a073f06dce7d5e934ef8ecd0de73b87fd1a"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "06c20f8c85abb46ed0869470e3f73185b4cdd47ca196e01faa4b591da12d5869"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a23cde4d0db4d0e68002d95bec38e22bbb10dae33e565b664607850e46358269"
   end
 
   keg_only :versioned_formula
