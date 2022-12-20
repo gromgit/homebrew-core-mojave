@@ -11,14 +11,14 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "1948f03bd44e133b30b83319a930e653edac721e5550530564def773c7eb0f30"
-    sha256 cellar: :any, arm64_monterey: "6d02a30983f979ac7bd32ff4001b50cd4afe8b10c4a566009dcee918a4114a05"
-    sha256 cellar: :any, arm64_big_sur:  "b7beaa228901b28811563e24225f176571b2f960f50eea025761fcc2d1b96dca"
-    sha256 cellar: :any, ventura:        "f63e517af005631b82432bcd15549d1291eb1d59e01b484332e3e880eb49690d"
-    sha256 cellar: :any, monterey:       "7aa6e5b03157684305c3712718d95e487e258bfc9689a436e568510365086251"
-    sha256 cellar: :any, big_sur:        "ff55a2d6082d2e440f55532ea332c45f192643ce3ac0a4dc3d4823b9515fdb7f"
-    sha256 cellar: :any, catalina:       "242e5cf8253bdece0d4e9b5e3841ddf24b34c713b7ce96daa6b1bada7d4433fe"
-    sha256               x86_64_linux:   "b040105b3f8e64514e9b87ab70ffbca01138860f571f3e6f53b6274748ebe063"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "f8f4e322438b1f12f221dfa2456988e9438287585f242fba15e53a9a254dbc48"
+    sha256 cellar: :any, arm64_monterey: "0e6b0f8b09b57242adf280ec452d2695d596d3108eadfad78e793e0c9f65d2a7"
+    sha256 cellar: :any, arm64_big_sur:  "5ded901b7ed751d62f12b1123d6ef3631e681c2f70da490b1bcd8e2420a97d20"
+    sha256 cellar: :any, ventura:        "119cb96b8a9e6ab61a6dbaabb391f4f5f45ce64e41dbbcdd38fc8366452a31a5"
+    sha256 cellar: :any, monterey:       "8380eef4472205fdc0b3968c1241bfc616efaea90aef325198d767a74d2f78ee"
+    sha256 cellar: :any, big_sur:        "7f8144e91c53df5a413d03a7dc72db16fb98116185e2cae3c499715032bbf731"
+    sha256               x86_64_linux:   "f9ea52dd1f656ed210a56095ba42f8e54dfe230ccf7a55e3539ae36f72a130f0"
   end
 
   keg_only :shadowed_by_macos
@@ -48,11 +48,6 @@ class Openjdk < Formula
     depends_on "libxrender"
     depends_on "libxt"
     depends_on "libxtst"
-
-    # FIXME: This should not be needed because of the `-rpath` flag
-    #        we set in `--with-extra-ldflags`, but this configuration
-    #        does not appear to have made it to the linker.
-    ignore_missing_libraries "libjvm.so"
   end
 
   fails_with gcc: "5"
@@ -120,7 +115,7 @@ class Openjdk < Formula
       --with-zlib=system
     ]
 
-    ldflags = ["-Wl,-rpath,#{loader_path}/server"]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}/server"]
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
