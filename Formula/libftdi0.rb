@@ -9,6 +9,7 @@ class Libftdi0 < Formula
     sha256 cellar: :any,                 arm64_ventura:  "49e1218cecb4cb2c0ac5a274beb6f2f57171d845ddc5117474c0482df90a04e3"
     sha256 cellar: :any,                 arm64_monterey: "aa6fa3c7382182d2cccdfad72fd6842b382498c6c5dd5e7a4231313e6cd0e2ab"
     sha256 cellar: :any,                 arm64_big_sur:  "0c48950d5292b7eca6aa02488d53792cc2b83b3bb0aa657cce08d10141eba5d2"
+    sha256 cellar: :any,                 ventura:        "0a1d461e39f8a7cccc80aedce141e75721ae2cbb27b20dfa7b952f3632dbea99"
     sha256 cellar: :any,                 monterey:       "28b4982190f4f50bbb0b9875d159adaeb71f9dab8ae960b0140f1b9d45939c65"
     sha256 cellar: :any,                 big_sur:        "710564aabb66bbb9b82f0fccd149fdf40f6e1a7886bd624829a07a9c41752e63"
     sha256 cellar: :any,                 catalina:       "064e2f32a4a8959f2a489611c931beac426f509a8299bbcdd03871b1d5f5859e"
