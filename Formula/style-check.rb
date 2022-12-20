@@ -16,6 +16,7 @@ class StyleCheck < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "abef781d8bcc9e2070e039fe4adfb5f56d5fb428af473439628ec98fe87b788d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "abef781d8bcc9e2070e039fe4adfb5f56d5fb428af473439628ec98fe87b788d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "225c5a3dd8f66d7b42f60d165aa7190e252f4432bf0c41cfed8216746bbbbfef"
+    sha256 cellar: :any_skip_relocation, ventura:        "abef781d8bcc9e2070e039fe4adfb5f56d5fb428af473439628ec98fe87b788d"
     sha256 cellar: :any_skip_relocation, monterey:       "abef781d8bcc9e2070e039fe4adfb5f56d5fb428af473439628ec98fe87b788d"
     sha256 cellar: :any_skip_relocation, big_sur:        "ad0fe7316475b3384c68b37f288a76e9e20933fe382dd28c3e93944ecb3cf52d"
     sha256 cellar: :any_skip_relocation, catalina:       "5f652a7db0691978cb42a5be5d0e293e671c2953364b64b75a0ba663b581051c"
