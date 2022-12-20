@@ -8,6 +8,7 @@ class Wy60 < Formula
     sha256 arm64_ventura:  "4416be14e5f87f206fd75dca1e15f6b2a1ec3a0fc2e1264c3d242c57dadf1217"
     sha256 arm64_monterey: "af9022e78bcd0a863d72bcc0c7ddeb5fa004318e7d3e39f17f630b0e6d3f25cc"
     sha256 arm64_big_sur:  "700b80eb03a92465ae6a0860bf3c3eb572c9bc97799eec577e2fcb694c050148"
+    sha256 ventura:        "9274cf2e7bf58a7ae51ddc8d96634ad46c185bd177098b332069e5d8c3f545e0"
     sha256 monterey:       "8ca95f2514f7950df479ab89844c07038fdfed5b8b730a26a938be0e85bd4c41"
     sha256 big_sur:        "d9f755155083e888e0c001dc6590e88f90c5c1ae7868d7ec36865e127f60e066"
     sha256 catalina:       "29247a3617870bdb8364f9ce1b6d167b6029b016683dc5da39816b0a637bf5ef"
