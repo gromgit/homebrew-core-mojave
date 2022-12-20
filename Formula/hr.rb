@@ -1,15 +1,13 @@
 class Hr < Formula
   desc "<hr />, for your terminal window"
   homepage "https://github.com/LuRsT/hr"
-  url "https://github.com/LuRsT/hr/archive/1.3.tar.gz"
-  sha256 "258ff3121369d17c5c70fa18e466ac01cdb4cf890c605f7a5e706d5b1a3afebf"
+  url "https://github.com/LuRsT/hr/archive/1.4.tar.gz"
+  sha256 "decaf6e09473cb5792ba606f761786d8dce3587a820c8937a74b38b1bf5d80fb"
   license "MIT"
   head "https://github.com/LuRsT/hr.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hr"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "20167865a7329e3f771e97b1b0c6c5cc639507ad041c1abd99628bdc87514257"
+    sha256 cellar: :any_skip_relocation, all: "7d71a3a75027a3bc096f492ed779d0603542382f936572d91cd3f1c194abe48b"
   end
 
   def install
