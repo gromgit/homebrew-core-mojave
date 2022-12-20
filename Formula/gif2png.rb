@@ -13,6 +13,7 @@ class Gif2png < Formula
     sha256 cellar: :any,                 arm64_ventura:  "f0feffa02d1d8db0cf5e4f13a209c173fa870557faae6fe0d37a5d96614c9cc5"
     sha256 cellar: :any,                 arm64_monterey: "7376913b012f5b2fe0972244be5bbbefc665ed0f13c9d3a8ac2b0fe6d23dd375"
     sha256 cellar: :any,                 arm64_big_sur:  "a8b1dd6b1f3b029b7ca53f99f18caea098810634aea1a745630028e66ecc4203"
+    sha256 cellar: :any,                 ventura:        "4e5fbf6fd1a25c14963a42660ef29c0463d4cf9f7966690d3ac8ec3d2abd4552"
     sha256 cellar: :any,                 monterey:       "6f5ad22f5b61cb14009aa71dc7c892093117a1a7d920e9f7712bb27e98e56b4d"
     sha256 cellar: :any,                 big_sur:        "2c3b07aba9f301e689fbc6268894e3ab3a56044741b8b4adabd6afb1d4962af1"
     sha256 cellar: :any,                 catalina:       "cfbf0572aec85f33c51bc58064e20a44de374a319bb369e46c0aab8581756253"
