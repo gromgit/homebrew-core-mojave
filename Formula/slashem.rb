@@ -16,6 +16,7 @@ class Slashem < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbc49014eb4afffa42419df08cb98337389fb1d87b76c2c900553e0c3739f069"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "07334e0d163f5aef7e77cd2047374806fccca1071f0e8e6057e3f740746cc139"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7fcb3b60e93f0119b791410997a9552c4dd409061eeb06d7b5461a4ab75a52b"
+    sha256 cellar: :any_skip_relocation, ventura:        "1094c0410fe6414fe94e7d583d31a483fa2cb5a432876da3d533b5beb853fc83"
     sha256 cellar: :any_skip_relocation, monterey:       "b7f005ad0ee38c512e4ec7f89c50ff88b86439b66d8c0fae05db62f933290ea8"
     sha256 cellar: :any_skip_relocation, big_sur:        "580468c6703c09d86a0904bb838e3bf8f98a1a21d7a694147b8bb61ea3428f88"
     sha256 cellar: :any_skip_relocation, catalina:       "96fc5b1abd0e8deff9573c43656e7f3caa25b51d28eb8f426cec7c28131ab4b0"
