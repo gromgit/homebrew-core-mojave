@@ -19,6 +19,7 @@ class GraphqlCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1828f727e53a0d4605a62affb657d94d86c4e9edb530cf9db16c9d61b0946519"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f0032a97995c66d8f090765b11c3fc85af23a7ca389cce6f2e183508721e4039"
     sha256                               arm64_big_sur:  "2da205bbd5c76588be334a84b52dacfac9062045d605ed3f8298b7cb7b9b84a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0603e5871fee5982513c8f28020e94bb85482f9157db3be8e7b2df987b7d551"
     sha256 cellar: :any_skip_relocation, monterey:       "81cb7b69b2c0f61b042cd95eb434bf59f594815bd85b686e6336db6aa27ff725"
     sha256                               big_sur:        "02d60908557d5dedf63fffe66a51f5829807abd910b5460a2ae44d7b8d208142"
     sha256                               catalina:       "5060d007d13a695709ff9afaa16a1492d8645e17ab78ec2b14650e0c7a305e55"
