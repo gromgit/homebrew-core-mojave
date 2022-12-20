@@ -2,16 +2,16 @@ class Bartycrouch < Formula
   desc "Incrementally update/translate your Strings files"
   homepage "https://github.com/FlineDev/BartyCrouch"
   url "https://github.com/FlineDev/BartyCrouch.git",
-      tag:      "4.13.0",
-      revision: "36cc46399abe717986cda40ccd6d6eb34c6ff70d"
+      tag:      "4.14.0",
+      revision: "03c3816a39ac2d82fe9a2f2efc84949a1e50165d"
   license "MIT"
   head "https://github.com/FlineDev/BartyCrouch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd2e879cff394c1e6f7e9ad68c798e0cabdf3f624f99eb8e308f6d9d4d11b782"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "451f872bb60d12f471624c23dad49f040abfb23d0cc4eecd6f8970e59772460f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b476e74851ac08523154626d083509439a74a66b361b610236a4e42423fe8e3f"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2860b77f98f794025464a34cf1a565c8991336850d9f88cd8b5c57d3498ab3a"
+    sha256 cellar: :any, arm64_ventura:  "5a311ab6b5dcc5207d783d613f2435b1d38247d2d67bb929e6a071c5f3d24b28"
+    sha256 cellar: :any, arm64_monterey: "43dba96a5a6c96a5a04d677da4055658ac3c9c8af53c7d76c94fe1f12a5fb182"
+    sha256 cellar: :any, ventura:        "18dabbc4f3dbed4f368989134994412d03dfd5456bded2efd8c6f67bbe8e7601"
+    sha256 cellar: :any, monterey:       "904848becdca34aeda73e79878654d02d937db7d2403d345d34d2a04c6cef120"
   end
 
   depends_on xcode: ["14.0", :build]
@@ -19,6 +19,9 @@ class Bartycrouch < Formula
 
   def install
     system "make", "install", "prefix=#{prefix}"
+
+    # lib_InternalSwiftSyntaxParser is taken from Xcode, so it's a universal binary.
+    deuniversalize_machos(lib/"lib_InternalSwiftSyntaxParser.dylib")
   end
 
   test do
