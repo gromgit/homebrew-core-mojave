@@ -14,6 +14,7 @@ class Aescrypt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c6719bff5edd5e48eea46096d02b2818e94491901d419de070a0927fb53bd5d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bbd0fab48f97fd829f8fddf38423158d950668f84dfaee6d87f45fa1af96b55c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a6ca5e29be88eea7f2fe4faf1e57e3f827bfa86bae2726e5f83cedc79c091fcb"
+    sha256 cellar: :any_skip_relocation, ventura:        "436e60d661f966b478c730c3a0e9615a963e540424a6d9acf26f549d56bcd08a"
     sha256 cellar: :any_skip_relocation, monterey:       "a2d7637fcca0782a1f78089af50ea8a39d97d84f7e5fff9c9af938a353724887"
     sha256 cellar: :any_skip_relocation, big_sur:        "e41505ebcf2ca60292fd7391501ccc8d81ec41c96b23f2f50f21315bafc97f77"
     sha256 cellar: :any_skip_relocation, catalina:       "c5dac9eb7f3ce8509c766d82ef5f972c8a41984284ae3e01651c6f308164c5bd"
