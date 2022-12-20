@@ -10,6 +10,7 @@ class PandocIncludeCode < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "03487512c8b41b88561df1e3e2f9d93ee09a6ea0381346c400417716a2b88b55"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "116b050084dbeca5e70da5f02d8e71502ff6d2b971e27ef1fb4e8411b6678745"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d348930f3e282fc3b5e3ca457391931637757b91a9fa1ab0617531bb8629ef4"
     sha256 cellar: :any_skip_relocation, monterey:       "180d35d9d7e345bdfbdd2382aa4dfb2bc20ce1c2f0809b4a365c6cb0aca5e059"
     sha256 cellar: :any_skip_relocation, big_sur:        "dc076e4b3a63c70309a63b8c631500418b0b9ba5db2a0a46718527fe780d5136"
     sha256 cellar: :any_skip_relocation, catalina:       "63300eec1d6a9e05208917453d202436384beaa35a50c9e46cff101bac589849"
