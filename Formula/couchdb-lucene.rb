@@ -10,6 +10,7 @@ class CouchdbLucene < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "eaa814fcca3f76e89a767b2ee41759690e5cfe7b90fac27e9b1c8be31c54126b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5729f57b791c90e176835e8ec3b21889b0a8e8b9dcd57c3e995cf377b8b0cd84"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dd2d73a35db77da8eaed04fc2f1afb87dcc995c1f79acbae54e831c36782b286"
+    sha256 cellar: :any_skip_relocation, ventura:        "3db1128166f7c71200fcccf92414e16fc1a0f20921bd00a46460f508716aacbe"
     sha256 cellar: :any_skip_relocation, monterey:       "0bdd89c21b0a7f779e79afe8b44f816aa84a47680f78888d3ef9ca60d9bc59d6"
     sha256 cellar: :any_skip_relocation, big_sur:        "8c75a95f3c1909e99602f51ed4c55fc2eb495910d8772b9b693347c633141715"
     sha256 cellar: :any_skip_relocation, catalina:       "5888b91cbf5c0fe4744ee9f1cf0ca204f9dd89e125a06fc928375b1d2770ae87"
