@@ -9,6 +9,7 @@ class Lexbor < Formula
     sha256 cellar: :any,                 arm64_ventura:  "4c774414ad87eed57d9cfc6acdf3fbdefd1f79e2aa32606ba8647986403d857d"
     sha256 cellar: :any,                 arm64_monterey: "049e9dcce3ab4f13d659346cd8e437df6fa1436835148cd77b9a692c892247a5"
     sha256 cellar: :any,                 arm64_big_sur:  "7ff7b35d9f6c4eb4ed63a7dde659430d17ca5c48564d6702dc9b4e1ea955592c"
+    sha256 cellar: :any,                 ventura:        "b07d98d4d1af57d0306f87201a7732e4dc2e134b496ea9d61f433fbb09d2d0a4"
     sha256 cellar: :any,                 monterey:       "f6d5df6a5a8b4a0c68276927883bcf9950d79e0c8534671345be60abb8cf5eda"
     sha256 cellar: :any,                 big_sur:        "e553e88f89c5fb07eb2e5da0950888f1f8e60a6c23c05999119f5fdc50acc9a2"
     sha256 cellar: :any,                 catalina:       "717a39abae12061410e36356219b4f44a31d4ca6c050966d48a5cf941ac13421"
