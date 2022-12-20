@@ -14,6 +14,7 @@ class Liboil < Formula
     sha256 cellar: :any,                 arm64_ventura:  "d9163cdae71515f1281691a77d77cd635f9f5d0e001eece4ac204f0156ecc393"
     sha256 cellar: :any,                 arm64_monterey: "1301c11b0befc6f72c27cdf4c659caa989c472a4a04d5fda6d1815baff7c381e"
     sha256 cellar: :any,                 arm64_big_sur:  "915b7c9defeb1e3d056cd4ead9442b6da74c033d776a3d29eab11f3a74cc4bc6"
+    sha256 cellar: :any,                 ventura:        "05bd717d1d98207ae7534a1fac233d493838f0b919ddcb2af09f8010b687e56e"
     sha256 cellar: :any,                 monterey:       "85dc36f48c6496097f4aa02b580573a1c21a399e418464121a8f935f50a4a951"
     sha256 cellar: :any,                 big_sur:        "ca18b013a3853b8d751276c3aea1891d945cb510fd73c3f6704eeb84aba49216"
     sha256 cellar: :any,                 catalina:       "4568936a9d090ea8a2a349e4009a0b2f0a66edc49c93b4bda1a9c30d6ad64544"
