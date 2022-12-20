@@ -16,6 +16,7 @@ class Pbc < Formula
     sha256 cellar: :any, arm64_ventura:  "e22db03b394884a0f34163c74d87b6c33210aefd98cc751d2ab61108c667fdf0"
     sha256 cellar: :any, arm64_monterey: "2397daa1cad88180149983c0f6557b6a48fa2124c24ac78a8d95dd0af9cac8a0"
     sha256 cellar: :any, arm64_big_sur:  "ac722f3534f9cf0679f2c999353a524d822d4068d8f9877a5967fe6fbcef9f04"
+    sha256 cellar: :any, ventura:        "903a04400b010de2e1c4311881dfaa8cfc9f04ee40a83f369a19fd334e6b4446"
     sha256 cellar: :any, monterey:       "dfe0e9676dd479513ec0cf524d6a225229de96aa058492a6319cdd914dd3509f"
     sha256 cellar: :any, big_sur:        "c14c0514c725c35d0dffbc7dc410ddc5be033e061ffc66d9c039033b0ca1e6e4"
     sha256 cellar: :any, catalina:       "83d464696ab79f463ec2dc930cbd9c3ecbdedde5c578e70a4994b2cd8fec1f6d"
