@@ -10,6 +10,7 @@ class Bgrep < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b808abe4e0fd7be98cd1d9916c7e839f95cb086d28a987101aa51a73c22da87f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c65ddc4ca486db177cd63f45e4cb97172f590ed9b2f70364120b2326e7ab3f94"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d5628a1b93a4ad2e770502b011140bc301051e1679ac5d59eadbd9b94944b1b"
+    sha256 cellar: :any_skip_relocation, ventura:        "0240d1970176f07cb0649f1da10501aadd49ca7a915756ecadb0d08fb1032bb5"
     sha256 cellar: :any_skip_relocation, monterey:       "2264b9b3c17b3faa5c66f612ce460a65e02bf0f3c3620002c90866c699b5cf81"
     sha256 cellar: :any_skip_relocation, big_sur:        "cbd5d550e042d764f0cc4c39e58cd40ae87430fb773aae7d77f3ca56d05c3325"
     sha256 cellar: :any_skip_relocation, catalina:       "444a8dd0c2190e3a75574f8bee287895aee1d070d3e72e72fd7cda4c9cb77211"
