@@ -10,6 +10,7 @@ class Jvgrep < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd3a0a38f4473a5f7f09d8a37cb3e0509eba31c77a3b29d51c62fbc8693f4708"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a8e3bfa63ba343fe5be6e0386101e43e5b4e51eb5883f7d0aafac15b66de8ed9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9f22b7d0972294f7d6d1dec7f88628df527656aad3e3f5331da3b16d78928cb"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd004d77b6969c6704aa0423bd5fe57d5b446c731a6d683873035b36746f7102"
     sha256 cellar: :any_skip_relocation, monterey:       "ef68f2ff439b0e69a0b81d2692d3730d52a50126a3214416e3f22ede0664909c"
     sha256 cellar: :any_skip_relocation, big_sur:        "d7d7ed4778bab36afa71a8b06b5a42b5d4178bb3bd08c94a90e9f099af5ea92e"
     sha256 cellar: :any_skip_relocation, catalina:       "da1235bed154594ddbda2614b02a42cefe359aeb02835bd99cce97642aa83df7"
