@@ -1,12 +1,12 @@
 class Skinny < Formula
   desc "Full-stack web app framework in Scala"
   homepage "https://skinny-framework.github.io"
-  url "https://github.com/skinny-framework/skinny-framework/releases/download/4.0.0/skinny-4.0.0.tar.gz"
-  sha256 "7d1370856927e2768c30be15c38dfbd5e322bc6eaf9b5ef14e69ddf2ddc91520"
+  url "https://github.com/skinny-framework/skinny-framework/releases/download/4.0.1/skinny-4.0.1.tar.gz"
+  sha256 "2382ba97f799bfc772ee79b2c084c63a1278ddd89de8dacd4ba6433f41294812"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "136e223ff9658c5d185c911eb0e8a130bb5931814d7a788dd5bfa4f9513d37a7"
+    sha256 cellar: :any_skip_relocation, all: "97cc1387283607f82657290b059c45d22018c2b2a93abe4ce14cf771af450def"
   end
 
   depends_on "openjdk"
