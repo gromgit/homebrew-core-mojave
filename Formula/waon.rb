@@ -9,6 +9,7 @@ class Waon < Formula
     sha256 cellar: :any,                 arm64_ventura:  "648dea99dcc66856eb8a50ae15b4f8b026be97accb83bdceaabe795933b63af1"
     sha256 cellar: :any,                 arm64_monterey: "42e529969e77de03e3dccc5c7e8ea1883bb860f22cc253b710a2d0125f0648df"
     sha256 cellar: :any,                 arm64_big_sur:  "5c2460bd2671fbb035d30f61a80c470caca47d2cc2b84b103b1d9d25540dd233"
+    sha256 cellar: :any,                 ventura:        "0cac05703864bf3fa9a3d7b5df3707eed37ed165926b63c9fe8fac3c3814427c"
     sha256 cellar: :any,                 monterey:       "5c75aa3dabee6f46d25c3ac932ef5af20f00cfefe4e5e586489c380ed9aa4c05"
     sha256 cellar: :any,                 big_sur:        "1fb554284ace79c0c8eae1d7dc9b9e9ce9d7d90e35e97ad318f5cf7dcdaa059c"
     sha256 cellar: :any,                 catalina:       "47eaaeeea5b323dced48d444ffc21c2f16b86443271952bceac22abd788ebd8f"
