@@ -10,6 +10,7 @@ class Ctail < Formula
     sha256 cellar: :any,                 arm64_ventura:  "2b40393969bdf9a4676ee936099af2cfbe92c006e87ce6c62b44761d24328b10"
     sha256 cellar: :any,                 arm64_monterey: "0b339ed01671f93d78b97a473d2ab4710182097276def040447573b274003e59"
     sha256 cellar: :any,                 arm64_big_sur:  "d4f6bf36550a739d7ad22a28200fe2cfb4fc18798fb2af832f380a1b2411803a"
+    sha256 cellar: :any,                 ventura:        "c168ea95ba0e8639c4f1152c19a8cbb831ac1cd7f108c2fc9ac37eab03e0ed23"
     sha256 cellar: :any,                 monterey:       "be4aa07bfd921f4903112f0ff6dbccc979b86cae77cdd75fe4ae9e2bcb3ff101"
     sha256 cellar: :any,                 big_sur:        "31c851cee6019ade6def5da7a50b2d901d04e1038d9d01d6985ac57a700a810f"
     sha256 cellar: :any,                 catalina:       "0821eb3a9bf969519149b7cb3038db2dc25836bc335c057e0ff263aa5fc2f7b2"
