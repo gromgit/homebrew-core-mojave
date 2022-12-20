@@ -17,6 +17,7 @@ class Aalib < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bbe40492b5ff2d6bde6effd36a8fa0b179786032c1da624d0f6bd15e71cd044"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "292e704fb6cca01e6ab77baac8960df5c9b45f2fb209a0f670a7de16242c3ee0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "031eac9658cb6878fea6b53e232e0b3f294b81953dd1803bd808c26c5b1a934a"
+    sha256 cellar: :any_skip_relocation, ventura:        "a71c6ea0888e11ca4512de9bab4142c160e360e41ef5eb761740af5f77a459cb"
     sha256 cellar: :any_skip_relocation, monterey:       "ac7c8f7dafcb3eedf34abdd258d0cab1f9e58a3048da6307ded8ae029d162a2b"
     sha256 cellar: :any_skip_relocation, big_sur:        "fb1df93a418c2ae4b7c358d19b58afc0ad73d9d1e6f22b92aa5d5f086cb48a70"
     sha256 cellar: :any_skip_relocation, catalina:       "d83c1b827ca16ae5450356db32fe1b27e910a27bbe2b074a9b4c22fe310bc5b7"
