@@ -1,21 +1,22 @@
 class PhpCsFixer < Formula
   desc "Tool to automatically fix PHP coding standards issues"
   homepage "https://cs.symfony.com/"
-  url "https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v3.13.0/php-cs-fixer.phar"
-  sha256 "ac2e57e32cdae67f21baa88f78405f93d4d6e928f41ba62dc91505565c785a44"
+  # Bump to php 8.2 on the next release, if possible.
+  url "https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v3.13.1/php-cs-fixer.phar"
+  sha256 "e1b42b0a3b9a58de036ecd6d924e26d56c526f9d74b9eec6e7d1c0fa0439db29"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2e0658f7344cdead9565fe95a736c36d60c26753f88b13303059bd2311d56843"
+    sha256 cellar: :any_skip_relocation, all: "14cbefb5201f4ada0a790d46c9febf5943b9ff7a9e1f1eaeb41d9d7479d1c62a"
   end
 
-  depends_on "php"
+  depends_on "php@8.1"
 
   def install
     libexec.install "php-cs-fixer.phar"
 
     (bin/"php-cs-fixer").write <<~EOS
-      #!#{Formula["php"].opt_bin}/php
+      #!#{Formula["php@8.1"].opt_bin}/php
       <?php require '#{libexec}/php-cs-fixer.phar';
     EOS
   end
