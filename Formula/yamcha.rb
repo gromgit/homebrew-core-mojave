@@ -12,8 +12,10 @@ class Yamcha < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "2302fc8b966f2d6cd48fdffdf765d577844e571a7f7de14aa1fe4091f960e329"
     sha256 cellar: :any,                 arm64_monterey: "f3b51abc7335c21295ed08c9142d9c8fe2b48a74d8d632b5bc7812079938ba80"
     sha256 cellar: :any,                 arm64_big_sur:  "69a10b712ef5d0d47b50623eba38fe14207b046e6b55156cfc5f5595d0983161"
+    sha256 cellar: :any,                 ventura:        "f8db88401507cec60953241a6ea12bc3945dcb68db85366bc597f466664badb7"
     sha256 cellar: :any,                 monterey:       "31ace70fbbf4e2da60850ccc2cea0bd4131e6acc98560cb3230d38c334ec2d2d"
     sha256 cellar: :any,                 big_sur:        "18f032ddd520debefef3e67422089660c9222e1a8098d4c9b5128cb7a517e87a"
     sha256 cellar: :any,                 catalina:       "703da9d88502c3e8ede9d567a816f7b7856112175f07f8b4c720bc7b0f540e64"
