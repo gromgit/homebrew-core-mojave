@@ -14,6 +14,7 @@ class Lzop < Formula
     sha256 cellar: :any,                 arm64_ventura:  "f797bf586d6db6240f6984be8f115a91f0218e3db024668f926b8a694ff2b57a"
     sha256 cellar: :any,                 arm64_monterey: "32f4ffb33fda5a32802c7a37dcf41eef9b74185e726c6332912dc7d0d524381a"
     sha256 cellar: :any,                 arm64_big_sur:  "32390eb8141791296e84ed7c6a39edb5bb2ded9b04581c301d32a6dfa322db4d"
+    sha256 cellar: :any,                 ventura:        "b521542f32669d0890bd66a3a77cb8517df3f6a619563fb3817be6c7a77acc90"
     sha256 cellar: :any,                 monterey:       "5a74762d3592fc992174fff54cb221db8a4c104f185ac3eff12deda7e97563be"
     sha256 cellar: :any,                 big_sur:        "f04a876a2b69220632fb027546104d9c6cb9ee8bdb1d9f6a2845a054500d8bb7"
     sha256 cellar: :any,                 catalina:       "3aa57a50254d383c0fe0e4d0d0585e1525d50d0cd30f87390d087523348044a0"
