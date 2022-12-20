@@ -14,6 +14,7 @@ class Aamath < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fdc50f0e8165ff7de731e092ddfa57149185bd1c1e1cf463e819645364d25ee"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e823e4d89ae67660af61746c7472d80f0eb2ea70503471ac1190f9c0c691faf0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eec6c9dd0ae3b32b3d2b22ac4cf926c6b3084a41623361762a4c0a297dc05286"
+    sha256 cellar: :any_skip_relocation, ventura:        "1edd59508421089d629ab153c03d9db3c5e0e3cad0a75d3baea36b533a5b1d0a"
     sha256 cellar: :any_skip_relocation, monterey:       "58065a231153b1971495d1d07c7d68740a1e7ca51ff95d8c8684ab511aaa4ab7"
     sha256 cellar: :any_skip_relocation, big_sur:        "588a5ccb517b6d41a4f323f7a376cd9a34e4d0d447baf15179c05fbbf2c0e588"
     sha256 cellar: :any_skip_relocation, catalina:       "1ac1413ef0322b280ae5bd5663373ed959ee54d28dbdd3261fc4da6e57abf44c"
