@@ -15,6 +15,7 @@ class Mmsrip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd7b148f1a0c9017f7a141493d40fd0c4e764fe34a458f151ccb5925bcbc2a13"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c834ca9c19e7b5bc37a0895b146f99d6075760948468a2c8b1bbd4cc67191c2e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5d47cddeabd5f3cbd7b0c2c988d10dee8726dcf557f95eb3cada3a1cdc954a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b305d9a6f6fc639792dfc7cfa1253c060132ad799eadd64878e87a688029b7f"
     sha256 cellar: :any_skip_relocation, monterey:       "7c87f0f2f82134a872ac528a24c8c66231ee101d6611e85c4cf9dc346a34fcda"
     sha256 cellar: :any_skip_relocation, big_sur:        "74c94f8562cc8c71a8376fc3a294a05a78c2a520ee7cb38a4996577d8417a06f"
     sha256 cellar: :any_skip_relocation, catalina:       "084dec614496303468f92768c1f262f3a72abf9b839791e84711ed9288efb402"
