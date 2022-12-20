@@ -5,10 +5,6 @@ class Zbackup < Formula
   sha256 "efccccd2a045da91576c591968374379da1dc4ca2e3dec4d3f8f12628fa29a85"
   revision 18
 
-  bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
-  end
-
   # No new commits since 2016, no sign a activity since 2020
   disable! date: "2021-12-16", because: :unmaintained
 
