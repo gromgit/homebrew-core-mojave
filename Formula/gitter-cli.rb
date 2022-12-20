@@ -11,6 +11,7 @@ class GitterCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ded7d2d1699591044372318358e80ddded859348b17be44bbe8692c886ab286"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8333cdaf2d1896ef53257664f5fe6433433772632c19e0fc3aa4784714ba308c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db56401085f8c41a3892d4fed62af37b1a0b02bb435956a2ecc7b385c6d77ec7"
+    sha256 cellar: :any_skip_relocation, ventura:        "9707225895e3e3f8323ee1e4e504f3a93c2ee891c6a30bfa72e3dfb4015f145e"
     sha256 cellar: :any_skip_relocation, monterey:       "ac8a05d52db25a2cc9fa56988285e33d890802e5372c815ff7d5603c744e0279"
     sha256 cellar: :any_skip_relocation, big_sur:        "e35dc802e3dad7ce033c0489dc5939872715660c7dbdd812c84d3abe0a5a7f8d"
     sha256 cellar: :any_skip_relocation, catalina:       "b65d3049c2aeb35b63aeece9d9a08f224ec9e4b3aa2d64c1d8a7850ea631f836"
