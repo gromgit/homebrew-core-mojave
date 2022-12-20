@@ -16,6 +16,7 @@ class Rtptools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d06d42bddd550eb32476e7412d204a11795fa1295c9c68e0b608e652b5092df"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3b656aa50230fbf083a0acd2bb82b6c9911b0c1e450280f2beba636aea4dd444"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a760c9b142e55aba7732406eeb2603c49b9b7514e02bd01bc245d0661772bf20"
+    sha256 cellar: :any_skip_relocation, ventura:        "d9f2ab7acb5516a14a0da93a58364e92cd396275a687947d4c1fa6e66419f2d5"
     sha256 cellar: :any_skip_relocation, monterey:       "cc4355761bc5d55ef0bf7ed1b81946cecb40db52832d63dca2ba4a01c5655168"
     sha256 cellar: :any_skip_relocation, big_sur:        "a9f1e8f18d40ba8b435f619de132a5fbc00e0ef84d5a1e10378700e0f3ce417b"
     sha256 cellar: :any_skip_relocation, catalina:       "59fa4c8c53c3430c6bb47b82c752eef710f692ad3fb1bd3ab82c108524aabe00"
