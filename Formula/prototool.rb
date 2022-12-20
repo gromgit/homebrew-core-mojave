@@ -9,6 +9,7 @@ class Prototool < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b6b999fefb3390dce4469fa0ec49de2f431b59b621f44bc8c1d9e716ecc349f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b0a778ccfbbeaef3a52afc1cb3bbec4d48c3b7c618b88cef6a52d90c4422f88d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ce505a3c8ebc53f48ffee3f5a174073364f462538f4c94458b54dc3e15669106"
+    sha256 cellar: :any_skip_relocation, ventura:        "061c9488b0d17ea3596308e9dc568ec6e22d0cb1019d0b5a8af227cb11886356"
     sha256 cellar: :any_skip_relocation, monterey:       "ae13c21f5c59d7fbd664fa74cd526cf0c39df04ca6c066656d27f32b19d72349"
     sha256 cellar: :any_skip_relocation, big_sur:        "c667e52b752c52d3c852a084dad1fb962e3cbdfd75fac5a7092a691f748cd63e"
     sha256 cellar: :any_skip_relocation, catalina:       "e7c678d2842ce666ddfbeee1092c2354a420c9b8b94244e8db2b382f6568e536"
