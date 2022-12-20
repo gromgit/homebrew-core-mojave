@@ -14,6 +14,7 @@ class Prodigal < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a790b0ef414bf71bd6382b1e7e2acee149988003a3def80085c4ae555e436ed0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bcf9c5deb46b542d95f4bcca4f4f947d60fee5138b76eab5018b61eb6f86279d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "abcf0f632ae6187b7b29e2ebd9680717c3678d3e2694b87840591a0f51d4db09"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b27c484b78ade21719983f96701441033f3c8bc409f12db3678a4da740b108e"
     sha256 cellar: :any_skip_relocation, monterey:       "19a6b172b25f41612c11427cb12b19cca27580935c756ac5337c9bce27e3b4a5"
     sha256 cellar: :any_skip_relocation, big_sur:        "5f61811f05bc3e784428dd1ece760e6375f2624b103393e1809ece54659d440c"
     sha256 cellar: :any_skip_relocation, catalina:       "5cebc25d98ba4439aa810c4e05c9f30e7ecf768035d135d0989cf58c18517a87"
