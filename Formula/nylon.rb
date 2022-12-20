@@ -14,6 +14,7 @@ class Nylon < Formula
     sha256 cellar: :any,                 arm64_ventura:  "be2cc327743e9011455a4f318ea045968c6eb10632ebe6452194342e3a9fbb39"
     sha256 cellar: :any,                 arm64_monterey: "9d9db2d218e2627790aabf8e7cfd28f6722e039bbffb6f55505870098188e1d9"
     sha256 cellar: :any,                 arm64_big_sur:  "26d58c80e5db471ca253930300316cfc77dd1b53fae4ebd38502a48e69d4af8a"
+    sha256 cellar: :any,                 ventura:        "3e0363e363d1a596f674ed6c2f576f5f375c2ca61d43b17e336b67c4a3182597"
     sha256 cellar: :any,                 monterey:       "11ae6faf8f16faf3bc2be2f03981b4d1303897cfe86fb2108c05c4449cbafea6"
     sha256 cellar: :any,                 big_sur:        "dffadaeddcde173302400dfc71686048edf9944a3543ac578ce634d9f283870d"
     sha256 cellar: :any,                 catalina:       "6138b062f2a435928485795e2b3bdef81983a87137d4bf73029838f19c1210f5"
