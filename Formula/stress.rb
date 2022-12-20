@@ -14,6 +14,7 @@ class Stress < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "682417d0cce887de4bfad5dbf1382917cda827e21b760f890a74d1856e45915d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d62a404e264f4d64f2e5a14c9adee3f6cdb3593c31880410d24f38accea32bdf"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dc5c125c3eb8cf95cb21bf4ae2efaf114b9b47677747026ba92a5c9eb09ad6e"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf4131cee3e5082600056d0872a4a0147d477c6b87f24fab295a86201a649973"
     sha256 cellar: :any_skip_relocation, monterey:       "c3a4929d6031c9cdf21cb81c8b3ff06b3a9bad924194eeadba7996aabb9cd9a7"
     sha256 cellar: :any_skip_relocation, big_sur:        "00d9ed736381a3967b8eaf0b709328ccb0263640fdc856fe5c2e8f2164ea705d"
     sha256 cellar: :any_skip_relocation, catalina:       "2fb692ddaa54337dfe07eb71ee647e167bbe41db054556c32d7507cba38caa43"
