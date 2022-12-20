@@ -1,24 +1,19 @@
 class Needle < Formula
   desc "Compile-time safe Swift dependency injection framework with real code"
   homepage "https://github.com/uber/needle"
-  url "https://github.com/uber/needle/archive/v0.20.0.tar.gz"
-  sha256 "0df06e1f39a9ccf67acb10bbab0294403bd2c5b581e724d9dbd875879096c7b4"
+  url "https://github.com/uber/needle/archive/v0.21.0.tar.gz"
+  sha256 "e214b471319b0b3acc62a7105e06fc74b116a546ac5cce8cd4d3c18f0e6ff6a2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "07826c6a2d070c0043ddb6e2ffe17b7a3e3f0209c90baf229a7254eadfe1d132"
-    sha256 cellar: :any, arm64_monterey: "0e66627ef1680983c0cc42009f236d4cfca6cbfb5cf0fe3a5cddbaa9a063f0ae"
-    sha256 cellar: :any, arm64_big_sur:  "322645f16215f9784d162de9552e533131fff4235dfd421e46c3e3ced208a26f"
-    sha256 cellar: :any, ventura:        "fcc83c3d71dba3f876c465000371096270ab1322f4b755181e3647e2ceebb809"
-    sha256 cellar: :any, monterey:       "1ec0bd0e6b409a8f65bc3741ab7170e2346c838b96e3407bac5e8b815aca8f1f"
-    sha256 cellar: :any, big_sur:        "21e3fc48210529852cf33cae4fe2c5a2937920321e7d03b76b93d775d35c0e9a"
+    sha256 cellar: :any, arm64_ventura:  "930af092bb21ad2fd58a84b2ee887f4712212248de113f0ef85866852bd70854"
+    sha256 cellar: :any, arm64_monterey: "b461236f894b3b735b80f87b4c1808be13f5e054d214d2e0fe8673e6861d4c09"
+    sha256 cellar: :any, ventura:        "37cfdaf73b74591acb2bd571dbea613e13790c0fbb548e6b99bea6ab46796c67"
+    sha256 cellar: :any, monterey:       "325586b63584cfa4093e0a0fffbf1d6271605330f29671f3fe18b870edc96f5f"
   end
 
-  depends_on xcode: ["13.0", :build] # Swift 5.5+
+  depends_on xcode: ["14.0", :build]
   depends_on :macos
-
-  # Support Swift 5.7+
-  patch :DATA
 
   def install
     # Avoid building a universal binary.
@@ -49,20 +44,3 @@ class Needle < Formula
     assert_match version.to_s, shell_output("#{bin}/needle version")
   end
 end
-
-__END__
-diff --git a/Generator/Package.swift b/Generator/Package.swift
-index 915889b..485be3d 100644
---- a/Generator/Package.swift
-+++ b/Generator/Package.swift
-@@ -2,7 +2,9 @@
- import PackageDescription
-
- // Based on https://github.com/apple/swift-syntax#readme
--#if swift(>=5.6) && swift(<5.8)
-+#if swift(>=5.7) && swift(<5.8)
-+let swiftSyntaxVersion: Version = "0.50700.0"
-+#elseif swift(>=5.6)
- let swiftSyntaxVersion: Version = "0.50600.1"
- #elseif swift(>=5.5)
- let swiftSyntaxVersion: Version = "0.50500.0"
