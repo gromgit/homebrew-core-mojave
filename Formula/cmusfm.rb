@@ -8,6 +8,7 @@ class Cmusfm < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura: "91b73a874c10d4deeebcee02a451edff2e1034f88da878506f221eb6a7fa4037"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "6aa58d8aaaf982d09847ca12fa1d90a29d9697d3c396445345d6151f7268ab3e"
+    sha256 cellar: :any_skip_relocation, ventura:       "38859b2343c65800586364cf047ec4ffe4325c9171d8f8082a587fc9c9db2643"
     sha256 cellar: :any_skip_relocation, monterey:      "f4693ccd831c18591443a07ca6e92d066d912dc2deb91be1e58d9b926d556e13"
     sha256 cellar: :any_skip_relocation, big_sur:       "fb3118b55ecf198907e43466587b28d328d2f41337f75701c4288ea72759ee7b"
     sha256 cellar: :any_skip_relocation, catalina:      "c5f5828389cb7aad8fbc5ffb15dcd522f3e9f70718de08bbc5425f7c33118d56"
