@@ -15,6 +15,7 @@ class Log4c < Formula
     sha256 arm64_ventura:  "3d35b584c96f856ebdc672621ae867fc0d14c56b193bc25fcd3f4b122cd9e250"
     sha256 arm64_monterey: "df3a6f744304902108b48717a9bde9c4f1f19b25f04dbf4b99afb5ca8b55b9f8"
     sha256 arm64_big_sur:  "13c3c642cb9d105c742bb313fde02b1968dee00017ac5fa96e46a908ae43e996"
+    sha256 ventura:        "11db7e7c463f17035e79dfd31d906a8b52dbca9802ba7a45239290d337e0a4b7"
     sha256 monterey:       "26f216931900e3f177c8f9158afc9d1beddab45327606f35e180577ec3b4ca27"
     sha256 big_sur:        "fa93c7beb25097d19cd6408e88e1d5bf8019386cdee22beb0f30d1fa7956286e"
     sha256 catalina:       "25859511ac3302318ca6eed1eaa89c5a9b1e91b611da4233604e443d9c016dec"
