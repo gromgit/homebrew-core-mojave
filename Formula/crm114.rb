@@ -3,6 +3,7 @@ class Crm114 < Formula
   homepage "https://crm114.sourceforge.io/"
   url "https://crm114.sourceforge.io/tarballs/crm114-20100106-BlameMichelson.src.tar.gz"
   sha256 "fb626472eca43ac2bc03526d49151c5f76b46b92327ab9ee9c9455210b938c2b"
+  license "GPL-3.0-only"
 
   livecheck do
     url "https://crm114.sourceforge.io/wiki/doku.php?id=download"
@@ -10,8 +11,10 @@ class Crm114 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "9791c36069114cb7235007258500b450c2d28aec42bc0753fae806bb2ef71dd4"
     sha256 cellar: :any,                 arm64_monterey: "0cdce09555c1d90f1e577367c906921bbd8ea8fb37af61598a8ec80307fe7bf5"
     sha256 cellar: :any,                 arm64_big_sur:  "24d3e83ee6c91b1fbed3b83aefbd17c2a93119b12d6cf7a9cea10090e52af6a8"
+    sha256 cellar: :any,                 ventura:        "df00326ae71fa1bca46f3d78d63ad58b99346c3603b6bd7c6e95f5940c0705b5"
     sha256 cellar: :any,                 monterey:       "6ba9e53e2cbfd76a236595fff2cd7d0bd816dd41c4b48ec3e7d673bf12a40f69"
     sha256 cellar: :any,                 big_sur:        "c00ea54f01bfa748d4a48123c7140fd4e8abb200b8c42ca0ab016272f72eeb8c"
     sha256 cellar: :any,                 catalina:       "f6ebd35ffbae26d9cf77de3f165c13ec170b8123d527369f43e9a862f14eb287"
