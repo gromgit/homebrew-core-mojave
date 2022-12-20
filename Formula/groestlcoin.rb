@@ -1,31 +1,32 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://groestlcoin.org/groestlcoin-core-wallet/"
-  url "https://github.com/Groestlcoin/groestlcoin/releases/download/v23.0/groestlcoin-23.0.tar.gz"
-  sha256 "ea647fec40568ccb8d574f98cf5642fd0afcfb61af72cd5e83fd167e810885b3"
+  url "https://github.com/Groestlcoin/groestlcoin/releases/download/v24.0.1/groestlcoin-24.0.1.tar.gz"
+  sha256 "ff4db6305018a90973ed4686ede54b2886615d22ce7969fec41a3e861ec7d4b4"
   license "MIT"
   head "https://github.com/groestlcoin/groestlcoin.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "7f169f6c1b836a53ecd547562af19e7127ad922584092919967bb4b03c122723"
-    sha256 cellar: :any,                 arm64_monterey: "e271b0f7cffcc522b9b280e4f96d79aaac5aa5a89706a57575a159e67fda5215"
-    sha256 cellar: :any,                 arm64_big_sur:  "0bc45052b5f441bd2cd56a3b2205066c3eb6e5c20187f06e13740def6416b210"
-    sha256 cellar: :any,                 monterey:       "74770956a29628ed8c4f4f20db03947482e311d1a5b339e4006c8cb5c99da01f"
-    sha256 cellar: :any,                 big_sur:        "a9109bf51667122319ebeaaacd57a9b82d5d4dd45a235691d311b42e9c9455f0"
-    sha256 cellar: :any,                 catalina:       "8bdcc7cf88e1a1f8b32157e73afc17437c3714866dca1d00fd6efb3b872787bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4afc36c84ae0165d06b1b3c773e2b3639f1005f9df171d21be2e3bcc4cf510e2"
+    sha256 cellar: :any,                 arm64_ventura:  "34567f2eeeb13aaf572044991a405b749e524dc3f3addeb2c5306bbc86eacb13"
+    sha256 cellar: :any,                 arm64_monterey: "8ab43886b552bd54f09ec738c3c6e6c4ba2a5b14f3f92d9cb00eea3a758e2033"
+    sha256 cellar: :any,                 arm64_big_sur:  "34f263590ffa6610682c75bacaed4e81487ceebf267192c184764ef6ee465f8d"
+    sha256 cellar: :any,                 ventura:        "52deecb041d0900408e42bcb008b39957d8e7d51d163b97295d81ee7cbe6da6b"
+    sha256 cellar: :any,                 monterey:       "b44e4d2f39daaa79fa0693d0fb5c0b0a9724ac0e5cda6ff4035ebf4a65361037"
+    sha256 cellar: :any,                 big_sur:        "5b08e265229242c9e73f4aad6c358a4974f5c5116f939fe5c0f82ad597103295"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4358d87ee76d7a1f66644f33547244d9158a03b64eb0c8235257d5b275d9c1b"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "berkeley-db@5"
   depends_on "boost"
   depends_on "libevent"
   depends_on macos: :catalina # groestlcoin requires std::filesystem, which is only supported from Catalina onwards.
   depends_on "miniupnpc"
   depends_on "zeromq"
+
   uses_from_macos "sqlite"
 
   on_linux do
@@ -37,9 +38,7 @@ class Groestlcoin < Formula
   def install
     system "./autogen.sh"
     system "./configure", *std_configure_args,
-           "--disable-dependency-tracking",
            "--disable-silent-rules",
-           "--without-bdb",
            "--with-boost-libdir=#{Formula["boost"].opt_lib}"
     system "make", "install"
     pkgshare.install "share/rpcauth"
