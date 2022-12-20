@@ -16,6 +16,7 @@ class BbftpClient < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f99da3815fbef62edb3391bdf9dab41055ed1ace3f0b30cd69c45e719be6149"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d429a71fe3b54e34d75efd1480062c322cee2a9b471628a671de3e9f1b91b201"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd7a47c27111d4dc064a7009f919a3283360738329dcfde7eb6522ee280e78fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "7808120a9bee27c473f0f59b5223c9d709add5ed8d8609992d51efb4288fb89c"
     sha256 cellar: :any_skip_relocation, monterey:       "e50848489c6ad43604cbc0730d027939830ddc50d46fdd8d18dc6f729a910503"
     sha256 cellar: :any_skip_relocation, big_sur:        "f30650734e1829a0c399153c78088ccd987f28ede25b8eb13ecde6b138d55076"
     sha256 cellar: :any_skip_relocation, catalina:       "6d5bed31d69a0ff2f38f2642176cb3c3a4da34c4ea2740567d2698ca62519b7d"
