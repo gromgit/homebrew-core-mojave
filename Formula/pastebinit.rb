@@ -7,11 +7,12 @@ class Pastebinit < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "811962a281bc547c1d6ca15ea68ee862798e88ccc4346ab5425432495bc4867c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "543364003052f07b9e34bff634ce36374e6a127009cab9f0d7705ccc4fbe0449"
   end
 
   depends_on "docbook2x" => :build
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   # Remove for next release
   patch do
@@ -21,7 +22,7 @@ class Pastebinit < Formula
 
   def install
     inreplace "pastebinit" do |s|
-      s.gsub! "/usr/bin/python3", which("python3.10")
+      s.gsub! "/usr/bin/python3", which("python3.11")
       s.gsub! "/usr/local/etc/pastebin.d", etc/"pastebin.d"
     end
 
