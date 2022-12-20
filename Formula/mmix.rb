@@ -13,6 +13,7 @@ class Mmix < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf7b89901297da556ae769c209fae21d23057d4e0277197b3e317efbcef427a7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cb698eeaba81433e47c44d2eab8858b272c3c711d6b6a745e9a43d7d0c3908c7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03a6468d729fc0ccddb6187c50b8f0318dedbe2bf613ef2e86e95aada83daeac"
+    sha256 cellar: :any_skip_relocation, ventura:        "f246f0fd905410b6c8df7802eaaa0af9bcb7cde18af61a623f4f0b7a18443b8e"
     sha256 cellar: :any_skip_relocation, monterey:       "69c25099d92634bba78ac9ad1565f5af979bd473b14414cf4dd35dc9349c4a76"
     sha256 cellar: :any_skip_relocation, big_sur:        "fa0a9dd7f5ea9520ffd9c4682df2d754462a7b7e6d7b30bc8ea84f39903fa29e"
     sha256 cellar: :any_skip_relocation, catalina:       "ca577c8e313e25ce4b0ccdf1067a9fa1765b23a3f63b26905ad3aea044507ece"
