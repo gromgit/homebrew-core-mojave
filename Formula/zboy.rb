@@ -15,6 +15,7 @@ class Zboy < Formula
     sha256 cellar: :any,                 arm64_ventura:  "4c1255995acd35d950d0625b1c505b32feeb5f92ba8428e5a91405aca49f5841"
     sha256 cellar: :any,                 arm64_monterey: "19932605bd410edb2aa29dca7ee24442f62323f35118faee2132434a68cf891f"
     sha256 cellar: :any,                 arm64_big_sur:  "3ca2df4138ab68a6124473e973ac17161cbb8850388c21cf768008f204361eb6"
+    sha256 cellar: :any,                 ventura:        "1770fc751708bba11c935142cf5d51ebcda11a816b9d183c270df6b11b52601f"
     sha256 cellar: :any,                 monterey:       "e2f20de36150fd9ebb743bf9302083bc75960b6b2760f90b07071475bedc0ba2"
     sha256 cellar: :any,                 big_sur:        "932d9411d6f5119849d230a6747e7bd65cade0d64c80128ea2ffee8096797dd2"
     sha256 cellar: :any,                 catalina:       "9e143e9227bc22e48d66f7e9f3239374d4d22edc4d0867ffe50f8f60180d27db"
