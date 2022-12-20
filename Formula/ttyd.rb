@@ -8,7 +8,8 @@ class Ttyd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ttyd"
-    sha256 mojave: "d23dc753f89ec7e01308ce6a6a02587fea94f4a8f6327ac73019a889c781f57a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9f37fc36452b181f380d7a6204aa9af02af016d16bf7a10b869e9cc818524655"
   end
 
   depends_on "cmake" => :build
