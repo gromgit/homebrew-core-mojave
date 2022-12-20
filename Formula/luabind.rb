@@ -10,6 +10,7 @@ class Luabind < Formula
     sha256 cellar: :any,                 arm64_ventura:  "27fc85843ea4d2c9f93cbd908ee2dc272b3b3046e10006a4c45c3c7f83efbe33"
     sha256 cellar: :any,                 arm64_monterey: "2aa06fda6b16e944418e0bbb8306794b6a37574cc3498b979e50d3bf63126045"
     sha256 cellar: :any,                 arm64_big_sur:  "412b4800d6e640819f77c80cdf5b6597cb5357caebd499e9b32577d27ddeab5c"
+    sha256 cellar: :any,                 ventura:        "21f0b06990eac59cb8887c4ecbe3efd00ce135e9cbf412558a64324d3e5577db"
     sha256 cellar: :any,                 monterey:       "676b9de9bb164333be0f98da20ce853cfdf54234f3a9536303308e6e8598c589"
     sha256 cellar: :any,                 big_sur:        "adf679efd6e24a319ef2481cf51e75f2098ab9d9284c0acc48c88363cc15eba2"
     sha256 cellar: :any,                 catalina:       "cc7fc93a6ae050ea6fb11c1c961c7e8cfea5ca3f78407c069f2210c598a38823"
