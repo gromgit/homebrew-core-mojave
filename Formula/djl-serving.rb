@@ -1,12 +1,19 @@
 class DjlServing < Formula
   desc "This module contains an universal model serving implementation"
   homepage "https://github.com/deepjavalibrary/djl-serving"
-  url "https://publish.djl.ai/djl-serving/serving-0.19.0.tar"
-  sha256 "f87189733657e80c5f3ad94a11eb73f3bb7a3433f2fbd5441662a94e0d887f9c"
+  url "https://publish.djl.ai/djl-serving/serving-0.20.0.tar"
+  sha256 "d9dec82d0087a5c7c3daf941834ac51ad1fb8b8f1a8d444daf372ce33c18ea1d"
   license "Apache-2.0"
 
+  # `djl-serving` versions aren't considered released until a corresponding
+  # release is created in the main `deepjavalibrary/djl` repository.
+  livecheck do
+    url "https://github.com/deepjavalibrary/djl"
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cf1c865204bb3d4ab5625cd686b76598e1d69a57fe1bf2c6ab0b57a992b5cdd4"
+    sha256 cellar: :any_skip_relocation, all: "94aaecfa8f346f98dec8cfadc7e9381b4eebaae1570c4faa4efe818dc37e8c2e"
   end
 
   depends_on "openjdk"
