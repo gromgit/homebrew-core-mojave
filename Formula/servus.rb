@@ -10,6 +10,7 @@ class Servus < Formula
     sha256 cellar: :any,                 arm64_ventura:  "1efa83c497c61c33ffaa0217aebd141898bd6b1ae4302116d8a9e7deb1737f53"
     sha256 cellar: :any,                 arm64_monterey: "ed3be1f83df1a364a0eb5161853e369777ee882950c8a7237ee5dd10fa6cf6b4"
     sha256 cellar: :any,                 arm64_big_sur:  "5a2c8cbe46fc1a9e8d2aa14036c2cc775f438cae77adaa8918d5a6cb9378c2e7"
+    sha256 cellar: :any,                 ventura:        "6d2eb5d2a67e639b97ca51cde1ee0530638b723c6b631ea349662cb02dd92211"
     sha256 cellar: :any,                 monterey:       "af895ca95876fe36403308b673b0d7a1fdf0b5579e3f651f0dbb9449ace86e65"
     sha256 cellar: :any,                 big_sur:        "4e2b2042868af63bf0d39f10821afdd04d37da37ad8ba4da41dff0a73fae7787"
     sha256 cellar: :any,                 catalina:       "e0629cca8bee46595c540c2240ed1cc599c5f676527a21f951bfc89a0335c54e"
