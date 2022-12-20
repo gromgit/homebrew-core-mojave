@@ -11,6 +11,7 @@ class Iprint < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "16caeb56b6e78b172acd4aefd102fd4614bec7950d43dc426bb00b247bab3568"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "59184069028344bc9b2d24985c049efc45ededd3f8aff7d82bdf6692545f6f63"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb538fa6b5466dac71f52ec8f428e4ef0674e1f475893879a857cf27ce914a9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e60db16bfc4230af55c4e8dd9330d4622832d6bc0189078bb34b58ba906095e1"
     sha256 cellar: :any_skip_relocation, monterey:       "56bca76cab2c3618c905d90160eeefa4e536913e7641ac29e4ee48c6bee7a674"
     sha256 cellar: :any_skip_relocation, big_sur:        "e4508c0b9eed2e203735de1d864dcd4ba35cb7279fb95eef28fbae2cd8d9d41c"
     sha256 cellar: :any_skip_relocation, catalina:       "e5fba1fa985ad96aac02d36f50e0985c14248655fd810c15c053e1ff7d5a1981"
