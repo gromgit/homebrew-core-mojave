@@ -11,6 +11,7 @@ class ProtocGenGogo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "80e3e677f3b12a02da7de60f3586d2ead2be403885c62f5c9700c010cc368be4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f806d12b79c1d49407fcad5fa50a8cf47303ee5f3e5f0403c2d1993387bf6a62"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ba5d8b674ef61368f7dfdc0f072190ec0927fc3c42fa846535ccd2dfd3030f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b1296d9bf13d3eb67cbf999303e7a7b1e72369ced261c15567956fdcb5ef329"
     sha256 cellar: :any_skip_relocation, monterey:       "a0e11a313199c7912fbeca42f17d9c24bff4031a6d0a994ced6e6d7b4e25dc6a"
     sha256 cellar: :any_skip_relocation, big_sur:        "fd8a46c27fe74626f154ec7ea64183b1dfcfaea1cba6f35ebd91da51383c4122"
     sha256 cellar: :any_skip_relocation, catalina:       "fd8a46c27fe74626f154ec7ea64183b1dfcfaea1cba6f35ebd91da51383c4122"
