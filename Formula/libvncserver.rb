@@ -14,6 +14,7 @@ class Libvncserver < Formula
     sha256 cellar: :any,                 arm64_ventura:  "87e7fe46721162bf960736153eb09f6c02233c6aed8559a75575cf449d14b836"
     sha256 cellar: :any,                 arm64_monterey: "819203d759df0243fafbe98a4af39ceb66df276ec292d774b79e1292a1b565af"
     sha256 cellar: :any,                 arm64_big_sur:  "2bc993923fe1854ab86f96e2644f1ae865b538b09092cafabe7bf4baadde2940"
+    sha256 cellar: :any,                 ventura:        "f60d76ab695a809578b36c57d452499f8d0be189a6e4977ece11d060cd55e986"
     sha256 cellar: :any,                 monterey:       "9b4871a1a52f0f44d58bc57736490a44774738133cfe0b2ff92a6a86380d79f2"
     sha256 cellar: :any,                 big_sur:        "a28d45216831ec31a87e0756fd13fd226b9341b2bfa798acc865be3f34a530ac"
     sha256 cellar: :any,                 catalina:       "c667ff09ee40d2ab0e8db25a51697ae62edd14496c1075f07015bf0ed372695e"
