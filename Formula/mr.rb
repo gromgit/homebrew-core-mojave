@@ -10,6 +10,7 @@ class Mr < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fea4a97b97b7a89c314c1e66244eac2686e20ff15332782ce8ded266ffc6788a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1ef1fbe930aac818a5996a5280755f746d5595ed94a2d01ffe4c46d0aa066fb2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3acd961664e9d84ec19e6fa5044fc7b024bbfc691a3dc3d02a250d773abb6a18"
+    sha256 cellar: :any_skip_relocation, ventura:        "e77aa6bef7c23757654c48d75907eb00b5c5eb7469f96d8b0a59830235f01ffe"
     sha256 cellar: :any_skip_relocation, monterey:       "a0f6609e5526c820741400527d23e96699e51490ec9b90c2759ddd0565773a58"
     sha256 cellar: :any_skip_relocation, big_sur:        "9b2f724c76a7b2a2504301eeb2dcd5d16d2b919e53fe7f43b404c79f56ce7c75"
     sha256 cellar: :any_skip_relocation, catalina:       "90ab23bd6811b507860b5ddcc7e9a181abd3f126fc2ab193739987d6d4b31612"
