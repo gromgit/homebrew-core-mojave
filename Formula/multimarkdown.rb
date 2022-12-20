@@ -10,6 +10,7 @@ class Multimarkdown < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a13c42e5fd09aac9c3748b9ecb2ee0da5bfa9ddde9bba95c7781718407f66435"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3061fd1e30663e1fe42fb3f9e92530f8a2e8cba671ed67863639d1c6cef8e680"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c377c5976fff15a469b330470febc8b7db8f695b597e588fd35e975fe17010a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "f9675026841e36ca7d179d4229eff2d42296f47f3618a0fc0868405daff41936"
     sha256 cellar: :any_skip_relocation, monterey:       "694f10e1a17f294485223e557a27cb7f9ce8025b202197caf2698257a26e1e36"
     sha256 cellar: :any_skip_relocation, big_sur:        "15b87bf8b7be554761d0114af63d3789df6db6cb58616afc408f569ea8ac50d0"
     sha256 cellar: :any_skip_relocation, catalina:       "f4a26eb7603d38d0f67db4edbde56334fce2024c1c78fd5f49a7b8b69ba48683"
