@@ -3,6 +3,7 @@ class Bookloupe < Formula
   homepage "http://www.juiblex.co.uk/pgdp/bookloupe/"
   url "http://www.juiblex.co.uk/pgdp/bookloupe/bookloupe-2.0.tar.gz"
   sha256 "15b1f5a0fa01e7c0a0752c282f8a354d3dc9edbefc677e6e42044771d5abe3c9"
+  license "GPL-2.0-only"
   revision 1
 
   livecheck do
@@ -14,6 +15,7 @@ class Bookloupe < Formula
     sha256 cellar: :any,                 arm64_ventura:  "4421a88b7f0f464d3469a652e232134ae0f9402c48201515a3c04f9e9f267c45"
     sha256 cellar: :any,                 arm64_monterey: "f981bcea12ecb29401b723391ccf8a7b47ba68bf57dd7277cc4474fc3e0767af"
     sha256 cellar: :any,                 arm64_big_sur:  "52b3382b76c8ef2e8edd46e3bcbe56620d659713f0e8fc4a4fe3e109fc25d7ca"
+    sha256 cellar: :any,                 ventura:        "f39f6f8a9a229fcd14e1784dd57f1215afae5f8473ce0508392e64ba8063d540"
     sha256 cellar: :any,                 monterey:       "b2df92066e4e19f5a6c9eb4c0784b9f736e1e9043dcb83798e7f2bdf02295942"
     sha256 cellar: :any,                 big_sur:        "7ccdee4a97e6c705e478e38aeca1648b06a39c2edfcfa807a4a07ab12eb0d3c8"
     sha256 cellar: :any,                 catalina:       "83e920e882a00717b094b14477917ed477fa3ab9ae02433d79bf4d374d5723a6"
