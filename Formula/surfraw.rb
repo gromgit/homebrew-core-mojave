@@ -9,6 +9,7 @@ class Surfraw < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "31d8b711776cd751f846106b974bd1aa944f614880f8038ba04b391120abe9c4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "31d8b711776cd751f846106b974bd1aa944f614880f8038ba04b391120abe9c4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65d1418f750b53be50f7d67e98791242056d4d7b5e21ba177899435fd9ac9d0f"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e7b575c7ac5db980372aea5bc1276ccd78522d63f006c858b1b2394748b3ba7"
     sha256 cellar: :any_skip_relocation, monterey:       "64fbd46e38561804f22a7bcd408fcbef55e312d2e7dde999088ae0ec78fb2906"
     sha256 cellar: :any_skip_relocation, big_sur:        "a9e126e0e78269271cee0952d6576fb99c443f49449dc9196a53ee2eb65d7ea6"
     sha256 cellar: :any_skip_relocation, catalina:       "2a2267217bfdd25ea00b3a08f76c44518e33dac0192a8590e4b3bfa3b5d90073"
