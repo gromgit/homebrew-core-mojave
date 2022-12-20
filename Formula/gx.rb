@@ -10,6 +10,7 @@ class Gx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a49ac2040542b71f63e9c30592e102b07fc10561a79b99014773f7c88ffe7c47"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f1323ff13674b582766dccca83ee63a63314eb3fbc0ccfd815dd9138e073b1f1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7099419ae5d6da42d66de65b1a4b9355f586f7484a6a738d1caa1c77ff917670"
+    sha256 cellar: :any_skip_relocation, ventura:        "e707d45bd29a98762cee6992eccec4b0015c75d6d009488abfafeb96f63684f5"
     sha256 cellar: :any_skip_relocation, monterey:       "800b33c5da09b5165c011858adf22f136390f84c3636a66c32f6114fd9294ea4"
     sha256 cellar: :any_skip_relocation, big_sur:        "5171470b8fe21652a1ae5fef81f0b463a3c10fdac821134f2e8d7635af1ccdda"
     sha256 cellar: :any_skip_relocation, catalina:       "f737f5829c0e1ce2ff58c56515e77f3797c30d614a53ebbf663985d5564c62db"
