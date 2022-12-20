@@ -16,6 +16,7 @@ class Jnettop < Formula
     sha256 cellar: :any,                 arm64_ventura:  "d9309bcae09fec8961c974c65107b4d6cab9761d171c7d4d54cd0c8bc7842337"
     sha256 cellar: :any,                 arm64_monterey: "f2c6e3fed7a82f036acdf944ac6f27d11946995d961be3a0e804b8a9099a946a"
     sha256 cellar: :any,                 arm64_big_sur:  "1f1f3c5e26f7fc52b331300926a4aa93e1081b31cc20cb533f9b0791477cc101"
+    sha256 cellar: :any,                 ventura:        "a37b6e72480a3c0945b6e13fb651e2797199aeae23fe73e85804e84c3b1db723"
     sha256 cellar: :any,                 monterey:       "9e14b85dd45a7b23d5548948dff568bde0f0db0ec59c91baff292c896c804423"
     sha256 cellar: :any,                 big_sur:        "1a077d39b05adcb4ba5a5e777e6ff054ad3b910876ff3d49172057f050e8b39c"
     sha256 cellar: :any,                 catalina:       "13d9effd79e9b18faa659af615a7b68c7a940adf5eaee5e30806553e1a237f0f"
