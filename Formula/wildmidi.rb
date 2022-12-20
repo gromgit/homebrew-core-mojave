@@ -9,6 +9,7 @@ class Wildmidi < Formula
     sha256 cellar: :any,                 arm64_ventura:  "0e773a584fef147be9671b30a2f3a390246ecea8cd1a1422c00c21ee5775bfe8"
     sha256 cellar: :any,                 arm64_monterey: "bea15c21531ad36c34f47a59d247a06d5bf1fa0847954ffd709deae333153c5c"
     sha256 cellar: :any,                 arm64_big_sur:  "d3911b6c060df898e6e8e5358a956afaf9bb042083e05be6f7af4f255b80c8bf"
+    sha256 cellar: :any,                 ventura:        "26767510ddd3102c627bec0bd407d052a604ddba36c3920deaac00b38e7cdc52"
     sha256 cellar: :any,                 monterey:       "0da132da5f63a79c7f236f7a49ccee626ef53c509344632fbf7a11cb63bf285c"
     sha256 cellar: :any,                 big_sur:        "258eb43be9a818dd975315669930ac09bc3c4da1c349e4dfe3c03685dc2b26e4"
     sha256 cellar: :any,                 catalina:       "ca98c79414e1efd3e398c658aa16ede8af301cb46bafede7a8d1cce56bd45f38"
