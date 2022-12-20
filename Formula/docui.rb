@@ -10,6 +10,7 @@ class Docui < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "de82677b66e326d6af704b75aa714a5da131360dd5e4ddaed8c4db3c960d6351"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b051dececee7d5ec01e3b2a2c235dfc919bdca2a856c1235aacb0ff99fc4a06c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30638ca04ad60f4c2406405d151dad2c5854a6b7404dcb1d5be3917a93efcd14"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c319302fe8034da24518213725028fe4c0c0473f1e7f43e5a0750850e46142a"
     sha256 cellar: :any_skip_relocation, monterey:       "01b2add3c6c9fe6d6c732dd06ef244a891396db8701fef01b963f0c3c4595e65"
     sha256 cellar: :any_skip_relocation, big_sur:        "17950b11df021726ebb04675ffc92c096e94ab213c32b803888ab3c16e360f60"
     sha256 cellar: :any_skip_relocation, catalina:       "85812a1ae880fa35f8f03fb7632d6e1cae1288c673c02d5ef41763a998e1ce42"
