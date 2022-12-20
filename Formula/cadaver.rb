@@ -19,6 +19,7 @@ class Cadaver < Formula
     sha256 arm64_ventura:  "f31ec5eb5056e09d4b8a22a2323fb2bbe3c8c15ea89be69429382c00ec534d3c"
     sha256 arm64_monterey: "4ffec4d1167cb17f80cb63c4142909b6f208cc653518cee7f46fb7c1f270e192"
     sha256 arm64_big_sur:  "859215276f7fda671ceee3b7908772d84fccd12873e6bb6cac0f90c50982cbcc"
+    sha256 ventura:        "276617de9ff7b225421e56658cba86766a180a42f6458586b7e0903be7945c2e"
     sha256 monterey:       "72eea3f287da7f77740b72db463cdf967c355a4044d0730150d637145d6be312"
     sha256 big_sur:        "240a41ea5b71aa144bea0fdb28b6233130d5368e8a221171eaa7bee24f5075a6"
     sha256 catalina:       "da94dea10afd90e1d0e41f24d4319ea006bf909381de2c2379c3144374c3feff"
