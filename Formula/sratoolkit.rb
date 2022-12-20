@@ -23,6 +23,7 @@ class Sratoolkit < Formula
     sha256 cellar: :any,                 arm64_ventura:  "2b8b280330dac7af1fd37ff96e644d6646a391de5abcd6aebf431a945e591e9d"
     sha256 cellar: :any,                 arm64_monterey: "6c6a32652af2f8ab9c54ed59edc181db1af783215a61be6fdbfa4401ff879fc7"
     sha256 cellar: :any,                 arm64_big_sur:  "d6a6eb07031864f36d11d1392c1c4aa99e696e6704d1ac303f29adc2433a742b"
+    sha256 cellar: :any,                 ventura:        "bbc19f67ce1d70e5737d7d5e857043f81063c722b068a3fa2fe240815259efdb"
     sha256 cellar: :any,                 monterey:       "7016ea36e31f338f43e013230fe18c8afae8854cdab36b0488a86572ddb7fa92"
     sha256 cellar: :any,                 big_sur:        "46f8d2ef24b5f035b353191aadd8df9058bd5c4e27bfce4c15a0baf65c7ed442"
     sha256 cellar: :any,                 catalina:       "609b9fb8f0fb3757a09ab030880156ac6f8dde9c37fdd611203c6b4cbe78cf96"
