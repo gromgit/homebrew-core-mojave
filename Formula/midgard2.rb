@@ -19,6 +19,7 @@ class Midgard2 < Formula
     sha256 arm64_ventura:  "0c3702505d020b3c0dee6a5deb6cc167b1a1f621eac32debff53d11b296412db"
     sha256 arm64_monterey: "a895e75f191eae0c7483f72ab017b382408d5c2e695b45501899bb851afd404f"
     sha256 arm64_big_sur:  "60df7b2c0c5128949c9ad6c8cea8bce50b2abbbf1405da2e2a7681745eea90d0"
+    sha256 ventura:        "8afc070915c73c1d225b6004ff568aa907b25f3d7da92a46d60f3274449f7a21"
     sha256 monterey:       "0298dfd2a09496215031d1c3f86e316922b1308bb9310d109ec5e4313127e5c3"
     sha256 big_sur:        "e0e95184827d7b69fa0c39d3bca827d600e38db97541606f48edd14c08d3a2a3"
     sha256 catalina:       "c3ed243fb5c433a40f959a357c8c78258a62b2fcc7eb5f3e6d94ca0b9cae3159"
