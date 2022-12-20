@@ -13,6 +13,7 @@ class Zsync < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c26ab39f23b57f14fcb5407541cc6785209d09c4408d516069d8fe8694f5e01"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5d9c561ebe0167e590847ed7993ff01e098eed20ba1ab158ffc3fc6a1295d220"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ee85fb722fa125e4323e14732d4de448f3751e9445e2ec6933fce0ee38d5a90"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa55a9ccdc3c06c605580b6820afd107819cf970a59f96beed53e7988f73e8fc"
     sha256 cellar: :any_skip_relocation, monterey:       "257f153c9f34b33cfcbcb08aeaab17a7bdf5c5a0538edf96c1a9a6f8074dd212"
     sha256 cellar: :any_skip_relocation, big_sur:        "1be9e390c02555dbce349a76e0beb63231bc327f4326580b18679ff0307db446"
     sha256 cellar: :any_skip_relocation, catalina:       "333d4b2be5c1b6621bf7e7ac87199da1c5ec24a3cdb408c97ed733b6fafb89a1"
