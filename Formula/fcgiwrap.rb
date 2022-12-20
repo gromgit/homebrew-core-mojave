@@ -9,6 +9,7 @@ class Fcgiwrap < Formula
     sha256 cellar: :any,                 arm64_ventura:  "0037b9cebb42c65b4381625dd9ae10a228ad246527ffe73ba718f4c2a7d5b551"
     sha256 cellar: :any,                 arm64_monterey: "8ddb35ceaf8709ed245ad937b559a8539c6fc1f2135b6ad40781cdf6ff86726f"
     sha256 cellar: :any,                 arm64_big_sur:  "b7f23b86cfdfcf813fadf2e7a3c228fa70476bae53c5617f20d810e07c7c355b"
+    sha256 cellar: :any,                 ventura:        "578107ed37b7d8cc435a7b0d9f36ceca8f50500957145ebfd1d0dc6742dc4f16"
     sha256 cellar: :any,                 monterey:       "520ec05d4f3b387f30876075f77e0fce87c3fd12a616f9c8c08db683ca05510b"
     sha256 cellar: :any,                 big_sur:        "bd98b43c74955117affa9b619376f09eae18890dea9b4bdb3ea81b70c44024ac"
     sha256 cellar: :any,                 catalina:       "c8d117b2a7fed48905548381120a0ce80e6250ea434d8f62dde18fd12542ca04"
