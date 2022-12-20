@@ -18,6 +18,7 @@ class Libstatgrab < Formula
     sha256 cellar: :any,                 arm64_ventura:  "7c52741c5bc27ba569e9d97c89ab5258f51f0b66c46e678f35fc8770f0fa6655"
     sha256 cellar: :any,                 arm64_monterey: "d8fe01051dd20bebd918d8d4e0634218121d1a9b3b0be2e5830cdf24bc1d9fd5"
     sha256 cellar: :any,                 arm64_big_sur:  "ce70f4a494445f8afde960c4ceea838e48b98fcf4c4d9513f705afae83193433"
+    sha256 cellar: :any,                 ventura:        "35cc23ef8a82b0b187d227e801d66aec5f561464c353234ee5aef30b3894c0d4"
     sha256 cellar: :any,                 monterey:       "5154065582dbae8bf645834ccabc9b878a77dc21d5a85d307366d78b6ee7ed91"
     sha256 cellar: :any,                 big_sur:        "08aba9012402bf7611ddc2fb0f6e0dfcb31c97ce067dd83d6ae73830b5d30aeb"
     sha256 cellar: :any,                 catalina:       "802d07a3f0948bf0f3a60bb174b1ee56e028b4b24f9eb121e9f90e5926e689c0"
