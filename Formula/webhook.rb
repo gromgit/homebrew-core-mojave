@@ -10,6 +10,7 @@ class Webhook < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6d44cd57a6f9449c397152344acb7a83f90102488ea92e7b3a3e89e9c666dd2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2a243c7fe554c0380da0f68556ea1f1613b1847e94a4d21e89b5fe1a38e62b61"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e77443d3500d2cd479cf3b326c66cc5c59a7009ddb63f2fb3492488e7b3412c"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d37a39c5cdc90e47da0abd9aff2d4bcf3857eceb1c9f7453df6aa13aa097ba8"
     sha256 cellar: :any_skip_relocation, monterey:       "135ca549d05cdf512acded9f75387cbe1a48969bcbcb75fd1dd3dfd247c0e61d"
     sha256 cellar: :any_skip_relocation, big_sur:        "836ee3a10e87e2208f0bc7f9e124b4cb51d0aa3bba16f76e835c4116836c2cf0"
     sha256 cellar: :any_skip_relocation, catalina:       "b4a117234e85237fd2bf36fe7ec4176a773608b4d50044961f82874337c9cc6f"
