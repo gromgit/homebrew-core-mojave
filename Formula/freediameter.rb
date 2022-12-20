@@ -19,6 +19,7 @@ class Freediameter < Formula
     sha256 cellar: :any,                 arm64_ventura:  "d692eec62f99ce01bafd11d1e6931fe4dd6e439a88768edda86cc7a6957a4bf0"
     sha256 cellar: :any,                 arm64_monterey: "ef01b2ee94b8f7b8794b6880188ec09d7a8458b0e10a2b6063b4dcc0f9b7c798"
     sha256 cellar: :any,                 arm64_big_sur:  "a2fd2271af79fd86ec7162e0af3adbaf611f280563a84dc2a98af96b7b3a3a4d"
+    sha256 cellar: :any,                 ventura:        "4ab626305bfe4f0a658d1afee146c2b9424bd09f0003f274a34915602e8d2271"
     sha256 cellar: :any,                 monterey:       "506a0a7375314a874e8a04b4904d0fe9d7c83bda4c494171c4ceee242debd81d"
     sha256 cellar: :any,                 big_sur:        "2c99cc840e0daebf52793d55e91ec616416c7fc7c4f4a8c332c6fe8c52fd181d"
     sha256 cellar: :any,                 catalina:       "92933b4a5076f85098b784f47f3943065444b9dda243c6165d38aaffb9122b68"
