@@ -10,6 +10,7 @@ class PerlAT518 < Formula
     sha256 arm64_ventura:  "45502e783b4e89f4eb5392227e79a80313e46c9f5d10397b07ef80d2bc6c9d2b"
     sha256 arm64_monterey: "c331f308c1f7b2df92aaa51b30a4ff049454e2c1218843ae9e493db403ec165f"
     sha256 arm64_big_sur:  "6c250f7fbbb0cbc997ad0068b88802f5d097f3b3a635d5c64d7267c3ab39340f"
+    sha256 ventura:        "b5a9adf58ee29a45a3824d268ee4dd18f96a7ec29c560d18d231287f99b59def"
     sha256 monterey:       "73812816ce2e3a511f5b4bf371ac8a0330c8e9ad46463ecb2fc42dde62d93a00"
     sha256 big_sur:        "6a0597d8cea75db2fecaf1e807777b2f55b3fcdad4721630bc1e5c062a9ec8a0"
     sha256 catalina:       "45b388773570fd4ef892caa7a0bb0312fd05dfcb3f73245a03eed16bf9187cc9"
