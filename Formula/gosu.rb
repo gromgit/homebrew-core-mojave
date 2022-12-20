@@ -7,6 +7,7 @@ class Gosu < Formula
   head "https://github.com/gosu-lang/gosu-lang.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, ventura:      "cfa06e74d45922c8c455829273ed19ee5afb3858dfaebcb0a32896f8a9bb5946"
     sha256 cellar: :any_skip_relocation, monterey:     "c3ee2e77dd6f53dc8dddbacfd55eb157f654ceb208073d38c3ba0485f621a0a2"
     sha256 cellar: :any_skip_relocation, big_sur:      "693e5dc4f4424b3a38797ca8cfefebee998c157abc23e7f2aee9d86f719f3812"
     sha256 cellar: :any_skip_relocation, catalina:     "64abc4230c722c02801160e8ed6640c6dba29817ca80f3832f58e47e2ceb58ad"
