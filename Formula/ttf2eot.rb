@@ -9,6 +9,7 @@ class Ttf2eot < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "867b5d7d37b4ac230168ea41318dd3a6f9fed7b64dba3f6aed2e57ac3f89d9a8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ac0f37ff08692308c939a421e2d2ab2dfc7130d1bcc85ca070e1baab844dfcc8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ad7c55fc38097327fcc7ecc967f4af2a24ee690ffe8f1ed5e465f5ef398c4750"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2f96c1fb256084ee3ac130861a7a72ddf03841ff45414dada9ec4d04acc1241"
     sha256 cellar: :any_skip_relocation, monterey:       "7b791e8df0d498383f11ccbed2017a57be517169725560b92ccd0d25ef602123"
     sha256 cellar: :any_skip_relocation, big_sur:        "88edb09b376fe32ce292747416549530e92a763c9859817e7eb936c65cf1c696"
     sha256 cellar: :any_skip_relocation, catalina:       "05b1f397b4784a77f36a3d3138e812932db4419d8d03e0f0735e58591677e918"
