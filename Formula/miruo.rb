@@ -10,6 +10,7 @@ class Miruo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9bb44cd7fe123593bf3e89da14aa5b2987bf1b616ae671bfa5d7e1d9adb992b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3a56112e32e6ba542f3679e87d247d10850c74ad6e9d7f82504a40caa0737de1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd45391af46ccd1a166e139e2aa6020e0e75999a094e5e4a4eabb8ca5056fc97"
+    sha256 cellar: :any_skip_relocation, ventura:        "de0e2a37948da0d8fa4a0b34e89ee1b5511fdc85d3ec7037b66f39aba60df795"
     sha256 cellar: :any_skip_relocation, monterey:       "cd83d74247835df4ef5036c68c8d93539ef3b2eac56ffc839334d1f95c557e61"
     sha256 cellar: :any_skip_relocation, big_sur:        "61fbf984ade171a70ae80af4695a78ed35331a143cdc12ddf4440fee74889807"
     sha256 cellar: :any_skip_relocation, catalina:       "044456429802d6f6d8ba2a8d00547e0e0695e99edd1cceb1af29e70eb004d13f"
