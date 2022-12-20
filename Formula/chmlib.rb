@@ -16,6 +16,7 @@ class Chmlib < Formula
     sha256 cellar: :any,                 arm64_ventura:  "fb27ebeee48d99f6637aae0da57043863119406a49fafe09deac78badcb723f8"
     sha256 cellar: :any,                 arm64_monterey: "23e464348836e12bf5835bfdf1acbcdcce344151d12cfa2a055d689c205b6e82"
     sha256 cellar: :any,                 arm64_big_sur:  "3ab46a541a6aeb2ac904a74fa1433e48bfca91a382e8e8b27290d0597581f520"
+    sha256 cellar: :any,                 ventura:        "73986282be1f4d01cfdaebb1aa2b68683143a60acd35cf67235ed8d4f8f0df31"
     sha256 cellar: :any,                 monterey:       "4d4a29e60712457e4ea3838947a95959dbc0f68338514edd3817d6ee122afbf4"
     sha256 cellar: :any,                 big_sur:        "af369d3e427b36281f053f65a0d5be2a269c2a0fb80c87443baa066892d0652c"
     sha256 cellar: :any,                 catalina:       "96d7cb33260c72012f24f383054b7f2505f815f0e3e24298229b5712f8a66cfa"
