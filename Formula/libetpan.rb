@@ -10,6 +10,7 @@ class Libetpan < Formula
     sha256 cellar: :any, arm64_ventura:  "d5a028d25df2cfef1f146a27024b8a1a111d5d939a9678538b02649a35c2da75"
     sha256 cellar: :any, arm64_monterey: "772546d5dd375facff503b9d1fb5618b9ebc49e6d0d8c04250edc7bcc60cd115"
     sha256 cellar: :any, arm64_big_sur:  "c72a2eeaf1b3fd67a093375fd567ff97c329d5d503abd720572eefb8d88acac3"
+    sha256 cellar: :any, ventura:        "8e10bb7d65a748f856d0bc05ad843f35836cf444bf55aa286ec5c17590a3e73c"
     sha256 cellar: :any, monterey:       "58fb1bf8eef4740ab4383ec37787e7a5885198e48d3254c1811c2ac70ff1c174"
     sha256 cellar: :any, big_sur:        "9d2ac6a48a6c14f2894155162d52ad7e8cf219ab21245b429b83378662f4a7f7"
     sha256 cellar: :any, catalina:       "2effe5528f31ea1edcdd0baf468bb1ebbfb0061cb8bf131f2636b5db6cc20550"
