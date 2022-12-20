@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.4.5.38423.tar.gz"
-  sha256 "ea42316879484b5bde4046e4bfd812f65fd62f06bc373898de2d118f91dbb4df"
+  url "https://dist.duck.sh/duck-src-8.5.2.38799.tar.gz"
+  sha256 "54cf37880cd1db807784c00055ea70f66c52721c869431812f92054d89d5dc0c"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
@@ -12,11 +12,13 @@ class Duck < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "87526b9d238cf8252974e62894116e11607a0a6dd52f6b1a11f9fc8a891e7d6d"
-    sha256 cellar: :any, arm64_big_sur:  "c6659997ec42acb0de824ea5504c8eba616e4a6666f00c6ee35d5857cc1b2041"
-    sha256 cellar: :any, monterey:       "d56258924fb322973b6a20e2fea61d905df5b10da6d97bfb6857b62ab2054d52"
-    sha256 cellar: :any, big_sur:        "a28907c30dc74fce80a73d74ffb80ca080cd48c6af0287c54f16035b310ffa93"
-    sha256               x86_64_linux:   "322dacb4f178c25cb0a119c6e43920659c2215f57a02c0359c2925e3e9bb26bc"
+    sha256 cellar: :any, arm64_ventura:  "fafa6e1ff6c68fdc1051103db29affa7a524d70253831c91d422bc476d47eae0"
+    sha256 cellar: :any, arm64_monterey: "8d5878620195f7e96465fc53993b052f473ed8b40b5fce6ae9127e0bc6a5a9b6"
+    sha256 cellar: :any, arm64_big_sur:  "167cb6b79225330eaddb48de677a434abc91a869498d561e0267bfc412e100a2"
+    sha256 cellar: :any, ventura:        "138c21288185bb99a8ffa516f21189f339f77711d651aaa89dd74f5df7624d00"
+    sha256 cellar: :any, monterey:       "01f5303eae3d3bf30bd9783dfc7afae9c81b679b8a6ebded4248cd22f24e57da"
+    sha256 cellar: :any, big_sur:        "1d8df2460df82ff75f54698df3890119626b82d6fb7e6ec29ed634fa39d438f4"
+    sha256               x86_64_linux:   "5a1371819e002be45776183ba93c9be8f488fc78edd3c80a511b6590322e4e72"
   end
 
   depends_on "ant" => :build
@@ -36,8 +38,6 @@ class Duck < Formula
     depends_on "libxi"
     depends_on "libxrender"
     depends_on "libxtst"
-
-    ignore_missing_libraries "libjvm.so"
   end
 
   resource "jna" do
