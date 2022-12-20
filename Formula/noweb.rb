@@ -11,6 +11,7 @@ class Noweb < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "445837953be37e6f291e346a9469b445cacdf9a0ef4d7da96dbe6c779b62f9a3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cf0e3c32a2c45886fcf808941a29332aefaa8c619b89866a55f34d478054ae1a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58c550c2b55a37c6377eada0ffd5d3db747ebf46ddeef1f9803534ce58ea6c59"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f16976e58f41d239d9029f6e3d649fda7d63f14d7cc2835847f088485fcb9f7"
     sha256 cellar: :any_skip_relocation, monterey:       "e22a1ef8495089090d3e274f1f80c42baad63749cd564213f21c97c3b6eaa332"
     sha256 cellar: :any_skip_relocation, big_sur:        "3d78bc1dfb0c7d4175744b013ea9aeafb6992824ec079d7218960512e551e8c4"
     sha256 cellar: :any_skip_relocation, catalina:       "b52d3febc8494ae943db6f99e0734b61333f95d67994b6b609d4c5129d52f788"
