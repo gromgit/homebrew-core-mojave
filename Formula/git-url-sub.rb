@@ -10,6 +10,7 @@ class GitUrlSub < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "95bb0b9c90b3c5fd928714791ed4dc800a3e25ddd52dd3dbdd295e1eb5fdb6da"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "95bb0b9c90b3c5fd928714791ed4dc800a3e25ddd52dd3dbdd295e1eb5fdb6da"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8975feb6b79a015095edec52863982710396e64089ad4f3ff5ad8e0258c5d86b"
+    sha256 cellar: :any_skip_relocation, ventura:        "95bb0b9c90b3c5fd928714791ed4dc800a3e25ddd52dd3dbdd295e1eb5fdb6da"
     sha256 cellar: :any_skip_relocation, monterey:       "95bb0b9c90b3c5fd928714791ed4dc800a3e25ddd52dd3dbdd295e1eb5fdb6da"
     sha256 cellar: :any_skip_relocation, big_sur:        "826dfdc4c81aa33b3962bec4280c0e0167b74f98103b028c49cff97383c06ef5"
     sha256 cellar: :any_skip_relocation, catalina:       "e35658a190c074ad5bb88578e34c91f8751b24ea297cf5b2eac9729c8eb9e814"
