@@ -8,6 +8,7 @@ class ElmFormat < Formula
   head "https://github.com/avh4/elm-format.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, ventura:      "f0bb51492d7fc58de730bfb13034e5e01dbe84486303fa42c77418ea3142b728"
     sha256 cellar: :any_skip_relocation, monterey:     "7522c2f606c3f292b32a6eb6b3b75bceacec062bfd1495e6189ab9858988760f"
     sha256 cellar: :any_skip_relocation, big_sur:      "9066d69a558d83fd34502c7a8949213fbd8c62314d6020e7bf83bf533b48ff87"
     sha256 cellar: :any_skip_relocation, catalina:     "934eed770e7b19d15cb01906b5e64124b4b6bb0c5a0272d52b70d20d98b3487d"
