@@ -11,6 +11,7 @@ class Lcrack < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ed33a289956f6798336a9cc79d43cc3cbcdafad2474d8e553e70f0fbec02479"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f8986278bb55beb07506b9953fb36dbe76d44bac1e876b955a1aaf3bd9236467"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9a11f709651ff447bc6a4ef8868e52fbf44587d4631cbbcba248c5a61dae2a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9be785163e014dce3f3263c4f37ca099d8cd9237b6c004c17c6b195b3e2ccce"
     sha256 cellar: :any_skip_relocation, monterey:       "787aef461f0e77f9bd1801b1529fd35d9fa05a6eee5b6b6fe9b7f479c18ef24b"
     sha256 cellar: :any_skip_relocation, big_sur:        "7a10b7d205bc60c5e719ca47f3ffe4c3a4d8a975c393cb1258daf2bac4ee0217"
     sha256 cellar: :any_skip_relocation, catalina:       "229ccd2408afb62d18a8ea9f68cf7d065720fb9137b1b14f9d4e7aaffc178865"
