@@ -8,6 +8,7 @@ class Shelltestrunner < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3eac3b0a43294eace66fd737fc7aacfc3cc363b1748e53b21cee80897cefc4a5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a8727bdd254b5af7101182d68e536f23421e6a08d880c4adf4ac949daed5628"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58f03249e05d5808baff4da11f784b37bd818f35c3243855bdc467562526ff76"
     sha256 cellar: :any_skip_relocation, ventura:        "9e42d023a03505d850b8b9d3bd7b9448d8c9711d604242015053438aedcea9fa"
