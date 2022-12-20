@@ -13,6 +13,7 @@ class Abnfgen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "04ac724e984219dd01fc9766bf24c9ed5b768d4d52cf600d1c358e0a5155f89c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c1ebec3242ff2bd1ad767c152536f7c33ec454dafbf902dd1b0bbf4ce026b856"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3c6fe963835658791592b3846bcab8bfeafbee2c63f3fb804405ce72ed2e64a"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f43fe85052ed7b06e560b1dd76958b47153625433eb7ce1b742f86c46b1ebd9"
     sha256 cellar: :any_skip_relocation, monterey:       "f80717b29159352a309473e370a1ed615aed0cb2b9f822daf556b9f691bc1a35"
     sha256 cellar: :any_skip_relocation, big_sur:        "bddcdbc3e7993d70dc27f99fd18b439ecb25cd338c8c88762d7d3842439fd2f2"
     sha256 cellar: :any_skip_relocation, catalina:       "c1531bab58a352221fca0cc5b73db2d9f206e1b98272ff06a90d72aa9e991925"
