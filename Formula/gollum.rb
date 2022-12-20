@@ -10,6 +10,7 @@ class Gollum < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "460291bccda886ab089032e4df6c5a289bfe1a0355fb81b10b1143200e306be6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ac1e8bf4e7ddbe753112b22cf9544bbc3f1f831c8878a16c9992c194c7e35fd5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ee4392902517d8c01ccefd711b89658420b8ab2727473538db2c8781e3ece6f"
+    sha256 cellar: :any_skip_relocation, ventura:        "201d868caa5e4eaf9ee8b0094496ea4deec2ac6fe2c6a1589baf695ebbb7be70"
     sha256 cellar: :any_skip_relocation, monterey:       "c9509e4313d50c6aa2ca636b82fd7e52dd2349d24cfd27644722bd86735ae8ab"
     sha256 cellar: :any_skip_relocation, big_sur:        "93b409a0df8ba538dc75783b349b6e3d9d3390aa9d2e89813513a0452e3eab3e"
     sha256 cellar: :any_skip_relocation, catalina:       "a8f048a8431da205f8c35224d43b6818c73adcb1abf973e7d1274231df6cb562"
