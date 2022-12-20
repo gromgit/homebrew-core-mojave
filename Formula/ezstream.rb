@@ -15,6 +15,7 @@ class Ezstream < Formula
     sha256 cellar: :any,                 arm64_ventura:  "2dd9d7371e6fd462547e28d93e82f1351059b847a50b46dbb1a309c628c99fa7"
     sha256 cellar: :any,                 arm64_monterey: "22efe55635691409ca6c53eda5be73a7667c8ca59f0076b46380b67e663f5283"
     sha256 cellar: :any,                 arm64_big_sur:  "188838a38d3573fc77ffd5684e0e7759b24d550ffdd895243425e13c29e038c2"
+    sha256 cellar: :any,                 ventura:        "ce167e9399770af979c88253224ef5e852192aef03ec4c5a64243612b91ec742"
     sha256 cellar: :any,                 monterey:       "07ec03e5e37aee0593f5d9121b9bc0ccb071df6c5ee520fc619991820ca90f31"
     sha256 cellar: :any,                 big_sur:        "fbfe1082559a1313ee3ff071ad35866fb20d5fb360fbfc634fbf85ac48c3e94d"
     sha256 cellar: :any,                 catalina:       "2854c21def8d7e97747aeca5e856833d17780698739e581a192059c58f50ffa2"
