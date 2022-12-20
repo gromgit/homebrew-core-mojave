@@ -16,6 +16,7 @@ class Ekg2 < Formula
     sha256 arm64_ventura:  "057590a3d797db559b5a9e119b5426de7b1482188ad99163b35d35894f77f02d"
     sha256 arm64_monterey: "70fd07bef46d76450a77c68cc6633201080b11c2caacdc5b0a857eaec2bc9ebe"
     sha256 arm64_big_sur:  "e1ca8c485b595b3d8a0edcd59699c99d280a14d3aa7bfd7646c6d966f903101f"
+    sha256 ventura:        "eb9427866797a3ab1dda864380f3d4b584f49ae5fc9d656b345b939acbcd75d7"
     sha256 monterey:       "6ebb96a39595e0138fec66f379b7db080169ad019cae73943b43b48e958f777c"
     sha256 big_sur:        "2f095607ab5e5bdbf0ca515983aeff44e4a2480d97fb460d19c63babd875bd05"
     sha256 catalina:       "e17ea1385008892e80e0d5e0d44e510f6ac30e5d86423b55c61465eccd348d36"
