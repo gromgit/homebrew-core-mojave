@@ -15,6 +15,7 @@ class WirouterKeyrec < Formula
     sha256 arm64_ventura:  "d0f76ae3936a32cc3be17614e325503686400bd1c38abf3a072d0f0de9444628"
     sha256 arm64_monterey: "43c8cb4e4f1389c6a584c27b0407c11e31422cdb2802706f316a93f7e5d8c7a5"
     sha256 arm64_big_sur:  "e3cfa2752a3957af0fcc474d4ad24ab76f026ee4479e0fa74d84222d16c02812"
+    sha256 ventura:        "e0334033e6d6ac7f366a556d8e89d3394bc85968180e52ef7bc5ad4edcfa2548"
     sha256 monterey:       "0b4c56b39f76881732a5afd3a4fc490e35e05145efb71845d938555d1173168d"
     sha256 big_sur:        "f5a1ec8cb71d5240eb01a3dbd0cbfa8f09c4b76cae27cacd2fea058ccb8c9f78"
     sha256 catalina:       "907d4ed63f0f9c13217a9120749b12521ad773d310d554534a507ca9714d2dd7"
