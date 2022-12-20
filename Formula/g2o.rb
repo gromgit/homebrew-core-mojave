@@ -15,6 +15,7 @@ class G2o < Formula
     sha256 cellar: :any,                 arm64_ventura:  "eea750922b8eca237db78923657fc7cb2475ec6afc0b881cb6914ec026f7b7c8"
     sha256 cellar: :any,                 arm64_monterey: "c492d099917d4f2a22b8b11095580fbd14de561942d048727e4069316832dfbb"
     sha256 cellar: :any,                 arm64_big_sur:  "161de612759ffe32652d1eac931b72f8f3c7d1a9807acd9e7215459430df3eec"
+    sha256 cellar: :any,                 ventura:        "31d381a031fcc91cd406eb2357e67055fb8c8038aec681a68fb84cf2220167e5"
     sha256 cellar: :any,                 monterey:       "e8d94c808de15df0286bf9337a17cf5c21935b6a9da55ad993560225c3d36623"
     sha256 cellar: :any,                 big_sur:        "b99527b4e0670ced76af5ad443df1b83d3c3a16a84b9a834be849336e76d99fc"
     sha256 cellar: :any,                 catalina:       "8d8d1b729449d5f6e5afd9ef70aa2531e75e60f2a3208dcfdf00ca3097e146c4"
