@@ -9,6 +9,7 @@ class Gdl < Formula
     sha256                               arm64_ventura:  "05d8c74345f6a707a3a7f106b224457683c9f98da930d58a76ed60aee42596d8"
     sha256                               arm64_monterey: "20a0742ffcaa3bf6a8ee5c1531ed48f2b51a18c7a816f4b96d85192c2906db23"
     sha256                               arm64_big_sur:  "e96c5e69fc084fd421f08f651e8727fb7a5d28e270c804ebba7e6d860ccec583"
+    sha256                               ventura:        "83bb5806dac6659eb548241dcdc75b241ba8f75f8591fcec7af37c5b0e7a3c02"
     sha256                               monterey:       "b1a120f5c6ae1e9f6802be4306f00cc2fc54ca1aaf75c017fa74efd6dec2da0e"
     sha256                               big_sur:        "98cb1563adec26dea9289d5ad3f5b006c26897cc9c586114efe0dcc2214a1a68"
     sha256                               catalina:       "11df5d907431165eb6f9a6b8673f413dfd939199940b5a2e3a3f78eab11c2ce8"
