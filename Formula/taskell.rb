@@ -1,13 +1,16 @@
 class Taskell < Formula
   desc "Command-line Kanban board/task manager with support for Trello"
   homepage "https://taskell.app"
+  # TODO: Try to switch `ghc@9.2` to `ghc` when a release supports brick>=1
   url "https://github.com/smallhadroncollider/taskell/archive/1.11.4.tar.gz"
   sha256 "0d4f3f54fb0b975f969d7ef8a810bbc7a78e0b46aec28cc4cb337ee36e8abdfc"
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3d4adedf5311251d430126a527c229bc743f7ad10204f953669c46ed1ecb1ae"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e3bddb43e9655602e40fdbdc7152cc34d574d76654410ae2735b02eb66e402f9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0af5900a42ff1461448170364e3f8d7f81f274bb5e44db84779a34f6e76a7e46"
+    sha256 cellar: :any_skip_relocation, ventura:        "d80b3487d9a6f372fe881ab460469daca32287cac49ddce328b794a067cb7c08"
     sha256 cellar: :any_skip_relocation, monterey:       "b57296655c42311e58057cdd587e579316ee535cbebb25c2e4ea33d2c2ee3141"
     sha256 cellar: :any_skip_relocation, big_sur:        "5b343d4e8b61335b598fda4c5d07084f7f31186c28212ce70eeee3216f7ceeeb"
     sha256 cellar: :any_skip_relocation, catalina:       "aa033e92954aee8915a4ede120e11015ce2aaadb9f313bd893656d78f20805ea"
@@ -16,7 +19,7 @@ class Taskell < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.2" => :build
   depends_on "hpack" => :build
 
   uses_from_macos "ncurses"
