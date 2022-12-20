@@ -11,6 +11,7 @@ class Dcadec < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "47bf0a1d239ce33c7fd85c57dd7b8aad67e69aaca2a28206d45a6f7f14d189d1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d458c3484034748b9b1fee9074d5f3018354447d11914f132c6e41899de17491"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "359384000edd00fc8e030bb59f9ebc15a301eb250351a20f2da062cc202caa54"
+    sha256 cellar: :any_skip_relocation, ventura:        "d372f413acbf37b65b3f39e2f7140d8731dab8216a683b4153428c574e87a3e6"
     sha256 cellar: :any_skip_relocation, monterey:       "702e3f8b57be59604d5969be08fb64067763e5aac353154b233ad74a3f5a3276"
     sha256 cellar: :any_skip_relocation, big_sur:        "2679a012566efff2d1ad05021648975dc2960d2ff42720d53b001631311d4a51"
     sha256 cellar: :any_skip_relocation, catalina:       "0622b87f5b7f7c71346443f12d5e3d6eabd02aa63dce433c7248d405a9fbc036"
