@@ -1,19 +1,18 @@
 class Mint < Formula
   desc "Dependency manager that installs and runs Swift command-line tool packages"
   homepage "https://github.com/yonaskolb/Mint"
-  url "https://github.com/yonaskolb/Mint/archive/0.17.3.tar.gz"
-  sha256 "31ad7cc72fa0427ef95363efaabebe3c90c7e5af14537bf67f046c738460b51e"
+  url "https://github.com/yonaskolb/Mint/archive/0.17.4.tar.gz"
+  sha256 "1c4ccf124ab883a6f8c50d1d7cc5feba92c527cdc2dbcb4d2b1ae8960131aedf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6c2b944c3bd04099240ed8c4c1489ba8a6274e8d80793744cf3bf5b0388922a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4a82c0b54477a7c3c54000d84833724f3aaa6f9bb62a20ffddb3c880f264480"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "722c3f50d202e3461e5130c3639da14b4d3e55f5156d7803978571da5577f5cf"
-    sha256 cellar: :any_skip_relocation, ventura:        "38c805a065c493e4ce8ecae3dd9f832b8341cfa1d6f1d854b41f5bc19d022cbc"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a233f8e964bd5da4b4c6a4682e4d1bf1ee070a82afeffc12ec0dcbeb018f704"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ee17ecd152799a45f080066867c1046ffd332940f1aa925ec4a4b032c47b0f54"
-    sha256 cellar: :any_skip_relocation, catalina:       "54dd30032281efb21ce064aa2d205ca59c985f12f1bb55419ca6800c9b38a59b"
-    sha256                               x86_64_linux:   "84e7f55630889e1dd849fc58d2840b79e91523039e1fcc4516cfe45c779f8b40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fe1c5f8db79dfa97fb36ec9646079f23a18441dbcd83cca9649f2f59b4fe593"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1797a7a9073fdd6900ed06e6e7305add5c5a62626947913c032b528bc4543c33"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61d91ea891ced7d9c9927f57898c6d3ae7d1056410c99244ac60e6efcb642536"
+    sha256 cellar: :any_skip_relocation, ventura:        "c3f28c2b81d7da7d93b0a67b0506efce2bd485e9a01f9d81f560b9fe93b85ba9"
+    sha256 cellar: :any_skip_relocation, monterey:       "771fd3357631887772c69a9340cbe88f9ae488458270b3491b683fac0aae4685"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9a257fa4677c1cc00b53290855874700f5b39eac9e4c90098627549130b01747"
+    sha256                               x86_64_linux:   "0b06ed938d61bf55d577b305cddd1fb43081d1f8d9cb06e8b2d5755daaf7fbda"
   end
 
   depends_on xcode: ["12.0", :build]
