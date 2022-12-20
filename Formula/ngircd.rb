@@ -14,6 +14,7 @@ class Ngircd < Formula
   bottle do
     sha256 arm64_ventura:  "bb80b2f49177072ca73666a7a9537355f4b1bc14c118f6a8cb2e748e0e7aa961"
     sha256 arm64_monterey: "e99d8d95834f66b6d5c4d14e94b207939852e9e1ee9e7634d58f894b3fb44ce0"
+    sha256 ventura:        "c5170552d07576ea7ca1b6720903fabd6a9609f617c124781d518cd9c9b32a8c"
     sha256 monterey:       "7939168fb5b5936e1acf6f9a9729ed98d4ea1f8bde061b46ab926eec219a2db1"
     sha256 big_sur:        "9fe092e3ca8de75453b4aa667067e1cd863c041b8055ae7981e51f3506ac19c4"
     sha256 catalina:       "95f504faeffb209318e93a050c632805178e91cd1e9475bbccfa9eb040b8d785"
