@@ -10,6 +10,7 @@ class Rmlint < Formula
     sha256 cellar: :any,                 arm64_ventura:  "a90c9737485418dfe6b54ba6173fbeefd5c10543352353a88bcc524ed7037be8"
     sha256 cellar: :any,                 arm64_monterey: "506515b8e54f1f0023c245b9dd52fa419cedbe5e2f8fb434b7991d49ad6e6dce"
     sha256 cellar: :any,                 arm64_big_sur:  "5eae37b1c416a95072b7475cffbbf5a8652c2f3f6c9e3d24b96c13b57ac06c24"
+    sha256 cellar: :any,                 ventura:        "dca6470a638a2bc0914f857b0c9e5f4c07140b81501ef2794b8f101ef67ba22d"
     sha256 cellar: :any,                 monterey:       "668514f9f5d6a28feb7bed3976b10a5daa51384e5e390664854f96f307be281a"
     sha256 cellar: :any,                 big_sur:        "ce229f94deeb1e91f84db64e71e4c3bd22f2bf0d1236c6093aad80d3685540b2"
     sha256 cellar: :any,                 catalina:       "b22e86d9727096bb5a73d92e28f03dcb36c7b46d4fbe3289a1105d46eff7d67b"
