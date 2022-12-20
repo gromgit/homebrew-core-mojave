@@ -12,6 +12,7 @@ class Ksync < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "17050b5e32529174fb9607999c5cae39cab8951647d1cc50efb5c2bf1492c0ec"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a58b20d7cf681598f94c777200474e1419890fb24e3d6217cc0233a91a266bab"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4fe9c12efd8e73fd794edecca04b0270e4dc2229adad3953f25635c3432fc313"
+    sha256 cellar: :any_skip_relocation, ventura:        "3582cd7dab286bc699ef63abb25d5ab2ec69f9b2d5046ef4e9b96a949bee53b9"
     sha256 cellar: :any_skip_relocation, monterey:       "2add85f6b9b1daa3aa4cde7791fec5e36873f2440155c6cb20a1ab08a0be92c7"
     sha256 cellar: :any_skip_relocation, big_sur:        "0e497912738482d6fa2d1161c6a26b62a781b25ba4280f7ac8e2487b757cda9d"
     sha256 cellar: :any_skip_relocation, catalina:       "ccee0b1bd4f7d3af674d1c2901965e7140b4408a794a781fc8e7640276936f98"
