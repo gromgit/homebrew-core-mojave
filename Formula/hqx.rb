@@ -11,6 +11,7 @@ class Hqx < Formula
     sha256 cellar: :any,                 arm64_ventura:  "83b6c8f9ae3cfcf01fd4745bf1170829206069830a119324cf382c7a258ea66b"
     sha256 cellar: :any,                 arm64_monterey: "09abea6af7106f8bdcf0e58e7b17cd91e1c22074139596a2c4f23afdbf9c9a07"
     sha256 cellar: :any,                 arm64_big_sur:  "d782e36758fe3e2a3b354a3c9e021078230934c2bbc2bd4f7043cf7ad570f542"
+    sha256 cellar: :any,                 ventura:        "dcf39c5df3a0caa4b58e68cf62d77fb1f5c75fdfb1c2d1cd31dab8ad263d69f5"
     sha256 cellar: :any,                 monterey:       "3d8f69b255851ecfcefd4ddaf2011eb70a2a038868001194fcff7f87c777c891"
     sha256 cellar: :any,                 big_sur:        "8eccb719985ba896880e42efd7266c24ee920c3952441ac90f8fb327c875b1c0"
     sha256 cellar: :any,                 catalina:       "d59524a43357e8590e15fbb039891261b2d3c6c33bf073fece8bfa568c3b9710"
@@ -35,7 +36,7 @@ class Hqx < Formula
 
   test do
     system bin/"hqx", test_fixtures("test.jpg"), "out.jpg"
-    output = pipe_output("php -r \"print_r(getimagesize(\'file://#{testpath}/out.jpg\'));\"")
+    output = pipe_output("php -r \"print_r(getimagesize('file://#{testpath}/out.jpg'));\"")
     assert_equal <<~EOS, output
       Array
       (
