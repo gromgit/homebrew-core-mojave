@@ -10,6 +10,7 @@ class SpirvCross < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce681803131b114f973e47e23003394b5e4238473a7c595a21a23c0b90b42fa0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "81b39909da8d863717546e6e07da98ffeb3861ccf359082ff5fe94dcd4623123"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "80a4ee152f875a3b653457ee40e0a05fa9892cc6203fd3d525e16157e646c3c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "1206c42b59212e72be0325eafc39eedafe12e70a6b6f452414f304e7a62b51dc"
     sha256 cellar: :any_skip_relocation, monterey:       "bf474aadfd797bf685430e8112a6572a0cd3445e2a694ebed9d234134a3d2f39"
     sha256 cellar: :any_skip_relocation, big_sur:        "224f4a1ac8dbc055a8ea1a431a82e275a3de850f805d7aa5388d05696616e403"
     sha256 cellar: :any_skip_relocation, catalina:       "612183441f7920e7f6a3f4d87181e30ecc071a3d2d20185c8b3d614dc2deb30b"
