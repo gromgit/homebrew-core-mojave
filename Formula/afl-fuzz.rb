@@ -8,6 +8,7 @@ class AflFuzz < Formula
   revision 1
 
   bottle do
+    sha256 ventura:      "dea9142406930f3728f083353c833cc7f9d8cb928c7d8699344cee47b2a9b1ae"
     sha256 monterey:     "df82d44ff12c2e6fffc4e91c7b47798d11330f3cdbf8520910027cf3b5f55e79"
     sha256 big_sur:      "9a6b82b91f72a781d576a0b79b43869577c2f2c16d8d7e56a8c0830f8f7aa11e"
     sha256 catalina:     "9d9406abfd60163bea04281f6f3746a4f1a1c138c980fa28ace79869b1097052"
