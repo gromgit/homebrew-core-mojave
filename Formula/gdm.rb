@@ -12,6 +12,7 @@ class Gdm < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8c01e7222d46005257a757c00fb6dbf6e476be44502d4cee0d7afc2b759b801"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "45fa20615c4ff168b2753f538d396a9a92cc851ead7eab94c2a21faac5bee814"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "684b0b0f11a168b38500f0e9c4e8419bf39979501014f5e4a5177be2ac5352f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ccfb93348ed299dfa37bb416202514672c7933189d438593b57a629169d2f88"
     sha256 cellar: :any_skip_relocation, monterey:       "4ee869fe61efff2e95c1979ee051a5209d2fae0ca4b74585b678c9fdcce5f9d8"
     sha256 cellar: :any_skip_relocation, big_sur:        "fc0e6626aec33649015a5808dd6c2b2d5b73051ff71231c6b482bba9e599efc1"
     sha256 cellar: :any_skip_relocation, catalina:       "a9801987792b8b32d8e1a30d668e43a36c798f2901149dbd49f4f8f0f79b45b7"
