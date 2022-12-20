@@ -13,7 +13,8 @@ class Poppler < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/poppler"
-    sha256 cellar: :any_skip_relocation, mojave: "a9ac145f00322f5c3ddb3191666b86a4c4a8f2ae3d985ab44e0e645935232683"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d7c50357223440bf7c52568c8c218f3743245fb8aa67730ba416ff29f3f46e9f"
   end
 
   depends_on "cmake" => :build
