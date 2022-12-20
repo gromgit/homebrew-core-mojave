@@ -9,6 +9,7 @@ class Devtodo < Formula
     sha256 arm64_ventura:  "58105a4bbd78bdef5f52bd4de540591c1d647613b5b7ad70f43076c715939cfe"
     sha256 arm64_monterey: "ca3402d8a1efde8eeaf00f4290c2d9921c9ce5f2b51c3bde4cbc9fcee836e589"
     sha256 arm64_big_sur:  "d7d93dba48edf2c4cf03bfe351796620f0082ad3a040d7d35bb820613499828a"
+    sha256 ventura:        "66b1c96b904e87be75c601a68aa094ce97ea99d5bb36ab6ee3714fc40e69cacb"
     sha256 monterey:       "f128500ac76557a196ba47d6a31d2b9cafa2191f7ef3f2ba934303ee95081cb1"
     sha256 big_sur:        "fd6bd62ec91c76dcbb047b0eb8cfe9ffaf7ff045913493dc5070ee0c090d7809"
     sha256 catalina:       "24cc0693b8b69ac2fe7d926cbc3b8fae6e09df83b6a979ac71c68b8ae5ee6196"
