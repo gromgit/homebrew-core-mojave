@@ -1,13 +1,13 @@
 class Tart < Formula
   desc "macOS and Linux VMs on Apple Silicon to use in CI and other automations"
   homepage "https://github.com/cirruslabs/tart"
-  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.35.0.tar.gz"
-  sha256 "a7c16318d70c4d8b418e253da8ab8b024bdc9f71f08721dfbbb8cbb251a87e0a"
+  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.36.2.tar.gz"
+  sha256 "5f8e3b1d92907a1c6949ac8430ad1c48f24d28e8af73dd28b7cc87df69401eef"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87589f6dbefeebcf0db61407fbf652754ce0d761754622b0fec5f0e35d70ee3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "81b374095aa9a1ac6012a4c3df29dc0179aa7ab72dbc60c246513b9816a735a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "824b8df3b40c17054251d3eeebe044c789d27ff1da8234137a2836a34b4e69cc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c62fbcbdd94c15a9ed978f538781ca349f1c66226f669005fda6e2b719256009"
   end
 
   depends_on "rust" => :build
@@ -19,8 +19,8 @@ class Tart < Formula
   uses_from_macos "swift"
 
   resource "softnet" do
-    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.3.2.tar.gz"
-    sha256 "7bdb4c4c1996257769f11fb1b17d50954bc083c0155cb1509ad30bd8f304ee76"
+    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.6.0.tar.gz"
+    sha256 "fd01589b9cb1497394f1fd0fbed385dca51558352b5a7d1337cb92a1a2d2f95d"
   end
 
   def install
