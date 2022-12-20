@@ -10,6 +10,7 @@ class GoStatik < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "26f7b3d318ee90136abccb38d929251dd06a2b689191ad9c34a29acde10a4645"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1c5a13a7d21ea10888bdfb31153624ca587b2b3424ecf8c97f5bfa512aedf898"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5960b8ab88990df3e2a3ef0578da24b674d72c620466af263fdad6b479133fe9"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad26269af443084182676494a9d351fd977e0d8d4644f465b22e2f92498fc492"
     sha256 cellar: :any_skip_relocation, monterey:       "bc500cc264e19fa299d10cee767ea23b79750b4e5891359aa465898e1de6590f"
     sha256 cellar: :any_skip_relocation, big_sur:        "0f05d7b15227e1bdf7be3876d90135232083ae1789c08d32641777b9291ef8a7"
     sha256 cellar: :any_skip_relocation, catalina:       "d6d3e13adce186f49cf35be7be414baec7cfa02e8d884e0a97ec9f15108f4cb4"
