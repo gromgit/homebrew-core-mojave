@@ -16,6 +16,7 @@ class Olsrd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1278537dfc38526c39a2e62b42d507c84249f267d65371596deaa6cc20354d56"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "adfef1479c1e3e2070783547ba8a6a6c832287e0ae2c6ab18f2305bb4acb97c6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d962f1a213860c614fafd91b494c4c06700c2d960645ff18bc410a071ba90250"
+    sha256 cellar: :any_skip_relocation, ventura:        "a2b2239bf19aab387f1ed2a1e720d5d1cef2c2dbdb6a2b394943af1d1d06c296"
     sha256 cellar: :any_skip_relocation, monterey:       "821ca8fd35e1738acad8eeebbfbbee9adc95cae681ce7db97870f04d62226ecf"
     sha256 cellar: :any_skip_relocation, big_sur:        "52333a59755987095e315f745c70d2187513099c2aff7692d8bf4711a44354d9"
     sha256 cellar: :any_skip_relocation, catalina:       "95e531e19da3a6e11bf48851691e411d3fb27acf7dc18ccf5bed5c32aa3df4ff"
