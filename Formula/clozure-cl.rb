@@ -11,6 +11,14 @@ class ClozureCl < Formula
     strategy :github_latest
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, ventura:      "aef763ec8fc6f55d3ded1a162c73c42d57e790a7995ae4280d5915b181e05c5d"
+    sha256 cellar: :any_skip_relocation, monterey:     "f9ab070f78708521c466672aa08f327fa428694b46620a858acf546e7a68df99"
+    sha256 cellar: :any_skip_relocation, big_sur:      "2e8a3a3d80b28ab52584b2b6314f4739e7b2747d4efb1fead8b66e18045826c8"
+    sha256 cellar: :any_skip_relocation, catalina:     "1a61c4c36d12ea0707ddffb61456a65a7b585e009f900daafa9745b292384fd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d7ccfcd028e68959e5d105ef9f942febdd44ba2f47f18c93b259cae0a8c8806"
+  end
+
   depends_on xcode: :build
   depends_on macos: :catalina # The GNU assembler frontend which ships macOS 10.14 is incompatible with clozure-ccl: https://github.com/Clozure/ccl/issues/271
 
