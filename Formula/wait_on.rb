@@ -9,6 +9,7 @@ class WaitOn < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d6736732caacfe89a285f06256c397fefb2e47f11032f282d84e874b384fd21"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5d7664213ff9c0136cb6e8add7a2bfc87f2bf316594f9305e53a287834b12c72"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca26e2aeef0c80f7b61b392ea50b03f7465bcdc0c8c3be2248aca538935fdc78"
+    sha256 cellar: :any_skip_relocation, ventura:        "9427ad9d03fbceae7b129c5f00e7ad2fdd4e6d7630c933e1e1ef8554166cb1ed"
     sha256 cellar: :any_skip_relocation, monterey:       "abc2d21a1add07205d46997d869de4a896bd47174033c0e392e74c17813251b1"
     sha256 cellar: :any_skip_relocation, big_sur:        "b7a8f90a892e9b2cbe4455d9fd4aedfdf7b65c3534e00b8849e94652171bd4e3"
     sha256 cellar: :any_skip_relocation, catalina:       "befef0facd28d26c22ed14197e74c1bff41c9cd2f787ae4bee59027cfb89b2c7"
