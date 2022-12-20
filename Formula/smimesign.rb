@@ -9,6 +9,7 @@ class Smimesign < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8709e59254d883223d8aa3f565054cacce97135da8d7c1b7c941596a75898f4a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d103d54144838e83f98e76260c5f3f546729cfa59b52002889ba6716951ba529"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2adc095ef7135d81dde128352c105f36affe27882900960e5ea658b1acd2427f"
+    sha256 cellar: :any_skip_relocation, ventura:        "bdff73f08ec9eda212fbf271a5d7c131e38e1d9c2263e153db5229dba92c211a"
     sha256 cellar: :any_skip_relocation, monterey:       "b94e7e56d2920ae7038bc1ad9a33adf1ad6cced39c896e9a15515abbc63a423f"
     sha256 cellar: :any_skip_relocation, big_sur:        "9781b5ecad25be5a9ef95fb714caedae7512af4d6a31be300b30c57fd17d1fb9"
     sha256 cellar: :any_skip_relocation, catalina:       "4a8f0b0a87417c22175a7cfa7c25583a3c71170b220d3cbc56b05786baa3227d"
