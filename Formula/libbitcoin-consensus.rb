@@ -10,6 +10,7 @@ class LibbitcoinConsensus < Formula
     sha256 cellar: :any,                 arm64_ventura:  "46734a045992d1a1e2cba4689ab58537f5e7729310d6acb476178d170c54d63d"
     sha256 cellar: :any,                 arm64_monterey: "1a6488ba887d026f465280fc3f2c27847d539eca7c3ab733eff3e4bed89d6c26"
     sha256 cellar: :any,                 arm64_big_sur:  "b2a70f871df4a376246e9882383751a65d04e7f30ff1b0c7abab507cf3d80e49"
+    sha256 cellar: :any,                 ventura:        "c1fa7160b3b53e24caf0b92cc8cd1276f859966a15aac8e2950b67bf2e301ac3"
     sha256 cellar: :any,                 monterey:       "357a443d52c298a45747b15297806704f3bcf81c43f0ccf7066f9e4653356e5a"
     sha256 cellar: :any,                 big_sur:        "31b62a85a41d440a6f2772c348288c89b8ff0de5c6eaaf911b4891a3796c6c60"
     sha256 cellar: :any,                 catalina:       "c45b5944cedcd5ad9733ea30e49a644851264abf40f8d38cbc8b67ddf33ce21c"
