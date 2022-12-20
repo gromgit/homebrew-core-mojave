@@ -9,6 +9,7 @@ class Rain < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ed570796adfa7b5f287198ab69fbdb321c2c77bd388685d575ebc87b1ded60b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b07cdea377e89b93e512473f90965a56f39d1eebacd8cbbd5048035843553348"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d734401c46693b663ebb1f7cc070f13b5685a8699a02a92e8c24a61b3f5b367"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8a0a96d1a5922713605f919b2863056de53897f1f8cd965fbd3de167ca03fa8"
     sha256 cellar: :any_skip_relocation, monterey:       "33582fd6af866524787889bccc1414b9ac9faadf92c3580a2876a6c665156b1f"
     sha256 cellar: :any_skip_relocation, big_sur:        "5f81d8ad4b04cc8fa7d5594e65fcbc60fe706fa5509bd91baf006d68e252cda9"
     sha256 cellar: :any_skip_relocation, catalina:       "0f7c618e299a493540330c769eea29de70086ecd71fb904b1d5dd89a5535dee7"
