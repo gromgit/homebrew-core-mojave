@@ -9,6 +9,7 @@ class Man2html < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad45d9711383728beed965692eeff5cf47f26017c9a68254aa00af577e950c7e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ad45d9711383728beed965692eeff5cf47f26017c9a68254aa00af577e950c7e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74778ca60783522eafd3f718104a650b2d3b9d6b3bf357c39990bfe669ba622a"
+    sha256 cellar: :any_skip_relocation, ventura:        "52150cc353b92e2591decb511790b28c22921c11a5e716931e3c003f0c1ab5b6"
     sha256 cellar: :any_skip_relocation, monterey:       "52150cc353b92e2591decb511790b28c22921c11a5e716931e3c003f0c1ab5b6"
     sha256 cellar: :any_skip_relocation, big_sur:        "f7c753526a25dfa4b3331da2129ff867199b9f4357e8c6b38d1df2d1c20c7886"
     sha256 cellar: :any_skip_relocation, catalina:       "760f302a2a8c5178b683688d47e7ec55b17bf85a51ee404b00b2a3eb02030fcb"
