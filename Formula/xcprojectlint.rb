@@ -7,7 +7,11 @@ class Xcprojectlint < Formula
   license "Apache-2.0"
   head "https://github.com/americanexpress/xcprojectlint.git", branch: "master"
 
-  disable! date: "2021-12-23", because: "is not compatible with Mojave"
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c5233bd7427141a2a3aaac3979661ececab9babacc18b4b4af258f45a87f5ef6"
+    sha256 cellar: :any_skip_relocation, big_sur:       "82e41371144c071dc8cb360cc434d2e692ced87a38f90d41e8422f64425263af"
+    sha256 cellar: :any_skip_relocation, catalina:      "e573329068894a330ee859bdc2968001d42b2d06005824ca7a099d52e2dda543"
+  end
 
   depends_on xcode: ["12.0", :build]
 
@@ -40,7 +44,7 @@ class Xcprojectlint < Formula
       }
     EOS
     output = shell_output("#{bin}/xcprojectlint --project Bad.xcodeproj --report error --validations all 2>&1", 70)
-    assert_match "error: Xcode folder \“/B4A1B4A825CF28FA00DF4293\” has no children.", output
+    assert_match "error: Xcode folder “/B4A1B4A825CF28FA00DF4293” has no children.", output
 
     # Good Xcode project
     (testpath/"Good.xcodeproj/project.pbxproj").write <<~EOS
