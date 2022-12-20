@@ -10,6 +10,7 @@ class Pkcrack < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4424d7af0d7f9655e7fdade301906943147f7480e6457f29aca6b99e981f3395"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41fac1d66b167e630a47d183df3ef169d0c61e19538b783442f2951371807b53"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4ee4c3916070396ad7bd3fdcf550cd150f33359381a177784015a06a4fed9e8"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb846e1622521334993f8e5317678be6e9bc7ae6a4d48ef74fbe09a2f1b727e3"
     sha256 cellar: :any_skip_relocation, monterey:       "eb4e5a960e8da28789c0f702c751338039358f985864f1194cc7637ab0d342e5"
     sha256 cellar: :any_skip_relocation, big_sur:        "a2dd9784714a8b28083cf1d68d6f0c36515e90a2a6ae4ff079aaa33a563a310e"
     sha256 cellar: :any_skip_relocation, catalina:       "d3a30eacefe197d458f08b01ad58d778376fc5b4d53c35f7c0e5c525c17c32d0"
