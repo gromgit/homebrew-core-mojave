@@ -10,6 +10,7 @@ class Mdp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "24f08fa3b94a8f8c5e29944011c5604bdf7b15669db7df886bdfef39a8691929"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a05d67cc6d17e503937cb9ee56b48b96028f095ca8e4a2aced6cac4086bb519b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4807986d02b7d09a0bcdd726ab3efd74434a2a2a298a0e4db4f88301f0c5c5be"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0a8b3917f4bcaca6054386a4522a90567c78adb1a30ac9366403b00c15a09b3"
     sha256 cellar: :any_skip_relocation, monterey:       "72a1a991542a0980bf369d4eae9a85e9c1ad1a353fd407bb35b2af014071db61"
     sha256 cellar: :any_skip_relocation, big_sur:        "422a1aa5fdbc6c1286036480a306c5842876a26982d78809b3ad84c448971018"
     sha256 cellar: :any_skip_relocation, catalina:       "4d4430aea06ed48c1284b8a6b064d2e69a8a37cafb27de9ad5c65ce08c4681c4"
