@@ -14,6 +14,7 @@ class Castget < Formula
     sha256 cellar: :any,                 arm64_ventura:  "85bc8985e90ece6ae58bf9d7a1f68eda1d2d2b3744694f5d7dfcfaf82d9b33df"
     sha256 cellar: :any,                 arm64_monterey: "dab2c9c9952ce1ecd3263ed1d6c1c002c772c9e7c310bde0b6277c46fd424edf"
     sha256 cellar: :any,                 arm64_big_sur:  "320ee21622d1bd939ea95055395d84e5d7cb2d6f091d0da9f05c9eb3d0cff7b9"
+    sha256 cellar: :any,                 ventura:        "6fc622c18f0e57ca04747ce77b5663200f6669c6a1a4f01b071a13ae942ca231"
     sha256 cellar: :any,                 monterey:       "e504eb4b4d6c38f21fdb20a8424de8ac6e98ee4dd970c397da89c0f936520be6"
     sha256 cellar: :any,                 big_sur:        "b91da84bac0b31dfb521f193b519c984cf943f15974f9427fa3e780028ea07aa"
     sha256 cellar: :any,                 catalina:       "83d589037e4418829134060be140fce4b4b9883b9b68376f20257df68d9fff9a"
