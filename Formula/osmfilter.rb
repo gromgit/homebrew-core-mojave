@@ -11,6 +11,7 @@ class Osmfilter < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "06e67f6d61cc209499475b010c4bfe2375d5e3dcb4429e89485d6b03454322c6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "daf330073a0fdad514305d1a2af9333705cc946c3bc8e52da4856ae2d0bba094"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b37db3c9ebe77673bbd83fb7d2e6c215760450987df2ded64044eccf6f34d3b"
+    sha256 cellar: :any_skip_relocation, ventura:        "b89f9122cd15cd5da3e03fac3b4a1c33ecd2efb325f98918c7e9e494b3bf130b"
     sha256 cellar: :any_skip_relocation, monterey:       "806b9fb45a9369e43e4b7f6903cc9a3b98b55c385e7e8828e6aaef556e31b620"
     sha256 cellar: :any_skip_relocation, big_sur:        "5647d8f3a704bd126e2b5f24237febb50989798b425147baf1d1ce1a08fbdaaa"
     sha256 cellar: :any_skip_relocation, catalina:       "5e2b755a970b7432fb076d787cb1777df18861832d0e4d45132fd84e4d7aea20"
