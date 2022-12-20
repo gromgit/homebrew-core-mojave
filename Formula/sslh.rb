@@ -10,6 +10,7 @@ class Sslh < Formula
     sha256 cellar: :any,                 arm64_ventura:  "58a1a9db2ca55d914fe6591146532dbb249ae1ca0228d972830aa69e12861b81"
     sha256 cellar: :any,                 arm64_monterey: "6a857e6ca21121c84c83092cf997ddafb565827318fc6e810dee157fde76854f"
     sha256 cellar: :any,                 arm64_big_sur:  "2baa52312b06845b59164cefec82633805e3a25ce30b1838de8588c13a73c37f"
+    sha256 cellar: :any,                 ventura:        "f80f05fc341a8d956642d3a392e9d577c2695642fa2feaa8ef4dfc9feb543623"
     sha256 cellar: :any,                 monterey:       "ce4dde0de017b628b312535039d166ca0c37a5da30b75814ee697f7841389250"
     sha256 cellar: :any,                 big_sur:        "d8dc78ae9611573a5af86e21e0ce9a1dc08f8b615a1efa6914a28f09e5d973c2"
     sha256 cellar: :any,                 catalina:       "54584832683d93d67a4d2ab440da431d5407e6f23ec4fac5d0a31743000f12de"
