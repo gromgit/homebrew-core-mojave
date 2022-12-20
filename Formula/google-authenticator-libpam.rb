@@ -9,6 +9,7 @@ class GoogleAuthenticatorLibpam < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "521a4e777e947db5535752430caee3bab7a95db3fc2897eb5d1487c269e97d09"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ceb57c28fa8ac36471c762ab3d2dd67c5026a0568100e82b756cef2196b5747e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8adf8be0fbea5003e02b748ef71a099635eb8dff716c62d6935581d493fcda78"
+    sha256 cellar: :any_skip_relocation, ventura:        "dc592e42daa5e9d661de8c515b4e7e5f3ce0eb92d6287811f2bbf547edf0cf48"
     sha256 cellar: :any_skip_relocation, monterey:       "3b72851db1049b3e11e374e7afd80799b5724c76a31ad637a0853ce047d8fc4b"
     sha256 cellar: :any_skip_relocation, big_sur:        "edd70a2050f2b57337558bd372f5bfa78f45df8ce678e3a6c400310edaa830a9"
     sha256 cellar: :any_skip_relocation, catalina:       "4ed85644559250923d4b21f5b99643cad08eb8bbb63afc3827d7ac225b4581d7"
