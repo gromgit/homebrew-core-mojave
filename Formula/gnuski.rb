@@ -8,6 +8,7 @@ class Gnuski < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da56e306a753eeae75d10c177c42a17698bdb41e0cfb9487f98af4347353510"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5ffb1f95f60f2e9244ccd431e72aab1fd4b44b8b7cf684efab6965d5540c853d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d82abb34deac302a464e7c664a3dcf0726f1d0f8ee03586b195e3449a2c83d43"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e85d7ff425c969c3ec59ac17c7638424a2533e2064478f782a3ecf3a7d8abbb"
     sha256 cellar: :any_skip_relocation, monterey:       "313b0cefe9c2c2ffa45f1bee439feb5a28ca2c3fcce32bfa566534f6c3cad725"
     sha256 cellar: :any_skip_relocation, big_sur:        "6ae8c77ab5fed3e5f85be1c411cc631099d219bd49ddb3a35f527da27894b880"
     sha256 cellar: :any_skip_relocation, catalina:       "7c58085b5ceb98168c728003d484e08410c837bde9b044ed5a5fa6f26796d9ab"
