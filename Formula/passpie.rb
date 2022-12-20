@@ -13,6 +13,7 @@ class Passpie < Formula
     sha256 cellar: :any,                 arm64_ventura:  "ab4a9bdce97d2e9a86ce099d618109301f2bf1cfb5a1717c64c2991533b0bfb3"
     sha256 cellar: :any,                 arm64_monterey: "cf72c916dcef8440341f090154893ccdd78dc2237118cc6163cb1159a638fffc"
     sha256 cellar: :any,                 arm64_big_sur:  "2bea6978498b4a19b59ba269d158c833d31ee75c10528f34ceb4eaa7ffe2293f"
+    sha256 cellar: :any,                 ventura:        "9a0fe7bf96d30a99d8935250138fe1dde53e47e4fad542edbc53d2e254d41870"
     sha256 cellar: :any,                 monterey:       "a97cb60bfe42889ca3109c4e926af1f0b07b4197b5ae4104d487901316fdb389"
     sha256 cellar: :any,                 big_sur:        "e8550b5e5a4caa3515b9e726beeb3a571a98db40e3fc2731fc0a4460fe929a61"
     sha256 cellar: :any,                 catalina:       "29a24482b5c955a6d14b7a285d6937c04ab89a53f110c8343221d2ccef2cb508"
