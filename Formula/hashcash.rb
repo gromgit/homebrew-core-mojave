@@ -13,6 +13,7 @@ class Hashcash < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbd73ccbca122c860b2377fecc209cdf20f5615cad13e0fa267ccc4d14919483"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3453259cebd4bdb0d392b804b72081e8197ba2680e1ec486c8dad75df78b8674"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a58aab9f64cd4e97938df6d17e88f8d07549d9d84d3499e0c2d071664660132c"
+    sha256 cellar: :any_skip_relocation, ventura:        "37de01797dca207a374a2a102eadf45b5fa1d9f594bb1787519f2253215f8ab4"
     sha256 cellar: :any_skip_relocation, monterey:       "cd1ae797834ad6d0e0eafb9c7e4189c27ef9f06ab204a03ed2de82762fdf48be"
     sha256 cellar: :any_skip_relocation, big_sur:        "4d72206542ef1e5c627cd54327baa1fa5b5c669445ba4879aac6dbe4c23876a3"
     sha256 cellar: :any_skip_relocation, catalina:       "1865d8db05d392b73cf26b0d873b397b087ac76f6a71c6bdbbf9f5888d46ef15"
