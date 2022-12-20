@@ -2,8 +2,8 @@ class KubernetesCliAT122 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.22.15",
-      revision: "1d79bc3bcccfba7466c44cc2055d6e7442e140ea"
+      tag:      "v1.22.17",
+      revision: "a7736eaf34d823d7652415337ac0ad06db9167fc"
   license "Apache-2.0"
 
   livecheck do
@@ -12,15 +12,19 @@ class KubernetesCliAT122 < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli@1.22"
-    sha256 cellar: :any_skip_relocation, mojave: "5cfaa73c9dcf0dc0d34d3af6cb1c958e35f7a8b06c8bf5a305c5ea539e342053"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4888e246ca781b36e1d1c1d015272dee446dda2659c22ac14f3d4f31ce11ecee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b223d96b8db4ab81508a62b4f47419349bcd15c95dd7b9b3b2c4bcb1708ad908"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7d2e3b120e9c0eacdbae66b56938cfc2bb97832a32be381e0aad68292f9d9cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "28e7487048762d2cd5c7d1089acceecc6469d34ce35141fb99434197b6f7582c"
+    sha256 cellar: :any_skip_relocation, monterey:       "9270c4e34f0a5add2a28ef857260fa8c19e8fead25af3fa42201e29ac1868c8e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b07c67f09dbc9e9b13d436c0bc398327e2b666fb6d5d8e3b4d9c2a31893861a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5172c1c631fffc42c1c13be38f1220b935f42d385f40404d595969091140a6a0"
   end
 
   keg_only :versioned_formula
 
   # https://kubernetes.io/releases/patch-releases/#1-22
-  deprecate! date: "2022-08-28", because: :deprecated_upstream
-  # disable! date: "2022-10-28", because: :deprecated_upstream
+  disable! date: "2022-10-28", because: :deprecated_upstream
 
   depends_on "bash" => :build
   depends_on "coreutils" => :build
