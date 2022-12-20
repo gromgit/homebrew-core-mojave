@@ -10,6 +10,7 @@ class DmtxUtils < Formula
     sha256 cellar: :any,                 arm64_ventura:  "b37767b9a019c342ae87af9e2734790c1f05a377262c3d0eafe21eb3fda094b2"
     sha256 cellar: :any,                 arm64_monterey: "c2fb338b5c1accf8ae28a76b962098dfb6fcbccb7835028de99f92de60530537"
     sha256 cellar: :any,                 arm64_big_sur:  "9db11b5cb18a18e7e02d369353730e2c6e574e2154db95e60fd9a82983d8be83"
+    sha256 cellar: :any,                 ventura:        "42375ec4413000cb3686b2fa717d96e75193c808ad0f665c575b04e925d0ead6"
     sha256 cellar: :any,                 monterey:       "2cfbd07ad1760cbe66991740574f92a045c59b030699fddb8312fab09d52c7f6"
     sha256 cellar: :any,                 big_sur:        "0f5cbe20fda6fcc8db3bf57039ced929283a31b666f38da8a64ba5c6c19d76cd"
     sha256 cellar: :any,                 catalina:       "20b46ae2ba790f10191d8f53c8ce3095222d1b814db72990e7fc48a501fabba9"
