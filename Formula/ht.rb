@@ -8,6 +8,7 @@ class Ht < Formula
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_big_sur: "67aa1b783d01e759a908a568cfc1715e614bff7b77171fc82af00e2af682b464"
+    sha256 cellar: :any,                 ventura:       "d704c8f0d899b257967d3478cbeb1e2c093a71e28402747722842908e1e2eff6"
     sha256 cellar: :any,                 monterey:      "cf85f1fc8724c40f8f03a109f8a39b35e84358796b8fe17de1e907f49dcad53f"
     sha256 cellar: :any,                 big_sur:       "68a9ebfab03bd7d4f5e61d26075d07ee692002a07b8e5f201ae84ebbac45e5dd"
     sha256 cellar: :any,                 catalina:      "75ab4e842bc671346e7e75ef512f5f2b3d55008a07d91437a9ba46e9c9dcb1b4"
