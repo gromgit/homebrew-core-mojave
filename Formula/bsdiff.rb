@@ -15,6 +15,7 @@ class Bsdiff < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e83875207f8cc492079e701ba371bb08c89aaea95d47c0aa1d78069376dced12"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "141219925cf9d52e796d9bce068bf747d32e5f5c9b486c3eaf539b59980062dd"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "810dccf063f4876a5786e4aa7f7584ebcf5205fec1abd0882cead7e0de16bca9"
+    sha256 cellar: :any_skip_relocation, ventura:        "a48083deaf3e24c5c364aeb4503cbceee406a980b63fa764df92d23798c95283"
     sha256 cellar: :any_skip_relocation, monterey:       "e0cf74e5fb1ef71fd68a33595f0dcc6d777d72e90689f57976e5c1784b1496a0"
     sha256 cellar: :any_skip_relocation, big_sur:        "7f1f498a32a8804a238cf8dce1ba7cebbee070ae6bf0bb4015dcb133ab155574"
     sha256 cellar: :any_skip_relocation, catalina:       "648a52a8af8e8f17feb9e34168dd0f00abfc98e9f0f3aa7fd88fb1458a782098"
