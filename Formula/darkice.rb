@@ -14,6 +14,7 @@ class Darkice < Formula
     sha256 cellar: :any,                 arm64_ventura:  "caaafe8dbf56dd3cdda2f846a140a2db35a7536d7796b12a38389b8f60ae13a4"
     sha256 cellar: :any,                 arm64_monterey: "5c818db8d3d5bad23fb9125499e2840ed2d897f089407a18a5e309939986982e"
     sha256 cellar: :any,                 arm64_big_sur:  "3a4f9f7d9203130529868ad9b0ff539bb795c531b4603090d6255441d5b15dbc"
+    sha256 cellar: :any,                 ventura:        "a70a91ec300bb7b40820b2cb2b737838633b61a8ccf37008990f02065ea6ffeb"
     sha256 cellar: :any,                 monterey:       "06d6c5a858374cec98f3b0ba736040da5424ca02d31b3417c60afb97b3bd8381"
     sha256 cellar: :any,                 big_sur:        "500b7d4a2ccd852588c4ac9cd65f901817f19961ad21e8c2355b82318efd74d4"
     sha256 cellar: :any,                 catalina:       "c312949cef4bec0b37951d4e9f3b9211a0a0c04d8666cb14bfde0a9f6c85ad5e"
