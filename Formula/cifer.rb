@@ -9,6 +9,7 @@ class Cifer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e91e9087a69d7922fe1fe9f84e11e9f222c45d5b1b1cd794f1e7f0bf3a295c2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "66851780bbfe9071936bd7f230dc0f0744f5dc16ae6bd5986d9494d31563b75b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f826a8dc0534a56e2c372abeba0f05124f79e96502243d1c89548777d2156b2"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d266e4601b71e979f7580f3fe3eeb6aafe4aa5c350bf5db2f1fcf4950e556ed"
     sha256 cellar: :any_skip_relocation, monterey:       "efc874dcf1bfb9fb07faab3de50b204897e1daf172f74fd00d75a0a5e421036f"
     sha256 cellar: :any_skip_relocation, big_sur:        "f58f511d07f6a8daf8c868915c1de59f23d33c089da52271da83180e321bab5b"
     sha256 cellar: :any_skip_relocation, catalina:       "ce4a7d9b846388eae2309dbd0a1f0493b533cbefef85ae50ff97648b6a46600c"
