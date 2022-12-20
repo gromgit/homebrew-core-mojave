@@ -10,6 +10,7 @@ class Libhid < Formula
     sha256 cellar: :any,                 arm64_ventura:  "7438d29931c8f30d894d323b710a5149bb320aa2945aeb9967fd7b46d7edb194"
     sha256 cellar: :any,                 arm64_monterey: "b69b1ff4ecd6f24b292da9085e8aa30694f24081c5183bdcb6c95d7f535c55dc"
     sha256 cellar: :any,                 arm64_big_sur:  "01170cf4863c640d89c02c1c8d10759aa9ab7b16a0ab88bccdefdf10c5174620"
+    sha256 cellar: :any,                 ventura:        "7542b6e26adf1e5cd79c9392712c6772f8b0e256f33f1379fd9f3742e6d774bd"
     sha256 cellar: :any,                 monterey:       "d1a311d2e981c50f68ecb636a98659ff67894b30309942ad1258f96b66d017aa"
     sha256 cellar: :any,                 big_sur:        "33539f7a9be0592c28fc6b4c7d1866603cf115441fcf72db5ca67f99149b63c4"
     sha256 cellar: :any,                 catalina:       "049d5c106ab738e55af18878f19cc0510d78bbda54f0c5626e3ccb725e415c68"
