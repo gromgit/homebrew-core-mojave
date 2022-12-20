@@ -9,6 +9,7 @@ class Libcroco < Formula
     sha256 cellar: :any,                 arm64_ventura:  "1936cc9609cb8de2360e762984a4a40d7c6ba2c92c6b2fd4133243a0b93426b0"
     sha256 cellar: :any,                 arm64_monterey: "0c7ea7611c087cead41eabbc6e7680a7d47c8c3fd6736d7f97742f1311f61eaf"
     sha256 cellar: :any,                 arm64_big_sur:  "d6cced1a48822aac65fbb995159f26ed0552217d125969bcae4bd61bdf223407"
+    sha256 cellar: :any,                 ventura:        "ce5d64ff6d4425936d3bd5a3f8af048edfe077b7fdb8fdf09fe0a831f1474af8"
     sha256 cellar: :any,                 monterey:       "c8404e365ec027cb735e158ea042d5c338f6d0f6594e8a7196722801059df193"
     sha256 cellar: :any,                 big_sur:        "001998f7977aa0e07aa26ab431422e56b2de76dcb7b75dee392f0d0f3674197a"
     sha256 cellar: :any,                 catalina:       "bc64de8725726ae0188ec23dc9946759565f06e45d3eb10e510d5d42d0888e28"
