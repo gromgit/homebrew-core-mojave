@@ -21,7 +21,7 @@
   },
   "ansible-lint": {
     "exclude_packages": [
-      "PyYAML", "jsonschema", "attrs", "pyrsistent", "yamllint", "pathspec",
+      "PyYAML", "yamllint", "pathspec",
       "ansible-core", "cryptography", "Jinja2", "MarkupSafe", "resolvelib",
       "Pygments", "black", "click", "mypy-extensions", "platformdirs"
     ]
@@ -51,7 +51,7 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "b2-tools": {
-    "exclude_packages": ["six", "docutils"]
+    "exclude_packages": ["six"]
   },
   "bandcamp-dl": {
     "exclude_packages": ["six"]
@@ -63,6 +63,9 @@
     "exclude_packages": ["six"]
   },
   "black": "black[d]",
+  "borgmatic": {
+    "extra_packages": ["ruamel.yaml.clib"]
+  },
   "bpython": {
     "exclude_packages": ["six", "Pygments"]
   },
@@ -298,8 +301,7 @@
     "exclude_packages": [
       "ipython", "appnope", "asttokens", "backcall", "decorator", "executing", "jedi",
       "matplotlib-inline", "parso", "pexpect", "pickleshare", "prompt-toolkit", "ptyprocess",
-      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth",
-      "jsonschema", "attrs", "pyrsistent"
+      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth"
     ]
   },
   "keepkey-agent": {
@@ -568,8 +570,13 @@
   "shallow-backup": {
     "exclude_packages": ["six"]
   },
+  "snakefmt": {
+    "exclude_packages": [
+      "pathspec", "black", "click", "mypy-extensions", "platformdirs"
+    ]
+  },
   "snakemake": {
-    "exclude_packages": ["tabulate", "PyYAML", "jsonschema", "attrs", "pyrsistent", "docutils"]
+    "exclude_packages": ["tabulate", "PyYAML", "docutils"]
   },
   "sphinx-doc": {
     "extra_packages": ["numpydoc"],
@@ -615,6 +622,9 @@
   "tox": {
     "exclude_packages": ["six"]
   },
+  "trailscraper": {
+    "exclude_packages": ["six"]
+  },
   "trash-cli": {
     "exclude_packages": ["six"]
   },
@@ -646,7 +656,7 @@
     "exclude_packages": ["six", "virtualenv"]
   },
   "volatility": {
-    "extra_packages": ["capstone", "pycryptodome", "yara-python"]
+    "extra_packages": ["capstone", "pycryptodome", "yara-python", "jsonschema"]
   },
   "watson": {
     "exclude_packages": ["six"]

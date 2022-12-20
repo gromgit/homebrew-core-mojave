@@ -25,6 +25,10 @@
   ["gdb", "i386-elf-gdb", "x86_64-elf-gdb"],
   ["ghz", "ghz-web"],
   ["git", "git-credential-libsecret", "git-gui", "git-svn"],
+  [
+    "gst-devtools", "gst-editing-services", "gst-libav", "gst-plugins-bad", "gst-plugins-base", 
+    "gst-plugins-good", "gst-plugins-ugly", "gst-python", "gst-rtsp-server"
+  ],
   ["hdf5", "hdf5-mpi"],
   ["ilmbase", "openexr@2"],
   ["libnetworkit", "networkit"],
@@ -48,7 +52,6 @@
   ["protoc-gen-gogo", "protoc-gen-gogofaster"],
   ["python-tk@3.10", "python@3.10"],
   ["python-tk@3.9", "python@3.9"],
-  ["python-tabulate", "libpython-tabulate"],
   ["qt", "qt-libiodbc", "qt-mariadb", "qt-mysql", "qt-percona-server", "qt-postgresql", "qt-unixodbc"],
   ["qwt", "qwt-qt5"],
   ["telnet", "telnetd"],
