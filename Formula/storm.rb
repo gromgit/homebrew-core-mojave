@@ -8,11 +8,12 @@ class Storm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4cf6f7e7246a6d806f367ccf82398437f9938e66e79e1b8e00d7f40a29b9f944"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f731eb6706ecc4d40e83a8441e6abb46b157575c257a0d29e0d0d255b4609244"
   end
 
   depends_on "openjdk"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   conflicts_with "stormssh", because: "both install 'storm' binary"
 
