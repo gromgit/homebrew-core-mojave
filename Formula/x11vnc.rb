@@ -9,6 +9,7 @@ class X11vnc < Formula
     sha256 cellar: :any,                 arm64_ventura:  "0d2772adc547684b666b6edfa52bdbf8fb9a9fa8d75e45f34d942b91138c8958"
     sha256 cellar: :any,                 arm64_monterey: "056f5811d473464e1642e707b0e9f970ab8a4d21a39643e417e65795a36cbc5f"
     sha256 cellar: :any,                 arm64_big_sur:  "f066915a77e9635f0f1394566b2b825bcb0a02207e6393e3c0c5a62b7f8a03ae"
+    sha256 cellar: :any,                 ventura:        "910d4f2e08afcdf5b7eeefb5d5e949131a1b22171b03308b5ad56e41fa5f520a"
     sha256 cellar: :any,                 monterey:       "8e50851314ec0ed46b747c489a54b56d2ec2af9e74be8458022612f0a7e236b1"
     sha256 cellar: :any,                 big_sur:        "50270ae1fd7681db301b3449748f46108d5eb93df535be7085ef6498f936555d"
     sha256 cellar: :any,                 catalina:       "66ddb190e2e2a183ba662d4c7ac2de508b6ebe3c3c827078a5eec5b550477e5e"
