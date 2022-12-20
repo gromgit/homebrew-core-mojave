@@ -30,9 +30,10 @@ class Infer < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/infer"
-    rebuild 1
-    sha256 cellar: :any, mojave: "997666bc5a95c7c2cf2e6212fb54b76f52d7e5b96d1090697c4de2a62e33d417"
+    sha256 cellar: :any, big_sur:      "2c27006c4ccbc05c6bb405c626d188e2dd5ca183a0a2f4441385def480ba4f34"
+    sha256 cellar: :any, catalina:     "7a2816d33cea3053531f51402e0145e4e8ee7537570ba2a580c3ef8aaff379fc"
+    sha256 cellar: :any, mojave:       "2bda6a47ff87c9d79a3f937c9cf24771798107c1bc215823e6156d6ba414f40d"
+    sha256               x86_64_linux: "987d26d95d3e073a96c683710ab0298a1674d2ee6e7a2ee4cb0d8914f2b0139d"
   end
 
   # https://github.com/Homebrew/homebrew-core/pull/87904
@@ -141,18 +142,18 @@ class Infer < Formula
     failing_c_output = <<~EOS
 
       FailingTest.c:5: error: Null Dereference
-      \  pointer `s` last assigned on line 4 could be null and is dereferenced at line 5, column 3.
-      \  3. int main() {
-      \  4.   int *s = NULL;
-      \  5.   *s = 42;
-      \       ^
-      \  6.   return 0;
-      \  7. }
+        pointer `s` last assigned on line 4 could be null and is dereferenced at line 5, column 3.
+        3. int main() {
+        4.   int *s = NULL;
+        5.   *s = 42;
+             ^
+        6.   return 0;
+        7. }
 
 
       Found 1 issue
-      \          Issue Type(ISSUED_TYPE_ID): #
-      \  Null Dereference(NULL_DEREFERENCE): 1
+                Issue Type(ISSUED_TYPE_ID): #
+        Null Dereference(NULL_DEREFERENCE): 1
     EOS
 
     assert_equal failing_c_output.to_s,
@@ -198,17 +199,17 @@ class Infer < Formula
     failing_java_output = <<~EOS
 
       FailingTest.java:12: error: Null Dereference
-      \  object `s` last assigned on line 11 could be null and is dereferenced at line 12.
-      \  10.     int mayCauseNPE() {
-      \  11.       String s = mayReturnNull(0);
-      \  12. >     return s.length();
-      \  13.     }
-      \  14.   }
+        object `s` last assigned on line 11 could be null and is dereferenced at line 12.
+        10.     int mayCauseNPE() {
+        11.       String s = mayReturnNull(0);
+        12. >     return s.length();
+        13.     }
+        14.   }
 
 
       Found 1 issue
-      \          Issue Type(ISSUED_TYPE_ID): #
-      \  Null Dereference(NULL_DEREFERENCE): 1
+                Issue Type(ISSUED_TYPE_ID): #
+        Null Dereference(NULL_DEREFERENCE): 1
     EOS
 
     assert_equal failing_java_output.to_s,
