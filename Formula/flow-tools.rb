@@ -8,6 +8,7 @@ class FlowTools < Formula
     sha256 arm64_ventura:  "9b3c31e16ad744d7bf46bb4f19592fde2ba528679c14da62b6cfefc45d7c16df"
     sha256 arm64_monterey: "f777ff9ec4f45fac84b06bad2fce24a144fd7c0df2b83490852139edf12b4977"
     sha256 arm64_big_sur:  "81f57d2bc6154643b3836e02200b77573cfda8f16abe9d6c7575f24f35c74048"
+    sha256 ventura:        "4535681fee773838b2657292736b03d6a5097afbdcbc4f0b3c4ad4a06d33240b"
     sha256 monterey:       "f6118db5b348d619d01bafffe2f6f71d962b66f3a926ed77a6998da0dc327018"
     sha256 big_sur:        "9884c67cdf4c5aedd39ce946d68bcc8a090e01793fac68b89f6dd7933d55c945"
     sha256 catalina:       "b2cf9a7d6690c11dd5894bac2e38175d599341ee18dcd99a3e1185f8d8cd8995"
