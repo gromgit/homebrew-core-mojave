@@ -15,6 +15,7 @@ class Pdftohtml < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a18be87eedeec7c2bb94b6571e532ac3e04abf21567991c177d53f6740c71767"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0ddb14280f6046adac64bd2d731483b8bf97cd9f8bd61a52f1f7b95b608febe2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61d5a75c1351339a1e1cee32c585172bc638503e4fea57232532daae41bbb2e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "74cca150680a622965a061c05bbe754e80c63232b6b35db8508136313321d6b4"
     sha256 cellar: :any_skip_relocation, monterey:       "4c5979a8c315cdbe2babf1a576e86259956f129d67b416fe62dd9a5b51bc9c64"
     sha256 cellar: :any_skip_relocation, big_sur:        "17a699cdc73b7674f537adec7ea8ad696374921c84a52dfaacaa05882f5696da"
     sha256 cellar: :any_skip_relocation, catalina:       "d8a6e5bb1d84ee766898543d77307b4a9a6e6f826ebe9cc48ce6db8bb24c8923"
