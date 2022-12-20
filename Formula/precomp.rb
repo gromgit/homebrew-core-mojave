@@ -10,6 +10,7 @@ class Precomp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "33c0801e82dd120a4300a93190e59d99da46d28acb0cef6f6946ec9a75cad1e0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5567c2d4a2a3e18046d75f916742f0d112c81c2c744e63aabfaa0f75bb3ab0a8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "527a77954282f384fd4bd01ec67750d73ee5fc0d989cee4be22ba688a461a90f"
+    sha256 cellar: :any_skip_relocation, ventura:        "77b3e5aedbb4e12c3ded5f546045d04e8cecadcc2c5a4700299ffad6be3912b2"
     sha256 cellar: :any_skip_relocation, monterey:       "d7b2be3194f675f7db87d9952635a1f0bcb36b2b4cffdc63078d1adf8683bc63"
     sha256 cellar: :any_skip_relocation, big_sur:        "98d1f2f0987f9317b372895c3af39358585a461023e286baf2ebc67d118cf3be"
     sha256 cellar: :any_skip_relocation, catalina:       "9ac9f156315ae463a1e378bdd9ed06d5f36437ccff4505740dfa10ee914b5adf"
