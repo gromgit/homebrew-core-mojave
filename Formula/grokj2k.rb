@@ -15,6 +15,7 @@ class Grokj2k < Formula
     sha256 cellar: :any,                 arm64_ventura:  "65a4253b600244d5139aae29f4a439f314e057df2016fd8c0051ddd12e377438"
     sha256 cellar: :any,                 arm64_monterey: "e5a0048b4a441f37aa43f8e0f58cd3e130a16f7034ac1be02031bbde7ff8b311"
     sha256 cellar: :any,                 arm64_big_sur:  "b9848a27bb829c55566579b3884ca443ec9dc134204d6046eb593b2582925e4f"
+    sha256 cellar: :any,                 ventura:        "f660ea93486302ba50ba313a83ba92456a6c212b69a964cd153e5628c31cd29b"
     sha256 cellar: :any,                 monterey:       "e5f7760e2d9c344f0132093fe71702bc0fd9ced345a7f12f005c60fe39fdf298"
     sha256 cellar: :any,                 big_sur:        "d47bb02be03404ce7440f23712cd5044a4fda722441e914c36bcb19bc61a10fb"
     sha256 cellar: :any,                 catalina:       "8d2d9796e8d9a52bee653f6f1f494c59900f5f89c1eadb88d2172400dbaca455"
