@@ -9,6 +9,7 @@ class Malbolge < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8dbf31191633eab5119ca16eda4b541264a42261c5c7b7103e50446d1505dfc0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "05e689895ba5a84f1d6b44eab314ef7b71111ad3a19e054fb1a0b73e81a43f5a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df9e2b8bc55e587840b6f51c5fcc09b7820f148daa34fcf19fd64e18dd6b8769"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c371b9845e7eb81eb6a9a9ed0611713d092e58b1a8e6e04f86c29656a6afaad"
     sha256 cellar: :any_skip_relocation, monterey:       "4a7325d76aaadf2cc7da73b26ef40bbbf3e36e26a915f9cca27beb1c742432c7"
     sha256 cellar: :any_skip_relocation, big_sur:        "1d20423d7d367645816e29d674ea45b2efd683cf781428c79a7fb73abb15974f"
     sha256 cellar: :any_skip_relocation, catalina:       "fc544c2c918c4a4882cf3ea49b28d8e5fdec31637c8f8e4a33874229ac54d6b3"
