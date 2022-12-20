@@ -16,6 +16,7 @@ class Genders < Formula
     sha256 cellar: :any,                 arm64_ventura:  "6ebb2e4ef5220af8459fca62e9181e9c0dea1392476dd99ab76c63e281dc6de4"
     sha256 cellar: :any,                 arm64_monterey: "8979f90c79fcf64e0edb58eb16afeadae1a525a7ae7116ed5ad191d3be93c83f"
     sha256 cellar: :any,                 arm64_big_sur:  "36d036a70a6833bdfd9dd86289c5c97c90ac54e10fdf7fdddb9438410ae556e4"
+    sha256 cellar: :any,                 ventura:        "d9a533d3e77e4108ff79c4c23dfe6af9d434629318c4ffa9ef0018538f82f74e"
     sha256 cellar: :any,                 monterey:       "c93e0650faa66822115dac4284f9af726b9704ceb01bc92cfb5ce9df852fed81"
     sha256 cellar: :any,                 big_sur:        "9134738efeeeee06bdf84158390bdb848bf92c3b6099f7e9ca66756a3e268b9e"
     sha256 cellar: :any,                 catalina:       "e1bbeeb4bc32d8655ea35718825175dc1293a1cebd059437cf2fcc9001d159e2"
