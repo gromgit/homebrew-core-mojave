@@ -14,6 +14,7 @@ class Swfmill < Formula
     sha256 cellar: :any,                 arm64_ventura:  "0963f879f2401a1174f2d1536a1dbbec0cfea0ca85978943f5f00e9d98c7b62e"
     sha256 cellar: :any,                 arm64_monterey: "dde3958952f7a8f233e56a4a623f133ba07fd8f5fb06d5832d013f4e0ef59ffe"
     sha256 cellar: :any,                 arm64_big_sur:  "be6e61f096ab129607f537e0bc37fd87214f01cfbfa097ab4bfb348614ffa83c"
+    sha256 cellar: :any,                 ventura:        "68a4a9c1038067e60dffeaac7b18e40ab2c623cb8dda217b7f91a9a06436b3c3"
     sha256 cellar: :any,                 monterey:       "1409bea1e846cda18e4206dc39027d195acb9fe0cae14f9a49842b945ba4befc"
     sha256 cellar: :any,                 big_sur:        "61d884a0d8fda68458267311da138851688cf5574f3d17152f7227c120653115"
     sha256 cellar: :any,                 catalina:       "be2f7f3666c78c37775bd41e2adb640f290bb3e73d8a0b4b04bae0f08e140fac"
