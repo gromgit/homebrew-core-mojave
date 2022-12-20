@@ -14,6 +14,7 @@ class MecabKoDic < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9149e5ec1b85940657df3ed931d6ddbc83ea1a1e68767b9d27138c5d4ba451c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e9149e5ec1b85940657df3ed931d6ddbc83ea1a1e68767b9d27138c5d4ba451c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e39a270ea5fbb5424d0ca358acafc2f08b9232d878eded2789f990f4065aba7"
+    sha256 cellar: :any_skip_relocation, ventura:        "e9149e5ec1b85940657df3ed931d6ddbc83ea1a1e68767b9d27138c5d4ba451c"
     sha256 cellar: :any_skip_relocation, monterey:       "e9149e5ec1b85940657df3ed931d6ddbc83ea1a1e68767b9d27138c5d4ba451c"
     sha256 cellar: :any_skip_relocation, big_sur:        "ab72fcbb7b1e0bc1ec8667a2d183ad5beab66279d27486ef1ae241d4114fddd1"
     sha256 cellar: :any_skip_relocation, catalina:       "02f67f9bd82e7310074c4c47097bcb4244c79211af9736db8fa73861dbbb820d"
