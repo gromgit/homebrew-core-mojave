@@ -11,6 +11,7 @@ class Nutcracker < Formula
     sha256 cellar: :any,                 arm64_ventura:  "72e440a578846be30b99237a05ac9251ad0859aa19fb4603e73671c61add0e66"
     sha256 cellar: :any,                 arm64_monterey: "c8c9e289383ed4b606246b5300a2b768642ed231a0526e6e9dab6e2f37e762bc"
     sha256 cellar: :any,                 arm64_big_sur:  "5063c8fb5c2f1327bb0979be76cf05be72b879113b69667d9d6548d1db6da44b"
+    sha256 cellar: :any,                 ventura:        "0fa603b54d16e0a34fc38095337cb3809ec3180249a18b114708aec49c344871"
     sha256 cellar: :any,                 monterey:       "0682fca355c4930be73a43fca315d8eb36a709413f60ebae19f58289eafe1916"
     sha256 cellar: :any,                 big_sur:        "a8a718227faa82141b08684c12654a04dee9ffc91df8157100fb5b51eb6fe8ba"
     sha256 cellar: :any,                 catalina:       "95055ec8487419f854e34be6212369081eaa574ebaa36dabb01b2047f2e31240"
