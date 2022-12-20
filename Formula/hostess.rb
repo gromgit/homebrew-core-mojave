@@ -11,6 +11,7 @@ class Hostess < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "70fb5d0bdf6c6c22082affae3027953e8c59d51a795bd6983b30a58fecf5088c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "277bc64d736ab7413d771e469943d1037b196e6b3aafd987a5c09602ada6b499"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4272e75f8cba2d02e038dca00f7620a70ca396f3486aaf57a6a9fde77645c562"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0cf169ccb1606629100606c6326aeccb72447e6f3447dd018814c4423f8f07e"
     sha256 cellar: :any_skip_relocation, monterey:       "02d6c4ebd1fb5d414bde215becf8c8c69c1a7b7d9561ca19c270f3c2da2e904b"
     sha256 cellar: :any_skip_relocation, big_sur:        "addb5bc6b7ff84ad6d2a33f2e0c46298f16865473ad82a32c02434def068c26b"
     sha256 cellar: :any_skip_relocation, catalina:       "9386f4841bb16ea44d5131b0a360138a3d33d7595e85d0baba3b9546762d7ae6"
