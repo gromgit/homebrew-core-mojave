@@ -12,7 +12,8 @@ class Aarch64ElfGcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aarch64-elf-gcc"
-    sha256 mojave: "c60e847784501efe2ae5417ce8b3ac8e57b5da5673ab4e8461457f8dabcd6064"
+    rebuild 1
+    sha256 mojave: "ce0cb3519aa243aeb0bbeefebbd272ef029387a52ae6f3c26bf3dddcb31e7d89"
   end
 
   depends_on "aarch64-elf-binutils"
