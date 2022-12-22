@@ -13,7 +13,7 @@ class Cproto < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cproto"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "880c94a64f3bc868d623f27a768524fdcea4d309e5d057b89477c8087375a777"
   end
 
