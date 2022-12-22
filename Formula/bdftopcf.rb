@@ -7,6 +7,7 @@ class Bdftopcf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bdftopcf"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "dcc16aa2070becd68fb87020631a46fecf34dfe6d18bc9014e925d2f3e2c967f"
   end
 
