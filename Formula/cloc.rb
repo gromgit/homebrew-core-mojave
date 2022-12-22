@@ -1,15 +1,14 @@
 class Cloc < Formula
   desc "Statistics utility to count lines of code"
   homepage "https://github.com/AlDanial/cloc/"
-  url "https://github.com/AlDanial/cloc/archive/v1.94.tar.gz"
-  sha256 "c835fe343e1c25194a61eb74d7a36e98413682ed0c3b4d6b8e35a327077bf926"
+  url "https://github.com/AlDanial/cloc/archive/v1.96.tar.gz"
+  sha256 "9cab16a2d9b9e915d7f7299f718d13bb7a8e2082255d29747dc79498d5a4a3a4"
   license "GPL-2.0-or-later"
   head "https://github.com/AlDanial/cloc.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloc"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "184f2e92a8773561b3021884817466757a73a422c7a2502dceb6b57646745f83"
+    sha256 cellar: :any_skip_relocation, mojave: "2bcafd115d7d9ddad87378b890c3a979abd3ee1058fa59763fad33aa9d67b5ab"
   end
 
   uses_from_macos "perl"
