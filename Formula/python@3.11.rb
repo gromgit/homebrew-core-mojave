@@ -12,8 +12,8 @@ class PythonAT311 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/python@3.11"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "bf8436a0b7f0ed6b8b6f21c278e18554f3031b3f016c641fa607f593e8e7bf71"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b6862dff779b43763f7a40a8dd1db4f533024b4412bd971deb79d8c9bcf8e589"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -414,14 +414,14 @@ class PythonAT311 < Formula
           sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
-          long_prefix = re.compile(r'#{rack}/[0-9\._abrc]+/Frameworks/Python\.framework/Versions/#{version.major_minor}/lib/python#{version.major_minor}/site-packages')
+          long_prefix = re.compile(r'#{rack}/[0-9._abrc]+/Frameworks/Python.framework/Versions/#{version.major_minor}/lib/python#{version.major_minor}/site-packages')
           sys.path = [long_prefix.sub('#{HOMEBREW_PREFIX/"lib/python#{version.major_minor}/site-packages"}', p) for p in sys.path]
           # Set the sys.executable to use the opt_prefix. Only do this if PYTHONEXECUTABLE is not
           # explicitly set and we are not in a virtualenv:
           if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
               sys.executable = sys._base_executable = '#{opt_bin}/python#{version.major_minor}'
       if 'PYTHONHOME' not in os.environ:
-          cellar_prefix = re.compile(r'#{rack}/[0-9\._abrc]+/')
+          cellar_prefix = re.compile(r'#{rack}/[0-9._abrc]+/')
           if os.path.realpath(sys.base_prefix).startswith('#{rack}'):
               new_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_prefix)
               if sys.prefix == sys.base_prefix:
