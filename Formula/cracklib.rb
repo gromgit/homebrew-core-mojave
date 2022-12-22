@@ -12,7 +12,8 @@ class Cracklib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cracklib"
-    sha256 cellar: :any, mojave: "7f08c6e608ef75298262482fa39917b9dbce2defd861b54ef82c3c64046aa84c"
+    rebuild 1
+    sha256 mojave: "c4529837d76e55af397c157aee3a1c570dc5dce8f39f7d8d255a33e2c40b40d7"
   end
 
   depends_on "gettext"
