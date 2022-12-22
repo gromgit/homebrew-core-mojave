@@ -18,7 +18,8 @@ class Cvs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cvs"
-    sha256 cellar: :any, mojave: "4299cdca5c0493b7ae77957ced9fe359f601775e325fce83b43a226835592b3a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e0bfde12da32672908b09b2e84f83f176a028109878b7b97ce3a926152e21083"
   end
 
   depends_on "autoconf" => :build
@@ -34,8 +35,8 @@ class Cvs < Formula
   end
 
   patch :p0 do
-    url "https://opensource.apple.com/tarballs/cvs/cvs-47.tar.gz"
-    sha256 "643d871d6c5f3aaa1f7be626d60bd83bbdcab0f61196f51cb81e8c20e41f808a"
+    url "https://github.com/apple-oss-distributions/cvs/archive/refs/tags/cvs-47.tar.gz"
+    sha256 "57652695bbfbc33eacb8f1ecb3ca5e2df0f773e4abb307b840bf948e3840f3d3"
     patches = ["patches/PR5178707.diff",
                "patches/ea.diff",
                "patches/endian.diff",
