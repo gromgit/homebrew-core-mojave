@@ -13,7 +13,8 @@ class Ocamlbuild < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocamlbuild"
-    sha256 mojave: "9c357b4b85c38d7e7bbd390e9af3464d37ffbee7699460fb18484deeb5efed7d"
+    rebuild 1
+    sha256 mojave: "add5edadf2d10a1a202e48e86b14cbf115ec539a811a4f26b14f0fca4076887d"
   end
 
   depends_on "ocaml"
