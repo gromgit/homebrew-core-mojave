@@ -15,11 +15,11 @@ class Alpine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alpine"
-    rebuild 1
-    sha256 mojave: "82510bab5e5d6e47bd6a30225168be87d5bf34afc50579924c28629332b665ae"
+    rebuild 2
+    sha256 mojave: "7fa09207b6fdbac34f8b3cd0bcac2cf49e1dda80cb7b3736c78f4406adcfa8da"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "ncurses"
   uses_from_macos "openldap"
@@ -27,6 +27,8 @@ class Alpine < Formula
   on_linux do
     depends_on "linux-pam"
   end
+
+  conflicts_with "macpine", because: "both install `alpine` binaries"
 
   # patch for macOS obtained from developer; see git commit
   # https://repo.or.cz/alpine.git/commitdiff/701aebc00aff0585ce6c96653714e4ba94834c9c
@@ -37,8 +39,8 @@ class Alpine < Formula
 
     args = %W[
       --disable-debug
-      --with-ssl-dir=#{Formula["openssl@1.1"].opt_prefix}
-      --with-ssl-certs-dir=#{etc}/openssl@1.1
+      --with-ssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-ssl-certs-dir=#{etc}/openssl@3
       --prefix=#{prefix}
       --with-bundled-tools
     ]
