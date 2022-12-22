@@ -8,7 +8,8 @@ class OcamlZarith < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ocaml-zarith"
-    sha256 cellar: :any, mojave: "d984e509d42e7888a6627989ab0f94606afeb5bc57df3faed60b0056c6b8185c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "db585e13b8949636ae48a0fc26a637b2fecdfec5c5c2d467e95f9be20899f2f3"
   end
 
   depends_on "ocaml-findlib" => :build
