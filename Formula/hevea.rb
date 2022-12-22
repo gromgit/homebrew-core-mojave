@@ -3,6 +3,10 @@ class Hevea < Formula
   homepage "http://hevea.inria.fr/"
   url "http://hevea.inria.fr/old/hevea-2.36.tar.gz"
   sha256 "5d6759d7702a295c76a12c1b2a1a16754ab0ec1ffed73fc9d0b138b41e720648"
+  license all_of: [
+    "QPL-1.0", # source files
+    "GPL-2.0-only", # binaries
+  ]
 
   livecheck do
     url "http://hevea.inria.fr/old/"
@@ -11,7 +15,8 @@ class Hevea < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hevea"
-    sha256 mojave: "60639e9a65e975ea0cb2f6b92b53e01f4f4a331b5a3781b0a674c13e130ab8b2"
+    rebuild 1
+    sha256 mojave: "ecee1377c816c370a9a0b5db287c427bea43e42513660dde4e3e30630851826a"
   end
 
   depends_on "ocamlbuild" => :build
