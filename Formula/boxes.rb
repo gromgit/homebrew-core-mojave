@@ -8,6 +8,7 @@ class Boxes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boxes"
+    rebuild 1
     sha256 mojave: "218d36a4bbad3cf3528c1e3b26cda45fa7e20893098561049c5fa863c8eaaa13"
   end
 
