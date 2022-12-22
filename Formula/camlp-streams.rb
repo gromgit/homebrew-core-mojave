@@ -7,8 +7,8 @@ class CamlpStreams < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/camlp-streams"
-    rebuild 1
-    sha256 cellar: :any, mojave: "ae0a3a618649f6676dab8c1a17998fe6210933269216c6474c8f51127994c8fd"
+    rebuild 2
+    sha256 cellar: :any, mojave: "e10bc2e0d5d48913609309a671b952f82c71ccc990b88c793b599711d4415439"
   end
 
   depends_on "dune" => :build
