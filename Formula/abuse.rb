@@ -14,7 +14,8 @@ class Abuse < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abuse"
-    sha256 cellar: :any, mojave: "0be9add7a4d7d0ae526a9cb89635652f97e2c56ab9aad39cccddaadca00c656c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2ca29163bd23394613ea07e20e32d5c73f22942a08862e0b79d37563e2b78191"
   end
 
   depends_on "autoconf" => :build
