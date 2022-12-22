@@ -8,7 +8,8 @@ class BoostAT176 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boost@1.76"
-    sha256 cellar: :any, mojave: "2a77683e3be86e359d2d08bb20b858b9cd396c8e970f6af678f6e94d09c7f47c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4a766d83bcccce2e4a31f774069cf4e9b8c103e5aa429c00b7c8485a4c48b86e"
   end
 
   keg_only :versioned_formula
