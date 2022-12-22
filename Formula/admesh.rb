@@ -7,6 +7,7 @@ class Admesh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/admesh"
+    rebuild 1
     sha256 cellar: :any, mojave: "a159847ee98053ed6ea1e81d440882cede1dd482e2d25e499e2e862e606d1555"
   end
 
