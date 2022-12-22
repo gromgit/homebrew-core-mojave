@@ -1,28 +1,31 @@
 class Augeas < Formula
   desc "Configuration editing tool and API"
   homepage "https://augeas.net/"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
   head "https://github.com/hercules-team/augeas.git", branch: "master"
 
+  # Remove stable block when patch is no longer needed.
   stable do
-    url "https://github.com/hercules-team/augeas/releases/download/release-1.13.0/augeas-1.13.0.tar.gz"
-    sha256 "5002f33f42365ab78be974609a0f3b76a4c277fc404ec79f516305cab5ce5de1"
+    url "https://github.com/hercules-team/augeas/releases/download/release-1.14.0/augeas-1.14.0.tar.gz"
+    sha256 "8c101759ca3d504bd1d805e70e2f615fa686af189dd7cf0529f71d855c087df1"
 
-    # Replace deprecated 'security_context_t' with 'char *'. Remove in the next release.
+    # Fix "fatal error: 'malloc.h' file not found".
+    # Remove when https://github.com/hercules-team/augeas/pull/792 is merged.
     patch do
-      url "https://github.com/hercules-team/augeas/commit/f38398a2d07028b892eac59449a35e1a3d645fac.patch?full_index=1"
-      sha256 "1697379e0676edf94346a3377a75c871d1d0d033e3a37a29d69ae66f6e57553a"
+      url "https://github.com/hercules-team/augeas/commit/6cc785a46f2c651a299549eab25c6476c39f3080.patch?full_index=1"
+      sha256 "754beea4f75e6ada6a6093a41f8071d18e067f9d60137b135a4188a6e3a80227"
     end
   end
 
   livecheck do
-    url "http://download.augeas.net/"
-    regex(/href=.*?augeas[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(%r{href=["']?[^"' >]*?/tag/\D*?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :github_latest
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/augeas"
-    sha256 mojave: "88ec30b7300b2e079d830c6048973793503d0817286bf9cc47c0b85e76f8fb24"
+    sha256 mojave: "b97544646269b12da6c09467047e0fe1773b8ab1967b497d5859f1d702792af1"
   end
 
   depends_on "autoconf" => :build
