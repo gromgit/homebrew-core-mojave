@@ -1,14 +1,13 @@
 class Abcm2ps < Formula
   desc "ABC music notation software"
   homepage "http://moinejf.free.fr"
-  url "https://github.com/leesavide/abcm2ps/archive/v8.14.13.tar.gz"
-  sha256 "8db29e33f30fce609ddffeb641c3bfe60ae5d16c3305402157ddc88bcaaf0c5b"
+  url "https://github.com/leesavide/abcm2ps/archive/v8.14.14.tar.gz"
+  sha256 "5b39ca08cd5e0d1992071b0be9eb77304489823824570236c4df4dc0f8b33aab"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/abcm2ps"
-    rebuild 1
-    sha256 mojave: "7b1bcc240dcbd26dd06d1025d517d8ae4b3d965892edeb1273b3f3eece6c560d"
+    sha256 mojave: "451d831c0bde3335494fbab374d6797a892669293dde744ded82acbdc01246ac"
   end
 
   depends_on "pkg-config" => :build
