@@ -7,8 +7,8 @@ class Bitwise < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bitwise"
-    rebuild 2
-    sha256 cellar: :any, mojave: "40d18980eaa4de3e52f9ce57e5c30319d8cefc7088b9a72ed7919abe3cf4b06f"
+    rebuild 3
+    sha256 cellar: :any, mojave: "bf7b45974da791e288c5bc742349a73c30b7c9e6868a87367b3b47f8bd3f0ed3"
   end
 
   depends_on "autoconf" => :build
