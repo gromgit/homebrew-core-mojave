@@ -18,11 +18,14 @@ class OpensslAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openssl@1.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6104efca3c3ca46312b83f972e02aafc8c3a314c6b49676dc1e313988b168cdd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "bd15d452df8b2b301b44007ddc3b7124fa27a8074245bdd42b7c0e88542695a7"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
+
+  # See: https://www.openssl.org/policies/releasestrat.html
+  deprecate! date: "2023-09-11", because: :unsupported
 
   depends_on "ca-certificates"
 
