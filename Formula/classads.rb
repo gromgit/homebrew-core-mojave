@@ -3,6 +3,7 @@ class Classads < Formula
   homepage "https://research.cs.wisc.edu/htcondor/classad/"
   url "https://ftp.cs.wisc.edu/condor/classad/c++/classads-1.0.10.tar.gz"
   sha256 "cde2fe23962abb6bc99d8fc5a5cbf88f87e449b63c6bca991d783afb4691efb3"
+  license "Apache-2.0"
 
   livecheck do
     url :homepage
@@ -10,15 +11,9 @@ class Classads < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 monterey:        "f9869ca00795efc9bcda53a12cf7d485bfceb6c373492f9d7d652ffb59da61d0"
-    sha256 cellar: :any,                 big_sur:         "dcc6e15e209b41868d0e328ca0d65aac6416c923b494f53f1259ed97b64f4b33"
-    sha256 cellar: :any,                 catalina:        "9803231cebf936ef95bd86c820a7f3ba832c56109ad8a527ac5786d1d6150234"
-    sha256 cellar: :any,                 mojave:          "2c2987f20d62b7c0926071bfe5c2c9825b30b4c6dba4dd20e2d2f34c5369ef44"
-    sha256 cellar: :any,                 high_sierra:     "febef9dc12fdea8d1dbd1687f835ac8a58d8a7534ce2a0735d6102872058ec59"
-    sha256 cellar: :any,                 sierra:          "d51471a725a552974a309b8add05ca731264f7a0fbaedee1c85b97475c204cb7"
-    sha256 cellar: :any,                 el_capitan:      "52bd3bb21e7a2491ad96f01988b802ab183c5e93d3123e9cc57b75e1a0076171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:    "d6f5ea31c00944afcd4c2e3d78457d9f630ae17a4a58a161321c7c4c6b4046a3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/classads"
+    rebuild 2
+    sha256 cellar: :any, mojave: "5b60392cbf08c837b6d4e01823b9de8d3456962a14bde3944cae9ab61e4f674a"
   end
 
   depends_on "pcre"
@@ -29,6 +24,10 @@ class Classads < Formula
     depends_on "libtool" => :build
   end
 
+  # Allow compilation on ARM, where finite() is not availalbe.
+  # Reported by email on 2022-11-10
+  patch :DATA
+
   def install
     # Run autoreconf on macOS to rebuild configure script so that it doesn't try
     # to build with a flat namespace.
@@ -37,3 +36,17 @@ class Classads < Formula
     system "make", "install"
   end
 end
+
+__END__
+diff -pur classads-1.0.10/util.cpp classads-1.0.10-new/util.cpp
+--- classads-1.0.10/util.cpp	2011-04-09 01:36:36
++++ classads-1.0.10-new/util.cpp	2022-11-10 11:16:47
+@@ -430,7 +430,7 @@ int classad_isinf(double x) 
+ #endif
+ int classad_isinf(double x) 
+ { 
+-    if (finite(x) || x != x) {
++    if (isfinite(x) || x != x) {
+         return 0;
+     } else if (x > 0) {
+         return 1;
