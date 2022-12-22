@@ -24,7 +24,8 @@ class Clisp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clisp"
-    sha256 cellar: :any, mojave: "46600f30167ba9f495d9900a76495fc71072a8593d46fe20ec3641852e9d5d0f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "81ff06164462a3129a1f4b277222cabf7ec1688cf0b3dfaf0de95efe5844b175"
   end
 
   depends_on "libsigsegv"
