@@ -14,7 +14,7 @@ class Chicken < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chicken"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "4d6adcce58bcda98d4d1e0d3eba6072c4551572d366575d7f0790dd6af9dcd83"
   end
 
