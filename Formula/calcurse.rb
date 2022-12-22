@@ -12,7 +12,8 @@ class Calcurse < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/calcurse"
-    sha256 mojave: "16d1dc1aef7191ccdf4a4dcf9898e73d83ad4d63f9e4db76c4b7cf09cd3be172"
+    rebuild 1
+    sha256 mojave: "49854d1702088add26b28c2207c0c762e358a0adcf8860cc536115a16685577a"
   end
 
   head do
