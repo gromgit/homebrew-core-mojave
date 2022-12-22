@@ -1,22 +1,22 @@
 class Libre < Formula
   desc "Toolkit library for asynchronous network I/O with protocol stacks"
   homepage "https://github.com/baresip/re"
-  url "https://github.com/baresip/re/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "6aa9622bc0fee6881770e0b374161df44edb395b5d295fc8c56e7b6fa18a8ea2"
+  url "https://github.com/baresip/re/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "4d2b6f8fc73efdbcb5a7b2a98d0b46ac6eb28ede5ae90f9596b49663eec623a9"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libre"
-    sha256 cellar: :any, mojave: "dda9d58cec2a33a39844569b17c2a3bff6a9a85e7b2b2cc5cf85cfab96cd07b0"
+    sha256 cellar: :any, mojave: "6189a082365cb23b6de70a4d3da2027f84ad07a3698ed19a4aa4201cd9b0183d"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
   def install
     sysroot = "SYSROOT=#{MacOS.sdk_path}/usr" if OS.mac?
-    system "make", *sysroot, "install", "PREFIX=#{prefix}"
+    system "make", *sysroot, "install", "PREFIX=#{prefix}", "RELEASE=1", "V=1"
   end
 
   test do
