@@ -8,7 +8,8 @@ class SdlMixer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl_mixer"
-    sha256 cellar: :any, mojave: "e8a0f9a37391157dd2bf3a945a2c7483fe4311963ed365e17bbc40449ce48a22"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4ae9e1de2b2de5035ffaaef0d7ac21372c59df05174a84835a3cc88f18ca3b93"
   end
 
   head do
