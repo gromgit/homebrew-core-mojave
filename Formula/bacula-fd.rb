@@ -7,8 +7,8 @@ class BaculaFd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bacula-fd"
-    rebuild 1
-    sha256 mojave: "6b78800f14028b0e32018b30b441994070b78887d2f3dba3a6920abcd13fd479"
+    rebuild 2
+    sha256 mojave: "02d29293a994d8f9fb6df3ad50f41235a7ae12e15e165f7433a30d7bc356fb78"
   end
 
   depends_on "openssl@3"
