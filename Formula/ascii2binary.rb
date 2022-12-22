@@ -12,8 +12,8 @@ class Ascii2binary < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ascii2binary"
-    rebuild 1
-    sha256 cellar: :any, mojave: "02e8dd0519bc9f5cd9e93c1add075ef462f5248d563c0582e8e7abf8060de2b3"
+    rebuild 2
+    sha256 cellar: :any, mojave: "30e47f2c16fcc14f21f69a6d565d57c8cf61bf536e7b8464256ea5bac800d9b7"
   end
 
   depends_on "gettext"
