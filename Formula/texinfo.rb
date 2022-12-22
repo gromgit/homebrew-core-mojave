@@ -1,15 +1,14 @@
 class Texinfo < Formula
   desc "Official documentation format of the GNU project"
   homepage "https://www.gnu.org/software/texinfo/"
-  url "https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.0.tar.xz"
-  sha256 "20744b82531ce7a04d8cee34b07143ad59777612c3695d5855f29fba40fbe3e0"
+  url "https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.0.1.tar.xz"
+  sha256 "bcd221fdb2d807a8a09938a0f8d5e010ebd2b58fca16075483d6fcb78db2c6b2"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/texinfo"
-    rebuild 1
-    sha256 mojave: "bc5cd25fe8b17c4f693ef8232ac95aaba9c837cb098c4cb91ef4aa9a0a0a499c"
+    sha256 mojave: "f6fe6e3b0c3b5a0dd8375c73c8a9959beb54096dea20a1c48fced54b98ef23fd"
   end
 
   uses_from_macos "ncurses"
