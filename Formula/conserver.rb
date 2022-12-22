@@ -12,10 +12,11 @@ class Conserver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/conserver"
-    sha256 cellar: :any, mojave: "3921d070f3430323c451fea3d32f43f00cad76f060d6cc3d56a6fe4af67ff6f7"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d7ef45f38f895d59175b2d019b7de75af263b7cae8538c7a73f47ee7c16cecc2"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "libxcrypt"
 
