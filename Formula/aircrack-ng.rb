@@ -13,7 +13,8 @@ class AircrackNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aircrack-ng"
-    sha256 mojave: "7fb862ca2dd2443e8acb017efe3a31363a7c0d342983b76bd4c6e8043c64033a"
+    rebuild 1
+    sha256 mojave: "34035a38d2f43a75df7b0e1571c92bbfe40265a82daaddda247e344e2d367d1b"
   end
 
   depends_on "autoconf" => :build
