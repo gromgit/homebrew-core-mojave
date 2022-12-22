@@ -14,7 +14,8 @@ class Autogen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autogen"
-    sha256 mojave: "3af90b81d5384a91498725c95bc94b0db59c370edd9afad2b6785f46d296939f"
+    rebuild 1
+    sha256 mojave: "e2d4bbd9e721206057a01435688fc8230f1c21d36eb46cf7c8acb8cd5bbb247c"
   end
 
   depends_on "coreutils" => :build
