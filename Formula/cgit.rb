@@ -13,7 +13,8 @@ class Cgit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgit"
-    sha256 mojave: "dd7ffdc5fc43104efcf8ba38914825d2fa3ddfd91deb0b9e1b8207de385d9e30"
+    rebuild 1
+    sha256 mojave: "95d020b7a729b31c1de88afca25fecaa8dd7370019ddc80fecf9260fd93dbb45"
   end
 
   uses_from_macos "zlib"
