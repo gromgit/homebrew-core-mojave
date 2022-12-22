@@ -1,14 +1,13 @@
 class Faad2 < Formula
   desc "ISO AAC audio decoder"
   homepage "https://sourceforge.net/projects/faac/"
-  url "https://github.com/knik0/faad2/archive/refs/tags/2_10_0.tar.gz"
-  sha256 "0c6d9636c96f95c7d736f097d418829ced8ec6dbd899cc6cc82b728480a84bfb"
+  url "https://github.com/knik0/faad2/archive/refs/tags/2.10.1.tar.gz"
+  sha256 "4c16c71295ca0cbf7c3dfe98eb11d8fa8d0ac3042e41604cfd6cc11a408cf264"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faad2"
-    rebuild 2
-    sha256 cellar: :any, mojave: "a8a8ec97c8b4844100a13568334a0d78286a5dcf6bde98bac8247146cd3f77c3"
+    sha256 cellar: :any, mojave: "899a0e87de519b4b857af86997ad288c39aa8750a854f64f478a75a86d0aff3b"
   end
 
   depends_on "autoconf" => :build
