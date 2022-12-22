@@ -1,15 +1,14 @@
 class ArpScan < Formula
   desc "ARP scanning and fingerprinting tool"
   homepage "https://github.com/royhills/arp-scan"
-  url "https://github.com/royhills/arp-scan/archive/1.9.8.tar.gz"
-  sha256 "b9b75ceaef6348f5951b06c773ec7a243a9e780e160eafebc369f9c27f6a7d3f"
+  url "https://github.com/royhills/arp-scan/archive/1.10.0.tar.gz"
+  sha256 "204b13487158b8e46bf6dd207757a52621148fdd1d2467ebd104de17493bab25"
   license "GPL-3.0"
   head "https://github.com/royhills/arp-scan.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arp-scan"
-    rebuild 2
-    sha256 mojave: "66dc61cedff973a97f8bb2e9ba58bb64739d20c647df3908dbcd1dd4ba9c82b3"
+    sha256 mojave: "629bc3f21b2f306211d8d75ba4faec885febbbde746cc2d13f13757eecac7c66"
   end
 
   depends_on "autoconf" => :build
