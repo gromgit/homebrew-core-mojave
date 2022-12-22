@@ -1,15 +1,14 @@
 class Help2man < Formula
   desc "Automatically generate simple man pages"
   homepage "https://www.gnu.org/software/help2man/"
-  url "https://ftp.gnu.org/gnu/help2man/help2man-1.49.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/help2man/help2man-1.49.2.tar.xz"
-  sha256 "9e2e0e213a7e0a36244eed6204d902b6504602a578b6ecd15268b1454deadd36"
+  url "https://ftp.gnu.org/gnu/help2man/help2man-1.49.3.tar.xz"
+  mirror "https://ftpmirror.gnu.org/help2man/help2man-1.49.3.tar.xz"
+  sha256 "4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/help2man"
-    sha256 cellar: :any, mojave: "ee8fbcbff801607dc6e94a617c967b52879730df956a61078239d5a225e730f1"
+    sha256 cellar: :any, mojave: "4143978331f59a85a8c72d0993af7c9dc01abe928c18c2ab2cd52d3bebf73e90"
   end
 
   uses_from_macos "perl", since: :mojave
