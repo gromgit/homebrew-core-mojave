@@ -15,7 +15,8 @@ class Coccinelle < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coccinelle"
-    sha256 mojave: "72f49bb656145ea5d96bbd88b312264fefe655dad595ff97a6b5fe6292edf667"
+    rebuild 1
+    sha256 mojave: "8658bd0529c0aa037f139ee082596ef7c9850a716e04ff5852da479262fc1c67"
   end
 
   depends_on "autoconf" => :build
