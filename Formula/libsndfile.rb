@@ -13,8 +13,8 @@ class Libsndfile < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsndfile"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c5bb17196653f3ec34f4b209149ee94f07d39e9543236e66c8b43eeee22d5ade"
+    rebuild 2
+    sha256 cellar: :any, mojave: "62dc3fad44ca5da072f664562ab95fe2a216fa5af855aa96a3b4e585836df177"
   end
 
   depends_on "autoconf" => :build
@@ -22,8 +22,10 @@ class Libsndfile < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "flac"
+  depends_on "lame"
   depends_on "libogg"
   depends_on "libvorbis"
+  depends_on "mpg123"
   depends_on "opus"
 
   uses_from_macos "python" => :build
