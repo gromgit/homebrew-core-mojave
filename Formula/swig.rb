@@ -1,14 +1,13 @@
 class Swig < Formula
   desc "Generate scripting interfaces to C/C++ code"
   homepage "http://www.swig.org/"
-  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.1.0/swig-4.1.0.tar.gz"
-  sha256 "d6a9a8094e78f7cfb6f80a73cc271e1fe388c8638ed22668622c2c646df5bb3d"
+  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz"
+  sha256 "2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/swig"
-    rebuild 1
-    sha256 mojave: "acdf0e463045ea4d95e7330b44d9ab2551b7de655f008cb0bd2ea6253d0380bd"
+    sha256 mojave: "48831f14e12f609ab9958b6d342d32784c60e190faceea40ec1b6ca4a2a2fc6d"
   end
 
   head do
