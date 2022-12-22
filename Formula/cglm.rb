@@ -1,13 +1,13 @@
 class Cglm < Formula
   desc "Optimized OpenGL/Graphics Math (glm) for C"
   homepage "https://github.com/recp/cglm"
-  url "https://github.com/recp/cglm/archive/v0.8.5.tar.gz"
-  sha256 "baefa21342d228a83c90708459a745d5aa9b0ebb381555eea42db1f37fdf7a5a"
+  url "https://github.com/recp/cglm/archive/refs/tags/v0.8.8.tar.gz"
+  sha256 "8e3fd955eb7e961e9cf737743009437c29648dcc618bdabaa65db1047445f542"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cglm"
-    sha256 cellar: :any, mojave: "90db50e6e7b46587df1fa4cc8ed41493eea9cade0260859b7064c12f435a3704"
+    sha256 cellar: :any, mojave: "92a2d2008de962f00028d581fd42ec65a933256f18a00845ffefd83e0c227b92"
   end
 
   depends_on "autoconf" => :build
