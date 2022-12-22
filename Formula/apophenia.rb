@@ -7,6 +7,7 @@ class Apophenia < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/apophenia"
+    rebuild 1
     sha256 cellar: :any, mojave: "68061005567239d6b0f2aa8a71fd5e055342f31541f777086c3fec9b18bef6de"
   end
 
