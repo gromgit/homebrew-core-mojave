@@ -1,8 +1,8 @@
 class Ace < Formula
   desc "ADAPTIVE Communication Environment: OO network programming in C++"
   homepage "https://www.dre.vanderbilt.edu/~schmidt/ACE.html"
-  url "https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-7_0_10/ACE+TAO-7.0.10.tar.bz2"
-  sha256 "cba005e2d267884ba9634414bd39c2a72b8717eb9f7a7a293298f3b2a05c841e"
+  url "https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-7_0_11/ACE+TAO-7.0.11.tar.bz2"
+  sha256 "e49eb4eb7a0436e4c9af031a36f24ac8335ed3ee06d85e49162ac5df4d14a38d"
   license "DOC"
 
   livecheck do
@@ -15,7 +15,7 @@ class Ace < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ace"
-    sha256 cellar: :any, mojave: "18e559f6106b9480e553b83f7a88d8a5382647944dcb0b2a0f3d551f2e25155e"
+    sha256 cellar: :any, mojave: "13ca1a0bc9901122b880c900fbde5dd83d67e4568926c5842f35bfc32ae534d1"
   end
 
   def install
