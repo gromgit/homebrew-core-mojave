@@ -4,11 +4,11 @@ class Xz < Formula
   desc "General-purpose data compression with high compression ratio"
   homepage "https://tukaani.org/xz/"
   # The archive.org mirror below needs to be manually created at `archive.org`.
-  url "https://downloads.sourceforge.net/project/lzmautils/xz-5.2.7.tar.gz"
-  mirror "https://tukaani.org/xz/xz-5.2.7.tar.gz"
-  mirror "https://archive.org/download/xz-5.2.7/xz-5.2.7.tar.gz"
-  mirror "http://archive.org/download/xz-5.2.7/xz-5.2.7.tar.gz"
-  sha256 "06327c2ddc81e126a6d9a78b0be5014b976a2c0832f492dcfc4755d7facf6d33"
+  url "https://downloads.sourceforge.net/project/lzmautils/xz-5.2.9.tar.gz"
+  mirror "https://tukaani.org/xz/xz-5.2.9.tar.gz"
+  mirror "https://archive.org/download/xz-5.2.9/xz-5.2.9.tar.gz"
+  mirror "http://archive.org/download/xz-5.2.9/xz-5.2.9.tar.gz"
+  sha256 "e982ea31b81543d7ee2b6fa34c2ad11760e1c50c6f4475add8ba0f2f005f07b4"
   license all_of: [
     :public_domain,
     "LGPL-2.1-or-later",
@@ -18,8 +18,7 @@ class Xz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xz"
-    rebuild 2
-    sha256 mojave: "9fe9ad76649875d150b3c7025d404efd3eeb3d6d98b291cb806fe61304f50fa3"
+    sha256 mojave: "557f6d4f240b140c0fbf7e1dde9166c4c40b4fd0432c212b84c68b4cb8937e72"
   end
 
   def install
