@@ -12,7 +12,8 @@ class Cgdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cgdb"
-    sha256 mojave: "015898733ab519529e5e04f1ab0fa6b61320723be23c4923f41ad6049c276cb3"
+    rebuild 1
+    sha256 mojave: "4a52692604ea380a2a638bf57756656e71a76923be2e2bf7ef698ed267c6ad1d"
   end
 
   head do
@@ -26,7 +27,10 @@ class Cgdb < Formula
   depends_on "readline"
 
   uses_from_macos "flex" => :build
-  uses_from_macos "texinfo" => :build
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   def install
     system "sh", "autogen.sh" if build.head?
