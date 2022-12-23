@@ -8,7 +8,8 @@ class Agg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/agg"
-    sha256 cellar: :any_skip_relocation, mojave: "f9c9a7cd8f1cdac5d3286b5574bacf5e4d0a165c781cd36f05796896101e00ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7361a3f1359025ddb56dd4e0b3271ca748241ddbf6baedd5052d003386a3ef5d"
   end
 
   depends_on "rust" => :build
