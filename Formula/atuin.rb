@@ -1,19 +1,21 @@
 class Atuin < Formula
   desc "Improved shell history for zsh and bash"
   homepage "https://github.com/ellie/atuin"
-  url "https://github.com/ellie/atuin/archive/refs/tags/v11.0.0.tar.gz"
-  sha256 "29689906e3fd6bc680c60c3b2f41f756da5bd677a4f4aea3d26eff87f5bebac4"
+  url "https://github.com/ellie/atuin/archive/refs/tags/v12.0.0.tar.gz"
+  sha256 "bfeeb14c3fd94862e2cb7c57ac2b77db78686b0afe49b5597ead9cca02dcc403"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atuin"
-    sha256 cellar: :any_skip_relocation, mojave: "7fee38ca6dc9e649abfcaf6c6c3474db5ea3da2c36c4acfc84ca39d3642e0950"
+    sha256 cellar: :any_skip_relocation, mojave: "62237360378e32926bb6a690e7f2fd4defd3e2a8850a351fadeffdee3d3578db"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"atuin", "gen-completion", "--shell")
   end
 
   test do
