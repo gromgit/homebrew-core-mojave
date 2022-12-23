@@ -12,15 +12,22 @@ class Htop < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htop"
-    sha256 cellar: :any, mojave: "a820bc25248b100448b12d1208727e2ba2515220b6bf8145be78afa87f49ebaa"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htop-3.2.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "49ec8ba30dbca7b9f6435b54bd4d9f5a9449833cd11e3d330394b022d5681ab1"
   end
+
+  option "with-native", "Build non-Homebrew htop binary"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
-  depends_on "ncurses" # enables mouse scroll
+  on_macos do
+    unless build.with? "native"
+      depends_on "pkg-config" => :build
+      depends_on "ncurses" # enables mouse scroll
+    end
+  end
 
   on_linux do
     depends_on "lm-sensors"
@@ -30,6 +37,7 @@ class Htop < Formula
     system "./autogen.sh"
     args = ["--prefix=#{prefix}"]
     args << "--enable-sensors" if OS.linux?
+    ENV["PKG_CONFIG"] = "/usr/bin/ncurses5.4-config" if OS.mac? && (build.with? "native")
     system "./configure", *args
     system "make", "install"
   end
