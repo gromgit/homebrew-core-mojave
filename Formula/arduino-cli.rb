@@ -2,8 +2,8 @@ class ArduinoCli < Formula
   desc "Arduino command-line interface"
   homepage "https://github.com/arduino/arduino-cli"
   url "https://github.com/arduino/arduino-cli.git",
-      tag:      "0.27.1",
-      revision: "a900cfb2e7e58a9ed7e06be607c0f9878a17b15d"
+      tag:      "0.29.0",
+      revision: "76251df9241a7e09108bbc681d7455a024bccd13"
   license "GPL-3.0-only"
   head "https://github.com/arduino/arduino-cli.git", branch: "master"
 
@@ -14,7 +14,7 @@ class ArduinoCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arduino-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "bb2b4bdf6fdccff380fc5e2f60df1c5208cd7842e71661dba80e7d0e4b038357"
+    sha256 cellar: :any_skip_relocation, mojave: "2d0aa2d7618e68873c6203ab4295394a7ddd72478a939bacc395267311171588"
   end
 
   depends_on "go" => :build
