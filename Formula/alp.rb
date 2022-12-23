@@ -8,7 +8,8 @@ class Alp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/alp"
-    sha256 cellar: :any_skip_relocation, mojave: "dba1504713c979230bdcb812cd32a8b238776919f07cde75cb34ea9e72b832fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a86149d228fe56929b04563e0e85e76d3c2168476780c9dbc23ae5e920d319ad"
   end
 
   depends_on "go" => :build
