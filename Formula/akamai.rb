@@ -7,7 +7,8 @@ class Akamai < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/akamai"
-    sha256 cellar: :any_skip_relocation, mojave: "9da850dfff5bc4ec5470ecf949503daff3b15b71fe0ad76de89bcfeaeee2b22f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c6084a95be21e5251667bac919e22598333dc6781f8e4fdb87f5cea3f208ee95"
   end
 
   depends_on "go" => [:build, :test]
