@@ -3,22 +3,22 @@ class Archey4 < Formula
 
   desc "Simple system information tool written in Python"
   homepage "https://github.com/HorlogeSkynet/archey4"
-  url "https://files.pythonhosted.org/packages/be/f1/48885ef271b76ac590e239c04531af48009b85b54b60c1d2afba9b0bf463/archey4-4.13.4.tar.gz"
-  sha256 "9813ed0a1d5131756375e4113e6b158723d299353dab3d51b6ac0420af402e2c"
+  url "https://files.pythonhosted.org/packages/7e/6b/ccab7e74a8c9cf79a82912508d741bbb78219c307cc0daef219c2dc802c9/archey4-4.14.0.1.tar.gz"
+  sha256 "349e462d530491f17526441261bea3d0cd1b2430b69f5eaa03054961b918e1d1"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/archey4"
-    sha256 cellar: :any_skip_relocation, mojave: "d3ad369be4342de683f4424ea3f1cf76ec7cbf0eb5cc06e7f8acaac7f591bef8"
+    sha256 cellar: :any_skip_relocation, mojave: "29aa42e6b4477d026bde36418faac45c3240d0cda4aaee78d427e9f4da2273e8"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   conflicts_with "archey", because: "both install `archey` binaries"
 
   resource "distro" do
-    url "https://files.pythonhosted.org/packages/b5/7e/ddfbd640ac9a82e60718558a3de7d5988a7d4648385cf00318f60a8b073a/distro-1.7.0.tar.gz"
-    sha256 "151aeccf60c216402932b52e40ee477a939f8d58898927378a02abbe852c1c39"
+    url "https://files.pythonhosted.org/packages/4b/89/eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398/distro-1.8.0.tar.gz"
+    sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"
   end
 
   resource "netifaces" do
