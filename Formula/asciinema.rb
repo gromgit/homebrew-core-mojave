@@ -10,10 +10,11 @@ class Asciinema < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciinema"
-    sha256 cellar: :any_skip_relocation, mojave: "078f0815ed94fb3829dca824dd3ea0741e7ccdd72448d530da3b43fe3839006c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "01e2163495e1cbc15a34517721d94bcbef8eb9b3b5b75745a434b8cbe8d09b8c"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
