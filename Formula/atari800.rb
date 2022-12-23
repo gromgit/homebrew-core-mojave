@@ -14,7 +14,8 @@ class Atari800 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atari800"
-    sha256 cellar: :any, mojave: "3522dc7dbc69219a5de61e16977cc14631118d3b673459502efae0464636c901"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a79f38044a50a8c9736112f8b3ec3b2f9882078510dbf68047ee5e0c9059e622"
   end
 
   depends_on "libpng"
