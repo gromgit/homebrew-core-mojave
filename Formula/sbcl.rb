@@ -1,20 +1,10 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "http://www.sbcl.org/"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.2.11/sbcl-2.2.11-source.tar.bz2"
+  sha256 "3607d68016731880845ced5d5d55c6054cc49f19121a15027e6c5607ae8496df"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
-
-  # Remove `stable` block when patch is no longer needed.
-  stable do
-    url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.2.9/sbcl-2.2.9-source.tar.bz2"
-    sha256 "7ebebd6d2023fff7077b0372fa1171f880529bdec6104f20983297c2feb7c172"
-
-    # Fix Catalina build. Remove in next version.
-    patch do
-      url "https://github.com/sbcl/sbcl/commit/171cef936ad8c68a5892d59b758930c99fcea1cc.patch?full_index=1"
-      sha256 "f86e289d002c76065a72d643ac786646e778080d77ce543d832d683e0d30bea8"
-    end
-  end
 
   livecheck do
     url "https://sourceforge.net/projects/sbcl/rss?path=/sbcl"
@@ -22,7 +12,7 @@ class Sbcl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sbcl"
-    sha256 cellar: :any, mojave: "9fee2377cad363825e43a5583f4e07aca312450ea5952626c10aa7c4acacb194"
+    sha256 cellar: :any, mojave: "d97bb0c15710db87ec5a8dd3ee0a5e3b7b83834cf5ee9c37efa884fcfca01900"
   end
 
   depends_on "ecl" => :build
