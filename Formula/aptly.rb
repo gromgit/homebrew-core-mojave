@@ -8,8 +8,8 @@ class Aptly < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aptly"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "27ba3ade5b0cdef7ded4de39b1dc27055c079d211cf4e738eb3a031f595bf24c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "06d44271016a3c0c05ef4acd780f936a69e77522162dae79e78de10c2bcb016f"
   end
 
   depends_on "go" => :build
