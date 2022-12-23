@@ -7,19 +7,22 @@ class Authoscope < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/authoscope"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "52b2cbecb35bb37097a926fc61b24279091e9b6ff80bcdf2009ec9c8dc152ba4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "886f31ae96f5285de48ab397519062e4808130e021c471eb02fb97d0baf9662a"
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "openssl@3" # Uses Secure Transport on macOS
+  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix if OS.linux?
 
     system "cargo", "install", *std_cargo_args
     man1.install "docs/authoscope.1"
