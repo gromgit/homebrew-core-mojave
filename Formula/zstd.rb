@@ -10,8 +10,8 @@ class Zstd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/zstd"
-    rebuild 4
-    sha256 cellar: :any, mojave: "a7d086fac5c380d98b07f0e4be1ee72fd63c6550ad6fc13f331cc13d3e0e0899"
+    rebuild 5
+    sha256 cellar: :any, mojave: "bb74654093bfee86086343290c8d6c06c4babb7776801f9cf8be536a2f761217"
   end
 
   depends_on "cmake" => :build
