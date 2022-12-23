@@ -13,7 +13,8 @@ class Asio < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asio"
-    sha256 cellar: :any, mojave: "f3ec201700d1e91cff56e3cd6b4ab7e5e368ee98006c124b2c9efeec015e7ce6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3ef54ea25ac6a521831ba2e902e49555c1193487b3a8e841383033ce9aba37af"
   end
 
   depends_on "autoconf" => :build
