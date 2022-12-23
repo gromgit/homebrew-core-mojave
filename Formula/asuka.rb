@@ -12,7 +12,8 @@ class Asuka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asuka"
-    sha256 cellar: :any_skip_relocation, mojave: "b2f3185c92ee8016a93fff14a133185f67f239dffcaf7e7aea8e37772a872cff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "21b84b41593f09c776766f65132449f12c96cabd8758e27782241d388c3e1d25"
   end
 
   depends_on "rust" => :build
@@ -21,7 +22,7 @@ class Asuka < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "openssl@1.1"
+    depends_on "openssl@3"
   end
 
   def install
