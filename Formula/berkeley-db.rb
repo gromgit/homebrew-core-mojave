@@ -14,7 +14,7 @@ class BerkeleyDb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/berkeley-db"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "861bef4fcdb2db457a14a9bff2aeeecc8cb00105f285c9fef5eac82edc64c87f"
   end
 
