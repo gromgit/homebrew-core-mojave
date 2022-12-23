@@ -8,7 +8,8 @@ class Aria2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aria2"
-    sha256 mojave: "85819ae30402c019a7156fac9f72fdc60bd7bb74a183ac80beb361b10a24e72f"
+    rebuild 1
+    sha256 mojave: "a1bf15703012e1a265d9c02d935e42933001c12bd07730527f0d6e5101ff0d3a"
   end
 
   depends_on "pkg-config" => :build
