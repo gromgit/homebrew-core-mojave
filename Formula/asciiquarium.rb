@@ -17,6 +17,7 @@ class Asciiquarium < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciiquarium"
+    rebuild 1
     sha256 cellar: :any, mojave: "225f74b82da686ee7f67736bd602a6892f783c0d2caff07944935d51860e959d"
   end
 
