@@ -24,7 +24,8 @@ class Perl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/perl"
-    sha256 mojave: "8281c68c5cfbee6cfadce4866d0f63932856bed458b1f9ffd9f30582a8b4b8ce"
+    rebuild 1
+    sha256 mojave: "bb148400ae5e585524b70b17c36447ca99e745d32df7bb7a5a78d6bfff9698eb"
   end
 
   depends_on "berkeley-db"
