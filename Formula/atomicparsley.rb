@@ -10,7 +10,7 @@ class Atomicparsley < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atomicparsley"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "9ac9a61d7847405d3562fdf83b6fb3790359e069e77b437f0bdc56bf3c03fddf"
   end
 
