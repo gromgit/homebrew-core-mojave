@@ -14,6 +14,7 @@ class Agedu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/agedu"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "45737e5f5b420fb2ea2182f133e3f29c911c5f852aa28cd1e5352821fb3c444a"
   end
 
