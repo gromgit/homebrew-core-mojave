@@ -6,7 +6,8 @@ class Dumb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dumb"
-    sha256 cellar: :any, mojave: "0aef7a4d8679d100c114c95ee357f3a8710966f5e4f2ca07557c21aa542d98f8"
+    rebuild 1
+    sha256 cellar: :any, mojave: "243dd957960ae2015f49e7cee2e7b33e23b354c9f69d5ac9428270f63e95c4b8"
   end
 
   depends_on "cmake" => :build
