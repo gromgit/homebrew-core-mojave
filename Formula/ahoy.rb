@@ -7,7 +7,8 @@ class Ahoy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ahoy"
-    sha256 cellar: :any_skip_relocation, mojave: "9f9540782b60933fff6173c0ebec1f6132a0b1d453061719a90c321b2696f43d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7876cdc36bcaf34bd6a29975b020f4212f89bc2362cc82c37c25369c09216b80"
   end
 
   depends_on "go" => :build
