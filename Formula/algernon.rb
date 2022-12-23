@@ -14,7 +14,8 @@ class Algernon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/algernon"
-    sha256 cellar: :any_skip_relocation, mojave: "776dcc272c8827ab7575256d3f2dc7f5160c60d0f2e381cd4ac8351d60822e91"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "72cfad007fdf9f35c43752e5449d95460d8bed4fb437a8c4e2fd773f59441b56"
   end
 
   depends_on "go" => :build
