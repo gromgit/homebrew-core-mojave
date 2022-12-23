@@ -12,7 +12,8 @@ class Amfora < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amfora"
-    sha256 cellar: :any_skip_relocation, mojave: "11ef1bbac621d6fd4da453b49054812310d2581b4a76cab467af92935857b58d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "80194022c457e347c70f7743eec7974f24460993607bca9e0b1e791bae95b6c0"
   end
 
   depends_on "go" => :build
