@@ -9,7 +9,8 @@ class Mage < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mage"
-    sha256 cellar: :any_skip_relocation, mojave: "c96d1ce7372a0cc6df4904089c12e7850013bb2f704da4d01ae3f35dc61b03e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1c445e77e62b05e1674d6befba17cdff666280a6e6d6683f7044824dc541bf9b"
   end
 
   depends_on "go"
