@@ -1,8 +1,8 @@
 class Pixman < Formula
   desc "Low-level library for pixel manipulation"
   homepage "https://cairographics.org/"
-  url "https://cairographics.org/releases/pixman-0.40.0.tar.gz"
-  sha256 "6d200dec3740d9ec4ec8d1180e25779c00bc749f94278c8b9021f5534db223fc"
+  url "https://cairographics.org/releases/pixman-0.42.2.tar.gz"
+  sha256 "ea1480efada2fd948bc75366f7c349e1c96d3297d09a3fe62626e38e234a625e"
   license "MIT"
 
   livecheck do
@@ -11,25 +11,20 @@ class Pixman < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6d3b22b80045f4f42289b412bb95febd88dd228fc96a18594000c849c8b0e209"
-    sha256 cellar: :any,                 arm64_monterey: "3dbb0582d3c6fcb87fc1d99a42064e8b81d409951ba7b863c2482957792f837b"
-    sha256 cellar: :any,                 arm64_big_sur:  "da951aa8e872276034458036321dfa78e7c8b5c89b9de3844d3b546ff955c4c3"
-    sha256 cellar: :any,                 ventura:        "214f3fea0c34a730b2be9cce910139dae610ce3983ebd88ca0a3af2b2d50aa25"
-    sha256 cellar: :any,                 monterey:       "300fc41cc99dfc7ba11862149f9cb88ab9976200bf88b5b944ff09796ed05f40"
-    sha256 cellar: :any,                 big_sur:        "0114710dd922d5e4839c9dea3b72cd5fbe6f00157dd63457c99ca15554cf8d7f"
-    sha256 cellar: :any,                 catalina:       "1862e6826a4bedb97af8dcb9ab849c69754226ed92e5ee19267fa33ee96f94f8"
-    sha256 cellar: :any,                 mojave:         "70a476e6b14fdfa42188d3df2797f8c13f25bd633528164b0d42c5fb70dfb431"
-    sha256 cellar: :any,                 high_sierra:    "e5b78e3dca71370ccc06a013ebda8b9f1c2b89a238e2f3ef11a8086560e3c07b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b24ecddb5e7fe12c7a0b4458304542b4bacb1de51966f8f33d9dfdf9bd0c2b00"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pixman"
+    sha256 cellar: :any, mojave: "52e33bde78ada21065c910bd6b217a6b2aaa4a90a460bd19430c5141b4a9956f"
   end
 
   depends_on "pkg-config" => :build
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-gtk",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    args = ["--disable-gtk", "--disable-silent-rules"]
+    # Disable NEON intrinsic support on macOS
+    # Issue ref: https://gitlab.freedesktop.org/pixman/pixman/-/issues/59
+    # Issue ref: https://gitlab.freedesktop.org/pixman/pixman/-/issues/69
+    args << "--disable-arm-a64-neon" if OS.mac?
+
+    system "./configure", *std_configure_args, *args
     system "make", "install"
   end
 
