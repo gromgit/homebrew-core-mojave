@@ -9,7 +9,8 @@ class Amp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amp"
-    sha256 cellar: :any_skip_relocation, mojave: "a31b4785069804635413960d130de305a9870466f060c477cf8e1e6b6ce73b45"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f96998129126d6ecaff3a7416b978290e5d40f2949ba8c6c607c6d5799bbd47d"
   end
 
   depends_on "cmake" => :build
