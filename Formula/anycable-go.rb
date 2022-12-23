@@ -1,8 +1,8 @@
 class AnycableGo < Formula
   desc "WebSocket server with action cable protocol"
   homepage "https://github.com/anycable/anycable-go"
-  url "https://github.com/anycable/anycable-go/archive/v1.2.1.tar.gz"
-  sha256 "b14a2e0a453c121c4d7bb60189e360751c6e6e2d5f3f7ccb8e17dfa1b51b35f7"
+  url "https://github.com/anycable/anycable-go/archive/v1.2.3.tar.gz"
+  sha256 "d845c77689ccdf8e42a3ebf09ff1afefe2c65a95186c8d17757eb3a2ae80c5b0"
   license "MIT"
   head "https://github.com/anycable/anycable-go.git", branch: "master"
 
@@ -13,7 +13,7 @@ class AnycableGo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/anycable-go"
-    sha256 cellar: :any_skip_relocation, mojave: "ff414e5ac9e7a6194f296316f0243f051007d54357fdc795fe8cb45f12cb0738"
+    sha256 cellar: :any_skip_relocation, mojave: "562f97fc54e4ea366ee5f2dd904f9a419dd0ac36f27a37741c8c22daf0740bbe"
   end
 
   depends_on "go" => :build
