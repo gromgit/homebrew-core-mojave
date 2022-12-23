@@ -13,21 +13,21 @@ class AmqpCpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amqp-cpp"
-    sha256 cellar: :any_skip_relocation, mojave: "62d2b4981abc903d056eeee5a87266787ba8a8732a8cce56f8eaaecac5e27b6d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "913fb35f3f882e8090ce980537f57364591e979c87c0ce4688ce98df542697a0"
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
-    ENV.cxx11
-
-    system "cmake", "-DBUILD_SHARED=ON",
-                    "-DCMAKE_MACOSX_RPATH=1",
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DAMQP-CPP_BUILD_SHARED=ON",
                     "-DAMQP-CPP_LINUX_TCP=ON",
+                    "-DCMAKE_MACOSX_RPATH=1",
                     *std_cmake_args
-    system "make"
-    system "make", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
