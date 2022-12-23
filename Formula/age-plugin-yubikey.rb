@@ -8,7 +8,8 @@ class AgePluginYubikey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/age-plugin-yubikey"
-    sha256 cellar: :any_skip_relocation, mojave: "1553dd97c9b519ee70d4e1a299c7b8291d53635dcfdbbeab035228fdf35459cf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "6de0ba4f0d4a692d1da12502f502cf6e315d3b847ca0c8b3b14c0bcb2aed79a3"
   end
 
   depends_on "rust" => :build
