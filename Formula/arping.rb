@@ -7,6 +7,7 @@ class Arping < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arping"
+    rebuild 1
     sha256 cellar: :any, mojave: "b1fc658c27d98eaf325d52ac8e3071b1c38ff05814f6bd40ff56dedccf4b08f2"
   end
 
