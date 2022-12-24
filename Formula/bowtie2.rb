@@ -1,15 +1,13 @@
 class Bowtie2 < Formula
   desc "Fast and sensitive gapped read aligner"
   homepage "https://bowtie-bio.sourceforge.io/bowtie2/"
-  url "https://github.com/BenLangmead/bowtie2/archive/v2.4.5.tar.gz"
-  sha256 "db101391b54a5e0eeed7469b05aee55ee6299558b38607f592f6b35a7d41dcb6"
+  url "https://github.com/BenLangmead/bowtie2/archive/v2.5.0.tar.gz"
+  sha256 "55dedeba8bea240d3ce3f46211d6e14310035c1de5a3e9ac33f72f739165fea0"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bowtie2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7bb2e74b04000b466e2068342ef7960bfede3fb4bcf7f47288baf55f131a7dac"
+    sha256 cellar: :any_skip_relocation, mojave: "8a884a333ee5afb58b589e4f486860e83f0688927e5812124724337504067d17"
   end
 
   uses_from_macos "perl"
