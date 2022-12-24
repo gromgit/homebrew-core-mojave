@@ -8,19 +8,20 @@ class Bibtexconv < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bibtexconv"
-    sha256 cellar: :any, mojave: "c03bc3e2c054127d4993c7c149f25a7fa7de33ab72799cad02baa45e1c9475e0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b966e8b1e7bd4fd59ff18ac45f6afc21b4afed5869e2357aa737431caa3a7ebd"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
 
   def install
     system "cmake", *std_cmake_args,
-                    "-DCRYPTO_LIBRARY=#{Formula["openssl@1.1"].opt_lib}/#{shared_library("libcrypto")}"
+                    "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}/#{shared_library("libcrypto")}"
     system "make", "install"
   end
 
