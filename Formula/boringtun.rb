@@ -8,7 +8,8 @@ class Boringtun < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/boringtun"
-    sha256 cellar: :any_skip_relocation, mojave: "22d6b7b880092cbf26dbaad6798f2e002b604bf97c7c862ce76eccc5686eb231"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "85922841c2901ff0c9e4a25518ebcb9a34bdbe803ff0bd88e8aadde9b630f955"
   end
 
   depends_on "rust" => :build
