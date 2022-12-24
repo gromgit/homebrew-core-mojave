@@ -12,8 +12,8 @@ class AwsVault < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-vault"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "33bb08e49fb54af17783f7baac87a9fb25cd6e6c6bab1efafa129a093a203d3a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9e8f5016d9ba3a3602dc6c85c2ccdc2e010cd95359bbc7554e8ffc4980828bd5"
   end
 
   depends_on "go" => :build
