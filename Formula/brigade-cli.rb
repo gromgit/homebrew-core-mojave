@@ -14,7 +14,8 @@ class BrigadeCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brigade-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "628bce3de89083c8026b075c3ab0dd1e24f13d14f0305d02a72407bcb77deafa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2871cd0a880a6caf770b5fe85766369e5b41d5f11cbdc871d2d85e040727771c"
   end
 
   depends_on "go" => :build
