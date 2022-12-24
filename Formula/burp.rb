@@ -20,7 +20,8 @@ class Burp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/burp"
-    sha256 mojave: "1f3366de9b6a5617884984b9b3481e257f3a2c0cd111f0d50ddd1a251176408c"
+    rebuild 1
+    sha256 mojave: "44342df654efea04148681fba93194270ab7265e0242a124e5e566e47b6d65a7"
   end
 
   head do
