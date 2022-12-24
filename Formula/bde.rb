@@ -13,8 +13,8 @@ class Bde < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bde"
-    rebuild 2
-    sha256 cellar: :any, mojave: "d1e756066fb1259cef889ffc82da3ca18d6f8834f358f8ddeb0d6dcc8f3e6394"
+    rebuild 3
+    sha256 cellar: :any, mojave: "89b592b22dd4a9861ce91de055391f355fedd145100982b600def0b2e660e6da"
   end
 
   depends_on "cmake" => :build
