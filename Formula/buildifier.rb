@@ -8,7 +8,8 @@ class Buildifier < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildifier"
-    sha256 cellar: :any_skip_relocation, mojave: "b50c4c7e9a0bda54792c4f478417a8678c164aeaf08520d922dd7f8e9ef89bff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d8670fc5540e37dddeef4fafe4d44098f13c8f032980fb7f4c05facba5f2b694"
   end
 
   depends_on "go" => :build
