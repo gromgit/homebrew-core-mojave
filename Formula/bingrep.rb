@@ -7,7 +7,8 @@ class Bingrep < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bingrep"
-    sha256 cellar: :any_skip_relocation, mojave: "3f4b45598dd36cc431867d96419d441134fc4ab871983e55de2c3ebc3f414eaf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5cf47c0aa9d3644de71d08c31a89e2a36e302aeb950929c9c12f87683982f258"
   end
 
   depends_on "rust" => :build
