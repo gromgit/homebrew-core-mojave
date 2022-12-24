@@ -7,7 +7,8 @@ class BasisUniversal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/basis_universal"
-    sha256 cellar: :any_skip_relocation, mojave: "50e64f2730965a038ccfab92b98841f7858484253d7c1409835b87b0ffb2f9ae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "fcc196c4a5037440259120e2fdab15be5c609b2fbedb74806473129e16862aee"
   end
 
   depends_on "cmake" => :build
