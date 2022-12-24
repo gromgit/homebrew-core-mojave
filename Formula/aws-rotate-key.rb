@@ -8,7 +8,8 @@ class AwsRotateKey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-rotate-key"
-    sha256 cellar: :any_skip_relocation, mojave: "aefa7d6f65f6bb5a06f33047d25e9a9c5bdb14b2e279c91bb773dfbd0ed10f77"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ec3d8d672adb1b64223571154efee94b14c81cd6e5a6f9f35ce0aac1202a6c1f"
   end
 
   depends_on "go" => :build
