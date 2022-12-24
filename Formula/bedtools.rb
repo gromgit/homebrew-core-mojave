@@ -7,18 +7,20 @@ class Bedtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bedtools"
-    rebuild 2
-    sha256 cellar: :any, mojave: "51da2e0d3e1adf7791f157976e0219de679c8f0574a19ee5d1a8e5e538df5489"
+    rebuild 3
+    sha256 cellar: :any, mojave: "d2e159d32596af9bd6d4caffe962f65dc1a79336756e8b4eb758c8114d03354d"
   end
 
-  depends_on "python@3.10" => :build
   depends_on "xz"
 
+  uses_from_macos "python" => :build
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
   def install
-    inreplace "Makefile", "python", "python3.10"
+    # Remove on the next release which has commit try both python and python3
+    # Ref: https://github.com/arq5x/bedtools2/commit/ffbc4e18d100ccb488e4a9e7e64146ec5d3af849
+    inreplace "Makefile", "python", "python3" if !OS.mac? || MacOS.version >= :catalina
 
     system "make"
     system "make", "install", "prefix=#{prefix}"
