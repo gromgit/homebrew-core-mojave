@@ -8,8 +8,8 @@ class Bk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bk"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e3217eeca92340b9e472fba02bffa08ca439d8f18966f02113106531ab9388db"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "777b16e808b37ad3e30efb27f5b353f5900837f9e1ef9d6a98a91acd99f2e7e8"
   end
 
   depends_on "rust" => :build
