@@ -13,7 +13,8 @@ class Backupninja < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/backupninja"
-    sha256 cellar: :any_skip_relocation, mojave: "3e0f3c562e13469570fa3852a72b05745f4ebc4154e306fdf152d33d3b79c0a5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "66db6bfc69a280635f32584d4390dff394520a9cf6d932348cdca35f38fef06a"
   end
 
   depends_on "bash"
