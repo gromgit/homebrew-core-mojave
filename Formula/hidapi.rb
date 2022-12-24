@@ -8,7 +8,8 @@ class Hidapi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hidapi"
-    sha256 cellar: :any, mojave: "b646bcd0b6b77b9391736ec1b07133f3f8770d048ac7dea9bc819b82b861b2e5"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ad3adf33149d9c8357ceed01538591d550de4b0441562cee20a6c0eec8d5c5ad"
   end
 
   depends_on "cmake" => :build
