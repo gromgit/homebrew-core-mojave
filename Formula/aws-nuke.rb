@@ -2,15 +2,14 @@ class AwsNuke < Formula
   desc "Nuke a whole AWS account and delete all its resources"
   homepage "https://github.com/rebuy-de/aws-nuke"
   url "https://github.com/rebuy-de/aws-nuke.git",
-      tag:      "v2.19.0",
-      revision: "357aa44f5a04df9d1faa8c57bb5ce924871a910a"
+      tag:      "v2.21.2",
+      revision: "e76d21c263477ebd6648fae19f9e539049ad2b51"
   license "MIT"
   head "https://github.com/rebuy-de/aws-nuke.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aws-nuke"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "99894d9424dc2c0799237b8858f9dfca8fc0e6e200def6c7dfe5f17e5dcc7897"
+    sha256 cellar: :any_skip_relocation, mojave: "d8464526c0d63a628531b94fff979e70fe0d86a51e9ac32b4973305bdca24017"
   end
 
   depends_on "go" => :build
