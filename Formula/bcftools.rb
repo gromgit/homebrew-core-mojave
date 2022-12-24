@@ -14,6 +14,7 @@ class Bcftools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcftools"
+    rebuild 1
     sha256 mojave: "855dc929d4d28468b607bd13fbf0c6348552c240bf35b8b909aea40d61b23cf1"
   end
 
