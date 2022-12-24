@@ -1,14 +1,13 @@
 class B3sum < Formula
   desc "BLAKE3 cryptographic hash function"
   homepage "https://github.com/BLAKE3-team/BLAKE3"
-  url "https://github.com/BLAKE3-team/BLAKE3/archive/1.3.1.tar.gz"
-  sha256 "112becf0983b5c83efff07f20b458f2dbcdbd768fd46502e7ddd831b83550109"
+  url "https://github.com/BLAKE3-team/BLAKE3/archive/1.3.3.tar.gz"
+  sha256 "27d2bc4ee5945ba75434859521042c949463ee7514ff17aaef328e23ef83fec0"
   license "CC0-1.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/b3sum"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "9b545bf59bdfb4e4bf887fc651b032ba196db08c7cf43c0665dfdc9a43405787"
+    sha256 cellar: :any_skip_relocation, mojave: "f61b27a20d62b9e78ce4abc5174c573b74355c4576562c411eededea77714214"
   end
 
   depends_on "rust" => :build
