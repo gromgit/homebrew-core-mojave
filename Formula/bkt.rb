@@ -7,7 +7,8 @@ class Bkt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bkt"
-    sha256 cellar: :any_skip_relocation, mojave: "43b123d5c3c917b95af62fec6991cd51d84a1c72e67fbfa0f611d86732d76c12"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "74220f66bb8ca4ab03e27bb000b3fc9cd3a1ad2c380238eb254976b2ff28d239"
   end
 
   depends_on "rust" => :build
