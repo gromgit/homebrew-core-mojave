@@ -8,7 +8,8 @@ class Bat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bat"
-    sha256 cellar: :any_skip_relocation, mojave: "4594dfc9a85a7ac597dd2ce411e3b934e5e1f1d156f6d141413d4eb6a6b988db"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cdf5484ee7625897cd32c29836e5ae5a3c99f38fe1a5d9a1790f2ee1d88cc333"
   end
 
   depends_on "rust" => :build
