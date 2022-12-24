@@ -8,7 +8,8 @@ class Buildozer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/buildozer"
-    sha256 cellar: :any_skip_relocation, mojave: "2df8fb4b87991360d76697945d91da54970364f14f7368ef0ac48899cdbac405"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "39dacfc249d730b2b6ae185c538caac26d0cbdc84c8525a5bd06740d94cd4354"
   end
 
   depends_on "go" => :build
