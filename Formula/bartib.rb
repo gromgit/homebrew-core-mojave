@@ -7,7 +7,8 @@ class Bartib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bartib"
-    sha256 cellar: :any_skip_relocation, mojave: "45b2b1ff647e8b5cde1008acdb6e29548a32f5f0c09efa7dffc0b1f03fd8e1e7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5237974de0f8ec45ff727a60446383d32e5f8884057304e2b04ca76d8fd1bd98"
   end
 
   depends_on "rust" => :build
