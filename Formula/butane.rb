@@ -1,8 +1,8 @@
 class Butane < Formula
   desc "Translates human-readable Butane Configs into machine-readable Ignition Configs"
   homepage "https://github.com/coreos/butane"
-  url "https://github.com/coreos/butane/archive/v0.15.0.tar.gz"
-  sha256 "790ad699ccff87f9b7499d109e9b2e0ebe394dd47aa2c37076124f4a07fa3dcc"
+  url "https://github.com/coreos/butane/archive/v0.16.0.tar.gz"
+  sha256 "ea6e8bc51bb2f00559c4392fa0e47758a6e84884a6a7b15980dcd3bf53c95b03"
   license "Apache-2.0"
   head "https://github.com/coreos/butane.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Butane < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/butane"
-    sha256 cellar: :any_skip_relocation, mojave: "5e97c91a1c9dc7eb260ebe9dc8c97147c0d655ce5ec58465a20ea427216bec56"
+    sha256 cellar: :any_skip_relocation, mojave: "9a47a6d68e0f6792e5d93ada4c7215159881587a152dda87c8b5fd412c797375"
   end
 
   depends_on "go" => :build
