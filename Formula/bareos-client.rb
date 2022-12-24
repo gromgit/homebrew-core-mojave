@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.org/"
-  url "https://github.com/bareos/bareos/archive/Release/21.1.4.tar.gz"
-  sha256 "ed898221182f2dbca712d0e85715cb5f9dd9d2c78f0e20eb7a13ae35d08701bb"
+  url "https://github.com/bareos/bareos/archive/Release/21.1.6.tar.gz"
+  sha256 "da883c7d8ded422dfc8fd9ab8467c3d79faf0d9b367328de7860ab85e1507172"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -12,13 +12,13 @@ class BareosClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bareos-client"
-    sha256 mojave: "e20984d5422d6e40d3b5ba04d94724d542e9e01307cdfb6383436068ae889652"
+    sha256 mojave: "9308b63fc29008ec3ee8e77c260740997fc3f68659183e33f3abc5430cdc9f11"
   end
 
   depends_on "cmake" => :build
   depends_on "jansson"
   depends_on "lzo"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "zlib"
@@ -34,16 +34,21 @@ class BareosClient < Formula
   conflicts_with "bacula-fd", because: "both install a `bconsole` executable"
 
   def install
+    # Work around Linux build failure by disabling warning:
+    # lmdb/mdb.c:2282:13: error: variable 'rc' set but not used [-Werror=unused-but-set-variable]
+    # TODO: Try to remove in the next release which has various compiler warning changes
+    ENV.append_to_cflags "-Wno-unused-but-set-variable" if OS.linux?
+
     # Work around hardcoded paths to /usr/local Homebrew installation,
     # forced static linkage on macOS, and openssl formula alias usage.
     inreplace "core/CMakeLists.txt" do |s|
       s.gsub! "/usr/local/opt/gettext/lib/libintl.a", Formula["gettext"].opt_lib/shared_library("libintl")
-      s.gsub! "/usr/local/opt/openssl", Formula["openssl@1.1"].opt_prefix
+      s.gsub! "/usr/local/opt/openssl", Formula["openssl@3"].opt_prefix
       s.gsub! "/usr/local/", "#{HOMEBREW_PREFIX}/"
     end
     inreplace "core/src/plugins/CMakeLists.txt" do |s|
       s.gsub! "/usr/local/opt/gettext/include", Formula["gettext"].opt_include
-      s.gsub! "/usr/local/opt/openssl/include", Formula["openssl@1.1"].opt_include
+      s.gsub! "/usr/local/opt/openssl/include", Formula["openssl@3"].opt_include
     end
     inreplace "core/cmake/BareosFindAllLibraries.cmake" do |s|
       s.gsub! "/usr/local/opt/lzo/lib/liblzo2.a", Formula["lzo"].opt_lib/shared_library("liblzo2")
