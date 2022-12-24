@@ -8,7 +8,8 @@ class Restic < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/restic"
-    sha256 cellar: :any_skip_relocation, mojave: "030fd47b302cdaef0b04967dd2adcd1600d6a24864a7737947a0d5dad2c50a7b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "187976073610a6e9cd01026ad8bc113fcf934fc5f72548c357871dc6a49b3882"
   end
 
   depends_on "go" => :build
