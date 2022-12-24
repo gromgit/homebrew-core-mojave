@@ -10,22 +10,23 @@ class Bpytop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bpytop"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7ed5898181321afcce433341b54ca0de92b5f9e78cad3e40e2f5f403f2f678fc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "e368e0e0ee6bcfd1642be08d09fd0e2307b8102e86664a178f0ef534894e30f9"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
+
   on_macos do
     depends_on "osx-cpu-temp"
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/b0/7276de53321c12981717490516b7e612364f2cb372ee8901bd4a66a000d7/psutil-5.8.0.tar.gz"
-    sha256 "0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6"
+    url "https://files.pythonhosted.org/packages/de/eb/1c01a34c86ee3b058c556e407ce5b07cb7d186ebe47b3e69d6f152ca5cc5/psutil-5.9.3.tar.gz"
+    sha256 "7ccfcdfea4fc4b0a02ca2c31de7fcd186beb9cff8207800e14ab66f79c773af6"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.10")
+    venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources
     system "make", "install", "PREFIX=#{prefix}"
     pkgshare.install "themes"
