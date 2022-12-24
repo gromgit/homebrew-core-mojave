@@ -7,7 +7,8 @@ class Bombadillo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bombadillo"
-    sha256 cellar: :any_skip_relocation, mojave: "45ed16323302c2f0662bcd2de5b674c405068eb8037804b5e6dafba49e896419"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9d00df11ed3b490dd0e1fab75efdd61f5dfc3242b7f7a25156a10f3c9762d344"
   end
 
   depends_on "go" => :build
