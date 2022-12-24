@@ -1,4 +1,6 @@
 class BrewPip < Formula
+  include Language::Python::Shebang
+
   desc "Install pip packages as homebrew formulae"
   homepage "https://github.com/hanxue/brew-pip"
   url "https://github.com/hanxue/brew-pip/archive/0.4.1.tar.gz"
@@ -6,22 +8,22 @@ class BrewPip < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3231885b29ff349dfcee4f83a375f5d0ce4643750ea61d40a64a9ca0373ab71b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3231885b29ff349dfcee4f83a375f5d0ce4643750ea61d40a64a9ca0373ab71b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2cc472aef77f711ebb4890a1f669e9d7bf1668c5e024ef97b8e09fb8e6565aa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d2cc472aef77f711ebb4890a1f669e9d7bf1668c5e024ef97b8e09fb8e6565aa"
-    sha256 cellar: :any_skip_relocation, catalina:       "d2cc472aef77f711ebb4890a1f669e9d7bf1668c5e024ef97b8e09fb8e6565aa"
-    sha256 cellar: :any_skip_relocation, mojave:         "d2cc472aef77f711ebb4890a1f669e9d7bf1668c5e024ef97b8e09fb8e6565aa"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/brew-pip"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d06a7bf79cd911d10bb3dc6679a7e47fb61b0beaa3ab86eb75dd6ef6d1c67823"
   end
 
   # Repository is not maintained in 9+ years
   deprecate! date: "2022-04-16", because: :unmaintained
 
+  depends_on "python@3.11"
+
   def install
     bin.install "bin/brew-pip"
+    rewrite_shebang detected_python_shebang, bin/"brew-pip"
   end
 
   test do
-    system "#{bin}/brew-pip", "help"
+    system "#{bin}/brew-pip", "--help"
   end
 end
