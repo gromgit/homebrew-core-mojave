@@ -14,7 +14,8 @@ class Bento4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bento4"
-    sha256 cellar: :any_skip_relocation, mojave: "5046d46b28a39544aba3236bda55537676bf762e2f51655749f46b1bd9c2fde5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c482f790d223375717d660c038101ba08f7cc1f15fd34ddd90633ef7b6397759"
   end
 
   depends_on "cmake" => :build
