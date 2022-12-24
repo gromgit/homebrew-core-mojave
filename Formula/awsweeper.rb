@@ -8,8 +8,8 @@ class Awsweeper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awsweeper"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "2eed06254bc17472737ae077abe284579afe052ad29a2c2ff3c977aab9707d05"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "1b1703541a7ee8ad30ece2b974b4c73ee56e8baa7c2b33dbc9d3cdf7081d9540"
   end
 
   # Bump to 1.18 on the next release, if possible.
