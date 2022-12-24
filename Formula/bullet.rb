@@ -8,7 +8,8 @@ class Bullet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bullet"
-    sha256 cellar: :any, mojave: "7bb0430fe50222bcafa60cae2ab43141a987ceccf61a67c20bfc8959c2677ba4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f8b5516be90cef8f0410f8160db834e17a278352da968072ad8686d754c937b7"
   end
 
   depends_on "cmake" => :build
