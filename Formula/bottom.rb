@@ -8,7 +8,8 @@ class Bottom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bottom"
-    sha256 cellar: :any_skip_relocation, mojave: "e3d9ccf1ddb837a8e207c9eac48f15d398fad0116b1c7fe57f755b0b561225ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "754a2ccf146f69abe71a789837f5d685990821683861333a86c860a44dd727ec"
   end
 
   depends_on "rust" => :build
