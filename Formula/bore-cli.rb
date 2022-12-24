@@ -1,14 +1,14 @@
 class BoreCli < Formula
   desc "Modern, simple TCP tunnel in Rust that exposes local ports to a remote server"
   homepage "http://bore.pub"
-  url "https://github.com/ekzhang/bore/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "ab1f3e924ce8a32eafe842de0bb1d23eeeb397ec0ad16455b443206f0c9ee59d"
+  url "https://github.com/ekzhang/bore/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "707459f6fde45139741d039910a1ec5095739ac31ed9b447c46624d71b1274b3"
   license "MIT"
   head "https://github.com/ekzhang/bore.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bore-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "006881ba0ec99ba5cc555ce3a094ad63dece9c50898b9a7731726c8487e3fbf6"
+    sha256 cellar: :any_skip_relocation, mojave: "5f89ac0e49f2607dac4d038b8f87ac0408fc107a4f0c612af37f1f3b73889a6f"
   end
 
   depends_on "rust" => :build
