@@ -1,14 +1,14 @@
 class CargoLlvmLines < Formula
   desc "Count lines of LLVM IR per generic function"
   homepage "https://github.com/dtolnay/cargo-llvm-lines"
-  url "https://github.com/dtolnay/cargo-llvm-lines/archive/0.4.17.tar.gz"
-  sha256 "1e0e09f95bd70256c9e25d43d20a6340a9a507e5c1d414deef478f365945f5c4"
+  url "https://github.com/dtolnay/cargo-llvm-lines/archive/0.4.23.tar.gz"
+  sha256 "dce23c892a618ecee953323275f20ac408e8fb34d9b6350dab742d7ad01419cc"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/dtolnay/cargo-llvm-lines.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-llvm-lines"
-    sha256 cellar: :any_skip_relocation, mojave: "434a39dcd594dd0bf46971afd6ca754366fc2dee5794f77cd02870cbaa292f37"
+    sha256 cellar: :any_skip_relocation, mojave: "fde7fa8226d7c8f2f15f0837f485bf5fb3e415cb6dc58179524da493181bd8d3"
   end
 
   depends_on "rust"
