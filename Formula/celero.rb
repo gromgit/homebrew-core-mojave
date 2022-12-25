@@ -7,7 +7,8 @@ class Celero < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/celero"
-    sha256 cellar: :any, mojave: "bd9c0449813255dc283e39b2be7dbbdccd72882942b69cfcb3beb9fb9d58d8fd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "01bd582dca9c523b1742257b0b7be78b6e2c9ec42be54027ccd2143ff3766c9a"
   end
 
   depends_on "cmake" => :build
