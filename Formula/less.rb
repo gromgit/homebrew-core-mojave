@@ -12,6 +12,7 @@ class Less < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/less"
+    rebuild 1
     sha256 cellar: :any, mojave: "831266160ab2610e7ffdbc9a2c2645c5ce1bae67ead3725621c9964ea07a8a8a"
   end
 
