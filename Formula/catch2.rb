@@ -1,14 +1,13 @@
 class Catch2 < Formula
   desc "Modern, C++-native, header-only, test framework"
   homepage "https://github.com/catchorg/Catch2"
-  url "https://github.com/catchorg/Catch2/archive/v3.1.0.tar.gz"
-  sha256 "c252b2d9537e18046d8b82535069d2567f77043f8e644acf9a9fffc22ea6e6f7"
+  url "https://github.com/catchorg/Catch2/archive/v3.2.1.tar.gz"
+  sha256 "4613d3e8142b672159fcae252a4860d72c8cf8e2df5043b1ae3541db9ef5d73c"
   license "BSL-1.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/catch2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "305fa14d0e2893e965d4311ce21a327eebaad83f8d87f69f40b6e9919598e506"
+    sha256 cellar: :any_skip_relocation, mojave: "c5d57196fb54a137502a009220f95189cc3d82dd4af9872b057e75ed12d51489"
   end
 
   depends_on "cmake" => :build
