@@ -10,16 +10,12 @@ class Yamale < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yamale"
-    sha256 cellar: :any, mojave: "82cf7671f6838b8665046e0dc7029da0c9442c64cfaa57a7d8d06ad5a6930032"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d3f3df5c8bbfa6008780dae17e10f985f5ec4e6e9f3fdb62190eacc31e33b094"
   end
 
-  depends_on "libyaml"
-  depends_on "python@3.10"
-
-  resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
-  end
+  depends_on "python@3.11"
+  depends_on "pyyaml"
 
   def install
     virtualenv_install_with_resources
