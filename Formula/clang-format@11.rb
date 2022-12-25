@@ -7,8 +7,8 @@ class ClangFormatAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clang-format@11"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d53739f57d43ba95e922436cb53e521a9358eaef6c98c7a03cf29f46921fadb0"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "53dd5f9017868f459a8dca2b314610a4bd894e16644707300cdf346adc22b2fc"
   end
 
   depends_on "cmake" => :build
