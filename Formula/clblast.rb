@@ -7,7 +7,8 @@ class Clblast < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clblast"
-    sha256 cellar: :any, mojave: "9747d8b9296f45b02bba0df6bc78c54f24f39f4734eb6f12b1845cf2755cf748"
+    rebuild 1
+    sha256 cellar: :any, mojave: "615eb9f6c76cc31506168b4be58e21eeb1deb47b0b0f4933770c1bf2a966e861"
   end
 
   depends_on "cmake" => :build
