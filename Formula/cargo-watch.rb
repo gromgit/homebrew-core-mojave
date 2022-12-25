@@ -8,8 +8,8 @@ class CargoWatch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-watch"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "a500f9e6ca0a2e5ef26340ebfcc154c5ae3e5d9f51835bbebae7e7a09b72c805"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "7dbe31bcd6bec0dba0f1fbe82477a6fca79c9ae57bafe7efb90881513139e57e"
   end
 
   depends_on "rust" => [:build, :test]
