@@ -13,8 +13,8 @@ class Certigo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certigo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3a0ac62aeaf819e2bc3d42881b33bdf113b6a530e57718f22c1c48806dcecf3e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "acd851c3ec3f9a5c0bac807097fa0be82a4b612f75f9762a803f0ade0297571a"
   end
 
   depends_on "go" => :build
