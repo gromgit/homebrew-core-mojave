@@ -8,7 +8,8 @@ class Chars < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chars"
-    sha256 cellar: :any_skip_relocation, mojave: "ec0dcec32cd96ca26d23a6954d9af9bbb85873b63c7747e2578b82b4c0d50a93"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "68509216b2beaf5d8277a065047f3a973ded9bb864e1cf58d6cc9ece9dd46402"
   end
 
   depends_on "rust" => :build
