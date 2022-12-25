@@ -14,6 +14,7 @@ class CheckPostgres < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/check_postgres"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "1e5d5939f4e5fe39416e7ca38959cf0898c437247df83c27c90ceb12612b6182"
   end
 
