@@ -10,10 +10,11 @@ class Yamllint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/yamllint"
-    sha256 cellar: :any_skip_relocation, mojave: "9f5cc20858452c722a3ed5691190d8516315ff61303c3ef19ac3e506bd52d942"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cb11ed6a4f4759f3a30e158dd212f78d055fd1e94b24feadacb933820cfa006a"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "pyyaml"
 
   resource "pathspec" do
