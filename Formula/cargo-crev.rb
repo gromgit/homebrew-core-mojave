@@ -12,7 +12,8 @@ class CargoCrev < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-crev"
-    sha256 cellar: :any_skip_relocation, mojave: "fa7755cb627f8fd03d7b058aed252e37c889c5ba84df4f4ccf170b8547a164fa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "355b37cb8d24400c8fe4c71eba0bee5b6361ea5442d46029b871551e6bc0a518"
   end
 
   depends_on "rust" => [:build, :test]
