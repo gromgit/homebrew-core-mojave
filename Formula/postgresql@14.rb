@@ -1,10 +1,9 @@
 class PostgresqlAT14 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v14.5/postgresql-14.5.tar.bz2"
-  sha256 "d4f72cb5fb857c9a9f75ec8cf091a1771272802f2178f0b2e65b7b6ff64f4a30"
+  url "https://ftp.postgresql.org/pub/source/v14.6/postgresql-14.6.tar.bz2"
+  sha256 "508840fc1809d39ab72274d5f137dabb9fd7fb4f933da4168aeebb20069edf22"
   license "PostgreSQL"
-  revision 5
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -13,7 +12,7 @@ class PostgresqlAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/postgresql@14"
-    sha256 cellar: :any_skip_relocation, mojave: "8cd3dc8365960b705cc67b756a2bc18cdbab4994e8b9c5ea44ef1295d3cfab4b"
+    sha256 cellar: :any_skip_relocation, mojave: "72712d2a30e46e718921ff0b65261a9a99dde6c5372f1a33e503e902d7880da0"
   end
 
   # https://www.postgresql.org/support/versioning/
