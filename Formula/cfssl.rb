@@ -8,7 +8,8 @@ class Cfssl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfssl"
-    sha256 cellar: :any_skip_relocation, mojave: "3cec02bc8ee05e0f0f4204f45ac6397655faeab20d0dcbf38242bad5b98b772c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9697f909ff07e8fd72938e9b274341a485e790a8aae9765858471884523367b4"
   end
 
   depends_on "go" => :build
