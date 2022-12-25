@@ -8,7 +8,8 @@ class CargoBundle < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-bundle"
-    sha256 cellar: :any_skip_relocation, mojave: "da7bc6e973361180f3f3c47072f73aac53f09026702136dc3a2f18d076a72b06"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "53321fc65a39c10ba48818624e7dfd00ca364ccd88612db2862eae8662a27789"
   end
 
   depends_on "rust" => [:build, :test]
