@@ -1,8 +1,8 @@
 class CargoDepgraph < Formula
   desc "Creates dependency graphs for cargo projects"
   homepage "https://sr.ht/~jplatte/cargo-depgraph/"
-  url "https://git.sr.ht/~jplatte/cargo-depgraph/archive/v1.2.5.tar.gz"
-  sha256 "75e6b716996062518bc556607929abce52dffdd97422275b41079e971f9459e2"
+  url "https://git.sr.ht/~jplatte/cargo-depgraph/archive/v1.4.0.tar.gz"
+  sha256 "c138718e610673352b99d7078eda46f6039c3e20d44f85e4312d48d9dce99f77"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class CargoDepgraph < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-depgraph"
-    sha256 cellar: :any_skip_relocation, mojave: "c58628f53045a7d6358c883688290e710f706f788cd4b8b2f2054d3911593d49"
+    sha256 cellar: :any_skip_relocation, mojave: "e0a807f432550755a438e749f10bdda6d53c353c426f40b0bdeafcbe9b58834b"
   end
 
   depends_on "rust" => [:build, :test]
