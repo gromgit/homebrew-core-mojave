@@ -7,7 +7,8 @@ class Certstrap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/certstrap"
-    sha256 cellar: :any_skip_relocation, mojave: "ce3c7847674ad469c1d88fc1056c3382522d763cb816573d73e54a46f85de737"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9b35ca6b0edab6838f1a9ebe0480174a9a1b0446f7c7bbf2a5239c41d166b27c"
   end
 
   depends_on "go" => :build
