@@ -1,8 +1,8 @@
 class CargoAudit < Formula
   desc "Audit Cargo.lock files for crates with security vulnerabilities"
   homepage "https://rustsec.org/"
-  url "https://github.com/RustSec/rustsec/archive/cargo-audit/v0.17.0.tar.gz"
-  sha256 "18fc40de40b95adc55e4c4e767f969d62f60bba23805ea9455dd12c1c19f01c0"
+  url "https://github.com/RustSec/rustsec/archive/cargo-audit/v0.17.4.tar.gz"
+  sha256 "c2e8a742d55c1e257df25f38adb47b46ecc7b56b9e5ce03f03b2d371d9530195"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/RustSec/rustsec.git", branch: "main"
 
@@ -13,11 +13,11 @@ class CargoAudit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-audit"
-    sha256 cellar: :any, mojave: "ad39f40c460aa802653cc8202fb0f0d5e4e916597f095320a7ae6e75f41edcb5"
+    sha256 cellar: :any, mojave: "74f1805e07ebe3df3e95c8282b7874b2a5091f5d33fedabf2a72a50592fbcd3a"
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -26,11 +26,9 @@ class CargoAudit < Formula
   end
 
   def install
-    cd "cargo-audit" do
-      system "cargo", "install", *std_cargo_args
-      # test cargo-audit
-      pkgshare.install "tests/support"
-    end
+    system "cargo", "install", *std_cargo_args(path: "cargo-audit")
+    # test cargo-audit
+    pkgshare.install "cargo-audit/tests/support"
   end
 
   test do
