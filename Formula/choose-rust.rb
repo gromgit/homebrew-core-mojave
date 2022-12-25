@@ -7,7 +7,8 @@ class ChooseRust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/choose-rust"
-    sha256 cellar: :any_skip_relocation, mojave: "c8853dba61b76574c3c905af3a5c3229bbbe49d395b9e732db7c444030848f03"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "62857d6c86542c89dd8473be23176ba47d1864af60146f7b5a1ebc9aed01ff5d"
   end
 
   depends_on "rust" => :build
