@@ -1,13 +1,13 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
   homepage "https://killercup.github.io/cargo-edit/"
-  url "https://github.com/killercup/cargo-edit/archive/v0.11.1.tar.gz"
-  sha256 "e907a6e98de63943fb4063b64aba5a7d3ff88748858ad141333d80d8f4ad8e9e"
+  url "https://github.com/killercup/cargo-edit/archive/v0.11.6.tar.gz"
+  sha256 "3110b5ffa65ac958aa0c5fa2b4c69db967d2fc18a71de1a598153b4c22c302e0"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-edit"
-    sha256 cellar: :any, mojave: "e79f39cc783768bc7851ee45578d29d4a464bcd879e0877b62e01d094bbc95ba"
+    sha256 cellar: :any, mojave: "eef8139f13e16439de1e7f71edf98e8ba6cd399278e416c712778a5bf6f2334e"
   end
 
   depends_on "libgit2"
