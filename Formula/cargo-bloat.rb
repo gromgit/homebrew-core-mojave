@@ -8,7 +8,8 @@ class CargoBloat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cargo-bloat"
-    sha256 cellar: :any_skip_relocation, mojave: "a6c892259d0500b0bfed05707c537d7f7a34ead92d9dcb9acae44b7179477f75"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "54d6f2d135d7cf8e8e087783dc706fb799e36ea46d604cf755134adc27b4208c"
   end
 
   depends_on "rust"
