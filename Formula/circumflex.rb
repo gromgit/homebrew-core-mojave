@@ -1,19 +1,17 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex"
-  url "https://github.com/bensadeh/circumflex/archive/refs/tags/2.6.tar.gz"
-  sha256 "f30e346aa4cd31b46bbba69cdd17d3bf879607bc5d67c3c2940f511458d19645"
+  url "https://github.com/bensadeh/circumflex/archive/refs/tags/2.8.tar.gz"
+  sha256 "b3ac1ab35ce4716290ad40898b3227b4b18197f8068a8f03fb1069231e60104e"
   license "AGPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circumflex"
-    sha256 cellar: :any_skip_relocation, mojave: "82b983afa12382ccf3ea56948329e9520dcca856980dcb1fb788c4324d067e61"
+    sha256 cellar: :any_skip_relocation, mojave: "6d11fa627ea6209e9851cc5dfd241e4e8de2b858d8fe3625cf10b21a1ae369fc"
   end
 
   depends_on "go" => :build
-
-  # Requires less 576 or later for --use-color
-  uses_from_macos "less", since: :monterey
+  depends_on "less"
 
   def install
     system "go", "build", *std_go_args(output: bin/"clx", ldflags: "-s -w")
