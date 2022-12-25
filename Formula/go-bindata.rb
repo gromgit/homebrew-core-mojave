@@ -7,7 +7,8 @@ class GoBindata < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-bindata"
-    sha256 cellar: :any_skip_relocation, mojave: "b4f5dd8358eae379208df587f8d25bbfa9b0887d87149dd3268a711016ba17da"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a00f84bfded8a393d56256e0e9842e9c38f4670d36a2a903c247b81e629f6576"
   end
 
   depends_on "go"
