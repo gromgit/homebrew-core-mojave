@@ -13,7 +13,8 @@ class Cfonts < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfonts"
-    sha256 cellar: :any_skip_relocation, mojave: "e84825cc7fd8f5fdd720602d1b6b276a99925fe47a37dbb464342269ec65ec06"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e5e966be5850ba42c5ab3c3b341c9f3125de1b1ef62a6992a0b632adde3436fd"
   end
 
   depends_on "rust" => :build
@@ -30,12 +31,12 @@ class Cfonts < Formula
     system bin/"cfonts", "--version"
     assert_match <<~EOS, shell_output("#{bin}/cfonts t")
       \n
-      \ ████████╗
-      \ ╚══██╔══╝
-      \    ██║  \s
-      \    ██║  \s
-      \    ██║  \s
-      \    ╚═╝  \s
+       ████████╗
+       ╚══██╔══╝
+          ██║  \s
+          ██║  \s
+          ██║  \s
+          ╚═╝  \s
       \n
     EOS
     assert_match "\n\ntest\n\n\n", shell_output("#{bin}/cfonts test -f console")
