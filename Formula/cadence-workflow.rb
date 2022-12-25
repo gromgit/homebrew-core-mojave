@@ -9,7 +9,8 @@ class CadenceWorkflow < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cadence-workflow"
-    sha256 cellar: :any_skip_relocation, mojave: "d71636651bf258051d6bcaf973a534136a9dce0450733fa3bee2976faa7d9597"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2648a45fcbb536378b38c706c897dcb795850b4b39b6772cf1b7b87d93b23349"
   end
 
   depends_on "go" => :build
