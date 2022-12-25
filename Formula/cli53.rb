@@ -8,7 +8,8 @@ class Cli53 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cli53"
-    sha256 cellar: :any_skip_relocation, mojave: "629754c25a8f97fb7599dba14460b2b6d73f9d6ed7e9d5a345743fb203c38ceb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e9dd52bdfdda7cf4ca5155aa5bdb2605d999113f21d9c6fc71c54ca222d8a664"
   end
 
   depends_on "go" => :build
