@@ -12,6 +12,7 @@ class Cfengine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cfengine"
+    rebuild 1
     sha256 mojave: "a32b367dee13f86bc734573754636c43cfb426d1e6720b20f9b9d336602a4c75"
   end
 
