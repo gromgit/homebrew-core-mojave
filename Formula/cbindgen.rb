@@ -7,7 +7,8 @@ class Cbindgen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cbindgen"
-    sha256 cellar: :any_skip_relocation, mojave: "83762e7ac6b235382b40c1b032e5d413fc1d6f22f826f70b69698f69dd1e289d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "5840faeb81909ea1f9bd7078b9e552e7b83ae08e6e83eade1bebd36e1fc38f8e"
   end
 
   depends_on "rust" => :build
