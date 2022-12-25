@@ -8,7 +8,8 @@ class Canfigger < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/canfigger"
-    sha256 cellar: :any, mojave: "585d29feaf6085073ffac091801d05856c8fd9b2e665dd0a023444eef321fccc"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dc2620cb049823c0e0e3b873d83c24dc818e32be6e6ef4b7e3ce63afc65b5c32"
   end
 
   depends_on "meson" => :build
