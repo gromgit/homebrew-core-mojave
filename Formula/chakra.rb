@@ -8,11 +8,13 @@ class Chakra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chakra"
-    sha256 cellar: :any, mojave: "8e91bad56bb7ad6a973dee8809fdb3370e35789b790a9d45c2b78c4803d97210"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c8d651adc26784c16b246ec7feddf0025be5f0a285b9001eac89928642b5dd3c"
   end
 
   depends_on "cmake" => :build
   depends_on "python@3.10" => :build
+  depends_on arch: :x86_64 # https://github.com/chakra-core/ChakraCore/issues/6860
   depends_on "icu4c"
 
   uses_from_macos "llvm" => [:build, :test]
