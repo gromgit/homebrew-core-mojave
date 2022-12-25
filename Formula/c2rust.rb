@@ -8,7 +8,8 @@ class C2rust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/c2rust"
-    sha256 cellar: :any, mojave: "eace950e85f604e327c2e8b9107da5bf6c3253e7f5c94bae65380304b75abfb1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e222ddf377db964a76895f28940742a106fd0e39048ecd32aa721a9e0109d17b"
   end
 
   depends_on "cmake" => [:build, :test]
