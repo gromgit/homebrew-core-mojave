@@ -3,22 +3,19 @@ class Circleci < Formula
   homepage "https://circleci.com/docs/2.0/local-cli/"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v0.1.22150",
-      revision: "37e2fc36d336b0f20683efc21205d9a7ba299516"
+      tag:      "v0.1.22875",
+      revision: "fdce758e37fd3d20a1783cfd0947848baba51081"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/circleci"
-    sha256 cellar: :any_skip_relocation, mojave: "1986041780eb2791f632f36c6d0df46ba8550a3d5a692cf72220bd99e7d7a185"
+    sha256 cellar: :any_skip_relocation, mojave: "3387a89b63345450ff25bd17a733322477586d2c9f9723843ebba1ce9abcf370"
   end
 
   depends_on "go" => :build
-  depends_on "packr" => :build
 
   def install
-    system "packr2", "--ignore-imports", "-v"
-
     ldflags = %W[
       -s -w
       -X github.com/CircleCI-Public/circleci-cli/version.packageManager=homebrew
