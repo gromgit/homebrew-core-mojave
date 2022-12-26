@@ -13,7 +13,8 @@ class Coredns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coredns"
-    sha256 cellar: :any_skip_relocation, mojave: "d02b80b3f2372d30b4c38740684ad9919fb6e0876bdeecac2d77ebc9e3b5febd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ab4f31a1a2c2b079864c0321e6359238880e03e956d3c11bf7ad74f32ed0c3a1"
   end
 
   depends_on "go" => :build
