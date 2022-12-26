@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https://convox.com/"
-  url "https://github.com/convox/convox/archive/3.5.6.tar.gz"
-  sha256 "4713f8a4838c95023915fa371ea6e524e78ef34793d96034b1a702ee99136dcc"
+  url "https://github.com/convox/convox/archive/3.10.2.tar.gz"
+  sha256 "021163f6eea84c298d94bcbea5ee760a593b4c8a0ba870b03c4911be78cf4d5a"
   license "Apache-2.0"
   version_scheme 1
 
@@ -13,17 +13,10 @@ class Convox < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/convox"
-    sha256 cellar: :any_skip_relocation, mojave: "d3ec1c86e6eb0c9de661f3eca0bfc2ca05fe781cbb87da557e293561148708d1"
+    sha256 cellar: :any_skip_relocation, mojave: "db26d52eb628fe2781c14a1d3b625a05538f89ce99839e4d7c4be9fe3feb8fe3"
   end
 
   depends_on "go" => :build
-
-  # Support go 1.17, remove when upstream patch is merged/released
-  # https://github.com/convox/convox/pull/389
-  patch do
-    url "https://github.com/convox/convox/commit/d28b01c5797cc8697820c890e469eb715b1d2e2e.patch?full_index=1"
-    sha256 "a0f94053a5549bf676c13cea877a33b3680b6116d54918d1fcfb7f3d2941f58b"
-  end
 
   def install
     ldflags = %W[
