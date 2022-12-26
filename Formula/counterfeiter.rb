@@ -9,7 +9,8 @@ class Counterfeiter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/counterfeiter"
-    sha256 cellar: :any_skip_relocation, mojave: "d77a7211900355c0e440921a8b06fb8e1d91a650d98d1eea280bded849dc2739"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "870bd7fc498e58110700e7cf97a6eb5962473906738dccea961b3477a668aa8d"
   end
 
   depends_on "go"
