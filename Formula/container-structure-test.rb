@@ -1,15 +1,14 @@
 class ContainerStructureTest < Formula
   desc "Validate the structure of your container images"
   homepage "https://github.com/GoogleContainerTools/container-structure-test"
-  url "https://github.com/GoogleContainerTools/container-structure-test/archive/v1.11.0.tar.gz"
-  sha256 "38bf793106da6cf7bfead49fae2a75c51609a304de4580af099eb57c5a018761"
+  url "https://github.com/GoogleContainerTools/container-structure-test/archive/v1.14.0.tar.gz"
+  sha256 "a52a28f94f608ce2132b5b9ebfa29db0c3eb382f0d0644be3877e64713ae2900"
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/container-structure-test.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/container-structure-test"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "893e55be509a94a03f48b0cd94b255829fb85274c2c1ca84058b61b0b30ea475"
+    sha256 cellar: :any_skip_relocation, mojave: "c76b0d4ef2546e25ebd2c2296b4ea899c5d64129c777df6d8fe8f65a34bc866f"
   end
 
   depends_on "go" => :build
@@ -21,7 +20,13 @@ class ContainerStructureTest < Formula
   end
 
   def install
-    system "go", "build", *std_go_args, "./cmd/container-structure-test"
+    project = "github.com/GoogleContainerTools/container-structure-test"
+    ldflags = %W[
+      -s -w
+      -X #{project}/pkg/version.version=#{version}
+      -X #{project}/pkg/version.buildDate=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/container-structure-test"
   end
 
   test do
