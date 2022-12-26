@@ -7,7 +7,8 @@ class CqlProxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cql-proxy"
-    sha256 cellar: :any_skip_relocation, mojave: "38dc07fa08691c13ae2c93846d871c89fbf27ea12a3d4cb5171eab5cd75a0d40"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1146cb65e30570cfb1bd92f0340225985a14d6f4586d3cabce015c380a8514e2"
   end
 
   depends_on "go" => :build
