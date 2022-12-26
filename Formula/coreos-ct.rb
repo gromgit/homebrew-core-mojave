@@ -7,7 +7,8 @@ class CoreosCt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coreos-ct"
-    sha256 cellar: :any_skip_relocation, mojave: "c674b2ed3f67703bdf99edcf1945d75a48bfe32700144584af00157587057c6a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "251698c6034f5ba28afc1c319e2b08ef656c8279c2dee5bc68a7fc3a775bcf3d"
   end
 
   depends_on "go" => :build
