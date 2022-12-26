@@ -2,25 +2,24 @@ class Clusterctl < Formula
   desc "Home for the Cluster Management API work, a subproject of sig-cluster-lifecycle"
   homepage "https://cluster-api.sigs.k8s.io"
   url "https://github.com/kubernetes-sigs/cluster-api.git",
-      tag:      "v1.2.3",
-      revision: "bb377163f141d69b7a61479756ee96891f6670bd"
+      tag:      "v1.3.1",
+      revision: "a9f75adbe9661f71f3980f7ce597bcb27d0e254f"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api.git", branch: "main"
 
   # Upstream creates releases on GitHub for the two most recent major/minor
   # versions (e.g., 0.3.x, 0.4.x), so the "latest" release can be incorrect. We
-  # don't check the Git tags because, for this project, a version may not be
-  # considered released until the GitHub release is created. The first-party
-  # website doesn't clearly list the latest version and we have to isolate it
-  # from a GitHub URL used in a curl command in the installation instructions.
+  # don't check the Git tags for this project because a version may not be
+  # considered released until the GitHub release is created.
   livecheck do
-    url "https://cluster-api.sigs.k8s.io/user/quick-start.html"
-    regex(%r{/cluster-api/releases/download/v?(\d+(?:\.\d+)+)/}i)
+    url "https://github.com/kubernetes-sigs/cluster-api/releases?q=prerelease%3Afalse"
+    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :page_match
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clusterctl"
-    sha256 cellar: :any_skip_relocation, mojave: "6bb9d372feb4310227f2d01fdd01062340620edd688270c4ffba23c84b8bd74d"
+    sha256 cellar: :any_skip_relocation, mojave: "114e425660c727dad9237e89d85022cf51dc6a8497164ff1adc7e6e39d33ef89"
   end
 
   depends_on "go" => :build
