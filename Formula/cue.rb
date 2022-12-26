@@ -8,8 +8,8 @@ class Cue < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cue"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dd6582ed28584354cd2de02dffd3666913822aec0460f875b385c9cbe801c420"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a02eab92b62b4bf800d0007c94c7fe57b4c6b0b9a60d41d2ba1dee042447fcf7"
   end
 
   depends_on "go" => :build
