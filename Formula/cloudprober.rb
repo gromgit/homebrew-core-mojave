@@ -7,7 +7,8 @@ class Cloudprober < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cloudprober"
-    sha256 cellar: :any_skip_relocation, mojave: "8c71af21961e9fd14ec57c1e55710d59249fde7779f8eb0e129989acd601b2c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a3cd5574eb57b1135f765678f5240d7638393ae21d93bcfccff7ca46f2103a14"
   end
 
   depends_on "go" => :build
