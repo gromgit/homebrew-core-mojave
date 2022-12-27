@@ -2,8 +2,8 @@ class ClickhouseOdbc < Formula
   desc "Official ODBC driver implementation for accessing ClickHouse as a data source"
   homepage "https://github.com/ClickHouse/clickhouse-odbc#readme"
   url "https://github.com/ClickHouse/clickhouse-odbc.git",
-      tag:      "v1.1.10.20210822",
-      revision: "c7aaff6860e448acee523f5f7d3ee97862fd07d2"
+      tag:      "v1.2.1.20220905",
+      revision: "fab6efc57d671155c3a386f49884666b2a02c7b7"
   license "Apache-2.0"
   revision 2
   head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"
@@ -15,13 +15,14 @@ class ClickhouseOdbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/clickhouse-odbc"
-    sha256 cellar: :any, mojave: "bb0333894433f844a719f8bd1c4ba1fb6f0a4e37ccad2819b7f2d09e87614889"
+    sha256 cellar: :any, mojave: "70c917d4ccd82ba271557e5c88da69d8dcf1d10e0df5fb483349a10b6e3eba46"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
+  depends_on "poco"
 
   on_macos do
     depends_on "libiodbc"
@@ -31,24 +32,27 @@ class ClickhouseOdbc < Formula
     depends_on "unixodbc"
   end
 
-  fails_with gcc: "5"
-  fails_with gcc: "6"
+  fails_with :gcc do
+    version "6"
+  end
 
   def install
-    cmake_args = std_cmake_args.dup
+    # Remove bundled libraries excluding required bundled `folly` headers
+    %w[googletest nanodbc poco ssl].each { |l| (buildpath/"contrib"/l).rmtree }
 
-    cmake_args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}"
-    cmake_args << "-DICU_ROOT=#{Formula["icu4c"].opt_prefix}"
-
-    if OS.mac?
-      cmake_args << "-DODBC_PROVIDER=iODBC"
-      cmake_args << "-DODBC_DIR=#{Formula["libiodbc"].opt_prefix}"
-    elsif OS.linux?
-      cmake_args << "-DODBC_PROVIDER=UnixODBC"
-      cmake_args << "-DODBC_DIR=#{Formula["unixodbc"].opt_prefix}"
+    args = %W[
+      -DCH_ODBC_PREFER_BUNDLED_THIRD_PARTIES=OFF
+      -DCH_ODBC_THIRD_PARTY_LINK_STATIC=OFF
+      -DICU_ROOT=#{Formula["icu4c"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+    ]
+    args += if OS.mac?
+      ["-DODBC_PROVIDER=iODBC", "-DODBC_DIR=#{Formula["libiodbc"].opt_prefix}"]
+    else
+      ["-DODBC_PROVIDER=UnixODBC", "-DODBC_DIR=#{Formula["unixodbc"].opt_prefix}"]
     end
 
-    system "cmake", "-S", ".", "-B", "build", *cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
