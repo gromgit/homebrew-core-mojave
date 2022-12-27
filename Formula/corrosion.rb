@@ -1,13 +1,13 @@
 class Corrosion < Formula
   desc "Easy Rust and C/C++ Integration"
   homepage "https://github.com/corrosion-rs/corrosion"
-  url "https://github.com/corrosion-rs/corrosion/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "7787effb1d545e3e6da3dbfae2d7fe4dc88c6a0e5561e2999eabacc6311ab398"
+  url "https://github.com/corrosion-rs/corrosion/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "78ea4c9ac8b0f2262a39b0ddb36b59f4c74ddeb1969f241356bdda13a35178c9"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/corrosion"
-    sha256 cellar: :any_skip_relocation, mojave: "ba9c8f8a9e0d10cb7569426821daee2ce1a5e409144b48c72caa20b4dfceca5e"
+    sha256 cellar: :any_skip_relocation, mojave: "99149d03e47ff8ea20727a32a0e48b2c4c12f0d939efe01d9f80298f54d7f06f"
   end
 
   depends_on "cmake" => [:build, :test]
