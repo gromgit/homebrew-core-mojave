@@ -21,7 +21,8 @@ class Codec2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/codec2"
-    sha256 cellar: :any, mojave: "14f933ebdd317338f0743a489a710c95b6ae9ed9d804f904c338bf98295233b0"
+    rebuild 1
+    sha256 cellar: :any, mojave: "07acc2a3f868ff11320e5f73a2cbef620a6eb0831ab4653157c9212bc3970d64"
   end
 
   depends_on "cmake" => :build
