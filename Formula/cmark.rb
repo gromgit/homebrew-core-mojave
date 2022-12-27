@@ -7,8 +7,8 @@ class Cmark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cmark"
-    rebuild 1
-    sha256 cellar: :any, mojave: "d76cfbba8800c3c1aa13f75ec99f6d1597b55ff0523aa83666107ed5a6ca963c"
+    rebuild 2
+    sha256 cellar: :any, mojave: "15a0d8e7ea068de6e207a5b114749f65a96a5b60891d9485f34dae09c54199be"
   end
 
   depends_on "cmake" => :build
