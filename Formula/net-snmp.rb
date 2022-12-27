@@ -13,8 +13,8 @@ class NetSnmp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/net-snmp"
-    rebuild 1
-    sha256 mojave: "94a7227a511bb42afbea8065c43a6a0d69f2b766c07b5da1e3ac25aae877f860"
+    rebuild 2
+    sha256 mojave: "0240c1b2da1c71b7ed533e945af42e4b677bfff1be1d1a2558b2e46ad7715d7e"
   end
 
   keg_only :provided_by_macos
