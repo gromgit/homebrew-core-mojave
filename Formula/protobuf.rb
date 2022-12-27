@@ -2,11 +2,10 @@ class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://github.com/protocolbuffers/protobuf/"
   license "BSD-3-Clause"
-  revision 1
 
   stable do
-    url "https://github.com/protocolbuffers/protobuf/releases/download/v21.9/protobuf-all-21.9.tar.gz"
-    sha256 "c00f05e19e89b04ea72e92a3c204eedda91f871cd29b0bbe5188550d783c73c7"
+    url "https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protobuf-all-21.12.tar.gz"
+    sha256 "2c6a36c7b5a55accae063667ef3c55f2642e67476d96d355ff0acb13dbb47f09"
 
     # Fix build with Python 3.11. Remove in the next release.
     patch do
@@ -22,8 +21,7 @@ class Protobuf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "00a2f527fecfc16ac78e614a8081c1606052216d1c725961f2ded391b06c621b"
+    sha256 cellar: :any, mojave: "dfb9123cd04b0e2a9dcbd1c48eab101d207ac41983a109dce203b2c06edc1eb0"
   end
 
   head do
@@ -53,7 +51,7 @@ class Protobuf < Formula
     ENV.cxx11
 
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args, "--with-zlib"
+    system "./configure", *std_configure_args, "--with-zlib", "--with-pic"
     system "make"
     system "make", "check"
     system "make", "install"
