@@ -7,7 +7,8 @@ class Comby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/comby"
-    sha256 cellar: :any, mojave: "44c509e1902f528b3bb46b91d0581c7984f98e63815756b454316bd5e8e32518"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ca7d925a8d9ff52c57a532eb2399181eb4fdc7ffa55919f50194d41e1e1a7484"
   end
 
   depends_on "autoconf" => :build
