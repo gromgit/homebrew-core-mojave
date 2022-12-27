@@ -7,7 +7,8 @@ class Cobalt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cobalt"
-    sha256 cellar: :any_skip_relocation, mojave: "32de5675f9c875c71c0e6d08fac0cdb3f8a852172bed1baf7e85a755409da3e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "cc2099d74a2f6db98dcce19721262fe84b1d3dedc2cc8850e1dcb131d041d958"
   end
 
   depends_on "rust" => :build
