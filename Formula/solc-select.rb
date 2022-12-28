@@ -3,21 +3,31 @@ class SolcSelect < Formula
 
   desc "Manage multiple Solidity compiler versions"
   homepage "https://github.com/crytic/solc-select"
-  url "https://files.pythonhosted.org/packages/48/d6/35f72b61b89c087e7b886ff6511deb6d3193db2ffacdcf03827373e5e312/solc-select-0.2.1.tar.gz"
-  sha256 "e956b04dc7df2209d1fb3b82e2bb62f8e730bb554c4d7f958a14ff2fb2f37212"
+  url "https://files.pythonhosted.org/packages/b0/be/778216e18bf50cf3d6b4fe77509700677de9ce01480a8a7dcbf3d778b586/solc-select-1.0.2.tar.gz"
+  sha256 "ceba561d07680950c66831837fd7d686746c4ded46570aa4d6a96cd4fcaf94bc"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/solc-select.git", branch: "dev"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/solc-select"
-    sha256 cellar: :any_skip_relocation, mojave: "a6661f45a000e9a2605d31fa41c78bb9109a130a98e378acfc71ac45f208fb67"
+    sha256 cellar: :any_skip_relocation, mojave: "c5a0eaaa529245940dd8493cd180f80edcee87e9fdbea2489b3159996c5ca441"
   end
 
   depends_on "python@3.10"
 
-  resource "pysha3" do
-    url "https://files.pythonhosted.org/packages/73/bf/978d424ac6c9076d73b8fdc8ab8ad46f98af0c34669d736b1d83c758afee/pysha3-1.0.2.tar.gz"
-    sha256 "fe988e73f2ce6d947220624f04d467faf05f1bbdbc64b0a201296bb3af92739e"
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
+    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
+  end
+
+  resource "pycryptodome" do
+    url "https://files.pythonhosted.org/packages/11/e4/a8e8056a59c39f8c9ddd11d3bc3e1a67493abe746df727e531f66ecede9e/pycryptodome-3.15.0.tar.gz"
+    sha256 "9135dddad504592bcc18b0d2d95ce86c3a5ea87ec6447ef25cfedea12d6018b8"
+  end
+
+  resource "pyparsing" do
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   def install
