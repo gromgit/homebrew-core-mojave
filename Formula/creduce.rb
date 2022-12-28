@@ -25,14 +25,13 @@ class Creduce < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/creduce"
-    rebuild 2
-    sha256 cellar: :any, mojave: "6b896cc04122d1d9c837bb356a520306c01fc008013906ec7c7348834c29d650"
+    rebuild 3
+    sha256 cellar: :any, mojave: "5d5820699d025d7e76089292631d798a90dd69193d7f748cabaaf50982c0cad0"
   end
 
   head do
-    # The `llvm-13.0` branch is slightly ahead of `master` and allows use of `llvm@13`.
-    url "https://github.com/csmith-project/creduce.git", branch: "llvm-13.0"
-    depends_on "llvm@13"
+    url "https://github.com/csmith-project/creduce.git", branch: "master"
+    depends_on "llvm"
   end
 
   depends_on "astyle"
