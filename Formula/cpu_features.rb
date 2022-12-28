@@ -8,10 +8,12 @@ class CpuFeatures < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpu_features"
-    sha256 cellar: :any, mojave: "1f2a0194da09356f0a49b6c3df2aa4808abe43c74af6770d7e92e4ec8b0994ea"
+    rebuild 1
+    sha256 cellar: :any, mojave: "938b71cb96178c411d0bb9b5fa6512b5677bafa6131a97c7e896abc84b605fd7"
   end
 
   depends_on "cmake" => :build
+  depends_on arch: :x86_64 # https://github.com/google/cpu_features#whats-supported
 
   def install
     system "cmake", "-S", ".", "-B", "build",
