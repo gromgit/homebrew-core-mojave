@@ -9,11 +9,11 @@ class Cpplint < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpplint"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "e453098f9d51ea4ea5869aafc40ad7601ecb01476021008830529a5c463d6689"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "ca5bd8aadf73aef56ffde235ee85c3f4086ac4987ea97576f459e94fd1d4e5d7"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
