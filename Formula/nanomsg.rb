@@ -13,7 +13,8 @@ class Nanomsg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nanomsg"
-    sha256 cellar: :any, mojave: "b3ace7d1c3cf7d42a885698b6224cef4a5d61cea7e5c70c370c4ed4afc2d6029"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a272ce6675ec87b52ea4b05d5eac26152b5b8dc57a033294886318791c4749fe"
   end
 
   depends_on "cmake" => :build
