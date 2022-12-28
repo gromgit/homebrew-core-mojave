@@ -14,7 +14,8 @@ class Cppad < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppad"
-    sha256 cellar: :any, mojave: "f370140c568533e5734a94cc34438b3a2bcca448ca474d45dbdbd7d79c6db807"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0fd82d6ea9c7e0c851ff7faec2875f435cfd2546659d92d106d778ec7e32f52a"
   end
 
   depends_on "cmake" => :build
