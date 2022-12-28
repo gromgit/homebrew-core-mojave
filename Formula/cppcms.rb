@@ -13,8 +13,8 @@ class Cppcms < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cppcms"
-    rebuild 2
-    sha256 cellar: :any, mojave: "7788bb5e4912199977907e8c2456d286eb93a8dda7c7ca683a27920c2b27bbe7"
+    rebuild 3
+    sha256 cellar: :any, mojave: "3abf3d460d1867053041cd3db836a80fb077b3e7598569b06ec615d03ed296fd"
   end
 
   depends_on "cmake" => :build
