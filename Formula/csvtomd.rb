@@ -9,16 +9,15 @@ class Csvtomd < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8685baa5ab7f599731b2ce2e300efddd740fed6c786a371b725abebd5f2e72ee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8685baa5ab7f599731b2ce2e300efddd740fed6c786a371b725abebd5f2e72ee"
-    sha256 cellar: :any_skip_relocation, monterey:       "2ed6b67a278e0266bda516a475867129cff5e93fad695f4e029e4119b199f123"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2ed6b67a278e0266bda516a475867129cff5e93fad695f4e029e4119b199f123"
-    sha256 cellar: :any_skip_relocation, catalina:       "2ed6b67a278e0266bda516a475867129cff5e93fad695f4e029e4119b199f123"
-    sha256 cellar: :any_skip_relocation, mojave:         "2ed6b67a278e0266bda516a475867129cff5e93fad695f4e029e4119b199f123"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d047da6a41a03db412406412f4741715b7446630a5ba5558fac8bda7b66668e9"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csvtomd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "72b620135d3ff66ada1d0a4b463ce2cd9433615084b220fc971ca16fa8b2dd08"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
+
+  # ValueError: invalid mode: 'rU'
+  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -37,3 +36,18 @@ class Csvtomd < Formula
     assert_equal markdown, shell_output("#{bin}/csvtomd test.csv").strip
   end
 end
+
+__END__
+diff --git a/csvtomd/csvtomd.py b/csvtomd/csvtomd.py
+index a0589a3..137f8da 100755
+--- a/csvtomd/csvtomd.py
++++ b/csvtomd/csvtomd.py
+@@ -146,7 +146,7 @@ def main():
+         if filename == '-':
+             table = csv_to_table(sys.stdin, args.delimiter)
+         else:
+-            with open(filename, 'rU') as f:
++            with open(filename, 'r') as f:
+                 table = csv_to_table(f, args.delimiter)
+         # Print filename for each table if --no-filenames wasn't passed and
+         # more than one CSV was provided
