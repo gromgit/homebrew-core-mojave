@@ -7,7 +7,8 @@ class Analog < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/analog"
-    sha256 mojave: "ff008121307b29d3f517be7c859c1b2750508d32fa554be8953be309b50bb8a3"
+    rebuild 1
+    sha256 mojave: "4c10ecf751ab6ada82b59c1fcd0dd07e7df6518f85c0776625525f047ed25306"
   end
 
   depends_on "gd"
