@@ -12,7 +12,8 @@ class Ilmbase < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ilmbase"
-    sha256 cellar: :any, mojave: "a037f58a502578b047e6b89346f5b2db94a7695bac10a9b4a55059437afc8469"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7cc1ca09e0c7596f6b413e4ade58a2ed64d7f3184cd2a91014c14ee5c51c2481"
   end
 
   keg_only "ilmbase conflicts with `openexr` and `imath`"
