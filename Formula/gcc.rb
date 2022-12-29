@@ -24,8 +24,8 @@ class Gcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "7510a5390cb5faad87abf46bf940749d3e7bf3a928bf9f6ba9f16dcaa3fc3fd2"
+    rebuild 3
+    sha256 mojave: "7983c46662d55ba102032babe36457eb65c2f566833a7c8e9c2c71d1404b53e2"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -99,6 +99,9 @@ class Gcc < Formula
 
       # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"
+
+      # Enable to PIE by default to match what the host GCC uses
+      args << "--enable-default-pie"
 
       # Change the default directory name for 64-bit libraries to `lib`
       # https://stackoverflow.com/a/54038769
