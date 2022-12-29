@@ -1,19 +1,20 @@
 class GsettingsDesktopSchemas < Formula
   desc "GSettings schemas for desktop components"
   homepage "https://download.gnome.org/sources/gsettings-desktop-schemas/"
-  url "https://download.gnome.org/sources/gsettings-desktop-schemas/42/gsettings-desktop-schemas-42.0.tar.xz"
-  sha256 "6686335a9ed623f7ae2276fefa50a410d4e71d4231880824714070cb317323d2"
+  url "https://download.gnome.org/sources/gsettings-desktop-schemas/43/gsettings-desktop-schemas-43.0.tar.xz"
+  sha256 "5d5568282ab38b95759d425401f7476e56f8cbf2629885587439f43bd0b84bbe"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gsettings-desktop-schemas"
-    sha256 cellar: :any_skip_relocation, mojave: "20d3476344356c605545eb88740d06692e630cb59c90561a43ec15e8cc775ec9"
+    sha256 cellar: :any_skip_relocation, mojave: "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.10" => :build
   depends_on "glib"
 
   uses_from_macos "expat"
