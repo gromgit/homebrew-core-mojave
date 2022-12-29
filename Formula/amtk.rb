@@ -2,13 +2,13 @@ class Amtk < Formula
   desc "Actions, Menus and Toolbars Kit for GNOME"
   homepage "https://gitlab.gnome.org/World/amtk"
   url "https://gitlab.gnome.org/World/amtk.git",
-      tag:      "5.5.1",
-      revision: "fa2835b2e60d60c924fc722a330524a378446a7d"
+      tag:      "5.6.1",
+      revision: "f0029cf75ec416159079a27b578b9253a04b1c5a"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/amtk"
-    sha256 mojave: "c7f768097146390b3851de743567899fa71dd29eb9486a2afba9e726ecd79d8d"
+    sha256 mojave: "9dd399a5716394f4fdcacb3b9e112bb0c41a1517e48f33d536a1037c24c9e31b"
   end
 
   depends_on "gobject-introspection" => :build
@@ -88,13 +88,9 @@ class Amtk < Formula
       -lgtk-3
       -lpango-1.0
       -lpangocairo-1.0
+      -lamtk-5
     ]
-    if OS.mac?
-      flags << "-lintl"
-      flags << "-lamtk-5.0"
-    else
-      flags << "-lamtk-5"
-    end
+    flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
