@@ -10,19 +10,15 @@ class Cxxtest < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "290c7e2e1fe99e75a0f7b45d2808d971db1e39fb915acb11ec2d75ef15b18b0c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "290c7e2e1fe99e75a0f7b45d2808d971db1e39fb915acb11ec2d75ef15b18b0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1bcaf3c8fbddf83977c8cbbde084f64d3915a22bbf023cb044423b7215c26ee"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e1bcaf3c8fbddf83977c8cbbde084f64d3915a22bbf023cb044423b7215c26ee"
-    sha256 cellar: :any_skip_relocation, catalina:       "e1bcaf3c8fbddf83977c8cbbde084f64d3915a22bbf023cb044423b7215c26ee"
-    sha256 cellar: :any_skip_relocation, mojave:         "e1bcaf3c8fbddf83977c8cbbde084f64d3915a22bbf023cb044423b7215c26ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b808acbab8d4cc6aa173baafc1e35786e8253cc5a4f16e5bf8a35853aeed490"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cxxtest"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b880c731092c8e1c5aa2543b5d8af5dbf4dc059670fc650a0f67e0a33dea8da5"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
-    venv = virtualenv_create(libexec, Formula["python@3.10"].opt_bin/"python3.10")
+    venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install_and_link buildpath/"python"
 
     include.install "cxxtest"
