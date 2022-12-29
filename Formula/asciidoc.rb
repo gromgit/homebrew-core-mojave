@@ -5,7 +5,7 @@ class Asciidoc < Formula
   homepage "https://asciidoc-py.github.io/"
   url "https://files.pythonhosted.org/packages/8a/57/50180e0430fdb552539da9b5f96f1da6f09c4bfa951b39a6e1b4fbe37d75/asciidoc-10.2.0.tar.gz"
   sha256 "91ff1dd4c85af7b235d03e0860f0c4e79dd1ff580fb610668a39b5c77b4ccace"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://github.com/asciidoc-py/asciidoc-py.git", branch: "main"
 
   livecheck do
@@ -15,11 +15,12 @@ class Asciidoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/asciidoc"
-    sha256 cellar: :any_skip_relocation, mojave: "b132c3cc85f2fa12e693fc93fe640c0a3676a85747687a5917a11af7821c8667"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ef0ff79ca1a2494626667efc995c8e3ff75993889d75312fd46d9acb408d0e4c"
   end
 
   depends_on "docbook"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "source-highlight"
 
   def install
