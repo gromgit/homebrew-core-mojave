@@ -8,7 +8,8 @@ class CyrusSasl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cyrus-sasl"
-    sha256 mojave: "fb793a03ccb82d8dade47c774673139f2a7e9a2372555a383ddb1bb66a840c57"
+    rebuild 1
+    sha256 mojave: "b1498b38f8afdd794cc8eb2615c86da9a14476f12c1764f4e1fbced7606db447"
   end
 
   keg_only :provided_by_macos
