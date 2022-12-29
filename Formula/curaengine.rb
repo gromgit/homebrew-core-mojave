@@ -19,8 +19,8 @@ class Curaengine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curaengine"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "5a94c9cf2890454399cb3c680367bc985ac3b34c5def6d00b10589679a49cef8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a82940a7063a575979fd2daaebf09211a64a49a62b7660be761ef4144dc4fc1e"
   end
 
   depends_on "cmake" => :build
