@@ -12,6 +12,7 @@ class Libksba < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libksba"
+    rebuild 1
     sha256 cellar: :any, mojave: "e2fd94afb47f45196f71f895930fb49c673ec21fdfc66ccbcc92be41b4a7e21d"
   end
 
