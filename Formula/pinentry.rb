@@ -13,7 +13,8 @@ class Pinentry < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pinentry"
-    sha256 cellar: :any, mojave: "e569016a9f53765ec44a7ab4a9ff4aa6a3ace4036b0e22fd323621655cc31be1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "92ecaf9576fac87d93779587198aaf584570cc982bf77ebc63a2c05a71aecc73"
   end
 
   depends_on "pkg-config" => :build
