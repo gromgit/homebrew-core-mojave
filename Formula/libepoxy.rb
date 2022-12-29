@@ -14,6 +14,7 @@ class Libepoxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libepoxy"
+    rebuild 1
     sha256 cellar: :any, mojave: "42717ff7582d8fda23961fca735b7ea3a0e98d57b87187b49e38ee4f60879f10"
   end
 
