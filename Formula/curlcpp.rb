@@ -1,13 +1,13 @@
 class Curlcpp < Formula
   desc "Object oriented C++ wrapper for CURL (libcurl)"
   homepage "https://josephp91.github.io/curlcpp"
-  url "https://github.com/JosephP91/curlcpp/archive/refs/tags/1.5.tar.gz"
-  sha256 "d1c236be862965d5882a842be3112b16e7f49d6fdff9906f7aec71ee8669d60e"
+  url "https://github.com/JosephP91/curlcpp/archive/refs/tags/2.1.tar.gz"
+  sha256 "4640806cdb1aad5328fd38dfbfb40817c64d17e9c7b5176f6bf297a98c6e309c"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/curlcpp"
-    sha256 cellar: :any, mojave: "93b5bbff1fa09d58e46a8c34a30e57e390888495dbc17a2573d7e57a023df346"
+    sha256 cellar: :any, mojave: "7eb593a2dc9944bbf01bf2401cb959039fa211752a161c53cebaf29e0cb6a612"
   end
 
   depends_on "cmake" => :build
@@ -15,7 +15,7 @@ class Curlcpp < Formula
   uses_from_macos "curl"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=SHARED"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
