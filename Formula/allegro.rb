@@ -14,7 +14,8 @@ class Allegro < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/allegro"
-    sha256 cellar: :any, mojave: "6fa7de3deaeecf681e07ea6a787fc568f503309bf7fc2dd20bc83893144d050e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "0d5c2c6eddc1e6d00ee3bcf3b60e73f3a75c1e4db131f27eff578d25b5f2f831"
   end
 
   depends_on "cmake" => :build
