@@ -12,7 +12,8 @@ class Talloc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/talloc"
-    sha256 cellar: :any, mojave: "757eacbd8f5d18bd91e2418d4e9a09cb032ff99a3547f115b716bf95eda01919"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7499d9c4e1dcd58f7b37ed86dc29b801443be979b97d2b919ed3764131eba61e"
   end
 
   depends_on "python@3.10" => :build
