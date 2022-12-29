@@ -1,17 +1,15 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.8.tar.xz"
-  sha256 "84acea3acb2411b29134b32015a5b1aaa62844b19c4b1ef8b8971c6b0759f4c6"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.10.tar.xz"
+  sha256 "ee9b6c75d13ba096907a2e3c6b27b61bcd17f5c7ebeab5a5b439d2f2e39fe44b"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdk-pixbuf-2.42.8"
-    sha256 mojave: "8e60c323be61d1c7696cb90851ea2ee5367e83535ede5c427ed952e1a6e009e3"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gdk-pixbuf"
+    sha256 mojave: "76fb97217d1130a211cca177ab4651b2fc8a55dbe6f9783212ddbebb65e24213"
   end
 
-  depends_on "glib-utils" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
