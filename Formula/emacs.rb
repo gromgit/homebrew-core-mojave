@@ -8,7 +8,8 @@ class Emacs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/emacs"
-    sha256 mojave: "66b45819dfdb99e07f531e9b8480690cf0fc57362a3b42f457a4ebfd374bca00"
+    rebuild 1
+    sha256 mojave: "513933d9a4dd2a89bcda8fe14a94b4f0df21fa1384b0ac75958a5a64890d9761"
   end
 
   head do
