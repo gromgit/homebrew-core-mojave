@@ -1,14 +1,14 @@
 class Csview < Formula
   desc "High performance csv viewer for cli"
   homepage "https://github.com/wfxr/csview"
-  url "https://github.com/wfxr/csview/archive/v1.1.0.tar.gz"
-  sha256 "69947891ede93257d663b40097e47da97b06fb2c0bf35a4bf02f2b43aa12fa8e"
+  url "https://github.com/wfxr/csview/archive/v1.2.2.tar.gz"
+  sha256 "c8c4d1207b225e4257f301af6333d28cfee611781cfa51bf8227b742b043105a"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/wfxr/csview.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/csview"
-    sha256 cellar: :any_skip_relocation, mojave: "1d3ff6224de1fee477a3eab32dea0fe06a94ca210a903aebf17e1b599fbbeefe"
+    sha256 cellar: :any_skip_relocation, mojave: "8d175a0bc487be2d4aeb432c4f7845016f0ef702fcaae1c433c20d7731e4d741"
   end
 
   depends_on "rust" => :build
