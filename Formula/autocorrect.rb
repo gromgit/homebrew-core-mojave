@@ -1,17 +1,17 @@
 class Autocorrect < Formula
   desc "Linter and formatter to improve copywriting, correct spaces, words between CJK"
   homepage "https://github.com/huacnlee/autocorrect"
-  url "https://github.com/huacnlee/autocorrect/archive/v2.1.1.tar.gz"
-  sha256 "1367a2d6f2b8d034d54f0b92498900a6f2ba7b962c3ef374302d968617b3714d"
+  url "https://github.com/huacnlee/autocorrect/archive/v2.5.4.tar.gz"
+  sha256 "6d06ad99f99aad35400a8cb5bad72eac1496b09953aaa481205ce701a6a3c56d"
   license "MIT"
   head "https://github.com/huacnlee/autocorrect.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/autocorrect"
-    sha256 cellar: :any_skip_relocation, mojave: "fd1a847358a69b8c0d807e04109d474ce530921506db8f73e2aad3a908077a66"
+    sha256 cellar: :any_skip_relocation, mojave: "82f7e88fe5c43939a91a0928340fa967d64076f6c9b20659bf8d5de3e11d0d1b"
   end
 
-  depends_on "rust"
+  depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "autocorrect-cli")
