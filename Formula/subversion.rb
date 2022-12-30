@@ -2,6 +2,7 @@ class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.2.tar.bz2"
@@ -17,7 +18,7 @@ class Subversion < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/subversion"
-    sha256 mojave: "9f48dfc82e7f7d59d84721636f0cd2593d155ed0466b201cac5f2d92854a3ab7"
+    sha256 mojave: "98e5fa86c30ad41a004e2abae8332b2c6204119c7061008e6439ae638fb1c5ae"
   end
 
   head do
@@ -50,14 +51,12 @@ class Subversion < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "openjdk" => :build unless MacOS.version.outdated_release?
     # Prevent "-arch ppc" from being pulled in from Perl's $Config{ccflags}
     patch :DATA
   end
 
   on_linux do
     depends_on "libtool" => :build
-    depends_on "openjdk" => :build
   end
 
   resource "py3c" do
@@ -79,8 +78,8 @@ class Subversion < Formula
     resource("serf").stage do
       if OS.linux?
         inreplace "SConstruct" do |s|
-          s.gsub! "env.Append(LIBPATH=['$OPENSSL\/lib'])",
-          "\\1\nenv.Append(CPPPATH=['$ZLIB\/include'])\nenv.Append(LIBPATH=['$ZLIB/lib'])"
+          s.gsub! "env.Append(LIBPATH=['$OPENSSL/lib'])",
+          "\\1\nenv.Append(CPPPATH=['$ZLIB/include'])\nenv.Append(LIBPATH=['$ZLIB/lib'])"
         end
       end
 
@@ -114,8 +113,9 @@ class Subversion < Formula
 
       args << "ZLIB=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
-      system "scons", *args
-      system "scons", "install"
+      scons = Formula["scons"].opt_bin/"scons"
+      system scons, *args
+      system scons, "install"
     end
 
     # Use existing system zlib and sqlite
@@ -138,9 +138,9 @@ class Subversion < Formula
       ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib"
     end
 
-    openjdk = deps.map(&:to_formula).find { |f| f.name.match? "^openjdk" }
     perl = DevelopmentTools.locate("perl")
     ruby = DevelopmentTools.locate("ruby")
+    python3 = "python3.10"
 
     args = %W[
       --prefix=#{prefix}
@@ -162,13 +162,9 @@ class Subversion < Formula
       --without-gpg-agent
       --without-jikes
       PERL=#{perl}
-      PYTHON=#{Formula["python@3.10"].opt_bin}/python3
+      PYTHON=#{python3}
       RUBY=#{ruby}
     ]
-    if openjdk
-      args.unshift "--with-jdk=#{Formula["openjdk"].opt_prefix}",
-                   "--enable-javahl"
-    end
 
     # preserve compatibility with macOS 12.0–12.2
     args.unshift "--enable-sqlite-compatibility-version=3.36.0" if MacOS.version == :monterey
@@ -189,15 +185,7 @@ class Subversion < Formula
 
     system "make", "swig-py"
     system "make", "install-swig-py"
-    (lib/"python3.10/site-packages").install_symlink Dir["#{lib}/svn-python/*"]
-
-    # Java and Perl support don't build correctly in parallel:
-    # https://github.com/Homebrew/homebrew/issues/20415
-    if openjdk
-      ENV.deparallelize
-      system "make", "javahl"
-      system "make", "install-javahl"
-    end
+    (prefix/Language::Python.site_packages(python3)).install_symlink Dir["#{lib}/svn-python/*"]
 
     perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
     perl_core = Pathname.new(perl_archlib)/"CORE"
@@ -219,8 +207,12 @@ class Subversion < Formula
           "-DPERL_DARWIN -fno-strict-aliasing -I#{HOMEBREW_PREFIX}/include -I#{perl_core}"
       end
     end
-    system "make", "swig-pl"
-    system "make", "install-swig-pl"
+    system "make", "swig-pl-lib"
+    system "make", "install-swig-pl-lib"
+    cd "subversion/bindings/swig/perl/native" do
+      system perl, "Makefile.PL", "PREFIX=#{prefix}", "INSTALLSITEMAN3DIR=#{man3}"
+      system "make", "install"
+    end
 
     # This is only created when building against system Perl, but it isn't
     # purged by Homebrew's post-install cleaner because that doesn't check
@@ -236,10 +228,6 @@ class Subversion < Formula
 
       The perl bindings are located in various subdirectories of:
         #{opt_lib}/perl5
-
-      You may need to link the Java bindings into the Java Extensions folder:
-        sudo mkdir -p /Library/Java/Extensions
-        sudo ln -s #{HOMEBREW_PREFIX}/lib/libsvnjavahl-1.dylib /Library/Java/Extensions/libsvnjavahl-1.dylib
     EOS
   end
 
