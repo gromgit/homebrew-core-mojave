@@ -1,10 +1,9 @@
 class Jasper < Formula
   desc "Library for manipulating JPEG-2000 images"
   homepage "https://ece.engr.uvic.ca/~frodo/jasper/"
-  url "https://github.com/jasper-software/jasper/releases/download/version-3.0.6/jasper-3.0.6.tar.gz"
-  sha256 "169be004d91f6940c649a4f854ada2755d4f35f62b0555ce9e1219c778cffc09"
+  url "https://github.com/jasper-software/jasper/releases/download/version-4.0.0/jasper-4.0.0.tar.gz"
+  sha256 "39514e1b53a5333fcff817e19565371f016ea536c36fd2d13a9c4d8da8f0be0c"
   license "JasPer-2.0"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,8 +12,7 @@ class Jasper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jasper"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c72df2cd19dcc42f2867031438badd03e0e62a60a3131f4b1c8845e0dc6ac66e"
+    sha256 cellar: :any, mojave: "1dbbe089a9e5d17992c7ab9fa92b6a333e2c5db28dab3a1955dc8c497c50c65c"
   end
 
   depends_on "cmake" => :build
