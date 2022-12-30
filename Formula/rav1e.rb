@@ -1,10 +1,18 @@
 class Rav1e < Formula
   desc "Fastest and safest AV1 video encoder"
   homepage "https://github.com/xiph/rav1e"
-  url "https://github.com/xiph/rav1e/archive/v0.5.1.tar.gz"
-  sha256 "7b3060e8305e47f10b79f3a3b3b6adc3a56d7a58b2cb14e86951cc28e1b089fd"
   license "BSD-2-Clause"
   head "https://github.com/xiph/rav1e.git", branch: "master"
+
+  stable do
+    url "https://github.com/xiph/rav1e/archive/v0.6.1.tar.gz"
+    sha256 "dd12132ad9dac229ce00a9caad132c4ad23d7db2b3ad4b5a59e89658fee04d9a"
+
+    resource "Cargo.lock" do
+      url "https://github.com/xiph/rav1e/releases/download/v0.6.1/Cargo.lock"
+      sha256 "da13dcb2ea6bc0212b077a2e2e2e55b2a674a0ae683b7a2c4cf3e4f137c920cb"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,8 +21,7 @@ class Rav1e < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rav1e"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "01157cb50beace68ce2aa249f8a4470cd4e68e446faf8678905772c5b7d8a686"
+    sha256 cellar: :any, mojave: "f3f6f3de290ab26e0d80c6f01c11778e87acbb981930b2835d4686f7bca9fdb3"
   end
 
   depends_on "cargo-c" => :build
@@ -30,6 +37,7 @@ class Rav1e < Formula
   end
 
   def install
+    buildpath.install resource("Cargo.lock") if build.stable?
     system "cargo", "install", *std_cargo_args
     system "cargo", "cinstall", "--prefix", prefix
   end
