@@ -1,10 +1,9 @@
 class NodeAT14 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v14.20.0/node-v14.20.0.tar.xz"
-  sha256 "2b5098498889d1e6a9709d63f3d6f94e696a5ad8221618c5d51159cee363996a"
+  url "https://nodejs.org/dist/v14.21.2/node-v14.21.2.tar.xz"
+  sha256 "d8f09a0f16773a77613c3817606f6d455624992d9c43443aca15e91807a1ff03"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://nodejs.org/dist/"
@@ -13,10 +12,13 @@ class NodeAT14 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@14"
-    sha256 cellar: :any, mojave: "6e82a20f8f647e7005c20c2307986be12099f0154197f59a881e2a5674359bde"
+    sha256 cellar: :any, mojave: "6ad3adc3ad32cce8dd9e47cade779c325110f5206fb28c7ec59ba0f52dda4d40"
   end
 
   keg_only :versioned_formula
+
+  # https://nodejs.org/en/about/releases/
+  # disable! date: "2023-04-30", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "brotli"
