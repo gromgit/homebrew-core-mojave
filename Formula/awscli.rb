@@ -3,30 +3,31 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.7.31.tar.gz"
-  sha256 "ecfdb3b61624a452d64d3b31cbf2a2c9de0694f176d0c538a597fba31e20c48c"
+  url "https://github.com/aws/aws-cli/archive/2.9.8.tar.gz"
+  sha256 "4a8aa1ec79a7c115a02213cb2e75160d24054106bb82b6e75ea0008df5810834"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/awscli"
-    sha256 cellar: :any, mojave: "d31e0d848dae802540380604d9169c43da1e58141a894cad4515112e50b3af1c"
+    sha256 cellar: :any, mojave: "59cdb93db7a61c6694ecc227e7790d833c7816b5e0553d0a8bbc474fb92fba1c"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build # for cryptography
-  depends_on "python@3.10"
+  depends_on "docutils"
+  depends_on "python@3.11"
   depends_on "six"
 
-  uses_from_macos "groff"
+  uses_from_macos "mandoc"
 
   # Python resources should be updated based on setup.cfg. One possible way is:
   # 1. Run `pipgrip 'awscli @ #{url}' --sort`
   # 2. Ignore `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/69/5f/997b6c9a8f77cf5f2f1e434a35088a4ddd119254b1a6dc8fb196e0607d66/awscrt-0.14.3.tar.gz"
-    sha256 "9cb96574ee28b7258a9fdd4beaf0a2061f5cb29945acdf2d88ad6d7de8a4e98e"
+    url "https://files.pythonhosted.org/packages/51/1f/4d9193f7b16d102c3c11d8edcb11ea741ac6562d8fcf4d1ae1aa223f197c/awscrt-0.14.0.tar.gz"
+    sha256 "3062d315cb16542fe04dd8239f2e8bc3238ee9045cd5070b915cf2ebbecbaaac"
   end
 
   resource "cffi" do
@@ -40,18 +41,13 @@ class Awscli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz"
-    sha256 "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9"
+    url "https://files.pythonhosted.org/packages/6d/0c/5e67831007ba6cd7e52c4095f053cf45c357739b0a7c46a45ddd50049019/cryptography-38.0.1.tar.gz"
+    sha256 "1db3d807a14931fa317f96435695d9ec386be7b84b618cc61cfa5d08b0ae33d7"
   end
 
   resource "distro" do
     url "https://files.pythonhosted.org/packages/a6/a4/75064c334d8ae433445a20816b788700db1651f21bdb0af33db2aab142fe/distro-1.5.0.tar.gz"
     sha256 "0e58756ae38fbd8fc3020d54badb8eae17c5b9dcbed388b17bb55b8a5928df92"
-  end
-
-  resource "docutils" do
-    url "https://files.pythonhosted.org/packages/93/22/953e071b589b0b1fee420ab06a0d15e5aa0c7470eb9966d60393ce58ad61/docutils-0.15.2.tar.gz"
-    sha256 "a2aeea129088da402665e92e0b25b04b073c04b2dce4ab65caaa38b7ce2e1a99"
   end
 
   resource "jmespath" do
@@ -75,8 +71,8 @@ class Awscli < Formula
   end
 
   resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/8b/25/08e5ad2431a028d0723ca5540b3af6a32f58f25e83c6dda4d0fcef7288a3/ruamel.yaml.clib-0.2.6.tar.gz"
-    sha256 "4ff604ce439abb20794f05613c374759ce10e3595d1867764dd1ae675b85acbd"
+    url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
+    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
   end
 
   resource "ruamel-yaml" do
@@ -95,10 +91,15 @@ class Awscli < Formula
   end
 
   def python3
-    which("python3.10")
+    which("python3.11")
   end
 
   def install
+    # Temporary workaround for Xcode 14's ld causing build failure (without logging a reason):
+    # ld: fatal warning(s) induced error (-fatal_warnings)
+    # Ref: https://github.com/python/cpython/issues/97524
+    ENV.append "LDFLAGS", "-Wl,-no_fixup_chains" if DevelopmentTools.clang_build_version >= 1400
+
     # The `awscrt` package uses its own libcrypto.a on Linux. When building _awscrt.*.so,
     # Homebrew's default environment causes issues, which may be due to `openssl` flags.
     # This causes installation to fail while running `scripts/gen-ac-index` with error:
@@ -110,7 +111,7 @@ class Awscli < Formula
       ENV.prepend "LDFLAGS", "-L./build/temp.linux-x86_64-#{python_version}/deps/install/lib"
     end
 
-    # setuptools>=60 prefers its own bundled distutils, which is incompatabile with docutils~=0.15
+    # setuptools>=60 prefers its own bundled distutils, which is incompatible with docutils~=0.15
     # Force the previous behavior of using distutils from the stdlib
     # Remove when fixed upstream: https://github.com/aws/aws-cli/pull/6011
     with_env(SETUPTOOLS_USE_DISTUTILS: "stdlib") do
