@@ -23,7 +23,8 @@ class Avrdude < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/avrdude"
-    sha256 mojave: "3fe22bdf0e0bfc5d98f8ae68210a1889c20fb57d3a6e96887b182e5fe4522a3e"
+    rebuild 1
+    sha256 mojave: "c3628b81378cecc0e7f9541d76dbd733d29d9afa33a6b135dc2aafa5c64867a3"
   end
 
   head do
