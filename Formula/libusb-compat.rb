@@ -1,9 +1,12 @@
 class LibusbCompat < Formula
   desc "Library for USB device access"
   homepage "https://libusb.info/"
-  url "https://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.5/libusb-compat-0.1.5.tar.bz2"
-  sha256 "404ef4b6b324be79ac1bfb3d839eac860fbc929e6acb1ef88793a6ea328bc55a"
-  revision 1
+  url "https://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.8/libusb-compat-0.1.8.tar.bz2"
+  sha256 "698c76484f3dec1e0175067cbd1556c3021e94e7f2313ae3ea6a66d900e00827"
+  license all_of: [
+    "LGPL-2.1-or-later",
+    any_of: ["LGPL-2.1-or-later", "BSD-3-Clause"], # libusb/usb.h
+  ]
 
   livecheck do
     url :stable
@@ -11,30 +14,18 @@ class LibusbCompat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "96e578e69eb194e164e10412e3ccdf030e997d3dad19671433c219d5581ba1bd"
-    sha256 cellar: :any,                 arm64_monterey: "18e59704d824c4cecb91b176ab52aa192660c3c5f64a01cc9d57daf80aca6373"
-    sha256 cellar: :any,                 arm64_big_sur:  "8e54f4e98a9dd9e39c8d18e053729472c23a20f35c858fefdc78c8aa6552368f"
-    sha256 cellar: :any,                 ventura:        "a8468be05137dfbd9a1d08866950e69084952c1a17ea706ea21e9673ad5d9622"
-    sha256 cellar: :any,                 monterey:       "8bebb13222ca261997a5e64725dc7a0c2215652830bc4f32dbe504a7a19df6b5"
-    sha256 cellar: :any,                 big_sur:        "75c7921c73433f1481dfc4aeed5e63dac1a75d67ed13409ed1c2ec053864dadc"
-    sha256 cellar: :any,                 catalina:       "e1f03f77caed5418c50c3c9659e6c56f2363eddfd6cc1aac3f8dcac9451771d2"
-    sha256 cellar: :any,                 mojave:         "11fe66aff70c0177a186c946624f91417565c43bbdc9e7c51725e26ea0c868c5"
-    sha256 cellar: :any,                 high_sierra:    "fccc08c6c3ff2bf93d2aa8e7cc18f30c1fb95fbca044ecaa42d45f7c73a8facf"
-    sha256 cellar: :any,                 sierra:         "e24ad80ee860f6f6c7e6c8dbb100aaa2de3294e2ecf7f591f2f51c52e11f09ea"
-    sha256 cellar: :any,                 el_capitan:     "7b62449f8a9c02834b74adeb0827ca2ae32b47cb82923de0a8e88f16c36ca8b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f696d9eaabea3d1a6facc6b259157df62f5c0dae3b523d93c5010bfbe4ba7d81"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libusb-compat"
+    sha256 cellar: :any, mojave: "bb60c0dd73087ca78b6c87e352e80bf5be5e591df17738f2cfa3c2ebfb96c43d"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libusb"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-  end
-
   def install
+    system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "install"
   end
