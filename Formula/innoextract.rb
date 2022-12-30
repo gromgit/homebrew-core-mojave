@@ -4,7 +4,7 @@ class Innoextract < Formula
   url "https://constexpr.org/innoextract/files/innoextract-1.9.tar.gz"
   sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
   license "Zlib"
-  revision 2
+  revision 3
   head "https://github.com/dscharrer/innoextract.git", branch: "master"
 
   livecheck do
@@ -14,7 +14,7 @@ class Innoextract < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/innoextract"
-    sha256 cellar: :any, mojave: "04ee58d96cd6fb06c2c74143b38e84e72275ce3e24ead38872e9e99946753693"
+    sha256 cellar: :any, mojave: "afdb6d33bffa05e48084f1469d43395b27f96f079cfd714d7b2eefde4b6b75f7"
   end
 
   depends_on "cmake" => :build
