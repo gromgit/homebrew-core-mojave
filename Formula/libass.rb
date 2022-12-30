@@ -1,18 +1,17 @@
 class Libass < Formula
   desc "Subtitle renderer for the ASS/SSA subtitle format"
   homepage "https://github.com/libass/libass"
-  url "https://github.com/libass/libass/releases/download/0.16.0/libass-0.16.0.tar.xz"
-  sha256 "5dbde9e22339119cf8eed59eea6c623a0746ef5a90b689e68a090109078e3c08"
+  url "https://github.com/libass/libass/releases/download/0.17.0/libass-0.17.0.tar.xz"
+  sha256 "971e2e1db59d440f88516dcd1187108419a370e64863f70687da599fdf66cc1a"
   license "ISC"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libass"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6744d18d7492af3ae6bdaaabb2a024dba61ba1a36e8d1c4567fc40a75ebf6e20"
+    sha256 cellar: :any, mojave: "cfd080006b0edd57e0abd7527a71746b283a54f2806b963e280090d22ee7eae4"
   end
 
   head do
-    url "https://github.com/libass/libass.git"
+    url "https://github.com/libass/libass.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -23,6 +22,7 @@ class Libass < Formula
   depends_on "freetype"
   depends_on "fribidi"
   depends_on "harfbuzz"
+  depends_on "libunibreak"
 
   on_linux do
     depends_on "fontconfig"
