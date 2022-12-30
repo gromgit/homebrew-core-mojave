@@ -9,10 +9,11 @@ class Scons < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/scons"
-    sha256 cellar: :any_skip_relocation, mojave: "f4b2dc4152373424f8df6f9d8fff6e23e231443bd8897128445318468f23753d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f6d6e507ea5bbeabae6fa2798e660bd809a240aad0fb33f89bbecf4795157448"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
