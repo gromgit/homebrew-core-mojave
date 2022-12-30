@@ -7,7 +7,8 @@ class Glibmm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glibmm"
-    sha256 cellar: :any, mojave: "04b01b7faa9cd2f5f172a5b6297a0b16fa5fab1823aa3ddce68410c390b1bc38"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c953cad0cbaf3ca7b09b91a34220be53934c0030ec4e0803089d820a52eaee49"
   end
 
   depends_on "meson" => :build
