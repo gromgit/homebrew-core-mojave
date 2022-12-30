@@ -12,7 +12,8 @@ class ArxLibertatis < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arx-libertatis"
-    sha256 mojave: "1f703142609831533445d5b2d8c7ac81385088e4eed556912a427229faffb49f"
+    rebuild 1
+    sha256 mojave: "02e46695d3be5d2ef2c9ca1b1c83082334331d443a9c64ed486d62668f2f09ac"
   end
 
   head do
