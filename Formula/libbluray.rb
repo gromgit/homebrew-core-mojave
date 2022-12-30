@@ -1,8 +1,8 @@
 class Libbluray < Formula
   desc "Blu-Ray disc playback library for media players like VLC"
   homepage "https://www.videolan.org/developers/libbluray.html"
-  url "https://download.videolan.org/videolan/libbluray/1.3.3/libbluray-1.3.3.tar.bz2"
-  sha256 "58ff52cdcee64c55dcc3c777a1c39fb41abd951b927978e4d2b6811b9193a488"
+  url "https://download.videolan.org/videolan/libbluray/1.3.4/libbluray-1.3.4.tar.bz2"
+  sha256 "478ffd68a0f5dde8ef6ca989b7f035b5a0a22c599142e5cd3ff7b03bbebe5f2b"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,8 +12,7 @@ class Libbluray < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libbluray"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3ac6284aedc627ed54eecce6a15f856d3e8db8a286c9317a27eba7adb86cdde8"
+    sha256 cellar: :any, mojave: "d8befca8efd2a8ffa9ed3ee6331d1b9555dd1bf533d625abaf244adf9ec8b0da"
   end
 
   head do
