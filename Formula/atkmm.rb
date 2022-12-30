@@ -7,8 +7,8 @@ class Atkmm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/atkmm"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b87c4a05442be2dd4274fd7fa3ac502d6c18fd132e73805a907b9021a3a562b7"
+    rebuild 2
+    sha256 cellar: :any, mojave: "9dea7d91c0647d0c36e68dd7f5afa6920a597cbab58fada7b1f578d140231354"
   end
 
   depends_on "meson" => :build
@@ -16,10 +16,6 @@ class Atkmm < Formula
   depends_on "pkg-config" => :build
   depends_on "atk"
   depends_on "glibmm"
-
-  on_linux do
-    depends_on "gcc" => :build
-  end
 
   fails_with gcc: "5"
 
