@@ -4,11 +4,11 @@ class AzureStorageCpp < Formula
   url "https://github.com/Azure/azure-storage-cpp/archive/v7.5.0.tar.gz"
   sha256 "446a821d115949f6511b7eb01e6a0e4f014b17bfeba0f3dc33a51750a9d5eca5"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/azure-storage-cpp"
-    sha256 cellar: :any, mojave: "2e035e5d0e11a39643b66ac1d4df356f189b7719c77bc7e562aa4434a8c50fd2"
+    sha256 cellar: :any, mojave: "b40690de97cfc2e17dd1509cdf5e043b7c9eb0ef234ee9ea1ab4ce3889fe4146"
   end
 
   depends_on "cmake" => :build
