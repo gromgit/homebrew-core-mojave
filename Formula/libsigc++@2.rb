@@ -7,7 +7,8 @@ class LibsigcxxAT2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsigc++@2"
-    sha256 cellar: :any, mojave: "bf6a1300603e06424c0348a5c67f38536406fb95557c4fbfba78e5dc4210c386"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c417bcb761d4c29392321bfeb435b80f225ae1b16b466ca7339e0998ffb3819f"
   end
 
   depends_on "meson" => :build
