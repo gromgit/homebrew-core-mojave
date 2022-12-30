@@ -1,8 +1,8 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSL/TLS library"
   homepage "https://tls.mbed.org/"
-  url "https://github.com/Mbed-TLS/mbedtls/archive/mbedtls-3.2.1.tar.gz"
-  sha256 "5850089672560eeaca03dc36678ee8573bb48ef6e38c94f5ce349af60c16da33"
+  url "https://github.com/Mbed-TLS/mbedtls/archive/mbedtls-3.3.0.tar.gz"
+  sha256 "a22ff38512697b9cd8472faa2ea2d35e320657f6d268def3a64765548b81c3ec"
   license "Apache-2.0"
   head "https://github.com/Mbed-TLS/mbedtls.git", branch: "development"
 
@@ -14,8 +14,7 @@ class Mbedtls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbedtls"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "74c5c2eea1771ec9d1934a5e92bcbe1e091b1e8eb28b0c4eefc4a4826b9285de"
+    sha256 cellar: :any, mojave: "c1610c90d888067ea5b0aa893072d9c2ceda3490c0f60d68a0b65781ca84b30f"
   end
 
   depends_on "cmake" => :build
