@@ -3,9 +3,10 @@ class Netpbm < Formula
   homepage "https://netpbm.sourceforge.io/"
   # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
   # for stable versions and matching revisions.
-  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4365"
-  version "10.86.34"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4436"
+  version "10.86.35"
   license "GPL-3.0-or-later"
+  revision 1
   version_scheme 1
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
 
@@ -17,7 +18,7 @@ class Netpbm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/netpbm"
-    sha256 mojave: "5f0b86f0cda4f6ffe153e7d7a10db8fb7599656853c656990ce54e57eff9e129"
+    sha256 mojave: "068fe29d7a9cb3d78af247bccf71208abeb23814caf0853c591a82205af677b7"
   end
 
   depends_on "jasper"
