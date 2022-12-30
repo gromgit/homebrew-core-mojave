@@ -12,8 +12,8 @@ class ArgyllCms < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/argyll-cms"
-    rebuild 1
-    sha256 cellar: :any, mojave: "c8f95ac95dd0e918db36b6df059395a8b9a78e58babc40e73b5b0b69291b7a40"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8b76f0431f9308d6e8247b1d2a611ae7c91bc5a8f14f9a66e764edc97f4666f9"
   end
 
   depends_on "jam" => :build
