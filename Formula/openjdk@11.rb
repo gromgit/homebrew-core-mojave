@@ -1,10 +1,9 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.16.1-ga.tar.gz"
-  sha256 "3008e50e258a5e9a488a814df2998b9823b6c2959d6a5a85221d333534d2f24c"
+  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.17-ga.tar.gz"
+  sha256 "1d36043f2cecfe2b079ca288c66ad7f009c50c828f4eab989e1adaeee443367b"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,32 +12,34 @@ class OpenjdkAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openjdk@11"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "c2b167e7aa78cafbd9c1f13844907b44edd6c2fe5071fc34d7ceed56bf84ea8f"
+    sha256 cellar: :any, mojave: "5da9ec666d6e9a09d6b5eb4d5036ca259e134642a64ce82ee7bc187c5170d34b"
   end
 
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
+  depends_on "pkg-config" => :build
+  depends_on "giflib"
+  depends_on "harfbuzz"
+  depends_on "jpeg-turbo"
+  depends_on "libpng"
+  depends_on "little-cms2"
+
+  uses_from_macos "cups"
+  uses_from_macos "unzip"
+  uses_from_macos "zip"
+  uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "alsa-lib"
-    depends_on "cups"
     depends_on "fontconfig"
+    depends_on "freetype"
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxrandr"
     depends_on "libxrender"
     depends_on "libxt"
     depends_on "libxtst"
-    depends_on "unzip"
-    depends_on "zip"
-
-    # FIXME: This should not be needed because of the `-rpath` flag
-    #        we set in `--with-extra-ldflags`, but this configuration
-    #        does not appear to have made it to the linker.
-    ignore_missing_libraries "libjvm.so"
   end
 
   resource "boot-jdk" do
@@ -52,14 +53,15 @@ class OpenjdkAT11 < Formula
         sha256 "77ea7675ee29b85aa7df138014790f91047bfdafbc997cb41a1030a0417356d7"
       end
     end
+    # Bootstrapping with JDK 10 hit a java.util.ConcurrentModificationException so we use JDK 11
     on_linux do
-      url "https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_linux-x64_bin.tar.gz"
-      sha256 "f3b26abc9990a0b8929781310e14a339a7542adfd6596afb842fa0dd7e3848b2"
+      url "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz"
+      sha256 "99be79935354f5c0df1ad293620ea36d13f48ec3ea870c838f20c504c9668b57"
     end
   end
 
   def install
-    boot_jdk = Pathname.pwd/"boot-jdk"
+    boot_jdk = buildpath/"boot-jdk"
     resource("boot-jdk").stage boot_jdk
     boot_jdk /= "Contents/Home" if OS.mac? && !Hardware::CPU.arm?
     java_options = ENV.delete("_JAVA_OPTIONS")
@@ -81,9 +83,15 @@ class OpenjdkAT11 < Formula
       --with-vendor-vm-bug-url=#{tap.issues_url}
       --without-version-opt
       --without-version-pre
+      --with-giflib=system
+      --with-harfbuzz=system
+      --with-lcms=system
+      --with-libjpeg=system
+      --with-libpng=system
+      --with-zlib=system
     ]
 
-    ldflags = ["-Wl,-rpath,#{loader_path}/server"]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}/server"]
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
@@ -96,12 +104,13 @@ class OpenjdkAT11 < Formula
         --with-x=#{HOMEBREW_PREFIX}
         --with-cups=#{HOMEBREW_PREFIX}
         --with-fontconfig=#{HOMEBREW_PREFIX}
+        --with-freetype=system
+        --with-stdc++lib=dynamic
       ]
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
-    chmod 0755, "configure"
-    system "./configure", *args
+    system "bash", "configure", *args
 
     ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"
     system "make", "images", "CONF=release"
@@ -123,10 +132,12 @@ class OpenjdkAT11 < Formula
   end
 
   def caveats
-    <<~EOS
-      For the system Java wrappers to find this JDK, symlink it with
-        sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
-    EOS
+    on_macos do
+      <<~EOS
+        For the system Java wrappers to find this JDK, symlink it with
+          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+      EOS
+    end
   end
 
   test do
