@@ -8,12 +8,13 @@ class CassandraCppDriver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cassandra-cpp-driver"
-    sha256 cellar: :any, mojave: "108994954fa7f350ea26cdb2263a0d1e0e69696995666fa442203c2d87620b0f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "61e085b276bf2ffed476f59aa5ac02712a38c84c8e7f77fde7f05f7cc06363c9"
   end
 
   depends_on "cmake" => :build
   depends_on "libuv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -22,11 +23,10 @@ class CassandraCppDriver < Formula
   end
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DLIBUV_ROOT_DIR=#{Formula["libuv"].opt_prefix}"
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+                    "-DLIBUV_ROOT_DIR=#{Formula["libuv"].opt_prefix}"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
