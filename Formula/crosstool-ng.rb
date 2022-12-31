@@ -13,8 +13,8 @@ class CrosstoolNg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crosstool-ng"
-    rebuild 1
-    sha256 cellar: :any, mojave: "09e92b8b3709c30185bddd68fda5b15ed97710e043a1249931f1ca985343621a"
+    rebuild 2
+    sha256 cellar: :any, mojave: "7230fe98ac18485b4555cd1ebc75f515443d378646844419093237213d0fecb5"
   end
 
   depends_on "help2man" => :build
@@ -33,7 +33,6 @@ class CrosstoolNg < Formula
 
   uses_from_macos "flex" => :build
   uses_from_macos "gperf" => :build
-  uses_from_macos "texinfo" => :build
   uses_from_macos "unzip" => :build
 
   on_macos do
@@ -43,6 +42,10 @@ class CrosstoolNg < Formula
     depends_on "gnu-sed"
     depends_on "grep"
     depends_on "make"
+  end
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
   end
 
   def install
