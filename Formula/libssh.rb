@@ -8,7 +8,8 @@ class Libssh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libssh"
-    sha256 cellar: :any, mojave: "e0b83e4fb62423b3320027d4ad07a1cddd4f652a663d5a3fd4d10ba509a3acc3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "349e51a2ee9d262d83b784010ce697aebf6cb3c667a804a5f516785e25be7109"
   end
 
   depends_on "cmake" => :build
