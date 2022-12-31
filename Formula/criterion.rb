@@ -9,7 +9,8 @@ class Criterion < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/criterion"
-    sha256 cellar: :any, mojave: "f0a53faa2c1d100347f25d9de8399049e668098fe1556a3909c11b9edb2a4945"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8dbc5e3ad88073c410c208bd172448306d5628951ee3cbe1eead33e696403e74"
   end
 
   depends_on "cmake" => :build
