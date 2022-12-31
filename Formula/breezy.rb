@@ -4,27 +4,23 @@ class Breezy < Formula
   desc "Version control system implemented in Python with multi-format support"
   # homepage "https://www.breezy-vcs.org" temporary? 503
   homepage "https://github.com/breezy-team/breezy"
-  url "https://files.pythonhosted.org/packages/e4/56/bc9f139cfb5eaeb9f0e155bbe2071f97167994b7cbc4c2cced04c48e4a80/breezy-3.2.2.tar.gz"
-  sha256 "187a6e45208dd05d81750736720c83710cf48094f547ec4081c571259559a4d5"
+  url "https://files.pythonhosted.org/packages/5e/06/b6ffff222a6917e2f50705b553db35ef51b14857b147c12eb952c18c7148/breezy-3.3.1.tar.gz"
+  sha256 "f00c2d17766f2947f6dc692e1247e5c1771a9186f4e941aa97ecc9d2ac23a8a6"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/breezy"
-    sha256 cellar: :any_skip_relocation, mojave: "685f1630870c54264c544c3747105a266422fefca2f27e3f13aa09b4961be510"
+    sha256 cellar: :any, mojave: "b52f8c01567e181378e175933322d19deb9818e909e24c8cb5ab00f8ce432492"
   end
 
   depends_on "gettext" => :build
-  depends_on "libcython" => :build
+  depends_on "rust" => :build
   depends_on "openssl@1.1"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   conflicts_with "bazaar", because: "both install `bzr` binaries"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
-  end
 
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/64/61/079eb60459c44929e684fa7d9e2fdca403f67d64dd9dbac27296be2e0fab/configobj-5.0.6.tar.gz"
@@ -32,27 +28,36 @@ class Breezy < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/28/0d/e89036c08fd49722ca7091cc574c0f133d667a7ec37bbdff763b15ec0913/dulwich-0.20.35.tar.gz"
-    sha256 "953f6301a9df8a091fa88d55eed394a88bf9988cde8be341775354910918c196"
+    url "https://files.pythonhosted.org/packages/d1/20/4c2ea55d6547460a93dce9112599953be1c939155eae7a8e11a17c4d0b2c/dulwich-0.20.50.tar.gz"
+    sha256 "50a941796b2c675be39be728d540c16b5b7ce77eb9e1b3f855650ece6832d2be"
   end
 
   resource "fastbencode" do
-    url "https://files.pythonhosted.org/packages/27/8c/b98694c74535f984f220c3762842e7aa17c60d5c12103093e0ce0da8edb0/fastbencode-0.0.7.tar.gz"
-    sha256 "b6bc9abe542d0663793529576f49ba8891508554f85d09b5d6d5ed7af7e0c6e4"
+    url "https://files.pythonhosted.org/packages/cd/e1/94ff8d7ce12ca1fa76b7299af27819829cc8feea125615e6e1f805e8f4e6/fastbencode-0.1.tar.gz"
+    sha256 "c1a978e75a5048bba833d90d6e748a55950ca8b59f12e917c2a2c8e7ca7eb6f5"
+  end
+
+  resource "merge3" do
+    url "https://files.pythonhosted.org/packages/7d/1d/1a2a0ff25b18cc3b7af41180821099696c2c34e4459fff09a2d19729281e/merge3-0.0.12.tar.gz"
+    sha256 "fd3fc873dcf60b9944606d125f72643055c739ff41793979ccbdea3ea6818d36"
   end
 
   resource "patiencediff" do
-    url "https://files.pythonhosted.org/packages/90/ca/13cdabb3c491a0ccd7d580419b96abce3d227d4a6ba674364e6b19d4d67e/patiencediff-0.2.2.tar.gz"
-    sha256 "456d9fc47fe43f9aea863059ea2c6df5b997285590e4b7f9ee8fbb6c3419b5a7"
+    url "https://files.pythonhosted.org/packages/96/d7/88848319e68f92db32982d0a2ca9b84c6fc05f38786f74c41c84adf26f6d/patiencediff-0.2.8.tar.gz"
+    sha256 "d8838ade52d91e09e3689f63c9d3ac7cb3b039f6ce2d730a39a1641cb40cdd53"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
-    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
+    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
+    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
   end
 
   def install
     virtualenv_install_with_resources
+    bin.each_child do |f|
+      f.unlink
+      f.write_env_script libexec/"bin"/f.basename, PATH: "#{libexec}/bin:$PATH"
+    end
     man1.install_symlink Dir[libexec/"man/man1/*.1"]
 
     # Replace bazaar with breezy
