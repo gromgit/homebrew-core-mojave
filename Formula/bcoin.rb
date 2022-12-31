@@ -10,11 +10,11 @@ class Bcoin < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bcoin"
-    rebuild 2
-    sha256 mojave: "5fd83347622a7383108640fd8983a0f6cce7be96a9d52df50450e036741e3c30"
+    rebuild 3
+    sha256 mojave: "a65673bfb958561531e0b1a3fa64b93350af06e8ed859885bf9de593aa1decaf"
   end
 
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "node@16"
 
   def node
