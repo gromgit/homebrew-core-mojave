@@ -8,7 +8,8 @@ class Bloaty < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bloaty"
-    sha256 cellar: :any, mojave: "bdb752764cdc754b12d9a3a2bb050e221464d3d3ab7329bcc587d1d60c49e8a6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1f5f5ea371680e8f0e49c58505cbc94dc333fc8122df16dbbc81604fdada18c6"
   end
 
   depends_on "cmake" => :build
