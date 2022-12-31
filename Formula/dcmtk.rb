@@ -12,7 +12,8 @@ class Dcmtk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dcmtk"
-    sha256 mojave: "62a28a81ce7a235db59586f2908351e65cb833846870e8eccfd3f0320b03c476"
+    rebuild 1
+    sha256 mojave: "771da25cd0e6c4a3653897045103ff39be4cbc1d5f7e1a7ee374f465aea5d21a"
   end
 
   depends_on "cmake" => :build
