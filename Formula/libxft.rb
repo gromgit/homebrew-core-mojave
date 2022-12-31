@@ -1,13 +1,13 @@
 class Libxft < Formula
   desc "X.Org: X FreeType library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXft-2.3.6.tar.xz"
-  sha256 "60a6e7319fc938bbb8d098c9bcc86031cc2327b5d086d3335fc5c76323c03022"
+  url "https://www.x.org/archive/individual/lib/libXft-2.3.7.tar.xz"
+  sha256 "79f0b37c45007381c371a790c2754644ad955166dbf2a48e3625032e9bdd4f71"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxft"
-    sha256 cellar: :any_skip_relocation, mojave: "db3c554fdc88002a8824c7f33c93c715c05118ecd086f03a28274daf3a9222fa"
+    sha256 cellar: :any, mojave: "f7331969b2b39f8896a7542364c2f19fce4d07eb55b4810ddfe4da0cbaf68622"
   end
 
   depends_on "pkg-config" => :build
