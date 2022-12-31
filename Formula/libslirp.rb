@@ -7,7 +7,8 @@ class Libslirp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libslirp"
-    sha256 cellar: :any, mojave: "9129e5edbf8a10a09a190ec32eda40c53c3c38d25a202d3893f8a0fd02377201"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3de6e8638756508abd5e5c9423841a03ea052fb332f4b11a30bd7cf165f17db5"
   end
 
   depends_on "meson" => :build
