@@ -1,8 +1,8 @@
 class NodeAT16 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v16.18.1/node-v16.18.1.tar.xz"
-  sha256 "1f8051a88f86f42064f4415fe7a980e59b0a502ecc8def583f6303bc4d445238"
+  url "https://nodejs.org/dist/v16.19.0/node-v16.19.0.tar.xz"
+  sha256 "4f1fec1aea2392f6eb6d1d040b01e7ee3e51e762a9791dfea590920bc1156706"
   license "MIT"
 
   livecheck do
@@ -12,7 +12,7 @@ class NodeAT16 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node@16"
-    sha256 cellar: :any_skip_relocation, mojave: "47bed31b20298de27bba623840aefb8abceb29f215e8d42ccafd948d0e706c37"
+    sha256 cellar: :any, mojave: "63a6f2dbf201523d8fdd9e315e507fa5660bcefd6335773c4238b37305a0eb4a"
   end
 
   keg_only :versioned_formula
@@ -21,7 +21,7 @@ class NodeAT16 < Formula
   # disable! date: "2023-09-11", because: :unsupported
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "icu4c"
@@ -40,7 +40,7 @@ class NodeAT16 < Formula
   fails_with gcc: "5"
 
   def install
-    python3 = "python3.10"
+    python3 = "python3.11"
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which(python3)
 
