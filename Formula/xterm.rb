@@ -1,9 +1,9 @@
 class Xterm < Formula
   desc "Terminal emulator for the X Window System"
   homepage "https://invisible-island.net/xterm/"
-  url "https://invisible-mirror.net/archives/xterm/xterm-372.tgz"
-  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_372.orig.tar.gz"
-  sha256 "c6d08127cb2409c3a04bcae559b7025196ed770bb7bf26630abcb45d95f60ab1"
+  url "https://invisible-mirror.net/archives/xterm/xterm-377.tgz"
+  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_377.orig.tar.gz"
+  sha256 "db108fe7a45d8ed97e604721b58443b473649e61e263631bf8759f8618a990b2"
   license "X11"
 
   livecheck do
@@ -13,7 +13,7 @@ class Xterm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/xterm"
-    sha256 mojave: "351e2b370489fe5f7302a36b09ce420458b388d6822de7cd9c99e5fc6a0a5792"
+    sha256 mojave: "d965919c6d1f8c45da93b83c5499f4e0df5a178534b595e041a337bf50c1692a"
   end
 
   depends_on "fontconfig"
