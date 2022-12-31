@@ -1,29 +1,20 @@
 class Chapel < Formula
   desc "Programming language for productive parallel computing at scale"
   homepage "https://chapel-lang.org/"
-  url "https://github.com/chapel-lang/chapel/releases/download/1.27.0/chapel-1.27.0.tar.gz"
-  sha256 "558b1376fb7757a5e1f254c717953f598a3e89850c8edd1936b8d09c464f3e8b"
+  url "https://github.com/chapel-lang/chapel/releases/download/1.29.0/chapel-1.29.0.tar.gz"
+  sha256 "f87bc7285c4641ed540f806c63ab904137b650b1e232a11c15f76e874e079804"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/chapel-lang/chapel.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chapel"
-    sha256 mojave: "69769cc72e4b6c34838798e6ed179f416ed3f6f90bd323b3aaf6b9c8cb3e5c00"
+    sha256 mojave: "9354149f415fec5953f53bd7711e41fb81bd15f7ccb0c0bada05a30be37504d2"
   end
 
+  depends_on "cmake"
   depends_on "gmp"
+  depends_on "llvm@14"
   depends_on "python@3.10"
-
-  # fatal error: cannot open file './sys_basic.h': No such file or directory
-  # Issue ref: https://github.com/Homebrew/homebrew-core/issues/96915
-  on_catalina :or_older do
-    depends_on "llvm@11"
-  end
-
-  on_system :linux, macos: :big_sur_or_newer do
-    depends_on "llvm"
-  end
 
   # LLVM is built with gcc11 and we will fail on linux with gcc version 5.xx
   fails_with gcc: "5"
@@ -41,6 +32,8 @@ class Chapel < Formula
   def install
     # Always detect Python used as dependency rather than needing aliased Python formula
     python = "python3.10"
+    # It should be noted that this will expand to: 'for cmd in python3.10 python3 python python2; do'
+    # in our find-python.sh script.
     inreplace "util/config/find-python.sh", /^(for cmd in )(python3 )/, "\\1#{python} \\2"
 
     libexec.install Dir["*"]
