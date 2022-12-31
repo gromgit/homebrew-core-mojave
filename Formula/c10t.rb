@@ -4,11 +4,11 @@ class C10t < Formula
   url "https://github.com/udoprog/c10t/archive/1.7.tar.gz"
   sha256 "0e5779d517105bfdd14944c849a395e1a8670bedba5bdab281a0165c3eb077dc"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/c10t"
-    sha256 cellar: :any, mojave: "80590e627f9a84377adf9bcbb252b2e68a6f3212a52cae94eb04aa2619e93279"
+    sha256 cellar: :any, mojave: "807ddfa9d9e18afa0abe10924476d1c0b11fd8981fdcce2d596a474c93b580e0"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +37,7 @@ class C10t < Formula
   end
 
   def install
+    ENV.cxx11
     inreplace "test/CMakeLists.txt", "boost_unit_test_framework", "boost_unit_test_framework-mt"
     args = std_cmake_args
     unless OS.mac?
