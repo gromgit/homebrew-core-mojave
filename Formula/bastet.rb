@@ -4,11 +4,11 @@ class Bastet < Formula
   url "https://github.com/fph/bastet/archive/0.43.2.tar.gz"
   sha256 "f219510afc1d83e4651fbffd5921b1e0b926d5311da4f8fa7df103dc7f2c403f"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bastet"
-    sha256 mojave: "bf7c7d29cb70a92c57d0d6b8cb10134a3367987ea16598d08f20a61e641dcf28"
+    sha256 mojave: "0c3916a8f9b0842f9c44a7266ceb5826a6e5226790941dc8dda6ea0882f0e9ca"
   end
 
   depends_on "boost"
