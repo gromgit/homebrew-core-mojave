@@ -9,14 +9,15 @@ class Borgbackup < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/borgbackup"
-    sha256 cellar: :any, mojave: "e4001a23465101a99df86251e063c4fcc4a4e1748ca79cac5825630de9391b9c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3a33da5efd2f5141fded89ce06baa05b751d19c95abb8fe7875e64d01b923d8d"
   end
 
   depends_on "pkg-config" => :build
   depends_on "libb2"
   depends_on "lz4"
   depends_on "openssl@1.1"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "xxhash"
   depends_on "zstd"
 
@@ -47,6 +48,7 @@ class Borgbackup < Formula
     ENV["BORG_OPENSSL_PREFIX"] = Formula["openssl@1.1"].prefix
     virtualenv_install_with_resources
 
+    man1.install Dir["docs/man/*.1"]
     bash_completion.install "scripts/shell_completions/bash/borg"
     fish_completion.install "scripts/shell_completions/fish/borg.fish"
     zsh_completion.install "scripts/shell_completions/zsh/_borg"
