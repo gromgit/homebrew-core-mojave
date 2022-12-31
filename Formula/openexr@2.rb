@@ -11,7 +11,8 @@ class OpenexrAT2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openexr@2"
-    sha256 cellar: :any, mojave: "df078f37c8347da6c208cec6b244bd8e058d9e1a550daf76ee69d8177badcb0a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8f8c0450356068ecfffbd1922c2c3e2cd39ca6992105f5b4d528307c2e64e936"
   end
 
   keg_only :versioned_formula
