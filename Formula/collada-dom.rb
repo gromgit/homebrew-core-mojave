@@ -3,12 +3,12 @@ class ColladaDom < Formula
   homepage "https://www.khronos.org/collada/wiki/Portal:COLLADA_DOM"
   url "https://github.com/rdiankov/collada-dom/archive/v2.5.0.tar.gz"
   sha256 "3be672407a7aef60b64ce4b39704b32816b0b28f61ebffd4fbd02c8012901e0d"
-  revision 3
+  revision 4
   head "https://github.com/rdiankov/collada-dom.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/collada-dom-2.5.0"
-    sha256 cellar: :any, mojave: "80396359bd77cbf3369541a538cf829e42c2f39dee1527f3670030cf9f5c0910"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/collada-dom"
+    sha256 cellar: :any, mojave: "85b1ec0788d18bddf8dc7a77ffba42c9323102a064e7b50761e650b58649ff62"
   end
 
   depends_on "cmake" => :build
