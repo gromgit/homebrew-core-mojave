@@ -8,7 +8,8 @@ class Carton < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/carton"
-    sha256 cellar: :any_skip_relocation, mojave: "ae0fcb618fd8b91fb40d7e52ed07d1ccb8a76ef5fabe0f7a73772f7f63a9979f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1488d2dde96fc144cd7e787b90930275bf1e291850bca2feb2a7639bab69c7d5"
   end
 
   depends_on "perl"
