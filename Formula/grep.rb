@@ -9,6 +9,7 @@ class Grep < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grep"
+    rebuild 1
     sha256 cellar: :any, mojave: "ab9bc016b315c6b713946d9b7b6cf37520e50aafbb9bf8f3e55bc78a079d094a"
   end
 
