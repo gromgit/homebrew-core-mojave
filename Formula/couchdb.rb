@@ -14,7 +14,8 @@ class Couchdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/couchdb"
-    sha256 cellar: :any, mojave: "3f1667d8dd43fad15c210130a196654d77eb453b624ca6b47dae460b08a0219e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "34e7ffa09d708ab92ba97f524624016ba25d6b79085f5aa16d291de9809bb45b"
   end
 
   depends_on "autoconf" => :build
