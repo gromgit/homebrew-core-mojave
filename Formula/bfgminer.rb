@@ -8,6 +8,7 @@ class Bfgminer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/bfgminer"
+    rebuild 1
     sha256 mojave: "e16ca55178abf2e2815933697dc247e76a76d31fed89614ee529399c6ec5f57b"
   end
 
