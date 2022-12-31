@@ -8,7 +8,8 @@ class FluidSynth < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluid-synth"
-    sha256 cellar: :any, mojave: "bb671ba786cd4f06a1bea0e201d106e1cbe00a8f2f5cfde4ea64997b04894c78"
+    rebuild 1
+    sha256 cellar: :any, mojave: "15a9a3f473cd93e0347b885b046402b66301a2f2d1beb8030c30e785df43163e"
   end
 
   depends_on "cmake" => :build
