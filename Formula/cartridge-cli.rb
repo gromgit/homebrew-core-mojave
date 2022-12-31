@@ -2,13 +2,13 @@ class CartridgeCli < Formula
   desc "Tarantool Cartridge command-line utility"
   homepage "https://tarantool.org/"
   url "https://github.com/tarantool/cartridge-cli.git",
-      tag:      "2.12.2",
-      revision: "53e6a5be9a611323401a3d98d2dd380da4f672f9"
+      tag:      "2.12.3",
+      revision: "004186a0188f90e4481f026f09bb9c929acb37e6"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cartridge-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "6b46e2bdbba3ee037aa7901225ad6499dca375a6f5d58a6dcfa7203d1b5ec014"
+    sha256 cellar: :any_skip_relocation, mojave: "a464694ec06d562bdbe228cf00d9ab7a02835b39474206734ffdd8b0cae61ee7"
   end
 
   depends_on "go" => :build
