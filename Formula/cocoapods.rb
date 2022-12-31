@@ -7,8 +7,8 @@ class Cocoapods < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cocoapods"
-    rebuild 1
-    sha256 cellar: :any, mojave: "416ab91eeecff981b9fb64a57db7c077c0efc154fea3be0d800a9ee7cb56e5d5"
+    rebuild 2
+    sha256 cellar: :any, mojave: "c6858907cda1f2328f73e860f6f33a4890afa5a8e3c90df052405b26c33d40b3"
   end
 
   depends_on "pkg-config" => :build
