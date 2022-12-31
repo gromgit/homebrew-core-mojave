@@ -7,10 +7,12 @@ class Chezscheme < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/chezscheme"
-    sha256 mojave: "930e313679c80adaedc498d280a49984f25602e10b9bbf41317dc352a47c093f"
+    rebuild 1
+    sha256 mojave: "cdfb4373afcfa3ece76f1ce323ab9fdfc270a810b0fbd6e3f70a5effcd1fe160"
   end
 
   depends_on "libx11" => :build
+  depends_on arch: :x86_64 # https://github.com/cisco/ChezScheme/issues/544
   depends_on "xterm"
   uses_from_macos "ncurses"
 
