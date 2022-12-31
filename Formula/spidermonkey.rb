@@ -17,7 +17,8 @@ class Spidermonkey < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/spidermonkey"
-    sha256 cellar: :any, mojave: "d54764c702b2a300f7949097f0cd08e6f3d37037917febc7a738c10c53a6c7c6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9da9dc50cdf544307063da05c31a8a0c96c08923d1fba0044a709e6990fe3dc3"
   end
 
   depends_on "autoconf@2.13" => :build
