@@ -8,7 +8,8 @@ class Cpm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpm"
-    sha256 cellar: :any_skip_relocation, mojave: "509ffe2455227c4cb8016ca11f79227401c83bbea4927889ea7ad55a81f48060"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "18a09246fcd6b89af574fede520cef78efa12424dee38842c8644f11fa1bfe0d"
   end
 
   depends_on "perl"
