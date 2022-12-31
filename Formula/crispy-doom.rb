@@ -8,7 +8,8 @@ class CrispyDoom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crispy-doom"
-    sha256 cellar: :any, mojave: "25f6708451624cf451dd7998839879fa3941ae8ad697aad09179b1ba3405b832"
+    rebuild 1
+    sha256 cellar: :any, mojave: "8444d1f41570a5d0b1e9cf3aa9ef8c9ec2c715bcf6a6a20a4b978ee5752d22cb"
   end
 
   depends_on "autoconf" => :build
