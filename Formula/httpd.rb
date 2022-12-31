@@ -9,7 +9,8 @@ class Httpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/httpd"
-    sha256 mojave: "5fd292c2ce862242a577cf41d8270a9983821c5253a6f8338ee10969a32d4f8c"
+    rebuild 1
+    sha256 mojave: "56f0e1997b26c08e964ddefa7016a264aa438084fbd709ea91b6ec73613ca428"
   end
 
   depends_on "apr"
