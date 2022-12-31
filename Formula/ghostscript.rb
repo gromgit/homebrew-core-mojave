@@ -16,7 +16,8 @@ class Ghostscript < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghostscript"
-    sha256 cellar: :any_skip_relocation, mojave: "9712363673b6d370f22e1809a50f228d8b8b67be721c29f38575396eb457b7ff"
+    rebuild 1
+    sha256 mojave: "80696f5f7135743135a540dc3085e3ebc60e6e8f9adb45d7f2b1dc2c570c1a4d"
   end
 
   head do
