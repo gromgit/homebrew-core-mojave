@@ -3,7 +3,7 @@ class Wxwidgets < Formula
   homepage "https://www.wxwidgets.org"
   url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.1/wxWidgets-3.2.1.tar.bz2"
   sha256 "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66"
-  license "wxWindows"
+  license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -13,21 +13,30 @@ class Wxwidgets < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/wxwidgets"
-    sha256 cellar: :any, mojave: "f710d24a801abadfca207d086b049b0fa20b13b44492b230b3dd85f4e75b7af4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4c9776a72ee8990a2b022a176956188dd6af64f0196fd2977140597a6c7d93e6"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
+  depends_on "pcre2"
+
+  uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "gtk+3"
     depends_on "libsm"
     depends_on "mesa-glu"
   end
 
   def install
+    # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
+    %w[catch pcre].each { |l| (buildpath/"3rdparty"/l).rmtree }
+    %w[expat jpeg png tiff zlib].each { |l| (buildpath/"src"/l).rmtree }
+
     args = [
       "--prefix=#{prefix}",
       "--enable-clipboard",
@@ -46,6 +55,8 @@ class Wxwidgets < Formula
       "--with-libtiff",
       "--with-opengl",
       "--with-zlib",
+      "--disable-dependency-tracking",
+      "--disable-tests",
       "--disable-precomp-headers",
       # This is the default option, but be explicit
       "--disable-monolithic",
