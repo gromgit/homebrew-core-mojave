@@ -4,12 +4,12 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/1.5.0.tar.gz"
-    sha256 "f53e459ef6c7227df922a76fb62e350c90d52d30bfaa84b90feda9731bb98655"
+    url "https://github.com/crystal-lang/crystal/archive/1.6.2.tar.gz"
+    sha256 "fbbff8f975a2627ac3f42208362365668fb08a33637f424e0c2c0e51b1f37cfa"
 
     resource "shards" do
-      url "https://github.com/crystal-lang/shards/archive/v0.17.0.tar.gz"
-      sha256 "b3f0a2261437b21b3e2465b7755edf0c33f0305a112bd9a36e1b3ec74f96b098"
+      url "https://github.com/crystal-lang/shards/archive/v0.17.1.tar.gz"
+      sha256 "cfae162980ef9260120f00ba530273fc2e1b595906b6d39db0cd41323f936e03"
     end
   end
 
@@ -20,7 +20,7 @@ class Crystal < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/crystal"
-    sha256 cellar: :any, mojave: "9de72213e1c5f655238cb7272dc48f52abc07a6a3f10ea54bf57babc059d0e76"
+    sha256 cellar: :any, mojave: "7c1cb3937a30a1472a209cfbffe5f3a1260372d20a518a4452d32f41faeb1761"
   end
 
   head do
@@ -37,14 +37,13 @@ class Crystal < Formula
   depends_on "gmp" # std uses it but it's not linked
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm"
+  depends_on "llvm@14"
   depends_on "openssl@1.1" # std uses it but it's not linked
   depends_on "pcre"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
 
   on_linux do
     depends_on arch: :x86_64
-    depends_on "gcc"
   end
 
   fails_with gcc: "5"
@@ -61,12 +60,12 @@ class Crystal < Formula
     end
 
     checksums = {
-      "darwin-universal" => "e7f9b3e1e866dc909a0a310238907182f1ee8b3c09bd8da5ecd0072d99c1fc5c",
-      "linux-x86_64"     => "a5bdf1b78897b3cdc7d715b5f7adff79e84401d39b7ab546ab3249dc17fc770c",
+      "darwin-universal" => "432c2fc992247f666db7e55fb15509441510831a72beba34affa2d76b6f2e092",
+      "linux-x86_64"     => "a475c3d99dbe0f2d5a72d471fa25e03c124b599e47336eed746973b4b4d787bc",
     }
 
     if checksums.include? platform
-      boot_version = Version.new("1.4.1-1")
+      boot_version = Version.new("1.5.1-1")
 
       url "https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-#{platform}.tar.gz"
       version boot_version
@@ -87,7 +86,7 @@ class Crystal < Formula
                                     .map(&:to_formula)
                                     .reject(&:keg_only?)
 
-    (buildpath/"boot").install resource("boot")
+    resource("boot").stage "boot"
     ENV.append_path "PATH", "boot/bin"
     ENV["LLVM_CONFIG"] = llvm.opt_bin/"llvm-config"
     ENV["CRYSTAL_LIBRARY_PATH"] = ENV["HOMEBREW_LIBRARY_PATHS"]
@@ -110,11 +109,9 @@ class Crystal < Formula
     crystal_build_opts = release_flags + [
       "CRYSTAL_CONFIG_LIBRARY_PATH=#{config_library_path}",
       "CRYSTAL_CONFIG_PATH=#{config_path}",
+      "interpreter=true",
     ]
-    if build.head?
-      crystal_build_opts << "interpreter=true"
-      crystal_build_opts << "CRYSTAL_CONFIG_BUILD_COMMIT=#{Utils.git_short_head}"
-    end
+    crystal_build_opts << "CRYSTAL_CONFIG_BUILD_COMMIT=#{Utils.git_short_head}" if build.head?
 
     # Build crystal
     (buildpath/".build").mkpath
@@ -128,7 +125,7 @@ class Crystal < Formula
       available_molinillo_version = resource("molinillo").version.to_s
       odie "`molinillo` resource is outdated!" unless required_molinillo_version == available_molinillo_version
 
-      (Pathname.pwd/"lib/molinillo").install resource("molinillo")
+      resource("molinillo").stage "lib/molinillo"
 
       shards_build_opts = release_flags + [
         "CRYSTAL=#{buildpath}/bin/crystal",
@@ -152,6 +149,7 @@ class Crystal < Formula
 
     bash_completion.install "etc/completion.bash" => "crystal"
     zsh_completion.install "etc/completion.zsh" => "_crystal"
+    fish_completion.install "etc/completion.fish" => "crystal.fish"
 
     man1.install "man/crystal.1"
   end
