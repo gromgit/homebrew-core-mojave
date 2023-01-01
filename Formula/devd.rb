@@ -23,8 +23,8 @@ class Devd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/devd"
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, mojave: "10b5153c020b6a6e4bdef2f3044a0f4eafd61985364d770530f792bb8f4677d2"
+    rebuild 7
+    sha256 cellar: :any_skip_relocation, mojave: "bbb67e26dfcdcb9c8587447fa3ab26ba20a7dd137df9ab917803231f9f783bba"
   end
 
   # Current release is from 2019-01-20 and needs deprecated `dep` to build.
