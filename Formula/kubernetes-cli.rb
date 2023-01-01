@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.25.2",
-      revision: "5835544ca568b757a8ecae5c153f317e5736700e"
+      tag:      "v1.26.0",
+      revision: "b46a3f887ca979b1a5d14fd39cb1af43e7e5d12d"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -14,7 +14,7 @@ class KubernetesCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/kubernetes-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "9526dcea21d19bde14ed13617aa093f54ae7451f4fd193f037291d1787fb3a79"
+    sha256 cellar: :any_skip_relocation, mojave: "df756e18f36357626124374cc6741749f0777759b46a69f0e95b0e1b8bb55e4c"
   end
 
   depends_on "bash" => :build
