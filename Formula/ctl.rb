@@ -9,7 +9,8 @@ class Ctl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ctl"
-    sha256 cellar: :any, mojave: "4d2627e2b7de66e1a96a76dc27eb30af8b0e007a0e82ef2236b51ecb460232da"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6a46abbde6434828ca3961101994d3440f173f89ca3ce7de7eb42fcfa96c2185"
   end
 
   depends_on "cmake" => :build
