@@ -14,6 +14,7 @@ class Dcm2niix < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dcm2niix"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "dea0acd4f4a2b4bc190ef38623065e9facec5bddcb2df9a2dd8cf68ad8788a04"
   end
 
