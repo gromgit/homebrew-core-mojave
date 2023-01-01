@@ -9,14 +9,15 @@ class Diceware < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diceware"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "42cd8c219f04856449c4abe901e66f253578263f4b204f6d6a266e93f9dd98e9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "72b062456e3ff046ed6cb143ed36aa89d762f245d6f8a4278fc404a14d2d5979"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
+    man1.install "diceware.1"
   end
 
   test do
