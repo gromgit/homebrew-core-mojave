@@ -8,7 +8,8 @@ class Biber < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/biber"
-    sha256 cellar: :any_skip_relocation, mojave: "0b75a763e3484c7caa92aa4ca9a49cce23ed990a3ff4ec3a6768717eb99a2093"
+    rebuild 1
+    sha256 cellar: :any, mojave: "587948887cdbe4ef5cdb38bfac747d771fe7815f828cd51c49b201c435fcce3d"
   end
 
   depends_on "pkg-config" => :build
