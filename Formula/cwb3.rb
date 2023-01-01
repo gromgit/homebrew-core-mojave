@@ -13,7 +13,8 @@ class Cwb3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cwb3"
-    sha256 cellar: :any, mojave: "e4e9de187430ca0abbf72ff8bc132fdf3d5d45e69e3a6b11477ec35cf9ac572e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "178511db0d8543f6d3230034633710ab5e2a78e73d3b755ea21e336ee9169c23"
   end
 
   depends_on "pkg-config" => :build
