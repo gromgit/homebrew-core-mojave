@@ -2,7 +2,7 @@ class Devil < Formula
   desc "Cross-platform image library"
   homepage "https://sourceforge.net/projects/openil/"
   license "LGPL-2.1-only"
-  revision 4
+  revision 5
   head "https://github.com/DentonW/DevIL.git", branch: "master"
 
   stable do
@@ -34,7 +34,7 @@ class Devil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/devil"
-    sha256 cellar: :any, mojave: "7331f3a2daef94013ab0fe8bd944638e40e5fe3cdd2c447b822197ac69fb3320"
+    sha256 cellar: :any, mojave: "f8b68699bddee4887a1e33f12e3bf37229890bb08e4aeeec4edae4d7a4fef19a"
   end
 
   depends_on "cmake" => :build
