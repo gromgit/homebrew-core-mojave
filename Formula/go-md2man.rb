@@ -8,7 +8,8 @@ class GoMd2man < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-md2man"
-    sha256 cellar: :any_skip_relocation, mojave: "bf229a23b6bfe77c80872668ccaa52da73fba7b3dcce34085661dbecb5bb9f75"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d20605ca0c31886bb8eae5bc879eb9f3156f073547d237114bf414a530a0494b"
   end
 
   depends_on "go" => :build
