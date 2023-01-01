@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/cli.git",
-      tag:      "v20.10.18",
-      revision: "b40c2f6b5deeb11ac6c485c940865ee40664f0f0"
+      tag:      "v20.10.22",
+      revision: "3a2c30b63ab20acfcc3f3550ea756a0561655a77"
   license "Apache-2.0"
   head "https://github.com/docker/cli.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Docker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker"
-    sha256 cellar: :any_skip_relocation, mojave: "b11aae4f73586f62733c671547b736e63a774360eef0d07bedfa8a144a118918"
+    sha256 cellar: :any_skip_relocation, mojave: "2b34eeb8d4be9aa8df6a5bb4979cc1211791ea2a1d1dedd8c40e1727ed793628"
   end
 
   depends_on "go" => :build
