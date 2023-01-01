@@ -12,8 +12,8 @@ class CucumberRuby < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cucumber-ruby"
-    rebuild 2
-    sha256 cellar: :any, mojave: "40fd7196b29d8ad8eac980fcb2a844003b72ecc51762d3425a009dc9c997d372"
+    rebuild 3
+    sha256 cellar: :any, mojave: "d79a8a35c2fbc8e8a93904c296f2b43c9b42d422a4a1ee3ef012f41a46c7a734"
   end
 
   depends_on "pkg-config" => :build
