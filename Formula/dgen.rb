@@ -7,7 +7,8 @@ class Dgen < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dgen"
-    sha256 cellar: :any, mojave: "15077dbf76abb5be09d9b9a9d1f1542b56c7cb1817a84fd983b9ab777e2cef06"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d2709eb9fa61f15fd61bb46097b81f8363dd248f03c62adc7218e44994873c8b"
   end
 
   head do
