@@ -7,8 +7,9 @@ class ProtobufC < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf-c-1.4.1"
-    sha256 cellar: :any, mojave: "2c1d78ee48cc052d94f1d32f6724b79a1ac0b3a1959d00aad88523c4e45ebdfb"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/protobuf-c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c5e2a1dd0e5dec0a5712d0a1fd680539a9f51d3bfaf1037a67bc3f94a9d50bbb"
   end
 
   depends_on "pkg-config" => :build
