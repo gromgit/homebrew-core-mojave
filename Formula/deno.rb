@@ -1,20 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  # TODO: Remove `ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib` at rebuild.
-  url "https://github.com/denoland/deno/releases/download/v1.25.3/deno_src.tar.gz"
-  sha256 "b20a5a223aae4c654e9a1f5e1c5efd7aed2162d4863e2d3fb7ac271ef3f7d2d8"
+  url "https://github.com/denoland/deno/releases/download/v1.29.1/deno_src.tar.gz"
+  sha256 "96c9742682307e02e389a01535a9877525b5bcd88e2fa037611e47250c917498"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deno"
-    sha256 cellar: :any_skip_relocation, mojave: "6ff5ae524d76b2d3f7e40ccf7dc5e4ce5e80cb37bc7d6a372baa6f13a3912198"
+    sha256 cellar: :any_skip_relocation, mojave: "d79ab8545752ea1c34666cb7b5e1b2da2be724befc82183caf3e0ee6407c715f"
   end
 
   depends_on "llvm" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "rust" => :build
 
   uses_from_macos "xz"
@@ -34,17 +33,17 @@ class Deno < Formula
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
   # TODO: Remove this and `v8` resource when https://github.com/denoland/rusty_v8/pull/1063 is released
   resource "rusty-v8" do
-    url "https://static.crates.io/crates/v8/v8-0.49.0.crate"
-    sha256 "5a1cbad73336d67babcbe5e3b03c907c8d2ff77fc6f997570af219bbd9fdb6ce"
+    url "https://static.crates.io/crates/v8/v8-0.60.0.crate"
+    sha256 "5867543c19b87c45ed3f2bc49eb6135474ed6a1803cac40c278620b53e9865ef"
   end
 
   resource "v8" do
-    url "https://github.com/denoland/v8/archive/1f7df8c39451f3d53e9acef4b7b0476cf4f5eb66.tar.gz"
-    sha256 "5098e515c62e42c0c0754b0daf832f16c081bc53d27b7121bc917fb52759c65a"
+    url "https://github.com/denoland/v8/archive/05fb6e97fc6c5fdd2e79e4f9a51c5bf0ca0ef991.tar.gz"
+    sha256 "a083d815b21b0a2a59d1f133fd897c1f803f1418cfdffd411a89583bf37f22a8"
   end
 
   # To find the version of gn used:
-  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/core/Cargo.toml
+  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L43
   # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/tree/v#{v8_version}/tools/ninja_gn_binaries.py
   # 3. Find short gn commit hash from commit message: https://github.com/denoland/ninja_gn_binaries/tree/#{ninja_gn_binaries_tag}
   # 4. Find full gn commit hash: https://gn.googlesource.com/gn.git/+/#{gn_commit}
@@ -63,26 +62,25 @@ class Deno < Formula
     resource("v8").stage do
       cp_r "tools/builtins-pgo", buildpath/"v8/v8/tools/builtins-pgo"
     end
-    inreplace %w[core/Cargo.toml serde_v8/Cargo.toml],
+    inreplace "Cargo.toml",
               /^v8 = { version = ("[\d.]+"),.*}$/,
-              "v8 = { version = \\1, path = \"../v8\" }"
+              "v8 = { version = \\1, path = \"./v8\" }"
 
     if OS.mac? && (MacOS.version < :mojave)
       # Overwrite Chromium minimum SDK version of 10.15
       ENV["FORCE_MAC_SDK_MIN"] = MacOS.version
     end
 
-    python3 = "python3.10"
+    python3 = "python3.11"
     # env args for building a release build with our python3, ninja and gn
-    ENV.prepend_path "PATH", Formula["python@3.10"].libexec/"bin"
-    ENV["PYTHON"] = Formula["python@3.10"].opt_bin/python3
+    ENV.prepend_path "PATH", Formula["python@3.11"].libexec/"bin"
+    ENV["PYTHON"] = Formula["python@3.11"].opt_bin/python3
     ENV["GN"] = buildpath/"gn/out/gn"
     ENV["NINJA"] = Formula["ninja"].opt_bin/"ninja"
     # build rusty_v8 from source
     ENV["V8_FROM_SOURCE"] = "1"
     # Build with llvm and link against system libc++ (no runtime dep)
     ENV["CLANG_BASE_PATH"] = Formula["llvm"].prefix
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
 
     resource("gn").stage buildpath/"gn"
     cd "gn" do
