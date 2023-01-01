@@ -1,8 +1,8 @@
 class Datree < Formula
   desc "CLI tool to run policies against Kubernetes manifests YAML files or Helm charts"
   homepage "https://datree.io/"
-  url "https://github.com/datreeio/datree/archive/1.6.37.tar.gz"
-  sha256 "a15c57cd987aa8ae75a48cc1926b6614cc959dbba9fc2ad297afa8717bb228fc"
+  url "https://github.com/datreeio/datree/archive/1.8.8.tar.gz"
+  sha256 "53e2575845e59b05bb4f1210925065512d374a44eb9e80633b3e3a5f8099a2f8"
   license "Apache-2.0"
   head "https://github.com/datreeio/datree.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Datree < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/datree"
-    sha256 cellar: :any_skip_relocation, mojave: "6838c87459b963b050460e3be76e38dac0cc15b6c5f4a4fa22727474862f25cb"
+    sha256 cellar: :any_skip_relocation, mojave: "82d313993e0a055dad8f5cd568bb6be68b22439f77c93d86991d9a184f5c89e9"
   end
 
   depends_on "go" => :build
