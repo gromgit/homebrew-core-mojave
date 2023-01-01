@@ -14,7 +14,8 @@ class Ldc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldc"
-    sha256 cellar: :any_skip_relocation, mojave: "c1da997b6cc1e183f54d85c8a775749e3b76de2c146359afd179cde5234fad03"
+    rebuild 1
+    sha256 mojave: "05cfffad7f107802e0a5e4bfa6dc2d0d847ace72cd3885f7a4dd7f4d4ede11d0"
   end
 
   depends_on "cmake" => :build
