@@ -4,7 +4,7 @@ class Dcraw < Formula
   url "https://www.dechifro.org/dcraw/archive/dcraw-9.28.0.tar.gz"
   mirror "https://mirrorservice.org/sites/distfiles.macports.org/dcraw/dcraw-9.28.0.tar.gz"
   sha256 "2890c3da2642cd44c5f3bfed2c9b2c1db83da5cec09cc17e0fa72e17541fb4b9"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://distfiles.macports.org/dcraw/"
@@ -13,7 +13,7 @@ class Dcraw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dcraw"
-    sha256 cellar: :any, mojave: "e35b518c31ace36009c7b8df7530368d5e0590f4f9de0541884d2f77887fed5d"
+    sha256 cellar: :any, mojave: "8618554a7984c1c74016923ed86b0a76d7230bbb55c493b28526874c160a9fa4"
   end
 
   depends_on "jasper"
