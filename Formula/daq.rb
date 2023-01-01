@@ -10,6 +10,7 @@ class Daq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/daq"
+    rebuild 1
     sha256 cellar: :any, mojave: "c07d9f9dcb85c5c5a77b01bfd4a6040dfdd1050d28bf59fee5d7d2ed8c1e9d31"
   end
 
