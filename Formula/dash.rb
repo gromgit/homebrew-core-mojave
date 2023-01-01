@@ -1,8 +1,8 @@
 class Dash < Formula
   desc "POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)"
   homepage "http://gondor.apana.org.au/~herbert/dash/"
-  url "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.11.5.tar.gz"
-  sha256 "db778110891f7937985f29bf23410fe1c5d669502760f584e54e0e7b29e123bd"
+  url "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz"
+  sha256 "6a474ac46e8b0b32916c4c60df694c82058d3297d8b385b74508030ca4a8f28a"
   license "BSD-3-Clause"
   head "https://git.kernel.org/pub/scm/utils/dash/dash.git", branch: "master"
 
@@ -12,15 +12,8 @@ class Dash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "999ca07555b86be44033f06913d0a513995ecc43fc94757699e4b43d6c0ca523"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98745c9a59dcf0e9894493ad047699171d5ddb4d943115e94d08b58e21c484dd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "12e8257cfc5dda342cf5df3579e4d75d6c7da1c3e5188ea2bd632f66ca9291dc"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e65efe74dbcc532a9e9157dc033609294e9b38f183e12904870e34fb9527717"
-    sha256 cellar: :any_skip_relocation, monterey:       "0891342216aaba226425c2e27a21082f1096994e6be82cebb08eedb7c4d9fb76"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a7eafa8a473d2bfd1d9fbc207ed863d5765189b6662341420bee8a78cc6d4360"
-    sha256 cellar: :any_skip_relocation, catalina:       "b7ab66d5cea5b77081f58392eb8f8c66341cf20c94739a77c262f0a1f54716a6"
-    sha256 cellar: :any_skip_relocation, mojave:         "b7db705a81f667bde21d234b7241d9e0ae0643e9052aa836196095bbd4e98dbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "947fffdc8681c896ef07de1dabbd69341458de8d37c106d706d6013942d156c4"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dash"
+    sha256 cellar: :any_skip_relocation, mojave: "b2b0a2485f93e7fb7c5f6bc04272d84f07278bd05ec2bdf47645e6422642c9e2"
   end
 
   depends_on "autoconf" => :build
