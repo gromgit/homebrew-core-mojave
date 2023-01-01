@@ -1,8 +1,8 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
-  url "https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.2.tar.xz"
-  sha256 "d240abe6da9c65cb1900dd9bf3a3501ccf88b3c2a1cb98317d03f272dda5b265"
+  url "https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.3.tar.xz"
+  sha256 "5d2cc3d78bec3dbe212a9d7fa629ada25a7da928af432c93060ff5c17ee28a9c"
   license "MIT"
   revision 1
 
@@ -15,7 +15,7 @@ class Libxml2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxml2"
-    sha256 cellar: :any, mojave: "b41acc6257d980d83e65df67acdee670422c5fc4ba10fbb5cedc37bb9d3a0814"
+    sha256 cellar: :any, mojave: "c48f2e909d5bf5874c462af742d58e09e951407d73758fae9de9d943f40f71ec"
   end
 
   head do
@@ -30,6 +30,7 @@ class Libxml2 < Formula
   keg_only :provided_by_macos
 
   depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.9" => [:build, :test]
   depends_on "pkg-config" => :test
   depends_on "icu4c"
@@ -46,11 +47,16 @@ class Libxml2 < Formula
     sha256 "37eb81a8ec6929eed1514e891bff2dd05b450bcf0c712153880c485b7366c17c"
   end
 
-  def install
-    system "autoreconf", "-fiv" if build.head?
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
+  end
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+  def install
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules",
                           "--with-history",
                           "--with-icu",
                           "--without-python",
@@ -73,8 +79,8 @@ class Libxml2 < Formula
       inreplace "setup.py", "includes_dir = [",
                             "includes_dir = [#{includes}"
 
-      ["3.9", "3.10"].each do |xy|
-        system "python#{xy}", *Language::Python.setup_install_args(prefix, "python#{xy}")
+      pythons.each do |python|
+        system python, *Language::Python.setup_install_args(prefix, python)
       end
     end
   end
@@ -94,23 +100,20 @@ class Libxml2 < Formula
     EOS
 
     # Test build with xml2-config
-    args = %w[test.c -o test]
-    args += shell_output("#{bin}/xml2-config --cflags --libs").split
-    system ENV.cc, *args
+    args = shell_output("#{bin}/xml2-config --cflags --libs").split
+    system ENV.cc, "test.c", "-o", "test", *args
     system "./test"
 
     # Test build with pkg-config
     ENV.append "PKG_CONFIG_PATH", lib/"pkgconfig"
-    args = %w[test.c -o test]
-    args += shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libxml-2.0").split
-    system ENV.cc, *args
+    args = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libxml-2.0").split
+    system ENV.cc, "test.c", "-o", "test", *args
     system "./test"
 
-    orig_pypath = ENV["PYTHONPATH"]
-    ["3.9", "3.10"].each do |xy|
-      ENV.prepend_path "PYTHONPATH", lib/"python#{xy}/site-packages"
-      system Formula["python@#{xy}"].opt_bin/"python#{xy}", "-c", "import libxml2"
-      ENV["PYTHONPATH"] = orig_pypath
+    pythons.each do |python|
+      with_env(PYTHONPATH: prefix/Language::Python.site_packages(python)) do
+        system python, "-c", "import libxml2"
+      end
     end
   end
 end
