@@ -12,7 +12,7 @@ class Deark < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/deark"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "883f43fad74ca3a9285672c79927db516b74c20a3cafd57031da1c391bdffb60"
   end
 
