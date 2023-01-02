@@ -8,8 +8,8 @@ class DotenvLinter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dotenv-linter"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "78539ff4ced08e9095508700302b626380c80ab3c76dca4826b645d4131cc2d8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "9ccd885abb5bda76416fca9ef868ce0a05d67b62300b390a577516e0fd0b62d8"
   end
 
   depends_on "rust" => :build
