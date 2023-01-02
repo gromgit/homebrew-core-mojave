@@ -8,6 +8,7 @@ class Dump1090Mutability < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dump1090-mutability"
+    rebuild 1
     sha256 cellar: :any, mojave: "a29163bf5935e023fa9ed10a3dccbed73d842b0e7f542ebf90c53f39b36f536a"
   end
 
