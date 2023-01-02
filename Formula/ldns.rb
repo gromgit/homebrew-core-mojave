@@ -14,20 +14,19 @@ class Ldns < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ldns"
-    rebuild 1
-    sha256 cellar: :any, mojave: "57b3b0765176f5a60569075a58071f4fe8632ac06107b977a4b590b0a6728710"
+    rebuild 2
+    sha256 cellar: :any, mojave: "063d3fea15815231c8cebd9b3adc97ff3af22ef74d7e6f16450c8d15a294f94e"
   end
 
   depends_on "swig" => :build
   depends_on "openssl@1.1"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   conflicts_with "drill", because: "both install a `drill` binary"
 
   def install
-    python3 = "python3.10"
-    args = %W[
-      --prefix=#{prefix}
+    python3 = "python3.11"
+    args = *std_configure_args + %W[
       --with-drill
       --with-examples
       --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
