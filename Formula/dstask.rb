@@ -1,15 +1,14 @@
 class Dstask < Formula
   desc "Git-powered personal task tracker"
   homepage "https://github.com/naggie/dstask"
-  url "https://github.com/naggie/dstask/archive/v0.25.tar.gz"
-  sha256 "7a8b4e9d2d3ce6a59551fa181201148a008c35505d43593f80b1fe80493fdb8c"
+  url "https://github.com/naggie/dstask/archive/v0.26.tar.gz"
+  sha256 "ccd7afcb825eb799bdaaaf6eaf8150bbb8ceda02fec6c97f042b7bbc913a46fc"
   license "MIT"
   head "https://github.com/naggie/dstask.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dstask"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "5dad92d34fd8364d8d1e3c84e5367250447ccebaf1bdb7745207d7c0a3c060f7"
+    sha256 cellar: :any_skip_relocation, mojave: "ee68b9443574714a4773cd91da4c4e5d03678aff5d9ae11d229fb1e53471d993"
   end
 
   depends_on "go" => :build
