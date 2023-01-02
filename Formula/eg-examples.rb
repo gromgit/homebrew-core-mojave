@@ -10,11 +10,11 @@ class EgExamples < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eg-examples"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "8ad5951295b60ccd37774e71973cca05ad9a99adf1148b1d05ef2549e1cfefb6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "aa47a39ac7fa11e465914020ee475b3b9b5fbd22bbb32c9dedb515d8b0dbf8b5"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
