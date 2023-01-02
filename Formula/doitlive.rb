@@ -10,11 +10,11 @@ class Doitlive < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doitlive"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "1bcb326929d707a74527d1bbe9faf047952044208966a2f67cd25fdd357775c1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "0a8ed232b47957da6ba03a2446818f7fca8809a975f5142cae7284c1c375d41a"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "six"
 
   resource "click" do
