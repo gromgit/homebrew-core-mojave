@@ -8,7 +8,8 @@ class H2o < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/h2o"
-    sha256 mojave: "c661807327827f74f0123f4d3e7308f3f02c13f3041476487e603166c55cf3c8"
+    rebuild 1
+    sha256 mojave: "b89879b28c5c11d486fd6c1839adec91c4994a6accfbdab365861439a0e38059"
   end
 
   depends_on "cmake" => :build
