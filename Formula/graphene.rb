@@ -7,7 +7,8 @@ class Graphene < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphene"
-    sha256 cellar: :any, mojave: "216ec7bbeb003bcab2fb73b31c784e1f10aabf61c30425f19601c69c1c134bc1"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e45c879d15371674aa16b78d6c0df8c617028ca8e1dbf849acf382a96c573f56"
   end
 
   depends_on "gobject-introspection" => :build
