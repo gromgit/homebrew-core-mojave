@@ -1,8 +1,8 @@
 class Dnsmasq < Formula
   desc "Lightweight DNS forwarder and DHCP server"
   homepage "https://thekelleys.org.uk/dnsmasq/doc.html"
-  url "https://thekelleys.org.uk/dnsmasq/dnsmasq-2.87.tar.gz"
-  sha256 "ae39bffde9c37e4d64849b528afeb060be6bad6d1044a3bd94a49fce41357284"
+  url "https://thekelleys.org.uk/dnsmasq/dnsmasq-2.88.tar.gz"
+  sha256 "da9d26aa3f3fc15f3b58b94edbb9ddf744cbce487194ea480bd8e7381b3ca028"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -12,8 +12,7 @@ class Dnsmasq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsmasq"
-    rebuild 2
-    sha256 mojave: "91e272535aeda490ed84d1ef8db9a892380832ea0666ffc82d517ee3899f1c89"
+    sha256 mojave: "451a68a954b22b9f596fd302f1886ebefb810d83a8eb0e0334c5ce082d397b65"
   end
 
   depends_on "pkg-config" => :build
