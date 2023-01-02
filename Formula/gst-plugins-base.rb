@@ -1,8 +1,8 @@
 class GstPluginsBase < Formula
   desc "GStreamer plugins (well-supported, basic set)"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.20.3.tar.xz"
-  sha256 "7e30b3dd81a70380ff7554f998471d6996ff76bbe6fc5447096f851e24473c9f"
+  url "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.20.4.tar.xz"
+  sha256 "8d181b7abe4caf23ee9f9ec5b4d3e232640452464e39495bfffb6d776fc97225"
   license "LGPL-2.0-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git", branch: "master"
 
@@ -13,7 +13,7 @@ class GstPluginsBase < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-plugins-base"
-    sha256 mojave: "40b89b63733d7028ae321301668e1a7da44e737de6d5f4207c263ec38166254d"
+    sha256 mojave: "b2321f5b1902b2041a4ed0408ea6ebdb1ed6c04eec5aa0cbf35d11f584557293"
   end
 
   depends_on "gobject-introspection" => :build
