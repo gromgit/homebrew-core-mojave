@@ -1,8 +1,8 @@
 class MysqlClient < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.30.tar.gz"
-  sha256 "c331ac7a68099a2116097acbb14fd331423d486fe47ce0e346925111b44df69c"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.31.tar.gz"
+  sha256 "7867f3fd8ca423d283a6162c819c766863ecffbf9b59b4756dc7bb81184c1d6a"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -11,8 +11,7 @@ class MysqlClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mysql-client"
-    rebuild 2
-    sha256 mojave: "8b996d33f59c2816fdce44405640b36d8275778b928489fda435466596240cb8"
+    sha256 mojave: "c5dff7d767e2bb18bf2d849b56abe72c119af43a7a3ce5db2366dae4e7018865"
   end
 
   keg_only "it conflicts with mysql (which contains client libraries)"
