@@ -4,6 +4,7 @@ class Sdl2Image < Formula
   url "https://github.com/libsdl-org/SDL_image/releases/download/release-2.6.2/SDL2_image-2.6.2.tar.gz"
   sha256 "48355fb4d8d00bac639cd1c4f4a7661c4afef2c212af60b340e06b7059814777"
   license "Zlib"
+  revision 1
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
@@ -15,8 +16,7 @@ class Sdl2Image < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl2_image"
-    rebuild 1
-    sha256 cellar: :any, mojave: "afb9b889309853fe1f4a3f808f6b520733a4c0c6f8e887c8a471931f109c43bd"
+    sha256 cellar: :any, mojave: "1f5b3fbe365941621a5c2e1771cfb196d9013e116036d4168e408b8a5abe15ee"
   end
 
   head do
@@ -29,6 +29,8 @@ class Sdl2Image < Formula
 
   depends_on "pkg-config" => :build
   depends_on "jpeg-turbo"
+  depends_on "jpeg-xl"
+  depends_on "libavif"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "sdl2"
@@ -41,7 +43,9 @@ class Sdl2Image < Formula
 
     system "./configure", *std_configure_args,
                           "--disable-imageio",
+                          "--disable-avif-shared",
                           "--disable-jpg-shared",
+                          "--disable-jxl-shared",
                           "--disable-png-shared",
                           "--disable-stb-image",
                           "--disable-tif-shared",
@@ -55,9 +59,10 @@ class Sdl2Image < Formula
 
       int main()
       {
-          int success = IMG_Init(0);
+          int INIT_FLAGS = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF | IMG_INIT_WEBP | IMG_INIT_JXL | IMG_INIT_AVIF;
+          int result = IMG_Init(INIT_FLAGS);
           IMG_Quit();
-          return success;
+          return result == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
       }
     EOS
     system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
