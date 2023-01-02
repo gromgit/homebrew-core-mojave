@@ -13,7 +13,8 @@ class Dwdiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dwdiff"
-    sha256 mojave: "b4ab41af833e21d4f8ecd192a2c6209508a7396b0051f15118fa05b79193b4a6"
+    rebuild 1
+    sha256 mojave: "f8b8c229800bbdc2aaea15d41e5588cd31f2892fa8f77f7f394aa5470c9f3d7e"
   end
 
   depends_on "pkg-config" => :build
