@@ -1,8 +1,8 @@
 class MkConfigure < Formula
   desc "Lightweight replacement for GNU autotools"
   homepage "https://github.com/cheusov/mk-configure"
-  url "https://downloads.sourceforge.net/project/mk-configure/mk-configure/mk-configure-0.37.0/mk-configure-0.37.0.tar.gz"
-  sha256 "16d66de82bec9f050d5641af0851171e4804be69095630a01f7af8b88cd199e7"
+  url "https://downloads.sourceforge.net/project/mk-configure/mk-configure/mk-configure-0.38.2/mk-configure-0.38.2.tar.gz"
+  sha256 "1e705e11047515aea67327ba67010affcbb77f2f0736eb84a5080249f4ab483e"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT", "MIT-CMU"]
 
   livecheck do
@@ -11,15 +11,8 @@ class MkConfigure < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "833084703288803fe5bf6e7b21e2dc3fc3bb4e8ff3d1dfe0aa349418f49f384e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca9449aa389f16613661553243de67150d36b019d6b77b767f95c03fd0da1bba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99cfb90e5b63675ee36307557d4c4981843cb39f96824d3b0424d0feaa215ae8"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0d3babe5b626e23e8acf33e2a34c4dc330394cb84a9bdaed6344fb38c71a059"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8c8a8dd1f1710a987a6417b3ad3972cb03461213148284185ea535a54f373b3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "74fd29adec76158ebe619c4116609fe56b88aed78f64161fa352cad842a5a760"
-    sha256 cellar: :any_skip_relocation, catalina:       "d49908536866ff5ad40d08035125236d0f3c0cdcb0d4db190b4d2fc72deee1c1"
-    sha256 cellar: :any_skip_relocation, mojave:         "8e2d5682e9bbafe39e7d518b681f7e498b95b81a9e4ba16e5159af08825c2078"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc1ed3b81d9f3b233e7b858698e5c5f8942ff8b7887ad6978fd424d4dee8903d"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mk-configure"
+    sha256 cellar: :any_skip_relocation, mojave: "95f1e1d77dc8952728215be19559e12c869676410a47e7c65909c87f3baef1e4"
   end
 
   depends_on "bmake"
