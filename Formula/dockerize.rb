@@ -7,8 +7,8 @@ class Dockerize < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dockerize"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "9be674f534f3aa904a812e6fc88e8ad622ebba6eab5525f8f566e8222e418e21"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "9ffe7879861474c280da26768427ba070084abe9072dcaec16d1b3aa56a7e0eb"
   end
 
   depends_on "go" => :build
