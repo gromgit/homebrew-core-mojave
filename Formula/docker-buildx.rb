@@ -9,8 +9,8 @@ class DockerBuildx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-buildx"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "2bc3837b17a25ebb95b780cf1f234bc91bb52120b1c2b28df774035fc8a49d99"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "50732ba724f6b05d02920a268395229faeee9e55250593837d83d488d2af061b"
   end
 
   depends_on "go" => :build
