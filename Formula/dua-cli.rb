@@ -1,13 +1,13 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.18.0.tar.gz"
-  sha256 "ef283b8a7b97e6b6f7d3a837f73f7898e54beb2689c1bcb6a9e414991b5aee18"
+  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.19.0.tar.gz"
+  sha256 "fcbf2d9dbcdad2db17d2a3b690fb05d69ad3953237f2971d546d341339bf6271"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dua-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "c1f8281cc184c166a0968b3fb605858a891584af6f48c9aa726beae5060fe812"
+    sha256 cellar: :any_skip_relocation, mojave: "317da11b34bae18b2e206620ba3482a9857d900363e6adf2eac34775bc0215f5"
   end
 
   depends_on "rust" => :build
@@ -21,12 +21,10 @@ class DuaCli < Formula
     (testpath/"empty.txt").write("")
     (testpath/"file.txt").write("01")
 
-    # The "-EOS" is needed instead of "~EOS" in order to keep
-    # the expected indentation at the start of each line.
-    expected = <<-EOS
-      0  B #{testpath}/empty.txt
-      2  B #{testpath}/file.txt
-      2  B total
+    expected = <<~EOS
+      \e[32m      0  B\e[39m #{testpath}/empty.txt
+      \e[32m      2  B\e[39m #{testpath}/file.txt
+      \e[32m      2  B\e[39m total
     EOS
 
     assert_equal expected, shell_output("#{bin}/dua -A #{testpath}/*.txt")
