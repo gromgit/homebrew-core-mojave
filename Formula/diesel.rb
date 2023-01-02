@@ -1,15 +1,14 @@
 class Diesel < Formula
   desc "Command-line tool for Rust ORM Diesel"
   homepage "https://diesel.rs"
-  url "https://github.com/diesel-rs/diesel/archive/v2.0.0.tar.gz"
-  sha256 "5a95e7717c32e762963db90a32f49b79ab799987434c41b7d982c85334ecc2bf"
+  url "https://github.com/diesel-rs/diesel/archive/v2.0.2.tar.gz"
+  sha256 "d92d893849ebbd8e81e88a13d757e8273beac13c727fd34bfad20f986d03456a"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/diesel-rs/diesel.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diesel"
-    rebuild 1
-    sha256 cellar: :any, mojave: "091c6c9ef7bbba7e78ee1188435a94fed3ae052105fe089d600c84d93fb34f0b"
+    sha256 cellar: :any, mojave: "69ab6a840d95ac5433f793ea21e5a55e360e29d0db8fc4bebe744cd4f70854f9"
   end
 
   depends_on "rust" => [:build, :test]
