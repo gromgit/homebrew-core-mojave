@@ -10,7 +10,8 @@ class DockerMachine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-machine"
-    sha256 cellar: :any_skip_relocation, mojave: "72071fdc08b7407421883033910204324e4ba516034899bfefd36c07470805f7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "69369448dfa5bb9f1442a893cb5069f9f344c98b67bc9daf9eb76f4e65ce57e6"
   end
 
   # Commented out while this formula still has dependents.
