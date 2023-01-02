@@ -7,7 +7,8 @@ class SdlNet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl_net"
-    sha256 cellar: :any, mojave: "a76846e80c2027d1f253351240391192a152000dfbecc264f2b1052cad408278"
+    rebuild 1
+    sha256 cellar: :any, mojave: "1c447ce81f6ee5cfa43bd4e12392ea6c6da6395fac51a7902eea80546b011b44"
   end
 
   head do
