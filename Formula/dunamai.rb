@@ -3,16 +3,16 @@ class Dunamai < Formula
 
   desc "Dynamic version generation"
   homepage "https://github.com/mtkennerly/dunamai"
-  url "https://files.pythonhosted.org/packages/2d/e4/d92c4e1ac3115575c9a8d528625adf08ad3a980f8236a34486e49a7ad381/dunamai-1.13.0.tar.gz"
-  sha256 "5bf9e5baaa673b692a9613e4961b18b6d2d9743412f7bbcf4a39c84a979f47e2"
+  url "https://files.pythonhosted.org/packages/6e/43/ad68cee0365ebff6cccae2cda520f39431cf68336ec42fb1b4600d505a1d/dunamai-1.15.0.tar.gz"
+  sha256 "d6088922df3226a8234c228803bb01902a83766d04c2cddb33d4dd3bf85ec9a5"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dunamai"
-    sha256 cellar: :any_skip_relocation, mojave: "f7d30f4f0a60bd2621afcccfb1a9fae72e30df553153f906d3de3ffdfa9d6647"
+    sha256 cellar: :any_skip_relocation, mojave: "1ce04a2bb57bba0ca472589bdd6a7e3d581e040dc4e8e5d1f52e9c6fc9370a75"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
