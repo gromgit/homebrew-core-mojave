@@ -8,7 +8,8 @@ class Dynein < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynein"
-    sha256 cellar: :any_skip_relocation, mojave: "d0273617683b18aa1c657260c89a4479887d23edfbe42136a1f06a95000dc270"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8b847392ca8dff31ae2ffdde1d64a9a817a39e02ff759c49466373c3b11e68bd"
   end
 
   depends_on "rust" => :build
