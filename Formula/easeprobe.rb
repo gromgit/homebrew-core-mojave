@@ -2,14 +2,14 @@ class Easeprobe < Formula
   desc "Simple, standalone, and lightWeight tool that can do health/status checking"
   homepage "https://github.com/megaease/easeprobe"
   url "https://github.com/megaease/easeprobe.git",
-      tag:      "v1.8.0",
-      revision: "0108e6fc1a41607eef4f332ea05399ea59ce081e"
+      tag:      "v2.0.0",
+      revision: "9a75ba2a674941c6c8a369f503177dfb4fbee209"
   license "Apache-2.0"
   head "https://github.com/megaease/easeprobe.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easeprobe"
-    sha256 cellar: :any_skip_relocation, mojave: "a4cb5ba07ec7fc923fc8ee30bb43ff1c67a8f817bc75fe5eb6f74e7c75f372b8"
+    sha256 cellar: :any_skip_relocation, mojave: "231333968e2277f1804b27e539f5eb98a7e0104c578c60f895e53919c7db0148"
   end
 
   depends_on "go" => :build
