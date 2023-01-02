@@ -8,7 +8,8 @@ class Glfw < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glfw"
-    sha256 cellar: :any, mojave: "418cd446fdce1200f2d19ffc064c6d9c0984da1f9e6dcc4e9a533bbac4c8e3de"
+    rebuild 1
+    sha256 cellar: :any, mojave: "34f24281095fa86ab065f063bbc3d33601554a6abefb07267adedd9e2d5566e2"
   end
 
   depends_on "cmake" => :build
