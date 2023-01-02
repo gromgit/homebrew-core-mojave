@@ -1,8 +1,8 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
   homepage "https://dockersl.im"
-  url "https://github.com/docker-slim/docker-slim/archive/1.38.0.tar.gz"
-  sha256 "505e34813660e5131c2e92985f6b029696278d4715dc3a4b590dd1a079a54fe0"
+  url "https://github.com/docker-slim/docker-slim/archive/1.39.0.tar.gz"
+  sha256 "3574952b1d8ff340af3f9ed58d6a22f0f8d81ac043ea73b8d2e5eca80fedefce"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class DockerSlim < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-slim"
-    sha256 cellar: :any_skip_relocation, mojave: "01aa2cfded8ffb28fc77379184b609c3c9b239ca1f29d2a146962be17d7143a5"
+    sha256 cellar: :any_skip_relocation, mojave: "c5473e30e9d5f7f34b07318e5030a71f946a22d9736a63a081cbff9d7d6c6247"
   end
 
   depends_on "go" => :build
