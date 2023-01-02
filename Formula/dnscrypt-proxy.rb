@@ -13,7 +13,8 @@ class DnscryptProxy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnscrypt-proxy"
-    sha256 cellar: :any_skip_relocation, mojave: "6e586f8eaf69eeafb670c604d9b693f9dad6e9cf332a7825fed26032b4701649"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "793342cbee4d4e3456500ee7806519feb4a2f86a5f908831a4aae6514cf16139"
   end
 
   depends_on "go" => :build
