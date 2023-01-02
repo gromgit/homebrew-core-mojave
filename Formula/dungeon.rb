@@ -8,7 +8,8 @@ class Dungeon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dungeon"
-    sha256 cellar: :any, mojave: "bca5f867a3c9c708f8eed07f571e115cda55810ddcf4205b386c12a33a090248"
+    rebuild 1
+    sha256 cellar: :any, mojave: "edff505940ef418f53422ca123a5c9cbeab423f9bbdbfbea33c3e346db537722"
   end
 
   depends_on "gcc" # for gfortran
