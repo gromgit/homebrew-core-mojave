@@ -7,7 +7,9 @@ class DiffPdf < Formula
   revision 5
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diff-pdf"
+    rebuild 1
+    sha256 cellar: :any, mojave: "439d504a3b8d6ae21cb70cfa37d90479ef9141ad04bc8bce4d3f8466c026cdc5"
   end
 
   depends_on "autoconf" => :build
@@ -17,10 +19,6 @@ class DiffPdf < Formula
   depends_on "cairo"
   depends_on "poppler"
   depends_on "wxwidgets"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
 
