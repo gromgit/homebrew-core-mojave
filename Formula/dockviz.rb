@@ -9,7 +9,8 @@ class Dockviz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dockviz"
-    sha256 cellar: :any_skip_relocation, mojave: "a87d2eabcce2ceaf4ada13fa41c9986ad0114f20f32d7900a08d8c8d1a35e6fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4f31da6a82ae9bda42e843f7c5525a3ae6ae813fc31c17c7b98f87a70f9135cc"
   end
 
   depends_on "go" => :build
