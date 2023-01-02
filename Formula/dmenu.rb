@@ -1,8 +1,8 @@
 class Dmenu < Formula
   desc "Dynamic menu for X11"
   homepage "https://tools.suckless.org/dmenu/"
-  url "https://dl.suckless.org/tools/dmenu-5.1.tar.gz"
-  sha256 "1f4d709ebba37eb7326eba0e665e0f13be4fa24ee35c95b0d79c30f14a348fd5"
+  url "https://dl.suckless.org/tools/dmenu-5.2.tar.gz"
+  sha256 "d4d4ca77b59140f272272db537e05bb91a5914f56802652dc57e61a773d43792"
   license "MIT"
   head "https://git.suckless.org/dmenu/", using: :git, branch: "master"
 
@@ -13,8 +13,7 @@ class Dmenu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dmenu"
-    rebuild 3
-    sha256 cellar: :any, mojave: "f0e675a0ca4fb5205f3b513ca089893522b60da8ae6d45c86adf8a34b6ec2b88"
+    sha256 cellar: :any, mojave: "8e1278286bc1c38f5b9882598c99291d216d1c8beb6c8b3e2f25ca417650f83d"
   end
 
   depends_on "fontconfig"
