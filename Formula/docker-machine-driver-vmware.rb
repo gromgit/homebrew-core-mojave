@@ -8,8 +8,8 @@ class DockerMachineDriverVmware < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-machine-driver-vmware"
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, mojave: "5806fc1292fd60e8991c95ba51780f5999ac19b1030f36e25ed3d6f21e7cbc55"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, mojave: "4888a23bddff541c7a6fb5fbee6401a73ae814040dd62a01a6dc5e3b5a380eb4"
   end
 
   # Bump to 1.18 on the next release, if possible.
