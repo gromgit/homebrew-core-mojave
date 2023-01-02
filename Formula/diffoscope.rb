@@ -3,19 +3,18 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/ab/dc/da75ca396cd5177e3909d3054b76fb97098a6b124e486714e7701ca02e4f/diffoscope-221.tar.gz"
-  sha256 "7b1724e9b1e5ac6597cac07d0acd2661db1bcf0d6a9b2e87be21b5e3806be9f8"
+  url "https://files.pythonhosted.org/packages/ff/b1/ec60a3cf538c88eeaaa852a0df3964522a7c805ba4757c3c2b9881726e6c/diffoscope-228.tar.gz"
+  sha256 "ff5d656eb6699f0fcd077146d2af44307c34ba9190c7b531d0e5accc8aeef869"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diffoscope"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "122994dc32e2af6f42e3746d710142ddd2e087073ff1d999e075380580c81294"
+    sha256 cellar: :any_skip_relocation, mojave: "c371b5f94c65e17c2f1b48229f39fa93a03f145310380f109d1e10a86fae3c6c"
   end
 
   depends_on "libarchive"
   depends_on "libmagic"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/05/f8/67851ae4fe5396ba6868c5d84219b81ea6a5d53991a6853616095c30adc0/argcomplete-2.0.0.tar.gz"
@@ -38,7 +37,7 @@ class Diffoscope < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.10")
+    venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources
     venv.pip_install buildpath
 
@@ -50,6 +49,6 @@ class Diffoscope < Formula
   test do
     (testpath/"test1").write "test"
     cp testpath/"test1", testpath/"test2"
-    system "#{bin}/diffoscope", "--progress", "test1", "test2"
+    system bin/"diffoscope", "--progress", "test1", "test2"
   end
 end
