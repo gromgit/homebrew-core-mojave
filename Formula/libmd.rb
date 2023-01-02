@@ -11,14 +11,9 @@ class Libmd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "159d4661e6477b40c07ad7fd1b9832b8bfd1dfa0664a137b4ff7160c360e0c36"
-    sha256 cellar: :any,                 arm64_monterey: "176db8960cd4ac83cf0f5145c3b1f7560ac239c867a2b3b41127e5badd238a38"
-    sha256 cellar: :any,                 arm64_big_sur:  "4251c8ad6b6962dddba3270630943a53779af7eaf7b7963be34f5f3de7b14667"
-    sha256 cellar: :any,                 ventura:        "897b410369a68b9a2db954519ace1d396cac501669d1890534754cb6a7e6f77b"
-    sha256 cellar: :any,                 monterey:       "051da8fdcf3a6907760fd2983e9351d529a1a28d4f48ab32a942a232a9fe7fdf"
-    sha256 cellar: :any,                 big_sur:        "1aa4b3d7c3fe5ad30d0711d045ca94e05a6fed6f928cdf11ac80acfc1fb31928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10df9063da043dc8dc8a2b5b0018f2fc7f4f055fe9ee5d7ad2640c26472e877f"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmd"
+    rebuild 2
+    sha256 cellar: :any, mojave: "d2e8a49bbd46df681d64df47882573e636726d7f74dfabba47651e1a2edb3e97"
   end
 
   # build patch, https://github.com/macports/macports-ports/blob/master/devel/libmd/files/patch-symbol-alias.diff
