@@ -12,6 +12,7 @@ class Djvulibre < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djvulibre"
+    rebuild 1
     sha256 mojave: "968cfea4b7b8bda1f02d783d7418184b3436fe522be2ab06a852332b190989e2"
   end
 
