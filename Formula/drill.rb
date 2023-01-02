@@ -8,7 +8,8 @@ class Drill < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/drill"
-    sha256 cellar: :any_skip_relocation, mojave: "e0507c0b083b59585ca2c9ff59ba9f9cf30876d4929598a8e096ca07873dbbf8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4a3d6331e252de7fc583be978105c683b2c72b61445cfbc751c5ecd3d847fa0d"
   end
 
   depends_on "rust" => :build
