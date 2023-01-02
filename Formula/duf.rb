@@ -8,8 +8,8 @@ class Duf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duf"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "27246f7706c37ef8820ede07b217458b075b9d4a13924ef7f16654ac18817530"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "dcc2ce5cc9e3e797d036145c96174c1e46251b18fecf2fe69defd2e3c619336d"
   end
 
   depends_on "go" => :build
