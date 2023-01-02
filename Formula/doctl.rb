@@ -1,14 +1,14 @@
 class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
   homepage "https://github.com/digitalocean/doctl"
-  url "https://github.com/digitalocean/doctl/archive/v1.83.0.tar.gz"
-  sha256 "43e5d76715b7627374c00fa83a3a53726bc8735ac8b86a3960de133608a84eeb"
+  url "https://github.com/digitalocean/doctl/archive/v1.91.0.tar.gz"
+  sha256 "8a3d72f4b21505a19ebab8c12a8f2b81e6139848cfb09018084e658c6e5d707b"
   license "Apache-2.0"
   head "https://github.com/digitalocean/doctl.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/doctl"
-    sha256 cellar: :any_skip_relocation, mojave: "f4c92ff64e40fed3e92413614275944a3587a611670102f5d68715a339b700f7"
+    sha256 cellar: :any_skip_relocation, mojave: "2ad582ad64e9bb83ca1e1d76b44fa000526ec924a80b33f0dca256a5ec981dae"
   end
 
   depends_on "go" => :build
