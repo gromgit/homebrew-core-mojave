@@ -7,7 +7,8 @@ class Docuum < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docuum"
-    sha256 cellar: :any_skip_relocation, mojave: "4c3264cf83cd76c871010b2cb86f507c7decd21f595da4454b46a3157e0663de"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c638c581902d717ef575aac5e98cabd496db8796101af22bbbdee0062da5613c"
   end
 
   depends_on "rust" => :build
