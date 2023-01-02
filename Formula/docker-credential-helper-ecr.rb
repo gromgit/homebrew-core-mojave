@@ -13,8 +13,8 @@ class DockerCredentialHelperEcr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/docker-credential-helper-ecr"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ac00b33aef30a62f1986d49d1006a1c3877593e136d36bb6bf56533f5aad98a0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "63bd72e0836563e5c1bcb47cb669a1de3f227c86307fb1db1e031f1698fcfe20"
   end
 
   depends_on "go" => :build
