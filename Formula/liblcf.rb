@@ -9,7 +9,8 @@ class Liblcf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/liblcf"
-    sha256 cellar: :any, mojave: "0f0d97b748a4f771dc9f03ddcad94dd458d0ddeab8fed137e173acdebd1856a4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3d4b26840c7732f60b24618d29d87533c30364067bee712dc44af65e4cdc9360"
   end
 
   depends_on "cmake" => :build
