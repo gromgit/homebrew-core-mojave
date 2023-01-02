@@ -1,10 +1,9 @@
 class RubyAT27 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.6.tar.xz"
-  sha256 "54dcd3044726c4ab75a9d4604720501442b229a3aed6a55fe909567da8807f24"
+  url "https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.7.tar.xz"
+  sha256 "b38dff2e1f8ce6e5b7d433f8758752987a6b2adfd9bc7571dbc42ea5d04e3e4c"
   license "Ruby"
-  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -13,8 +12,7 @@ class RubyAT27 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ruby@2.7"
-    rebuild 1
-    sha256 mojave: "c25526a0abccd017a99799bdbc231c24bdb6662951d72a04f9df2c572726e7ca"
+    sha256 mojave: "6c899d982a2a8c9bed2f183af9746ba2c2a60578c159a288c4193e5286697868"
   end
 
   keg_only :versioned_formula
@@ -31,8 +29,8 @@ class RubyAT27 < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https://rubygems.org/rubygems/rubygems-3.3.11.tgz"
-    sha256 "64184aec5bf3d4314eca3b8bae2085c5ddec50564b822340035187431dc1c074"
+    url "https://rubygems.org/rubygems/rubygems-3.3.26.tgz"
+    sha256 "9b17a53a000a599926cf1ef19e9d2a35f87b436ae6500225eebe55db320dc68c"
   end
 
   def api_version
@@ -226,10 +224,10 @@ class RubyAT27 < Formula
 
     (testpath/"Gemfile").write <<~EOS
       source 'https://rubygems.org'
-      gem 'gemoji'
+      gem 'github-markup'
     EOS
     system bin/"bundle", "exec", "ls" # https://github.com/Homebrew/homebrew-core/issues/53247
     system bin/"bundle", "install", "--binstubs=#{testpath}/bin"
-    assert_predicate testpath/"bin/gemoji", :exist?, "gemoji is not installed in #{testpath}/bin"
+    assert_predicate testpath/"bin/github-markup", :exist?, "github-markup is not installed in #{testpath}/bin"
   end
 end
