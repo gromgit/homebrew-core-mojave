@@ -1,16 +1,16 @@
 class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
-  homepage "https://www.graphviz.org/"
+  homepage "https://graphviz.org/"
   url "https://gitlab.com/graphviz/graphviz.git",
-      tag:      "3.0.0",
-      revision: "24cf7232bb8728823466e0ef536862013893e567"
+      tag:      "7.0.4",
+      revision: "274d174ce715e31af5bfe6495a2f32fd6cd658b2"
   license "EPL-1.0"
   version_scheme 1
   head "https://gitlab.com/graphviz/graphviz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/graphviz"
-    sha256 mojave: "eed29c7c011e9a95e19a9b95280429e3e2d7baf0d6022cd1de654d12b5324853"
+    sha256 mojave: "b04905fd57acc1e0c07eb32715747c4b3a11e6c4377b88db14e5370995fa315f"
   end
 
   depends_on "autoconf" => :build
@@ -25,6 +25,7 @@ class Graphviz < Formula
   depends_on "pango"
 
   uses_from_macos "flex" => :build
+  uses_from_macos "python" => :build
 
   on_linux do
     depends_on "byacc" => :build
