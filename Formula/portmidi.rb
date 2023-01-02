@@ -8,7 +8,8 @@ class Portmidi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/portmidi"
-    sha256 cellar: :any, mojave: "a58d3ede45d508da28bc00b7e85df0344cabc08e7d171e694d4515be2167af68"
+    rebuild 1
+    sha256 cellar: :any, mojave: "83f77d053c7a227a47caee4781c83669b388e73700985f721558d8628f7da9a1"
   end
 
   depends_on "cmake" => :build
