@@ -1,12 +1,20 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://wiki.gnome.org/Projects/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.54/librsvg-2.54.5.tar.xz"
-  sha256 "4f03190f45324d1fa1f52a79dfcded1f64eaf49b3ae2f88eedab0c07617cae6e"
+  url "https://download.gnome.org/sources/librsvg/2.55/librsvg-2.55.1.tar.xz"
+  sha256 "6baf48a9d3a56fd13bbfbb9f1f76759b240b70a1fa220fd238474d66a926f98c"
   license "LGPL-2.1-or-later"
 
+  # We use a common regex because librsvg doesn't use GNOME's "even-numbered
+  # minor is stable" version scheme (at least as a "trial" for 2.55.x).
+  livecheck do
+    url :stable
+    regex(/librsvg[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/librsvg"
+    sha256 mojave: "b5353c56acdb284b93170efa3310058e71a29e0e7ac8624c1af68e0c10b1efe9"
   end
 
   depends_on "gobject-introspection" => :build
