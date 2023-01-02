@@ -12,7 +12,8 @@ class Mt32emu < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mt32emu"
-    sha256 cellar: :any, mojave: "89813e54d0ba343f675f96f28be41057cd39b097a470df8c2584f4ddc4942363"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f403bafda4c6e06134f6becaf6c69d67316eac3e6c9b38d0040d82be483aabf5"
   end
 
   depends_on "cmake" => :build
