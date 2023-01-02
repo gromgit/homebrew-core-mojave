@@ -1,10 +1,9 @@
 class DosboxStaging < Formula
   desc "Modernized DOSBox soft-fork"
   homepage "https://dosbox-staging.github.io/"
-  url "https://github.com/dosbox-staging/dosbox-staging/archive/v0.78.1.tar.gz"
-  sha256 "dcd93ce27f5f3f31e7022288f7cbbc1f1f6eb7cc7150c2c085eeff8ba76c3690"
+  url "https://github.com/dosbox-staging/dosbox-staging/archive/v0.79.1.tar.gz"
+  sha256 "43f23fd0a5cff55e06a3ba2be8403f872ae47423f3bb4f823301eaae8a39ac2f"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/dosbox-staging/dosbox-staging.git", branch: "main"
 
   # New releases of dosbox-staging are indicated by a GitHub release (and
@@ -16,23 +15,25 @@ class DosboxStaging < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dosbox-staging"
-    rebuild 1
-    sha256 cellar: :any, mojave: "00f381645c13c02819b30e7cf45b45beae41ad220b06f43e50833c9e7ddd53e3"
+    sha256 mojave: "5203d9145da131441dcb1ced7d19cb2d8981b437acd221360271bc1500d89894"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "fluid-synth"
+  depends_on "glib"
+  depends_on "iir1"
   depends_on "libpng"
   depends_on "libslirp"
   depends_on "mt32emu"
   depends_on "opusfile"
   depends_on "sdl2"
   depends_on "sdl2_net"
+  depends_on "speexdsp"
+  uses_from_macos "zlib"
 
   on_linux do
-    depends_on "gcc"
     depends_on "mesa"
     depends_on "mesa-glu"
   end
@@ -40,11 +41,14 @@ class DosboxStaging < Formula
   fails_with gcc: "5"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Db_lto=true", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    (buildpath/"subprojects").rmtree # Ensure we don't use vendored dependencies
+    system_libs = %w[fluidsynth glib iir mt32emu opusfile png sdl2 sdl2_net slirp speexdsp zlib]
+    args = %W[-Ddefault_library=shared -Db_lto=true -Dtracy=false -Dsystem_libraries=#{system_libs.join(",")}]
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+
     mv bin/"dosbox", bin/"dosbox-staging"
     mv man1/"dosbox.1", man1/"dosbox-staging.1"
   end
