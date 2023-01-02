@@ -9,10 +9,11 @@ class Djhtml < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/djhtml"
-    sha256 cellar: :any_skip_relocation, mojave: "8aa4a9d26d12527e3ac27a5c80689f87f5df3fea38fca3325b40223f3dcabb16"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "caa75d112d9127bea58b3837fcae220957af1282c2054fcb51981eb6ec08b51a"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
