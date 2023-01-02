@@ -8,7 +8,7 @@ class Ed < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ed"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "37a7ff393350771b079b4409c264049b4f8ab8dcce16b94d46e549a1b3dd6bc5"
   end
 
