@@ -13,7 +13,8 @@ class Libshout < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libshout"
-    sha256 cellar: :any, mojave: "be78d87b103f2210e82e6f253dfae2bc99b69c007777d4269045118a57a4c01a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7ad73a54ed3cd1291db4abed88c64072a82227a6bc726c2ea11bf871401e7f45"
   end
 
   depends_on "pkg-config" => :build
