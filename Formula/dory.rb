@@ -7,7 +7,8 @@ class Dory < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dory"
-    sha256 cellar: :any_skip_relocation, mojave: "2b997c97ef0977274fc7cf99d73c7685d641f7f512c48fc96067dcff3fe6e138"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3569a905dc58c68216967020b3a02c88b593670d4d7644c21e9f45000563a9b7"
   end
 
   depends_on "ruby@2.7"
