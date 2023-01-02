@@ -8,7 +8,8 @@ class EfmLangserver < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/efm-langserver"
-    sha256 cellar: :any_skip_relocation, mojave: "82449e9d9af5148a61134aeaf166ecaba6709d3cf797f66a397d1b2e908f7980"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e02d2713e792fa4456e9aa6aaef5ca2ac2b108354a6b4fc75895820361159e01"
   end
 
   depends_on "go" => :build
