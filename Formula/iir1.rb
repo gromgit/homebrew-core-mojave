@@ -7,7 +7,8 @@ class Iir1 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iir1"
-    sha256 cellar: :any, mojave: "9133324d38a75f6e89c1ab078a0ca7d95dda75c99f8d5cfa3f849ee3906232c2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "07cbd041a60f632d3ef015b42d4841f530231a12dae7aede3d96362fe3a93b93"
   end
 
   depends_on "cmake" => :build
