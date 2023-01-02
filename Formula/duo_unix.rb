@@ -1,19 +1,19 @@
 class DuoUnix < Formula
   desc "Two-factor authentication for SSH"
   homepage "https://www.duosecurity.com/docs/duounix"
-  url "https://github.com/duosecurity/duo_unix/archive/duo_unix-1.12.1.tar.gz"
-  sha256 "bcba8eac949c983955eadcd63199a327add3b8f00aa6e7eb87cd7f4e28b2115b"
+  url "https://github.com/duosecurity/duo_unix/archive/duo_unix-2.0.0.tar.gz"
+  sha256 "d1c761ce63eee0c35a57fc6b966096cac1fd52c9387c6112c6e56ec51ee1990b"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/duo_unix"
-    sha256 mojave: "4f983b852a0539c0733c53fe454c841f7ed803674d0727b48a07ea86a0238fb8"
+    sha256 mojave: "82d6fee9cfb68d8c423245b95d356591d264c0d7088c98e72b030a5577059694"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "linux-pam"
@@ -26,7 +26,7 @@ class DuoUnix < Formula
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--includedir=#{include}/duo",
-                          "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}",
+                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
                           "--with-pam=#{lib}/pam/"
     system "make", "install"
   end
