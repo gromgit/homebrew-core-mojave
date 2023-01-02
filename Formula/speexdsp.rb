@@ -7,6 +7,7 @@ class Speexdsp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/speexdsp"
+    rebuild 1
     sha256 cellar: :any, mojave: "cd70818baa2d3562d456ed5c069763602a84e45ff14302149159457fae07b5ab"
   end
 
