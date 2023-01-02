@@ -7,11 +7,12 @@ class Dura < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dura"
-    sha256 cellar: :any, mojave: "86589ce65d71bf9fc650fee6dbe09e57bb5b29304909f6953360ed1cd800ff52"
+    rebuild 1
+    sha256 cellar: :any, mojave: "56f01d4c1c408af99146e5367be4ca6da6a25db7662c562ff3fd0c7c7320a439"
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -33,6 +34,8 @@ class Dura < Formula
 
   test do
     system "git", "init"
+    system "git", "config", "user.name", "BrewTestBot"
+    system "git", "config", "user.email", "BrewTestBot@test.com"
     touch "foo"
     system "git", "add", "foo"
     system "git", "commit", "-m", "bar"
