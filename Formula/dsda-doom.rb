@@ -29,7 +29,8 @@ class DsdaDoom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dsda-doom"
-    sha256 mojave: "6a1e741bc596e8326bfb186ae6c2261f7bf882ee3c7bf68b6ce9af9e59f7115a"
+    rebuild 1
+    sha256 mojave: "3043caba2808cfe14b0b055cb1115f25354658536e53458a4d62d7de4d7b5253"
   end
 
   depends_on "cmake" => :build
