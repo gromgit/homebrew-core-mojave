@@ -1,13 +1,13 @@
 class Dssim < Formula
   desc "RGBA Structural Similarity Rust implementation"
   homepage "https://github.com/kornelski/dssim"
-  url "https://github.com/kornelski/dssim/archive/3.2.3.tar.gz"
-  sha256 "f536e2b798d1731f2bc3575c4c2283a25a02e092d22ea6a25c3c3a6a84564bac"
+  url "https://github.com/kornelski/dssim/archive/3.2.4.tar.gz"
+  sha256 "f58d834876ebcc8e5f21e94e0db42b173d2bea600642cbbbb6dab16a6b5d7537"
   license "AGPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dssim"
-    sha256 cellar: :any_skip_relocation, mojave: "b258778432a65b48b29c7516d381200234bae041656214dabed77a879ab04867"
+    sha256 cellar: :any_skip_relocation, mojave: "6aead033c709c47160947286cc4c3bb8c25041e5f99034fc5becf8f9d5fea57b"
   end
 
   depends_on "nasm" => :build
