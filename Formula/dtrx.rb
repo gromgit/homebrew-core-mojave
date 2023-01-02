@@ -3,19 +3,20 @@ class Dtrx < Formula
 
   desc "Intelligent archive extraction"
   homepage "https://pypi.org/project/dtrx/"
-  url "https://files.pythonhosted.org/packages/ec/3c/e3b7669ac3821562221590611ec3285b736f538290328757e49986977a2b/dtrx-8.4.0.tar.gz"
-  sha256 "e96b87194481a54807763b33fc764d4de5fe0e4df6ee51147f72c0ccb3bed6fa"
+  url "https://files.pythonhosted.org/packages/3b/3b/426aacf32cfc661b1adbb61f3285367e9aff083252fd369a76bd3f565876/dtrx-8.5.0.tar.gz"
+  sha256 "66e2e1d5bf98401aec70c44e78192ca478d2138c7a6395863e51d07b085355b0"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dtrx"
-    sha256 cellar: :any_skip_relocation, mojave: "6aa5eaf94435781ca6f0470a2abfe641468bd473e3adc33fb520e48562e1edfa"
+    sha256 cellar: :any_skip_relocation, mojave: "09a757e9c313cec509b7178db7de0b856f6a540fabc56426e58e3a842b7c961e"
   end
 
   # Include a few common decompression handlers in addition to the python dep
   depends_on "p7zip"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "xz"
+
   uses_from_macos "zip" => :test
   uses_from_macos "bzip2"
   uses_from_macos "unzip"
