@@ -14,7 +14,8 @@ class Dlib < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dlib"
-    sha256 cellar: :any, mojave: "2f605efb34bf31df410ba14a8347835e2b02402ffc7f6e38fec750fcb977a333"
+    rebuild 1
+    sha256 cellar: :any, mojave: "df2ff5f4e7749d92eed1ac1f658654092b980c154ff78e313e5cb295e853b057"
   end
 
   depends_on "cmake" => :build
