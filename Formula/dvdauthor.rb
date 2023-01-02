@@ -12,8 +12,8 @@ class Dvdauthor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvdauthor"
-    rebuild 2
-    sha256 cellar: :any, mojave: "cb5c25ec0610eca2ff281dcb512c6b2493c11b42dfcad523176b4caca191950d"
+    rebuild 3
+    sha256 cellar: :any, mojave: "fb590561ce0b10f005381594b241dae47401957cb556ecbe72c4c2fe4bef777a"
   end
 
   # Dvdauthor will optionally detect ImageMagick or GraphicsMagick, too.
