@@ -1,8 +1,8 @@
 class Dnsdist < Formula
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-1.7.2.tar.bz2"
-  sha256 "524bd2bb05aa2e05982a971ae8510f2812303ab4486a3861b62212d06b1127cd"
+  url "https://downloads.powerdns.com/releases/dnsdist-1.7.3.tar.bz2"
+  sha256 "7eaf6fac2f26565c5d8658d42a213799e05f4d3bc68e7c716e7174df41315886"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,8 +12,7 @@ class Dnsdist < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dnsdist"
-    rebuild 1
-    sha256 cellar: :any, mojave: "fd72772d9cd90e1936209e82d21d3cef9eb67e8d3a8c5b35fb8a9914c8399a41"
+    sha256 cellar: :any, mojave: "0971a2bd16ed5f2836d5380a976ac4407573aacd9bbe3ec395f54effa564ec87"
   end
 
   depends_on "boost" => :build
@@ -22,7 +21,7 @@ class Dnsdist < Formula
   depends_on "fstrm"
   depends_on "h2o"
   depends_on "libsodium"
-  depends_on "luajit-openresty"
+  depends_on "luajit"
   depends_on "openssl@1.1"
   depends_on "protobuf"
   depends_on "re2"
@@ -31,7 +30,6 @@ class Dnsdist < Formula
 
   on_linux do
     depends_on "linux-headers@5.16" => :build
-    depends_on "gcc"
   end
 
   fails_with gcc: "5"
