@@ -12,6 +12,7 @@ class Dynomite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynomite"
+    rebuild 1
     sha256 cellar: :any, mojave: "7258a08c61d4e2a9dc4603e80ee45d5e6466064417ad5b84762913fe769ff97d"
   end
 
