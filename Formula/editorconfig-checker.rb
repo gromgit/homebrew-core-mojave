@@ -8,7 +8,8 @@ class EditorconfigChecker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/editorconfig-checker"
-    sha256 cellar: :any_skip_relocation, mojave: "a1e76c97a829f2b4bb869c90b7cb52ba89163c97b06910e9b060c9478d5f0a65"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c8ee222a7e21c09260e94a6a71585603314ca6ea12931bc23cd4c43a59884db5"
   end
 
   depends_on "go" => :build
