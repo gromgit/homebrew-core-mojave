@@ -12,7 +12,8 @@ class Dynamips < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dynamips"
-    sha256 cellar: :any_skip_relocation, mojave: "88d2dedfe7f408ca161f81eb2ecaaf9d28f9a136e7bf44cbec1c784278871bbd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "34f8da1ca1f416b0c41b1875bada3fbfda4bf6c68ef76b68a2203f7c2b9f4f85"
   end
 
   depends_on "cmake" => :build
