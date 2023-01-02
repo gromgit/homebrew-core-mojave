@@ -13,7 +13,8 @@ class Dust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dust"
-    sha256 cellar: :any_skip_relocation, mojave: "48d7548e3ef3c16505d01b4529586b9ebc6923bd6c6f9ae86480f4948c35752d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4835b4d3d6e944d0198cd591582e0e53a79b35b60f200c083fe3cbe96b47bf88"
   end
 
   depends_on "rust" => :build
