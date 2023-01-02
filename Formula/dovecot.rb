@@ -13,10 +13,11 @@ class Dovecot < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dovecot"
-    sha256 mojave: "89d58be0cc39562ec007ed52fca86a71ab5ce2dfb95800d62058305428b8af6b"
+    rebuild 1
+    sha256 mojave: "dc435b2e638a97902703dbb092413ae626136dadf4e1d5efde77fff2e9cf1597"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
