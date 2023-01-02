@@ -12,7 +12,7 @@ class Diffstat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/diffstat"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "3d1bffb7e8abba91580bf75b52f52f44a42d8895bd36a68bc0bfee01b15fafc3"
   end
 
