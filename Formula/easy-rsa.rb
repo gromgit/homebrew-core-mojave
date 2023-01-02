@@ -1,14 +1,14 @@
 class EasyRsa < Formula
   desc "CLI utility to build and manage a PKI CA"
   homepage "https://github.com/OpenVPN/easy-rsa"
-  url "https://github.com/OpenVPN/easy-rsa/archive/v3.1.0.tar.gz"
-  sha256 "5fdb3586987695ae7746a64b08bf1d2daf1e63c72a2ee64ec973ad230d0f6edb"
+  url "https://github.com/OpenVPN/easy-rsa/archive/v3.1.1.tar.gz"
+  sha256 "35032fa0a07288e87504703fd6546f310c4e2692ccc23b94cb66acdd664badd5"
   license "GPL-2.0-only"
   head "https://github.com/OpenVPN/easy-rsa.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/easy-rsa"
-    sha256 cellar: :any_skip_relocation, mojave: "09a549d3ff88f28ee642dcf3ba74905be122769882ce16256f133d48e8e0d5ca"
+    sha256 cellar: :any_skip_relocation, mojave: "954f1e545c4c4410b24f4774cc11b8d75994c315dcbfb9fde62d45b6704ca897"
   end
 
   depends_on "openssl@3"
@@ -50,6 +50,7 @@ class EasyRsa < Formula
 
   test do
     ENV["EASYRSA_PKI"] = testpath/"pki"
-    assert_match "init-pki complete", shell_output("easyrsa init-pki")
+    assert_match "'init-pki' complete; you may now create a CA or requests.",
+      shell_output("#{bin}/easyrsa init-pki")
   end
 end
