@@ -7,8 +7,8 @@ class Dvm < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/dvm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c99e8e0762b53b38b9a0e0a0402273b0f5797cc808941d54d057b9e8c6932cba"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "8f5a1cf874bd6536869454f2ead814176f8f19eae25ae0c8c2a812e42afcc4a3"
   end
 
   depends_on "go" => :build
