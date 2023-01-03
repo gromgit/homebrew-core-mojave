@@ -8,7 +8,8 @@ class Imlib2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imlib2"
-    sha256 mojave: "6b5f61c848e101624e656f53fa579476cd75efa61328544aac60a40682b8bd47"
+    rebuild 1
+    sha256 mojave: "54db3cd09bb2eb3c02b098d5de2510e3ea1b2bdf2fa336818a5feba001101707"
   end
 
   depends_on "pkg-config" => :build
