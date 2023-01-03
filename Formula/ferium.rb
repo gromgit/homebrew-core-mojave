@@ -8,7 +8,8 @@ class Ferium < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ferium"
-    sha256 cellar: :any_skip_relocation, mojave: "b021c374fb59610712a15696d62989310ad6d387681a437d99adfea6957e3c57"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4fb0f3ce449b03124942d8c2b30b15865938dcd910ff4b25c0c66de17cebeab0"
   end
 
   depends_on "rust" => :build
