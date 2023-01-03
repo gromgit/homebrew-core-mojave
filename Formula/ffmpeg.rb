@@ -6,6 +6,7 @@ class Ffmpeg < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -15,7 +16,7 @@ class Ffmpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg"
-    sha256 cellar: :any_skip_relocation, mojave: "9158156d82337e72f60edec43b57ad494785dbcfecfeb2ec1a24eea86a95767d"
+    sha256 mojave: "fa97d25b0b5f4646602afc3dbd06ab43b253809f0cbaa1697340bec3d6f3de14"
   end
 
   depends_on "pkg-config" => :build
