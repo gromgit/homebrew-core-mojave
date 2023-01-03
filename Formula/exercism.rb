@@ -13,7 +13,8 @@ class Exercism < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exercism"
-    sha256 cellar: :any_skip_relocation, mojave: "2a9e942e5a2a613a774f098be960b289174dc41b9a73ef144b61977d087d430c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1b71bcbc421de970c1dbba5a87123d1d887184aac211500047949160569c4b40"
   end
 
   depends_on "go" => :build
