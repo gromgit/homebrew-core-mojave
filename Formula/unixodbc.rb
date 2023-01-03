@@ -13,7 +13,8 @@ class Unixodbc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unixodbc"
-    sha256 mojave: "f2125790179e5350289d745889039d9965320f10f92bbcdd572cefa261af63a7"
+    rebuild 1
+    sha256 mojave: "1811dc21f7eea13c635f2fb7d68617c5adc215fad32b82ce04118dc94b264ca7"
   end
 
   depends_on "libtool"
