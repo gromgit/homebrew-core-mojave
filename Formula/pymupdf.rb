@@ -1,20 +1,20 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https://github.com/pymupdf/PyMuPDF"
-  url "https://files.pythonhosted.org/packages/29/e4/d1d88146ef0b3b97d785acc7aed22b9774ac6bcf137e98b48a9c9bbb7f35/PyMuPDF-1.20.1.tar.gz"
-  sha256 "305c1a64b8fb2fd465e27cc8bdcbf0f64224f0ec6d7763e3f5f2ca6783136649"
+  url "https://files.pythonhosted.org/packages/4a/09/6afe87a8ea7acb6e4709223a704270ffe9929497add4d06b12305e229ba8/PyMuPDF-1.20.2.tar.gz"
+  sha256 "02eedf01f57c6bafb5e8667cea0088a2d2522643c47100f1908bec3a68a84888"
   license "AGPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pymupdf"
-    sha256 cellar: :any, mojave: "3a70f54a2a150bcab0353e2a9d424086dbd10d0770a9f972a828317e8b055f18"
+    sha256 cellar: :any, mojave: "e9f449adde57c4eb897f320efd1c595eff050fe92a9cacc61aaf064437a05c87"
   end
 
   depends_on "freetype" => :build
   depends_on "swig" => :build
 
   depends_on "mupdf"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   on_linux do
     depends_on "gumbo-parser"
@@ -22,6 +22,10 @@ class Pymupdf < Formula
     depends_on "jbig2dec"
     depends_on "mujs"
     depends_on "openjpeg"
+  end
+
+  def python3
+    "python3.11"
   end
 
   def install
@@ -34,7 +38,7 @@ class Pymupdf < Formula
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
 
-    system "python3", *Language::Python.setup_install_args(prefix), "build"
+    system python3, *Language::Python.setup_install_args(prefix, python3), "build"
   end
 
   test do
@@ -58,7 +62,7 @@ class Pymupdf < Formula
     in_pdf = test_fixtures("test.pdf")
     out_png = testpath/"test.png"
 
-    system Formula["python@3.10"].opt_bin/"python3", testpath/"test.py", in_pdf, out_png
+    system python3, testpath/"test.py", in_pdf, out_png
     assert_predicate out_png, :exist?
   end
 end
