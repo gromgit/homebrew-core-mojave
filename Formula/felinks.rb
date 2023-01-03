@@ -7,7 +7,8 @@ class Felinks < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/felinks"
-    sha256 cellar: :any, mojave: "22e118446187e4b9f7f6707d0558ea8c7db025880f4dd029ca011ebaca696948"
+    rebuild 1
+    sha256 cellar: :any, mojave: "6f794a0357002927e57685fb19ec61ebf9bbeb485b9f1f550531f7dfeed74286"
   end
 
   head do
