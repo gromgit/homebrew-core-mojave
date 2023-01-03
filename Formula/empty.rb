@@ -12,7 +12,7 @@ class Empty < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/empty"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "db6fa84eefa0698ed5f5d564fe6d748bf844eb80862d206ece9c998d9ae94139"
   end
 
