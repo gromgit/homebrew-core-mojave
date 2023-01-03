@@ -8,7 +8,8 @@ class Fdroidcl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fdroidcl"
-    sha256 cellar: :any_skip_relocation, mojave: "a6a47901e9885d53d5ed7b15e9a1fa71ea9e991b1067b21b1be524e374091aba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9366c66e3d46bb1ccc671e729d1b6cde60be403eda35929441f352487b3f7dd6"
   end
 
   depends_on "go" => :build
