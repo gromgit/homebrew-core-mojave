@@ -8,7 +8,8 @@ class Libmicrohttpd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmicrohttpd"
-    sha256 cellar: :any, mojave: "20e8525e29f7a96f2086c6a83de2e6115d455ca32cab5efec68bbaadf61ec3a4"
+    rebuild 1
+    sha256 cellar: :any, mojave: "00fee5b725b1f8991fba4c06c28202ad9eac5764eedb8ec9b298489271bbb257"
   end
 
   depends_on "gnutls"
