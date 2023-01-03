@@ -31,7 +31,8 @@ class Exim < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exim"
-    sha256 mojave: "896ea257893f12dc5baaa024954954f2a2445236b8f93b9865f1425b7fd8c4ff"
+    rebuild 1
+    sha256 mojave: "a544ef173f187ced6b81f89d1d53d091fdbcb17bcaf5027e6767d50389a42dd6"
   end
 
   depends_on "berkeley-db@5"
