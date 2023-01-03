@@ -7,6 +7,7 @@ class FdkAacEncoder < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fdk-aac-encoder"
+    rebuild 1
     sha256 cellar: :any, mojave: "1dd26d4031c60fb7b060d3bc70fc6581bbf26e4ee697722c496c5f495b8cb0ac"
   end
 
