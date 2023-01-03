@@ -7,8 +7,8 @@ class Fastmod < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastmod"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "388466c329dcd8dc5e0f757c58c877c0db27ef1781e0fc58c8708fdc7ebe4c05"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "a5e11cbdd052da96782ea11197af13d2b2f03ab70281d4409091c4b9b9b9d26f"
   end
 
   depends_on "rust" => :build
