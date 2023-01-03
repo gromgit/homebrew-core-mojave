@@ -17,7 +17,8 @@ class SdlTtf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/sdl_ttf"
-    sha256 cellar: :any, mojave: "08c7d7caeb1d476ad2016d45355605b6a556b67110dbce516e441fd09db58625"
+    rebuild 1
+    sha256 cellar: :any, mojave: "066da7a2d16b3280bd8217f4142763daa815617f408b89c5b1133a45191bf42b"
   end
 
   head do
