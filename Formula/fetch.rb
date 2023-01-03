@@ -8,7 +8,8 @@ class Fetch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fetch"
-    sha256 cellar: :any_skip_relocation, mojave: "c5f8c2b3b0442639673703f835456ab7456f96bb2c91e0548a2bd13057edb723"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "606df4ff1184398870793175ee65653170b7fd6310b7721f86c0adcbe91536de"
   end
 
   depends_on "go" => :build
