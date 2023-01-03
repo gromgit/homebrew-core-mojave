@@ -7,7 +7,8 @@ class Libexif < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libexif"
-    sha256 mojave: "176a7cc688d484d4ce957f7d0791c7f30b9e43b9a90080c1a6ddc3c7de71d0b4"
+    rebuild 1
+    sha256 mojave: "c2e2119c3261ab24636358a1f36b55452dc121e8f6ad188f800eb2975ed9a97d"
   end
 
   depends_on "autoconf" => :build
