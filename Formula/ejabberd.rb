@@ -1,15 +1,14 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://github.com/processone/ejabberd/archive/refs/tags/22.05.tar.gz"
-  sha256 "b8e93b51ae3cb650a2870fae1b6705404bb155289e97be7e9a54961a9effb959"
+  url "https://github.com/processone/ejabberd/archive/refs/tags/22.10.tar.gz"
+  sha256 "8539707da7e75785444edf402b5ff60fc3f956806c341b2565702dcc77900402"
   license "GPL-2.0-only"
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejabberd"
-    rebuild 1
-    sha256 cellar: :any, mojave: "b9ecf3c6aa67c38cf1020efe81cbd724f546444020dda07c90324b27485a7a5f"
+    sha256 cellar: :any, mojave: "f75114719b0972dd624469e3a682c5818b76830e4dd8208aa79909cd7f83a83c"
   end
 
   depends_on "autoconf" => :build
