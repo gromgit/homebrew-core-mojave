@@ -1,14 +1,14 @@
 class Embree < Formula
   desc "High-performance ray tracing kernels"
   homepage "https://embree.github.io/"
-  url "https://github.com/embree/embree/archive/v3.13.4.tar.gz"
-  sha256 "e6a8d1d4742f60ae4d936702dd377bc4577a3b034e2909adb2197d0648b1cb35"
+  url "https://github.com/embree/embree/archive/v3.13.5.tar.gz"
+  sha256 "b8c22d275d9128741265537c559d0ea73074adbf2f2b66b0a766ca52c52d665b"
   license "Apache-2.0"
   head "https://github.com/embree/embree.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/embree"
-    sha256 cellar: :any, mojave: "0a0d4c1285fc8d2df1b0511eecf47e08ccfc21c52ca8f2fc02ab6cb8f048be70"
+    sha256 cellar: :any, mojave: "b3f9243af6dcccf18f9794a28fd39ef9b290779089c99f909cd2e82cd6a9cb46"
   end
 
   depends_on "cmake" => :build
