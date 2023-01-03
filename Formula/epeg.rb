@@ -9,6 +9,7 @@ class Epeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/epeg"
+    rebuild 1
     sha256 cellar: :any, mojave: "aa952b0cd6b361ead4e591ead066c207978f4cdfb5ce95ecf33b724d9a066cbf"
   end
 
