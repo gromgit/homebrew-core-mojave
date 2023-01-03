@@ -8,7 +8,8 @@ class ElanInit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elan-init"
-    sha256 cellar: :any_skip_relocation, mojave: "5f1368e711d3e134e0b81666b15294401ec7d2f920d65adc70bfbdb5d97e6ece"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "be53923f3ae9008d49f43ebe944cd517acb5825409603fe0de0d04fcf047a9fb"
   end
 
   depends_on "rust" => :build
