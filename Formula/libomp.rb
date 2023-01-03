@@ -1,38 +1,46 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/openmp-14.0.6.src.tar.xz"
-  sha256 "4f731ff202add030d9d68d4c6daabd91d3aeed9812e6a5b4968815cfdff0eb1f"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.6/openmp-15.0.6.src.tar.xz"
+  sha256 "1ac6f159d81625d852a42676ff6d8820cb744c18d825a56d56a6d7aa389f5ac9"
   license "MIT"
 
   livecheck do
-    url "https://llvm.org/"
-    regex(/LLVM (\d+\.\d+\.\d+)/i)
+    url :stable
+    regex(/^llvmorg[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libomp"
-    sha256 cellar: :any, mojave: "5d44a03eaa4e6de527618c68f023cdd15d1017cd3071fc48c9a3e0e9cfba5823"
+    sha256 cellar: :any, mojave: "24de440a55ad11a6b951ba0a4e5e1022198482ceb56c3cc6278bf9da0448808c"
   end
 
+  # Ref: https://github.com/Homebrew/homebrew-core/issues/112107
+  keg_only "it can override GCC headers and result in broken builds"
+
   depends_on "cmake" => :build
+  depends_on "lit" => :build
   uses_from_macos "llvm" => :build
 
-  on_linux do
-    keg_only "provided by LLVM, which is not keg-only on Linux"
+  resource "cmake" do
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.6/cmake-15.0.6.src.tar.xz"
+    sha256 "7613aeeaba9b8b12b35224044bc349b5fa45525919625057fa54dc882dcb4c86"
   end
 
   def install
+    (buildpath/"src").install buildpath.children
+    (buildpath/"cmake").install resource("cmake")
+
     # Disable LIBOMP_INSTALL_ALIASES, otherwise the library is installed as
     # libgomp alias which can conflict with GCC's libgomp.
     args = ["-DLIBOMP_INSTALL_ALIASES=OFF"]
     args << "-DOPENMP_ENABLE_LIBOMPTARGET=OFF" if OS.linux?
 
-    system "cmake", "-S", "openmp-#{version}.src", "-B", "build/shared", *std_cmake_args, *args
+    system "cmake", "-S", "src", "-B", "build/shared", *std_cmake_args, *args
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", "openmp-#{version}.src", "-B", "build/static",
+    system "cmake", "-S", "src", "-B", "build/static",
                     "-DLIBOMP_ENABLE_SHARED=OFF",
                     *std_cmake_args, *args
     system "cmake", "--build", "build/static"
@@ -57,7 +65,7 @@ class Libomp < Formula
       }
     EOS
     system ENV.cxx, "-Werror", "-Xpreprocessor", "-fopenmp", "test.cpp", "-std=c++11",
-                    "-L#{lib}", "-lomp", "-o", "test"
+                    "-I#{include}", "-L#{lib}", "-lomp", "-o", "test"
     system "./test"
   end
 end
