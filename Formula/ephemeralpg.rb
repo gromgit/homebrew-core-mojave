@@ -13,6 +13,7 @@ class Ephemeralpg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ephemeralpg"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "6dd1e2dc0ea2cb35b966d3e19bdc77a19917434556f970bf78e2ffc4e5096841"
   end
 
