@@ -13,8 +13,8 @@ class Exult < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/exult"
-    rebuild 1
-    sha256 mojave: "57616b8acf082105896085712da57314d9d4dfb51031d630d7ee27c175d96b4b"
+    rebuild 2
+    sha256 mojave: "53e38bc033717e0bd2b12a5aae9049263c113ea5bed9aae903df1d09ade9f9d8"
   end
 
   depends_on "autoconf" => :build
