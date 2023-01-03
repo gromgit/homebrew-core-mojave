@@ -8,6 +8,7 @@ class Fdupes < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fdupes"
+    rebuild 1
     sha256 cellar: :any, mojave: "b8df60268535843d8434d014498625ca96f246c5749b8e5c38a26aada4c11959"
   end
 
