@@ -17,7 +17,8 @@ class GtkDoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk-doc"
-    sha256 cellar: :any, mojave: "b5b013a8c30182b1c1c84a3ce89a47f2776469540210c39aacd52d12d6fc6701"
+    rebuild 1
+    sha256 cellar: :any, mojave: "875530ce5a0c1bbb5bddd94848183c52aeb4532ada052294878fe87465d4df5b"
   end
 
   depends_on "meson" => :build
@@ -49,7 +50,7 @@ class GtkDoc < Formula
     # To avoid recording pkg-config shims path
     ENV.prepend_path "PATH", Formula["pkg-config"].bin
 
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.10")
     venv.pip_install resources
     ENV.prepend_path "PATH", libexec/"bin"
 
