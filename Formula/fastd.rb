@@ -5,16 +5,12 @@ class Fastd < Formula
       tag:      "v22",
       revision: "0f47d83eac2047d33efdab6eeaa9f81f17e3ebd1"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/NeoRaider/fastd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "e8c034f7725b6783bc9d811026120c2fe7730c8654da37b890e043654755e4a7"
-    sha256 cellar: :any, arm64_big_sur:  "0c9a053904d99b504199894884c1bf8726d37a8d615e39f7241ca0288a1db48b"
-    sha256 cellar: :any, monterey:       "80925ae137116b0dcbcafd7bad1adb273b2b73147eca8029914963e26d0667cd"
-    sha256 cellar: :any, big_sur:        "80cb41c2885f7dea9a880de2a373f1643a9a204dcd1fbe7e865c7cb4fe2069f9"
-    sha256 cellar: :any, catalina:       "b26819307ac8f58961adcb171eaffcbb06dc4758667aca30ce726befc861523c"
-    sha256 cellar: :any, mojave:         "74193caa95dbb4e885eca705ce72b0fc3e708222e914448081752eee6c4051d9"
-    sha256               x86_64_linux:   "64ea560398270b9bb107c9bae9c397c6bdf808535e197e1b941494a7d9f69af1"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastd"
+    sha256 cellar: :any, mojave: "2fe74d4d31f8f7835265acf9f23ebd477087c651d47cfb3630196cb6245519ab"
   end
 
   depends_on "bison" => :build
@@ -25,7 +21,7 @@ class Fastd < Formula
   depends_on "json-c"
   depends_on "libsodium"
   depends_on "libuecc"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "libcap"
