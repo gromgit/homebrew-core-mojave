@@ -15,7 +15,8 @@ class Epic5 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/epic5"
-    sha256 mojave: "aa105b62d0e194632b5f792ee3a16c9e878b10cf58c1e23594f588d610c24ab4"
+    rebuild 1
+    sha256 mojave: "15f108ac4f4f0f06dba4d41d45457db04a93c2775fac5c693823794f8ba4ff6a"
   end
 
   depends_on "openssl@3"
