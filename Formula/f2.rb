@@ -8,8 +8,8 @@ class F2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/f2"
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, mojave: "310af18cf3d645583ab1da44dad4b7154964beb533f906a29341feeacb0dda22"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, mojave: "f6c53c336f0be3ab5eaaf4952f4ed5f278760b24c9d9441466f967fa856d8355"
   end
 
   depends_on "go" => :build
