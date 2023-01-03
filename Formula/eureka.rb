@@ -8,11 +8,12 @@ class Eureka < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eureka"
-    sha256 cellar: :any, mojave: "c8f06f3aee6109437bff6879e876e825b1363546d725dfe8c5169d90a1660a0a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "85138ad6eed5cb572153d878ab31b974ef1ba5cfc600349bb9edd1fd46ac5ff7"
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
