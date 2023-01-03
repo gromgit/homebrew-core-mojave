@@ -7,6 +7,7 @@ class Enkits < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/enkits"
+    rebuild 1
     sha256 cellar: :any, mojave: "e4c4ce5e7e2c48e19d1e40788e44b7e2376bea6e3d39ef9a72e128edf0ade8de"
   end
 
