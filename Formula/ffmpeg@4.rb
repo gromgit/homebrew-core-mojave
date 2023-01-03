@@ -1,12 +1,12 @@
 class FfmpegAT4 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.xz"
-  sha256 "af419a7f88adbc56c758ab19b4c708afbcae15ef09606b82b855291f6a6faa93"
+  url "https://ffmpeg.org/releases/ffmpeg-4.4.3.tar.xz"
+  sha256 "6c5b6c195e61534766a0b5fe16acc919170c883362612816d0a1c7f4f947006e"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 3
+  revision 1
 
   livecheck do
     url "https://ffmpeg.org/download.html"
@@ -15,8 +15,7 @@ class FfmpegAT4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg@4"
-    rebuild 1
-    sha256 mojave: "20178bf8f969619b3b33ed6ee40e9bd0c883c660d419a1a5dbde35812b12adb2"
+    sha256 mojave: "eb47d3188173071717104504f2ac71965cf3e3e9e64803bd8a0f44b85795c8b0"
   end
 
   keg_only :versioned_formula
@@ -63,7 +62,6 @@ class FfmpegAT4 < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "gcc" # because rubberband is compiled with gcc
     depends_on "libxv"
   end
 
