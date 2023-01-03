@@ -16,11 +16,11 @@ class EyeD3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/eye-d3"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dac6daf9fd456e88d60e0dc12a496241fa43beea98f78bb680ec919a0a01e3c3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "b4c5e0166157e69e8dd08eae098e35e168c781e86b84565b9d5406a9744443ea"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   # Looking for documentation? Please submit a PR to build some!
   # See https://github.com/Homebrew/homebrew/issues/32770 for previous attempt.
@@ -56,7 +56,7 @@ class EyeD3 < Formula
   end
 
   def install
-    python3 = "python3.10"
+    python3 = "python3.11"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
 
