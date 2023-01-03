@@ -2,8 +2,8 @@ class Ehco < Formula
   desc "Network relay tool and a typo :)"
   homepage "https://github.com/Ehco1996/ehco"
   url "https://github.com/Ehco1996/ehco.git",
-      tag:      "v1.1.1",
-      revision: "c723fa0c3fefcc7f89c3847c6cd753cfdaf30486"
+      tag:      "v1.1.2",
+      revision: "3f649b356a33e317e4eaeeeca4590eedbd360892"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,11 +13,12 @@ class Ehco < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ehco"
-    sha256 cellar: :any_skip_relocation, mojave: "c8ee71c81cb9f6cbf3df53d82b258f42fd5343dbabdc095f1093cac335ec94a3"
+    sha256 cellar: :any_skip_relocation, mojave: "5814d9555102495b004be6ad6880656f208e931090a155bae82984dd4826b7a3"
   end
 
-
-  depends_on "go" => :build
+  # quic-go needs to be updated to use go@1.19
+  # upstream issue, https://github.com/Ehco1996/ehco/issues/165
+  depends_on "go@1.18" => :build
 
   uses_from_macos "netcat" => :test
 
