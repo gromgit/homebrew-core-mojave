@@ -7,7 +7,8 @@ class Enchant < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/enchant"
-    sha256 mojave: "d41d958d31f40685dd357c381adf9420fb57b1580684f1a1179f9e553331a18d"
+    rebuild 1
+    sha256 mojave: "0c897ce30fa74dbc28a3fc779c24ca20308be8287e9d91ace2d1b7aba032a6a7"
   end
 
   depends_on "pkg-config" => :build
