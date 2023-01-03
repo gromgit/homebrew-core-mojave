@@ -2,15 +2,14 @@ class Ejdb < Formula
   desc "Embeddable JSON Database engine C11 library"
   homepage "https://ejdb.org"
   url "https://github.com/Softmotions/ejdb.git",
-      tag:      "v2.72",
-      revision: "5f44c3f222b34dc9180259e37cdd1677b84d1a85"
+      tag:      "v2.73",
+      revision: "bc370d1aab86d5e2b8b15cbd7f804d3bbc6db185"
   license "MIT"
   head "https://github.com/Softmotions/ejdb.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ejdb"
-    rebuild 2
-    sha256 cellar: :any, mojave: "966de75d97621c39b76a1f6cb28c1820e008b81e5ac9f9b2ef3ca690be793e58"
+    sha256 cellar: :any, mojave: "8dfd0ba1dfc07610a37f570a3372e40010ba4d12d0041368ab949d623c49aa11"
   end
 
   depends_on "cmake" => :build
@@ -107,7 +106,8 @@ class Ejdb < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lejdb2", "-o", testpath/"test"
+
+    system ENV.cc, "-I#{include}/ejdb2", "test.c", "-L#{lib}", "-lejdb2", "-o", testpath/"test"
     system "./test"
   end
 end
