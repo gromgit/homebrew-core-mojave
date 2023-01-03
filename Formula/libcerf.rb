@@ -1,8 +1,8 @@
 class Libcerf < Formula
   desc "Numeric library for complex error functions"
   homepage "https://jugit.fz-juelich.de/mlz/libcerf"
-  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.1/libcerf-v2.1.tar.gz"
-  sha256 "8a1cd8b7fae04b82a95168252129b8c1baca098a285ff8d3f25781dead14b75a"
+  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.2/libcerf-v2.2.tar.gz"
+  sha256 "bf9e3c4707a49f27edc1891b1a8668a0cf5320741dcd84311d83f9af78249069"
   license "MIT"
   version_scheme 1
   head "https://jugit.fz-juelich.de/mlz/libcerf.git", branch: "master"
@@ -14,7 +14,7 @@ class Libcerf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libcerf"
-    sha256 cellar: :any, mojave: "678806cd0571d4333a9cc056c9665b4e8fb1374ae2c0cf70427435cb7343826e"
+    sha256 cellar: :any, mojave: "e6e00b5aa36c096e574c00d63c90e670708ffa6c623c0bd9f3ba80b4a5636859"
   end
 
   depends_on "cmake" => :build
