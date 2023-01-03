@@ -2,8 +2,8 @@ class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
   url "https://github.com/openfaas/faas-cli.git",
-      tag:      "0.14.9",
-      revision: "d188521ee1c673b99c231fb06334842593e38488"
+      tag:      "0.15.4",
+      revision: "0074051aeb837f5f160ee8736341460468b5c190"
   license "MIT"
   head "https://github.com/openfaas/faas-cli.git", branch: "master"
 
@@ -14,7 +14,7 @@ class FaasCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/faas-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "830043c7939d1ffad5b68dc20f4c41c52fe58c7a86b552acad28de1efac8db91"
+    sha256 cellar: :any_skip_relocation, mojave: "1428c9fcb242bc16a1ca2135ee087421397fb6bcf477db021931729519948b6e"
   end
 
   depends_on "go" => :build
