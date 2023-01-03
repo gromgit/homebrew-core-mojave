@@ -12,6 +12,7 @@ class Fastme < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fastme"
+    rebuild 1
     sha256 cellar: :any, mojave: "567012da0c7d91e251b23bd0fdd8fbe1f1868c59366e15051680441a9fa7f8fc"
   end
 
