@@ -8,7 +8,8 @@ class ErofsUtils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/erofs-utils"
-    sha256 cellar: :any, mojave: "4cdcd4b4c47e8d8caa05a67b5d00aff30318fc13e5dbff773298183febd845eb"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2ec9508242f077a6dbc1343442916a90dbd94194455ad384059ea4c1f5093e8b"
   end
 
   depends_on "autoconf" => :build
