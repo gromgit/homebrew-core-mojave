@@ -8,7 +8,8 @@ class Elvish < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/elvish"
-    sha256 cellar: :any_skip_relocation, mojave: "11b252e31472bae07c19fedf753f1174fb107d98c35d556736e0979d31c35e20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "33a5198416e46215ac858f297f759a347bcff59d5d9bbdd98d50fafbe5431f71"
   end
 
   depends_on "go" => :build
