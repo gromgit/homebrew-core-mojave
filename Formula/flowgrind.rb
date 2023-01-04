@@ -13,6 +13,7 @@ class Flowgrind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flowgrind"
+    rebuild 1
     sha256 cellar: :any, mojave: "638fcc89f3b88eb55f709e58ee8e18456a55d574a3cec70561c283ccbe335f88"
   end
 
