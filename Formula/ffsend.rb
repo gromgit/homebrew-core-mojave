@@ -7,14 +7,15 @@ class Ffsend < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffsend"
-    sha256 cellar: :any_skip_relocation, mojave: "639c60608d4368caee26ff2dbfffdda57edf30ee050a1ddb4af1d443b109381a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9074340f9a38e73e4a546627701f08c7357ef8a3192a82f440fafb0e5104de3d"
   end
 
   depends_on "rust" => :build
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "openssl@1.1"
+    depends_on "openssl@3"
   end
 
   def install
