@@ -7,7 +7,7 @@ class Fpart < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fpart"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "3e631967333489821b28c162616df8bdfed894cb2b56d9667ca2e97f53bc1576"
   end
 
