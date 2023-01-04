@@ -2,14 +2,13 @@ class Frpc < Formula
   desc "Client app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
   url "https://github.com/fatedier/frp.git",
-      tag:      "v0.44.0",
-      revision: "8888610d8339bb26bbfe788d4e8edfd6b3dc9ad6"
+      tag:      "v0.46.0",
+      revision: "a4189ba474f77b5b30eddc2e746f3878e8dd5e1d"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frpc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a6b55c554884cc8a1e8ecea74a966978c25f0fdef176c9335707c48393e48cee"
+    sha256 cellar: :any_skip_relocation, mojave: "f3eef7ee8e0dd75056e1d4f289fec554fe523f1394670053a5316f029b1caeef"
   end
 
   depends_on "go" => :build
