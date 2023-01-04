@@ -3,6 +3,7 @@ class Ffmpeg2theora < Formula
   homepage "https://v2v.cc/~j/ffmpeg2theora/"
   url "https://v2v.cc/~j/ffmpeg2theora/downloads/ffmpeg2theora-0.30.tar.bz2"
   sha256 "4f6464b444acab5d778e0a3359d836e0867a3dcec4ad8f1cdcf87cb711ccc6df"
+  license "GPL-2.0-or-later"
   revision 10
   head "https://gitlab.xiph.org/xiph/ffmpeg2theora.git", branch: "master"
 
@@ -13,8 +14,8 @@ class Ffmpeg2theora < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg2theora"
-    rebuild 2
-    sha256 cellar: :any, mojave: "051b5678a26dc4958e1f368f12c91d0f111e606b2851a9611f30b7928b83747f"
+    rebuild 3
+    sha256 cellar: :any, mojave: "2945c8258df0a8b7235afb7b9f70480689923954ea25e6e19061a67d22f73a2c"
   end
 
   depends_on "pkg-config" => :build
@@ -24,12 +25,6 @@ class Ffmpeg2theora < Formula
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "theora"
-
-  on_linux do
-    depends_on "gcc"
-  end
-
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   # Use python3 print()
   patch do
