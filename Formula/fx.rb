@@ -7,7 +7,8 @@ class Fx < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fx"
-    sha256 cellar: :any_skip_relocation, mojave: "6a8a13d6bbeec597abc819e6b573969a0accb2cefe859efcc0f4efceb593e52a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "213a6cbb501c397db02de4955f4ce195baa472dbae810a6216556f9d2561f26f"
   end
 
   depends_on "go" => :build
