@@ -6,16 +6,13 @@ class Fluxctl < Formula
       revision: "95493343346f2000299996bab0fc49caf31201dd"
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluxctl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "df17d3c52037c4c2c79fcfb3cf82cb1c6db3925667c0183238442d46d9d09a82"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "55815d5dc69fcaf9edfc3537a2b223e6eb3dc97aeced10f7a1b3c4da47a494ed"
   end
+
+  deprecate! date: "2022-11-08", because: :repo_archived
 
   depends_on "go" => :build
 
