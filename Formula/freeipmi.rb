@@ -8,7 +8,7 @@ class Freeipmi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeipmi"
-    rebuild 1
+    rebuild 2
     sha256 mojave: "fea681ce6a41330f3fd54fb6ed399eb8eba6dd3d60ab3d9ee0f5f929e53ae10a"
   end
 
