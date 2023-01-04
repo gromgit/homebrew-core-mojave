@@ -1,14 +1,14 @@
 class Flarectl < Formula
   desc "CLI application for interacting with a Cloudflare account"
   homepage "https://github.com/cloudflare/cloudflare-go/tree/master/cmd/flarectl"
-  url "https://github.com/cloudflare/cloudflare-go/archive/v0.51.0.tar.gz"
-  sha256 "41d2d534c8f8a4d4ea95f6715ad08be7bb92eff97210395793f8b0dc33dd41ec"
+  url "https://github.com/cloudflare/cloudflare-go/archive/v0.56.0.tar.gz"
+  sha256 "c131e9e1a68d33cf6940ef6ab68f7ff84bca54c3c2eacac2b47d9df1069e1258"
   license "BSD-3-Clause"
   head "https://github.com/cloudflare/cloudflare-go.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flarectl"
-    sha256 cellar: :any_skip_relocation, mojave: "426cf8a998117bc787a82ef725b511c71a2acd36b41f596fb7cb4101a68dae47"
+    sha256 cellar: :any_skip_relocation, mojave: "b9f9faba586106a52adcd9177aa3a0534e97f50df750338c24082a815fcd8652"
   end
 
   depends_on "go" => :build
