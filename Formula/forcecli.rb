@@ -1,26 +1,24 @@
 class Forcecli < Formula
   desc "Command-line interface to Force.com"
   homepage "https://force-cli.herokuapp.com/"
-  url "https://github.com/ForceCLI/force/archive/v0.33.0.tar.gz"
-  sha256 "d8ab631475c9080339d1e96410ad84ea26377fa3d0662d3903f05030f929860d"
+  url "https://github.com/ForceCLI/force/archive/v0.99.4.tar.gz"
+  sha256 "8439143f865b9baf8b5d073be5ff68d67e11873dc5edf50541525c14dd28a543"
   license "MIT"
   head "https://github.com/ForceCLI/force.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/forcecli"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "de0882f3d737f6fcd0b1320847dc682ce69e4395e52b5ed8f93bac270073f9fa"
+    sha256 cellar: :any_skip_relocation, mojave: "c48dfd95a424af462ca8add88e039178c62dc98780d94192ca69c85e40778822"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
-    system "go", "build", "-trimpath", "-o", bin/"force"
+    system "go", "build", *std_go_args(output: bin/"force")
   end
 
   test do
-    assert_match "Usage: force <command> [<args>]",
-                 shell_output("#{bin}/force help")
+    assert_match "ERROR: Please login before running this command.",
+                 shell_output("#{bin}/force active 2>&1", 1)
   end
 end
