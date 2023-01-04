@@ -15,7 +15,8 @@ class FileFormula < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/file-formula"
-    sha256 cellar: :any, mojave: "267944347bb4ff8281e69ea94fba2d1e52ccb6b4ca734347b805f0d74b5afc10"
+    rebuild 1
+    sha256 cellar: :any, mojave: "54b570e395bdbe2f140f75116c983cbd2c3dfd1190bb0963cec17cbab28f7198"
   end
 
   keg_only :provided_by_macos
