@@ -1,14 +1,14 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
   homepage "https://github.com/junegunn/fzf"
-  url "https://github.com/junegunn/fzf/archive/0.34.0.tar.gz"
-  sha256 "5bfd2518f0d136a76137de799ff5911608802d23564fc26e245f25a627395ecc"
+  url "https://github.com/junegunn/fzf/archive/0.35.1.tar.gz"
+  sha256 "d59ec6f2b6e95dad53bb81f758471e066c657be1b696f2fe569e1a9265dda8fe"
   license "MIT"
   head "https://github.com/junegunn/fzf.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fzf"
-    sha256 cellar: :any_skip_relocation, mojave: "656c24bf675214b21fab5b06b7a0704d1d60e9fde76098e0f3fc2bb136930047"
+    sha256 cellar: :any_skip_relocation, mojave: "87c8f1c7ca3de00380160bdd6e4e227de08b80a6cd3a8fd4b233561893451816"
   end
 
   depends_on "go" => :build
