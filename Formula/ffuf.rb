@@ -7,7 +7,8 @@ class Ffuf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffuf"
-    sha256 cellar: :any_skip_relocation, mojave: "24f310422900b99f1d9a83ad9b427d69f1f87968ceeb386928ce6eee09d9f039"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f30a4803d88e7e99c032d21dec96cd3462d02eccc07f146a79c67fe60217c7e7"
   end
 
   depends_on "go" => :build
