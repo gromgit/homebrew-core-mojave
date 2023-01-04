@@ -2,8 +2,8 @@ class Filebeat < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
   homepage "https://www.elastic.co/products/beats/filebeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v8.4.1",
-      revision: "fe210d46ebc339459e363ac313b07d4a9ba78fc7"
+      tag:      "v8.5.3",
+      revision: "6d03209df870c63ef9d59d609268c11dfdc835dd"
   # Outside of the "x-pack" folder, source code in a given file is licensed
   # under the Apache License Version 2.0
   license "Apache-2.0"
@@ -11,12 +11,12 @@ class Filebeat < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/filebeat"
-    sha256 cellar: :any_skip_relocation, mojave: "9f2e06c90f8f8e3fa1293f612bd7403f6652921dee74109c424594d04d35b642"
+    sha256 cellar: :any_skip_relocation, mojave: "48a14004fbde72dc237bbc4b5509aff0d14af2313de7862013a996b696224e98"
   end
 
   depends_on "go" => :build
   depends_on "mage" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
 
   uses_from_macos "rsync" => :build
 
@@ -50,6 +50,9 @@ class Filebeat < Formula
         --path.logs #{var}/log/filebeat \
         "$@"
     EOS
+
+    chmod 0555, bin/"filebeat" # generate_completions_from_executable fails otherwise
+    generate_completions_from_executable(bin/"filebeat", "completion", shells: [:bash, :zsh])
   end
 
   service do
