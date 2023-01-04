@@ -13,7 +13,8 @@ class SLang < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/s-lang"
-    sha256 mojave: "e1cc7cb897e4cfea770615f01956dda2744483aadaa4054bb31e80e30efe7267"
+    rebuild 1
+    sha256 mojave: "9f258c472de6f72234d59ef29cc4f3e9a7accd8debaa271fee821f27241d28a8"
   end
 
   depends_on "libpng"
