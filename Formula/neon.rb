@@ -13,7 +13,8 @@ class Neon < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neon"
-    sha256 cellar: :any, mojave: "2af9ff24f2cebd5be1ff826137d6af6a0d926854cf2c1e82caea283b881a3577"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c2b09ae681559615066bbe6246884252c226826db0c73ea7646813ab1778c462"
   end
 
   depends_on "pkg-config" => :build
