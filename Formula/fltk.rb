@@ -13,7 +13,8 @@ class Fltk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fltk"
-    sha256 mojave: "b48d73f94b8fa2119bcf09b4edd8504136c7edbd8d671f671dc07eb73717ed01"
+    rebuild 1
+    sha256 mojave: "5a747535cc0421437dd5eebc8705c751184e8d9ade6da6c9c19a13c769f3cff1"
   end
 
   head do
