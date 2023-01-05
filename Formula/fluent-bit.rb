@@ -1,8 +1,8 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https://github.com/fluent/fluent-bit"
-  url "https://github.com/fluent/fluent-bit/archive/v1.9.9.tar.gz"
-  sha256 "d58dc649f6b4e2433711666ae68c8f443c0542801eb6241b21d245fb421daced"
+  url "https://github.com/fluent/fluent-bit/archive/v2.0.6.tar.gz"
+  sha256 "363e8c0bb9331b85abdc69b33a8c77de0a78557fe61734ea6026ea8d28863d85"
   license "Apache-2.0"
   head "https://github.com/fluent/fluent-bit.git", branch: "master"
 
@@ -13,7 +13,7 @@ class FluentBit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluent-bit"
-    sha256 mojave: "2435992364340bcc2214370956474e62f39f64420c4f7824c59e07416bcfd3c5"
+    sha256 mojave: "bb2a47f7a03c6bf1637bfba687049e5375dadf9a6e924b3e6cb52cb86261d845"
   end
 
   depends_on "bison" => :build
@@ -22,10 +22,7 @@ class FluentBit < Formula
   depends_on "pkg-config" => :build
 
   depends_on "libyaml"
-
-  on_linux do
-    depends_on "openssl@1.1"
-  end
+  depends_on "openssl@3"
 
   def install
     # Prevent fluent-bit to install files into global init system
@@ -34,15 +31,14 @@ class FluentBit < Formula
     inreplace "src/CMakeLists.txt", "if(IS_DIRECTORY /lib/systemd/system)", "if(False)"
     inreplace "src/CMakeLists.txt", "elseif(IS_DIRECTORY /usr/share/upstart)", "elif(False)"
 
-    chdir "build" do
-      # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
-      # is not set then it's forced to 10.4, which breaks compile on Mojave.
-      # fluent-bit builds against a vendored Luajit.
-      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
+    # is not set then it's forced to 10.4, which breaks compile on Mojave.
+    # fluent-bit builds against a vendored Luajit.
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
