@@ -8,7 +8,8 @@ class Flac123 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flac123"
-    sha256 cellar: :any, mojave: "b3dceb5c7171526aa505eacdb505970e4a7288a48a4a5674ecf7d78cbe071313"
+    rebuild 1
+    sha256 cellar: :any, mojave: "390dde9183c215233f46c81fd8da3a9ef7e1a7d7ea2588b3d28029ff58d209bf"
   end
 
   depends_on "autoconf" => :build
