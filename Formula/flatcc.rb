@@ -8,7 +8,8 @@ class Flatcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flatcc"
-    sha256 cellar: :any_skip_relocation, mojave: "0519b2f0e641e2315fb0c18465ebac4c99dc22d5c80a3cb0802ceff19d620abf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "66d9c64097c10cb8ae9201296cb5d00f548be6739226553abf93d68968759878"
   end
 
   depends_on "cmake" => :build
