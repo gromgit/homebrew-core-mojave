@@ -8,7 +8,8 @@ class Flif < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flif"
-    sha256 cellar: :any, mojave: "43fd3598eb2f7663c380ceb9460c4ab89ddc1592c65ea6e95139166d4cefa48d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3d176e49e69125225fe66fc63fe58887750e8c005f4c8f8c12cb52a4135162db"
   end
 
   depends_on "cmake" => :build
