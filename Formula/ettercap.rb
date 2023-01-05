@@ -8,8 +8,8 @@ class Ettercap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ettercap"
-    rebuild 2
-    sha256 mojave: "add3dd759c896d3b822088d741eb6f8866ad20cbe374cd1a71d1c2dca104b4a2"
+    rebuild 3
+    sha256 mojave: "921bed41555cd5984dda89d9bb72295781c7e7174842494fcba618500c19bfe3"
   end
 
   depends_on "cmake" => :build
