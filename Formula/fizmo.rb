@@ -13,7 +13,8 @@ class Fizmo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fizmo"
-    sha256 mojave: "566b3940f0746d7e553210a8913c4d49e184a3eecd94500eeae01f8e9da2cf25"
+    rebuild 1
+    sha256 mojave: "7c8c6ffeefc309c463c068155f807879f8a7d4139c5bb21c8350d241f5ba807d"
   end
 
   depends_on "pkg-config" => :build
