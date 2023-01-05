@@ -10,13 +10,13 @@ class Fish < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  pour_bottle? only_if: :default_prefix
-
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fish"
-    rebuild 2
-    sha256 mojave: "d5cb98fafb0b0fbf6176f92b53a819647ab9fae102ae89f36fff4ebd2f61e54e"
+    rebuild 3
+    sha256 mojave: "46f5ad22161e310cd770e7bfbc579cbdef09bd8f6e5b051c3a6d441554ce4006"
   end
+
+  pour_bottle? only_if: :default_prefix
 
   head do
     url "https://github.com/fish-shell/fish-shell.git", branch: "master"
