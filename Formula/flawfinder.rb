@@ -16,11 +16,11 @@ class Flawfinder < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flawfinder"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "a116e75c92383e07b961fe90c74275cb34eb83eec5d40ff56891301eba4893aa"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "107899064c5f4fa2fc88f94059b1f239a6510c5b0abad7ad2d42a5f68a0b8d3e"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     rewrite_shebang detected_python_shebang, "flawfinder.py"
