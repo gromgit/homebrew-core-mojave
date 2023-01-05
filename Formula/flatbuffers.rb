@@ -1,8 +1,8 @@
 class Flatbuffers < Formula
   desc "Serialization library for C++, supporting Java, C#, and Go"
   homepage "https://google.github.io/flatbuffers"
-  url "https://github.com/google/flatbuffers/archive/v2.0.8.tar.gz"
-  sha256 "f97965a727d26386afaefff950badef2db3ab6af9afe23ed6d94bfb65f95f37e"
+  url "https://github.com/google/flatbuffers/archive/v22.12.06.tar.gz"
+  sha256 "209823306f2cbedab6ff70997e0d236fcfd1864ca9ad082cbfdb196e7386daed"
   license "Apache-2.0"
   head "https://github.com/google/flatbuffers.git", branch: "master"
 
@@ -13,8 +13,7 @@ class Flatbuffers < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/flatbuffers"
-    rebuild 3
-    sha256 cellar: :any, mojave: "17034a4575dbcfa9a95606c5dde67a196fd32f43a7f30dc68e1b4c2b50d1e136"
+    sha256 cellar: :any, mojave: "9427ab1f18ee461f801a67832f471256c484c75c5b3daa22a430f654d9275c3f"
   end
 
   depends_on "cmake" => :build
