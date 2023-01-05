@@ -8,8 +8,8 @@ class FluidSynthAT21 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fluid-synth@2.1"
-    rebuild 2
-    sha256 cellar: :any, mojave: "02a2f120b42ef5f501d8c6d809264e28e1d856d411fe5dddbbe547de2698f5fc"
+    rebuild 3
+    sha256 cellar: :any, mojave: "c27fcd489d1a8b78d4b19826fdc19e8a31916c2752405b7247abdbdc976bf40c"
   end
 
   keg_only :versioned_formula
