@@ -8,7 +8,8 @@ class Gauge < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gauge"
-    sha256 cellar: :any_skip_relocation, mojave: "1bc19fd6e3570ce83aaf3c0f0834ff39afbf841f90e61c9cf9d7c4f831ee2dd6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bac556512b7aaf9cb65bb2b2b3e457f0860d49b05269838201b1e110c94fd298"
   end
 
   depends_on "go" => :build
