@@ -10,12 +10,12 @@ class Fprettify < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fprettify"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "4b91f7d305993633724b59debf03c486218ab19603a490ac7fc75484f61eca7f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "f1d901353f3bb5ecf7c8157335b8f4f3391e5f2394b29ece6762a98d1e79836c"
   end
 
   depends_on "gcc" => :test
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
