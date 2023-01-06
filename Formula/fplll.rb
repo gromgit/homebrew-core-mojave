@@ -7,7 +7,8 @@ class Fplll < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fplll"
-    sha256 mojave: "0fd7c4fb0b132c09d0c3773780e33ac72e44721cbf69c155eeb07c9325fd942d"
+    rebuild 1
+    sha256 mojave: "4f525ea946d473a35f6662d223f9df907ec242aaca6c9b00cf61f3d8fade68b5"
   end
 
   depends_on "automake" => :build
