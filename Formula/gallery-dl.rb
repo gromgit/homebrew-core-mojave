@@ -3,21 +3,21 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/2a/01/231b56657860045a8db431ba2b522d922eb738174c53d27ae8c6eb0ba4f0/gallery_dl-1.23.1.tar.gz"
-  sha256 "2443c60b00bcd67008a618a7c03eaabeb922a5a1d3b37fe4ae802b82a86dfdf4"
+  url "https://files.pythonhosted.org/packages/74/69/8b64b8ffbf53b8a4770f822c2c3d2f12fd9862c84e3544aa204aa45ac9a4/gallery_dl-1.24.2.tar.gz"
+  sha256 "2aa0e9acaa2aa5b36952b33b9c0623ef572e321e94deceb992a5535b670778b7"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gallery-dl"
-    sha256 cellar: :any_skip_relocation, mojave: "b11ab8836af18c2071931da184dda2ad069f3a31abb4948e8e98b475b43425b0"
+    sha256 cellar: :any_skip_relocation, mojave: "13dbbc9e8506c98e5d01fc4e4c56e960e258f687c54be6d524b58b0ff64f664f"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/ca/48/88ec470f8b68319b6782ca3a0570789886ad5ca24c1af2f3771699135baa/certifi-2022.9.14.tar.gz"
-    sha256 "36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5"
+    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
+    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "charset-normalizer" do
@@ -36,8 +36,8 @@ class GalleryDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
-    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
+    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
+    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
   end
 
   def install
