@@ -12,16 +12,9 @@ class Fwknop < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "bfb4c0401d613c5dabdae08cab5bf2ad212eeb9d76ed4c0eba4b59c89b03c4e7"
-    sha256 arm64_big_sur:  "74003c23c04e207543afa2e957df46dc72b3067c8d9100503546d828007c14a8"
-    sha256 monterey:       "1b678b6bd8459eb2089f4a4fcda70d3954df3739b09f1e536483f083eda5817f"
-    sha256 big_sur:        "61ec8e446a6dbae400dcf40a8db9e066a8d64937bf82e84ee1c1e5a86d163934"
-    sha256 catalina:       "3a4ff22b7de484deb6473ffdad63d3e927290925af925b5dbf1b868648824493"
-    sha256 mojave:         "2e56267215274c15f322335f86aa92b671f5600cbfd2275949cef03ec47d390e"
-    sha256 high_sierra:    "a36cd65fe358a6b156b2b5276bcdf629b2d777ac8a803e7cd40ee9e3c75512e4"
-    sha256 sierra:         "7472ea129bbb0d5a1187d08e4a9770d66d480a9bc284a62db11f6dec90b770cf"
-    sha256 el_capitan:     "ec59a9d13d78f441a695776767038fb830acc4cdbfe28b30cc41ec2b7ea76f1f"
-    sha256 x86_64_linux:   "4da5b329804bbdacdcfa93ec6b9bb46d73a9aeb7c2a74fff7fb3b3865a9f05f7"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fwknop"
+    rebuild 1
+    sha256 mojave: "56daff6f91001db3b0df6f0f4101da7a3fc50b4770fab61d8f36d6404d877476"
   end
 
   depends_on "autoconf" => :build
@@ -29,13 +22,20 @@ class Fwknop < Formula
   depends_on "libtool" => :build
   depends_on "gpgme"
 
-  uses_from_macos "texinfo" => :build
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   on_linux do
     depends_on "iptables"
   end
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # fwknop-config_init.o:(.bss+0x4): multiple definition of `log_level_t'
+    # Issue ref: https://github.com/mrash/fwknop/issues/305
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     # Fix failure with texinfo while building documentation.
     inreplace "doc/libfko.texi", "@setcontentsaftertitlepage", "" unless OS.mac?
 
