@@ -14,7 +14,8 @@ class Gabedit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gabedit"
-    sha256 cellar: :any, mojave: "7214da84f7e830f3e5ead00a9aa49da9138050bf363c9aa93942701640f541ba"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e398c9591eb0af99dc906a9da9bf305740720eb3c1aec0c71c4bd6c74b505144"
   end
 
   depends_on "pkg-config" => :build
