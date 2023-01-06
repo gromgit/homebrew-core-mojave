@@ -8,7 +8,8 @@ class RiemannClient < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/riemann-client"
-    sha256 cellar: :any, mojave: "ea58b6f156ed3e8046f1e2808c83dcd3c4bec0b1b55d68e2c1daef0ed3d4d379"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3e373ec66610e5ee3b7dcb5af8f3a64b75122ddf55064ecca32d5960adebf8d5"
   end
 
   depends_on "autoconf" => :build
