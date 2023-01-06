@@ -7,7 +7,8 @@ class Libxcursor < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcursor"
-    sha256 cellar: :any, mojave: "3a7942d3bf3fe3f659c01a7af8be2b897de4edb76f3530c6536040ddfefc0cbd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c90794cbcc7b1a6488e0c5f89fcbd3e64e19a109de4d60927166572e5b331a1f"
   end
 
   depends_on "pkg-config" => :build
