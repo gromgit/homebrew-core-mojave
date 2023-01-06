@@ -8,7 +8,8 @@ class FontUtil < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/font-util"
-    sha256 cellar: :any_skip_relocation, mojave: "2aaf71fcbffb8a9e64a96d613cbb30438929972228188fe51cb0079b013f57d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "48b85e303dd4b86bd7783745889571a8c41ace8ce55d9d300e81ed70b53f3f17"
   end
 
   depends_on "pkg-config" => [:build, :test]
