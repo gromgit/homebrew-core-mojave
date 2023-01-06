@@ -1,14 +1,14 @@
 class Gator < Formula
   desc "CLI Utility for Open Policy Agent Gatekeeper"
   homepage "https://open-policy-agent.github.io/gatekeeper/website/docs/gator"
-  url "https://github.com/open-policy-agent/gatekeeper/archive/refs/tags/v3.9.1.tar.gz"
-  sha256 "4f7691aa7562b7ee5c707d6f322d2dc25ab06cf4784f6f9ca991ee27ec5b839e"
+  url "https://github.com/open-policy-agent/gatekeeper/archive/refs/tags/v3.10.0.tar.gz"
+  sha256 "cfe47f54738bcd648de94be6fedf182858771fa6938a609cfa416a72a54a7682"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/gatekeeper.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gator"
-    sha256 cellar: :any_skip_relocation, mojave: "2a17d7b571e30a8f27ed3ca87121bc3fd802ee7403ea9dff05f525ed068f4eeb"
+    sha256 cellar: :any_skip_relocation, mojave: "0c3ea42a03f1b3897aa8b718a0b2466ebd7a97b20394383014a4a93d52138706"
   end
 
   depends_on "go" => :build
