@@ -13,7 +13,8 @@ class Libmpeg2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libmpeg2"
-    sha256 cellar: :any, mojave: "b8f751210369d9431b70a78e8300db18e7ccdff9184f1b5cc3e21a327c3fa38b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "54fcd63b0fad87221192cbc93c377603a6ff8e7d5ed991776135b11fd8094a3f"
   end
 
   depends_on "autoconf" => :build
