@@ -9,7 +9,8 @@ class Frotz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frotz"
-    sha256 mojave: "54da27192a7979ff3d6a189d102b287d3cc781083af69d4874e7a72243dc67c1"
+    rebuild 1
+    sha256 mojave: "0c02e63bb32214c161a1cd41901bcac62ea52d01d76d8ab47c2824b95aa44706"
   end
 
   depends_on "pkg-config" => :build
