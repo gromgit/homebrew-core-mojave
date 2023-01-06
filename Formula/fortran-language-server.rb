@@ -10,10 +10,13 @@ class FortranLanguageServer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fortran-language-server"
-    sha256 cellar: :any_skip_relocation, mojave: "32839345a2cdc7894b65d7b6b6a06d439db922a7708973a4fd3e4b3213f6a899"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "54feeb4a4e4482a558a329cad54b6d5b35397132c012d03545c84a5d5afa0156"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
+
+  conflicts_with "fortls", because: "both install `fortls` binaries"
 
   def install
     virtualenv_install_with_resources
