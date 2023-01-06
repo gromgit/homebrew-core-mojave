@@ -1,14 +1,14 @@
 class Freeling < Formula
   desc "Suite of language analyzers"
-  homepage "http://nlp.lsi.upc.edu/freeling/"
+  homepage "https://nlp.lsi.upc.edu/freeling/"
   url "https://github.com/TALP-UPC/FreeLing/releases/download/4.2/FreeLing-src-4.2.tar.gz"
   sha256 "f96afbdb000d7375426644fb2f25baff9a63136dddce6551ea0fd20059bfce3b"
   license "AGPL-3.0-only"
-  revision 7
+  revision 9
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/freeling"
-    sha256 cellar: :any, mojave: "dc38b68449f7cbc42db713e6ea5edd07ec97da1334e8266a5775a1fdeb1f486c"
+    sha256 cellar: :any, mojave: "fc1656256e81dda31f0a6f24a3be4868649131a57c0b62eef6bc9f427066d299"
   end
 
   depends_on "cmake" => :build
@@ -39,6 +39,14 @@ class Freeling < Formula
   patch do
     url "https://github.com/TALP-UPC/FreeLing/commit/34a1a78545fb6a4ca31ee70e59fd46211fd3f651.patch?full_index=1"
     sha256 "8f7f87a630a9d13ea6daebf210b557a095b5cb8747605eb90925a3aecab97e18"
+  end
+
+  # Fixes `error: 'pow' was not declared in this scope` and
+  # `error: 'sqrt' was not declared in this scope`.
+  # Remove this and other patches with next release.
+  patch do
+    url "https://github.com/TALP-UPC/FreeLing/commit/48eb3470416cbfd0026eae9f9ca832bb68269273.patch?full_index=1"
+    sha256 "8430804b9a8695d3212946c00562b1cf2d3a0bbb5cb94ac48222f1a952401caf"
   end
 
   def install
