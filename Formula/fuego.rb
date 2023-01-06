@@ -3,12 +3,12 @@ class Fuego < Formula
   homepage "https://fuego.sourceforge.io/"
   url "https://svn.code.sf.net/p/fuego/code/trunk", revision: "1981"
   version "1.1.SVN"
-  revision 4
+  revision 5
   head "https://svn.code.sf.net/p/fuego/code/trunk"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fuego"
-    sha256 mojave: "94780cc270cd421ad6daa4a27ed85feb5d794368c64037affe41518491f30ee5"
+    sha256 mojave: "44044dd0bf33a90c9739b654e673b32c9dfb670ae48b16d70c03e949ef8a1c56"
   end
 
   depends_on "autoconf" => :build
