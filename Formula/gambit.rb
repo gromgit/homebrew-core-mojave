@@ -8,7 +8,8 @@ class Gambit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gambit"
-    sha256 cellar: :any, mojave: "e85505b525820acd0af502fab70aca6215ca4bc667d65bab62a5bd01405363dd"
+    rebuild 1
+    sha256 cellar: :any, mojave: "611302e8b45fd7bd45b0215e97de0884e8d44466592e108ce9d0181077fa010f"
   end
 
   depends_on "autoconf" => :build
