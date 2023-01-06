@@ -9,10 +9,11 @@ class Fred < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fred"
-    sha256 cellar: :any_skip_relocation, mojave: "9bbdea42b30c24713079f3af8c1cf4b4861f29ebaa42df9ad60522edd50abebd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e9deddf77cb324b3b74813b1a5d24585d20745a55bd0c3cb47ee40040e2f84b1"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/cb/a4/7de7cd59e429bd0ee6521ba58a75adaec136d32f91a761b28a11d8088d44/certifi-2022.9.24.tar.gz"
