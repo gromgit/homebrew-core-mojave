@@ -1,13 +1,13 @@
 class Vala < Formula
   desc "Compiler for the GObject type system"
   homepage "https://wiki.gnome.org/Projects/Vala"
-  url "https://download.gnome.org/sources/vala/0.56/vala-0.56.1.tar.xz"
-  sha256 "c518b81dfdda82d1cdf586b3f9b2323162cb96bd3cb5a2c03650cea025d91fb9"
+  url "https://download.gnome.org/sources/vala/0.56/vala-0.56.3.tar.xz"
+  sha256 "e1066221bf7b89cb1fa7327a3888645cb33b604de3bf45aa81132fd040b699bf"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/vala"
-    sha256 mojave: "159b61b66803a612d967986ac1528522deac0369490775ccf5a46fec62445b0b"
+    sha256 mojave: "104d306230597445f5ab7302db42aaf00990bd94add48341cb53f57ca5fabd96"
   end
 
   depends_on "gettext"
