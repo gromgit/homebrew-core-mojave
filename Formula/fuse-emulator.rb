@@ -4,6 +4,7 @@ class FuseEmulator < Formula
   url "https://downloads.sourceforge.net/project/fuse-emulator/fuse/1.6.0/fuse-1.6.0.tar.gz"
   sha256 "3a8fedf2ffe947c571561bac55a59adad4c59338f74e449b7e7a67d9ca047096"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,8 +13,7 @@ class FuseEmulator < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/fuse-emulator"
-    rebuild 1
-    sha256 mojave: "29b132fd197ced4cc0c78038fbc3d8c6687cfb5c71c534de159020696654dbed"
+    sha256 mojave: "9b3ccd8945831406f1cbaf93c9fd582c90ffc2e58a756d4afa33e7781d07f587"
   end
 
   head do
@@ -26,7 +26,9 @@ class FuseEmulator < Formula
   depends_on "pkg-config" => :build
   depends_on "libpng"
   depends_on "libspectrum"
-  depends_on "sdl"
+  depends_on "sdl12-compat"
+
+  uses_from_macos "libxml2"
 
   def install
     system "./autogen.sh" if build.head?
