@@ -13,8 +13,8 @@ class Frum < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/frum"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "73d429ed76e95e69665f2733a932d2e50e8ac326ce9907c64654453049435905"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, mojave: "2ac4efd3e1a546fcfba6fa2e8ff4581b8d010d8737823d7166ab9a8ff6435bf4"
   end
 
   depends_on "rust" => :build
