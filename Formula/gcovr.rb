@@ -10,10 +10,11 @@ class Gcovr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcovr"
-    sha256 cellar: :any_skip_relocation, mojave: "ec28e1aa232955e1f9f8f872e7fda39265fe9368bcf6a2ff2d1dff8c3b4274cd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c455033d1aa75c012d0c62168b8f26e55bd31da580d3164a154bd68c7941fd71"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -34,8 +35,8 @@ class Gcovr < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
-    sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
+    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
+    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   def install
