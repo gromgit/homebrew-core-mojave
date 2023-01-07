@@ -22,7 +22,8 @@ class Libgeotiff < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgeotiff"
-    sha256 cellar: :any, mojave: "f0f967a772ed9bf8398cce188b2760f6b1a0914403d9d1bff6629daeeb9b6710"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d3350c6ba09b725b306ec7fc94a54ec29d98a261fe8e8c7c21ac12410d0f4e63"
   end
 
   head do
