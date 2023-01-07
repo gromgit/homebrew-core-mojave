@@ -13,8 +13,8 @@ class GccAT11 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gcc@11"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "64574269e9901b3a7c53cf3bca03561733c58785bb761a6b94656d9cbdc49917"
+    rebuild 2
+    sha256 mojave: "306a155da6e27de4c5dff02bea3eea88e95acb9fe964dcce6c6c464de9968a0b"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -39,10 +39,15 @@ class GccAT11 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-11-branch
   patch do
-    on_arm do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/07e71538/gcc/gcc-11.3.0-arm.diff"
-      sha256 "857390a7f32dbfc4c7e6163a3b3b9d5e1d392e5d9c74c3ebb98701c1d0629565"
-    end
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/07e71538/gcc/gcc-11.3.0-arm.diff"
+    sha256 "857390a7f32dbfc4c7e6163a3b3b9d5e1d392e5d9c74c3ebb98701c1d0629565"
+  end
+
+  # Fix build on macOS Ventura
+  # https://github.com/iains/gcc-11-branch/issues/5
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/86fa3c4b/gcc/gcc-11.3-ventura.diff"
+    sha256 "70499af2e5745c91ef4e886c0083cd70d7e94b7b45ba7b1276449bbb102df93b"
   end
 
   def install
@@ -101,10 +106,14 @@ class GccAT11 < Formula
       system "../configure", *args
       system "make"
 
+      # Do not strip the binaries on macOS, it makes them unsuitable
+      # for loading plugins
+      install_target = OS.mac? ? "install" : "install-strip"
+
       # To make sure GCC does not record cellar paths, we configure it with
       # opt_prefix as the prefix. Then we use DESTDIR to install into a
       # temporary location, then move into the cellar path.
-      system "make", "install-strip", "DESTDIR=#{Pathname.pwd}/../instdir"
+      system "make", install_target, "DESTDIR=#{Pathname.pwd}/../instdir"
       mv Dir[Pathname.pwd/"../instdir/#{opt_prefix}/*"], prefix
     end
 
