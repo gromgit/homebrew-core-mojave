@@ -1,13 +1,13 @@
 class Genact < Formula
   desc "Nonsense activity generator"
   homepage "https://github.com/svenstaro/genact"
-  url "https://github.com/svenstaro/genact/archive/v1.1.1.tar.gz"
-  sha256 "231ea3735c59a659264d11b7ef1a6a2572c73f7bd7c9cb3efb940709673b58bf"
+  url "https://github.com/svenstaro/genact/archive/v1.2.2.tar.gz"
+  sha256 "72ead4b84e4ca733ae8a25614d44df3f3db5e47e54913ed9fbfecd2f5212a632"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/genact"
-    sha256 cellar: :any_skip_relocation, mojave: "497818c75d9504e1f169d5b43163a810a55b0a83c5a107971d39164770504e91"
+    sha256 cellar: :any_skip_relocation, mojave: "ac33184d75ecc822fb90b2a826098048256c70984e448587948f6249083f4b36"
   end
 
   depends_on "rust" => :build
