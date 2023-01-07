@@ -8,7 +8,8 @@ class GetFlashVideos < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/get-flash-videos"
-    sha256 cellar: :any_skip_relocation, mojave: "81bbf841dee2ae01c0dd4a427eb5dbe5cc23dd3e44022aed96ab32d3550a92c9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f1c92d65941d10c74d8c274b8dc4b3dbbfaec115a9ee06135923d8f83c62471d"
   end
 
   depends_on "rtmpdump"
