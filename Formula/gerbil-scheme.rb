@@ -12,8 +12,8 @@ class GerbilScheme < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gerbil-scheme"
-    rebuild 2
-    sha256 mojave: "d63097896afd8decbdb2a86eea19a1609cf421dacb0a2fc1215f8baf7757609d"
+    rebuild 3
+    sha256 mojave: "ca94fa0e75503f42c64b9849f2a3ee8b1d0506e6a32f71e6b518f90e6b231e84"
   end
 
   depends_on "gambit-scheme"
