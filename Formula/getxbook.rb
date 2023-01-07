@@ -13,7 +13,7 @@ class Getxbook < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/getxbook"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "60b01f682bb204a990e31be879c51dc2a31e646a586fe8f341e8c764031a8a00"
   end
 
