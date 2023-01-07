@@ -1,14 +1,13 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.13.0/libheif-1.13.0.tar.gz"
-  sha256 "c20ae01bace39e89298f6352f1ff4a54b415b33b9743902da798e8a1e51d7ca1"
+  url "https://github.com/strukturag/libheif/releases/download/v1.14.0/libheif-1.14.0.tar.gz"
+  sha256 "9a2b969d827e162fa9eba582ebd0c9f6891f16e426ef608d089b1f24962295b5"
   license "LGPL-3.0-only"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libheif"
-    sha256 cellar: :any_skip_relocation, mojave: "bd802245860bec9be35df065c1eb0609c6d6805757a2cbd36ce93dd9689296fd"
+    sha256 cellar: :any, mojave: "4da1642915373d3d2cb03d3506ab3128e4a6ad111547696d5482d84e64d98c15"
   end
 
   depends_on "pkg-config" => :build
