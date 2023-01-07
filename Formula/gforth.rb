@@ -7,8 +7,8 @@ class Gforth < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gforth"
-    rebuild 1
-    sha256 mojave: "842494483ce071e07c0cc3a6cbf3dc994757dab01733a48258a250bc646883e7"
+    rebuild 2
+    sha256 mojave: "d97be36156528dafbc6ec06edcf0f4c93706d5ac27a0e192e46468ba9c69a594"
   end
 
   depends_on "emacs" => :build
