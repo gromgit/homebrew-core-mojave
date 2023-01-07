@@ -8,7 +8,8 @@ class Gebug < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gebug"
-    sha256 cellar: :any_skip_relocation, mojave: "758417b5571cca6e680b67f78e27e97b89479ffb53d0e8a077c0ede68b566156"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b3809375b2d5e2f922be555f13f349f57f6b01d684ae8511e7bd27cdf54d417d"
   end
 
   depends_on "go" => :build
