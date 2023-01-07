@@ -20,7 +20,8 @@ class Libdap < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libdap"
-    sha256 mojave: "a2bca098bd0983c9085d60bc5d71ce8cd56d0bfafe23aed0a972c1b941611a9b"
+    rebuild 1
+    sha256 mojave: "b0e6c32b7a14bf1d76363f68076e950ae01c4457efe7030757a0492fa5a3e009"
   end
 
   head do
