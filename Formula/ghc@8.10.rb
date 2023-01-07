@@ -17,7 +17,8 @@ class GhcAT810 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@8.10"
-    sha256 mojave: "0fd28369f743e8473ec8df0a9dc9d9164358dbfa923d1fe6ce1a6c1f4c9410ab"
+    rebuild 1
+    sha256 mojave: "43d53dec7a8535145f4117b6fe0ff2668ad8b522c08ecfb47eb3679986b3d416"
   end
 
   keg_only :versioned_formula
