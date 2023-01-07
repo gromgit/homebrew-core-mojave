@@ -12,7 +12,8 @@ class SharedMimeInfo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/shared-mime-info"
-    sha256 cellar: :any, mojave: "c6ae65648666e666a685222f7b4942d0d400dd01830545cb83bd2fc5a6f52a6a"
+    rebuild 1
+    sha256 cellar: :any, mojave: "06d3705b19a6a50706f83e5cb291133fa167c1d12858a30d4de6e2c782375c3e"
   end
 
   head do
