@@ -24,7 +24,8 @@ class Libspatialite < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libspatialite"
-    sha256 cellar: :any, mojave: "f924844e5618968c8360fdca3325e9224eea13ea5c35eede335909fa0f1cfbae"
+    rebuild 1
+    sha256 cellar: :any, mojave: "55f7632671e72651473a80124bee9f8d33a418acea0764c3e93052ddc74d3274"
   end
 
   head do
