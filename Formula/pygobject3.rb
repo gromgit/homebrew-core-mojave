@@ -4,18 +4,18 @@ class Pygobject3 < Formula
   url "https://download.gnome.org/sources/pygobject/3.42/pygobject-3.42.2.tar.xz"
   sha256 "ade8695e2a7073849dd0316d31d8728e15e1e0bc71d9ff6d1c09e86be52bc957"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pygobject3"
-    sha256 cellar: :any_skip_relocation, mojave: "8e3257f05d3da7a4451ac65d341102d7e19dba165512ae2c454a6ca1efce2bae"
+    sha256 cellar: :any, mojave: "a72d348e17912ae0af12aa1ebba4c16359a236d6111c788275f79b910ce2906a"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
   depends_on "gobject-introspection"
   depends_on "py3cairo"
 
