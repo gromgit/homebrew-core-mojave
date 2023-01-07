@@ -1,15 +1,14 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
   homepage "https://proj.org/"
-  url "https://github.com/OSGeo/PROJ/releases/download/9.1.0/proj-9.1.0.tar.gz"
-  sha256 "81b2239b94cad0886222cde4f53cb49d34905aad2a1317244a0c30a553db2315"
+  url "https://github.com/OSGeo/PROJ/releases/download/9.1.1/proj-9.1.1.tar.gz"
+  sha256 "003cd4010e52bb5eb8f7de1c143753aa830c8902b6ed01209f294846e40e6d39"
   license "MIT"
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/proj"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3330a7e66aa27d22cc1e2b49b07e68d5a29fee24bdff92bf3994ca4cd33d3087"
+    sha256 mojave: "ae336f9e0b085d77971ca1d11dd57961ce10f3c44080342df1f1965c4f5b4d5d"
   end
 
   depends_on "cmake" => :build
