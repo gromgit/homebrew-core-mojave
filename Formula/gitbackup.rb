@@ -1,13 +1,13 @@
 class Gitbackup < Formula
   desc "Tool to backup your Bitbucket, GitHub and GitLab repositories"
   homepage "https://github.com/amitsaha/gitbackup"
-  url "https://github.com/amitsaha/gitbackup/archive/v0.8.2.tar.gz"
-  sha256 "a216fc96cc80c65ed72a1b50f77697c2d6cb18f4cb849d8dde67f65d24951adc"
+  url "https://github.com/amitsaha/gitbackup/archive/v0.8.4.tar.gz"
+  sha256 "1d110658874dcb96d9de7cdbb7a54bdaa6e01a77a2952bf881a20d58235d1e7a"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitbackup"
-    sha256 cellar: :any_skip_relocation, mojave: "9b6a33e3586bac4b7785d4c33d08279844a5e90d51c820e76ccd942b504b4bbf"
+    sha256 cellar: :any_skip_relocation, mojave: "49652ac6fe5956d0cec9417b2338b57d9eaa8aeeec5705a29ff3d07aec22d85f"
   end
 
   depends_on "go" => :build
