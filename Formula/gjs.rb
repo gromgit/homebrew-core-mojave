@@ -1,14 +1,15 @@
 class Gjs < Formula
   desc "JavaScript Bindings for GNOME"
   homepage "https://gitlab.gnome.org/GNOME/gjs/wikis/Home"
-  url "https://download.gnome.org/sources/gjs/1.72/gjs-1.72.0.tar.xz"
-  sha256 "3ef0caf716e3920dd61f7748f6d56e476cc0fc18351ad0548e7df1a0ab9bdcad"
+  url "https://download.gnome.org/sources/gjs/1.72/gjs-1.72.2.tar.xz"
+  sha256 "ddee379bdc5a7d303a5d894be2b281beb8ac54508604e7d3f20781a869da3977"
   license all_of: ["LGPL-2.0-or-later", "MIT"]
+  revision 1
   head "https://gitlab.gnome.org/GNOME/gjs.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gjs"
-    sha256 mojave: "16de87e72f73db098fc54ed7a6686ec5ec20a58e6e91a2a919b92b3607f9162b"
+    sha256 mojave: "1d97a97ff4eeb8ebb33a820215a8e34f1a2e422fcd39430c45cec8d586b76611"
   end
 
   depends_on "meson" => :build
@@ -16,10 +17,6 @@ class Gjs < Formula
   depends_on "gobject-introspection"
   depends_on "readline"
   depends_on "spidermonkey"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5" # meson ERROR: SpiderMonkey sanity check: DID NOT COMPILE
 
