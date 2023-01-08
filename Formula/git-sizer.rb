@@ -7,8 +7,8 @@ class GitSizer < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-sizer"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3670d1dc6ec729e0036b5dd5453387e9053499caef9af35c0e425a42ed3c563c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "140618bbc6f8edb1a84eefdefe7595c1540b27fecbb845febaed3bd19a7e0a46"
   end
 
   depends_on "go" => :build
