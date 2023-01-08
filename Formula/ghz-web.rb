@@ -1,8 +1,8 @@
 class GhzWeb < Formula
   desc "Web interface for ghz"
   homepage "https://ghz.sh"
-  url "https://github.com/bojand/ghz/archive/v0.110.0.tar.gz"
-  sha256 "254463fd61b316f709a84b184da5309be1c0a4a442145665da26d9ad98da1351"
+  url "https://github.com/bojand/ghz/archive/v0.111.0.tar.gz"
+  sha256 "155a818636d5927bc3975c36a5cfa5ca3e15d6e077986e2a520337e0dd3bb79b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class GhzWeb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghz-web"
-    sha256 cellar: :any_skip_relocation, mojave: "794c39e93472e42f8ea0a1aa791fea2682fc5e692d83b400fa878834687b97ca"
+    sha256 cellar: :any_skip_relocation, mojave: "0fb7b0e41f6caafb5d8555d36e71289cbfeb9292f6f0b60ed4bf58733ecf6883"
   end
 
   depends_on "go" => :build
