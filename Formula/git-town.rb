@@ -7,8 +7,8 @@ class GitTown < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-town"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b9315b5453707529643dccd5e73a19ffd145bf674342d0ffcb02b49a477f906e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "756977d902a41322c3ab5a196dc1651d93e035985b2062129ee1f7c4ae0e932d"
   end
 
   depends_on "go" => :build
