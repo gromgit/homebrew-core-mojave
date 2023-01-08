@@ -13,7 +13,8 @@ class GnupgPkcs11Scd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnupg-pkcs11-scd"
-    sha256 cellar: :any, mojave: "909774940f6043f8312ce05a5154580363cec1344400d514ad7acce043dee746"
+    rebuild 1
+    sha256 cellar: :any, mojave: "de7eb951019fc5f500ec5e8814d39cdbc9773fbf4d16306f8ba7d8d817e09155"
   end
 
   depends_on "autoconf" => :build
