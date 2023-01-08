@@ -7,7 +7,8 @@ class Libgsf < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgsf"
-    sha256 mojave: "e775d525250354355a48d4532774a129017e04b8e82b0223fa34b9983fa19b15"
+    rebuild 1
+    sha256 mojave: "6fb5038efc02212e1b8f27ac5e7549f5bb387fb9c559d9476f09c9546a885e79"
   end
 
   head do
