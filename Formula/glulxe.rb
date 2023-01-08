@@ -9,7 +9,7 @@ class Glulxe < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glulxe"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "6d6f3a23ef4eafed778218540d927bc1ccf8c97781fbbf951dc653e2701c95e6"
   end
 
