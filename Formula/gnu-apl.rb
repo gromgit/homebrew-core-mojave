@@ -17,8 +17,8 @@ class GnuApl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-apl"
-    rebuild 1
-    sha256 mojave: "ad46013b546483b1249e89fb35101baeb3230c31fa4f403c7e7787ac09acc7c6"
+    rebuild 2
+    sha256 mojave: "6ee497b7f209cd5a3e3faa06ea2eeaacbe97e288bbc46193e47c8e0034b461a8"
   end
 
   head do
