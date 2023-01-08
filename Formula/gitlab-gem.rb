@@ -7,7 +7,8 @@ class GitlabGem < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-gem"
-    sha256 cellar: :any_skip_relocation, mojave: "95066291140c4f67a5b74667427a3ead59f5d7e5b6dbd7611a5f5fbe2cdae83f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "78a28582471f3ebc751b151ee0ddd5f1cf17929c5159c9479f2d42c99d84cf98"
   end
 
   uses_from_macos "ruby", since: :catalina
