@@ -12,7 +12,8 @@ class GitRemoteGcrypt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-remote-gcrypt"
-    sha256 cellar: :any_skip_relocation, mojave: "f34df64eecf7c91ae1926e5e0fda306e10738705f7385585547c3994ee31cd80"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "c06645a19c60befe35c368c418e52a4b52c1e352f274c360db7e2805511f359b"
   end
 
   depends_on "docutils" => :build
