@@ -11,6 +11,7 @@ class GitSecret < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-secret"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "973f4fddf023508c20a21b6d4cdc303c24d7bdd8d912c7ba90beee9d71aae329"
   end
 
