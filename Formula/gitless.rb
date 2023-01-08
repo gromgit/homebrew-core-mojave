@@ -10,11 +10,12 @@ class Gitless < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitless"
-    sha256 cellar: :any, mojave: "0f63a22dcb0fb448ae2e5e1596788767b9c14c8b0df5bdee438ae59bf25afa07"
+    rebuild 1
+    sha256 cellar: :any, mojave: "240bc1788cf81e8814e99a34615a7c17275a7d7c3bc0d0b79959023de81c5a46"
   end
 
   depends_on "libgit2"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "libffi"
