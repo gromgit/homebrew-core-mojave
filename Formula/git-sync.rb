@@ -1,13 +1,13 @@
 class GitSync < Formula
   desc "Clones a git repository and keeps it synchronized with the upstream"
   homepage "https://github.com/kubernetes/git-sync#readme"
-  url "https://github.com/kubernetes/git-sync/archive/refs/tags/v3.6.1.tar.gz"
-  sha256 "f0ed5255d409d3cd7a56686831532669ac8034e2e9212c91e993c2aa81a33fe0"
+  url "https://github.com/kubernetes/git-sync/archive/refs/tags/v3.6.2.tar.gz"
+  sha256 "937f03d238d392bbebcdd65318e5a26213dec6f1e90d5fd2cd9111cdc3311444"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-sync"
-    sha256 cellar: :any_skip_relocation, mojave: "5482f3a84920d3bb05977c9c379fb32bcdb37028977ea29996a70be8bfade501"
+    sha256 cellar: :any_skip_relocation, mojave: "816ddaf054ea047155a3e55361f7ef2aef99e76cd0664c9b7e8f5a9a3aa75ee2"
   end
 
   head do
