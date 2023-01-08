@@ -1,14 +1,13 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
   homepage "https://github.com/tummychow/git-absorb"
-  url "https://github.com/tummychow/git-absorb/archive/0.6.7.tar.gz"
-  sha256 "f562dbcf68c5f687197e8a594cb58cf102cc17a2e9fcf66dbacb83b49e053bd7"
+  url "https://github.com/tummychow/git-absorb/archive/0.6.9.tar.gz"
+  sha256 "feaee35e6771d66d6d895a69d59d812cfbcabbecaa70ece64f87528a8c3c2fb5"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-absorb"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6cd9e042c24b0f2a9788601c74a64874c2ff6f20c5f7c307f1f9be424e512ab6"
+    sha256 cellar: :any_skip_relocation, mojave: "d10f8ff2fb80912a19f9beba3abb294c675fba57d0f7c020bdab45d96ce1c76a"
   end
 
   depends_on "rust" => :build
