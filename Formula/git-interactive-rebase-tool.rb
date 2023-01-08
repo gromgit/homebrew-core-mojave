@@ -1,8 +1,8 @@
 class GitInteractiveRebaseTool < Formula
   desc "Native sequence editor for Git interactive rebase"
   homepage "https://gitrebasetool.mitmaro.ca/"
-  url "https://github.com/MitMaro/git-interactive-rebase-tool/archive/2.2.0.tar.gz"
-  sha256 "4d60912c64a1ea25ff3e8a4beca0ecdb6a1c761f81e06f81ebc2a46119b8780c"
+  url "https://github.com/MitMaro/git-interactive-rebase-tool/archive/2.2.1.tar.gz"
+  sha256 "86f262e6607ac0bf5cee22ca1b333cf9f827e09d3257658d525a518aa785ca7c"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class GitInteractiveRebaseTool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-interactive-rebase-tool"
-    sha256 cellar: :any_skip_relocation, mojave: "766f651e62903c5aae1da4a487ac4f54942b8621fb4463afe3ac7ef4aaf0a513"
+    sha256 cellar: :any_skip_relocation, mojave: "7479e7f8c8bd0df9db1e1897525e8a5e37405a2c42809160e8d6061b4fe5f920"
   end
 
   depends_on "rust" => :build
