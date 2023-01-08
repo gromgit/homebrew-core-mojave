@@ -15,7 +15,7 @@ class GitFlowAvh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-flow-avh"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "fe31ea33fecc7177f22fa64b15430512ea2ae728536d3c3d21b9121d97e311e6"
   end
 
