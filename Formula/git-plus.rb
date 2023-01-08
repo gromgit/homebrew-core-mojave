@@ -10,10 +10,11 @@ class GitPlus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-plus"
-    sha256 cellar: :any_skip_relocation, mojave: "54a3a8bf7d28d2dff77088e68eb79ed26543a7b9f93d9cd580964258d25c297e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f84a2bb9606908c30040db300734c023394660e0ffb6229939be0c4ccbeb02a7"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
