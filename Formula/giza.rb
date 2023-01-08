@@ -4,11 +4,12 @@ class Giza < Formula
   url "https://github.com/danieljprice/giza/archive/v1.3.2.tar.gz"
   sha256 "080b9d20551bc6c6a779b1148830d0e89314c9a78c5a934f9ec8f02e8e541372"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/danieljprice/giza.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/giza"
-    sha256 cellar: :any, mojave: "9845ec90140037eaeaa09bd64f93462f88c94d17fa402b57feeb85cb124a9eeb"
+    sha256 cellar: :any, mojave: "e02231d1e380492eb5b0b344ebcc86e6ec3c4aada1a16adbc55bb0080b9c2628"
   end
 
   depends_on "pkg-config" => :build
