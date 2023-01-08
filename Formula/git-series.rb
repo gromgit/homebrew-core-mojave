@@ -8,7 +8,8 @@ class GitSeries < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-series"
-    sha256 cellar: :any, mojave: "ba0f6c29139b75c18fbc1d13efee3259d6e3178b7d3d41d02b8b738631e1ba55"
+    rebuild 1
+    sha256 cellar: :any, mojave: "4a968d35294b2fd2952a75ec87c8f70d2782db3ba079056d4bae61583e1ff3ae"
   end
 
   depends_on "cmake" => :build
