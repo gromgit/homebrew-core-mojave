@@ -1,13 +1,13 @@
 class Gifski < Formula
   desc "Highest-quality GIF encoder based on pngquant"
   homepage "https://gif.ski/"
-  url "https://github.com/ImageOptim/gifski/archive/1.7.0.tar.gz"
-  sha256 "f9d66778d763f2391fa626261d24815799f1dfe61ce9ee0cc5637692172db29d"
+  url "https://github.com/ImageOptim/gifski/archive/1.8.1.tar.gz"
+  sha256 "9c06e0124a5bde4d70fe44cc8be52ffc9b9099548fc34cac1db43c4a6ff8783c"
   license "AGPL-3.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gifski"
-    sha256 cellar: :any, mojave: "26e1d2506cbb6c22b801a7a42eb510262ccc1a40723b4b94bfb0560fd7b08688"
+    sha256 cellar: :any, mojave: "72b558d843ff8432419bcdf50c3c8af94e83653536302848df0e0054c95ca2f5"
   end
 
   depends_on "pkg-config" => :build
@@ -15,10 +15,6 @@ class Gifski < Formula
   depends_on "ffmpeg@4"
 
   uses_from_macos "llvm" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5" # rubberband is built with GCC
 
