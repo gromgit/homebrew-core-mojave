@@ -1,14 +1,13 @@
 class Ghorg < Formula
   desc "Quickly clone an entire org's or user's repositories into one directory"
   homepage "https://github.com/gabrie30/ghorg"
-  url "https://github.com/gabrie30/ghorg/archive/refs/tags/v1.8.7.tar.gz"
-  sha256 "0a4c7f8051d8351508510148e01c965a10490d97362b9c14407d0d19d7fd7778"
+  url "https://github.com/gabrie30/ghorg/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "82917744b06204ee721e865737a06f067e631b62ba78a19e5ba8b5c38afba896"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "6311eb45432b9c07fa4d1b1ff5bab86fdb2e6630e33c3d6dd013e57fb0cfe6ed"
+    sha256 cellar: :any_skip_relocation, mojave: "c61c7bb77ffc0e9b553e36efdd472693252f9d9658b9cb15a37aabc5086c0c46"
   end
 
   depends_on "go" => :build
