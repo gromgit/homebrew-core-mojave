@@ -5,6 +5,7 @@ class Opencascade < Formula
   version "7.6.3"
   sha256 "baae5b3a7a38825396fc45ef9d170db406339f5eeec62e21b21036afeda31200"
   license "LGPL-2.1-only"
+  revision 1
 
   # The first-party download page (https://dev.opencascade.org/release)
   # references version 7.5.0 and hasn't been updated for later maintenance
@@ -21,7 +22,7 @@ class Opencascade < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/opencascade"
-    sha256 cellar: :any, mojave: "5b16eccb9d12ba94503600e721472e2f8b89bf6fc524cd76bbbd61bc04b7ca2e"
+    sha256 cellar: :any, mojave: "a37a3ba855d3ad0d1e7732f4cac6f3163f9badd598b2f78f993bc88ada90870a"
   end
 
   depends_on "cmake" => :build
@@ -46,11 +47,15 @@ class Opencascade < Formula
 
   def install
     tcltk = Formula["tcl-tk"]
-    system "cmake", ".",
+    libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
+    libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
+
+    system "cmake", "-S", ".", "-B", "build",
                     "-DUSE_FREEIMAGE=ON",
                     "-DUSE_RAPIDJSON=ON",
                     "-DUSE_TBB=ON",
                     "-DINSTALL_DOC_Overview=ON",
+                    "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
                     "-D3RDPARTY_FREEIMAGE_DIR=#{Formula["freeimage"].opt_prefix}",
                     "-D3RDPARTY_FREETYPE_DIR=#{Formula["freetype"].opt_prefix}",
                     "-D3RDPARTY_RAPIDJSON_DIR=#{Formula["rapidjson"].opt_prefix}",
@@ -62,13 +67,14 @@ class Opencascade < Formula
                     "-D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}",
                     "-D3RDPARTY_TCL_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
                     "-D3RDPARTY_TK_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
-                    "-D3RDPARTY_TCL_LIBRARY:FILEPATH=#{tcltk.opt_lib}/libtcl#{tcltk.version.major_minor}.dylib",
-                    "-D3RDPARTY_TK_LIBRARY:FILEPATH=#{tcltk.opt_lib}/libtk#{tcltk.version.major_minor}.dylib",
-                    "-DCMAKE_INSTALL_RPATH:FILEPATH=#{lib}",
+                    "-D3RDPARTY_TCL_LIBRARY:FILEPATH=#{libtcl}",
+                    "-D3RDPARTY_TK_LIBRARY:FILEPATH=#{libtk}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args
-    system "make", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-    bin.env_script_all_files(libexec/"bin", CASROOT: prefix)
+    bin.env_script_all_files(libexec, CASROOT: prefix)
 
     # Some apps expect resources in legacy ${CASROOT}/src directory
     prefix.install_symlink pkgshare/"resources" => "src"
