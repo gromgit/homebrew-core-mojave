@@ -8,7 +8,8 @@ class Glider < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glider"
-    sha256 cellar: :any_skip_relocation, mojave: "3986f61fac5a67facc388d55996c627994748221dda799031be9a2f93ddc4114"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "976b00456764a80e6abb9dcccbfaedd694c8007d72c3bdadc0396cb0cb334440"
   end
 
   depends_on "go" => :build
