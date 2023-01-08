@@ -3,16 +3,16 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/d9/0e/f1ede21301911f5f4a66b418b28d81ac8942b40dff49f3037b941ac68849/Glances-3.2.7.tar.gz"
-  sha256 "56ec34293aba3e09d801c890e1ccd799c2b9e8614c9435d74ffdf14cdfeb9492"
+  url "https://files.pythonhosted.org/packages/21/71/4580c2977846c59c3e4a8f16b738a16a4ff3761b323b2f83894c4d699bf5/Glances-3.3.0.4.tar.gz"
+  sha256 "8a0a5298ea55e34773eda86c51710a56f19c4724600472627079b1c370f79e4e"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glances"
-    sha256 cellar: :any_skip_relocation, mojave: "2966a7d0de9dfdcfa172b959b490923bcaa433994383ac091c40870a8c05422f"
+    sha256 cellar: :any_skip_relocation, mojave: "b1c241b6c77dccaaafd1d7325fb9804d7310c6cee8cb0b5abfc8052ba04bb82e"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "defusedxml" do
     url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
@@ -30,8 +30,8 @@ class Glances < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/de/0999ea2562b96d7165812606b18f7169307b60cd378bc29cf3673322c7e9/psutil-5.9.1.tar.gz"
-    sha256 "57f1819b5d9e95cdfb0c881a8a5b7d542ed0b7c522d575706a80bedc848c8954"
+    url "https://files.pythonhosted.org/packages/de/eb/1c01a34c86ee3b058c556e407ce5b07cb7d186ebe47b3e69d6f152ca5cc5/psutil-5.9.3.tar.gz"
+    sha256 "7ccfcdfea4fc4b0a02ca2c31de7fcd186beb9cff8207800e14ab66f79c773af6"
   end
 
   resource "pyparsing" do
