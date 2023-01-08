@@ -14,7 +14,8 @@ class Pkcs11Helper < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pkcs11-helper"
-    sha256 cellar: :any, mojave: "572d0f981eb87a3d50adde23b72cb2c96f7541c87a5d827f51d613150016221f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "c47c3b9cf1bf4286dfc460e0efa4d723444cd209a403360a4f2845351039b7cf"
   end
 
   depends_on "autoconf" => :build
