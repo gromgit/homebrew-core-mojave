@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.6/gtk-4.6.5.tar.xz"
-  sha256 "fa42c371f49c90916711e15591d87d4bee4438c27bf0692715581807628be9c2"
+  url "https://download.gnome.org/sources/gtk/4.8/gtk-4.8.2.tar.xz"
+  sha256 "85b7a160b6e02eafa4e7d38f046f8720fab537d3fe73c01c864333a983a692a9"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,7 +12,7 @@ class Gtk4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk4"
-    sha256 mojave: "265b17a14359e6a39931e2d33238002669a68180a6b4f4bc42aa97c34b936c98"
+    sha256 mojave: "3fa44263cb1f888908bd8e866ee5151d451987784226939704ede69297076744"
   end
 
   depends_on "docbook" => :build
@@ -27,19 +27,22 @@ class Gtk4 < Formula
   depends_on "glib"
   depends_on "graphene"
   depends_on "hicolor-icon-theme"
+  depends_on "jpeg-turbo"
   depends_on "libepoxy"
+  depends_on "libpng"
+  depends_on "libtiff"
   depends_on "pango"
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "cups"
 
   on_linux do
-    depends_on "libxkbcommon"
     depends_on "libxcursor"
+    depends_on "libxkbcommon"
   end
 
   def install
-    args = std_meson_args + %w[
+    args = %w[
       -Dgtk_doc=false
       -Dman-pages=true
       -Dintrospection=enabled
@@ -63,11 +66,9 @@ class Gtk4 < Formula
     # Disable asserts and cast checks explicitly
     ENV.append "CPPFLAGS", "-DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS"
 
-    mkdir "build" do
-      system "meson", *args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", *std_meson_args, "build", *args
+    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
@@ -85,6 +86,7 @@ class Gtk4 < Formula
         return 0;
       }
     EOS
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["jpeg-turbo"].opt_lib/"pkgconfig"
     flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtk4").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
