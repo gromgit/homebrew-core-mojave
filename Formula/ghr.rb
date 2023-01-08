@@ -7,7 +7,8 @@ class Ghr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghr"
-    sha256 cellar: :any_skip_relocation, mojave: "91cdc655de45e58089e28f610da16fe1eeea3cb928184aefda9a317cc9911fba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "d7e7c95d1d0725d9216c0533b44280da433f81bd1340ba815410b116ebfafa49"
   end
 
   depends_on "go" => :build
