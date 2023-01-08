@@ -10,8 +10,8 @@ class GnuSmalltalk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-smalltalk"
-    rebuild 1
-    sha256 mojave: "ab4b5dc5a2eb437ea5f49d9047398e2a9c072bebf14bcfc9e9db9eb054ac86f4"
+    rebuild 2
+    sha256 mojave: "1fe8f6cbdac077ddd82a37f0f5878fabfd3789916484ca81fca8c7c829fe3b82"
   end
 
   depends_on "autoconf" => :build
