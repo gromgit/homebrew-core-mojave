@@ -12,11 +12,13 @@ class GhcAT88 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghc@8.8"
-    rebuild 3
-    sha256 mojave: "cf38693bc4130dbb05e5433352744a4c4236db2146defa1297354558a24188a8"
+    rebuild 4
+    sha256 mojave: "2533fc9a55d7d25e23f6d694799f782396d6a223f4dbee22f7cb4988457c977e"
   end
 
   keg_only :versioned_formula
+
+  deprecate! date: "2022-12-08", because: :unmaintained
 
   depends_on "python@3.10" => :build
   depends_on arch: :x86_64
