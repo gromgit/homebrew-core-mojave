@@ -9,7 +9,8 @@ class Ghq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghq"
-    sha256 cellar: :any_skip_relocation, mojave: "61fef32a6dedbe040444b313d89b44ac0cac5813e70f5e0b97324f13c638f3c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "bb3a80014c333adbc6bb75d0215197339726a326fc5f44eca30e567d6f5677a8"
   end
 
   depends_on "go" => :build
