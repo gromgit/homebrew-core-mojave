@@ -10,10 +10,11 @@ class GitRevise < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-revise"
-    sha256 cellar: :any_skip_relocation, mojave: "aac1ccf21a7f370ad64d30bc92cefab901913bc81b7561ce3b4232036d28da0c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "f6eea6ab552651d2c45035be1db8c1203e0239b4c763612c3e3996f1b94c150f"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
