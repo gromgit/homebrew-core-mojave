@@ -1,15 +1,14 @@
 class Glab < Formula
   desc "Open-source GitLab command-line tool"
-  homepage "https://glab.readthedocs.io/"
-  url "https://github.com/profclems/glab/archive/v1.22.0.tar.gz"
-  sha256 "4b700d46cf9ee8fe6268e7654326053f4366aa3e072b5c3f3d243930a6e89edc"
+  homepage "https://gitlab.com/gitlab-org/cli"
+  url "https://gitlab.com/gitlab-org/cli/-/archive/v1.24.1/cli-v1.24.1.tar.gz"
+  sha256 "dc942f7806aa417714483bd5323bfcde9eceadd7ed33154f7a77038b416bdd95"
   license "MIT"
-  head "https://github.com/profclems/glab.git", branch: "trunk"
+  head "https://gitlab.com/gitlab-org/cli.git", branch: "trunk"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glab"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ebe933987f81bae17476949844bbfa2ff3babfc95ef038e24536093b010fc978"
+    sha256 cellar: :any_skip_relocation, mojave: "1cd5a16c7f35e82d2c61b1ad99c0e0c7be52bb14fb346314634cef4f80431ec6"
   end
 
   depends_on "go" => :build
@@ -23,9 +22,9 @@ class Glab < Formula
   end
 
   test do
-    system "git", "clone", "https://gitlab.com/profclems/test.git"
-    cd "test" do
-      assert_match "Clement Sam", shell_output("#{bin}/glab repo contributors")
+    system "git", "clone", "https://gitlab.com/cli-automated-testing/homebrew-testing.git"
+    cd "homebrew-testing" do
+      assert_match "Matt Nohr", shell_output("#{bin}/glab repo contributors")
       assert_match "This is a test issue", shell_output("#{bin}/glab issue list --all")
     end
   end
