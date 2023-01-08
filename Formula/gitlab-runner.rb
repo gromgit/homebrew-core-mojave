@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v15.4.0",
-      revision: "43b2dc3d83ed12442f8a106ceef1be993797f355"
+      tag:      "v15.7.1",
+      revision: "6d4809485d18a643e97eea1a158f87ed124c23d5"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -14,7 +14,7 @@ class GitlabRunner < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gitlab-runner"
-    sha256 cellar: :any_skip_relocation, mojave: "e4387c00f324a1245b3d1ac6ceccc1e1459c10b7d04426f9fe47ae8f30726478"
+    sha256 cellar: :any_skip_relocation, mojave: "4611b7c97b7c3be5ffc064cf4ab66744494e9e531a25d6bf932e8bba4c55da07"
   end
 
   depends_on "go" => :build
