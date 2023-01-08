@@ -1,8 +1,8 @@
 class Ghz < Formula
   desc "Simple gRPC benchmarking and load testing tool"
   homepage "https://ghz.sh"
-  url "https://github.com/bojand/ghz/archive/v0.110.0.tar.gz"
-  sha256 "254463fd61b316f709a84b184da5309be1c0a4a442145665da26d9ad98da1351"
+  url "https://github.com/bojand/ghz/archive/v0.111.0.tar.gz"
+  sha256 "155a818636d5927bc3975c36a5cfa5ca3e15d6e077986e2a520337e0dd3bb79b"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Ghz < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ghz"
-    sha256 cellar: :any_skip_relocation, mojave: "067085e9a5d6269dbb2201261639b229eabe350fb29b08256bc3ce62aabbcff3"
+    sha256 cellar: :any_skip_relocation, mojave: "b3e74874807beacb5a189ce030cbc4c9b366873ca65b525ea6cbd9d5ecaa583c"
   end
 
   depends_on "go" => :build
