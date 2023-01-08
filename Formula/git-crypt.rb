@@ -12,14 +12,22 @@ class GitCrypt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-crypt"
-    rebuild 1
-    sha256 cellar: :any, mojave: "bf50a75df4c568372f317a884157bdb9ba2d0d51f0d28a607119ad907c163894"
+    rebuild 2
+    sha256 cellar: :any, mojave: "10b53791c80ed0a9bc05ad9b93f1d4d49225f0683d498baaf355820a3e3928b8"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "docbook" => :build
+  depends_on "docbook-xsl" => :build
+  depends_on "openssl@3"
+
   uses_from_macos "libxslt" => :build
 
   def install
+    # fix docbook load issue
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+
+    ENV.append_to_cflags "-DOPENSSL_API_COMPAT=0x30000000L"
+
     system "make", "ENABLE_MAN=yes", "PREFIX=#{prefix}", "install"
   end
 
