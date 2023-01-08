@@ -13,6 +13,7 @@ class GitSubrepo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-subrepo"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "1980304e4b65652e9ffd9b211844698ecf19b5a963819616681733fb98302b3a"
   end
 
