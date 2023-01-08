@@ -3,15 +3,14 @@ class Global < Formula
 
   desc "Source code tag system"
   homepage "https://www.gnu.org/software/global/"
-  url "https://ftp.gnu.org/gnu/global/global-6.6.8.tar.gz"
-  mirror "https://ftpmirror.gnu.org/global/global-6.6.8.tar.gz"
-  sha256 "6f93d9732a07175817907d26640a90dc1009918e02be761bba09d1fa068357cd"
+  url "https://ftp.gnu.org/gnu/global/global-6.6.9.tar.gz"
+  mirror "https://ftpmirror.gnu.org/global/global-6.6.9.tar.gz"
+  sha256 "aacba0fa8d60ca645e62f312dcd23b47ed48a081aa0fb1563cff4702d9d1fad5"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/global"
-    rebuild 1
-    sha256 mojave: "fd83858c07d5bea33a67ca65bea265573ed1f79b6857de3826d81f53cfb44a20"
+    sha256 mojave: "273852346496d315be7c707753d7d4392b15d7617bef654a46c3d4be52ee985d"
   end
 
   head do
@@ -27,21 +26,21 @@ class Global < Formula
 
   depends_on "libtool"
   depends_on "ncurses"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "sqlite"
   depends_on "universal-ctags"
 
   skip_clean "lib/gtags"
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/94/9c/cb656d06950268155f46d4f6ce25d7ffc51a0da47eadf1b164bbf23b718b/Pygments-2.11.2.tar.gz"
-    sha256 "4e426f72023d88d03b2fa258de560726ce890ff3b630f88c21cbb8b2503b8c6a"
+    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
+    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   def install
     system "sh", "reconf.sh" if build.head?
 
-    python3 = "python3.10"
+    python3 = "python3.11"
     ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
 
     resource("Pygments").stage do
