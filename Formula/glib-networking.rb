@@ -1,13 +1,13 @@
 class GlibNetworking < Formula
   desc "Network related modules for glib"
   homepage "https://gitlab.gnome.org/GNOME/glib-networking"
-  url "https://download.gnome.org/sources/glib-networking/2.72/glib-networking-2.72.2.tar.xz"
-  sha256 "cd2a084c7bb91d78e849fb55d40e472f6d8f6862cddc9f12c39149359ba18268"
+  url "https://download.gnome.org/sources/glib-networking/2.74/glib-networking-2.74.0.tar.xz"
+  sha256 "1f185aaef094123f8e25d8fa55661b3fd71020163a0174adb35a37685cda613b"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glib-networking"
-    sha256 mojave: "81c7a29df082b493be113161db86c9877fd8833b6073f685670c745b8e0a3b47"
+    sha256 mojave: "27ac46beea3fa685f4cfb9422e790404ec557854ff1056acf5fd2175e1779e6e"
   end
 
   depends_on "meson" => :build
@@ -17,25 +17,18 @@ class GlibNetworking < Formula
   depends_on "gnutls"
   depends_on "gsettings-desktop-schemas"
 
-  on_linux do
-    depends_on "libidn"
-  end
-
   link_overwrite "lib/gio/modules"
 
   def install
-    # stop meson_post_install.py from doing what needs to be done in the post_install step
+    # stop gnome.post_install from doing what needs to be done in the post_install step
     ENV["DESTDIR"] = "/"
 
-    mkdir "build" do
-      system "meson", *std_meson_args,
-                      "-Dlibproxy=disabled",
-                      "-Dopenssl=disabled",
-                      "-Dgnome_proxy=disabled",
-                      ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", *std_meson_args, "build",
+                    "-Dlibproxy=disabled",
+                    "-Dopenssl=disabled",
+                    "-Dgnome_proxy=disabled"
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
