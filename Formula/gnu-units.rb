@@ -8,7 +8,8 @@ class GnuUnits < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnu-units"
-    sha256 mojave: "0435b3efe3752903191c55c77726096cd354405ebdd72d90c664299d482c16ac"
+    rebuild 1
+    sha256 mojave: "3d688703d211e8a9843810f1754345cd9149f1cc6d95ab6e493d679d39b4ccc7"
   end
 
   depends_on "readline"
