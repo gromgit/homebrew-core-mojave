@@ -8,7 +8,8 @@ class Glyr < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/glyr"
-    sha256 cellar: :any, mojave: "9b797bc0e4f86f94d510b35a1c42ad84bd5dc77956fd2e5fd86c082858a832d2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b6573b55f24fde0ec6c468c00701fa26d1b2388d09930d0df36df26f3804a0b1"
   end
 
   depends_on "cmake" => :build
