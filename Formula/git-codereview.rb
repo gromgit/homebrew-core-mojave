@@ -1,13 +1,13 @@
 class GitCodereview < Formula
   desc "Tool for working with Gerrit code reviews"
   homepage "https://pkg.go.dev/golang.org/x/review/git-codereview"
-  url "https://github.com/golang/review/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "b79b296bc2794dad15aefff8f095ab475422377010ac6546fe30c7dea4306cc1"
+  url "https://github.com/golang/review/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "2151eb3ea0a288b7f65489b8bbc835d2ee52e38d202171aa9a183ff53664e7f0"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-codereview"
-    sha256 cellar: :any_skip_relocation, mojave: "48f422e8e26d290ec66f431ac2b56b83926fdc0fb408e49975d15d245fdcfcea"
+    sha256 cellar: :any_skip_relocation, mojave: "7f11424ade93dfe58d471053827a0fada67608650e82bab20fcbe0d90708f52d"
   end
 
   depends_on "go" => :build
