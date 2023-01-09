@@ -7,7 +7,8 @@ class Grsync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grsync"
-    sha256 mojave: "ec749303600ac33a8774d36000059023d554cc31f2262bb847a71b5bafb097e7"
+    rebuild 1
+    sha256 mojave: "d80524e3c8f35ff0f71698d994899221f2563b0b24e01984e87a4dfc48eb2639"
   end
 
   depends_on "intltool" => :build
