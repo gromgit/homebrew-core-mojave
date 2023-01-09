@@ -13,7 +13,8 @@ class Gpsd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gpsd"
-    sha256 cellar: :any, mojave: "e95fdd3f5447bdafc65eaa10a261bad91e5ebb51375265daada01d6322ac74f6"
+    rebuild 1
+    sha256 cellar: :any, mojave: "7643a1963a38ebb15c136aa24190ca55705cff5257b2102ef15624f615f19405"
   end
 
   depends_on "asciidoctor" => :build
