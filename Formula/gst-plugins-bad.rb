@@ -1,8 +1,8 @@
 class GstPluginsBad < Formula
   desc "GStreamer plugins less supported, not fully tested"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.20.2.tar.xz"
-  sha256 "4adc4c05f41051f8136b80cda99b0d049a34e777832f9fea7c5a70347658745b"
+  url "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.20.4.tar.xz"
+  sha256 "a1a3f53b3604d9a04fdd0bf9a1a616c3d2dab5320489e9ecee1178e81e33a16a"
   license "LGPL-2.0-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git", branch: "master"
 
@@ -13,7 +13,7 @@ class GstPluginsBad < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-plugins-bad"
-    sha256 mojave: "fe2e1ee588f9f5aac954e50ac0bc47f300532dcf99d02d96f5c8feee284ceac7"
+    sha256 mojave: "bcbfdc069bcfce7c2b6bc17543b52d82cf6ee797562c44f317a1b457c187cca5"
   end
 
   depends_on "gobject-introspection" => :build
@@ -22,9 +22,10 @@ class GstPluginsBad < Formula
   depends_on "pkg-config" => :build
   depends_on "faac"
   depends_on "faad2"
+  depends_on "fdk-aac"
   depends_on "gettext"
   depends_on "gst-plugins-base"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libnice"
   depends_on "libusrsctp"
   depends_on "openssl@1.1"
@@ -32,6 +33,8 @@ class GstPluginsBad < Formula
   depends_on "orc"
   depends_on "rtmpdump"
   depends_on "srtp"
+
+  uses_from_macos "python" => :build, since: :catalina
 
   on_macos do
     # musepack is not bottled on Linux
@@ -41,25 +44,24 @@ class GstPluginsBad < Formula
 
   def install
     # Plugins with GPL-licensed dependencies: faad
-    args = std_meson_args + %w[
+    args = %w[
       -Dgpl=enabled
       -Dintrospection=enabled
       -Dexamples=disabled
     ]
-
     # The apple media plug-in uses API that was added in Mojave
     args << "-Dapplemedia=disabled" if MacOS.version <= :high_sierra
 
-    mkdir "build" do
-      system "meson", *args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", *std_meson_args, "build", *args
+    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "install", "-C", "build"
   end
 
   test do
     gst = Formula["gstreamer"].opt_bin/"gst-inspect-1.0"
     output = shell_output("#{gst} --plugin dvbsuboverlay")
+    assert_match version.to_s, output
+    output = shell_output("#{gst} --plugin fdkaac")
     assert_match version.to_s, output
   end
 end
