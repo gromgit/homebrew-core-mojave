@@ -12,8 +12,8 @@ class Jack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/jack"
-    rebuild 1
-    sha256 mojave: "7239e4a44e0d9bdc6f33dae265d474bcf097fd96afb8d87723c67a8d3014f83b"
+    rebuild 2
+    sha256 mojave: "0dc1f6872c2b5e1fa27af15935678c8e8e92be9401e3639bd4766006ec01c829"
   end
 
   depends_on "autoconf" => :build
