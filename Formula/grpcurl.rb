@@ -7,7 +7,8 @@ class Grpcurl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpcurl"
-    sha256 cellar: :any_skip_relocation, mojave: "c3e6488a3d7179be82c5601a815a49ab36c791febf32d35b34ca02dfda79e6e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4f5e321a0228b3303381e53cc96489b236b7ce190901910adb7f079c0f0984ca"
   end
 
   depends_on "go" => :build
