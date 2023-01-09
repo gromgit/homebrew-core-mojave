@@ -8,7 +8,8 @@ class GnustepBase < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnustep-base"
-    sha256 cellar: :any, mojave: "66c0d65a695f294270a15499d9d43052c521a4a86ec77433b66cc215abc0c2c3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2b47ef042971cc8a9aea471d313ec40042e8b69800b672ba64fcd2fc6c8dbd2c"
   end
 
   depends_on "gnustep-make" => :build
