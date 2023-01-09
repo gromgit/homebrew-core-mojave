@@ -8,7 +8,8 @@ class Gotify < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gotify"
-    sha256 cellar: :any_skip_relocation, mojave: "e848fae4ef448cf174498a22a68133e4421bae8aacfaa52015221ef3dba15e67"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "8814a64a358220eee948f83522f41c123d3e961c3c63f68846ae74511d597444"
   end
 
   depends_on "go" => :build
