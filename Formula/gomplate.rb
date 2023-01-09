@@ -8,7 +8,8 @@ class Gomplate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gomplate"
-    sha256 cellar: :any_skip_relocation, mojave: "63a7d0e4594a01a31d8edf201a4b22288b4c014b619472ae7b39efd4a36ffb4e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1d73d003368201c8c5c5e56944961f45f94ef155707b82a56a90241cffb4e4dc"
   end
 
   depends_on "go" => :build
