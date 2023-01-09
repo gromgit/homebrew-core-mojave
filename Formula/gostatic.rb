@@ -1,14 +1,14 @@
 class Gostatic < Formula
   desc "Fast static site generator"
   homepage "https://github.com/piranha/gostatic"
-  url "https://github.com/piranha/gostatic/archive/2.34.tar.gz"
-  sha256 "fc61c77e76e81b17b9955d18341da3f62e2f8def6a8f33156681e046ab1e80c5"
+  url "https://github.com/piranha/gostatic/archive/2.35.tar.gz"
+  sha256 "a179a469938c4ea6be7185bfcab42153114e0b95b62006ec266eccf5e73d3ae3"
   license "ISC"
   head "https://github.com/piranha/gostatic.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gostatic"
-    sha256 cellar: :any_skip_relocation, mojave: "82a5e0ba41c7aed79bde7094188fa925f0c1ca84c1c4faacc580e7b64c691a1d"
+    sha256 cellar: :any_skip_relocation, mojave: "2ffa284a6a09851569a022579e03fa188e98f987240649089f60e4ad67939ac4"
   end
 
   depends_on "go" => :build
