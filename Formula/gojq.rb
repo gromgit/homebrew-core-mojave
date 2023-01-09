@@ -2,14 +2,14 @@ class Gojq < Formula
   desc "Pure Go implementation of jq"
   homepage "https://github.com/itchyny/gojq"
   url "https://github.com/itchyny/gojq.git",
-      tag:      "v0.12.9",
-      revision: "f2e333c56832b92658add0f4712994427ba70919"
+      tag:      "v0.12.10",
+      revision: "c1a3ebdcdcdfbdf0f9bf482c9885d53058e6f7a9"
   license "MIT"
   head "https://github.com/itchyny/gojq.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gojq"
-    sha256 cellar: :any_skip_relocation, mojave: "552d0eb8abdce0b54aa53104e3af9625619bcf272a25861b59b4ce63d69cd741"
+    sha256 cellar: :any_skip_relocation, mojave: "125803a81200ee1c179e677ddf4fc1065f883fe9cb3da38c1be8ee9754c91c8d"
   end
 
   depends_on "go" => :build
