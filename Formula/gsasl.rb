@@ -8,7 +8,8 @@ class Gsasl < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gsasl"
-    sha256 mojave: "8d679d6664559e04f68e9a98f44afaeb0fdd67617f2a86493ef90290cf39c76f"
+    rebuild 1
+    sha256 mojave: "2b8ac2b4e9247f742ce323019ec8be3a2b7ccaf53239ff501e56a144ecbfb61f"
   end
 
   depends_on "libgcrypt"
