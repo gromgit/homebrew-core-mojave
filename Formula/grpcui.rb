@@ -7,8 +7,8 @@ class Grpcui < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grpcui"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "d71463952f5a94519dc70e33e86e9e85ea6f203880fef49dcc620adca361db22"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "cec68b29431a11408a12d7a1d9abb1d15cd6136787217760d4c5264b88867f56"
   end
 
   depends_on "go" => :build
