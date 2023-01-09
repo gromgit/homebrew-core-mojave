@@ -7,7 +7,8 @@ class GrinWallet < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/grin-wallet"
-    sha256 cellar: :any_skip_relocation, mojave: "1354e41f5f94b60fe2f18f0ac5eb3b8dcdb499050f02e131f6b6ca27147dcacb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "519645531a2a1136a05350f44b25a5ae68806e09af4f4d420847f3f5f8824fcd"
   end
 
   depends_on "rust" => :build
@@ -16,7 +17,7 @@ class GrinWallet < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "openssl@1.1" # Uses Secure Transport on macOS
+    depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 
   def install
