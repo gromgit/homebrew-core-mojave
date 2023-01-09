@@ -8,7 +8,8 @@ class GnuplotAT4 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gnuplot@4"
-    sha256 mojave: "77e9af6f2a286cae89368c3d1f0f0bf5538381a305803363b5a8f6365a35a5ba"
+    rebuild 1
+    sha256 mojave: "47efe948f19d4974053ff33d69e2438ff8433c2b58c57100c0246db023313170"
   end
 
   keg_only :versioned_formula
