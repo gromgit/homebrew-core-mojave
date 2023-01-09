@@ -7,8 +7,8 @@ class Gom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gom"
-    rebuild 1
-    sha256 cellar: :any, mojave: "8816e1d7e68166ce89ad527439d30b70d8462c3128f36f1aafd2dc5a474423ac"
+    rebuild 2
+    sha256 cellar: :any, mojave: "02ac117384d37f182f5871061d13113326625e15882408daca9e32d3384da24a"
   end
 
   depends_on "gobject-introspection" => :build
@@ -23,7 +23,7 @@ class Gom < Formula
   uses_from_macos "sqlite"
 
   def install
-    site_packages = prefix/Language::Python.site_packages("python3")
+    site_packages = prefix/Language::Python.site_packages("python3.10")
 
     mkdir "build" do
       system "meson", *std_meson_args, "-Dpygobject-override-dir=#{site_packages}", ".."
