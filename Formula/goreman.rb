@@ -13,7 +13,8 @@ class Goreman < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goreman"
-    sha256 cellar: :any_skip_relocation, mojave: "51572c301ffb1f05104d8ff7d519b3e6ee30b175ba59d7fd028cb5a8b1f15483"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "2de3ac14b694dac5e97ad269231c2b38870506b121960537cdcfdf9abf05d71e"
   end
 
   depends_on "go" => :build
