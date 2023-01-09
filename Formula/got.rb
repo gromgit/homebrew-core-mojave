@@ -1,8 +1,8 @@
 class Got < Formula
   desc "Version control system"
   homepage "https://gameoftrees.org/"
-  url "https://gameoftrees.org/releases/portable/got-portable-0.76.tar.gz"
-  sha256 "d3955420752a5e7112e029a0a29cd0d8b434ba57527dfb0617913179d10efb20"
+  url "https://gameoftrees.org/releases/portable/got-portable-0.79.tar.gz"
+  sha256 "78be1c0a905184ed1cb506468359faf87e4ee86851291b1670439c46bfb3d87c"
   license "ISC"
 
   livecheck do
@@ -12,7 +12,7 @@ class Got < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/got"
-    sha256 mojave: "e8d32d11e0a8a4cf0919a418ba32dcefe414c20b40e333321c5890922d5abb8c"
+    sha256 mojave: "cb31f053ac271ff7da0957d7bef4b0b15468d0537b4f05c9ee0b6375e371d642"
   end
 
   depends_on "bison" => :build
