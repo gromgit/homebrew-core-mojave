@@ -7,7 +7,8 @@ class GtkGnutella < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gtk-gnutella"
-    sha256 mojave: "e7c3ae51e65bc367696d55cbfd67c050a83cded84acf5cda24113748f6d967a1"
+    rebuild 1
+    sha256 mojave: "74aa8d842bef0e52f345c067e5823fdb7587b5a2a4daf10b3819ee8bc65bb494"
   end
 
   depends_on "pkg-config" => :build
@@ -15,11 +16,6 @@ class GtkGnutella < Formula
 
   def install
     ENV.deparallelize
-
-    if MacOS.version == :el_capitan && MacOS::Xcode.version >= "8.0"
-      inreplace "Configure", "ret = clock_gettime(CLOCK_REALTIME, &tp);",
-                             "ret = undefinedgibberish(CLOCK_REALTIME, &tp);"
-    end
 
     system "./build.sh", "--prefix=#{prefix}", "--disable-nls"
     system "make", "install"
