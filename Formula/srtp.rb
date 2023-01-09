@@ -14,7 +14,8 @@ class Srtp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/srtp"
-    sha256 cellar: :any, mojave: "fecb33dbcc01a29bc252b60cf42b17e2457763913ad67b858810f3e95649fb64"
+    rebuild 1
+    sha256 cellar: :any, mojave: "d81880c6ad0514c9376b5e754f432f9f469d3b803821978dccd1a60462e6c316"
   end
 
   depends_on "pkg-config" => :build
