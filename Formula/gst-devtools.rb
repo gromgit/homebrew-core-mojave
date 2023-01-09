@@ -3,8 +3,8 @@ class GstDevtools < Formula
 
   desc "GStreamer development and validation tools"
   homepage "https://gstreamer.freedesktop.org/modules/gstreamer.html"
-  url "https://gstreamer.freedesktop.org/src/gst-devtools/gst-devtools-1.20.3.tar.xz"
-  sha256 "bbbd45ead703367ea8f4be9b3c082d7b62bef47b240a39083f27844e28758c47"
+  url "https://gstreamer.freedesktop.org/src/gst-devtools/gst-devtools-1.20.4.tar.xz"
+  sha256 "82a293600273f4dd3eed567aae510ca0c7d629c3807788b00e6cdbd1d2459a84"
   license "LGPL-2.1-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gst-devtools.git", branch: "master"
 
@@ -15,7 +15,7 @@ class GstDevtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-devtools"
-    sha256 mojave: "81d66bb3a5f18af50dcab9fc9375ef58f4db5c9e55be1cc6eb7cba0f827b1d75"
+    sha256 mojave: "eb40e4b435ce8292e730d42612f584fb253c5955d45831f80317c761896eae53"
   end
 
   depends_on "gobject-introspection" => :build
@@ -26,25 +26,23 @@ class GstDevtools < Formula
   depends_on "gst-plugins-base"
   depends_on "gstreamer"
   depends_on "json-glib"
-  depends_on "python@3.9"
+  depends_on "python@3.11"
 
   def install
-    args = std_meson_args + %w[
+    args = %w[
       -Dintrospection=enabled
       -Dvalidate=enabled
       -Dtests=disabled
     ]
 
-    mkdir "build" do
-      system "meson", *args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
 
     rewrite_shebang detected_python_shebang, bin/"gst-validate-launcher"
   end
 
   test do
-    system "#{bin}/gst-validate-launcher", "--usage"
+    system bin/"gst-validate-launcher", "--usage"
   end
 end
