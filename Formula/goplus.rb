@@ -8,7 +8,8 @@ class Goplus < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goplus"
-    sha256 mojave: "ab8195503d22c607453f8da5a52675c0c4eb061ead0a39f736ec2e765b566353"
+    rebuild 1
+    sha256 mojave: "146b5a1b97fa1ee82cb1d0192ee8322a0e97e8142f043f59d4042a7178e539e8"
   end
 
   depends_on "go"
