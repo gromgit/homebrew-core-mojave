@@ -7,7 +7,8 @@ class GoCamo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/go-camo"
-    sha256 cellar: :any_skip_relocation, mojave: "f6e17fd597c9b4c6042c1ac7f94bd59a488ef18f52416f89aace02e0b23ae5e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "27892e2557d913e942d8a69331b12b82ca745a7a833f78937f4ee19c53671b2e"
   end
 
   depends_on "go" => :build
