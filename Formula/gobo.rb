@@ -7,7 +7,8 @@ class Gobo < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gobo"
-    sha256 cellar: :any_skip_relocation, mojave: "4d8a09514869529d8493163d84de0d1b117dfdc355020dad01455b7f43f71ffe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a36791c6b07fbb0638b43464c4866669bf9f837e6f191fb42ffdc61ac2e7cd54"
   end
 
   depends_on "eiffelstudio" => :test
@@ -15,7 +16,10 @@ class Gobo < Formula
   def install
     ENV["GOBO"] = buildpath
     ENV.prepend_path "PATH", buildpath/"bin"
-    system buildpath/"bin/install.sh", "-v", "--threads=#{ENV.make_jobs}", ENV.compiler
+    # The value for compiler needs to be an unversioned name, but it will still use
+    # the compiler shim which will choose the correct compiler.
+    compiler = OS.mac? ? "clang" : "gcc"
+    system buildpath/"bin/install.sh", "-v", "--threads=#{ENV.make_jobs}", compiler
     (prefix/"gobo").install Dir[buildpath/"*"]
     (Pathname.glob prefix/"gobo/bin/ge*").each do |p|
       (bin/p.basename).write_env_script p,
