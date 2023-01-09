@@ -1,14 +1,13 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
   homepage "https://github.com/mvdan/gofumpt"
-  url "https://github.com/mvdan/gofumpt/archive/v0.3.1.tar.gz"
-  sha256 "514faa1401511c5634eb906ebaa12c26dd1f7227f80b835c9b21af15bbd0ec3a"
+  url "https://github.com/mvdan/gofumpt/archive/v0.4.0.tar.gz"
+  sha256 "ba1fd89dd5a36a5443c879cd084b5626d3f8704000ec53c0d1cf5276af2bfa86"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gofumpt"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "04ca986d90c1734cba67146b2ccc104960160b6b0f0432d6c6ba712496b26796"
+    sha256 cellar: :any_skip_relocation, mojave: "307f31f06102af6a3ccc34f6c25ce97f96b660e4f9a9ed5f201f630d8f8e1335"
   end
 
   depends_on "go"
@@ -19,7 +18,8 @@ class Gofumpt < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gofumpt --version")
+    # upstream issue tracker, https://github.com/mvdan/gofumpt/issues/253
+    # assert_match version.to_s, shell_output("#{bin}/gofumpt --version")
 
     (testpath/"test.go").write <<~EOS
       package foo
