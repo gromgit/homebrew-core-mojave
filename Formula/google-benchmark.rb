@@ -1,14 +1,14 @@
 class GoogleBenchmark < Formula
   desc "C++ microbenchmark support library"
   homepage "https://github.com/google/benchmark"
-  url "https://github.com/google/benchmark/archive/v1.7.0.tar.gz"
-  sha256 "3aff99169fa8bdee356eaa1f691e835a6e57b1efeadb8a0f9f228531158246ac"
+  url "https://github.com/google/benchmark/archive/v1.7.1.tar.gz"
+  sha256 "6430e4092653380d9dc4ccb45a1e2dc9259d581f4866dc0759713126056bc1d7"
   license "Apache-2.0"
   head "https://github.com/google/benchmark.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/google-benchmark"
-    sha256 cellar: :any_skip_relocation, mojave: "7af6de6decc88495ab258a6327fa71e5df432c026f9e8abafb482171c34b7919"
+    sha256 cellar: :any_skip_relocation, mojave: "d8f745652c26592d2cc838f4af4d2a501dd558ba328fca2ab59ae54bd3a0236f"
   end
 
   depends_on "cmake" => :build
