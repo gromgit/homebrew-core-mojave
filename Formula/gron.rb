@@ -8,7 +8,8 @@ class Gron < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gron"
-    sha256 cellar: :any_skip_relocation, mojave: "a8eb228f66cf7956bf01746679389ec3ab6d474091cbf49a56f3d8c69d67f790"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a2f11e94354fe178fca266d8204f4cbbb3c1bd6bfb6b3a18777dde398f427b18"
   end
 
   depends_on "go" => :build
