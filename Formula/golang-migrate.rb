@@ -7,7 +7,8 @@ class GolangMigrate < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/golang-migrate"
-    sha256 cellar: :any_skip_relocation, mojave: "a09c59e5067881f6b64a61e6fae9e718c7dd3cedd560e2ad0815206ba852f9d6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "80f891b075e6d6ee3065e1b6eb1c9c7eb461db0b4502467a10db8e3c692ac591"
   end
 
   depends_on "go" => :build
