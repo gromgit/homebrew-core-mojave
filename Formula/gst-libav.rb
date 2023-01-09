@@ -1,8 +1,8 @@
 class GstLibav < Formula
   desc "GStreamer plugins for Libav (a fork of FFmpeg)"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.20.2.tar.xz"
-  sha256 "b5c531dd8413bf771c79dab66b8e389f20b3991f745115133f0fa0b8e32809f9"
+  url "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.20.4.tar.xz"
+  sha256 "04ccbdd58fb31dd94098da599209834a0e7661638c5703381dd0a862c56fc532"
   license "LGPL-2.1-or-later"
   head "https://gitlab.freedesktop.org/gstreamer/gst-libav.git", branch: "master"
 
@@ -13,7 +13,7 @@ class GstLibav < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gst-libav"
-    sha256 cellar: :any, mojave: "22f88cdc6f5f930effe6dfedbb80116eedb41bc4dacd12a8cecd03ad9487a5bc"
+    sha256 cellar: :any, mojave: "90f37e553ff1e0d17688e5307dec351dc8b16e7d4cb6ee3b75b5b7ee3d2f5712"
   end
 
   depends_on "meson" => :build
@@ -23,12 +23,6 @@ class GstLibav < Formula
   depends_on "ffmpeg"
   depends_on "gst-plugins-base"
   depends_on "xz" # For LZMA
-
-  on_linux do
-    depends_on "gcc"
-  end
-
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     mkdir "build" do
