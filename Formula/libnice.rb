@@ -12,7 +12,8 @@ class Libnice < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libnice"
-    sha256 cellar: :any, mojave: "4e32b4aa8742685a70952c6da7a4fb21ee3760197a29dcbc77f9a3fb7f03fe12"
+    rebuild 1
+    sha256 cellar: :any, mojave: "2fb89331271709f06d2db0e56dc0d5383bb776b866f106adafacb0150b4f364b"
   end
 
   depends_on "meson" => :build
