@@ -8,7 +8,8 @@ class Gost < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gost"
-    sha256 cellar: :any_skip_relocation, mojave: "b3d897a78ed6dd5b309303c229ae06cc5abb635c0c9551ad0b506ae38e74c67b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3b649f0a2555c3205c478f276c32a7fc5956ba2134770d678379b11d86bef29d"
   end
 
   depends_on "go" => :build
