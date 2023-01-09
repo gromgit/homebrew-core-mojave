@@ -1,14 +1,13 @@
 class Goawk < Formula
   desc "POSIX-compliant AWK interpreter written in Go"
   homepage "https://benhoyt.com/writings/goawk/"
-  url "https://github.com/benhoyt/goawk/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "c24ef4a9b1c0b416c1aeb786368b36736617c60cfd1f4e871798f5abb2a18e0b"
+  url "https://github.com/benhoyt/goawk/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "3846a1bdacedb1c87edf7627ebd67fe29ce7b2cdafa77a8528eb45b22df5506d"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/goawk"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "7f025573c8f738f58c9b58235981cc0ba3809b32a5b12dfebf5604ed037b54da"
+    sha256 cellar: :any_skip_relocation, mojave: "698bbbd6ee44490c70141f73cb44b7a38f1e64911886d17a908be6d0e931d962"
   end
 
   depends_on "go" => :build
