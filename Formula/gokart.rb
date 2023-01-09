@@ -8,7 +8,8 @@ class Gokart < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gokart"
-    sha256 cellar: :any_skip_relocation, mojave: "fe21c55df3429ca876c8b7286d4e4ef5a43a5dd407f97f5ac0e9dde64b115d30"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "3538ae33007b2ced8efe43156f3e9812fb0e048719747dbcda83b887123ee99a"
   end
 
   depends_on "go" => [:build, :test]
