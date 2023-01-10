@@ -13,8 +13,8 @@ class Halibut < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/halibut"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "7ef0e17bc140f8b2284703044c3c9cccbd0340302cf8b5e5fb7159aedf1e7368"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, mojave: "c779d5555024eeafb0135c529ef8224b894e4d84a9b254dca78d8bcd7f4f9fb3"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Halibut < Formula
     (testpath/"sample.but").write("Hello, world!")
     system "#{bin}/halibut", "--html=sample.html", "sample.but"
 
-    assert_match("<p>\nHello, world!\n<\/p>",
+    assert_match("<p>\nHello, world!\n</p>",
                  (testpath/"sample.html").read)
   end
 end
