@@ -13,7 +13,8 @@ class OpenalSoft < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openal-soft"
-    sha256 cellar: :any, mojave: "b3ae76a9ad6a542b008f8647fb462a00db7c7a1cfa38e3a0a99504322f0d513c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "446a66930ce74f1aae16e30a5141e3a21e66e6af9a69c295f3a35c9dcaa27650"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenAL.framework"
