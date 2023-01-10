@@ -1,13 +1,13 @@
 class Libofx < Formula
   desc "Library to support OFX command responses"
   homepage "https://github.com/libofx/libofx"
-  url "https://github.com/libofx/libofx/releases/download/0.10.5/libofx-0.10.5.tar.gz"
-  sha256 "570ea744fb654750ed9c60456c771e7cbb035465f409e9ee1118f671b47b3bc3"
+  url "https://github.com/libofx/libofx/releases/download/0.10.9/libofx-0.10.9.tar.gz"
+  sha256 "1ca89ff7d681c9edad312172ac464231a8de686e653213612f9417492cef0d37"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libofx"
-    sha256 mojave: "fdf4e0567a7be2e1b0d7ab85ef53932db82d1c65549e8f6f4b91b2c1bb297edb"
+    sha256 mojave: "f0fcaef0e63409c1d52eb17577075210ef7b0b174df3985e4e9d4903960a79e9"
   end
 
   head do
