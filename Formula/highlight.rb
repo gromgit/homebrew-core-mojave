@@ -1,8 +1,8 @@
 class Highlight < Formula
   desc "Convert source code to formatted text with syntax highlighting"
   homepage "http://www.andre-simon.de/doku/highlight/en/highlight.php"
-  url "http://www.andre-simon.de/zip/highlight-4.2.tar.bz2"
-  sha256 "ed3efdb9b416b236e503989f9dfebdd94bf515536cfd183aefe36cefdd0d0468"
+  url "http://www.andre-simon.de/zip/highlight-4.4.tar.bz2"
+  sha256 "9682336941db6b081c9be616ee778fc306386ddd2ed87881db87578bfa2a39ba"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/saalen/highlight.git", branch: "master"
 
@@ -13,17 +13,12 @@ class Highlight < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/highlight"
-    rebuild 1
-    sha256 mojave: "2627d8a374f99a08e3a4eaa2e3d247fefb71e4050b653c6c064f03b0459eb3ed"
+    sha256 mojave: "760d9a92983456cc0bb513a836f01e6831c0503482623dd310f5a1a121cf63b5"
   end
 
   depends_on "boost" => :build
   depends_on "pkg-config" => :build
   depends_on "lua"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5" # needs C++17
 
