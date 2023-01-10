@@ -8,7 +8,8 @@ class Hwatch < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hwatch"
-    sha256 cellar: :any_skip_relocation, mojave: "5fb1024ed3b86b8d16e85fef1c13e4b53341d587d60e904e4a438a2fadbd5277"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "9a6c9cb26a7bd3fd61c3825fa5ce673dc832e13a7297afd94a61e956279487a5"
   end
 
   depends_on "rust" => :build
