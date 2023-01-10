@@ -3,13 +3,13 @@ require "language/node"
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://github.com/hasura/graphql-engine/archive/v2.11.0.tar.gz"
-  sha256 "48863bb0fe86938c84736e2a9d710bea3ab75bc1f4f95723851cc7e23b0bfcfa"
+  url "https://github.com/hasura/graphql-engine/archive/v2.16.1.tar.gz"
+  sha256 "8459860005fd72d01bfd0a52e64c0e4ac355578a2e7076df7b2a13f3c0463513"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hasura-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "5c323a8ba06fc461a888d12796146e765b2b8e8595beaa24b2311ead3e143a3f"
+    sha256 cellar: :any_skip_relocation, mojave: "1d657a5150fdc3f10e64f6704ff6b3d0403a6779a8d8613d708e4676c85b6c6f"
   end
 
   depends_on "go" => :build
@@ -38,10 +38,7 @@ class HasuraCli < Formula
       cp "../cli-ext/bin/cli-ext-hasura", "./internal/cliext/static-bin/#{os}/#{arch}/cli-ext"
       system "go", "build", *std_go_args(output: bin/"hasura", ldflags: ldflags), "./cmd/hasura/"
 
-      output = Utils.safe_popen_read("#{bin}/hasura", "completion", "bash")
-      (bash_completion/"hasura").write output
-      output = Utils.safe_popen_read("#{bin}/hasura", "completion", "zsh")
-      (zsh_completion/"_hasura").write output
+      generate_completions_from_executable(bin/"hasura", "completion", base_name: "hasura", shells: [:bash, :zsh])
     end
   end
 
