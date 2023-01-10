@@ -1,9 +1,10 @@
 class Hackrf < Formula
   desc "Low cost software radio platform"
   homepage "https://github.com/greatscottgadgets/hackrf"
-  url "https://github.com/greatscottgadgets/hackrf/archive/v2021.03.1.tar.gz"
-  sha256 "84a9aef6fe2666744dc1a17ba5adb1d039f8038ffab30e9018dcfae312eab5be"
+  url "https://github.com/greatscottgadgets/hackrf/releases/download/v2022.09.1/hackrf-2022.09.1.tar.xz"
+  sha256 "bacd4e7937467ffa14654624444c8b5c716ab470d8c1ee8d220d2094ae2adb3e"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/greatscottgadgets/hackrf.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,8 @@ class Hackrf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "37d8ca63d8dc49eaf98deb62b44f2ff0b938dbbd61d8596d1db24513b4f6dbe0"
-    sha256 cellar: :any,                 arm64_big_sur:  "233c56f5a051ad74e30f3a18741a39c750b4973e20d580388c11606488e61fc0"
-    sha256 cellar: :any,                 monterey:       "4bea22297877adcbe79dbf29ba2afed9b44d74362003153c516a8d2360b95121"
-    sha256 cellar: :any,                 big_sur:        "54e9e6ad6edbac05a150b07cab7e23ff6053e2c64c927fdbc63bea7007c7ec9e"
-    sha256 cellar: :any,                 catalina:       "903c9d309035f261f336a5c3d456a7947eb14390be917f43f40dbaf2ff0146b6"
-    sha256 cellar: :any,                 mojave:         "68d1ffb38ef62af28483d702189ea4019cf81764767d91dd0fa113f39bcbdc0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54be32eb59c488a5ad63e06f4957fae5fabe673e1bbdec19708d5cca96434092"
+    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hackrf"
+    sha256 cellar: :any, mojave: "e80df232ed899a8b3fdca39bafde465585657e8b42be2df631982675bb8120f4"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +34,7 @@ class Hackrf < Formula
       system "cmake", ".", *args
       system "make", "install"
     end
+    pkgshare.install "firmware-bin/"
   end
 
   test do
