@@ -2,14 +2,14 @@ class Hof < Formula
   desc "Flexible data modeling & code generation system"
   homepage "https://hofstadter.io/"
   url "https://github.com/hofstadter-io/hof.git",
-      tag:      "v0.6.6",
-      revision: "0f49b4d71a66788b006daacf905a2b138768beca"
+      tag:      "v0.6.7",
+      revision: "5f6770b9628cd46a4caa24594e052dd715ac2dca"
   license "BSD-3-Clause"
   head "https://github.com/hofstadter-io/hof.git", branch: "_dev"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hof"
-    sha256 cellar: :any_skip_relocation, mojave: "b3820d04ed50a608716a2594c01717f235fc0b11d4e3aa3f206b546a929dad85"
+    sha256 cellar: :any_skip_relocation, mojave: "f9f2a315e087d7f283041c7ca523dd6e374a29d0ab1dd87644d27f78861785b2"
   end
 
   depends_on "go" => :build
