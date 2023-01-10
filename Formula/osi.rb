@@ -12,7 +12,7 @@ class Osi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/osi"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "077cfad63e28207298cfb25c42e38a96070e2a2268b4212f3f9aa5fd1554de11"
   end
 
