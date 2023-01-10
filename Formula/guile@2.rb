@@ -8,7 +8,8 @@ class GuileAT2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/guile@2"
-    sha256 mojave: "831e968a079d97926d9acee6c6c5c6823f8c83a7af889819662083be9d001372"
+    rebuild 1
+    sha256 mojave: "0f6c0c978cb3d2d819360bcb4c42c837c0e37cbe02d20fe699fde8740c7b9efb"
   end
 
   keg_only :versioned_formula
