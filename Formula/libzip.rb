@@ -12,7 +12,8 @@ class Libzip < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libzip"
-    sha256 cellar: :any, mojave: "f175c8eda8a330707c0a01955f6d6b503d40ad1623164c2837e565d2c059f58e"
+    rebuild 1
+    sha256 cellar: :any, mojave: "a5e8c62e3a911ef7e2b88a6e13635fb357b21d43495f0d661707b946b0b21744"
   end
 
   depends_on "cmake" => :build
