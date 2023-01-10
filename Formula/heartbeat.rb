@@ -2,19 +2,19 @@ class Heartbeat < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
   homepage "https://www.elastic.co/beats/heartbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v8.4.1",
-      revision: "fe210d46ebc339459e363ac313b07d4a9ba78fc7"
+      tag:      "v8.5.3",
+      revision: "6d03209df870c63ef9d59d609268c11dfdc835dd"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/heartbeat"
-    sha256 cellar: :any_skip_relocation, mojave: "58464306ea25e82b20b97d9a03a90c099eeb5ff211acd4a90626fa7f4a952a3e"
+    sha256 cellar: :any_skip_relocation, mojave: "f5df97771113ecd6c9c099708e5837b487ecfcca3c38a6b1f22b7d20d1564334"
   end
 
   depends_on "go" => :build
   depends_on "mage" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   uses_from_macos "netcat" => :test
 
   def install
@@ -41,6 +41,9 @@ class Heartbeat < Formula
         --path.logs #{var}/log/heartbeat \
         "$@"
     EOS
+
+    chmod 0555, bin/"heartbeat" # generate_completions_from_executable fails otherwise
+    generate_completions_from_executable(bin/"heartbeat", "completion", shells: [:bash, :zsh])
   end
 
   def post_install
