@@ -8,7 +8,8 @@ class Htmlq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htmlq"
-    sha256 cellar: :any_skip_relocation, mojave: "1b39a2eddeb0ce201b0a2fb6d463e7d2336d0897ed01f410b397c25f49f6879d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "1f81dcdcee62fedd4893e76b675bf7f7364fb79c8385a5fa3571fc2f5e0bb036"
   end
 
   depends_on "rust" => :build
