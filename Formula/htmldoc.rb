@@ -9,7 +9,8 @@ class Htmldoc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/htmldoc"
-    sha256 mojave: "82caf181d9bc459343f473f83554bac52f399e0b1f265ecc3150f9035709995a"
+    rebuild 1
+    sha256 mojave: "ef879f8591c5b03bd4ec9f14c3d7772a12fa2dee354250e3c2f16425afde6602"
   end
 
   depends_on "pkg-config" => :build
