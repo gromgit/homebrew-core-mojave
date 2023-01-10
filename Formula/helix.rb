@@ -1,14 +1,14 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
   homepage "https://helix-editor.com"
-  url "https://github.com/helix-editor/helix/releases/download/22.08.1/helix-22.08.1-source.tar.xz"
-  sha256 "962cfb913b40b6b5e3896fce5d52590d83fa2e9c35dfba45fdfa26bada54f343"
+  url "https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-source.tar.xz"
+  sha256 "295b42a369fbc6282693eb984a77fb86260f7baf3ba3a8505d62d1c619c2f3f4"
   license "MPL-2.0"
   head "https://github.com/helix-editor/helix.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helix"
-    sha256 cellar: :any, mojave: "491ea923cb6a63f8f2cb6033cc84ae1cf592a818069b37e8431e5d686ad020d7"
+    sha256 cellar: :any, mojave: "16ff7a0cd3b8a0194847d797bf0489243500507c4d656aef15f0d48acb786429"
   end
 
   depends_on "rust" => :build
