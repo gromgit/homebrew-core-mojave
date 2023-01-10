@@ -1,14 +1,13 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
   homepage "https://github.com/hetznercloud/cli"
-  url "https://github.com/hetznercloud/cli/archive/v1.30.3.tar.gz"
-  sha256 "3e5d1fa240c5d0ea46d209c66c315095f6daa884a9424e2a69b5dc312dafe4d6"
+  url "https://github.com/hetznercloud/cli/archive/v1.31.1.tar.gz"
+  sha256 "d9ee39db85eb2f0ff5f812331c674f32ceab6f1203f5d14be2f732a555f12795"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcloud"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "23ef87c3de81a92dc6b7590261be119130e60348fd89de486a0c1dc95b3509ce"
+    sha256 cellar: :any_skip_relocation, mojave: "f0d03cb4d0bc9932226266d90d46b0809e040caeb09849aff201b7603d41d2c6"
   end
 
   depends_on "go" => :build
