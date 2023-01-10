@@ -10,11 +10,11 @@ class Honcho < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/honcho"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "024ad19cd56b028052f691ddd888eb509f3ab986bca27449a0af7d135fae3e83"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "670036cac190b715c641d71635a8c54d0ae18d2173e3d27df712e10c13082dcf"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
