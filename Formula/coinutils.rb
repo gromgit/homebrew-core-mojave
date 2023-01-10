@@ -13,7 +13,7 @@ class Coinutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/coinutils"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, mojave: "58a9dfa240fd9c9ac23d465fa048e51a6f36bc9ccafa61128534d19dc6a83225"
   end
 
