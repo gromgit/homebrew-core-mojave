@@ -1,14 +1,14 @@
 class Gum < Formula
   desc "Tool for glamorous shell scripts"
   homepage "https://github.com/charmbracelet/gum"
-  url "https://github.com/charmbracelet/gum/archive/v0.7.0.tar.gz"
-  sha256 "46e57897c43878a483914f08ecd4036208e5c28c2326311838696bc33b6c9c10"
+  url "https://github.com/charmbracelet/gum/archive/v0.8.0.tar.gz"
+  sha256 "80d0000d8eaf1d577c76099a6747307df445ae66e368b99467d3493cce21c668"
   license "MIT"
   head "https://github.com/charmbracelet/gum.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gum"
-    sha256 cellar: :any_skip_relocation, mojave: "ba6a392a3eb4d7dbace301df6cff3da1c9b5bdb23e1ae68f768a8ebbfc349c2c"
+    sha256 cellar: :any_skip_relocation, mojave: "20f54ada584c58f7151cde5a52420e27bb567ad57106a20f4f72aa7920c89ab5"
   end
 
   depends_on "go" => :build
