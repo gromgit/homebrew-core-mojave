@@ -9,8 +9,8 @@ class Neko < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/neko"
-    rebuild 1
-    sha256 mojave: "79b4dce82b0661141a3bc4c7e7557cd61e3a4a48b7e7be62e0e5714d34fcc3f8"
+    rebuild 2
+    sha256 mojave: "352f2e03ed164c7d38061c191baef0c8341a0b6eec941de7cf71fb8a4fe4fa7d"
   end
 
   depends_on "cmake" => :build
