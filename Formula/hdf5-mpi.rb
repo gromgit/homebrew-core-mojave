@@ -13,7 +13,8 @@ class Hdf5Mpi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5-mpi"
-    sha256 cellar: :any, mojave: "3ae3df8b63f0bba74bceef9a7763ba3cdf4f695b26351d07b4db7979ef8e7430"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f82aaba02071c7f7a0d2ae76377070fb69c4cc5e7508b3def7158c173c8ba005"
   end
 
   depends_on "autoconf" => :build
