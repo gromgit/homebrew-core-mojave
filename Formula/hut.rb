@@ -8,7 +8,8 @@ class Hut < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hut"
-    sha256 cellar: :any_skip_relocation, mojave: "f10476783fa6ef66fc4816902cacb4ae67003ad1e31ffcc07ee3d396f6264db3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "ffe191cc986e2e9c7723e428d7e46605287424896358cd2328c01249e93792c7"
   end
 
   depends_on "go" => :build
