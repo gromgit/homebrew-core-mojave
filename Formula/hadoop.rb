@@ -8,6 +8,7 @@ class Hadoop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hadoop"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "a7285cf8aeaae3e175340d73f5458aad739dcf377e5e3c622867f3889a5921da"
   end
 
