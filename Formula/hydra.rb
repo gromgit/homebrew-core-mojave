@@ -8,6 +8,7 @@ class Hydra < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hydra"
+    rebuild 1
     sha256 cellar: :any, mojave: "d9a683c6cd850af3b9d4a388f0b12554300da18f74718727718c6a05503b4533"
   end
 
