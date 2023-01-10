@@ -14,7 +14,8 @@ class Hdf5AT18 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hdf5@1.8"
-    sha256 cellar: :any, mojave: "72d668e2be31cf74692f4acf255cb6debd8e2343fc67497786fab35cd9ac4934"
+    rebuild 1
+    sha256 cellar: :any, mojave: "48663b583b0ab2e4a66687c13bfb75bed859360e2c46a8cf28660fbd9eec3505"
   end
 
   keg_only :versioned_formula
