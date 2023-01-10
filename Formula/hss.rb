@@ -7,7 +7,8 @@ class Hss < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hss"
-    sha256 cellar: :any, mojave: "345b80257b9046c71e7720751927b9552cc147bf6438b6731902377fb10a6ec2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "02eb0acce288d37d0c355b7c626e5eafca3a4cc874599e6c44c6f7bb70650961"
   end
 
   depends_on "readline"
