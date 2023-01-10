@@ -1,14 +1,13 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https://www.maths.ed.ac.uk/hall/HiGHS/"
-  url "https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "e849276134eb0e7d876be655ff5fe3aa6ecf1030d605edee760620469f9e97cf"
+  url "https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "9890e02ff2d1607ed4d0708a0f2e3a2dc64da1f4301bb85cf1f2c924aa1fee7b"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/highs"
-    sha256 cellar: :any, mojave: "6b4d8c71188f0ba05672985b1091713e84a734ec01b6a3ea5ca8bf2595f0330c"
+    sha256 cellar: :any, mojave: "f47294f9c61811949b5c4601bdfe9e50d88932f6bdb037a0d166915bd00ad379"
   end
 
   depends_on "cmake" => :build
@@ -19,7 +18,7 @@ class Highs < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "check", "examples"
@@ -30,7 +29,7 @@ class Highs < Formula
     assert_match "Optimal", output
 
     cp pkgshare/"examples/call_highs_from_cpp.cpp", testpath/"test.cpp"
-    system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lhighs", "-o", "test"
+    system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}/highs", "-L#{lib}", "-lhighs", "-o", "test"
     assert_match "Optimal", shell_output("./test")
   end
 end
