@@ -8,11 +8,12 @@ class Hcxtools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hcxtools"
-    sha256 cellar: :any, mojave: "291149054ed99c572ca06ad419440f7b720684f80e99af09c7fbea2620bc33d2"
+    rebuild 1
+    sha256 cellar: :any, mojave: "79147a69c1d59951c8bce7f382c9e87dcadd21ea4de1f62fd7545f94c2704b69"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "curl"
 
