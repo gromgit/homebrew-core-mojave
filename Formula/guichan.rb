@@ -7,7 +7,8 @@ class Guichan < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/guichan"
-    sha256 cellar: :any, mojave: "4a74eb75543f7c06332388c7a16a9afbb9277d550baf9bcb7d47795ffcace65b"
+    rebuild 1
+    sha256 cellar: :any, mojave: "e8c2573dafdb97f9a7634ea64066785d3024141b36cfd4704c044927d78b86d4"
   end
 
   depends_on "sdl_image"
