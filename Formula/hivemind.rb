@@ -8,7 +8,8 @@ class Hivemind < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hivemind"
-    sha256 cellar: :any_skip_relocation, mojave: "b7cda984478f615e7c09b252fc230c731008d851e6e541977771d207afc511fc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "b37e4939e7b1324f049f9fbe6aa039590233d331d09cb50517637022a3b885bc"
   end
 
   depends_on "go" => :build
