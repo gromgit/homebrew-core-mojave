@@ -13,7 +13,8 @@ class Hfstospell < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hfstospell"
-    sha256 cellar: :any, mojave: "e4991c48b86da523355babe2f0f7d5fcd947c5ed83967b05a4cfd307722a0e24"
+    rebuild 1
+    sha256 cellar: :any, mojave: "75405c2c6d5dc90f2c40e50ae63d69a5732f5e9279775ef7feb4b0a1d14b821c"
   end
 
   depends_on "autoconf" => :build
