@@ -7,7 +7,8 @@ class H3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/h3"
-    sha256 cellar: :any, mojave: "34e0d2c49ecd202c9a2dd5a8d7f93c72655083adf6a99db5d5e51c5206671d6d"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3ffb0e518db0b66d02416c22e9b38e9333824d0e028f2d506e55f739037d73cc"
   end
 
   depends_on "cmake" => :build
