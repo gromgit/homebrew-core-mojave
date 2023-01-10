@@ -8,7 +8,8 @@ class Hyperfine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hyperfine"
-    sha256 cellar: :any_skip_relocation, mojave: "4549fe191b2c1864bd05079ee0902517782e4a2d0c629e0f4886398009beadef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "7a61f7b8d752b6f31ea45d0757c2696ed9da22fee30c586f63cce2e0263a51a4"
   end
 
   depends_on "rust" => :build
