@@ -8,7 +8,8 @@ class Hotbuild < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hotbuild"
-    sha256 cellar: :any_skip_relocation, mojave: "be780119371df8b1f2b994eead4e81cd784753104083012898a8ead6470df38f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "4b38c497e6aa51ff7a23e69753ce064fa38af48454127d85c3caa7842d812ece"
   end
 
   depends_on "go" => :build
