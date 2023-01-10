@@ -22,7 +22,8 @@ class Harbour < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/harbour"
-    sha256 cellar: :any, mojave: "748bf744fd071d423cc4f281a8ecd53a5f42026fa5435a76daec39ae40637107"
+    rebuild 1
+    sha256 cellar: :any, mojave: "b8d934dd4838f270b4754207f7616b7226f3bf46a8704c09017758190d231679"
   end
 
   depends_on "jpeg-turbo"
