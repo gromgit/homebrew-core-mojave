@@ -7,8 +7,8 @@ class Hubble < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hubble"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "503a719b0d2ffc9df8878526a7ca5bd7a146c7fbb8697ff85b777a40c0ac939a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "24ac80ae4576b79802c59812e212a2ef15b312b5dd365ed9debaf48767332a2c"
   end
 
   depends_on "go" => :build
