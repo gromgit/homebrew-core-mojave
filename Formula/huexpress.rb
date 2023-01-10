@@ -9,7 +9,8 @@ class Huexpress < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/huexpress"
-    sha256 cellar: :any, mojave: "ce616624311bad981def3bd5bdef198592d24974fa579eb0cf9888494c1b14b3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "015276e7e805efcf4a4ba3e76a7f8f7e85f123edd60477127449ac39b6a9ea8c"
   end
 
   depends_on "pkg-config" => :build
