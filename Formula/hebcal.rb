@@ -1,23 +1,20 @@
 class Hebcal < Formula
   desc "Perpetual Jewish calendar for the command-line"
   homepage "https://github.com/hebcal/hebcal"
-  url "https://github.com/hebcal/hebcal/archive/v4.31.tar.gz"
-  sha256 "0a083aa0f4e561987f15914c1d6807a5107eb7e7f2e981aef5725130a36893cd"
+  url "https://github.com/hebcal/hebcal/archive/v5.7.0.tar.gz"
+  sha256 "88a1f2492b4be94f2ad32d42441e996938f3c637c5e6e7e13120b01d8fa09db2"
   license "GPL-2.0-or-later"
+  head "https://github.com/hebcal/hebcal.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hebcal"
-    sha256 cellar: :any_skip_relocation, mojave: "db1aaef6edcb45de9a6af08d45cc38b571ed0e89548a81fe8cd10abb4c6c20c1"
+    sha256 cellar: :any_skip_relocation, mojave: "bd9bbdbf589ddc86d9754f94262cc7c1b815abefe7431894bb0caa83be072ba2"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  uses_from_macos "gperf" => :build
+  depends_on "go" => :build
 
   def install
-    system "autoreconf", "-fiv"
-    system "./configure", "--prefix=#{prefix}", "ACLOCAL=aclocal", "AUTOMAKE=automake"
-    system "make", "install"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
