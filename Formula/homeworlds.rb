@@ -13,7 +13,8 @@ class Homeworlds < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/homeworlds"
-    sha256 cellar: :any, mojave: "c48d6ad611ea9018c19a71b81044e7e5e9c9ca6a42277d1c3efb9ff9298d77ef"
+    rebuild 1
+    sha256 cellar: :any, mojave: "48657d176c0812c334dbcdd19ef5bf230dc2049e8237de9c42e0c2c290dd0350"
   end
 
   depends_on "wxwidgets"
