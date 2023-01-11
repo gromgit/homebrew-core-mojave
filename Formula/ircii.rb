@@ -19,8 +19,8 @@ class Ircii < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ircii"
-    rebuild 2
-    sha256 mojave: "6ac00e33f57c799bf3d3a3890362f68202d79e4a2aa081db6c8aab34061f2ae0"
+    rebuild 3
+    sha256 mojave: "7ede52c75e5f08f2270e7c5d4ab6ab9c8419ffd22856967c54c18a427c74adfe"
   end
 
   depends_on "openssl@3"
