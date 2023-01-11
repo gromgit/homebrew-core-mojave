@@ -7,6 +7,7 @@ class Imapfilter < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imapfilter"
+    rebuild 1
     sha256 mojave: "27e5102d0f9b7d1f9903b9d395ebe50ca5fac9b3ea82fd08b757ee39cb504fc1"
   end
 
