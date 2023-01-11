@@ -8,7 +8,8 @@ class IamPolicyJsonToTerraform < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iam-policy-json-to-terraform"
-    sha256 cellar: :any_skip_relocation, mojave: "898a475ea6f2628b7972e43f1a5849c3fec9eec86ceb5117e56a68849dab87cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "e719f328f94bfcf58537e1b3f23934b32c25aec123c174931d8e67ec1eeef1c6"
   end
 
   depends_on "go" => :build
