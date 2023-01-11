@@ -8,7 +8,8 @@ class Ifacemaker < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ifacemaker"
-    sha256 cellar: :any_skip_relocation, mojave: "2ff04b231be4840bf83ff3afc38f0ad27452ddcd79f4ac43e5a42bad7585dc1c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "712ee8ea2e81f6769d8ceb90950d2fb8a7b353c340708a47e798a56f937d30ff"
   end
 
   depends_on "go" => :build
