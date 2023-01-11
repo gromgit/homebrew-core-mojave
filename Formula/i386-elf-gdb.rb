@@ -5,6 +5,7 @@ class I386ElfGdb < Formula
   mirror "https://ftpmirror.gnu.org/gdb/gdb-12.1.tar.xz"
   sha256 "0e1793bf8f2b54d53f46dea84ccfd446f48f81b297b28c4f7fc017b818d69fed"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   livecheck do
@@ -13,17 +14,19 @@ class I386ElfGdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i386-elf-gdb"
-    rebuild 1
-    sha256 mojave: "27bfb00496f38bb32217a652b50e228c42479c3da279fbc76836d35811ebcef4"
+    sha256 mojave: "bf96c080aee063d75ad6863d1f974a046449b4d3ed759cdc4bf409cdb18ca10c"
   end
 
   depends_on "i686-elf-gcc" => :test
   depends_on "gmp"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "xz" # required for lzma support
 
-  uses_from_macos "texinfo" => :build
   uses_from_macos "zlib"
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
 
   def install
     target = "i386-elf"
@@ -37,7 +40,7 @@ class I386ElfGdb < Formula
       --disable-debug
       --disable-dependency-tracking
       --with-lzma
-      --with-python=#{which("python3.10")}
+      --with-python=#{Formula["python@3.11"].opt_bin}/python3.11
       --with-system-zlib
       --disable-binutils
     ]
