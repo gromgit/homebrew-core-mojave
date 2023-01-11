@@ -3,8 +3,8 @@ class Isort < Formula
 
   desc "Sort Python imports automatically"
   homepage "https://pycqa.github.io/isort/"
-  url "https://files.pythonhosted.org/packages/ab/e9/964cb0b2eedd80c92f5172f1f8ae0443781a9d461c1372a3ce5762489593/isort-5.10.1.tar.gz"
-  sha256 "e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"
+  url "https://files.pythonhosted.org/packages/e2/43/d99899bfa24a3914f0318536918ab8c91c09350b5482e4e9bb7291840ae3/isort-5.11.3.tar.gz"
+  sha256 "a8ca25fbfad0f7d5d8447a4314837298d9f6b23aed8618584c894574f626b64b"
   license "MIT"
   head "https://github.com/PyCQA/isort.git", branch: "main"
 
@@ -15,11 +15,10 @@ class Isort < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isort"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, mojave: "098493d82909877f24ce4e08d8ecb97cf574888b6bb210e87e274568232cb72d"
+    sha256 cellar: :any_skip_relocation, mojave: "ceae9c89d693c4a277a0501617331ee234547eb9b570e2f47573bd97fd615344"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
