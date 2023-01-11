@@ -7,6 +7,7 @@ class Inih < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inih"
+    rebuild 1
     sha256 cellar: :any, mojave: "080583404da265bf09e81c7b12a1ef482369970501ed7f7a826d7015b5eca8da"
   end
 
