@@ -1,8 +1,8 @@
 class Hypre < Formula
   desc "Library featuring parallel multigrid methods for grid problems"
   homepage "https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods"
-  url "https://github.com/hypre-space/hypre/archive/v2.25.0.tar.gz"
-  sha256 "f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c"
+  url "https://github.com/hypre-space/hypre/archive/v2.26.0.tar.gz"
+  sha256 "c214084bddc61a06f3758d82947f7f831e76d7e3edeac2c78bb82d597686e05d"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/hypre-space/hypre.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Hypre < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/hypre"
-    sha256 cellar: :any_skip_relocation, mojave: "b303ab4a2027719ed62a0bd12574200c7c170edeec4801fb17901da4a44ca567"
+    sha256 cellar: :any_skip_relocation, mojave: "350f957171a9d34a916064773bd6575c13cf798ac722eb284bd61f4eb8e53718"
   end
 
   depends_on "gcc" # for gfortran
