@@ -1,8 +1,8 @@
 class ImagemagickAT6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://legacy.imagemagick.org/"
-  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.12-58.tar.xz"
-  sha256 "249a2bdc3d2f579c2b81fd2d4d3d30b8ce9de8d2bdf7ebb6d95c486d90454c0e"
+  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.12-70.tar.xz"
+  sha256 "d53afcabc763a2198d81ff20274adec39b5168733558c91081fc0ef7aa470ce7"
   license "ImageMagick"
   head "https://github.com/imagemagick/imagemagick6.git", branch: "main"
 
@@ -13,8 +13,7 @@ class ImagemagickAT6 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imagemagick@6"
-    rebuild 1
-    sha256 mojave: "05ff26c009232e1674fb0e2b404589add2359774f97ffdbf95d20d1efcc24059"
+    sha256 mojave: "2931690ead916acef04363ea9c14e6e6dac340efb5f42383c52196bf01cb9809"
   end
 
   keg_only :versioned_formula
@@ -23,7 +22,7 @@ class ImagemagickAT6 < Formula
 
   depends_on "freetype"
   depends_on "ghostscript"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libtool"
@@ -31,6 +30,8 @@ class ImagemagickAT6 < Formula
   depends_on "openjpeg"
   depends_on "webp"
   depends_on "xz"
+
+  uses_from_macos "libxml2"
 
   skip_clean :la
 
