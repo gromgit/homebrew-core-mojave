@@ -9,7 +9,8 @@ class Innotop < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/innotop"
-    sha256 cellar: :any, mojave: "ec077f5808f807de042739e272773ca5940dc4cdb0456b4df3003d9cee237759"
+    rebuild 1
+    sha256 cellar: :any, mojave: "f0a94441dd57be1c01d19f4f2b88cc383a7332847edcc40c9bfae7c8b93bf9c7"
   end
 
   depends_on "mysql-client"
