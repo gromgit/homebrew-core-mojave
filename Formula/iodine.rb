@@ -8,6 +8,7 @@ class Iodine < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iodine"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "5200e26d1bdda86b4898736c155031e54f877a1531eabf28a2d8ea49c6dc56ce"
   end
 
