@@ -9,8 +9,8 @@ class Idutils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idutils"
-    rebuild 4
-    sha256 mojave: "baccc8db52fab46e0dcc34e812022fd55315a5cb9e9f4691ed50f9cc1195f57c"
+    rebuild 5
+    sha256 mojave: "f3b1b9e00316f628af54d606805bdd4bf58277719d51a044998fb91cb90ac6da"
   end
 
   conflicts_with "coreutils", because: "both install `gid` and `gid.1`"
