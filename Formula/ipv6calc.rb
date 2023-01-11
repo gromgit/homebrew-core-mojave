@@ -5,27 +5,26 @@ class Ipv6calc < Formula
 
   desc "Small utility for manipulating IPv6 addresses"
   homepage "https://www.deepspace6.net/projects/ipv6calc.html"
-  url "https://github.com/pbiering/ipv6calc/archive/4.0.1.tar.gz"
-  sha256 "0de7dbe66c0e3602becc18bb8f69a278a02eeaf5d58779cd1c0e0069eb80a7e6"
+  url "https://github.com/pbiering/ipv6calc/archive/4.0.2.tar.gz"
+  sha256 "f96a89bdce201ec313f66514ee52eeab5f5ead3d2ba9efe5ed9f757632cd01a1"
   license "GPL-2.0-only"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipv6calc"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "69872a88bc2edff3a9cf054f1e825ebff100ec777f362dc83a4b73c8cdf57f1f"
+    sha256 cellar: :any_skip_relocation, mojave: "8dae946d09becac0d804ba03a78c6c640ad9c0821e48ac283893b86de25703c5"
   end
 
   uses_from_macos "perl"
 
   on_linux do
     resource "URI::Escape" do
-      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/URI-1.72.tar.gz"
-      sha256 "35f14431d4b300de4be1163b0b5332de2d7fbda4f05ff1ed198a8e9330d40a32"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.17.tar.gz"
+      sha256 "5f7e42b769cb27499113cfae4b786c37d49e7c7d32dbb469602cd808308568f8"
     end
 
     resource "HTML::Entities" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.76.tar.gz"
-      sha256 "64d9e2eb2b420f1492da01ec0e6976363245b4be9290f03f10b7d2cb63fa2f61"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.80.tar.gz"
+      sha256 "63411db03016747e37c2636db11b05f8cc71608ef5bff36d04ddb0dc92f7835b"
     end
 
     resource "DIGEST::Sha1" do
