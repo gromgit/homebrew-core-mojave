@@ -1,18 +1,18 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https://i2pd.website/"
-  url "https://github.com/PurpleI2P/i2pd/archive/2.43.0.tar.gz"
-  sha256 "db1679653491a411dd16fa329488d840296c8f680e0691f9fe0d0e796e5d7bca"
+  url "https://github.com/PurpleI2P/i2pd/archive/2.44.0.tar.gz"
+  sha256 "b653c845ac7a16fefab2ace78e3ae496c12b05304bb66e41e776071635d4e070"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i2pd"
-    sha256 cellar: :any, mojave: "857d31bcc345123b20b5f147dd5d8409337661cb7204ea8e55762826862dbd4a"
+    sha256 cellar: :any, mojave: "50679281b044f92ca2c6978957a5d910eed30f5088f5ffa05aac3cd2ad3968c4"
   end
 
   depends_on "boost"
   depends_on "miniupnpc"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     args = %W[
@@ -20,8 +20,9 @@ class I2pd < Formula
       HOMEBREW=1
       USE_UPNP=yes
       PREFIX=#{prefix}
+      BREWROOT=#{HOMEBREW_PREFIX}
+      SSLROOT=#{Formula["openssl@3"].opt_prefix}
     ]
-
     args << "USE_AESNI=no" if Hardware::CPU.arm?
 
     system "make", "install", *args
