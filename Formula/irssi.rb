@@ -4,7 +4,7 @@ class Irssi < Formula
   url "https://github.com/irssi/irssi/releases/download/1.2.3/irssi-1.2.3.tar.xz"
   sha256 "a647bfefed14d2221fa77b6edac594934dc672c4a560417b1abcbbc6b88d769f"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
@@ -15,7 +15,7 @@ class Irssi < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/irssi"
-    sha256 mojave: "37925442531bd544ca8b370f40c457854e0c068b1fd303fd63a2eceeccc71c94"
+    sha256 mojave: "ff0cff7a3f8bc54f1fef6ce793105d62d435c6214be5950d74462af58db1339d"
   end
 
   head do
