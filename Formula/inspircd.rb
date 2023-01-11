@@ -12,7 +12,8 @@ class Inspircd < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inspircd"
-    sha256 mojave: "e9e3bf7f9bed7d040844e50490458a55813cc5db7c35e11d40ec60343d654476"
+    rebuild 1
+    sha256 mojave: "09fff850b48c2334e83f4747c29489a483c1e362c6a37df120082c0d5da39690"
   end
 
   depends_on "pkg-config" => :build
