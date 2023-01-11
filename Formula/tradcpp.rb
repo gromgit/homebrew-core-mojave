@@ -7,6 +7,7 @@ class Tradcpp < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tradcpp"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, mojave: "8d694818735940251a8cc1095f2da58b25cca0b3c79ea1489c4d387586fc665e"
   end
 
