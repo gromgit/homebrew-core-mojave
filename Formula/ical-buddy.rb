@@ -9,8 +9,8 @@ class IcalBuddy < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ical-buddy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "01fd60770752eff263c6f184ece6b142bbb7c213d529f1346165c78c742f231b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, mojave: "5ce1353e0e6473cdf733ad56115910b8eb712ff0740cd0df396b3389e4dea02b"
   end
 
   depends_on :macos
