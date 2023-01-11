@@ -1,8 +1,8 @@
 class Iozone < Formula
   desc "File system benchmark tool"
   homepage "https://www.iozone.org/"
-  url "https://www.iozone.org/src/current/iozone3_493.tgz"
-  sha256 "5a52f5017e022e737f5b55f320cc6ada0f2a8c831a5f996cce2a44e03e91c038"
+  url "https://www.iozone.org/src/current/iozone3_494.tgz"
+  sha256 "a36d43831e2829dbc9dc3d5a5a7eb1ca733c9ecc8cbb634022a52928e9b78662"
   license :cannot_represent
 
   livecheck do
@@ -15,12 +15,13 @@ class Iozone < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/iozone"
-    sha256 cellar: :any_skip_relocation, mojave: "e5fb9c4c8b297f4d1f73061971f74f407dd0df4e3d2fb50d13dbc7f79a9f475d"
+    sha256 cellar: :any_skip_relocation, mojave: "52fd495458ad527c27ee54e80dd710b5b1d2849611531bc937ab4cbfb34a8f88"
   end
 
   def install
     cd "src/current" do
       target = OS.mac? ? "macosx" : OS.kernel_name.downcase
+      system "make", "clean"
       system "make", target, "CC=#{ENV.cc}"
       bin.install "iozone"
       pkgshare.install %w[Generate_Graphs client_list gengnuplot.sh gnu3d.dem
