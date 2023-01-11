@@ -2,8 +2,8 @@ class InfluxdbCli < Formula
   desc "CLI for managing resources in InfluxDB v2"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influx-cli.git",
-      tag:      "v2.4.0",
-      revision: "5c7c34f16db858e1287cdfe162e6481a36f79145"
+      tag:      "v2.6.0",
+      revision: "90e825cdd95ebc9e6cb7cfdb68a49a429e4d4efd"
   license "MIT"
   head "https://github.com/influxdata/influx-cli.git", branch: "main"
 
@@ -14,7 +14,7 @@ class InfluxdbCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "78ac3a19099f9a6cfbb8754abbe3a35f980bd09ee8136e8e7fc9e172f4bf7c06"
+    sha256 cellar: :any_skip_relocation, mojave: "f818ee0ac7b971f9bdf6a1ccf61fdcebca0b00c8610f124f052772362b6abd26"
   end
 
   depends_on "go" => :build
