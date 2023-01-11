@@ -8,7 +8,7 @@ class Ioping < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ioping"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, mojave: "314f99ca6aee88aed56b004e400f6bde458d43d63d99459952377d2329ac52ea"
   end
 
