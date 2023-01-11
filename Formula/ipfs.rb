@@ -2,8 +2,8 @@ class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https://ipfs.tech/"
   url "https://github.com/ipfs/kubo.git",
-      tag:      "v0.16.0",
-      revision: "38117db6fcd76f38d9183f597739fd5be81c893f"
+      tag:      "v0.17.0",
+      revision: "4485d6b71789766d36f0bdcc6d4514053f467887"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -17,7 +17,7 @@ class Ipfs < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipfs"
-    sha256 cellar: :any_skip_relocation, mojave: "bfef262291d0379d50191aa585aaad274e9b57236010df1091e1b15f654a4a07"
+    sha256 cellar: :any_skip_relocation, mojave: "8347a8011e16641ed8f3a7068b44bfe72e55bcaa2397eed7a9c4a594144e4a6d"
   end
 
   depends_on "go" => :build
