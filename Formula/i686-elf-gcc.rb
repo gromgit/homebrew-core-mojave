@@ -12,7 +12,8 @@ class I686ElfGcc < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/i686-elf-gcc"
-    sha256 mojave: "b4c6fd7d0558561c70866dddd6cb0cb972d649e60214844edd6059d053bbaaf2"
+    rebuild 1
+    sha256 mojave: "9c71e8289fcb00b59f7161ea776049bf67a5fb2bf73ec9ad5853b4e0bfae7d7f"
   end
 
   depends_on "gmp"
