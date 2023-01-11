@@ -9,7 +9,8 @@ class Arpack < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/arpack"
-    sha256 cellar: :any, mojave: "9243d4054c1b93695fdfcbe97788526b80223baf4a7763703549b6f1345dfb9c"
+    rebuild 1
+    sha256 cellar: :any, mojave: "ff3c718cead3d645e56e4f8c811beca4e6ebc70b27f8ac2cfdd209d70c469594"
   end
 
   depends_on "autoconf" => :build
