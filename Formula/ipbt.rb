@@ -13,7 +13,8 @@ class Ipbt < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipbt"
-    sha256 cellar: :any_skip_relocation, mojave: "873d87d2e2fa807456f4fc9924815e928c1e2b6efa6d45c503ae3a060ff26898"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "a8b2e690bdd4b472c50412f6b02e19e7cc5bde35338b9b05bc1040b2261c1f5a"
   end
 
   depends_on "cmake" => :build
