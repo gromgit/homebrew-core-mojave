@@ -1,8 +1,8 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
-  url "https://include-what-you-use.org/downloads/include-what-you-use-0.18.src.tar.gz"
-  sha256 "9102fc8419294757df86a89ce6ec305f8d90a818d1f2598a139d15eb1894b8f3"
+  url "https://include-what-you-use.org/downloads/include-what-you-use-0.19.src.tar.gz"
+  sha256 "2b10157b60ea08adc08e3896b4921c73fcadd5ec4eb652b29a34129d501e5ee0"
   license "NCSA"
   head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
 
@@ -17,7 +17,7 @@ class IncludeWhatYouUse < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/include-what-you-use"
-    sha256 cellar: :any, mojave: "bf0f49ace614584a03449a2286592408734bd9b792a8ac29a83a6121c9199847"
+    sha256 cellar: :any, mojave: "6b2bf7cb6970401ef8456cd2880a5ffc87164785a500b4ab7759f36360e41492"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class IncludeWhatYouUse < Formula
   fails_with gcc: "5" # LLVM is built with GCC
 
   def llvm
-    deps.map(&:to_formula).find { |f| f.name.match? "^llvm(@\d+(\.\d+)*)?$" }
+    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
   end
 
   def install
