@@ -2,20 +2,18 @@ class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
   url "https://github.com/istio/istio.git",
-      tag:      "1.14.3",
-      revision: "a95e01fe300e14a11e7e9503d4b2c196ab755fcf"
+      tag:      "1.16.1",
+      revision: "f6d7bf648e571a6a523210d97bde8b489250354b"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/istioctl"
-    sha256 cellar: :any_skip_relocation, mojave: "d014b4eb5244b221bf13f4beed68263b21e28022d7d63d2e026e2e040c1c6550"
+    sha256 cellar: :any_skip_relocation, mojave: "b4b419e4842fef13eca2adca70eda55fb8352c87a0a14ad830cd63b899809e7c"
   end
 
+  depends_on "go" => :build
   depends_on "go-bindata" => :build
-  # Required lucas-clemente/quic-go >= 0.28
-  # Try to switch to the latest go on the next release
-  depends_on "go@1.18" => :build
 
   uses_from_macos "curl" => :build
 
@@ -34,17 +32,7 @@ class Istioctl < Formula
     system "make", "istioctl"
     bin.install "out/#{os}_#{arch}/istioctl"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"istioctl", "completion", "bash")
-    (bash_completion/"istioctl").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"istioctl", "completion", "zsh")
-    (zsh_completion/"_istioctl").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"istioctl", "completion", "fish")
-    (fish_completion/"istioctl.fish").write output
+    generate_completions_from_executable(bin/"istioctl", "completion")
   end
 
   test do
