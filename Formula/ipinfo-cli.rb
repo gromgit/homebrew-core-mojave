@@ -12,7 +12,8 @@ class IpinfoCli < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipinfo-cli"
-    sha256 cellar: :any_skip_relocation, mojave: "9d30460d985f43bea6e2dc65d971a1c7e45e512a4fff83c4abfaee8e7e814679"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "044a2cd27c84b07d0d1909d36dc95dda25a305e2ba81db2eee445559e12300a8"
   end
 
   depends_on "go" => :build
