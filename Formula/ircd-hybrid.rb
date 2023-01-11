@@ -12,7 +12,8 @@ class IrcdHybrid < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ircd-hybrid"
-    sha256 mojave: "974d3a466d8a0f85ecb5d3effeb26c59fe1cf9e12a740c907c7ce3159d1efbf2"
+    rebuild 1
+    sha256 mojave: "0031adbf2bbf6db60393f710090b3ff3a8edefee0bc966612cbbc0388716cc5d"
   end
 
   depends_on "openssl@3"
