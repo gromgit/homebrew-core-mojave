@@ -5,20 +5,13 @@ class IosDeploy < Formula
   head "https://github.com/ios-control/ios-deploy.git", branch: "master"
 
   stable do
-    url "https://github.com/ios-control/ios-deploy/archive/refs/tags/1.12.0.tar.gz"
-    sha256 "49f4835e365f6c5c986af3f4bd5c1858c1a1d110aa7f9cf45649c3617911c508"
-
-    # fix build failure, remove in next release
-    patch do
-      url "https://github.com/ios-control/ios-deploy/commit/24c9efbd43f2acd25c0f3e85137e29ec3c1654cf.patch?full_index=1"
-      sha256 "efc223ca219fb64c06155b1675a8a81d57ee42c18ff210c070d8d6f37c893b07"
-    end
+    url "https://github.com/ios-control/ios-deploy/archive/1.12.1.tar.gz"
+    sha256 "635cc36b027ec36cd9f5ebd4136f0e1274caa60049c1f6e4fd15d45d7bef5bc3"
   end
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ios-deploy"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "39155833ffcb9ef99fdf8dd326467d9a22072c1d24ccea8d651a1f03e9a4b933"
+    sha256 cellar: :any_skip_relocation, mojave: "8c80453647b8dcb5229de34e77f399bc60b494b7dc29da4851173979317bd35c"
   end
 
   depends_on xcode: :build
