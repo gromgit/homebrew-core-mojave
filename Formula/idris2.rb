@@ -1,30 +1,71 @@
 class Idris2 < Formula
   desc "Pure functional programming language with dependent types"
   homepage "https://www.idris-lang.org/"
-  url "https://github.com/idris-lang/Idris2/archive/v0.5.1.tar.gz"
-  sha256 "da44154f6eba5e22ec5ac64c6ba2c28d2df0a57cf620c5b00c11adb51dbda399"
+  url "https://github.com/idris-lang/Idris2/archive/v0.6.0.tar.gz"
+  sha256 "7f5597652ed26abc2d2a6ed4220ec28fafdab773cfae0062a8dfafe7d133e633"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/idris2"
-    sha256 cellar: :any, mojave: "b2e145e976c2fc6c70224f71e8f5de354b60c3ee9fe6d546246ba507e7cf300d"
+    sha256 cellar: :any, mojave: "5822f40f2db191ac328197abbac5ead6ef9551e0ba95a796c6ac2505dc519ffb"
   end
 
-  depends_on "coreutils" => :build
   depends_on "gmp" => :build
-  depends_on "chezscheme"
-  uses_from_macos "zsh" => :build, since: :mojave
+
+  on_high_sierra :or_older do
+    depends_on "zsh" => :build
+  end
+
+  # Use Racket fork of Chez Scheme for Apple Silicon support while main formula lacks support.
+  # https://github.com/idris-lang/Idris2/blob/main/INSTALL.md#installing-chez-scheme-on-apple-silicon
+  on_arm do
+    depends_on "lz4"
+
+    resource "chezscheme" do
+      url "https://github.com/racket/ChezScheme.git",
+          tag:      "racket-v8.6",
+          revision: "9383dda64db9f430a95bb5cf014af2afdc71fb0c"
+    end
+  end
+
+  on_intel do
+    depends_on "chezscheme"
+  end
 
   def install
+    scheme = if Hardware::CPU.arm?
+      resource("chezscheme").stage do
+        rm_r %w[lz4 zlib]
+        args = %w[LZ4=-llz4 ZLIB=-lz]
+
+        system "./configure", "--pb", *args
+        system "make", "auto.bootquick"
+        system "./configure", "--disable-x11",
+                              "--installprefix=#{libexec}/chezscheme",
+                              "--installschemename=chez",
+                              "--threads",
+                              *args
+        system "make"
+        system "make", "install"
+      end
+      libexec/"chezscheme/bin/chez"
+    else
+      Formula["chezscheme"].opt_bin/"chez"
+    end
+
     ENV.deparallelize
-    scheme = Formula["chezscheme"].bin/"chez"
+    ENV["CHEZ"] = scheme
     system "make", "bootstrap", "SCHEME=#{scheme}", "PREFIX=#{libexec}"
     system "make", "install", "PREFIX=#{libexec}"
-    bin.install_symlink libexec/"bin/idris2"
-    lib.install_symlink Dir["#{libexec}/lib/#{shared_library("*")}"]
-    (bash_completion/"idris2").write Utils.safe_popen_read(bin/"idris2", "--bash-completion-script", "idris2")
+    if Hardware::CPU.arm?
+      (bin/"idris2").write_env_script libexec/"bin/idris2", CHEZ: "${CHEZ:-#{scheme}}"
+    else
+      bin.install_symlink libexec/"bin/idris2"
+    end
+    lib.install_symlink Dir[libexec/"lib"/shared_library("*")]
+    generate_completions_from_executable(libexec/"bin/idris2", "--bash-completion-script", "idris2",
+                                         shells: [:bash], shell_parameter_format: :none)
   end
 
   test do
