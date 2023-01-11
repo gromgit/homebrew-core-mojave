@@ -3,13 +3,13 @@ class IkeScan < Formula
   homepage "https://github.com/royhills/ike-scan"
   url "https://github.com/royhills/ike-scan/archive/1.9.5.tar.gz"
   sha256 "5152bf06ac82d0cadffb93a010ffb6bca7efd35ea169ca7539cf2860ce2b263f"
-  license "GPL-3.0-or-later"
+  license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/royhills/ike-scan.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ike-scan"
-    rebuild 2
-    sha256 mojave: "e0d89e1fb8fe6db9450bd2a89096d25e07a0abb95e31da9c55a77fdbd1e1a4d2"
+    rebuild 3
+    sha256 mojave: "44b897a0a80c5813b572d7b79eadf2e3c7d9a34c7d3e7d70afd4532c34a88afd"
   end
 
   depends_on "autoconf" => :build
