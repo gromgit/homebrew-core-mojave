@@ -1,13 +1,13 @@
 class Inadyn < Formula
   desc "Dynamic DNS client with IPv4, IPv6, and SSL/TLS support"
   homepage "https://troglobit.com/projects/inadyn/"
-  url "https://github.com/troglobit/inadyn/releases/download/v2.9.1/inadyn-2.9.1.tar.xz"
-  sha256 "0094d20cfcd431674b8d658e93169c7589bf8f2b351b2860818a1ca05f0218c5"
+  url "https://github.com/troglobit/inadyn/releases/download/v2.10.0/inadyn-2.10.0.tar.xz"
+  sha256 "58ca61afdc0554b63b3eba1265caa1049c783d0ccfdbabc98273266466d8f142"
   license all_of: ["GPL-2.0-or-later", "ISC", "MIT"]
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inadyn"
-    sha256 mojave: "c38e7ce1892625308617048c6fcc3a17a3f597efe03b31e93bbbea59e5963287"
+    sha256 mojave: "bfe7ab2508b226e22621abd6e8f489f5a841d9f474a7a7540295025ef20bae93"
   end
 
   depends_on "autoconf" => :build
