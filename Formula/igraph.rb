@@ -1,13 +1,13 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://github.com/igraph/igraph/releases/download/0.10.1/igraph-0.10.1.tar.gz"
-  sha256 "11ac87336b7adc61b4cb3d9c29fd9ed74db383a1fd994f6c47a870a86f68038c"
+  url "https://github.com/igraph/igraph/releases/download/0.10.2/igraph-0.10.2.tar.gz"
+  sha256 "2c2b9f18fc2f84b327f1146466942eb3e3d2ff09b6738504efb9e5edf2728c83"
   license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/igraph"
-    sha256 cellar: :any, mojave: "90fa4337b6b81f5c6e2c5b27a50957ab7000c6f4cb60cbe97268c38e5238c713"
+    sha256 cellar: :any, mojave: "62d7cd63c344645c68d4ed730735fe38f85c23c2f5ece77547a1b310dced7c05"
   end
 
   depends_on "cmake" => :build
@@ -15,7 +15,6 @@ class Igraph < Formula
   depends_on "glpk"
   depends_on "gmp"
   depends_on "openblas"
-  depends_on "suite-sparse"
 
   uses_from_macos "libxml2"
 
@@ -38,7 +37,6 @@ class Igraph < Formula
                       "-DIGRAPH_GRAPHML_SUPPORT=ON",
                       "-DIGRAPH_USE_INTERNAL_ARPACK=OFF",
                       "-DIGRAPH_USE_INTERNAL_BLAS=OFF",
-                      "-DIGRAPH_USE_INTERNAL_CXSPARSE=OFF",
                       "-DIGRAPH_USE_INTERNAL_GLPK=OFF",
                       "-DIGRAPH_USE_INTERNAL_GMP=OFF",
                       "-DIGRAPH_USE_INTERNAL_LAPACK=OFF",
