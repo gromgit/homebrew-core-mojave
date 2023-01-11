@@ -1,10 +1,9 @@
 class Imake < Formula
   desc "Build automation system written for X11"
   homepage "https://xorg.freedesktop.org"
-  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.8.tar.bz2"
-  sha256 "b8d2e416b3f29cd6482bcffaaf19286d32917a164d07102a0e531ccd41a2a702"
+  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.9.tar.xz"
+  sha256 "72de9d278f74d95d320ec7b0d745296f582264799eab908260dbea0ce8e08f83"
   license "MIT"
-  revision 6
 
   livecheck do
     url "https://xorg.freedesktop.org/releases/individual/util/"
@@ -13,7 +12,7 @@ class Imake < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/imake"
-    sha256 mojave: "8fb9fdfbcf801b0947588f69f64847ccfecd624d7355239a99b49865250165f5"
+    sha256 mojave: "8d506d755bc6a1da360651d2dd776d370973bcb3872a45e24983bfaf6fdb42de"
   end
 
   depends_on "pkg-config" => :build
