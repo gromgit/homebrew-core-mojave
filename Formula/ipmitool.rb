@@ -7,7 +7,8 @@ class Ipmitool < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ipmitool"
-    sha256 mojave: "719fda5ee05ed99dc083700ce91b10be70132be9e7e3a07bf18092730e0d30bc"
+    rebuild 1
+    sha256 mojave: "192e611ca7df21e13467d6d713cb5439918f738b8a32eb028148e84c286bc8e5"
   end
 
   depends_on "autoconf" => :build
@@ -17,6 +18,13 @@ class Ipmitool < Formula
 
   on_linux do
     depends_on "readline"
+  end
+
+  # Patch to fix build on ARM
+  # https://github.com/ipmitool/ipmitool/issues/332
+  patch do
+    url "https://github.com/ipmitool/ipmitool/commit/a45da6b4dde21a19e85fd87abbffe31ce9a8cbe6.patch?full_index=1"
+    sha256 "98787263c33fe11141a6b576d52f73127b223394c3d2c7b1640d4adc075f14d5"
   end
 
   def install
