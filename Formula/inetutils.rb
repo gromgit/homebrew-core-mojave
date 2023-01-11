@@ -1,15 +1,14 @@
 class Inetutils < Formula
   desc "GNU utilities for networking"
   homepage "https://www.gnu.org/software/inetutils/"
-  url "https://ftp.gnu.org/gnu/inetutils/inetutils-2.3.tar.xz"
-  mirror "https://ftpmirror.gnu.org/inetutils/inetutils-2.3.tar.xz"
-  sha256 "0b01bb08e29623c4e3b940f233c961451d9af8c5066301add76a52a95d51772c"
+  url "https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz"
+  mirror "https://ftpmirror.gnu.org/inetutils/inetutils-2.4.tar.xz"
+  sha256 "1789d6b1b1a57dfe2a7ab7b533ee9f5dfd9cbf5b59bb1bb3c2612ed08d0f68b2"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/inetutils"
-    rebuild 1
-    sha256 mojave: "f4f69685365c7280c3be89fa8c6705d14e911cba403924a3aedd15295d3c3800"
+    sha256 mojave: "9d45765a57424edd74c8ca7875ce1010be9679897a01aa570ca92414165faf3c"
   end
 
   depends_on "libidn2"
