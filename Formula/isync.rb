@@ -9,7 +9,8 @@ class Isync < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isync"
-    sha256 cellar: :any, mojave: "5eb3714bd1ec246e9211d4ab40393317d4f63dc855140e41e8a880cf9cb9a4a3"
+    rebuild 1
+    sha256 cellar: :any, mojave: "dc364b3cddeb3b59abd3c5b6d3146cb28f54478867619c3074275a481b24a070"
   end
 
   depends_on "autoconf" => :build
