@@ -13,6 +13,7 @@ class Oniguruma < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/oniguruma"
+    rebuild 1
     sha256 cellar: :any, mojave: "997572e28272dfbde7336d7983496e5a601a3168ffe0427f84128eab4c5ea709"
   end
 
