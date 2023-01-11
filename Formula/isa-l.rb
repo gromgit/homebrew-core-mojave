@@ -7,6 +7,7 @@ class IsaL < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/isa-l"
+    rebuild 1
     sha256 cellar: :any, mojave: "63d1fe2da2e05cda8584d6bb5359416a70eb8fda4f3b7f76c8fbe57ebb3b62ed"
   end
 
