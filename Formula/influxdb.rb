@@ -2,8 +2,8 @@ class Influxdb < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v2.4.0",
-      revision: "de247bab083df4685b2dab80ae46deea011d5898"
+      tag:      "v2.6.0",
+      revision: "24a2b621ea74abb498d3864bd27cf38181999c5c"
   license "MIT"
   head "https://github.com/influxdata/influxdb.git", branch: "master"
 
@@ -15,8 +15,7 @@ class Influxdb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/influxdb"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "ce1908a40be6d393aeea48151a56e49f49b286baefcf916c2e3551285ccfe249"
+    sha256 cellar: :any_skip_relocation, mojave: "07c747629af0fbae84ad07dd1c24bf3434f3aea5900825a6f4c4fc91efa4ec1f"
   end
 
   depends_on "breezy" => :build
@@ -35,8 +34,8 @@ class Influxdb < Formula
   # NOTE: The version/URL here is specified in scripts/fetch-ui-assets.sh in influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "ui-assets" do
-    url "https://github.com/influxdata/ui/releases/download/OSS-Master/build.tar.gz"
-    sha256 "60a0e9d632f2a389fe61378c69697c7613782ebdc7f055d5eecb49de9df315ef"
+    url "https://github.com/influxdata/ui/releases/download/OSS-v2.6.0/build.tar.gz"
+    sha256 "e3a492886f7d22b88f6c0c852c6ff6dc6993a18b0dbde41dab6f66309072ba85"
   end
 
   def install
