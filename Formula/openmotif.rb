@@ -8,7 +8,8 @@ class Openmotif < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/openmotif"
-    sha256 mojave: "0b9d8d0882dc37c0cc69bdc3770a202d08befdedd9b33ba7bedbdb2e756e515e"
+    rebuild 1
+    sha256 mojave: "62389e4c402b19cd10daf3063f60729a1ffa62e860c04379bde081c5ad8e645c"
   end
 
   depends_on "pkg-config" => :build
