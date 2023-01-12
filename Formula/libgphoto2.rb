@@ -13,7 +13,8 @@ class Libgphoto2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libgphoto2"
-    sha256 mojave: "fe2bd4969eac9097c8117252756b2e6d8a72a753da2b923319c6fb0ec2bb08d7"
+    rebuild 1
+    sha256 mojave: "e4ff7fe7bcfeac38f30d78b5fc4e6e24ea93e3ff28c03dcaf9e58ab0e9ce8c6a"
   end
 
   head do
