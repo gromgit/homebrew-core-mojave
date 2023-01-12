@@ -1,8 +1,8 @@
 class Gmsh < Formula
   desc "3D finite element grid generator with CAD engine"
   homepage "https://gmsh.info/"
-  url "https://gmsh.info/src/gmsh-4.10.4-source.tgz"
-  sha256 "f47e927f24f354f38d44e26c21a2495c4cdbdc3d5eb9b883d5a7e3a2273fbd13"
+  url "https://gmsh.info/src/gmsh-4.11.0-source.tgz"
+  sha256 "3cf2f24455ee09252c99e64d4e6462956e68f0ff1f37baca0b78c809d6cc557a"
   license "GPL-2.0-or-later"
   head "https://gitlab.onelab.info/gmsh/gmsh.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Gmsh < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gmsh"
-    sha256 cellar: :any, mojave: "efd474781484eeb307a1b6a0acdb7361dfa5e3f93400ea39ce824a45de7ff2d3"
+    sha256 cellar: :any, mojave: "71539e95e7ec9500d5a43f5212a94c28250d0130cf35f8d254ed98f36a9e3205"
   end
 
   depends_on "cmake" => :build
@@ -24,31 +24,25 @@ class Gmsh < Formula
   depends_on "opencascade"
 
   def install
-    args = std_cmake_args + %W[
-      -DENABLE_OS_SPECIFIC_INSTALL=0
-      -DGMSH_BIN=#{bin}
-      -DGMSH_LIB=#{lib}
-      -DGMSH_DOC=#{pkgshare}/gmsh
-      -DGMSH_MAN=#{man}
-      -DENABLE_BUILD_LIB=ON
-      -DENABLE_BUILD_SHARED=ON
-      -DENABLE_NATIVE_FILE_CHOOSER=ON
-      -DENABLE_PETSC=OFF
-      -DENABLE_SLEPC=OFF
-      -DENABLE_OCC=ON
-    ]
-
     ENV["CASROOT"] = Formula["opencascade"].opt_prefix
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+                    "-DENABLE_OS_SPECIFIC_INSTALL=0",
+                    "-DGMSH_BIN=#{bin}",
+                    "-DGMSH_LIB=#{lib}",
+                    "-DGMSH_DOC=#{pkgshare}/gmsh",
+                    "-DGMSH_MAN=#{man}",
+                    "-DENABLE_BUILD_LIB=ON",
+                    "-DENABLE_BUILD_SHARED=ON",
+                    "-DENABLE_NATIVE_FILE_CHOOSER=ON",
+                    "-DENABLE_PETSC=OFF",
+                    "-DENABLE_SLEPC=OFF",
+                    "-DENABLE_OCC=ON"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-      # Move onelab.py into libexec instead of bin
-      mkdir_p libexec
-      mv bin/"onelab.py", libexec
-    end
+    # Move onelab.py into libexec instead of bin
+    libexec.install bin/"onelab.py"
   end
 
   test do
