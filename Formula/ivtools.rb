@@ -4,11 +4,11 @@ class Ivtools < Formula
   url "https://github.com/vectaport/ivtools/archive/refs/tags/ivtools-2.0.11d.tar.gz"
   sha256 "8c6fe536dff923f7819b4210a706f0abe721e13db8a844395048ded484fb2437"
   license "MIT"
-  revision 3
+  revision 6
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ivtools"
-    sha256 mojave: "b02d5470eb51e72a2eaf9f9b935504f5bdb1f4afc058b798c75703feecacd23a"
+    sha256 mojave: "57cd2c64d439875786ee8370c701e09ee50dcb7be978613f7c73f05bff8ba1a4"
   end
 
   depends_on "ace"
