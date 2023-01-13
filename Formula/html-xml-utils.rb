@@ -2,7 +2,7 @@ class HtmlXmlUtils < Formula
   desc "Tools for manipulating HTML and XML files"
   homepage "https://www.w3.org/Tools/HTML-XML-utils/"
   url "https://www.w3.org/Tools/HTML-XML-utils/html-xml-utils-8.4.tar.gz"
-  sha256 "41bb9b14e1f4cd6102e3f8dfb79e7146a24c09693869873165c421769a57d137"
+  sha256 "a2ef4ff5c20689d05750faf50da83e12d99a21a412956c8104b72f23d8ab7392"
   license "W3C"
 
   livecheck do
@@ -12,8 +12,8 @@ class HtmlXmlUtils < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/html-xml-utils"
-    rebuild 1
-    sha256 cellar: :any, mojave: "91a60afdbdcc972f7919dc4ba41550cc77b443d5936ebafa6bd41b3d4c18b660"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8274c41e20d824356ba20d7b90592021e8eca626e47bc00a34a88fdfb5aff061"
   end
 
   def install
