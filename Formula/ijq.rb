@@ -9,7 +9,8 @@ class Ijq < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ijq"
-    sha256 cellar: :any_skip_relocation, mojave: "a4fa2ec501b6f34dd9629d3ed49a9c083dc51fe4f214a39997d08e062710578e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, mojave: "546c75f8efe9527f43f05ae540102e5706d4e984d2a4b2ba13e67b804782dcaf"
   end
 
   depends_on "go" => :build
