@@ -1,14 +1,14 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/helmfile/helmfile"
-  url "https://github.com/helmfile/helmfile/archive/v0.146.0.tar.gz"
-  sha256 "c61f9efb150793a253660000fa929b0a87552b66bb2a27373f39e93d54ade932"
+  url "https://github.com/helmfile/helmfile/archive/v0.149.0.tar.gz"
+  sha256 "5149156beda7d1c420368b9d1b098c5823dda6c494e47e28a77f6b74e007e04e"
   license "MIT"
   version_scheme 1
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/helmfile"
-    sha256 cellar: :any_skip_relocation, mojave: "e678abbb56af7762f8cc3ddf96b5f1aac8aeca50cc4e42cb3021df1f46a21b49"
+    sha256 cellar: :any_skip_relocation, mojave: "9859e099f466e98c467a6183658c9d2b12bdf510094ddd705ae571bdc3309971"
   end
 
   depends_on "go" => :build
@@ -17,9 +17,15 @@ class Helmfile < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/helmfile/helmfile/pkg/app/version.Version=v#{version}
+      -X go.szostok.io/version.version=v#{version}
+      -X go.szostok.io/version.buildDate=#{time.iso8601}
+      -X go.szostok.io/version.commit="brew"
+      -X go.szostok.io/version.commitDate=#{time.iso8601}
+      -X go.szostok.io/version.dirtyBuild=false
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
+
+    generate_completions_from_executable(bin/"helmfile", "completion")
   end
 
   test do
