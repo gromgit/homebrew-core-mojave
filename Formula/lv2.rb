@@ -15,12 +15,13 @@ class Lv2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "00e2c051efd2fbb588d34d1b96d1582252ccf0c3a254d4f994d81b6a7fe3fea8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c3b8730ed5228ee77c3eb76a3d88d5adca04726b05548f18c511b6cb696c6827"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     system "meson", "build", *std_meson_args, "-Dplugins=disabled", "-Dlv2dir=#{lib}/lv2"
