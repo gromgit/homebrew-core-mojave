@@ -54,12 +54,13 @@ class MoltenVk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "fdded6a6fee9488df91ba40dfa60eb71aefd48ce3e61d2b5f879d65d03e91773"
-    sha256 cellar: :any, arm64_monterey: "3ba33d3913fff723ccb189acec0607904ee3ae37b3e2cf2defc4c3a3b53e57df"
-    sha256 cellar: :any, arm64_big_sur:  "69bc8c5ea78a4adaab9a5e1ea0889f13f5209cf239cb493781683a2965c30733"
-    sha256 cellar: :any, ventura:        "4827554bc961e7c4e35635ab73ef41188bc5063b59fafedf35f1ef8b791fdfdc"
-    sha256 cellar: :any, monterey:       "58a6dbcf2c1772fea882fcf6074d65a9423a4478fbf316ddb2747e068c35f7c4"
-    sha256 cellar: :any, big_sur:        "56975701b9d135ef23cf75a9c1a078ddc689e2b9933bae85910f5fb9e40356ae"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "508abcdaee3f928755028f1232fb6ff919b620d334de53ae9ef5c94685d9863e"
+    sha256 cellar: :any, arm64_monterey: "aa1f43f4f369546182b4f924038deba16e804c0fa4edf1c28798e63f0bdda8c9"
+    sha256 cellar: :any, arm64_big_sur:  "692772c5b22ee1a64af6429dfd26e820cf47b2ab924f573556c2483518b4d552"
+    sha256 cellar: :any, ventura:        "a27cb9922580250180236aebe747ad26eb6b8ec0bf0ea381d949ed55c732bdbf"
+    sha256 cellar: :any, monterey:       "8606c8d2fff59ac56e4bead9c8d282ca700b1bb91a1aa2743503603b122ee219"
+    sha256 cellar: :any, big_sur:        "588117bb74967b2d29f4b7e85d74622ecac365ba263135fcf86bca94fe5c0a34"
   end
 
   head do
@@ -95,7 +96,7 @@ class MoltenVk < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on xcode: ["11.7", :build]
   # Requires IOSurface/IOSurfaceRef.h.
   depends_on macos: :sierra
