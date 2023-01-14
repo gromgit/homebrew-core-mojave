@@ -16,13 +16,14 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1f5376c38aabbd5bfb4261647b0672ef133e390d826bfd36bdf46d0892677b66"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4dbe1a80c79cb58dbb3cd389f227892010f8525b47770866b2cf8ec2150d2a95"
   end
 
   # https://github.com/prestodb/presto/issues/17146
   depends_on arch: :x86_64
   depends_on "openjdk@11"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "presto-cli" do
     url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-cli/0.278.1/presto-cli-0.278.1-executable.jar"
