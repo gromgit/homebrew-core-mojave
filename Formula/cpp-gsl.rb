@@ -4,12 +4,11 @@ class CppGsl < Formula
   url "https://github.com/Microsoft/GSL/archive/v4.0.0.tar.gz"
   sha256 "f0e32cb10654fea91ad56bde89170d78cfbf4363ee0b01d8f097de2ba49f6ce9"
   license "MIT"
+  revision 1
   head "https://github.com/Microsoft/GSL.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/cpp-gsl"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b2beb4f775764d20ae757fc9a096e01e0f43132f27da24185536d1fa9ef9423a"
+    sha256 cellar: :any_skip_relocation, all: "5bda1ae8723c554253565ae7f67f0cbf4e7f902722c36c2b0537f1ec953ecfd0"
   end
 
   depends_on "cmake" => :build
