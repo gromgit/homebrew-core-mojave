@@ -9,19 +9,14 @@ class Sshfs < Formula
     sha256 x86_64_linux: "a98d273e64706971684935a3ae87da16b1dda98f7289eb79e82f4cdfb7f12bb8"
   end
 
+  deprecate! date: "2023-01-01", because: :repo_archived
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
-
-  on_macos do
-    disable! date: "2021-04-08", because: "requires closed-source macFUSE"
-  end
-
-  on_linux do
-    deprecate! date: "2022-05-27", because: :repo_archived
-    depends_on "libfuse"
-  end
+  depends_on "libfuse"
+  depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
     mkdir "build" do
@@ -29,18 +24,6 @@ class Sshfs < Formula
       system "meson", "configure", "--prefix", prefix
       system "ninja", "--verbose"
       system "ninja", "install", "--verbose"
-    end
-  end
-
-  def caveats
-    on_macos do
-      <<~EOS
-        The reasons for disabling this formula can be found here:
-          https://github.com/Homebrew/homebrew-core/pull/64491
-
-        An external tap may provide a replacement formula. See:
-          https://docs.brew.sh/Interesting-Taps-and-Forks
-      EOS
     end
   end
 
