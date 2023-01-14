@@ -4,6 +4,7 @@ class Ntp < Formula
   url "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p15.tar.gz"
   version "4.2.8p15"
   sha256 "f65840deab68614d5d7ceb2d0bb9304ff70dcdedd09abb79754a87536b849c19"
+  license all_of: ["BSD-2-Clause", "NTP"]
 
   livecheck do
     url "https://www.ntp.org/downloads.html"
@@ -22,6 +23,8 @@ class Ntp < Formula
     sha256 cellar: :any,                 high_sierra:    "9f7ce9c3ff545ff738fcf4049445923c968ec807cf1ecde451be76412442e6f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "16137579ea8978ef71a1222071cd9e44a42eeeaa8d83ed83bdbf0fd048e6178c"
   end
+
+  deprecate! date: "2022-12-26", because: :unmaintained
 
   depends_on "openssl@1.1"
 
