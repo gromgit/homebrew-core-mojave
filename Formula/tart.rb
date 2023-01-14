@@ -1,13 +1,13 @@
 class Tart < Formula
   desc "macOS and Linux VMs on Apple Silicon to use in CI and other automations"
   homepage "https://github.com/cirruslabs/tart"
-  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.36.2.tar.gz"
-  sha256 "5f8e3b1d92907a1c6949ac8430ad1c48f24d28e8af73dd28b7cc87df69401eef"
+  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.36.3.tar.gz"
+  sha256 "a8da8bc66ed32d31e4a7e547bf679a61ac772b5edd7aff85020459364fdd4d70"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "824b8df3b40c17054251d3eeebe044c789d27ff1da8234137a2836a34b4e69cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c62fbcbdd94c15a9ed978f538781ca349f1c66226f669005fda6e2b719256009"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5b07783ecae638e17c78cd92e8cc0d3ca06c80cf4175386cba0c508f2fad806"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3bf13b206521d4818c8e37367e7a2f3a773c4dae6fe896a6a420c4eb5698f944"
   end
 
   depends_on "rust" => :build
@@ -19,8 +19,8 @@ class Tart < Formula
   uses_from_macos "swift"
 
   resource "softnet" do
-    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.6.0.tar.gz"
-    sha256 "fd01589b9cb1497394f1fd0fbed385dca51558352b5a7d1337cb92a1a2d2f95d"
+    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.6.1.tar.gz"
+    sha256 "3943295bda70f0520dca9adf469f921f65ec2f6d96240046995dd5528deade57"
   end
 
   def install
@@ -35,7 +35,7 @@ class Tart < Formula
   test do
     ENV["TART_HOME"] = testpath/".tart"
     (testpath/"empty.ipsw").write ""
-    output = shell_output("tart create --from-ipsw #{testpath/"empty.ipsw"} test", 1)
+    output = shell_output("tart create --from-ipsw #{testpath/"empty.ipsw"} test 2>&1", 1)
     assert_match "Unable to load restore image", output
   end
 end
