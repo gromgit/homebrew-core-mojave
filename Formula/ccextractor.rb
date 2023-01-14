@@ -8,9 +8,21 @@ class Ccextractor < Formula
   head "https://github.com/ccextractor/ccextractor.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ccextractor"
-    sha256 cellar: :any, mojave: "3f2c58c862dafec6db656477105144430a48c71ab6a4e71634b9999f39b951c4"
+    sha256 cellar: :any,                 arm64_ventura:  "12a98eca4d3a7de01e7320a4c949caab7b4d83ee822c928a06bdb0a51995ed1e"
+    sha256 cellar: :any,                 arm64_monterey: "2921edfc33b26f792398dfbf85806ea3c26e3c74606fbf9fad69e19132a93633"
+    sha256 cellar: :any,                 arm64_big_sur:  "720a3d22c73a265a998dbab7a964e12f024fa010c31252684c8606ec39abf498"
+    sha256 cellar: :any,                 ventura:        "18d2fa35c8d99364be1ccf249dd885aab6005eb89a9ca9b3b40f0bdca1c5e0c5"
+    sha256 cellar: :any,                 monterey:       "050b1f5cb459d30810e584d8ab21041db0442f904e3bda4b83abf4979a47fa59"
+    sha256 cellar: :any,                 big_sur:        "a36cf52162b6f847e16de881ec74dfc3468b893b939dde44445ec78f92c930b4"
+    sha256 cellar: :any,                 catalina:       "2d69f8155bd877d19cf90681b34ea1183ee0f10c3262887f4c16f8d9cd956a34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d1b026a171e1a894bd3e7ea306eba0a2d7a4894978618ebc5ffd05ed96cea68"
   end
+
+  # Upstream vendors their own dependencies without an easy way to switch to using brewed/system dependencies, see
+  # https://github.com/CCExtractor/ccextractor/issues/1309. Also, upstream does not support gpac 2.x.x (and doesn't
+  # seem to intend to soon), see https://github.com/CCExtractor/ccextractor/issues/1425. See also
+  # https://github.com/Homebrew/homebrew-core/pull/97413.
+  disable! date: "2022-12-24", because: :does_not_build
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
