@@ -1,8 +1,8 @@
 class Kotlin < Formula
   desc "Statically typed programming language for the JVM"
   homepage "https://kotlinlang.org/"
-  url "https://github.com/JetBrains/kotlin/releases/download/v1.7.21/kotlin-compiler-1.7.21.zip"
-  sha256 "8412b31b808755f0c0d336dbb8c8443fa239bf32ddb3cdb81b305b25f0ad279e"
+  url "https://github.com/JetBrains/kotlin/releases/download/v1.8.0/kotlin-compiler-1.8.0.zip"
+  sha256 "0bb9419fac9832a56a3a19cad282f8f2d6f1237d2d467dc8dfe9bd4a2a43c42e"
   license "Apache-2.0"
 
   # This repository has thousands of development tags, so the `GithubLatest`
@@ -13,7 +13,7 @@ class Kotlin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f3a48b0d323610b9a0d3c6fe2ecbd88afa092cd65428e6d3ec2c3514fdb1066b"
+    sha256 cellar: :any_skip_relocation, all: "3b09590444aa63fb2e429bbd8bd9ba9937cc38f21810364c546eccf29ae1c54d"
   end
 
   depends_on "openjdk"
@@ -33,7 +33,6 @@ class Kotlin < Formula
       }
     EOS
     system bin/"kotlinc", "test.kt", "-include-runtime", "-d", "test.jar"
-    system bin/"kotlinc-js", "test.kt", "-output", "test.js"
     system bin/"kotlinc-jvm", "test.kt", "-include-runtime", "-d", "test.jar"
   end
 end
