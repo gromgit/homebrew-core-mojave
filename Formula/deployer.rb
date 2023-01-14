@@ -1,25 +1,20 @@
 class Deployer < Formula
   desc "Deployment tool written in PHP with support for popular frameworks"
   homepage "https://deployer.org/"
-  # Bump to php 8.2 on the next release, if possible.
-  url "https://github.com/deployphp/deployer/releases/download/v7.0.2/deployer.phar"
-  sha256 "0dd3d3a4aac4b27338359843fc9f4f974b06276c2854b41b6fd54b0786473936"
+  url "https://github.com/deployphp/deployer/releases/download/v7.1.1/deployer.phar"
+  sha256 "0a75adcc64df33c4911e505c038579ff1376b77022e4a1581d5e5e23cc0a1ef3"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "945de0a43e6b2ba7b28bf7eaf9eaec43fe693b2563a2cbcce8d8a249c192b829"
+    sha256 cellar: :any_skip_relocation, all: "f2266f02bdccbb1d7793587bd715e14068533ce7e398f67c432798863fc7be02"
   end
 
-  depends_on "php@8.1"
+  depends_on "php"
 
   conflicts_with "dep", because: "both install `dep` binaries"
 
   def install
     bin.install "deployer.phar" => "dep"
-    bin.env_script_all_files libexec, PATH: "#{Formula["php@8.1"].opt_bin}:$PATH"
-    chmod 0755, libexec/"dep"
   end
 
   test do
