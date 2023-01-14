@@ -1,8 +1,8 @@
 class Colordiff < Formula
   desc "Color-highlighted diff(1) output"
   homepage "https://www.colordiff.org/"
-  url "https://www.colordiff.org/colordiff-1.0.20.tar.gz"
-  sha256 "e3b2017beeb9f619ebc3b15392f22810c882d1b657aab189623cffef351d7bcd"
+  url "https://www.colordiff.org/colordiff-1.0.21.tar.gz"
+  sha256 "9b30f4257ef0f0806dea5a27c9ad8edc3f7999f05ddaff6f0627064dc927e615"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Colordiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "074e293f6918138f532ee761a97822b75344fba0bf1193c776b597e40b7763ca"
+    sha256 cellar: :any_skip_relocation, all: "4f4ba10c742bc2036939397bf86b0f00a3d1992d1e72c08e7f20b77964d42b07"
   end
 
   depends_on "coreutils" => :build # GNU install
