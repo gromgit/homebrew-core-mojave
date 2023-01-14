@@ -1,8 +1,8 @@
 class Webkitgtk < Formula
   desc "GTK interface to WebKit"
   homepage "https://webkitgtk.org"
-  url "https://webkitgtk.org/releases/webkitgtk-2.38.2.tar.xz"
-  sha256 "f3eb82899651f583b4d99cacd16af784a1a7710fce9e7b6807bd6ccde909fe3e"
+  url "https://webkitgtk.org/releases/webkitgtk-2.38.3.tar.xz"
+  sha256 "41f001d1ed448c6936b394a9f20e4640eebf83a7f08262df28504f7410604a5a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Webkitgtk < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "212b94920a45595c92deca006aa98c06d734b7ad94c30f5c9171816dd15f12da"
+    sha256 x86_64_linux: "ed06ac1ccec54d3eaf73221a873e6dccb9187b3cf5d8135a4bb4558f4934953e"
   end
 
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "cairo"
   depends_on "enchant"
   depends_on "fontconfig"
@@ -49,6 +49,7 @@ class Webkitgtk < Formula
   uses_from_macos "perl" => :build
   uses_from_macos "ruby" => :build
   uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
