@@ -1,13 +1,12 @@
 class Mat2 < Formula
   desc "Metadata anonymization toolkit"
   homepage "https://0xacab.org/jvoisin/mat2"
-  url "https://0xacab.org/jvoisin/mat2/-/archive/0.13.0/mat2-0.13.0.tar.gz"
-  sha256 "8f895b45247c701f311da52442de7d1117cce234f82936edf305d6e339c016b0"
+  url "https://0xacab.org/jvoisin/mat2/-/archive/0.13.1/mat2-0.13.1.tar.gz"
+  sha256 "473c56d60733a4434e10c85a86e928bd714f8f72a0b4772251cfa0a45f805e1d"
   license "LGPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3e3081b97a1b9374ddaf5efccf1ab643202d6ebcdf08dd179ae329cc4736c72a"
+    sha256 cellar: :any_skip_relocation, all: "80e769c1d7702ec07cce85816cceecaaaab97b65b123dd7477b984a42739b956"
   end
 
   depends_on "exiftool"
@@ -17,7 +16,7 @@ class Mat2 < Formula
   depends_on "poppler"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "mutagen" do
     url "https://files.pythonhosted.org/packages/f3/d9/2232a4cb9a98e2d2501f7e58d193bc49c956ef23756d7423ba1bd87e386d/mutagen-1.45.1.tar.gz"
@@ -25,7 +24,7 @@ class Mat2 < Formula
   end
 
   def install
-    python = "python3.10"
+    python = "python3.11"
 
     ENV.append_path "PYTHONPATH", prefix/Language::Python.site_packages(python)
     ENV.append_path "PYTHONPATH", Formula["pygobject3"].opt_prefix/Language::Python.site_packages(python)
