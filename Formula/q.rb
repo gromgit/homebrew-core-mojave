@@ -9,12 +9,17 @@ class Q < Formula
   head "https://github.com/harelba/q.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/q"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "5eefb60531e2e7ee284238d8df0a56fb5163170bc442e32df058d327038d1876"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a1d9fe022e696e90b6f45aa3e83e9fccd7959849d475dbb7688a894c7bda353"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c72ca06a7c9dbe3b3eaee1b8db72811edbf7e64fbee5b694bcf2ed7e8d877d50"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c72ca06a7c9dbe3b3eaee1b8db72811edbf7e64fbee5b694bcf2ed7e8d877d50"
+    sha256 cellar: :any_skip_relocation, ventura:        "566b481aa2b06f9d0146dee37a970198a0cfda64e87cec7cb0f801d92fc48bed"
+    sha256 cellar: :any_skip_relocation, monterey:       "4511c183df36704ec7cb497b4a319409875ea2ef6068255ae2a2e0a2d7293e29"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4511c183df36704ec7cb497b4a319409875ea2ef6068255ae2a2e0a2d7293e29"
+    sha256 cellar: :any_skip_relocation, catalina:       "4511c183df36704ec7cb497b4a319409875ea2ef6068255ae2a2e0a2d7293e29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bed14a331133ff96b85fa37e0729ca695bd273f78ee82e792185d137edf9917a"
   end
 
-  deprecate! date: "2021-11-30", because: "requires PyOxidizer, which is a disallowed dependency in homebrew/core"
+  disable! date: "2022-12-30", because: "requires PyOxidizer, which is a disallowed dependency in homebrew/core"
 
   depends_on "ronn" => :build
   depends_on "python@3.9"
