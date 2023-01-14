@@ -10,13 +10,14 @@ class Whatmp3 < Formula
   head "https://github.com/RecursiveForest/whatmp3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e2d016997747d101763e515bb9a223090672b2914340c05bd4fb71618af491cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "dbef5257fc09e6881e0e2a652a6d5ec460c0d2881d6c1cb4ec9288841823390b"
   end
 
   depends_on "flac"
   depends_on "lame"
   depends_on "mktorrent"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     system "make", "PREFIX=#{prefix}", "install"
