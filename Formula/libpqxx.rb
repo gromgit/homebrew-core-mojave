@@ -6,19 +6,18 @@ class Libpqxx < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "4f7eac329b43c9339b132bf4dfb9fd8bdfd157b38372d62fff7fb07a46f81fed"
-    sha256 cellar: :any,                 arm64_monterey: "efc6a46c8f5be1b0cdba4b225d2c5ee6ab4a1ab781c6d15e3e91377b75086b27"
-    sha256 cellar: :any,                 arm64_big_sur:  "4d404ad40773faa6ee7c43f265dfad2469e6df3b225f081791beafca23e08ba6"
-    sha256 cellar: :any,                 ventura:        "ab9d2a71d7e69db88b1ed5a7fb10cabe6e9a9c9cf6c41385196f3bc5957f5cce"
-    sha256 cellar: :any,                 monterey:       "817cffc912456f0e233dbee4be5db19bad19374051c27179b44af3da228470d3"
-    sha256 cellar: :any,                 big_sur:        "225c2c1f68f97c7cd1dc12e252dba50a7b987a8e6897f76a2091b5d81ea9f993"
-    sha256 cellar: :any,                 catalina:       "970f82f123653e725658e03e5cf1d8de48ba0af2d7e9a2eee7c01249fbcaac6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d52e95a1ebd81fca0bd0539e969cfbdaeea9a2cc615e19aa527678ace77cc082"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "93b64cdbadf88442580c25807bd1ccb37c07388d784effe6930debb16892c588"
+    sha256 cellar: :any,                 arm64_monterey: "eb6a34512b4dbe8441c6125e7ee1bebd045bdf5d237a9e13e61a46317a952f86"
+    sha256 cellar: :any,                 arm64_big_sur:  "259df212ce00831658e97c8aa0402507ffa394bf8044bd1150e99910e1634a7d"
+    sha256 cellar: :any,                 ventura:        "d49f566b9d3c80945d8304aad35b3c1c32944781556fbc173d0f5108249178e2"
+    sha256 cellar: :any,                 monterey:       "dda7a525996ed368af904279787658d503150c209a70f1ea77406b1c7ae7e34c"
+    sha256 cellar: :any,                 big_sur:        "a3064e182fe3c821e5b44093f5820e4b3e869f6f1ba6d095509f742d40b9653b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d31206534bff2f4bfab03669216dfbdc1befbf0c5b2ab07b1a8c3cb43ff3fe7"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "xmlto" => :build
   depends_on "libpq"
   depends_on macos: :catalina # requires std::filesystem
@@ -27,7 +26,7 @@ class Libpqxx < Formula
 
   def install
     ENV.append "CXXFLAGS", "-std=c++17"
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
     ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
 
     system "./configure", "--prefix=#{prefix}", "--enable-shared"
