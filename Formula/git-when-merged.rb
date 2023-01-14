@@ -9,12 +9,12 @@ class GitWhenMerged < Formula
   head "https://github.com/mhagger/git-when-merged.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "351c05a7dfe0568ffde09a4633ab23d253ab10e0c3e0b2421e3f9b4740bae4b7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "1475d839dbfbe0fcf5132c9291a9f4467f118a9c899f5571f11cdf09568dc097"
   end
 
   # TODO: Update this to whichever python has `bin/python3`.
-  depends_on "python@3.10" => :test
+  depends_on "python@3.11" => :test
   uses_from_macos "python"
 
   def install
