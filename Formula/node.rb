@@ -1,19 +1,14 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v18.10.0/node-v18.10.0.tar.xz"
-  sha256 "ad711b54e2be4a7d24f37c73fb2801adeaf6d26d298d431be98d6abc0202e89f"
+  url "https://nodejs.org/dist/v19.3.0/node-v19.3.0.tar.xz"
+  sha256 "d3189574ef9849c713822e7f31de7a1b9dd8a2c6b5fc78ddb811aaa259a22b1e"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
     url "https://nodejs.org/dist/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
-  end
-
-  bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/node"
-    sha256 cellar: :any_skip_relocation, mojave: "a3b24a9e79e34cf213e8964e29b4f617e793dbaced31211cab3a3a1faf05404d"
   end
 
   depends_on "pkg-config" => :build
@@ -44,12 +39,17 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-8.19.2.tgz"
-    sha256 "439fb2276f7039d2fba2739e361006f3bc25d6a6b3f88c1edb4d28ab5a7eb3f7"
+    url "https://registry.npmjs.org/npm/-/npm-9.2.0.tgz"
+    sha256 "e2574f7da94665dd2f717f8e67bd1874134c4b301f8781dabceecdfc3d685071"
   end
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
+
+    if MacOS.version == :mojave
+      inreplace "common.gypi", "'MACOSX_DEPLOYMENT_TARGET': '10.15'",
+                               "'MACOSX_DEPLOYMENT_TARGET': '10.14'"
+    end
 
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.10")

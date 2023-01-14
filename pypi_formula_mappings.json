@@ -103,7 +103,7 @@
   },
   "charmcraft": {
     "extra_packages": ["appdirs", "pydantic"],
-    "exclude_packages": ["six", "tabulate", "PyYAML", "jsonschema", "attrs", "pyrsistent", "typing-extensions"]
+    "exclude_packages": ["six", "tabulate", "PyYAML", "typing-extensions"]
   },
   "ciphey": {
     "exclude_packages": ["six"]
@@ -113,7 +113,7 @@
     "exclude_packages": ["junit-xml", "six"]
   },
   "charm-tools": {
-    "exclude_packages": ["six", "jsonschema", "attrs", "pyrsistent"],
+    "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
   },
   "checkov": {
@@ -232,6 +232,9 @@
   "gcalcli": {
     "exclude_packages": ["six"]
   },
+  "gi-docgen": {
+    "exclude_packages": ["pygments", "smartypants"]
+  },
   "gimme-aws-creds": {
     "package_name": "gimme-aws-creds",
     "exclude_packages": ["six"],
@@ -253,7 +256,7 @@
     "exclude_packages": ["Pygments", "virtualenv"]
   },
   "homeassistant-cli": {
-    "exclude_packages": ["tabulate"]
+    "exclude_packages": ["six", "tabulate"]
   },
   "howdoi": {
     "exclude_packages": ["six", "Pygments"]
@@ -267,9 +270,6 @@
     "exclude_packages": ["PyYAML", "typing-extensions"]
   },
   "instalooter": {
-    "exclude_packages": ["six"]
-  },
-  "internetarchive": {
     "exclude_packages": ["six"]
   },
   "ipython": {
@@ -346,6 +346,11 @@
   "mathlibtools": {
     "exclude_packages": ["PyYAML"]
   },
+  "mdv": {
+    "package_name": "mdv[yaml]",
+    "exclude_packages": ["tabulate", "PyYAML", "Pygments"],
+    "extra_packages": ["Markdown==2.6.11"]
+  },
   "mkdocs": {
     "exclude_packages": ["six", "PyYAML"]
   },
@@ -381,8 +386,7 @@
       "tornado", "urllib3", "webencodings", "websocket-client",
       "appnope", "asttokens", "backcall", "decorator", "executing", "jedi",
       "matplotlib-inline", "parso", "pexpect", "pickleshare", "prompt-toolkit", "ptyprocess",
-      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth",
-      "jsonschema", "attrs", "pyrsistent"
+      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth"
     ]
   },
   "nicotine-plus": {
@@ -498,6 +502,9 @@
   },
   "rbtools": {
     "exclude_packages": ["six", "typing-extensions"]
+  },
+  "rdiff-backup": {
+    "exclude_packages": ["PyYAML"]
   },
   "regipy": {
     "package_name": "regipy[cli]",
