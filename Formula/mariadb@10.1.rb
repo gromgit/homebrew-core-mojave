@@ -5,10 +5,6 @@ class MariadbAT101 < Formula
   sha256 "069d58b1e2c06bb1e6c31249eda34138f41fb8ae3dec7ecaeba8035812c87cf9"
   license "GPL-2.0-only"
 
-  bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
-  end
-
   keg_only :versioned_formula
 
   # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-101/
