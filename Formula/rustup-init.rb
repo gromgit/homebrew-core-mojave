@@ -7,8 +7,8 @@ class RustupInit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rustup-init"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "d93735f6bd5749b55112dc002d7e092517c9df7f8bef5ad67db6834c57dbd703"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, mojave: "0dc9aafcffc96786dd6c79c55875e92237a3f773554fd42813dcd1c6c31272e6"
   end
 
   depends_on "rust" => :build
