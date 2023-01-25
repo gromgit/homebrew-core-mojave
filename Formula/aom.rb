@@ -9,8 +9,8 @@ class Aom < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/aom"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "dae12dd6cca4146f8820857be154f588ea89dd7aaeba5b729c855a10f6252a12"
+    rebuild 2
+    sha256 cellar: :any, mojave: "0c3c1caebbdda5be74879b94787a846638ef86fe2d4677bde9036c53067f0146"
   end
 
   depends_on "cmake" => :build
@@ -34,13 +34,15 @@ class Aom < Formula
   def install
     ENV.runtime_cpu_detection unless Hardware::CPU.arm?
 
-    args = std_cmake_args.concat(["-DCMAKE_INSTALL_RPATH=#{rpath}",
-                                  "-DENABLE_DOCS=off",
-                                  "-DENABLE_EXAMPLES=on",
-                                  "-DENABLE_TESTDATA=off",
-                                  "-DENABLE_TESTS=off",
-                                  "-DENABLE_TOOLS=off",
-                                  "-DBUILD_SHARED_LIBS=on"])
+    args = std_cmake_args + [
+      "-DCMAKE_INSTALL_RPATH=#{rpath}",
+      "-DENABLE_DOCS=off",
+      "-DENABLE_EXAMPLES=on",
+      "-DENABLE_TESTDATA=off",
+      "-DENABLE_TESTS=off",
+      "-DENABLE_TOOLS=off",
+      "-DBUILD_SHARED_LIBS=on",
+    ]
     # Runtime CPU detection is not currently enabled for ARM on macOS.
     args << "-DCONFIG_RUNTIME_CPU_DETECT=0" if Hardware::CPU.arm?
 
