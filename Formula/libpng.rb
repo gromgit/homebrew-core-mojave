@@ -13,11 +13,12 @@ class Libpng < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libpng"
-    sha256 cellar: :any, mojave: "0a21b8a28fe38bda61d6d735b1667e27a5f5ff0982bd3fa80306d58356384851"
+    rebuild 1
+    sha256 cellar: :any, mojave: "9dedd73d0fe6845fae53b4c36a1b1f30c6252c427daf1df2ba4fb1420644fc6e"
   end
 
   head do
-    url "https://github.com/glennrp/libpng.git"
+    url "https://github.com/glennrp/libpng.git", branch: "libpng16"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
