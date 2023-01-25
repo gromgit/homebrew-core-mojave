@@ -7,8 +7,8 @@ class RustupInit < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rustup-init"
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, mojave: "43f34826aca6eb82841984f144db8218e0e374848426f56e352a1f9d66fe4777"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, mojave: "c7ac580f5a7a741cf03caa9e10429e8e274f20066e0dfea4c58dbaf063812d7e"
   end
 
   depends_on "rust" => :build
@@ -29,7 +29,7 @@ class RustupInit < Formula
     ENV["CARGO_HOME"] = testpath/".cargo"
     ENV["RUSTUP_HOME"] = testpath/".multirust"
 
-    system bin/"rustup-init", "-y"
+    system bin/"rustup-init", "-vy"
     (testpath/"hello.rs").write <<~EOS
       fn main() {
         println!("Hello World!");
