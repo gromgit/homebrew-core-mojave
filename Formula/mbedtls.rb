@@ -14,11 +14,12 @@ class Mbedtls < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/mbedtls"
-    sha256 cellar: :any, mojave: "c1610c90d888067ea5b0aa893072d9c2ceda3490c0f60d68a0b65781ca84b30f"
+    rebuild 1
+    sha256 cellar: :any, mojave: "3804609add66a8809d1bdddab40e80110939711953fe7d60ace9e372371c2a29"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
 
   def install
     inreplace "include/mbedtls/mbedtls_config.h" do |s|
@@ -30,7 +31,7 @@ class Mbedtls < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DUSE_SHARED_MBEDTLS_LIBRARY=On",
-                    "-DPython3_EXECUTABLE=#{which("python3.10")}",
+                    "-DPython3_EXECUTABLE=#{which("python3.11")}",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DGEN_FILES=OFF",
                     *std_cmake_args
