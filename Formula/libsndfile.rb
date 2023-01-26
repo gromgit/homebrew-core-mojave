@@ -1,10 +1,9 @@
 class Libsndfile < Formula
   desc "C library for files containing sampled sound"
   homepage "https://libsndfile.github.io/libsndfile/"
-  url "https://github.com/libsndfile/libsndfile/releases/download/1.1.0/libsndfile-1.1.0.tar.xz"
-  sha256 "0f98e101c0f7c850a71225fb5feaf33b106227b3d331333ddc9bacee190bcf41"
+  url "https://github.com/libsndfile/libsndfile/releases/download/1.2.0/libsndfile-1.2.0.tar.xz"
+  sha256 "0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +12,7 @@ class Libsndfile < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libsndfile"
-    rebuild 2
-    sha256 cellar: :any, mojave: "62dc3fad44ca5da072f664562ab95fe2a216fa5af855aa96a3b4e585836df177"
+    sha256 cellar: :any, mojave: "183b87f9b075960d765e8ed4336628e9e91c2ad33d51cff0f47017189311bcc6"
   end
 
   depends_on "autoconf" => :build
@@ -29,14 +27,6 @@ class Libsndfile < Formula
   depends_on "opus"
 
   uses_from_macos "python" => :build
-
-  # Fix unsubstituted variable @EXTERNAL_MPEG_LIBS@ in sndfile.pc
-  # PR ref: https://github.com/libsndfile/libsndfile/pull/828
-  # Remove in the next release.
-  patch do
-    url "https://github.com/libsndfile/libsndfile/commit/e4fdaeefddd39bae1db27d48ccb7db7733e0c009.patch?full_index=1"
-    sha256 "af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910"
-  end
 
   def install
     system "autoreconf", "-fvi"
