@@ -1,14 +1,13 @@
 class Libraqm < Formula
   desc "Library for complex text layout"
   homepage "https://github.com/HOST-Oman/libraqm"
-  url "https://github.com/HOST-Oman/libraqm/archive/v0.9.0.tar.gz"
-  sha256 "826e43bc638b53ec720e93a26f4ead494c6a28006d280609dac6aef09b39283e"
+  url "https://github.com/HOST-Oman/libraqm/archive/v0.10.0.tar.gz"
+  sha256 "be25c6376888b6fb7168746fa3191e17a3b950045552bd9a6eef85f8353facc8"
   license "MIT"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libraqm"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "20053a5499ba012b821f270c5d634e86f23be5a1a8015e15a78340c6f77fb380"
+    sha256 cellar: :any, mojave: "50c09497b7ac81c6a12cbc5802477c95a9c39e37fdf8c86fce8ad50bd81535a7"
   end
 
   depends_on "meson" => :build
