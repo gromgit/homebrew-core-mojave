@@ -1,15 +1,14 @@
 class Pillow < Formula
   desc "Friendly PIL fork (Python Imaging Library)"
   homepage "https://python-pillow.org"
-  url "https://files.pythonhosted.org/packages/16/11/da8d395299ca166aa56d9436e26fe8440e5443471de16ccd9a1d06f5993a/Pillow-9.3.0.tar.gz"
-  sha256 "c935a22a557a560108d780f9a0fc426dd7459940dc54faa49d83249c8d3e760f"
+  url "https://files.pythonhosted.org/packages/bc/07/830784e061fb94d67649f3e438ff63cfb902dec6d48ac75aeaaac7c7c30e/Pillow-9.4.0.tar.gz"
+  sha256 "a1c2d7780448eb93fbcc3789bf3916aa5720d942e37945f4056680317f1cd23e"
   license "HPND"
-  revision 1
   head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pillow"
-    sha256 cellar: :any_skip_relocation, mojave: "118b639f3b0a96487ed8f41a6bef861b6d514e110c9e86e5da3e45b0793feb03"
+    sha256 cellar: :any, mojave: "1a42490f668bd1f6a5063f347ed64ca0f0de157635539fbca9ddd08d9b71f407"
   end
 
   depends_on "pkg-config" => :build
