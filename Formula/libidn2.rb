@@ -6,6 +6,7 @@ class Libidn2 < Formula
   mirror "http://ftp.gnu.org/gnu/libidn/libidn2-2.3.4.tar.gz"
   sha256 "93caba72b4e051d1f8d4f5a076ab63c99b77faee019b72b9783b267986dbb45f"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
+  revision 1
 
   livecheck do
     url :stable
@@ -14,11 +15,11 @@ class Libidn2 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libidn2"
-    sha256 mojave: "0098c1f4914d307cabbf87f81b910a23373ba684ac93893b7dbbaa1390ca56e7"
+    sha256 mojave: "8ce8300e327f75e882f0105e9f20c5a903c5c1bad12229cfcb102ea08a264e4b"
   end
 
   head do
-    url "https://gitlab.com/libidn/libidn2.git"
+    url "https://gitlab.com/libidn/libidn2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
