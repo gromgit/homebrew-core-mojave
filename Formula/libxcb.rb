@@ -7,16 +7,19 @@ class Libxcb < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/libxcb"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "62984ce87c63be1ad9096071b2e9cf1b2bbdada4e585c753e0e98f539187497f"
+    rebuild 3
+    sha256 cellar: :any, mojave: "7965f6bfbf5c65489978d7d26dc8635df72c6eac3f219f53c8ce8c861617dacd"
   end
 
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => :build # match version in `xcb-proto`
   depends_on "xcb-proto" => :build
-  depends_on "libpthread-stubs"
   depends_on "libxau"
   depends_on "libxdmcp"
+
+  # Drop libpthread-stubs on macOS
+  # remove in next release
+  patch :DATA
 
   def install
     python3 = "python3.11"
@@ -92,3 +95,18 @@ class Libxcb < Formula
     assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end
+
+__END__
+diff --git a/configure b/configure
+index 2503d4b..0c36685 100755
+--- a/configure
++++ b/configure
+@@ -20662,7 +20662,7 @@ printf "%s\n" "yes" >&6; }
+ fi
+ NEEDED="xau >= 0.99.2"
+ case $host_os in
+-linux*) ;;
++linux*|darwin*) ;;
+      *) NEEDED="$NEEDED pthread-stubs" ;;
+ esac
+ 
