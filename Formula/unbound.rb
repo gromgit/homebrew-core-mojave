@@ -16,7 +16,8 @@ class Unbound < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/unbound"
-    sha256 cellar: :any_skip_relocation, mojave: "b9aba31b6bae845a2aca975eb73dadfc1a786c223e9a92a05d946cd17e4bb6db"
+    rebuild 1
+    sha256 mojave: "729780fe44f3017771bf3ee51805841ad7453742709fbdefff0c67b21c2cd216"
   end
 
   depends_on "libevent"
@@ -55,10 +56,10 @@ class Unbound < Formula
                     "username: \"#{ENV["USER"]}\""
   end
 
-  plist_options startup: true
   service do
     run [opt_sbin/"unbound", "-d", "-c", etc/"unbound/unbound.conf"]
     keep_alive true
+    require_root true
   end
 
   test do
