@@ -13,7 +13,8 @@ class TclTk < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/tcl-tk"
-    sha256 cellar: :any_skip_relocation, mojave: "8298192adcdb07c41ce475116f4ad7fe850acc7fcfd886f711f4d348ad0dcb92"
+    rebuild 1
+    sha256 mojave: "c7dcddc582dd8c43517425bcf98531ac6e3bdda92fe6d184612bb730a1e5ca66"
   end
 
   keg_only :provided_by_macos
@@ -27,6 +28,8 @@ class TclTk < Formula
     depends_on "pkg-config" => :build
     depends_on "libx11"
     depends_on "libxext"
+
+    conflicts_with "page", because: "both install `page` binaries" # from tcllib
   end
 
   resource "critcl" do
@@ -144,7 +147,6 @@ class TclTk < Formula
     test_itk = <<~EOS
       # Check that Itcl and Itk load, and that we can define, instantiate,
       # and query the properties of a widget.
-
 
       # If anything errors, just exit
       catch {
