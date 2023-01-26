@@ -6,7 +6,7 @@ class Ffmpeg < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 1
+  revision 3
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -16,11 +16,12 @@ class Ffmpeg < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/ffmpeg"
-    sha256 mojave: "fa97d25b0b5f4646602afc3dbd06ab43b253809f0cbaa1697340bec3d6f3de14"
+    sha256 mojave: "96c7fcc6a0a6a3c1cc3dffcfaad89ce698ff91a7e05eb0648f24ca6fc88e1f17"
   end
 
   depends_on "pkg-config" => :build
   depends_on "aom"
+  depends_on "aribb24"
   depends_on "dav1d"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -44,6 +45,7 @@ class Ffmpeg < Formula
   depends_on "snappy"
   depends_on "speex"
   depends_on "srt"
+  depends_on "svt-av1"
   depends_on "tesseract"
   depends_on "theora"
   depends_on "webp"
@@ -82,6 +84,7 @@ class Ffmpeg < Formula
       --enable-gnutls
       --enable-gpl
       --enable-libaom
+      --enable-libaribb24
       --enable-libbluray
       --enable-libdav1d
       --enable-libmp3lame
@@ -91,6 +94,7 @@ class Ffmpeg < Formula
       --enable-librubberband
       --enable-libsnappy
       --enable-libsrt
+      --enable-libsvtav1
       --enable-libtesseract
       --enable-libtheora
       --enable-libvidstab
