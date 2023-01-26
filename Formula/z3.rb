@@ -4,6 +4,7 @@ class Z3 < Formula
   url "https://github.com/Z3Prover/z3/archive/z3-4.11.2.tar.gz"
   sha256 "e3a82431b95412408a9c994466fad7252135c8ed3f719c986cd75c8c5f234c7e"
   license "MIT"
+  revision 1
   head "https://github.com/Z3Prover/z3.git", branch: "master"
 
   livecheck do
@@ -14,19 +15,18 @@ class Z3 < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/z3"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "fbf5666a444f836e7c56912c7d79ce5a2af71aef9f9f0ca7c505ad83d44edea6"
+    sha256 cellar: :any, mojave: "cc12412563aabf04237d4a0e9cc83352c90aad83f6edf2560e6c05f73b541960"
   end
 
   depends_on "cmake" => :build
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
-  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
 
   fails_with gcc: "5"
 
   def python3
-    which("python3.10")
+    which("python3.11")
   end
 
   def install
