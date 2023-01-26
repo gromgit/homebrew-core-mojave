@@ -8,8 +8,8 @@ class Nettle < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/nettle"
-    rebuild 2
-    sha256 cellar: :any, mojave: "c8fa97bcd17fbd28bd37e83351273d51e91aadc7afcd2ac235d996836385c404"
+    rebuild 3
+    sha256 cellar: :any, mojave: "4db28198856e59b61661b721979fe911cf495e1e1ccbc0c80a5a39f8f7833177"
   end
 
   depends_on "gmp"
@@ -17,22 +17,7 @@ class Nettle < Formula
   uses_from_macos "m4" => :build
 
   def install
-    # The LLVM shipped with Xcode/CLT 10+ compiles binaries/libraries with
-    # ___chkstk_darwin, which upsets nettle's expected symbol check.
-    # https://github.com/Homebrew/homebrew-core/issues/28817#issuecomment-396762855
-    # https://lists.lysator.liu.se/pipermail/nettle-bugs/2018/007300.html
-    if DevelopmentTools.clang_build_version >= 1000
-      inreplace "testsuite/symbols-test", "get_pc_thunk",
-                                          "get_pc_thunk|(_*chkstk_darwin)"
-    end
-
-    args = []
-    args << "--build=aarch64-apple-darwin#{OS.kernel_version}" if Hardware::CPU.arm?
-
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-shared",
-                          *args
+    system "./configure", *std_configure_args, "--enable-shared"
     system "make"
     system "make", "install"
     system "make", "check"
