@@ -16,12 +16,12 @@ class Gperftools < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gperftools"
-    rebuild 1
-    sha256 cellar: :any, mojave: "2e125390974a63ff852335344026c7ba1668711f66280d847f025c57cc607092"
+    rebuild 2
+    sha256 cellar: :any, mojave: "8bfe18af58c2a98e46784cc3dbfa8c7f1dc611bb284e90b9174e9d7ba99e21db"
   end
 
   head do
-    url "https://github.com/gperftools/gperftools.git"
+    url "https://github.com/gperftools/gperftools.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
