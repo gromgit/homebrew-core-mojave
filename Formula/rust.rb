@@ -17,7 +17,8 @@ class Rust < Formula
 
   bottle do
     root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/rust"
-    sha256 cellar: :any, mojave: "c4a880e30293b4d70281f575a8f6c5a3bade3e9b1958ad555a86758ed68568ca"
+    rebuild 1
+    sha256 cellar: :any, mojave: "11f89f1e524587f8b855363774d812a671eb659db6c6ebf6a4681eb4a26bfebf"
   end
 
   head do
