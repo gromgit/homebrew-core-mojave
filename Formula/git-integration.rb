@@ -7,9 +7,8 @@ class GitIntegration < Formula
   head "https://github.com/johnkeeping/git-integration.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-integration"
     rebuild 2
-    sha256 cellar: :any_skip_relocation, mojave: "5bc7934d1c2e7ded1b4794518ab3091df56ab947e001cc9279408673a89f384d"
+    sha256 cellar: :any_skip_relocation, all: "bfa4ce1e4125c40f4667b65cc123b62c4572f82ad515bcd9223da4a6ef632a07"
   end
 
   def install
@@ -19,7 +18,10 @@ class GitIntegration < Formula
   end
 
   test do
+    system "git", "config", "--global", "init.defaultBranch", "master"
     system "git", "init"
+    system "git", "config", "user.name", "BrewTestBot"
+    system "git", "config", "user.email", "BrewTestBot@test.com"
     system "git", "commit", "--allow-empty", "-m", "An initial commit"
     system "git", "checkout", "-b", "branch-a", "master"
     system "git", "commit", "--allow-empty", "-m", "A commit on branch-a"
