@@ -1,8 +1,8 @@
 class GrpcSwift < Formula
   desc "Swift language implementation of gRPC"
   homepage "https://github.com/grpc/grpc-swift"
-  url "https://github.com/grpc/grpc-swift/archive/1.13.2.tar.gz"
-  sha256 "d172cd71f5713a1b98bfeffd2acda8e7a99d1addd669abf8f0b4f79f5d4ed6e6"
+  url "https://github.com/grpc/grpc-swift/archive/1.14.0.tar.gz"
+  sha256 "643109e821be5097082a618b11f0fa6d57f858680d86e88a0e390e94fb85f21d"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc-swift.git", branch: "main"
 
@@ -12,13 +12,13 @@ class GrpcSwift < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d41bac96c2a407b3f30cea30e2fed7da7dd2416aa1ae11fffd42d9e9061f2582"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6d37178b53ba96011afce4f8e60fb47b1f2d0bd882dd42e4c85c4f3f5597845"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45ea425aa98449934dc426dff8fd50a9e69eec6367dc9aac4bf61d4a2ced2229"
-    sha256 cellar: :any_skip_relocation, ventura:        "f568babea8022a02fec074687853516b9f03d9599efdda29c4c9b14dcc8ff378"
-    sha256 cellar: :any_skip_relocation, monterey:       "572ced424b97f16568a13de54fbfb36234d461465455daf4e934d0fc596c547d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "74a3b7f9ccd47d27f5b18033b61c167a9a93a7ce236c51cbecdc10bb55e248a3"
-    sha256                               x86_64_linux:   "126f9732dc3132eefee0a3f097ba5f1edd600b23caaef3a7dc06f6c62d2c376b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01ddbdddce5a7c7d1838e3ed8c0a708cd2223350c8160f898bfc2ab5e4018376"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "80ac79e6099ce9901c53f11f8d339b27fdb9c3eed9878683a6d2bcd1e5fa8c2a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a3daa8207218ee5399928c519d222df994f9d3f8a3347f2dca116a0976178db"
+    sha256 cellar: :any_skip_relocation, ventura:        "0739d2dd76c068314629a2967eae9cce768d317db38c86f871002ecc05ccbf2f"
+    sha256 cellar: :any_skip_relocation, monterey:       "4dc343da28f50817c5678897ffc9b676c0b3a88e857ec6fb84432a8970ac63d3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "14246f4ce3bd2b16579a35d4ce385bf0ab3de089102b6e599e45fc9c1b328f3e"
+    sha256                               x86_64_linux:   "4484ed956a12e4e6fe25c093701caa982f3f4752175ea4b6c627bf3d9e3ef1bb"
   end
 
   depends_on xcode: ["12.5", :build]
