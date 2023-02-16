@@ -1,12 +1,12 @@
 class Mat2 < Formula
   desc "Metadata anonymization toolkit"
   homepage "https://0xacab.org/jvoisin/mat2"
-  url "https://0xacab.org/jvoisin/mat2/-/archive/0.13.1/mat2-0.13.1.tar.gz"
-  sha256 "473c56d60733a4434e10c85a86e928bd714f8f72a0b4772251cfa0a45f805e1d"
+  url "https://0xacab.org/jvoisin/mat2/-/archive/0.13.2/mat2-0.13.2.tar.gz"
+  sha256 "957633dd80b0c060062925b057607559bdcd9a52fbe25bee0723d1db425dffaf"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "80e769c1d7702ec07cce85816cceecaaaab97b65b123dd7477b984a42739b956"
+    sha256 cellar: :any_skip_relocation, all: "198b67283e28392d4f37b074acd1727443d3c4bd54ba2a068f94b944b0cadd2c"
   end
 
   depends_on "exiftool"
@@ -19,8 +19,8 @@ class Mat2 < Formula
   depends_on "python@3.11"
 
   resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/f3/d9/2232a4cb9a98e2d2501f7e58d193bc49c956ef23756d7423ba1bd87e386d/mutagen-1.45.1.tar.gz"
-    sha256 "6397602efb3c2d7baebd2166ed85731ae1c1d475abca22090b7141ff5034b3e1"
+    url "https://files.pythonhosted.org/packages/b1/54/d1760a363d0fe345528e37782f6c18123b0e99e8ea755022fd51f1ecd0f9/mutagen-1.46.0.tar.gz"
+    sha256 "6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58"
   end
 
   def install
