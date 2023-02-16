@@ -7,9 +7,8 @@ class GitStandup < Formula
   head "https://github.com/kamranahmedse/git-standup.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-standup"
     rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "aa0b4c617369ac7e25189f82c90c2234ad9050bcb02f56f1cc867d27df9c5379"
+    sha256 cellar: :any_skip_relocation, all: "b0bd8d9ae367c4eb026f0ce046e7c33fbfa861249425d47fd2c9b81e69ca6706"
   end
 
   def install
