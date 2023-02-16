@@ -7,9 +7,8 @@ class Gist < Formula
   head "https://github.com/defunkt/gist.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/gist"
     rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "b6ab41e62cadacc08d55445e1c152ac614d291d81a22af13c64a17efa0f33af6"
+    sha256 cellar: :any_skip_relocation, all: "0158ab83b42d17104b9dc5bf56f76fea7ec1b2c83e453dbcefc2c2d1d474392a"
   end
 
   uses_from_macos "ruby", since: :high_sierra
