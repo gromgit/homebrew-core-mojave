@@ -13,9 +13,15 @@ class GitCal < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/git-cal"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "3bf18ff2ed64b3086e0d5fccb58cd2f05f6bcb68ba15d0e27d92e4ec8bf597ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6228f62ffe5b766fb9b546613777249e348dd5caa14e83138397974f198ba20"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6228f62ffe5b766fb9b546613777249e348dd5caa14e83138397974f198ba20"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2100e367528b52d5bf60d1e85687908e154fc8f831ef7bd29862b3bc899395c"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6228f62ffe5b766fb9b546613777249e348dd5caa14e83138397974f198ba20"
+    sha256 cellar: :any_skip_relocation, monterey:       "e6228f62ffe5b766fb9b546613777249e348dd5caa14e83138397974f198ba20"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1d191bdf9da21ef2dbe3eeb3909fbf738df652931b5ee9876b9868b429644899"
+    sha256 cellar: :any_skip_relocation, catalina:       "ee5e258bbc598978be1d2e3e3220c28b7ef1ff4d7e5a34bdcc852107f68b5f67"
+    sha256 cellar: :any_skip_relocation, mojave:         "80bbebc06dc4f05e6aa34324276650f303a714efe857e72f67861d7cf9194451"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62d35c98bb021280c82914245ee51078760261e8ae8e877df3ddb7bfe8726231"
   end
 
   def install
