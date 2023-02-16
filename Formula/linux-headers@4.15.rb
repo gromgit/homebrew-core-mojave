@@ -6,10 +6,15 @@ class LinuxHeadersAT415 < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "720cb4d024febce4f9195b11ac452d707c5a22abe79b1aa3c802e8a56a7cabae"
   end
 
   keg_only :versioned_formula
+
+  # Linux kernel 4.15 is EOL with final release on 2018-04-19.
+  # It is still used in Ubuntu 18.04 LTS but we don't track Ubuntu's versions
+  # and we skipped to Ubuntu 22.04 LTS for Linux bottling.
+  deprecate! date: "2023-02-12", because: :deprecated_upstream
 
   depends_on :linux
 
