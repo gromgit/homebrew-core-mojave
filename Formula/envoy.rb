@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.24.1.tar.gz"
-  sha256 "385e5345e9bc73dcdae311d1df61e16e998860fc958571be9c9b781ad20e14f8"
+  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.25.1.tar.gz"
+  sha256 "d3504dc6706f1c009412240824faedfc0ac99db996715ebda695e752aecefed5"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -12,14 +12,13 @@ class Envoy < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8884c61777053dace6c9d72c689efb7b985ae24a4315ec61a8d86e49981a7ef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "745f7a1a124bfc02be2bf6b6434049c904bbc38abd3dda69c3ef738169468de7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "616703b5342050555532080fe98f12f57f8fcdff403e390d828f19ad88ad83db"
-    sha256 cellar: :any_skip_relocation, ventura:        "29d3129e51b2d6c06cd0213d34bc0dab46098224e7e12e13fc88f951c18c2060"
-    sha256 cellar: :any_skip_relocation, monterey:       "c851e41349c8586834d6f0976a6aab6562d7910b99d6e49e8cb785e4883266ca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "774a1c8b479942cf41bf400f074a51e5add628e6bd72141da65e452a13cf0dad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8efb10dce3c4963f6767d3f26e037b5bea3de29af428544984f337b9f62e5657"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7cfb2e4460f964e9cc964365aa039c5ed43ddccc0102d6f0fa191a263135bde"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "635945ba9fc817ad3322335304c3178f7b9f858d2cac8b0d7a5e796ea81761d8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c68986ba182e6fabec3211e0f2137c96480847143919b87e777aa0b5533c6e21"
+    sha256 cellar: :any_skip_relocation, ventura:        "b589f440e3002dea184a6a16777afed3dd87a17db1d229f617ca6efb55d11102"
+    sha256 cellar: :any_skip_relocation, monterey:       "74e6ed442e18b9fd667377f031cbfb1fae04e8117db094fcf6b9a6b58d626f82"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6fd9bb919c4e8c6c4995b7f177f57e82aaa13432239135a973c2193fa0712f8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7da1cf2819a93455bab469196d14edf8d4acff540c1a53337def90599e2242e8"
   end
 
   depends_on "automake" => :build
@@ -42,14 +41,6 @@ class Envoy < Formula
   fails_with :gcc do
     version "8"
     cause "C++17 support and tcmalloc requirement"
-  end
-
-  # Fix build with GCC 11 by updating brotli. Remove in the next release with commit
-  patch do
-    on_linux do
-      url "https://github.com/envoyproxy/envoy/commit/b58fb72476fac20f213c4a4a09a97d709f736442.patch?full_index=1"
-      sha256 "7ec3ae77702c7e373eb4050e2947499708f5c8cb0df065479e204290902810c6"
-    end
   end
 
   def install
@@ -79,7 +70,6 @@ class Envoy < Formula
       # external/v8/src/base/platform/platform-darwin.cc:56:22: 'getsectdatafromheader_64'
       # is deprecated: first deprecated in macOS 13.0.
       # https://bugs.chromium.org/p/v8/issues/detail?id=13428.
-      # Reference: https://github.com/envoyproxy/envoy/pull/23707.
       args << "--cxxopt=-Wno-deprecated-declarations"
       args << "--host_cxxopt=-Wno-deprecated-declarations"
     end
