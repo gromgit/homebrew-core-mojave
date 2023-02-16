@@ -6,10 +6,10 @@ class Paket < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/paket"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "330cd6980e9b373816075815c4f3c677e6c56fbd819476df6e29410b16e9152f"
+    sha256 cellar: :any_skip_relocation, all: "e88d0baf7898ba4bdcff08a69f27710b6c1356bb451805a7ad11292bf315d112"
   end
+
+  deprecate! date: "2023-01-14", because: :does_not_build
 
   depends_on "mono"
 
