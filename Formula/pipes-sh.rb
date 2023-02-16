@@ -12,9 +12,8 @@ class PipesSh < Formula
   end
 
   bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/pipes-sh"
     rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "da14dd754188372ac28504c4bf326749df47323c5179e96912ec1e0dd9fa6ad1"
+    sha256 cellar: :any_skip_relocation, all: "da14dd754188372ac28504c4bf326749df47323c5179e96912ec1e0dd9fa6ad1"
   end
 
   depends_on "bash"
