@@ -8,10 +8,9 @@ class GenerateJsonSchema < Formula
   license "MIT"
   head "https://github.com/Nijikokun/generate-schema.git", branch: "master"
 
-bottle do
-    root_url "https://github.com/gromgit/homebrew-core-mojave/releases/download/generate-json-schema"
+  bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, mojave: "c56edbfaa023e61ba9187be6e9ef2425ff634622ae6d77449083c12d9d2ab457"
+    sha256 cellar: :any_skip_relocation, all: "35954058f0fef5823d56b73ae541c63664d6d599b6810812609139050a2c7a3e"
   end
 
   depends_on "node"
