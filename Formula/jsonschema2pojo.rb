@@ -1,8 +1,8 @@
 class Jsonschema2pojo < Formula
   desc "Generates Java types from JSON Schema (or example JSON)"
   homepage "https://www.jsonschema2pojo.org/"
-  url "https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.1.2/jsonschema2pojo-1.1.2.tar.gz"
-  sha256 "13648191c731ad590d730aa3a366ee78fef20f484af50d00e81e7a0de4c1182e"
+  url "https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.1.3/jsonschema2pojo-1.1.3.tar.gz"
+  sha256 "03c4a2fc1c50d8ca600ef3ad640143539e983290744b833bc58632232eba3ab4"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Jsonschema2pojo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1752a7fe84c4bee3d4bd48d6587b8927141fab348c159e117e8844b42fda985e"
+    sha256 cellar: :any_skip_relocation, all: "6e84b730b1e3d0632f7b6a8a0060b5940e882b02a32463d5a69dd87091e728d1"
   end
 
   depends_on "openjdk"
