@@ -9,19 +9,19 @@ class HaruhiDl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1f77069c92d9b9b5d840362ce6242ab7ffc327c5716c270c14e4d4b66acfa77"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "966c61dfcc9b8849d593007e07c3254a5e243093ef7b3b3d74f7f1e06be569b6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "966c61dfcc9b8849d593007e07c3254a5e243093ef7b3b3d74f7f1e06be569b6"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f02351208113edd07366e0689d99ca03c42651ad42ec53c1439780a1a23895c"
-    sha256 cellar: :any_skip_relocation, monterey:       "127ff0efc125444133103fd03f0f8b51c2492b1cf9af89db62eb78db12fabc94"
-    sha256 cellar: :any_skip_relocation, big_sur:        "127ff0efc125444133103fd03f0f8b51c2492b1cf9af89db62eb78db12fabc94"
-    sha256 cellar: :any_skip_relocation, catalina:       "127ff0efc125444133103fd03f0f8b51c2492b1cf9af89db62eb78db12fabc94"
-    sha256 cellar: :any_skip_relocation, mojave:         "127ff0efc125444133103fd03f0f8b51c2492b1cf9af89db62eb78db12fabc94"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7aa894f84c47706348027874c65d722f0262b0867d3d011053e0159db4c5a273"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7aa894f84c47706348027874c65d722f0262b0867d3d011053e0159db4c5a273"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7aa894f84c47706348027874c65d722f0262b0867d3d011053e0159db4c5a273"
+    sha256 cellar: :any_skip_relocation, ventura:        "d301396fe3c9c5c75d1b808d87a5aa9975300d69a67f7ad0334b24b99b4e38b7"
+    sha256 cellar: :any_skip_relocation, monterey:       "d301396fe3c9c5c75d1b808d87a5aa9975300d69a67f7ad0334b24b99b4e38b7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d301396fe3c9c5c75d1b808d87a5aa9975300d69a67f7ad0334b24b99b4e38b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d08de7bd41cf3850110950b094166ec4da94703a9bf29529ab1bd78a72c13a0"
   end
 
-  deprecate! date: "2022-01-15", because: :deprecated_upstream
+  disable! date: "2023-01-31", because: :deprecated_upstream
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
