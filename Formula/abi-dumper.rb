@@ -7,7 +7,7 @@ class AbiDumper < Formula
   head "https://github.com/lvc/abi-dumper.git", branch: "master"
 
   bottle do
-    sha256 mojave: "f27baf8ae2f171b8f7236ee399bb9df7da423c4ef81b68d7e0ece78df850d204" # fake mojave
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4e69d56bf0f10ea4b9f0bea25e8a860823ff0f08846cea20ca1212f06b9d09b5"
   end
 
   depends_on "abi-compliance-checker"
