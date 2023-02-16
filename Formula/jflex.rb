@@ -1,9 +1,9 @@
 class Jflex < Formula
   desc "Lexical analyzer generator for Java, written in Java"
   homepage "https://jflex.de/"
-  url "https://jflex.de/release/jflex-1.8.2.tar.gz"
-  sha256 "a1e0d25e341d01de6b93ec32b45562905e69d06598113934b74f76b1be7927ab"
-  revision 1
+  url "https://github.com/jflex-de/jflex/releases/download/v1.9.0/jflex-1.9.0.tar.gz"
+  sha256 "4fd77f6bde675c3fc2892051819c7b86358679072a858fbd39471d1289ac51f3"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://jflex.de/download.html"
@@ -11,8 +11,7 @@ class Jflex < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "81555ae7265b0427f2aaa6df7ee70e4a292630f1ac70151f61c3fb6e9af7203d"
+    sha256 cellar: :any_skip_relocation, all: "c73268c73a3cbbc9ba4079b5457bd99380fd595261821482e61ccbebb7a6a0e7"
   end
 
   depends_on "openjdk"
